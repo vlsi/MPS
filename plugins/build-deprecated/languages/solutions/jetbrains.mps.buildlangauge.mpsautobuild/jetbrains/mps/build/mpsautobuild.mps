@@ -462,6 +462,10 @@
               <property name="id" nameId="tps4.1222447189012" value="d5033cee-f632-44b6-b308-89d4fbde34ff" />
               <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.build.startup" />
             </node>
+            <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="2099694185787173472">
+              <property name="id" nameId="tps4.1222447189012" value="4a1e4a24-105b-44ed-959c-6586fc957db3" />
+              <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.bash" />
+            </node>
             <node role="entry" roleId="tps4.1203617897549" type="tps4.Jar" typeId="tps4.1203598417283" id="8227093612175711630">
               <node role="delete" roleId="tps4.1239622410040" type="tps4.Delete" typeId="tps4.1204122781510" id="8227093612175711631" />
               <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="8227093612175711632">
@@ -2390,14 +2394,6 @@
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="6322407397626461069">
           <property name="id" nameId="tps4.1222447189012" value="ef7bf5ac-d06c-4342-b11d-e42104eb9343" />
           <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.lang.plugin.standalone" />
-        </node>
-      </node>
-      <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="7947179031518250059">
-        <node role="entry" roleId="tps4.1203617897549" type="tps4.Module" typeId="tps4.1203599702327" id="1527228114010785705">
-          <property name="id" nameId="tps4.1222447189012" value="4a1e4a24-105b-44ed-959c-6586fc957db3" />
-        </node>
-        <node role="title" roleId="tps4.1205340441197" type="tps4.SimpleString" typeId="tps4.1205339044029" id="7947179031518250062">
-          <property name="name" nameId="tps4.1223641503366" value="bash" />
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Folder" typeId="tps4.1203598512427" id="7947179031518250064">

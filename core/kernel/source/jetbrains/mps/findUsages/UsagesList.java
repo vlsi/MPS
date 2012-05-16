@@ -19,10 +19,6 @@ import jetbrains.mps.smodel.SModel;
 
 import java.util.Set;
 
-/**
- * Evgeny Gryaznov, Sep 10, 2010
- */
 public interface UsagesList {
-
   Set<SModel> getAffectedModels();
 }

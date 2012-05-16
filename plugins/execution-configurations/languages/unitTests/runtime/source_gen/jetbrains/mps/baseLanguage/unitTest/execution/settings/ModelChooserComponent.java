@@ -15,8 +15,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -42,7 +42,7 @@ public class ModelChooserComponent extends BaseChooserComponent {
     ListSequence.fromList(this.myCheckedModels).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), GlobalScope.getInstance(), new EmptyProgressMonitor(), false));
+        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SearchType.INSTANCES, GlobalScope.getInstance(), null));
         for (SNode node : nodes) {
           SModel model = SNodeOperations.getModel(node);
           SModelReference md = model.getSModelReference();

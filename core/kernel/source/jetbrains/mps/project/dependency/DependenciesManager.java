@@ -30,7 +30,10 @@ public interface DependenciesManager {
   /**
    * Collects all visible modules (including current).
    */
+  @Deprecated
   public void collectModules(Set<IModule> reexpRes, Set<IModule> nonReexpRes,boolean runtimes, Reexports reexports);
+
+  public void collectModules(Set<IModule> reexpRes, Set<IModule> nonReexpRes,boolean runtimes, Reexports reexports, ModuleDependencyCollector collector);
 
   public enum Reexports {
     DONT_RESPECT,

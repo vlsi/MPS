@@ -34,6 +34,8 @@ import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
+import java.util.Collections;
+import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -161,7 +163,7 @@ public class ListPanel extends JPanel {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-                ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findInstances(concept, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()), false)));
+                ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()))));
               }
             }
           });

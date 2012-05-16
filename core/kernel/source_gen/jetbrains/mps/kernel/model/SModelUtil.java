@@ -33,8 +33,6 @@ import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 
 public class SModelUtil {
   private static ConcurrentMap<String, SNode> myFQNameToConcepDecl = new ConcurrentHashMap<String, SNode>();
@@ -221,19 +219,6 @@ public class SModelUtil {
 
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
     return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), "sourceCardinality", "0..1"));
-  }
-
-  public static SNode findAnnotationLinkDeclaration(final String childRole, IScope scope) {
-    List<SNode> annotationLinks = SConceptOperations.findConceptInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration"), scope);
-    if (childRole == null) {
-      return null;
-    }
-    SNode annotationLinkDeclaration = ListSequence.fromList(annotationLinks).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode ald) {
-        return SPropertyOperations.hasValue(ald, "stereotype", "node", "node") && childRole.equals(AttributesRolesUtil.childRoleFromAttributeRole(SPropertyOperations.getString(ald, "role")));
-      }
-    });
-    return annotationLinkDeclaration;
   }
 
   public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {

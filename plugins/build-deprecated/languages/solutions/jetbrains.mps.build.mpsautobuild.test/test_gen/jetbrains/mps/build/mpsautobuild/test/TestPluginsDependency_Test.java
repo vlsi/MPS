@@ -52,7 +52,7 @@ public class TestPluginsDependency_Test extends BaseTransformationTest4 {
           sb.append(id);
           sb.append(" should depend on plugin ");
           sb.append(CheckFullDependencyUtil.getId(dependency));
-          sb.append("");
+          sb.append(".");
           sb.append("\n");
         }
       }

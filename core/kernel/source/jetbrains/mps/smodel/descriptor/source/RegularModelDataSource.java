@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -31,22 +32,18 @@ import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Set;
 
-public class RegularModelDataSource extends FileBasedModelDataSource {
+public class RegularModelDataSource extends FileBasedModelDataSource implements FastFindSupportProvider {
+  public static String FAST_FIND_ID = "regular";
+
   private static Logger LOG = Logger.getLogger(RegularModelDataSource.class);
 
   private IFile myFile;
@@ -139,44 +136,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     return myFile != null && myFile.exists();
   }
 
-  public boolean containsSomeString(@NotNull SModelDescriptor sm, @NotNull Set<String> strings) {
-    DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
-    if (dsm.isChanged()) return true;
-
-    IFile modelFile = dsm.getModelFile();
-    if (!modelFile.exists()) return true;
-    BufferedReader r = null;
-    try {
-      r = new BufferedReader(new InputStreamReader(modelFile.openInputStream(), FileUtil.DEFAULT_CHARSET));
-      String line;
-      boolean result = false;
-      while ((line = r.readLine()) != null) {
-        for (String s : strings) {
-          if (line.contains(s)) {
-            result = true;
-            break;
-          }
-        }
-      }
-      return result;
-    } catch (IOException e) {
-      LOG.error(e);
-    } finally {
-      if (r != null) {
-        try {
-          r.close();
-        } catch (IOException e) {
-          LOG.error(e);
-        }
-      }
-    }
-    return true;
-  }
-
-  public boolean containsString(@NotNull SModelDescriptor modelDescriptor, @NotNull String string) {
-    return containsSomeString(modelDescriptor, CollectionUtil.set(string));
-  }
-
   public void saveModelRefactorings(@NotNull SModelDescriptor sm, @NotNull StructureModificationLog log) {
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) sm;
     RefactoringsPersistence.save(dsm.getModelFile(), log);
@@ -249,5 +208,10 @@ public class RegularModelDataSource extends FileBasedModelDataSource {
     if (!FileSystem.getInstance().getFileByPath(root.getPath()).getName().equals(Language.LANGUAGE_MODELS))
       return false;
     return true;
+  }
+
+  @NotNull
+  public String getFastFindSupportId() {
+    return FAST_FIND_ID;
   }
 }

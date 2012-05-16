@@ -17,30 +17,65 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.dependency.ModuleDependencyCollector.Axis;
+import jetbrains.mps.project.dependency.ModuleDependencyCollector.Walker;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 
+import java.util.Collection;
 import java.util.Set;
 
 public class LanguageDependenciesManager extends ModuleDependenciesManager<Language> {
+
   public LanguageDependenciesManager(Language language) {
     super(language);
   }
 
+  @Deprecated
   public void collectAllExtendedLanguages(Set<Language> result) {
-    if (result.contains(myModule)) return;
+    collectAllExtendedLanguages((Set)result, new ModuleDependencyCollector());
+  }
 
-    result.add(myModule);
+  public void collectAllExtendedLanguages(Collection<IModule> result, ModuleDependencyCollector collector) {
+    Walker<Language> walker = collector.getOrCreateWalker(ourExtendedLanguagesAxis);
+    walker.walkAllFrom(myModule);
+    result.addAll(collector.getCollected(LanguageDependenciesManager.EXTENDED_LANGUAGES));
+  }
 
-    for (Language l : ModuleUtil.refsToLanguages(myModule.getExtendedLanguageRefs())) {
-      l.getDependenciesManager().collectAllExtendedLanguages(result);
-    }
+  public void collectAllRuntimes(Collection<IModule> result, ModuleDependencyCollector collector) {
+    collector.getOrCreateWalker(ourAllLanguageRuntimesAxis).walkAllFrom(myModule);
+    result.addAll(collector.getCollected(LanguageDependenciesManager.ALL_LANGUAGE_RUNTIMES));
   }
 
   @Override
-  protected void collectUsedModules(boolean runtimes, Set<IModule> reexported, Set<IModule> nonReexported) {
-    super.collectUsedModules(runtimes, reexported, nonReexported);
-    //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
-    collectAllExtendedLanguages((Set<Language>) (Set)nonReexported);
+  protected void collectUsedModulesAndRuntimes(Collection<IModule> reexported, Collection<IModule> nonReexported, ModuleDependencyCollector collector) {
+    super.collectUsedModulesAndRuntimes(reexported, nonReexported, collector);
+    collectAllExtendedLanguages(reexported, collector);
+    // MPS-15883
+    for (Generator generator : myModule.getGenerators()) {
+      generator.getDependenciesManager().collectUsedModulesAndRuntimes(reexported, nonReexported, collector);
+    }
   }
+
+  public static final String EXTENDED_LANGUAGES = "extendedLanguages";
+  private static Axis<Language> ourExtendedLanguagesAxis = new Axis<Language>(EXTENDED_LANGUAGES) {
+        @Override
+        protected Collection<Language> next(Language module) {
+          return ModuleUtil.refsToLanguages(module.getExtendedLanguageRefs());
+        }
+      };
+
+  public static final String ALL_LANGUAGE_RUNTIMES = "allLanguageRuntimes";
+  private static Axis<Language> ourAllLanguageRuntimesAxis = new Axis<Language>(ALL_LANGUAGE_RUNTIMES) {
+    @Override
+    protected Collection<Language> next(Language module) {
+      return ModuleUtil.refsToModules(module.getExtendedLanguageRefs(), Language.class);
+    }
+
+    @Override
+    protected void collect(Collection<IModule> result, Language module) {
+      result.addAll(ModuleUtil.refsToModules(module.getRuntimeModulesReferences(), Solution.class));
+    }
+  };
 }

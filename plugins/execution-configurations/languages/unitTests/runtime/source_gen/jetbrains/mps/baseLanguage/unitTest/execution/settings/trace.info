@@ -9,14 +9,14 @@
     <nodeInfo nodeId="6062668769034852796" fileName="ModelChooserComponent.java" startLine="33" startPosition="31" endLine="34" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034852803" fileName="ModelChooserComponent.java" startLine="34" startPosition="48" endLine="35" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034852818" fileName="ModelChooserComponent.java" startLine="41" startPosition="32" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034852827" fileName="ModelChooserComponent.java" startLine="44" startPosition="25" endLine="45" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034852827" fileName="ModelChooserComponent.java" startLine="44" startPosition="25" endLine="45" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034852843" fileName="ModelChooserComponent.java" startLine="46" startPosition="34" endLine="47" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034852849" fileName="ModelChooserComponent.java" startLine="47" startPosition="56" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034852858" fileName="ModelChooserComponent.java" startLine="49" startPosition="95" endLine="50" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6062668769034852865" fileName="ModelChooserComponent.java" startLine="51" startPosition="11" endLine="52" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034852856" fileName="ModelChooserComponent.java" startLine="48" startPosition="58" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769034852794" fileName="ModelChooserComponent.java" startLine="32" startPosition="169" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034852841" fileName="ModelChooserComponent.java" startLine="45" startPosition="295" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6062668769034852841" fileName="ModelChooserComponent.java" startLine="45" startPosition="308" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6062668769034852770" fileName="ModelChooserComponent.java" startLine="28" startPosition="36" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="6062668769034852763" fileName="ModelChooserComponent.java" startLine="27" startPosition="12" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034852825" fileName="ModelChooserComponent.java" startLine="43" startPosition="57" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -33,7 +33,7 @@
       <varInfo nodeId="6062668769034852786" varName="modelRef" />
       <varInfo nodeId="6062668769034852781" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034852841" fileName="ModelChooserComponent.java" startLine="45" startPosition="295" endLine="53" endPosition="9">
+    <scopeInfo nodeId="6062668769034852841" fileName="ModelChooserComponent.java" startLine="45" startPosition="308" endLine="53" endPosition="9">
       <varInfo nodeId="6062668769034852873" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769034852826" fileName="ModelChooserComponent.java" startLine="44" startPosition="25" endLine="53" endPosition="9">
@@ -102,7 +102,9 @@
     <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5" />
+    <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5">
+      <varInfo nodeId="6062668769034852876" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="6062668769034852876" varName="newValue" />
     </scopeInfo>
@@ -119,7 +121,7 @@
     <nodeInfo nodeId="6062668769034852928" fileName="ModuleChooserComponent.java" startLine="34" startPosition="26" endLine="35" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034852935" fileName="ModuleChooserComponent.java" startLine="35" startPosition="47" endLine="36" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034852950" fileName="ModuleChooserComponent.java" startLine="42" startPosition="33" endLine="43" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034852959" fileName="ModuleChooserComponent.java" startLine="45" startPosition="25" endLine="46" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034852959" fileName="ModuleChooserComponent.java" startLine="45" startPosition="25" endLine="46" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034852975" fileName="ModuleChooserComponent.java" startLine="47" startPosition="34" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034852981" fileName="ModuleChooserComponent.java" startLine="48" startPosition="56" endLine="49" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034852988" fileName="ModuleChooserComponent.java" startLine="49" startPosition="59" endLine="50" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -127,7 +129,7 @@
     <nodeInfo nodeId="6062668769034853005" fileName="ModuleChooserComponent.java" startLine="53" startPosition="11" endLine="54" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034852996" fileName="ModuleChooserComponent.java" startLine="50" startPosition="71" endLine="53" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769034852926" fileName="ModuleChooserComponent.java" startLine="33" startPosition="172" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034852973" fileName="ModuleChooserComponent.java" startLine="46" startPosition="295" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6062668769034852973" fileName="ModuleChooserComponent.java" startLine="46" startPosition="308" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6062668769034852901" fileName="ModuleChooserComponent.java" startLine="29" startPosition="36" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="6062668769034852894" fileName="ModuleChooserComponent.java" startLine="28" startPosition="12" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034852957" fileName="ModuleChooserComponent.java" startLine="44" startPosition="57" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -145,7 +147,7 @@
       <varInfo nodeId="6062668769034852976" varName="model" />
       <varInfo nodeId="6062668769034852989" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034852973" fileName="ModuleChooserComponent.java" startLine="46" startPosition="295" endLine="55" endPosition="9">
+    <scopeInfo nodeId="6062668769034852973" fileName="ModuleChooserComponent.java" startLine="46" startPosition="308" endLine="55" endPosition="9">
       <varInfo nodeId="6062668769034853013" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769034852901" fileName="ModuleChooserComponent.java" startLine="29" startPosition="36" endLine="39" endPosition="0">
@@ -569,9 +571,7 @@
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="368" startPosition="0" endLine="372" endPosition="0" />
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="121" startPosition="0" endLine="126" endPosition="0" />
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="126" startPosition="0" endLine="131" endPosition="0" />
-    <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5">
-      <varInfo nodeId="6062668769034853020" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="135" startPosition="25" endLine="140" endPosition="5" />
     <scopeInfo nodeId="6062668769034853020" fileName="JUnitConfigEditor.java" startLine="255" startPosition="52" endLine="260" endPosition="21">
       <varInfo nodeId="6062668769034853020" varName="component" />
     </scopeInfo>
@@ -1049,260 +1049,260 @@
     <unitInfo nodeId="6062668769034854227" fileName="ListPanel.java" startLine="15" startPosition="32" endLine="21" endPosition="3" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$1" />
   </root>
   <root nodeId="6062668769034854228">
-    <nodeInfo nodeId="6062668769034854229" fileName="ListPanel.java" startLine="44" startPosition="39" endLine="45" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLock" />
-    <nodeInfo nodeId="6062668769034854234" fileName="ListPanel.java" startLine="45" startPosition="45" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListComponent" />
-    <nodeInfo nodeId="6062668769034854237" fileName="ListPanel.java" startLine="46" startPosition="32" endLine="47" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
-    <nodeInfo nodeId="6062668769034854244" fileName="ListPanel.java" startLine="47" startPosition="101" endLine="48" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCandidates" />
-    <nodeInfo nodeId="6062668769034854248" fileName="ListPanel.java" startLine="48" startPosition="46" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsTestMethods" />
-    <nodeInfo nodeId="6062668769034854251" fileName="ListPanel.java" startLine="49" startPosition="34" endLine="50" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
-    <nodeInfo nodeId="6062668769034854786" fileName="ListPanel.java" startLine="50" startPosition="36" endLine="51" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListModel" />
-    <nodeInfo nodeId="6062668769034854789" fileName="ListPanel.java" startLine="51" startPosition="52" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="6062668769034854258" fileName="ListPanel.java" startLine="57" startPosition="46" endLine="58" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854265" fileName="ListPanel.java" startLine="58" startPosition="58" endLine="59" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854277" fileName="ListPanel.java" startLine="62" startPosition="58" endLine="63" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854289" fileName="ListPanel.java" startLine="66" startPosition="28" endLine="67" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854297" fileName="ListPanel.java" startLine="70" startPosition="23" endLine="71" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854306" fileName="ListPanel.java" startLine="71" startPosition="94" endLine="72" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854316" fileName="ListPanel.java" startLine="75" startPosition="79" endLine="76" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854322" fileName="ListPanel.java" startLine="76" startPosition="41" endLine="77" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854328" fileName="ListPanel.java" startLine="77" startPosition="39" endLine="78" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854334" fileName="ListPanel.java" startLine="78" startPosition="26" endLine="79" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854341" fileName="ListPanel.java" startLine="79" startPosition="59" endLine="80" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854363" fileName="ListPanel.java" startLine="82" startPosition="45" endLine="83" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7032426736593739963" fileName="ListPanel.java" startLine="83" startPosition="48" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7032426736593739989" fileName="ListPanel.java" startLine="84" startPosition="0" endLine="85" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7032426736593740002" fileName="ListPanel.java" startLine="85" startPosition="86" endLine="86" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854368" fileName="ListPanel.java" startLine="86" startPosition="29" endLine="87" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7032426736593740033" fileName="ListPanel.java" startLine="87" startPosition="59" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034854376" fileName="ListPanel.java" startLine="89" startPosition="33" endLine="90" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854381" fileName="ListPanel.java" startLine="91" startPosition="9" endLine="92" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854387" fileName="ListPanel.java" startLine="94" startPosition="29" endLine="95" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854394" fileName="ListPanel.java" startLine="98" startPosition="36" endLine="99" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854399" fileName="ListPanel.java" startLine="100" startPosition="9" endLine="101" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854408" fileName="ListPanel.java" startLine="102" startPosition="48" endLine="103" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854420" fileName="ListPanel.java" startLine="104" startPosition="9" endLine="105" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854426" fileName="ListPanel.java" startLine="105" startPosition="50" endLine="106" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854432" fileName="ListPanel.java" startLine="106" startPosition="58" endLine="107" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854467" fileName="ListPanel.java" startLine="113" startPosition="71" endLine="114" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854473" fileName="ListPanel.java" startLine="116" startPosition="33" endLine="117" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854481" fileName="ListPanel.java" startLine="120" startPosition="45" endLine="121" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854488" fileName="ListPanel.java" startLine="121" startPosition="81" endLine="122" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6062668769034854500" fileName="ListPanel.java" startLine="126" startPosition="48" endLine="127" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854512" fileName="ListPanel.java" startLine="128" startPosition="9" endLine="129" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854518" fileName="ListPanel.java" startLine="129" startPosition="50" endLine="130" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854527" fileName="ListPanel.java" startLine="132" startPosition="6" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034854528" fileName="ListPanel.java" startLine="133" startPosition="0" endLine="134" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854535" fileName="ListPanel.java" startLine="134" startPosition="45" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034854536" fileName="ListPanel.java" startLine="135" startPosition="0" endLine="136" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854542" fileName="ListPanel.java" startLine="136" startPosition="73" endLine="137" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854551" fileName="ListPanel.java" startLine="137" startPosition="112" endLine="138" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854559" fileName="ListPanel.java" startLine="138" startPosition="56" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034854560" fileName="ListPanel.java" startLine="139" startPosition="0" endLine="140" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854565" fileName="ListPanel.java" startLine="140" startPosition="75" endLine="141" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854569" fileName="ListPanel.java" startLine="141" startPosition="20" endLine="142" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854575" fileName="ListPanel.java" startLine="142" startPosition="40" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034854589" fileName="ListPanel.java" startLine="147" startPosition="33" endLine="148" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854605" fileName="ListPanel.java" startLine="151" startPosition="39" endLine="152" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854611" fileName="ListPanel.java" startLine="153" startPosition="27" endLine="154" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854619" fileName="ListPanel.java" startLine="155" startPosition="5" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034854634" fileName="ListPanel.java" startLine="159" startPosition="27" endLine="160" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854649" fileName="ListPanel.java" startLine="163" startPosition="108" endLine="164" endPosition="254" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854666" fileName="ListPanel.java" startLine="168" startPosition="47" endLine="169" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854678" fileName="ListPanel.java" startLine="172" startPosition="50" endLine="173" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854685" fileName="ListPanel.java" startLine="174" startPosition="40" endLine="175" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6062668769034854689" fileName="ListPanel.java" startLine="176" startPosition="19" endLine="177" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854702" fileName="ListPanel.java" startLine="181" startPosition="35" endLine="182" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854728" fileName="ListPanel.java" startLine="189" startPosition="62" endLine="190" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854736" fileName="ListPanel.java" startLine="193" startPosition="64" endLine="194" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854749" fileName="ListPanel.java" startLine="202" startPosition="55" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034854751" fileName="ListPanel.java" startLine="204" startPosition="5" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6062668769034854755" fileName="ListPanel.java" startLine="206" startPosition="27" endLine="207" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854773" fileName="ListPanel.java" startLine="209" startPosition="50" endLine="210" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854839" fileName="ListPanel.java" startLine="216" startPosition="43" endLine="217" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854804" fileName="ListPanel.java" startLine="224" startPosition="40" endLine="225" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854817" fileName="ListPanel.java" startLine="228" startPosition="26" endLine="229" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769034854827" fileName="ListPanel.java" startLine="232" startPosition="40" endLine="233" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854781" fileName="ListPanel.java" startLine="53" startPosition="0" endLine="55" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListPanel#()V" />
-    <nodeInfo nodeId="6062668769034854793" fileName="ListPanel.java" startLine="220" startPosition="63" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyAbstractListModel#()V" />
-    <nodeInfo nodeId="6062668769034854374" fileName="ListPanel.java" startLine="88" startPosition="0" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034854392" fileName="ListPanel.java" startLine="97" startPosition="11" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034854406" fileName="ListPanel.java" startLine="101" startPosition="81" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034854498" fileName="ListPanel.java" startLine="125" startPosition="9" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034854608" fileName="ListPanel.java" startLine="152" startPosition="24" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="6062668769034854640" fileName="ListPanel.java" startLine="162" startPosition="31" endLine="165" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6062668769034854683" fileName="ListPanel.java" startLine="173" startPosition="88" endLine="176" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034854699" fileName="ListPanel.java" startLine="180" startPosition="15" endLine="183" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="6062668769034854273" fileName="ListPanel.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addActionListener#(Ljava/awt/event/ActionListener;)V" />
-    <nodeInfo nodeId="6062668769034854285" fileName="ListPanel.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItems#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="6062668769034854385" fileName="ListPanel.java" startLine="93" startPosition="61" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034854471" fileName="ListPanel.java" startLine="115" startPosition="65" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034854479" fileName="ListPanel.java" startLine="119" startPosition="15" endLine="123" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034854576" fileName="ListPanel.java" startLine="143" startPosition="0" endLine="147" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854726" fileName="ListPanel.java" startLine="188" startPosition="130" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="6062668769034854734" fileName="ListPanel.java" startLine="192" startPosition="65" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
-    <nodeInfo nodeId="6062668769034854771" fileName="ListPanel.java" startLine="208" startPosition="103" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6062668769034854835" fileName="ListPanel.java" startLine="215" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProject#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="6062668769034854798" fileName="ListPanel.java" startLine="223" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementAt#(I)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6062668769034854813" fileName="ListPanel.java" startLine="227" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSize#()I" />
-    <nodeInfo nodeId="6062668769034854823" fileName="ListPanel.java" startLine="231" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireSomethingChanged#()V" />
-    <nodeInfo nodeId="6062668769034854254" fileName="ListPanel.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addItem#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)V" />
-    <nodeInfo nodeId="6062668769034854293" fileName="ListPanel.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="6062668769034854384" fileName="ListPanel.java" startLine="92" startPosition="90" endLine="97" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854470" fileName="ListPanel.java" startLine="114" startPosition="73" endLine="119" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854764" fileName="ListPanel.java" startLine="207" startPosition="100" endLine="212" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2335605876461843371" fileName="ListPanel.java" startLine="161" startPosition="63" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2335605876461843370" fileName="ListPanel.java" startLine="160" startPosition="63" endLine="167" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854676" fileName="ListPanel.java" startLine="171" startPosition="33" endLine="178" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6062668769034854752" fileName="ListPanel.java" startLine="205" startPosition="0" endLine="213" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="6062668769034854719" fileName="ListPanel.java" startLine="187" startPosition="39" endLine="196" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854674" fileName="ListPanel.java" startLine="170" startPosition="65" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034854673" fileName="ListPanel.java" startLine="169" startPosition="112" endLine="180" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854716" fileName="ListPanel.java" startLine="186" startPosition="33" endLine="197" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="6062668769034854465" fileName="ListPanel.java" startLine="112" startPosition="81" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6062668769034854456" fileName="ListPanel.java" startLine="111" startPosition="49" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6062668769034854714" fileName="ListPanel.java" startLine="185" startPosition="65" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034854713" fileName="ListPanel.java" startLine="184" startPosition="18" endLine="199" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854711" fileName="ListPanel.java" startLine="184" startPosition="16" endLine="200" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769034854450" fileName="ListPanel.java" startLine="110" startPosition="66" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="6062668769034854443" fileName="ListPanel.java" startLine="109" startPosition="6" endLine="132" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854357" fileName="ListPanel.java" startLine="81" startPosition="60" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
-    <nodeInfo nodeId="6062668769034854351" fileName="ListPanel.java" startLine="80" startPosition="56" endLine="109" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034854664" fileName="ListPanel.java" startLine="167" startPosition="13" endLine="200" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034854630" fileName="ListPanel.java" startLine="158" startPosition="88" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6062668769034854622" fileName="ListPanel.java" startLine="157" startPosition="22" endLine="202" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769034854620" fileName="ListPanel.java" startLine="156" startPosition="0" endLine="204" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769034854600" fileName="ListPanel.java" startLine="150" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCandidates#()Ljava/util/List;" />
-    <nodeInfo nodeId="6062668769034854312" fileName="ListPanel.java" startLine="74" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljava/util/List;Z)V" />
-    <scopeInfo nodeId="6062668769034854784" fileName="ListPanel.java" startLine="54" startPosition="22" endLine="54" endPosition="22" />
-    <scopeInfo nodeId="6062668769034854796" fileName="ListPanel.java" startLine="221" startPosition="34" endLine="221" endPosition="34" />
-    <scopeInfo nodeId="6062668769034854276" fileName="ListPanel.java" startLine="62" startPosition="58" endLine="63" endPosition="31" />
-    <scopeInfo nodeId="6062668769034854288" fileName="ListPanel.java" startLine="66" startPosition="28" endLine="67" endPosition="25" />
-    <scopeInfo nodeId="6062668769034854375" fileName="ListPanel.java" startLine="89" startPosition="33" endLine="90" endPosition="20" />
-    <scopeInfo nodeId="6062668769034854386" fileName="ListPanel.java" startLine="94" startPosition="29" endLine="95" endPosition="73" />
-    <scopeInfo nodeId="6062668769034854393" fileName="ListPanel.java" startLine="98" startPosition="36" endLine="99" endPosition="20" />
-    <scopeInfo nodeId="6062668769034854407" fileName="ListPanel.java" startLine="102" startPosition="48" endLine="103" endPosition="58" />
-    <scopeInfo nodeId="6062668769034854472" fileName="ListPanel.java" startLine="116" startPosition="33" endLine="117" endPosition="48" />
-    <scopeInfo nodeId="6062668769034854499" fileName="ListPanel.java" startLine="126" startPosition="48" endLine="127" endPosition="58" />
-    <scopeInfo nodeId="6062668769034854610" fileName="ListPanel.java" startLine="153" startPosition="27" endLine="154" endPosition="46" />
-    <scopeInfo nodeId="6062668769034854643" fileName="ListPanel.java" startLine="163" startPosition="108" endLine="164" endPosition="254" />
-    <scopeInfo nodeId="6062668769034854684" fileName="ListPanel.java" startLine="174" startPosition="40" endLine="175" endPosition="29" />
-    <scopeInfo nodeId="6062668769034854701" fileName="ListPanel.java" startLine="181" startPosition="35" endLine="182" endPosition="56" />
-    <scopeInfo nodeId="6062668769034854727" fileName="ListPanel.java" startLine="189" startPosition="62" endLine="190" endPosition="66" />
-    <scopeInfo nodeId="6062668769034854735" fileName="ListPanel.java" startLine="193" startPosition="64" endLine="194" endPosition="40" />
-    <scopeInfo nodeId="6062668769034854772" fileName="ListPanel.java" startLine="209" startPosition="50" endLine="210" endPosition="103" />
-    <scopeInfo nodeId="6062668769034854838" fileName="ListPanel.java" startLine="216" startPosition="43" endLine="217" endPosition="24" />
-    <scopeInfo nodeId="6062668769034854803" fileName="ListPanel.java" startLine="224" startPosition="40" endLine="225" endPosition="93" />
-    <scopeInfo nodeId="6062668769034854816" fileName="ListPanel.java" startLine="228" startPosition="26" endLine="229" endPosition="68" />
-    <scopeInfo nodeId="6062668769034854826" fileName="ListPanel.java" startLine="232" startPosition="40" endLine="233" endPosition="76" />
-    <scopeInfo nodeId="6062668769034854781" fileName="ListPanel.java" startLine="53" startPosition="0" endLine="55" endPosition="3" />
-    <scopeInfo nodeId="6062668769034854257" fileName="ListPanel.java" startLine="57" startPosition="46" endLine="59" endPosition="36" />
-    <scopeInfo nodeId="6062668769034854296" fileName="ListPanel.java" startLine="70" startPosition="23" endLine="72" endPosition="36" />
-    <scopeInfo nodeId="6062668769034854480" fileName="ListPanel.java" startLine="120" startPosition="45" endLine="122" endPosition="20" />
-    <scopeInfo nodeId="6062668769034854793" fileName="ListPanel.java" startLine="220" startPosition="63" endLine="222" endPosition="5" />
-    <scopeInfo nodeId="2335605876461843372" fileName="ListPanel.java" startLine="162" startPosition="31" endLine="165" endPosition="15" />
-    <scopeInfo nodeId="6062668769034854640" fileName="ListPanel.java" startLine="162" startPosition="31" endLine="165" endPosition="15">
+    <nodeInfo nodeId="6062668769034854229" fileName="ListPanel.java" startLine="46" startPosition="39" endLine="47" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLock" />
+    <nodeInfo nodeId="6062668769034854234" fileName="ListPanel.java" startLine="47" startPosition="45" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListComponent" />
+    <nodeInfo nodeId="6062668769034854237" fileName="ListPanel.java" startLine="48" startPosition="32" endLine="49" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
+    <nodeInfo nodeId="6062668769034854244" fileName="ListPanel.java" startLine="49" startPosition="101" endLine="50" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCandidates" />
+    <nodeInfo nodeId="6062668769034854248" fileName="ListPanel.java" startLine="50" startPosition="46" endLine="51" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsTestMethods" />
+    <nodeInfo nodeId="6062668769034854251" fileName="ListPanel.java" startLine="51" startPosition="34" endLine="52" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
+    <nodeInfo nodeId="6062668769034854786" fileName="ListPanel.java" startLine="52" startPosition="36" endLine="53" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListModel" />
+    <nodeInfo nodeId="6062668769034854789" fileName="ListPanel.java" startLine="53" startPosition="52" endLine="54" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="6062668769034854258" fileName="ListPanel.java" startLine="59" startPosition="46" endLine="60" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854265" fileName="ListPanel.java" startLine="60" startPosition="58" endLine="61" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854277" fileName="ListPanel.java" startLine="64" startPosition="58" endLine="65" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854289" fileName="ListPanel.java" startLine="68" startPosition="28" endLine="69" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854297" fileName="ListPanel.java" startLine="72" startPosition="23" endLine="73" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854306" fileName="ListPanel.java" startLine="73" startPosition="94" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854316" fileName="ListPanel.java" startLine="77" startPosition="79" endLine="78" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854322" fileName="ListPanel.java" startLine="78" startPosition="41" endLine="79" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854328" fileName="ListPanel.java" startLine="79" startPosition="39" endLine="80" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854334" fileName="ListPanel.java" startLine="80" startPosition="26" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854341" fileName="ListPanel.java" startLine="81" startPosition="59" endLine="82" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854363" fileName="ListPanel.java" startLine="84" startPosition="45" endLine="85" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7032426736593739963" fileName="ListPanel.java" startLine="85" startPosition="48" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7032426736593739989" fileName="ListPanel.java" startLine="86" startPosition="0" endLine="87" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7032426736593740002" fileName="ListPanel.java" startLine="87" startPosition="86" endLine="88" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854368" fileName="ListPanel.java" startLine="88" startPosition="29" endLine="89" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7032426736593740033" fileName="ListPanel.java" startLine="89" startPosition="59" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034854376" fileName="ListPanel.java" startLine="91" startPosition="33" endLine="92" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854381" fileName="ListPanel.java" startLine="93" startPosition="9" endLine="94" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854387" fileName="ListPanel.java" startLine="96" startPosition="29" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854394" fileName="ListPanel.java" startLine="100" startPosition="36" endLine="101" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854399" fileName="ListPanel.java" startLine="102" startPosition="9" endLine="103" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854408" fileName="ListPanel.java" startLine="104" startPosition="48" endLine="105" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854420" fileName="ListPanel.java" startLine="106" startPosition="9" endLine="107" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854426" fileName="ListPanel.java" startLine="107" startPosition="50" endLine="108" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854432" fileName="ListPanel.java" startLine="108" startPosition="58" endLine="109" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854467" fileName="ListPanel.java" startLine="115" startPosition="71" endLine="116" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854473" fileName="ListPanel.java" startLine="118" startPosition="33" endLine="119" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854481" fileName="ListPanel.java" startLine="122" startPosition="45" endLine="123" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854488" fileName="ListPanel.java" startLine="123" startPosition="81" endLine="124" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6062668769034854500" fileName="ListPanel.java" startLine="128" startPosition="48" endLine="129" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854512" fileName="ListPanel.java" startLine="130" startPosition="9" endLine="131" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854518" fileName="ListPanel.java" startLine="131" startPosition="50" endLine="132" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854527" fileName="ListPanel.java" startLine="134" startPosition="6" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034854528" fileName="ListPanel.java" startLine="135" startPosition="0" endLine="136" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854535" fileName="ListPanel.java" startLine="136" startPosition="45" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034854536" fileName="ListPanel.java" startLine="137" startPosition="0" endLine="138" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854542" fileName="ListPanel.java" startLine="138" startPosition="73" endLine="139" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854551" fileName="ListPanel.java" startLine="139" startPosition="112" endLine="140" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854559" fileName="ListPanel.java" startLine="140" startPosition="56" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034854560" fileName="ListPanel.java" startLine="141" startPosition="0" endLine="142" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854565" fileName="ListPanel.java" startLine="142" startPosition="75" endLine="143" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854569" fileName="ListPanel.java" startLine="143" startPosition="20" endLine="144" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854575" fileName="ListPanel.java" startLine="144" startPosition="40" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034854589" fileName="ListPanel.java" startLine="149" startPosition="33" endLine="150" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854605" fileName="ListPanel.java" startLine="153" startPosition="39" endLine="154" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854611" fileName="ListPanel.java" startLine="155" startPosition="27" endLine="156" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854619" fileName="ListPanel.java" startLine="157" startPosition="5" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034854634" fileName="ListPanel.java" startLine="161" startPosition="27" endLine="162" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854649" fileName="ListPanel.java" startLine="165" startPosition="108" endLine="166" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854666" fileName="ListPanel.java" startLine="170" startPosition="47" endLine="171" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854678" fileName="ListPanel.java" startLine="174" startPosition="50" endLine="175" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854685" fileName="ListPanel.java" startLine="176" startPosition="40" endLine="177" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6062668769034854689" fileName="ListPanel.java" startLine="178" startPosition="19" endLine="179" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854702" fileName="ListPanel.java" startLine="183" startPosition="35" endLine="184" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854728" fileName="ListPanel.java" startLine="191" startPosition="62" endLine="192" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854736" fileName="ListPanel.java" startLine="195" startPosition="64" endLine="196" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854749" fileName="ListPanel.java" startLine="204" startPosition="55" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034854751" fileName="ListPanel.java" startLine="206" startPosition="5" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6062668769034854755" fileName="ListPanel.java" startLine="208" startPosition="27" endLine="209" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854773" fileName="ListPanel.java" startLine="211" startPosition="50" endLine="212" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854839" fileName="ListPanel.java" startLine="218" startPosition="43" endLine="219" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854804" fileName="ListPanel.java" startLine="226" startPosition="40" endLine="227" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854817" fileName="ListPanel.java" startLine="230" startPosition="26" endLine="231" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769034854827" fileName="ListPanel.java" startLine="234" startPosition="40" endLine="235" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854781" fileName="ListPanel.java" startLine="55" startPosition="0" endLine="57" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListPanel#()V" />
+    <nodeInfo nodeId="6062668769034854793" fileName="ListPanel.java" startLine="222" startPosition="63" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyAbstractListModel#()V" />
+    <nodeInfo nodeId="6062668769034854374" fileName="ListPanel.java" startLine="90" startPosition="0" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034854392" fileName="ListPanel.java" startLine="99" startPosition="11" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034854406" fileName="ListPanel.java" startLine="103" startPosition="81" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034854498" fileName="ListPanel.java" startLine="127" startPosition="9" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034854608" fileName="ListPanel.java" startLine="154" startPosition="24" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="6062668769034854640" fileName="ListPanel.java" startLine="164" startPosition="31" endLine="167" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6062668769034854683" fileName="ListPanel.java" startLine="175" startPosition="88" endLine="178" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034854699" fileName="ListPanel.java" startLine="182" startPosition="15" endLine="185" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="6062668769034854273" fileName="ListPanel.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addActionListener#(Ljava/awt/event/ActionListener;)V" />
+    <nodeInfo nodeId="6062668769034854285" fileName="ListPanel.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getItems#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="6062668769034854385" fileName="ListPanel.java" startLine="95" startPosition="61" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034854471" fileName="ListPanel.java" startLine="117" startPosition="65" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034854479" fileName="ListPanel.java" startLine="121" startPosition="15" endLine="125" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034854576" fileName="ListPanel.java" startLine="145" startPosition="0" endLine="149" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854726" fileName="ListPanel.java" startLine="190" startPosition="130" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="6062668769034854734" fileName="ListPanel.java" startLine="194" startPosition="65" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
+    <nodeInfo nodeId="6062668769034854771" fileName="ListPanel.java" startLine="210" startPosition="103" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6062668769034854835" fileName="ListPanel.java" startLine="217" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProject#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="6062668769034854798" fileName="ListPanel.java" startLine="225" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementAt#(I)Ljava/lang/Object;" />
+    <nodeInfo nodeId="6062668769034854813" fileName="ListPanel.java" startLine="229" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSize#()I" />
+    <nodeInfo nodeId="6062668769034854823" fileName="ListPanel.java" startLine="233" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireSomethingChanged#()V" />
+    <nodeInfo nodeId="6062668769034854254" fileName="ListPanel.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addItem#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)V" />
+    <nodeInfo nodeId="6062668769034854293" fileName="ListPanel.java" startLine="71" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
+    <nodeInfo nodeId="6062668769034854384" fileName="ListPanel.java" startLine="94" startPosition="90" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854470" fileName="ListPanel.java" startLine="116" startPosition="73" endLine="121" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854764" fileName="ListPanel.java" startLine="209" startPosition="100" endLine="214" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2335605876461843371" fileName="ListPanel.java" startLine="163" startPosition="63" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2335605876461843370" fileName="ListPanel.java" startLine="162" startPosition="63" endLine="169" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854676" fileName="ListPanel.java" startLine="173" startPosition="33" endLine="180" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6062668769034854752" fileName="ListPanel.java" startLine="207" startPosition="0" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="6062668769034854719" fileName="ListPanel.java" startLine="189" startPosition="39" endLine="198" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854674" fileName="ListPanel.java" startLine="172" startPosition="65" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034854673" fileName="ListPanel.java" startLine="171" startPosition="112" endLine="182" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854716" fileName="ListPanel.java" startLine="188" startPosition="33" endLine="199" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="6062668769034854465" fileName="ListPanel.java" startLine="114" startPosition="81" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6062668769034854456" fileName="ListPanel.java" startLine="113" startPosition="49" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6062668769034854714" fileName="ListPanel.java" startLine="187" startPosition="65" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034854713" fileName="ListPanel.java" startLine="186" startPosition="18" endLine="201" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854711" fileName="ListPanel.java" startLine="186" startPosition="16" endLine="202" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769034854450" fileName="ListPanel.java" startLine="112" startPosition="66" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+    <nodeInfo nodeId="6062668769034854443" fileName="ListPanel.java" startLine="111" startPosition="6" endLine="134" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854357" fileName="ListPanel.java" startLine="83" startPosition="60" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
+    <nodeInfo nodeId="6062668769034854351" fileName="ListPanel.java" startLine="82" startPosition="56" endLine="111" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769034854664" fileName="ListPanel.java" startLine="169" startPosition="13" endLine="202" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034854630" fileName="ListPanel.java" startLine="160" startPosition="88" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769034854622" fileName="ListPanel.java" startLine="159" startPosition="22" endLine="204" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034854620" fileName="ListPanel.java" startLine="158" startPosition="0" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769034854600" fileName="ListPanel.java" startLine="152" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCandidates#()Ljava/util/List;" />
+    <nodeInfo nodeId="6062668769034854312" fileName="ListPanel.java" startLine="76" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Ljava/util/List;Z)V" />
+    <scopeInfo nodeId="6062668769034854784" fileName="ListPanel.java" startLine="56" startPosition="22" endLine="56" endPosition="22" />
+    <scopeInfo nodeId="6062668769034854796" fileName="ListPanel.java" startLine="223" startPosition="34" endLine="223" endPosition="34" />
+    <scopeInfo nodeId="6062668769034854276" fileName="ListPanel.java" startLine="64" startPosition="58" endLine="65" endPosition="31" />
+    <scopeInfo nodeId="6062668769034854288" fileName="ListPanel.java" startLine="68" startPosition="28" endLine="69" endPosition="25" />
+    <scopeInfo nodeId="6062668769034854375" fileName="ListPanel.java" startLine="91" startPosition="33" endLine="92" endPosition="20" />
+    <scopeInfo nodeId="6062668769034854386" fileName="ListPanel.java" startLine="96" startPosition="29" endLine="97" endPosition="73" />
+    <scopeInfo nodeId="6062668769034854393" fileName="ListPanel.java" startLine="100" startPosition="36" endLine="101" endPosition="20" />
+    <scopeInfo nodeId="6062668769034854407" fileName="ListPanel.java" startLine="104" startPosition="48" endLine="105" endPosition="58" />
+    <scopeInfo nodeId="6062668769034854472" fileName="ListPanel.java" startLine="118" startPosition="33" endLine="119" endPosition="48" />
+    <scopeInfo nodeId="6062668769034854499" fileName="ListPanel.java" startLine="128" startPosition="48" endLine="129" endPosition="58" />
+    <scopeInfo nodeId="6062668769034854610" fileName="ListPanel.java" startLine="155" startPosition="27" endLine="156" endPosition="46" />
+    <scopeInfo nodeId="6062668769034854643" fileName="ListPanel.java" startLine="165" startPosition="108" endLine="166" endPosition="289" />
+    <scopeInfo nodeId="6062668769034854684" fileName="ListPanel.java" startLine="176" startPosition="40" endLine="177" endPosition="29" />
+    <scopeInfo nodeId="6062668769034854701" fileName="ListPanel.java" startLine="183" startPosition="35" endLine="184" endPosition="56" />
+    <scopeInfo nodeId="6062668769034854727" fileName="ListPanel.java" startLine="191" startPosition="62" endLine="192" endPosition="66" />
+    <scopeInfo nodeId="6062668769034854735" fileName="ListPanel.java" startLine="195" startPosition="64" endLine="196" endPosition="40" />
+    <scopeInfo nodeId="6062668769034854772" fileName="ListPanel.java" startLine="211" startPosition="50" endLine="212" endPosition="103" />
+    <scopeInfo nodeId="6062668769034854838" fileName="ListPanel.java" startLine="218" startPosition="43" endLine="219" endPosition="24" />
+    <scopeInfo nodeId="6062668769034854803" fileName="ListPanel.java" startLine="226" startPosition="40" endLine="227" endPosition="93" />
+    <scopeInfo nodeId="6062668769034854816" fileName="ListPanel.java" startLine="230" startPosition="26" endLine="231" endPosition="68" />
+    <scopeInfo nodeId="6062668769034854826" fileName="ListPanel.java" startLine="234" startPosition="40" endLine="235" endPosition="76" />
+    <scopeInfo nodeId="6062668769034854781" fileName="ListPanel.java" startLine="55" startPosition="0" endLine="57" endPosition="3" />
+    <scopeInfo nodeId="6062668769034854257" fileName="ListPanel.java" startLine="59" startPosition="46" endLine="61" endPosition="36" />
+    <scopeInfo nodeId="6062668769034854296" fileName="ListPanel.java" startLine="72" startPosition="23" endLine="74" endPosition="36" />
+    <scopeInfo nodeId="6062668769034854480" fileName="ListPanel.java" startLine="122" startPosition="45" endLine="124" endPosition="20" />
+    <scopeInfo nodeId="6062668769034854793" fileName="ListPanel.java" startLine="222" startPosition="63" endLine="224" endPosition="5" />
+    <scopeInfo nodeId="2335605876461843372" fileName="ListPanel.java" startLine="164" startPosition="31" endLine="167" endPosition="15" />
+    <scopeInfo nodeId="6062668769034854640" fileName="ListPanel.java" startLine="164" startPosition="31" endLine="167" endPosition="15">
       <varInfo nodeId="6062668769034854640" varName="concept" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854273" fileName="ListPanel.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="6062668769034854273" fileName="ListPanel.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="6062668769034854283" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854285" fileName="ListPanel.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854385" fileName="ListPanel.java" startLine="93" startPosition="61" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854471" fileName="ListPanel.java" startLine="115" startPosition="65" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854726" fileName="ListPanel.java" startLine="188" startPosition="130" endLine="192" endPosition="0">
+    <scopeInfo nodeId="6062668769034854285" fileName="ListPanel.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854385" fileName="ListPanel.java" startLine="95" startPosition="61" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854471" fileName="ListPanel.java" startLine="117" startPosition="65" endLine="121" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854726" fileName="ListPanel.java" startLine="190" startPosition="130" endLine="194" endPosition="0">
       <varInfo nodeId="6062668769034854726" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854734" fileName="ListPanel.java" startLine="192" startPosition="65" endLine="196" endPosition="0">
+    <scopeInfo nodeId="6062668769034854734" fileName="ListPanel.java" startLine="194" startPosition="65" endLine="198" endPosition="0">
       <varInfo nodeId="6062668769034854734" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854771" fileName="ListPanel.java" startLine="208" startPosition="103" endLine="212" endPosition="0">
+    <scopeInfo nodeId="6062668769034854771" fileName="ListPanel.java" startLine="210" startPosition="103" endLine="214" endPosition="0">
       <varInfo nodeId="6062668769034854771" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854835" fileName="ListPanel.java" startLine="215" startPosition="0" endLine="219" endPosition="0">
+    <scopeInfo nodeId="6062668769034854835" fileName="ListPanel.java" startLine="217" startPosition="0" endLine="221" endPosition="0">
       <varInfo nodeId="6062668769034854843" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854798" fileName="ListPanel.java" startLine="223" startPosition="0" endLine="227" endPosition="0">
+    <scopeInfo nodeId="6062668769034854798" fileName="ListPanel.java" startLine="225" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="6062668769034854801" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854813" fileName="ListPanel.java" startLine="227" startPosition="0" endLine="231" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854823" fileName="ListPanel.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854254" fileName="ListPanel.java" startLine="56" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="6062668769034854813" fileName="ListPanel.java" startLine="229" startPosition="0" endLine="233" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854823" fileName="ListPanel.java" startLine="233" startPosition="0" endLine="237" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854254" fileName="ListPanel.java" startLine="58" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="6062668769034854271" varName="item" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854293" fileName="ListPanel.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854677" fileName="ListPanel.java" startLine="172" startPosition="50" endLine="177" endPosition="114">
+    <scopeInfo nodeId="6062668769034854293" fileName="ListPanel.java" startLine="71" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854677" fileName="ListPanel.java" startLine="174" startPosition="50" endLine="179" endPosition="114">
       <varInfo nodeId="6062668769034854679" varName="wrapper" />
     </scopeInfo>
-    <scopeInfo nodeId="2335605876461843371" fileName="ListPanel.java" startLine="161" startPosition="63" endLine="167" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854754" fileName="ListPanel.java" startLine="206" startPosition="27" endLine="212" endPosition="26" />
-    <scopeInfo nodeId="6062668769034854675" fileName="ListPanel.java" startLine="171" startPosition="33" endLine="178" endPosition="17" />
-    <scopeInfo nodeId="6062668769034854676" fileName="ListPanel.java" startLine="171" startPosition="33" endLine="178" endPosition="17">
+    <scopeInfo nodeId="2335605876461843371" fileName="ListPanel.java" startLine="163" startPosition="63" endLine="169" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854754" fileName="ListPanel.java" startLine="208" startPosition="27" endLine="214" endPosition="26" />
+    <scopeInfo nodeId="6062668769034854675" fileName="ListPanel.java" startLine="173" startPosition="33" endLine="180" endPosition="17" />
+    <scopeInfo nodeId="6062668769034854676" fileName="ListPanel.java" startLine="173" startPosition="33" endLine="180" endPosition="17">
       <varInfo nodeId="6062668769034854697" varName="testCase" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854718" fileName="ListPanel.java" startLine="187" startPosition="39" endLine="196" endPosition="38" />
-    <scopeInfo nodeId="6062668769034854466" fileName="ListPanel.java" startLine="113" startPosition="71" endLine="123" endPosition="13">
+    <scopeInfo nodeId="6062668769034854718" fileName="ListPanel.java" startLine="189" startPosition="39" endLine="198" endPosition="38" />
+    <scopeInfo nodeId="6062668769034854466" fileName="ListPanel.java" startLine="115" startPosition="71" endLine="125" endPosition="13">
       <varInfo nodeId="6062668769034854468" varName="fqName" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854674" fileName="ListPanel.java" startLine="170" startPosition="65" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854715" fileName="ListPanel.java" startLine="186" startPosition="33" endLine="197" endPosition="17" />
-    <scopeInfo nodeId="6062668769034854464" fileName="ListPanel.java" startLine="112" startPosition="81" endLine="124" endPosition="11" />
-    <scopeInfo nodeId="6062668769034854465" fileName="ListPanel.java" startLine="112" startPosition="81" endLine="124" endPosition="11">
+    <scopeInfo nodeId="6062668769034854674" fileName="ListPanel.java" startLine="172" startPosition="65" endLine="182" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854715" fileName="ListPanel.java" startLine="188" startPosition="33" endLine="199" endPosition="17" />
+    <scopeInfo nodeId="6062668769034854464" fileName="ListPanel.java" startLine="114" startPosition="81" endLine="126" endPosition="11" />
+    <scopeInfo nodeId="6062668769034854465" fileName="ListPanel.java" startLine="114" startPosition="81" endLine="126" endPosition="11">
       <varInfo nodeId="6062668769034854496" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854456" fileName="ListPanel.java" startLine="111" startPosition="49" endLine="125" endPosition="9">
+    <scopeInfo nodeId="6062668769034854456" fileName="ListPanel.java" startLine="113" startPosition="49" endLine="127" endPosition="9">
       <varInfo nodeId="6062668769034854462" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854714" fileName="ListPanel.java" startLine="185" startPosition="65" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854665" fileName="ListPanel.java" startLine="168" startPosition="47" endLine="183" endPosition="13">
+    <scopeInfo nodeId="6062668769034854714" fileName="ListPanel.java" startLine="187" startPosition="65" endLine="201" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854665" fileName="ListPanel.java" startLine="170" startPosition="47" endLine="185" endPosition="13">
       <varInfo nodeId="6062668769034854667" varName="methodsList" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854712" fileName="ListPanel.java" startLine="184" startPosition="18" endLine="199" endPosition="15" />
-    <scopeInfo nodeId="6062668769034854455" fileName="ListPanel.java" startLine="111" startPosition="49" endLine="130" endPosition="58" />
-    <scopeInfo nodeId="6062668769034854450" fileName="ListPanel.java" startLine="110" startPosition="66" endLine="132" endPosition="0">
+    <scopeInfo nodeId="6062668769034854712" fileName="ListPanel.java" startLine="186" startPosition="18" endLine="201" endPosition="15" />
+    <scopeInfo nodeId="6062668769034854455" fileName="ListPanel.java" startLine="113" startPosition="49" endLine="132" endPosition="58" />
+    <scopeInfo nodeId="6062668769034854450" fileName="ListPanel.java" startLine="112" startPosition="66" endLine="134" endPosition="0">
       <varInfo nodeId="6062668769034854453" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854362" fileName="ListPanel.java" startLine="82" startPosition="45" endLine="107" endPosition="85">
+    <scopeInfo nodeId="6062668769034854362" fileName="ListPanel.java" startLine="84" startPosition="45" endLine="109" endPosition="85">
       <varInfo nodeId="7032426736593739990" varName="chooserDialog" />
       <varInfo nodeId="6062668769034854364" varName="nodesList" />
       <varInfo nodeId="6062668769034854369" varName="resultNode" />
       <varInfo nodeId="6062668769034854382" varName="wrapper" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854357" fileName="ListPanel.java" startLine="81" startPosition="60" endLine="109" endPosition="0">
+    <scopeInfo nodeId="6062668769034854357" fileName="ListPanel.java" startLine="83" startPosition="60" endLine="111" endPosition="0">
       <varInfo nodeId="6062668769034854360" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854633" fileName="ListPanel.java" startLine="159" startPosition="27" endLine="200" endPosition="11">
+    <scopeInfo nodeId="6062668769034854633" fileName="ListPanel.java" startLine="161" startPosition="27" endLine="202" endPosition="11">
       <varInfo nodeId="6062668769034854635" varName="nodesList" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854630" fileName="ListPanel.java" startLine="158" startPosition="88" endLine="202" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854621" fileName="ListPanel.java" startLine="157" startPosition="22" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854604" fileName="ListPanel.java" startLine="151" startPosition="39" endLine="213" endPosition="5">
+    <scopeInfo nodeId="6062668769034854630" fileName="ListPanel.java" startLine="160" startPosition="88" endLine="204" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854621" fileName="ListPanel.java" startLine="159" startPosition="22" endLine="205" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854604" fileName="ListPanel.java" startLine="153" startPosition="39" endLine="215" endPosition="5">
       <varInfo nodeId="6062668769034854606" varName="needsUpdate" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854600" fileName="ListPanel.java" startLine="150" startPosition="0" endLine="215" endPosition="0" />
-    <scopeInfo nodeId="6062668769034854315" fileName="ListPanel.java" startLine="75" startPosition="79" endLine="148" endPosition="36">
+    <scopeInfo nodeId="6062668769034854600" fileName="ListPanel.java" startLine="152" startPosition="0" endLine="217" endPosition="0" />
+    <scopeInfo nodeId="6062668769034854315" fileName="ListPanel.java" startLine="77" startPosition="79" endLine="150" endPosition="36">
       <varInfo nodeId="6062668769034854352" varName="add" />
       <varInfo nodeId="6062668769034854561" varName="comp" />
       <varInfo nodeId="6062668769034854537" varName="group" />
       <varInfo nodeId="6062668769034854444" varName="remove" />
       <varInfo nodeId="6062668769034854543" varName="toolbar" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769034854312" fileName="ListPanel.java" startLine="74" startPosition="0" endLine="150" endPosition="0">
+    <scopeInfo nodeId="6062668769034854312" fileName="ListPanel.java" startLine="76" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="6062668769034854598" varName="isTestMethods" />
       <varInfo nodeId="6062668769034854595" varName="nodes" />
     </scopeInfo>
-    <unitInfo nodeId="6062668769034854228" fileName="ListPanel.java" startLine="44" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel" />
-    <unitInfo nodeId="6062668769034854356" fileName="ListPanel.java" startLine="81" startPosition="23" endLine="109" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$1" />
-    <unitInfo nodeId="6062668769034854385" fileName="ListPanel.java" startLine="93" startPosition="49" endLine="97" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$2" />
-    <unitInfo nodeId="6062668769034854448" fileName="ListPanel.java" startLine="110" startPosition="26" endLine="132" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$2" />
-    <unitInfo nodeId="6062668769034854471" fileName="ListPanel.java" startLine="115" startPosition="53" endLine="119" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$3" />
-    <unitInfo nodeId="6062668769034854628" fileName="ListPanel.java" startLine="158" startPosition="76" endLine="202" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$3" />
-    <unitInfo nodeId="6062668769034854771" fileName="ListPanel.java" startLine="208" startPosition="65" endLine="212" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$4" />
-    <unitInfo nodeId="2335605876461843371" fileName="ListPanel.java" startLine="161" startPosition="51" endLine="167" endPosition="11" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$4" />
-    <unitInfo nodeId="6062668769034854674" fileName="ListPanel.java" startLine="170" startPosition="53" endLine="180" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$4" />
-    <unitInfo nodeId="6062668769034854714" fileName="ListPanel.java" startLine="185" startPosition="53" endLine="199" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$4" />
-    <unitInfo nodeId="6062668769034854726" fileName="ListPanel.java" startLine="188" startPosition="92" endLine="192" endPosition="19" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$5" />
-    <unitInfo nodeId="6062668769034854734" fileName="ListPanel.java" startLine="192" startPosition="31" endLine="196" endPosition="19" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$5" />
-    <unitInfo nodeId="6062668769034854792" fileName="ListPanel.java" startLine="220" startPosition="0" endLine="236" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$MyAbstractListModel" />
+    <unitInfo nodeId="6062668769034854228" fileName="ListPanel.java" startLine="46" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel" />
+    <unitInfo nodeId="6062668769034854356" fileName="ListPanel.java" startLine="83" startPosition="23" endLine="111" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$1" />
+    <unitInfo nodeId="6062668769034854385" fileName="ListPanel.java" startLine="95" startPosition="49" endLine="99" endPosition="9" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$2" />
+    <unitInfo nodeId="6062668769034854448" fileName="ListPanel.java" startLine="112" startPosition="26" endLine="134" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$2" />
+    <unitInfo nodeId="6062668769034854471" fileName="ListPanel.java" startLine="117" startPosition="53" endLine="121" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$3" />
+    <unitInfo nodeId="6062668769034854628" fileName="ListPanel.java" startLine="160" startPosition="76" endLine="204" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$3" />
+    <unitInfo nodeId="6062668769034854771" fileName="ListPanel.java" startLine="210" startPosition="65" endLine="214" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$4" />
+    <unitInfo nodeId="2335605876461843371" fileName="ListPanel.java" startLine="163" startPosition="51" endLine="169" endPosition="11" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$4" />
+    <unitInfo nodeId="6062668769034854674" fileName="ListPanel.java" startLine="172" startPosition="53" endLine="182" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$4" />
+    <unitInfo nodeId="6062668769034854714" fileName="ListPanel.java" startLine="187" startPosition="53" endLine="201" endPosition="13" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$4" />
+    <unitInfo nodeId="6062668769034854726" fileName="ListPanel.java" startLine="190" startPosition="92" endLine="194" endPosition="19" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$5" />
+    <unitInfo nodeId="6062668769034854734" fileName="ListPanel.java" startLine="194" startPosition="31" endLine="198" endPosition="19" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$5" />
+    <unitInfo nodeId="6062668769034854792" fileName="ListPanel.java" startLine="222" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ListPanel$MyAbstractListModel" />
   </root>
   <root nodeId="6062668769034854845">
     <nodeInfo nodeId="6062668769034854881" fileName="ClonableList.java" startLine="11" startPosition="75" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myData" />

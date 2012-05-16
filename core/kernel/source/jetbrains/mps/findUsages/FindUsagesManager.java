@@ -15,33 +15,79 @@
  */
 package jetbrains.mps.findUsages;
 
+import gnu.trove.THashSet;
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
 
-public abstract class FindUsagesManager {
+public class FindUsagesManager implements CoreComponent {
+
+  //------------CoreComponent stuff----------------
+
+  private static FindUsagesManager INSTANCE;
 
   public static FindUsagesManager getInstance() {
-    return ProxyFindUsagesManager.getProxyInstance();
+    return INSTANCE;
   }
 
-  public abstract Set<SNode> findDescendants(SNode node, IScope scope);
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
 
-  public abstract Set<SReference> findUsages(SNode node, IScope scope);
+    INSTANCE = this;
+  }
 
-  public abstract Set<SReference> findUsages(SNode node, IScope scope, ProgressMonitor monitor);
+  public void dispose() {
+    INSTANCE = null;
+  }
 
-  public abstract Set<SReference> findUsages(Set<SNode> nodes, IScope scope, ProgressMonitor monitor, boolean manageTasks);
+//------------------API-------------------------
 
-  public abstract List<SNode> findInstances(SNode conceptDeclaration, IScope scope);
+  public <T> Set<T> findUsages(Set<SNode> nodes, SearchType<T> type, IScope scope, @Nullable ProgressMonitor monitor) {
+    Set<SModelDescriptor> directSearch = new THashSet<SModelDescriptor>();
+    Set<SModelDescriptor> cacheSearch = new THashSet<SModelDescriptor>();
 
-  public abstract List<SNode> findInstances(SNode conceptDeclaration, IScope scope, ProgressMonitor monitor);
+    for (SModelDescriptor model : scope.getModelDescriptors()) {
+      if ((model instanceof EditableSModelDescriptor) && ((EditableSModelDescriptor) model).isChanged()) {
+        directSearch.add(model);
+      } else {
+        cacheSearch.add(model);
+      }
+    }
 
-  public abstract Set<SNode> findInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
+    directSearch.addAll(type.findMatchingModelsInCache(nodes, cacheSearch, null));
 
-  public abstract Set<SNode> findExactInstances(SNode concept, IScope scope, ProgressMonitor monitor, boolean manageTasks);
+    Set<T> result = new HashSet<T>();
+    if (monitor == null) monitor = new EmptyProgressMonitor();
+    monitor.start("Finding usages...", directSearch.size());
+    try {
+      result.addAll(type.findInModel(nodes, directSearch, new MyProgressNotifier(monitor)));
+    } finally {
+      monitor.done();
+    }
+    return result;
+  }
+
+  private static class MyProgressNotifier implements Computable<Boolean> {
+    private final ProgressMonitor myProgress;
+
+    public MyProgressNotifier(ProgressMonitor progress) {
+      myProgress = progress;
+    }
+
+    public Boolean compute() {
+      myProgress.advance(1);
+      return !myProgress.isCanceled();
+    }
+  }
 }

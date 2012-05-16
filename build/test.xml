@@ -30,7 +30,7 @@
       <path path="${dest}/MPS ${version}/lib/jdom.jar"/>
     </path>
     <javac classpathref="tests.classpath" destdir="${dest}/buildtests.tmp" fork="true" includeantruntime="false"
-           memorymaximumsize="1024m">
+           memorymaximumsize="1024m" debug="true">
       <src>
         <path path="${mps_home}/testbench/tests"/>
         <path path="${mps_home}/testbench/tests_gen"/>

@@ -275,6 +275,9 @@
     <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="375000982841836966">
       <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.debugger-api" />
     </node>
+    <node role="dependency" roleId="tp4k.5864553086652219115" type="tp4k.IdeaPluginDependency" typeId="tp4k.5864553086652219116" id="3559658471000606470">
+      <property name="pluginId" nameId="tp4k.5864553086652219119" value="jetbrains.mps.build.deprecated" />
+    </node>
   </root>
   <root id="6062668769033909448">
     <node role="editor" roleId="uhxm.3754890006475816675" type="fb9u.SettingsEditor" typeId="fb9u.946964771156066621" id="6062668769033909449">
@@ -5292,7 +5295,7 @@
   </root>
   <root id="6062668769034023839">
     <node role="icon" roleId="uhxm.7966814097310618131" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6062668769034023840">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/util/buildlanguage/languages/buildlanguage/icons/build.png" />
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/plugins/build-deprecated/languages/buildlanguage/icons/build.png" />
     </node>
   </root>
   <root id="6062668769034023841">

@@ -18,7 +18,6 @@ package jetbrains.mps.testbench;
 import com.intellij.ide.IdeEventQueue;
 import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.checkers.LanguageChecker;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
@@ -47,7 +46,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -99,7 +98,7 @@ public class CheckProjectStructureHelper {
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).getModels();
+    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).includingGenerators().getModels();
 
     return checkModels(models);
   }
@@ -109,7 +108,7 @@ public class CheckProjectStructureHelper {
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    Collection<SModelDescriptor> models = new ModelsExtractor(module, true).getModels();
+    Collection<SModelDescriptor> models = new ModelsExtractor(module, true).includingGenerators().getModels();
 
     return checkStructure(models);
   }
@@ -119,7 +118,7 @@ public class CheckProjectStructureHelper {
     IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
     assertNotNull("module " + moduleHandle.getFile().getPath() + " was not loaded", module);
 
-    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).getModels();
+    Collection<SModelDescriptor> models = new ModelsExtractor(module, false).includingGenerators().getModels();
 
     return checkModelsGenerationStatus(models);
   }

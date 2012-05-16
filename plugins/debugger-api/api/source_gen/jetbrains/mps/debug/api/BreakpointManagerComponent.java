@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ListIterator;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 
@@ -162,19 +163,27 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           LOG.error("Error while loading breakpoint from " + breakpointElement, t);
         }
       }
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        synchronized (myBreakpoints) {
-          for (IBreakpoint breakpoint : myBreakpoints) {
-            if (breakpoint instanceof ILocationBreakpoint) {
-              addLocationBreakpoint((ILocationBreakpoint) breakpoint);
+      // read action should not be taken inside of myBreakpoints lock 
+      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+        @Override
+        public void run() {
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              synchronized (myBreakpoints) {
+                myRootsToBreakpointsMap.clear();
+                for (IBreakpoint breakpoint : myBreakpoints) {
+                  if (breakpoint instanceof ILocationBreakpoint) {
+                    addLocationBreakpoint((ILocationBreakpoint) breakpoint);
+                  }
+                }
+              }
             }
-          }
+          });
         }
-      }
-    });
+      });
+
+    }
   }
 
   public Element getState() {

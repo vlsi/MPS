@@ -16,9 +16,7 @@
 package jetbrains.mps.testbench;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -27,22 +25,33 @@ import java.util.Set;
 
 public class ModelsExtractor {
   private Set<SModelDescriptor> models = new HashSet<SModelDescriptor>();
+  private final IModule module;
   private final boolean myIncludeDoNotGenerate;
 
   public ModelsExtractor(IModule module, boolean includeDoNotGenerate) {
-    myIncludeDoNotGenerate = includeDoNotGenerate;
-    extractModels(models, module);
+    this.module = module;
+    this.myIncludeDoNotGenerate = includeDoNotGenerate;
+    extractModels(module);
+  }
+
+  public ModelsExtractor includingGenerators() {
+    if (module instanceof Language) {
+      for (Generator gen : ((Language) module).getGenerators()) {
+        extractModels(gen);
+      }
+    }
+    return this;
   }
 
   public Collection<SModelDescriptor> getModels() {
     return models;
   }
 
-  private void extractModels(Collection<SModelDescriptor> modelsList, IModule m) {
+  private void extractModels(IModule m) {
     List<SModelDescriptor> ownedModels = m.getOwnModelDescriptors();
     for (SModelDescriptor d : ownedModels) {
       if (includeModel(d)) {
-        modelsList.add(d);
+        models.add(d);
       }
     }
   }

@@ -18,7 +18,6 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
-import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.findusages.MPSFindUsages;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
@@ -93,9 +92,5 @@ public class MPSCoreComponents implements ApplicationComponent {
 
   public LanguageHierarchyCache getLanguageHierarchyCache() {
     return LanguageHierarchyCache.getInstance();
-  }
-
-  public ProxyFindUsagesManager getFindUsagesManager() {
-    return ProxyFindUsagesManager.getProxyInstance();
   }
 }

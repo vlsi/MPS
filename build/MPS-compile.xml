@@ -2723,6 +2723,7 @@
     <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/mpsbuild/startup/classes_gen" />
+    <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
@@ -2835,6 +2836,7 @@
     <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/typesystem/classes_gen" />
     <path path="${base_dir}/languages/mpsbuild/startup/classes_gen" />
+    <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/extensionMethod/classes_gen" />
@@ -3767,6 +3769,7 @@
     <path path="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/classes_gen" />
     <path path="${base_dir}/languages/languageDesign/traceable/classes_gen" />
     <path path="${base_dir}/languages/mpsbuild/startup/classes_gen" />
+    <path path="${base_dir}/languages/util/bash/languages/bash/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/classes_gen" />
     <path path="${base_dir}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
     <path path="${base_dir}/languages/util/gtext/classes_gen" />

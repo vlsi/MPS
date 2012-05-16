@@ -10,14 +10,15 @@
     <ant antfile="buildExecution.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildUtilLanguages.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildUiLanguages.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildBuild.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildPlugins.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildVcs.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="buildBuild.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDebuggerPlugin.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExecutionPlugin.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildBuildUI.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildMPS.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDistribution.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildExe.xml" inheritAll="true" useNativeBasedir="true" />
   </target>
   
   <target name="clean">
