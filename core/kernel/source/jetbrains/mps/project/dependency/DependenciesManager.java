@@ -17,7 +17,6 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
@@ -30,11 +29,5 @@ public interface DependenciesManager {
   /**
    * Collects all visible modules (including current).
    */
-  public void collectModules(Set<IModule> reexpRes, Set<IModule> nonReexpRes,boolean runtimes, Reexports reexports);
-
-  public enum Reexports {
-    DONT_RESPECT,
-    ALL_WITH_RESPECT,
-    REEXPORTED_ONLY
-  }
+  Set<IModule> collectUsedModules(boolean reexportAll, boolean runtimes);
 }

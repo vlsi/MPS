@@ -17,7 +17,6 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.Language;
 
 import java.util.Set;
@@ -38,9 +37,10 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
   }
 
   @Override
-  protected void collectUsedModules(boolean runtimes, Set<IModule> reexported, Set<IModule> nonReexported) {
-    super.collectUsedModules(runtimes, reexported, nonReexported);
+  public Set<IModule> collectUsedModules(boolean reexportAll, boolean runtimes) {
+    Set<IModule> result = super.collectUsedModules(reexportAll, runtimes);
     //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
-    collectAllExtendedLanguages((Set<Language>) (Set)nonReexported);
+    collectAllExtendedLanguages((Set)result);
+    return result;
   }
 }

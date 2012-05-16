@@ -16,7 +16,6 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.DependenciesManager.Reexports;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 
@@ -49,18 +48,32 @@ public class GlobalModuleDependenciesManager {
     return result;
   }
 
-  /**
-   * see Deptype doc
-   */
   public Collection<IModule> getModules(Deptype depType) {
-    Set<IModule> result = new HashSet<IModule>();
-    Set<IModule> nonReexports = new HashSet<IModule>();
+    Set<IModule> neighbours = collectNeighbours(depType);
 
-    for (IModule module : myModules) {
-      module.getDependenciesManager().collectModules(result, nonReexports, depType.runtimes, depType.reexportAll ? Reexports.DONT_RESPECT : Reexports.ALL_WITH_RESPECT);
+    HashSet<IModule> result = new HashSet<IModule>();
+    for (IModule neighbour : neighbours) {
+      collect(neighbour, result, depType);
     }
-    result.addAll(nonReexports);
+
     return result;
+  }
+
+  private Set<IModule> collectNeighbours(Deptype depType) {
+    HashSet<IModule> result = new HashSet<IModule>();
+    for (IModule module : myModules) {
+      result.addAll(module.getDependenciesManager().collectUsedModules(true, depType.runtimes));
+    }
+    result.addAll(myModules);
+    return result;
+  }
+
+  private void collect(IModule current, Set<IModule> result, Deptype depType) {
+    if (result.contains(current)) return;
+    result.add(current);
+    for (IModule m : current.getDependenciesManager().collectUsedModules(depType.reexportAll,depType.runtimes)) {
+      collect(m, result, depType);
+    }
   }
 
   public enum Deptype {

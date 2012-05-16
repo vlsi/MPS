@@ -16,11 +16,9 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import java.util.HashSet;
@@ -31,17 +29,20 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
     super(gen);
   }
 
-  protected void collectUsedModules(boolean runtimes, Set<IModule> reexported, Set<IModule> nonReexported) {
-    super.collectUsedModules(runtimes, reexported, nonReexported);
+  public Set<IModule> collectUsedModules(boolean reexportAll, boolean runtimes) {
+    Set<IModule> result = super.collectUsedModules(reexportAll, runtimes);
     //generator sees all modules from source language as non-reexported
     HashSet<Language> lang = new HashSet<Language>();
     myModule.getSourceLanguage().getDependenciesManager().collectAllExtendedLanguages(lang);
-    nonReexported.addAll(lang);
-    //generator sees all dependent generators as non-reexport
-    for (ModuleReference refGenerator : myModule.getReferencedGeneratorUIDs()) {
-      IModule gm = ModuleRepositoryFacade.getInstance().getModule(refGenerator);
-      if (gm == null) continue;
-      nonReexported.add(gm);
+    if (reexportAll) {
+      result.addAll(lang);
+      //generator sees all dependent generators as non-reexport
+      for (ModuleReference refGenerator : myModule.getReferencedGeneratorUIDs()) {
+        IModule gm = ModuleRepositoryFacade.getInstance().getModule(refGenerator);
+        if (gm == null) continue;
+        result.add(gm);
+      }
     }
+    return result;
   }
 }
