@@ -20,6 +20,7 @@ import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.ModuleDependencyCollector.Axis;
 import jetbrains.mps.project.dependency.ModuleDependencyCollector.Walker;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 
 import java.util.Collection;
@@ -51,6 +52,10 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
   protected void collectUsedModulesAndRuntimes(Collection<IModule> reexported, Collection<IModule> nonReexported, ModuleDependencyCollector collector) {
     super.collectUsedModulesAndRuntimes(reexported, nonReexported, collector);
     collectAllExtendedLanguages(reexported, collector);
+    // MPS-15883
+    for (Generator generator : myModule.getGenerators()) {
+      generator.getDependenciesManager().collectUsedModulesAndRuntimes(reexported, nonReexported, collector);
+    }
   }
 
   public static final String EXTENDED_LANGUAGES = "extendedLanguages";
