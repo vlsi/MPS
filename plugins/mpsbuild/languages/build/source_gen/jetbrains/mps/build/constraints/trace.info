@@ -1051,38 +1051,40 @@
     <unitInfo nodeId="7753544965996878818" fileName="BuildLayout_FilesOf_Constraints.java" startLine="31" startPosition="19" endLine="41" endPosition="9" unitName="jetbrains.mps.build.constraints.BuildLayout_FilesOf_Constraints$2" />
   </root>
   <root nodeId="7801138212747054669">
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="12" startPosition="81" endLine="13" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="15" startPosition="45" endLine="16" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="20" startPosition="43" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="25" startPosition="200" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="26" startPosition="96" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7801138212747311050" fileName="BuildLayout_Filemode_Constraints.java" startLine="35" startPosition="148" endLine="36" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7801138212747054683" fileName="BuildLayout_Filemode_Constraints.java" startLine="36" startPosition="32" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildLayout_Filemode_Constraints#()V" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="23" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="15" startPosition="45" endLine="16" endPosition="64" />
-    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="20" startPosition="43" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="67" />
-    <scopeInfo nodeId="7801138212747054672" fileName="BuildLayout_Filemode_Constraints.java" startLine="35" startPosition="148" endLine="37" endPosition="16" />
-    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="3" />
-    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="18" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="14" startPosition="81" endLine="15" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="17" startPosition="45" endLine="18" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="22" startPosition="43" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="27" startPosition="200" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="28" startPosition="96" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="32" startPosition="5" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="33" startPosition="0" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7670275304420327333" fileName="BuildLayout_Filemode_Constraints.java" startLine="37" startPosition="148" endLine="38" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7670275304420327344" fileName="BuildLayout_Filemode_Constraints.java" startLine="38" startPosition="144" endLine="39" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildLayout_Filemode_Constraints#()V" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="17" startPosition="45" endLine="18" endPosition="64" />
+    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="22" startPosition="43" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="30" startPosition="51" endLine="31" endPosition="67" />
+    <scopeInfo nodeId="7801138212747054672" fileName="BuildLayout_Filemode_Constraints.java" startLine="37" startPosition="148" endLine="39" endPosition="132">
+      <varInfo nodeId="7670275304420327334" varName="archive" />
+    </scopeInfo>
+    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="16" startPosition="0" endLine="19" endPosition="3" />
+    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="7801138212747054669" varName="childConcept" />
       <varInfo nodeId="7801138212747054669" varName="link" />
       <varInfo nodeId="7801138212747054669" varName="node" />
       <varInfo nodeId="7801138212747054669" varName="operationContext" />
       <varInfo nodeId="7801138212747054669" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="25" startPosition="200" endLine="32" endPosition="18">
+    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="27" startPosition="200" endLine="34" endPosition="18">
       <varInfo nodeId="7801138212747054669" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="23" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="25" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="7801138212747054669" varName="checkingNodeContext" />
       <varInfo nodeId="7801138212747054669" varName="childConcept" />
       <varInfo nodeId="7801138212747054669" varName="link" />
@@ -1090,7 +1092,7 @@
       <varInfo nodeId="7801138212747054669" varName="operationContext" />
       <varInfo nodeId="7801138212747054669" varName="parentNode" />
     </scopeInfo>
-    <unitInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_Filemode_Constraints" />
+    <unitInfo nodeId="7801138212747054669" fileName="BuildLayout_Filemode_Constraints.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_Filemode_Constraints" />
   </root>
   <root nodeId="8237269006869472775">
     <nodeInfo nodeId="8237269006869472775" fileName="BuildLayout_NamedContainer_Constraints.java" startLine="16" startPosition="51" endLine="17" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
