@@ -6952,10 +6952,18 @@
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="1051774332673624330">
       <property name="name" nameId="tpck.1169194664001" value="plugin.version" />
-      <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="1051774332673624331">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="1051774332673624332">
-          <property name="text" nameId="3ior.4903714810883755350" value="1.0.SNAPSHOT" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7230385212464648573">
+        <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7230385212464648574">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7230385212464648575">
+            <property name="text" nameId="3ior.4903714810883755350" value="1.0.SNAPSHOT" />
+          </node>
         </node>
+      </node>
+    </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="244868996532871759">
+      <property name="name" nameId="tpck.1169194664001" value="date" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithDate" typeId="3ior.244868996532454372" id="244868996532871760">
+        <property name="pattern" nameId="3ior.244868996532454384" value="yyyyMMdd" />
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="5148601452480491527">
@@ -8406,40 +8414,65 @@
         </node>
       </node>
       <node role="buildDate" roleId="kdzh.1462305029084462472" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5996470108026228809">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="5996470108026228810">
-          <property name="text" nameId="3ior.4903714810883755350" value="000000" />
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="244868996532963135">
+          <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="244868996532550354" resolveInfo="date" />
         </node>
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="4301118715654465616">
       <property name="name" nameId="tpck.1169194664001" value="build.number" />
-      <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4301118715654465625">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="3970102152661338962">
-          <property name="text" nameId="3ior.4903714810883755350" value="MPS-25.SNAPSHOT" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7230385212464648576">
+        <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7230385212464648577">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7230385212464648578">
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS-25.SNAPSHOT" />
+          </node>
         </node>
+      </node>
+    </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="244868996532550354">
+      <property name="name" nameId="tpck.1169194664001" value="date" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithDate" typeId="3ior.244868996532454372" id="244868996532550355">
+        <property name="pattern" nameId="3ior.244868996532454384" value="yyyyMMdd" />
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="4301118715654465618">
       <property name="name" nameId="tpck.1169194664001" value="version" />
-      <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="4301118715654465619">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4301118715654465620">
-          <property name="text" nameId="3ior.4903714810883755350" value="2.5 EAP" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7230385212464648580">
+        <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7230385212464648581">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7230385212464648582">
+            <property name="text" nameId="3ior.4903714810883755350" value="2.5 EAP" />
+          </node>
         </node>
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="202934866059165341">
       <property name="name" nameId="tpck.1169194664001" value="build.vcs.number" />
-      <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165342">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="202934866059165343">
-          <property name="text" nameId="3ior.4903714810883755350" value="HEAD" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7230385212464648584">
+        <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7230385212464648585">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7230385212464648586">
+            <property name="text" nameId="3ior.4903714810883755350" value="HEAD" />
+          </node>
         </node>
       </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="202934866059165346">
       <property name="name" nameId="tpck.1169194664001" value="teamcity.buildConfName" />
-      <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165347">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="202934866059165348">
-          <property name="text" nameId="3ior.4903714810883755350" value="local" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7230385212464648587">
+        <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7230385212464648588">
+          <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7230385212464648589">
+            <property name="text" nameId="3ior.4903714810883755350" value="local" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="244868996532550358">
+      <property name="name" nameId="tpck.1169194664001" value="idea.platform.build.number" />
+      <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithValueFromFile" typeId="3ior.244868996532550359" id="244868996532595258">
+        <property name="propertyName" nameId="3ior.244868996532550362" value="idea.platform.build.number" />
+        <node role="fileName" roleId="3ior.244868996532550360" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="244868996532595259">
+          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="244868996532595260">
+            <property name="head" nameId="3ior.8618885170173601779" value="build.number" />
+          </node>
         </node>
       </node>
     </node>
@@ -8714,6 +8747,14 @@
             </node>
           </node>
         </node>
+        <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="7670275304420070470">
+          <property name="key" nameId="3ior.202934866059043960" value="date" />
+          <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7670275304420070474">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="7670275304420070475">
+              <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="244868996532550354" resolveInfo="date" />
+            </node>
+          </node>
+        </node>
         <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="202934866059165326">
           <property name="key" nameId="3ior.202934866059043960" value="revision.number" />
           <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165327">
@@ -8735,6 +8776,14 @@
           <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165329">
             <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="202934866059165332">
               <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="4301118715654465618" resolveInfo="version" />
+            </node>
+          </node>
+        </node>
+        <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="7670275304420070476">
+          <property name="key" nameId="3ior.202934866059043960" value="idea.platform.build.number" />
+          <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7670275304420070477">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="7670275304420070480">
+              <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="244868996532550358" resolveInfo="idea.platform.build.number" />
             </node>
           </node>
         </node>
@@ -11454,14 +11503,6 @@
     </node>
   </root>
   <root id="8658995123701267517">
-    <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="8658995123701267535">
-      <property name="name" nameId="tpck.1169194664001" value="plugin.version" />
-      <node role="value" roleId="3ior.4380385936562281299" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="8658995123701267536">
-        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="8658995123701267537">
-          <property name="text" nameId="3ior.4903714810883755350" value="1.0.SNAPSHOT" />
-        </node>
-      </node>
-    </node>
     <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8658995123701267518">
       <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8658995123701321875">
         <property name="head" nameId="3ior.8618885170173601779" value="IdeaPlugin" />
@@ -11474,7 +11515,7 @@
             <property name="text" nameId="3ior.4903714810883755350" value="mps-core-" />
           </node>
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="8658995123701267539">
-            <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="8658995123701267535" resolveInfo="plugin.version" />
+            <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="1051774332673624330" resolveInfo="plugin.version" />
           </node>
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="8658995123701267538">
             <property name="text" nameId="3ior.4903714810883755350" value=".zip" />

@@ -2,16 +2,16 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildPluginDist" />
   <property name="build.layout" location="${build.dir}/artifacts/buildPluginDist" />
-  <property name="plugin.version" value="1.0.SNAPSHOT" />
   <property name="artifacts.buildPlugin" location="${build.dir}/artifacts/buildPlugin" />
   <property file="${artifacts.buildPlugin}/build.properties" prefix="import.buildPlugin" />
   <property name="buildPlugin.plugin.version" value="${import.buildPlugin.buildPlugin.plugin.version}" />
+  <property name="buildPlugin.date" value="${import.buildPlugin.buildPlugin.date}" />
   
   <target name="assemble" depends="fetchDependencies">
-    <zip destfile="${build.layout}/mps-core-${plugin.version}.zip">
+    <zip destfile="${build.layout}/mps-core-${buildPlugin.plugin.version}.zip">
       <fileset dir="${artifacts.buildPlugin}/plugins" />
     </zip>
-    <echo file="${build.layout}/build.properties">buildPluginDist.plugin.version=${plugin.version}${line.separator}buildPlugin.plugin.version=${buildPlugin.plugin.version}</echo>
+    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${buildPlugin.plugin.version}${line.separator}buildPlugin.date=${buildPlugin.date}</echo>
   </target>
   
   <target name="buildDependents">

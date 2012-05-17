@@ -2,18 +2,18 @@
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.ExtensionDescriptor" />
   <root nodeId="6905339732004138486">
-    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="11" startPosition="38" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1162302692985202025" fileName="Extension_GeneratorCache_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6905339732004138985" fileName="Extension_GeneratorCache_.java" startLine="18" startPosition="5" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="10" startPosition="92" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_GeneratorCache_#()V" />
-    <nodeInfo nodeId="1162302692985198019" fileName="Extension_GeneratorCache_.java" startLine="15" startPosition="41" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
-    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="11" startPosition="38" endLine="12" endPosition="52" />
-    <scopeInfo nodeId="1162302692985198020" fileName="Extension_GeneratorCache_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" />
-    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="10" startPosition="92" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="15" startPosition="41" endLine="19" endPosition="60" />
-    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="14" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache_.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache_" />
+    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="11" startPosition="57" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1162302692985202025" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6905339732004138985" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="18" startPosition="5" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="10" startPosition="111" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_GeneratorCache6905339732004138486_#()V" />
+    <nodeInfo nodeId="1162302692985198019" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="15" startPosition="41" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
+    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="11" startPosition="57" endLine="12" endPosition="52" />
+    <scopeInfo nodeId="1162302692985198020" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" />
+    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="10" startPosition="111" endLine="13" endPosition="3" />
+    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="15" startPosition="41" endLine="19" endPosition="60" />
+    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="14" startPosition="0" endLine="21" endPosition="0" />
+    <unitInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache6905339732004138486_" />
   </root>
 </debugInfo>
 
