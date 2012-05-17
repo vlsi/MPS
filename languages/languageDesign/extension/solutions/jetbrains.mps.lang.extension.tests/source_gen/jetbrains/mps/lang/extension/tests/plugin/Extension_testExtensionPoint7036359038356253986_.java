@@ -4,10 +4,10 @@ package jetbrains.mps.lang.extension.tests.plugin;
 
 import jetbrains.mps.smodel.structure.Extension;
 
-public class Extension_testExtensionPoint_ extends Extension.Default<TestObject> {
+public class Extension_testExtensionPoint7036359038356253986_ extends Extension.Default<TestObject> {
   private TestObject myTestObject;
 
-  public Extension_testExtensionPoint_() {
+  public Extension_testExtensionPoint7036359038356253986_() {
     super("jetbrains.mps.lang.extension.tests.testExtensionPoint");
   }
 
