@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.structure.Extension;
 import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
-  private Extension[] extensions = new Extension[]{new Extension_NodeRenamer_()};
+  private Extension[] extensions = new Extension[]{new Extension_NodeRenamer7972144475523791621_()};
 
   public ExtensionDescriptor() {
   }
