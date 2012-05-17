@@ -85,6 +85,9 @@ public class PasteProvider implements com.intellij.ide.PasteProvider, Runnable {
     return new Runnable() {
       @Override
       public void run() {
+        if (myModel.isDisposed()) {
+          return;
+        }
         List<SNode> nodesToPaste = nodeData.getNodes();
         if (nodesToPaste == null || nodesToPaste.isEmpty()) {
           return;

@@ -97,6 +97,9 @@ public class PasteNode_Action extends BaseAction {
       }
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
+          if (((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).getSModel().isDisposed()) {
+            return;
+          }
           if (addImportsRunnable != null) {
             addImportsRunnable.run();
           }
