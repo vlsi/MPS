@@ -362,10 +362,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8237269006869516510(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "value", true) == null) ?
-      "" :
-      BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(_context.getNode(), "value", true), Context.defaultContext(_context).getMacros(_context.getNode()))
-    );
+    SNode stringValue = SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "initialValue", true), "jetbrains.mps.build.structure.BuildVariableMacroInitWithString");
+    if ((stringValue != null) && (SLinkOperations.getTarget(stringValue, "value", true) != null)) {
+      return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(stringValue, "value", true), Context.defaultContext(_context).getMacros(_context.getNode()));
+    }
+    return "";
   }
 
   public static Object propertyMacro_GetPropertyValue_8237269006869516519(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -373,7 +374,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6420586245471622081(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "value", true) == null);
+    return (SLinkOperations.getTarget(_context.getNode(), "initialValue", true) == null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1117643560963346388(final IOperationContext operationContext, final PropertyMacroContext _context) {
