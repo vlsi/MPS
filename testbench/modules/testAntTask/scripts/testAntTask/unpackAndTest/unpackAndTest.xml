@@ -1,5 +1,5 @@
 <project name="unpackAndTest" default="default" basedir=".">
-  <property name="mps.zip.path" value="artifacts"/>
+  <property name="mps.zip.path" value="artifacts" />
   <property name="projectsdir" value="${basedir}/../../../projects" />
   <property name="mps.ant.workdir" value="${java.io.tmpdir}/mps.ant.workdir" />
   <property name="tmpdir" value="${mps.ant.workdir}/testproject" />
