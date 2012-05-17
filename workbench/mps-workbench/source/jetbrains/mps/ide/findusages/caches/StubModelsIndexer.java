@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages;
+package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
@@ -21,7 +21,7 @@ import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.text.CharArrayUtil;
-import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.projectPane.fileSystem.MPSWorkbenchFileTypeFactory;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence.IndexEntry;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -34,8 +34,7 @@ import java.util.Map.Entry;
 
 public class StubModelsIndexer implements ApplicationComponent {
   public void initComponent() {
-    //IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
-
+    IdTableBuilding.registerIdIndexer(MPSWorkbenchFileTypeFactory. CLASS_FILE_TYPE, new MyFileTypeIdIndexer());
   }
 
   public void disposeComponent() {
