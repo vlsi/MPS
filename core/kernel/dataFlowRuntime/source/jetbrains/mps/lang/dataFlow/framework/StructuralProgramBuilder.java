@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.dataFlow.framework;
 
 import jetbrains.mps.lang.dataFlow.framework.instructions.*;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -146,7 +147,11 @@ public abstract class StructuralProgramBuilder<N> {
     myProgram.add(instruction);
     invokeLater(new Runnable() {
       public void run() {
-        instruction.setJumpTo(position);
+        try{
+          instruction.setJumpTo(position);
+        } catch (DataflowBuilderException e) {
+          Logger.getLogger(StructuralProgramBuilder.class).warning("JumpTo instruction reference to outer node");
+        }
       }
     });
   }
@@ -156,7 +161,11 @@ public abstract class StructuralProgramBuilder<N> {
     onInstructionEmitted(instruction);
     invokeLater(new Runnable() {
       public void run() {
-        instruction.setJumpTo(position);
+        try{
+          instruction.setJumpTo(position);
+        } catch (DataflowBuilderException e) {
+          Logger.getLogger(StructuralProgramBuilder.class).warning("IfJumpTo instruction reference to outer node");
+        }
       }
     });
     return instruction;
