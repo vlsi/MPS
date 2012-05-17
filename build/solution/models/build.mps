@@ -8747,6 +8747,14 @@
             </node>
           </node>
         </node>
+        <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="7670275304420070470">
+          <property name="key" nameId="3ior.202934866059043960" value="date" />
+          <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7670275304420070474">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="7670275304420070475">
+              <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="244868996532550354" resolveInfo="date" />
+            </node>
+          </node>
+        </node>
         <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="202934866059165326">
           <property name="key" nameId="3ior.202934866059043960" value="revision.number" />
           <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165327">
@@ -8768,6 +8776,14 @@
           <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="202934866059165329">
             <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="202934866059165332">
               <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="4301118715654465618" resolveInfo="version" />
+            </node>
+          </node>
+        </node>
+        <node role="entries" roleId="3ior.202934866059043962" type="3ior.BuildLayout_EchoPropertyEntry" typeId="3ior.202934866059043959" id="7670275304420070476">
+          <property name="key" nameId="3ior.202934866059043960" value="idea.platform.build.number" />
+          <node role="value" roleId="3ior.202934866059043961" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7670275304420070477">
+            <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="7670275304420070480">
+              <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="244868996532550358" resolveInfo="idea.platform.build.number" />
             </node>
           </node>
         </node>
