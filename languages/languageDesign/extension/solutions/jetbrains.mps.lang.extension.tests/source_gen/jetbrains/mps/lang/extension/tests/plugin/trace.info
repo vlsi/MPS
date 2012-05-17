@@ -21,15 +21,15 @@
     <unitInfo nodeId="2622946712629256054" fileName="Extension_lazyTestExtensionPoint_.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_lazyTestExtensionPoint_" />
   </root>
   <root nodeId="4451661519483734260">
-    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint_.java" startLine="8" startPosition="43" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4451661519483734263" fileName="Extension_multiExtensionPoint_.java" startLine="12" startPosition="23" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint_.java" startLine="7" startPosition="79" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_multiExtensionPoint_#()V" />
-    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
-    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint_.java" startLine="8" startPosition="43" endLine="9" endPosition="68" />
-    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint_.java" startLine="12" startPosition="23" endLine="13" endPosition="19" />
-    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint_.java" startLine="7" startPosition="79" endLine="10" endPosition="3" />
-    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint_.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
-    <unitInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint_.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint_" />
+    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint__0.java" startLine="8" startPosition="45" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4451661519483734263" fileName="Extension_multiExtensionPoint__0.java" startLine="12" startPosition="23" endLine="13" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint__0.java" startLine="7" startPosition="81" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_multiExtensionPoint__0#()V" />
+    <nodeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint__0.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
+    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint__0.java" startLine="8" startPosition="45" endLine="9" endPosition="68" />
+    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint__0.java" startLine="12" startPosition="23" endLine="13" endPosition="19" />
+    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint__0.java" startLine="7" startPosition="81" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint__0.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <unitInfo nodeId="4451661519483734260" fileName="Extension_multiExtensionPoint__0.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.extension.tests.plugin.Extension_multiExtensionPoint__0" />
   </root>
   <root nodeId="4451661519483734265">
     <nodeInfo nodeId="4451661519483734265" fileName="Extension_multiExtensionPoint_.java" startLine="8" startPosition="43" endLine="9" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
