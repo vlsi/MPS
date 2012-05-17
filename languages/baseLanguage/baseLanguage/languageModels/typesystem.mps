@@ -986,6 +986,10 @@
     <node type="tpd4.ComparisonRule" typeId="tpd4.1188811367543" id="3431562870377402710">
       <property name="name" nameId="tpck.1169194664001" value="compareClassifierTypes" />
     </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3497441244465827965">
+      <property name="name" nameId="tpck.1169194664001" value="check_BaseAssignmentExpression" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+    </node>
   </roots>
   <root id="1175495245176">
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1175495245177">
@@ -1103,22 +1107,6 @@
               <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068498886297" />
             </node>
           </node>
-        </node>
-      </node>
-      <node role="statement" roleId="tpee.1068581517665" type="tpd4.AssertStatement" typeId="tpd4.1175517400280" id="1175519229331">
-        <node role="condition" roleId="tpd4.1175517761460" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1203977964766">
-          <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1175519235397">
-            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1175519167125" resolveInfo="lval" />
-          </node>
-          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="1196171749363">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877519786" resolveInfo="isLValue" />
-          </node>
-        </node>
-        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1175519272650">
-          <property name="value" nameId="tpee.1070475926801" value="unexpected in left part or assignment" />
-        </node>
-        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1175519279041">
-          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1175519167125" resolveInfo="lval" />
         </node>
       </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpd4.CreateLessThanInequationStatement" typeId="tpd4.1174663118805" id="1175519336188">
@@ -30765,6 +30753,40 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3431562870377402714">
       <property name="name" nameId="tpck.1169194664001" value="left" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
+    </node>
+  </root>
+  <root id="3497441244465827965">
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="3497441244465827966">
+      <node role="statement" roleId="tpee.1068581517665" type="tpd4.AssertStatement" typeId="tpd4.1175517400280" id="1175519229331">
+        <node role="condition" roleId="tpd4.1175517761460" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3497441244465828014">
+          <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3497441244465827985">
+            <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3497441244465827968">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3497441244465827967" resolveInfo="assignment" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3497441244465827996">
+              <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068498886295" />
+            </node>
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="3497441244465828020">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.1213877519786" resolveInfo="isLValue" />
+          </node>
+        </node>
+        <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1175519272650">
+          <property name="value" nameId="tpee.1070475926801" value="unexpected in left part or assignment" />
+        </node>
+        <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3497441244465828027">
+          <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="3497441244465828028">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="3497441244465827967" resolveInfo="assignment" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="3497441244465828029">
+            <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1068498886295" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3497441244465827967">
+      <property name="name" nameId="tpck.1169194664001" value="assignment" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1215693861676" resolveInfo="BaseAssignmentExpression" />
     </node>
   </root>
 </model>

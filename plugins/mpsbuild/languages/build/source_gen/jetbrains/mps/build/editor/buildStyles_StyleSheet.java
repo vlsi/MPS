@@ -60,7 +60,7 @@ public class buildStyles_StyleSheet {
   public static Style getString(final EditorCell cell) {
     Style style = new Style(cell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, new Color(32768));
+    style.set(StyleAttributes.TEXT_COLOR, new Color(128));
     return style;
   }
 
