@@ -2269,7 +2269,7 @@
             <property name="name" nameId="tpck.1169194664001" value="fixedValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2975785153735291410" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2975785153735291412">
-              <property name="value" nameId="tpee.1070475926801" value="fixed value" />
+              <property name="value" nameId="tpee.1070475926801" value=" fixed value " />
             </node>
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="cgfx.ThreadSafe" typeId="cgfx.2975785153735111398" id="2975785153735296295" />
           </node>

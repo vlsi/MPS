@@ -31,7 +31,6 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
     <classNode dependClassName="java.util.concurrent.CountDownLatch" />
@@ -58,7 +57,6 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
     <classNode dependClassName="java.util.concurrent.CountDownLatch" />
@@ -76,7 +74,6 @@
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
     <classNode dependClassName="java.util.concurrent.CountDownLatch" />
