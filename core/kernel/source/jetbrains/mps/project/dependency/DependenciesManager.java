@@ -20,14 +20,19 @@ import jetbrains.mps.smodel.Language;
 
 import java.util.Set;
 
+/**
+ * This class says, which modules are immediately visible from its module
+ */
 public interface DependenciesManager {
   /**
-   * All languages in scope of this module
+   * Returns languages, immediately used by this module
    */
   Set<Language> immediateUsedLanguages();
 
   /**
-   * Collects all visible modules (including current).
+   * Returns modules, immediately visible from this module
+   * @param includeNonReexport - if set to ruue, include all dependencies, false - only reexport dependencies
+   * @param runtimes - whether or not to include modules visible at runtime (i.e runtimes of used languages)
    */
-  Set<IModule> immediateUsedModules(boolean reexportAll, boolean runtimes);
+  Set<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes);
 }

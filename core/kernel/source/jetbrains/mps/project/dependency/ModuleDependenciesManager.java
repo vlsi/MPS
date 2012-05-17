@@ -41,18 +41,18 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     return immediate;
   }
 
-  public Set<IModule> immediateUsedModules(boolean reexportAll, boolean runtimes) {
+  public Set<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes) {
     HashSet<IModule> result = new HashSet<IModule>();
     for (Dependency dependency : myModule.getDependencies()) {
       IModule m = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());
       if (m == null) continue;
 
-      if (reexportAll || dependency.isReexport()) {
+      if (includeNonReexport || dependency.isReexport()) {
         result.add(m);
       }
     }
 
-    if (reexportAll) {
+    if (includeNonReexport) {
       for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
         result.addAll(dk.getAllExportedSolutions());
       }
