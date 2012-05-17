@@ -3,6 +3,9 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildPlugin" />
   <property name="build.layout" location="${build.dir}/artifacts/buildPlugin" />
   <property name="plugin.version" value="1.0.SNAPSHOT" />
+  <tstamp>
+    <format property="date" pattern="yyyyMMdd" />
+  </tstamp>
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
@@ -108,7 +111,7 @@
       <fileset dir="${build.tmp}/java/out/mps-java" />
       <fileset dir="${build.tmp}/default/mps-java.jar" />
     </jar>
-    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${plugin.version}</echo>
+    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${plugin.version}${line.separator}buildPlugin.date=${date}</echo>
   </target>
   
   <target name="buildDependents">

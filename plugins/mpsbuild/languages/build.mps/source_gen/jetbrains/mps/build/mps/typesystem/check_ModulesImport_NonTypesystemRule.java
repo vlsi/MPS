@@ -28,7 +28,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
   }
 
   public void applyRule(final SNode buildProject, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.getModel(buildProject).isTransient() || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(buildProject))) {
+    if (SNodeOperations.getModel(buildProject).isTransient() || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(buildProject)) || !(SNodeOperations.getModel(buildProject).getModelDescriptor().isGeneratable())) {
       return;
     }
 

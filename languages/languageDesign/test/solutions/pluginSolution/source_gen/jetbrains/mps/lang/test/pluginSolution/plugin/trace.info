@@ -2,15 +2,15 @@
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.ExtensionDescriptor" />
   <root nodeId="136702651994179408">
-    <nodeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="12" startPosition="33" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="136702651994179414" fileName="Extension_ActionIDs_.java" startLine="16" startPosition="29" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="11" startPosition="75" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_ActionIDs_#()V" />
-    <nodeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/util/List;" />
-    <scopeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="12" startPosition="33" endLine="13" endPosition="47" />
-    <scopeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="16" startPosition="29" endLine="17" endPosition="112" />
-    <scopeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="11" startPosition="75" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="136702651994179408" fileName="Extension_ActionIDs_.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.Extension_ActionIDs_" />
+    <nodeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs136702651994179408_.java" startLine="12" startPosition="51" endLine="13" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="136702651994179414" fileName="Extension_ActionIDs136702651994179408_.java" startLine="16" startPosition="29" endLine="17" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs136702651994179408_.java" startLine="11" startPosition="93" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_ActionIDs136702651994179408_#()V" />
+    <nodeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs136702651994179408_.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/util/List;" />
+    <scopeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs136702651994179408_.java" startLine="12" startPosition="51" endLine="13" endPosition="47" />
+    <scopeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs136702651994179408_.java" startLine="16" startPosition="29" endLine="17" endPosition="112" />
+    <scopeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs136702651994179408_.java" startLine="11" startPosition="93" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="136702651994179408" fileName="Extension_ActionIDs136702651994179408_.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
+    <unitInfo nodeId="136702651994179408" fileName="Extension_ActionIDs136702651994179408_.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.test.pluginSolution.plugin.Extension_ActionIDs136702651994179408_" />
   </root>
   <root nodeId="5487985028841906061">
     <nodeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="30" startPosition="53" endLine="31" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

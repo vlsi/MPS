@@ -20,6 +20,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.extension.behavior.ExtensionObjectGetter_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_63012922130977735(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -43,7 +44,8 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8820339482096486801(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName(ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode()), null);
+    return _context.createUniqueName(ExtensionDeclaration_Behavior.call_getJavaName_5234729458457669523(_context.getNode()) + _context.getNode().getId(), null);
+
   }
 
   public static Object referenceMacro_GetReferent_4230423796260420235(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -134,11 +136,19 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_63012922130955093(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_63012922130977659(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(SLinkOperations.getTarget(it, "extensionPoint", false), "name");
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_7036359038356269822(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -61,6 +61,11 @@ public class ScopeUtil {
         // that references providers 
         return SNodeOperations.cast(SLinkOperations.getTargetNode(Sequence.fromIterable(SNodeOperations.getReferences(it)).first()), "jetbrains.mps.lang.core.structure.ScopeProvider");
       }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        // check for cycles 
+        return !(ListSequence.fromList(SNodeOperations.getDescendants(it, null, false, new String[]{})).contains(child));
+      }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
         return ScopeProvider_Behavior.call_getScope_3734116213129936182(it, concept, child);

@@ -24,13 +24,15 @@ import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
@@ -298,23 +300,50 @@ public class ModuleMaker {
     }
   }
 
-  private Set<IModule> getModulesToCompile(Collection<IModule> modules) {
-    ttrace.push("checking if " + modules.size() + " modules are dirty", false);
-    List<IModule> dirtyModules = new ArrayList<IModule>(modules.size());
-    for (IModule m : modules) {
+  private Set<IModule> getModulesToCompile(Collection<IModule> candidates) {
+    ttrace.push("checking if " + candidates.size() + " modules are dirty", false);
+    Set<IModule> allModules = candidates instanceof Set ? (Set<IModule>) candidates : new HashSet<IModule>(candidates);
+    List<IModule> dirtyModules = new ArrayList<IModule>(candidates.size());
+    for (IModule m : candidates) {
       if (isDirty(m)) {
         dirtyModules.add(m);
       }
     }
     ttrace.pop();
 
-    Set<IModule> toCompile = new LinkedHashSet<IModule>();
-    ttrace.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      if (m.isPackaged()) continue;
+    // select from modules those that are affected by the "dirty" modules
+    // M={m}, D={m*}, D<=M, R:M->2^M (required), R* transitive closure of R
+    // C={m|m from M, exists m* from D: m* in R*(m)}
+    // to compile T=D union C
+
+    Map<IModule, Set<IModule>> backDependencies = new HashMap<IModule, Set<IModule>>();
+
+    ttrace.push("building back deps", false);
+
+    for (IModule m : candidates) {
       for (IModule dep : new GlobalModuleDependenciesManager(m).getModules(Deptype.COMPILE)) {
-        if (!dirtyModules.contains(dep)) continue;
+        Set<IModule> incoming = backDependencies.get(dep);
+        if (incoming == null) {
+          incoming = new HashSet<IModule>();
+          backDependencies.put(dep, incoming);
+        }
+        incoming.add(m);
+      }
+    }
+    ttrace.pop();
+
+    ttrace.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
+    Set<IModule> toCompile = new LinkedHashSet<IModule>();
+    // BFS from dirtyModules along backDependencies
+    LinkedList<IModule> queue = new LinkedList<IModule>(dirtyModules);
+    while (!queue.isEmpty()) {
+      IModule m = queue.removeFirst();
+      if (allModules.contains(m)) {
         toCompile.add(m);
+      }
+      Set<IModule> backDeps = backDependencies.remove(m);
+      if (backDeps != null) {
+        queue.addAll(backDeps);
       }
     }
     ttrace.pop();

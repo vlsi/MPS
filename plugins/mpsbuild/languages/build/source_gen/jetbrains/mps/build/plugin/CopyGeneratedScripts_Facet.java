@@ -100,9 +100,8 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                     if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
                       String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories"), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(tres.modelDescriptor().getSModelReference())).get(file.getName());
                       if ((destPath != null && destPath.length() > 0)) {
-                        IFile destDir = FileSystem.getInstance().getFileByPath(destPath);
-                        IFile copy = destDir.getDescendant(file.getName());
-                        ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, copy));
+                        IFile destFile = FileSystem.getInstance().getFileByPath(destPath);
+                        ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, destFile));
                         monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + ListSequence.fromList(toCopy).last())));
                       }
                     }
@@ -211,7 +210,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                     // all descendants with scripts_dir_property 
                     Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(gres.status().getOutputModel(), null)).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode it) {
-                        Object userObject = it.getUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY);
+                        Object userObject = it.getUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY);
                         return userObject != null && userObject instanceof String;
                       }
                     });
@@ -219,7 +218,17 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                     // calculate output file name and map it to scripts dir 
                     for (SNode descendant : Sequence.fromIterable(buildScriptDescendants)) {
                       String fileName = TextGenerator.getFileName(descendant);
-                      MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(gres.model().getSModelReference())).put(fileName, ((String) descendant.getUserObject(GenerationUtil.SCRIPTS_DIR_PROPERTY)));
+                      String targetXml = ((String) descendant.getUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY));
+                      if (!(fileName.endsWith(".xml"))) {
+                        String ext = Utils.getExtensionWithDot(fileName);
+                        if ((ext == null || ext.length() == 0)) {
+                          // do not copy 
+                          monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("Ignored " + fileName)));
+                          continue;
+                        }
+                        targetXml = Utils.withoutExtension(targetXml) + ext;
+                      }
+                      MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(gres.model().getSModelReference())).put(fileName, targetXml);
                     }
                   }
                 });

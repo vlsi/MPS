@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.ManyToManyMap;
+import jetbrains.mps.util.containers.ManyToManyMap;
 
 import java.util.Collections;
 import java.util.HashSet;

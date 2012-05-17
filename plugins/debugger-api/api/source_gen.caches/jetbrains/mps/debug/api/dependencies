@@ -59,6 +59,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.BreakpointManagerComponent" file="BreakpointManagerComponent.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />

@@ -57,8 +57,8 @@ public class BuildVariableMacro_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_cnoc6t_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("value");
-    provider.setNoTargetText("<no default value>");
+    provider.setRole("initialValue");
+    provider.setNoTargetText("<no initialValue>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
