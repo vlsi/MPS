@@ -3,7 +3,6 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <excludeFromCompile>
-      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/startup/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/execution-languages/languages/deprecated/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/debugger-api-languages/languages/jetbrains.mps.debugger.api.lang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/dependencies/source_gen" includeSubdirectories="true" />
@@ -306,6 +305,12 @@
       <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/packmps/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/property/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/solutions/jetbrains.mps.buildlangauge.mpsautobuild/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/util/buildlanguage/languages/startup/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/mpsbuild/startup/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/custommps/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/generictasks/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/packaging/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/build-deprecated/languages/packmps/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
