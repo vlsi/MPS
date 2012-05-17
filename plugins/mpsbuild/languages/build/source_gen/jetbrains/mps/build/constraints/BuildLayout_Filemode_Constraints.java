@@ -8,6 +8,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior;
 
 public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7801138212747054670");
@@ -33,7 +35,7 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    // TODO only in Archives... 
-    return true;
+    SNode archive = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet", true, false);
+    return archive != null && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasFileModeAttribute_6408167411310575237(archive);
   }
 }

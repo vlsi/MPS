@@ -55,6 +55,8 @@
   </dependency>
   <dependency className="jetbrains.mps.build.constraints.BuildLayout_Filemode_Constraints" file="BuildLayout_Filemode_Constraints.java">
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />

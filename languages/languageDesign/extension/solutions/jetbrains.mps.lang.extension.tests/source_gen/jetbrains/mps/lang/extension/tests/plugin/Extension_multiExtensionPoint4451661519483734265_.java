@@ -4,8 +4,8 @@ package jetbrains.mps.lang.extension.tests.plugin;
 
 import jetbrains.mps.smodel.structure.Extension;
 
-public class Extension_multiExtensionPoint__0 extends Extension.Default<String> {
-  public Extension_multiExtensionPoint__0() {
+public class Extension_multiExtensionPoint4451661519483734265_ extends Extension.Default<String> {
+  public Extension_multiExtensionPoint4451661519483734265_() {
     super("jetbrains.mps.lang.extension.tests.multiExtensionPoint");
   }
 
