@@ -80,7 +80,7 @@ lCompare:
     for (final Wrappers._int i = new Wrappers._int(0); i.value < ListSequence.fromList(list).count(); i.value++) {
       Set<Integer> before = SetSequence.fromSet(new HashSet<Integer>());
       List<Integer> after = ListSequence.fromList(new ArrayList<Integer>());
-      for (int j = 0; j < i.value; j++) {
+      for (int j : MapSequence.fromMap(graph).keySet()) {
         StructureModification.Relation rel = StructureModification.compare(ListSequence.fromList(list).getElement(j), ListSequence.fromList(list).getElement(i.value));
         if (rel == StructureModification.Relation.EQUAL) {
           continue lCompare;
