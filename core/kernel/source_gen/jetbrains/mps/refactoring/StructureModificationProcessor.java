@@ -19,10 +19,11 @@ import jetbrains.mps.smodel.SModelRepository;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashMap;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class StructureModificationProcessor {
   protected static Log log = LogFactory.getLog(StructureModificationProcessor.class);
@@ -74,23 +75,29 @@ public class StructureModificationProcessor {
 
   private List<StructureModification> sortModifications(List<StructureModification> list) {
     // create graph 
-    Map<Integer, Set<Integer>> graph = MapSequence.fromMap(new HashMap<Integer, Set<Integer>>());
+    final Map<Integer, Set<Integer>> graph = MapSequence.fromMap(new HashMap<Integer, Set<Integer>>());
 lCompare:
-    for (int i = 0; i < ListSequence.fromList(list).count(); i++) {
-      Set<Integer> cur = SetSequence.fromSet(new HashSet<Integer>());
-      for (int j = 0; j < i; j++) {
-        StructureModification.Relation rel = StructureModification.compare(ListSequence.fromList(list).getElement(j), ListSequence.fromList(list).getElement(i));
+    for (final Wrappers._int i = new Wrappers._int(0); i.value < ListSequence.fromList(list).count(); i.value++) {
+      Set<Integer> before = SetSequence.fromSet(new HashSet<Integer>());
+      List<Integer> after = ListSequence.fromList(new ArrayList<Integer>());
+      for (int j = 0; j < i.value; j++) {
+        StructureModification.Relation rel = StructureModification.compare(ListSequence.fromList(list).getElement(j), ListSequence.fromList(list).getElement(i.value));
         if (rel == StructureModification.Relation.EQUAL) {
           continue lCompare;
         }
         if (rel == StructureModification.Relation.BEFORE) {
-          SetSequence.fromSet(cur).addElement(j);
+          SetSequence.fromSet(before).addElement(j);
         }
         if (rel == StructureModification.Relation.AFTER) {
-          SetSequence.fromSet(MapSequence.fromMap(graph).get(j)).addElement(i);
+          ListSequence.fromList(after).addElement(j);
         }
       }
-      MapSequence.fromMap(graph).put(i, cur);
+      MapSequence.fromMap(graph).put(i.value, before);
+      ListSequence.fromList(after).visitAll(new IVisitor<Integer>() {
+        public void visit(Integer j) {
+          SetSequence.fromSet(MapSequence.fromMap(graph).get(j)).addElement(i.value);
+        }
+      });
     }
     // sort 
     List<StructureModification> result = ListSequence.fromList(new ArrayList<StructureModification>());
