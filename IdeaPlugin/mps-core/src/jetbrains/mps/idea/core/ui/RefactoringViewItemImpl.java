@@ -33,10 +33,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class RefactoringViewItemImpl implements RefactoringViewItem {
   private UsageView usageView;
@@ -75,7 +72,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
       }
     }
 
-    List<Usage> usages = new LinkedList<Usage>();
+    List<Usage> usages = new ArrayList<Usage>();
     Set<SNode> nodes = new HashSet<SNode>();
     for (SearchResult searchResult : (List<SearchResult>) searchResults.getAliveResults()) {
       Object usage = searchResult.getObject();
@@ -86,7 +83,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     }
 
 
-    final UsageViewPresentation presentation = createPresentation(usageTargets.toArray(new UsageTarget[usageTargets.size()]));
+    final UsageViewPresentation presentation = createPresentation();
 
     usageView = viewManager.showUsages(usageTargets.toArray(new UsageTarget[usageTargets.size()]), usages.toArray(new Usage[usages.size()]), presentation);
     String canNotMakeString = RefactoringBundle.message("usageView.need.reRun");
@@ -113,7 +110,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     }
   }
 
-  private static UsageViewPresentation createPresentation(final UsageTarget[] targets) {
+  private static UsageViewPresentation createPresentation() {
     UsageViewPresentation presentation = new UsageViewPresentation();
     presentation.setTargetsNodeText("Searched nodes");
 
