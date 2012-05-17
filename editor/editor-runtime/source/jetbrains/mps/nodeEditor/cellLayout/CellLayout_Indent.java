@@ -15,16 +15,16 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
+import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
 
+import java.awt.Rectangle;
 import java.util.*;
-import java.util.List;
-import java.awt.*;
 
 public class CellLayout_Indent extends AbstractCellLayout {
   static boolean isOnNewLine(EditorCell root, EditorCell cell) {
@@ -80,6 +80,37 @@ public class CellLayout_Indent extends AbstractCellLayout {
     return false;
   }
 
+  public int getAscent(EditorCell_Collection editorCells) {
+    for (EditorCell cell : editorCells.getCells()) {
+      if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
+        return cell.getY() - editorCells.getY() + cell.getAscent();
+      }
+    }
+
+    DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
+
+    int result = 0;
+    for (EditorCell cell : editorCells.getCells()) {
+      result = cell.getAscent();
+      if (result > 0) {
+        break;
+      }
+    }
+
+    switch (bL) {
+      case FIRST: // default behavior
+        return result;
+      case CENTER:
+        return Math.max(result, editorCells.getHeight() / 2);
+      case LAST:
+        EditorCell lastCell = editorCells.getCellAt(editorCells.getCellsCount() - 1);
+        if (lastCell != null) {
+          return lastCell.getY() - editorCells.getY() + lastCell.getAscent();
+        }
+    }
+
+    return 0;
+  }
 
   public void doLayout(EditorCell_Collection editorCells) {
     if (editorCells.getParent() != null && editorCells.getParent().getCellLayout() instanceof CellLayout_Indent) {
