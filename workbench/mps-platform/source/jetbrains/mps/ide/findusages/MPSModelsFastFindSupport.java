@@ -62,7 +62,11 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
   }
 
   public MultiMap<SModelDescriptor, String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
-    return findModels(models, conceptNames, null);
+    return findModels(models, conceptNames, new Mapper<String, String>() {
+      public String value(String key) {
+        return key.substring(key.lastIndexOf('.') + 1);
+      }
+    });
   }
 
   private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {

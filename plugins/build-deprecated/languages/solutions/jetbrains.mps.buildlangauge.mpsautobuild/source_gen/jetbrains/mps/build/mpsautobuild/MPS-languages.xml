@@ -6945,7 +6945,6 @@
     <echoxml file="${deploy.dir}/MPS/languages/xml/jetbrains.mps.xmlUnitTest/jetbrains.mps.xmlUnitTest.runtime.jar.jtmp/module.xml">
       <module namespace="jetbrains.mps.xmlUnitTest.runtime" uuid="dce9f8b9-bf49-4dd4-b00e-fe98fdfa7f2c" type="solution">
         <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="dce9f8b9-bf49-4dd4-b00e-fe98fdfa7f2c(jetbrains.mps.xmlUnitTest.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.xmlUnitTest.runtime-src.jar" descriptor="runtime.msd" />
