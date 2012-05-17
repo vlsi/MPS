@@ -7,55 +7,59 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration", "jetbrains.mps.build.workflow.structure.BwfDependency", "jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfMacro", "jetbrains.mps.build.workflow.structure.BwfMacroListImport", "jetbrains.mps.build.workflow.structure.BwfPathDeclaration", "jetbrains.mps.build.workflow.structure.BwfPathReference", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTaskLibrary", "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", "jetbrains.mps.build.workflow.structure.BwfTaskPart"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.build.workflow.structure.BwfAntStatement", "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration", "jetbrains.mps.build.workflow.structure.BwfDependency", "jetbrains.mps.build.workflow.structure.BwfFileSet", "jetbrains.mps.build.workflow.structure.BwfJavaClassPath", "jetbrains.mps.build.workflow.structure.BwfJavaDescriptor", "jetbrains.mps.build.workflow.structure.BwfJavaLibrary", "jetbrains.mps.build.workflow.structure.BwfJavaLibraryReference", "jetbrains.mps.build.workflow.structure.BwfJavaModule", "jetbrains.mps.build.workflow.structure.BwfJavaModuleReference", "jetbrains.mps.build.workflow.structure.BwfMacro", "jetbrains.mps.build.workflow.structure.BwfMacroListImport", "jetbrains.mps.build.workflow.structure.BwfPathDeclaration", "jetbrains.mps.build.workflow.structure.BwfPathReference", "jetbrains.mps.build.workflow.structure.BwfProject", "jetbrains.mps.build.workflow.structure.BwfStatement", "jetbrains.mps.build.workflow.structure.BwfSubTask", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTask", "jetbrains.mps.build.workflow.structure.BwfTaskDependency", "jetbrains.mps.build.workflow.structure.BwfTaskLibrary", "jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", "jetbrains.mps.build.workflow.structure.BwfTaskPart"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 12:
-        return new BwfProject_BehaviorDescriptor();
-      case 16:
-        return new BwfTask_BehaviorDescriptor();
       case 14:
+        return new BwfProject_BehaviorDescriptor();
+      case 18:
+        return new BwfTask_BehaviorDescriptor();
+      case 16:
         return new BwfSubTask_BehaviorDescriptor();
-      case 17:
+      case 19:
         return new BwfTaskDependency_BehaviorDescriptor();
-      case 15:
+      case 17:
         return new BwfSubTaskDependency_BehaviorDescriptor();
-      case 13:
+      case 15:
         return new BwfStatement_BehaviorDescriptor();
       case 0:
         return new BwfAntStatement_BehaviorDescriptor();
-      case 6:
-        return new BwfJavaModule_BehaviorDescriptor();
-      case 7:
-        return new BwfJavaModuleReference_BehaviorDescriptor();
-      case 20:
-        return new BwfTaskPart_BehaviorDescriptor();
       case 8:
+        return new BwfJavaModule_BehaviorDescriptor();
+      case 9:
+        return new BwfJavaModuleReference_BehaviorDescriptor();
+      case 22:
+        return new BwfTaskPart_BehaviorDescriptor();
+      case 10:
         return new BwfMacro_BehaviorDescriptor();
       case 5:
         return new BwfJavaDescriptor_BehaviorDescriptor();
-      case 18:
+      case 20:
         return new BwfTaskLibrary_BehaviorDescriptor();
-      case 19:
+      case 21:
         return new BwfTaskLibraryDependency_BehaviorDescriptor();
       case 4:
         return new BwfJavaClassPath_BehaviorDescriptor();
-      case 10:
+      case 12:
         return new BwfPathDeclaration_BehaviorDescriptor();
-      case 11:
+      case 13:
         return new BwfPathReference_BehaviorDescriptor();
       case 3:
         return new BwfFileSet_BehaviorDescriptor();
       case 2:
         return new BwfDependency_BehaviorDescriptor();
-      case 9:
+      case 11:
         return new BwfMacroListImport_BehaviorDescriptor();
       case 1:
         return new BwfAntTaskDeclaration_BehaviorDescriptor();
+      case 6:
+        return new BwfJavaLibrary_BehaviorDescriptor();
+      case 7:
+        return new BwfJavaLibraryReference_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

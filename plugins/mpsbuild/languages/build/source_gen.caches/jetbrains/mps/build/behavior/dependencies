@@ -69,6 +69,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildTextStringPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildVarRefStringPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildVariableMacroInitWithString_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildVariableMacro_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
@@ -1382,6 +1383,18 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildVarRefStringPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildVariableMacroInitValue_BehaviorDescriptor" file="BuildVariableMacroInitValue_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildVariableMacroInitWithString_BehaviorDescriptor" file="BuildVariableMacroInitWithString_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildVariableMacroInitValue_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildVariableMacro_Behavior" file="BuildVariableMacro_Behavior.java">

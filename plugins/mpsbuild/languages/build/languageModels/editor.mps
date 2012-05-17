@@ -402,6 +402,14 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File.Mappers" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.3970102152660876447" resolveInfo="BuildLayout_CopyRegexMapper" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2755237150521975433">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.2755237150521942442" resolveInfo="BuildVariableMacroInitValue" />
+    </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2755237150521975438">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="3ior.2755237150521975431" resolveInfo="BuildVariableMacroInitWithString" />
+    </node>
   </roots>
   <root id="5617550519002745365">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7389400916847962446">
@@ -2966,9 +2974,8 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6420586245471595692">
         <property name="text" nameId="tpc2.1073389577007" value="=" />
       </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="4380385936562281305">
-        <property name="noTargetText" nameId="tpc2.1139852716018" value="&lt;no default value&gt;" />
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.4380385936562281299" />
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="7230385212464458556">
+        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.2755237150521975432" />
       </node>
     </node>
   </root>
@@ -5487,6 +5494,16 @@
         </node>
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3970102152660876467" />
+    </node>
+  </root>
+  <root id="2755237150521975433">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Error" typeId="tpc2.1075375595203" id="2755237150521975435">
+      <property name="text" nameId="tpc2.1075375595204" value="no value" />
+    </node>
+  </root>
+  <root id="2755237150521975438">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="2755237150521975440">
+      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="3ior.2755237150521975437" />
     </node>
   </root>
 </model>
