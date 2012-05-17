@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.core.mergedriver;
 
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -11,9 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Properties;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -55,7 +55,8 @@ public class MergeDriverMain {
     configureLog4j();
     String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();
     MergeDriverBackupUtil.setMergeBackupDirPath(systemPath + File.separator + "merge-backup");
-    AbstractContentMerger merger = selectMerger(baseFile, currentFile, otherFile);
+    File[] files = {baseFile, currentFile, otherFile};
+    AbstractContentMerger merger = selectMerger(files);
     if (merger == null) {
       merger = (SVN_OPTION.equals(args[0]) ?
         new TextMerger() :
@@ -63,7 +64,11 @@ public class MergeDriverMain {
       );
     }
 
-    boolean convertCRLF = GIT_OPTION.equals(args[0]) && false;
+    boolean convertCRLF = GIT_OPTION.equals(args[0]) && !(hasCRLF(Sequence.fromIterable(Sequence.fromArray(files)).findFirst(new IWhereFilter<File>() {
+      public boolean accept(File f) {
+        return f != null;
+      }
+    })));
     int status = FileMerger.mergeFiles(merger, baseFile, currentFile, otherFile, conflictStart, conflictEnd, conflictSeparator, overwrite, convertCRLF);
     System.exit(status);
   }

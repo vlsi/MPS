@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-a8i679cn8f35bymu3egt8g6wcrf33b1">
+<dependencies version="2" modelHash="-99z7b76dt48rjp2r5bpndh2jdnqgn4y">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -45,7 +45,7 @@
   <common hash="-5zahgq2g3pweybkvmgqrwv8ubbb9wg1">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   </common>
-  <source id="3342666646761693517" name="MergeDriverMain" hash="a95yzglsmke2iooaz7hsrm950chiwhf">
+  <source id="3342666646761693517" name="MergeDriverMain" hash="dgfvfyzhdgq09hkol8wvycmluj0pkxq">
     <dep root="3342666646761697466" />
     <dep root="3342666646761725454" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
