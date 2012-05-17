@@ -24,10 +24,10 @@ public interface DependenciesManager {
   /**
    * All languages in scope of this module
    */
-  void collectUsedLanguages(Set<Language> languages);
+  Set<Language> immediateUsedLanguages();
 
   /**
    * Collects all visible modules (including current).
    */
-  Set<IModule> collectUsedModules(boolean reexportAll, boolean runtimes);
+  Set<IModule> immediateUsedModules(boolean reexportAll, boolean runtimes);
 }

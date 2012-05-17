@@ -43,7 +43,7 @@ public class GlobalModuleDependenciesManager {
   public Collection<Language> getUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
     for (IModule module : myModules) {
-      module.getDependenciesManager().collectUsedLanguages(result);
+      result.addAll(module.getDependenciesManager().immediateUsedLanguages());
     }
     return result;
   }
@@ -62,7 +62,7 @@ public class GlobalModuleDependenciesManager {
   private Set<IModule> collectNeighbours(Deptype depType) {
     HashSet<IModule> result = new HashSet<IModule>();
     for (IModule module : myModules) {
-      result.addAll(module.getDependenciesManager().collectUsedModules(true, depType.runtimes));
+      result.addAll(module.getDependenciesManager().immediateUsedModules(true, depType.runtimes));
     }
     result.addAll(myModules);
     return result;
@@ -71,7 +71,7 @@ public class GlobalModuleDependenciesManager {
   private void collect(IModule current, Set<IModule> result, Deptype depType) {
     if (result.contains(current)) return;
     result.add(current);
-    for (IModule m : current.getDependenciesManager().collectUsedModules(depType.reexportAll,depType.runtimes)) {
+    for (IModule m : current.getDependenciesManager().immediateUsedModules(depType.reexportAll, depType.runtimes)) {
       collect(m, result, depType);
     }
   }

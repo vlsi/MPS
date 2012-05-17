@@ -29,8 +29,8 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
     super(gen);
   }
 
-  public Set<IModule> collectUsedModules(boolean reexportAll, boolean runtimes) {
-    Set<IModule> result = super.collectUsedModules(reexportAll, runtimes);
+  public Set<IModule> immediateUsedModules(boolean reexportAll, boolean runtimes) {
+    Set<IModule> result = super.immediateUsedModules(reexportAll, runtimes);
     //generator sees all modules from source language as non-reexported
     HashSet<Language> lang = new HashSet<Language>();
     myModule.getSourceLanguage().getDependenciesManager().collectAllExtendedLanguages(lang);

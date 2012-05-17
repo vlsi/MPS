@@ -37,8 +37,8 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
   }
 
   @Override
-  public Set<IModule> collectUsedModules(boolean reexportAll, boolean runtimes) {
-    Set<IModule> result = super.collectUsedModules(reexportAll, runtimes);
+  public Set<IModule> immediateUsedModules(boolean reexportAll, boolean runtimes) {
+    Set<IModule> result = super.immediateUsedModules(reexportAll, runtimes);
     //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
     collectAllExtendedLanguages((Set)result);
     return result;

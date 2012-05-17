@@ -32,11 +32,16 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     myModule = module;
   }
 
-  public final void collectUsedLanguages(Set<Language> result) {
-    collectUsedLanguages(result, false);
+  public Set<Language> immediateUsedLanguages() {
+    Set<Language> immediate = new HashSet<Language>();
+    immediate.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
+    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
+      immediate.addAll(dk.getAllExportedLanguages());
+    }
+    return immediate;
   }
 
-  public Set<IModule> collectUsedModules(boolean reexportAll, boolean runtimes) {
+  public Set<IModule> immediateUsedModules(boolean reexportAll, boolean runtimes) {
     HashSet<IModule> result = new HashSet<IModule>();
     for (Dependency dependency : myModule.getDependencies()) {
       IModule m = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());
@@ -55,7 +60,10 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
       //runtimes from languages
       if (runtimes) {
         HashSet<Language> lang = new HashSet<Language>();
-        collectUsedLanguages(lang, true);
+        for (Language l : immediateUsedLanguages()) {
+          if (lang.contains(l)) continue;
+          l.getDependenciesManager().collectAllExtendedLanguages(lang);
+        }
 
         for (IModule l : lang) {
           result.addAll(ModuleUtil.refsToModules(((Language) l).getRuntimeModulesReferences()));
@@ -63,23 +71,5 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
       }
     }
     return result;
-  }
-
-  protected void collectUsedLanguages(Set<Language> result, boolean includeExtended) {
-    Set<Language> immediate = new HashSet<Language>();
-    immediate.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
-    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
-      immediate.addAll(dk.getAllExportedLanguages());
-    }
-
-    if (!includeExtended) {
-      result.addAll(immediate);
-      return;
-    }
-
-    for (Language l : immediate) {
-      if (result.contains(l)) continue;
-      l.getDependenciesManager().collectAllExtendedLanguages(result);
-    }
   }
 }
