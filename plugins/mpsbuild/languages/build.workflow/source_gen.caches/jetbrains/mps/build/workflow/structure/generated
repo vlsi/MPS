@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5l06jxgt63cdxxt0fca8ifyo063cvu1">
+<dependencies version="2" modelHash="-ct28ply7vbiwguujdbc1vwgzyfm54vz">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -15,6 +15,7 @@
     <dep root="144710003695346438" />
     <dep root="144710003695507915" />
     <dep root="2059109515400477499" />
+    <dep root="244868996532667532" />
     <dep root="2769948622284546673" />
     <dep root="2769948622284546675" />
     <dep root="2769948622284546677" />
@@ -124,6 +125,9 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="144710003695507915" name="BwfJavaLibraryReference" hash="-dy3zh8emarozuzy5dqglsbx9a1867yi">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="244868996532667532" name="BwfCustomMacro" hash="8u08p6qb3l8fgrhyzdt3n7j6pgpzaj8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

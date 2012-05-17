@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="8056730377013685541">
-    <unitInfo nodeId="8056730377013685541" fileName="buildTest.xml" startLine="1" startPosition="0" endLine="100" endPosition="10" unitName="jetbrains.mps.build.sandbox.testExternalBuild.buildTest" />
+    <unitInfo nodeId="8056730377013685541" fileName="buildTest.xml" startLine="1" startPosition="0" endLine="102" endPosition="10" unitName="jetbrains.mps.build.sandbox.testExternalBuild.buildTest" />
   </root>
 </debugInfo>
 

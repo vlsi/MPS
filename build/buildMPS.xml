@@ -3,9 +3,14 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildMPS" />
   <property name="build.layout" location="${build.dir}/artifacts/buildMPS" />
   <property name="build.number" value="MPS-25.SNAPSHOT" />
+  <tstamp>
+    <format property="date" pattern="yyyyMMdd" />
+  </tstamp>
   <property name="version" value="2.5 EAP" />
   <property name="build.vcs.number" value="HEAD" />
   <property name="teamcity.buildConfName" value="local" />
+  <property file="${basedir}/build.number" prefix="loaded.for.idea.platform.build.number" />
+  <property name="idea.platform.build.number" value="${loaded.for.idea.platform.build.number.idea.platform.build.number}" />
   <property name="mps_home" location="${basedir}" />
   <property name="idea_home" location="" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
@@ -76,7 +81,7 @@
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
         <version codename="MPS" major="2" minor="5" eap="true" update-channel="MPS25EAP" />
-        <build date="000000" number="${build.number}" />
+        <build date="${date}" number="${build.number}" />
         <logo url="/splash.png" textcolor="002387" />
         <about url="/mpsAbout.png" />
         <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" />
@@ -158,7 +163,7 @@
     <copy todir="${build.layout}">
       <fileset file="${basedir}/entryPoints.xml" />
     </copy>
-    <echo file="${build.layout}/build.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.version=${version}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}</echo>
+    <echo file="${build.layout}/build.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.date=${date}${line.separator}buildMPS.version=${version}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}${line.separator}buildMPS.idea.platform.build.number=${idea.platform.build.number}</echo>
   </target>
   
   <target name="buildDependents">
