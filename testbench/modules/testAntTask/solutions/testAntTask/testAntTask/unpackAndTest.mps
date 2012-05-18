@@ -13,6 +13,13 @@
     </node>
   </roots>
   <root id="1135661017237151385">
+    <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="4366872349797381690">
+      <property name="name" nameId="tpck.1169194664001" value="mps.zip.path" />
+      <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="4366872349797381694">
+        <property name="value" nameId="tpsk.1196861024475" value="artifacts" />
+      </node>
+      <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="4366872349797381693" />
+    </node>
     <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1317587536323737871">
       <property name="name" nameId="tpck.1169194664001" value="projectsdir" />
       <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1317587536323737874" />
@@ -47,7 +54,7 @@
     <node role="property" roleId="tpsk.1200425668297" type="tpsk.PropertyDeclaration" typeId="tpsk.1196851107341" id="1317587536323738423">
       <property name="name" nameId="tpck.1169194664001" value="mps.zip" />
       <node role="propertyValue" roleId="tpsk.1196851904859" type="tpsk.StringLiteral" typeId="tpsk.1196861005114" id="1317587536323738427">
-        <property name="value" nameId="tpsk.1196861024475" value="${mps_home}/artifacts/${build.number}.zip" />
+        <property name="value" nameId="tpsk.1196861024475" value="${mps_home}/${mps.zip.path}/${build.number}.zip" />
       </node>
       <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1317587536323738426" />
     </node>
