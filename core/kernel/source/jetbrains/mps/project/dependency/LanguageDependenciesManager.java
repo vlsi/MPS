@@ -17,8 +17,11 @@ package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 
+import java.util.Collection;
 import java.util.Set;
 
 public class LanguageDependenciesManager extends ModuleDependenciesManager<Language> {
@@ -40,6 +43,7 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
     Set<IModule> result = super.immediateUsedModules(includeNonReexport, runtimes);
     //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
     collectAllExtendedLanguages((Set)result);
+
     return result;
   }
 }

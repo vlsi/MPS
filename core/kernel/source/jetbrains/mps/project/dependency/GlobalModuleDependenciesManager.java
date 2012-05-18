@@ -36,11 +36,23 @@ public class GlobalModuleDependenciesManager {
   public GlobalModuleDependenciesManager(Collection<IModule> modules) {
     assert !modules.isEmpty();
     myModules = new HashSet<IModule>(modules);
+    addGenerators();
   }
 
   public GlobalModuleDependenciesManager(@NotNull IModule module) {
     myModules = new HashSet<IModule>();
     myModules.add(module);
+    addGenerators();
+  }
+
+  // this is a temporary fix for MPS-15883, should be removed when generators are compiled with their own classpath
+  private void addGenerators() {
+    Set<IModule> addModules = new HashSet<IModule>();
+    for (IModule m : myModules) {
+      if (!(m instanceof Language)) continue;
+      addModules.addAll(((Language) m).getGenerators());
+    }
+    myModules.addAll(addModules);
   }
 
   /**
@@ -55,19 +67,19 @@ public class GlobalModuleDependenciesManager {
   }
 
   /**
-   Return all modules of a given dependency type in scope of given
-
-   RUNTIMES:
-   If we need runtimes, this only adds additional edges to our graph. M -uses> L -runtime> R is equivalent
-   to M -non-reexp> R in this case
-
-   REEXPORT:
-   If we need dependencies with respect to reexport flag, we should first collect all neighbours of the
-   given nodes in graph, and then, considering the graph with "reexport" edges only, collect all nodes
-   accessible from (start set+neighbours) in this graph
-   If we don't respect reexport flag, we should collect all accessible nodes from the given set in a
-   dependencies graph. The "neighbours scheme" works in this case, too.
-
+   * Return all modules of a given dependency type in scope of given
+   * <p/>
+   * RUNTIMES:
+   * If we need runtimes, this only adds additional edges to our graph. M -uses> L -runtime> R is equivalent
+   * to M -non-reexp> R in this case
+   * <p/>
+   * REEXPORT:
+   * If we need dependencies with respect to reexport flag, we should first collect all neighbours of the
+   * given nodes in graph, and then, considering the graph with "reexport" edges only, collect all nodes
+   * accessible from (start set+neighbours) in this graph
+   * If we don't respect reexport flag, we should collect all accessible nodes from the given set in a
+   * dependencies graph. The "neighbours scheme" works in this case, too.
+   *
    * @param depType determines the type of dependecies we want to get
    * @return all modules in scope of given
    */
