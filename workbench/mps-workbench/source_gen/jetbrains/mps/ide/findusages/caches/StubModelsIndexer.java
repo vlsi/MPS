@@ -5,33 +5,31 @@ package jetbrains.mps.ide.findusages.caches;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
 import jetbrains.mps.ide.projectPane.fileSystem.MPSWorkbenchFileTypeFactory;
+import jetbrains.mps.smodel.SNodeId.Foreign;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import java.util.Map;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileContent;
-import jetbrains.mps.baseLanguage.javastub.ClassifierUpdater;
+import java.util.HashMap;
+import org.objectweb.asm.ClassReader;
+import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
+import jetbrains.mps.baseLanguage.javastub.CacheClassifierUpdater;
 import jetbrains.mps.baseLanguage.javastub.SReferenceHandler;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.baseLanguage.javastub.ClassifierLoader;
+import jetbrains.mps.baseLanguage.javastub.CacheClassifierLoader;
 import jetbrains.mps.reloading.ClassBytesProvider;
 import org.jetbrains.annotations.Nullable;
-import org.objectweb.asm.ClassReader;
-import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
-import com.intellij.util.text.CharArrayUtil;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import java.util.Collections;
-import java.util.HashMap;
+import jetbrains.mps.util.NameUtil;
 
 public class StubModelsIndexer implements ApplicationComponent {
   public StubModelsIndexer() {
   }
 
   public void initComponent() {
-   // IdTableBuilding.registerIdIndexer(MPSWorkbenchFileTypeFactory.CLASS_FILE_TYPE, new StubModelsIndexer.MyFileTypeIdIndexer());
+    IdTableBuilding.registerIdIndexer(MPSWorkbenchFileTypeFactory.CLASS_FILE_TYPE, new StubModelsIndexer.MyFileTypeIdIndexer());
   }
 
   public void disposeComponent() {
@@ -48,37 +46,32 @@ public class StubModelsIndexer implements ApplicationComponent {
 
     @NotNull
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
-      ClassifierUpdater updater = new ClassifierUpdater(false, new SReferenceHandler() {
+      final HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
+      final byte[] content = inputData.getContent();
+
+      ClassReader reader = new ClassReader(inputData.getContent());
+      final ASMClass ac = new ASMClass(reader);
+      final String fqName = ac.getFqName();
+
+      CacheClassifierUpdater updater = new CacheClassifierUpdater(false, new SReferenceHandler() {
         public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
+          if (!(targetNodeId instanceof SNodeId.Foreign)) {
+            return null;
+          }
+          result.put(new IdIndexEntry(((Foreign) targetNodeId).getId(), false), 0);
           return null;
         }
       });
-      ClassifierLoader loader = new ClassifierLoader(new ClassBytesProvider() {
+      CacheClassifierLoader loader = new CacheClassifierLoader(new ClassBytesProvider() {
         @Nullable
-        public byte[] getClass(String p0) {
-          return null;
+        public byte[] getClass(String name) {
+          assert fqName.endsWith(name);
+          return content;
         }
       }, updater);
 
-      ClassReader reader = new ClassReader(inputData.getContent());
-      ASMClass ac = new ASMClass(reader);
+      loader.getClassifier(NameUtil.namespaceFromLongName(fqName), NameUtil.shortNameFromLongName(fqName));
 
-
-      CharSequence data = inputData.getContentAsText();
-      char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
-      if (charsArray == null) {
-        charsArray = CharArrayUtil.fromSequence(data);
-      }
-      final Map<ModelPersistence.IndexEntry, Integer> res;
-      try {
-        res = ModelPersistence.index(charsArray);
-      } catch (ModelReadException e) {
-        return Collections.emptyMap();
-      }
-      HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
-      for (Map.Entry<ModelPersistence.IndexEntry, Integer> ie : res.entrySet()) {
-        result.put(new IdIndexEntry(ie.getKey().data, ie.getKey().caseSensitive), ie.getValue());
-      }
       return result;
     }
   }
