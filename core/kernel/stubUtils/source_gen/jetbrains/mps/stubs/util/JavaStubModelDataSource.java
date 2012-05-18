@@ -83,7 +83,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
           // dirty hack for current problems with path separators 
           String dirCorrected = dir.replace('/', File.separatorChar);
           dirCorrected = dirCorrected.replace('\\', File.separatorChar);
-          assert dirCorrected.contains(name) : "Strang dir for model: model " + name + "; dir = " + dir;
+          assert dirCorrected.contains(name) : "Strange dir for model: model " + name + "; dir = " + dir;
 
           int index = dirCorrected.indexOf(name);
           dir = dir.substring(0, index);

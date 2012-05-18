@@ -6,6 +6,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 
 public class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
@@ -26,13 +28,17 @@ public class ASMModelLoader {
     try {
       String pack = myModel.getLongName();
       ClassifierUpdater updater = new ClassifierUpdater(mySkipPrivate, new SReferenceCreator(myModule, myModel));
-      ClassifierLoader loader = new ClassifierLoader(myModel, myCpItem, updater);
+      ClassifierLoader loader = new ClassifierLoader(myCpItem, updater);
 
       for (String name : myCpItem.getRootClasses(pack)) {
         if (myModel.getNodeById(ASMNodeId.createId(name)) != null) {
           continue;
         }
-        loader.loadRootClassifier(name);
+        loader.getClassifier(pack, name, new _FunctionTypes._void_P1_E0<SNode>() {
+          public void invoke(SNode n) {
+            myModel.addRoot(n);
+          }
+        });
       }
     } catch (Exception e) {
       LOG.error("Exception", e);

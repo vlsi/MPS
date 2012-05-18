@@ -10,6 +10,14 @@ import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import java.util.Map;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileContent;
+import jetbrains.mps.baseLanguage.javastub.ClassifierUpdater;
+import jetbrains.mps.baseLanguage.javastub.SReferenceHandler;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.baseLanguage.javastub.ClassifierLoader;
+import jetbrains.mps.reloading.ClassBytesProvider;
+import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import com.intellij.util.text.CharArrayUtil;
@@ -23,7 +31,7 @@ public class StubModelsIndexer implements ApplicationComponent {
   }
 
   public void initComponent() {
-    IdTableBuilding.registerIdIndexer(MPSWorkbenchFileTypeFactory.CLASS_FILE_TYPE, new StubModelsIndexer.MyFileTypeIdIndexer());
+   // IdTableBuilding.registerIdIndexer(MPSWorkbenchFileTypeFactory.CLASS_FILE_TYPE, new StubModelsIndexer.MyFileTypeIdIndexer());
   }
 
   public void disposeComponent() {
@@ -40,6 +48,18 @@ public class StubModelsIndexer implements ApplicationComponent {
 
     @NotNull
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
+      ClassifierUpdater updater = new ClassifierUpdater(false, new SReferenceHandler() {
+        public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
+          return null;
+        }
+      });
+      ClassifierLoader loader = new ClassifierLoader(new ClassBytesProvider() {
+        @Nullable
+        public byte[] getClass(String p0) {
+          return null;
+        }
+      }, updater);
+
       ClassReader reader = new ClassReader(inputData.getContent());
       ASMClass ac = new ASMClass(reader);
 

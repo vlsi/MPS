@@ -7,5 +7,5 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
 public interface SReferenceHandler {
-  public SReference createSReference(SNode source, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation);
+  public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation);
 }

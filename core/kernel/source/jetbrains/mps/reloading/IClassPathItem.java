@@ -26,13 +26,10 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public interface IClassPathItem {
+public interface IClassPathItem extends ClassBytesProvider {
   //this is for performance reasons
   boolean hasClass(String name);
   
-  @Nullable
-  byte[] getClass(String name);
-
   @Nullable
   ClassifierKind getClassifierKind(String name);
 

@@ -3397,7 +3397,7 @@
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="230599087727051101">
                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="230599087727051102">
                               <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="230599087727051103">
-                                <property name="value" nameId="tpee.1070475926801" value="Strang dir for model: model " />
+                                <property name="value" nameId="tpee.1070475926801" value="Strange dir for model: model " />
                               </node>
                               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="230599087727051104">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="230599087727051064" resolveInfo="name" />

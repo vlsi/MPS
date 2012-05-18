@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.project.StubModelsResolver;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -36,15 +37,15 @@ public class SReferenceCreator implements SReferenceHandler {
     this.model = model;
   }
 
-  public SReference createSReference(SNode source, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
-    if (model.getLongName().equals(model.getLongName())) {
+  public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
+    if (pack.equals(model.getLongName())) {
       SNode nodeInSameModel = model.getNodeById(targetNodeId);
       if (nodeInSameModel != null) {
         return SReference.create(role, source, model.getSModelReference(), targetNodeId, resolveInfo);
       }
     }
 
-    Set<SModelReference> models = getModelReferencesFor(rootPresentation);
+    Set<SModelReference> models = getModelReferencesFor(pack, rootPresentation);
 
     if (SetSequence.fromSet(models).isEmpty()) {
       return SReference.create(role, source, null, targetNodeId, resolveInfo);
@@ -54,27 +55,27 @@ public class SReferenceCreator implements SReferenceHandler {
       for (SModelReference model : models) {
         SNodeOperations.getModel(source).addModelImport(model, false);
       }
-      return new DynamicReference(role, source, model.getSModelReference(), resolveInfo);
+      return new DynamicReference(role, source, new SModelReference(pack, model.getStereotype()), resolveInfo);
     }
 
     ModuleReference moduleRef = SModelRepository.getInstance().getModelDescriptor(SetSequence.fromSet(models).first()).getModule().getModuleReference();
-    SModelReference ref = StubHelper.uidForPackageInStubs(this.model.getSModelFqName(), moduleRef, false);
+    SModelReference ref = StubHelper.uidForPackageInStubs(new SModelFqName(pack, model.getStereotype()), moduleRef, false);
     assert !(AuxilaryRuntimeModel.isAuxModel(SNodeOperations.getModel(source)));
     SNodeOperations.getModel(source).addModelImport(SetSequence.fromSet(models).first(), false);
     return SReference.create(role, source, ref, targetNodeId, resolveInfo);
   }
 
-  private Set<SModelReference> getModelReferencesFor(String rootPresentation) {
-    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, model.getSModelFqName(), null);
+  private Set<SModelReference> getModelReferencesFor(String pack, String rootPresentation) {
+    Set<SModelReference> models = StubModelsResolver.getInstance().resolveModel(module, new SModelFqName(pack, model.getStereotype()), null);
 
     if (SetSequence.fromSet(models).isEmpty()) {
       String moduleName = module.getModuleFqName();
-      Tuples._2<String, String> p = MultiTuple.<String,String>from(model.getLongName(), moduleName);
+      Tuples._2<String, String> p = MultiTuple.<String,String>from(pack, moduleName);
       if (!(SetSequence.fromSet(reported).contains(p))) {
         SetSequence.fromSet(reported).addElement(p);
         if (!(MPSCore.getInstance().isTestMode())) {
           if (log.isWarnEnabled()) {
-            log.warn("no module found for: " + model.getLongName() + " in " + moduleName + "(referenced from " + model.getLongName() + "/" + rootPresentation + ")");
+            log.warn("no module found for: " + pack + " in " + moduleName + "(referenced from " + model.getLongName() + "/" + rootPresentation + ")");
           }
         }
       }

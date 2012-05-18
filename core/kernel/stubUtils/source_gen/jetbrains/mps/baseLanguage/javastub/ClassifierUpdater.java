@@ -35,6 +35,7 @@ import jetbrains.mps.baseLanguage.javastub.asm.ASMExtendsType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMSuperType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMUnboundedType;
 import java.util.ArrayList;
+import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
@@ -616,10 +617,11 @@ public class ClassifierUpdater {
       return;
     }
 
+    String pack = NodeNameUtil.getNamespace(clsType.getName());
     String resolve = NameUtil.shortNameFromLongName(clsType.getName());
     resolve = resolve.replaceAll("\\$", ".");
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
-    SReference ref = myHandler.createSReference(sourceNode, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
+    SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
     sourceNode.addReference(ref);
   }
 
@@ -628,10 +630,11 @@ public class ClassifierUpdater {
       return;
     }
 
+    String pack = NodeNameUtil.getNamespace(annotationType.getName());
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
     String resolve = NameUtil.shortNameFromLongName(annotationType.getName());
     resolve = resolve.replaceAll("\\$", ".");
-    SReference ref = myHandler.createSReference(sourceNode, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
+    SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
     sourceNode.addReference(ref);
   }
 
@@ -641,10 +644,11 @@ public class ClassifierUpdater {
     }
 
     ASMClassType classType = (ASMClassType) enumValue.getType();
+    String pack = NodeNameUtil.getNamespace(classType.getName());
     String resolve = NameUtil.shortNameFromLongName(classType.getName());
     resolve = resolve.replaceAll("\\$", ".");
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
-    SReference ref = myHandler.createSReference(sourceNode, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
+    SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
 
     sourceNode.addReference(ref);
   }
