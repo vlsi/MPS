@@ -14,20 +14,20 @@ public class ASMModelLoader {
   private final SModel myModel;
   private final IModule myModule;
   private final boolean mySkipPrivate;
-  private final String myLanguageId;
 
-  public ASMModelLoader(IModule module, IClassPathItem classPathItem, SModel model, String languageId, boolean skipPrivate) {
+  public ASMModelLoader(IModule module, IClassPathItem classPathItem, SModel model, boolean skipPrivate) {
     myModule = module;
     myCpItem = classPathItem;
     myModel = model;
-    myLanguageId = languageId;
     mySkipPrivate = skipPrivate;
   }
 
   public void updateModel() {
     try {
       String pack = myModel.getLongName();
-      ClassifierLoader loader = new ClassifierLoader(myModule, myModel, myCpItem, new ClassifierUpdater(myLanguageId, mySkipPrivate));
+      ClassifierUpdater updater = new ClassifierUpdater(mySkipPrivate, new SReferenceCreator(myModule, myModel));
+      ClassifierLoader loader = new ClassifierLoader(myModel, myCpItem, updater);
+
       for (String name : myCpItem.getRootClasses(pack)) {
         if (myModel.getNodeById(ASMNodeId.createId(name)) != null) {
           continue;

@@ -32,12 +32,10 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
   public static final String FAST_FIND_ID = "java_stubs";
 
   private boolean skipPrivate;
-  private String langId;
 
-  public JavaStubModelDataSource(ModuleReference origin, String langId, boolean skipPrivate) {
+  public JavaStubModelDataSource(ModuleReference origin, boolean skipPrivate) {
     super(origin);
     this.skipPrivate = skipPrivate;
-    this.langId = langId;
   }
 
   protected Set<Language> getLanguagesToImport() {
@@ -59,7 +57,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
       module.addUsedLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
-    new ASMModelLoader(module, cp, model, langId, skipPrivate).updateModel();
+    new ASMModelLoader(module, cp, model, skipPrivate).updateModel();
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 

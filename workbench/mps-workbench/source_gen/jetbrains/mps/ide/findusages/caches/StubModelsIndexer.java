@@ -42,6 +42,8 @@ public class StubModelsIndexer implements ApplicationComponent {
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
       ClassReader reader = new ClassReader(inputData.getContent());
       ASMClass ac = new ASMClass(reader);
+
+
       CharSequence data = inputData.getContentAsText();
       char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
       if (charsArray == null) {

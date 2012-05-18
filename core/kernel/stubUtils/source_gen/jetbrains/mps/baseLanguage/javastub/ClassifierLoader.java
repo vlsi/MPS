@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
@@ -24,10 +23,8 @@ public class ClassifierLoader {
   private IClassPathItem myCpItem;
   private SModel myModel;
   private ClassifierUpdater myUpdater;
-  private IModule myModule;
 
-  public ClassifierLoader(IModule module, SModel model, IClassPathItem cpItem, ClassifierUpdater updater) {
-    myModule = module;
+  public ClassifierLoader(SModel model, IClassPathItem cpItem, ClassifierUpdater updater) {
     myModel = model;
     myCpItem = cpItem;
     myUpdater = updater;
@@ -58,7 +55,7 @@ public class ClassifierLoader {
     ASMClass ac = new ASMClass(reader);
     SNode res = createClassifierForClass(name, reader);
     adder.invoke(res);
-    myUpdater.updateClassifier(myModule, res, ac);
+    myUpdater.updateClassifier(res, ac);
     updateInnerClassifiers(ac, res);
   }
 
