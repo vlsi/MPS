@@ -9,6 +9,8 @@
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
+  <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
+  <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <path id="path.javac2.classpath">
@@ -34,6 +36,9 @@
     <mkdir dir="${build.layout}/plugins/mps-core/languages" />
     <copy todir="${build.layout}/plugins/mps-core/languages">
       <fileset dir="${artifacts.buildCore}/mps-core/languages" />
+    </copy>
+    <copy todir="${build.layout}/plugins/mps-core/languages">
+      <fileset dir="${artifacts.buildCoreEx}/languages" />
     </copy>
     <mkdir dir="${build.layout}/plugins/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/asm.jar" todir="${build.layout}/plugins/mps-core/lib" />
@@ -94,6 +99,9 @@
       <fileset dir="${build.tmp}/java/out/mps-vcs-platform" />
       <fileset dir="${build.tmp}/default/mps-vcs-platform.jar" />
     </jar>
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildBuild}/plugins" />
+    </copy>
     <mkdir dir="${build.tmp}/default/mps-java.jar" />
     <mkdir dir="${build.tmp}/default/mps-java.jar/META-INF" />
     <copy todir="${build.tmp}/default/mps-java.jar/META-INF">
@@ -116,6 +124,8 @@
   
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

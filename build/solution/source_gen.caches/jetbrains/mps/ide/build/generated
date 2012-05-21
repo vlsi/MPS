@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-7q06ha3cc4skahv1b1zsh5q1r58rcv3">
+<dependencies version="2" modelHash="-1k40di6oqvf5kbculu49flrr2u5ffc8">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" />
@@ -46,7 +46,7 @@
   <source id="7181125477683264500" name="IDEA" hash="4t2c8fq1l9mldwgfr1u97hhl2xn24o8">
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
   </source>
-  <source id="5148601452480491524" name="buildPlugin" hash="-5xmxmdmp17ygeyp5o6j1s68vj7c104y">
+  <source id="5148601452480491524" name="buildPlugin" hash="5vlqm1jyyk903mpmgyfoy9u4d34tvm3">
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -117,7 +117,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildPlugins.xml" />
   </source>
-  <source id="8524659923334108558" name="buildBuild" hash="-bbni74nntsxtkhga0bzp768litq493r">
+  <source id="8524659923334108558" name="buildBuild" hash="azt9qxg72cfqhan8reom4npo8yg7bbf">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
@@ -209,7 +209,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildCoreEx.xml" />
   </source>
-  <source id="8227093612176368028" name="buildBuildUI" hash="dgp8hc2zrp7yt5vu797ujurcyh3mrex">
+  <source id="8227093612176368028" name="buildBuildUI" hash="2ywphhdw077r3umk7n8scin7zkzwg32">
     <dep root="2569834391839970845" />
     <dep root="4301118715654850396" />
     <dep root="6164334420696839314" />

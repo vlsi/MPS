@@ -6,17 +6,16 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
-  <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
-    <mkdir dir="${build.layout}/plugins/mpsbuild" />
-    <mkdir dir="${build.layout}/plugins/mpsbuild/META-INF" />
-    <copy todir="${build.layout}/plugins/mpsbuild/META-INF">
+    <mkdir dir="${build.layout}/plugins/mps-build" />
+    <mkdir dir="${build.layout}/plugins/mps-build/META-INF" />
+    <copy todir="${build.layout}/plugins/mps-build/META-INF">
       <fileset file="${mps_home}/plugins/mpsbuild/META-INF/plugin.xml" />
     </copy>
-    <mkdir dir="${build.layout}/plugins/mpsbuild/languages" />
+    <mkdir dir="${build.layout}/plugins/mps-build/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.build.jar/META-INF/module.xml">
@@ -35,12 +34,12 @@
         <sources jar="jetbrains.mps.build-src.jar" descriptor="build.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build" />
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/build" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build-src.jar">
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/build/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsbuild/languages/build/build.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
@@ -64,12 +63,12 @@
         <sources jar="jetbrains.mps.build.workflow-src.jar" descriptor="workflow.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.workflow.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.workflow.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.workflow.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.workflow-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.workflow-src.jar">
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsbuild/languages/build.workflow/workflow.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.workflow/accessoryModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/accessoryModels" />
@@ -94,12 +93,12 @@
         <sources jar="jetbrains.mps.build.mps-src.jar" descriptor="mps.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.mps.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.mps.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps" />
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.mps-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.mps-src.jar">
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsbuild/languages/build.mps/mps.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/build.mps/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
@@ -123,12 +122,12 @@
         <sources jar="jetbrains.mps.build.startup-src.jar" descriptor="startup.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.startup.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.startup.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.startup" />
       <fileset dir="${mps_home}/languages/mpsbuild/startup" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.startup.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.startup-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.startup-src.jar">
       <fileset dir="${mps_home}/languages/mpsbuild/startup/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/mpsbuild/startup/startup.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/mpsbuild/startup/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
@@ -153,19 +152,19 @@
         <sources jar="jetbrains.mps.bash-src.jar" descriptor="bash.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.bash.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.bash.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.bash" />
       <fileset dir="${mps_home}/languages/util/bash/languages/bash" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.bash.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.bash-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.bash-src.jar">
       <fileset dir="${mps_home}/languages/util/bash/languages/bash/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/util/bash/languages/bash/bash.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/bash/languages/bash/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/languages/util/bash/languages/bash/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/util/bash/languages/bash/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.ide.build.jar">
       <zipfileset file="${mps_home}/build/solution/build.msd" prefix="modules/jetbrains.mps.ide.build" />
       <zipfileset dir="${mps_home}/build/solution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.build" />
       <zipfileset dir="${mps_home}/build/solution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.build/models" />
@@ -175,7 +174,6 @@
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
