@@ -4,6 +4,9 @@
     <modelRoot path="${solution_descriptor}/models" />
   </models>
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
+  </dependencies>
   <usedLanguages>
     <usedLanguage>3a7eede3-9c22-47a0-a10b-879db14c1b68(jetbrains.mps.debugger.decisionTable)</usedLanguage>
     <usedLanguage>ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</usedLanguage>
