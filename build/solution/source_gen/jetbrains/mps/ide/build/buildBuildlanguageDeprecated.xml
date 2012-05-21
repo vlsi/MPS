@@ -788,10 +788,6 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
-        <fileset file="${artifacts.buildBuild}/plugins/mps-build/languages/jetbrains.mps.build.jar" />
-        <fileset file="${artifacts.buildBuild}/plugins/mps-build/languages/jetbrains.mps.build.workflow.jar" />
-        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.properties.jar" />
-        <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
