@@ -302,7 +302,6 @@
       <modulePath path="${project}/languages/xml/xml/xml.mpl" folder="build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/buildlanguage/buildlanguage.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/custommps/custommps.mpl" folder="languages.build" />
-      <modulePath path="${project}/plugins/build-deprecated/languages/custommps/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/dependency/dependency.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/generictasks/generictasks.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/generictasks/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
