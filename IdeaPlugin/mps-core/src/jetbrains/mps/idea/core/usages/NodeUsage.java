@@ -190,6 +190,6 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
     if (!myFile.equals(hisFile)) {
       return myFile.getPresentableUrl().compareTo(hisFile.getPresentableUrl());
     }
-    return myTextPresentation.compareTo(usage.myTextPresentation);
+    return 0;
   }
 }

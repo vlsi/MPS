@@ -53,7 +53,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     init(callback, searchResults, name, hasModelsToGenerate);
   }
 
-  public void showRefactoringView(RefactoringContext refactoringContext, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate) {
+  public void showRefactoringView(@NotNull RefactoringContext refactoringContext, @NotNull final RefactoringViewAction callback, @NotNull SearchResults searchResults, boolean hasModelsToGenerate) {
     myRefactoringContext = refactoringContext;
     myProject = ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject());
     init(callback, searchResults, refactoringContext.getRefactoring().getUserFriendlyName(), hasModelsToGenerate);
@@ -90,7 +90,7 @@ public class RefactoringViewItemImpl implements RefactoringViewItem {
     usageView.addPerformOperationAction(new Runnable() {
       @Override
       public void run() {
-        if (myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
+        if (myRefactoringContext != null && myRefactoringContext.getRefactoring() instanceof ILoggableRefactoring) {
           showRefactoringOptions();
         } else {
           myCallback.performAction(RefactoringViewItemImpl.this);

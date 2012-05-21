@@ -61,19 +61,13 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
-    return new ModelOrNodeChooser(project,node);
+    return new ModelOrNodeChooser(project, node);
   }
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
-    return new ModelOrNodeChooser(project,model);
+    return new ModelOrNodeChooser(project, model);
   }
-
-    @Override
-    public void showRefactoringView(Project project, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-      RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
-      refactoringViewItem.showRefactoringView(project,callback,searchResults,hasModelsToGenerate,name);
-    }
 
   @Override
   public boolean showRefactoringDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
@@ -81,9 +75,16 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   }
 
   @Override
+  public void showRefactoringView(Project project, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
+    refactoringViewItem.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
+  }
+
+
+  @Override
   public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
-    refactoringViewItem.showRefactoringView(refactoringContext,callback,searchResults,hasModelsToGenerate);
+    refactoringViewItem.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
   }
 
 }
