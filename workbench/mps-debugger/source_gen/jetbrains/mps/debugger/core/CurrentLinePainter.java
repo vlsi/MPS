@@ -62,13 +62,17 @@ public class CurrentLinePainter extends EditorCellPainter<SNodePointer> {
     if (myCachedCoverageArea != null) {
       return myCachedCoverageArea;
     }
-    EditorCell_Label cell = findCell(editorComponent);
+    EditorCell_Label cell = findCellLabel(editorComponent);
     if (cell == null) {
       return null;
     }
-    myCachedCoverageArea = getBounds(editorComponent, cell);
+    if (isCellMode(editorComponent)) {
+      Rectangle bounds = editorComponent.getBigValidCellForNode(getSNode()).getBounds();
+      myCachedCoverageArea = bounds;
+      return bounds;
+    }
+    myCachedCoverageArea = getStripeBounds(editorComponent, cell);
     return myCachedCoverageArea;
-    // new Rectangle(bounds.x + 1, bounds.y + 1, bounds.width - 1, bounds.height - 1); 
   }
 
   @Override

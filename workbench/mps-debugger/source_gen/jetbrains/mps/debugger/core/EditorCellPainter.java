@@ -14,8 +14,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 
 public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> {
+  private static final int LEFT_MARGIN = 4;
+
   public EditorCellPainter() {
   }
 
@@ -32,7 +35,7 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
   protected abstract SNode getSNode();
 
   @Nullable
-  protected EditorCell_Label findCell(@NotNull EditorComponent editorComponent) {
+  protected EditorCell_Label findCellLabel(@NotNull EditorComponent editorComponent) {
     SNode node = getSNode();
     EditorCell_Label innerCell = null;
     if (node != null) {
@@ -63,7 +66,7 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
 
   @Override
   public void paintBackground(Graphics g, EditorComponent editorComponent) {
-    EditorCell_Label innerCell = findCell(editorComponent);
+    EditorCell_Label innerCell = findCellLabel(editorComponent);
     if (innerCell != null) {
       paintStripe(g, editorComponent, innerCell);
       paintCellBackground(g, editorComponent);
@@ -72,7 +75,7 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
 
   @Override
   public void paint(Graphics g, EditorComponent editorComponent) {
-    EditorCell_Label innerCell = findCell(editorComponent);
+    EditorCell_Label innerCell = findCellLabel(editorComponent);
     if (innerCell != null) {
       paintCellFrame(g, editorComponent);
     }
@@ -80,8 +83,12 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
 
   private void paintCellBackground(@NotNull Graphics g, @NotNull EditorComponent editorComponent) {
     EditorCell bigCell = editorComponent.getBigValidCellForNode(getSNode());
-    if (bigCell != null && getCellBackgroundColor() != null) {
-      g.setColor(getCellBackgroundColor());
+    Color cellBackgroundColor = getCellBackgroundColor();
+    if (bigCell != null && cellBackgroundColor == null && isCellMode(editorComponent)) {
+      cellBackgroundColor = getStripeBackgroundColor();
+    }
+    if (bigCell != null && cellBackgroundColor != null) {
+      g.setColor(cellBackgroundColor);
       g.fillRect(bigCell.getX(), bigCell.getY(), bigCell.getWidth(), bigCell.getHeight());
     }
   }
@@ -95,14 +102,24 @@ public abstract class EditorCellPainter<E> extends AbstractAdditionalPainter<E> 
   }
 
   @NotNull
-  protected Rectangle getBounds(@NotNull EditorComponent editorComponent, @NotNull EditorCell_Label innerCell) {
-    int leftMargin = 4;
-    return new Rectangle(leftMargin, innerCell.getY(), editorComponent.getWidth() - leftMargin, innerCell.getHeight() - innerCell.getTopInset() - innerCell.getBottomInset());
+  protected Rectangle getStripeBounds(@NotNull EditorComponent editorComponent, @NotNull EditorCell_Label innerCell) {
+    return new Rectangle(LEFT_MARGIN, innerCell.getY(), editorComponent.getWidth() - LEFT_MARGIN, innerCell.getHeight() - innerCell.getTopInset() - innerCell.getBottomInset());
   }
 
-  protected void paintStripe(@NotNull Graphics g, @NotNull EditorComponent editorComponent, @NotNull EditorCell_Label innerCell) {
+  private void paintStripe(@NotNull Graphics g, @NotNull EditorComponent editorComponent, @NotNull EditorCell_Label innerCell) {
+    if (isCellMode(editorComponent)) {
+      return;
+    }
     g.setColor(getStripeBackgroundColor());
-    Rectangle bounds = getBounds(editorComponent, innerCell);
+    Rectangle bounds = getStripeBounds(editorComponent, innerCell);
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+  }
+
+  protected boolean isCellMode(EditorComponent editorComponent) {
+    return isInsideHorisontalCollection(editorComponent.getBigValidCellForNode(getSNode()));
+  }
+
+  private boolean isInsideHorisontalCollection(EditorCell cell) {
+    return cell.getParent().getCellLayout() instanceof CellLayout_Horizontal;
   }
 }
