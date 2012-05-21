@@ -9,6 +9,8 @@
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
@@ -88,6 +90,7 @@
       <zipfileset dir="${mps_home}/plugins/mpsdevkit" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.mpsdevkit" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/solution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.mpsdevkit/solution" />
     </jar>
+    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">

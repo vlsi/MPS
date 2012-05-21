@@ -7,25 +7,29 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_Solution"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_Solution"};
 
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
-      case 4:
+      case 6:
         return new BuildMps_ModuleDependencyExtendLanguage_Constraints();
-      case 0:
-        return new BuildMps_Branding_Constraints();
-      case 2:
-        return new BuildMps_Group_Constraints();
-      case 5:
-        return new BuildMps_Solution_Constraints();
-      case 3:
-        return new BuildMps_Language_Constraints();
       case 1:
+        return new BuildMps_Branding_Constraints();
+      case 3:
+        return new BuildMps_Group_Constraints();
+      case 7:
+        return new BuildMps_Solution_Constraints();
+      case 5:
+        return new BuildMps_Language_Constraints();
+      case 2:
         return new BuildMps_DevKit_Constraints();
+      case 4:
+        return new BuildMps_IdeaPlugin_Constraints();
+      case 0:
+        return new BuildMpsLayout_Plugin_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);

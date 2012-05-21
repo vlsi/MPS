@@ -51,7 +51,7 @@ public class BuildLayout_Folder_Behavior {
     return true;
   }
 
-  public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
+  public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return !(propertyValue.contains("$") || propertyValue.contains("\\"));
   }
 

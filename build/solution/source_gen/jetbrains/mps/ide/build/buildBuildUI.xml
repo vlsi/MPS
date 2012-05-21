@@ -12,6 +12,8 @@
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
   <property name="artifacts.buildDebuggerPlugin" location="${build.dir}/artifacts/buildDebuggerPlugin" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
@@ -70,6 +72,7 @@
       <zipfileset file="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
+    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">

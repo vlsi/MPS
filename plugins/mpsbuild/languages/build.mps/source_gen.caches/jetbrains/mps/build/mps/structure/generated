@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9a8mibbxrosfc3djbcax071n54m8fgc">
+<dependencies version="2" modelHash="-2vxnbtjd1sqskj8leo63lspdwmfhtc3">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -9,7 +9,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="3cwewrs4res5msmdgkiiy0o5hr0pgv8" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="6vlx0lz6govs9r83a1bmfplozwba10d" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
   <common hash="7nm6dyddzlf5tj47jdtu7fm8mj6r0y1" dependsOnNodes="true">
     <dep root="1265949165890536423" />
@@ -39,6 +39,13 @@
     <dep root="5253498789149547823" />
     <dep root="5253498789149585690" />
     <dep root="5253498789149588970" />
+    <dep root="6592112598314498926" />
+    <dep root="6592112598314498932" />
+    <dep root="6592112598314499027" />
+    <dep root="6592112598314499036" />
+    <dep root="6592112598314499051" />
+    <dep root="6592112598314586625" />
+    <dep root="6592112598314795900" />
     <dep root="7259033139236285166" />
     <dep root="7655580649838764660" />
     <dep root="7753544965996377997" />
@@ -149,13 +156,45 @@
   <source id="4356762679305675652" name="BuildMpsLayout_ModuleXml_CustomJarLocation" hash="8y160hf3h6o17fs5rx2di41sk7j789a">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7753544965996377997" name="BuildMps_Branding" hash="-7xihh2ovjy2ak1ircp2qjwbosewo3y5">
+  <source id="7753544965996377997" name="BuildMps_Branding" hash="99wwdc887kh4t980qy7mz7wmvg9kzoi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7753544965996489991" name="BuildMps_BrandingUpdateSite" hash="81d8etw48qham7w54n7x31re2a7ntn">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7753544965996489992" name="BuildMps_BrandingHelp" hash="clfkb6wh4rj17vm3vk96tb0sxs3dfmv">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6592112598314498926" name="BuildMpsLayout_Plugin" hash="-1188p9l8id712mo2zeejqg6qzoh13kh">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6592112598314498932" name="BuildMps_IdeaPlugin" hash="1i7m9di2ifdtqj37zgcthujcy6g4ryr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6592112598314499027" name="BuildMps_IdeaPluginDependency" hash="8d06qukzyabuqf0tfe4z8h9gj4k5ilu">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6592112598314499036" name="BuildMps_IdeaPluginModule" hash="ws3wqhwe1mfisk8ql2tpy1vp9onowg">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6592112598314499051" name="BuildMps_IdeaPluginContent" hash="-9fxnsovad9urpnhjcguvp3e1idfn2f4">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6592112598314529916" name="qualifiedName" hash="-3s2ntblacl2ssj3ksssz9xw7wnye3d7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="qualifiedName_PropertySupport.java" />
+  </source>
+  <source id="6592112598314586625" name="BuildMps_IdeaPluginGroup" hash="-7yaw5vfs6mm6fc5yubnwn39zamwztwl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6592112598314795900" name="BuildMpsLayout_PluginDescriptor" hash="7scv7u2abcibgz9di17nyhzw1q35ejh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>

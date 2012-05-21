@@ -8,8 +8,8 @@ public class BuildLayout_EchoProperties_BehaviorDescriptor extends BuildLayout_N
   public BuildLayout_EchoProperties_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
-    return BuildLayout_EchoProperties_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue);
+  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
+    return BuildLayout_EchoProperties_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
 
   @Override

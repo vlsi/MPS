@@ -8,8 +8,8 @@ public class BuildLayout_EchoXml_BehaviorDescriptor extends BuildLayout_Node_Beh
   public BuildLayout_EchoXml_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
-    return BuildLayout_EchoXml_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue);
+  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
+    return BuildLayout_EchoXml_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
 
   @Override

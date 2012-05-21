@@ -11,8 +11,8 @@ public abstract class BuildLayout_NamedContainer_BehaviorDescriptor extends Buil
   public BuildLayout_NamedContainer_BehaviorDescriptor() {
   }
 
-  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
-    return BuildLayout_NamedContainer_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue);
+  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
+    return BuildLayout_NamedContainer_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
 
   public String virtual_getApproximateName_5610619299014531547(SNode thisNode) {

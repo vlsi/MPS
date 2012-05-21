@@ -7,6 +7,8 @@
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
@@ -169,6 +171,7 @@
       <zipfileset dir="${mps_home}/build/solution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.build" />
       <zipfileset dir="${mps_home}/build/solution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.build/models" />
     </jar>
+    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">

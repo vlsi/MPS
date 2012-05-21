@@ -9,6 +9,8 @@
   <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <path id="path.java.library.idea-vcs">
     <fileset dir="${artifacts.IDEA}/plugins/git4idea/lib" includes="*.jar" />
@@ -39,6 +41,7 @@
     <jar destfile="${build.layout}/plugins/vcs/lib/mps-vcs-core.jar">
       <fileset dir="${build.tmp}/java/out/vcs-core" />
     </jar>
+    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">

@@ -7,6 +7,8 @@
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/languages" />
@@ -458,6 +460,7 @@
     <copy todir="${build.layout}/languages/util/jetbrains.mps.gwt.client">
       <fileset file="${mps_home}/languages/util/gwtsupport/languages/client/redist/gwt-user.jar" />
     </copy>
+    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">

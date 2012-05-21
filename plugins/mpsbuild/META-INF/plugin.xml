@@ -16,7 +16,7 @@
 
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
     <id>jetbrains.mps.build</id>
-    <name>MPS Build language</name>
+    <name>MPS Build languages</name>
     <description>Declarative build languages</description>
     <category>Custom Languages</category>
     <version>1.0.0</version>

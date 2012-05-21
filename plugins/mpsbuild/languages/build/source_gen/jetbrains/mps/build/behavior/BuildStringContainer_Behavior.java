@@ -9,17 +9,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildStringContainer_Behavior {
-  private static Class[] PARAMETERS_9184644532456897464 = {SNode.class, String.class};
+  private static Class[] PARAMETERS_9184644532456897464 = {SNode.class, String.class, String.class};
 
   public static void init(SNode thisNode) {
   }
 
-  public static boolean call_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
+  public static boolean call_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, propertyValue);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, propertyValue, role);
   }
 
-  public static boolean callSuper_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, propertyValue);
+  public static boolean callSuper_isValidPart_9184644532456897464(SNode thisNode, String callerConceptFqName, String propertyValue, String role) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringContainer"), callerConceptFqName, "virtual_isValidPart_9184644532456897464", PARAMETERS_9184644532456897464, propertyValue, role);
   }
 }
