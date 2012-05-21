@@ -1,7 +1,7 @@
-<project name="buildTest" default="build" basedir="../../../">
+<project name="buildTest2" default="build" basedir="../../../">
   <property name="build.dir" location="build" />
-  <property name="build.tmp" location="${build.dir}/tmp/buildTest" />
-  <property name="build.layout" location="${build.dir}/artifacts/buildTest" />
+  <property name="build.tmp" location="${build.dir}/tmp/buildTest2" />
+  <property name="build.layout" location="${build.dir}/artifacts/buildTest2" />
   <property name="artifacts.buildMPS" location="../../../../build/artifacts/buildMPS" />
   <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
   <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}" />
@@ -12,7 +12,22 @@
   <property name="buildCore.version" value="${import.buildMPS.buildCore.version}" />
   
   <target name="assemble" depends="classes">
-    <mkdir dir="${build.layout}/sandbox" />
+    <mkdir dir="${build.layout}/plugins" />
+    <mkdir dir="${build.layout}/plugins/mps-buildTest2" />
+    <mkdir dir="${build.layout}/plugins/mps-buildTest2/META-INF" />
+    <echoxml file="${build.layout}/plugins/mps-buildTest2/META-INF/plugin.xml">
+      <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <id>jetbrains.mps.buildTest2</id>
+        <name>Build Test SandBox</name>
+        <version>1.0.0</version>
+        <depends>jetbrains.mps.core</depends>
+        
+        <extensions defaultExtensionNs="com.intellij">
+          <mps.LanguageLibrary dir="/languages" />
+        </extensions>
+      </idea-plugin>
+    </echoxml>
+    <mkdir dir="${build.layout}/plugins/mps-buildTest2/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.build.sandbox.jar/META-INF/module.xml">
@@ -26,12 +41,12 @@
         <sources jar="jetbrains.mps.build.sandbox-src.jar" descriptor="sandbox.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/sandbox/jetbrains.mps.build.sandbox.jar">
+    <jar destfile="${build.layout}/plugins/mps-buildTest2/languages/jetbrains.mps.build.sandbox.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.sandbox" />
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar" />
     </jar>
-    <jar destfile="${build.layout}/sandbox/jetbrains.mps.build.sandbox-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-buildTest2/languages/jetbrains.mps.build.sandbox-src.jar">
       <fileset dir="${basedir}/jetbrains.mps.build.sandbox/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/jetbrains.mps.build.sandbox/sandbox.msd" prefix="module" />
       <zipfileset dir="${basedir}/jetbrains.mps.build.sandbox/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
