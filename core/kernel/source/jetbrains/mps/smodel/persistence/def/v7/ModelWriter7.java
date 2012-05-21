@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelLoader.StagedLoadingException;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
@@ -40,10 +41,10 @@ public class ModelWriter7 implements IModelWriter {
     rootElement.setAttribute(ModelPersistence.MODEL_UID, sourceModel.getSModelReference().toString());
 
     int version = myModel.getSModelHeader().getVersion();
-    if(version >= 0) {
+    if (version >= 0) {
       rootElement.setAttribute(SModelHeader.VERSION, Integer.toString(version));
     }
-    if(myModel.getSModelHeader().isDoNotGenerate()) {
+    if (myModel.getSModelHeader().isDoNotGenerate()) {
       rootElement.setAttribute(SModelHeader.DO_NOT_GENERATE, "true");
     }
 
@@ -137,7 +138,12 @@ public class ModelWriter7 implements IModelWriter {
       linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));
       linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, myHelper.genTarget(reference));
-      DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, myHelper.genResolveInfo(reference));
+      try {
+        String ri = myHelper.genResolveInfo(reference);
+        DocUtil.setNotNullAttribute(linkElement, ModelPersistence.RESOLVE_INFO, ri);
+      } catch (StagedLoadingException e) {
+        //workaround for  MPS-15904 - model file can contain illegal data due to merge and model can't be loaded in this case
+      }
       element.addContent(linkElement);
     }
 
