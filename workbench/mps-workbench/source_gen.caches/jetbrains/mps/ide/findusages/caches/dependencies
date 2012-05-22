@@ -47,9 +47,6 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.findusages.caches.InstanceHandler" file="InstanceHandler.java">
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport" file="StubModelsFastFindSupport.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndex" />

@@ -55,7 +55,7 @@ public class StubModelsIndexer implements ApplicationComponent {
           if (!(targetNodeId instanceof SNodeId.Foreign)) {
             return null;
           }
-          result.put(new IdIndexEntry(((SNodeId.Foreign) targetNodeId).getId(), false), 0);
+          result.put(new IdIndexEntry(((SNodeId.Foreign) targetNodeId).getId(), true), 0);
           return null;
         }
       });
