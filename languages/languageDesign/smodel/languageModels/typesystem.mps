@@ -104,8 +104,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1178287491368">
-      <property name="name" nameId="tpck.1169194664001" value="supertypesOf_SNodeListType_SNodeListType" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <property name="name" nameId="tpck.1169194664001" value="supertypesOf_SNodeListType" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="1178287491374">
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />

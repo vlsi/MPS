@@ -20,23 +20,23 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
-public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  public supertypesOf_SNodeListType_SNodeListType_SubtypingRule() {
+public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  public supertypesOf_SNodeListType_SubtypingRule() {
   }
 
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     if (elementConcept != null) {
-      ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SNodeListType_SubtypingRule.QuotationClass_csbboy_a0a0a0c0a().createNode(elementConcept, typeCheckingContext));
+      ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0a0c0a().createNode(elementConcept, typeCheckingContext));
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept, false);
       for (SNode superConcept : ListSequence.fromList(superConcepts)) {
-        ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SNodeListType_SubtypingRule.QuotationClass_csbboy_a0a0a0c0c0a().createNode(superConcept, typeCheckingContext));
+        ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0a0c0c0a().createNode(superConcept, typeCheckingContext));
       }
       // ========== 
-      ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SNodeListType_SubtypingRule.QuotationClass_csbboy_a0a0e0c0a().createNode(typeCheckingContext));
+      ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0e0c0a().createNode(typeCheckingContext));
     }
-    ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SNodeListType_SubtypingRule.QuotationClass_csbboy_a0a0d0a().createNode(typeCheckingContext));
+    ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0d0a().createNode(typeCheckingContext));
     return supertypes;
   }
 
@@ -55,8 +55,8 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     return false;
   }
 
-  public static class QuotationClass_csbboy_a0a0a0c0a {
-    public QuotationClass_csbboy_a0a0a0c0a() {
+  public static class QuotationClass_f6ipu3_a0a0a0c0a {
+    public QuotationClass_f6ipu3_a0a0a0c0a() {
     }
 
     public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
@@ -98,8 +98,8 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     }
   }
 
-  public static class QuotationClass_csbboy_a0a0a0c0c0a {
-    public QuotationClass_csbboy_a0a0a0c0c0a() {
+  public static class QuotationClass_f6ipu3_a0a0a0c0c0a {
+    public QuotationClass_f6ipu3_a0a0a0c0c0a() {
     }
 
     public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
@@ -129,8 +129,8 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     }
   }
 
-  public static class QuotationClass_csbboy_a0a0e0c0a {
-    public QuotationClass_csbboy_a0a0e0c0a() {
+  public static class QuotationClass_f6ipu3_a0a0e0c0a {
+    public QuotationClass_f6ipu3_a0a0e0c0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -158,8 +158,8 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     }
   }
 
-  public static class QuotationClass_csbboy_a0a0d0a {
-    public QuotationClass_csbboy_a0a0d0a() {
+  public static class QuotationClass_f6ipu3_a0a0d0a {
+    public QuotationClass_f6ipu3_a0a0d0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
