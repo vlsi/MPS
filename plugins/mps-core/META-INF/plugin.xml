@@ -15,17 +15,13 @@
   -->
 
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <id>jetbrains.mps.build</id>
-    <name>MPS Build languages</name>
-    <description>Declarative build languages</description>
-    <category>Custom Languages</category>
-    <version>1.0.0</version>
-    <vendor url="http://www.jetbrains.com" email="support@jetbrains.com">JetBrains s.r.o.</vendor>
-    <depends>jetbrains.mps.core</depends>
-    <depends>jetbrains.mps.execution.configurations</depends>
+  <id>jetbrains.mps.core</id>
+  <name>MPS Core</name>
+  <category>Custom Languages</category>
+  <version>1.0.0</version>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <mps.LanguageLibrary dir="/languages"/>
-        <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
-    </extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
+  </extensions>
 </idea-plugin>
