@@ -19,6 +19,8 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_8923957828369629274(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -54,11 +56,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7865129668867189303(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getNode();
-  }
-
-  public static Object referenceMacro_GetReferent_7865129668867189312(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "e";
+    return SNodeOperations.cast(_context.getNode().getReferent("exc"), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
 
   public static Object referenceMacro_GetReferent_7793246093815939787(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -121,6 +119,12 @@ public class QueriesGenerated {
     return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(_context.getNode(), "body", true), false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return it != SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~RuntimeException");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        SNode n = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
+        n.setReferent("exc", it, false);
+        return n;
       }
     }).toListSequence();
   }

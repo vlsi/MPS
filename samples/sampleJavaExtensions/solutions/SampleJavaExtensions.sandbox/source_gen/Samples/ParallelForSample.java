@@ -37,7 +37,6 @@ public class ParallelForSample {
         Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               log("Starting calculation for number " + localA + " in thread " + Thread.currentThread());
               Thread.sleep(localA * 1000);
               // External (compiled) method calls can be annotated as thread-safe to indicate that they are safe to call 
@@ -89,7 +88,6 @@ public class ParallelForSample {
         Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               log("Touching " + doNotMessupWith);
 
               int messupWithMeSinceImlocal = 1;
@@ -144,7 +142,6 @@ public class ParallelForSample {
         Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               log("Name: " + localA);
               if (localA == "Joe") {
                 throw new RuntimeException("test");
