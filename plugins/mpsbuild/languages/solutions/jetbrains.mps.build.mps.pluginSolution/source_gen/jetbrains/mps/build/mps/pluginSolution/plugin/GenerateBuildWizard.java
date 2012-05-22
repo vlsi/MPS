@@ -8,7 +8,6 @@ import javax.swing.JComponent;
 import com.intellij.ide.wizard.Step;
 
 public class GenerateBuildWizard extends AbstractWizard {
-  private final String myTitle;
   private final Project myProject;
   protected final AbstractBuildGenerator myGenerator;
   protected IErrorHandler myErrorHandler = new IErrorHandler() {
@@ -19,9 +18,8 @@ public class GenerateBuildWizard extends AbstractWizard {
 
   public GenerateBuildWizard(String title, Project project, AbstractBuildGenerator generator) {
     super(title, project);
-    this.myTitle = title;
-    this.myProject = project;
-    this.myGenerator = generator;
+    myProject = project;
+    myGenerator = generator;
   }
 
   public String getHelpID() {
@@ -36,22 +34,22 @@ public class GenerateBuildWizard extends AbstractWizard {
   }
 
   protected void updateStep() {
-    this.getFinishButton().setEnabled((this.getCurrentStep() == this.mySteps.size() - 1) && this.myGenerator.isValid());
+    getFinishButton().setEnabled((getCurrentStep() == mySteps.size() - 1) && myGenerator.isValid());
     super.updateStep();
   }
 
   protected void doOKAction() {
     super.doOKAction();
-    this.myGenerator.generate();
+    myGenerator.generate();
   }
 
   public void initWizard() {
-    Step moduleStep = new SolutionStep(this.myProject, this.myGenerator, this.myErrorHandler);
-    Step modelStep = new ModelStep(this.myProject, this.myGenerator, this.myErrorHandler);
-    Step languagesStep = new LanguagesStep(this.myProject, this.myGenerator, this.myErrorHandler);
-    this.addStep(moduleStep);
-    this.addStep(modelStep);
-    this.addStep(languagesStep);
-    this.init();
+    Step moduleStep = new SolutionStep(myProject, myGenerator, myErrorHandler);
+    Step modelStep = new ModelStep(myProject, myGenerator, myErrorHandler);
+    Step languagesStep = new LanguagesStep(myProject, myGenerator, myErrorHandler);
+    addStep(moduleStep);
+    addStep(modelStep);
+    addStep(languagesStep);
+    init();
   }
 }
