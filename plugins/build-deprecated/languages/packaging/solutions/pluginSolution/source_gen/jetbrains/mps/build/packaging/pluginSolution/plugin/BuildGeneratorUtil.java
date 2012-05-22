@@ -91,6 +91,6 @@ public class BuildGeneratorUtil {
   }
 
   public static ModuleReference getPackagingLanguageReference() {
-    return ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.packaging", Language.class).getModuleReference();
+    return ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference();
   }
 }
