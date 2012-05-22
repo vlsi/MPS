@@ -40,7 +40,9 @@
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
   </dependency>
   <dependency className="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport" file="StubModelsFastFindSupport.java">
+    <classNode dependClassName="com.intellij.openapi.vfs.VfsUtilCore" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileVisitor" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndex" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />

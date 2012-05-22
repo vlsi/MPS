@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import java.util.Collection;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import com.intellij.openapi.vfs.VfsUtilCore;
+import com.intellij.openapi.vfs.VirtualFileVisitor;
 import jetbrains.mps.ide.findusages.ConcreteFilesGlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
@@ -72,14 +74,23 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
         id.value(elem)
       );
       // get all files in scope 
-      ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
-      for (SModelDescriptor sm : models) {
+      final ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
+      for (final SModelDescriptor sm : models) {
         assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
         ModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
         assert source instanceof StubModelDataSource : source.getClass().getName();
         Collection<String> filenames = ((StubModelDataSource) source).getFilesToListen();
         for (String path : filenames) {
-          scopeFiles.addLink(sm, VirtualFileUtils.getVirtualFile(path));
+          final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
+          VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor() {
+            public boolean visitFile(@NotNull VirtualFile file) {
+              if (file.isDirectory()) {
+                return true;
+              }
+              scopeFiles.addLink(sm, file);
+              return true;
+            }
+          });
         }
       }
       // filter files with usages 
