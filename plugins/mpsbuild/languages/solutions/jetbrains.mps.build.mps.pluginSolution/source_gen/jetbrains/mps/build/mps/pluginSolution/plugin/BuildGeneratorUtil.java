@@ -17,13 +17,9 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleFileTracker;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 
 public class BuildGeneratorUtil {
@@ -67,27 +63,18 @@ public class BuildGeneratorUtil {
       if (module instanceof Solution) {
         solution = (Solution) module;
       } else if (module == null) {
-        solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionFile);
+        solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionName, solutionFile);
       } else {
         return null;
       }
     } else {
-      solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionFile);
+      solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionName, solutionFile);
     }
     return solution;
   }
 
-  public static Solution createSolutionFromFile(final MPSProject mpsProject, final IFile solutionDescriptorFile) {
-    SolutionDescriptor descriptor = new SolutionDescriptor();
-    descriptor.setCompileInMPS(true);
-    String fileName = solutionDescriptorFile.getName();
-    descriptor.setNamespace(fileName.substring(0, fileName.length() - 4));
-    ModelRoot mr = new ModelRoot();
-    mr.setPath(solutionDescriptorFile.getParent().getPath());
-    descriptor.getModelRoots().add(mr);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, descriptor, MacrosFactory.forModuleFile(solutionDescriptorFile));
-    ModulesMiner.ModuleHandle handle = new ModulesMiner.ModuleHandle(solutionDescriptorFile, descriptor);
-    return (Solution) ModuleRepositoryFacade.createModule(handle, mpsProject);
+  public static Solution createSolutionFromFile(final MPSProject mpsProject, String solutionName, final IFile solutionDescriptorFile) {
+    return NewModuleUtil.createSolution(solutionName, solutionDescriptorFile.getParent().getPath(), mpsProject);
   }
 
   public static ModuleReference getPackagingLanguageReference() {
