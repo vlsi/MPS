@@ -1341,7 +1341,7 @@
     <nodeInfo nodeId="1841835149314792837" fileName="Context.java" startLine="95" startPosition="5" endLine="96" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1841835149314794232" fileName="Context.java" startLine="97" startPosition="57" endLine="98" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1841835149314794256" fileName="Context.java" startLine="99" startPosition="5" endLine="100" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1841835149314794289" fileName="Context.java" startLine="101" startPosition="63" endLine="102" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1841835149314794289" fileName="Context.java" startLine="101" startPosition="86" endLine="102" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1841835149314794559" fileName="Context.java" startLine="103" startPosition="5" endLine="104" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1841835149314794571" fileName="Context.java" startLine="104" startPosition="71" endLine="105" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1841835149314837166" fileName="Context.java" startLine="108" startPosition="54" endLine="109" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1385,7 +1385,7 @@
     <scopeInfo nodeId="4045247515868404767" fileName="Context.java" startLine="88" startPosition="47" endLine="89" endPosition="104" />
     <scopeInfo nodeId="1841835149314794372" fileName="Context.java" startLine="93" startPosition="61" endLine="94" endPosition="58" />
     <scopeInfo nodeId="1841835149314792847" fileName="Context.java" startLine="97" startPosition="57" endLine="98" endPosition="18" />
-    <scopeInfo nodeId="1841835149314794265" fileName="Context.java" startLine="101" startPosition="63" endLine="102" endPosition="18" />
+    <scopeInfo nodeId="1841835149314794265" fileName="Context.java" startLine="101" startPosition="86" endLine="102" endPosition="18" />
     <scopeInfo nodeId="1841835149314837165" fileName="Context.java" startLine="108" startPosition="54" endLine="109" endPosition="31" />
     <scopeInfo nodeId="4959435991187166416" fileName="Context.java" startLine="113" startPosition="42" endLine="114" endPosition="25" />
     <scopeInfo nodeId="2531699772406296577" fileName="Context.java" startLine="119" startPosition="29" endLine="120" endPosition="30" />

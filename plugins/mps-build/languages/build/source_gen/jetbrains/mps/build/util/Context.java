@@ -98,7 +98,7 @@ public class Context {
       return null;
     }
     IModule module = modelDescriptor.getModule();
-    if (module == null || module.getDescriptorFile() == null) {
+    if (module == null || module.getDescriptorFile() == null || module.isPackaged()) {
       return null;
     }
     String basePath = module.getDescriptorFile().getParent().getPath();
