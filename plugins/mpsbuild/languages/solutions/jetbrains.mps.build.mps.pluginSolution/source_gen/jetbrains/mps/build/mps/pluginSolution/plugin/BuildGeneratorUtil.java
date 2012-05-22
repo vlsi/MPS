@@ -18,9 +18,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
 
 public class BuildGeneratorUtil {
   public BuildGeneratorUtil() {
@@ -75,9 +72,5 @@ public class BuildGeneratorUtil {
 
   public static Solution createSolutionFromFile(final MPSProject mpsProject, String solutionName, final IFile solutionDescriptorFile) {
     return NewModuleUtil.createSolution(solutionName, solutionDescriptorFile.getParent().getPath(), mpsProject);
-  }
-
-  public static ModuleReference getPackagingLanguageReference() {
-    return ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference();
   }
 }
