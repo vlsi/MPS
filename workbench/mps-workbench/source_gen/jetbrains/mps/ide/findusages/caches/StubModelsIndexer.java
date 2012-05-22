@@ -5,7 +5,6 @@ package jetbrains.mps.ide.findusages.caches;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
 import jetbrains.mps.ide.projectPane.fileSystem.MPSWorkbenchFileTypeFactory;
-import jetbrains.mps.smodel.SNodeId.Foreign;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import java.util.Map;
@@ -14,12 +13,10 @@ import com.intellij.util.indexing.FileContent;
 import java.util.HashMap;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
-import jetbrains.mps.baseLanguage.javastub.CacheClassifierUpdater;
 import jetbrains.mps.baseLanguage.javastub.SReferenceHandler;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.baseLanguage.javastub.CacheClassifierLoader;
 import jetbrains.mps.reloading.ClassBytesProvider;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.NameUtil;
@@ -58,7 +55,7 @@ public class StubModelsIndexer implements ApplicationComponent {
           if (!(targetNodeId instanceof SNodeId.Foreign)) {
             return null;
           }
-          result.put(new IdIndexEntry(((Foreign) targetNodeId).getId(), false), 0);
+          result.put(new IdIndexEntry(((SNodeId.Foreign) targetNodeId).getId(), false), 0);
           return null;
         }
       });
