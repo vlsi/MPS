@@ -16,16 +16,10 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.project.MPSProject;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.project.StandaloneMPSProject;
-import com.intellij.openapi.application.ModalityState;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
 import jetbrains.mps.smodel.SNode;
@@ -92,21 +86,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         runnable.run();
         final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
         project.addModule(solution.getModuleReference());
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            ProgressManager.getInstance().run(new Task.Modal(BuildGeneratorImpl.this.myProject, "Reloading Classes", false) {
-              public void run(@NotNull ProgressIndicator progressIndicator) {
-                progressIndicator.setIndeterminate(true);
-                progressIndicator.setText("Reloading Classes... Please Wait");
-                ModelAccess.instance().runWriteAction(new Runnable() {
-                  public void run() {
-                    ((StandaloneMPSProject) project).update();
-                  }
-                });
-              }
-            });
-          }
-        }, ModalityState.NON_MODAL);
       }
     }, myProject.getComponent(MPSProject.class));
   }
