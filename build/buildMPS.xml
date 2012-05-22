@@ -112,6 +112,9 @@
     </copy>
     <mkdir dir="${build.layout}/plugins" />
     <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildCoreEx}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildPlugins}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">

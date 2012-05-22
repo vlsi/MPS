@@ -42,6 +42,9 @@
     <copy todir="${build.layout}/plugins/mps-core/languages">
       <fileset dir="${artifacts.buildCoreEx}/languages" />
     </copy>
+    <copy todir="${build.layout}/plugins/mps-core/languages">
+      <fileset dir="${artifacts.buildCoreEx}/plugins/mps-core/languages" />
+    </copy>
     <mkdir dir="${build.layout}/plugins/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/asm.jar" todir="${build.layout}/plugins/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" todir="${build.layout}/plugins/mps-core/lib" />
