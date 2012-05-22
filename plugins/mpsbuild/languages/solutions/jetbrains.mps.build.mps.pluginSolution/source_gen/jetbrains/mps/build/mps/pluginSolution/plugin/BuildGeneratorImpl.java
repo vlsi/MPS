@@ -29,6 +29,9 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.PathMacros;
 import java.util.ArrayList;
+import jetbrains.mps.build.util.Context;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
@@ -36,10 +39,7 @@ import jetbrains.mps.build.mps.util.ModuleLoader;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.build.util.Context;
-import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -140,7 +140,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNode folder = new BuildGeneratorImpl.QuotationClass_un708i_a0a1a5().createNode(name);
 
     SModel targetSModel = targetModelDescriptor.getSModel();
-    BuildGeneratorImpl.createContent(selectedData, folder, modules, targetSModel);
+    createContent(selectedData, folder, modules, targetSModel);
 
     Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
     List<SNode> macroses = new ArrayList<SNode>();
@@ -148,8 +148,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0i0f().createNode(macro));
     }
 
+    SNode buildProject = new BuildGeneratorImpl.QuotationClass_un708i_a0a01a5().createNode(name + ".zip", folder, name, SetSequence.fromSet(modules).toListSequence(), macroses);
 
-    SNode buildProject = new BuildGeneratorImpl.QuotationClass_un708i_a0a11a5().createNode(name + ".zip", folder, name, SetSequence.fromSet(modules).toListSequence(), macroses);
+    try {
+      String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetSModel).makeRelative(myProject.getBasePath());
+      SPropertyOperations.set(buildProject, "internalBaseDirectory", relativeToModuleProjectPath);
+    } catch (RelativePathHelper.PathException e) {
+      if (log.isWarnEnabled()) {
+        log.warn("Cant calculate project path relative to module " + targetModelDescriptor.getModule(), e);
+      }
+    }
 
     // add mps layout to the target model 
     SModelOperations.addRootNode(targetSModel, buildProject);
@@ -182,13 +190,13 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   @Nullable
-  public static SNode createComponent(NodeData data, SModel targetSModel, Set<SNode> modules) {
+  public SNode createComponent(NodeData data, SModel targetSModel, Set<SNode> modules) {
     if (data instanceof ModuleData) {
       IModule module = ((ModuleData) data).getModule();
 
       String relativeDescriptorPath;
       try {
-        relativeDescriptorPath = Context.defaultContext().getRelativePathHelper(targetSModel).makeRelative(module.getDescriptorFile().getPath());
+        relativeDescriptorPath = new RelativePathHelper(myProject.getBasePath()).makeRelative(module.getDescriptorFile().getPath());
       } catch (RelativePathHelper.PathException e) {
         if (log.isWarnEnabled()) {
           log.warn("Can't make relative path from build model base directory to module" + module, e);
@@ -196,7 +204,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         return null;
       }
       String[] parts = relativeDescriptorPath.split("/");
-      SNode path = new BuildGeneratorImpl.QuotationClass_un708i_a0a5a0a0().createNode();
+      SNode path = new BuildGeneratorImpl.QuotationClass_un708i_a0a5a0a7().createNode();
       SNode compositePart = SLinkOperations.getTarget(path, "compositePart", true);
       for (String part : parts) {
         SPropertyOperations.set(compositePart, "head", part);
@@ -207,22 +215,22 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
       SNode moduleNode;
       if (module instanceof Solution) {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a11a0a0().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a11a0a7().createNode(path);
       } else if (module instanceof Language) {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0a().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0h().createNode(path);
       } else {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0a_0().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0h_0().createNode(path);
       }
       SetSequence.fromSet(modules).addElement(moduleNode);
-      return new BuildGeneratorImpl.QuotationClass_un708i_a0n0a0a().createNode(moduleNode);
+      return new BuildGeneratorImpl.QuotationClass_un708i_a0n0a0h().createNode(moduleNode);
     } else if (data instanceof NamespaceData) {
       String namespace = ((NamespaceData) data).getText();
-      return new BuildGeneratorImpl.QuotationClass_un708i_a0b0a0a0().createNode(namespace);
+      return new BuildGeneratorImpl.QuotationClass_un708i_a0b0a0a7().createNode(namespace);
     }
     return null;
   }
 
-  private static void createContent(List<NodeData> selectedData, SNode folder, Set<SNode> modules, SModel targetSModel) {
+  private void createContent(List<NodeData> selectedData, SNode folder, Set<SNode> modules, SModel targetSModel) {
     Map<NodeData, SNode> createdComponent = MapSequence.fromMap(new HashMap<NodeData, SNode>());
     Set<SNode> topLevel = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (NodeData data : ListSequence.fromList(selectedData)) {
@@ -259,174 +267,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     // 
     for (SNode topLevelComponent : SetSequence.fromSet(topLevel)) {
       ListSequence.fromList(SLinkOperations.getTargets(folder, "children", true)).addElement(topLevelComponent);
-    }
-  }
-
-  public static class QuotationClass_un708i_a0a5a0a0 {
-    public QuotationClass_un708i_a0a5a0a0() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_2;
-          quotedNode1_4.setProperty("head", "");
-          quotedNode_1.addChild("compositePart", quotedNode1_4);
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a0a0a11a0a0 {
-    public QuotationClass_un708i_a0a0a11a0a0() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Solution", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("compact", "true");
-        {
-          quotedNode_2 = (SNode) parameter_5;
-          SNode quotedNode1_4;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_4 = quotedNode_2;
-          }
-          if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("path", HUtil.copyIfNecessary(quotedNode1_4));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a0a0a0l0a0a {
-    public QuotationClass_un708i_a0a0a0l0a0a() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Language", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("compact", "true");
-        {
-          quotedNode_2 = (SNode) parameter_5;
-          SNode quotedNode1_4;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_4 = quotedNode_2;
-          }
-          if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("path", HUtil.copyIfNecessary(quotedNode1_4));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a0a0a0l0a0a_0 {
-    public QuotationClass_un708i_a0a0a0l0a0a_0() {
-    }
-
-    public SNode createNode(Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.setProperty("compact", "true");
-        {
-          quotedNode_2 = (SNode) parameter_5;
-          SNode quotedNode1_4;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
-          } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_4 = quotedNode_2;
-          }
-          if (quotedNode1_4 != null) {
-            quotedNode_1.addChild("path", HUtil.copyIfNecessary(quotedNode1_4));
-          }
-        }
-        result = quotedNode1_3;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a0n0a0a {
-    public QuotationClass_un708i_a0n0a0a() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("module", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a0b0a0a0 {
-    public QuotationClass_un708i_a0b0a0a0() {
-    }
-
-    public SNode createNode(Object parameter_7) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_5 = quotedNode_2;
-          {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_6 = quotedNode_3;
-            quotedNode1_6.setProperty("text", (String) parameter_7);
-            quotedNode_2.addChild("parts", quotedNode1_6);
-          }
-          quotedNode_1.addChild("containerName", quotedNode1_5);
-        }
-        result = quotedNode1_4;
-      }
-      return result;
     }
   }
 
@@ -478,8 +318,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a11a5 {
-    public QuotationClass_un708i_a0a11a5() {
+  public static class QuotationClass_un708i_a0a01a5 {
+    public QuotationClass_un708i_a0a01a5() {
     }
 
     public SNode createNode(Object parameter_24, Object parameter_25, Object parameter_26, Object parameter_27, Object parameter_28) {
@@ -566,6 +406,174 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           }
         }
         result = quotedNode1_15;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a5a0a7 {
+    public QuotationClass_un708i_a0a5a0a7() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceProjectRelativePath", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.setProperty("head", "");
+          quotedNode_1.addChild("compositePart", quotedNode1_4);
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a0a11a0a7 {
+    public QuotationClass_un708i_a0a0a11a0a7() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Solution", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.setProperty("compact", "true");
+        {
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("path", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a0a0l0a0h {
+    public QuotationClass_un708i_a0a0a0l0a0h() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Language", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.setProperty("compact", "true");
+        {
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("path", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a0a0l0a0h_0 {
+    public QuotationClass_un708i_a0a0a0l0a0h_0() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.setProperty("compact", "true");
+        {
+          quotedNode_2 = (SNode) parameter_5;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_4 = HUtil.copyIfNecessary(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_4 = quotedNode_2;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_1.addChild("path", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0n0a0h {
+    public QuotationClass_un708i_a0n0a0h() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("module", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0b0a0a7 {
+    public QuotationClass_un708i_a0b0a0a7() {
+    }
+
+    public SNode createNode(Object parameter_7) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          {
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_6 = quotedNode_3;
+            quotedNode1_6.setProperty("text", (String) parameter_7);
+            quotedNode_2.addChild("parts", quotedNode1_6);
+          }
+          quotedNode_1.addChild("containerName", quotedNode1_5);
+        }
+        result = quotedNode1_4;
       }
       return result;
     }
