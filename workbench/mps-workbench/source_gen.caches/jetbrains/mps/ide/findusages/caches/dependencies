@@ -55,8 +55,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.ModelDataSource" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />
+    <classNode dependClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.stubs.util.JavaStubModelDataSource" />
-    <classNode dependClassName="jetbrains.mps.stubs.util.JavaStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.Mapper" />
     <classNode dependClassName="jetbrains.mps.util.containers.ManyToManyMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.MultiMap" />

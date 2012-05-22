@@ -36,7 +36,7 @@
   <import index="o9ng" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.objectweb.asm.tree(MPS.Core/org.objectweb.asm.tree@java_stub)" version="-1" />
   <import index="5heg" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#gnu.trove(MPS.Core/gnu.trove@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <import index="6xpj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.stubs(jetbrains.mps.stubs@java_stub)" version="-1" implicit="yes" />
+  <import index="6xpj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.stubs(jetbrains.mps.stubs@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
@@ -514,12 +514,22 @@
                     <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2810982631457565054">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2810982631457565049" resolveInfo="sm" />
                     </node>
-                    <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2810982631457565055">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yt7t.~JavaStubModelDescriptor" resolveInfo="JavaStubModelDescriptor" />
+                    <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6651498924798181175">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6xpj.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
                     </node>
                   </node>
-                  <node role="message" roleId="tpee.1160998916832" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2810982631457565056">
-                    <property name="value" nameId="tpee.1070475926801" value="a non-regular model is passed to FindSupport designed for regular models" />
+                  <node role="message" roleId="tpee.1160998916832" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6651498924798165506">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6651498924798165482">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6651498924798165463">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2810982631457565049" resolveInfo="sm" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6651498924798165487">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dgetClass()%cjava%dlang%dClass" resolveInfo="getClass" />
+                      </node>
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6651498924798172755">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
+                    </node>
                   </node>
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2810982631457565057">
@@ -535,14 +545,37 @@
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2810982631457565063">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2810982631457565049" resolveInfo="sm" />
                           </node>
-                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2810982631457565064">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yt7t.~JavaStubModelDescriptor" resolveInfo="JavaStubModelDescriptor" />
+                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6651498924798181176">
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="6xpj.~BaseStubModelDescriptor" resolveInfo="BaseStubModelDescriptor" />
                           </node>
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2810982631457565065">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6xpj.~BaseStubModelDescriptor%dgetSource()%cjetbrains%dmps%dsmodel%ddescriptor%dsource%dModelDataSource" resolveInfo="getSource" />
                       </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.AssertStatement" typeId="tpee.1160998861373" id="6651498924798182450">
+                  <node role="condition" roleId="tpee.1160998896846" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="6651498924798182453">
+                    <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6651498924798182456">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="omdc.~StubModelDataSource" resolveInfo="StubModelDataSource" />
+                    </node>
+                    <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6651498924798182452">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2810982631457565058" resolveInfo="source" />
+                    </node>
+                  </node>
+                  <node role="message" roleId="tpee.1160998916832" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6651498924798182502">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6651498924798182478">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6651498924798182459">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2810982631457565058" resolveInfo="source" />
+                      </node>
+                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6651498924798182483">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dgetClass()%cjava%dlang%dClass" resolveInfo="getClass" />
+                      </node>
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6651498924798182507">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Class%dgetName()%cjava%dlang%dString" resolveInfo="getName" />
                     </node>
                   </node>
                 </node>
@@ -560,8 +593,8 @@
                           <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2810982631457565073">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2810982631457565058" resolveInfo="source" />
                           </node>
-                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2810982631457565074">
-                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="yt7t.~JavaStubModelDataSource" resolveInfo="JavaStubModelDataSource" />
+                          <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6651498924798182508">
+                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="omdc.~StubModelDataSource" resolveInfo="StubModelDataSource" />
                           </node>
                         </node>
                       </node>

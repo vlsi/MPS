@@ -18,8 +18,9 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.stubs.util.JavaStubModelDescriptor;
+import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import java.util.Collection;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.findusages.ConcreteFilesGlobalSearchScope;
@@ -73,9 +74,10 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
       // get all files in scope 
       ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
       for (SModelDescriptor sm : models) {
-        assert sm instanceof JavaStubModelDescriptor : "a non-regular model is passed to FindSupport designed for regular models";
-        ModelDataSource source = ((JavaStubModelDescriptor) sm).getSource();
-        Collection<String> filenames = ((JavaStubModelDataSource) source).getFilesToListen();
+        assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
+        ModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
+        assert source instanceof StubModelDataSource : source.getClass().getName();
+        Collection<String> filenames = ((StubModelDataSource) source).getFilesToListen();
         for (String path : filenames) {
           scopeFiles.addLink(sm, VirtualFileUtils.getVirtualFile(path));
         }

@@ -1,111 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2810982631457564914">
-    <nodeInfo nodeId="2810982631457564926" fileName="StubModelsFastFindSupport.java" startLine="34" startPosition="31" endLine="35" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2810982631457564936" fileName="StubModelsFastFindSupport.java" startLine="38" startPosition="34" endLine="39" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2810982631457564945" fileName="StubModelsFastFindSupport.java" startLine="43" startPosition="36" endLine="44" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="303301571174693050" fileName="StubModelsFastFindSupport.java" startLine="49" startPosition="38" endLine="50" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="303301571174693029" fileName="StubModelsFastFindSupport.java" startLine="54" startPosition="114" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="303301571174693055" fileName="StubModelsFastFindSupport.java" startLine="56" startPosition="7" endLine="57" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2810982631457564962" fileName="StubModelsFastFindSupport.java" startLine="58" startPosition="5" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="303301571174692917" fileName="StubModelsFastFindSupport.java" startLine="62" startPosition="133" endLine="63" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2810982631457565010" fileName="StubModelsFastFindSupport.java" startLine="66" startPosition="132" endLine="67" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2810982631457565886" fileName="StubModelsFastFindSupport.java" startLine="72" startPosition="8" endLine="73" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2810982631457565038" fileName="StubModelsFastFindSupport.java" startLine="73" startPosition="32" endLine="74" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2810982631457565052" fileName="StubModelsFastFindSupport.java" startLine="75" startPosition="42" endLine="76" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2810982631457565057" fileName="StubModelsFastFindSupport.java" startLine="76" startPosition="130" endLine="77" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2810982631457565066" fileName="StubModelsFastFindSupport.java" startLine="77" startPosition="76" endLine="78" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2810982631457565081" fileName="StubModelsFastFindSupport.java" startLine="79" startPosition="39" endLine="80" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2810982631457565888" fileName="StubModelsFastFindSupport.java" startLine="82" startPosition="7" endLine="83" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2810982631457565088" fileName="StubModelsFastFindSupport.java" startLine="83" startPosition="34" endLine="84" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2810982631457565096" fileName="StubModelsFastFindSupport.java" startLine="84" startPosition="107" endLine="85" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2810982631457565890" fileName="StubModelsFastFindSupport.java" startLine="85" startPosition="150" endLine="86" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2810982631457565122" fileName="StubModelsFastFindSupport.java" startLine="88" startPosition="65" endLine="89" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2810982631457565128" fileName="StubModelsFastFindSupport.java" startLine="92" startPosition="5" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2810982631457564918" fileName="StubModelsFastFindSupport.java" startLine="30" startPosition="89" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubModelsFastFindSupport#()V" />
-    <nodeInfo nodeId="303301571174692971" fileName="StubModelsFastFindSupport.java" startLine="53" startPosition="51" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2810982631457565076" fileName="StubModelsFastFindSupport.java" startLine="78" startPosition="93" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2810982631457565114" fileName="StubModelsFastFindSupport.java" startLine="87" startPosition="46" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2810982631457564922" fileName="StubModelsFastFindSupport.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="2810982631457564932" fileName="StubModelsFastFindSupport.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="303301571174693044" fileName="StubModelsFastFindSupport.java" startLine="48" startPosition="102" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2810982631457564976" fileName="StubModelsFastFindSupport.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelsWithPossibleInstances#(Ljava/util/Set;Ljava/util/Set;)Ljetbrains/mps/util/containers/MultiMap;" />
-    <nodeInfo nodeId="2810982631457565024" fileName="StubModelsFastFindSupport.java" startLine="68" startPosition="26" endLine="72" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2810982631457564941" fileName="StubModelsFastFindSupport.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="303301571174693031" fileName="StubModelsFastFindSupport.java" startLine="47" startPosition="121" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2810982631457565109" fileName="StubModelsFastFindSupport.java" startLine="86" startPosition="24" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="303301571174692966" fileName="StubModelsFastFindSupport.java" startLine="52" startPosition="7" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2810982631457565047" fileName="StubModelsFastFindSupport.java" startLine="74" startPosition="115" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2810982631457564950" fileName="StubModelsFastFindSupport.java" startLine="46" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelsWithPossibleUsages#(Ljava/util/Set;Ljava/util/Set;)Ljetbrains/mps/util/containers/MultiMap;" />
-    <nodeInfo nodeId="2810982631457565019" fileName="StubModelsFastFindSupport.java" startLine="67" startPosition="87" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2810982631457564992" fileName="StubModelsFastFindSupport.java" startLine="65" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModels#(Ljava/util/Set;Ljava/util/Set;Ljetbrains/mps/util/Mapper;)Ljetbrains/mps/util/containers/MultiMap;" />
-    <scopeInfo nodeId="2810982631457564921" fileName="StubModelsFastFindSupport.java" startLine="31" startPosition="38" endLine="31" endPosition="38" />
-    <scopeInfo nodeId="2810982631457564925" fileName="StubModelsFastFindSupport.java" startLine="34" startPosition="31" endLine="35" endPosition="105" />
-    <scopeInfo nodeId="2810982631457564935" fileName="StubModelsFastFindSupport.java" startLine="38" startPosition="34" endLine="39" endPosition="102" />
-    <scopeInfo nodeId="2810982631457564944" fileName="StubModelsFastFindSupport.java" startLine="43" startPosition="36" endLine="44" endPosition="59" />
-    <scopeInfo nodeId="303301571174693049" fileName="StubModelsFastFindSupport.java" startLine="49" startPosition="38" endLine="50" endPosition="27" />
-    <scopeInfo nodeId="303301571174692973" fileName="StubModelsFastFindSupport.java" startLine="54" startPosition="114" endLine="55" endPosition="17" />
-    <scopeInfo nodeId="2810982631457564987" fileName="StubModelsFastFindSupport.java" startLine="62" startPosition="133" endLine="63" endPosition="50" />
-    <scopeInfo nodeId="2810982631457565080" fileName="StubModelsFastFindSupport.java" startLine="79" startPosition="39" endLine="80" endPosition="72" />
-    <scopeInfo nodeId="2810982631457565121" fileName="StubModelsFastFindSupport.java" startLine="88" startPosition="65" endLine="89" endPosition="35" />
-    <scopeInfo nodeId="2810982631457564918" fileName="StubModelsFastFindSupport.java" startLine="30" startPosition="89" endLine="32" endPosition="3" />
-    <scopeInfo nodeId="2810982631457565076" fileName="StubModelsFastFindSupport.java" startLine="78" startPosition="93" endLine="81" endPosition="9">
+    <nodeInfo nodeId="2810982631457564926" fileName="StubModelsFastFindSupport.java" startLine="35" startPosition="31" endLine="36" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2810982631457564936" fileName="StubModelsFastFindSupport.java" startLine="39" startPosition="34" endLine="40" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2810982631457564945" fileName="StubModelsFastFindSupport.java" startLine="44" startPosition="36" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="303301571174693050" fileName="StubModelsFastFindSupport.java" startLine="50" startPosition="38" endLine="51" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="303301571174693029" fileName="StubModelsFastFindSupport.java" startLine="55" startPosition="114" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="303301571174693055" fileName="StubModelsFastFindSupport.java" startLine="57" startPosition="7" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2810982631457564962" fileName="StubModelsFastFindSupport.java" startLine="59" startPosition="5" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="303301571174692917" fileName="StubModelsFastFindSupport.java" startLine="63" startPosition="133" endLine="64" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2810982631457565010" fileName="StubModelsFastFindSupport.java" startLine="67" startPosition="132" endLine="68" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2810982631457565886" fileName="StubModelsFastFindSupport.java" startLine="73" startPosition="8" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2810982631457565038" fileName="StubModelsFastFindSupport.java" startLine="74" startPosition="32" endLine="75" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2810982631457565052" fileName="StubModelsFastFindSupport.java" startLine="76" startPosition="42" endLine="77" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2810982631457565057" fileName="StubModelsFastFindSupport.java" startLine="77" startPosition="79" endLine="78" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6651498924798182450" fileName="StubModelsFastFindSupport.java" startLine="78" startPosition="76" endLine="79" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="2810982631457565066" fileName="StubModelsFastFindSupport.java" startLine="79" startPosition="83" endLine="80" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2810982631457565081" fileName="StubModelsFastFindSupport.java" startLine="81" startPosition="39" endLine="82" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2810982631457565888" fileName="StubModelsFastFindSupport.java" startLine="84" startPosition="7" endLine="85" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2810982631457565088" fileName="StubModelsFastFindSupport.java" startLine="85" startPosition="34" endLine="86" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2810982631457565096" fileName="StubModelsFastFindSupport.java" startLine="86" startPosition="107" endLine="87" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2810982631457565890" fileName="StubModelsFastFindSupport.java" startLine="87" startPosition="150" endLine="88" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2810982631457565122" fileName="StubModelsFastFindSupport.java" startLine="90" startPosition="65" endLine="91" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2810982631457565128" fileName="StubModelsFastFindSupport.java" startLine="94" startPosition="5" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2810982631457564918" fileName="StubModelsFastFindSupport.java" startLine="31" startPosition="89" endLine="33" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StubModelsFastFindSupport#()V" />
+    <nodeInfo nodeId="303301571174692971" fileName="StubModelsFastFindSupport.java" startLine="54" startPosition="51" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2810982631457565076" fileName="StubModelsFastFindSupport.java" startLine="80" startPosition="89" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2810982631457565114" fileName="StubModelsFastFindSupport.java" startLine="89" startPosition="46" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2810982631457564922" fileName="StubModelsFastFindSupport.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="2810982631457564932" fileName="StubModelsFastFindSupport.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="303301571174693044" fileName="StubModelsFastFindSupport.java" startLine="49" startPosition="102" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="value#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2810982631457564976" fileName="StubModelsFastFindSupport.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelsWithPossibleInstances#(Ljava/util/Set;Ljava/util/Set;)Ljetbrains/mps/util/containers/MultiMap;" />
+    <nodeInfo nodeId="2810982631457565024" fileName="StubModelsFastFindSupport.java" startLine="69" startPosition="26" endLine="73" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2810982631457564941" fileName="StubModelsFastFindSupport.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="303301571174693031" fileName="StubModelsFastFindSupport.java" startLine="48" startPosition="121" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2810982631457565109" fileName="StubModelsFastFindSupport.java" startLine="88" startPosition="24" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="303301571174692966" fileName="StubModelsFastFindSupport.java" startLine="53" startPosition="7" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2810982631457565047" fileName="StubModelsFastFindSupport.java" startLine="75" startPosition="115" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2810982631457564950" fileName="StubModelsFastFindSupport.java" startLine="47" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModelsWithPossibleUsages#(Ljava/util/Set;Ljava/util/Set;)Ljetbrains/mps/util/containers/MultiMap;" />
+    <nodeInfo nodeId="2810982631457565019" fileName="StubModelsFastFindSupport.java" startLine="68" startPosition="87" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2810982631457564992" fileName="StubModelsFastFindSupport.java" startLine="66" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findModels#(Ljava/util/Set;Ljava/util/Set;Ljetbrains/mps/util/Mapper;)Ljetbrains/mps/util/containers/MultiMap;" />
+    <scopeInfo nodeId="2810982631457564921" fileName="StubModelsFastFindSupport.java" startLine="32" startPosition="38" endLine="32" endPosition="38" />
+    <scopeInfo nodeId="2810982631457564925" fileName="StubModelsFastFindSupport.java" startLine="35" startPosition="31" endLine="36" endPosition="105" />
+    <scopeInfo nodeId="2810982631457564935" fileName="StubModelsFastFindSupport.java" startLine="39" startPosition="34" endLine="40" endPosition="102" />
+    <scopeInfo nodeId="2810982631457564944" fileName="StubModelsFastFindSupport.java" startLine="44" startPosition="36" endLine="45" endPosition="59" />
+    <scopeInfo nodeId="303301571174693049" fileName="StubModelsFastFindSupport.java" startLine="50" startPosition="38" endLine="51" endPosition="27" />
+    <scopeInfo nodeId="303301571174692973" fileName="StubModelsFastFindSupport.java" startLine="55" startPosition="114" endLine="56" endPosition="17" />
+    <scopeInfo nodeId="2810982631457564987" fileName="StubModelsFastFindSupport.java" startLine="63" startPosition="133" endLine="64" endPosition="50" />
+    <scopeInfo nodeId="2810982631457565080" fileName="StubModelsFastFindSupport.java" startLine="81" startPosition="39" endLine="82" endPosition="72" />
+    <scopeInfo nodeId="2810982631457565121" fileName="StubModelsFastFindSupport.java" startLine="90" startPosition="65" endLine="91" endPosition="35" />
+    <scopeInfo nodeId="2810982631457564918" fileName="StubModelsFastFindSupport.java" startLine="31" startPosition="89" endLine="33" endPosition="3" />
+    <scopeInfo nodeId="2810982631457565076" fileName="StubModelsFastFindSupport.java" startLine="80" startPosition="89" endLine="83" endPosition="9">
       <varInfo nodeId="2810982631457565078" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457565113" fileName="StubModelsFastFindSupport.java" startLine="87" startPosition="46" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="2810982631457565114" fileName="StubModelsFastFindSupport.java" startLine="87" startPosition="46" endLine="90" endPosition="9">
+    <scopeInfo nodeId="2810982631457565113" fileName="StubModelsFastFindSupport.java" startLine="89" startPosition="46" endLine="92" endPosition="9" />
+    <scopeInfo nodeId="2810982631457565114" fileName="StubModelsFastFindSupport.java" startLine="89" startPosition="46" endLine="92" endPosition="9">
       <varInfo nodeId="2810982631457565119" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457564922" fileName="StubModelsFastFindSupport.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2810982631457564932" fileName="StubModelsFastFindSupport.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="303301571174693044" fileName="StubModelsFastFindSupport.java" startLine="48" startPosition="102" endLine="52" endPosition="0">
+    <scopeInfo nodeId="2810982631457564922" fileName="StubModelsFastFindSupport.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2810982631457564932" fileName="StubModelsFastFindSupport.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
+    <scopeInfo nodeId="303301571174693044" fileName="StubModelsFastFindSupport.java" startLine="49" startPosition="102" endLine="53" endPosition="0">
       <varInfo nodeId="303301571174693047" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="303301571174692969" fileName="StubModelsFastFindSupport.java" startLine="53" startPosition="51" endLine="57" endPosition="81" />
-    <scopeInfo nodeId="2810982631457564976" fileName="StubModelsFastFindSupport.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="303301571174692969" fileName="StubModelsFastFindSupport.java" startLine="54" startPosition="51" endLine="58" endPosition="81" />
+    <scopeInfo nodeId="2810982631457564976" fileName="StubModelsFastFindSupport.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="2810982631457564984" varName="conceptNames" />
       <varInfo nodeId="2810982631457564981" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457564941" fileName="StubModelsFastFindSupport.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="2810982631457565109" fileName="StubModelsFastFindSupport.java" startLine="86" startPosition="24" endLine="91" endPosition="7">
+    <scopeInfo nodeId="2810982631457564941" fileName="StubModelsFastFindSupport.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="2810982631457565109" fileName="StubModelsFastFindSupport.java" startLine="88" startPosition="24" endLine="93" endPosition="7">
       <varInfo nodeId="2810982631457565111" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="303301571174692966" fileName="StubModelsFastFindSupport.java" startLine="52" startPosition="7" endLine="58" endPosition="5">
+    <scopeInfo nodeId="303301571174692966" fileName="StubModelsFastFindSupport.java" startLine="53" startPosition="7" endLine="59" endPosition="5">
       <varInfo nodeId="303301571174692966" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457565051" fileName="StubModelsFastFindSupport.java" startLine="75" startPosition="42" endLine="81" endPosition="9">
+    <scopeInfo nodeId="2810982631457565051" fileName="StubModelsFastFindSupport.java" startLine="76" startPosition="42" endLine="83" endPosition="9">
       <varInfo nodeId="2810982631457565067" varName="filenames" />
       <varInfo nodeId="2810982631457565058" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457565047" fileName="StubModelsFastFindSupport.java" startLine="74" startPosition="115" endLine="82" endPosition="7">
+    <scopeInfo nodeId="2810982631457565047" fileName="StubModelsFastFindSupport.java" startLine="75" startPosition="115" endLine="84" endPosition="7">
       <varInfo nodeId="2810982631457565049" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457564961" fileName="StubModelsFastFindSupport.java" startLine="47" startPosition="121" endLine="59" endPosition="18">
+    <scopeInfo nodeId="2810982631457564961" fileName="StubModelsFastFindSupport.java" startLine="48" startPosition="121" endLine="60" endPosition="18">
       <varInfo nodeId="303301571174693032" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457564950" fileName="StubModelsFastFindSupport.java" startLine="46" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="2810982631457564950" fileName="StubModelsFastFindSupport.java" startLine="47" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="2810982631457564955" varName="models" />
       <varInfo nodeId="2810982631457564958" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457565023" fileName="StubModelsFastFindSupport.java" startLine="68" startPosition="26" endLine="91" endPosition="7">
+    <scopeInfo nodeId="2810982631457565023" fileName="StubModelsFastFindSupport.java" startLine="69" startPosition="26" endLine="93" endPosition="7">
       <varInfo nodeId="2810982631457565089" varName="allFiles" />
       <varInfo nodeId="2810982631457565097" varName="matchingFiles" />
       <varInfo nodeId="2810982631457565025" varName="nodeId" />
       <varInfo nodeId="2810982631457565039" varName="scopeFiles" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457565019" fileName="StubModelsFastFindSupport.java" startLine="67" startPosition="87" endLine="92" endPosition="5">
+    <scopeInfo nodeId="2810982631457565019" fileName="StubModelsFastFindSupport.java" startLine="68" startPosition="87" endLine="94" endPosition="5">
       <varInfo nodeId="2810982631457565021" varName="elem" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457565009" fileName="StubModelsFastFindSupport.java" startLine="66" startPosition="132" endLine="93" endPosition="18">
+    <scopeInfo nodeId="2810982631457565009" fileName="StubModelsFastFindSupport.java" startLine="67" startPosition="132" endLine="95" endPosition="18">
       <varInfo nodeId="2810982631457565011" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="2810982631457564992" fileName="StubModelsFastFindSupport.java" startLine="65" startPosition="0" endLine="95" endPosition="0">
+    <scopeInfo nodeId="2810982631457564992" fileName="StubModelsFastFindSupport.java" startLine="66" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="2810982631457565001" varName="elems" />
       <varInfo nodeId="2810982631457565004" varName="id" />
       <varInfo nodeId="2810982631457564998" varName="models" />
     </scopeInfo>
-    <unitInfo nodeId="2810982631457564914" fileName="StubModelsFastFindSupport.java" startLine="30" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport" />
-    <unitInfo nodeId="303301571174693041" fileName="StubModelsFastFindSupport.java" startLine="48" startPosition="77" endLine="52" endPosition="5" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport$1" />
+    <unitInfo nodeId="2810982631457564914" fileName="StubModelsFastFindSupport.java" startLine="31" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport" />
+    <unitInfo nodeId="303301571174693041" fileName="StubModelsFastFindSupport.java" startLine="49" startPosition="77" endLine="53" endPosition="5" unitName="jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport$1" />
   </root>
   <root nodeId="2810982631457565446">
     <nodeInfo nodeId="2810982631457565470" fileName="StubModelsIndexer.java" startLine="24" startPosition="31" endLine="25" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
