@@ -28,15 +28,15 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     if (elementConcept != null) {
-      ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0a0c0a().createNode(elementConcept, typeCheckingContext));
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(elementConcept, false);
       for (SNode superConcept : ListSequence.fromList(superConcepts)) {
-        ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0a0c0c0a().createNode(superConcept, typeCheckingContext));
+        ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0a0b0c0a().createNode(superConcept, typeCheckingContext));
       }
       // ========== 
-      ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0e0c0a().createNode(typeCheckingContext));
+      ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0d0c0a().createNode(typeCheckingContext));
     }
-    ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0d0a().createNode(typeCheckingContext));
+    ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0d0a().createNode(elementConcept, typeCheckingContext));
+    ListSequence.fromList(supertypes).addElement(new supertypesOf_SNodeListType_SubtypingRule.QuotationClass_f6ipu3_a0a0e0a().createNode(typeCheckingContext));
     return supertypes;
   }
 
@@ -55,8 +55,68 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
     return false;
   }
 
-  public static class QuotationClass_f6ipu3_a0a0a0c0a {
-    public QuotationClass_f6ipu3_a0a0a0c0a() {
+  public static class QuotationClass_f6ipu3_a0a0a0b0c0a {
+    public QuotationClass_f6ipu3_a0a0a0b0c0a() {
+    }
+
+    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("elementConcept", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("elementConcept", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_f6ipu3_a0a0d0c0a {
+    public QuotationClass_f6ipu3_a0a0d0c0a() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_f6ipu3_a0a0d0a {
+    public QuotationClass_f6ipu3_a0a0d0a() {
     }
 
     public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
@@ -98,68 +158,8 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
     }
   }
 
-  public static class QuotationClass_f6ipu3_a0a0a0c0c0a {
-    public QuotationClass_f6ipu3_a0a0a0c0c0a() {
-    }
-
-    public SNode createNode(Object parameter_3, final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("elementConcept", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("elementConcept", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_f6ipu3_a0a0e0c0a {
-    public QuotationClass_f6ipu3_a0a0e0c0a() {
-    }
-
-    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_f6ipu3_a0a0d0a {
-    public QuotationClass_f6ipu3_a0a0d0a() {
+  public static class QuotationClass_f6ipu3_a0a0e0a {
+    public QuotationClass_f6ipu3_a0a0e0a() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -170,7 +170,7 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~List")));
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
@@ -190,7 +190,7 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_3 = quotedNode_1;
-        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~List")));
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_4 = quotedNode_2;
