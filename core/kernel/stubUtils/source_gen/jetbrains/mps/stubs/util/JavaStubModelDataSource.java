@@ -27,6 +27,8 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import java.io.File;
 import java.io.IOException;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.findUsages.fastfind.FastFindSupport;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 
 public class JavaStubModelDataSource extends StubModelDataSource implements FastFindSupportProvider {
   public static final String FAST_FIND_ID = "java_stubs";
@@ -97,7 +99,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
   }
 
   @NotNull
-  public String getFastFindSupportId() {
-    return FAST_FIND_ID;
+  public FastFindSupport getFastFindSupport() {
+    return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }
 }
