@@ -47,10 +47,9 @@ public class ThreadSafeSample {
 
         final String localA = name;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               try {
                 // Notice no warning nor error reported 
                 box.store(localA);
@@ -94,10 +93,9 @@ public class ThreadSafeSample {
 
         final String localA = name;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               String finalString = localA + fixedValue.toUpperCase() + fixedFieldValue;
               log("Result: " + finalString);
             } catch (RuntimeException e) {
