@@ -39,9 +39,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class CopyPasteUtil {
@@ -382,36 +380,23 @@ public class CopyPasteUtil {
           return;
         }
 
-        ModuleDescriptor moduleDescriptor = targetModule.getModuleDescriptor();
-        assert moduleDescriptor != null : targetModel.getSModelFqName().toString();
-
         for (ModuleReference language : requiredLanguages) {
-          moduleDescriptor.getUsedLanguages().add(language);
+          targetModule.addUsedLanguage(language);
         }
-        Set<ModuleReference> moduleDependencies = new HashSet<ModuleReference>();
+
         for (SModelReference model : requiredImports) {
           SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
           if (modelDescriptor == null) {
             continue;
           }
           IModule module = modelDescriptor.getModule();
-          ModuleReference prefModule = (module != null ?
-            module.getModuleReference() :
-            null
-          );
-          if (prefModule != null) {
-            moduleDependencies.add(prefModule);
+          if (module == null) {
+            continue;
           }
+
+          targetModule.addDependency(module.getModuleReference(), false);
         }
-        if (!(moduleDependencies.isEmpty())) {
-          for (ModuleReference ref : moduleDependencies) {
-            Dependency dep = new Dependency();
-            dep.setModuleRef(ref);
-            dep.setReexport(false);
-            moduleDescriptor.getDependencies().add(dep);
-          }
-          targetModule.setModuleDescriptor(moduleDescriptor, true);
-        }
+
         targetModule.save();
       }
     };
