@@ -338,10 +338,6 @@
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration25/solution/migration25.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="build" />
       <modulePath path="${project}/plugins/mps-build/languages/bash/bash.mpl" folder="build" />
       <modulePath path="${project}/plugins/mps-build/languages/bash/sandbox/jetbrains.mps.bash.sandbox.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/languages/build.mps/mps.mpl" folder="build" />
@@ -353,6 +349,10 @@
       <modulePath path="${project}/plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/tests.msd" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />
