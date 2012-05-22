@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.util.Mapper;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -43,15 +45,22 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
   }
 
   public MultiMap<SModelDescriptor, SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
-    return findModels(models, nodes, new Mapper<SNode, String>() {
+    MultiMap<SModelDescriptor, SNode> result = findModels(models, nodes, new Mapper<SNode, String>() {
       public String value(SNode key) {
         return key.getId();
       }
     });
+    for (SNode node : SetSequence.fromSet(nodes)) {
+      if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))) {
+        continue;
+      }
+      result.putValue(SNodeOperations.getModel(node).getModelDescriptor(), node);
+    }
+    return result;
   }
 
   public MultiMap<SModelDescriptor, String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
-    throw new UnsupportedOperationException("todo");
+    return findModels(models, conceptNames, null);
   }
 
   private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {

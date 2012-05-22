@@ -10,16 +10,12 @@ import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import java.util.Map;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileContent;
-import java.util.HashMap;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
-import jetbrains.mps.baseLanguage.javastub.SReferenceHandler;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.reloading.ClassBytesProvider;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.util.NameUtil;
+import java.util.Collections;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 
 public class StubModelsIndexer implements ApplicationComponent {
   public StubModelsIndexer() {
@@ -43,33 +39,17 @@ public class StubModelsIndexer implements ApplicationComponent {
 
     @NotNull
     public Map<IdIndexEntry, Integer> map(FileContent inputData) {
-      final HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
-      final byte[] content = inputData.getContent();
+      byte[] bytes = inputData.getContent();
+      ClassReader reader = new ClassReader(bytes);
+      ASMClass ac = new ASMClass(reader);
+      String fqName = ac.getFqName();
+      if (AbstractClassPathItem.isAnonymous(NameUtil.namespaceFromLongName(fqName))) {
+        return Collections.emptyMap();
+      }
 
-      ClassReader reader = new ClassReader(inputData.getContent());
-      final ASMClass ac = new ASMClass(reader);
-      final String fqName = ac.getFqName();
-
-      CacheClassifierUpdater updater = new CacheClassifierUpdater(false, new SReferenceHandler() {
-        public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
-          if (!(targetNodeId instanceof SNodeId.Foreign)) {
-            return null;
-          }
-          result.put(new IdIndexEntry(((SNodeId.Foreign) targetNodeId).getId(), true), 0);
-          return null;
-        }
-      });
-      CacheClassifierLoader loader = new CacheClassifierLoader(new ClassBytesProvider() {
-        @Nullable
-        public byte[] getClass(String name) {
-          assert fqName.endsWith(name);
-          return content;
-        }
-      }, updater);
-
-      loader.getClassifier(NameUtil.namespaceFromLongName(fqName), NameUtil.shortNameFromLongName(fqName));
-
-      return result;
+      ClassifierCacher updater = new ClassifierCacher();
+      updater.updateClassifier(ClassifierKind.getClassifierKind(reader), ac);
+      return updater.getResult();
     }
   }
 }
