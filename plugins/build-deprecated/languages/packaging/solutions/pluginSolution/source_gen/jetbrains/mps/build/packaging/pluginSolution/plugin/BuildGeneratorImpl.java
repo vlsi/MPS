@@ -169,7 +169,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0i0f().createNode(macro));
     }
 
-    SNode buildProject = new BuildGeneratorImpl.QuotationClass_un708i_a0a01a5().createNode(name + ".zip", folder, name, SetSequence.fromSet(modules).toListSequence(), macroses);
+
+    SNode buildProject = new BuildGeneratorImpl.QuotationClass_un708i_a0a11a5().createNode(name + ".zip", folder, name, SetSequence.fromSet(modules).toListSequence(), macroses);
 
     // add mps layout to the target model 
     SModelOperations.addRootNode(targetSModel, buildProject);
@@ -498,8 +499,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a01a5 {
-    public QuotationClass_un708i_a0a01a5() {
+  public static class QuotationClass_un708i_a0a11a5 {
+    public QuotationClass_un708i_a0a11a5() {
     }
 
     public SNode createNode(Object parameter_24, Object parameter_25, Object parameter_26, Object parameter_27, Object parameter_28) {
