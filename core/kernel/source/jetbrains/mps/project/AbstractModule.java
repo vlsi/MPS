@@ -125,7 +125,14 @@ public abstract class AbstractModule implements IModule {
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     for (Dependency dep : descriptor.getDependencies()) {
-      if (ObjectUtils.equals(dep.getModuleRef(), moduleRef)) return;
+      if (!ObjectUtils.equals(dep.getModuleRef(), moduleRef)) continue;
+
+      if (reexport && !dep.isReexport()) {
+        dep.setReexport(true);
+        invalidateCaches();
+        save();
+      }
+      return;
     }
 
     Dependency dep = new Dependency();
@@ -288,7 +295,7 @@ public abstract class AbstractModule implements IModule {
       String suffix = descriptor.getCompileInMPS() ? "classes_gen" : "classes";
       if (canonicalPath.endsWith(suffix)) {
         IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
-        if(dd != null && parent != null) {
+        if (dd != null && parent != null) {
           parent = parent.getParent();
         }
         IFile classes = parent != null ? parent.getDescendant(suffix) : null;
