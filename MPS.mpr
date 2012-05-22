@@ -201,9 +201,6 @@
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.bootstrap.helgins.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/typesystem.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/mpsbuild/startup/startup.mpl" folder="build" />
-      <modulePath path="${project}/languages/util/bash/languages/bash/bash.mpl" folder="languages.bash" />
-      <modulePath path="${project}/languages/util/bash/solutions/jetbrains.mps.bash.sandbox/jetbrains.mps.bash.sandbox.msd" folder="languages.bash" />
       <modulePath path="${project}/languages/util/builders/builders.mpl" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/builders/sandbox/jetbrains.mps.builders.msd" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/gentest/gentest.mpl" folder="languages.build" />
@@ -242,8 +239,6 @@
       <modulePath path="${project}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/pluginSolution.msd" folder="mpslite" />
       <modulePath path="${project}/languages/util/mps-lite/languages/nanoj/nanoj.mpl" folder="samples" />
       <modulePath path="${project}/languages/util/mps-lite/solutions/mpslite.sandbox/mpslite.sandbox.msd" folder="mpslite" />
-      <modulePath path="${project}/languages/util/properties/properties.mpl" folder="build" />
-      <modulePath path="${project}/languages/util/properties/sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/languages/util/quickQueryLanguage/quickQueryLanguage.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/util/quickQueryLanguage/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
@@ -298,8 +293,6 @@
       <modulePath path="${project}/languages/util/ypath/solutions/sandbox/sandbox.msd" folder="languages.ypath" />
       <modulePath path="${project}/languages/util/ypath/solutions/test/test.msd" folder="languages.ypath" />
       <modulePath path="${project}/languages/util/ypath/ypath.mpl" folder="languages.ypath" />
-      <modulePath path="${project}/languages/xml/xml/sandbox/sandbox.msd" folder="build" />
-      <modulePath path="${project}/languages/xml/xml/xml.mpl" folder="build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/buildlanguage/buildlanguage.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/custommps/custommps.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/dependency/dependency.mpl" folder="languages.build" />
@@ -345,7 +338,14 @@
       <modulePath path="${project}/plugins/migration/solution/jetbrains.mps.ide.migration.msd" folder="plugins" />
       <modulePath path="${project}/plugins/migration25/solution/migration25.msd" folder="plugins" />
       <modulePath path="${project}/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/properties.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="build" />
+      <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/bash/bash.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/bash/sandbox/jetbrains.mps.bash.sandbox.msd" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/build.mps/mps.mpl" folder="build" />
+      <modulePath path="${project}/plugins/mpsbuild/languages/build.startup/startup.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/build.workflow/workflow.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/build/build.mpl" folder="build" />
       <modulePath path="${project}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" folder="build" />
