@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public abstract class RevertRootsAction extends BaseAction {
@@ -43,7 +44,7 @@ public abstract class RevertRootsAction extends BaseAction {
   protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
     super.doUpdate(event, map);
     SModel newModel = myModelDifferenceDialog.getChangeSet().getNewModel();
-    boolean enabled = getRoots().length != 0 && newModel.getModelDescriptor() instanceof EditableSModelDescriptor;
+    boolean enabled = getRoots().length != 0 && newModel.getModelDescriptor() instanceof EditableSModelDescriptor && SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference()).getSModel() == newModel;
     event.getPresentation().setEnabled(enabled);
     event.getPresentation().setVisible(enabled);
     String what = "Roots";
