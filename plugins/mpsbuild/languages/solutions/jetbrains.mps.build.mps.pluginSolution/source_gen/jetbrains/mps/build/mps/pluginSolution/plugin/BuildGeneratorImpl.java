@@ -10,25 +10,24 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import java.util.List;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.project.MPSProject;
-import java.util.Arrays;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.project.Solution;
 import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
-import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.PathMacros;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.util.RelativePathHelper;
@@ -36,7 +35,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -69,29 +67,30 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   public void generate() {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
-        final SModelDescriptor descriptor = BuildGeneratorImpl.this.getSModelDescriptor(new EmptyProgressIndicator());
-        final String projectName = BuildGeneratorImpl.this.getProjectName();
-        final String projectBasedirPath = BuildGeneratorImpl.this.myProject.getBaseDir().getPath();
-        final List<NodeData> modules = BuildGeneratorImpl.this.getModules();
-        final List<ModuleReference> moduleReferencesToAdd = BuildGeneratorImpl.this.getModuleReferencesToAdd();
-        Runnable runnable;
-        Solution solution = (Solution) descriptor.getModule();
-        for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
-          (solution).getModuleDescriptor().getUsedLanguages().add(ref);
-        }
-        for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
-          descriptor.getSModel().addLanguage(ref);
-        }
-        runnable = BuildGeneratorImpl.this.generate(((EditableSModelDescriptor) descriptor), projectName, projectBasedirPath, modules);
-        runnable.run();
-        final MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
-        project.addModule(solution.getModuleReference());
+        SModelDescriptor descriptor = BuildGeneratorImpl.this.getSModelDescriptor(new EmptyProgressIndicator());
+
+        descriptor.getModule().getModuleDescriptor().getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
+        descriptor.getModule().getModuleDescriptor().getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
+        descriptor.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
+        descriptor.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
+
+        final EditableSModelDescriptor targetModelDescriptor = ((EditableSModelDescriptor) descriptor);
+        SNode buildProject = createMPSLayout(targetModelDescriptor, BuildGeneratorImpl.this.getProjectName(), BuildGeneratorImpl.this.myProject.getBaseDir().getPath(), BuildGeneratorImpl.this.getModules());
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            targetModelDescriptor.getModule().save();
+            targetModelDescriptor.save();
+          }
+        });
+
+        NavigationSupport.getInstance().openNode(myOperationContext, buildProject, true, true);
+
+        MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
+        project.addModule(descriptor.getModule().getModuleReference());
+
       }
     }, myProject.getComponent(MPSProject.class));
-  }
-
-  protected List<ModuleReference> getModuleReferencesToAdd() {
-    return Arrays.asList(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference(), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
@@ -126,18 +125,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     this.setNewSolutionName(solutionName);
   }
 
-  public Runnable generate(final EditableSModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
-    final SNode buildProject = this.createMPSLayout(targetModelDescriptor, name, basedir, selectedData);
-    return new Runnable() {
-      public void run() {
-        BuildGeneratorImpl.this.finishGeneration(targetModelDescriptor, buildProject);
-      }
-    };
-  }
-
   protected SNode createMPSLayout(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     Set<SNode> modules = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    SNode folder = new BuildGeneratorImpl.QuotationClass_un708i_a0a1a5().createNode(name);
+    SNode folder = new BuildGeneratorImpl.QuotationClass_un708i_a0a1a3().createNode(name);
 
     SModel targetSModel = targetModelDescriptor.getSModel();
     createContent(selectedData, folder, modules, targetSModel);
@@ -145,10 +135,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
     List<SNode> macroses = new ArrayList<SNode>();
     for (String macro : SetSequence.fromSet(userMacroNames)) {
-      ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0i0f().createNode(macro));
+      ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0i0d().createNode(macro));
     }
 
-    SNode buildProject = new BuildGeneratorImpl.QuotationClass_un708i_a0a01a5().createNode(name + ".zip", folder, name, SetSequence.fromSet(modules).toListSequence(), macroses);
+    SNode buildProject = new BuildGeneratorImpl.QuotationClass_un708i_a0a01a3().createNode(name + ".zip", folder, name, SetSequence.fromSet(modules).toListSequence(), macroses);
 
     try {
       String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetSModel).makeRelative(myProject.getBasePath());
@@ -179,16 +169,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     return buildProject;
   }
 
-  protected void finishGeneration(final EditableSModelDescriptor targetModelDescriptor, SNode mpsLayout) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        targetModelDescriptor.getModule().save();
-        targetModelDescriptor.save();
-      }
-    });
-    NavigationSupport.getInstance().openNode(myOperationContext, mpsLayout, true, true);
-  }
-
   @Nullable
   public SNode createComponent(NodeData data, SModel targetSModel, Set<SNode> modules) {
     if (data instanceof ModuleData) {
@@ -204,7 +184,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         return null;
       }
       String[] parts = relativeDescriptorPath.split("/");
-      SNode path = new BuildGeneratorImpl.QuotationClass_un708i_a0a5a0a7().createNode();
+      SNode path = new BuildGeneratorImpl.QuotationClass_un708i_a0a5a0a4().createNode();
       SNode compositePart = SLinkOperations.getTarget(path, "compositePart", true);
       for (String part : parts) {
         SPropertyOperations.set(compositePart, "head", part);
@@ -215,17 +195,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
       SNode moduleNode;
       if (module instanceof Solution) {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a11a0a7().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a11a0a4().createNode(path);
       } else if (module instanceof Language) {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0h().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0e().createNode(path);
       } else {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0h_0().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0e_0().createNode(path);
       }
       SetSequence.fromSet(modules).addElement(moduleNode);
-      return new BuildGeneratorImpl.QuotationClass_un708i_a0n0a0h().createNode(moduleNode);
+      return new BuildGeneratorImpl.QuotationClass_un708i_a0n0a0e().createNode(moduleNode);
     } else if (data instanceof NamespaceData) {
       String namespace = ((NamespaceData) data).getText();
-      return new BuildGeneratorImpl.QuotationClass_un708i_a0b0a0a7().createNode(namespace);
+      return new BuildGeneratorImpl.QuotationClass_un708i_a0b0a0a4().createNode(namespace);
     }
     return null;
   }
@@ -270,8 +250,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a1a5 {
-    public QuotationClass_un708i_a0a1a5() {
+  public static class QuotationClass_un708i_a0a1a3 {
+    public QuotationClass_un708i_a0a1a3() {
     }
 
     public SNode createNode(Object parameter_7) {
@@ -300,8 +280,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a0i0f {
-    public QuotationClass_un708i_a0a0a0i0f() {
+  public static class QuotationClass_un708i_a0a0a0i0d {
+    public QuotationClass_un708i_a0a0a0i0d() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -318,8 +298,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a01a5 {
-    public QuotationClass_un708i_a0a01a5() {
+  public static class QuotationClass_un708i_a0a01a3 {
+    public QuotationClass_un708i_a0a01a3() {
     }
 
     public SNode createNode(Object parameter_24, Object parameter_25, Object parameter_26, Object parameter_27, Object parameter_28) {
@@ -411,8 +391,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a5a0a7 {
-    public QuotationClass_un708i_a0a5a0a7() {
+  public static class QuotationClass_un708i_a0a5a0a4 {
+    public QuotationClass_un708i_a0a5a0a4() {
     }
 
     public SNode createNode() {
@@ -435,8 +415,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a11a0a7 {
-    public QuotationClass_un708i_a0a0a11a0a7() {
+  public static class QuotationClass_un708i_a0a0a11a0a4 {
+    public QuotationClass_un708i_a0a0a11a0a4() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -467,8 +447,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a0l0a0h {
-    public QuotationClass_un708i_a0a0a0l0a0h() {
+  public static class QuotationClass_un708i_a0a0a0l0a0e {
+    public QuotationClass_un708i_a0a0a0l0a0e() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -499,8 +479,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a0l0a0h_0 {
-    public QuotationClass_un708i_a0a0a0l0a0h_0() {
+  public static class QuotationClass_un708i_a0a0a0l0a0e_0 {
+    public QuotationClass_un708i_a0a0a0l0a0e_0() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -531,8 +511,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0n0a0h {
-    public QuotationClass_un708i_a0n0a0h() {
+  public static class QuotationClass_un708i_a0n0a0e {
+    public QuotationClass_un708i_a0n0a0e() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -549,8 +529,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0b0a0a7 {
-    public QuotationClass_un708i_a0b0a0a7() {
+  public static class QuotationClass_un708i_a0b0a0a4 {
+    public QuotationClass_un708i_a0b0a0a4() {
     }
 
     public SNode createNode(Object parameter_7) {
