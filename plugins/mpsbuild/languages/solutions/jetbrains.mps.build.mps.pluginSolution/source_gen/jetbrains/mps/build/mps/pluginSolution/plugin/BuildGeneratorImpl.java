@@ -15,11 +15,12 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
 import com.intellij.openapi.vfs.VirtualFile;
 import java.io.File;
+import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -51,23 +52,23 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   protected static Log log = LogFactory.getLog(BuildGeneratorImpl.class);
 
   private final Project myProject;
-  private IOperationContext myOperationContext;
+  private final IOperationContext myOperationContext;
 
   public BuildGeneratorImpl(Project project, IOperationContext context) {
-    this.myProject = project;
-    this.myOperationContext = context;
+    myProject = project;
+    myOperationContext = context;
     String projectName = this.myProject.getName();
     if (projectName.endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
       projectName = projectName.substring(0, projectName.length() - MPSExtentions.DOT_MPS_PROJECT.length());
     }
-    this.setProjectName(projectName);
-    this.setValidDefaultSolutionName(projectName);
+    setProjectName(projectName);
+    setValidDefaultSolutionName(projectName);
   }
 
   public void generate() {
     ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
-        SModelDescriptor descriptor = BuildGeneratorImpl.this.getSModelDescriptor(new EmptyProgressIndicator());
+        SModelDescriptor descriptor = getSModelDescriptor(new EmptyProgressIndicator());
 
         descriptor.getModule().getModuleDescriptor().getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
         descriptor.getModule().getModuleDescriptor().getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
@@ -86,29 +87,27 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
         NavigationSupport.getInstance().openNode(myOperationContext, buildProject, true, true);
 
-        MPSProject project = BuildGeneratorImpl.this.myProject.getComponent(MPSProject.class);
-        project.addModule(descriptor.getModule().getModuleReference());
+        ProjectHelper.toMPSProject(myProject).addModule(descriptor.getModule().getModuleReference());
 
       }
-    }, myProject.getComponent(MPSProject.class));
+    }, ProjectHelper.toMPSProject(myProject));
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
-    if (this.getCreateModel()) {
+    if (getCreateModel()) {
       Solution solution;
-      if (this.getCreateSolution()) {
-        VirtualFile projectBaseDir = this.myProject.getBaseDir();
+      if (getCreateSolution()) {
+        VirtualFile projectBaseDir = myProject.getBaseDir();
         //  get solution 
-        String solutionName = this.getNewSolutionName();
+        String solutionName = getNewSolutionName();
         String solutionBaseDir = projectBaseDir.getPath() + File.separator + "solutions" + File.separator + solutionName;
-        MPSProject mpsProject = this.myProject.getComponent(MPSProject.class);
         indicator.setText("Creating Solution...");
-        solution = BuildGeneratorUtil.createSolution(mpsProject, solutionName, solutionBaseDir);
+        solution = BuildGeneratorUtil.createSolution(myProject.getComponent(MPSProject.class), solutionName, solutionBaseDir);
       } else {
-        solution = this.getSolution();
+        solution = getSolution();
       }
       indicator.setText("Creating Model...");
-      return BuildGeneratorUtil.createModel(this.getNewModelName(), solution);
+      return BuildGeneratorUtil.createModel(getNewModelName(), solution);
     } else {
       return this.getModel();
     }
@@ -179,7 +178,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         relativeDescriptorPath = new RelativePathHelper(myProject.getBasePath()).makeRelative(module.getDescriptorFile().getPath());
       } catch (RelativePathHelper.PathException e) {
         if (log.isWarnEnabled()) {
-          log.warn("Can't make relative path from build model base directory to module" + module, e);
+          log.warn("Can't make relative path from build model base directory to module " + module, e);
         }
         return null;
       }
