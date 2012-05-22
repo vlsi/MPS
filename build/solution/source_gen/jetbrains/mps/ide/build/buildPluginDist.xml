@@ -6,12 +6,13 @@
   <property file="${artifacts.buildPlugin}/build.properties" prefix="import.buildPlugin" />
   <property name="buildPlugin.plugin.version" value="${import.buildPlugin.buildPlugin.plugin.version}" />
   <property name="buildPlugin.date" value="${import.buildPlugin.buildPlugin.date}" />
+  <property name="buildCore.version" value="${import.buildPlugin.buildCore.version}" />
   
   <target name="assemble" depends="fetchDependencies">
     <zip destfile="${build.layout}/mps-core-${buildPlugin.plugin.version}.zip">
       <fileset dir="${artifacts.buildPlugin}/plugins" />
     </zip>
-    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${buildPlugin.plugin.version}${line.separator}buildPlugin.date=${buildPlugin.date}</echo>
+    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${buildPlugin.plugin.version}${line.separator}buildPlugin.date=${buildPlugin.date}${line.separator}buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">

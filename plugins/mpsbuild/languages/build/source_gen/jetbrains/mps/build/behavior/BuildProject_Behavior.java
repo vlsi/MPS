@@ -147,7 +147,12 @@ public class BuildProject_Behavior {
     ListSequence.fromList(scopes).addElement(rootScope);
     ListSequence.fromList(scopes).addSequence(Sequence.fromIterable(ScopeUtil.imported(SLinkOperations.getTargets(thisNode, "dependencies", true), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildMacro"), child)));
 
-    return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class));
+    return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class)) {
+      @Override
+      public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
+        return Sequence.fromIterable(super.getAvailableElements(prefix)).distinct();
+      }
+    };
   }
 
   public static boolean call_canEditBaseDir_631271972590018330(SNode thisNode) {

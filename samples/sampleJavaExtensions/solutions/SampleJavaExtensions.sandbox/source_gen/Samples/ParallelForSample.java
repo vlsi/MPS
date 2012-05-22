@@ -10,7 +10,6 @@ import java.util.concurrent.CountDownLatch;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.Collections;
 import utils.ParallelLoopException;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -31,14 +30,13 @@ public class ParallelForSample {
       final CountDownLatch latch_i0a = new CountDownLatch(Sequence.fromIterable(numbers).count());
       final List<Exception> exceptions_i0a = new CopyOnWriteArrayList<Exception>();
 
-      for (final int a : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<Integer>(), numbers))) {
+      for (final int a : numbers) {
 
         final int localA = a;
 
         Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               log("Starting calculation for number " + localA + " in thread " + Thread.currentThread());
               Thread.sleep(localA * 1000);
               // External (compiled) method calls can be annotated as thread-safe to indicate that they are safe to call 
@@ -83,14 +81,13 @@ public class ParallelForSample {
       final CountDownLatch latch_w0a = new CountDownLatch(Sequence.fromIterable(numbers).count());
       final List<Exception> exceptions_w0a = new CopyOnWriteArrayList<Exception>();
 
-      for (final int b : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<Integer>(), numbers))) {
+      for (final int b : numbers) {
 
         final int localA = b;
 
         Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               log("Touching " + doNotMessupWith);
 
               int messupWithMeSinceImlocal = 1;
@@ -138,14 +135,13 @@ public class ParallelForSample {
       final CountDownLatch latch_ab0a = new CountDownLatch(ListSequence.fromList(names).count());
       final List<Exception> exceptions_ab0a = new CopyOnWriteArrayList<Exception>();
 
-      for (final String c : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<String>(), names))) {
+      for (final String c : names) {
 
         final String localA = c;
 
         Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               log("Name: " + localA);
               if (localA == "Joe") {
                 throw new RuntimeException("test");

@@ -63,6 +63,10 @@ public final class MacroHelper {
       }
 
       for (SNode m : depHelper.getAvailableMacros()) {
+        if (macroToName.containsKey(m)) {
+          continue;
+        }
+
         String exportName = depHelper.getExportName(m);
         if (exportName == null) {
           continue;

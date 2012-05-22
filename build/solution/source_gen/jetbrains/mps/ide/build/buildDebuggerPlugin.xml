@@ -8,6 +8,8 @@
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildExecution" location="${build.dir}/artifacts/buildExecution" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <path id="path.java.library.tools">
     <fileset file="${mps_home}/lib/tools.jar" />
@@ -182,6 +184,7 @@
       <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="**/*.mps, **/*.metadata, **/*.history" prefix="jetbrains.mps.debugger.java.customViewers.plugin/" />
       <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="jetbrains.mps.debugger.java.customViewers.plugin/models" />
     </jar>
+    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">

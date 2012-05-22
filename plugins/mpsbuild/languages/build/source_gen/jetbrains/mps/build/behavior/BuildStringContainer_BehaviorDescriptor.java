@@ -5,5 +5,5 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.smodel.SNode;
 
 public interface BuildStringContainer_BehaviorDescriptor {
-  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue);
+  public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role);
 }

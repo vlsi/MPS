@@ -1740,130 +1740,134 @@
     <nodeInfo nodeId="6520682027040856734" fileName="MacroHelper.java" startLine="59" startPosition="73" endLine="60" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6520682027040859584" fileName="MacroHelper.java" startLine="61" startPosition="30" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="6520682027040859585" fileName="MacroHelper.java" startLine="63" startPosition="7" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6520682027040860068" fileName="MacroHelper.java" startLine="65" startPosition="54" endLine="66" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6520682027040860106" fileName="MacroHelper.java" startLine="67" startPosition="33" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6520682027041001481" fileName="MacroHelper.java" startLine="69" startPosition="9" endLine="70" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6520682027041001614" fileName="MacroHelper.java" startLine="71" startPosition="32" endLine="72" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027041001794" fileName="MacroHelper.java" startLine="72" startPosition="147" endLine="73" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040859586" fileName="MacroHelper.java" startLine="74" startPosition="9" endLine="75" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040857117" fileName="MacroHelper.java" startLine="80" startPosition="71" endLine="81" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6520682027040857156" fileName="MacroHelper.java" startLine="82" startPosition="31" endLine="83" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040857200" fileName="MacroHelper.java" startLine="83" startPosition="78" endLine="84" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040859320" fileName="MacroHelper.java" startLine="89" startPosition="18" endLine="90" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040860327" fileName="MacroHelper.java" startLine="90" startPosition="33" endLine="91" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040859908" fileName="MacroHelper.java" startLine="92" startPosition="29" endLine="93" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040860250" fileName="MacroHelper.java" startLine="95" startPosition="29" endLine="96" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040860280" fileName="MacroHelper.java" startLine="96" startPosition="55" endLine="97" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040860140" fileName="MacroHelper.java" startLine="101" startPosition="69" endLine="102" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6520682027040860196" fileName="MacroHelper.java" startLine="102" startPosition="27" endLine="103" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6520682027040860190" fileName="MacroHelper.java" startLine="104" startPosition="36" endLine="105" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040860230" fileName="MacroHelper.java" startLine="106" startPosition="5" endLine="107" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040860368" fileName="MacroHelper.java" startLine="110" startPosition="49" endLine="111" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041001957" fileName="MacroHelper.java" startLine="116" startPosition="39" endLine="117" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041002134" fileName="MacroHelper.java" startLine="120" startPosition="37" endLine="121" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040929316" fileName="MacroHelper.java" startLine="128" startPosition="39" endLine="129" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040940361" fileName="MacroHelper.java" startLine="136" startPosition="39" endLine="137" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2590653267525251749" fileName="MacroHelper.java" startLine="142" startPosition="38" endLine="143" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2590653267525251804" fileName="MacroHelper.java" startLine="146" startPosition="44" endLine="147" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040857013" fileName="MacroHelper.java" startLine="150" startPosition="44" endLine="151" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041002365" fileName="MacroHelper.java" startLine="154" startPosition="38" endLine="155" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041026773" fileName="MacroHelper.java" startLine="158" startPosition="34" endLine="159" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041026670" fileName="MacroHelper.java" startLine="162" startPosition="50" endLine="163" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040821715" fileName="MacroHelper.java" startLine="166" startPosition="36" endLine="167" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="seenProjects" />
-    <nodeInfo nodeId="6520682027040854722" fileName="MacroHelper.java" startLine="167" startPosition="65" endLine="168" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
-    <nodeInfo nodeId="6520682027040856144" fileName="MacroHelper.java" startLine="168" startPosition="50" endLine="169" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="existingMacros" />
-    <nodeInfo nodeId="6520682027040854725" fileName="MacroHelper.java" startLine="171" startPosition="73" endLine="172" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040856149" fileName="MacroHelper.java" startLine="172" startPosition="35" endLine="173" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040856710" fileName="MacroHelper.java" startLine="176" startPosition="45" endLine="177" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040859551" fileName="MacroHelper.java" startLine="178" startPosition="24" endLine="179" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040856378" fileName="MacroHelper.java" startLine="182" startPosition="13" endLine="183" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6520682027040856413" fileName="MacroHelper.java" startLine="184" startPosition="31" endLine="185" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040856419" fileName="MacroHelper.java" startLine="185" startPosition="48" endLine="186" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040856562" fileName="MacroHelper.java" startLine="187" startPosition="71" endLine="188" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040856166" fileName="MacroHelper.java" startLine="190" startPosition="11" endLine="191" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040854534" fileName="MacroHelper.java" startLine="192" startPosition="19" endLine="193" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040854567" fileName="MacroHelper.java" startLine="195" startPosition="14" endLine="196" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6520682027040856163" fileName="MacroHelper.java" startLine="196" startPosition="60" endLine="197" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041049531" fileName="MacroHelper.java" startLine="201" startPosition="48" endLine="202" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027041049585" fileName="MacroHelper.java" startLine="205" startPosition="44" endLine="206" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040856189" fileName="MacroHelper.java" startLine="209" startPosition="59" endLine="210" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6592112598315170732" fileName="MacroHelper.java" startLine="66" startPosition="41" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6592112598315170733" fileName="MacroHelper.java" startLine="68" startPosition="9" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6520682027040860068" fileName="MacroHelper.java" startLine="69" startPosition="0" endLine="70" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040860106" fileName="MacroHelper.java" startLine="71" startPosition="33" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6520682027041001481" fileName="MacroHelper.java" startLine="73" startPosition="9" endLine="74" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027041001614" fileName="MacroHelper.java" startLine="75" startPosition="32" endLine="76" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027041001794" fileName="MacroHelper.java" startLine="76" startPosition="147" endLine="77" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040859586" fileName="MacroHelper.java" startLine="78" startPosition="9" endLine="79" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040857117" fileName="MacroHelper.java" startLine="84" startPosition="71" endLine="85" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040857156" fileName="MacroHelper.java" startLine="86" startPosition="31" endLine="87" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040857200" fileName="MacroHelper.java" startLine="87" startPosition="78" endLine="88" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040859320" fileName="MacroHelper.java" startLine="93" startPosition="18" endLine="94" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040860327" fileName="MacroHelper.java" startLine="94" startPosition="33" endLine="95" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040859908" fileName="MacroHelper.java" startLine="96" startPosition="29" endLine="97" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040860250" fileName="MacroHelper.java" startLine="99" startPosition="29" endLine="100" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040860280" fileName="MacroHelper.java" startLine="100" startPosition="55" endLine="101" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040860140" fileName="MacroHelper.java" startLine="105" startPosition="69" endLine="106" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040860196" fileName="MacroHelper.java" startLine="106" startPosition="27" endLine="107" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040860190" fileName="MacroHelper.java" startLine="108" startPosition="36" endLine="109" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040860230" fileName="MacroHelper.java" startLine="110" startPosition="5" endLine="111" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040860368" fileName="MacroHelper.java" startLine="114" startPosition="49" endLine="115" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041001957" fileName="MacroHelper.java" startLine="120" startPosition="39" endLine="121" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041002134" fileName="MacroHelper.java" startLine="124" startPosition="37" endLine="125" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040929316" fileName="MacroHelper.java" startLine="132" startPosition="39" endLine="133" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040940361" fileName="MacroHelper.java" startLine="140" startPosition="39" endLine="141" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2590653267525251749" fileName="MacroHelper.java" startLine="146" startPosition="38" endLine="147" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2590653267525251804" fileName="MacroHelper.java" startLine="150" startPosition="44" endLine="151" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040857013" fileName="MacroHelper.java" startLine="154" startPosition="44" endLine="155" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041002365" fileName="MacroHelper.java" startLine="158" startPosition="38" endLine="159" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041026773" fileName="MacroHelper.java" startLine="162" startPosition="34" endLine="163" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041026670" fileName="MacroHelper.java" startLine="166" startPosition="50" endLine="167" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040821715" fileName="MacroHelper.java" startLine="170" startPosition="36" endLine="171" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="seenProjects" />
+    <nodeInfo nodeId="6520682027040854722" fileName="MacroHelper.java" startLine="171" startPosition="65" endLine="172" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
+    <nodeInfo nodeId="6520682027040856144" fileName="MacroHelper.java" startLine="172" startPosition="50" endLine="173" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="existingMacros" />
+    <nodeInfo nodeId="6520682027040854725" fileName="MacroHelper.java" startLine="175" startPosition="73" endLine="176" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040856149" fileName="MacroHelper.java" startLine="176" startPosition="35" endLine="177" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040856710" fileName="MacroHelper.java" startLine="180" startPosition="45" endLine="181" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040859551" fileName="MacroHelper.java" startLine="182" startPosition="24" endLine="183" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040856378" fileName="MacroHelper.java" startLine="186" startPosition="13" endLine="187" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040856413" fileName="MacroHelper.java" startLine="188" startPosition="31" endLine="189" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040856419" fileName="MacroHelper.java" startLine="189" startPosition="48" endLine="190" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040856562" fileName="MacroHelper.java" startLine="191" startPosition="71" endLine="192" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040856166" fileName="MacroHelper.java" startLine="194" startPosition="11" endLine="195" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040854534" fileName="MacroHelper.java" startLine="196" startPosition="19" endLine="197" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040854567" fileName="MacroHelper.java" startLine="199" startPosition="14" endLine="200" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6520682027040856163" fileName="MacroHelper.java" startLine="200" startPosition="60" endLine="201" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041049531" fileName="MacroHelper.java" startLine="205" startPosition="48" endLine="206" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041049585" fileName="MacroHelper.java" startLine="209" startPosition="44" endLine="210" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040856189" fileName="MacroHelper.java" startLine="213" startPosition="59" endLine="214" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2590653267525251366" fileName="MacroHelper.java" startLine="41" startPosition="73" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6520682027040859555" fileName="MacroHelper.java" startLine="60" startPosition="60" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040860077" fileName="MacroHelper.java" startLine="66" startPosition="55" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040859833" fileName="MacroHelper.java" startLine="91" startPosition="31" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040860146" fileName="MacroHelper.java" startLine="103" startPosition="14" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="6520682027040859522" fileName="MacroHelper.java" startLine="177" startPosition="130" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040856533" fileName="MacroHelper.java" startLine="186" startPosition="26" endLine="189" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040854565" fileName="MacroHelper.java" startLine="195" startPosition="12" endLine="198" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6592112598315170689" fileName="MacroHelper.java" startLine="65" startPosition="54" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040860077" fileName="MacroHelper.java" startLine="70" startPosition="55" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040859833" fileName="MacroHelper.java" startLine="95" startPosition="31" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040860146" fileName="MacroHelper.java" startLine="107" startPosition="14" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="6520682027040859522" fileName="MacroHelper.java" startLine="181" startPosition="130" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040856533" fileName="MacroHelper.java" startLine="190" startPosition="26" endLine="193" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040854565" fileName="MacroHelper.java" startLine="199" startPosition="12" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6547494638219723168" fileName="MacroHelper.java" startLine="34" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacroHelper#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/MacroHelper/MacroContext;)V" />
     <nodeInfo nodeId="6520682027040859364" fileName="MacroHelper.java" startLine="44" startPosition="7" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2590653267525251611" fileName="MacroHelper.java" startLine="50" startPosition="135" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2590653267525251712" fileName="MacroHelper.java" startLine="54" startPosition="45" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6520682027041001534" fileName="MacroHelper.java" startLine="70" startPosition="48" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040857127" fileName="MacroHelper.java" startLine="81" startPosition="132" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040857371" fileName="MacroHelper.java" startLine="85" startPosition="5" endLine="89" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6520682027040859986" fileName="MacroHelper.java" startLine="94" startPosition="5" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040857025" fileName="MacroHelper.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableMacros#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="6520682027041001953" fileName="MacroHelper.java" startLine="115" startPosition="130" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6520682027041002130" fileName="MacroHelper.java" startLine="119" startPosition="45" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6520682027040929283" fileName="MacroHelper.java" startLine="127" startPosition="103" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="6520682027040940359" fileName="MacroHelper.java" startLine="135" startPosition="103" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2590653267525218535" fileName="MacroHelper.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2590653267525251800" fileName="MacroHelper.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExportName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6520682027040857009" fileName="MacroHelper.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImportName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6520682027041002360" fileName="MacroHelper.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPrefix#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6520682027041026768" fileName="MacroHelper.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjectName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6520682027041026661" fileName="MacroHelper.java" startLine="161" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="report#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6520682027040854657" fileName="MacroHelper.java" startLine="170" startPosition="0" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacroContext#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="6520682027041049524" fileName="MacroHelper.java" startLine="200" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOriginalMacro#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6520682027041049582" fileName="MacroHelper.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOriginalDep#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2590653267525251370" fileName="MacroHelper.java" startLine="208" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportProblem#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="6520682027040929221" fileName="MacroHelper.java" startLine="126" startPosition="46" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040940351" fileName="MacroHelper.java" startLine="134" startPosition="46" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040856401" fileName="MacroHelper.java" startLine="183" startPosition="60" endLine="190" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040929216" fileName="MacroHelper.java" startLine="125" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacrosToExport#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6520682027040940346" fileName="MacroHelper.java" startLine="133" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacrosToImport#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6520682027041001534" fileName="MacroHelper.java" startLine="74" startPosition="48" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040857127" fileName="MacroHelper.java" startLine="85" startPosition="132" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040857371" fileName="MacroHelper.java" startLine="89" startPosition="5" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6520682027040859986" fileName="MacroHelper.java" startLine="98" startPosition="5" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040857025" fileName="MacroHelper.java" startLine="113" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableMacros#()Ljava/util/Collection;" />
+    <nodeInfo nodeId="6520682027041001953" fileName="MacroHelper.java" startLine="119" startPosition="130" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6520682027041002130" fileName="MacroHelper.java" startLine="123" startPosition="45" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6520682027040929283" fileName="MacroHelper.java" startLine="131" startPosition="103" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="6520682027040940359" fileName="MacroHelper.java" startLine="139" startPosition="103" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2590653267525218535" fileName="MacroHelper.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2590653267525251800" fileName="MacroHelper.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExportName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6520682027040857009" fileName="MacroHelper.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImportName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6520682027041002360" fileName="MacroHelper.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPrefix#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6520682027041026768" fileName="MacroHelper.java" startLine="161" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProjectName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6520682027041026661" fileName="MacroHelper.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="report#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6520682027040854657" fileName="MacroHelper.java" startLine="174" startPosition="0" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MacroContext#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+    <nodeInfo nodeId="6520682027041049524" fileName="MacroHelper.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOriginalMacro#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6520682027041049582" fileName="MacroHelper.java" startLine="208" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOriginalDep#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2590653267525251370" fileName="MacroHelper.java" startLine="212" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reportProblem#(Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="6520682027040929221" fileName="MacroHelper.java" startLine="130" startPosition="46" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040940351" fileName="MacroHelper.java" startLine="138" startPosition="46" endLine="143" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027040856401" fileName="MacroHelper.java" startLine="187" startPosition="60" endLine="194" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040929216" fileName="MacroHelper.java" startLine="129" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacrosToExport#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6520682027040940346" fileName="MacroHelper.java" startLine="137" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacrosToImport#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="2590653267525251277" fileName="MacroHelper.java" startLine="40" startPosition="22" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6520682027040860107" fileName="MacroHelper.java" startLine="100" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeUnique#(Ljava/lang/String;Ljava/util/Set;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6520682027041001868" fileName="MacroHelper.java" startLine="114" startPosition="46" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6520682027040859514" fileName="MacroHelper.java" startLine="64" startPosition="0" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6520682027041001862" fileName="MacroHelper.java" startLine="113" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVarsContainers#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6520682027040854530" fileName="MacroHelper.java" startLine="181" startPosition="34" endLine="194" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="6520682027040854458" fileName="MacroHelper.java" startLine="180" startPosition="7" endLine="198" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6520682027040857073" fileName="MacroHelper.java" startLine="79" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6520682027040854713" fileName="MacroHelper.java" startLine="175" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacros#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/build/util/MacroHelper;" />
-    <nodeInfo nodeId="2590653267525251487" fileName="MacroHelper.java" startLine="49" startPosition="5" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2590653267525251418" fileName="MacroHelper.java" startLine="39" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="6520682027040860107" fileName="MacroHelper.java" startLine="104" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeUnique#(Ljava/lang/String;Ljava/util/Set;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6520682027041001868" fileName="MacroHelper.java" startLine="118" startPosition="46" endLine="127" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6520682027041001862" fileName="MacroHelper.java" startLine="117" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVarsContainers#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="6520682027040854530" fileName="MacroHelper.java" startLine="185" startPosition="34" endLine="198" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="6520682027040859514" fileName="MacroHelper.java" startLine="64" startPosition="0" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6520682027040854458" fileName="MacroHelper.java" startLine="184" startPosition="7" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6520682027040857073" fileName="MacroHelper.java" startLine="83" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="add#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6520682027040854713" fileName="MacroHelper.java" startLine="179" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMacros#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/build/util/MacroHelper;" />
+    <nodeInfo nodeId="2590653267525251487" fileName="MacroHelper.java" startLine="49" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2590653267525251418" fileName="MacroHelper.java" startLine="39" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <scopeInfo nodeId="2590653267525251367" fileName="MacroHelper.java" startLine="42" startPosition="73" endLine="43" endPosition="57" />
     <scopeInfo nodeId="2590653267525251612" fileName="MacroHelper.java" startLine="51" startPosition="39" endLine="52" endPosition="104" />
     <scopeInfo nodeId="2590653267525251713" fileName="MacroHelper.java" startLine="55" startPosition="37" endLine="56" endPosition="96" />
     <scopeInfo nodeId="6520682027040859556" fileName="MacroHelper.java" startLine="61" startPosition="30" endLine="62" endPosition="17" />
-    <scopeInfo nodeId="6520682027040860078" fileName="MacroHelper.java" startLine="67" startPosition="33" endLine="68" endPosition="19" />
-    <scopeInfo nodeId="6520682027040859834" fileName="MacroHelper.java" startLine="92" startPosition="29" endLine="93" endPosition="41" />
-    <scopeInfo nodeId="6520682027040860148" fileName="MacroHelper.java" startLine="104" startPosition="36" endLine="105" endPosition="28" />
-    <scopeInfo nodeId="6520682027040857028" fileName="MacroHelper.java" startLine="110" startPosition="49" endLine="111" endPosition="27" />
-    <scopeInfo nodeId="6520682027041001954" fileName="MacroHelper.java" startLine="116" startPosition="39" endLine="117" endPosition="213" />
-    <scopeInfo nodeId="6520682027041002131" fileName="MacroHelper.java" startLine="120" startPosition="37" endLine="121" endPosition="96" />
-    <scopeInfo nodeId="6520682027040929284" fileName="MacroHelper.java" startLine="128" startPosition="39" endLine="129" endPosition="43" />
-    <scopeInfo nodeId="6520682027040940360" fileName="MacroHelper.java" startLine="136" startPosition="39" endLine="137" endPosition="43" />
-    <scopeInfo nodeId="2590653267525218538" fileName="MacroHelper.java" startLine="142" startPosition="38" endLine="143" endPosition="60" />
-    <scopeInfo nodeId="2590653267525251803" fileName="MacroHelper.java" startLine="146" startPosition="44" endLine="147" endPosition="60" />
-    <scopeInfo nodeId="6520682027040857012" fileName="MacroHelper.java" startLine="150" startPosition="44" endLine="151" endPosition="60" />
-    <scopeInfo nodeId="6520682027041002363" fileName="MacroHelper.java" startLine="154" startPosition="38" endLine="155" endPosition="56" />
-    <scopeInfo nodeId="6520682027041026771" fileName="MacroHelper.java" startLine="158" startPosition="34" endLine="159" endPosition="58" />
-    <scopeInfo nodeId="6520682027041026664" fileName="MacroHelper.java" startLine="162" startPosition="50" endLine="163" endPosition="41" />
-    <scopeInfo nodeId="6520682027040859523" fileName="MacroHelper.java" startLine="178" startPosition="24" endLine="179" endPosition="20" />
-    <scopeInfo nodeId="6520682027040856534" fileName="MacroHelper.java" startLine="187" startPosition="71" endLine="188" endPosition="52" />
-    <scopeInfo nodeId="6520682027040854533" fileName="MacroHelper.java" startLine="192" startPosition="19" endLine="193" endPosition="35" />
-    <scopeInfo nodeId="6520682027041049527" fileName="MacroHelper.java" startLine="201" startPosition="48" endLine="202" endPosition="131" />
-    <scopeInfo nodeId="6520682027041049584" fileName="MacroHelper.java" startLine="205" startPosition="44" endLine="206" endPosition="141" />
-    <scopeInfo nodeId="2590653267525251373" fileName="MacroHelper.java" startLine="209" startPosition="59" endLine="210" endPosition="49" />
+    <scopeInfo nodeId="6592112598315170690" fileName="MacroHelper.java" startLine="66" startPosition="41" endLine="67" endPosition="19" />
+    <scopeInfo nodeId="6520682027040860078" fileName="MacroHelper.java" startLine="71" startPosition="33" endLine="72" endPosition="19" />
+    <scopeInfo nodeId="6520682027040859834" fileName="MacroHelper.java" startLine="96" startPosition="29" endLine="97" endPosition="41" />
+    <scopeInfo nodeId="6520682027040860148" fileName="MacroHelper.java" startLine="108" startPosition="36" endLine="109" endPosition="28" />
+    <scopeInfo nodeId="6520682027040857028" fileName="MacroHelper.java" startLine="114" startPosition="49" endLine="115" endPosition="27" />
+    <scopeInfo nodeId="6520682027041001954" fileName="MacroHelper.java" startLine="120" startPosition="39" endLine="121" endPosition="213" />
+    <scopeInfo nodeId="6520682027041002131" fileName="MacroHelper.java" startLine="124" startPosition="37" endLine="125" endPosition="96" />
+    <scopeInfo nodeId="6520682027040929284" fileName="MacroHelper.java" startLine="132" startPosition="39" endLine="133" endPosition="43" />
+    <scopeInfo nodeId="6520682027040940360" fileName="MacroHelper.java" startLine="140" startPosition="39" endLine="141" endPosition="43" />
+    <scopeInfo nodeId="2590653267525218538" fileName="MacroHelper.java" startLine="146" startPosition="38" endLine="147" endPosition="60" />
+    <scopeInfo nodeId="2590653267525251803" fileName="MacroHelper.java" startLine="150" startPosition="44" endLine="151" endPosition="60" />
+    <scopeInfo nodeId="6520682027040857012" fileName="MacroHelper.java" startLine="154" startPosition="44" endLine="155" endPosition="60" />
+    <scopeInfo nodeId="6520682027041002363" fileName="MacroHelper.java" startLine="158" startPosition="38" endLine="159" endPosition="56" />
+    <scopeInfo nodeId="6520682027041026771" fileName="MacroHelper.java" startLine="162" startPosition="34" endLine="163" endPosition="58" />
+    <scopeInfo nodeId="6520682027041026664" fileName="MacroHelper.java" startLine="166" startPosition="50" endLine="167" endPosition="41" />
+    <scopeInfo nodeId="6520682027040859523" fileName="MacroHelper.java" startLine="182" startPosition="24" endLine="183" endPosition="20" />
+    <scopeInfo nodeId="6520682027040856534" fileName="MacroHelper.java" startLine="191" startPosition="71" endLine="192" endPosition="52" />
+    <scopeInfo nodeId="6520682027040854533" fileName="MacroHelper.java" startLine="196" startPosition="19" endLine="197" endPosition="35" />
+    <scopeInfo nodeId="6520682027041049527" fileName="MacroHelper.java" startLine="205" startPosition="48" endLine="206" endPosition="131" />
+    <scopeInfo nodeId="6520682027041049584" fileName="MacroHelper.java" startLine="209" startPosition="44" endLine="210" endPosition="141" />
+    <scopeInfo nodeId="2590653267525251373" fileName="MacroHelper.java" startLine="213" startPosition="59" endLine="214" endPosition="49" />
     <scopeInfo nodeId="6547494638219723171" fileName="MacroHelper.java" startLine="35" startPosition="72" endLine="37" endPosition="27" />
-    <scopeInfo nodeId="6520682027041001535" fileName="MacroHelper.java" startLine="71" startPosition="32" endLine="73" endPosition="42" />
-    <scopeInfo nodeId="6520682027040857128" fileName="MacroHelper.java" startLine="82" startPosition="31" endLine="84" endPosition="13" />
-    <scopeInfo nodeId="6520682027040859987" fileName="MacroHelper.java" startLine="95" startPosition="29" endLine="97" endPosition="41" />
-    <scopeInfo nodeId="6520682027040854660" fileName="MacroHelper.java" startLine="171" startPosition="73" endLine="173" endPosition="113" />
-    <scopeInfo nodeId="6520682027040854566" fileName="MacroHelper.java" startLine="195" startPosition="14" endLine="197" endPosition="20" />
+    <scopeInfo nodeId="6520682027041001535" fileName="MacroHelper.java" startLine="75" startPosition="32" endLine="77" endPosition="42" />
+    <scopeInfo nodeId="6520682027040857128" fileName="MacroHelper.java" startLine="86" startPosition="31" endLine="88" endPosition="13" />
+    <scopeInfo nodeId="6520682027040859987" fileName="MacroHelper.java" startLine="99" startPosition="29" endLine="101" endPosition="41" />
+    <scopeInfo nodeId="6520682027040854660" fileName="MacroHelper.java" startLine="175" startPosition="73" endLine="177" endPosition="113" />
+    <scopeInfo nodeId="6520682027040854566" fileName="MacroHelper.java" startLine="199" startPosition="14" endLine="201" endPosition="20" />
     <scopeInfo nodeId="6547494638219723168" fileName="MacroHelper.java" startLine="34" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="6520682027040821709" varName="context" />
       <varInfo nodeId="6547494638219723172" varName="project" />
@@ -1874,110 +1878,110 @@
     <scopeInfo nodeId="2590653267525251712" fileName="MacroHelper.java" startLine="54" startPosition="45" endLine="58" endPosition="0">
       <varInfo nodeId="2590653267525251712" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040857025" fileName="MacroHelper.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="6520682027041001953" fileName="MacroHelper.java" startLine="115" startPosition="130" endLine="119" endPosition="0">
+    <scopeInfo nodeId="6520682027040857025" fileName="MacroHelper.java" startLine="113" startPosition="0" endLine="117" endPosition="0" />
+    <scopeInfo nodeId="6520682027041001953" fileName="MacroHelper.java" startLine="119" startPosition="130" endLine="123" endPosition="0">
       <varInfo nodeId="6520682027041001953" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027041002130" fileName="MacroHelper.java" startLine="119" startPosition="45" endLine="123" endPosition="0">
+    <scopeInfo nodeId="6520682027041002130" fileName="MacroHelper.java" startLine="123" startPosition="45" endLine="127" endPosition="0">
       <varInfo nodeId="6520682027041002130" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040929283" fileName="MacroHelper.java" startLine="127" startPosition="103" endLine="131" endPosition="0">
+    <scopeInfo nodeId="6520682027040929283" fileName="MacroHelper.java" startLine="131" startPosition="103" endLine="135" endPosition="0">
       <varInfo nodeId="6520682027040929283" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040940359" fileName="MacroHelper.java" startLine="135" startPosition="103" endLine="139" endPosition="0">
+    <scopeInfo nodeId="6520682027040940359" fileName="MacroHelper.java" startLine="139" startPosition="103" endLine="143" endPosition="0">
       <varInfo nodeId="6520682027040940359" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2590653267525218535" fileName="MacroHelper.java" startLine="141" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="2590653267525218535" fileName="MacroHelper.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="2590653267525218539" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="2590653267525251800" fileName="MacroHelper.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
+    <scopeInfo nodeId="2590653267525251800" fileName="MacroHelper.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="2590653267525251809" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040857009" fileName="MacroHelper.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
+    <scopeInfo nodeId="6520682027040857009" fileName="MacroHelper.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="6520682027040857018" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027041002360" fileName="MacroHelper.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
+    <scopeInfo nodeId="6520682027041002360" fileName="MacroHelper.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="6520682027041002404" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027041026768" fileName="MacroHelper.java" startLine="157" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="6520682027041026661" fileName="MacroHelper.java" startLine="161" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="6520682027041026768" fileName="MacroHelper.java" startLine="161" startPosition="0" endLine="165" endPosition="0" />
+    <scopeInfo nodeId="6520682027041026661" fileName="MacroHelper.java" startLine="165" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="6520682027041026665" varName="message" />
       <varInfo nodeId="6520682027041026667" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040854657" fileName="MacroHelper.java" startLine="170" startPosition="0" endLine="174" endPosition="5">
+    <scopeInfo nodeId="6520682027040854657" fileName="MacroHelper.java" startLine="174" startPosition="0" endLine="178" endPosition="5">
       <varInfo nodeId="6520682027040854720" varName="genContext" />
       <varInfo nodeId="6520682027040856136" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027041049524" fileName="MacroHelper.java" startLine="200" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="6520682027041049524" fileName="MacroHelper.java" startLine="204" startPosition="0" endLine="208" endPosition="0">
       <varInfo nodeId="6520682027041049529" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027041049582" fileName="MacroHelper.java" startLine="204" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="6520682027041049582" fileName="MacroHelper.java" startLine="208" startPosition="0" endLine="212" endPosition="0">
       <varInfo nodeId="6520682027041049591" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="2590653267525251370" fileName="MacroHelper.java" startLine="208" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="2590653267525251370" fileName="MacroHelper.java" startLine="212" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="2590653267525251374" varName="message" />
       <varInfo nodeId="2590653267525251377" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040929220" fileName="MacroHelper.java" startLine="126" startPosition="46" endLine="131" endPosition="7" />
-    <scopeInfo nodeId="6520682027040940350" fileName="MacroHelper.java" startLine="134" startPosition="46" endLine="139" endPosition="7" />
-    <scopeInfo nodeId="6520682027040856402" fileName="MacroHelper.java" startLine="184" startPosition="31" endLine="189" endPosition="13" />
-    <scopeInfo nodeId="6520682027040860110" fileName="MacroHelper.java" startLine="101" startPosition="69" endLine="107" endPosition="16">
+    <scopeInfo nodeId="6520682027040929220" fileName="MacroHelper.java" startLine="130" startPosition="46" endLine="135" endPosition="7" />
+    <scopeInfo nodeId="6520682027040940350" fileName="MacroHelper.java" startLine="138" startPosition="46" endLine="143" endPosition="7" />
+    <scopeInfo nodeId="6520682027040856402" fileName="MacroHelper.java" startLine="188" startPosition="31" endLine="193" endPosition="13" />
+    <scopeInfo nodeId="6520682027040860110" fileName="MacroHelper.java" startLine="105" startPosition="69" endLine="111" endPosition="16">
       <varInfo nodeId="6520682027040860197" varName="i" />
       <varInfo nodeId="6520682027040860141" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="2590653267525251278" fileName="MacroHelper.java" startLine="41" startPosition="73" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="6520682027040929216" fileName="MacroHelper.java" startLine="125" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="6520682027040940346" fileName="MacroHelper.java" startLine="133" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="6520682027040929216" fileName="MacroHelper.java" startLine="129" startPosition="0" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="6520682027040940346" fileName="MacroHelper.java" startLine="137" startPosition="0" endLine="145" endPosition="0" />
     <scopeInfo nodeId="2590653267525251277" fileName="MacroHelper.java" startLine="40" startPosition="22" endLine="49" endPosition="5">
       <varInfo nodeId="2590653267525251279" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040860107" fileName="MacroHelper.java" startLine="100" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="6520682027040860107" fileName="MacroHelper.java" startLine="104" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="6520682027040860113" varName="baseName" />
       <varInfo nodeId="6520682027040860115" varName="usedNames" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027041001865" fileName="MacroHelper.java" startLine="114" startPosition="46" endLine="123" endPosition="7" />
-    <scopeInfo nodeId="6520682027040854531" fileName="MacroHelper.java" startLine="182" startPosition="13" endLine="191" endPosition="24">
+    <scopeInfo nodeId="6520682027041001865" fileName="MacroHelper.java" startLine="118" startPosition="46" endLine="127" endPosition="7" />
+    <scopeInfo nodeId="6520682027040854531" fileName="MacroHelper.java" startLine="186" startPosition="13" endLine="195" endPosition="24">
       <varInfo nodeId="6520682027040856379" varName="helper" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040859515" fileName="MacroHelper.java" startLine="65" startPosition="54" endLine="75" endPosition="57">
+    <scopeInfo nodeId="6520682027041001862" fileName="MacroHelper.java" startLine="117" startPosition="0" endLine="129" endPosition="0" />
+    <scopeInfo nodeId="6520682027040854459" fileName="MacroHelper.java" startLine="185" startPosition="34" endLine="198" endPosition="9" />
+    <scopeInfo nodeId="6520682027040859515" fileName="MacroHelper.java" startLine="65" startPosition="54" endLine="79" endPosition="57">
       <varInfo nodeId="6520682027041001482" varName="depprefix" />
       <varInfo nodeId="6520682027040860069" varName="exportName" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040859514" fileName="MacroHelper.java" startLine="64" startPosition="0" endLine="76" endPosition="7">
+    <scopeInfo nodeId="6520682027040859514" fileName="MacroHelper.java" startLine="64" startPosition="0" endLine="80" endPosition="7">
       <varInfo nodeId="6520682027040859516" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027041001862" fileName="MacroHelper.java" startLine="113" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="6520682027040854459" fileName="MacroHelper.java" startLine="181" startPosition="34" endLine="194" endPosition="9" />
-    <scopeInfo nodeId="2590653267525251488" fileName="MacroHelper.java" startLine="58" startPosition="9" endLine="76" endPosition="7">
-      <varInfo nodeId="6520682027040856735" varName="depHelper" />
-      <varInfo nodeId="6520682027040859688" varName="depProject" />
-    </scopeInfo>
-    <scopeInfo nodeId="6520682027040857076" fileName="MacroHelper.java" startLine="80" startPosition="71" endLine="98" endPosition="5">
+    <scopeInfo nodeId="6520682027040857076" fileName="MacroHelper.java" startLine="84" startPosition="71" endLine="102" endPosition="5">
       <varInfo nodeId="6520682027040857118" varName="macroProject" />
       <varInfo nodeId="6520682027040857372" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040857073" fileName="MacroHelper.java" startLine="79" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="6520682027040857073" fileName="MacroHelper.java" startLine="83" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="6520682027040857083" varName="exportName" />
       <varInfo nodeId="6520682027040857080" varName="importName" />
       <varInfo nodeId="6520682027040857078" varName="macro" />
     </scopeInfo>
-    <scopeInfo nodeId="6520682027040854716" fileName="MacroHelper.java" startLine="176" startPosition="45" endLine="198" endPosition="7" />
-    <scopeInfo nodeId="6520682027040854713" fileName="MacroHelper.java" startLine="175" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="2590653267525251488" fileName="MacroHelper.java" startLine="58" startPosition="9" endLine="80" endPosition="7">
+      <varInfo nodeId="6520682027040856735" varName="depHelper" />
+      <varInfo nodeId="6520682027040859688" varName="depProject" />
+    </scopeInfo>
+    <scopeInfo nodeId="6520682027040854716" fileName="MacroHelper.java" startLine="180" startPosition="45" endLine="202" endPosition="7" />
+    <scopeInfo nodeId="6520682027040854713" fileName="MacroHelper.java" startLine="179" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="6520682027040854718" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="2590653267525251487" fileName="MacroHelper.java" startLine="49" startPosition="5" endLine="77" endPosition="5">
+    <scopeInfo nodeId="2590653267525251487" fileName="MacroHelper.java" startLine="49" startPosition="5" endLine="81" endPosition="5">
       <varInfo nodeId="2590653267525251490" varName="dep" />
     </scopeInfo>
-    <scopeInfo nodeId="2590653267525251421" fileName="MacroHelper.java" startLine="40" startPosition="22" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="2590653267525251418" fileName="MacroHelper.java" startLine="39" startPosition="0" endLine="79" endPosition="0" />
-    <unitInfo nodeId="6547494638219723166" fileName="MacroHelper.java" startLine="23" startPosition="0" endLine="214" endPosition="0" unitName="jetbrains.mps.build.util.MacroHelper" />
+    <scopeInfo nodeId="2590653267525251421" fileName="MacroHelper.java" startLine="40" startPosition="22" endLine="81" endPosition="5" />
+    <scopeInfo nodeId="2590653267525251418" fileName="MacroHelper.java" startLine="39" startPosition="0" endLine="83" endPosition="0" />
+    <unitInfo nodeId="6547494638219723166" fileName="MacroHelper.java" startLine="23" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.build.util.MacroHelper" />
     <unitInfo nodeId="2590653267525251611" fileName="MacroHelper.java" startLine="50" startPosition="112" endLine="54" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$1" />
     <unitInfo nodeId="2590653267525251712" fileName="MacroHelper.java" startLine="54" startPosition="18" endLine="58" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$2" />
-    <unitInfo nodeId="6520682027041001953" fileName="MacroHelper.java" startLine="115" startPosition="107" endLine="119" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$3" />
-    <unitInfo nodeId="6520682027041002130" fileName="MacroHelper.java" startLine="119" startPosition="18" endLine="123" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$4" />
-    <unitInfo nodeId="6520682027040929283" fileName="MacroHelper.java" startLine="127" startPosition="80" endLine="131" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$5" />
-    <unitInfo nodeId="6520682027040940359" fileName="MacroHelper.java" startLine="135" startPosition="80" endLine="139" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$6" />
-    <unitInfo nodeId="6520682027040854655" fileName="MacroHelper.java" startLine="166" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.build.util.MacroHelper$MacroContext" />
+    <unitInfo nodeId="6520682027041001953" fileName="MacroHelper.java" startLine="119" startPosition="107" endLine="123" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$3" />
+    <unitInfo nodeId="6520682027041002130" fileName="MacroHelper.java" startLine="123" startPosition="18" endLine="127" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$4" />
+    <unitInfo nodeId="6520682027040929283" fileName="MacroHelper.java" startLine="131" startPosition="80" endLine="135" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$5" />
+    <unitInfo nodeId="6520682027040940359" fileName="MacroHelper.java" startLine="139" startPosition="80" endLine="143" endPosition="5" unitName="jetbrains.mps.build.util.MacroHelper$6" />
+    <unitInfo nodeId="6520682027040854655" fileName="MacroHelper.java" startLine="170" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.build.util.MacroHelper$MacroContext" />
   </root>
   <root nodeId="7880069565647313573">
     <nodeInfo nodeId="7880069565647313695" fileName="JavaModulesClosure.java" startLine="14" startPosition="33" endLine="15" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modules" />

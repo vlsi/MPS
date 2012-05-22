@@ -12,11 +12,13 @@
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
   <property name="artifacts.buildDebuggerPlugin" location="${build.dir}/artifacts/buildDebuggerPlugin" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
-    <mkdir dir="${build.layout}/plugins/mpsbuild" />
-    <mkdir dir="${build.layout}/plugins/mpsbuild/languages" />
+    <mkdir dir="${build.layout}/plugins/mps-build" />
+    <mkdir dir="${build.layout}/plugins/mps-build/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar/META-INF/module.xml">
@@ -33,12 +35,12 @@
         <sources jar="jetbrains.mps.build.mps.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.mps.pluginSolution.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.mps.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" />
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.mps.pluginSolution-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.mps.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
@@ -60,16 +62,17 @@
         <sources jar="jetbrains.mps.build.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" />
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.pluginSolution.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsbuild/languages/jetbrains.mps.build.pluginSolution-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
+    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">
@@ -129,9 +132,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.buildBuild}/plugins/mpsbuild/languages/jetbrains.mps.build.jar" />
-        <fileset file="${artifacts.buildBuild}/plugins/mpsbuild/languages/jetbrains.mps.build.mps.jar" />
-        <fileset file="${artifacts.buildBuild}/plugins/mpsbuild/languages/jetbrains.mps.build.workflow.jar" />
+        <fileset file="${artifacts.buildBuild}/plugins/mps-build/languages/jetbrains.mps.build.jar" />
+        <fileset file="${artifacts.buildBuild}/plugins/mps-build/languages/jetbrains.mps.build.mps.jar" />
+        <fileset file="${artifacts.buildBuild}/plugins/mps-build/languages/jetbrains.mps.build.workflow.jar" />
         <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
@@ -173,8 +176,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.buildBuild}/plugins/mpsbuild/languages/jetbrains.mps.build.jar" />
-        <fileset file="${artifacts.buildBuild}/plugins/mpsbuild/languages/jetbrains.mps.build.workflow.jar" />
+        <fileset file="${artifacts.buildBuild}/plugins/mps-build/languages/jetbrains.mps.build.jar" />
+        <fileset file="${artifacts.buildBuild}/plugins/mps-build/languages/jetbrains.mps.build.workflow.jar" />
         <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.buildCoreEx}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.buildExecutionPlugin}/plugins/execution-languages/languages/jetbrains.mps.execution.configurations.pluginSolution.jar" />

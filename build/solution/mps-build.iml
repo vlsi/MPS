@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="MPS" name="MPS">
+      <configuration>
+        <option name="UUID" value="19eec0f1-611c-469a-9d4f-e9972ab6ad14" />
+        <option name="generatorOutputPath" value="$MODULE_DIR$/source_gen" />
+        <option name="modelRoots">
+          <set>
+            <ModelRoot>
+              <option name="path" value="$MODULE_DIR$/models" />
+            </ModelRoot>
+          </set>
+        </option>
+        <option name="usedLanguages">
+          <array>
+            <option value="798100da-4f0a-421a-b991-71f8c50ce5d2(jetbrains.mps.build)" />
+            <option value="0cf935df-4699-4e9c-a132-fa109541cba3(jetbrains.mps.build.mps)" />
+            <option value="d5033cee-f632-44b6-b308-89d4fbde34ff(jetbrains.mps.build.startup)" />
+            <option value="a83c3bd0-2f7e-4ba1-8373-12d49e99f57e(jetbrains.mps.gtext)" />
+          </array>
+        </option>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/models" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
+

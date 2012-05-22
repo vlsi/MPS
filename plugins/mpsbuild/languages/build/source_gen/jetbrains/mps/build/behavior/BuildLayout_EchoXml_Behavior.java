@@ -11,7 +11,7 @@ public class BuildLayout_EchoXml_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue) {
+  public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return !(propertyValue.contains("$") || propertyValue.contains("/") || propertyValue.contains("\\"));
   }
 

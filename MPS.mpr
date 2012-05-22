@@ -302,18 +302,13 @@
       <modulePath path="${project}/languages/xml/xml/xml.mpl" folder="build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/buildlanguage/buildlanguage.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/custommps/custommps.mpl" folder="languages.build" />
-      <modulePath path="${project}/plugins/build-deprecated/languages/custommps/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/dependency/dependency.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/generictasks/generictasks.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/generictasks/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/packaging/packaging.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/packaging/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
-      <modulePath path="${project}/plugins/build-deprecated/languages/packmps/packmps.mpl" folder="languages.build" />
-      <modulePath path="${project}/plugins/build-deprecated/languages/packmps/solutions/pluginSolution/pluginSolution.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/property/property.mpl" folder="languages.build" />
-      <modulePath path="${project}/plugins/build-deprecated/languages/solutions/jetbrains.mps.build.mpsautobuild.test/test.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/solutions/jetbrains.mps.build.mpsdist/mpsdist.msd" folder="languages.build" />
-      <modulePath path="${project}/plugins/build-deprecated/languages/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains.mps.buildlangauge.mpsautobuild.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/build-deprecated/languages/solutions/jetbrains.mps.buildlanguage.execution/execution.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/debugger-api/api/api.msd" folder="debugger.api" />
       <modulePath path="${project}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/api.mpl" folder="debugger.api" />

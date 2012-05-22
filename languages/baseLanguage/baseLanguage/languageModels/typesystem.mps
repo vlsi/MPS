@@ -8829,6 +8829,9 @@
             <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2925336694746296751">
               <property name="value" nameId="tpee.1070475926801" value="wrong number of type parameters" />
             </node>
+            <node role="messageTarget" roleId="tpd4.1227096836496" type="tpd4.ReferenceMessageTarget" typeId="tpd4.1227096620180" id="2873897578007969032">
+              <link role="linkDeclaration" roleId="tpd4.1227096645744" targetNodeId="tpee.1170346070688" />
+            </node>
           </node>
         </node>
         <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="2925336694746296752">
