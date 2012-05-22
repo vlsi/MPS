@@ -1437,7 +1437,9 @@
       <varInfo nodeId="5487985028841904437" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="41" startPosition="0" endLine="46" endPosition="3" />
-    <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="73" startPosition="26" endLine="79" endPosition="9" />
+    <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="73" startPosition="26" endLine="79" endPosition="9">
+      <varInfo nodeId="5487985028841904387" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="5487985028841904387" fileName="MoveConcepts_Action.java" startLine="52" startPosition="89" endLine="63" endPosition="5" />
     <scopeInfo nodeId="5487985028841904401" fileName="MoveConcepts_Action.java" startLine="134" startPosition="25" endLine="145" endPosition="11">
       <varInfo nodeId="5487985028841904403" varName="model" />
