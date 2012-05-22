@@ -2431,7 +2431,7 @@
                     <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470432879">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6690493898470423554" resolveInfo="absolutePath" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6690493898470432880">
-                        <property name="value" nameId="tpee.1070475926801" value="plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime" />
+                        <property name="value" nameId="tpee.1070475926801" value="plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime" />
                       </node>
                     </node>
                     <node role="initValue" roleId="tpee.1154542803372" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="6690493898470454621">

@@ -1,6 +1,6 @@
 <project name="test-genxml" basedir="./../../../../..">
   <property name="mps.home" value="${basedir}/../../../../../.." />
-  <property name="runtime.dir" value="${mps.home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
+  <property name="runtime.dir" value="${mps.home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
   
   <path id="mps.classpath">
     <fileset dir="${mps.home}/lib" includes="*.jar" />

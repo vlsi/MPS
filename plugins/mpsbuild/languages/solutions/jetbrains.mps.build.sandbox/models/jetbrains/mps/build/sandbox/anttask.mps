@@ -41,7 +41,7 @@
           <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="1479037094930485456">
             <property name="attrName" nameId="iuxj.6666499814681447926" value="value" />
             <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="1479037094930485457">
-              <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
+              <property name="text" nameId="iuxj.6666499814681541920" value="${mps.home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/classes_gen" />
             </node>
           </node>
         </node>

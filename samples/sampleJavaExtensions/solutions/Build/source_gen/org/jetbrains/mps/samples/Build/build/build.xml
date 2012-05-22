@@ -4,7 +4,7 @@
   <property name="build.layout" location="${build.dir}/artifacts/build" />
   <property name="project_home" location="${basedir}" />
   <property name="idea_home" location="${basedir}/../../../../../dev/JetBrains/IntelliJ IDEA Community Edition 11.1.1" />
-  <property name="artifacts.buildMPS" location="../../../../../dev/JetBrains/MPS 2.5 EAP/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar!/build/artifacts/buildMPS" />
+  <property name="artifacts.buildMPS" location="../../../../../dev/JetBrains/MPS 2.5 EAP/plugins/mps-build/languages/jetbrains.mps.ide.build.jar!/build/artifacts/buildMPS" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
   <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}" />
@@ -183,7 +183,7 @@
   </target>
   
   <target name="buildDependents">
-    <ant antfile="../../../../../dev/JetBrains/MPS 2.5 EAP/plugins/mpsbuild/languages/jetbrains.mps.ide.build.jar!/build/buildMPS.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="../../../../../dev/JetBrains/MPS 2.5 EAP/plugins/mps-build/languages/jetbrains.mps.ide.build.jar!/build/buildMPS.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
