@@ -28,12 +28,12 @@ public interface DependenciesManager {
   /**
    * Returns languages, immediately used by this module
    */
-  Collection<Language> immediateUsedLanguages();
+  Collection<Language> directlyUsedLanguages();
 
   /**
    * Returns modules, immediately visible from this module
    * @param includeNonReexport - if set to ruue, include all dependencies, false - only reexport dependencies
    * @param runtimes - whether or not to include modules visible at runtime (i.e runtimes of used languages)
    */
-  Collection<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes);
+  Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes);
 }

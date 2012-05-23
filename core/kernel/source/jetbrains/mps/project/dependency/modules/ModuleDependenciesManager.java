@@ -33,7 +33,7 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     myModule = module;
   }
 
-  public Collection<Language> immediateUsedLanguages() {
+  public Collection<Language> directlyUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
     for (Language l : ModuleUtil.getUsedLanguages(myModule)) {
       result.add(l);
@@ -41,7 +41,7 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     return result;
   }
 
-  public Collection<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes) {
+  public Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes) {
     HashSet<IModule> result = new HashSet<IModule>();
     for (Dependency dependency : myModule.getDependencies()) {
       IModule m = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());
@@ -60,7 +60,7 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
       //runtimes from languages
       if (runtimes) {
         HashSet<Language> lang = new HashSet<Language>();
-        for (Language l : immediateUsedLanguages()) {
+        for (Language l : directlyUsedLanguages()) {
           if (lang.contains(l)) continue;
           l.getDependenciesManager().collectAllExtendedLanguages(lang);
         }
