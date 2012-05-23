@@ -12,6 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.ModelPlusImportedScope;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.build.util.ScopeUtil;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.util.DescendantsScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.EmptyScope;
@@ -19,12 +24,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import jetbrains.mps.build.util.ScopeUtil;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.scope.CompositeScope;
 
 public class BuildProject_Behavior {
@@ -83,6 +85,19 @@ public class BuildProject_Behavior {
   }
 
   public static Scope call_getScope_1224588814561808649(SNode thisNode, SNode kind, String role) {
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildExternalLayout")) {
+      return new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, SNodeOperations.getModel(thisNode).getModelDescriptor().getModule().getScope(), NameUtil.nodeFQName(kind));
+    }
+
+    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildProject")) {
+      final SNode _this = thisNode;
+      return ScopeUtil.where(new ModelPlusImportedScope(SNodeOperations.getModel(thisNode), true, SNodeOperations.getModel(thisNode).getModelDescriptor().getModule().getScope(), NameUtil.nodeFQName(kind)), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+        public Boolean invoke(SNode n) {
+          return n != _this && !(Sequence.fromIterable(BuildProject_Behavior.call_getVisibleProjects_1224588814561807665(SNodeOperations.cast(n, "jetbrains.mps.build.structure.BuildProject"), false)).contains(_this));
+        }
+      });
+    }
+
     // NOTE: references in project structure and layout should be unordered, thus 
     //       we do not need index/child parameters here 
     if ("layout".equals(role)) {

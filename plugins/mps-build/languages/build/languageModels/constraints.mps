@@ -135,6 +135,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.2755237150521942442" resolveInfo="BuildVariableMacroInitValue" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="8258189873530167542">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Dependencies" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="3ior.4993211115183325728" resolveInfo="BuildProjectDependency" />
+    </node>
   </roots>
   <root id="7389400916848182167">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="7389400916848182168">
@@ -868,7 +872,14 @@
       </node>
     </node>
   </root>
-  <root id="7181125477683417258" />
+  <root id="7181125477683417258">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="8258189873530172585">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="3ior.7181125477683417255" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="8258189873530172586">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="3ior.7181125477683216329" resolveInfo="BuildExternalLayout" />
+      </node>
+    </node>
+  </root>
   <root id="5610619299013068362">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="5610619299013068363">
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="3ior.5610619299013057365" />
@@ -1791,6 +1802,14 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+  </root>
+  <root id="8258189873530167542">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="8258189873530172577">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="3ior.5617550519002745380" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="8258189873530172584">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="3ior.5617550519002745363" resolveInfo="BuildProject" />
       </node>
     </node>
   </root>

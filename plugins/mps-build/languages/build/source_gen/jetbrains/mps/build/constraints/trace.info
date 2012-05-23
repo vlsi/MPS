@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.build.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.build.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1258644073389103233">
     <nodeInfo nodeId="1258644073389103233" fileName="BuildSourcePath_Constraints.java" startLine="8" startPosition="40" endLine="9" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1258644073389103233" fileName="BuildSourcePath_Constraints.java" startLine="12" startPosition="51" endLine="13" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1028,11 +1028,46 @@
     <unitInfo nodeId="7181125477683370817" fileName="BuildLayout_FileStub_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_FileStub_Constraints" />
   </root>
   <root nodeId="7181125477683417258">
-    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="8" startPosition="54" endLine="9" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="7" startPosition="90" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildExternalLayoutDependency_Constraints#()V" />
-    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="8" startPosition="54" endLine="9" endPosition="73" />
-    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="7" startPosition="90" endLine="10" endPosition="3" />
-    <unitInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="21" startPosition="90" endLine="22" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_cnlg4i_a0a0a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="24" startPosition="54" endLine="25" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="42" startPosition="61" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="48" startPosition="13" endLine="49" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="58" startPosition="7" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildExternalLayoutDependency_Constraints#()V" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="49" startPosition="225" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="31" startPosition="85" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="40" startPosition="40" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="47" startPosition="122" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="45" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="39" startPosition="56" endLine="56" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="36" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="30" startPosition="75" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="27" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="24" startPosition="54" endLine="25" endPosition="73" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="42" startPosition="61" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="31" startPosition="85" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="40" startPosition="40" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="48" startPosition="13" endLine="53" endPosition="16">
+      <varInfo nodeId="7181125477683417258" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="47" startPosition="122" endLine="54" endPosition="13" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="7181125477683417258" varName="_context" />
+      <varInfo nodeId="7181125477683417258" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="39" startPosition="56" endLine="56" endPosition="10" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="36" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="29" startPosition="83" endLine="59" endPosition="22">
+      <varInfo nodeId="7181125477683417258" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="27" startPosition="0" endLine="61" endPosition="0" />
+    <unitInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints" />
+    <unitInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="31" startPosition="33" endLine="58" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints$1" />
+    <unitInfo nodeId="7181125477683417258" fileName="BuildExternalLayoutDependency_Constraints.java" startLine="40" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.build.constraints.BuildExternalLayoutDependency_Constraints$2" />
   </root>
   <root nodeId="7389400916848182167">
     <nodeInfo nodeId="7389400916848182167" fileName="BuildSourceMacroRelativePath_Constraints.java" startLine="23" startPosition="89" endLine="24" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_6szw9x_a0a2a0a0a1a0b0a1a0" />
@@ -1215,6 +1250,48 @@
     <scopeInfo nodeId="8237269006869472775" fileName="BuildLayout_NamedContainer_Constraints.java" startLine="19" startPosition="0" endLine="37" endPosition="0" />
     <unitInfo nodeId="8237269006869472775" fileName="BuildLayout_NamedContainer_Constraints.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildLayout_NamedContainer_Constraints" />
     <unitInfo nodeId="8237269006869472775" fileName="BuildLayout_NamedContainer_Constraints.java" startLine="23" startPosition="31" endLine="34" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildLayout_NamedContainer_Constraints$1" />
+  </root>
+  <root nodeId="8258189873530167542">
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="21" startPosition="83" endLine="22" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_woke7q_a0a0a0a0a1a0b0a1a0" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="24" startPosition="47" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="29" startPosition="83" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="42" startPosition="61" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="48" startPosition="13" endLine="49" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="58" startPosition="7" endLine="59" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildProjectDependency_Constraints#()V" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="49" startPosition="218" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="31" startPosition="85" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="40" startPosition="40" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="47" startPosition="122" endLine="54" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="45" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="39" startPosition="56" endLine="56" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="36" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="30" startPosition="75" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="27" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="24" startPosition="47" endLine="25" endPosition="66" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="33" startPosition="44" endLine="34" endPosition="20" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="42" startPosition="61" endLine="43" endPosition="58" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="31" startPosition="85" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="40" startPosition="40" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="48" startPosition="13" endLine="53" endPosition="16">
+      <varInfo nodeId="8258189873530167542" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="47" startPosition="122" endLine="54" endPosition="13" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="45" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="8258189873530167542" varName="_context" />
+      <varInfo nodeId="8258189873530167542" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="39" startPosition="56" endLine="56" endPosition="10" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="36" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="29" startPosition="83" endLine="59" endPosition="22">
+      <varInfo nodeId="8258189873530167542" varName="references" />
+    </scopeInfo>
+    <scopeInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="27" startPosition="0" endLine="61" endPosition="0" />
+    <unitInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="21" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.constraints.BuildProjectDependency_Constraints" />
+    <unitInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="31" startPosition="33" endLine="58" endPosition="5" unitName="jetbrains.mps.build.constraints.BuildProjectDependency_Constraints$1" />
+    <unitInfo nodeId="8258189873530167542" fileName="BuildProjectDependency_Constraints.java" startLine="40" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.build.constraints.BuildProjectDependency_Constraints$2" />
   </root>
   <root nodeId="841011766565773812">
     <nodeInfo nodeId="841011766565773812" fileName="BuildLayout_Import_Constraints.java" startLine="25" startPosition="79" endLine="26" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_gjnfdd_a0a2a0a0a1a0b0a1a0" />
