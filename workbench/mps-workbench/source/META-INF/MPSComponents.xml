@@ -3,6 +3,7 @@
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             xsi:schemaLocation="http://www.w3.org/2001/XInclude
    http://www.w3.org/2001/XInclude.xsd">
+  <module value="jetbrains.mps.ide"/>
 
   <application-components>
     <component>
