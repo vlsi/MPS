@@ -18,7 +18,7 @@
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildExecution" location="${build.dir}/artifacts/buildExecution" />
   <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
-  <property name="artifacts.buildUiLanguages" location="${build.dir}/artifacts/buildUiLanguages" />
+  <property name="artifacts.buildUILanguages" location="${build.dir}/artifacts/buildUILanguages" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.buildBuildUI" location="${build.dir}/artifacts/buildBuildUI" />
@@ -60,9 +60,6 @@
     </copy>
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildUtilLanguages}/languages" />
-    </copy>
-    <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
     <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
@@ -134,6 +131,9 @@
     </copy>
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildBuildlanguageDeprecated}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildUILanguages}/plugins" />
     </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">
