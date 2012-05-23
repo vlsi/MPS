@@ -47,8 +47,74 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.6592112598314498926" resolveInfo="BuildMpsLayout_Plugin" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561889089">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.1265949165890536423" resolveInfo="BuildMpsLayout_ModuleJars" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561902800">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Runtime" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.3189788309731981027" resolveInfo="BuildMps_ModuleSolutionRuntime" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561902805">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.322010710376037449" resolveInfo="BuildMps_ModuleDependencyOnDevKit" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561902808">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.3189788309731928315" resolveInfo="BuildMps_ModuleDependencyOnJavaModule" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561902811">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.5253498789149585690" resolveInfo="BuildMps_ModuleDependencyOnModule" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913804">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Deps" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.3189788309731922642" resolveInfo="BuildMps_ModuleDependencyUseLanguage" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913808">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.322010710375805242" resolveInfo="BuildMps_DevKitRef" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913811">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.322010710375832938" resolveInfo="BuildMps_DevKitExportLanguage" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913814">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.DevKit" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.322010710375832954" resolveInfo="BuildMps_DevKitExportSolution" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913819">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.1692280246134781712" resolveInfo="BuildMpsLayout_ModuleSources" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913825">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.7655580649838764660" resolveInfo="BuildMpsLayout_ModuleXml" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913828">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.6592112598314795900" resolveInfo="BuildMpsLayout_PluginDescriptor" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913831">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.6592112598314586625" resolveInfo="BuildMps_IdeaPluginGroup" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913834">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.6592112598314499036" resolveInfo="BuildMps_IdeaPluginModule" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="1224588814561913837">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="kdzh.6592112598314499027" resolveInfo="BuildMps_IdeaPluginDependency" />
+    </node>
   </roots>
   <root id="4278635856200794937">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561902803">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.4278635856200794928" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561902804">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.3189788309731840248" resolveInfo="BuildMps_Language" />
+      </node>
+    </node>
     <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="4278635856200794938">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4278635856200794939">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4278635856200794940">
@@ -498,6 +564,132 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913817">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.6592112598314801433" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913818">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.6592112598314498932" resolveInfo="BuildMps_IdeaPlugin" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561889089">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561889090">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.1265949165890536425" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561889091">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.5253498789149381388" resolveInfo="BuildMps_Module" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561902800">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561902801">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.3189788309731981028" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561902802">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.3189788309731840247" resolveInfo="BuildMps_Solution" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561902805">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561902806">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.322010710376037450" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561902807">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.322010710375794190" resolveInfo="BuildMps_DevKit" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561902808">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561902809">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.3189788309731928317" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561902810">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="3ior.7389400916848073784" resolveInfo="BuildSource_JavaModule" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561902811">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561902812">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.5253498789149547705" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561902813">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.5253498789149381388" resolveInfo="BuildMps_Module" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913804">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913805">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.3189788309731922643" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913807">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.3189788309731840248" resolveInfo="BuildMps_Language" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913808">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913809">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.322010710375805243" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913810">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.322010710375794190" resolveInfo="BuildMps_DevKit" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913811">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913812">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.322010710375832947" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913813">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.3189788309731840248" resolveInfo="BuildMps_Language" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913814">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913815">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.322010710375832955" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913816">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.3189788309731840247" resolveInfo="BuildMps_Solution" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913819">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913820">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.1692280246134781713" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913824">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.5253498789149381388" resolveInfo="BuildMps_Module" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913825">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913826">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.7655580649838764661" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913827">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.5253498789149381388" resolveInfo="BuildMps_Module" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913828">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913829">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.6592112598314795901" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913830">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.6592112598314498932" resolveInfo="BuildMps_IdeaPlugin" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913831">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913832">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.6592112598314586626" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913833">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.1500819558095907805" resolveInfo="BuildMps_Group" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913834">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913835">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.6592112598314499037" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913836">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.322010710375871467" resolveInfo="BuildMps_AbstractModule" />
+      </node>
+    </node>
+  </root>
+  <root id="1224588814561913837">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561913838">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="kdzh.6592112598314499066" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561913839">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="kdzh.6592112598314498932" resolveInfo="BuildMps_IdeaPlugin" />
       </node>
     </node>
   </root>

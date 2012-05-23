@@ -5,13 +5,8 @@ package jetbrains.mps.build.mps.constraints;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Map;
-import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import java.util.HashMap;
-import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
@@ -19,38 +14,21 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 
-public class BuildMpsLayout_Plugin_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_vhu3b2_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913818");
+public class BuildMps_IdeaPluginDependency_Constraints extends BaseConstraintsDescriptor {
+  private static SNodePointer breakingNode_p5gp1g_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913839");
 
-  public BuildMpsLayout_Plugin_Constraints() {
-    super("jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin");
-  }
-
-  @Override
-  protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
-    Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
-    properties.put("name", new BasePropertyConstraintsDescriptor("name", this) {
-      @Override
-      public boolean hasOwnGetter() {
-        return true;
-      }
-
-      @Override
-      public Object getValue(SNode node, IScope scope) {
-        String propertyName = "name";
-        return BuildSource_SingleFolder_Behavior.call_getApproximateName_5610619299014531547(node);
-      }
-    });
-    return properties;
+  public BuildMps_IdeaPluginDependency_Constraints() {
+    super("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency");
   }
 
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
-    references.put("plugin", new BaseReferenceConstraintsDescriptor("plugin", this) {
+    references.put("target", new BaseReferenceConstraintsDescriptor("target", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
@@ -62,7 +40,7 @@ public class BuildMpsLayout_Plugin_Constraints extends BaseConstraintsDescriptor
         return new BaseScopeProvider() {
           @Override
           public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_vhu3b2_a0a0a0a0a1a0b0a1a1;
+            return breakingNode_p5gp1g_a0a0a0a0a1a0b0a1a0;
           }
 
           @Override

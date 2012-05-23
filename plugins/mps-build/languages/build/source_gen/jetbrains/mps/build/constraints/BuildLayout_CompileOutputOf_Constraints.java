@@ -8,10 +8,21 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import java.util.Map;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
+import java.util.HashMap;
+import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "2591537044435952572");
+  private static SNodePointer breakingNode_yp60el_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1224588814561883819");
 
   public BuildLayout_CompileOutputOf_Constraints() {
     super("jetbrains.mps.build.structure.BuildLayout_CompileOutputOf");
@@ -31,6 +42,40 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
     }
 
     return result;
+  }
+
+  @Override
+  protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
+    Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
+    references.put("module", new BaseReferenceConstraintsDescriptor("module", this) {
+      @Override
+      public boolean hasOwnScopeProvider() {
+        return true;
+      }
+
+      @Nullable
+      @Override
+      public ReferenceScopeProvider getScopeProvider() {
+        return new BaseScopeProvider() {
+          @Override
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_yp60el_a0a0a0a0a1a0b0a1a2;
+          }
+
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_CompilablePart"));
+              return (scope == null ?
+                new EmptyScope() :
+                scope
+              );
+            }
+          }
+        };
+      }
+    });
+    return references;
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {

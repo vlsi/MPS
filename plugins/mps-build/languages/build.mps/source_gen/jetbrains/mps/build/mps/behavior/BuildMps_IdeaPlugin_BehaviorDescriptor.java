@@ -4,11 +4,14 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
+public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
   public BuildMps_IdeaPlugin_BehaviorDescriptor() {
   }
 
@@ -16,8 +19,16 @@ public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_Beh
     return BuildMps_IdeaPlugin_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
 
+  public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
+    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
+  }
+
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
+  }
+
+  public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    return BuildMps_IdeaPlugin_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
 
   @Override

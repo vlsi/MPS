@@ -764,6 +764,12 @@
     </node>
   </root>
   <root id="2591537044435952571">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1224588814561883818">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="3ior.2591537044435828006" />
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814561883819">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="3ior.2591537044435828007" resolveInfo="BuildSource_CompilablePart" />
+      </node>
+    </node>
     <node role="canBeChild" roleId="tp1t.1213106463729" type="tp1t.ConstraintFunction_CanBeAChild" typeId="tp1t.1202989531578" id="2591537044435952572">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2591537044435952573">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2591537044435952574">
@@ -1725,6 +1731,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="1224588814562040209">
+        <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="3ior.7753544965996647426" resolveInfo="BuildSource_FilesetProjectPart" />
       </node>
     </node>
   </root>

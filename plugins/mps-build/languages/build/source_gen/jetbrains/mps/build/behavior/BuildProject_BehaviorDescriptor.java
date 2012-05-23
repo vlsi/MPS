@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class BuildProject_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
@@ -15,7 +14,7 @@ public class BuildProject_BehaviorDescriptor extends BaseConcept_BehaviorDescrip
   }
 
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
-    return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
+    return BuildProject_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {
