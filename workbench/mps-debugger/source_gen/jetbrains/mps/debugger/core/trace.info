@@ -567,7 +567,8 @@
     <nodeInfo nodeId="8424806882555207825" fileName="DebuggerCellPainter.java" startLine="146" startPosition="65" endLine="147" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8424806882555207863" fileName="DebuggerCellPainter.java" startLine="148" startPosition="27" endLine="149" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8424806882555207859" fileName="DebuggerCellPainter.java" startLine="149" startPosition="18" endLine="150" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8424806882555201650" fileName="DebuggerCellPainter.java" startLine="151" startPosition="5" endLine="152" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6280122295252374513" fileName="DebuggerCellPainter.java" startLine="151" startPosition="5" endLine="152" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8424806882555201650" fileName="DebuggerCellPainter.java" startLine="152" startPosition="69" endLine="153" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8424806882555133840" fileName="DebuggerCellPainter.java" startLine="19" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerCellPainter#()V" />
     <nodeInfo nodeId="8424806882555201603" fileName="DebuggerCellPainter.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellBackgroundColor#()Ljava/awt/Color;" />
     <nodeInfo nodeId="8424806882555201608" fileName="DebuggerCellPainter.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeBackgroundColor#()Ljava/awt/Color;" />
@@ -594,7 +595,7 @@
     <nodeInfo nodeId="8424806882555201429" fileName="DebuggerCellPainter.java" startLine="98" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeCell#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
     <nodeInfo nodeId="8424806882555202119" fileName="DebuggerCellPainter.java" startLine="127" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellCoverage#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljava/awt/Rectangle;" />
     <nodeInfo nodeId="8424806882555202075" fileName="DebuggerCellPainter.java" startLine="136" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeCoverage#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljava/awt/Rectangle;" />
-    <nodeInfo nodeId="8424806882555201630" fileName="DebuggerCellPainter.java" startLine="145" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInCellMode#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
+    <nodeInfo nodeId="8424806882555201630" fileName="DebuggerCellPainter.java" startLine="145" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInCellMode#(Ljetbrains/mps/nodeEditor/EditorComponent;)Z" />
     <nodeInfo nodeId="8424806882555201440" fileName="DebuggerCellPainter.java" startLine="107" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStripeCell#(Ljetbrains/mps/nodeEditor/EditorComponent;)Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;" />
     <nodeInfo nodeId="8424806882555202174" fileName="DebuggerCellPainter.java" startLine="63" startPosition="88" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8424806882555207356" fileName="DebuggerCellPainter.java" startLine="38" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
@@ -639,7 +640,7 @@
     <scopeInfo nodeId="8424806882555202079" fileName="DebuggerCellPainter.java" startLine="138" startPosition="72" endLine="143" endPosition="180">
       <varInfo nodeId="8424806882555202073" varName="stripeCell" />
     </scopeInfo>
-    <scopeInfo nodeId="8424806882555201633" fileName="DebuggerCellPainter.java" startLine="146" startPosition="65" endLine="152" endPosition="81">
+    <scopeInfo nodeId="8424806882555201633" fileName="DebuggerCellPainter.java" startLine="146" startPosition="65" endLine="153" endPosition="81">
       <varInfo nodeId="8424806882555207826" varName="nodeCell" />
     </scopeInfo>
     <scopeInfo nodeId="8424806882555201443" fileName="DebuggerCellPainter.java" startLine="109" startPosition="75" endLine="117" endPosition="100">
@@ -657,7 +658,7 @@
     <scopeInfo nodeId="8424806882555202075" fileName="DebuggerCellPainter.java" startLine="136" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="8424806882555202074" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="8424806882555201630" fileName="DebuggerCellPainter.java" startLine="145" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="8424806882555201630" fileName="DebuggerCellPainter.java" startLine="145" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="8424806882555201648" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="8424806882555207363" fileName="DebuggerCellPainter.java" startLine="39" startPosition="73" endLine="51" endPosition="107">
@@ -688,7 +689,7 @@
       <varInfo nodeId="8424806882555201427" varName="editorComponent" />
       <varInfo nodeId="8424806882555201425" varName="graphics" />
     </scopeInfo>
-    <unitInfo nodeId="8424806882555133838" fileName="DebuggerCellPainter.java" startLine="17" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.debugger.core.DebuggerCellPainter" />
+    <unitInfo nodeId="8424806882555133838" fileName="DebuggerCellPainter.java" startLine="17" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.debugger.core.DebuggerCellPainter" />
   </root>
 </debugInfo>
 

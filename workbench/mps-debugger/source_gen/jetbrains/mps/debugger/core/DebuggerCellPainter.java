@@ -149,6 +149,7 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       // whatever 
       return false;
     }
+    // todo what if a table cell contains a list of statements? huh? 
     return nodeCell.getParent().getCellLayout() instanceof CellLayout_Horizontal;
   }
 }
