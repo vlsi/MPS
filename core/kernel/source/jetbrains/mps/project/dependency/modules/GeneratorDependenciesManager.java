@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.dependency;
+package jetbrains.mps.project.dependency.modules;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Set;
 
 public class GeneratorDependenciesManager extends ModuleDependenciesManager<Generator> {
   public GeneratorDependenciesManager(Generator gen) {
