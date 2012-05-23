@@ -11,15 +11,18 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 
 public class BuildMps_IdeaPluginModule_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_gcu639_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913836");
+  private static SNodePointer breakingNode_gcu639_a0a2a0a0a1a0b0a1a0 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913836");
 
   public BuildMps_IdeaPluginModule_Constraints() {
     super("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule");
@@ -39,8 +42,24 @@ public class BuildMps_IdeaPluginModule_Constraints extends BaseConstraintsDescri
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
+          public boolean hasPresentation() {
+            return true;
+          }
+
+          @Override
+          public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
+            if (SNodeOperations.getContainingRoot(_context.getParameterNode()) != SNodeOperations.getContainingRoot(_context.getContextNode())) {
+              SNode proj = SNodeOperations.as(SNodeOperations.getContainingRoot(_context.getParameterNode()), "jetbrains.mps.build.structure.BuildProject");
+              if (proj != null) {
+                return SPropertyOperations.getString(proj, "name") + "/" + SPropertyOperations.getString(_context.getParameterNode(), "name");
+              }
+            }
+            return SPropertyOperations.getString(_context.getParameterNode(), "name");
+          }
+
+          @Override
           public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_gcu639_a0a0a0a0a1a0b0a1a0;
+            return breakingNode_gcu639_a0a2a0a0a1a0b0a1a0;
           }
 
           @Override
