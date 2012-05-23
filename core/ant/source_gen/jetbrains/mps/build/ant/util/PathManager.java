@@ -67,6 +67,12 @@ public class PathManager {
   private static final String MPS_DASH = "mps-";
   private static final String DOT_JAR = ".jar";
   private static final String MODULES_PREFIX = "!/modules";
+  private static final FilenameFilter JARS = new FilenameFilter() {
+    @Override
+    public boolean accept(File dir, String name) {
+      return name.endsWith(PathManager.DOT_JAR);
+    }
+  };
   private static final FilenameFilter MPS_JARS = new FilenameFilter() {
     @Override
     public boolean accept(File dir, String name) {
@@ -268,7 +274,7 @@ public class PathManager {
   @NonNls
   private static String extractRoot(URL resourceURL, String resourcePath) {
     if (!((StringUtil.startsWithChar(resourcePath, '/') || StringUtil.startsWithChar(resourcePath, '\\')))) {
-      // noinspection HardCodedStringLiteral 
+      // noinspection HardCodedStringLiteral
       System.err.println("precondition failed: " + resourcePath);
       return null;
     }
@@ -391,6 +397,26 @@ public class PathManager {
       }
     }
     return Collections.singleton(getHomePath() + File.separator + "core");
+  }
+
+  public static Collection<String> getExtensionsPaths() {
+    String pluginsPath = System.getProperty("plugin.path");
+    List<String> paths = new ArrayList<String>();
+    if (pluginsPath != null) {
+      for (String plugin : pluginsPath.split(File.pathSeparator)) {
+        File lib = new File(plugin + File.separator + "lib");
+        if (lib.exists() && lib.isDirectory()) {
+          for (File jar : lib.listFiles(JARS)) {
+            paths.add(jar.getAbsolutePath() + MODULES_PREFIX);
+          }
+        }
+        File languages = new File(plugin + File.separator + "languages");
+        if (languages.exists() && languages.isDirectory()) {
+          paths.add(languages.getAbsolutePath());
+        }
+      }
+    }
+    return Collections.unmodifiableCollection(paths);
   }
 
   public static String getLanguagesPath() {
