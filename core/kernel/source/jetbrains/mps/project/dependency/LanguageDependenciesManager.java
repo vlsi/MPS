@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.dependency;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
@@ -42,7 +43,9 @@ public class LanguageDependenciesManager extends ModuleDependenciesManager<Langu
   public Collection<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes) {
     Collection<IModule> result = super.immediateUsedModules(includeNonReexport, runtimes);
     //todo this needs to be reviewed when we understand what is the extended language (after moving generator out and getting rid of extended language dependency in generator case)
-    collectAllExtendedLanguages((Set)result);
+    Set<Language> langs = new THashSet<Language>();
+    collectAllExtendedLanguages(langs);
+    result.addAll(langs);
 
     return result;
   }
