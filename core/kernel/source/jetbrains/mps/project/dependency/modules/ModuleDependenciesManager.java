@@ -34,12 +34,11 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
   }
 
   public Collection<Language> immediateUsedLanguages() {
-    Set<Language> immediate = new HashSet<Language>();
-    immediate.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
-    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
-      immediate.addAll(dk.getAllExportedLanguages());
+    Set<Language> result = new HashSet<Language>();
+    for (Language l : ModuleUtil.getUsedLanguages(myModule)) {
+      result.add(l);
     }
-    return immediate;
+    return result;
   }
 
   public Collection<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes) {
