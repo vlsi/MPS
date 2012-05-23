@@ -21,6 +21,7 @@ import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -1370,6 +1371,66 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       public void doUpdateInstanceNode(SNode node) {
         SNode arg = SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).first());
         StubRefUtil.replaceNode(node, new Mps25ApiMigration_MigrationScript.QuotationClass_dibvm8_a1a1a4a0a0a25a0().createNode(arg));
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "ToolDeclaration init block rename";
+      }
+
+      public String getAdditionalInfo() {
+        return "ToolDeclaration init block rename";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return node.getChild("initBlock") != null;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode init = node.getChild("initBlock");
+        if (init != null && SLinkOperations.getTarget(node, "toolInitBlock", true) == null) {
+          SLinkOperations.setTarget(node, "toolInitBlock", SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.InitBlock", null), true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(node, "toolInitBlock", true), "body", (SNode) init.getChild("body"), true);
+          node.removeChild(init);
+        }
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "ToolDeclaration dispose block rename";
+      }
+
+      public String getAdditionalInfo() {
+        return "ToolDeclaration dispose block rename";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return node.getChild("disposeBlock") != null;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode dispose = node.getChild("disposeBlock");
+        if (dispose != null && SLinkOperations.getTarget(node, "toolDisposeBlock", true) == null) {
+          SLinkOperations.setTarget(node, "toolDisposeBlock", SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.DisposeBlock", null), true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(node, "toolDisposeBlock", true), "body", (SNode) dispose.getChild("body"), true);
+          node.removeChild(dispose);
+        }
       }
 
       public boolean isShowAsIntention() {
