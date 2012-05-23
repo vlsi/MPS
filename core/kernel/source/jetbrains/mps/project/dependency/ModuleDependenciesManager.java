@@ -22,6 +22,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,7 +33,7 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     myModule = module;
   }
 
-  public Set<Language> immediateUsedLanguages() {
+  public Collection<Language> immediateUsedLanguages() {
     Set<Language> immediate = new HashSet<Language>();
     immediate.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
     for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
@@ -41,7 +42,7 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
     return immediate;
   }
 
-  public Set<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes) {
+  public Collection<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes) {
     HashSet<IModule> result = new HashSet<IModule>();
     for (Dependency dependency : myModule.getDependencies()) {
       IModule m = ModuleRepositoryFacade.getInstance().getModule(dependency.getModuleRef());

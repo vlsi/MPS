@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,8 +30,8 @@ public class GeneratorDependenciesManager extends ModuleDependenciesManager<Gene
     super(gen);
   }
 
-  public Set<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes) {
-    Set<IModule> result = super.immediateUsedModules(includeNonReexport, runtimes);
+  public Collection<IModule> immediateUsedModules(boolean includeNonReexport, boolean runtimes) {
+    Collection<IModule> result = super.immediateUsedModules(includeNonReexport, runtimes);
     //generator sees all modules from source language as non-reexported
     HashSet<Language> lang = new HashSet<Language>();
     myModule.getSourceLanguage().getDependenciesManager().collectAllExtendedLanguages(lang);
