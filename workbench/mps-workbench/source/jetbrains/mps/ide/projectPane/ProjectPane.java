@@ -236,7 +236,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   public void rebuildTree() {
     myUpdateQueue.queue(new Update(null) {
       public void run() {
-        if (getTree() == null) {
+        if (getTree() == null || getProject().isDisposed()) {
           return;
         }
         getTree().rebuildNow();
