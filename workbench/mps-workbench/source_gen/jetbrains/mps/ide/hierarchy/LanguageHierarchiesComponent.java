@@ -385,22 +385,25 @@ outer:
       myNamespace = SModelUtil.getDeclaringLanguage(conceptDeclaration).getModuleFqName();
       myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
-        public void mousePressed(MouseEvent e) {
+        public void mousePressed(final MouseEvent e) {
           Project project = myOperationContext.getProject();
-          ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
+          final ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(project));
           myComponent.select(ConceptContainer.this);
           if (e.isPopupTrigger()) {
             myComponent.processPopupMenu(e);
           } else {
-            SNode node = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-              public SNode compute() {
-                return getNode();
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
+              public void run() {
+                SNode node = getNode();
+                if (node == null) {
+                  return;
+                }
+                projectPane.selectNode(node, false);
+                if (e.getClickCount() == 2) {
+                  NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
+                }
               }
             });
-            projectPane.selectNode(node, false);
-            if (e.getClickCount() == 2) {
-              NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
-            }
           }
         }
 

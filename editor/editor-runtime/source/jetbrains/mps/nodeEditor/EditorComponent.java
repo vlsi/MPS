@@ -1777,7 +1777,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                       for (final Pair<String, String> id : herror.getAdditionalRulesIds()) {
                         popupMenu.add(new AbstractAction("Go To Rule " + id.o2) {
                           public void actionPerformed(ActionEvent e) {
-                            ModelAccess.instance().runReadAction(new Runnable() {
+                            ModelAccess.instance().runWriteInEDT(new Runnable() {
                               public void run() {
                                 GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, id);
                                 dialog.dispose();
@@ -1788,7 +1788,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                       }
                       popupMenu.add(new AbstractAction("Go To Immediate Rule") {
                         public void actionPerformed(ActionEvent e) {
-                          ModelAccess.instance().runReadAction(new Runnable() {
+                          ModelAccess.instance().runWriteInEDT(new Runnable() {
                             public void run() {
                               GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
                                 herror.getRuleId()));
@@ -1799,7 +1799,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                       });
                       popupMenu.show(dialog, button.getX(), button.getY() + button.getHeight());
                     } else {
-                      ModelAccess.instance().runReadAction(new Runnable() {
+                      ModelAccess.instance().runWriteInEDT(new Runnable() {
                         public void run() {
                           GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
                             herror.getRuleId()));

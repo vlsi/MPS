@@ -61,11 +61,15 @@ public class MPSEditorOpener {
     return new NodeEditor(operationContext, node);
   }
 
+  /**
+   * TODO: not used, remove before MPS 3.0
+   *
+   * @deprecated use openNode(SNode, IOperationContext, boolean, boolean) instead
+   */
   @Deprecated
   public void openNode(final SNode node) {
     if (node == null) return;
-    //todo why later?
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
         if (modelDescriptor == null) return;
@@ -79,27 +83,24 @@ public class MPSEditorOpener {
     });
   }
 
-  /*
-   * Requires: model read, EDT.
+  /**
+   * @deprecated use openNode(SNode, IOperationContext, boolean, boolean) instead
    */
+  @Deprecated
   public Editor editNode(@NotNull final SNode node, final IOperationContext context) {
-    ThreadUtils.assertEDT();
-    ModelAccess.assertLegalRead();
-
     return openNode(node, context, true, !node.isRoot());
   }
 
   /*
-   * Requires: model read, EDT.
+   * Requires: model write, EDT.
    */
   public Editor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     ThreadUtils.assertEDT();
-    ModelAccess.assertLegalRead();
+    ModelAccess.assertLegalWrite();
 
     final jetbrains.mps.project.Project mpsProject = context.getProject();
     mpsProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodePointer instead of SNode */
-    /* temp hack: runWriteAction instead of read, TODO move sync into doOpenNode */
     return doOpenNode(node, context, focus, select);
   }
 

@@ -15,7 +15,7 @@
     <nodeInfo nodeId="3575782568432719140" fileName="TestMethodTreeNode.java" startLine="48" startPosition="27" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3575782568432719148" fileName="TestMethodTreeNode.java" startLine="53" startPosition="39" endLine="54" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3575782568432719166" fileName="TestMethodTreeNode.java" startLine="59" startPosition="25" endLine="60" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432719178" fileName="TestMethodTreeNode.java" startLine="63" startPosition="49" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432719178" fileName="TestMethodTreeNode.java" startLine="63" startPosition="50" endLine="64" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575782568432719192" fileName="TestMethodTreeNode.java" startLine="69" startPosition="33" endLine="70" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3575782568432719039" fileName="TestMethodTreeNode.java" startLine="14" startPosition="58" endLine="16" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestMethod" />
     <nodeInfo nodeId="3575782568432719102" fileName="TestMethodTreeNode.java" startLine="29" startPosition="63" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -38,7 +38,7 @@
     <scopeInfo nodeId="3575782568432719139" fileName="TestMethodTreeNode.java" startLine="48" startPosition="27" endLine="49" endPosition="16" />
     <scopeInfo nodeId="3575782568432719147" fileName="TestMethodTreeNode.java" startLine="53" startPosition="39" endLine="54" endPosition="96" />
     <scopeInfo nodeId="3575782568432719165" fileName="TestMethodTreeNode.java" startLine="59" startPosition="25" endLine="60" endPosition="108" />
-    <scopeInfo nodeId="3575782568432719177" fileName="TestMethodTreeNode.java" startLine="63" startPosition="49" endLine="64" endPosition="47" />
+    <scopeInfo nodeId="3575782568432719177" fileName="TestMethodTreeNode.java" startLine="63" startPosition="50" endLine="64" endPosition="48" />
     <scopeInfo nodeId="3575782568432719191" fileName="TestMethodTreeNode.java" startLine="69" startPosition="33" endLine="70" endPosition="24" />
     <scopeInfo nodeId="3575782568432719050" fileName="TestMethodTreeNode.java" startLine="18" startPosition="112" endLine="22" endPosition="36" />
     <scopeInfo nodeId="3575782568432719093" fileName="TestMethodTreeNode.java" startLine="28" startPosition="25" endLine="32" endPosition="9">

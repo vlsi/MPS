@@ -2595,8 +2595,8 @@
                       <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1227218669095">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1227218669096">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1227224505140">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Comparing%dequal(java%dlang%dString,java%dlang%dString)%cboolean" resolveInfo="equal" />
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~Comparing" resolveInfo="Comparing" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Comparing%dequal(java%dlang%dObject,java%dlang%dObject)%cboolean" resolveInfo="equal" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1227224505141">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1227224505142">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1227218669104" resolveInfo="it" />
@@ -2974,8 +2974,8 @@
                       <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="1227221178659">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1227221178660">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="1227221178661">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Comparing%dequal(java%dlang%dString,java%dlang%dString)%cboolean" resolveInfo="equal" />
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~Comparing" resolveInfo="Comparing" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~Comparing%dequal(java%dlang%dString,java%dlang%dString)%cboolean" resolveInfo="equal" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1227221178662">
                               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1227221178663">
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1227221178668" resolveInfo="it" />

@@ -124,7 +124,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
       if (editorNode == null) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, true, true);
           NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, false);

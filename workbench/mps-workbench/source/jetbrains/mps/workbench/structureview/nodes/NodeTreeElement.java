@@ -67,21 +67,15 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
         final Project p = MPSDataKeys.PROJECT.getData(dataContext);
         if (p == null) return;
 
-        final IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
-          public IModule compute() {
-            SNode node = myNode.getNode();
-            if (node == null) return null;
-            SModel model = node.getModel();
-            if (model == null) return null;
-            return model.getModelDescriptor().getModule();
-          }
-        });
-
-        if (module == null) return;
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          @Override
           public void run() {
             SNode node = myNode.getNode();
             if (node == null) return;
+            SModel model = node.getModel();
+            if (model == null) return;
+            IModule module = model.getModelDescriptor().getModule();
+            if (module == null) return;
             NavigationSupport.getInstance().openNode(new ModuleContext(module, ProjectHelper.toMPSProject(p)), node, true, true);
           }
         });

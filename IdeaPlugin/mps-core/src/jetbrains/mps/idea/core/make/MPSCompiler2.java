@@ -314,7 +314,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
 
     @Override
     public void navigate(final boolean requestFocus) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           SModel model = lookupModel();

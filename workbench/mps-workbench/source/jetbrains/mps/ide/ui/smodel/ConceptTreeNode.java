@@ -67,10 +67,13 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
   }
 
   public void doubleClick() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         SNode concept = getSNode();
-        if (concept == null) return;
+        if (concept == null || concept.isDisposed() || !(concept.isRegistered()) || concept.getModel().getModelDescriptor() != null) {
+          return;
+        }
+        // TODO: use node pointers here
         NavigationSupport.getInstance().openNode(getOperationContext(), concept, true, true);
       }
     });

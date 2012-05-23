@@ -52,12 +52,13 @@ public abstract class BaseNodeModel extends BaseMPSChooseModel<SNode> {
       private Project myProject = getProject();
 
       public void navigate(boolean requestFocus) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             SNode node = getNode();
-            if (node == null) {
+            if (node == null || node.isDisposed() || !(node.isRegistered()) || node.getModel().getModelDescriptor() != null) {
               return;
             }
+            // TODO: use node pointers here
             ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(myProject));
             NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));
           }

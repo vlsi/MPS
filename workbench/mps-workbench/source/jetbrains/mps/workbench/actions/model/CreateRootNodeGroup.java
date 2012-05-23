@@ -216,7 +216,7 @@ public class CreateRootNodeGroup extends BaseGroup {
           node.setProperty(SModelTreeNode.PACK, myPackage);
           myModelDescriptor.getSModel().addRoot(node);
 
-          ModelAccess.instance().runReadInEDT(new Runnable() {
+          ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
               if (!trySelectInCurrentPane(node)) {

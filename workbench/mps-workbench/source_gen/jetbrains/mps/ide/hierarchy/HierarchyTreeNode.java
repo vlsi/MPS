@@ -88,10 +88,14 @@ public class HierarchyTreeNode extends MPSTreeNode {
     if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
+        if (myNode.isDisposed() || !(myNode.isRegistered()) || myNode.getModel().getModelDescriptor() != null) {
+          return;
+        }
         AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();
         if (hierarchyView != null) {
+          // TODO: use node pointers here 
           hierarchyView.openNode(myNode, getOperationContext());
         }
       }

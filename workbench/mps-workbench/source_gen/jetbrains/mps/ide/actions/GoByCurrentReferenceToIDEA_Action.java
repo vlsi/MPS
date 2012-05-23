@@ -24,8 +24,6 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
@@ -127,10 +125,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
         log.error("User's action execute method failed. Action:" + "GoByCurrentReferenceToIDEA", t);
       }
     }
-  }
-
-  private void open(SNode targetNode, final Map<String, Object> _params) {
-    NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), targetNode, true, !(targetNode.isRoot()));
   }
 
   private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {

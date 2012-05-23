@@ -120,7 +120,7 @@ public class PasteNode_Action extends BaseAction {
           // make sure editor will be open 
           final SNode root = pasteNodes.get(0).getContainingRoot();
           assert root != null;
-          ModelAccess.instance().runReadInEDT(new Runnable() {
+          ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
               NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, true, true);
               NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, false);

@@ -175,7 +175,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
             UIUtil.invokeAndWaitIfNeeded(new Runnable() {
                 @Override
                 public void run() {
-                    ModelAccess.instance().runReadAction(new Runnable() {
+                    ModelAccess.instance().runWriteAction(new Runnable() {
                         @Override
                         public void run() {
                             final ProjectOperationContext context = new ProjectOperationContext(

@@ -251,7 +251,7 @@ public class IntentionsSupport {
     intentionActionGroup.add(new BaseAction("Go to Intention Declaration", "Go to declaration of this intention", icon) {
       @Override
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             SNode intentionNode = intentionsManager.getNodeByIntention(intention);
             if (intentionNode == null) {

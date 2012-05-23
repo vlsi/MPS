@@ -53,10 +53,10 @@ public class NavigationManager {
   }
 
   /**
-   *  Navigates to the object. Requires: model read, EDT.
+   *  Navigates to the object. Requires: model write, EDT.
    */
   public void navigateTo(Project project, Object o, boolean focus, boolean select) {
-    ModelAccess.assertLegalRead();
+    ModelAccess.assertLegalWrite();
 
     Class cls = o.getClass();
 

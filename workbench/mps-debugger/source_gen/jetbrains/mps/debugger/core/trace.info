@@ -259,139 +259,136 @@
     <nodeInfo nodeId="1053276000964505360" fileName="CurrentLinePositionComponentEx.java" startLine="100" startPosition="97" endLine="101" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5658809246031045780" fileName="CurrentLinePositionComponentEx.java" startLine="101" startPosition="37" endLine="102" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5658809246031045785" fileName="CurrentLinePositionComponentEx.java" startLine="103" startPosition="51" endLine="104" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045799" fileName="CurrentLinePositionComponentEx.java" startLine="108" startPosition="26" endLine="109" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1053276000964508445" fileName="CurrentLinePositionComponentEx.java" startLine="110" startPosition="20" endLine="111" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045803" fileName="CurrentLinePositionComponentEx.java" startLine="116" startPosition="5" endLine="117" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5658809246031045826" fileName="CurrentLinePositionComponentEx.java" startLine="122" startPosition="25" endLine="123" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5658809246031045847" fileName="CurrentLinePositionComponentEx.java" startLine="123" startPosition="236" endLine="124" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045861" fileName="CurrentLinePositionComponentEx.java" startLine="125" startPosition="45" endLine="126" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1053276000964508382" fileName="CurrentLinePositionComponentEx.java" startLine="134" startPosition="25" endLine="135" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1053276000964508432" fileName="CurrentLinePositionComponentEx.java" startLine="136" startPosition="77" endLine="137" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045876" fileName="CurrentLinePositionComponentEx.java" startLine="146" startPosition="55" endLine="147" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5658809246031045882" fileName="CurrentLinePositionComponentEx.java" startLine="148" startPosition="49" endLine="149" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045888" fileName="CurrentLinePositionComponentEx.java" startLine="149" startPosition="79" endLine="150" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045906" fileName="CurrentLinePositionComponentEx.java" startLine="155" startPosition="27" endLine="156" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045910" fileName="CurrentLinePositionComponentEx.java" startLine="159" startPosition="5" endLine="160" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5658809246031045931" fileName="CurrentLinePositionComponentEx.java" startLine="164" startPosition="106" endLine="165" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045941" fileName="CurrentLinePositionComponentEx.java" startLine="169" startPosition="43" endLine="170" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5658809246031045948" fileName="CurrentLinePositionComponentEx.java" startLine="171" startPosition="40" endLine="172" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5658809246031045952" fileName="CurrentLinePositionComponentEx.java" startLine="173" startPosition="5" endLine="174" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045961" fileName="CurrentLinePositionComponentEx.java" startLine="177" startPosition="45" endLine="178" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5658809246031045966" fileName="CurrentLinePositionComponentEx.java" startLine="178" startPosition="66" endLine="179" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5658809246031045990" fileName="CurrentLinePositionComponentEx.java" startLine="183" startPosition="38" endLine="184" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045996" fileName="CurrentLinePositionComponentEx.java" startLine="186" startPosition="38" endLine="187" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031046025" fileName="CurrentLinePositionComponentEx.java" startLine="196" startPosition="105" endLine="197" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5658809246031046033" fileName="CurrentLinePositionComponentEx.java" startLine="198" startPosition="30" endLine="199" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031046065" fileName="CurrentLinePositionComponentEx.java" startLine="206" startPosition="119" endLine="207" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031046090" fileName="CurrentLinePositionComponentEx.java" startLine="219" startPosition="76" endLine="220" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031046106" fileName="CurrentLinePositionComponentEx.java" startLine="226" startPosition="76" endLine="227" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5574644062438401453" fileName="CurrentLinePositionComponentEx.java" startLine="107" startPosition="29" endLine="108" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045799" fileName="CurrentLinePositionComponentEx.java" startLine="109" startPosition="26" endLine="110" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1053276000964508445" fileName="CurrentLinePositionComponentEx.java" startLine="111" startPosition="20" endLine="112" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045803" fileName="CurrentLinePositionComponentEx.java" startLine="117" startPosition="5" endLine="118" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031045826" fileName="CurrentLinePositionComponentEx.java" startLine="121" startPosition="80" endLine="122" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031045847" fileName="CurrentLinePositionComponentEx.java" startLine="122" startPosition="232" endLine="123" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045861" fileName="CurrentLinePositionComponentEx.java" startLine="124" startPosition="41" endLine="125" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1053276000964508382" fileName="CurrentLinePositionComponentEx.java" startLine="129" startPosition="67" endLine="130" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1053276000964508432" fileName="CurrentLinePositionComponentEx.java" startLine="131" startPosition="73" endLine="132" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045876" fileName="CurrentLinePositionComponentEx.java" startLine="139" startPosition="55" endLine="140" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031045882" fileName="CurrentLinePositionComponentEx.java" startLine="141" startPosition="49" endLine="142" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045888" fileName="CurrentLinePositionComponentEx.java" startLine="142" startPosition="79" endLine="143" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045906" fileName="CurrentLinePositionComponentEx.java" startLine="148" startPosition="27" endLine="149" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045910" fileName="CurrentLinePositionComponentEx.java" startLine="152" startPosition="5" endLine="153" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031045931" fileName="CurrentLinePositionComponentEx.java" startLine="157" startPosition="106" endLine="158" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045941" fileName="CurrentLinePositionComponentEx.java" startLine="162" startPosition="43" endLine="163" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031045948" fileName="CurrentLinePositionComponentEx.java" startLine="164" startPosition="40" endLine="165" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031045952" fileName="CurrentLinePositionComponentEx.java" startLine="166" startPosition="5" endLine="167" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045961" fileName="CurrentLinePositionComponentEx.java" startLine="170" startPosition="45" endLine="171" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031045966" fileName="CurrentLinePositionComponentEx.java" startLine="171" startPosition="66" endLine="172" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031045990" fileName="CurrentLinePositionComponentEx.java" startLine="176" startPosition="38" endLine="177" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045996" fileName="CurrentLinePositionComponentEx.java" startLine="179" startPosition="38" endLine="180" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031046025" fileName="CurrentLinePositionComponentEx.java" startLine="189" startPosition="105" endLine="190" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5658809246031046033" fileName="CurrentLinePositionComponentEx.java" startLine="191" startPosition="30" endLine="192" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031046065" fileName="CurrentLinePositionComponentEx.java" startLine="199" startPosition="119" endLine="200" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031046090" fileName="CurrentLinePositionComponentEx.java" startLine="212" startPosition="76" endLine="213" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031046106" fileName="CurrentLinePositionComponentEx.java" startLine="219" startPosition="76" endLine="220" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1053276000964398335" fileName="CurrentLinePositionComponentEx.java" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentSession#()null" />
-    <nodeInfo nodeId="1053276000964508443" fileName="CurrentLinePositionComponentEx.java" startLine="110" startPosition="18" endLine="112" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="796115907523081787" fileName="CurrentLinePositionComponentEx.java" startLine="142" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(null)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5658809246031046075" fileName="CurrentLinePositionComponentEx.java" startLine="213" startPosition="90" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyEditorComponentCreateListener#()V" />
+    <nodeInfo nodeId="1053276000964508443" fileName="CurrentLinePositionComponentEx.java" startLine="111" startPosition="18" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="796115907523081787" fileName="CurrentLinePositionComponentEx.java" startLine="135" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(null)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5658809246031046075" fileName="CurrentLinePositionComponentEx.java" startLine="206" startPosition="90" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyEditorComponentCreateListener#()V" />
     <nodeInfo nodeId="5658809246031045662" fileName="CurrentLinePositionComponentEx.java" startLine="65" startPosition="97" endLine="68" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1053276000964529332" fileName="CurrentLinePositionComponentEx.java" startLine="92" startPosition="43" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031045856" fileName="CurrentLinePositionComponentEx.java" startLine="124" startPosition="131" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1053276000964508410" fileName="CurrentLinePositionComponentEx.java" startLine="135" startPosition="125" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5658809246031045924" fileName="CurrentLinePositionComponentEx.java" startLine="163" startPosition="67" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5658809246031045946" fileName="CurrentLinePositionComponentEx.java" startLine="170" startPosition="68" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031045985" fileName="CurrentLinePositionComponentEx.java" startLine="182" startPosition="27" endLine="185" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031045994" fileName="CurrentLinePositionComponentEx.java" startLine="185" startPosition="11" endLine="188" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031046031" fileName="CurrentLinePositionComponentEx.java" startLine="197" startPosition="100" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031046058" fileName="CurrentLinePositionComponentEx.java" startLine="205" startPosition="25" endLine="208" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5658809246031046086" fileName="CurrentLinePositionComponentEx.java" startLine="218" startPosition="82" endLine="221" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5658809246031046102" fileName="CurrentLinePositionComponentEx.java" startLine="225" startPosition="83" endLine="228" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5658809246031045856" fileName="CurrentLinePositionComponentEx.java" startLine="123" startPosition="127" endLine="126" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1053276000964508410" fileName="CurrentLinePositionComponentEx.java" startLine="130" startPosition="121" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5658809246031045924" fileName="CurrentLinePositionComponentEx.java" startLine="156" startPosition="67" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5658809246031045946" fileName="CurrentLinePositionComponentEx.java" startLine="163" startPosition="68" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5658809246031045985" fileName="CurrentLinePositionComponentEx.java" startLine="175" startPosition="27" endLine="178" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5658809246031045994" fileName="CurrentLinePositionComponentEx.java" startLine="178" startPosition="11" endLine="181" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5658809246031046031" fileName="CurrentLinePositionComponentEx.java" startLine="190" startPosition="100" endLine="193" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5658809246031046058" fileName="CurrentLinePositionComponentEx.java" startLine="198" startPosition="25" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5658809246031046086" fileName="CurrentLinePositionComponentEx.java" startLine="211" startPosition="82" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5658809246031046102" fileName="CurrentLinePositionComponentEx.java" startLine="218" startPosition="83" endLine="221" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5658809246031046135" fileName="CurrentLinePositionComponentEx.java" startLine="35" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CurrentLinePositionComponentEx#(Lcom/intellij/openapi/project/Project;Lcom/intellij/openapi/fileEditor/FileEditorManager;)V" />
     <nodeInfo nodeId="5658809246031045598" fileName="CurrentLinePositionComponentEx.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="5658809246031045706" fileName="CurrentLinePositionComponentEx.java" startLine="79" startPosition="25" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031045879" fileName="CurrentLinePositionComponentEx.java" startLine="147" startPosition="37" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5658809246031045879" fileName="CurrentLinePositionComponentEx.java" startLine="140" startPosition="37" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="5658809246031045580" fileName="CurrentLinePositionComponentEx.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="5658809246031045609" fileName="CurrentLinePositionComponentEx.java" startLine="52" startPosition="53" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="1053276000964508438" fileName="CurrentLinePositionComponentEx.java" startLine="107" startPosition="29" endLine="112" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031045902" fileName="CurrentLinePositionComponentEx.java" startLine="153" startPosition="29" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1053276000964508438" fileName="CurrentLinePositionComponentEx.java" startLine="108" startPosition="43" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5658809246031045902" fileName="CurrentLinePositionComponentEx.java" startLine="146" startPosition="29" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5658809246031045655" fileName="CurrentLinePositionComponentEx.java" startLine="64" startPosition="25" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031045898" fileName="CurrentLinePositionComponentEx.java" startLine="152" startPosition="26" endLine="158" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5658809246031045917" fileName="CurrentLinePositionComponentEx.java" startLine="162" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainter#(Ljetbrains/mps/debugger/core/CurrentLinePainter;)V" />
-    <nodeInfo nodeId="5658809246031046019" fileName="CurrentLinePositionComponentEx.java" startLine="195" startPosition="49" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1053276000964508322" fileName="CurrentLinePositionComponentEx.java" startLine="133" startPosition="57" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5658809246031046054" fileName="CurrentLinePositionComponentEx.java" startLine="203" startPosition="68" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5658809246031046079" fileName="CurrentLinePositionComponentEx.java" startLine="216" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentCreated#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="5658809246031046095" fileName="CurrentLinePositionComponentEx.java" startLine="223" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="5658809246031045898" fileName="CurrentLinePositionComponentEx.java" startLine="145" startPosition="26" endLine="151" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031045917" fileName="CurrentLinePositionComponentEx.java" startLine="155" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainter#(Ljetbrains/mps/debugger/core/CurrentLinePainter;)V" />
+    <nodeInfo nodeId="5658809246031046019" fileName="CurrentLinePositionComponentEx.java" startLine="188" startPosition="49" endLine="194" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1053276000964508307" fileName="CurrentLinePositionComponentEx.java" startLine="128" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainter#(Ljetbrains/mps/debugger/core/CurrentLinePainter;)V" />
+    <nodeInfo nodeId="5658809246031046054" fileName="CurrentLinePositionComponentEx.java" startLine="196" startPosition="68" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5658809246031046079" fileName="CurrentLinePositionComponentEx.java" startLine="209" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentCreated#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
+    <nodeInfo nodeId="5658809246031046095" fileName="CurrentLinePositionComponentEx.java" startLine="216" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="editorComponentDisposed#(Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
     <nodeInfo nodeId="5658809246031045606" fileName="CurrentLinePositionComponentEx.java" startLine="51" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllPainters#()Ljava/util/List;" />
     <nodeInfo nodeId="5658809246031045702" fileName="CurrentLinePositionComponentEx.java" startLine="77" startPosition="57" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1053276000964528885" fileName="CurrentLinePositionComponentEx.java" startLine="90" startPosition="117" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/debugger/core/CurrentLinePainter;" />
-    <nodeInfo nodeId="5658809246031045822" fileName="CurrentLinePositionComponentEx.java" startLine="121" startPosition="57" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1053276000964508314" fileName="CurrentLinePositionComponentEx.java" startLine="132" startPosition="73" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045893" fileName="CurrentLinePositionComponentEx.java" startLine="151" startPosition="5" endLine="159" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031045935" fileName="CurrentLinePositionComponentEx.java" startLine="168" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainter#(null)V" />
-    <nodeInfo nodeId="5658809246031046016" fileName="CurrentLinePositionComponentEx.java" startLine="194" startPosition="54" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="5658809246031046047" fileName="CurrentLinePositionComponentEx.java" startLine="202" startPosition="5" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045807" fileName="CurrentLinePositionComponentEx.java" startLine="120" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterAndOpenEditor#(Ljetbrains/mps/debugger/core/CurrentLinePainter;)V" />
+    <nodeInfo nodeId="5658809246031045893" fileName="CurrentLinePositionComponentEx.java" startLine="144" startPosition="5" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5658809246031045935" fileName="CurrentLinePositionComponentEx.java" startLine="161" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainter#(null)V" />
+    <nodeInfo nodeId="5658809246031046016" fileName="CurrentLinePositionComponentEx.java" startLine="187" startPosition="54" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5658809246031046047" fileName="CurrentLinePositionComponentEx.java" startLine="195" startPosition="5" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5658809246031045695" fileName="CurrentLinePositionComponentEx.java" startLine="76" startPosition="65" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1053276000964529353" fileName="CurrentLinePositionComponentEx.java" startLine="89" startPosition="66" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5658809246031045795" fileName="CurrentLinePositionComponentEx.java" startLine="105" startPosition="31" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5658809246031045814" fileName="CurrentLinePositionComponentEx.java" startLine="120" startPosition="86" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5658809246031045981" fileName="CurrentLinePositionComponentEx.java" startLine="181" startPosition="70" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5574644062438401408" fileName="CurrentLinePositionComponentEx.java" startLine="174" startPosition="59" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="5658809246031045651" fileName="CurrentLinePositionComponentEx.java" startLine="62" startPosition="57" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5658809246031045791" fileName="CurrentLinePositionComponentEx.java" startLine="104" startPosition="88" endLine="114" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5658809246031045973" fileName="CurrentLinePositionComponentEx.java" startLine="180" startPosition="57" endLine="190" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5658809246031045795" fileName="CurrentLinePositionComponentEx.java" startLine="105" startPosition="31" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5574644062438401374" fileName="CurrentLinePositionComponentEx.java" startLine="173" startPosition="57" endLine="183" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5658809246031045644" fileName="CurrentLinePositionComponentEx.java" startLine="61" startPosition="65" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1053276000964508307" fileName="CurrentLinePositionComponentEx.java" startLine="131" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainter#(Ljetbrains/mps/debugger/core/CurrentLinePainter;)V" />
-    <nodeInfo nodeId="5658809246031045807" fileName="CurrentLinePositionComponentEx.java" startLine="119" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterAndOpenEditor#(Ljetbrains/mps/debugger/core/CurrentLinePainter;)V" />
-    <nodeInfo nodeId="5658809246031045971" fileName="CurrentLinePositionComponentEx.java" startLine="179" startPosition="66" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5658809246031045791" fileName="CurrentLinePositionComponentEx.java" startLine="104" startPosition="88" endLine="115" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5658809246031045971" fileName="CurrentLinePositionComponentEx.java" startLine="172" startPosition="66" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5658809246031045681" fileName="CurrentLinePositionComponentEx.java" startLine="74" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detach#(Ljetbrains/mps/debugger/core/CurrentLinePainter;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="5658809246031045782" fileName="CurrentLinePositionComponentEx.java" startLine="102" startPosition="116" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5658809246031045782" fileName="CurrentLinePositionComponentEx.java" startLine="102" startPosition="116" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="5658809246031045630" fileName="CurrentLinePositionComponentEx.java" startLine="59" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attach#(Ljetbrains/mps/debugger/core/CurrentLinePainter;Ljetbrains/mps/nodeEditor/EditorComponent;)V" />
-    <nodeInfo nodeId="5658809246031045957" fileName="CurrentLinePositionComponentEx.java" startLine="176" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reAttachPainter#(null)V" />
-    <nodeInfo nodeId="5658809246031045769" fileName="CurrentLinePositionComponentEx.java" startLine="98" startPosition="7" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5658809246031045874" fileName="CurrentLinePositionComponentEx.java" startLine="144" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainterRunnable#(null)Ljava/lang/Runnable;" />
-    <nodeInfo nodeId="5658809246031046012" fileName="CurrentLinePositionComponentEx.java" startLine="193" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(null)V" />
-    <nodeInfo nodeId="5658809246031045723" fileName="CurrentLinePositionComponentEx.java" startLine="87" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterRunnable#(null)Ljava/lang/Runnable;" />
-    <scopeInfo nodeId="5658809246031046078" fileName="CurrentLinePositionComponentEx.java" startLine="214" startPosition="47" endLine="214" endPosition="47" />
+    <nodeInfo nodeId="5658809246031045957" fileName="CurrentLinePositionComponentEx.java" startLine="169" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reAttachPainter#(null)V" />
+    <nodeInfo nodeId="5658809246031045874" fileName="CurrentLinePositionComponentEx.java" startLine="137" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="detachPainterRunnable#(null)Ljava/lang/Runnable;" />
+    <nodeInfo nodeId="5658809246031045769" fileName="CurrentLinePositionComponentEx.java" startLine="98" startPosition="7" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5658809246031046012" fileName="CurrentLinePositionComponentEx.java" startLine="186" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="currentSessionChanged#(null)V" />
+    <nodeInfo nodeId="5658809246031045723" fileName="CurrentLinePositionComponentEx.java" startLine="87" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="attachPainterRunnable#(null)Ljava/lang/Runnable;" />
+    <scopeInfo nodeId="5658809246031046078" fileName="CurrentLinePositionComponentEx.java" startLine="207" startPosition="47" endLine="207" endPosition="47" />
     <scopeInfo nodeId="5658809246031045601" fileName="CurrentLinePositionComponentEx.java" startLine="46" startPosition="28" endLine="47" endPosition="40" />
     <scopeInfo nodeId="5658809246031045670" fileName="CurrentLinePositionComponentEx.java" startLine="66" startPosition="77" endLine="67" endPosition="58" />
     <scopeInfo nodeId="1053276000964529333" fileName="CurrentLinePositionComponentEx.java" startLine="93" startPosition="27" endLine="94" endPosition="46" />
-    <scopeInfo nodeId="1053276000964508439" fileName="CurrentLinePositionComponentEx.java" startLine="108" startPosition="26" endLine="109" endPosition="53" />
-    <scopeInfo nodeId="1053276000964508444" fileName="CurrentLinePositionComponentEx.java" startLine="110" startPosition="20" endLine="111" endPosition="40" />
-    <scopeInfo nodeId="5658809246031045860" fileName="CurrentLinePositionComponentEx.java" startLine="125" startPosition="45" endLine="126" endPosition="50" />
-    <scopeInfo nodeId="1053276000964508413" fileName="CurrentLinePositionComponentEx.java" startLine="136" startPosition="77" endLine="137" endPosition="37" />
-    <scopeInfo nodeId="5658809246031045905" fileName="CurrentLinePositionComponentEx.java" startLine="155" startPosition="27" endLine="156" endPosition="33" />
-    <scopeInfo nodeId="5658809246031045930" fileName="CurrentLinePositionComponentEx.java" startLine="164" startPosition="106" endLine="165" endPosition="30" />
-    <scopeInfo nodeId="5658809246031045947" fileName="CurrentLinePositionComponentEx.java" startLine="171" startPosition="40" endLine="172" endPosition="13" />
-    <scopeInfo nodeId="5658809246031045989" fileName="CurrentLinePositionComponentEx.java" startLine="183" startPosition="38" endLine="184" endPosition="32" />
-    <scopeInfo nodeId="5658809246031045995" fileName="CurrentLinePositionComponentEx.java" startLine="186" startPosition="38" endLine="187" endPosition="32" />
-    <scopeInfo nodeId="5658809246031046032" fileName="CurrentLinePositionComponentEx.java" startLine="198" startPosition="30" endLine="199" endPosition="74" />
-    <scopeInfo nodeId="5658809246031046064" fileName="CurrentLinePositionComponentEx.java" startLine="206" startPosition="119" endLine="207" endPosition="36" />
-    <scopeInfo nodeId="5658809246031046089" fileName="CurrentLinePositionComponentEx.java" startLine="219" startPosition="76" endLine="220" endPosition="35" />
-    <scopeInfo nodeId="5658809246031046105" fileName="CurrentLinePositionComponentEx.java" startLine="226" startPosition="76" endLine="227" endPosition="35" />
+    <scopeInfo nodeId="1053276000964508439" fileName="CurrentLinePositionComponentEx.java" startLine="109" startPosition="26" endLine="110" endPosition="53" />
+    <scopeInfo nodeId="1053276000964508444" fileName="CurrentLinePositionComponentEx.java" startLine="111" startPosition="20" endLine="112" endPosition="40" />
+    <scopeInfo nodeId="5658809246031045860" fileName="CurrentLinePositionComponentEx.java" startLine="124" startPosition="41" endLine="125" endPosition="46" />
+    <scopeInfo nodeId="1053276000964508413" fileName="CurrentLinePositionComponentEx.java" startLine="131" startPosition="73" endLine="132" endPosition="33" />
+    <scopeInfo nodeId="5658809246031045905" fileName="CurrentLinePositionComponentEx.java" startLine="148" startPosition="27" endLine="149" endPosition="33" />
+    <scopeInfo nodeId="5658809246031045930" fileName="CurrentLinePositionComponentEx.java" startLine="157" startPosition="106" endLine="158" endPosition="30" />
+    <scopeInfo nodeId="5658809246031045947" fileName="CurrentLinePositionComponentEx.java" startLine="164" startPosition="40" endLine="165" endPosition="13" />
+    <scopeInfo nodeId="5658809246031045989" fileName="CurrentLinePositionComponentEx.java" startLine="176" startPosition="38" endLine="177" endPosition="32" />
+    <scopeInfo nodeId="5658809246031045995" fileName="CurrentLinePositionComponentEx.java" startLine="179" startPosition="38" endLine="180" endPosition="32" />
+    <scopeInfo nodeId="5658809246031046032" fileName="CurrentLinePositionComponentEx.java" startLine="191" startPosition="30" endLine="192" endPosition="74" />
+    <scopeInfo nodeId="5658809246031046064" fileName="CurrentLinePositionComponentEx.java" startLine="199" startPosition="119" endLine="200" endPosition="36" />
+    <scopeInfo nodeId="5658809246031046089" fileName="CurrentLinePositionComponentEx.java" startLine="212" startPosition="76" endLine="213" endPosition="35" />
+    <scopeInfo nodeId="5658809246031046105" fileName="CurrentLinePositionComponentEx.java" startLine="219" startPosition="76" endLine="220" endPosition="35" />
     <scopeInfo nodeId="5658809246031046138" fileName="CurrentLinePositionComponentEx.java" startLine="36" startPosition="95" endLine="38" endPosition="44" />
     <scopeInfo nodeId="5658809246031045583" fileName="CurrentLinePositionComponentEx.java" startLine="41" startPosition="25" endLine="43" endPosition="128" />
     <scopeInfo nodeId="1053276000964398335" fileName="CurrentLinePositionComponentEx.java" startLine="49" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="5658809246031045712" fileName="CurrentLinePositionComponentEx.java" startLine="80" startPosition="97" endLine="82" endPosition="36" />
-    <scopeInfo nodeId="796115907523081787" fileName="CurrentLinePositionComponentEx.java" startLine="142" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="796115907523081787" fileName="CurrentLinePositionComponentEx.java" startLine="135" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="796115907523081788" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045881" fileName="CurrentLinePositionComponentEx.java" startLine="148" startPosition="49" endLine="150" endPosition="75" />
-    <scopeInfo nodeId="5658809246031046075" fileName="CurrentLinePositionComponentEx.java" startLine="213" startPosition="90" endLine="215" endPosition="5" />
+    <scopeInfo nodeId="5658809246031045881" fileName="CurrentLinePositionComponentEx.java" startLine="141" startPosition="49" endLine="143" endPosition="75" />
+    <scopeInfo nodeId="5658809246031046075" fileName="CurrentLinePositionComponentEx.java" startLine="206" startPosition="90" endLine="208" endPosition="5" />
     <scopeInfo nodeId="5658809246031045611" fileName="CurrentLinePositionComponentEx.java" startLine="53" startPosition="49" endLine="56" endPosition="22">
       <varInfo nodeId="5658809246031045613" varName="painters" />
     </scopeInfo>
-    <scopeInfo nodeId="1053276000964508410" fileName="CurrentLinePositionComponentEx.java" startLine="135" startPosition="125" endLine="138" endPosition="9">
+    <scopeInfo nodeId="1053276000964508410" fileName="CurrentLinePositionComponentEx.java" startLine="130" startPosition="121" endLine="133" endPosition="5">
       <varInfo nodeId="1053276000964508410" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045923" fileName="CurrentLinePositionComponentEx.java" startLine="163" startPosition="67" endLine="166" endPosition="5" />
-    <scopeInfo nodeId="5658809246031045924" fileName="CurrentLinePositionComponentEx.java" startLine="163" startPosition="67" endLine="166" endPosition="5">
+    <scopeInfo nodeId="5658809246031045923" fileName="CurrentLinePositionComponentEx.java" startLine="156" startPosition="67" endLine="159" endPosition="5" />
+    <scopeInfo nodeId="5658809246031045924" fileName="CurrentLinePositionComponentEx.java" startLine="156" startPosition="67" endLine="159" endPosition="5">
       <varInfo nodeId="5658809246031045928" varName="editor" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031046057" fileName="CurrentLinePositionComponentEx.java" startLine="205" startPosition="25" endLine="208" endPosition="9" />
-    <scopeInfo nodeId="5658809246031046058" fileName="CurrentLinePositionComponentEx.java" startLine="205" startPosition="25" endLine="208" endPosition="9">
+    <scopeInfo nodeId="5658809246031046057" fileName="CurrentLinePositionComponentEx.java" startLine="198" startPosition="25" endLine="201" endPosition="9" />
+    <scopeInfo nodeId="5658809246031046058" fileName="CurrentLinePositionComponentEx.java" startLine="198" startPosition="25" endLine="201" endPosition="9">
       <varInfo nodeId="5658809246031046062" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031046085" fileName="CurrentLinePositionComponentEx.java" startLine="218" startPosition="82" endLine="221" endPosition="7" />
-    <scopeInfo nodeId="5658809246031046086" fileName="CurrentLinePositionComponentEx.java" startLine="218" startPosition="82" endLine="221" endPosition="7">
+    <scopeInfo nodeId="5658809246031046085" fileName="CurrentLinePositionComponentEx.java" startLine="211" startPosition="82" endLine="214" endPosition="7" />
+    <scopeInfo nodeId="5658809246031046086" fileName="CurrentLinePositionComponentEx.java" startLine="211" startPosition="82" endLine="214" endPosition="7">
       <varInfo nodeId="5658809246031046086" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031046101" fileName="CurrentLinePositionComponentEx.java" startLine="225" startPosition="83" endLine="228" endPosition="7" />
-    <scopeInfo nodeId="5658809246031046102" fileName="CurrentLinePositionComponentEx.java" startLine="225" startPosition="83" endLine="228" endPosition="7">
+    <scopeInfo nodeId="5658809246031046101" fileName="CurrentLinePositionComponentEx.java" startLine="218" startPosition="83" endLine="221" endPosition="7" />
+    <scopeInfo nodeId="5658809246031046102" fileName="CurrentLinePositionComponentEx.java" startLine="218" startPosition="83" endLine="221" endPosition="7">
       <varInfo nodeId="5658809246031046102" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="5658809246031046135" fileName="CurrentLinePositionComponentEx.java" startLine="35" startPosition="0" endLine="39" endPosition="3">
@@ -401,10 +398,10 @@
     <scopeInfo nodeId="5658809246031045598" fileName="CurrentLinePositionComponentEx.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="5658809246031045661" fileName="CurrentLinePositionComponentEx.java" startLine="65" startPosition="97" endLine="69" endPosition="36" />
     <scopeInfo nodeId="5658809246031045705" fileName="CurrentLinePositionComponentEx.java" startLine="79" startPosition="25" endLine="83" endPosition="9" />
-    <scopeInfo nodeId="1053276000964508325" fileName="CurrentLinePositionComponentEx.java" startLine="134" startPosition="25" endLine="138" endPosition="9">
+    <scopeInfo nodeId="1053276000964508313" fileName="CurrentLinePositionComponentEx.java" startLine="129" startPosition="67" endLine="133" endPosition="5">
       <varInfo nodeId="1053276000964508383" varName="components" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031046024" fileName="CurrentLinePositionComponentEx.java" startLine="196" startPosition="105" endLine="200" endPosition="9">
+    <scopeInfo nodeId="5658809246031046024" fileName="CurrentLinePositionComponentEx.java" startLine="189" startPosition="105" endLine="193" endPosition="9">
       <varInfo nodeId="5658809246031046026" varName="painter" />
     </scopeInfo>
     <scopeInfo nodeId="5658809246031045580" fileName="CurrentLinePositionComponentEx.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
@@ -412,62 +409,58 @@
     <scopeInfo nodeId="1053276000964528888" fileName="CurrentLinePositionComponentEx.java" startLine="91" startPosition="43" endLine="96" endPosition="20">
       <varInfo nodeId="796115907523081915" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045798" fileName="CurrentLinePositionComponentEx.java" startLine="107" startPosition="29" endLine="112" endPosition="13" />
-    <scopeInfo nodeId="5658809246031045825" fileName="CurrentLinePositionComponentEx.java" startLine="122" startPosition="25" endLine="127" endPosition="9">
+    <scopeInfo nodeId="5658809246031045813" fileName="CurrentLinePositionComponentEx.java" startLine="121" startPosition="80" endLine="126" endPosition="5">
       <varInfo nodeId="5658809246031045827" varName="currentEditorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045902" fileName="CurrentLinePositionComponentEx.java" startLine="153" startPosition="29" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="5658809246031045940" fileName="CurrentLinePositionComponentEx.java" startLine="169" startPosition="43" endLine="174" endPosition="75">
+    <scopeInfo nodeId="5658809246031045902" fileName="CurrentLinePositionComponentEx.java" startLine="146" startPosition="29" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="5658809246031045940" fileName="CurrentLinePositionComponentEx.java" startLine="162" startPosition="43" endLine="167" endPosition="75">
       <varInfo nodeId="5658809246031045942" varName="detachPainterRunnable" />
     </scopeInfo>
     <scopeInfo nodeId="5658809246031045654" fileName="CurrentLinePositionComponentEx.java" startLine="64" startPosition="25" endLine="70" endPosition="9" />
-    <scopeInfo nodeId="5658809246031045897" fileName="CurrentLinePositionComponentEx.java" startLine="152" startPosition="26" endLine="158" endPosition="8" />
-    <scopeInfo nodeId="5658809246031045917" fileName="CurrentLinePositionComponentEx.java" startLine="162" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="5658809246031045798" fileName="CurrentLinePositionComponentEx.java" startLine="107" startPosition="29" endLine="113" endPosition="13" />
+    <scopeInfo nodeId="5658809246031045897" fileName="CurrentLinePositionComponentEx.java" startLine="145" startPosition="26" endLine="151" endPosition="8" />
+    <scopeInfo nodeId="5658809246031045917" fileName="CurrentLinePositionComponentEx.java" startLine="155" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="5658809246031045920" varName="painter" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045984" fileName="CurrentLinePositionComponentEx.java" startLine="182" startPosition="27" endLine="188" endPosition="11" />
-    <scopeInfo nodeId="5658809246031046018" fileName="CurrentLinePositionComponentEx.java" startLine="195" startPosition="49" endLine="201" endPosition="7" />
-    <scopeInfo nodeId="5658809246031046019" fileName="CurrentLinePositionComponentEx.java" startLine="195" startPosition="49" endLine="201" endPosition="7">
+    <scopeInfo nodeId="5574644062438401411" fileName="CurrentLinePositionComponentEx.java" startLine="175" startPosition="27" endLine="181" endPosition="11" />
+    <scopeInfo nodeId="5658809246031046018" fileName="CurrentLinePositionComponentEx.java" startLine="188" startPosition="49" endLine="194" endPosition="7" />
+    <scopeInfo nodeId="5658809246031046019" fileName="CurrentLinePositionComponentEx.java" startLine="188" startPosition="49" endLine="194" endPosition="7">
       <varInfo nodeId="5658809246031046019" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="1053276000964508322" fileName="CurrentLinePositionComponentEx.java" startLine="133" startPosition="57" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="5658809246031046054" fileName="CurrentLinePositionComponentEx.java" startLine="203" startPosition="68" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="5658809246031046079" fileName="CurrentLinePositionComponentEx.java" startLine="216" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="1053276000964508307" fileName="CurrentLinePositionComponentEx.java" startLine="128" startPosition="0" endLine="135" endPosition="0">
+      <varInfo nodeId="1053276000964508310" varName="painter" />
+    </scopeInfo>
+    <scopeInfo nodeId="5658809246031046054" fileName="CurrentLinePositionComponentEx.java" startLine="196" startPosition="68" endLine="203" endPosition="0" />
+    <scopeInfo nodeId="5658809246031046079" fileName="CurrentLinePositionComponentEx.java" startLine="209" startPosition="0" endLine="216" endPosition="0">
       <varInfo nodeId="5658809246031046082" varName="editorComponent" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031046095" fileName="CurrentLinePositionComponentEx.java" startLine="223" startPosition="0" endLine="230" endPosition="0">
+    <scopeInfo nodeId="5658809246031046095" fileName="CurrentLinePositionComponentEx.java" startLine="216" startPosition="0" endLine="223" endPosition="0">
       <varInfo nodeId="5658809246031046098" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="5658809246031045606" fileName="CurrentLinePositionComponentEx.java" startLine="51" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="5658809246031045702" fileName="CurrentLinePositionComponentEx.java" startLine="77" startPosition="57" endLine="85" endPosition="0" />
     <scopeInfo nodeId="1053276000964528885" fileName="CurrentLinePositionComponentEx.java" startLine="90" startPosition="117" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="5658809246031045822" fileName="CurrentLinePositionComponentEx.java" startLine="121" startPosition="57" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="1053276000964508313" fileName="CurrentLinePositionComponentEx.java" startLine="132" startPosition="73" endLine="140" endPosition="7" />
-    <scopeInfo nodeId="5658809246031045935" fileName="CurrentLinePositionComponentEx.java" startLine="168" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="5658809246031045938" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="5658809246031045795" fileName="CurrentLinePositionComponentEx.java" startLine="105" startPosition="31" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="5658809246031045813" fileName="CurrentLinePositionComponentEx.java" startLine="120" startPosition="86" endLine="129" endPosition="7" />
-    <scopeInfo nodeId="5658809246031045981" fileName="CurrentLinePositionComponentEx.java" startLine="181" startPosition="70" endLine="190" endPosition="0" />
-    <scopeInfo nodeId="5658809246031045651" fileName="CurrentLinePositionComponentEx.java" startLine="62" startPosition="57" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="5658809246031045690" fileName="CurrentLinePositionComponentEx.java" startLine="75" startPosition="116" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="5658809246031045972" fileName="CurrentLinePositionComponentEx.java" startLine="180" startPosition="57" endLine="190" endPosition="9" />
-    <scopeInfo nodeId="5658809246031045784" fileName="CurrentLinePositionComponentEx.java" startLine="103" startPosition="51" endLine="114" endPosition="10" />
-    <scopeInfo nodeId="1053276000964508307" fileName="CurrentLinePositionComponentEx.java" startLine="131" startPosition="0" endLine="142" endPosition="0">
-      <varInfo nodeId="1053276000964508310" varName="painter" />
-    </scopeInfo>
-    <scopeInfo nodeId="5658809246031045639" fileName="CurrentLinePositionComponentEx.java" startLine="60" startPosition="116" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="5658809246031045807" fileName="CurrentLinePositionComponentEx.java" startLine="119" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="5658809246031045807" fileName="CurrentLinePositionComponentEx.java" startLine="120" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="5658809246031045810" varName="painter" />
     </scopeInfo>
+    <scopeInfo nodeId="5658809246031045935" fileName="CurrentLinePositionComponentEx.java" startLine="161" startPosition="0" endLine="169" endPosition="0">
+      <varInfo nodeId="5658809246031045938" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="5574644062438401408" fileName="CurrentLinePositionComponentEx.java" startLine="174" startPosition="59" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="5658809246031045651" fileName="CurrentLinePositionComponentEx.java" startLine="62" startPosition="57" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="5658809246031045690" fileName="CurrentLinePositionComponentEx.java" startLine="75" startPosition="116" endLine="85" endPosition="7" />
+    <scopeInfo nodeId="5658809246031045795" fileName="CurrentLinePositionComponentEx.java" startLine="105" startPosition="31" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="5658809246031045972" fileName="CurrentLinePositionComponentEx.java" startLine="173" startPosition="57" endLine="183" endPosition="9" />
+    <scopeInfo nodeId="5658809246031045639" fileName="CurrentLinePositionComponentEx.java" startLine="60" startPosition="116" endLine="72" endPosition="7" />
+    <scopeInfo nodeId="5658809246031045784" fileName="CurrentLinePositionComponentEx.java" startLine="103" startPosition="51" endLine="115" endPosition="10" />
     <scopeInfo nodeId="5658809246031045681" fileName="CurrentLinePositionComponentEx.java" startLine="74" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="5658809246031045687" varName="editorComponent" />
       <varInfo nodeId="5658809246031045684" varName="painter" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045875" fileName="CurrentLinePositionComponentEx.java" startLine="146" startPosition="55" endLine="160" endPosition="16">
+    <scopeInfo nodeId="5658809246031045875" fileName="CurrentLinePositionComponentEx.java" startLine="139" startPosition="55" endLine="153" endPosition="16">
       <varInfo nodeId="5658809246031045877" varName="painter" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045960" fileName="CurrentLinePositionComponentEx.java" startLine="177" startPosition="45" endLine="191" endPosition="5">
+    <scopeInfo nodeId="5658809246031045960" fileName="CurrentLinePositionComponentEx.java" startLine="170" startPosition="45" endLine="184" endPosition="5">
       <varInfo nodeId="5658809246031045967" varName="attachSession" />
       <varInfo nodeId="5658809246031045962" varName="detachSession" />
     </scopeInfo>
@@ -475,36 +468,34 @@
       <varInfo nodeId="5658809246031045636" varName="editorComponent" />
       <varInfo nodeId="5658809246031045633" varName="painter" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045773" fileName="CurrentLinePositionComponentEx.java" startLine="99" startPosition="29" endLine="115" endPosition="7">
+    <scopeInfo nodeId="5658809246031046015" fileName="CurrentLinePositionComponentEx.java" startLine="187" startPosition="54" endLine="203" endPosition="7" />
+    <scopeInfo nodeId="5658809246031045773" fileName="CurrentLinePositionComponentEx.java" startLine="99" startPosition="29" endLine="116" endPosition="7">
       <varInfo nodeId="1053276000964505333" varName="visible" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031046015" fileName="CurrentLinePositionComponentEx.java" startLine="194" startPosition="54" endLine="210" endPosition="7" />
-    <scopeInfo nodeId="5658809246031045957" fileName="CurrentLinePositionComponentEx.java" startLine="176" startPosition="0" endLine="193" endPosition="0">
+    <scopeInfo nodeId="5658809246031045957" fileName="CurrentLinePositionComponentEx.java" startLine="169" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="5658809246031046010" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045874" fileName="CurrentLinePositionComponentEx.java" startLine="144" startPosition="0" endLine="162" endPosition="0">
+    <scopeInfo nodeId="5658809246031045874" fileName="CurrentLinePositionComponentEx.java" startLine="137" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="5658809246031045913" varName="session" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031046012" fileName="CurrentLinePositionComponentEx.java" startLine="193" startPosition="0" endLine="212" endPosition="0">
+    <scopeInfo nodeId="5658809246031046012" fileName="CurrentLinePositionComponentEx.java" startLine="186" startPosition="0" endLine="205" endPosition="0">
       <varInfo nodeId="5658809246031046070" varName="newSession" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045727" fileName="CurrentLinePositionComponentEx.java" startLine="89" startPosition="66" endLine="117" endPosition="16">
+    <scopeInfo nodeId="5658809246031045727" fileName="CurrentLinePositionComponentEx.java" startLine="89" startPosition="66" endLine="118" endPosition="16">
       <varInfo nodeId="1053276000964529354" varName="newPainter" />
     </scopeInfo>
-    <scopeInfo nodeId="5658809246031045723" fileName="CurrentLinePositionComponentEx.java" startLine="87" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="5658809246031045723" fileName="CurrentLinePositionComponentEx.java" startLine="87" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="5658809246031045725" varName="debugSession" />
     </scopeInfo>
-    <unitInfo nodeId="5658809246031045579" fileName="CurrentLinePositionComponentEx.java" startLine="29" startPosition="0" endLine="232" endPosition="0" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx" />
+    <unitInfo nodeId="5658809246031045579" fileName="CurrentLinePositionComponentEx.java" startLine="29" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx" />
     <unitInfo nodeId="5658809246031045650" fileName="CurrentLinePositionComponentEx.java" startLine="62" startPosition="45" endLine="72" endPosition="5" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$1" />
     <unitInfo nodeId="5658809246031045701" fileName="CurrentLinePositionComponentEx.java" startLine="77" startPosition="45" endLine="85" endPosition="5" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$2" />
     <unitInfo nodeId="1053276000964528883" fileName="CurrentLinePositionComponentEx.java" startLine="90" startPosition="83" endLine="98" endPosition="5" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$3" />
-    <unitInfo nodeId="5658809246031045794" fileName="CurrentLinePositionComponentEx.java" startLine="105" startPosition="19" endLine="114" endPosition="9" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$4" />
-    <unitInfo nodeId="5658809246031045820" fileName="CurrentLinePositionComponentEx.java" startLine="121" startPosition="45" endLine="129" endPosition="5" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$5" />
-    <unitInfo nodeId="1053276000964508320" fileName="CurrentLinePositionComponentEx.java" startLine="133" startPosition="45" endLine="140" endPosition="5" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$6" />
-    <unitInfo nodeId="5658809246031045901" fileName="CurrentLinePositionComponentEx.java" startLine="153" startPosition="17" endLine="158" endPosition="7" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$7" />
-    <unitInfo nodeId="5658809246031045979" fileName="CurrentLinePositionComponentEx.java" startLine="181" startPosition="58" endLine="190" endPosition="7" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$8" />
-    <unitInfo nodeId="5658809246031046053" fileName="CurrentLinePositionComponentEx.java" startLine="203" startPosition="56" endLine="210" endPosition="5" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$9" />
-    <unitInfo nodeId="5658809246031046072" fileName="CurrentLinePositionComponentEx.java" startLine="213" startPosition="0" endLine="231" endPosition="0" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$MyEditorComponentCreateListener" />
+    <unitInfo nodeId="5658809246031045794" fileName="CurrentLinePositionComponentEx.java" startLine="105" startPosition="19" endLine="115" endPosition="9" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$4" />
+    <unitInfo nodeId="5658809246031045901" fileName="CurrentLinePositionComponentEx.java" startLine="146" startPosition="17" endLine="151" endPosition="7" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$5" />
+    <unitInfo nodeId="5574644062438401406" fileName="CurrentLinePositionComponentEx.java" startLine="174" startPosition="47" endLine="183" endPosition="7" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$6" />
+    <unitInfo nodeId="5658809246031046053" fileName="CurrentLinePositionComponentEx.java" startLine="196" startPosition="56" endLine="203" endPosition="5" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$7" />
+    <unitInfo nodeId="5658809246031046072" fileName="CurrentLinePositionComponentEx.java" startLine="206" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx$MyEditorComponentCreateListener" />
   </root>
 </debugInfo>
 

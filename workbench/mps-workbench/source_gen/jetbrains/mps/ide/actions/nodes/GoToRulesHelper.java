@@ -29,6 +29,7 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import jetbrains.mps.ide.icons.IconManager;
 import java.awt.event.ActionEvent;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class GoToRulesHelper {
   public GoToRulesHelper() {
@@ -145,7 +146,15 @@ public class GoToRulesHelper {
           }
 
           public void actionPerformed(ActionEvent e) {
-            NavigationSupport.getInstance().openNode(operationContext, node, true, !(node.isRoot()));
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
+              public void run() {
+                if (node.isDisposed() || !(node.isRegistered()) || node.getModel().getModelDescriptor() != null) {
+                  return;
+                }
+                // TODO: use node pointers here 
+                NavigationSupport.getInstance().openNode(operationContext, node, true, !(node.isRoot()));
+              }
+            });
           }
         }).setBackground(Color.WHITE);
       }
