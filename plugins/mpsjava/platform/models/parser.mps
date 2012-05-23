@@ -39920,7 +39920,7 @@
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8536576595310962707" resolveInfo="classPath" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8536576595310964009">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n13f.~IClassPathItem%dgetClass(java%dlang%dString)%cbyte[]" resolveInfo="getClass" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="n13f.~ClassBytesProvider%dgetClass(java%dlang%dString)%cbyte[]" resolveInfo="getClass" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="8536576595310998259">
                           <link role="variable" roleId="tp2q.1153944258490" targetNodeId="8536576595310998242" resolveInfo="nextUnresolved" />
                         </node>
