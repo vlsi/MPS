@@ -4,6 +4,9 @@
 
   <module value="com.intellij.modules.mps"/>
   <module value="com.intellij.modules.all"/>
+  <module value="com.intellij.modules.lang"/>
+  <module value="com.intellij.modules.vcs"/>
+  <module value="com.intellij.modules.platform"/>
 
   <xi:include href="/META-INF/MPSComponents.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/idea/MPSActionManager.xml" xpointer="xpointer(/component/*)"/>
