@@ -274,7 +274,7 @@ public class PathManager {
   @NonNls
   private static String extractRoot(URL resourceURL, String resourcePath) {
     if (!((StringUtil.startsWithChar(resourcePath, '/') || StringUtil.startsWithChar(resourcePath, '\\')))) {
-      // noinspection HardCodedStringLiteral
+      // noinspection HardCodedStringLiteral 
       System.err.println("precondition failed: " + resourcePath);
       return null;
     }
@@ -399,6 +399,10 @@ public class PathManager {
     return Collections.singleton(getHomePath() + File.separator + "core");
   }
 
+  public static String getLanguagesPath() {
+    return getHomePath() + File.separator + "languages";
+  }
+
   public static Collection<String> getExtensionsPaths() {
     String pluginsPath = System.getProperty("plugin.path");
     List<String> paths = new ArrayList<String>();
@@ -417,10 +421,6 @@ public class PathManager {
       }
     }
     return Collections.unmodifiableCollection(paths);
-  }
-
-  public static String getLanguagesPath() {
-    return getHomePath() + File.separator + "languages";
   }
 
   private static class StringHolder {
