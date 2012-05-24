@@ -21,7 +21,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMAnnotation;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMField;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClassType;
@@ -254,7 +254,7 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a11().createNode(cm, createVisibility(c), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, "name"));
+      SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a11().createNode(cm, createVisibility(c), SModelOperations.createNewNode(cm, "jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, "name"));
       SPropertyOperations.set(constructor, "isDeprecated", "" + c.isDeprecated());
       for (ASMTypeVariable tv : c.getTypeParameters()) {
         ListSequence.fromList(SLinkOperations.getTargets(constructor, "typeVariableDeclaration", true)).addElement(new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0f0a0l().createNode(cm, tv.getName()));
@@ -317,7 +317,7 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode md = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
+      SNode md = SModelOperations.createNewNode(cm, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
       SPropertyOperations.set(md, "isAbstract", "" + m.isAbstract());
       SLinkOperations.setTarget(md, "visibility", createVisibility(m), true);
       this.updateBaseMethod(m, md, cls);
@@ -342,7 +342,7 @@ public class ClassifierUpdater {
         continue;
       }
 
-      SNode md = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
+      SNode md = SModelOperations.createNewNode(cm, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
       SLinkOperations.setTarget(md, "visibility", createVisibility(m), true);
       updateBaseMethod(m, md, cls);
 
