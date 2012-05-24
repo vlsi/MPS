@@ -53,7 +53,8 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       Collection<SNode> nodes = e.getValue();
       Set<StaticReferenceInfo> srefs = new THashSet<StaticReferenceInfo>();
       for (SNode n:nodes){
-        srefs.add(new StaticReferenceInfo(n.getModel().getSModelReference(), n.getSNodeId()));
+        SModelReference mr = n.getModel().getSModelReference();
+        srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), n.getSNodeId()));
       }
 
       for (SNode root : model.roots()) {
@@ -68,7 +69,8 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
   private void addUsages(SNode current, Collection<SNode> nodes, Set<StaticReferenceInfo> srefs, Set<SReference> result) {
     for (SReference ref : current.getReferences()) {
       if (ref instanceof StaticReference){
-        if (srefs.contains(new StaticReferenceInfo(ref.getTargetSModelReference(),ref.getTargetNodeId()))){
+        SModelReference mr = ref.getTargetSModelReference();
+        if (srefs.contains(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr),ref.getTargetNodeId()))){
           result.add(ref);
         }
       } else{
@@ -83,10 +85,10 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
   }
 
   private static class StaticReferenceInfo{
-    private SModelReference myModelRef;
+    private SModelDescriptor myModelRef;
     private SNodeId myNodeId;
 
-    public StaticReferenceInfo(SModelReference modelRef, SNodeId nodeId) {
+    public StaticReferenceInfo(SModelDescriptor modelRef, SNodeId nodeId) {
       myModelRef = modelRef;
       myNodeId = nodeId;
     }
