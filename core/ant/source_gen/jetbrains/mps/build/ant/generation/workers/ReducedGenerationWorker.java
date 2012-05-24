@@ -171,7 +171,9 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         skipCopyTraceinfo._0(true);
 
         Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), Object.class);
-        compileProps._1(true);
+        if (compileProps != null) {
+          compileProps._1(true);
+        }
 
         Tuples._2<List<String>, List<String>> report = (Tuples._2<List<String>, List<String>>) pp.properties(new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report"), Object.class);
         report._0(writtenFiles);
