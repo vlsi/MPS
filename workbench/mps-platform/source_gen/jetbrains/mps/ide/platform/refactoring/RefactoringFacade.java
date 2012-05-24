@@ -126,7 +126,7 @@ public class RefactoringFacade {
 
   }
 
-  protected SearchResults findUsages(final RefactoringContext refactoringContext) {
+  private SearchResults findUsages(final RefactoringContext refactoringContext) {
     // returns null if should be interrupted after the call 
     final SearchResults[] result = new SearchResults[]{null};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -163,7 +163,7 @@ public class RefactoringFacade {
     return result[0];
   }
 
-  protected void showRefactoring(final RefactoringContext refactoringContext, final SearchResults searchResults) {
+  private void showRefactoring(final RefactoringContext refactoringContext, final SearchResults searchResults) {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -205,7 +205,7 @@ public class RefactoringFacade {
   }
 
   @NotNull
-  protected List<SModel> getModelsToGenerate(final IRefactoring refactoring, final RefactoringContext context) {
+  private List<SModel> getModelsToGenerate(final IRefactoring refactoring, final RefactoringContext context) {
     final Wrappers._T<List<SModel>> result = new Wrappers._T<List<SModel>>(new ArrayList<SModel>());
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -227,7 +227,7 @@ public class RefactoringFacade {
     });
   }
 
-  protected void updateModels(RefactoringContext context) {
+  private void updateModels(RefactoringContext context) {
     assert context.getRefactoring() instanceof ILoggableRefactoring;
     if (!(context.isLocal())) {
       updateLoadedModels(context);
