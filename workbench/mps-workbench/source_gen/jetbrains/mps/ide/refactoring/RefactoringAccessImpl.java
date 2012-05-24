@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.awt.Frame;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 
 public class RefactoringAccessImpl extends RefactoringAccess implements ApplicationComponent {
@@ -53,7 +52,7 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
     refactoringView.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
   }
 
-  public boolean showRefactoringDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
-    return showRefactoringDialogBase(mainFrame, refactoringContext, refactoring, hasModelsToGenerate);
+  public boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
+    return showRefactoringDialogBase(project, refactoringContext, refactoring, hasModelsToGenerate);
   }
 }

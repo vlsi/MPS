@@ -10,14 +10,13 @@ import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -93,9 +92,9 @@ public class RefactoringFacade {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         IRefactoring refactoring = refactoringContext.getRefactoring();
-        Frame mainFrame = ProjectHelper.toMainFrame(refactoringContext.getCurrentOperationContext().getProject());
+        Project ideaProject = ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject());
         List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, refactoringContext);
-        cancelled[0] = RefactoringAccess.getInstance().showRefactoringDialog(mainFrame, refactoringContext, refactoring, !(modelsToGenerate.isEmpty()));
+        cancelled[0] = RefactoringAccess.getInstance().showRefactoringDialog(ideaProject, refactoringContext, refactoring, !(modelsToGenerate.isEmpty()));
       }
     });
     if (cancelled[0]) {
@@ -138,7 +137,7 @@ public class RefactoringFacade {
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
                 try {
-                  Project project = refactoringContext.getSelectedProject();
+                  jetbrains.mps.project.Project project = refactoringContext.getSelectedProject();
                   refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
                   IRefactoring refactoring = refactoringContext.getRefactoring();
                   result[0] = refactoring.getAffectedNodes(refactoringContext);

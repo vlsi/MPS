@@ -7,7 +7,6 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
-import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import javax.swing.JComponent;
 import java.awt.GridBagLayout;
@@ -26,11 +25,6 @@ public class RefactoringOptionsDialog extends DialogWrapper {
   private boolean myNeedToBeShown = false;
   private boolean myHasModelsToGenerate;
   private boolean myIsCancelled = true;
-
-  public RefactoringOptionsDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
-    super(mainFrame, true);
-    initDialog(refactoringContext, refactoring, hasModelsToGenerate);
-  }
 
   public RefactoringOptionsDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
     super(project, true);

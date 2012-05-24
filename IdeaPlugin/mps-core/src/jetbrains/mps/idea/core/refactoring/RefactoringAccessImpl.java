@@ -31,8 +31,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
-import java.awt.Frame;
-
 /**
  * User: shatalin
  * Date: 2/20/12
@@ -70,8 +68,8 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
   }
 
   @Override
-  public boolean showRefactoringDialog(Frame mainFrame, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
-    return showRefactoringDialogBase(mainFrame, refactoringContext, refactoring, false);
+  public boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
+    return showRefactoringDialogBase(project, refactoringContext, refactoring, false);
   }
 
   @Override
