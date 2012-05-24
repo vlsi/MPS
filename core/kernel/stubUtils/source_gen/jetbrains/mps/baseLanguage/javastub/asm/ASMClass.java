@@ -99,6 +99,10 @@ public class ASMClass {
     return (myNode.access & Opcodes.ACC_ABSTRACT) != 0;
   }
 
+  public boolean isStatic() {
+    return (myNode.access & Opcodes.ACC_STATIC) != 0;
+  }
+
   public boolean isPublic() {
     return (myNode.access & Opcodes.ACC_PUBLIC) != 0;
   }

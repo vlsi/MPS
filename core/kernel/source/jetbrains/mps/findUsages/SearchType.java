@@ -17,7 +17,6 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
@@ -26,8 +25,10 @@ import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public abstract class SearchType<T, R> {
   //--------const---------
@@ -57,8 +58,7 @@ public abstract class SearchType<T, R> {
     BaseSModelDescriptorWithSource mws = (BaseSModelDescriptorWithSource) model;
     if (!(mws.getSource() instanceof FastFindSupportProvider)) return null;
 
-    String ffsId = ((FastFindSupportProvider) mws.getSource()).getFastFindSupportId();
-    return FastFindSupportRegistry.getInstance().getFastFindSupport(ffsId);
+    return ((FastFindSupportProvider) mws.getSource()).getFastFindSupport();
   }
 
   //--------impl----------

@@ -13,31 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.dependency;
+package jetbrains.mps.project.dependency.modules;
 
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
-import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.Set;
 
+/**
+ * This class says, which modules are immediately visible from its module
+ */
 public interface DependenciesManager {
   /**
-   * All languages in scope of this module
+   * Returns languages, immediately used by this module
    */
-  void collectUsedLanguages(Set<Language> languages);
+  Collection<Language> directlyUsedLanguages();
 
   /**
-   * Collects all visible modules (including current).
+   * Returns modules, immediately visible from this module
+   * @param includeNonReexport - if set to ruue, include all dependencies, false - only reexport dependencies
+   * @param runtimes - whether or not to include modules visible at runtime (i.e runtimes of used languages)
    */
-  @Deprecated
-  public void collectModules(Set<IModule> reexpRes, Set<IModule> nonReexpRes,boolean runtimes, Reexports reexports);
-
-  public void collectModules(Set<IModule> reexpRes, Set<IModule> nonReexpRes,boolean runtimes, Reexports reexports, ModuleDependencyCollector collector);
-
-  public enum Reexports {
-    DONT_RESPECT,
-    ALL_WITH_RESPECT,
-    REEXPORTED_ONLY
-  }
+  Collection<IModule> directlyUsedModules(boolean includeNonReexport, boolean runtimes);
 }

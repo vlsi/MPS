@@ -16,7 +16,6 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.dependency.DependenciesManager.Reexports;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 
@@ -24,45 +23,92 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * This class helps extracting all dependencies of a given type for a given set of modules.
+ * E.g. we can give it a set of modules and ask, which modules are needed to compile the given set:
+ * new GlobalModuleDependenciesManager(startSet).getModules(Deptype.COMPILE)
+ * Note that if we have M modules and N dependencies, and want to know something about a set of S modules,
+ * this will work O(M+N) in the worst case, regardless of S
+ */
 public class GlobalModuleDependenciesManager {
   private Set<IModule> myModules;
 
   public GlobalModuleDependenciesManager(Collection<IModule> modules) {
     assert !modules.isEmpty();
     myModules = new HashSet<IModule>(modules);
+    addGenerators();
   }
 
   public GlobalModuleDependenciesManager(@NotNull IModule module) {
     myModules = new HashSet<IModule>();
     myModules.add(module);
+    addGenerators();
+  }
+
+  // this is a temporary fix for MPS-15883, should be removed when generators are compiled with their own classpath
+  private void addGenerators() {
+    Set<IModule> addModules = new HashSet<IModule>();
+    for (IModule m : myModules) {
+      if (!(m instanceof Language)) continue;
+      addModules.addAll(((Language) m).getGenerators());
+    }
+    myModules.addAll(addModules);
   }
 
   /**
-   * All languages in scope of the given modules
-   * This includes imported languages, languages from imported devkits, all their extended languages etc.
+   * @return all languages used by the given modules
    */
   public Collection<Language> getUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
     for (IModule module : myModules) {
-      module.getDependenciesManager().collectUsedLanguages(result);
+      result.addAll(module.getDependenciesManager().directlyUsedLanguages());
     }
     return result;
   }
 
   /**
-   * see Deptype doc
+   * Return all modules of a given dependency type in scope of given
+   * <p/>
+   * RUNTIMES:
+   * If we need runtimes, this only adds additional edges to our graph. M -uses> L -runtime> R is equivalent
+   * to M -non-reexp> R in this case
+   * <p/>
+   * REEXPORT:
+   * If we need dependencies with respect to reexport flag, we should first collect all neighbours of the
+   * given nodes in graph, and then, considering the graph with "reexport" edges only, collect all nodes
+   * accessible from (start set+neighbours) in this graph
+   * If we don't respect reexport flag, we should collect all accessible nodes from the given set in a
+   * dependencies graph. The "neighbours scheme" works in this case, too.
+   *
+   * @param depType determines the type of dependecies we want to get
+   * @return all modules in scope of given
    */
   public Collection<IModule> getModules(Deptype depType) {
-    Set<IModule> result = new HashSet<IModule>();
-    Set<IModule> nonReexports = new HashSet<IModule>();
+    Set<IModule> neighbours = collectNeighbours(depType);
 
-    ModuleDependencyCollector collector = new ModuleDependencyCollector();
-    for (IModule module : myModules) {
-      module.getDependenciesManager().collectModules(result, nonReexports, depType.runtimes, depType.reexportAll ? Reexports.DONT_RESPECT : Reexports.ALL_WITH_RESPECT, collector);
+    HashSet<IModule> result = new HashSet<IModule>();
+    for (IModule neighbour : neighbours) {
+      collect(neighbour, result, depType);
     }
-    result.addAll(nonReexports);
-//    System.out.println("*** "+depType.toString()+": "+myModules.toString()+"->"+result.toString());
+
     return result;
+  }
+
+  private Set<IModule> collectNeighbours(Deptype depType) {
+    HashSet<IModule> result = new HashSet<IModule>();
+    for (IModule module : myModules) {
+      result.addAll(module.getDependenciesManager().directlyUsedModules(true, depType.runtimes));
+    }
+    result.addAll(myModules);
+    return result;
+  }
+
+  private void collect(IModule current, Set<IModule> result, Deptype depType) {
+    if (result.contains(current)) return;
+    result.add(current);
+    for (IModule m : current.getDependenciesManager().directlyUsedModules(depType.reexportAll, depType.runtimes)) {
+      collect(m, result, depType);
+    }
   }
 
   public enum Deptype {
@@ -94,9 +140,9 @@ public class GlobalModuleDependenciesManager {
     public boolean runtimes;
     public boolean reexportAll;
 
-    Deptype(boolean runtimes, boolean reexportAll) {
+    Deptype(boolean runtimes, boolean respectReexport) {
       this.runtimes = runtimes;
-      this.reexportAll = !reexportAll;
+      this.reexportAll = !respectReexport;
     }
   }
 }

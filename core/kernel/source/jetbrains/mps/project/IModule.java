@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.project.dependency.DependenciesManager;
+import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
