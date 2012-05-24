@@ -323,7 +323,7 @@
     <unitInfo nodeId="8589065642488591082" fileName="BreakpointIconRenderrerEx.java" startLine="14" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx" />
   </root>
   <root nodeId="8589065642488591173">
-    <nodeInfo nodeId="8589065642488591225" fileName="BreakpointPainterEx.java" startLine="11" startPosition="75" endLine="12" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_BACKGROUND_COLOR" />
+    <nodeInfo nodeId="8589065642488591225" fileName="BreakpointPainterEx.java" startLine="11" startPosition="77" endLine="12" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CELL_BACKGROUND_COLOR" />
     <nodeInfo nodeId="8589065642488591234" fileName="BreakpointPainterEx.java" startLine="12" startPosition="82" endLine="13" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STRIPE_BACKGROUND_COLOR" />
     <nodeInfo nodeId="8589065642488591242" fileName="BreakpointPainterEx.java" startLine="13" startPosition="80" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FRAME_COLOR" />
     <nodeInfo nodeId="8589065642488591222" fileName="BreakpointPainterEx.java" startLine="15" startPosition="0" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBreakpoint" />

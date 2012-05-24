@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import java.util.Set;
 
-class ConcreteFilesGlobalSearchScope extends GlobalSearchScope {
+public class ConcreteFilesGlobalSearchScope extends GlobalSearchScope {
   private final Collection<VirtualFile> myScopeFiles;
 
   public ConcreteFilesGlobalSearchScope(Collection<VirtualFile> scopeFiles) {

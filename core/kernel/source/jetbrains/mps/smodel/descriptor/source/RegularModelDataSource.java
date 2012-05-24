@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.smodel.descriptor.source;
 
+import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -210,8 +212,8 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return true;
   }
 
-  @NotNull
-  public String getFastFindSupportId() {
-    return FAST_FIND_ID;
+  @NotNull()
+  public FastFindSupport getFastFindSupport() {
+    return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }
 }

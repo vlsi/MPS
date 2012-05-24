@@ -32,20 +32,24 @@ public class StubHelper {
     return uidForPackageInStubs(pack, languageId, moduleRef, false);
   }
 
+  @Deprecated
   public static SModelReference uidForPackageInStubs(String pack, String languageId, ModuleReference moduleRef, boolean forceResolve) {
     String stereo = SModelStereotype.getStubStereotypeForId(languageId);
+    return uidForPackageInStubs(new SModelFqName(pack, stereo), moduleRef, forceResolve);
+  }
 
+  public static SModelReference uidForPackageInStubs(SModelFqName name, ModuleReference moduleRef, boolean forceResolve) {
     String moduleFqName = null;
     SModelId id;
 
     if (moduleRef != null) {
       moduleFqName = moduleRef.getModuleFqName();
-      id = SModelId.foreign(stereo, moduleRef.getModuleId().toString(), pack);
+      id = SModelId.foreign(name.getStereotype(), moduleRef.getModuleId().toString(), name.getLongName());
     } else {
-      id = StubMigrationHelper.convertModelUIDAny(stereo + "#" + pack, forceResolve);
+      id = StubMigrationHelper.convertModelUIDAny(name.getStereotype() + "#" + name.getLongName(), forceResolve);
     }
 
-    SModelFqName fqName = new SModelFqName(moduleFqName, pack, stereo);
+    SModelFqName fqName = new SModelFqName(moduleFqName, name.getLongName(), name.getStereotype());
     return new SModelReference(fqName, id);
   }
 }

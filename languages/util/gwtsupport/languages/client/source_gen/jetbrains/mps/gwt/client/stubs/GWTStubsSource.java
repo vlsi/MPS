@@ -38,6 +38,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.SModelFqName;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.findUsages.fastfind.FastFindSupport;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
+import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 
 public class GWTStubsSource extends StubModelDataSource implements FastFindSupportProvider {
   private ModelRoot root;
@@ -116,7 +119,7 @@ public class GWTStubsSource extends StubModelDataSource implements FastFindSuppo
   }
 
   @NotNull
-  public String getFastFindSupportId() {
-    return "java_stub";
+  public FastFindSupport getFastFindSupport() {
+    return FastFindSupportRegistry.getInstance().getFastFindSupport(JavaStubModelDataSource.FAST_FIND_ID);
   }
 }

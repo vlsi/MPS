@@ -17,7 +17,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.core.CurrentLinePositionComponentEx" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.AdditionalPainter" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode extendsClassName="jetbrains.mps.debugger.core.EditorCellPainter" />
+    <classNode extendsClassName="jetbrains.mps.debugger.core.DebuggerCellPainter" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx" file="BreakpointsUiComponentEx.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />

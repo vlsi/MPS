@@ -15,8 +15,8 @@
     <nodeInfo nodeId="4063774604867752538" fileName="JavaStubs.java" startLine="54" startPosition="106" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4063774604867752542" fileName="JavaStubs.java" startLine="55" startPosition="63" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4063774604867752548" fileName="JavaStubs.java" startLine="56" startPosition="53" endLine="57" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867752516" fileName="JavaStubs.java" startLine="58" startPosition="16" endLine="59" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867752525" fileName="JavaStubs.java" startLine="59" startPosition="150" endLine="60" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867752516" fileName="JavaStubs.java" startLine="58" startPosition="16" endLine="59" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867752525" fileName="JavaStubs.java" startLine="59" startPosition="133" endLine="60" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4063774604867752553" fileName="JavaStubs.java" startLine="61" startPosition="9" endLine="62" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4063774604867753759" fileName="JavaStubs.java" startLine="63" startPosition="7" endLine="64" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4063774604867753551" fileName="JavaStubs.java" startLine="73" startPosition="46" endLine="74" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -101,8 +101,8 @@
     <nodeInfo nodeId="8382013213871414518" fileName="AllMembersJavaStubs.java" startLine="54" startPosition="106" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="8382013213871414522" fileName="AllMembersJavaStubs.java" startLine="55" startPosition="63" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8382013213871414528" fileName="AllMembersJavaStubs.java" startLine="56" startPosition="53" endLine="57" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8382013213871414496" fileName="AllMembersJavaStubs.java" startLine="58" startPosition="16" endLine="59" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8382013213871414505" fileName="AllMembersJavaStubs.java" startLine="59" startPosition="150" endLine="60" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8382013213871414496" fileName="AllMembersJavaStubs.java" startLine="58" startPosition="16" endLine="59" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8382013213871414505" fileName="AllMembersJavaStubs.java" startLine="59" startPosition="133" endLine="60" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8382013213871414533" fileName="AllMembersJavaStubs.java" startLine="61" startPosition="9" endLine="62" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8382013213871414544" fileName="AllMembersJavaStubs.java" startLine="63" startPosition="7" endLine="64" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8382013213871414592" fileName="AllMembersJavaStubs.java" startLine="73" startPosition="46" endLine="74" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

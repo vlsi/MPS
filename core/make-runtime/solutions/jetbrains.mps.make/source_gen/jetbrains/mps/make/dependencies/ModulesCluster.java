@@ -214,7 +214,6 @@ __switch__:
   }
 
   private Iterable<ModuleReference> required(IModule mod) {
-    mod.getDependenciesManager();
     GlobalModuleDependenciesManager depman = new GlobalModuleDependenciesManager(mod);
     Set<IModule> reqmods = SetSequence.fromSetWithValues(new HashSet<IModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getUsedLanguages())).translate(new ITranslator2<Language, Generator>() {
       public Iterable<Generator> translate(Language lang) {

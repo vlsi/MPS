@@ -36,6 +36,7 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="library" name="Annotations" level="project" />
+    <orderEntry type="library" name="ASM" level="project" />
   </component>
 </module>
 

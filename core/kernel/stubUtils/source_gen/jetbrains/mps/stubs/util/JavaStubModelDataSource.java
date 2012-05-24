@@ -27,17 +27,17 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import java.io.File;
 import java.io.IOException;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.findUsages.fastfind.FastFindSupport;
+import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 
 public class JavaStubModelDataSource extends StubModelDataSource implements FastFindSupportProvider {
   public static final String FAST_FIND_ID = "java_stubs";
 
   private boolean skipPrivate;
-  private String langId;
 
-  public JavaStubModelDataSource(ModuleReference origin, String langId, boolean skipPrivate) {
+  public JavaStubModelDataSource(ModuleReference origin, boolean skipPrivate) {
     super(origin);
     this.skipPrivate = skipPrivate;
-    this.langId = langId;
   }
 
   protected Set<Language> getLanguagesToImport() {
@@ -59,7 +59,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
       module.addUsedLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
-    new ASMModelLoader(module, cp, model, langId, skipPrivate).updateModel();
+    new ASMModelLoader(module, cp, model, skipPrivate).updateModel();
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
@@ -85,7 +85,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
           // dirty hack for current problems with path separators 
           String dirCorrected = dir.replace('/', File.separatorChar);
           dirCorrected = dirCorrected.replace('\\', File.separatorChar);
-          assert dirCorrected.contains(name) : "Strang dir for model: model " + name + "; dir = " + dir;
+          assert dirCorrected.contains(name) : "Strange dir for model: model " + name + "; dir = " + dir;
 
           int index = dirCorrected.indexOf(name);
           dir = dir.substring(0, index);
@@ -99,7 +99,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
   }
 
   @NotNull
-  public String getFastFindSupportId() {
-    return FAST_FIND_ID;
+  public FastFindSupport getFastFindSupport() {
+    return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }
 }

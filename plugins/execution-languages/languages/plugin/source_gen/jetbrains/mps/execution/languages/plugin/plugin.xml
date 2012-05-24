@@ -6,7 +6,7 @@
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
   <id>jetbrains.mps.execution.languages</id>
   <name>Execution Languages</name>
-  <description>Provides languages and libraries for implementing execution configurations for MPS</description>
+  <description>Languages and libraries for implementing execution configurations for MPS</description>
   <version>1.0</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"></idea-version>

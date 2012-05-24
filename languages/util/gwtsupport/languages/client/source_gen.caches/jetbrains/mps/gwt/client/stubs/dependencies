@@ -62,6 +62,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.findUsages.fastfind.FastFindSupport" />
+    <classNode dependClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry" />
     <classNode dependClassName="jetbrains.mps.gwt.client.stubs.GWTModuleFormatException" />
     <classNode dependClassName="jetbrains.mps.gwt.client.stubs.GWTModulePathItem" />
     <classNode dependClassName="jetbrains.mps.gwt.client.stubs.GWTModuleReader" />
@@ -86,6 +88,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.DescriptorLoadResult" />
+    <classNode dependClassName="jetbrains.mps.stubs.util.JavaStubModelDataSource" />
     <classNode dependClassName="jetbrains.mps.stubs.util.PathItem" />
     <classNode dependClassName="jetbrains.mps.stubs.util.StubModelDescriptors" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
