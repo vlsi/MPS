@@ -55,7 +55,6 @@ public class RefactoringOptionsDialog extends DialogWrapper {
       myNeedToBeShown = true;
     }
     c.weighty = 1;
-    myInnerPanel.add(new JPanel(), c);
     myInnerPanel.setPreferredSize(new Dimension(300, 250));
     return myInnerPanel;
   }
@@ -68,7 +67,7 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     c.weightx = 1;
     c.weighty = 0;
     c.anchor = GridBagConstraints.NORTHWEST;
-    panel.add(new JLabel("Set refactoring options"));
+    panel.add(new JLabel("Set refactoring options"), c);
     return panel;
   }
 
