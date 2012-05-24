@@ -37,7 +37,7 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
 
   @Override
   public String getMPSCorePath() {
-    return getMPSCorePluginPath();
+    return getMPSCorePluginPath() + File.separator + "lib";
   }
 
   @Override
