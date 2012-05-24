@@ -95,7 +95,7 @@
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
       <property name="name" nameId="tpck.1169194664001" value="buildUILanguages" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildUiLanguages.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="buildUILanguages.xml" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6503539749405386437">
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />

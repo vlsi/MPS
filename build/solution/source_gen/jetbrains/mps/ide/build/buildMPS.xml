@@ -177,7 +177,7 @@
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecution.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildUiLanguages.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildUILanguages.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
