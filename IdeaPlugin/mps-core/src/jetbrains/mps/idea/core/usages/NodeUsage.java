@@ -26,6 +26,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.usages.TextChunk;
+import com.intellij.usages.Usage;
 import com.intellij.usages.UsagePresentation;
 import com.intellij.usages.rules.MergeableUsage;
 import com.intellij.usages.rules.UsageInModule;
@@ -37,12 +38,13 @@ import jetbrains.mps.idea.core.usages.rules.UsageInRoot;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
 
-public class NodeUsage extends NodeUsageBase implements UsagePresentation, UsageInMPS, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel, UsageByCategory, Comparable<NodeUsage> {
+public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentation, UsageInMPS, UsageInModule, MergeableUsage, UsageInRoot, UsageInModel, UsageByCategory, Comparable<NodeUsage> {
   private SModel myModel;
   private TextChunk[] myChunks;
   private boolean myIsValid;
@@ -162,6 +164,16 @@ public class NodeUsage extends NodeUsageBase implements UsagePresentation, Usage
 
   }
 
+
+  @Override
+  public boolean isValid() {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return !myNode.isDetached();
+      }
+    });
+  }
 
   @Override
   public VirtualFile getFile() {

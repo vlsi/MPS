@@ -25,10 +25,11 @@ import com.intellij.psi.PsiFile;
 import com.intellij.usages.UsageTarget;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 import org.jetbrains.annotations.NotNull;
 
-public class NodeUsageTarget extends NodeUsageBase implements UsageTarget {
+public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
 
   public NodeUsageTarget(@NotNull SNode node, @NotNull Project project) {
     super(node, project);
@@ -52,6 +53,16 @@ public class NodeUsageTarget extends NodeUsageBase implements UsageTarget {
   @Override
   public boolean isReadOnly() {
     return false;
+  }
+
+  @Override
+  public boolean isValid() {
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return !myNode.isDetached();
+      }
+    });
   }
 
   @Override
