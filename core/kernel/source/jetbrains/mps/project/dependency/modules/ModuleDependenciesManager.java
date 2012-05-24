@@ -35,8 +35,9 @@ public class ModuleDependenciesManager<T extends IModule> implements Dependencie
 
   public Collection<Language> directlyUsedLanguages() {
     Set<Language> result = new HashSet<Language>();
-    for (Language l : ModuleUtil.getUsedLanguages(myModule)) {
-      result.add(l);
+    result.addAll(ModuleUtil.refsToLanguages(myModule.getUsedLanguagesReferences()));
+    for (DevKit dk : ModuleUtil.refsToDevkits(myModule.getUsedDevkitReferences())) {
+      result.addAll(dk.getAllExportedLanguages());
     }
     return result;
   }
