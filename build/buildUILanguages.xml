@@ -21,7 +21,7 @@
         <name>MPS Experimental UI languages</name>
         <version>${buildCore.version}</version>
         <depends>jetbrains.mps.core</depends>
-        <depends>jetbrains.mps.ide</depends>
+        <depends>com.intellij.modules.mps</depends>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
