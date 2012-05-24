@@ -17,7 +17,7 @@
   <dependency className="jetbrains.mps.ide.build.buildPluginDist" file="buildPluginDist.xml" />
   <dependency className="jetbrains.mps.ide.build.buildPluginTests" file="buildPluginTests.xml" />
   <dependency className="jetbrains.mps.ide.build.buildPlugins" file="buildPlugins.xml" />
-  <dependency className="jetbrains.mps.ide.build.buildUiLanguages" file="buildUiLanguages.xml" />
+  <dependency className="jetbrains.mps.ide.build.buildUILanguages" file="buildUILanguages.xml" />
   <dependency className="jetbrains.mps.ide.build.buildUtilLanguages" file="buildUtilLanguages.xml" />
   <dependency className="jetbrains.mps.ide.build.buildVcs" file="buildVcs.xml" />
   <dependency className="jetbrains.mps.ide.build.buildWorkbench" file="buildWorkbench.xml" />
