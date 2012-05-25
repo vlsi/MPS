@@ -280,9 +280,6 @@
       <modulePath path="${project}/languages/util/xml/xmlInternal/xmlInternal.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xmlQuery/xmlQuery.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xml/xmlSchema/xmlSchema.mpl" folder="languages.xml" />
-      <modulePath path="${project}/languages/util/xmlDeprecated/languageDescriptor.mpl" folder="languages.xml" />
-      <modulePath path="${project}/languages/util/xmlDeprecated/solutions/jetbrains.mps.xml.sandbox/jetbrains.mps.xml.sandbox.msd" folder="languages.xml" />
-      <modulePath path="${project}/languages/util/xmlDeprecated/solutions/pluginSolution/pluginSolution.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/runtime.msd" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlUnitTest/languages/xmlUnitTest/xmlUnitTest.mpl" folder="languages.xml" />
       <modulePath path="${project}/languages/util/xmlUnitTest/solutions/jetbrains.mps.xmlUnitTest.sandbox/jetbrains.mps.xmlUnitTest.sandbox.msd" folder="languages.xml" />
@@ -355,6 +352,9 @@
       <modulePath path="${project}/plugins/mps-obsolete/languages/property/property.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.mpsdist/mpsdist.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/execution.msd" folder="languages.build" />
+      <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/languageDescriptor.mpl" folder="languages.xml" />
+      <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/jetbrains.mps.xml.sandbox/jetbrains.mps.xml.sandbox.msd" folder="languages.xml" />
+      <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/pluginSolution/pluginSolution.msd" folder="languages.xml" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />
