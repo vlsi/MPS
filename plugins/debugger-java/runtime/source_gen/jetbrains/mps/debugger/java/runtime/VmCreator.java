@@ -278,18 +278,25 @@ public class VmCreator extends AbstractDebugSessionCreator {
     if (myArguments == null) {
       throw new RunFailedException("no debug listen port");
     }
+
     //  negative port number means the caller leaves to debugger to decide at which hport to listen 
-    final Connector.Argument portArg = (myConnectionSettings.isUseSockets() ?
+    Connector.Argument portArg = (myConnectionSettings.isUseSockets() ?
       myArguments.get("port") :
       myArguments.get("name")
     );
     if (portArg != null) {
       portArg.setValue(Integer.toString(myConnectionSettings.getPort()));
     }
-    final Connector.Argument timeoutArg = myArguments.get("timeout");
+
+    Connector.Argument timeoutArg = myArguments.get("timeout");
     if (timeoutArg != null) {
       timeoutArg.setValue("0");
       //  wait forever 
+    }
+
+    Connector.Argument hostArgument = myArguments.get("hostname");
+    if (hostArgument != null) {
+      hostArgument.setValue(myConnectionSettings.getHostName());
     }
   }
 
