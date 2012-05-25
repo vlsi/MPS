@@ -1,4 +1,4 @@
-JETBRAINS MPS 2.0 README FILE
+JETBRAINS MPS 2.5 README FILE
 
 Thank you for downloading JetBrains MPS!
 
@@ -16,7 +16,7 @@ CONTENTS
 	mps.bat             bat-file for starting JetBrains MPS on Windows (may not be present for some distributions)
 	mps.sh              sh-file for starting JetBrains MPS on Unix (may not be present for some distributions)
 	readme.txt          this file
-	releaseNotes.txt    MPS 2.0 release notes
+	releaseNotes.txt    MPS 2.5 release notes
 	samples.zip         sample projects
 
 SYSTEM REQUIREMENTS
@@ -50,7 +50,7 @@ HOW TO ADJUST JVM OPTIONS
 GETTING HELP AND REPORTING BUGS
     For getting help you can visit several locations:
     - home http://www.jetbrains.com/mps/
-    - documentation http://confluence.jetbrains.com/display/MPSD2/MPS+User%27s+Guide
+    - documentation http://confluence.jetbrains.net/display/MPSD25/MPS+User%27s+Guide
     - JetBrains MPS space http://confluence.jetbrains.com/display/MPS/Welcome+to+JetBrains+MPS+Space
     - issue tracker http://www.jetbrains.net/tracker/issues/MPS
     - forum http://forum.jetbrains.com/forum/Meta-Programming-System
