@@ -36,6 +36,9 @@
     <component>
       <implementation-class>jetbrains.mps.vcs.platform.integration.PluginVCSManager</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.vcs.MergeDriverPackerImpl</implementation-class>
+    </component>
   </application-components>
   <extensions defaultExtensionNs="com.intellij">
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>

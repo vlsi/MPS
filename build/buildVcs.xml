@@ -19,8 +19,8 @@
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
-    <mkdir dir="${build.layout}/plugins/vcs" />
-    <mkdir dir="${build.layout}/plugins/vcs/lib" />
+    <mkdir dir="${build.layout}/plugins/mps-vcs" />
+    <mkdir dir="${build.layout}/plugins/mps-vcs/lib" />
     <mkdir dir="${build.tmp}/default/vcs.jar" />
     <mkdir dir="${build.tmp}/default/vcs.jar/META-INF" />
     <copy todir="${build.tmp}/default/vcs.jar/META-INF">
@@ -34,11 +34,11 @@
         </tokenfilter>
       </filterchain>
     </copy>
-    <jar destfile="${build.layout}/plugins/vcs/lib/vcs.jar">
+    <jar destfile="${build.layout}/plugins/mps-vcs/lib/vcs.jar">
       <fileset dir="${build.tmp}/java/out/vcs" />
       <fileset dir="${build.tmp}/default/vcs.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/vcs/lib/mps-vcs-core.jar">
+    <jar destfile="${build.layout}/plugins/mps-vcs/lib/vcs-core.jar">
       <fileset dir="${build.tmp}/java/out/vcs-core" />
     </jar>
     <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
@@ -119,7 +119,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildPlugins}/plugins/mpsmake.jar" />
+        <fileset file="${artifacts.buildPlugins}/plugins/mps-make.jar" />
         <path refid="path.java.library.idea-vcs" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />

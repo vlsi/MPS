@@ -227,6 +227,7 @@
       <src>
         <path location="${mps_home}/plugins/vcs/common/source" />
         <path location="${mps_home}/plugins/vcs/common/source_gen" />
+        <path location="${mps_home}/IdeaPlugin/mps-vcs/source" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />

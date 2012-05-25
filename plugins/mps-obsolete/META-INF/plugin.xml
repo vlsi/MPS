@@ -4,9 +4,9 @@
     "http://plugins.intellij.net/plugin.dtd"
 >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
-  <id>jetbrains.mps.build.deprecated</id>
-  <name>MPS Deprecated Build Languages</name>
-  <description>Legacy (deprecated) build languages for MPS</description>
+  <id>jetbrains.mps.obsolete</id>
+  <name>MPS Obsolete Languages</name>
+  <description>Discontinued legacy languages from previous versions of MPS. These languages will most probably be dropped in the next release.</description>
   <version>1.0</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"></idea-version>

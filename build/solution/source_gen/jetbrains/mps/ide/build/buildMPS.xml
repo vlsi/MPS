@@ -25,7 +25,7 @@
   <property name="artifacts.buildVcs" location="${build.dir}/artifacts/buildVcs" />
   <property name="artifacts.buildDebuggerPlugin" location="${build.dir}/artifacts/buildDebuggerPlugin" />
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
-  <property name="artifacts.buildBuildlanguageDeprecated" location="${build.dir}/artifacts/buildBuildlanguageDeprecated" />
+  <property name="artifacts.buildObsolete" location="${build.dir}/artifacts/buildObsolete" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
@@ -130,7 +130,7 @@
       <fileset dir="${artifacts.buildExecutionPlugin}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
-      <fileset dir="${artifacts.buildBuildlanguageDeprecated}/plugins" />
+      <fileset dir="${artifacts.buildObsolete}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildUILanguages}/plugins" />
@@ -184,7 +184,7 @@
     <ant antfile="build/buildVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildBuildlanguageDeprecated.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildObsolete.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

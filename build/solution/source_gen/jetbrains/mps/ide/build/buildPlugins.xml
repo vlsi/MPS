@@ -14,8 +14,8 @@
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
-    <mkdir dir="${build.layout}/plugins/mpsjava" />
-    <mkdir dir="${build.layout}/plugins/mpsjava/lib" />
+    <mkdir dir="${build.layout}/plugins/mps-java" />
+    <mkdir dir="${build.layout}/plugins/mps-java/lib" />
     <mkdir dir="${build.tmp}/default/mpsjava.jar" />
     <mkdir dir="${build.tmp}/default/mpsjava.jar/META-INF" />
     <copy todir="${build.tmp}/default/mpsjava.jar/META-INF">
@@ -26,11 +26,11 @@
         </tokenfilter>
       </filterchain>
     </copy>
-    <jar destfile="${build.layout}/plugins/mpsjava/lib/mpsjava.jar">
+    <jar destfile="${build.layout}/plugins/mps-java/lib/mpsjava.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
       <fileset dir="${build.tmp}/default/mpsjava.jar" />
     </jar>
-    <mkdir dir="${build.layout}/plugins/mpsjava/languages" />
+    <mkdir dir="${build.layout}/plugins/mps-java/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.java.migration.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.java.migration.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.java.migration.jar/META-INF/module.xml">
@@ -44,15 +44,31 @@
         <sources jar="jetbrains.mps.ide.java.migration-src.jar" descriptor="migration.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mpsjava/languages/jetbrains.mps.ide.java.migration.jar">
+    <jar destfile="${build.layout}/plugins/mps-java/languages/jetbrains.mps.ide.java.migration.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration" />
       <fileset dir="${mps_home}/plugins/mpsjava/migration" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.java.migration.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsjava/languages/jetbrains.mps.ide.java.migration-src.jar">
+    <jar destfile="${build.layout}/plugins/mps-java/languages/jetbrains.mps.ide.java.migration-src.jar">
       <fileset dir="${mps_home}/plugins/mpsjava/migration/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mpsjava/migration/migration.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/migration/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    </jar>
+    <mkdir dir="${build.layout}/plugins/mps-devkit" />
+    <mkdir dir="${build.layout}/plugins/mps-devkit/META-INF" />
+    <copy todir="${build.layout}/plugins/mps-devkit/META-INF">
+      <fileset file="${mps_home}/plugins/mpsdevkit/META-INF/plugin.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/plugins/mps-devkit/lib" />
+    <jar destfile="${build.layout}/plugins/mps-devkit/lib/devkit.jar">
+      <fileset dir="${build.tmp}/java/out/mps-devkit" />
+      <zipfileset file="${mps_home}/plugins/mpsdevkit/mpsdevkit.msd" prefix="modules/jetbrains.mps.ide.mpsdevkit" />
+      <zipfileset dir="${mps_home}/plugins/mpsdevkit" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.mpsdevkit" />
+      <zipfileset dir="${mps_home}/plugins/mpsdevkit/solution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.mpsdevkit/solution" />
+    </jar>
+    <jar destfile="${build.layout}/plugins/mps-make.jar">
+      <fileset dir="${build.tmp}/java/out/mps-make" />
+      <zipfileset file="${mps_home}/plugins/mpsmake/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
     <jar destfile="${build.layout}/plugins/ideaIntegration.jar">
       <fileset dir="${build.tmp}/java/out/ideaIntegration" />
@@ -70,25 +86,9 @@
       <fileset dir="${build.tmp}/java/out/migration25" />
       <zipfileset file="${mps_home}/plugins/migration25/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mpsmake.jar">
-      <fileset dir="${build.tmp}/java/out/mps-make" />
-      <zipfileset file="${mps_home}/plugins/mpsmake/META-INF/plugin.xml" prefix="META-INF" />
-    </jar>
     <jar destfile="${build.layout}/plugins/samples.jar">
       <fileset dir="${build.tmp}/java/out/samples" />
       <zipfileset file="${mps_home}/plugins/samples/META-INF/plugin.xml" prefix="META-INF" />
-    </jar>
-    <mkdir dir="${build.layout}/plugins/mpsdevkit" />
-    <mkdir dir="${build.layout}/plugins/mpsdevkit/META-INF" />
-    <copy todir="${build.layout}/plugins/mpsdevkit/META-INF">
-      <fileset file="${mps_home}/plugins/mpsdevkit/META-INF/plugin.xml" />
-    </copy>
-    <mkdir dir="${build.layout}/plugins/mpsdevkit/lib" />
-    <jar destfile="${build.layout}/plugins/mpsdevkit/lib/mpsdevkit.jar">
-      <fileset dir="${build.tmp}/java/out/mps-devkit" />
-      <zipfileset file="${mps_home}/plugins/mpsdevkit/mpsdevkit.msd" prefix="modules/jetbrains.mps.ide.mpsdevkit" />
-      <zipfileset dir="${mps_home}/plugins/mpsdevkit" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.mpsdevkit" />
-      <zipfileset dir="${mps_home}/plugins/mpsdevkit/solution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.mpsdevkit/solution" />
     </jar>
     <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
