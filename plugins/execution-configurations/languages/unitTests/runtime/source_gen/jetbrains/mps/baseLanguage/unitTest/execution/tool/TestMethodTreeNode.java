@@ -60,8 +60,8 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
         NavigationSupport.getInstance().openNode(getOperationContext(), myTestMethod.getNode(), true, true);
       }
     };
-    if (!(ModelAccess.instance().tryRead(nav))) {
-      ModelAccess.instance().runReadInEDT(nav);
+    if (!(ModelAccess.instance().tryWrite(nav))) {
+      ModelAccess.instance().runWriteInEDT(nav);
     }
   }
 

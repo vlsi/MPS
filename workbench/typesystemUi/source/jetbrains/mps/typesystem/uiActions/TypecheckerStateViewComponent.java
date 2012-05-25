@@ -30,7 +30,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.*;
@@ -169,17 +168,14 @@ public class TypecheckerStateViewComponent extends JPanel {
       return;
     }
 
-    final SNode rule = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-      public SNode compute() {
-        return modelDescriptor.getSModel().getNodeById(ruleID);
-      }
-    });
-    if (rule == null) {
-      LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
-      return;
-    }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
       public void run() {
+        SNode rule = modelDescriptor.getSModel().getNodeById(ruleID);
+        if (rule == null) {
+          LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
+          return;
+        }
         NavigationSupport.getInstance().openNode(myOperationContext, rule, true, !(rule.isRoot()));
       }
     });

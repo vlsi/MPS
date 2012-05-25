@@ -105,6 +105,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
         return new Runnable() {
           @Override
           public void run() {
+            ModelAccess.assertLegalWrite();
             if (visible) {
               attachPainterAndOpenEditor(newPainter);
             } else {
@@ -117,27 +118,19 @@ public abstract class CurrentLinePositionComponentEx<S> {
     return null;
   }
 
-  private void attachPainterAndOpenEditor(@NotNull final CurrentLinePainter painter) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(painter.getSNode(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
-        currentEditorComponent = EditorComponentUtil.scrollToNode(painter.getSNode(), currentEditorComponent, myFileEditorManager);
-        if (currentEditorComponent != null) {
-          attach(painter, currentEditorComponent);
-        }
-      }
-    });
+  private void attachPainterAndOpenEditor(@NotNull CurrentLinePainter painter) {
+    EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(painter.getSNode(), new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
+    currentEditorComponent = EditorComponentUtil.scrollToNode(painter.getSNode(), currentEditorComponent, myFileEditorManager);
+    if (currentEditorComponent != null) {
+      attach(painter, currentEditorComponent);
+    }
   }
 
-  private void attachPainter(@NotNull final CurrentLinePainter painter) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        List<EditorComponent> components = EditorComponentUtil.findComponentForNode(painter.getSNode(), myFileEditorManager);
-        for (EditorComponent component : ListSequence.fromList(components)) {
-          attach(painter, component);
-        }
-      }
-    });
+  private void attachPainter(@NotNull CurrentLinePainter painter) {
+    List<EditorComponent> components = EditorComponentUtil.findComponentForNode(painter.getSNode(), myFileEditorManager);
+    for (EditorComponent component : ListSequence.fromList(components)) {
+      attach(painter, component);
+    }
   }
 
   protected abstract SNode getNode(S session);
@@ -178,7 +171,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
     final Runnable detachSession = detachPainterRunnable(session);
     final Runnable attachSession = attachPainterRunnable(session);
     if (detachSession != null || attachSession != null) {
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           if (detachSession != null) {
             detachSession.run();

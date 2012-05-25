@@ -132,7 +132,7 @@ public class ClassLoaderManager implements CoreComponent {
             "  " + id.toString() + "\n" +
             "  " + oldLoaderId.toString();
           //throw new IllegalStateException(s);
-          System.out.println(s);
+          LOG.warning(s);
         }
       } else {
         myLoadedClasses.put(InternUtil.intern(name), id);

@@ -4,12 +4,13 @@ package jetbrains.mps.ide.java.platform.highlighters;
 
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import java.util.Set;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.HashMap;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.List;
@@ -36,17 +37,17 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private static boolean DISABLED = false;
 
-  private Set<SNode> myCheckedMethodCalls = new HashSet<SNode>();
-  private Map<SNode, Set<SNode>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNode, Set<SNode>>();
-  private Map<Pair<String, String>, Set<SNode>> myMethodConceptsAndNamesToCheckedMethodCalls = new HashMap<Pair<String, String>, Set<SNode>>();
-  private Map<SNode, SNode> myParametersToCheckedMethodCalls = new HashMap<SNode, SNode>();
-  private Map<SNode, SNode> myMethodCallsToSetDecls = new HashMap<SNode, SNode>();
-  private Set<SNode> myCurrentExpressionsWithChangedTypes = new HashSet<SNode>();
+  private Set<SNodePointer> myCheckedMethodCalls = new HashSet<SNodePointer>();
+  private Map<SNodePointer, Set<SNodePointer>> myMethodDeclsToCheckedMethodCalls = new HashMap<SNodePointer, Set<SNodePointer>>();
+  private Map<Pair<String, String>, Set<SNodePointer>> myMethodConceptsAndNamesToCheckedMethodCalls = new HashMap<Pair<String, String>, Set<SNodePointer>>();
+  private Map<SNodePointer, SNodePointer> myParametersToCheckedMethodCalls = new HashMap<SNodePointer, SNodePointer>();
+  private Map<SNodePointer, SNodePointer> myMethodCallsToSetDecls = new HashMap<SNodePointer, SNodePointer>();
+  private Set<SNodePointer> myCurrentExpressionsWithChangedTypes = new HashSet<SNodePointer>();
   private final Object myRecalculatedTypesLock = new Object();
   private TypeRecalculatedListener myTypeRecalculatedListener = new TypeRecalculatedListener() {
     public void typeWillBeRecalculatedForTerm(SNode term) {
       synchronized (myRecalculatedTypesLock) {
-        myCurrentExpressionsWithChangedTypes.add(term);
+        myCurrentExpressionsWithChangedTypes.add(new SNodePointer(term));
       }
     }
   };
@@ -77,9 +78,9 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         testAndFixMethodCall(methodCall, reResolvedTargets);
       }
     } else {
-      Set<SNode> expressionsWithChangedTypes;
+      Set<SNodePointer> expressionsWithChangedTypes;
       synchronized (myRecalculatedTypesLock) {
-        expressionsWithChangedTypes = new HashSet<SNode>(myCurrentExpressionsWithChangedTypes);
+        expressionsWithChangedTypes = new HashSet<SNodePointer>(myCurrentExpressionsWithChangedTypes);
         myCurrentExpressionsWithChangedTypes.clear();
       }
       SModelEventVisitor visitor = new SModelEventVisitorAdapter() {
@@ -115,8 +116,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         }
         event.accept(visitor);
       }
-      for (SNode expressionWithChangedType : expressionsWithChangedTypes) {
-        expressionTypeChanged(expressionWithChangedType, reResolvedTargets);
+      for (SNodePointer expressionWithChangedType : expressionsWithChangedTypes) {
+        expressionTypeChanged(expressionWithChangedType.getNode(), reResolvedTargets);
       }
     }
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -196,25 +197,26 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       if (baseMethodDeclaration == null || (good && newTarget != baseMethodDeclaration)) {
         reResolvedTargets.put(methodCallNode, newTarget);
       }
-      myMethodCallsToSetDecls.put(methodCallNode, newTarget);
-      myCheckedMethodCalls.add(methodCallNode);
+      SNodePointer methodCallPointer = new SNodePointer(methodCallNode);
+      SNodePointer newTargetPointer = new SNodePointer(newTarget);
+      myMethodCallsToSetDecls.put(methodCallPointer, newTargetPointer);
+      myCheckedMethodCalls.add(methodCallPointer);
       for (SNode actualArgument : SLinkOperations.getTargets(methodCallNode, "actualArgument", true)) {
-        myParametersToCheckedMethodCalls.put(actualArgument, methodCallNode);
+        myParametersToCheckedMethodCalls.put(new SNodePointer(actualArgument), methodCallPointer);
       }
-      SNode newTargetNode = newTarget;
-      Set<SNode> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTargetNode);
+      Set<SNodePointer> nodeSet = myMethodDeclsToCheckedMethodCalls.get(newTargetPointer);
       if (nodeSet == null) {
-        nodeSet = new HashSet<SNode>();
-        myMethodDeclsToCheckedMethodCalls.put(newTargetNode, nodeSet);
+        nodeSet = new HashSet<SNodePointer>();
+        myMethodDeclsToCheckedMethodCalls.put(newTargetPointer, nodeSet);
       }
-      nodeSet.add(methodCallNode);
+      nodeSet.add(methodCallPointer);
       Pair<String, String> key = new Pair<String, String>(newTarget.getConceptFqName(), methodName);
-      Set<SNode> nodesByNameAndConcept = myMethodConceptsAndNamesToCheckedMethodCalls.get(key);
+      Set<SNodePointer> nodesByNameAndConcept = myMethodConceptsAndNamesToCheckedMethodCalls.get(key);
       if (nodesByNameAndConcept == null) {
-        nodesByNameAndConcept = new HashSet<SNode>();
+        nodesByNameAndConcept = new HashSet<SNodePointer>();
         myMethodConceptsAndNamesToCheckedMethodCalls.put(key, nodesByNameAndConcept);
       }
-      nodesByNameAndConcept.add(methodCallNode);
+      nodesByNameAndConcept.add(methodCallPointer);
     }
   }
 
@@ -227,38 +229,39 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNode> methodCalls = myMethodDeclsToCheckedMethodCalls.get(method);
+    Set<SNodePointer> methodCalls = myMethodDeclsToCheckedMethodCalls.get(new SNodePointer(method));
     if (methodCalls != null) {
-      for (SNode methodCall : methodCalls) {
+      for (SNodePointer methodCall : methodCalls) {
         if (methodCall != null) {
-          testAndFixMethodCall(methodCall, resolveTargets);
+          testAndFixMethodCall(SNodeOperations.cast(methodCall.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
         }
       }
     }
   }
 
   private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNode> methodCalls = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConceptFqName(), method.getName()));
+    Set<SNodePointer> methodCalls = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConceptFqName(), method.getName()));
     if (methodCalls != null) {
-      for (SNode methodCall : methodCalls) {
+      for (SNodePointer methodCall : methodCalls) {
         if (methodCall != null) {
-          testAndFixMethodCall(methodCall, resolveTargets);
+          testAndFixMethodCall(SNodeOperations.cast(methodCall.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
         }
       }
     }
   }
 
   private void methodCallDeclarationChanged(SNode methodCall, Map<SNode, SNode> resolveTargets) {
-    if (myCheckedMethodCalls.contains(methodCall) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == myMethodCallsToSetDecls.get(methodCall)) {
+    SNodePointer methodCallPointer = new SNodePointer(methodCall);
+    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == myMethodCallsToSetDecls.get(methodCallPointer).getNode()) {
       return;
     }
     testAndFixMethodCall(methodCall, resolveTargets);
   }
 
   private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
-    SNode methodCall = myParametersToCheckedMethodCalls.get(expression);
+    SNodePointer methodCall = myParametersToCheckedMethodCalls.get(new SNodePointer(expression));
     if (methodCall != null) {
-      testAndFixMethodCall(methodCall, resolveTargets);
+      testAndFixMethodCall(SNodeOperations.cast(methodCall.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
     }
   }
 
@@ -267,9 +270,10 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
     SNode parent = SNodeOperations.getParent(child);
-    if (myCheckedMethodCalls.contains(parent)) {
+    SNodePointer parentPointer = new SNodePointer(parent);
+    if (myCheckedMethodCalls.contains(parentPointer)) {
       SNode p = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.IMethodCall");
-      myParametersToCheckedMethodCalls.put(child, p);
+      myParametersToCheckedMethodCalls.put(new SNodePointer(child), parentPointer);
       testAndFixMethodCall(p, resolveTargets);
     }
     SNode formalParam = SNodeOperations.getAncestor(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", true, false);
@@ -279,10 +283,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void nodeRemoved(SNode child, SNode formerParent, Map<SNode, SNode> resolveTargets) {
-    for (SNode methodCall : SNodeOperations.getDescendants(child, "jetbrains.mps.baseLanguage.structure.IMethodCall", true, new String[]{})) {
-    }
-    if (myCheckedMethodCalls.contains(formerParent)) {
-      myParametersToCheckedMethodCalls.remove(child);
+    if (myCheckedMethodCalls.contains(new SNodePointer(formerParent))) {
+      myParametersToCheckedMethodCalls.remove(new SNodePointer(child));
       testAndFixMethodCall(SNodeOperations.cast(formerParent, "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
     }
     if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {

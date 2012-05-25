@@ -1709,43 +1709,48 @@
     <nodeInfo nodeId="2891782949125169901" fileName="VmCreator.java" startLine="274" startPosition="28" endLine="275" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="2891782949125169905" fileName="VmCreator.java" startLine="276" startPosition="5" endLine="277" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2891782949125169916" fileName="VmCreator.java" startLine="278" startPosition="30" endLine="279" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2891782949125205937" fileName="VmCreator.java" startLine="280" startPosition="5" endLine="281" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125169940" fileName="VmCreator.java" startLine="286" startPosition="26" endLine="287" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125169948" fileName="VmCreator.java" startLine="288" startPosition="5" endLine="289" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125169960" fileName="VmCreator.java" startLine="290" startPosition="29" endLine="291" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205939" fileName="VmCreator.java" startLine="291" startPosition="31" endLine="292" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125169972" fileName="VmCreator.java" startLine="296" startPosition="83" endLine="297" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125169987" fileName="VmCreator.java" startLine="298" startPosition="9" endLine="299" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125169979" fileName="VmCreator.java" startLine="300" startPosition="23" endLine="301" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2891782949125169991" fileName="VmCreator.java" startLine="302" startPosition="5" endLine="303" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170026" fileName="VmCreator.java" startLine="304" startPosition="120" endLine="305" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170019" fileName="VmCreator.java" startLine="307" startPosition="120" endLine="308" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170016" fileName="VmCreator.java" startLine="309" startPosition="12" endLine="310" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170042" fileName="VmCreator.java" startLine="312" startPosition="62" endLine="313" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170058" fileName="VmCreator.java" startLine="314" startPosition="51" endLine="315" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170060" fileName="VmCreator.java" startLine="317" startPosition="5" endLine="318" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170084" fileName="VmCreator.java" startLine="323" startPosition="38" endLine="324" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170078" fileName="VmCreator.java" startLine="325" startPosition="14" endLine="326" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170112" fileName="VmCreator.java" startLine="333" startPosition="38" endLine="334" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170106" fileName="VmCreator.java" startLine="335" startPosition="14" endLine="336" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170125" fileName="VmCreator.java" startLine="341" startPosition="63" endLine="342" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125170131" fileName="VmCreator.java" startLine="342" startPosition="99" endLine="343" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170146" fileName="VmCreator.java" startLine="345" startPosition="68" endLine="346" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170154" fileName="VmCreator.java" startLine="351" startPosition="52" endLine="352" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170160" fileName="VmCreator.java" startLine="355" startPosition="41" endLine="356" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125170166" fileName="VmCreator.java" startLine="359" startPosition="58" endLine="360" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125169350" fileName="VmCreator.java" startLine="363" startPosition="64" endLine="364" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunnable" />
-    <nodeInfo nodeId="2891782949125169353" fileName="VmCreator.java" startLine="364" startPosition="32" endLine="365" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="alreadyRun" />
-    <nodeInfo nodeId="2891782949125170170" fileName="VmCreator.java" startLine="367" startPosition="55" endLine="368" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170179" fileName="VmCreator.java" startLine="372" startPosition="26" endLine="373" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170183" fileName="VmCreator.java" startLine="373" startPosition="26" endLine="374" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170187" fileName="VmCreator.java" startLine="375" startPosition="7" endLine="376" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170191" fileName="VmCreator.java" startLine="379" startPosition="51" endLine="380" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7280914690732957232" fileName="VmCreator.java" startLine="280" startPosition="5" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2891782949125205937" fileName="VmCreator.java" startLine="281" startPosition="0" endLine="282" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125169940" fileName="VmCreator.java" startLine="287" startPosition="26" endLine="288" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7280914690732957235" fileName="VmCreator.java" startLine="289" startPosition="5" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2891782949125169948" fileName="VmCreator.java" startLine="290" startPosition="0" endLine="291" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125169960" fileName="VmCreator.java" startLine="292" startPosition="29" endLine="293" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205939" fileName="VmCreator.java" startLine="293" startPosition="31" endLine="294" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7280914690732957233" fileName="VmCreator.java" startLine="295" startPosition="5" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7280914690732957238" fileName="VmCreator.java" startLine="296" startPosition="0" endLine="297" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7280914690732957330" fileName="VmCreator.java" startLine="298" startPosition="31" endLine="299" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125169972" fileName="VmCreator.java" startLine="303" startPosition="83" endLine="304" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125169987" fileName="VmCreator.java" startLine="305" startPosition="9" endLine="306" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125169979" fileName="VmCreator.java" startLine="307" startPosition="23" endLine="308" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2891782949125169991" fileName="VmCreator.java" startLine="309" startPosition="5" endLine="310" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170026" fileName="VmCreator.java" startLine="311" startPosition="120" endLine="312" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170019" fileName="VmCreator.java" startLine="314" startPosition="120" endLine="315" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170016" fileName="VmCreator.java" startLine="316" startPosition="12" endLine="317" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170042" fileName="VmCreator.java" startLine="319" startPosition="62" endLine="320" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170058" fileName="VmCreator.java" startLine="321" startPosition="51" endLine="322" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170060" fileName="VmCreator.java" startLine="324" startPosition="5" endLine="325" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170084" fileName="VmCreator.java" startLine="330" startPosition="38" endLine="331" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170078" fileName="VmCreator.java" startLine="332" startPosition="14" endLine="333" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170112" fileName="VmCreator.java" startLine="340" startPosition="38" endLine="341" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170106" fileName="VmCreator.java" startLine="342" startPosition="14" endLine="343" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170125" fileName="VmCreator.java" startLine="348" startPosition="63" endLine="349" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125170131" fileName="VmCreator.java" startLine="349" startPosition="99" endLine="350" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170146" fileName="VmCreator.java" startLine="352" startPosition="68" endLine="353" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170154" fileName="VmCreator.java" startLine="358" startPosition="52" endLine="359" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170160" fileName="VmCreator.java" startLine="362" startPosition="41" endLine="363" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125170166" fileName="VmCreator.java" startLine="366" startPosition="58" endLine="367" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125169350" fileName="VmCreator.java" startLine="370" startPosition="64" endLine="371" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunnable" />
+    <nodeInfo nodeId="2891782949125169353" fileName="VmCreator.java" startLine="371" startPosition="32" endLine="372" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="alreadyRun" />
+    <nodeInfo nodeId="2891782949125170170" fileName="VmCreator.java" startLine="374" startPosition="55" endLine="375" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170179" fileName="VmCreator.java" startLine="379" startPosition="26" endLine="380" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170183" fileName="VmCreator.java" startLine="380" startPosition="26" endLine="381" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170187" fileName="VmCreator.java" startLine="382" startPosition="7" endLine="383" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125170191" fileName="VmCreator.java" startLine="386" startPosition="51" endLine="387" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2891782949125169464" fileName="VmCreator.java" startLine="79" startPosition="10" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2891782949125170279" fileName="VmCreator.java" startLine="204" startPosition="14" endLine="206" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125170014" fileName="VmCreator.java" startLine="309" startPosition="10" endLine="311" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125170076" fileName="VmCreator.java" startLine="325" startPosition="12" endLine="327" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125170104" fileName="VmCreator.java" startLine="335" startPosition="12" endLine="337" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125170014" fileName="VmCreator.java" startLine="316" startPosition="10" endLine="318" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125170076" fileName="VmCreator.java" startLine="332" startPosition="12" endLine="334" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125170104" fileName="VmCreator.java" startLine="342" startPosition="12" endLine="344" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2891782949125169480" fileName="VmCreator.java" startLine="74" startPosition="99" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125169562" fileName="VmCreator.java" startLine="98" startPosition="9" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2891782949125170194" fileName="VmCreator.java" startLine="133" startPosition="87" endLine="136" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1753,43 +1758,44 @@
     <nodeInfo nodeId="2891782949125169766" fileName="VmCreator.java" startLine="222" startPosition="9" endLine="225" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125169896" fileName="VmCreator.java" startLine="273" startPosition="86" endLine="276" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125169911" fileName="VmCreator.java" startLine="277" startPosition="47" endLine="280" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125169935" fileName="VmCreator.java" startLine="285" startPosition="6" endLine="288" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170050" fileName="VmCreator.java" startLine="313" startPosition="50" endLine="316" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170139" fileName="VmCreator.java" startLine="344" startPosition="36" endLine="347" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125169356" fileName="VmCreator.java" startLine="366" startPosition="0" endLine="369" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunsAfterProcessStarted#(Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="2891782949125169935" fileName="VmCreator.java" startLine="286" startPosition="6" endLine="289" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7280914690732957303" fileName="VmCreator.java" startLine="297" startPosition="66" endLine="300" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170050" fileName="VmCreator.java" startLine="320" startPosition="50" endLine="323" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170139" fileName="VmCreator.java" startLine="351" startPosition="36" endLine="354" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125169356" fileName="VmCreator.java" startLine="373" startPosition="0" endLine="376" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunsAfterProcessStarted#(Ljava/lang/Runnable;)V" />
     <nodeInfo nodeId="2891782949125169408" fileName="VmCreator.java" startLine="56" startPosition="37" endLine="60" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessListeners" />
     <nodeInfo nodeId="2891782949125169548" fileName="VmCreator.java" startLine="94" startPosition="61" endLine="98" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125170327" fileName="VmCreator.java" startLine="197" startPosition="70" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
     <nodeInfo nodeId="2891782949125169817" fileName="VmCreator.java" startLine="227" startPosition="60" endLine="231" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2891782949125169781" fileName="VmCreator.java" startLine="252" startPosition="14" endLine="256" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125169920" fileName="VmCreator.java" startLine="281" startPosition="100" endLine="285" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125169955" fileName="VmCreator.java" startLine="289" startPosition="69" endLine="293" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170150" fileName="VmCreator.java" startLine="350" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getManagerThread#()Ljetbrains/mps/debugger/java/runtime/execution/IDebuggerManagerThread;" />
-    <nodeInfo nodeId="2891782949125170156" fileName="VmCreator.java" startLine="354" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugSession#()Ljetbrains/mps/debugger/java/runtime/DebugSession;" />
-    <nodeInfo nodeId="2891782949125170162" fileName="VmCreator.java" startLine="358" startPosition="0" endLine="362" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConnectionSettings#()Ljetbrains/mps/debug/runtime/settings/DebugConnectionSettings;" />
-    <nodeInfo nodeId="2891782949125170175" fileName="VmCreator.java" startLine="371" startPosition="36" endLine="375" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125169364" fileName="VmCreator.java" startLine="378" startPosition="0" endLine="382" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startNotified#(Lcom/intellij/execution/process/ProcessEvent;)V" />
+    <nodeInfo nodeId="2891782949125169920" fileName="VmCreator.java" startLine="282" startPosition="100" endLine="286" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125169955" fileName="VmCreator.java" startLine="291" startPosition="63" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170150" fileName="VmCreator.java" startLine="357" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getManagerThread#()Ljetbrains/mps/debugger/java/runtime/execution/IDebuggerManagerThread;" />
+    <nodeInfo nodeId="2891782949125170156" fileName="VmCreator.java" startLine="361" startPosition="0" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDebugSession#()Ljetbrains/mps/debugger/java/runtime/DebugSession;" />
+    <nodeInfo nodeId="2891782949125170162" fileName="VmCreator.java" startLine="365" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConnectionSettings#()Ljetbrains/mps/debug/runtime/settings/DebugConnectionSettings;" />
+    <nodeInfo nodeId="2891782949125170175" fileName="VmCreator.java" startLine="378" startPosition="36" endLine="382" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125169364" fileName="VmCreator.java" startLine="385" startPosition="0" endLine="389" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startNotified#(Lcom/intellij/execution/process/ProcessEvent;)V" />
     <nodeInfo nodeId="2891782949125169606" fileName="VmCreator.java" startLine="114" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVmFailed#(Ljava/lang/Throwable;)V" />
     <nodeInfo nodeId="2891782949125169623" fileName="VmCreator.java" startLine="119" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createVmFailed#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="2891782949125170320" fileName="VmCreator.java" startLine="196" startPosition="62" endLine="201" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2891782949125169796" fileName="VmCreator.java" startLine="257" startPosition="42" endLine="262" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2891782949125169976" fileName="VmCreator.java" startLine="297" startPosition="55" endLine="302" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2891782949125170004" fileName="VmCreator.java" startLine="306" startPosition="10" endLine="311" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170072" fileName="VmCreator.java" startLine="322" startPosition="39" endLine="327" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170100" fileName="VmCreator.java" startLine="332" startPosition="39" endLine="337" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125170134" fileName="VmCreator.java" startLine="343" startPosition="40" endLine="348" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125169976" fileName="VmCreator.java" startLine="304" startPosition="55" endLine="309" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2891782949125170004" fileName="VmCreator.java" startLine="313" startPosition="10" endLine="318" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170072" fileName="VmCreator.java" startLine="329" startPosition="39" endLine="334" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170100" fileName="VmCreator.java" startLine="339" startPosition="39" endLine="344" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125170134" fileName="VmCreator.java" startLine="350" startPosition="40" endLine="355" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125169671" fileName="VmCreator.java" startLine="150" startPosition="23" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="2891782949125170300" fileName="VmCreator.java" startLine="209" startPosition="41" endLine="215" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2891782949125170032" fileName="VmCreator.java" startLine="311" startPosition="5" endLine="317" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="2891782949125170032" fileName="VmCreator.java" startLine="318" startPosition="5" endLine="324" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="2891782949125169421" fileName="VmCreator.java" startLine="63" startPosition="0" endLine="70" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VmCreator#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="2891782949125169719" fileName="VmCreator.java" startLine="166" startPosition="62" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="connectorIsReady#()V" />
     <nodeInfo nodeId="2891782949125169863" fileName="VmCreator.java" startLine="242" startPosition="36" endLine="249" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2891782949125170069" fileName="VmCreator.java" startLine="321" startPosition="67" endLine="328" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="2891782949125170097" fileName="VmCreator.java" startLine="331" startPosition="70" endLine="338" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="2891782949125170069" fileName="VmCreator.java" startLine="328" startPosition="67" endLine="335" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="2891782949125170097" fileName="VmCreator.java" startLine="338" startPosition="70" endLine="345" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="2891782949125169712" fileName="VmCreator.java" startLine="165" startPosition="97" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2891782949125170253" fileName="VmCreator.java" startLine="179" startPosition="85" endLine="187" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2891782949125169994" fileName="VmCreator.java" startLine="303" startPosition="20" endLine="311" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125169361" fileName="VmCreator.java" startLine="370" startPosition="0" endLine="378" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2891782949125169994" fileName="VmCreator.java" startLine="310" startPosition="20" endLine="318" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125169361" fileName="VmCreator.java" startLine="377" startPosition="0" endLine="385" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2891782949125169460" fileName="VmCreator.java" startLine="72" startPosition="114" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125170296" fileName="VmCreator.java" startLine="194" startPosition="53" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="2891782949125169732" fileName="VmCreator.java" startLine="208" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="commandCancelled#()V" />
@@ -1797,9 +1803,9 @@
     <nodeInfo nodeId="2891782949125169667" fileName="VmCreator.java" startLine="149" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fail#()V" />
     <nodeInfo nodeId="2891782949125170246" fileName="VmCreator.java" startLine="178" startPosition="55" endLine="188" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="2891782949125170291" fileName="VmCreator.java" startLine="193" startPosition="40" endLine="203" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125170063" fileName="VmCreator.java" startLine="320" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProcessListener#(Lcom/intellij/execution/process/ProcessListener;)V" />
-    <nodeInfo nodeId="2891782949125170091" fileName="VmCreator.java" startLine="330" startPosition="0" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeProcessListener#(Lcom/intellij/execution/process/ProcessListener;)V" />
-    <nodeInfo nodeId="2891782949125170119" fileName="VmCreator.java" startLine="340" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeAfterProcessStarted#(Ljava/lang/Runnable;)V" />
+    <nodeInfo nodeId="2891782949125170063" fileName="VmCreator.java" startLine="327" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProcessListener#(Lcom/intellij/execution/process/ProcessListener;)V" />
+    <nodeInfo nodeId="2891782949125170091" fileName="VmCreator.java" startLine="337" startPosition="0" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeProcessListener#(Lcom/intellij/execution/process/ProcessListener;)V" />
+    <nodeInfo nodeId="2891782949125170119" fileName="VmCreator.java" startLine="347" startPosition="0" endLine="357" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeAfterProcessStarted#(Ljava/lang/Runnable;)V" />
     <nodeInfo nodeId="2891782949125169779" fileName="VmCreator.java" startLine="252" startPosition="12" endLine="263" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2891782949125169454" fileName="VmCreator.java" startLine="71" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createLocalConnectionSettings#(Lcom/intellij/execution/configurations/RunProfileState;)Ljetbrains/mps/debug/runtime/settings/DebugConnectionSettings;" />
     <nodeInfo nodeId="2891782949125169660" fileName="VmCreator.java" startLine="132" startPosition="62" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processWillTerminate#(Lcom/intellij/execution/process/ProcessEvent;Z)V" />
@@ -1810,9 +1816,9 @@
     <nodeInfo nodeId="2891782949125169848" fileName="VmCreator.java" startLine="235" startPosition="69" endLine="251" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="2891782949125169527" fileName="VmCreator.java" startLine="91" startPosition="27" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2891782949125169646" fileName="VmCreator.java" startLine="125" startPosition="102" endLine="147" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125169890" fileName="VmCreator.java" startLine="272" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillConnectorArguments#(Lcom/sun/jdi/connect/Connector;)V" />
     <nodeInfo nodeId="2891782949125169638" fileName="VmCreator.java" startLine="124" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fixStopBugUnderLinux#(Lcom/intellij/execution/process/ProcessHandler;Ljetbrains/mps/debugger/java/runtime/DebugSession;)V" />
-    <nodeInfo nodeId="2891782949125169966" fileName="VmCreator.java" startLine="295" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findConnector#(Ljava/lang/String;)Lcom/sun/jdi/connect/Connector;" />
+    <nodeInfo nodeId="2891782949125169966" fileName="VmCreator.java" startLine="302" startPosition="0" endLine="327" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findConnector#(Ljava/lang/String;)Lcom/sun/jdi/connect/Connector;" />
+    <nodeInfo nodeId="2891782949125169890" fileName="VmCreator.java" startLine="272" startPosition="0" endLine="302" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillConnectorArguments#(Lcom/sun/jdi/connect/Connector;)V" />
     <nodeInfo nodeId="2891782949125169496" fileName="VmCreator.java" startLine="83" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startSession#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;Lcom/intellij/execution/configurations/RunProfileState;Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/ExecutionResult;" />
     <nodeInfo nodeId="2891782949125169729" fileName="VmCreator.java" startLine="174" startPosition="60" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
     <nodeInfo nodeId="2891782949125169775" fileName="VmCreator.java" startLine="225" startPosition="7" endLine="263" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1859,26 +1865,27 @@
     <scopeInfo nodeId="2891782949125169760" fileName="VmCreator.java" startLine="268" startPosition="15" endLine="269" endPosition="25" />
     <scopeInfo nodeId="2891782949125169900" fileName="VmCreator.java" startLine="274" startPosition="28" endLine="275" endPosition="64" />
     <scopeInfo nodeId="2891782949125169915" fileName="VmCreator.java" startLine="278" startPosition="30" endLine="279" endPosition="59" />
-    <scopeInfo nodeId="2891782949125169939" fileName="VmCreator.java" startLine="286" startPosition="26" endLine="287" endPosition="73" />
-    <scopeInfo nodeId="2891782949125169986" fileName="VmCreator.java" startLine="298" startPosition="9" endLine="299" endPosition="64" />
-    <scopeInfo nodeId="2891782949125169977" fileName="VmCreator.java" startLine="300" startPosition="0" endLine="301" endPosition="61">
+    <scopeInfo nodeId="2891782949125169939" fileName="VmCreator.java" startLine="287" startPosition="26" endLine="288" endPosition="73" />
+    <scopeInfo nodeId="7280914690732957304" fileName="VmCreator.java" startLine="298" startPosition="31" endLine="299" endPosition="64" />
+    <scopeInfo nodeId="2891782949125169986" fileName="VmCreator.java" startLine="305" startPosition="9" endLine="306" endPosition="64" />
+    <scopeInfo nodeId="2891782949125169977" fileName="VmCreator.java" startLine="307" startPosition="0" endLine="308" endPosition="61">
       <varInfo nodeId="2891782949125169984" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125169978" fileName="VmCreator.java" startLine="300" startPosition="23" endLine="301" endPosition="61" />
-    <scopeInfo nodeId="2891782949125170025" fileName="VmCreator.java" startLine="304" startPosition="120" endLine="305" endPosition="63" />
-    <scopeInfo nodeId="2891782949125170018" fileName="VmCreator.java" startLine="307" startPosition="120" endLine="308" endPosition="63" />
-    <scopeInfo nodeId="2891782949125170015" fileName="VmCreator.java" startLine="309" startPosition="12" endLine="310" endPosition="18" />
-    <scopeInfo nodeId="2891782949125170057" fileName="VmCreator.java" startLine="314" startPosition="51" endLine="315" endPosition="25" />
-    <scopeInfo nodeId="2891782949125170083" fileName="VmCreator.java" startLine="323" startPosition="38" endLine="324" endPosition="82" />
-    <scopeInfo nodeId="2891782949125170077" fileName="VmCreator.java" startLine="325" startPosition="14" endLine="326" endPosition="48" />
-    <scopeInfo nodeId="2891782949125170111" fileName="VmCreator.java" startLine="333" startPosition="38" endLine="334" endPosition="85" />
-    <scopeInfo nodeId="2891782949125170105" fileName="VmCreator.java" startLine="335" startPosition="14" endLine="336" endPosition="51" />
-    <scopeInfo nodeId="2891782949125170145" fileName="VmCreator.java" startLine="345" startPosition="68" endLine="346" endPosition="30" />
-    <scopeInfo nodeId="2891782949125170153" fileName="VmCreator.java" startLine="351" startPosition="52" endLine="352" endPosition="35" />
-    <scopeInfo nodeId="2891782949125170159" fileName="VmCreator.java" startLine="355" startPosition="41" endLine="356" endPosition="29" />
-    <scopeInfo nodeId="2891782949125170165" fileName="VmCreator.java" startLine="359" startPosition="58" endLine="360" endPosition="32" />
-    <scopeInfo nodeId="2891782949125170169" fileName="VmCreator.java" startLine="367" startPosition="55" endLine="368" endPosition="28" />
-    <scopeInfo nodeId="2891782949125170190" fileName="VmCreator.java" startLine="379" startPosition="51" endLine="380" endPosition="12" />
+    <scopeInfo nodeId="2891782949125169978" fileName="VmCreator.java" startLine="307" startPosition="23" endLine="308" endPosition="61" />
+    <scopeInfo nodeId="2891782949125170025" fileName="VmCreator.java" startLine="311" startPosition="120" endLine="312" endPosition="63" />
+    <scopeInfo nodeId="2891782949125170018" fileName="VmCreator.java" startLine="314" startPosition="120" endLine="315" endPosition="63" />
+    <scopeInfo nodeId="2891782949125170015" fileName="VmCreator.java" startLine="316" startPosition="12" endLine="317" endPosition="18" />
+    <scopeInfo nodeId="2891782949125170057" fileName="VmCreator.java" startLine="321" startPosition="51" endLine="322" endPosition="25" />
+    <scopeInfo nodeId="2891782949125170083" fileName="VmCreator.java" startLine="330" startPosition="38" endLine="331" endPosition="82" />
+    <scopeInfo nodeId="2891782949125170077" fileName="VmCreator.java" startLine="332" startPosition="14" endLine="333" endPosition="48" />
+    <scopeInfo nodeId="2891782949125170111" fileName="VmCreator.java" startLine="340" startPosition="38" endLine="341" endPosition="85" />
+    <scopeInfo nodeId="2891782949125170105" fileName="VmCreator.java" startLine="342" startPosition="14" endLine="343" endPosition="51" />
+    <scopeInfo nodeId="2891782949125170145" fileName="VmCreator.java" startLine="352" startPosition="68" endLine="353" endPosition="30" />
+    <scopeInfo nodeId="2891782949125170153" fileName="VmCreator.java" startLine="358" startPosition="52" endLine="359" endPosition="35" />
+    <scopeInfo nodeId="2891782949125170159" fileName="VmCreator.java" startLine="362" startPosition="41" endLine="363" endPosition="29" />
+    <scopeInfo nodeId="2891782949125170165" fileName="VmCreator.java" startLine="366" startPosition="58" endLine="367" endPosition="32" />
+    <scopeInfo nodeId="2891782949125170169" fileName="VmCreator.java" startLine="374" startPosition="55" endLine="375" endPosition="28" />
+    <scopeInfo nodeId="2891782949125170190" fileName="VmCreator.java" startLine="386" startPosition="51" endLine="387" endPosition="12" />
     <scopeInfo nodeId="2891782949125169552" fileName="VmCreator.java" startLine="95" startPosition="40" endLine="97" endPosition="22" />
     <scopeInfo nodeId="2891782949125169528" fileName="VmCreator.java" startLine="108" startPosition="0" endLine="110" endPosition="14">
       <varInfo nodeId="2891782949125169535" varName="e" />
@@ -1892,26 +1899,26 @@
     <scopeInfo nodeId="2891782949125170255" fileName="VmCreator.java" startLine="184" startPosition="35" endLine="186" endPosition="20" />
     <scopeInfo nodeId="2891782949125170306" fileName="VmCreator.java" startLine="210" startPosition="13" endLine="212" endPosition="52" />
     <scopeInfo nodeId="2891782949125169878" fileName="VmCreator.java" startLine="236" startPosition="13" endLine="238" endPosition="47" />
-    <scopeInfo nodeId="2891782949125169959" fileName="VmCreator.java" startLine="290" startPosition="29" endLine="292" endPosition="23" />
-    <scopeInfo nodeId="2891782949125170178" fileName="VmCreator.java" startLine="372" startPosition="26" endLine="374" endPosition="25" />
+    <scopeInfo nodeId="2891782949125169959" fileName="VmCreator.java" startLine="292" startPosition="29" endLine="294" endPosition="23" />
+    <scopeInfo nodeId="2891782949125170178" fileName="VmCreator.java" startLine="379" startPosition="26" endLine="381" endPosition="25" />
     <scopeInfo nodeId="2891782949125169562" fileName="VmCreator.java" startLine="98" startPosition="9" endLine="101" endPosition="9">
       <varInfo nodeId="2891782949125169564" varName="processListener" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125170262" fileName="VmCreator.java" startLine="180" startPosition="17" endLine="183" endPosition="20" />
-    <scopeInfo nodeId="2891782949125170138" fileName="VmCreator.java" startLine="344" startPosition="36" endLine="347" endPosition="7" />
-    <scopeInfo nodeId="2891782949125169356" fileName="VmCreator.java" startLine="366" startPosition="0" endLine="369" endPosition="5">
+    <scopeInfo nodeId="2891782949125170138" fileName="VmCreator.java" startLine="351" startPosition="36" endLine="354" endPosition="7" />
+    <scopeInfo nodeId="2891782949125169356" fileName="VmCreator.java" startLine="373" startPosition="0" endLine="376" endPosition="5">
       <varInfo nodeId="2891782949125169359" varName="runnable" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125169673" fileName="VmCreator.java" startLine="151" startPosition="25" endLine="155" endPosition="24" />
     <scopeInfo nodeId="2891782949125170209" fileName="VmCreator.java" startLine="167" startPosition="38" endLine="171" endPosition="48" />
     <scopeInfo nodeId="2891782949125170327" fileName="VmCreator.java" startLine="197" startPosition="70" endLine="201" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170041" fileName="VmCreator.java" startLine="312" startPosition="62" endLine="316" endPosition="7">
+    <scopeInfo nodeId="2891782949125170041" fileName="VmCreator.java" startLine="319" startPosition="62" endLine="323" endPosition="7">
       <varInfo nodeId="2891782949125170043" varName="connector" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170150" fileName="VmCreator.java" startLine="350" startPosition="0" endLine="354" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170156" fileName="VmCreator.java" startLine="354" startPosition="0" endLine="358" endPosition="0" />
-    <scopeInfo nodeId="2891782949125170162" fileName="VmCreator.java" startLine="358" startPosition="0" endLine="362" endPosition="0" />
-    <scopeInfo nodeId="2891782949125169364" fileName="VmCreator.java" startLine="378" startPosition="0" endLine="382" endPosition="0">
+    <scopeInfo nodeId="2891782949125170150" fileName="VmCreator.java" startLine="357" startPosition="0" endLine="361" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170156" fileName="VmCreator.java" startLine="361" startPosition="0" endLine="365" endPosition="0" />
+    <scopeInfo nodeId="2891782949125170162" fileName="VmCreator.java" startLine="365" startPosition="0" endLine="369" endPosition="0" />
+    <scopeInfo nodeId="2891782949125169364" fileName="VmCreator.java" startLine="385" startPosition="0" endLine="389" endPosition="0">
       <varInfo nodeId="2891782949125169367" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125169426" fileName="VmCreator.java" startLine="64" startPosition="37" endLine="69" endPosition="87" />
@@ -1924,12 +1931,12 @@
     <scopeInfo nodeId="2891782949125169623" fileName="VmCreator.java" startLine="119" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="2891782949125169626" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170071" fileName="VmCreator.java" startLine="322" startPosition="39" endLine="327" endPosition="7" />
-    <scopeInfo nodeId="2891782949125170099" fileName="VmCreator.java" startLine="332" startPosition="39" endLine="337" endPosition="7" />
-    <scopeInfo nodeId="2891782949125170174" fileName="VmCreator.java" startLine="371" startPosition="36" endLine="376" endPosition="34" />
+    <scopeInfo nodeId="2891782949125170071" fileName="VmCreator.java" startLine="329" startPosition="39" endLine="334" endPosition="7" />
+    <scopeInfo nodeId="2891782949125170099" fileName="VmCreator.java" startLine="339" startPosition="39" endLine="344" endPosition="7" />
+    <scopeInfo nodeId="2891782949125170174" fileName="VmCreator.java" startLine="378" startPosition="36" endLine="383" endPosition="34" />
     <scopeInfo nodeId="2891782949125170314" fileName="VmCreator.java" startLine="195" startPosition="31" endLine="201" endPosition="17" />
     <scopeInfo nodeId="2891782949125170299" fileName="VmCreator.java" startLine="209" startPosition="41" endLine="215" endPosition="9" />
-    <scopeInfo nodeId="2891782949125170032" fileName="VmCreator.java" startLine="311" startPosition="5" endLine="317" endPosition="5">
+    <scopeInfo nodeId="2891782949125170032" fileName="VmCreator.java" startLine="318" startPosition="5" endLine="324" endPosition="5">
       <varInfo nodeId="2891782949125170033" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125169421" fileName="VmCreator.java" startLine="63" startPosition="0" endLine="70" endPosition="3">
@@ -1938,13 +1945,13 @@
     <scopeInfo nodeId="2891782949125169670" fileName="VmCreator.java" startLine="150" startPosition="23" endLine="157" endPosition="41" />
     <scopeInfo nodeId="2891782949125169719" fileName="VmCreator.java" startLine="166" startPosition="62" endLine="173" endPosition="0" />
     <scopeInfo nodeId="2891782949125169862" fileName="VmCreator.java" startLine="242" startPosition="36" endLine="249" endPosition="13" />
-    <scopeInfo nodeId="2891782949125170068" fileName="VmCreator.java" startLine="321" startPosition="67" endLine="328" endPosition="5" />
-    <scopeInfo nodeId="2891782949125170096" fileName="VmCreator.java" startLine="331" startPosition="70" endLine="338" endPosition="5" />
-    <scopeInfo nodeId="2891782949125170124" fileName="VmCreator.java" startLine="341" startPosition="63" endLine="348" endPosition="5">
+    <scopeInfo nodeId="2891782949125170068" fileName="VmCreator.java" startLine="328" startPosition="67" endLine="335" endPosition="5" />
+    <scopeInfo nodeId="2891782949125170096" fileName="VmCreator.java" startLine="338" startPosition="70" endLine="345" endPosition="5" />
+    <scopeInfo nodeId="2891782949125170124" fileName="VmCreator.java" startLine="348" startPosition="63" endLine="355" endPosition="5">
       <varInfo nodeId="2891782949125170126" varName="processListener" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125170252" fileName="VmCreator.java" startLine="179" startPosition="85" endLine="187" endPosition="13" />
-    <scopeInfo nodeId="2891782949125169361" fileName="VmCreator.java" startLine="370" startPosition="0" endLine="378" endPosition="0" />
+    <scopeInfo nodeId="2891782949125169361" fileName="VmCreator.java" startLine="377" startPosition="0" endLine="385" endPosition="0" />
     <scopeInfo nodeId="2891782949125169459" fileName="VmCreator.java" startLine="72" startPosition="114" endLine="81" endPosition="5" />
     <scopeInfo nodeId="2891782949125170296" fileName="VmCreator.java" startLine="194" startPosition="53" endLine="203" endPosition="0" />
     <scopeInfo nodeId="2891782949125169732" fileName="VmCreator.java" startLine="208" startPosition="0" endLine="217" endPosition="0" />
@@ -1953,13 +1960,13 @@
     <scopeInfo nodeId="2891782949125169780" fileName="VmCreator.java" startLine="252" startPosition="14" endLine="262" endPosition="9">
       <varInfo nodeId="2891782949125169782" varName="connector" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170063" fileName="VmCreator.java" startLine="320" startPosition="0" endLine="330" endPosition="0">
+    <scopeInfo nodeId="2891782949125170063" fileName="VmCreator.java" startLine="327" startPosition="0" endLine="337" endPosition="0">
       <varInfo nodeId="2891782949125170066" varName="processListener" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170091" fileName="VmCreator.java" startLine="330" startPosition="0" endLine="340" endPosition="0">
+    <scopeInfo nodeId="2891782949125170091" fileName="VmCreator.java" startLine="337" startPosition="0" endLine="347" endPosition="0">
       <varInfo nodeId="2891782949125170094" varName="processListener" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125170119" fileName="VmCreator.java" startLine="340" startPosition="0" endLine="350" endPosition="0">
+    <scopeInfo nodeId="2891782949125170119" fileName="VmCreator.java" startLine="347" startPosition="0" endLine="357" endPosition="0">
       <varInfo nodeId="2891782949125170122" varName="run" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125170193" fileName="VmCreator.java" startLine="133" startPosition="87" endLine="144" endPosition="54" />
@@ -1981,17 +1988,10 @@
     </scopeInfo>
     <scopeInfo nodeId="2891782949125169537" fileName="VmCreator.java" startLine="92" startPosition="9" endLine="107" endPosition="7" />
     <scopeInfo nodeId="2891782949125169652" fileName="VmCreator.java" startLine="126" startPosition="62" endLine="146" endPosition="9" />
-    <scopeInfo nodeId="2891782949125169895" fileName="VmCreator.java" startLine="273" startPosition="86" endLine="293" endPosition="5">
-      <varInfo nodeId="2891782949125169921" varName="portArg" />
-      <varInfo nodeId="2891782949125169949" varName="timeoutArg" />
-    </scopeInfo>
     <scopeInfo nodeId="2891782949125169645" fileName="VmCreator.java" startLine="125" startPosition="102" endLine="147" endPosition="5" />
-    <scopeInfo nodeId="2891782949125169971" fileName="VmCreator.java" startLine="296" startPosition="83" endLine="318" endPosition="16">
+    <scopeInfo nodeId="2891782949125169971" fileName="VmCreator.java" startLine="303" startPosition="83" endLine="325" endPosition="16">
       <varInfo nodeId="2891782949125169992" varName="connectors" />
       <varInfo nodeId="2891782949125169973" varName="virtualMachineManager" />
-    </scopeInfo>
-    <scopeInfo nodeId="2891782949125169890" fileName="VmCreator.java" startLine="272" startPosition="0" endLine="295" endPosition="0">
-      <varInfo nodeId="2891782949125169893" varName="connector" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125169638" fileName="VmCreator.java" startLine="124" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="2891782949125169641" varName="processHandler" />
@@ -2000,10 +2000,18 @@
     <scopeInfo nodeId="2891782949125169811" fileName="VmCreator.java" startLine="226" startPosition="48" endLine="251" endPosition="9">
       <varInfo nodeId="2891782949125169818" varName="connector" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125169966" fileName="VmCreator.java" startLine="295" startPosition="0" endLine="320" endPosition="0">
+    <scopeInfo nodeId="2891782949125169966" fileName="VmCreator.java" startLine="302" startPosition="0" endLine="327" endPosition="0">
       <varInfo nodeId="2891782949125169969" varName="connectorName" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125169507" fileName="VmCreator.java" startLine="86" startPosition="164" endLine="112" endPosition="29" />
+    <scopeInfo nodeId="2891782949125169895" fileName="VmCreator.java" startLine="273" startPosition="86" endLine="300" endPosition="5">
+      <varInfo nodeId="7280914690732957239" varName="hostArgument" />
+      <varInfo nodeId="2891782949125169921" varName="portArg" />
+      <varInfo nodeId="2891782949125169949" varName="timeoutArg" />
+    </scopeInfo>
+    <scopeInfo nodeId="2891782949125169890" fileName="VmCreator.java" startLine="272" startPosition="0" endLine="302" endPosition="0">
+      <varInfo nodeId="2891782949125169893" varName="connector" />
+    </scopeInfo>
     <scopeInfo nodeId="2891782949125169496" fileName="VmCreator.java" startLine="83" startPosition="0" endLine="114" endPosition="0">
       <varInfo nodeId="2891782949125169499" varName="executor" />
       <varInfo nodeId="2891782949125169505" varName="project" />
@@ -2023,13 +2031,13 @@
       <varInfo nodeId="2891782949125169692" varName="semaphore" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125169687" fileName="VmCreator.java" startLine="159" startPosition="0" endLine="220" endPosition="0" />
-    <unitInfo nodeId="2891782949125169344" fileName="VmCreator.java" startLine="44" startPosition="0" endLine="384" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.VmCreator" />
+    <unitInfo nodeId="2891782949125169344" fileName="VmCreator.java" startLine="44" startPosition="0" endLine="391" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.VmCreator" />
     <unitInfo nodeId="2891782949125169659" fileName="VmCreator.java" startLine="132" startPosition="44" endLine="146" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.VmCreator$1" />
     <unitInfo nodeId="2891782949125169718" fileName="VmCreator.java" startLine="166" startPosition="39" endLine="173" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.VmCreator$2" />
     <unitInfo nodeId="2891782949125169728" fileName="VmCreator.java" startLine="174" startPosition="41" endLine="217" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.VmCreator$3" />
     <unitInfo nodeId="2891782949125170295" fileName="VmCreator.java" startLine="194" startPosition="41" endLine="203" endPosition="11" unitName="jetbrains.mps.debugger.java.runtime.VmCreator$4" />
     <unitInfo nodeId="2891782949125170326" fileName="VmCreator.java" startLine="197" startPosition="51" endLine="201" endPosition="15" unitName="jetbrains.mps.debugger.java.runtime.VmCreator$5" />
-    <unitInfo nodeId="2891782949125169347" fileName="VmCreator.java" startLine="363" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.VmCreator$RunsAfterProcessStarted" />
+    <unitInfo nodeId="2891782949125169347" fileName="VmCreator.java" startLine="370" startPosition="0" endLine="390" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.VmCreator$RunsAfterProcessStarted" />
   </root>
   <root nodeId="2891782949125170518">
     <nodeInfo nodeId="2891782949125170520" fileName="DebugProcessListener.java" startLine="7" startPosition="39" endLine="8" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="connectorIsReady#()V" />
@@ -2386,283 +2394,279 @@
     <nodeInfo nodeId="2891782949125171388" fileName="SuspendManager.java" startLine="17" startPosition="29" endLine="18" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2891782949125171393" fileName="SuspendManager.java" startLine="19" startPosition="0" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugProcess" />
     <nodeInfo nodeId="2891782949125171396" fileName="SuspendManager.java" startLine="20" startPosition="54" endLine="21" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEventContexts" />
-    <nodeInfo nodeId="2891782949125171420" fileName="SuspendManager.java" startLine="34" startPosition="62" endLine="35" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171943" fileName="SuspendManager.java" startLine="37" startPosition="98" endLine="38" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171947" fileName="SuspendManager.java" startLine="38" startPosition="32" endLine="39" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171951" fileName="SuspendManager.java" startLine="39" startPosition="33" endLine="40" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171446" fileName="SuspendManager.java" startLine="45" startPosition="90" endLine="46" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125171454" fileName="SuspendManager.java" startLine="46" startPosition="117" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171457" fileName="SuspendManager.java" startLine="47" startPosition="32" endLine="48" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171465" fileName="SuspendManager.java" startLine="51" startPosition="70" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125205951" fileName="SuspendManager.java" startLine="53" startPosition="22" endLine="54" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125171474" fileName="SuspendManager.java" startLine="60" startPosition="12" endLine="61" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171495" fileName="SuspendManager.java" startLine="62" startPosition="5" endLine="63" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171498" fileName="SuspendManager.java" startLine="63" startPosition="32" endLine="64" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171506" fileName="SuspendManager.java" startLine="67" startPosition="59" endLine="68" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171508" fileName="SuspendManager.java" startLine="68" startPosition="50" endLine="69" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171519" fileName="SuspendManager.java" startLine="72" startPosition="46" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171523" fileName="SuspendManager.java" startLine="73" startPosition="21" endLine="74" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171547" fileName="SuspendManager.java" startLine="85" startPosition="57" endLine="86" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171549" fileName="SuspendManager.java" startLine="86" startPosition="50" endLine="87" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171554" fileName="SuspendManager.java" startLine="87" startPosition="43" endLine="88" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171564" fileName="SuspendManager.java" startLine="89" startPosition="50" endLine="90" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171574" fileName="SuspendManager.java" startLine="94" startPosition="65" endLine="95" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171582" fileName="SuspendManager.java" startLine="95" startPosition="60" endLine="96" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171593" fileName="SuspendManager.java" startLine="99" startPosition="65" endLine="100" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171595" fileName="SuspendManager.java" startLine="100" startPosition="50" endLine="101" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171605" fileName="SuspendManager.java" startLine="104" startPosition="50" endLine="105" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171607" fileName="SuspendManager.java" startLine="105" startPosition="50" endLine="106" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171615" fileName="SuspendManager.java" startLine="109" startPosition="86" endLine="110" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171617" fileName="SuspendManager.java" startLine="110" startPosition="50" endLine="111" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125171632" fileName="SuspendManager.java" startLine="113" startPosition="44" endLine="114" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171636" fileName="SuspendManager.java" startLine="114" startPosition="25" endLine="115" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2891782949125171637" fileName="SuspendManager.java" startLine="117" startPosition="5" endLine="118" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171655" fileName="SuspendManager.java" startLine="121" startPosition="59" endLine="122" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171664" fileName="SuspendManager.java" startLine="122" startPosition="52" endLine="123" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171686" fileName="SuspendManager.java" startLine="125" startPosition="46" endLine="126" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171682" fileName="SuspendManager.java" startLine="127" startPosition="14" endLine="128" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171695" fileName="SuspendManager.java" startLine="133" startPosition="60" endLine="134" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171698" fileName="SuspendManager.java" startLine="134" startPosition="38" endLine="135" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171711" fileName="SuspendManager.java" startLine="138" startPosition="57" endLine="139" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171720" fileName="SuspendManager.java" startLine="142" startPosition="58" endLine="143" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171726" fileName="SuspendManager.java" startLine="143" startPosition="46" endLine="144" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171733" fileName="SuspendManager.java" startLine="147" startPosition="62" endLine="148" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171738" fileName="SuspendManager.java" startLine="152" startPosition="55" endLine="153" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171747" fileName="SuspendManager.java" startLine="156" startPosition="62" endLine="157" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171763" fileName="SuspendManager.java" startLine="161" startPosition="103" endLine="162" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2891782949125171775" fileName="SuspendManager.java" startLine="166" startPosition="33" endLine="167" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125205953" fileName="SuspendManager.java" startLine="168" startPosition="27" endLine="169" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125171796" fileName="SuspendManager.java" startLine="171" startPosition="40" endLine="172" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171802" fileName="SuspendManager.java" startLine="176" startPosition="7" endLine="177" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171806" fileName="SuspendManager.java" startLine="181" startPosition="83" endLine="182" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171814" fileName="SuspendManager.java" startLine="187" startPosition="116" endLine="188" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2891782949125171821" fileName="SuspendManager.java" startLine="192" startPosition="33" endLine="193" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171832" fileName="SuspendManager.java" startLine="195" startPosition="38" endLine="196" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171834" fileName="SuspendManager.java" startLine="196" startPosition="28" endLine="197" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171839" fileName="SuspendManager.java" startLine="197" startPosition="50" endLine="198" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2891782949125205955" fileName="SuspendManager.java" startLine="199" startPosition="47" endLine="200" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205957" fileName="SuspendManager.java" startLine="200" startPosition="112" endLine="201" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125171843" fileName="SuspendManager.java" startLine="201" startPosition="53" endLine="202" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125171847" fileName="SuspendManager.java" startLine="202" startPosition="47" endLine="203" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171854" fileName="SuspendManager.java" startLine="203" startPosition="55" endLine="204" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171858" fileName="SuspendManager.java" startLine="204" startPosition="26" endLine="205" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171867" fileName="SuspendManager.java" startLine="205" startPosition="81" endLine="206" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2891782949125171871" fileName="SuspendManager.java" startLine="207" startPosition="39" endLine="208" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171876" fileName="SuspendManager.java" startLine="208" startPosition="51" endLine="209" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2891782949125171879" fileName="SuspendManager.java" startLine="215" startPosition="83" endLine="216" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171889" fileName="SuspendManager.java" startLine="221" startPosition="136" endLine="222" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2891782949125171900" fileName="SuspendManager.java" startLine="227" startPosition="38" endLine="228" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125171939" fileName="SuspendManager.java" startLine="230" startPosition="13" endLine="231" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171941" fileName="SuspendManager.java" startLine="231" startPosition="22" endLine="232" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2891782949125205959" fileName="SuspendManager.java" startLine="233" startPosition="46" endLine="234" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205961" fileName="SuspendManager.java" startLine="235" startPosition="39" endLine="236" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205963" fileName="SuspendManager.java" startLine="236" startPosition="100" endLine="237" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205965" fileName="SuspendManager.java" startLine="238" startPosition="86" endLine="239" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205967" fileName="SuspendManager.java" startLine="239" startPosition="46" endLine="240" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125171929" fileName="SuspendManager.java" startLine="241" startPosition="18" endLine="242" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171934" fileName="SuspendManager.java" startLine="242" startPosition="40" endLine="243" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2891782949125171472" fileName="SuspendManager.java" startLine="60" startPosition="10" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125171680" fileName="SuspendManager.java" startLine="127" startPosition="12" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125171382" fileName="SuspendManager.java" startLine="224" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResume#()V" />
-    <nodeInfo nodeId="2891782949125171559" fileName="SuspendManager.java" startLine="88" startPosition="44" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171338" fileName="SuspendManager.java" startLine="160" startPosition="81" endLine="163" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspendContextFromSet#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Lcom/sun/jdi/event/EventSet;)V" />
-    <nodeInfo nodeId="2891782949125171790" fileName="SuspendManager.java" startLine="170" startPosition="13" endLine="173" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171353" fileName="SuspendManager.java" startLine="186" startPosition="82" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspendContextByItSelf#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;II)V" />
-    <nodeInfo nodeId="2891782949125171371" fileName="SuspendManager.java" startLine="220" startPosition="68" endLine="223" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspendContextImpl#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;IILcom/sun/jdi/event/EventSet;)V" />
-    <nodeInfo nodeId="2891782949125171927" fileName="SuspendManager.java" startLine="241" startPosition="16" endLine="244" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125171489" fileName="SuspendManager.java" startLine="55" startPosition="112" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumeImpl#()V" />
-    <nodeInfo nodeId="2891782949125171530" fileName="SuspendManager.java" startLine="78" startPosition="44" endLine="82" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125171626" fileName="SuspendManager.java" startLine="112" startPosition="59" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171705" fileName="SuspendManager.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voteResume#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171729" fileName="SuspendManager.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPausedContexts#()Ljava/util/LinkedList;" />
-    <nodeInfo nodeId="2891782949125171741" fileName="SuspendManager.java" startLine="155" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPausedByUser#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171410" fileName="SuspendManager.java" startLine="27" startPosition="95" endLine="32" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPausedByUserContext" />
-    <nodeInfo nodeId="2891782949125171483" fileName="SuspendManager.java" startLine="54" startPosition="23" endLine="59" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171500" fileName="SuspendManager.java" startLine="66" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushContext#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171513" fileName="SuspendManager.java" startLine="71" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171568" fileName="SuspendManager.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushPausedContext#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171587" fileName="SuspendManager.java" startLine="98" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasEventContext#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)Z" />
-    <nodeInfo nodeId="2891782949125171600" fileName="SuspendManager.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventContexts#()Ljava/util/List;" />
-    <nodeInfo nodeId="2891782949125171676" fileName="SuspendManager.java" startLine="124" startPosition="44" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171689" fileName="SuspendManager.java" startLine="132" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notifyPaused#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171714" fileName="SuspendManager.java" startLine="141" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voteSuspend#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171735" fileName="SuspendManager.java" startLine="150" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPausedByUserContext#()Ljetbrains/mps/debugger/java/runtime/SuspendContext;" />
-    <nodeInfo nodeId="2891782949125171348" fileName="SuspendManager.java" startLine="179" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResume#()V" />
-    <nodeInfo nodeId="2891782949125171365" fileName="SuspendManager.java" startLine="213" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResume#()V" />
-    <nodeInfo nodeId="2891782949125171403" fileName="SuspendManager.java" startLine="21" startPosition="94" endLine="27" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPausedContexts" />
-    <nodeInfo nodeId="2891782949125171431" fileName="SuspendManager.java" startLine="36" startPosition="70" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDetached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Z)V" />
-    <nodeInfo nodeId="2891782949125171438" fileName="SuspendManager.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushSuspendContextWithVotesNumber#(II)Ljetbrains/mps/debugger/java/runtime/SuspendContext;" />
-    <nodeInfo nodeId="2891782949125171621" fileName="SuspendManager.java" startLine="111" startPosition="30" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2891782949125171784" fileName="SuspendManager.java" startLine="169" startPosition="57" endLine="175" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2891782949125171424" fileName="SuspendManager.java" startLine="35" startPosition="34" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125171669" fileName="SuspendManager.java" startLine="123" startPosition="35" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171917" fileName="SuspendManager.java" startLine="237" startPosition="107" endLine="244" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171526" fileName="SuspendManager.java" startLine="76" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPausedContext#()Ljetbrains/mps/debugger/java/runtime/SuspendContext;" />
-    <nodeInfo nodeId="2891782949125171541" fileName="SuspendManager.java" startLine="84" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popContext#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171779" fileName="SuspendManager.java" startLine="167" startPosition="43" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171414" fileName="SuspendManager.java" startLine="33" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspendManager#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
-    <nodeInfo nodeId="2891782949125171468" fileName="SuspendManager.java" startLine="52" startPosition="34" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125171609" fileName="SuspendManager.java" startLine="108" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSuspended#(Lcom/sun/jdi/ThreadReference;)Z" />
-    <nodeInfo nodeId="2891782949125171649" fileName="SuspendManager.java" startLine="120" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processVote#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125171345" fileName="SuspendManager.java" startLine="164" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumeImpl#()V" />
-    <nodeInfo nodeId="2891782949125171459" fileName="SuspendManager.java" startLine="50" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushSuspendContextFromEventSet#(Lcom/sun/jdi/event/EventSet;)Ljetbrains/mps/debugger/java/runtime/SuspendContext;" />
-    <nodeInfo nodeId="2891782949125171910" fileName="SuspendManager.java" startLine="229" startPosition="36" endLine="245" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2891782949125171826" fileName="SuspendManager.java" startLine="193" startPosition="52" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="2891782949125171904" fileName="SuspendManager.java" startLine="228" startPosition="29" endLine="246" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2891782949125171385" fileName="SuspendManager.java" startLine="226" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResume5Times#()V" />
-    <nodeInfo nodeId="2891782949125171362" fileName="SuspendManager.java" startLine="190" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumeImpl#()V" />
-    <scopeInfo nodeId="2891782949125171956" fileName="SuspendManager.java" startLine="57" startPosition="37" endLine="57" endPosition="37" />
-    <scopeInfo nodeId="2891782949125171785" fileName="SuspendManager.java" startLine="174" startPosition="0" endLine="174" endPosition="52">
+    <nodeInfo nodeId="2891782949125171420" fileName="SuspendManager.java" startLine="35" startPosition="62" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171943" fileName="SuspendManager.java" startLine="38" startPosition="98" endLine="39" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171947" fileName="SuspendManager.java" startLine="39" startPosition="32" endLine="40" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171951" fileName="SuspendManager.java" startLine="40" startPosition="33" endLine="41" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171446" fileName="SuspendManager.java" startLine="46" startPosition="90" endLine="47" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125171454" fileName="SuspendManager.java" startLine="47" startPosition="117" endLine="48" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171457" fileName="SuspendManager.java" startLine="48" startPosition="32" endLine="49" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171465" fileName="SuspendManager.java" startLine="52" startPosition="70" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125205951" fileName="SuspendManager.java" startLine="54" startPosition="22" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125171474" fileName="SuspendManager.java" startLine="61" startPosition="12" endLine="62" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171495" fileName="SuspendManager.java" startLine="63" startPosition="5" endLine="64" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171498" fileName="SuspendManager.java" startLine="64" startPosition="32" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171506" fileName="SuspendManager.java" startLine="68" startPosition="59" endLine="69" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171508" fileName="SuspendManager.java" startLine="69" startPosition="50" endLine="70" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171519" fileName="SuspendManager.java" startLine="73" startPosition="46" endLine="74" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171523" fileName="SuspendManager.java" startLine="74" startPosition="21" endLine="75" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171547" fileName="SuspendManager.java" startLine="86" startPosition="57" endLine="87" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171549" fileName="SuspendManager.java" startLine="87" startPosition="50" endLine="88" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171554" fileName="SuspendManager.java" startLine="88" startPosition="43" endLine="89" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171564" fileName="SuspendManager.java" startLine="90" startPosition="50" endLine="91" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171574" fileName="SuspendManager.java" startLine="95" startPosition="65" endLine="96" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171582" fileName="SuspendManager.java" startLine="96" startPosition="60" endLine="97" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171593" fileName="SuspendManager.java" startLine="100" startPosition="65" endLine="101" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171595" fileName="SuspendManager.java" startLine="101" startPosition="50" endLine="102" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171605" fileName="SuspendManager.java" startLine="105" startPosition="50" endLine="106" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171607" fileName="SuspendManager.java" startLine="106" startPosition="50" endLine="107" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171615" fileName="SuspendManager.java" startLine="110" startPosition="86" endLine="111" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171617" fileName="SuspendManager.java" startLine="111" startPosition="50" endLine="112" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125171632" fileName="SuspendManager.java" startLine="114" startPosition="44" endLine="115" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171636" fileName="SuspendManager.java" startLine="115" startPosition="25" endLine="116" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2891782949125171637" fileName="SuspendManager.java" startLine="118" startPosition="5" endLine="119" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171655" fileName="SuspendManager.java" startLine="122" startPosition="59" endLine="123" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171664" fileName="SuspendManager.java" startLine="123" startPosition="52" endLine="124" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171686" fileName="SuspendManager.java" startLine="126" startPosition="46" endLine="127" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171682" fileName="SuspendManager.java" startLine="128" startPosition="14" endLine="129" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171695" fileName="SuspendManager.java" startLine="134" startPosition="60" endLine="135" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171698" fileName="SuspendManager.java" startLine="135" startPosition="38" endLine="136" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171711" fileName="SuspendManager.java" startLine="139" startPosition="57" endLine="140" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171720" fileName="SuspendManager.java" startLine="143" startPosition="58" endLine="144" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171726" fileName="SuspendManager.java" startLine="144" startPosition="46" endLine="145" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171733" fileName="SuspendManager.java" startLine="148" startPosition="62" endLine="149" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171738" fileName="SuspendManager.java" startLine="153" startPosition="55" endLine="154" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171747" fileName="SuspendManager.java" startLine="157" startPosition="62" endLine="158" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171763" fileName="SuspendManager.java" startLine="162" startPosition="103" endLine="163" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2891782949125171775" fileName="SuspendManager.java" startLine="167" startPosition="33" endLine="168" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125205953" fileName="SuspendManager.java" startLine="169" startPosition="27" endLine="170" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125171796" fileName="SuspendManager.java" startLine="172" startPosition="40" endLine="173" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171802" fileName="SuspendManager.java" startLine="177" startPosition="7" endLine="178" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171806" fileName="SuspendManager.java" startLine="182" startPosition="83" endLine="183" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171814" fileName="SuspendManager.java" startLine="188" startPosition="116" endLine="189" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2891782949125171821" fileName="SuspendManager.java" startLine="193" startPosition="33" endLine="194" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171832" fileName="SuspendManager.java" startLine="196" startPosition="38" endLine="197" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171834" fileName="SuspendManager.java" startLine="197" startPosition="28" endLine="198" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171839" fileName="SuspendManager.java" startLine="198" startPosition="50" endLine="199" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2891782949125205955" fileName="SuspendManager.java" startLine="200" startPosition="47" endLine="201" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205957" fileName="SuspendManager.java" startLine="201" startPosition="112" endLine="202" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125171843" fileName="SuspendManager.java" startLine="202" startPosition="53" endLine="203" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125171847" fileName="SuspendManager.java" startLine="203" startPosition="47" endLine="204" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171854" fileName="SuspendManager.java" startLine="204" startPosition="55" endLine="205" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171858" fileName="SuspendManager.java" startLine="205" startPosition="26" endLine="206" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171867" fileName="SuspendManager.java" startLine="206" startPosition="81" endLine="207" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2891782949125171871" fileName="SuspendManager.java" startLine="208" startPosition="39" endLine="209" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171876" fileName="SuspendManager.java" startLine="209" startPosition="51" endLine="210" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2891782949125171879" fileName="SuspendManager.java" startLine="216" startPosition="83" endLine="217" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171889" fileName="SuspendManager.java" startLine="222" startPosition="136" endLine="223" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2891782949125171900" fileName="SuspendManager.java" startLine="228" startPosition="38" endLine="229" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125171939" fileName="SuspendManager.java" startLine="231" startPosition="13" endLine="232" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171941" fileName="SuspendManager.java" startLine="232" startPosition="22" endLine="233" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2891782949125205959" fileName="SuspendManager.java" startLine="234" startPosition="46" endLine="235" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205961" fileName="SuspendManager.java" startLine="236" startPosition="39" endLine="237" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205963" fileName="SuspendManager.java" startLine="237" startPosition="100" endLine="238" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205965" fileName="SuspendManager.java" startLine="239" startPosition="86" endLine="240" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205967" fileName="SuspendManager.java" startLine="240" startPosition="46" endLine="241" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125171929" fileName="SuspendManager.java" startLine="242" startPosition="18" endLine="243" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171934" fileName="SuspendManager.java" startLine="243" startPosition="40" endLine="244" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2891782949125171472" fileName="SuspendManager.java" startLine="61" startPosition="10" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125171680" fileName="SuspendManager.java" startLine="128" startPosition="12" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125171382" fileName="SuspendManager.java" startLine="225" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResume#()V" />
+    <nodeInfo nodeId="2891782949125171559" fileName="SuspendManager.java" startLine="89" startPosition="44" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171338" fileName="SuspendManager.java" startLine="161" startPosition="81" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspendContextFromSet#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Lcom/sun/jdi/event/EventSet;)V" />
+    <nodeInfo nodeId="2891782949125171790" fileName="SuspendManager.java" startLine="171" startPosition="13" endLine="174" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171353" fileName="SuspendManager.java" startLine="187" startPosition="82" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspendContextByItSelf#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;II)V" />
+    <nodeInfo nodeId="2891782949125171371" fileName="SuspendManager.java" startLine="221" startPosition="68" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspendContextImpl#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;IILcom/sun/jdi/event/EventSet;)V" />
+    <nodeInfo nodeId="2891782949125171927" fileName="SuspendManager.java" startLine="242" startPosition="16" endLine="245" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125171489" fileName="SuspendManager.java" startLine="56" startPosition="112" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumeImpl#()V" />
+    <nodeInfo nodeId="2891782949125171530" fileName="SuspendManager.java" startLine="79" startPosition="44" endLine="83" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125171626" fileName="SuspendManager.java" startLine="113" startPosition="59" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171705" fileName="SuspendManager.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voteResume#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171729" fileName="SuspendManager.java" startLine="147" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPausedContexts#()Ljava/util/LinkedList;" />
+    <nodeInfo nodeId="2891782949125171741" fileName="SuspendManager.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPausedByUser#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171410" fileName="SuspendManager.java" startLine="28" startPosition="95" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPausedByUserContext" />
+    <nodeInfo nodeId="2891782949125171483" fileName="SuspendManager.java" startLine="55" startPosition="23" endLine="60" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171500" fileName="SuspendManager.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushContext#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171513" fileName="SuspendManager.java" startLine="72" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171568" fileName="SuspendManager.java" startLine="94" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushPausedContext#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171587" fileName="SuspendManager.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasEventContext#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)Z" />
+    <nodeInfo nodeId="2891782949125171600" fileName="SuspendManager.java" startLine="104" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEventContexts#()Ljava/util/List;" />
+    <nodeInfo nodeId="2891782949125171676" fileName="SuspendManager.java" startLine="125" startPosition="44" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171689" fileName="SuspendManager.java" startLine="133" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notifyPaused#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171714" fileName="SuspendManager.java" startLine="142" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="voteSuspend#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171735" fileName="SuspendManager.java" startLine="151" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPausedByUserContext#()Ljetbrains/mps/debugger/java/runtime/SuspendContext;" />
+    <nodeInfo nodeId="2891782949125171348" fileName="SuspendManager.java" startLine="180" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResume#()V" />
+    <nodeInfo nodeId="2891782949125171365" fileName="SuspendManager.java" startLine="214" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResume#()V" />
+    <nodeInfo nodeId="2891782949125171431" fileName="SuspendManager.java" startLine="37" startPosition="70" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processDetached#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Z)V" />
+    <nodeInfo nodeId="2891782949125171438" fileName="SuspendManager.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushSuspendContextWithVotesNumber#(II)Ljetbrains/mps/debugger/java/runtime/SuspendContext;" />
+    <nodeInfo nodeId="2891782949125171621" fileName="SuspendManager.java" startLine="112" startPosition="30" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2891782949125171784" fileName="SuspendManager.java" startLine="170" startPosition="57" endLine="176" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2891782949125171403" fileName="SuspendManager.java" startLine="21" startPosition="94" endLine="28" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPausedContexts" />
+    <nodeInfo nodeId="2891782949125171424" fileName="SuspendManager.java" startLine="36" startPosition="34" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125171669" fileName="SuspendManager.java" startLine="124" startPosition="35" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171917" fileName="SuspendManager.java" startLine="238" startPosition="107" endLine="245" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171526" fileName="SuspendManager.java" startLine="77" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPausedContext#()Ljetbrains/mps/debugger/java/runtime/SuspendContext;" />
+    <nodeInfo nodeId="2891782949125171541" fileName="SuspendManager.java" startLine="85" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="popContext#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171779" fileName="SuspendManager.java" startLine="168" startPosition="43" endLine="177" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171414" fileName="SuspendManager.java" startLine="34" startPosition="0" endLine="44" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspendManager#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;)V" />
+    <nodeInfo nodeId="2891782949125171468" fileName="SuspendManager.java" startLine="53" startPosition="34" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125171609" fileName="SuspendManager.java" startLine="109" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSuspended#(Lcom/sun/jdi/ThreadReference;)Z" />
+    <nodeInfo nodeId="2891782949125171649" fileName="SuspendManager.java" startLine="121" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processVote#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125171345" fileName="SuspendManager.java" startLine="165" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumeImpl#()V" />
+    <nodeInfo nodeId="2891782949125171459" fileName="SuspendManager.java" startLine="51" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pushSuspendContextFromEventSet#(Lcom/sun/jdi/event/EventSet;)Ljetbrains/mps/debugger/java/runtime/SuspendContext;" />
+    <nodeInfo nodeId="2891782949125171910" fileName="SuspendManager.java" startLine="230" startPosition="36" endLine="246" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2891782949125171826" fileName="SuspendManager.java" startLine="194" startPosition="52" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="2891782949125171904" fileName="SuspendManager.java" startLine="229" startPosition="29" endLine="247" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2891782949125171385" fileName="SuspendManager.java" startLine="227" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryResume5Times#()V" />
+    <nodeInfo nodeId="2891782949125171362" fileName="SuspendManager.java" startLine="191" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resumeImpl#()V" />
+    <scopeInfo nodeId="2891782949125171956" fileName="SuspendManager.java" startLine="58" startPosition="37" endLine="58" endPosition="37" />
+    <scopeInfo nodeId="2891782949125171785" fileName="SuspendManager.java" startLine="175" startPosition="0" endLine="175" endPosition="52">
       <varInfo nodeId="2891782949125171787" varName="ignored" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171786" fileName="SuspendManager.java" startLine="174" startPosition="52" endLine="174" endPosition="52" />
-    <scopeInfo nodeId="2891782949125171828" fileName="SuspendManager.java" startLine="210" startPosition="16" endLine="210" endPosition="16" />
-    <scopeInfo nodeId="2891782949125171473" fileName="SuspendManager.java" startLine="60" startPosition="12" endLine="61" endPosition="85" />
-    <scopeInfo nodeId="2891782949125171563" fileName="SuspendManager.java" startLine="89" startPosition="50" endLine="90" endPosition="35" />
-    <scopeInfo nodeId="2891782949125171685" fileName="SuspendManager.java" startLine="125" startPosition="46" endLine="126" endPosition="31" />
-    <scopeInfo nodeId="2891782949125171681" fileName="SuspendManager.java" startLine="127" startPosition="14" endLine="128" endPosition="37" />
-    <scopeInfo nodeId="2891782949125171710" fileName="SuspendManager.java" startLine="138" startPosition="57" endLine="139" endPosition="32" />
-    <scopeInfo nodeId="2891782949125171732" fileName="SuspendManager.java" startLine="147" startPosition="62" endLine="148" endPosition="28" />
-    <scopeInfo nodeId="2891782949125171737" fileName="SuspendManager.java" startLine="152" startPosition="55" endLine="153" endPosition="33" />
-    <scopeInfo nodeId="2891782949125171746" fileName="SuspendManager.java" startLine="156" startPosition="62" endLine="157" endPosition="43" />
-    <scopeInfo nodeId="2891782949125171762" fileName="SuspendManager.java" startLine="161" startPosition="103" endLine="162" endPosition="64" />
-    <scopeInfo nodeId="2891782949125171795" fileName="SuspendManager.java" startLine="171" startPosition="40" endLine="172" endPosition="84" />
-    <scopeInfo nodeId="2891782949125171805" fileName="SuspendManager.java" startLine="181" startPosition="83" endLine="182" endPosition="29" />
-    <scopeInfo nodeId="2891782949125171813" fileName="SuspendManager.java" startLine="187" startPosition="116" endLine="188" endPosition="59" />
-    <scopeInfo nodeId="2891782949125171878" fileName="SuspendManager.java" startLine="215" startPosition="83" endLine="216" endPosition="50" />
-    <scopeInfo nodeId="2891782949125171888" fileName="SuspendManager.java" startLine="221" startPosition="136" endLine="222" endPosition="58" />
-    <scopeInfo nodeId="2891782949125171911" fileName="SuspendManager.java" startLine="233" startPosition="0" endLine="234" endPosition="110">
+    <scopeInfo nodeId="2891782949125171786" fileName="SuspendManager.java" startLine="175" startPosition="52" endLine="175" endPosition="52" />
+    <scopeInfo nodeId="2891782949125171828" fileName="SuspendManager.java" startLine="211" startPosition="16" endLine="211" endPosition="16" />
+    <scopeInfo nodeId="2891782949125171473" fileName="SuspendManager.java" startLine="61" startPosition="12" endLine="62" endPosition="85" />
+    <scopeInfo nodeId="2891782949125171563" fileName="SuspendManager.java" startLine="90" startPosition="50" endLine="91" endPosition="35" />
+    <scopeInfo nodeId="2891782949125171685" fileName="SuspendManager.java" startLine="126" startPosition="46" endLine="127" endPosition="31" />
+    <scopeInfo nodeId="2891782949125171681" fileName="SuspendManager.java" startLine="128" startPosition="14" endLine="129" endPosition="37" />
+    <scopeInfo nodeId="2891782949125171710" fileName="SuspendManager.java" startLine="139" startPosition="57" endLine="140" endPosition="32" />
+    <scopeInfo nodeId="2891782949125171732" fileName="SuspendManager.java" startLine="148" startPosition="62" endLine="149" endPosition="28" />
+    <scopeInfo nodeId="2891782949125171737" fileName="SuspendManager.java" startLine="153" startPosition="55" endLine="154" endPosition="33" />
+    <scopeInfo nodeId="2891782949125171746" fileName="SuspendManager.java" startLine="157" startPosition="62" endLine="158" endPosition="43" />
+    <scopeInfo nodeId="2891782949125171762" fileName="SuspendManager.java" startLine="162" startPosition="103" endLine="163" endPosition="64" />
+    <scopeInfo nodeId="2891782949125171795" fileName="SuspendManager.java" startLine="172" startPosition="40" endLine="173" endPosition="84" />
+    <scopeInfo nodeId="2891782949125171805" fileName="SuspendManager.java" startLine="182" startPosition="83" endLine="183" endPosition="29" />
+    <scopeInfo nodeId="2891782949125171813" fileName="SuspendManager.java" startLine="188" startPosition="116" endLine="189" endPosition="59" />
+    <scopeInfo nodeId="2891782949125171878" fileName="SuspendManager.java" startLine="216" startPosition="83" endLine="217" endPosition="50" />
+    <scopeInfo nodeId="2891782949125171888" fileName="SuspendManager.java" startLine="222" startPosition="136" endLine="223" endPosition="58" />
+    <scopeInfo nodeId="2891782949125171911" fileName="SuspendManager.java" startLine="234" startPosition="0" endLine="235" endPosition="110">
       <varInfo nodeId="2891782949125171913" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171912" fileName="SuspendManager.java" startLine="233" startPosition="46" endLine="234" endPosition="110" />
-    <scopeInfo nodeId="2891782949125171505" fileName="SuspendManager.java" startLine="67" startPosition="59" endLine="69" endPosition="45" />
-    <scopeInfo nodeId="2891782949125171518" fileName="SuspendManager.java" startLine="72" startPosition="46" endLine="74" endPosition="24" />
-    <scopeInfo nodeId="2891782949125171573" fileName="SuspendManager.java" startLine="94" startPosition="65" endLine="96" endPosition="46" />
-    <scopeInfo nodeId="2891782949125171592" fileName="SuspendManager.java" startLine="99" startPosition="65" endLine="101" endPosition="52" />
-    <scopeInfo nodeId="2891782949125171604" fileName="SuspendManager.java" startLine="104" startPosition="50" endLine="106" endPosition="27" />
-    <scopeInfo nodeId="2891782949125171631" fileName="SuspendManager.java" startLine="113" startPosition="44" endLine="115" endPosition="14" />
-    <scopeInfo nodeId="2891782949125171694" fileName="SuspendManager.java" startLine="133" startPosition="60" endLine="135" endPosition="59" />
-    <scopeInfo nodeId="2891782949125171719" fileName="SuspendManager.java" startLine="142" startPosition="58" endLine="144" endPosition="32" />
-    <scopeInfo nodeId="2891782949125171870" fileName="SuspendManager.java" startLine="207" startPosition="39" endLine="209" endPosition="16" />
-    <scopeInfo nodeId="2891782949125171382" fileName="SuspendManager.java" startLine="224" startPosition="0" endLine="226" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171938" fileName="SuspendManager.java" startLine="230" startPosition="13" endLine="232" endPosition="16" />
-    <scopeInfo nodeId="2891782949125171935" fileName="SuspendManager.java" startLine="238" startPosition="86" endLine="240" endPosition="63" />
-    <scopeInfo nodeId="2891782949125171928" fileName="SuspendManager.java" startLine="241" startPosition="18" endLine="243" endPosition="18" />
-    <scopeInfo nodeId="2891782949125171942" fileName="SuspendManager.java" startLine="37" startPosition="98" endLine="40" endPosition="37" />
-    <scopeInfo nodeId="2891782949125171445" fileName="SuspendManager.java" startLine="45" startPosition="90" endLine="48" endPosition="26">
+    <scopeInfo nodeId="2891782949125171912" fileName="SuspendManager.java" startLine="234" startPosition="46" endLine="235" endPosition="110" />
+    <scopeInfo nodeId="2891782949125171505" fileName="SuspendManager.java" startLine="68" startPosition="59" endLine="70" endPosition="45" />
+    <scopeInfo nodeId="2891782949125171518" fileName="SuspendManager.java" startLine="73" startPosition="46" endLine="75" endPosition="24" />
+    <scopeInfo nodeId="2891782949125171573" fileName="SuspendManager.java" startLine="95" startPosition="65" endLine="97" endPosition="46" />
+    <scopeInfo nodeId="2891782949125171592" fileName="SuspendManager.java" startLine="100" startPosition="65" endLine="102" endPosition="52" />
+    <scopeInfo nodeId="2891782949125171604" fileName="SuspendManager.java" startLine="105" startPosition="50" endLine="107" endPosition="27" />
+    <scopeInfo nodeId="2891782949125171631" fileName="SuspendManager.java" startLine="114" startPosition="44" endLine="116" endPosition="14" />
+    <scopeInfo nodeId="2891782949125171694" fileName="SuspendManager.java" startLine="134" startPosition="60" endLine="136" endPosition="59" />
+    <scopeInfo nodeId="2891782949125171719" fileName="SuspendManager.java" startLine="143" startPosition="58" endLine="145" endPosition="32" />
+    <scopeInfo nodeId="2891782949125171870" fileName="SuspendManager.java" startLine="208" startPosition="39" endLine="210" endPosition="16" />
+    <scopeInfo nodeId="2891782949125171382" fileName="SuspendManager.java" startLine="225" startPosition="0" endLine="227" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171938" fileName="SuspendManager.java" startLine="231" startPosition="13" endLine="233" endPosition="16" />
+    <scopeInfo nodeId="2891782949125171935" fileName="SuspendManager.java" startLine="239" startPosition="86" endLine="241" endPosition="63" />
+    <scopeInfo nodeId="2891782949125171928" fileName="SuspendManager.java" startLine="242" startPosition="18" endLine="244" endPosition="18" />
+    <scopeInfo nodeId="2891782949125171942" fileName="SuspendManager.java" startLine="38" startPosition="98" endLine="41" endPosition="37" />
+    <scopeInfo nodeId="2891782949125171445" fileName="SuspendManager.java" startLine="46" startPosition="90" endLine="49" endPosition="26">
       <varInfo nodeId="2891782949125171447" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171338" fileName="SuspendManager.java" startLine="160" startPosition="81" endLine="163" endPosition="5">
+    <scopeInfo nodeId="2891782949125171338" fileName="SuspendManager.java" startLine="161" startPosition="81" endLine="164" endPosition="5">
       <varInfo nodeId="2891782949125171341" varName="debugProcess" />
       <varInfo nodeId="2891782949125171343" varName="set" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171789" fileName="SuspendManager.java" startLine="170" startPosition="13" endLine="173" endPosition="11" />
-    <scopeInfo nodeId="2891782949125171353" fileName="SuspendManager.java" startLine="186" startPosition="82" endLine="189" endPosition="5">
+    <scopeInfo nodeId="2891782949125171789" fileName="SuspendManager.java" startLine="171" startPosition="13" endLine="174" endPosition="11" />
+    <scopeInfo nodeId="2891782949125171353" fileName="SuspendManager.java" startLine="187" startPosition="82" endLine="190" endPosition="5">
       <varInfo nodeId="2891782949125171356" varName="debugProcess" />
       <varInfo nodeId="2891782949125171360" varName="eventVotes" />
       <varInfo nodeId="2891782949125171358" varName="suspendPolicy" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171831" fileName="SuspendManager.java" startLine="195" startPosition="38" endLine="198" endPosition="16" />
-    <scopeInfo nodeId="2891782949125171371" fileName="SuspendManager.java" startLine="220" startPosition="68" endLine="223" endPosition="5">
+    <scopeInfo nodeId="2891782949125171831" fileName="SuspendManager.java" startLine="196" startPosition="38" endLine="199" endPosition="16" />
+    <scopeInfo nodeId="2891782949125171371" fileName="SuspendManager.java" startLine="221" startPosition="68" endLine="224" endPosition="5">
       <varInfo nodeId="2891782949125171374" varName="debugProcess" />
       <varInfo nodeId="2891782949125171378" varName="eventVotes" />
       <varInfo nodeId="2891782949125171380" varName="set" />
       <varInfo nodeId="2891782949125171376" varName="suspendPolicy" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171489" fileName="SuspendManager.java" startLine="55" startPosition="112" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171529" fileName="SuspendManager.java" startLine="78" startPosition="44" endLine="82" endPosition="6" />
-    <scopeInfo nodeId="2891782949125171625" fileName="SuspendManager.java" startLine="112" startPosition="59" endLine="116" endPosition="7" />
-    <scopeInfo nodeId="2891782949125171705" fileName="SuspendManager.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="2891782949125171489" fileName="SuspendManager.java" startLine="56" startPosition="112" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171529" fileName="SuspendManager.java" startLine="79" startPosition="44" endLine="83" endPosition="6" />
+    <scopeInfo nodeId="2891782949125171625" fileName="SuspendManager.java" startLine="113" startPosition="59" endLine="117" endPosition="7" />
+    <scopeInfo nodeId="2891782949125171705" fileName="SuspendManager.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="2891782949125171708" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171729" fileName="SuspendManager.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171741" fileName="SuspendManager.java" startLine="155" startPosition="0" endLine="159" endPosition="0">
+    <scopeInfo nodeId="2891782949125171729" fileName="SuspendManager.java" startLine="147" startPosition="0" endLine="151" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171741" fileName="SuspendManager.java" startLine="156" startPosition="0" endLine="160" endPosition="0">
       <varInfo nodeId="2891782949125171744" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171500" fileName="SuspendManager.java" startLine="66" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="2891782949125171500" fileName="SuspendManager.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="2891782949125171503" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171513" fileName="SuspendManager.java" startLine="71" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="2891782949125171513" fileName="SuspendManager.java" startLine="72" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="2891782949125171516" varName="context" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171568" fileName="SuspendManager.java" startLine="93" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="2891782949125171568" fileName="SuspendManager.java" startLine="94" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="2891782949125171571" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171587" fileName="SuspendManager.java" startLine="98" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="2891782949125171587" fileName="SuspendManager.java" startLine="99" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="2891782949125171590" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171600" fileName="SuspendManager.java" startLine="103" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171675" fileName="SuspendManager.java" startLine="124" startPosition="44" endLine="129" endPosition="7" />
-    <scopeInfo nodeId="2891782949125171689" fileName="SuspendManager.java" startLine="132" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="2891782949125171600" fileName="SuspendManager.java" startLine="104" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171675" fileName="SuspendManager.java" startLine="125" startPosition="44" endLine="130" endPosition="7" />
+    <scopeInfo nodeId="2891782949125171689" fileName="SuspendManager.java" startLine="133" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="2891782949125171692" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171714" fileName="SuspendManager.java" startLine="141" startPosition="0" endLine="146" endPosition="0">
+    <scopeInfo nodeId="2891782949125171714" fileName="SuspendManager.java" startLine="142" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="2891782949125171717" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171735" fileName="SuspendManager.java" startLine="150" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171348" fileName="SuspendManager.java" startLine="179" startPosition="0" endLine="184" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171365" fileName="SuspendManager.java" startLine="213" startPosition="0" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171431" fileName="SuspendManager.java" startLine="36" startPosition="70" endLine="42" endPosition="0">
+    <scopeInfo nodeId="2891782949125171735" fileName="SuspendManager.java" startLine="151" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171348" fileName="SuspendManager.java" startLine="180" startPosition="0" endLine="185" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171365" fileName="SuspendManager.java" startLine="214" startPosition="0" endLine="219" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171431" fileName="SuspendManager.java" startLine="37" startPosition="70" endLine="43" endPosition="0">
       <varInfo nodeId="2891782949125171436" varName="closedByUser" />
       <varInfo nodeId="2891782949125171434" varName="process" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171438" fileName="SuspendManager.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="2891782949125171438" fileName="SuspendManager.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="2891782949125171443" varName="nVotes" />
       <varInfo nodeId="2891782949125171441" varName="suspendPolicy" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171482" fileName="SuspendManager.java" startLine="53" startPosition="22" endLine="59" endPosition="8" />
-    <scopeInfo nodeId="2891782949125171546" fileName="SuspendManager.java" startLine="85" startPosition="57" endLine="91" endPosition="5" />
-    <scopeInfo nodeId="2891782949125171621" fileName="SuspendManager.java" startLine="111" startPosition="30" endLine="117" endPosition="5">
+    <scopeInfo nodeId="2891782949125171482" fileName="SuspendManager.java" startLine="54" startPosition="22" endLine="60" endPosition="8" />
+    <scopeInfo nodeId="2891782949125171546" fileName="SuspendManager.java" startLine="86" startPosition="57" endLine="92" endPosition="5" />
+    <scopeInfo nodeId="2891782949125171621" fileName="SuspendManager.java" startLine="112" startPosition="30" endLine="118" endPosition="5">
       <varInfo nodeId="2891782949125171623" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171783" fileName="SuspendManager.java" startLine="168" startPosition="27" endLine="175" endPosition="9" />
-    <scopeInfo nodeId="2891782949125171842" fileName="SuspendManager.java" startLine="199" startPosition="47" endLine="206" endPosition="16">
+    <scopeInfo nodeId="2891782949125171783" fileName="SuspendManager.java" startLine="169" startPosition="27" endLine="176" endPosition="9" />
+    <scopeInfo nodeId="2891782949125171842" fileName="SuspendManager.java" startLine="200" startPosition="47" endLine="207" endPosition="16">
       <varInfo nodeId="2891782949125171844" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171419" fileName="SuspendManager.java" startLine="34" startPosition="62" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="2891782949125171526" fileName="SuspendManager.java" startLine="76" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171541" fileName="SuspendManager.java" startLine="84" startPosition="0" endLine="93" endPosition="0">
+    <scopeInfo nodeId="2891782949125171419" fileName="SuspendManager.java" startLine="35" startPosition="62" endLine="43" endPosition="7" />
+    <scopeInfo nodeId="2891782949125171526" fileName="SuspendManager.java" startLine="77" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171541" fileName="SuspendManager.java" startLine="85" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="2891782949125171544" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171614" fileName="SuspendManager.java" startLine="109" startPosition="86" endLine="118" endPosition="65">
+    <scopeInfo nodeId="2891782949125171614" fileName="SuspendManager.java" startLine="110" startPosition="86" endLine="119" endPosition="65">
       <varInfo nodeId="2891782949125171618" varName="suspended" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171654" fileName="SuspendManager.java" startLine="121" startPosition="59" endLine="130" endPosition="5" />
-    <scopeInfo nodeId="2891782949125171915" fileName="SuspendManager.java" startLine="235" startPosition="0" endLine="244" endPosition="11">
+    <scopeInfo nodeId="2891782949125171654" fileName="SuspendManager.java" startLine="122" startPosition="59" endLine="131" endPosition="5" />
+    <scopeInfo nodeId="2891782949125171915" fileName="SuspendManager.java" startLine="236" startPosition="0" endLine="245" endPosition="11">
       <varInfo nodeId="2891782949125171936" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171916" fileName="SuspendManager.java" startLine="235" startPosition="39" endLine="244" endPosition="11" />
-    <scopeInfo nodeId="2891782949125171414" fileName="SuspendManager.java" startLine="33" startPosition="0" endLine="43" endPosition="3">
+    <scopeInfo nodeId="2891782949125171916" fileName="SuspendManager.java" startLine="236" startPosition="39" endLine="245" endPosition="11" />
+    <scopeInfo nodeId="2891782949125171414" fileName="SuspendManager.java" startLine="34" startPosition="0" endLine="44" endPosition="3">
       <varInfo nodeId="2891782949125171417" varName="debugProcess" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171774" fileName="SuspendManager.java" startLine="166" startPosition="33" endLine="177" endPosition="24">
+    <scopeInfo nodeId="2891782949125171774" fileName="SuspendManager.java" startLine="167" startPosition="33" endLine="178" endPosition="24">
       <varInfo nodeId="2891782949125171776" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171609" fileName="SuspendManager.java" startLine="108" startPosition="0" endLine="120" endPosition="0">
+    <scopeInfo nodeId="2891782949125171609" fileName="SuspendManager.java" startLine="109" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="2891782949125171612" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171649" fileName="SuspendManager.java" startLine="120" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="2891782949125171649" fileName="SuspendManager.java" startLine="121" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="2891782949125171652" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171464" fileName="SuspendManager.java" startLine="51" startPosition="70" endLine="64" endPosition="26">
+    <scopeInfo nodeId="2891782949125171464" fileName="SuspendManager.java" startLine="52" startPosition="70" endLine="65" endPosition="26">
       <varInfo nodeId="2891782949125171466" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171345" fileName="SuspendManager.java" startLine="164" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171459" fileName="SuspendManager.java" startLine="50" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="2891782949125171345" fileName="SuspendManager.java" startLine="165" startPosition="0" endLine="180" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171459" fileName="SuspendManager.java" startLine="51" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="2891782949125171462" varName="set" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171909" fileName="SuspendManager.java" startLine="229" startPosition="36" endLine="245" endPosition="9" />
-    <scopeInfo nodeId="2891782949125171820" fileName="SuspendManager.java" startLine="192" startPosition="33" endLine="211" endPosition="7" />
-    <scopeInfo nodeId="2891782949125171899" fileName="SuspendManager.java" startLine="227" startPosition="38" endLine="246" endPosition="7">
+    <scopeInfo nodeId="2891782949125171909" fileName="SuspendManager.java" startLine="230" startPosition="36" endLine="246" endPosition="9" />
+    <scopeInfo nodeId="2891782949125171820" fileName="SuspendManager.java" startLine="193" startPosition="33" endLine="212" endPosition="7" />
+    <scopeInfo nodeId="2891782949125171899" fileName="SuspendManager.java" startLine="228" startPosition="38" endLine="247" endPosition="7">
       <varInfo nodeId="2891782949125171901" varName="resumeAttempts" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125171385" fileName="SuspendManager.java" startLine="226" startPosition="0" endLine="248" endPosition="0" />
-    <scopeInfo nodeId="2891782949125171362" fileName="SuspendManager.java" startLine="190" startPosition="0" endLine="213" endPosition="0" />
-    <unitInfo nodeId="2891782949125171479" fileName="SuspendManager.java" startLine="61" startPosition="27" endLine="17" endPosition="0" />
-    <unitInfo nodeId="2891782949125171488" fileName="SuspendManager.java" startLine="55" startPosition="27" endLine="59" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$3" />
-    <unitInfo nodeId="2891782949125145718" fileName="SuspendManager.java" startLine="186" startPosition="0" endLine="219" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextByItSelf" />
-    <unitInfo nodeId="2891782949125145719" fileName="SuspendManager.java" startLine="160" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextFromSet" />
-    <unitInfo nodeId="2891782949125171368" fileName="SuspendManager.java" startLine="220" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextImpl" />
+    <scopeInfo nodeId="2891782949125171385" fileName="SuspendManager.java" startLine="227" startPosition="0" endLine="249" endPosition="0" />
+    <scopeInfo nodeId="2891782949125171362" fileName="SuspendManager.java" startLine="191" startPosition="0" endLine="214" endPosition="0" />
+    <unitInfo nodeId="2891782949125171479" fileName="SuspendManager.java" startLine="62" startPosition="27" endLine="17" endPosition="0" />
   </root>
   <root nodeId="2891782949125171958">
     <nodeInfo nodeId="2891782949125171967" fileName="RunFailedException.java" startLine="7" startPosition="45" endLine="8" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

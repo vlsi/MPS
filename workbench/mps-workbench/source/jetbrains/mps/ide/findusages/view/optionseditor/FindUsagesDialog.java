@@ -135,7 +135,7 @@ public class FindUsagesDialog extends BaseDialog {
     }
 
     public void goToFinder(final ReloadableFinder finder) {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           SNode finderNode = finder.getNodeToNavigate();

@@ -191,7 +191,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public void doubleClick() {
     if (getTree() instanceof LogicalViewTree) {
-      ((LogicalViewTree) getTree()).editNode(myNode, getOperationContext(), true);
+      editNode((LogicalViewTree) getTree(), true);
     }
   }
 
@@ -199,8 +199,20 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   public void autoscroll() {
     super.autoscroll();
     if (getTree() instanceof LogicalViewTree) {
-      ((LogicalViewTree) getTree()).editNode(myNode, getOperationContext(), false);
+      editNode((LogicalViewTree) getTree(), false);
     }
+  }
+
+  private void editNode(final LogicalViewTree treeView, final boolean focus) {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (myNode.isDisposed() || !myNode.isRegistered() || myNode.getModel().getModelDescriptor() == null) {
+          return;
+        }
+        treeView.editNode(myNode, getOperationContext(), focus);
+      }
+    });
   }
 
   protected SModelDescriptor getModelDescriptor() {

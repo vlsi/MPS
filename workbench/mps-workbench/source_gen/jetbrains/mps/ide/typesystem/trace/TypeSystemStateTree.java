@@ -27,6 +27,7 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -167,11 +168,20 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
           return;
         }
         for (SNode var : vars) {
-          final SNode node = check_x8yvv7_a0a0d0a0a0a0d0i(maps, var);
+          SNode node = check_x8yvv7_a0a0d0a0a0a0d0i(maps, var);
           if (node != null && node.isRegistered()) {
+            final SNodePointer pointer = new SNodePointer(node);
             group.add(new BaseAction("Go to node with type " + var) {
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
-                NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
+                ModelAccess.instance().runWriteInEDT(new Runnable() {
+                  public void run() {
+                    SNode node = pointer.getNode();
+                    if (node == null) {
+                      return;
+                    }
+                    NavigationSupport.getInstance().openNode(myOperationContext, node, true, true);
+                  }
+                });
               }
             });
           }

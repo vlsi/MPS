@@ -33,7 +33,7 @@ public class GoToTypeErrorRuleUtil {
   }
 
   public static void goToRuleById(IOperationContext context, Pair<String, String> ruleModelAndId) {
-    ModelAccess.assertLegalRead();
+    ModelAccess.assertLegalWrite();
 
     String ruleModel = ruleModelAndId.o1;
     final String ruleID = ruleModelAndId.o2;
@@ -48,15 +48,8 @@ public class GoToTypeErrorRuleUtil {
       LOG.error("can't find rule's model " + ruleModel);
       return;
     }
-    Computable<SNode> c = new Computable<SNode>() {
-      public SNode compute() {
-        return modelDescriptor.getSModel().getNodeById(ruleID);
-      }
-    };
-    SNode rule = (ModelAccess.instance().canRead() ?
-      c.compute() :
-      ModelAccess.instance().runReadAction(c)
-    );
+
+    SNode rule = modelDescriptor.getSModel().getNodeById(ruleID);
     if (rule == null) {
       LOG.error("can't find rule with id " + ruleID + " in the model " + modelDescriptor);
       return;

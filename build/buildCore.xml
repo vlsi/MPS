@@ -2,6 +2,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildCore" />
   <property name="build.layout" location="${build.dir}/artifacts/buildCore" />
+  <property name="version" value="2.5 EAP" />
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
@@ -2053,6 +2054,7 @@
     <copy todir="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     </copy>
+    <echo file="${build.layout}/build.properties">buildCore.version=${version}</echo>
   </target>
   
   <target name="fetchDependencies" />

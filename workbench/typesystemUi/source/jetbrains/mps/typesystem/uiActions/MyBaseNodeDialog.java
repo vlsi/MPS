@@ -86,7 +86,7 @@ public class
     if (myError != null) {
       JButton errorButton = new JButton(new AbstractAction("Go To Rule Which Caused Error") {
         public void actionPerformed(ActionEvent e) {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
               GoToTypeErrorRuleUtil.goToTypeErrorRule(getOperationContext(), myError);

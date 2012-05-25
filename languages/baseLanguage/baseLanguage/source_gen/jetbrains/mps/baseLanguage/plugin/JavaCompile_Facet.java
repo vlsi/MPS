@@ -274,6 +274,10 @@ public class JavaCompile_Facet extends IFacet.Stub {
           Iterable<IResource> _output_wf1ya0_a0b = null;
           switch (0) {
             case 0:
+              if (Boolean.TRUE.equals(pa.global().properties(new ITarget.Name("jetbrains.mps.baseLanguage.JavaCompile.compile"), JavaCompile_Facet.Target_compile.Parameters.class).skipCompilation())) {
+                _output_wf1ya0_a0b = Sequence.fromIterable(_output_wf1ya0_a0b).concat(Sequence.fromIterable(input));
+                return new IResult.SUCCESS(_output_wf1ya0_a0b);
+              }
               int work = Sequence.fromIterable(input).foldLeft(0, new ILeftCombinator<IResource, Integer>() {
                 public Integer combine(Integer s, IResource it) {
                   return s + ((((TResource) it).module().isCompileInMPS() ?

@@ -20,6 +20,13 @@ import jetbrains.mps.smodel.SNode;
 
 
 public interface LogicalViewTree {
+  /**
+   * Open node in the editor. Requires: model write, EDT.
+   *
+   * @param node
+   * @param context
+   * @param focus
+   */
   void editNode(final SNode node, IOperationContext context, boolean focus);
 
   boolean isAutoOpen();

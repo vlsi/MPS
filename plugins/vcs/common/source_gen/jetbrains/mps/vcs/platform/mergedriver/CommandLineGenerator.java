@@ -12,7 +12,7 @@ public class CommandLineGenerator {
   }
 
   public static String getCommandLine(int vcs) {
-    String classpathString = MergeDriverPacker.getPath() + File.separator + '*';
+    String classpathString = MergeDriverPacker.getInstance().getPath() + File.separator + '*';
     String javaExecutable = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
     if (SystemInfo.isWindows) {
       javaExecutable = adaptPathForMsysGit(javaExecutable + ".exe");

@@ -20,11 +20,8 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Igor Alshannikov
- * Sep 26, 2007
- */
-public class StaticReference extends SReferenceBase {
+//final used by find usages
+public final class StaticReference extends SReferenceBase {
   private SNodeId myTargetNodeId;    // mature
 
   /**

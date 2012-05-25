@@ -372,6 +372,12 @@ public class SubTypingManagerNew extends SubtypingManager {
     Set<SNode> residualNodes = new THashSet<SNode>(nodes);
     while (residualNodes.size() > 1) {
       List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);
+      Collections.sort(nodesToIterate, new Comparator<SNode>() {
+        @Override
+        public int compare(SNode o1, SNode o2) {
+          return TypesUtil.depth(o2) - TypesUtil.depth(o1);
+        }
+      });
       boolean wasChange = false;
       int size = nodesToIterate.size();
       for (int i = 0; i < size; i++) {

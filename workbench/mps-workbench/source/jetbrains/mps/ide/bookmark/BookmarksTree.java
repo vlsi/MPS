@@ -107,7 +107,7 @@ public class BookmarksTree extends MPSTree {
   public void gotoSelectedBookmark() {
     final BookmarkNode node = getSelectedBookmarkNode();
     if (node != null) {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           node.navigateToBookmark();
@@ -209,7 +209,7 @@ public class BookmarksTree extends MPSTree {
     }
 
     public void doubleClick() {
-      ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
           SNode openNode = getSNode();

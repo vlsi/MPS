@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import java.awt.Graphics;
 
-public class CurrentLinePainter extends EditorCellPainter<SNodePointer> {
+public class CurrentLinePainter extends DebuggerCellPainter<SNodePointer> {
   private static final Color STRIPE_COLOR = new Color(0, 0, 255);
 
   @NotNull
@@ -36,7 +36,7 @@ public class CurrentLinePainter extends EditorCellPainter<SNodePointer> {
 
   @Override
   protected Color getCellBackgroundColor() {
-    return null;
+    return STRIPE_COLOR;
   }
 
   @Override
@@ -62,13 +62,8 @@ public class CurrentLinePainter extends EditorCellPainter<SNodePointer> {
     if (myCachedCoverageArea != null) {
       return myCachedCoverageArea;
     }
-    EditorCell_Label cell = findCell(editorComponent);
-    if (cell == null) {
-      return null;
-    }
-    myCachedCoverageArea = getBounds(editorComponent, cell);
+    myCachedCoverageArea = calculateCoverageArea(editorComponent);
     return myCachedCoverageArea;
-    // new Rectangle(bounds.x + 1, bounds.y + 1, bounds.width - 1, bounds.height - 1); 
   }
 
   @Override

@@ -194,7 +194,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
-    myUpdateQueue.queue(new Update(null) {
+    myUpdateQueue.queue(new AbstractUpdate(UpateID.REBUILD) {
       public void run() {
         getTree().rebuildNow();
       }
@@ -234,8 +234,11 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public void rebuildTree() {
-    myUpdateQueue.queue(new Update(null) {
+    myUpdateQueue.queue(new AbstractUpdate(UpateID.REBUILD) {
       public void run() {
+        if (getTree() == null || getProject().isDisposed()) {
+          return;
+        }
         getTree().rebuildNow();
         getTree().expandProjectNode();
       }
@@ -433,17 +436,21 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     @Override
     public final void run() {
       getProjectView().changeView(getId());
-      // TODO: check if we need running read action here, or should we better do it inside myFindHelper methods.
-      if (myRunReadAction) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
+      myUpdateQueue.queue(new AbstractUpdate(UpateID.SELECT) {
+        public void run() {
+          // TODO: check if we need running read action here, or should we better do it inside myFindHelper methods.
+          if (myRunReadAction) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
+              public void run() {
+                doOnPaneActivation();
+              }
+            });
+          } else {
             doOnPaneActivation();
           }
-        });
-      } else {
-        doOnPaneActivation();
-      }
+        }
+      });
     }
 
     protected void doOnPaneActivation() {
@@ -452,5 +459,26 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public interface ComponentCreationListener {
     void componentCreated(ProjectPane projectPane);
+  }
+
+  private enum UpateID {
+    REBUILD(20),
+    SELECT(30);
+
+    private int myPriority;
+
+    UpateID(int priority) {
+      myPriority = priority;
+    }
+
+    public int getPriority() {
+      return myPriority;
+    }
+  }
+
+  private abstract class AbstractUpdate extends Update {
+    private AbstractUpdate(UpateID id) {
+      super(id, id.getPriority());
+    }
   }
 }

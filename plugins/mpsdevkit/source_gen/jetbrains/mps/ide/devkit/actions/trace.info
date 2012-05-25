@@ -1179,7 +1179,7 @@
     <nodeInfo nodeId="1744445256079578595" fileName="GoToEditorDeclaration_Action.java" startLine="34" startPosition="0" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToEditorDeclaration_Action#()V" />
     <nodeInfo nodeId="1744445256079578598" fileName="GoToEditorDeclaration_Action.java" startLine="104" startPosition="9" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1744445256079578635" fileName="GoToEditorDeclaration_Action.java" startLine="113" startPosition="7" endLine="118" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1071422968910417072" fileName="GoToEditorDeclaration_Action.java" startLine="127" startPosition="58" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1071422968910417072" fileName="GoToEditorDeclaration_Action.java" startLine="127" startPosition="59" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="1744445256079578595" fileName="GoToEditorDeclaration_Action.java" startLine="90" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1071422968910417065" fileName="GoToEditorDeclaration_Action.java" startLine="126" startPosition="7" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1744445256079578595" fileName="GoToEditorDeclaration_Action.java" startLine="90" startPosition="5" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1238,7 +1238,7 @@
     <scopeInfo nodeId="1071422968910333551" fileName="GoToEditorDeclaration_Action.java" startLine="105" startPosition="90" endLine="109" endPosition="0" />
     <scopeInfo nodeId="1071422968910333577" fileName="GoToEditorDeclaration_Action.java" startLine="114" startPosition="95" endLine="118" endPosition="0" />
     <scopeInfo nodeId="1744445256079578595" fileName="GoToEditorDeclaration_Action.java" startLine="34" startPosition="0" endLine="39" endPosition="3" />
-    <scopeInfo nodeId="1071422968910417072" fileName="GoToEditorDeclaration_Action.java" startLine="127" startPosition="58" endLine="132" endPosition="0" />
+    <scopeInfo nodeId="1071422968910417072" fileName="GoToEditorDeclaration_Action.java" startLine="127" startPosition="59" endLine="132" endPosition="0" />
     <scopeInfo nodeId="1744445256079578595" fileName="GoToEditorDeclaration_Action.java" startLine="90" startPosition="5" endLine="99" endPosition="5" />
     <scopeInfo nodeId="1744445256079578595" fileName="GoToEditorDeclaration_Action.java" startLine="45" startPosition="89" endLine="56" endPosition="5" />
     <scopeInfo nodeId="1744445256079578595" fileName="GoToEditorDeclaration_Action.java" startLine="44" startPosition="0" endLine="58" endPosition="0">
@@ -1264,7 +1264,7 @@
     <unitInfo nodeId="1744445256079578595" fileName="GoToEditorDeclaration_Action.java" startLine="31" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action" />
     <unitInfo nodeId="1071422968910333551" fileName="GoToEditorDeclaration_Action.java" startLine="105" startPosition="66" endLine="109" endPosition="7" unitName="jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action$1" />
     <unitInfo nodeId="1071422968910333577" fileName="GoToEditorDeclaration_Action.java" startLine="114" startPosition="74" endLine="118" endPosition="7" unitName="jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action$2" />
-    <unitInfo nodeId="1071422968910417072" fileName="GoToEditorDeclaration_Action.java" startLine="127" startPosition="46" endLine="132" endPosition="7" unitName="jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action$3" />
+    <unitInfo nodeId="1071422968910417072" fileName="GoToEditorDeclaration_Action.java" startLine="127" startPosition="47" endLine="132" endPosition="7" unitName="jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action$3" />
   </root>
   <root nodeId="1744445256079578766">
     <nodeInfo nodeId="1744445256079578766" fileName="GoToConceptDeclaration_Action.java" startLine="21" startPosition="63" endLine="22" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -5379,8 +5379,8 @@
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -5450,8 +5450,8 @@
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="75" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="90" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />

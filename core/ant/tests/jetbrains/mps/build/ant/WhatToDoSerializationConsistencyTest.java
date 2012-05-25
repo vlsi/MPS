@@ -31,7 +31,7 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
     WhatToDo toDo = new WhatToDo();
 
     toDo.addProjectFile(new File("languages/util/builders/builders.mpr").getAbsoluteFile(), "blahblahblah1", "blahblahblah2");
-    toDo.addProjectFile(new File("languages/util/bash/jetbrains.mps.bash.mpr").getAbsoluteFile(), "blahblahblah1");
+    toDo.addProjectFile(new File("languages/util/dates/dates.mpr").getAbsoluteFile(), "blahblahblah1");
     toDo.addProjectFile(new File("languages/util/regexp/regexp.mpr").getAbsoluteFile());
 
     testToDoConsistency(toDo);

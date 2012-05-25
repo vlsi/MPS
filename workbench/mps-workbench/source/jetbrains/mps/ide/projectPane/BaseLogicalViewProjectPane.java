@@ -348,12 +348,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return ActionPlace.PROJECT_PANE;
   }
 
-  public void editNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        NavigationSupport.getInstance().openNode(context, node, focus, select);
-      }
-    });
+  public void editNode(final SNode node, final IOperationContext context, final boolean focus) {
+    ModelAccess.assertLegalWrite();
+    NavigationSupport.getInstance().openNode(context, node, focus, !node.isRoot());
   }
 
   public <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {

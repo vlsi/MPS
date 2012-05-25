@@ -48,7 +48,7 @@ import java.io.IOException;
     if (!(PluginUtil.isSvnPluginEnabled())) {
       return AbstractInstaller.State.INSTALLED;
     }
-    AbstractInstaller.State packerState = MergeDriverPacker.packIfNeeded(dryRun);
+    AbstractInstaller.State packerState = MergeDriverPacker.getInstance().packIfNeeded(dryRun);
     if (packerState != AbstractInstaller.State.INSTALLED) {
       return packerState;
     }

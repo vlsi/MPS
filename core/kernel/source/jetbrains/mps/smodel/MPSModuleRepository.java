@@ -98,9 +98,54 @@ public class MPSModuleRepository implements CoreComponent {
     return module;
   }
 
+  public void unregisterModules(Collection<IModule> modules, MPSModuleOwner owner) {
+    Collection<IModule> modulesToDispose = new ArrayList<IModule>();
+    boolean repositoryChanged = false;
+    for (IModule module : modules) {
+      if (doUnregisterModule(module, owner)) {
+        modulesToDispose.add(module);
+      } else {
+        repositoryChanged = true;
+      }
+    }
+    if (modulesToDispose.isEmpty() && !repositoryChanged) {
+      return;
+    }
+    invalidateCaches();
+    for (IModule module : modulesToDispose) {
+      fireModuleRemoved(module);
+      module.dispose();
+    }
+    if (repositoryChanged) {
+      fireRepositoryChanged();
+    }
+  }
+
   public void unregisterModule(IModule module, MPSModuleOwner owner) {
     ModelAccess.assertLegalWrite();
 
+    boolean moduleRemoved = doUnregisterModule(module, owner);
+    invalidateCaches();
+    if (moduleRemoved) {
+      fireModuleRemoved(module);
+      module.dispose();
+    } else {
+      fireRepositoryChanged();
+    }
+  }
+
+  /**
+   * Unregister specified module from specified owner and conditionally remove module from ModuleRepository if there
+   * are no more owners.
+   * <p/>
+   * Clients are responsible for:
+   * - calling invalidateCaches()
+   * - firing moduleRemoved/repositoryChanged notifications if module was removed/was not removed from ModuleRepository
+   * - disposing module if it was removed
+   *
+   * @return true if module was removed from ModuleRepository
+   */
+  private boolean doUnregisterModule(IModule module, MPSModuleOwner owner) {
     assert myModules.contains(module) : "trying to unregister non-registered module: fqName=" + module.getModuleFqName() + "; file=" + module.getDescriptorFile();
 
     myModuleToOwners.removeLink(module, owner);
@@ -110,14 +155,9 @@ public class MPSModuleRepository implements CoreComponent {
       myModules.remove(module);
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
       myFqNameToModulesMap.remove(module.getModuleFqName());
-      invalidateCaches();
-      fireModuleRemoved(module);
-
-      module.dispose();
-    } else {
-      invalidateCaches();
-      fireRepositoryChanged();
+      return true;
     }
+    return false;
   }
 
   //---------------get by-----------------------------

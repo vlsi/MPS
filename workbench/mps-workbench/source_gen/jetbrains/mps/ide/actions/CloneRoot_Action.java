@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 
@@ -80,14 +79,10 @@ public class CloneRoot_Action extends BaseAction {
     try {
       for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
         SNode root = SNodeOperations.getContainingRoot(node);
-        final SNode copy = SNodeOperations.copyNode(root);
+        SNode copy = SNodeOperations.copyNode(root);
         SModelOperations.addRootNode(SNodeOperations.getModel(root), copy);
-        ModelAccess.instance().runReadInEDT(new Runnable() {
-          public void run() {
-            NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, true, true);
-            NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, false);
-          }
-        });
+        NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, true, true);
+        NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), copy, false);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

@@ -38,8 +38,8 @@ public abstract class BaseNavigatable implements Navigatable {
         doNavigate(requestFocus);
       }
     };
-    if (!ModelAccess.instance().tryRead(navigateRunnable)) {
-      ModelAccess.instance().runReadInEDT(navigateRunnable);
+    if (!ModelAccess.instance().tryWrite(navigateRunnable)) {
+      ModelAccess.instance().runWriteInEDT(navigateRunnable);
     }
   }
 

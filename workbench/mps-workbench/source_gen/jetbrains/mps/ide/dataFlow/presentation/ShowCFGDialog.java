@@ -44,7 +44,7 @@ public class ShowCFGDialog extends JDialog {
         Object source = cfgInstruction.getSource();
         if (source instanceof SNode) {
           final SNode node = (SNode) source;
-          ModelAccess.instance().runReadInEDT(new Runnable() {
+          ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
               NavigationSupport.getInstance().openNode(operationContext, node, true, true);
             }

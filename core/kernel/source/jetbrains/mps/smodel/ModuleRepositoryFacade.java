@@ -105,19 +105,17 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public void unregisterModules(MPSModuleOwner owner, Condition<IModule> condition) {
-    Set<IModule> modules = new HashSet<IModule>(REPO.getModules(owner));
-    for (IModule module : modules) {
+    Collection<IModule> modulesToRemove = new ArrayList<IModule>();
+    for (IModule module : REPO.getModules(owner)) {
       if (condition.met(module)) {
-        REPO.unregisterModule(module, owner);
+        modulesToRemove.add(module);
       }
     }
+    REPO.unregisterModules(modulesToRemove, owner);
   }
 
   public void unregisterModules(MPSModuleOwner owner) {
-    Set<IModule> modules = new HashSet<IModule>(REPO.getModules(owner));
-    for (IModule module : modules) {
-      REPO.unregisterModule(module, owner);
-    }
+    REPO.unregisterModules(new HashSet<IModule>(REPO.getModules(owner)), owner);
   }
 
   //intended to use only when module is removed physically

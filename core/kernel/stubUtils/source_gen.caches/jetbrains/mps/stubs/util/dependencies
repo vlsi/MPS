@@ -42,6 +42,8 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ASMModelLoader" />
+    <classNode dependClassName="jetbrains.mps.findUsages.fastfind.FastFindSupport" />
+    <classNode dependClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
