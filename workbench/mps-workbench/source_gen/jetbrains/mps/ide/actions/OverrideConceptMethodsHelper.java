@@ -16,9 +16,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class OverrideConceptMethodsHelper {
   private SNode myClassConcept;
@@ -119,17 +119,10 @@ public class OverrideConceptMethodsHelper {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
       {
-        quotedNode_1 = (SNode) parameter_3;
-        SNode quotedNode1_2;
-        if (_parameterValues_129834374.contains(quotedNode_1)) {
-          quotedNode1_2 = HUtil.copyIfNecessary(quotedNode_1);
-        } else {
-          _parameterValues_129834374.add(quotedNode_1);
-          quotedNode1_2 = quotedNode_1;
-        }
-        if (quotedNode1_2 != null) {
-          result = quotedNode1_2;
-        }
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("variableDeclaration", (SNode) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
