@@ -18,7 +18,6 @@
   <property name="artifacts.buildCoreUI" location="${build.dir}/artifacts/buildCoreUI" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildDevKit" location="${build.dir}/artifacts/buildDevKit" />
-  <property name="artifacts.buildExecution" location="${build.dir}/artifacts/buildExecution" />
   <property name="artifacts.buildTroveCollections" location="${build.dir}/artifacts/buildTroveCollections" />
   <property name="artifacts.buildExperimental" location="${build.dir}/artifacts/buildExperimental" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
@@ -56,9 +55,6 @@
     </copy>
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildWorkbench}/languages" />
-    </copy>
-    <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildExecution}/languages" />
     </copy>
     <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
@@ -185,7 +181,6 @@
     <ant antfile="build/buildCoreUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildDevKit.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildExecution.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExperimental.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
