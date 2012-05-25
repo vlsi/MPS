@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.*;

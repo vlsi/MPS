@@ -209,10 +209,6 @@ public class NewGeneratorDialog extends BaseDialog {
     }
     EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(new SModelFqName(getTemplateModelPrefix(sourceLanguage) + "." + "main", SModelStereotype.GENERATOR), newGenerator.getSModelRoots().iterator().next(), null);
     SModel templateModel = templateModelDescriptor.getSModel();
-    templateModel.addDevKit(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
-    templateModel.addDevKit(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("9eb20ab1-6fa5-4e62-8639-ce6089d49ac1")).getModuleReference());
-    templateModel.addModelImport(sourceLanguage.getStructureModelDescriptor().getSModelReference(), false);
-    // <node> 
     SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
     SPropertyOperations.set(mappingConfiguration, "name", "main");
     SModelOperations.addRootNode(templateModel, mappingConfiguration);
