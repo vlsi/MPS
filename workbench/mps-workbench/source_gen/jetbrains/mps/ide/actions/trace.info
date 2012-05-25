@@ -5762,100 +5762,96 @@
     <nodeInfo nodeId="1818770337282929227" fileName="OverrideConceptMethodsHelper.java" startLine="98" startPosition="12" endLine="99" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1818770337282929244" fileName="OverrideConceptMethodsHelper.java" startLine="104" startPosition="44" endLine="105" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1818770337282929257" fileName="OverrideConceptMethodsHelper.java" startLine="107" startPosition="61" endLine="108" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="117" startPosition="49" endLine="118" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="118" startPosition="26" endLine="119" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="119" startPosition="67" endLine="120" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="121" startPosition="7" endLine="122" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="122" startPosition="43" endLine="123" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="124" startPosition="64" endLine="125" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="126" startPosition="16" endLine="127" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="127" startPosition="55" endLine="128" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="130" startPosition="36" endLine="131" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="133" startPosition="7" endLine="134" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="142" startPosition="90" endLine="143" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="143" startPosition="26" endLine="144" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="144" startPosition="67" endLine="145" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="145" startPosition="32" endLine="146" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="146" startPosition="32" endLine="147" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="147" startPosition="32" endLine="148" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="149" startPosition="7" endLine="150" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="150" startPosition="162" endLine="151" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="152" startPosition="9" endLine="153" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="153" startPosition="171" endLine="154" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="154" startPosition="45" endLine="155" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="155" startPosition="73" endLine="156" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="158" startPosition="9" endLine="159" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="159" startPosition="172" endLine="160" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="160" startPosition="45" endLine="161" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="162" startPosition="11" endLine="163" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="164" startPosition="39" endLine="165" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="167" startPosition="11" endLine="168" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="169" startPosition="9" endLine="170" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="171" startPosition="7" endLine="172" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="180" startPosition="49" endLine="181" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="181" startPosition="26" endLine="182" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="182" startPosition="67" endLine="183" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="183" startPosition="32" endLine="184" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="185" startPosition="7" endLine="186" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="186" startPosition="168" endLine="187" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="188" startPosition="9" endLine="189" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="189" startPosition="45" endLine="190" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="191" startPosition="66" endLine="192" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="193" startPosition="18" endLine="194" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="194" startPosition="57" endLine="195" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="197" startPosition="38" endLine="198" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="200" startPosition="9" endLine="201" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="202" startPosition="7" endLine="203" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="211" startPosition="49" endLine="212" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="212" startPosition="26" endLine="213" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="213" startPosition="67" endLine="214" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="214" startPosition="32" endLine="215" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="216" startPosition="7" endLine="217" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="217" startPosition="164" endLine="218" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="219" startPosition="9" endLine="220" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="220" startPosition="45" endLine="221" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="222" startPosition="66" endLine="223" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="224" startPosition="18" endLine="225" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="225" startPosition="57" endLine="226" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="228" startPosition="38" endLine="229" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="231" startPosition="9" endLine="232" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="233" startPosition="7" endLine="234" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="242" startPosition="49" endLine="243" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="243" startPosition="26" endLine="244" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="244" startPosition="67" endLine="245" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="245" startPosition="32" endLine="246" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="247" startPosition="7" endLine="248" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="248" startPosition="168" endLine="249" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="250" startPosition="9" endLine="251" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="251" startPosition="45" endLine="252" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="253" startPosition="66" endLine="254" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="255" startPosition="18" endLine="256" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="256" startPosition="57" endLine="257" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="259" startPosition="38" endLine="260" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="262" startPosition="9" endLine="263" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="264" startPosition="7" endLine="265" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="117" startPosition="49" endLine="118" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="118" startPosition="26" endLine="119" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="119" startPosition="67" endLine="120" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="121" startPosition="7" endLine="122" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="122" startPosition="167" endLine="123" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="123" startPosition="43" endLine="124" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="124" startPosition="78" endLine="125" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="126" startPosition="7" endLine="127" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="135" startPosition="90" endLine="136" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="136" startPosition="26" endLine="137" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="137" startPosition="67" endLine="138" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="138" startPosition="32" endLine="139" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="139" startPosition="32" endLine="140" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="140" startPosition="32" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="142" startPosition="7" endLine="143" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="143" startPosition="162" endLine="144" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="145" startPosition="9" endLine="146" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="146" startPosition="171" endLine="147" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="147" startPosition="45" endLine="148" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="148" startPosition="73" endLine="149" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="151" startPosition="9" endLine="152" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="152" startPosition="172" endLine="153" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="153" startPosition="45" endLine="154" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="155" startPosition="11" endLine="156" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="157" startPosition="39" endLine="158" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="160" startPosition="11" endLine="161" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="162" startPosition="9" endLine="163" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="164" startPosition="7" endLine="165" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="173" startPosition="49" endLine="174" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="174" startPosition="26" endLine="175" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="175" startPosition="67" endLine="176" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="176" startPosition="32" endLine="177" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="178" startPosition="7" endLine="179" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="179" startPosition="168" endLine="180" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="181" startPosition="9" endLine="182" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="182" startPosition="45" endLine="183" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="184" startPosition="66" endLine="185" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="186" startPosition="18" endLine="187" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="187" startPosition="57" endLine="188" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="190" startPosition="38" endLine="191" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="193" startPosition="9" endLine="194" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="195" startPosition="7" endLine="196" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="204" startPosition="49" endLine="205" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="205" startPosition="26" endLine="206" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="206" startPosition="67" endLine="207" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="207" startPosition="32" endLine="208" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="209" startPosition="7" endLine="210" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="210" startPosition="164" endLine="211" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="212" startPosition="9" endLine="213" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="213" startPosition="45" endLine="214" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="215" startPosition="66" endLine="216" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="217" startPosition="18" endLine="218" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="218" startPosition="57" endLine="219" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="221" startPosition="38" endLine="222" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="224" startPosition="9" endLine="225" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="226" startPosition="7" endLine="227" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="235" startPosition="49" endLine="236" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="236" startPosition="26" endLine="237" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="237" startPosition="67" endLine="238" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="238" startPosition="32" endLine="239" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="240" startPosition="7" endLine="241" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="241" startPosition="168" endLine="242" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="243" startPosition="9" endLine="244" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="244" startPosition="45" endLine="245" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="246" startPosition="66" endLine="247" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="248" startPosition="18" endLine="249" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="249" startPosition="57" endLine="250" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="252" startPosition="38" endLine="253" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="255" startPosition="9" endLine="256" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="257" startPosition="7" endLine="258" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1818770337282928984" fileName="OverrideConceptMethodsHelper.java" startLine="49" startPosition="12" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1818770337282929187" fileName="OverrideConceptMethodsHelper.java" startLine="86" startPosition="10" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1818770337282929225" fileName="OverrideConceptMethodsHelper.java" startLine="98" startPosition="10" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="113" startPosition="60" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a0a0a0c0a4a1#()V" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="138" startPosition="55" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a3a0e0b#()V" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="176" startPosition="57" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a0a0a0g0b#()V" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="207" startPosition="53" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a0c0c#()V" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="238" startPosition="54" endLine="240" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a0a2a2#()V" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="113" startPosition="60" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a0a0a0c0a4a1#()V" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="131" startPosition="55" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a3a0e0b#()V" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="169" startPosition="57" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a0a0a0g0b#()V" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="200" startPosition="53" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a0c0c#()V" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="231" startPosition="54" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_7wts1u_a0a0a2a2#()V" />
     <nodeInfo nodeId="1818770337282929050" fileName="OverrideConceptMethodsHelper.java" startLine="59" startPosition="29" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1818770337282929297" fileName="OverrideConceptMethodsHelper.java" startLine="70" startPosition="190" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282929164" fileName="OverrideConceptMethodsHelper.java" startLine="82" startPosition="143" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282929208" fileName="OverrideConceptMethodsHelper.java" startLine="91" startPosition="54" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282929250" fileName="OverrideConceptMethodsHelper.java" startLine="106" startPosition="12" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="126" startPosition="14" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="129" startPosition="9" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="163" startPosition="58" endLine="166" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="193" startPosition="16" endLine="196" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="196" startPosition="11" endLine="199" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="224" startPosition="16" endLine="227" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="227" startPosition="11" endLine="230" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="255" startPosition="16" endLine="258" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="258" startPosition="11" endLine="261" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="156" startPosition="58" endLine="159" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="186" startPosition="16" endLine="189" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="189" startPosition="11" endLine="192" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="217" startPosition="16" endLine="220" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="220" startPosition="11" endLine="223" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="248" startPosition="16" endLine="251" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="251" startPosition="11" endLine="254" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282929317" fileName="OverrideConceptMethodsHelper.java" startLine="74" startPosition="149" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1818770337282929248" fileName="OverrideConceptMethodsHelper.java" startLine="106" startPosition="10" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1818770337282928982" fileName="OverrideConceptMethodsHelper.java" startLine="46" startPosition="0" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -5863,51 +5859,50 @@
     <nodeInfo nodeId="1818770337282929308" fileName="OverrideConceptMethodsHelper.java" startLine="73" startPosition="7" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1818770337282929216" fileName="OverrideConceptMethodsHelper.java" startLine="95" startPosition="0" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282928876" fileName="OverrideConceptMethodsHelper.java" startLine="28" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OverrideConceptMethodsHelper#(Ljetbrains/mps/project/Project;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;ZZ)V" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="123" startPosition="28" endLine="129" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="151" startPosition="43" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="151" startPosition="43" endLine="157" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="161" startPosition="83" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="161" startPosition="83" endLine="167" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="190" startPosition="30" endLine="196" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="221" startPosition="30" endLine="227" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="252" startPosition="30" endLine="258" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="120" startPosition="32" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="120" startPosition="32" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="144" startPosition="43" endLine="150" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="144" startPosition="43" endLine="150" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="154" startPosition="83" endLine="160" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="154" startPosition="83" endLine="160" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="183" startPosition="30" endLine="189" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="214" startPosition="30" endLine="220" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="245" startPosition="30" endLine="251" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282929162" fileName="OverrideConceptMethodsHelper.java" startLine="81" startPosition="0" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282929239" fileName="OverrideConceptMethodsHelper.java" startLine="103" startPosition="45" endLine="110" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282929235" fileName="OverrideConceptMethodsHelper.java" startLine="102" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeAttributes#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1818770337282929147" fileName="OverrideConceptMethodsHelper.java" startLine="69" startPosition="10" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1818770337282929204" fileName="OverrideConceptMethodsHelper.java" startLine="90" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReturnStatement#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="157" startPosition="9" endLine="169" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="157" startPosition="9" endLine="169" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="120" startPosition="32" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="120" startPosition="32" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="187" startPosition="43" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="187" startPosition="43" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="218" startPosition="43" endLine="231" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="218" startPosition="43" endLine="231" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="249" startPosition="43" endLine="262" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="249" startPosition="43" endLine="262" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="150" startPosition="9" endLine="162" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="150" startPosition="9" endLine="162" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="116" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="180" startPosition="43" endLine="193" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="180" startPosition="43" endLine="193" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="211" startPosition="43" endLine="224" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="211" startPosition="43" endLine="224" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="242" startPosition="43" endLine="255" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="242" startPosition="43" endLine="255" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1818770337282929136" fileName="OverrideConceptMethodsHelper.java" startLine="66" startPosition="22" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1818770337282928948" fileName="OverrideConceptMethodsHelper.java" startLine="38" startPosition="48" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="184" startPosition="32" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="184" startPosition="32" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="215" startPosition="32" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="215" startPosition="32" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="246" startPosition="32" endLine="264" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="246" startPosition="32" endLine="264" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="116" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="177" startPosition="32" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="177" startPosition="32" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="208" startPosition="32" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="208" startPosition="32" endLine="226" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="239" startPosition="32" endLine="257" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="239" startPosition="32" endLine="257" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1818770337282928927" fileName="OverrideConceptMethodsHelper.java" startLine="35" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertMethods#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="148" startPosition="32" endLine="171" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="148" startPosition="32" endLine="171" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="179" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="210" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="241" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="141" startPosition="32" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="141" startPosition="32" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="172" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="203" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="234" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1818770337282929028" fileName="OverrideConceptMethodsHelper.java" startLine="57" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="141" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="114" startPosition="51" endLine="114" endPosition="51" />
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="139" startPosition="46" endLine="139" endPosition="46" />
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="177" startPosition="48" endLine="177" endPosition="48" />
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="208" startPosition="44" endLine="208" endPosition="44" />
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="239" startPosition="45" endLine="239" endPosition="45" />
+    <nodeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="134" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="114" startPosition="51" endLine="114" endPosition="51" />
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="132" startPosition="46" endLine="132" endPosition="46" />
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="170" startPosition="48" endLine="170" endPosition="48" />
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="201" startPosition="44" endLine="201" endPosition="44" />
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="232" startPosition="45" endLine="232" endPosition="45" />
     <scopeInfo nodeId="1818770337282928993" fileName="OverrideConceptMethodsHelper.java" startLine="47" startPosition="22" endLine="48" endPosition="224" />
     <scopeInfo nodeId="1818770337282928985" fileName="OverrideConceptMethodsHelper.java" startLine="49" startPosition="14" endLine="50" endPosition="109" />
     <scopeInfo nodeId="1818770337282929053" fileName="OverrideConceptMethodsHelper.java" startLine="60" startPosition="63" endLine="61" endPosition="32" />
@@ -5921,24 +5916,21 @@
     <scopeInfo nodeId="1818770337282929226" fileName="OverrideConceptMethodsHelper.java" startLine="98" startPosition="12" endLine="99" endPosition="102" />
     <scopeInfo nodeId="1818770337282929243" fileName="OverrideConceptMethodsHelper.java" startLine="104" startPosition="44" endLine="105" endPosition="39" />
     <scopeInfo nodeId="1818770337282929256" fileName="OverrideConceptMethodsHelper.java" startLine="107" startPosition="61" endLine="108" endPosition="32" />
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="124" startPosition="64" endLine="125" endPosition="62" />
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="130" startPosition="36" endLine="131" endPosition="33" />
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="164" startPosition="39" endLine="165" endPosition="84" />
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="191" startPosition="66" endLine="192" endPosition="64" />
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="197" startPosition="38" endLine="198" endPosition="86" />
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="222" startPosition="66" endLine="223" endPosition="64" />
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="228" startPosition="38" endLine="229" endPosition="86" />
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="253" startPosition="66" endLine="254" endPosition="64" />
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="259" startPosition="38" endLine="260" endPosition="86" />
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="113" startPosition="60" endLine="115" endPosition="5" />
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="126" startPosition="16" endLine="128" endPosition="39" />
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="138" startPosition="55" endLine="140" endPosition="5" />
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="176" startPosition="57" endLine="178" endPosition="5" />
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="193" startPosition="18" endLine="195" endPosition="41" />
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="207" startPosition="53" endLine="209" endPosition="5" />
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="224" startPosition="18" endLine="226" endPosition="41" />
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="238" startPosition="54" endLine="240" endPosition="5" />
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="255" startPosition="18" endLine="257" endPosition="41" />
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="157" startPosition="39" endLine="158" endPosition="84" />
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="184" startPosition="66" endLine="185" endPosition="64" />
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="190" startPosition="38" endLine="191" endPosition="86" />
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="215" startPosition="66" endLine="216" endPosition="64" />
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="221" startPosition="38" endLine="222" endPosition="86" />
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="246" startPosition="66" endLine="247" endPosition="64" />
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="252" startPosition="38" endLine="253" endPosition="86" />
+    <scopeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="113" startPosition="60" endLine="115" endPosition="5" />
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="131" startPosition="55" endLine="133" endPosition="5" />
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="169" startPosition="57" endLine="171" endPosition="5" />
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="186" startPosition="18" endLine="188" endPosition="41" />
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="200" startPosition="53" endLine="202" endPosition="5" />
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="217" startPosition="18" endLine="219" endPosition="41" />
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="231" startPosition="54" endLine="233" endPosition="5" />
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="248" startPosition="18" endLine="250" endPosition="41" />
     <scopeInfo nodeId="1818770337282929049" fileName="OverrideConceptMethodsHelper.java" startLine="59" startPosition="29" endLine="62" endPosition="7" />
     <scopeInfo nodeId="1818770337282929050" fileName="OverrideConceptMethodsHelper.java" startLine="59" startPosition="29" endLine="62" endPosition="7">
       <varInfo nodeId="1818770337282929051" varName="child" />
@@ -5948,17 +5940,20 @@
     <scopeInfo nodeId="1818770337282929250" fileName="OverrideConceptMethodsHelper.java" startLine="106" startPosition="12" endLine="109" endPosition="7">
       <varInfo nodeId="1818770337282929254" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="163" startPosition="58" endLine="166" endPosition="13">
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="156" startPosition="58" endLine="159" endPosition="13">
       <varInfo nodeId="1818770337282929329" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1818770337282928880" fileName="OverrideConceptMethodsHelper.java" startLine="29" startPosition="145" endLine="33" endPosition="34" />
     <scopeInfo nodeId="1818770337282929317" fileName="OverrideConceptMethodsHelper.java" startLine="74" startPosition="149" endLine="78" endPosition="0">
       <varInfo nodeId="1818770337282929317" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="152" startPosition="9" endLine="156" endPosition="58">
+    <scopeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="121" startPosition="7" endLine="125" endPosition="31">
+      <varInfo nodeId="7842675415983046477" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="145" startPosition="9" endLine="149" endPosition="58">
       <varInfo nodeId="1818770337282929329" varName="quotedNode1_6" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="162" startPosition="11" endLine="166" endPosition="13">
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="155" startPosition="11" endLine="159" endPosition="13">
       <varInfo nodeId="1818770337282929329" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="1818770337282928876" fileName="OverrideConceptMethodsHelper.java" startLine="28" startPosition="0" endLine="34" endPosition="3">
@@ -5968,8 +5963,9 @@
       <varInfo nodeId="1818770337282928881" varName="project" />
       <varInfo nodeId="1818770337282928908" varName="removeAttributes" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="151" startPosition="43" endLine="157" endPosition="9" />
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="161" startPosition="83" endLine="167" endPosition="11" />
+    <scopeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="120" startPosition="32" endLine="126" endPosition="7" />
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="144" startPosition="43" endLine="150" endPosition="9" />
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="154" startPosition="83" endLine="160" endPosition="11" />
     <scopeInfo nodeId="1818770337282929238" fileName="OverrideConceptMethodsHelper.java" startLine="103" startPosition="45" endLine="110" endPosition="5" />
     <scopeInfo nodeId="1818770337282929207" fileName="OverrideConceptMethodsHelper.java" startLine="91" startPosition="54" endLine="100" endPosition="5" />
     <scopeInfo nodeId="1818770337282929148" fileName="OverrideConceptMethodsHelper.java" startLine="69" startPosition="12" endLine="79" endPosition="311">
@@ -5979,29 +5975,33 @@
     <scopeInfo nodeId="1818770337282929235" fileName="OverrideConceptMethodsHelper.java" startLine="102" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="1818770337282929260" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="158" startPosition="9" endLine="168" endPosition="60">
+    <scopeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="117" startPosition="49" endLine="127" endPosition="20">
+      <varInfo nodeId="7842675415983046477" varName="_parameterValues_129834374" />
+      <varInfo nodeId="7842675415983046477" varName="quotedNode_1" />
+      <varInfo nodeId="7842675415983046477" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="151" startPosition="9" endLine="161" endPosition="60">
       <varInfo nodeId="1818770337282929329" varName="quotedNode1_7" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="121" startPosition="7" endLine="132" endPosition="9">
-      <varInfo nodeId="1818770337282929320" varName="quotedNode1_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="188" startPosition="9" endLine="199" endPosition="11">
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="181" startPosition="9" endLine="192" endPosition="11">
       <varInfo nodeId="1818770337282929174" varName="quotedNode1_4" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="219" startPosition="9" endLine="230" endPosition="11">
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="212" startPosition="9" endLine="223" endPosition="11">
       <varInfo nodeId="1818770337282929219" varName="quotedNode1_4" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="250" startPosition="9" endLine="261" endPosition="11">
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="243" startPosition="9" endLine="254" endPosition="11">
       <varInfo nodeId="1818770337282929228" varName="quotedNode1_4" />
     </scopeInfo>
     <scopeInfo nodeId="1818770337282929204" fileName="OverrideConceptMethodsHelper.java" startLine="90" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="1818770337282929233" varName="returnExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="157" startPosition="9" endLine="169" endPosition="9" />
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="120" startPosition="32" endLine="133" endPosition="7" />
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="187" startPosition="43" endLine="200" endPosition="9" />
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="218" startPosition="43" endLine="231" endPosition="9" />
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="249" startPosition="43" endLine="262" endPosition="9" />
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="150" startPosition="9" endLine="162" endPosition="9" />
+    <scopeInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="116" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="7842675415983046477" varName="parameter_3" />
+    </scopeInfo>
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="180" startPosition="43" endLine="193" endPosition="9" />
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="211" startPosition="43" endLine="224" endPosition="9" />
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="242" startPosition="43" endLine="255" endPosition="9" />
     <scopeInfo nodeId="1818770337282928952" fileName="OverrideConceptMethodsHelper.java" startLine="39" startPosition="33" endLine="53" endPosition="55">
       <varInfo nodeId="1818770337282928954" varName="baseMethod" />
       <varInfo nodeId="1818770337282928959" varName="method" />
@@ -6009,69 +6009,61 @@
     <scopeInfo nodeId="1818770337282928948" fileName="OverrideConceptMethodsHelper.java" startLine="38" startPosition="48" endLine="54" endPosition="5">
       <varInfo nodeId="1818770337282928950" varName="m" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="185" startPosition="7" endLine="201" endPosition="31">
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="178" startPosition="7" endLine="194" endPosition="31">
       <varInfo nodeId="1818770337282929174" varName="quotedNode1_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="216" startPosition="7" endLine="232" endPosition="31">
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="209" startPosition="7" endLine="225" endPosition="31">
       <varInfo nodeId="1818770337282929219" varName="quotedNode1_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="247" startPosition="7" endLine="263" endPosition="31">
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="240" startPosition="7" endLine="256" endPosition="31">
       <varInfo nodeId="1818770337282929228" varName="quotedNode1_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="117" startPosition="49" endLine="134" endPosition="20">
-      <varInfo nodeId="1818770337282929320" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1818770337282929320" varName="quotedNode_1" />
-      <varInfo nodeId="1818770337282929320" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="184" startPosition="32" endLine="202" endPosition="7" />
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="215" startPosition="32" endLine="233" endPosition="7" />
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="246" startPosition="32" endLine="264" endPosition="7" />
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="177" startPosition="32" endLine="195" endPosition="7" />
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="208" startPosition="32" endLine="226" endPosition="7" />
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="239" startPosition="32" endLine="257" endPosition="7" />
     <scopeInfo nodeId="1818770337282928929" fileName="OverrideConceptMethodsHelper.java" startLine="36" startPosition="61" endLine="55" endPosition="18">
       <varInfo nodeId="1818770337282928931" varName="insertion" />
       <varInfo nodeId="1818770337282928943" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="116" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="1818770337282929320" varName="parameter_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="149" startPosition="7" endLine="170" endPosition="31">
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="142" startPosition="7" endLine="163" endPosition="31">
       <varInfo nodeId="1818770337282929329" varName="quotedNode1_5" />
     </scopeInfo>
     <scopeInfo nodeId="1818770337282928927" fileName="OverrideConceptMethodsHelper.java" startLine="35" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1818770337282929021" varName="baseMethods" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="148" startPosition="32" endLine="171" endPosition="7" />
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="180" startPosition="49" endLine="203" endPosition="20">
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="141" startPosition="32" endLine="164" endPosition="7" />
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="173" startPosition="49" endLine="196" endPosition="20">
       <varInfo nodeId="1818770337282929174" varName="_parameterValues_129834374" />
       <varInfo nodeId="1818770337282929174" varName="quotedNode_1" />
       <varInfo nodeId="1818770337282929174" varName="quotedNode_2" />
       <varInfo nodeId="1818770337282929174" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="211" startPosition="49" endLine="234" endPosition="20">
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="204" startPosition="49" endLine="227" endPosition="20">
       <varInfo nodeId="1818770337282929219" varName="_parameterValues_129834374" />
       <varInfo nodeId="1818770337282929219" varName="quotedNode_1" />
       <varInfo nodeId="1818770337282929219" varName="quotedNode_2" />
       <varInfo nodeId="1818770337282929219" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="242" startPosition="49" endLine="265" endPosition="20">
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="235" startPosition="49" endLine="258" endPosition="20">
       <varInfo nodeId="1818770337282929228" varName="_parameterValues_129834374" />
       <varInfo nodeId="1818770337282929228" varName="quotedNode_1" />
       <varInfo nodeId="1818770337282929228" varName="quotedNode_2" />
       <varInfo nodeId="1818770337282929228" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="179" startPosition="0" endLine="205" endPosition="0">
+    <scopeInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="172" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="1818770337282929174" varName="parameter_5" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="210" startPosition="0" endLine="236" endPosition="0">
+    <scopeInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="203" startPosition="0" endLine="229" endPosition="0">
       <varInfo nodeId="1818770337282929219" varName="parameter_5" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="241" startPosition="0" endLine="267" endPosition="0">
+    <scopeInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="234" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="1818770337282929228" varName="parameter_5" />
     </scopeInfo>
     <scopeInfo nodeId="1818770337282929031" fileName="OverrideConceptMethodsHelper.java" startLine="58" startPosition="55" endLine="88" endPosition="5">
       <varInfo nodeId="1818770337282929134" varName="defaultExpr" />
       <varInfo nodeId="1818770337282929062" varName="isInterfaceMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="142" startPosition="90" endLine="172" endPosition="20">
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="135" startPosition="90" endLine="165" endPosition="20">
       <varInfo nodeId="1818770337282929329" varName="_parameterValues_129834374" />
       <varInfo nodeId="1818770337282929329" varName="quotedNode_1" />
       <varInfo nodeId="1818770337282929329" varName="quotedNode_2" />
@@ -6083,18 +6075,18 @@
       <varInfo nodeId="1818770337282929201" varName="baseMethod" />
       <varInfo nodeId="1818770337282929199" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="141" startPosition="0" endLine="174" endPosition="0">
+    <scopeInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="134" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="1818770337282929329" varName="parameter_10" />
       <varInfo nodeId="1818770337282929329" varName="parameter_8" />
       <varInfo nodeId="1818770337282929329" varName="parameter_9" />
     </scopeInfo>
-    <unitInfo nodeId="1818770337282928852" fileName="OverrideConceptMethodsHelper.java" startLine="23" startPosition="0" endLine="269" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper" />
+    <unitInfo nodeId="1818770337282928852" fileName="OverrideConceptMethodsHelper.java" startLine="23" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper" />
     <unitInfo nodeId="1818770337282929317" fileName="OverrideConceptMethodsHelper.java" startLine="74" startPosition="122" endLine="78" endPosition="7" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$1" />
-    <unitInfo nodeId="1818770337282929320" fileName="OverrideConceptMethodsHelper.java" startLine="113" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a0a0a0c0a4a1" />
-    <unitInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="176" startPosition="0" endLine="206" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a0a0a0g0b" />
-    <unitInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="238" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a0a2a2" />
-    <unitInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="207" startPosition="0" endLine="237" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a0c0c" />
-    <unitInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="138" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a3a0e0b" />
+    <unitInfo nodeId="7842675415983046477" fileName="OverrideConceptMethodsHelper.java" startLine="113" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a0a0a0c0a4a1" />
+    <unitInfo nodeId="1818770337282929174" fileName="OverrideConceptMethodsHelper.java" startLine="169" startPosition="0" endLine="199" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a0a0a0g0b" />
+    <unitInfo nodeId="1818770337282929228" fileName="OverrideConceptMethodsHelper.java" startLine="231" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a0a2a2" />
+    <unitInfo nodeId="1818770337282929219" fileName="OverrideConceptMethodsHelper.java" startLine="200" startPosition="0" endLine="230" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a0c0c" />
+    <unitInfo nodeId="1818770337282929329" fileName="OverrideConceptMethodsHelper.java" startLine="131" startPosition="0" endLine="168" endPosition="0" unitName="jetbrains.mps.ide.actions.OverrideConceptMethodsHelper$QuotationClass_7wts1u_a0a3a0e0b" />
   </root>
   <root nodeId="1942098792227670965">
     <nodeInfo nodeId="1942098792227670965" fileName="ShowModuleDependencyLoop_Action.java" startLine="20" startPosition="65" endLine="21" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -8218,8 +8210,8 @@
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -13225,7 +13217,9 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="3" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="43" startPosition="87" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="104" startPosition="59" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="80" startPosition="26" endLine="86" endPosition="9" />
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="80" startPosition="26" endLine="86" endPosition="9">
+      <varInfo nodeId="7889360268649425705" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="118" startPosition="111" endLine="124" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />
