@@ -48,10 +48,13 @@ public abstract class BaseMethodsScope extends Scope {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       }
     })) {
-      if (MapSequence.fromMap(nameToMethods).containsKey(SPropertyOperations.getString(node, "name"))) {
-        ListSequence.fromList(MapSequence.fromMap(nameToMethods).get(SPropertyOperations.getString(node, "name"))).addElement(node);
-      } else {
-        MapSequence.fromMap(nameToMethods).put(SPropertyOperations.getString(node, "name"), ListSequence.fromListAndArray(new ArrayList(), node));
+      String name = SPropertyOperations.getString(node, "name");
+      if (name != null) {
+        if (MapSequence.fromMap(nameToMethods).containsKey(name)) {
+          ListSequence.fromList(MapSequence.fromMap(nameToMethods).get(name)).addElement(node);
+        } else {
+          MapSequence.fromMap(nameToMethods).put(name, ListSequence.fromListAndArray(new ArrayList(), node));
+        }
       }
     }
   }
