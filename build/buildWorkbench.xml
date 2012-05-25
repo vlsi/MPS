@@ -249,7 +249,7 @@
   
   <target name="java.compile.mps-workbench" depends="java.compile.uiLanguage.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-workbench" />
-    <javac destdir="${build.tmp}/java/out/mps-workbench" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/mps-workbench" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/workbench/mps-workbench/source" />

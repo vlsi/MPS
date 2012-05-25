@@ -19,7 +19,7 @@
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildExecution" location="${build.dir}/artifacts/buildExecution" />
   <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
-  <property name="artifacts.buildUILanguages" location="${build.dir}/artifacts/buildUILanguages" />
+  <property name="artifacts.buildExperimental" location="${build.dir}/artifacts/buildExperimental" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.buildBuildUI" location="${build.dir}/artifacts/buildBuildUI" />
@@ -137,7 +137,7 @@
       <fileset dir="${artifacts.buildObsolete}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
-      <fileset dir="${artifacts.buildUILanguages}/plugins" />
+      <fileset dir="${artifacts.buildExperimental}/plugins" />
     </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">
@@ -182,7 +182,7 @@
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecution.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildUILanguages.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildExperimental.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
