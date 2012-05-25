@@ -706,59 +706,50 @@
     <nodeInfo nodeId="5012303891251463380" fileName="RefactoringOptionsDialog.java" startLine="40" startPosition="42" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5012303891251463386" fileName="RefactoringOptionsDialog.java" startLine="41" startPosition="18" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5012303891251463392" fileName="RefactoringOptionsDialog.java" startLine="42" startPosition="18" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2992466356732700334" fileName="RefactoringOptionsDialog.java" startLine="43" startPosition="44" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463403" fileName="RefactoringOptionsDialog.java" startLine="45" startPosition="56" endLine="46" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463409" fileName="RefactoringOptionsDialog.java" startLine="46" startPosition="89" endLine="47" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463416" fileName="RefactoringOptionsDialog.java" startLine="47" startPosition="68" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463422" fileName="RefactoringOptionsDialog.java" startLine="48" startPosition="45" endLine="49" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463429" fileName="RefactoringOptionsDialog.java" startLine="51" startPosition="32" endLine="52" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463435" fileName="RefactoringOptionsDialog.java" startLine="52" startPosition="92" endLine="53" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463441" fileName="RefactoringOptionsDialog.java" startLine="53" startPosition="52" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463446" fileName="RefactoringOptionsDialog.java" startLine="54" startPosition="49" endLine="55" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463450" fileName="RefactoringOptionsDialog.java" startLine="56" startPosition="5" endLine="57" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463463" fileName="RefactoringOptionsDialog.java" startLine="57" startPosition="18" endLine="58" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251463471" fileName="RefactoringOptionsDialog.java" startLine="58" startPosition="59" endLine="59" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2992466356732700267" fileName="RefactoringOptionsDialog.java" startLine="62" startPosition="43" endLine="63" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2992466356732700190" fileName="RefactoringOptionsDialog.java" startLine="63" startPosition="51" endLine="64" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2992466356732700195" fileName="RefactoringOptionsDialog.java" startLine="64" startPosition="52" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2992466356732700201" fileName="RefactoringOptionsDialog.java" startLine="65" startPosition="16" endLine="66" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2992466356732700207" fileName="RefactoringOptionsDialog.java" startLine="66" startPosition="42" endLine="67" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2992466356732700213" fileName="RefactoringOptionsDialog.java" startLine="67" startPosition="18" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2992466356732700219" fileName="RefactoringOptionsDialog.java" startLine="68" startPosition="18" endLine="69" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2992466356732700284" fileName="RefactoringOptionsDialog.java" startLine="69" startPosition="44" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2992466356732700328" fileName="RefactoringOptionsDialog.java" startLine="70" startPosition="56" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5012303891251466081" fileName="RefactoringOptionsDialog.java" startLine="74" startPosition="32" endLine="75" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5012303891251466087" fileName="RefactoringOptionsDialog.java" startLine="78" startPosition="31" endLine="79" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251466096" fileName="RefactoringOptionsDialog.java" startLine="80" startPosition="56" endLine="81" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251466115" fileName="RefactoringOptionsDialog.java" startLine="83" startPosition="43" endLine="84" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251466109" fileName="RefactoringOptionsDialog.java" startLine="85" startPosition="12" endLine="86" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251466122" fileName="RefactoringOptionsDialog.java" startLine="87" startPosition="5" endLine="88" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251466129" fileName="RefactoringOptionsDialog.java" startLine="91" startPosition="34" endLine="92" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5012303891251466138" fileName="RefactoringOptionsDialog.java" startLine="98" startPosition="45" endLine="99" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6193323012353279089" fileName="RefactoringOptionsDialog.java" startLine="102" startPosition="121" endLine="103" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6193323012353279092" fileName="RefactoringOptionsDialog.java" startLine="103" startPosition="36" endLine="104" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6193323012353279096" fileName="RefactoringOptionsDialog.java" startLine="104" startPosition="46" endLine="105" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6193323012353279100" fileName="RefactoringOptionsDialog.java" startLine="105" startPosition="32" endLine="106" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6193323012353279134" fileName="RefactoringOptionsDialog.java" startLine="106" startPosition="48" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5012303891251466107" fileName="RefactoringOptionsDialog.java" startLine="85" startPosition="10" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5012303891251466091" fileName="RefactoringOptionsDialog.java" startLine="79" startPosition="26" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5278411831587058101" fileName="RefactoringOptionsDialog.java" startLine="43" startPosition="44" endLine="44" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2992466356732700334" fileName="RefactoringOptionsDialog.java" startLine="44" startPosition="63" endLine="45" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463403" fileName="RefactoringOptionsDialog.java" startLine="46" startPosition="56" endLine="47" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463409" fileName="RefactoringOptionsDialog.java" startLine="47" startPosition="89" endLine="48" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463416" fileName="RefactoringOptionsDialog.java" startLine="48" startPosition="68" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463422" fileName="RefactoringOptionsDialog.java" startLine="49" startPosition="45" endLine="50" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463429" fileName="RefactoringOptionsDialog.java" startLine="52" startPosition="32" endLine="53" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463435" fileName="RefactoringOptionsDialog.java" startLine="53" startPosition="92" endLine="54" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463441" fileName="RefactoringOptionsDialog.java" startLine="54" startPosition="52" endLine="55" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463446" fileName="RefactoringOptionsDialog.java" startLine="55" startPosition="49" endLine="56" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463450" fileName="RefactoringOptionsDialog.java" startLine="57" startPosition="5" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463463" fileName="RefactoringOptionsDialog.java" startLine="58" startPosition="18" endLine="59" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251463471" fileName="RefactoringOptionsDialog.java" startLine="59" startPosition="59" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5012303891251466081" fileName="RefactoringOptionsDialog.java" startLine="63" startPosition="32" endLine="64" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5012303891251466087" fileName="RefactoringOptionsDialog.java" startLine="67" startPosition="31" endLine="68" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251466096" fileName="RefactoringOptionsDialog.java" startLine="69" startPosition="56" endLine="70" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251466115" fileName="RefactoringOptionsDialog.java" startLine="72" startPosition="43" endLine="73" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251466109" fileName="RefactoringOptionsDialog.java" startLine="74" startPosition="12" endLine="75" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251466122" fileName="RefactoringOptionsDialog.java" startLine="76" startPosition="5" endLine="77" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251466129" fileName="RefactoringOptionsDialog.java" startLine="80" startPosition="34" endLine="81" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5012303891251466138" fileName="RefactoringOptionsDialog.java" startLine="87" startPosition="45" endLine="88" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6193323012353279089" fileName="RefactoringOptionsDialog.java" startLine="91" startPosition="121" endLine="92" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6193323012353279092" fileName="RefactoringOptionsDialog.java" startLine="92" startPosition="36" endLine="93" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6193323012353279096" fileName="RefactoringOptionsDialog.java" startLine="93" startPosition="46" endLine="94" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6193323012353279100" fileName="RefactoringOptionsDialog.java" startLine="94" startPosition="32" endLine="95" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6193323012353279134" fileName="RefactoringOptionsDialog.java" startLine="95" startPosition="48" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5012303891251466107" fileName="RefactoringOptionsDialog.java" startLine="74" startPosition="10" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5012303891251466091" fileName="RefactoringOptionsDialog.java" startLine="68" startPosition="26" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6193323012353274079" fileName="RefactoringOptionsDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringOptionsDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/refactoring/framework/IRefactoring;Z)V" />
-    <nodeInfo nodeId="5012303891251466077" fileName="RefactoringOptionsDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCancelled#()Z" />
-    <nodeInfo nodeId="5012303891251466125" fileName="RefactoringOptionsDialog.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needToBeShown#()Z" />
-    <nodeInfo nodeId="5012303891251466103" fileName="RefactoringOptionsDialog.java" startLine="82" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5012303891251463398" fileName="RefactoringOptionsDialog.java" startLine="44" startPosition="38" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5012303891251463426" fileName="RefactoringOptionsDialog.java" startLine="50" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5012303891251466134" fileName="RefactoringOptionsDialog.java" startLine="94" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6193323012353279082" fileName="RefactoringOptionsDialog.java" startLine="101" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initDialog#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/refactoring/framework/IRefactoring;Z)V" />
-    <nodeInfo nodeId="2992466356732700131" fileName="RefactoringOptionsDialog.java" startLine="61" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNorthPanel#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="5012303891251466083" fileName="RefactoringOptionsDialog.java" startLine="77" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
-    <nodeInfo nodeId="5012303891251463352" fileName="RefactoringOptionsDialog.java" startLine="35" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="5012303891251466080" fileName="RefactoringOptionsDialog.java" startLine="74" startPosition="32" endLine="75" endPosition="25" />
-    <scopeInfo nodeId="5012303891251466095" fileName="RefactoringOptionsDialog.java" startLine="80" startPosition="56" endLine="81" endPosition="68" />
-    <scopeInfo nodeId="5012303891251466114" fileName="RefactoringOptionsDialog.java" startLine="83" startPosition="43" endLine="84" endPosition="88" />
-    <scopeInfo nodeId="5012303891251466108" fileName="RefactoringOptionsDialog.java" startLine="85" startPosition="12" endLine="86" endPosition="56" />
-    <scopeInfo nodeId="5012303891251466128" fileName="RefactoringOptionsDialog.java" startLine="91" startPosition="34" endLine="92" endPosition="27" />
-    <scopeInfo nodeId="5012303891251466137" fileName="RefactoringOptionsDialog.java" startLine="98" startPosition="45" endLine="99" endPosition="32" />
+    <nodeInfo nodeId="5012303891251466077" fileName="RefactoringOptionsDialog.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCancelled#()Z" />
+    <nodeInfo nodeId="5012303891251466125" fileName="RefactoringOptionsDialog.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="needToBeShown#()Z" />
+    <nodeInfo nodeId="5012303891251466103" fileName="RefactoringOptionsDialog.java" startLine="71" startPosition="5" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5012303891251463398" fileName="RefactoringOptionsDialog.java" startLine="45" startPosition="38" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5012303891251463426" fileName="RefactoringOptionsDialog.java" startLine="51" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5012303891251466134" fileName="RefactoringOptionsDialog.java" startLine="83" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDimensionServiceKey#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6193323012353279082" fileName="RefactoringOptionsDialog.java" startLine="90" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initDialog#(Ljetbrains/mps/refactoring/framework/RefactoringContext;Ljetbrains/mps/refactoring/framework/IRefactoring;Z)V" />
+    <nodeInfo nodeId="5012303891251466083" fileName="RefactoringOptionsDialog.java" startLine="66" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doOKAction#()V" />
+    <nodeInfo nodeId="5012303891251463352" fileName="RefactoringOptionsDialog.java" startLine="35" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCenterPanel#()Ljavax/swing/JComponent;" />
+    <scopeInfo nodeId="5012303891251466080" fileName="RefactoringOptionsDialog.java" startLine="63" startPosition="32" endLine="64" endPosition="25" />
+    <scopeInfo nodeId="5012303891251466095" fileName="RefactoringOptionsDialog.java" startLine="69" startPosition="56" endLine="70" endPosition="68" />
+    <scopeInfo nodeId="5012303891251466114" fileName="RefactoringOptionsDialog.java" startLine="72" startPosition="43" endLine="73" endPosition="88" />
+    <scopeInfo nodeId="5012303891251466108" fileName="RefactoringOptionsDialog.java" startLine="74" startPosition="12" endLine="75" endPosition="56" />
+    <scopeInfo nodeId="5012303891251466128" fileName="RefactoringOptionsDialog.java" startLine="80" startPosition="34" endLine="81" endPosition="27" />
+    <scopeInfo nodeId="5012303891251466137" fileName="RefactoringOptionsDialog.java" startLine="87" startPosition="45" endLine="88" endPosition="32" />
     <scopeInfo nodeId="6193323012353274082" fileName="RefactoringOptionsDialog.java" startLine="31" startPosition="146" endLine="33" endPosition="69" />
     <scopeInfo nodeId="6193323012353274079" fileName="RefactoringOptionsDialog.java" startLine="30" startPosition="0" endLine="34" endPosition="3">
       <varInfo nodeId="6193323012353274109" varName="hasModelsToGenerate" />
@@ -766,29 +757,24 @@
       <varInfo nodeId="6193323012353274107" varName="refactoring" />
       <varInfo nodeId="6193323012353274105" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5012303891251463402" fileName="RefactoringOptionsDialog.java" startLine="45" startPosition="56" endLine="49" endPosition="29" />
-    <scopeInfo nodeId="5012303891251463428" fileName="RefactoringOptionsDialog.java" startLine="51" startPosition="32" endLine="55" endPosition="29" />
-    <scopeInfo nodeId="5012303891251466077" fileName="RefactoringOptionsDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="5012303891251466125" fileName="RefactoringOptionsDialog.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="6193323012353279088" fileName="RefactoringOptionsDialog.java" startLine="102" startPosition="121" endLine="107" endPosition="11" />
-    <scopeInfo nodeId="5012303891251466134" fileName="RefactoringOptionsDialog.java" startLine="94" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="6193323012353279082" fileName="RefactoringOptionsDialog.java" startLine="101" startPosition="0" endLine="109" endPosition="0">
+    <scopeInfo nodeId="5012303891251463402" fileName="RefactoringOptionsDialog.java" startLine="46" startPosition="56" endLine="50" endPosition="29" />
+    <scopeInfo nodeId="5012303891251463428" fileName="RefactoringOptionsDialog.java" startLine="52" startPosition="32" endLine="56" endPosition="29" />
+    <scopeInfo nodeId="5012303891251466077" fileName="RefactoringOptionsDialog.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="5012303891251466125" fileName="RefactoringOptionsDialog.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="6193323012353279088" fileName="RefactoringOptionsDialog.java" startLine="91" startPosition="121" endLine="96" endPosition="11" />
+    <scopeInfo nodeId="5012303891251466134" fileName="RefactoringOptionsDialog.java" startLine="83" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="6193323012353279082" fileName="RefactoringOptionsDialog.java" startLine="90" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="6193323012353279081" varName="hasModelsToGenerate" />
       <varInfo nodeId="6193323012353279080" varName="refactoring" />
       <varInfo nodeId="6193323012353279079" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2992466356732700134" fileName="RefactoringOptionsDialog.java" startLine="62" startPosition="43" endLine="71" endPosition="17">
-      <varInfo nodeId="2992466356732700191" varName="c" />
-      <varInfo nodeId="2992466356732700268" varName="panel" />
-    </scopeInfo>
-    <scopeInfo nodeId="5012303891251466086" fileName="RefactoringOptionsDialog.java" startLine="78" startPosition="31" endLine="88" endPosition="24" />
-    <scopeInfo nodeId="2992466356732700131" fileName="RefactoringOptionsDialog.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5012303891251466083" fileName="RefactoringOptionsDialog.java" startLine="77" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="5012303891251463355" fileName="RefactoringOptionsDialog.java" startLine="36" startPosition="44" endLine="59" endPosition="24">
+    <scopeInfo nodeId="5012303891251466086" fileName="RefactoringOptionsDialog.java" startLine="67" startPosition="31" endLine="77" endPosition="24" />
+    <scopeInfo nodeId="5012303891251466083" fileName="RefactoringOptionsDialog.java" startLine="66" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="5012303891251463355" fileName="RefactoringOptionsDialog.java" startLine="36" startPosition="44" endLine="60" endPosition="24">
       <varInfo nodeId="5012303891251463364" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="5012303891251463352" fileName="RefactoringOptionsDialog.java" startLine="35" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="2632304431905415118" fileName="RefactoringOptionsDialog.java" startLine="21" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog" />
+    <scopeInfo nodeId="5012303891251463352" fileName="RefactoringOptionsDialog.java" startLine="35" startPosition="0" endLine="62" endPosition="0" />
+    <unitInfo nodeId="2632304431905415118" fileName="RefactoringOptionsDialog.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.ide.platform.refactoring.RefactoringOptionsDialog" />
   </root>
   <root nodeId="3748064186690605985">
     <nodeInfo nodeId="2482360940803570307" fileName="RefactoringViewAction.java" startLine="6" startPosition="40" endLine="7" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />

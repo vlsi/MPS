@@ -11,10 +11,10 @@ import com.intellij.openapi.project.Project;
 import javax.swing.JComponent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import javax.swing.JLabel;
 import java.awt.Insets;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import java.awt.Dimension;
-import javax.swing.JLabel;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 
@@ -41,6 +41,7 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     c.weightx = 1;
     c.weighty = 0;
     c.anchor = GridBagConstraints.NORTHWEST;
+    myInnerPanel.add(new JLabel("Set refactoring options"), c);
     c.insets = new Insets(0, 3, 0, 0);
     if (myRefactoring instanceof ILoggableRefactoring) {
       myIsLocalCheckBox = new JCheckBox("is local (write refactoring history into log)");
@@ -57,18 +58,6 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     c.weighty = 1;
     myInnerPanel.setPreferredSize(new Dimension(300, 250));
     return myInnerPanel;
-  }
-
-  protected JComponent createNorthPanel() {
-    JPanel panel = new JPanel(new GridBagLayout());
-    GridBagConstraints c = new GridBagConstraints();
-    c.gridx = 0;
-    c.gridy = GridBagConstraints.RELATIVE;
-    c.weightx = 1;
-    c.weighty = 0;
-    c.anchor = GridBagConstraints.NORTHWEST;
-    panel.add(new JLabel("Set refactoring options"), c);
-    return panel;
   }
 
   public boolean isCancelled() {
