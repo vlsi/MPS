@@ -238,9 +238,6 @@
       <modulePath path="${project}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/pluginSolution.msd" folder="mpslite" />
       <modulePath path="${project}/languages/util/mps-lite/languages/nanoj/nanoj.mpl" folder="samples" />
       <modulePath path="${project}/languages/util/mps-lite/solutions/mpslite.sandbox/mpslite.sandbox.msd" folder="mpslite" />
-      <modulePath path="${project}/languages/util/quickQueryLanguage/quickQueryLanguage.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/util/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="core.language-design" />
-      <modulePath path="${project}/languages/util/quickQueryLanguage/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/util/regexp/regexp.mpl" folder="baseLanguage.regexp" />
       <modulePath path="${project}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/jetbrains.mps.baseLanguage.regexp.runtime.msd" folder="baseLanguage.regexp" />
       <modulePath path="${project}/languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd" folder="baseLanguage.regexp" />
@@ -355,6 +352,9 @@
       <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/languageDescriptor.mpl" folder="languages.xml" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/jetbrains.mps.xml.sandbox/jetbrains.mps.xml.sandbox.msd" folder="languages.xml" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/pluginSolution/pluginSolution.msd" folder="languages.xml" />
+      <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/quickQueryLanguage.mpl" folder="core.language-design" />
+      <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="core.language-design" />
+      <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />
