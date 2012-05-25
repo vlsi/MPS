@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7tu8hzj5k6v69aci88il5c76by2osoz">
+<dependencies version="2" modelHash="-3fwdmqe6c4t2uh1t77ixtevd20fuat3">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="-4iv38643b336rgds590u3shyjqnrivh" />
@@ -29,7 +29,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildCore.xml" />
   </source>
-  <source id="2569834391839970845" name="buildWorkbench" hash="bzjvdgihlyxwcezkvykkman61h0i32w">
+  <source id="2569834391839970845" name="buildWorkbench" hash="-cqcdidky55qr5rqjfeh7u9n75arjucu">
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -249,9 +249,8 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildConnectorPlugin.xml" />
   </source>
-  <source id="5970299968953599871" name="buildCoreUI" hash="-493cp6z9u3tf3f32z0ekce5q8sh6z25">
+  <source id="5970299968953599871" name="buildCoreUI" hash="-241khigtgv2ien6og1a2h87756pizwu">
     <dep root="2569834391839970845" />
-    <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -312,8 +311,9 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildDates.xml" />
   </source>
-  <source id="5548512857136492214" name="buildDevKit" hash="1cw4xvilrezdiupcx883eazyo0p3orv">
+  <source id="5548512857136492214" name="buildDevKit" hash="1dxdnmcgi5e62ashs0v7z3dfj5nl3tm">
     <dep root="2569834391839970845" />
+    <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
