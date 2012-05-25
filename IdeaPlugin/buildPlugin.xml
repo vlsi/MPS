@@ -227,6 +227,7 @@
       <src>
         <path location="${mps_home}/plugins/vcs/common/source" />
         <path location="${mps_home}/plugins/vcs/common/source_gen" />
+        <path location="${mps_home}/IdeaPlugin/mps-vcs/source" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -255,6 +256,7 @@
     <copy todir="${build.tmp}/java/out/mps-vcs-platform">
       <fileset dir="${mps_home}/plugins/vcs/common/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/vcs/common/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/mps-vcs/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
