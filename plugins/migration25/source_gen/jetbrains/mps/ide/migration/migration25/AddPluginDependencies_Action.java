@@ -14,13 +14,13 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -56,30 +56,17 @@ public class AddPluginDependencies_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModuleReference pluginRef = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("28f9e497-3b42-4291-aeba-0a1039153ab1")).getModuleReference();
       ModuleReference standaloneRef = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ef7bf5ac-d06c-4342-b11d-e42104eb9343")).getModuleReference();
-      for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class))) {
-        if (!(module.getUsedLanguagesReferences().contains(pluginRef))) {
-          continue;
-        }
-        if (module.getUsedLanguagesReferences().contains(standaloneRef)) {
+      for (Language lang : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(Language.class))) {
+        DefaultSModelDescriptor aspect = LanguageAspect.PLUGIN.get(lang);
+        if (aspect == null) {
           continue;
         }
 
-        for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
-          if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
-            continue;
-          }
-          if (!(model.getSModel().importedLanguages().contains(pluginRef))) {
-            continue;
-          }
-          if (model.getSModel().importedLanguages().contains(standaloneRef)) {
-            continue;
-          }
-          SModelOperations.createNewRootNode(((SModel) model.getSModel()), "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor", null);
-          model.getSModel().addLanguage(standaloneRef);
-          model.getModule().addDependency(standaloneRef, false);
-        }
+        lang.addDependency(standaloneRef, false);
+        SModel model = aspect.getSModel();
+        model.addLanguage(standaloneRef);
+        SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor", null);
       }
       SModelRepository.getInstance().saveAll();
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
