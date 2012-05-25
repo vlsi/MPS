@@ -205,17 +205,6 @@ public class Generator extends AbstractModule {
     return null;
   }
 
-  @Override
-  public Collection<ModuleReference> getUsedLanguagesReferences() {
-    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>(super.getUsedLanguagesReferences());
-    for (Language l : LibraryInitializer.getInstance().getBootstrapModules(Language.class)) {
-      if (!result.contains(l.getModuleReference())) {
-        result.add(l.getModuleReference());
-      }
-    }
-    return result;
-  }
-
   public String getGeneratorOutputPath() {
     return mySourceLanguage.getGeneratorOutputPath();
   }
