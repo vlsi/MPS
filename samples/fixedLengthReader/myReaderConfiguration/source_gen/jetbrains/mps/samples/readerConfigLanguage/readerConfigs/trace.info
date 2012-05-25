@@ -33,6 +33,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="18" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="27" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="1127341420738" fileName="Config1.xml" startLine="1" startPosition="0" endLine="14" endPosition="22" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
     <unitInfo nodeId="1127341420738" fileName="Config1.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
   </root>
 </debugInfo>
