@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-9ykke33lvkea0nj647jv6p7gz6f7tey">
+<dependencies version="2" modelHash="duu2096qj31kpzac84tbklt2et070qu">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="-4iv38643b336rgds590u3shyjqnrivh" />
@@ -91,7 +91,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildExecution.xml" />
   </source>
-  <source id="4301118715654819483" name="buildUtilLanguages" hash="cn63achbrehs5elpxxed69gmzcgj6g9">
+  <source id="4301118715654819483" name="buildUtilLanguages" hash="ccidcwtwz3utuee17ss0j32a9aq8beb">
     <dep root="2569834391839970845" />
     <dep root="7926701909975931624" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -281,9 +281,8 @@
     <dep model="r:00000000-0000-4000-0000-011c89590576(jetbrains.mps.gtext.generator.baseLanguage.template.main@generator)" />
     <file name="installer.nsi" />
   </source>
-  <source id="4197214709894135186" name="buildObsolete" hash="-4uv5l2dpfsbxvbtl7wv7kgcvxfiizsq">
+  <source id="4197214709894135186" name="buildObsolete" hash="30f1d3ga5irqpyd7ne5cnlg3ic9f7xu">
     <dep root="2569834391839970845" />
-    <dep root="4301118715654819483" />
     <dep root="6164334420696839314" />
     <dep root="6361939271669846483" />
     <dep root="6503539749405386437" />
