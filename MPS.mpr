@@ -211,7 +211,6 @@
       <modulePath path="${project}/languages/util/dates/dates.mpl" folder="baseLanguage.dates" />
       <modulePath path="${project}/languages/util/dates/internal/internal.mpl" folder="baseLanguage.dates" />
       <modulePath path="${project}/languages/util/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" folder="baseLanguage.dates" />
-      <modulePath path="${project}/languages/util/dates/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage.dates" />
       <modulePath path="${project}/languages/util/dates/unittest/dates.msd" folder="baseLanguage.dates" />
       <modulePath path="${project}/languages/util/extensionMethod/methodExtension.mpl" folder="baseLanguage.extensionMethods" />
       <modulePath path="${project}/languages/util/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/jetbrains.mps.baseLanguage.extensionMethods.sandbox.msd" folder="baseLanguage.extensionMethods" />
