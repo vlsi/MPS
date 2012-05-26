@@ -19,10 +19,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +36,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 
 public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1227089025593");
-  private static SNodePointer breakingNode_guz8cy_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "5629249995614139014");
+  private static SNodePointer breakingNode_guz8cy_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "7966406217186699970");
+  private static SNodePointer breakingNode_guz8cy_a0a1a0a0a1a0b0a2a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "5629249995614139014");
 
   public ConceptConstraints_Constraints() {
     super("jetbrains.mps.lang.constraints.structure.ConceptConstraints");
@@ -85,6 +92,39 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
+    references.put("concept", new BaseReferenceConstraintsDescriptor("concept", this) {
+      @Override
+      public boolean hasOwnScopeProvider() {
+        return true;
+      }
+
+      @Nullable
+      @Override
+      public ReferenceScopeProvider getScopeProvider() {
+        return new BaseScopeProvider() {
+          @Override
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_guz8cy_a0a0a0a0a1a0b0a1a3;
+          }
+
+          @Override
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              if (!(LanguageAspect.CONSTRAINTS.is(_context.getModel()))) {
+                return new EmptyScope();
+              }
+
+              SModel structure = check_guz8cy_a0c0a0(check_guz8cy_a0a2a0a(Language.getLanguageForLanguageAspect(_context.getModel().getModelDescriptor())));
+              if (structure == null) {
+                return new EmptyScope();
+              }
+
+              return new NamedElementsScope(SModelOperations.getRoots(structure, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
+            }
+          }
+        };
+      }
+    });
     references.put("defaultConcreteConcept", new BaseReferenceConstraintsDescriptor("defaultConcreteConcept", this) {
       @Override
       public boolean hasOwnScopeProvider() {
@@ -113,7 +153,7 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_guz8cy_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_guz8cy_a0a1a0a0a1a0b0a2a3;
           }
         };
       }
@@ -123,5 +163,19 @@ public class ConceptConstraints_Constraints extends BaseConstraintsDescriptor {
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.CONSTRAINTS.is(model);
+  }
+
+  private static SModel check_guz8cy_a0c0a0(DefaultSModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
+  }
+
+  private static DefaultSModelDescriptor check_guz8cy_a0a2a0a(Language checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getStructureModelDescriptor();
+    }
+    return null;
   }
 }
