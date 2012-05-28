@@ -235,7 +235,9 @@
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="97" startPosition="25" endLine="102" endPosition="5" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="97" startPosition="25" endLine="102" endPosition="5">
+      <varInfo nodeId="1204026592280" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="111" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="124" startPosition="0" endLine="130" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="157" startPosition="0" endLine="163" endPosition="0">
@@ -286,7 +288,7 @@
     <nodeInfo nodeId="1204027376133" fileName="NewDevKitDialogContentPane.java" startLine="56" startPosition="29" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237027964719" fileName="NewDevKitDialogContentPane.java" startLine="57" startPosition="28" endLine="58" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237027964724" fileName="NewDevKitDialogContentPane.java" startLine="58" startPosition="44" endLine="59" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4015801747712977594" fileName="NewDevKitDialogContentPane.java" startLine="183" startPosition="27" endLine="184" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4015801747712977594" fileName="NewDevKitDialogContentPane.java" startLine="183" startPosition="27" endLine="184" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4015801747712977603" fileName="NewDevKitDialogContentPane.java" startLine="185" startPosition="26" endLine="186" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4015801747712977605" fileName="NewDevKitDialogContentPane.java" startLine="186" startPosition="47" endLine="187" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460447788" fileName="NewDevKitDialogContentPane.java" startLine="188" startPosition="5" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -300,7 +302,7 @@
     <nodeInfo nodeId="4543209876460447836" fileName="NewDevKitDialogContentPane.java" startLine="197" startPosition="63" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/project/structure/modules/ModuleDescriptor;)V" />
     <nodeInfo nodeId="1204027191787" fileName="NewDevKitDialogContentPane.java" startLine="209" startPosition="41" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1204027305859" fileName="NewDevKitDialogContentPane.java" startLine="214" startPosition="71" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4015801747712977601" fileName="NewDevKitDialogContentPane.java" startLine="184" startPosition="116" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4015801747712977601" fileName="NewDevKitDialogContentPane.java" startLine="184" startPosition="114" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4543209876460447823" fileName="NewDevKitDialogContentPane.java" startLine="193" startPosition="217" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/MPSProject;)Ljetbrains/mps/project/DevKit;" />
     <nodeInfo nodeId="1204027087626" fileName="NewDevKitDialogContentPane.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onCancel#()V" />
     <nodeInfo nodeId="4543209876460447813" fileName="NewDevKitDialogContentPane.java" startLine="192" startPosition="28" endLine="200" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
