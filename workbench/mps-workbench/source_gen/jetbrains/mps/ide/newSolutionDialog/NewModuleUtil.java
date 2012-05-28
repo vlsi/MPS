@@ -46,7 +46,7 @@ public class NewModuleUtil {
   }
 
   public static String check(String extension, String namespace, String rootPath) {
-    if (!(SourceVersion.isName(namespace))) {
+    if (!extension.equals(MPSExtentions.DOT_DEVKIT) && !(SourceVersion.isName(namespace))) {
       return "Module namespace should be valid Java package";
     }
     if (rootPath.length() == 0) {
