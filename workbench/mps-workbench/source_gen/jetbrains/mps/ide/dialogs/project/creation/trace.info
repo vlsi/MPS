@@ -300,53 +300,54 @@
     <nodeInfo nodeId="1613125646032873184" fileName="NewGeneratorDialog.java" startLine="178" startPosition="51" endLine="179" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032873191" fileName="NewGeneratorDialog.java" startLine="179" startPosition="68" endLine="180" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032873198" fileName="NewGeneratorDialog.java" startLine="180" startPosition="64" endLine="181" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8978606230572474218" fileName="NewGeneratorDialog.java" startLine="181" startPosition="176" endLine="182" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1613125646032873205" fileName="NewGeneratorDialog.java" startLine="182" startPosition="176" endLine="183" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1613125646032873212" fileName="NewGeneratorDialog.java" startLine="183" startPosition="64" endLine="184" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8978606230572474873" fileName="NewGeneratorDialog.java" startLine="186" startPosition="25" endLine="187" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2273513587775220371" fileName="NewGeneratorDialog.java" startLine="189" startPosition="7" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2273513587775220372" fileName="NewGeneratorDialog.java" startLine="190" startPosition="0" endLine="191" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1613125646032873250" fileName="NewGeneratorDialog.java" startLine="194" startPosition="66" endLine="195" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1613125646032873264" fileName="NewGeneratorDialog.java" startLine="198" startPosition="85" endLine="199" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1613125646032873279" fileName="NewGeneratorDialog.java" startLine="201" startPosition="63" endLine="202" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1613125646032873283" fileName="NewGeneratorDialog.java" startLine="202" startPosition="40" endLine="203" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8978606230572474845" fileName="NewGeneratorDialog.java" startLine="206" startPosition="35" endLine="207" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1613125646032873288" fileName="NewGeneratorDialog.java" startLine="208" startPosition="5" endLine="209" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1613125646032873309" fileName="NewGeneratorDialog.java" startLine="209" startPosition="236" endLine="210" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1613125646032873351" fileName="NewGeneratorDialog.java" startLine="210" startPosition="63" endLine="211" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1613125646032873356" fileName="NewGeneratorDialog.java" startLine="211" startPosition="148" endLine="212" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1613125646032873361" fileName="NewGeneratorDialog.java" startLine="212" startPosition="66" endLine="213" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1613125646032873368" fileName="NewGeneratorDialog.java" startLine="213" startPosition="70" endLine="214" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8978606230572474218" fileName="NewGeneratorDialog.java" startLine="181" startPosition="176" endLine="182" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5492287215007042962" fileName="NewGeneratorDialog.java" startLine="182" startPosition="178" endLine="183" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1613125646032873205" fileName="NewGeneratorDialog.java" startLine="183" startPosition="178" endLine="184" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1613125646032873212" fileName="NewGeneratorDialog.java" startLine="184" startPosition="64" endLine="185" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8978606230572474873" fileName="NewGeneratorDialog.java" startLine="187" startPosition="25" endLine="188" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2273513587775220371" fileName="NewGeneratorDialog.java" startLine="190" startPosition="7" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2273513587775220372" fileName="NewGeneratorDialog.java" startLine="191" startPosition="0" endLine="192" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1613125646032873250" fileName="NewGeneratorDialog.java" startLine="195" startPosition="66" endLine="196" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1613125646032873264" fileName="NewGeneratorDialog.java" startLine="199" startPosition="85" endLine="200" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1613125646032873279" fileName="NewGeneratorDialog.java" startLine="202" startPosition="63" endLine="203" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1613125646032873283" fileName="NewGeneratorDialog.java" startLine="203" startPosition="40" endLine="204" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8978606230572474845" fileName="NewGeneratorDialog.java" startLine="207" startPosition="35" endLine="208" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1613125646032873288" fileName="NewGeneratorDialog.java" startLine="209" startPosition="5" endLine="210" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1613125646032873309" fileName="NewGeneratorDialog.java" startLine="210" startPosition="236" endLine="211" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1613125646032873351" fileName="NewGeneratorDialog.java" startLine="211" startPosition="63" endLine="212" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1613125646032873356" fileName="NewGeneratorDialog.java" startLine="212" startPosition="148" endLine="213" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1613125646032873361" fileName="NewGeneratorDialog.java" startLine="213" startPosition="66" endLine="214" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1613125646032873368" fileName="NewGeneratorDialog.java" startLine="214" startPosition="70" endLine="215" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032872731" fileName="NewGeneratorDialog.java" startLine="63" startPosition="37" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1613125646032873389" fileName="NewGeneratorDialog.java" startLine="92" startPosition="58" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1613125646032873414" fileName="NewGeneratorDialog.java" startLine="96" startPosition="44" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1613125646032872971" fileName="NewGeneratorDialog.java" startLine="117" startPosition="39" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1613125646032873027" fileName="NewGeneratorDialog.java" startLine="140" startPosition="5" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1613125646032873284" fileName="NewGeneratorDialog.java" startLine="205" startPosition="5" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1613125646032873284" fileName="NewGeneratorDialog.java" startLine="206" startPosition="5" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1613125646032872739" fileName="NewGeneratorDialog.java" startLine="69" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDefaultDimensionSettings#()Ljetbrains/mps/ide/dialogs/DialogDimensionsSettings/DialogDimensions;" />
     <nodeInfo nodeId="1613125646032872745" fileName="NewGeneratorDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMainComponent#()Ljavax/swing/JComponent;" />
     <nodeInfo nodeId="1613125646032872984" fileName="NewGeneratorDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/smodel/Generator;" />
     <nodeInfo nodeId="1613125646032873000" fileName="NewGeneratorDialog.java" startLine="131" startPosition="62" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1613125646032873017" fileName="NewGeneratorDialog.java" startLine="136" startPosition="50" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1613125646032873043" fileName="NewGeneratorDialog.java" startLine="144" startPosition="50" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8978606230572474871" fileName="NewGeneratorDialog.java" startLine="185" startPosition="57" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1613125646032873244" fileName="NewGeneratorDialog.java" startLine="193" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateModelPrefix#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1613125646032873275" fileName="NewGeneratorDialog.java" startLine="200" startPosition="84" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8978606230572474871" fileName="NewGeneratorDialog.java" startLine="186" startPosition="57" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1613125646032873244" fileName="NewGeneratorDialog.java" startLine="194" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateModelPrefix#(Ljetbrains/mps/smodel/Language;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1613125646032873275" fileName="NewGeneratorDialog.java" startLine="201" startPosition="84" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1613125646032872964" fileName="NewGeneratorDialog.java" startLine="116" startPosition="44" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5049856602248792141" fileName="NewGeneratorDialog.java" startLine="153" startPosition="79" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="1613125646032873115" fileName="NewGeneratorDialog.java" startLine="162" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonCancel#()V" />
     <nodeInfo nodeId="1613125646032873128" fileName="NewGeneratorDialog.java" startLine="167" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="1613125646032873218" fileName="NewGeneratorDialog.java" startLine="184" startPosition="61" endLine="189" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1613125646032873218" fileName="NewGeneratorDialog.java" startLine="185" startPosition="61" endLine="190" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1613125646032872700" fileName="NewGeneratorDialog.java" startLine="55" startPosition="0" endLine="61" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewGeneratorDialog#(Ljava/awt/Frame;Ljetbrains/mps/smodel/Language;)V" />
     <nodeInfo nodeId="5049856602248834912" fileName="NewGeneratorDialog.java" startLine="152" startPosition="81" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1613125646032873268" fileName="NewGeneratorDialog.java" startLine="199" startPosition="45" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1613125646032873268" fileName="NewGeneratorDialog.java" startLine="200" startPosition="45" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1613125646032872725" fileName="NewGeneratorDialog.java" startLine="62" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVisible#(Z)V" />
     <nodeInfo nodeId="1613125646032872919" fileName="NewGeneratorDialog.java" startLine="107" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateTemplateModelsDir#()V" />
     <nodeInfo nodeId="1613125646032872958" fileName="NewGeneratorDialog.java" startLine="115" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidName#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1613125646032872878" fileName="NewGeneratorDialog.java" startLine="88" startPosition="64" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="1613125646032872871" fileName="NewGeneratorDialog.java" startLine="87" startPosition="58" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1613125646032873256" fileName="NewGeneratorDialog.java" startLine="197" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustTemplateModel#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Generator;)V" />
-    <nodeInfo nodeId="1613125646032873137" fileName="NewGeneratorDialog.java" startLine="172" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewGenerator#(Ljetbrains/mps/smodel/Language;Ljava/io/File;Ljava/lang/String;)Ljetbrains/mps/smodel/Generator;" />
+    <nodeInfo nodeId="1613125646032873256" fileName="NewGeneratorDialog.java" startLine="198" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustTemplateModel#(Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Generator;)V" />
+    <nodeInfo nodeId="1613125646032873137" fileName="NewGeneratorDialog.java" startLine="172" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNewGenerator#(Ljetbrains/mps/smodel/Language;Ljava/io/File;Ljava/lang/String;)Ljetbrains/mps/smodel/Generator;" />
     <nodeInfo nodeId="1613125646032872751" fileName="NewGeneratorDialog.java" startLine="77" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initContentPane#()V" />
     <nodeInfo nodeId="1613125646032872990" fileName="NewGeneratorDialog.java" startLine="128" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buttonOK#()V" />
     <scopeInfo nodeId="1613125646032872733" fileName="NewGeneratorDialog.java" startLine="64" startPosition="12" endLine="65" endPosition="13" />
@@ -358,26 +359,26 @@
     <scopeInfo nodeId="1613125646032872987" fileName="NewGeneratorDialog.java" startLine="125" startPosition="32" endLine="126" endPosition="20" />
     <scopeInfo nodeId="1613125646032873032" fileName="NewGeneratorDialog.java" startLine="141" startPosition="26" endLine="142" endPosition="19" />
     <scopeInfo nodeId="1613125646032873118" fileName="NewGeneratorDialog.java" startLine="164" startPosition="30" endLine="165" endPosition="14" />
-    <scopeInfo nodeId="8978606230572474872" fileName="NewGeneratorDialog.java" startLine="186" startPosition="25" endLine="187" endPosition="24" />
-    <scopeInfo nodeId="1613125646032873249" fileName="NewGeneratorDialog.java" startLine="194" startPosition="66" endLine="195" endPosition="68" />
-    <scopeInfo nodeId="8978606230572474842" fileName="NewGeneratorDialog.java" startLine="206" startPosition="35" endLine="207" endPosition="13" />
+    <scopeInfo nodeId="8978606230572474872" fileName="NewGeneratorDialog.java" startLine="187" startPosition="25" endLine="188" endPosition="24" />
+    <scopeInfo nodeId="1613125646032873249" fileName="NewGeneratorDialog.java" startLine="195" startPosition="66" endLine="196" endPosition="68" />
+    <scopeInfo nodeId="8978606230572474842" fileName="NewGeneratorDialog.java" startLine="207" startPosition="35" endLine="208" endPosition="13" />
     <scopeInfo nodeId="1613125646032873006" fileName="NewGeneratorDialog.java" startLine="132" startPosition="43" endLine="134" endPosition="13" />
     <scopeInfo nodeId="1613125646032873022" fileName="NewGeneratorDialog.java" startLine="137" startPosition="30" endLine="139" endPosition="13" />
     <scopeInfo nodeId="1613125646032873047" fileName="NewGeneratorDialog.java" startLine="145" startPosition="31" endLine="147" endPosition="13" />
     <scopeInfo nodeId="5049856602248792142" fileName="NewGeneratorDialog.java" startLine="154" startPosition="28" endLine="156" endPosition="66" />
     <scopeInfo nodeId="1613125646032873131" fileName="NewGeneratorDialog.java" startLine="168" startPosition="25" endLine="170" endPosition="42" />
-    <scopeInfo nodeId="1613125646032873278" fileName="NewGeneratorDialog.java" startLine="201" startPosition="63" endLine="203" endPosition="14" />
+    <scopeInfo nodeId="1613125646032873278" fileName="NewGeneratorDialog.java" startLine="202" startPosition="63" endLine="204" endPosition="14" />
     <scopeInfo nodeId="1613125646032872970" fileName="NewGeneratorDialog.java" startLine="117" startPosition="39" endLine="120" endPosition="7" />
     <scopeInfo nodeId="1613125646032872707" fileName="NewGeneratorDialog.java" startLine="56" startPosition="96" endLine="60" endPosition="22" />
     <scopeInfo nodeId="1613125646032872730" fileName="NewGeneratorDialog.java" startLine="63" startPosition="37" endLine="67" endPosition="24" />
     <scopeInfo nodeId="1613125646032872739" fileName="NewGeneratorDialog.java" startLine="69" startPosition="0" endLine="73" endPosition="0" />
     <scopeInfo nodeId="1613125646032872745" fileName="NewGeneratorDialog.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
     <scopeInfo nodeId="1613125646032872984" fileName="NewGeneratorDialog.java" startLine="124" startPosition="0" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="8978606230572474871" fileName="NewGeneratorDialog.java" startLine="185" startPosition="57" endLine="189" endPosition="0" />
-    <scopeInfo nodeId="1613125646032873244" fileName="NewGeneratorDialog.java" startLine="193" startPosition="0" endLine="197" endPosition="0">
+    <scopeInfo nodeId="8978606230572474871" fileName="NewGeneratorDialog.java" startLine="186" startPosition="57" endLine="190" endPosition="0" />
+    <scopeInfo nodeId="1613125646032873244" fileName="NewGeneratorDialog.java" startLine="194" startPosition="0" endLine="198" endPosition="0">
       <varInfo nodeId="1613125646032873247" varName="sourceLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="1613125646032873274" fileName="NewGeneratorDialog.java" startLine="200" startPosition="84" endLine="204" endPosition="7" />
+    <scopeInfo nodeId="1613125646032873274" fileName="NewGeneratorDialog.java" startLine="201" startPosition="84" endLine="205" endPosition="7" />
     <scopeInfo nodeId="1613125646032872922" fileName="NewGeneratorDialog.java" startLine="108" startPosition="42" endLine="113" endPosition="43">
       <varInfo nodeId="1613125646032872924" varName="descriptorFile" />
       <varInfo nodeId="1613125646032872942" varName="modelsDir" />
@@ -394,7 +395,7 @@
       <varInfo nodeId="1613125646032872705" varName="sourceLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="1613125646032872963" fileName="NewGeneratorDialog.java" startLine="116" startPosition="44" endLine="122" endPosition="16" />
-    <scopeInfo nodeId="1613125646032873268" fileName="NewGeneratorDialog.java" startLine="199" startPosition="45" endLine="205" endPosition="5">
+    <scopeInfo nodeId="1613125646032873268" fileName="NewGeneratorDialog.java" startLine="200" startPosition="45" endLine="206" endPosition="5">
       <varInfo nodeId="1613125646032873272" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1613125646032872725" fileName="NewGeneratorDialog.java" startLine="62" startPosition="0" endLine="69" endPosition="0">
@@ -412,22 +413,22 @@
     <scopeInfo nodeId="1613125646032872878" fileName="NewGeneratorDialog.java" startLine="88" startPosition="64" endLine="101" endPosition="0">
       <varInfo nodeId="1613125646032872881" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="1613125646032873263" fileName="NewGeneratorDialog.java" startLine="198" startPosition="85" endLine="214" endPosition="35">
+    <scopeInfo nodeId="1613125646032873263" fileName="NewGeneratorDialog.java" startLine="199" startPosition="85" endLine="215" endPosition="35">
       <varInfo nodeId="1613125646032873265" varName="alreadyOwnsTemplateModel" />
       <varInfo nodeId="1613125646032873352" varName="mappingConfiguration" />
       <varInfo nodeId="1613125646032873310" varName="templateModel" />
       <varInfo nodeId="1613125646032873289" varName="templateModelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1613125646032873146" fileName="NewGeneratorDialog.java" startLine="173" startPosition="104" endLine="191" endPosition="100">
+    <scopeInfo nodeId="1613125646032873146" fileName="NewGeneratorDialog.java" startLine="173" startPosition="104" endLine="192" endPosition="100">
       <varInfo nodeId="1613125646032873154" varName="generatorDescriptor" />
       <varInfo nodeId="1613125646032873148" varName="languageDescriptor" />
       <varInfo nodeId="1613125646032873175" varName="templateModelsRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="1613125646032873256" fileName="NewGeneratorDialog.java" startLine="197" startPosition="0" endLine="216" endPosition="0">
+    <scopeInfo nodeId="1613125646032873256" fileName="NewGeneratorDialog.java" startLine="198" startPosition="0" endLine="217" endPosition="0">
       <varInfo nodeId="1613125646032873261" varName="newGenerator" />
       <varInfo nodeId="1613125646032873259" varName="sourceLanguage" />
     </scopeInfo>
-    <scopeInfo nodeId="1613125646032873137" fileName="NewGeneratorDialog.java" startLine="172" startPosition="0" endLine="193" endPosition="0">
+    <scopeInfo nodeId="1613125646032873137" fileName="NewGeneratorDialog.java" startLine="172" startPosition="0" endLine="194" endPosition="0">
       <varInfo nodeId="1613125646032873140" varName="language" />
       <varInfo nodeId="1613125646032873144" varName="name" />
       <varInfo nodeId="1613125646032873142" varName="templateModelsDir" />
@@ -448,10 +449,10 @@
       <varInfo nodeId="1613125646032872995" varName="templateModelsPath" />
     </scopeInfo>
     <scopeInfo nodeId="1613125646032872990" fileName="NewGeneratorDialog.java" startLine="128" startPosition="0" endLine="162" endPosition="0" />
-    <unitInfo nodeId="1613125646032872003" fileName="NewGeneratorDialog.java" startLine="47" startPosition="0" endLine="217" endPosition="0" unitName="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" />
+    <unitInfo nodeId="1613125646032872003" fileName="NewGeneratorDialog.java" startLine="47" startPosition="0" endLine="218" endPosition="0" unitName="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" />
     <unitInfo nodeId="1613125646032872877" fileName="NewGeneratorDialog.java" startLine="88" startPosition="46" endLine="101" endPosition="5" unitName="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog$1" />
     <unitInfo nodeId="5049856602248792141" fileName="NewGeneratorDialog.java" startLine="153" startPosition="49" endLine="158" endPosition="5" unitName="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog$2" />
-    <unitInfo nodeId="8978606230572474871" fileName="NewGeneratorDialog.java" startLine="185" startPosition="45" endLine="189" endPosition="5" unitName="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog$3" />
+    <unitInfo nodeId="8978606230572474871" fileName="NewGeneratorDialog.java" startLine="186" startPosition="45" endLine="190" endPosition="5" unitName="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog$3" />
   </root>
 </debugInfo>
 
