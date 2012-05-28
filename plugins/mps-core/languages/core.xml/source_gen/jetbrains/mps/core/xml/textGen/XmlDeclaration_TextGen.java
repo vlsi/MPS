@@ -15,7 +15,7 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
     this.append("\"");
     this.append(SPropertyOperations.getString(node, "version"));
     this.append("\"");
-    if ((SPropertyOperations.getString(node, "encoding") != null && SPropertyOperations.getString(node, "encoding").length() > 0)) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "encoding"))) {
       this.append(" ");
       this.append("encoding");
       this.append(" = ");
@@ -23,7 +23,7 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
       this.append(SPropertyOperations.getString(node, "encoding"));
       this.append("\"");
     }
-    if ((SPropertyOperations.getString(node, "standalone") != null && SPropertyOperations.getString(node, "standalone").length() > 0)) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "standalone"))) {
       this.append(" ");
       this.append("standalone");
       this.append(" = ");

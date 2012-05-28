@@ -27,7 +27,7 @@ public class AttributeUtil {
     SNode lastValue = null;
     for (SNode part : SLinkOperations.getTargets(attr, "value", true)) {
       if (SNodeOperations.isInstanceOf(part, "jetbrains.mps.core.xml.structure.XmlTextValue")) {
-        if ((SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text") == null || SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text").length() == 0)) {
+        if (StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text"))) {
           ListSequence.fromList(valuesToDelete).addElement(part);
         } else if (lastValue != null) {
           SPropertyOperations.set(lastValue, "text", SPropertyOperations.getString_def(lastValue, "text", "") + SPropertyOperations.getString(SNodeOperations.cast(part, "jetbrains.mps.core.xml.structure.XmlTextValue"), "text"));

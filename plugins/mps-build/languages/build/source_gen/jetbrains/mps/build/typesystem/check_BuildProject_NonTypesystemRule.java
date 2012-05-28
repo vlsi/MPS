@@ -19,7 +19,7 @@ public class check_BuildProject_NonTypesystemRule extends AbstractNonTypesystemR
   }
 
   public void applyRule(final SNode project, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((SPropertyOperations.getString(project, "fileName") != null && SPropertyOperations.getString(project, "fileName").length() > 0) && !(SPropertyOperations.getString(project, "fileName").endsWith(".xml"))) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(project, "fileName")) && !(SPropertyOperations.getString(project, "fileName").endsWith(".xml"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("fileName");

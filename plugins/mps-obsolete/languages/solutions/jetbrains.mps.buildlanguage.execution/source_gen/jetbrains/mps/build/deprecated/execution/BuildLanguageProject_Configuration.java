@@ -115,7 +115,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
 
   @Nullable
   public SNode getTarget() {
-    if ((this.getTargetId() == null || this.getTargetId().length() == 0)) {
+    if (StringUtils.isEmpty(this.getTargetId())) {
       return null;
     }
     final Wrappers._T<SNode> target = new Wrappers._T<SNode>();

@@ -20,7 +20,7 @@ public class Antcall_Behavior {
   public static String virtual_getChildrenTargetDir_1237389224202(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
       String parentTargetDir = IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"));
-      if ((parentTargetDir == null || parentTargetDir.length() == 0)) {
+      if (StringUtils.isEmpty(parentTargetDir)) {
         return Antcall_Behavior.call_getName_1213877286263(thisNode);
       }
       return parentTargetDir + File.separator + Antcall_Behavior.call_getName_1213877286263(thisNode);

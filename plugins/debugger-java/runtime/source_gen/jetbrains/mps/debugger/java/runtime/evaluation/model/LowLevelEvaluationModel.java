@@ -192,7 +192,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         SModelDescriptor scopeModel = myAuxModule.getScope().getModelDescriptor(targetModel.getSModelReference());
         if (scopeModel != null && neq_qkk2f2_a0a1a1a0a7(scopeModel.getSModel(), targetModel)) {
           String resolveInfo = SLinkOperations.getResolveInfo(reference);
-          if ((resolveInfo == null || resolveInfo.length() == 0)) {
+          if (StringUtils.isEmpty(resolveInfo)) {
             resolveInfo = SLinkOperations.getTargetNode(reference).getResolveInfo();
           }
           node.replaceReference(reference, new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), resolveInfo));
@@ -240,7 +240,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         }
 
         String nodesUnitName = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", new Class[]{SNode.class}));
-        if ((nodesUnitName == null || nodesUnitName.length() == 0)) {
+        if (StringUtils.isEmpty(nodesUnitName)) {
           return false;
         }
         return nodesUnitName.equals(unitFqName);

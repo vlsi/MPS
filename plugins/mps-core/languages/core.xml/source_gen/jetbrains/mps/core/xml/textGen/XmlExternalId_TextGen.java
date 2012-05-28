@@ -11,7 +11,7 @@ public class XmlExternalId_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isPublic")) {
       this.append("PUBLIC");
       this.append(" ");
-      if ((SPropertyOperations.getString(node, "publicId") != null && SPropertyOperations.getString(node, "publicId").length() > 0) && SPropertyOperations.getString(node, "publicId").contains("'")) {
+      if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "publicId")) && SPropertyOperations.getString(node, "publicId").contains("'")) {
         this.append("\"");
         this.append(SPropertyOperations.getString(node, "publicId"));
         this.append("\"");
@@ -24,7 +24,7 @@ public class XmlExternalId_TextGen extends SNodeTextGen {
       this.append("SYSTEM");
     }
     this.append(" ");
-    if ((SPropertyOperations.getString(node, "systemId") != null && SPropertyOperations.getString(node, "systemId").length() > 0) && SPropertyOperations.getString(node, "systemId").contains("'")) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "systemId")) && SPropertyOperations.getString(node, "systemId").contains("'")) {
       this.append("\"");
       this.append(SPropertyOperations.getString(node, "systemId"));
       this.append("\"");

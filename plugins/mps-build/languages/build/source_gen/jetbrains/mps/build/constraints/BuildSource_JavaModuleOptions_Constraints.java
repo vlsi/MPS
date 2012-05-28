@@ -47,7 +47,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return (((SPropertyOperations.getString(_context.getParameterNode(), "optionsName") == null || SPropertyOperations.getString(_context.getParameterNode(), "optionsName").length() == 0) ?
+            return ((StringUtils.isEmpty(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ?
               "<default options>" :
               SPropertyOperations.getString(_context.getParameterNode(), "optionsName")
             ));

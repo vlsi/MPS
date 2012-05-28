@@ -21,10 +21,10 @@ public class BuildLayout_Filemode_Behavior {
       SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept", false, false);
       name = SPropertyOperations.getString(ancestor, "name");
     }
-    if ((SPropertyOperations.getString(thisNode, "filemode") != null && SPropertyOperations.getString(thisNode, "filemode").length() > 0)) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "filemode"))) {
       name = name + "_f" + SPropertyOperations.getString(thisNode, "filemode");
     }
-    if ((SPropertyOperations.getString(thisNode, "dirmode") != null && SPropertyOperations.getString(thisNode, "dirmode").length() > 0)) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "dirmode"))) {
       name = name + "_d" + SPropertyOperations.getString(thisNode, "dirmode");
     }
     return context.getTempPath(thisNode, name, ((nlayout != null) ?

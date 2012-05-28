@@ -101,13 +101,13 @@ public class EvaluatorConcept_Behavior {
     if (operation == null) {
       return "????";
     }
-    if ((SConceptPropertyOperations.getString(operation, "alias") != null && SConceptPropertyOperations.getString(operation, "alias").length() > 0)) {
+    if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(operation, "alias"))) {
       return SConceptPropertyOperations.getString(operation, "alias");
     }
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
         public String combine(String s, SNode it) {
-          return (((s == null || s.length() == 0) ?
+          return ((StringUtils.isEmpty(s) ?
             "" :
             s + ","
           )) + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, it);
