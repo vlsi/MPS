@@ -21,8 +21,8 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.make.script.IConfig;
-import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
 import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
 import java.io.IOException;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -168,6 +168,10 @@ public class Test_Facet extends IFacet.Stub {
           Iterable<IResource> _output_rwbd_a0b = null;
           switch (0) {
             case 0:
+              if (pa.global().properties(Target_runTests.this.getName(), Test_Facet.Target_runTests.Parameters.class).testListener() == null) {
+                monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("No test listener provided, stopping")));
+                return new IResult.FAILURE(_output_rwbd_a0b);
+              }
               monitor.currentProgress().beginWork("Testing", Sequence.fromIterable(input).count() * 100, monitor.currentProgress().workLeft());
               for (IResource resource : input) {
                 String fqn = ((ITestResource) resource).getModule().getModuleFqName();
