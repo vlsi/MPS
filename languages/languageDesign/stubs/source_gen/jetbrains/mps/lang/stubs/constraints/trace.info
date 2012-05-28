@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.ConstraintsAspectDescriptor" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.stubs.constraints.StringUtils" />
   <root nodeId="562112407431569978">
     <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="18" startPosition="36" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="562112407431569978" fileName="LanguageRef_Constraints.java" startLine="23" startPosition="82" endLine="24" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

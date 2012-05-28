@@ -41,14 +41,14 @@ public class HelpHelper {
     if ((node == null)) {
       return false;
     }
-    return (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL") != null && SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL"));
   }
 
   public static boolean helpForRootIsAvailable(SNode node) {
     if ((node == null)) {
       return false;
     }
-    return (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL") != null && SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL"));
   }
 
   public static boolean helpForAspectIsAvailable(IModule module, SModelDescriptor model) {

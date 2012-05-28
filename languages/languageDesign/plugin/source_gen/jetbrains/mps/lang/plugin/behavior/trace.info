@@ -102,7 +102,7 @@
   <unitInfo fileName="SimpleActionPlace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SimpleActionPlace_BehaviorDescriptor" />
   <unitInfo fileName="SimpleShortcutChange_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange_BehaviorDescriptor" />
   <unitInfo fileName="SmartDisposeClosureParameterDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SmartDisposeClosureParameterDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.StringUtils" />
   <unitInfo fileName="TabbedToolDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.TabbedToolDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="TabbedToolOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.TabbedToolOperation_BehaviorDescriptor" />
   <unitInfo fileName="ToStringConceptFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ToStringConceptFunction_BehaviorDescriptor" />

@@ -41,7 +41,7 @@ public class Gcc_Command {
   }
 
   public ProcessHandler createProcess(SNode file) throws ExecutionException {
-    if ((myGccLocation_String == null || myGccLocation_String.length() == 0) || !(new File(myGccLocation_String).exists())) {
+    if (StringUtils.isEmpty(myGccLocation_String) || !(new File(myGccLocation_String).exists())) {
       throw new ExecutionException("Could not find gcc by path " + myGccLocation_String);
     }
 

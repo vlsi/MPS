@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.StringUtils" />
   <unitInfo fileName="XmlAttribute_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlAttribute_BehaviorDescriptor" />
   <unitInfo fileName="XmlBaseAttribute_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlBaseAttribute_BehaviorDescriptor" />
   <unitInfo fileName="XmlBaseElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.core.xml.behavior.XmlBaseElement_BehaviorDescriptor" />

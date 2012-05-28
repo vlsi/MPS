@@ -59,7 +59,7 @@
   <unitInfo fileName="Replace_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Replace_BehaviorDescriptor" />
   <unitInfo fileName="SimpleString_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.SimpleString_BehaviorDescriptor" />
   <unitInfo fileName="Space_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Space_BehaviorDescriptor" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.StringUtils" />
   <unitInfo fileName="UpdateWebsite_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.UpdateWebsite_BehaviorDescriptor" />
   <unitInfo fileName="VariableReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.VariableReference_BehaviorDescriptor" />
   <unitInfo fileName="Variable_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.packaging.behavior.Variable_BehaviorDescriptor" />

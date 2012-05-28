@@ -4,7 +4,7 @@
   <unitInfo fileName="ClassPathItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.ClassPathItem_BehaviorDescriptor" />
   <unitInfo fileName="MpsStartupScript_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.MpsStartupScript_BehaviorDescriptor" />
   <unitInfo fileName="SimpleVmOptions_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.SimpleVmOptions_BehaviorDescriptor" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.StringUtils" />
   <unitInfo fileName="VmOptions_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.startup.behavior.VmOptions_BehaviorDescriptor" />
   <root nodeId="5842819808956701264">
     <nodeInfo nodeId="5842819808956653680" fileName="MpsStartupScript_Behavior.java" startLine="21" startPosition="39" endLine="22" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

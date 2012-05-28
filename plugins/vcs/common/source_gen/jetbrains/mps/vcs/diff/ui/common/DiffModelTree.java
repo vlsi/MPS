@@ -86,7 +86,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }, true).toListSequence();
     for (DiffModelTree.RootTreeNode rtn : ListSequence.fromList(myRootNodes)) {
       DiffModelTree.TreeNode parentNode = modelNode;
-      if ((rtn.myVirtualPackage != null && rtn.myVirtualPackage.length() > 0)) {
+      if (StringUtils.isNotEmpty(rtn.myVirtualPackage)) {
         for (final String sub : Sequence.fromIterable(Sequence.fromArray(rtn.myVirtualPackage.split("\\.")))) {
           Iterable<DiffModelTree.TreeNode> children = Collections.list(parentNode.children());
           DiffModelTree.TreeNode child = Sequence.fromIterable(children).findFirst(new IWhereFilter<DiffModelTree.TreeNode>() {
@@ -282,7 +282,7 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
         }
       });
       coloredRenderer.append(getText(), new SimpleTextAttributes(myTextStyle, getColor()));
-      if ((myAdditionalText != null && myAdditionalText.length() > 0)) {
+      if (StringUtils.isNotEmpty(myAdditionalText)) {
         coloredRenderer.append(" (" + myAdditionalText + ")", new SimpleTextAttributes(SimpleTextAttributes.STYLE_PLAIN, Color.GRAY));
       }
       coloredRenderer.setToolTipText(myTooltipText);

@@ -109,7 +109,7 @@
   <unitInfo fileName="BuildVariableMacroInitWithString_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVariableMacroInitWithString_BehaviorDescriptor" />
   <unitInfo fileName="BuildVariableMacroInitWithValueFromFile_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVariableMacroInitWithValueFromFile_BehaviorDescriptor" />
   <unitInfo fileName="BuildVariableMacro_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildVariableMacro_BehaviorDescriptor" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.behavior.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.behavior.StringUtils" />
   <root nodeId="1224588814561775849">
     <nodeInfo nodeId="1224588814561775849" fileName="BuildPlugin_Behavior.java" startLine="12" startPosition="35" endLine="13" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3734116213129936182" />
     <nodeInfo nodeId="1224588814561775849" fileName="BuildPlugin_Behavior.java" startLine="13" startPosition="85" endLine="14" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1224588814561807654" />

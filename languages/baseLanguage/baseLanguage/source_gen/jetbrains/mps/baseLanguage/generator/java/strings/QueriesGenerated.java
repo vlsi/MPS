@@ -17,7 +17,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_2696770507970455345(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.BaseStringOperation").isEmpty());
+    return !(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.BaseStringOperation").isEmpty() && SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.SubstringExpression").isEmpty());
   }
 
   public static boolean baseMappingRule_Condition_1225277059829(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -85,7 +85,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3987319776542716744(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
+    return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
 
   public static SNode sourceNodeQuery_3987319776542716779(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

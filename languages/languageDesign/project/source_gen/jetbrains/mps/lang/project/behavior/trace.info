@@ -19,7 +19,7 @@
   <unitInfo fileName="Module_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Module_BehaviorDescriptor" />
   <unitInfo fileName="Solution_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.Solution_BehaviorDescriptor" />
   <unitInfo fileName="SourcePath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.SourcePath_BehaviorDescriptor" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.StringUtils" />
   <unitInfo fileName="StubEntry_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.StubEntry_BehaviorDescriptor" />
   <unitInfo fileName="StubSolution_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.project.behavior.StubSolution_BehaviorDescriptor" />
   <root nodeId="1250389701475344621">

@@ -17,7 +17,7 @@ import jetbrains.mps.testbench.suite.behavior.ModuleSuite_Behavior;
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2956932267233365622(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String fqn = ITestRef_Behavior.call_fqClassName_2956932267233324537(_context.getNode());
-    if ((fqn == null || fqn.length() == 0)) {
+    if (StringUtils.isEmpty(fqn)) {
       _context.showErrorMessage(_context.getNode(), "no class name");
       return "NO CLASS NAME";
     }
@@ -26,7 +26,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4089647634161018296(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String tns = IterableUtils.join(Sequence.fromIterable(ITestRef_Behavior.call_testNames_4089647634160960707(_context.getNode())), ",");
-    if ((tns == null || tns.length() == 0)) {
+    if (StringUtils.isEmpty(tns)) {
       _context.showWarningMessage(_context.getNode(), "empty test case");
     }
     return tns;

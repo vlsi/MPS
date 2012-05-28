@@ -181,7 +181,7 @@
   <unitInfo fileName="SocketConditionalExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.SocketConditionalExpression_BehaviorDescriptor" />
   <unitInfo fileName="StickyBitConditionalExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.StickyBitConditionalExpression_BehaviorDescriptor" />
   <unitInfo fileName="StringConditionalExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.StringConditionalExpression_BehaviorDescriptor" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.bash.behavior.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.bash.behavior.StringUtils" />
   <unitInfo fileName="SubExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.SubExpression_BehaviorDescriptor" />
   <unitInfo fileName="SymlinkConditionalExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.SymlinkConditionalExpression_BehaviorDescriptor" />
   <unitInfo fileName="TerminalConditionalExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.bash.behavior.TerminalConditionalExpression_BehaviorDescriptor" />
