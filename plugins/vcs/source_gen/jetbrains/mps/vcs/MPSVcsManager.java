@@ -134,7 +134,7 @@ public class MPSVcsManager implements ProjectComponent {
     FileStatus currentStatus = FileStatusManager.getInstance(myProject).getStatus(myProject.getProjectFile());
     if (currentStatus != myLastProjectStatus) {
       if (currentStatus == FileStatus.MERGED_WITH_CONFLICTS || currentStatus == FileStatus.MERGED_WITH_BOTH_CONFLICTS) {
-        int answer = Messages.showYesNoDialog(myProject, "You have yor project file unmerged. It is strongly recommended to merge it before continuing. " + "\nDo you want to merge it now?", "Unmerged Project File", Messages.getWarningIcon());
+        int answer = Messages.showYesNoDialog(myProject, "You have your project file unmerged. It is strongly recommended to merge it before continuing. " + "\nDo you want to merge it now?", "Unmerged Project File", Messages.getWarningIcon());
         if (answer == 0) {
           AbstractVcsHelper.getInstance(myProject).showMergeDialog(Arrays.asList(myProject.getProjectFile()));
         }
