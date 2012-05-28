@@ -35,10 +35,7 @@ public class JavaStackTraceFilter implements Filter {
   }
 
   public static Filter.Result tryToParseLine(String line, int offset, Project project) {
-    if (!(((line == null ?
-      null :
-      line.trim()
-    )).startsWith(JavaStackTraceFilter.STRING_START))) {
+    if (!(StringUtils.trimBoth(line).startsWith(JavaStackTraceFilter.STRING_START))) {
       return null;
     }
 

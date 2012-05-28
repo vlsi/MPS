@@ -22,11 +22,11 @@ public class GenerateGettersAndSettersUtil {
     if (suffix == null) {
       suffix = "";
     }
-    int preparedNameStart = (((prefix != null && prefix.length() > 0) && fullName.startsWith(prefix)) ?
+    int preparedNameStart = ((StringUtils.isNotEmpty(prefix) && fullName.startsWith(prefix)) ?
       prefix.length() :
       0
     );
-    int preparedNameEnd = (((suffix != null && suffix.length() > 0) && fullName.endsWith(suffix)) ?
+    int preparedNameEnd = ((StringUtils.isNotEmpty(suffix) && fullName.endsWith(suffix)) ?
       fullName.indexOf(suffix) :
       fullName.length()
     );
@@ -63,7 +63,7 @@ public class GenerateGettersAndSettersUtil {
       codeStyleSettings.getParameterSuffix()
     );
     String paramName;
-    if ((prefix == null || prefix.length() == 0)) {
+    if (StringUtils.isEmpty(prefix)) {
       paramName = NameUtil.decapitalize(preparedFieldName + suffix);
     } else {
       paramName = prefix + preparedFieldName + suffix;
