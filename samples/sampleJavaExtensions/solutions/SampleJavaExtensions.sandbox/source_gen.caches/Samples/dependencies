@@ -10,19 +10,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
   </dependency>
   <dependency className="Samples.DropBox" file="DropBox.java">
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
-    <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Thread" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
-    <classNode dependClassName="java.util.concurrent.CountDownLatch" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="utils.ParallelLoopException" />
   </dependency>
   <dependency className="Samples.MoneySample" file="MoneySample.java">
     <classNode dependClassName="java.lang.String" />

@@ -403,85 +403,35 @@
     <unitInfo nodeId="633195941006828922" fileName="ParallelForSample.java" startLine="142" startPosition="38" endLine="155" endPosition="9" unitName="Samples.ParallelForSample$3" />
   </root>
   <root nodeId="2975785153735164887">
-    <nodeInfo nodeId="2975785153735223616" fileName="DropBox.java" startLine="13" startPosition="31" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="storage" />
-    <nodeInfo nodeId="2975785153735248694" fileName="DropBox.java" startLine="16" startPosition="20" endLine="17" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735248698" fileName="DropBox.java" startLine="17" startPosition="84" endLine="18" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2975785153735223649" fileName="DropBox.java" startLine="22" startPosition="29" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223674" fileName="DropBox.java" startLine="24" startPosition="5" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223803" fileName="DropBox.java" startLine="25" startPosition="20" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223723" fileName="DropBox.java" startLine="30" startPosition="29" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223747" fileName="DropBox.java" startLine="32" startPosition="5" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2975785153735223753" fileName="DropBox.java" startLine="33" startPosition="20" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2975785153735223779" fileName="DropBox.java" startLine="34" startPosition="19" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="36" startPosition="5" endLine="37" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="37" startPosition="131" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="38" startPosition="83" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="40" startPosition="68" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="41" startPosition="0" endLine="42" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="42" startPosition="29" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3540747636396747948" fileName="DropBox.java" startLine="46" startPosition="17" endLine="47" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="48" startPosition="42" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="50" startPosition="23" endLine="51" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="54" startPosition="10" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="55" startPosition="0" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="56" startPosition="37" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="59" startPosition="11" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="61" startPosition="40" endLine="62" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="64" startPosition="63" endLine="65" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="66" startPosition="7" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3540747636396751186" fileName="DropBox.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2975785153735223774" fileName="DropBox.java" startLine="69" startPosition="0" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2975785153735223627" fileName="DropBox.java" startLine="21" startPosition="71" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2975785153735223701" fileName="DropBox.java" startLine="29" startPosition="64" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="63" startPosition="7" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2975785153735164889" fileName="DropBox.java" startLine="15" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DropBox#()V" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="58" startPosition="7" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="45" startPosition="29" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2975785153735223623" fileName="DropBox.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="store#(null)V" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="44" startPosition="50" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="43" startPosition="0" endLine="54" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="39" startPosition="0" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="35" startPosition="18" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2975785153735223696" fileName="DropBox.java" startLine="28" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retrieve#()null" />
-    <scopeInfo nodeId="2975785153735223629" fileName="DropBox.java" startLine="22" startPosition="29" endLine="23" endPosition="18" />
-    <scopeInfo nodeId="2975785153735223703" fileName="DropBox.java" startLine="30" startPosition="29" endLine="31" endPosition="18" />
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="46" startPosition="17" endLine="47" endPosition="37" />
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="48" startPosition="0" endLine="49" endPosition="66">
-      <varInfo nodeId="3540747636396747941" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="48" startPosition="42" endLine="49" endPosition="66" />
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="50" startPosition="23" endLine="51" endPosition="36" />
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="59" startPosition="11" endLine="60" endPosition="26" />
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="61" startPosition="0" endLine="62" endPosition="60">
-      <varInfo nodeId="3540747636396747941" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="61" startPosition="40" endLine="62" endPosition="60" />
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="64" startPosition="63" endLine="65" endPosition="93" />
-    <scopeInfo nodeId="2975785153735164892" fileName="DropBox.java" startLine="16" startPosition="20" endLine="18" endPosition="94" />
-    <scopeInfo nodeId="2975785153735164889" fileName="DropBox.java" startLine="15" startPosition="0" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="2975785153735223626" fileName="DropBox.java" startLine="21" startPosition="71" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="45" startPosition="29" endLine="52" endPosition="13" />
-    <scopeInfo nodeId="2975785153735223623" fileName="DropBox.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="2975785153735223676" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="44" startPosition="50" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="40" startPosition="68" endLine="57" endPosition="0">
-      <varInfo nodeId="3540747636396747941" varName="localA" />
-      <varInfo nodeId="3540747636396747941" varName="runnable" />
-    </scopeInfo>
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="39" startPosition="0" endLine="58" endPosition="7">
-      <varInfo nodeId="3540747636396747941" varName="a" />
-    </scopeInfo>
-    <scopeInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="36" startPosition="5" endLine="67" endPosition="0">
-      <varInfo nodeId="3540747636396747941" varName="exceptions_e0b" />
-      <varInfo nodeId="3540747636396747941" varName="latch_e0b" />
-    </scopeInfo>
-    <scopeInfo nodeId="2975785153735223699" fileName="DropBox.java" startLine="29" startPosition="64" endLine="70" endPosition="15">
+    <nodeInfo nodeId="2975785153735223616" fileName="DropBox.java" startLine="6" startPosition="31" endLine="7" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="storage" />
+    <nodeInfo nodeId="2975785153735248694" fileName="DropBox.java" startLine="9" startPosition="20" endLine="10" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2975785153735248698" fileName="DropBox.java" startLine="10" startPosition="84" endLine="11" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2975785153735223649" fileName="DropBox.java" startLine="15" startPosition="29" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223674" fileName="DropBox.java" startLine="17" startPosition="5" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223803" fileName="DropBox.java" startLine="18" startPosition="20" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223723" fileName="DropBox.java" startLine="23" startPosition="29" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223747" fileName="DropBox.java" startLine="25" startPosition="5" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2975785153735223753" fileName="DropBox.java" startLine="26" startPosition="20" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223779" fileName="DropBox.java" startLine="27" startPosition="19" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2975785153735223774" fileName="DropBox.java" startLine="28" startPosition="18" endLine="29" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2975785153735223627" fileName="DropBox.java" startLine="14" startPosition="71" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2975785153735223701" fileName="DropBox.java" startLine="22" startPosition="64" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2975785153735164889" fileName="DropBox.java" startLine="8" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DropBox#()V" />
+    <nodeInfo nodeId="2975785153735223623" fileName="DropBox.java" startLine="13" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="store#(null)V" />
+    <nodeInfo nodeId="2975785153735223696" fileName="DropBox.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="retrieve#()null" />
+    <scopeInfo nodeId="2975785153735223629" fileName="DropBox.java" startLine="15" startPosition="29" endLine="16" endPosition="18" />
+    <scopeInfo nodeId="2975785153735223703" fileName="DropBox.java" startLine="23" startPosition="29" endLine="24" endPosition="18" />
+    <scopeInfo nodeId="2975785153735164892" fileName="DropBox.java" startLine="9" startPosition="20" endLine="11" endPosition="94" />
+    <scopeInfo nodeId="2975785153735164889" fileName="DropBox.java" startLine="8" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="2975785153735223626" fileName="DropBox.java" startLine="14" startPosition="71" endLine="19" endPosition="18" />
+    <scopeInfo nodeId="2975785153735223699" fileName="DropBox.java" startLine="22" startPosition="64" endLine="29" endPosition="15">
       <varInfo nodeId="2975785153735223748" varName="pom" />
     </scopeInfo>
-    <scopeInfo nodeId="2975785153735223696" fileName="DropBox.java" startLine="28" startPosition="0" endLine="72" endPosition="0" />
-    <unitInfo nodeId="2975785153735164887" fileName="DropBox.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="Samples.DropBox" />
-    <unitInfo nodeId="3540747636396747941" fileName="DropBox.java" startLine="44" startPosition="38" endLine="54" endPosition="9" unitName="Samples.DropBox$1" />
+    <scopeInfo nodeId="2975785153735223623" fileName="DropBox.java" startLine="13" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2975785153735223676" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="2975785153735223696" fileName="DropBox.java" startLine="21" startPosition="0" endLine="31" endPosition="0" />
+    <unitInfo nodeId="2975785153735164887" fileName="DropBox.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="Samples.DropBox" />
   </root>
   <root nodeId="2975785153735223829">
     <nodeInfo nodeId="2975785153735296330" fileName="ThreadSafeSample.java" startLine="12" startPosition="31" endLine="13" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="fixedFieldValue" />
