@@ -19,54 +19,69 @@ import gnu.trove.THashMap;
 import gnu.trove.TLongObjectHashMap;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.util.iterable.MergeIterator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
+  private final THashMap<String, SNode> myForeignMap = new THashMap<String, SNode>();
+
   private final THashMap<SNodeId, SNode> myOtherMap = new THashMap<SNodeId, SNode>();
 
   public int size() {
-    return myOtherMap.size() + myRegularMap.size();
+    return myRegularMap.size() + myForeignMap.size() + myOtherMap.size();
   }
 
   public SNode get(SNodeId key) {
     if (key instanceof Regular) {
       return myRegularMap.get(((Regular) key).getId());
+    } else if (key instanceof Foreign) {
+      return myForeignMap.get(((Foreign) key).getId());
+    } else {
+      return myOtherMap.get(key);
     }
-    return myOtherMap.get(key);
   }
 
   public SNode put(SNodeId key, SNode value) {
     if (key instanceof Regular) {
       return myRegularMap.put(((Regular) key).getId(), value);
+    } else if (key instanceof Foreign) {
+      return myForeignMap.put(((Foreign) key).getId(), value);
+    } else {
+      return myOtherMap.put(key, value);
     }
-    return myOtherMap.put(key, value);
   }
 
   public boolean containsKey(SNodeId key) {
     if (key instanceof Regular) {
       return myRegularMap.containsKey(((Regular) key).getId());
+    } else if (key instanceof Foreign) {
+      return myForeignMap.containsKey(((Foreign) key).getId());
+    } else {
+      return myOtherMap.containsKey(key);
     }
-
-    return myOtherMap.containsKey(key);
   }
 
   public SNode remove(SNodeId key) {
     if (key instanceof Regular) {
       return myRegularMap.remove(((Regular) key).getId());
+    } else if (key instanceof Foreign) {
+      return myForeignMap.remove(((Foreign) key).getId());
+    } else {
+      return myOtherMap.remove(key);
     }
-
-    return myOtherMap.remove(key);
   }
 
   public Iterable<SNode> values() {
-    List<SNode> res = new ArrayList<SNode>();
-    res.addAll(myOtherMap.values());
-    res.addAll(((List) Arrays.asList(myRegularMap.getValues())));
-    return res;
+    Iterator<SNode> regular = Arrays.asList((SNode[]) myRegularMap.getValues()).iterator();
+    Iterator<SNode> foreign = myForeignMap.values().iterator();
+    Iterator<SNode> other = myOtherMap.values().iterator();
+    return new MergeIterator<SNode>(regular, new MergeIterator<SNode>(foreign, other));
   }
 }
