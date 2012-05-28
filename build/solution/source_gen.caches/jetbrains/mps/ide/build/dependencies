@@ -6,7 +6,6 @@
   <dependency className="jetbrains.mps.ide.build.buildConnectorPlugin" file="buildConnectorPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildCore" file="buildCore.xml" />
   <dependency className="jetbrains.mps.ide.build.buildCoreEx" file="buildCoreEx.xml" />
-  <dependency className="jetbrains.mps.ide.build.buildCoreUI" file="buildCoreUI.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDates" file="buildDates.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDebuggerPlugin" file="buildDebuggerPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDevKit" file="buildDevKit.xml" />

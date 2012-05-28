@@ -86,57 +86,58 @@ public class MigrationProcessor extends AbstractProjectComponent{
   public void startProcessing(final JComponent component) {
     if (!myStarted.compareAndSet(false, true)) throw new IllegalStateException("already processing");
 
-    final ArrayList<BaseAction> actionsCopy = new ArrayList<BaseAction>(mySelectedActions);
-
-    for (final BaseAction action : actionsCopy) {
-      final CountDownLatch latch = new CountDownLatch(1);
+    try {
+      final ArrayList<BaseAction> actionsCopy = new ArrayList<BaseAction>(mySelectedActions);
+      for (final BaseAction action : actionsCopy) {
+        final CountDownLatch latch = new CountDownLatch(1);
+        runCommand(new Runnable() {
+          @Override
+          public void run() {
+            try{
+              fireStartingAction(action);
+              AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
+              boolean success = false;
+              boolean oldFlag = action.isExecuteOutsideCommand();
+              try{
+                action.setExecuteOutsideCommand(true);
+                action.update(event);
+                if (action.getTemplatePresentation().isEnabled()) {
+                  action.actionPerformed(event);
+                  success = true;
+                }
+              }
+              catch (Exception e) {
+                LOG.error(e);
+              }
+              finally {
+                action.setExecuteOutsideCommand(oldFlag);
+                if (success) {
+                  fireFinishedAction(action);
+                } else {
+                  fireFailedAction(action);
+                }
+              }
+            }
+            finally {
+              latch.countDown();
+            }
+          }
+        });
+        try {
+          latch.await();
+        } catch (InterruptedException e) {
+          LOG.error(e);
+        }
+      }
+    } finally {
       runCommand(new Runnable() {
         @Override
         public void run() {
-          try{
-            fireStartingAction(action);
-            AnActionEvent event = new AnActionEvent(null, DataManager.getInstance().getDataContext(component), ActionPlaces.UNKNOWN, action.getTemplatePresentation(), ActionManager.getInstance(), 0);
-            boolean success = false;
-            boolean oldFlag = action.isExecuteOutsideCommand();
-            try{
-              action.setExecuteOutsideCommand(true);
-              action.update(event);
-              if (action.getTemplatePresentation().isEnabled()) {
-                action.actionPerformed(event);
-                success = true;
-              }
-            }
-            catch (Exception e) {
-              LOG.error(e);
-            }
-            finally {
-              action.setExecuteOutsideCommand(oldFlag);
-              if (success) {
-                fireFinishedAction(action);
-              } else {
-                fireFailedAction(action);
-              }
-            }
-          }
-          finally {
-            latch.countDown();
-          }
+          myFinished.set(true);
+          fireFinishedAll();
         }
       });
-      try {
-        latch.await();
-      } catch (InterruptedException e) {
-        LOG.error(e);
-      }
     }
-
-    runCommand(new Runnable() {
-      @Override
-      public void run() {
-        myFinished.set(true);
-        fireFinishedAll();
-      }
-    });
   }
   
   public void addCallback (Callback callback) {

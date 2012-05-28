@@ -6,10 +6,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.project.MPSExtentions;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import java.io.File;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
@@ -46,7 +46,7 @@ public class NewModuleUtil {
   }
 
   public static String check(String extension, String namespace, String rootPath) {
-    if (!(SourceVersion.isName(namespace))) {
+    if (!(extension.equals(MPSExtentions.DOT_DEVKIT)) && !(SourceVersion.isName(namespace))) {
       return "Module namespace should be valid Java package";
     }
     if (rootPath.length() == 0) {

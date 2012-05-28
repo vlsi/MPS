@@ -4,6 +4,8 @@ package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 import org.jetbrains.annotations.NotNull;
@@ -31,6 +33,8 @@ import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
+  protected static Log log = LogFactory.getLog(StubModelsFastFindSupport.class);
+
   public StubModelsFastFindSupport() {
   }
 
@@ -82,6 +86,12 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
         Collection<String> filenames = ((StubModelDataSource) source).getFilesToListen();
         for (String path : filenames) {
           final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
+          if (vf == null) {
+            if (log.isWarnEnabled()) {
+              log.warn("File " + path + ", which belows to model source of model " + sm.getSModelReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
+            }
+            continue;
+          }
           VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor() {
             public boolean visitFile(@NotNull VirtualFile file) {
               if (file.isDirectory()) {
