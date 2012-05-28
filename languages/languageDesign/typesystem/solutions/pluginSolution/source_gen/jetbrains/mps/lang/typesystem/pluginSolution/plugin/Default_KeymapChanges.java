@@ -10,11 +10,8 @@ import javax.swing.KeyStroke;
 public class Default_KeymapChanges extends BaseKeymapChanges {
   public Default_KeymapChanges() {
     // simple 
-    addSimpleShortcut("jetbrains.mps.lang.typesystem.pluginSolution.plugin.GoToTypeErrorRule_Action", getShortcut("ctrl alt R"));
     addSimpleShortcut("jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action", getShortcut("ctrl shift T"));
-    addSimpleShortcut("jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action", getShortcut("ctrl alt shift T"));
     // simple parameterized 
-    addComplexShortcut("jetbrains.mps.lang.typesystem.pluginSolution.plugin.GoToTypeErrorRule_InGroup_Action", new BaseKeymapChanges.ComplexShortcut.ParameterizedSimpleShortcut(getShortcut("ctrl alt R")));
     // complex 
   }
 
