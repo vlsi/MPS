@@ -37,7 +37,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
           return false;
         }
-        if ((SConceptPropertyOperations.getString(node, "alias") == null || SConceptPropertyOperations.getString(node, "alias").length() == 0)) {
+        if (StringUtils.isEmpty(SConceptPropertyOperations.getString(node, "alias"))) {
           return false;
         }
         return !(SConceptPropertyOperations.getString(node, "alias").equals(NameUtil.multiWordDecapitalize(SConceptPropertyOperations.getString(node, "alias"))));
@@ -76,7 +76,7 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         if (!(SPropertyOperations.getBoolean(node, "rootable"))) {
           return false;
         }
-        return (SConceptPropertyOperations.getString(node, "alias") == null || SConceptPropertyOperations.getString(node, "alias").length() == 0);
+        return StringUtils.isEmpty(SConceptPropertyOperations.getString(node, "alias"));
       }
 
       public void doUpdateInstanceNode(SNode node) {

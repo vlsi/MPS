@@ -25,7 +25,7 @@ public class HTMLElement_Behavior {
 
     if ((int) Sequence.fromIterable(lines).count() == 0) {
       SNode prev = SNodeOperations.getPrevSibling(thisNode);
-      if ((SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text") != null && SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length() > 0)) {
+      if (StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
         caret = SPropertyOperations.getString(SNodeOperations.cast(prev, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
       }
       SNodeOperations.deleteNode(thisNode);

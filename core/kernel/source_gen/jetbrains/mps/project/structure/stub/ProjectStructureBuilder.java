@@ -190,7 +190,7 @@ public abstract class ProjectStructureBuilder {
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + source.isGenerateTemplates());
-    SPropertyOperations.set(generator, "namespace", ((source.getNamespace() != null && source.getNamespace().length() > 0) ?
+    SPropertyOperations.set(generator, "namespace", (StringUtils.isNotEmpty(source.getNamespace()) ?
       source.getNamespace() :
       null
     ));

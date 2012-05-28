@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.intentions.StringUtils" />
   <root nodeId="1193744597902">
     <nodeInfo nodeId="1193744597902" fileName="AddCastStatement_Intention.java" startLine="21" startPosition="30" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1193744597902" fileName="AddCastStatement_Intention.java" startLine="25" startPosition="36" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6428,7 +6429,7 @@
     <nodeInfo nodeId="9163255059340146540" fileName="CreateInternalLabel_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9163255059340117948" fileName="CreateInternalLabel_Intention.java" startLine="37" startPosition="58" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9163255059340117948" fileName="CreateInternalLabel_Intention.java" startLine="39" startPosition="5" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9163255059340146436" fileName="CreateInternalLabel_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="1517" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9163255059340146436" fileName="CreateInternalLabel_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="994" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9163255059340147543" fileName="CreateInternalLabel_Intention.java" startLine="47" startPosition="76" endLine="48" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9163255059340147527" fileName="CreateInternalLabel_Intention.java" startLine="49" startPosition="100" endLine="50" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9163255059340147574" fileName="CreateInternalLabel_Intention.java" startLine="51" startPosition="110" endLine="52" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6454,7 +6455,7 @@
     <scopeInfo nodeId="9163255059340117948" fileName="CreateInternalLabel_Intention.java" startLine="28" startPosition="44" endLine="29" endPosition="17" />
     <scopeInfo nodeId="9163255059340117950" fileName="CreateInternalLabel_Intention.java" startLine="32" startPosition="85" endLine="33" endPosition="35" />
     <scopeInfo nodeId="9163255059340117948" fileName="CreateInternalLabel_Intention.java" startLine="37" startPosition="58" endLine="38" endPosition="19" />
-    <scopeInfo nodeId="9163255059340145226" fileName="CreateInternalLabel_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="1517" />
+    <scopeInfo nodeId="9163255059340145226" fileName="CreateInternalLabel_Intention.java" startLine="43" startPosition="90" endLine="44" endPosition="994" />
     <scopeInfo nodeId="9163255059340147518" fileName="CreateInternalLabel_Intention.java" startLine="49" startPosition="100" endLine="50" endPosition="129" />
     <scopeInfo nodeId="9163255059340147550" fileName="CreateInternalLabel_Intention.java" startLine="51" startPosition="110" endLine="52" endPosition="132" />
     <scopeInfo nodeId="9163255059340147553" fileName="CreateInternalLabel_Intention.java" startLine="53" startPosition="114" endLine="54" endPosition="136" />

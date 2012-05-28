@@ -71,10 +71,7 @@ public class GoToNodeById_Action extends BaseAction {
       if (value == null) {
         return;
       }
-      value = ((value == null ?
-        null :
-        value.trim()
-      ));
+      value = StringUtils.trimBoth(value);
       final SNodeId id = SNodeId.fromString(value);
       if (id == null) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);

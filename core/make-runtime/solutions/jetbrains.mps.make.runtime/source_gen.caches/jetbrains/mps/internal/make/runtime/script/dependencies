@@ -79,6 +79,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.CompositeResult" />
+    <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.TargetRange" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.script.ValidationError" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
@@ -103,6 +104,9 @@
     <classNode extendsClassName="jetbrains.mps.make.script.IPropertiesPool" />
     <classNode extendsClassName="jetbrains.mps.make.script.IResult" />
     <classNode extendsClassName="jetbrains.mps.make.script.IScript" />
+  </dependency>
+  <dependency className="jetbrains.mps.internal.make.runtime.script.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.internal.make.runtime.script.TargetRange" file="TargetRange.java">
     <classNode dependClassName="java.lang.Class" />

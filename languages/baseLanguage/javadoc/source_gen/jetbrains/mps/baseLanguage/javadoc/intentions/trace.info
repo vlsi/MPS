@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IntentionsDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.IntentionsDescriptor" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.intentions.StringUtils" />
   <root nodeId="2068944020170372970">
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="29" startPosition="36" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

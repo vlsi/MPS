@@ -75,7 +75,7 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
 
   public static void insertChildSNodeTreeNode(ModelTreeNode sModelTreeNode, ModelTreeNode sNodeTreeNode, String virtualPackage) {
     ModelTreeNode parentTreeNode = sModelTreeNode;
-    if ((virtualPackage != null && virtualPackage.length() > 0)) {
+    if (StringUtils.isNotEmpty(virtualPackage)) {
       for (String sub : virtualPackage.split("\\.")) {
         ModelTreeNode packageTreeNode = findChildNodeByText(parentTreeNode, sub);
         if (packageTreeNode == null) {

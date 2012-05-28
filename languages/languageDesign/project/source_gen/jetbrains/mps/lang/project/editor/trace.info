@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.project.editor.StringUtils" />
   <root nodeId="1855399583446017067">
     <nodeInfo nodeId="1855399583446017067" fileName="ModelRootManager_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5469351333089064732" fileName="ModelRootManager_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -8841,7 +8842,7 @@
     <nodeInfo nodeId="6735381766647679393" fileName="ModelReference_Editor.java" startLine="205" startPosition="72" endLine="206" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6735381766647679393" fileName="ModelReference_Editor.java" startLine="206" startPosition="78" endLine="207" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6735381766647679393" fileName="ModelReference_Editor.java" startLine="208" startPosition="10" endLine="209" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6735381766647562662" fileName="ModelReference_Editor.java" startLine="212" startPosition="111" endLine="213" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6735381766647562662" fileName="ModelReference_Editor.java" startLine="212" startPosition="111" endLine="213" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="269654322145263482" fileName="ModelReference_Editor.java" startLine="106" startPosition="90" endLine="108" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6735381766647679389" fileName="ModelReference_Editor.java" startLine="125" startPosition="96" endLine="127" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1057680424125015655" fileName="ModelReference_Editor.java" startLine="32" startPosition="81" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -8905,7 +8906,7 @@
     <scopeInfo nodeId="6735381766647562125" fileName="ModelReference_Editor.java" startLine="162" startPosition="58" endLine="163" endPosition="48" />
     <scopeInfo nodeId="269654322145263485" fileName="ModelReference_Editor.java" startLine="180" startPosition="58" endLine="181" endPosition="42" />
     <scopeInfo nodeId="6735381766647679393" fileName="ModelReference_Editor.java" startLine="199" startPosition="58" endLine="200" endPosition="50" />
-    <scopeInfo nodeId="6735381766647562661" fileName="ModelReference_Editor.java" startLine="212" startPosition="111" endLine="213" endPosition="137" />
+    <scopeInfo nodeId="6735381766647562661" fileName="ModelReference_Editor.java" startLine="212" startPosition="111" endLine="213" endPosition="85" />
     <scopeInfo nodeId="6735381766647562129" fileName="ModelReference_Editor.java" startLine="42" startPosition="5" endLine="44" endPosition="51">
       <varInfo nodeId="6735381766647562129" varName="style" />
     </scopeInfo>

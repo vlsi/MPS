@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.v7.StringUtils" />
   <root nodeId="286176397450364062">
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="31" startPosition="73" endLine="32" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
     <nodeInfo nodeId="286176397450364062" fileName="ModelReader7Handler.java" startLine="32" startPosition="54" endLine="33" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />

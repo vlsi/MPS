@@ -36,7 +36,7 @@ public class CheckingUtil {
 
   public static boolean isFieldDuplicated(final SNode fieldDecl) {
     final String name = SPropertyOperations.getString(fieldDecl, "name");
-    if ((name == null || name.length() == 0)) {
+    if (StringUtils.isEmpty(name)) {
       return false;
     }
     SNode classifier = SNodeOperations.getAncestor(fieldDecl, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

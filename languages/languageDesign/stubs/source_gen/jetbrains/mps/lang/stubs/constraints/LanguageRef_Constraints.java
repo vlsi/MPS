@@ -32,7 +32,7 @@ public class LanguageRef_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "languageFqName";
         {
-          if ((SPropertyOperations.getString(node, "languageId") == null || SPropertyOperations.getString(node, "languageId").length() == 0)) {
+          if (StringUtils.isEmpty(SPropertyOperations.getString(node, "languageId"))) {
             return null;
           }
 

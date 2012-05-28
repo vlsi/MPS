@@ -28,7 +28,7 @@ public class ConceptLinkDeclaration_Constraints extends BaseConstraintsDescripto
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "name";
-        return ((SPropertyOperations.getString(propertyValue)) != null && (SPropertyOperations.getString(propertyValue)).length() > 0);
+        return StringUtils.isNotEmpty((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;

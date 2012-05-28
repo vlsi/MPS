@@ -24,7 +24,7 @@ public class check_DuplicatedConceptName_NonTypesystemRule extends AbstractNonTy
 
   public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String name = SPropertyOperations.getString(conceptDeclaration, "name");
-    if ((name == null || name.length() == 0)) {
+    if (StringUtils.isEmpty(name)) {
       return;
     }
     if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(conceptDeclaration), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).any(new IWhereFilter<SNode>() {

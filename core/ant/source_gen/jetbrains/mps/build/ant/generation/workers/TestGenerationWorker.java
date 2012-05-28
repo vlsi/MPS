@@ -137,18 +137,12 @@ public class TestGenerationWorker extends MpsWorker {
 
     final _FunctionTypes._void_P1_E0<? super String> startTestFormat = new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(String msg) {
-        myReporter.testStarted(((msg == null ?
-          null :
-          msg.trim()
-        )));
+        myReporter.testStarted(StringUtils.trimBoth(msg));
       }
     };
     final _FunctionTypes._void_P1_E0<? super String> finishTestFormat = new _FunctionTypes._void_P1_E0<String>() {
       public void invoke(String msg) {
-        myReporter.testFinished(((msg == null ?
-          null :
-          msg.trim()
-        )));
+        myReporter.testFinished(StringUtils.trimBoth(msg));
       }
     };
     final int[] count = new int[]{1};
@@ -253,10 +247,7 @@ public class TestGenerationWorker extends MpsWorker {
 
   private void reportIfStartsWith(String prefix, String work, _FunctionTypes._void_P1_E0<? super String> format) {
     if (work != null && work.startsWith(prefix)) {
-      format.invoke(work.substring(prefix.length()) + ".Test." + ((prefix == null ?
-        null :
-        prefix.trim()
-      )));
+      format.invoke(work.substring(prefix.length()) + ".Test." + StringUtils.trimBoth(prefix));
     }
   }
 

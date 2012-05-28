@@ -30,7 +30,7 @@ public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || (SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name") == null || SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name").length() == 0)) {
+        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
           return false;
         }
         if ((SLinkOperations.getTarget(node, "alternativeConsequence", true) != null)) {
@@ -70,7 +70,7 @@ public class UpdateGeneratorMacros_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || (SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name") == null || SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name").length() == 0)) {
+        if ((SLinkOperations.getTarget(node, "mappingLabel", false) == null) || StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "mappingLabel", false), "name"))) {
           return false;
         }
         if ((SLinkOperations.getTarget(node, "mapperFunction", true) != null) || (SLinkOperations.getTarget(node, "postMapperFunction", true) != null) || (SLinkOperations.getTarget(node, "sourceNodeQuery", true) != null)) {

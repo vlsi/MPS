@@ -307,7 +307,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1237984687060(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || (SPropertyOperations.getString(_context.getNode(), "separator") != null && SPropertyOperations.getString(_context.getNode(), "separator").length() > 0);
+    return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "separator"));
   }
 
   public static boolean ifMacro_Condition_1237470933865(final IOperationContext operationContext, final IfMacroContext _context) {

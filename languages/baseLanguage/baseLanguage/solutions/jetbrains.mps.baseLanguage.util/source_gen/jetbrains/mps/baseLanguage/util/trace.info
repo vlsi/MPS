@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.StringUtils" />
   <root nodeId="1650638035896359074">
     <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="7" startPosition="32" endLine="8" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldPrefix" />
     <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="8" startPosition="31" endLine="9" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldSuffix" />
@@ -169,8 +170,8 @@
     <nodeInfo nodeId="8432634623182692147" fileName="OverridingMethodsFinder.java" startLine="138" startPosition="41" endLine="139" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8432634623182692160" fileName="OverridingMethodsFinder.java" startLine="143" startPosition="200" endLine="144" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8432634623182692173" fileName="OverridingMethodsFinder.java" startLine="146" startPosition="5" endLine="147" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8432634623182692183" fileName="OverridingMethodsFinder.java" startLine="150" startPosition="51" endLine="151" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8432634623182692197" fileName="OverridingMethodsFinder.java" startLine="154" startPosition="54" endLine="155" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8432634623182692183" fileName="OverridingMethodsFinder.java" startLine="150" startPosition="51" endLine="151" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8432634623182692197" fileName="OverridingMethodsFinder.java" startLine="154" startPosition="54" endLine="155" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8432634623182692219" fileName="OverridingMethodsFinder.java" startLine="159" startPosition="55" endLine="160" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8432634623182692232" fileName="OverridingMethodsFinder.java" startLine="161" startPosition="5" endLine="162" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8432634623182692249" fileName="OverridingMethodsFinder.java" startLine="166" startPosition="69" endLine="167" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -239,8 +240,8 @@
     <scopeInfo nodeId="8432634623182692123" fileName="OverridingMethodsFinder.java" startLine="131" startPosition="70" endLine="132" endPosition="111" />
     <scopeInfo nodeId="8432634623182692146" fileName="OverridingMethodsFinder.java" startLine="138" startPosition="41" endLine="139" endPosition="80" />
     <scopeInfo nodeId="8432634623182692159" fileName="OverridingMethodsFinder.java" startLine="143" startPosition="200" endLine="144" endPosition="135" />
-    <scopeInfo nodeId="8432634623182692182" fileName="OverridingMethodsFinder.java" startLine="150" startPosition="51" endLine="151" endPosition="277" />
-    <scopeInfo nodeId="8432634623182692196" fileName="OverridingMethodsFinder.java" startLine="154" startPosition="54" endLine="155" endPosition="277" />
+    <scopeInfo nodeId="8432634623182692182" fileName="OverridingMethodsFinder.java" startLine="150" startPosition="51" endLine="151" endPosition="229" />
+    <scopeInfo nodeId="8432634623182692196" fileName="OverridingMethodsFinder.java" startLine="154" startPosition="54" endLine="155" endPosition="229" />
     <scopeInfo nodeId="8432634623182692218" fileName="OverridingMethodsFinder.java" startLine="159" startPosition="55" endLine="160" endPosition="85" />
     <scopeInfo nodeId="8432634623182692064" fileName="OverridingMethodsFinder.java" startLine="122" startPosition="11" endLine="124" endPosition="78" />
     <scopeInfo nodeId="8432634623182692248" fileName="OverridingMethodsFinder.java" startLine="166" startPosition="69" endLine="168" endPosition="18" />

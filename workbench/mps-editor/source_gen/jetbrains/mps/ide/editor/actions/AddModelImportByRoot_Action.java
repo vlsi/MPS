@@ -134,7 +134,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
-      if (editorCellLabel.isErrorState() && !((editorCellLabel.getText() == null || editorCellLabel.getText().length() == 0))) {
+      if (editorCellLabel.isErrorState() && !(StringUtils.isEmpty(editorCellLabel.getText()))) {
         return editorCellLabel;
       }
     }
