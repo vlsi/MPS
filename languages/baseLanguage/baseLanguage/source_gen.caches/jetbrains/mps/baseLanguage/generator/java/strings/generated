@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bt09t35os6oka79t3gr0wq47bviuepp">
+<dependencies version="2" modelHash="b7nzqdgsxpkayz4jm4901xq7xgo0juv">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="5ilolhtj20utdeyfpzajg1ke8h914a4" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3pfv61ztw43crdi9n56ftoapjvy39kp" />
@@ -64,7 +64,7 @@
   <source id="2696770507970033436" name="reduce_TrimOperation_Trainling" hash="-13p7tnydqdr8rxwrrxedy95nj56h61c">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2696770507970455214" name="StringUtils" hash="-9tqt3u56an2enwvw9onyz0pysx5sicp">
+  <source id="2696770507970455214" name="StringUtils" hash="dy2nue5lva5kn65n70xv85asa1e4yh5">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="2696770507970455982" name="reduce_TrimOperation_Leading" hash="dvrg1glaumg1hll1g0lc4l70sst608b">
