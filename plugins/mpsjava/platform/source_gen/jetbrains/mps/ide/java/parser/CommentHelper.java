@@ -7,7 +7,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.apache.commons.lang.StringUtils;
 
 public class CommentHelper {
   public CommentHelper() {

@@ -181,7 +181,7 @@ public class NewDevKitDialogContentPane extends JPanel {
   }
 
   /*package*/ void onOk() {
-    String message = NewModuleUtil.check(MPSExtentions.DOT_SOLUTION, myThis.getDevkitName(), myThis.getDevkitDir());
+    String message = NewModuleUtil.check(MPSExtentions.DOT_DEVKIT, myThis.getDevkitName(), myThis.getDevkitDir());
     if (message != null) {
       myThis.getDialog().setErrorText(message);
       return;
