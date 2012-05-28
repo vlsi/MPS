@@ -48,13 +48,14 @@ public class DependencyStep extends AbstractStep {
     return "Dependency on MPS build scripts.";
   }
 
+  @Override
   public void _init() {
     super._init();
     String errorText = null;
-    if (!(this.myGenerator.isValid())) {
+    if (!(myGenerator.isValid())) {
       errorText = "Invalid input in previous steps.";
     }
-    this.myHandler.setErrorText(errorText);
+    myHandler.setErrorText(errorText);
   }
 
   @Override
