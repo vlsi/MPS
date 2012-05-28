@@ -16,9 +16,6 @@ public class TypesystemActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowNodeType_Action");
-      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.pluginSolution.plugin.GoToTypeErrorRule_Action");
-      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowRulesWhichAffectNodeType_Action");
-      TypesystemActions_ActionGroup.this.addAction("jetbrains.mps.lang.typesystem.pluginSolution.plugin.ShowInferredNodeType_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

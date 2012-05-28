@@ -9,7 +9,6 @@
     <ant antfile="buildTroveCollections.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildWorkbench.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDevKit.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="buildCoreUI.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExperimental.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildBuild.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildPlugins.xml" inheritAll="true" useNativeBasedir="true" />
