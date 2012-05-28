@@ -134,10 +134,10 @@
       <directory url="file://$PROJECT_DIR$/languages/util/xmlUnitTest/languages/xmlUnitTest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/util/ypath/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/collections/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/core/core/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/dataFlow/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/plugin/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/quotation/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
