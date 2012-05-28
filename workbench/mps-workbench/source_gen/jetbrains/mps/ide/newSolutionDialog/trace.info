@@ -3,7 +3,7 @@
   <root nodeId="5890305283801268194">
     <nodeInfo nodeId="6526493364578751225" fileName="NewModuleUtil.java" startLine="41" startPosition="25" endLine="42" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5049856602248782968" fileName="NewModuleUtil.java" startLine="42" startPosition="71" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8720557803585317712" fileName="NewModuleUtil.java" startLine="49" startPosition="45" endLine="50" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8720557803585317712" fileName="NewModuleUtil.java" startLine="49" startPosition="94" endLine="50" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460447244" fileName="NewModuleUtil.java" startLine="52" startPosition="33" endLine="53" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4543209876460425560" fileName="NewModuleUtil.java" startLine="54" startPosition="5" endLine="55" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4543209876460425571" fileName="NewModuleUtil.java" startLine="56" startPosition="26" endLine="57" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -98,7 +98,7 @@
     <nodeInfo nodeId="4543209876460424807" fileName="NewModuleUtil.java" startLine="47" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
     <scopeInfo nodeId="5249055041137756479" fileName="NewModuleUtil.java" startLine="36" startPosition="26" endLine="36" endPosition="26" />
     <scopeInfo nodeId="4543209876460447590" fileName="NewModuleUtil.java" startLine="99" startPosition="46" endLine="99" endPosition="46" />
-    <scopeInfo nodeId="8720557803585309180" fileName="NewModuleUtil.java" startLine="49" startPosition="45" endLine="50" endPosition="61" />
+    <scopeInfo nodeId="8720557803585309180" fileName="NewModuleUtil.java" startLine="49" startPosition="94" endLine="50" endPosition="61" />
     <scopeInfo nodeId="4543209876460447231" fileName="NewModuleUtil.java" startLine="52" startPosition="33" endLine="53" endPosition="40" />
     <scopeInfo nodeId="4543209876460425568" fileName="NewModuleUtil.java" startLine="56" startPosition="26" endLine="57" endPosition="21" />
     <scopeInfo nodeId="4543209876460425576" fileName="NewModuleUtil.java" startLine="59" startPosition="34" endLine="60" endPosition="45" />
