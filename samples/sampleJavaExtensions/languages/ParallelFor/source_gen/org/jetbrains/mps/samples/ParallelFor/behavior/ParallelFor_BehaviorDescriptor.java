@@ -8,8 +8,8 @@ import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescr
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 import java.util.List;
-import java.util.Set;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
+import java.util.Set;
 import jetbrains.mps.scope.Scope;
 
 public class ParallelFor_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor {
@@ -30,6 +30,10 @@ public class ParallelFor_BehaviorDescriptor extends AbstractLoopStatement_Behavi
 
   public boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
     return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
+  }
+
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
   }
 
   public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
