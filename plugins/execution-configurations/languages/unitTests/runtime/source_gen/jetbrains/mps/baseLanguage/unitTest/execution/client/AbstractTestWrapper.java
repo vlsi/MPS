@@ -87,7 +87,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   }
 
   public String getName() {
-    N node = getNode();
+    SNode node = getNode();
     if (node == null) {
       return null;
     }
@@ -101,7 +101,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   public String getFqName() {
     ITestNodeWrapper testCase = getTestCase();
     if (isTestCase() || testCase == null) {
-      N node = getNode();
+      SNode node = getNode();
       if (node == null) {
         return null;
       }
