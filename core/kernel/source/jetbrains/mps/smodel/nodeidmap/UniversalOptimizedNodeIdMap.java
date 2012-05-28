@@ -79,7 +79,7 @@ public class UniversalOptimizedNodeIdMap implements INodeIdToNodeMap {
   }
 
   public Iterable<SNode> values() {
-    Iterator<SNode> regular = Arrays.asList((SNode[]) myRegularMap.getValues()).iterator();
+    Iterator<SNode> regular = ((Iterable) Arrays.asList(myRegularMap.getValues())).iterator();
     Iterator<SNode> foreign = myForeignMap.values().iterator();
     Iterator<SNode> other = myOtherMap.values().iterator();
     return new MergeIterator<SNode>(regular, new MergeIterator<SNode>(foreign, other));
