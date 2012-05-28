@@ -20,6 +20,10 @@ public class ExecuteCommandPart_BehaviorDescriptor extends BaseConcept_BehaviorD
     return ExecuteCommandPart_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
   }
 
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
+  }
+
   public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
     return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
   }
