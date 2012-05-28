@@ -10,12 +10,19 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -25,10 +32,11 @@ import java.util.List;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.PathMacros;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.util.RelativePathHelper;
@@ -38,14 +46,14 @@ import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class BuildGeneratorImpl extends AbstractBuildGenerator {
@@ -70,10 +78,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       public void run() {
         SModelDescriptor descriptor = getSModelDescriptor(new EmptyProgressIndicator());
 
-        descriptor.getModule().getModuleDescriptor().getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
-        descriptor.getModule().getModuleDescriptor().getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
-        descriptor.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
-        descriptor.getSModel().addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
+        addRequiredImports(descriptor.getSModel(), descriptor.getModule().getModuleDescriptor());
 
         final EditableSModelDescriptor targetModelDescriptor = ((EditableSModelDescriptor) descriptor);
         SNode buildProject = createMPSLayout(targetModelDescriptor, BuildGeneratorImpl.this.getProjectName(), BuildGeneratorImpl.this.myProject.getBaseDir().getPath(), BuildGeneratorImpl.this.getModules());
@@ -91,6 +96,18 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
       }
     }, ProjectHelper.toMPSProject(myProject));
+  }
+
+  private void addRequiredImports(SModel smodel, ModuleDescriptor moduleDescriptor) {
+    moduleDescriptor.getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
+    moduleDescriptor.getUsedLanguages().add(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
+    smodel.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
+    smodel.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
+
+    if (getDependencyKind() != DependencyStep.DependencyKind.NONE) {
+      moduleDescriptor.getDependencies().add(new Dependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("422c2909-59d6-41a9-b318-40e6256b250f")).getModuleReference(), false));
+      smodel.addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getSModelReference(), false);
+    }
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
@@ -126,18 +143,28 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   protected SNode createMPSLayout(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     Set<SNode> modules = SetSequence.fromSet(new LinkedHashSet<SNode>());
-    SNode folder = new BuildGeneratorImpl.QuotationClass_un708i_a0a1a3().createNode(name);
+    SNode folder = new BuildGeneratorImpl.QuotationClass_un708i_a0a1a4().createNode(name);
 
     SModel targetSModel = targetModelDescriptor.getSModel();
     createContent(selectedData, folder, modules, targetSModel);
 
     Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
     List<SNode> macroses = new ArrayList<SNode>();
+    List<SNode> dependencies = new ArrayList<SNode>();
     for (String macro : SetSequence.fromSet(userMacroNames)) {
-      ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0i0d().createNode(macro));
+      ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0j0e().createNode(macro));
+    }
+    if (eq_un708i_a0k0e(getDependencyKind(), DependencyStep.DependencyKind.MPS)) {
+      ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0k0e().createNode());
+      ListSequence.fromList(dependencies).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0b0k0e().createNode(SNodeOperations.getNode("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)", "4301118715654192646")));
+    } else if (eq_un708i_a0a01a4(getDependencyKind(), DependencyStep.DependencyKind.IDEA_AND_MPS_PLUGIN)) {
+      SNode macro = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0k0e_0().createNode();
+      ListSequence.fromList(macroses).addElement(macro);
+      ListSequence.fromList(dependencies).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0c0a01a4().createNode(macro));
     }
 
-    SNode buildProject = new BuildGeneratorImpl.QuotationClass_un708i_a0a01a3().createNode(name + ".zip", folder, name, SetSequence.fromSet(modules).toListSequence(), macroses);
+    SNode buildProject = new BuildGeneratorImpl.QuotationClass_un708i_a0a21a4().createNode(name + ".zip", folder, name, SetSequence.fromSet(modules).toListSequence(), macroses);
+    ListSequence.fromList(SLinkOperations.getTargets(buildProject, "dependencies", true)).addSequence(ListSequence.fromList(dependencies));
 
     try {
       String relativeToModuleProjectPath = Context.defaultContext().getRelativePathHelper(targetSModel).makeRelative(myProject.getBasePath());
@@ -183,7 +210,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         return null;
       }
       String[] parts = relativeDescriptorPath.split("/");
-      SNode path = new BuildGeneratorImpl.QuotationClass_un708i_a0a5a0a4().createNode();
+      SNode path = new BuildGeneratorImpl.QuotationClass_un708i_a0a5a0a5().createNode();
       SNode compositePart = SLinkOperations.getTarget(path, "compositePart", true);
       for (String part : parts) {
         SPropertyOperations.set(compositePart, "head", part);
@@ -194,17 +221,17 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
       SNode moduleNode;
       if (module instanceof Solution) {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a11a0a4().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a11a0a5().createNode(path);
       } else if (module instanceof Language) {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0e().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0f().createNode(path);
       } else {
-        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0e_0().createNode(path);
+        moduleNode = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0l0a0f_0().createNode(path);
       }
       SetSequence.fromSet(modules).addElement(moduleNode);
-      return new BuildGeneratorImpl.QuotationClass_un708i_a0n0a0e().createNode(moduleNode);
+      return new BuildGeneratorImpl.QuotationClass_un708i_a0n0a0f().createNode(moduleNode);
     } else if (data instanceof NamespaceData) {
       String namespace = ((NamespaceData) data).getText();
-      return new BuildGeneratorImpl.QuotationClass_un708i_a0b0a0a4().createNode(namespace);
+      return new BuildGeneratorImpl.QuotationClass_un708i_a0b0a0a5().createNode(namespace);
     }
     return null;
   }
@@ -249,8 +276,22 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a1a3 {
-    public QuotationClass_un708i_a0a1a3() {
+  private static boolean eq_un708i_a0k0e(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_un708i_a0a01a4(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  public static class QuotationClass_un708i_a0a1a4 {
+    public QuotationClass_un708i_a0a1a4() {
     }
 
     public SNode createNode(Object parameter_7) {
@@ -279,8 +320,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a0i0d {
-    public QuotationClass_un708i_a0a0a0i0d() {
+  public static class QuotationClass_un708i_a0a0a0j0e {
+    public QuotationClass_un708i_a0a0a0j0e() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -297,8 +338,87 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a01a3 {
-    public QuotationClass_un708i_a0a01a3() {
+  public static class QuotationClass_un708i_a0a0a0k0e {
+    public QuotationClass_un708i_a0a0a0k0e() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("name", "mps_home");
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a0b0k0e {
+    public QuotationClass_un708i_a0a0b0k0e() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setReferent("script", (SNode) parameter_3);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a0a0k0e_0 {
+    public QuotationClass_un708i_a0a0a0k0e_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("name", "idea_home");
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a0c0a01a4 {
+    public QuotationClass_un708i_a0a0c0a01a4() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildExternalLayoutDependency", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.addReference(SReference.create("layout", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("7181125477683264500")));
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.setReferent("macro", (SNode) parameter_5);
+          quotedNode_1.addChild("artifacts", quotedNode1_4);
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a21a4 {
+    public QuotationClass_un708i_a0a21a4() {
     }
 
     public SNode createNode(Object parameter_24, Object parameter_25, Object parameter_26, Object parameter_27, Object parameter_28) {
@@ -390,8 +510,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a5a0a4 {
-    public QuotationClass_un708i_a0a5a0a4() {
+  public static class QuotationClass_un708i_a0a5a0a5 {
+    public QuotationClass_un708i_a0a5a0a5() {
     }
 
     public SNode createNode() {
@@ -414,8 +534,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a11a0a4 {
-    public QuotationClass_un708i_a0a0a11a0a4() {
+  public static class QuotationClass_un708i_a0a0a11a0a5 {
+    public QuotationClass_un708i_a0a0a11a0a5() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -446,8 +566,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a0l0a0e {
-    public QuotationClass_un708i_a0a0a0l0a0e() {
+  public static class QuotationClass_un708i_a0a0a0l0a0f {
+    public QuotationClass_un708i_a0a0a0l0a0f() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -478,8 +598,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a0l0a0e_0 {
-    public QuotationClass_un708i_a0a0a0l0a0e_0() {
+  public static class QuotationClass_un708i_a0a0a0l0a0f_0 {
+    public QuotationClass_un708i_a0a0a0l0a0f_0() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -510,8 +630,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0n0a0e {
-    public QuotationClass_un708i_a0n0a0e() {
+  public static class QuotationClass_un708i_a0n0a0f {
+    public QuotationClass_un708i_a0n0a0f() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -528,8 +648,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0b0a0a4 {
-    public QuotationClass_un708i_a0b0a0a4() {
+  public static class QuotationClass_un708i_a0b0a0a5 {
+    public QuotationClass_un708i_a0b0a0a5() {
     }
 
     public SNode createNode(Object parameter_7) {

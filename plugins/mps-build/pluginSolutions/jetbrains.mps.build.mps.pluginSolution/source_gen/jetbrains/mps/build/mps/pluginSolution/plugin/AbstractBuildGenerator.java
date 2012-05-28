@@ -22,6 +22,7 @@ public abstract class AbstractBuildGenerator {
   private SModelDescriptor myModelDescriptor;
   private boolean myCreateModel = true;
   private final List<NodeData> myModules = ListSequence.fromList(new LinkedList<NodeData>());
+  private DependencyStep.DependencyKind myDependencyKind = DependencyStep.DependencyKind.values()[DependencyStep.DependencyKind.DEFAULT];
 
   public AbstractBuildGenerator() {
   }
@@ -119,5 +120,13 @@ public abstract class AbstractBuildGenerator {
 
   public boolean isValid() {
     return (this.isValidModelName(this.myModelName) || !(this.myCreateModel)) && (this.isValidSolutionName(this.mySolutionName) || !(this.myCreateSolution));
+  }
+
+  public DependencyStep.DependencyKind getDependencyKind() {
+    return myDependencyKind;
+  }
+
+  public void setDependencyKind(DependencyStep.DependencyKind dependencyKind) {
+    myDependencyKind = dependencyKind;
   }
 }
