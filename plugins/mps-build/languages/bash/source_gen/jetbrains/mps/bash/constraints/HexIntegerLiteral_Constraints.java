@@ -28,7 +28,7 @@ public class HexIntegerLiteral_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "value";
-        if (((SPropertyOperations.getString(propertyValue)) == null || (SPropertyOperations.getString(propertyValue)).length() == 0)) {
+        if (StringUtils.isEmpty((SPropertyOperations.getString(propertyValue)))) {
           return false;
         }
         return (SPropertyOperations.getString(propertyValue)).matches("(\\d|[a-fA-F])*");

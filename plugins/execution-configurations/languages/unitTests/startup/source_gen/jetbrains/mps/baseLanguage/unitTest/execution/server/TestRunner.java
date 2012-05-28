@@ -46,7 +46,7 @@ public class TestRunner {
           if (line == null) {
             break;
           }
-          if ((line == null || line.length() == 0)) {
+          if (StringUtils.isEmpty(line)) {
             continue;
           }
           ListSequence.fromList(fileContents).addElement(line);

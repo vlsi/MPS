@@ -116,7 +116,7 @@ public class Junit_Command {
     return new Junit_Command().setVirtualMachineParameter_String(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath_String((check_u7m9j_a0c0a0a0(javaRunParameters) ?
       javaRunParameters.jrePath() :
       null
-    )).setWorkingDirectory_File(((check_u7m9j_a0a3a0a0a(javaRunParameters) == null || check_u7m9j_a0a3a0a0a(javaRunParameters).length() == 0) ?
+    )).setWorkingDirectory_File((StringUtils.isEmpty(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
       null :
       new File(javaRunParameters.workingDirectory())
     )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
@@ -130,7 +130,7 @@ public class Junit_Command {
     if (ListSequence.fromList(testsToRun._0()).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
-    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1()._1()), " ") + (((myVirtualMachineParameter_String != null && myVirtualMachineParameter_String.length() > 0) ?
+    return new Java_Command().setVirtualMachineParameter_String(IterableUtils.join(ListSequence.fromList(testsToRun._1()._1()), " ") + ((StringUtils.isNotEmpty(myVirtualMachineParameter_String) ?
       " " + myVirtualMachineParameter_String :
       ""
     ))).setClassPath_ListString(ListSequence.fromList(testsToRun._1()._2()).union(ListSequence.fromList(Junit_Command.getClasspath(testsToRun._0()))).toListSequence()).setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(Junit_Command.getProgramParameters(testsToRun._0())).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(testsToRun._1()._0());
@@ -195,7 +195,7 @@ public class Junit_Command {
         }), " ");
       }
     });
-    if ((skipped.value != null && skipped.value.length() > 0)) {
+    if (StringUtils.isNotEmpty(skipped.value)) {
       if (log.isWarnEnabled()) {
         log.warn("All tests could not be executed together. Skipped " + skipped.value);
       }

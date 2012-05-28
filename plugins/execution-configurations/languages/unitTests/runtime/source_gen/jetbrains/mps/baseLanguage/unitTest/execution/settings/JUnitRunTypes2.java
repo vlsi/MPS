@@ -93,7 +93,7 @@ public enum JUnitRunTypes2 {
     }
 
     public String check(JUnitSettings_Configuration configuration, Project project) {
-      if ((configuration.getModule() == null || configuration.getModule().length() == 0)) {
+      if (StringUtils.isEmpty(configuration.getModule())) {
         return "Module is not selected.";
       }
       IModule module = TestUtils.getModule(configuration.getModule());

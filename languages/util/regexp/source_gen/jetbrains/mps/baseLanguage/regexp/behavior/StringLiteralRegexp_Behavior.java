@@ -22,7 +22,7 @@ public class StringLiteralRegexp_Behavior {
   }
 
   public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
-    if ((SPropertyOperations.getString(thisNode, "text") == null || SPropertyOperations.getString(thisNode, "text").length() == 0)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text"))) {
       return false;
     }
     return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
