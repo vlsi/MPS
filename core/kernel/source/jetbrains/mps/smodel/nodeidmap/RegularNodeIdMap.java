@@ -58,6 +58,6 @@ public class RegularNodeIdMap implements INodeIdToNodeMap {
   }
 
   public Iterable<SNode> values() {
-    return Arrays.asList((SNode[]) myRegularMap.getValues());
+    return ((Iterable) Arrays.asList(myRegularMap.getValues()));
   }
 }
