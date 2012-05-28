@@ -21,6 +21,6 @@ public class ShowDefaultKeymap extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return "http://confluence.jetbrains.com/display/MPSD2/Default+Keymap+Reference";
+    return "http://confluence.jetbrains.com/display/MPSD25/Default+Keymap+Reference";
   }
 }
