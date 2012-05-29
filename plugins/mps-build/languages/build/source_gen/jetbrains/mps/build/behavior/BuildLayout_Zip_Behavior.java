@@ -16,7 +16,7 @@ public class BuildLayout_Zip_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
     String zipLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), helper.getMacroHelper());

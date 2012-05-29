@@ -14,8 +14,8 @@ public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedCont
     return BuildLayout_Folder_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildLayout_Folder_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_Folder_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {

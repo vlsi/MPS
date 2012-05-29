@@ -348,11 +348,17 @@ public class MergeRootsDialog extends DialogWrapper {
       }
       myActionGroup.removeAll();
       myModelsDialog.rootsDialogClosed();
-      myMineEditor.dispose();
+      if (myMineEditor != null) {
+        myMineEditor.dispose();
+      }
       myMineEditor = null;
-      myResultEditor.dispose();
+      if (myResultEditor != null) {
+        myResultEditor.dispose();
+      }
       myResultEditor = null;
-      myRepositoryEditor.dispose();
+      if (myRepositoryEditor != null) {
+        myRepositoryEditor.dispose();
+      }
       myRepositoryEditor = null;
       ListSequence.fromList(myEdtiorSeparators).visitAll(new IVisitor<DiffEditorSeparator>() {
         public void visit(DiffEditorSeparator s) {

@@ -18,7 +18,7 @@ public class VariableNameDeclaration_Behavior {
 
   public static SNode getDefinedName_9034131902192956167(IScope scope, String name) {
     for (SNode definedVar : ListSequence.fromList(SConceptOperations.findConceptInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.VariableNameDeclaration"), scope))) {
-      if ((SPropertyOperations.getString(definedVar, "name") != null && SPropertyOperations.getString(definedVar, "name").length() > 0) && SPropertyOperations.getString(definedVar, "name").equals(name)) {
+      if (StringUtils.isNotEmpty(SPropertyOperations.getString(definedVar, "name")) && SPropertyOperations.getString(definedVar, "name").equals(name)) {
         return definedVar;
       }
     }
@@ -54,7 +54,7 @@ public class VariableNameDeclaration_Behavior {
 
   public static SNode testName_9034131902194480300(SNode node, String name) {
     for (SNode v : ListSequence.fromList(VariableNameDeclaration_Behavior.getDefinedInShell_9034131902194381915(node))) {
-      if ((SPropertyOperations.getString(v, "name") != null && SPropertyOperations.getString(v, "name").length() > 0) && SPropertyOperations.getString(v, "name").equals(name)) {
+      if (StringUtils.isNotEmpty(SPropertyOperations.getString(v, "name")) && SPropertyOperations.getString(v, "name").equals(name)) {
         return v;
       }
     }

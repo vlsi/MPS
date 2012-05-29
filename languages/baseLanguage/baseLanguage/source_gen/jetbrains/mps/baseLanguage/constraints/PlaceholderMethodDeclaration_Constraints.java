@@ -51,7 +51,7 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "name";
-        return ((SPropertyOperations.getString(propertyValue)) == null || (SPropertyOperations.getString(propertyValue)).length() == 0);
+        return StringUtils.isEmpty((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;

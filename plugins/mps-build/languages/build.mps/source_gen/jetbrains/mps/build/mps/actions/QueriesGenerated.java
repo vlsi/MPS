@@ -43,6 +43,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "path", true) == null);
   }
 
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPlugin_1238980147630030570(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "pluginXml", true) == null);
+  }
+
   public static void nodeFactory_NodeSetup_BuildMps_AbstractModule_8369506495128727677(final IOperationContext operationContext, final NodeSetupContext _context) {
     SPropertyOperations.set(_context.getNewNode(), "compact", "" + true);
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "path", "jetbrains.mps.build.structure.BuildSourcePath");
@@ -166,6 +170,27 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return "load from";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildMps_IdeaPlugin_1238980147630030569(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "pluginXml", "jetbrains.mps.build.structure.BuildSourcePath");
+        }
+
+        public String getMatchingText(String pattern) {
+          return "from file";
         }
 
         public String getVisibleMatchingText(String pattern) {

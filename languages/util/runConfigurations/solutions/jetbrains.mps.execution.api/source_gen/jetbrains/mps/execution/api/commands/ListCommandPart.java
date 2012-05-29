@@ -21,7 +21,7 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
   }
 
   public ListCommandPart(List<? extends Object> list, @Nullable String separator) {
-    if ((separator == null || separator.length() == 0)) {
+    if (StringUtils.isEmpty(separator)) {
       addCommands(getCommands(list));
     } else {
       addCommands(IterableUtils.join(Sequence.fromIterable(getCommands(list)), separator));
@@ -41,12 +41,12 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
       return ListSequence.fromList(new ArrayList<String>());
     }
     if (item instanceof String) {
-      if ((((String) item) != null && ((String) item).length() > 0)) {
+      if (StringUtils.isNotEmpty(((String) item))) {
         return ProcessHandlerBuilder.splitCommandInParts((String) item);
       }
     } else if (item instanceof File) {
       String path = ((File) item).getAbsolutePath();
-      if ((path != null && path.length() > 0)) {
+      if (StringUtils.isNotEmpty(path)) {
         return Sequence.<String>singleton(path);
       }
     } else if (item instanceof CommandPart) {

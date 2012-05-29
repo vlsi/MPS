@@ -31,10 +31,7 @@ public class CommentHelper {
       return result;
     }
     // remove start prefix 
-    if (((Sequence.fromIterable(lines).first() == null ?
-      null :
-      Sequence.fromIterable(lines).first().trim()
-    )).equals(start)) {
+    if (StringUtils.trimBoth(Sequence.fromIterable(lines).first()).equals(start)) {
       lines = Sequence.fromIterable(lines).skip(1);
     } else if (Sequence.fromIterable(lines).first().startsWith(start)) {
       ListSequence.fromList(result).addElement(Sequence.fromIterable(lines).first().substring(start.length()));
@@ -44,29 +41,26 @@ public class CommentHelper {
     if (Sequence.fromIterable(lines).isNotEmpty()) {
       int mintrim = Sequence.fromIterable(lines).first().length();
       for (String line : Sequence.fromIterable(lines)) {
-        if ((line != null && line.length() > 0)) {
+        if (StringUtils.isNotEmpty(line)) {
           mintrim = Math.min(mintrim, line.length() - StringUtils.stripStart(line, " \n\r\t").length());
         }
       }
       boolean trimok = mintrim > 0;
       String prefix = Sequence.fromIterable(lines).first().substring(0, mintrim);
       for (String line : Sequence.fromIterable(lines)) {
-        if ((line != null && line.length() > 0)) {
+        if (StringUtils.isNotEmpty(line)) {
           trimok = trimok && line.startsWith(prefix);
         }
       }
       for (String line : Sequence.fromIterable(lines)) {
-        ListSequence.fromList(result).addElement((trimok && (line != null && line.length() > 0) ?
+        ListSequence.fromList(result).addElement((trimok && StringUtils.isNotEmpty(line) ?
           line.substring(mintrim) :
           line
         ));
       }
     }
-    if ((end != null && end.length() > 0) && ListSequence.fromList(result).isNotEmpty()) {
-      if (((ListSequence.fromList(result).last() == null ?
-        null :
-        ListSequence.fromList(result).last().trim()
-      )).equals(end)) {
+    if (StringUtils.isNotEmpty(end) && ListSequence.fromList(result).isNotEmpty()) {
+      if (StringUtils.trimBoth(ListSequence.fromList(result).last()).equals(end)) {
         ListSequence.fromList(result).removeLastElement();
       } else if (ListSequence.fromList(result).last().endsWith(end)) {
         String last = ListSequence.fromList(result).removeLastElement();

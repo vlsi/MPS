@@ -74,7 +74,7 @@ public class CycleHelper {
     for (SNode jm : modules) {
       CycleHelper.Module module = new CycleHelper.Module(jm);
       map.put(jm, module);
-      if ((SPropertyOperations.getString(jm, "outputFolder") == null || SPropertyOperations.getString(jm, "outputFolder").length() == 0)) {
+      if (StringUtils.isEmpty(SPropertyOperations.getString(jm, "outputFolder"))) {
         genContext.showErrorMessage(jm, "empty output path");
       } else if (SPropertyOperations.getString(jm, "outputFolder").endsWith("/") || SPropertyOperations.getString(jm, "outputFolder").endsWith("\\")) {
         genContext.showErrorMessage(jm, "output path shouldn't end with slash");

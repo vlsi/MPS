@@ -230,15 +230,15 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wbyfib_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && ((SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName") == null || SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName").length() == 0) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   private static boolean renderingCondition_wbyfib_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && ((SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName") == null || SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName").length() == 0) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   private static boolean renderingCondition_wbyfib_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName") != null && SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName").length() > 0);
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
   }
 
   public static class _Inline_wbyfib_a2a extends InlineCellProvider {

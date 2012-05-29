@@ -6,6 +6,7 @@ import jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_BehaviorDescri
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildSource_SingleFolder_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
@@ -14,20 +15,24 @@ public class BuildMpsLayout_Plugin_BehaviorDescriptor extends BuildLayout_Abstra
   public BuildMpsLayout_Plugin_BehaviorDescriptor() {
   }
 
+  public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
+    return BuildMpsLayout_Plugin_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
+  }
+
   public String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
     return BuildMpsLayout_Plugin_Behavior.virtual_getApproximateName_5610619299014531547(thisNode);
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildMpsLayout_Plugin_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
-  }
-
-  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
-    return BuildMpsLayout_Plugin_Behavior.virtual_exports_6547494638219603457(thisNode, object);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildMpsLayout_Plugin_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return BuildMpsLayout_Plugin_Behavior.virtual_isFolder_1368030936106753980(thisNode);
+  }
+
+  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
+    return BuildMpsLayout_Plugin_Behavior.virtual_exports_6547494638219603457(thisNode, artifactId);
   }
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {

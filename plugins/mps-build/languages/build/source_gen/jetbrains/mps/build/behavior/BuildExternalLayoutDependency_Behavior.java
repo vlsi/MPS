@@ -6,12 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.util.DependenciesHelper;
 
 public class BuildExternalLayoutDependency_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     String location = "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "layout", false), "name") + "}";
     helper.locations().put(thisNode, location);
     helper.contentLocations().put(thisNode, location);
@@ -20,5 +21,9 @@ public class BuildExternalLayoutDependency_Behavior {
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     sb.append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "layout", false), "name"));
     sb.append("::");
+  }
+
+  public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
+    return helper.locations().get(thisNode);
   }
 }

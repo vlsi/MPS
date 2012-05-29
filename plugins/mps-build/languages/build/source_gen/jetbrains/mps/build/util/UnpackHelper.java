@@ -7,15 +7,21 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Collection;
+import java.util.HashMap;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.LinkedHashSet;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
+import java.util.Collections;
 
 public class UnpackHelper extends DependenciesHelper {
   private final VisibleArtifacts visible;
   private final List<SNode> required = new ArrayList<SNode>();
   private final Set<SNode> requiredSet = new HashSet<SNode>();
   private final Set<SNode> requiredWithContent = new HashSet<SNode>();
+  private final Map<SNode, Collection<Object>> artifactIds = new HashMap<SNode, Collection<Object>>();
   private boolean evaluated = false;
   private final List<SNode> statements = new ArrayList<SNode>();
   private PathProvider myPathProvider;
@@ -28,9 +34,12 @@ public class UnpackHelper extends DependenciesHelper {
     this.genContext = genContext;
   }
 
-  /*package*/ void add(SNode n, boolean withContent) {
+  /*package*/ void add(SNode n, boolean withContent, Object artifactId) {
     if (withContent) {
       requiredWithContent.add(n);
+    }
+    if (artifactId != null) {
+      mapArtifactId(n, artifactId);
     }
     if (!(requiredSet.add(n))) {
       return;
@@ -38,9 +47,18 @@ public class UnpackHelper extends DependenciesHelper {
 
     SNode parent = visible.parent(n);
     if (parent != null) {
-      add(parent, true);
+      add(parent, true, null);
     }
     ListSequence.fromList(required).addElement(n);
+  }
+
+  private void mapArtifactId(SNode n, Object artifactId) {
+    Collection<Object> collection = artifactIds.get(n);
+    if (collection == null) {
+      collection = new LinkedHashSet<Object>();
+      artifactIds.put(n, collection);
+    }
+    collection.add(artifactId);
   }
 
   public void eval() {
@@ -50,7 +68,11 @@ public class UnpackHelper extends DependenciesHelper {
     evaluated = true;
 
     for (SNode n : required) {
-      BuildLayout_PathElement_Behavior.call_unpack_7128123785277710736(n, this);
+      Collection<Object> artifacts = artifactIds.get(n);
+      BuildLayout_PathElement_Behavior.call_unpack_7128123785277710736(n, this, (artifacts != null ?
+        artifacts :
+        Collections.emptyList()
+      ));
     }
   }
 

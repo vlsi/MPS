@@ -132,7 +132,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode l = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.project.structure.Language");
-    return SPropertyOperations.getString(l, "namespace") + "/" + (((SPropertyOperations.getString(_context.getNode(), "name") == null || SPropertyOperations.getString(_context.getNode(), "name").length() == 0) ?
+    return SPropertyOperations.getString(l, "namespace") + "/" + ((StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "name")) ?
       "<no name>" :
       SPropertyOperations.getString(_context.getNode(), "name")
     ));

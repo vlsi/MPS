@@ -27,42 +27,27 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5499565529811346601(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String p = BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getNode());
-    return "T" + Character.toUpperCase(p.charAt(0)) + (p == null ?
-      null :
-      p.substring(1)
-    ) + "ArrayListDecorator";
+    return "T" + Character.toUpperCase(p.charAt(0)) + StringUtils.substring(p, 1) + "ArrayListDecorator";
   }
 
   public static Object referenceMacro_GetReferent_5499565529811371608(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     String p = BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getNode());
-    return "[gnu.trove]T" + Character.toUpperCase(p.charAt(0)) + (p == null ?
-      null :
-      p.substring(1)
-    ) + "ArrayList";
+    return "[gnu.trove]T" + Character.toUpperCase(p.charAt(0)) + StringUtils.substring(p, 1) + "ArrayList";
   }
 
   public static Object referenceMacro_GetReferent_5499565529811382100(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     String p = BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getNode());
-    return "[gnu.trove]T" + Character.toUpperCase(p.charAt(0)) + (p == null ?
-      null :
-      p.substring(1)
-    ) + "ArrayList";
+    return "[gnu.trove]T" + Character.toUpperCase(p.charAt(0)) + StringUtils.substring(p, 1) + "ArrayList";
   }
 
   public static Object referenceMacro_GetReferent_5499565529811760474(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     String p = BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getNode());
-    return "T" + Character.toUpperCase(p.charAt(0)) + (p == null ?
-      null :
-      p.substring(1)
-    ) + "ArrayListDecorator";
+    return "T" + Character.toUpperCase(p.charAt(0)) + StringUtils.substring(p, 1) + "ArrayListDecorator";
   }
 
   public static Object referenceMacro_GetReferent_5499565529811760433(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     String p = BaseConcept_Behavior.call_getPresentation_1213877396640(_context.getNode());
-    return "T" + Character.toUpperCase(p.charAt(0)) + (p == null ?
-      null :
-      p.substring(1)
-    ) + "ArrayListDecorator";
+    return "T" + Character.toUpperCase(p.charAt(0)) + StringUtils.substring(p, 1) + "ArrayListDecorator";
   }
 
   public static Object referenceMacro_GetReferent_5499565529811346969(final IOperationContext operationContext, final ReferenceMacroContext _context) {

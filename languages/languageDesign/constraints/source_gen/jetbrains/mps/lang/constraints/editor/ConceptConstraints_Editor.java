@@ -756,7 +756,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_g00aa7_a21d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && (SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath") != null && SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath").length() > 0);
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && StringUtils.isNotEmpty(SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath"));
   }
 
   private static boolean renderingCondition_g00aa7_a1a21d0(SNode node, EditorContext editorContext, IScope scope) {

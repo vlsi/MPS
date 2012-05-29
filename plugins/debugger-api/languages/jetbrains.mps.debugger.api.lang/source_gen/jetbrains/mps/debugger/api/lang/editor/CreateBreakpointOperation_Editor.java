@@ -160,7 +160,7 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
-      if (debuggerType != null && (SPropertyOperations.getString(debuggerType, "name") != null && SPropertyOperations.getString(debuggerType, "name").length() > 0)) {
+      if (debuggerType != null && StringUtils.isNotEmpty(SPropertyOperations.getString(debuggerType, "name"))) {
         IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
         if (provider != null) {
           return (List<IBreakpointKind>) provider.getAllKinds();

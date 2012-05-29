@@ -59,10 +59,7 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         if (text == null) {
           return;
         }
-        String textTrimmed = ((text == null ?
-          null :
-          text.trim()
-        ));
+        String textTrimmed = StringUtils.trimBoth(text);
         TestEvent testEvent = TestEvent.parse(textTrimmed);
         if (testEvent != null) {
           myLastEvent = testEvent;

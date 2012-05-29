@@ -7,19 +7,20 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.LocalArtifacts;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper;
 import jetbrains.mps.build.util.RelativePathHelper;
 import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -46,6 +47,14 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_2591537044436204156(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+  }
+
+  public static boolean baseMappingRule_Condition_1238980147630114160(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Solution") && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "module", false), "doNotCompile") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "module", false), "dependencies", true)).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"));
+      }
+    });
   }
 
   public static boolean baseMappingRule_Condition_7753544965996882285(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -99,7 +108,7 @@ public class QueriesGenerated {
     final String pathText = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(path);
     String result = ListSequence.fromList(SLinkOperations.getTargets(((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), "jarLocations", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a3a21(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(it, "path", true)), pathText);
+        return eq_x583g4_a0a0a0a0a0a0a3a31(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(it, "path", true)), pathText);
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -135,7 +144,7 @@ public class QueriesGenerated {
     final String pathText = BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(path);
     String result = ListSequence.fromList(SLinkOperations.getTargets(((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._2(), "jarLocations", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a3a31(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(it, "path", true)), pathText);
+        return eq_x583g4_a0a0a0a0a0a0a3a41(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(it, "path", true)), pathText);
       }
     }).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -199,17 +208,22 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("module")), _context));
+    SNode artifact = SNodeOperations.as(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("module")), _context), "jetbrains.mps.build.mps.structure.BuildMps_Module");
+    SNode layoutNode = helper.artifacts().get(artifact);
     if (layoutNode == null) {
       _context.showErrorMessage(_context.getNode(), "mps module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name") + " was not found in the layout");
       return "???";
     }
-    String val = helper.locations().get(layoutNode);
+    String val = BuildLayout_PathElement_Behavior.call_location_7117056644539862594(layoutNode, helper, artifact);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name"));
       return "???";
     }
     return val;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1238980147630114297(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name") + ".jar";
   }
 
   public static Object propertyMacro_GetPropertyValue_7753544965996882380(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -359,6 +373,10 @@ public class QueriesGenerated {
     return ((SNode) _context.getVariable("var:target"));
   }
 
+  public static Object referenceMacro_GetReferent_1238980147630114395(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "module", false);
+  }
+
   public static Object referenceMacro_GetReferent_6592112598314985688(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "plugin", false);
   }
@@ -407,6 +425,10 @@ public class QueriesGenerated {
     return (((SNode) _context.getVariable("var:target")) != null);
   }
 
+  public static boolean ifMacro_Condition_1238980147630105699(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "pluginXml", true) == null);
+  }
+
   public static boolean ifMacro_Condition_6592112598314986714(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "target", false), "jetbrains.mps.build.mps.structure.BuildMps_Module");
   }
@@ -436,7 +458,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1462305029084461806(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a37(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a77(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
   }
 
   public static SNode sourceNodeQuery_2303926226081111358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -477,6 +499,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_6592112598314985660(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "containerName", true));
+  }
+
+  public static SNode sourceNodeQuery_1238980147630105794(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "pluginXml", true));
   }
 
   public static SNode sourceNodeQuery_6592112598314986661(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -933,13 +959,6 @@ public class QueriesGenerated {
     return SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_Copy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a3a21(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
   private static boolean eq_x583g4_a0a0a0a0a0a0a3a31(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -947,7 +966,14 @@ public class QueriesGenerated {
     );
   }
 
-  private static boolean neq_x583g4_a0a0a37(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a3a41(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean neq_x583g4_a0a0a77(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

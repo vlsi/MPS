@@ -19,6 +19,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -36,8 +38,11 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_dvtb4y_a");
     editorCell.addEditorCell(this.createConceptProperty_dvtb4y_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_dvtb4y_b0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_dvtb4y_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dvtb4y_d0(editorContext, node));
+    if (renderingCondition_dvtb4y_a2a(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_dvtb4y_c0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createCollection_dvtb4y_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dvtb4y_e0(editorContext, node));
     return editorCell;
   }
 
@@ -47,49 +52,70 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.addEditorCell(this.createConstant_dvtb4y_a2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dvtb4y_b2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dvtb4y_c2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_dvtb4y_d2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dvtb4y_e2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_dvtb4y_f2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dvtb4y_g2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_dvtb4y_h2a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dvtb4y_i2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_dvtb4y_j2a(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_dvtb4y_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_dvtb4y_d0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
+    }
+    editorCell.addEditorCell(this.createConstant_dvtb4y_a3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_dvtb4y_b3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dvtb4y_c3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_dvtb4y_d3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dvtb4y_e3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_dvtb4y_f3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dvtb4y_g3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_dvtb4y_h3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dvtb4y_i3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_dvtb4y_j3a(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_dvtb4y_a2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_dvtb4y_a2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_dvtb4y_c2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dvtb4y_a3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name");
+    editorCell.setCellId("Constant_dvtb4y_a3a");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_dvtb4y_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "short (folder) name");
-    editorCell.setCellId("Constant_dvtb4y_c2a");
+    editorCell.setCellId("Constant_dvtb4y_c3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_dvtb4y_e2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dvtb4y_e3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "version");
-    editorCell.setCellId("Constant_dvtb4y_e2a");
+    editorCell.setCellId("Constant_dvtb4y_e3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_dvtb4y_g2a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dvtb4y_g3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
-    editorCell.setCellId("Constant_dvtb4y_g2a");
+    editorCell.setCellId("Constant_dvtb4y_g3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -99,9 +125,9 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_dvtb4y_i2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depenencies:");
-    editorCell.setCellId("Constant_dvtb4y_i2a");
+  private EditorCell createConstant_dvtb4y_i3a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
+    editorCell.setCellId("Constant_dvtb4y_i3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -111,15 +137,15 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_dvtb4y_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dvtb4y_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_dvtb4y_d0");
+    editorCell.setCellId("Constant_dvtb4y_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_dvtb4y_h2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_IdeaPlugin_Editor.contentListHandler_dvtb4y_h2a(node, "content", editorContext);
+  private EditorCell createRefNodeList_dvtb4y_h3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_IdeaPlugin_Editor.contentListHandler_dvtb4y_h3a(node, "content", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_content");
     {
@@ -132,8 +158,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_dvtb4y_j2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_IdeaPlugin_Editor.dependenciesListHandler_dvtb4y_j2a(node, "dependencies", editorContext);
+  private EditorCell createRefNodeList_dvtb4y_j3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_IdeaPlugin_Editor.dependenciesListHandler_dvtb4y_j3a(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies");
     {
@@ -146,6 +172,23 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createRefNode_dvtb4y_b2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("pluginXml");
+    provider.setNoTargetText("<no pluginXml>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_dvtb4y_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("name");
     provider.setNoTargetText("<no name>");
@@ -166,7 +209,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_dvtb4y_d2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_dvtb4y_d3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("containerName");
     provider.setNoTargetText("<no containerName>");
@@ -187,7 +230,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_dvtb4y_f2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_dvtb4y_f3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("version");
     provider.setNoTargetText("<no version>");
@@ -217,7 +260,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     editorCell.setCellId("property_id");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_3_RTransform");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -249,8 +292,12 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private static class contentListHandler_dvtb4y_h2a extends RefNodeListHandler {
-    public contentListHandler_dvtb4y_h2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static boolean renderingCondition_dvtb4y_a2a(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "pluginXml", true) != null);
+  }
+
+  private static class contentListHandler_dvtb4y_h3a extends RefNodeListHandler {
+    public contentListHandler_dvtb4y_h3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -285,8 +332,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class dependenciesListHandler_dvtb4y_j2a extends RefNodeListHandler {
-    public dependenciesListHandler_dvtb4y_j2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_dvtb4y_j3a extends RefNodeListHandler {
+    public dependenciesListHandler_dvtb4y_j3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

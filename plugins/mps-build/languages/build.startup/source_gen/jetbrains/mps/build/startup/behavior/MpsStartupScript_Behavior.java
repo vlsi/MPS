@@ -17,7 +17,7 @@ public class MpsStartupScript_Behavior {
   }
 
   public static String call_getDefaultVmoptions_5842819808956701267(SNode thisNode) {
-    return ((ListSequence.fromList(SLinkOperations.getTargets(thisNode, "vmOptions", true)).where(new IWhereFilter<SNode>() {
+    return StringUtils.trimBoth(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "vmOptions", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.startup.structure.SimpleVmOptions") && !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.startup.structure.SimpleVmOptions"), "commented"));
       }
@@ -29,22 +29,7 @@ public class MpsStartupScript_Behavior {
       public String combine(String it, String s) {
         return s + " " + it;
       }
-    }) == null ?
-      null :
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "vmOptions", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.startup.structure.SimpleVmOptions") && !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.startup.structure.SimpleVmOptions"), "commented"));
-        }
-      }).select(new ISelector<SNode, String>() {
-        public String select(SNode it) {
-          return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.startup.structure.SimpleVmOptions"), "options");
-        }
-      }).foldRight("", new IRightCombinator<String, String>() {
-        public String combine(String it, String s) {
-          return s + " " + it;
-        }
-      }).trim()
-    ));
+    }));
   }
 
   public static List<SNode> call_getCommentedOptions_5842819808956911345(SNode thisNode) {

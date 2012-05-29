@@ -55,7 +55,7 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "optionsName";
-        return ((SPropertyOperations.getString(propertyValue)) == null || (SPropertyOperations.getString(propertyValue)).length() == 0) || NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
+        return StringUtils.isEmpty((SPropertyOperations.getString(propertyValue))) || NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;

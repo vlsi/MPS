@@ -67,7 +67,7 @@ public class XmlTextValue_text extends EditorCellKeyMap {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.xml.structure.XmlValuePart")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute"))) {
         return false;
       }
-      return (SPropertyOperations.getString(node, "text") != null && SPropertyOperations.getString(node, "text").length() > 0);
+      return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "text"));
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -135,7 +135,7 @@ public class XmlTextValue_text extends EditorCellKeyMap {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.xml.structure.XmlValuePart")) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute"))) {
         return false;
       }
-      return (SPropertyOperations.getString(node, "text") != null && SPropertyOperations.getString(node, "text").length() > 0);
+      return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "text"));
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {

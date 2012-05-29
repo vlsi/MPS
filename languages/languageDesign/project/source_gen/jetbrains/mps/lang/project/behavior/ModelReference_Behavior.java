@@ -11,10 +11,10 @@ public class ModelReference_Behavior {
 
   public static String call_getModelReference_6236774123822284799(SNode thisNode) {
     String result = SPropertyOperations.getString(thisNode, "qualifiedName");
-    if ((SPropertyOperations.getString(thisNode, "stereotype") != null && SPropertyOperations.getString(thisNode, "stereotype").length() > 0)) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "stereotype"))) {
       result = result + "@" + SPropertyOperations.getString(thisNode, "stereotype");
     }
-    if ((SPropertyOperations.getString(thisNode, "uuid") != null && SPropertyOperations.getString(thisNode, "uuid").length() > 0)) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "uuid"))) {
       result = SPropertyOperations.getString(thisNode, "uuid") + "(" + result + ")";
     }
     return result;

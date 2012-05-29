@@ -16,6 +16,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.IJavaNodeChangeListener" />
+    <classNode dependClassName="jetbrains.mps.execution.lib.ui.StringUtils" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.dialogs.choosers.NodeChooserDialog" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -209,6 +210,9 @@
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ui.IconContainer" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.BaseFieldWithButtonComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.lib.ui.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

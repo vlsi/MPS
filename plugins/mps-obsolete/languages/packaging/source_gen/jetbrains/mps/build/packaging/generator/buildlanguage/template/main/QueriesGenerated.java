@@ -226,7 +226,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1902360454495868335(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if ((SPropertyOperations.getString(_context.getNode(), "moduleRelativePath") == null || SPropertyOperations.getString(_context.getNode(), "moduleRelativePath").length() == 0)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "moduleRelativePath"))) {
       return Util.SEPARATOR + SPropertyOperations.getString(_context.getNode(), "fullPath");
     }
     return new File(SPropertyOperations.getString(_context.getNode(), "fullPath")).getName();
@@ -241,7 +241,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1902360454495907451(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    if ((SPropertyOperations.getString(_context.getNode(), "moduleRelativePath") == null || SPropertyOperations.getString(_context.getNode(), "moduleRelativePath").length() == 0)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "moduleRelativePath"))) {
       if ((SLinkOperations.getTarget(_context.getNode(), "macro", false) == null) || eq_x583g4_a0a0a0a93(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", false), "name"), Layout_Behavior.getBasedirName_1226509010730())) {
         return Util.SEPARATOR + SPropertyOperations.getString(_context.getNode(), "fullPath");
       }
@@ -285,7 +285,7 @@ public class QueriesGenerated {
     if (s == null) {
       _context.showErrorMessage(null, "language: model root folder should be placed under language root: " + SPropertyOperations.getString(_context.getNode(), "fullPath"));
       s = "";
-    } else if ((s != null && s.length() > 0)) {
+    } else if (StringUtils.isNotEmpty(s)) {
       s = "/" + s;
     }
     return AbstractModule.MODULE_DIR + s;
@@ -328,7 +328,7 @@ public class QueriesGenerated {
     if (s == null) {
       _context.showErrorMessage(null, "language: model root folder should be placed under language root: " + SPropertyOperations.getString(_context.getNode(), "fullPath"));
       s = "";
-    } else if ((s != null && s.length() > 0)) {
+    } else if (StringUtils.isNotEmpty(s)) {
       s = "/" + s;
     }
     return Util.SEPARATOR + Module_Behavior.call_getModuleFolderPath_2850282874221203279(SLinkOperations.getTarget(_context.getNode(), "module", false)) + s;
@@ -583,7 +583,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4738159245301622208(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String path = CompositePathComponent_Behavior.call_getPath_1220983419344(SLinkOperations.getTarget(_context.getNode(), "compositePathComponent", true));
-    return ((path == null || path.length() == 0) ?
+    return (StringUtils.isEmpty(path) ?
       "" :
       "/" + path
     );
@@ -894,11 +894,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1226346345677(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()) != null && Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()).length() > 0);
+    return StringUtils.isNotEmpty(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226346367196(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()) != null && ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()).length() > 0);
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1239624138320(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -906,11 +906,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1226346311970(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()) != null && ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()).length() > 0);
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226346323637(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()) != null && ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()).length() > 0);
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1203622509516(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -918,11 +918,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1226346273741(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()) != null && Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()).length() > 0);
+    return StringUtils.isNotEmpty(Copy_Behavior.call_getExcludes_1213877251358(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226346293894(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (Copy_Behavior.call_getIncludes_1213877251415(_context.getNode()) != null && Copy_Behavior.call_getIncludes_1213877251415(_context.getNode()).length() > 0);
+    return StringUtils.isNotEmpty(Copy_Behavior.call_getIncludes_1213877251415(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1204016587285(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -930,11 +930,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1226345902716(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()) != null && ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()).length() > 0);
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getExcludes_1213877279373(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1226345946802(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()) != null && ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()).length() > 0);
+    return StringUtils.isNotEmpty(ICompositeComponent_Behavior.call_getIncludes_1213877279430(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1209915520020(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1007,7 +1007,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1220986250252(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "macro", true), "name"));
   }
 
   public static boolean ifMacro_Condition_4104037887205451177(final IOperationContext operationContext, final IfMacroContext _context) {

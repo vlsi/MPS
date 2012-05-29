@@ -12,7 +12,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    if ((SPropertyOperations.getString(node, "name") == null || SPropertyOperations.getString(node, "name").length() == 0)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(node, "name"))) {
       this.foundError("enum constant without name");
       this.appendWithIndent("???");
     } else {

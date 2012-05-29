@@ -7,6 +7,7 @@ import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.util.UnpackHelper;
+import jetbrains.mps.build.util.DependenciesHelper;
 
 public class BuildNamedLayout_Behavior {
   public static void init(SNode thisNode) {
@@ -32,7 +33,11 @@ public class BuildNamedLayout_Behavior {
     sb.append(SPropertyOperations.getString(thisNode, "name"));
   }
 
-  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     // nop 
+  }
+
+  public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
+    return null;
   }
 }

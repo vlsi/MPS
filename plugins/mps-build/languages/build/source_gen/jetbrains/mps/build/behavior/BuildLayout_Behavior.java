@@ -26,7 +26,7 @@ public class BuildLayout_Behavior {
     sb.append("/");
   }
 
-  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
     helper.contentLocations().put(thisNode, parentLocation);

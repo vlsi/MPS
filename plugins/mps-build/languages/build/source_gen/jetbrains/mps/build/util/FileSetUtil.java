@@ -120,10 +120,10 @@ public class FileSetUtil {
     String dirmode = null;
     while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
-        if (filemode == null && (SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode") != null && SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode").length() > 0)) {
+        if (filemode == null && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode"))) {
           filemode = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode");
         }
-        if (dirmode == null && (SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode") != null && SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode").length() > 0)) {
+        if (dirmode == null && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode"))) {
           dirmode = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode");
         }
       }

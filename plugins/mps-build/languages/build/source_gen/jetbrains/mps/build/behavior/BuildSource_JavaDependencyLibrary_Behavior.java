@@ -14,7 +14,6 @@ public class BuildSource_JavaDependencyLibrary_Behavior {
   }
 
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    // TODO 
-    builder.addAll(JavaExportUtil.requireLibrary(artifacts, SLinkOperations.getTarget(thisNode, "library", false), SNodeOperations.getParent(thisNode)));
+    JavaExportUtil.requireLibrary(artifacts, SLinkOperations.getTarget(thisNode, "library", false), SNodeOperations.getParent(thisNode), builder);
   }
 }

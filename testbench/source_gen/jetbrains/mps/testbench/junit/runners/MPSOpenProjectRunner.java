@@ -79,7 +79,7 @@ public class MPSOpenProjectRunner extends Runner {
       }
       String propertyKey = (String) property.getKey();
       String propertyValue = (String) property.getValue();
-      if ((propertyKey == null || propertyKey.length() == 0) || !(propertyKey.startsWith(PROPERTY_PREFIX_PATH_MACRO))) {
+      if (StringUtils.isEmpty(propertyKey) || !(propertyKey.startsWith(PROPERTY_PREFIX_PATH_MACRO))) {
         continue;
       }
       String canonicalPath = PathUtil.getCanonicalPath(propertyValue);

@@ -20,7 +20,7 @@ public class BreakStatement_TextGen extends SNodeTextGen {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "loopLabelReference", true), "loopLabel", false), "name"));
       this.append(";");
-    } else if ((SPropertyOperations.getString(node, "label") != null && SPropertyOperations.getString(node, "label").length() > 0)) {
+    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "label"))) {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(node, "label"));
       this.append(";");

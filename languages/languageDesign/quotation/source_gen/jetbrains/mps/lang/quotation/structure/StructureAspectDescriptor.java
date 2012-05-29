@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", null, true, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.IAntisuppressErrors"}, new String[]{"label"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", null, true, new String[]{"jetbrains.mps.lang.core.structure.IMetaLevelChanger", "jetbrains.mps.lang.core.structure.IAntisuppressErrors", "jetbrains.mps.lang.core.structure.ScopeProvider"}, new String[]{"label"}, new String[]{});
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute", "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"}, new String[]{}, new String[]{});
       case 2:

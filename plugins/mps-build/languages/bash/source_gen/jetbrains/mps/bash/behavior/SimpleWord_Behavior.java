@@ -16,17 +16,17 @@ public class SimpleWord_Behavior {
   }
 
   public static boolean call_splitValue_3147078024759753598(SNode thisNode, String value, IScope scope) {
-    if ((value == null || value.length() == 0)) {
+    if (StringUtils.isEmpty(value)) {
       return false;
     }
     SNode refConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.IConcreteWordUnit");
     for (SNode unit : ListSequence.fromList(SConceptOperations.getAllSubConcepts(refConcept, SNodeOperations.getModel(thisNode), scope))) {
-      if ((SConceptPropertyOperations.getString(unit, "pattern") != null && SConceptPropertyOperations.getString(unit, "pattern").length() > 0)) {
+      if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(unit, "pattern"))) {
         int index = value.indexOf(SConceptPropertyOperations.getString(unit, "pattern"));
         if (index != -1) {
           SNode endOfWord = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
           String dummy = value.substring(index + SConceptPropertyOperations.getString(unit, "pattern").length());
-          if ((dummy != null && dummy.length() > 0)) {
+          if (StringUtils.isNotEmpty(dummy)) {
             SPropertyOperations.set(endOfWord, "word", dummy);
             SNodeOperations.insertNextSiblingChild(thisNode, endOfWord);
           }

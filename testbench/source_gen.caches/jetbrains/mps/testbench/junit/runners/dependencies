@@ -50,6 +50,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.testbench.Testbench" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.StringUtils" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -165,6 +166,9 @@
     <classNode dependClassName="org.junit.runners.model.TestClass" />
     <classNode extendsClassName="java.lang.annotation.Annotation" />
     <classNode extendsClassName="org.junit.runners.Suite" />
+  </dependency>
+  <dependency className="jetbrains.mps.testbench.junit.runners.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.testbench.junit.runners.SymbolicSuite" file="SymbolicSuite.java">
     <classNode dependClassName="java.lang.Class" />

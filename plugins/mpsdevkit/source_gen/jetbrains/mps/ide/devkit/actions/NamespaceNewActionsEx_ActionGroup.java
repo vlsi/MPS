@@ -15,6 +15,7 @@ public class NamespaceNewActionsEx_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       NamespaceNewActionsEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.NewLanguage_Action");
+      NamespaceNewActionsEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.NewDevKit_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

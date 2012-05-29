@@ -68,7 +68,7 @@ public class Path_Behavior {
   }
 
   public static boolean call_hasMacro_4323997179924030474(SNode thisNode) {
-    return (SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name") != null && SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name"));
   }
 
   public static String call_getName_1221141245424(SNode thisNode) {

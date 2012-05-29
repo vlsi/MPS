@@ -35,7 +35,7 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            if ((SPropertyOperations.getString(_context.getParameterNode(), "label") != null && SPropertyOperations.getString(_context.getParameterNode(), "label").length() > 0)) {
+            if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getParameterNode(), "label"))) {
               return SPropertyOperations.getString(_context.getParameterNode(), "label") + " " + SConceptPropertyOperations.getString(_context.getParameterNode(), "alias");
             } else {
               return SConceptPropertyOperations.getString(_context.getParameterNode(), "alias");

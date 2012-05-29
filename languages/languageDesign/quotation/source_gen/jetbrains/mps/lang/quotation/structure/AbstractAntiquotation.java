@@ -4,9 +4,10 @@ package jetbrains.mps.lang.quotation.structure;
 
 import jetbrains.mps.lang.core.structure.IMetaLevelChanger;
 import jetbrains.mps.lang.core.structure.IAntisuppressErrors;
+import jetbrains.mps.lang.core.structure.ScopeProvider;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
-public interface AbstractAntiquotation extends IMetaLevelChanger, IAntisuppressErrors {
+public interface AbstractAntiquotation extends IMetaLevelChanger, IAntisuppressErrors, ScopeProvider {
   public static final String concept = "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation";
   public static final String LABEL = "label";
   public static final String EXPRESSION = "expression";

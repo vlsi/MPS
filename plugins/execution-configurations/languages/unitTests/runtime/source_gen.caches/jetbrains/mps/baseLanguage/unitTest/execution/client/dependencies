@@ -142,6 +142,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.StringUtils" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
@@ -199,6 +200,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.AbstractTestWrapper" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" file="TestEventsDispatcher.java">
     <classNode dependClassName="com.intellij.openapi.util.Key" />
@@ -287,6 +291,7 @@
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.TestEvent" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.StringUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher" />
     <classNode extendsClassName="com.intellij.execution.process.ProcessAdapter" />
   </dependency>

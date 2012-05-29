@@ -102,6 +102,7 @@
   <unitInfo fileName="SimpleActionPlace_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SimpleActionPlace_BehaviorDescriptor" />
   <unitInfo fileName="SimpleShortcutChange_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SimpleShortcutChange_BehaviorDescriptor" />
   <unitInfo fileName="SmartDisposeClosureParameterDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.SmartDisposeClosureParameterDeclaration_BehaviorDescriptor" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.StringUtils" />
   <unitInfo fileName="TabbedToolDeclaration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.TabbedToolDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="TabbedToolOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.TabbedToolOperation_BehaviorDescriptor" />
   <unitInfo fileName="ToStringConceptFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ToStringConceptFunction_BehaviorDescriptor" />
@@ -730,7 +731,7 @@
     <nodeInfo nodeId="1499919975383913752" fileName="Order_Behavior.java" startLine="16" startPosition="29" endLine="17" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1499919975383913755" />
     <nodeInfo nodeId="1499919975383913752" fileName="Order_Behavior.java" startLine="17" startPosition="85" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_3038738109029048958" />
     <nodeInfo nodeId="3038738109029048924" fileName="Order_Behavior.java" startLine="23" startPosition="87" endLine="24" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3038738109029048940" fileName="Order_Behavior.java" startLine="25" startPosition="133" endLine="26" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3038738109029048940" fileName="Order_Behavior.java" startLine="25" startPosition="79" endLine="26" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3038738109029048921" fileName="Order_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3038738109029048933" fileName="Order_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1499919975383980873" fileName="Order_Behavior.java" startLine="35" startPosition="39" endLine="36" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -754,7 +755,7 @@
     <nodeInfo nodeId="1499919975383913752" fileName="Order_Behavior.java" startLine="32" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_presents_1499919975383879508#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1499919975383913752" fileName="Order_Behavior.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassName_3038738109029038654#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="1499919975383913754" fileName="Order_Behavior.java" startLine="20" startPosition="43" endLine="20" endPosition="43" />
-    <scopeInfo nodeId="3038738109029048910" fileName="Order_Behavior.java" startLine="25" startPosition="133" endLine="26" endPosition="150" />
+    <scopeInfo nodeId="3038738109029048910" fileName="Order_Behavior.java" startLine="25" startPosition="79" endLine="26" endPosition="150" />
     <scopeInfo nodeId="3038738109029048920" fileName="Order_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="58" />
     <scopeInfo nodeId="1499919975383980870" fileName="Order_Behavior.java" startLine="35" startPosition="39" endLine="36" endPosition="72" />
     <scopeInfo nodeId="3038738109029048960" fileName="Order_Behavior.java" startLine="41" startPosition="76" endLine="42" endPosition="20" />

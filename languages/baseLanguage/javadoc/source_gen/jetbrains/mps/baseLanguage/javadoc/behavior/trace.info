@@ -30,6 +30,7 @@
   <unitInfo fileName="SeeBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.SeeBlockDocTag_BehaviorDescriptor" />
   <unitInfo fileName="SinceBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.SinceBlockDocTag_BehaviorDescriptor" />
   <unitInfo fileName="StaticFieldDocReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.StaticFieldDocReference_BehaviorDescriptor" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.StringUtils" />
   <unitInfo fileName="TextCommentLinePart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.TextCommentLinePart_BehaviorDescriptor" />
   <unitInfo fileName="ThrowsBlockDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ThrowsBlockDocTag_BehaviorDescriptor" />
   <unitInfo fileName="ValueInlineDocTag_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.behavior.ValueInlineDocTag_BehaviorDescriptor" />
@@ -113,7 +114,7 @@
     <nodeInfo nodeId="5521685164201558373" fileName="HTMLElement_Behavior.java" startLine="23" startPosition="30" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5521685164201558367" fileName="HTMLElement_Behavior.java" startLine="24" startPosition="19" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5521685164201377131" fileName="HTMLElement_Behavior.java" startLine="26" startPosition="58" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5521685164201377226" fileName="HTMLElement_Behavior.java" startLine="28" startPosition="306" endLine="29" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5521685164201377226" fileName="HTMLElement_Behavior.java" startLine="28" startPosition="170" endLine="29" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="439148907936414864" fileName="HTMLElement_Behavior.java" startLine="30" startPosition="7" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3633133276124368613" fileName="HTMLElement_Behavior.java" startLine="31" startPosition="43" endLine="32" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5521685164201377259" fileName="HTMLElement_Behavior.java" startLine="32" startPosition="84" endLine="33" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -155,7 +156,7 @@
     <nodeInfo nodeId="439148907936340114" fileName="HTMLElement_Behavior.java" startLine="25" startPosition="0" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="17" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_smartDelete_9042833497008205283#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/baseLanguage/javadoc/editor/NodeCaretPair;" />
     <scopeInfo nodeId="6612597108004626830" fileName="HTMLElement_Behavior.java" startLine="14" startPosition="43" endLine="15" endPosition="110" />
-    <scopeInfo nodeId="5521685164201377200" fileName="HTMLElement_Behavior.java" startLine="28" startPosition="306" endLine="29" endPosition="159" />
+    <scopeInfo nodeId="5521685164201377200" fileName="HTMLElement_Behavior.java" startLine="28" startPosition="170" endLine="29" endPosition="159" />
     <scopeInfo nodeId="3633133276124307752" fileName="HTMLElement_Behavior.java" startLine="36" startPosition="173" endLine="37" endPosition="63" />
     <scopeInfo nodeId="3633133276124307924" fileName="HTMLElement_Behavior.java" startLine="48" startPosition="122" endLine="49" endPosition="66" />
     <scopeInfo nodeId="3633133276124409282" fileName="HTMLElement_Behavior.java" startLine="63" startPosition="104" endLine="64" endPosition="198" />

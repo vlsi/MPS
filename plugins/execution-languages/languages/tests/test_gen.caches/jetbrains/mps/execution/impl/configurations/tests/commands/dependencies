@@ -37,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.execution.api.commands.OutputRedirector" />
     <classNode dependClassName="jetbrains.mps.execution.api.commands.ProcessHandlerBuilder" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.commands.CheckTestStateListener" />
+    <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.commands.StringUtils" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.FailedBTestCase_Test" />
     <classNode dependClassName="jetbrains.mps.execution.impl.configurations.tests.commands.sandbox.SimpleBTestCase_Test" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -96,6 +97,9 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="junit.framework.TestCase" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.impl.configurations.tests.commands.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

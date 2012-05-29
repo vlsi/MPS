@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.StringUtils" />
   <root nodeId="1560298786499491521">
     <nodeInfo nodeId="1560298786499491542" fileName="ValidateableBoundPanel.java" startLine="35" startPosition="64" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="1560298786499491545" fileName="ValidateableBoundPanel.java" startLine="36" startPosition="34" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCaption" />
@@ -310,7 +311,7 @@
     <nodeInfo nodeId="1560298786499492583" fileName="BoundListPanel.java" startLine="63" startPosition="48" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499492614" fileName="BoundListPanel.java" startLine="77" startPosition="33" endLine="78" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="7648136371139264504" fileName="BoundListPanel.java" startLine="81" startPosition="46" endLine="82" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5652969333075991013" fileName="BoundListPanel.java" startLine="83" startPosition="65" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5652969333075991013" fileName="BoundListPanel.java" startLine="83" startPosition="46" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5652969333075991044" fileName="BoundListPanel.java" startLine="86" startPosition="35" endLine="87" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5652969333075991059" fileName="BoundListPanel.java" startLine="88" startPosition="212" endLine="89" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1560298786499492476" fileName="BoundListPanel.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BoundListPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
@@ -337,7 +338,7 @@
     <scopeInfo nodeId="3416087927885097964" fileName="BoundListPanel.java" startLine="46" startPosition="26" endLine="47" endPosition="20" />
     <scopeInfo nodeId="1560298786499492572" fileName="BoundListPanel.java" startLine="60" startPosition="27" endLine="61" endPosition="18" />
     <scopeInfo nodeId="1560298786499492613" fileName="BoundListPanel.java" startLine="77" startPosition="33" endLine="78" endPosition="22" />
-    <scopeInfo nodeId="5652969333075990999" fileName="BoundListPanel.java" startLine="83" startPosition="65" endLine="84" endPosition="15" />
+    <scopeInfo nodeId="5652969333075990999" fileName="BoundListPanel.java" startLine="83" startPosition="46" endLine="84" endPosition="15" />
     <scopeInfo nodeId="5652969333075991022" fileName="BoundListPanel.java" startLine="86" startPosition="35" endLine="87" endPosition="112" />
     <scopeInfo nodeId="5652969333075991056" fileName="BoundListPanel.java" startLine="88" startPosition="212" endLine="89" endPosition="45" />
     <scopeInfo nodeId="1560298786499492547" fileName="BoundListPanel.java" startLine="53" startPosition="57" endLine="55" endPosition="26" />

@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -63,18 +62,28 @@ public class FetchDependenciesProcessor {
       this.helper = helper;
     }
 
+    @Override
     public void add(SNode node) {
       if (!(check(node))) {
         return;
       }
-      helper.add(node, false);
+      helper.add(node, false, null);
     }
 
+    @Override
+    public void add(SNode node, Object artifactId) {
+      if (!(check(node)) || !(checkArtifactId(artifactId))) {
+        return;
+      }
+      helper.add(node, false, artifactId);
+    }
+
+    @Override
     public void addWithContent(SNode node) {
       if (!(check(node))) {
         return;
       }
-      helper.add(node, true);
+      helper.add(node, true, null);
     }
 
     private boolean check(SNode node) {
@@ -89,12 +98,12 @@ public class FetchDependenciesProcessor {
       return true;
     }
 
-    public void addAll(Iterable<SNode> nodes) {
-      for (SNode n : Sequence.fromIterable(nodes)) {
-        if (n != null) {
-          add(n);
-        }
+    private boolean checkArtifactId(Object artifactId) {
+      if (artifactId instanceof SNode && ((SNode) artifactId).getModel().isTransient()) {
+        genContext.showErrorMessage(dep, "cannot register artifact in transient model " + ((SNode) artifactId).getDebugText());
+        return false;
       }
+      return true;
     }
   }
 

@@ -170,7 +170,6 @@ public class Program {
     if (myStarts.containsKey(o)) {
       int start = getStart(o);
       int end = getEnd(o);
-      assert start <= end;
       if (start <= end) {
         return new ArrayList<Instruction>(myInstructions.subList(start, end));
       }

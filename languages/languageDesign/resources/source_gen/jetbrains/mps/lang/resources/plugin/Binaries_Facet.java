@@ -110,7 +110,7 @@ public class Binaries_Facet extends IFacet.Stub {
                         ListSequence.fromList(deltaList).addElement(fd);
                         return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.resources.structure.Resource")).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return (SPropertyOperations.getString(it, "path") != null && SPropertyOperations.getString(it, "path").length() > 0);
+                            return StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path"));
                           }
                         }).select(new ISelector<SNode, String>() {
                           public String select(SNode bin) {
