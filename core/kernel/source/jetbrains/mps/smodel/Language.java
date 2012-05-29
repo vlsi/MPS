@@ -558,15 +558,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
       if (dd == null) return;
 
-      for (ModuleReference mr : myLanguageDescriptor.getRuntimeModules()) {
-        IModule rtm = MPSModuleRepository.getInstance().getModule(mr);
-        if (rtm != null && rtm.getBundleHome() != null) {
-          if (rtm.getBundleHome().getName().startsWith("mps-") && rtm.getBundleHome().getPath().startsWith(PathManager.getHomePath())) {
-            dd.getRuntimeJars().add("/" + rtm.getBundleHome().getPath().substring(PathManager.getHomePath().length()));
-          }
-        }
-      }
-
       for (String jarFile : dd.getRuntimeJars()) {
         IFile jar = jarFile.startsWith("/")
           ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
