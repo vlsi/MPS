@@ -14,7 +14,6 @@ public class BuildSource_JavaDependencyModule_Behavior {
   }
 
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    // TODO 
-    builder.addAll(JavaExportUtil.requireModule(artifacts, SLinkOperations.getTarget(thisNode, "module", false), SNodeOperations.getParent(thisNode)));
+    JavaExportUtil.requireModule(artifacts, SLinkOperations.getTarget(thisNode, "module", false), SNodeOperations.getParent(thisNode), builder);
   }
 }

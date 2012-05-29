@@ -9,8 +9,8 @@ public class BuildLayout_FileStub_BehaviorDescriptor extends BuildLayout_Node_Be
   public BuildLayout_FileStub_BehaviorDescriptor() {
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildLayout_FileStub_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_FileStub_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {

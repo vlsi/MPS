@@ -11,7 +11,7 @@ public class BuildLayout_AbstractCopy_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile")) {
       SNode parent = helper.parent(thisNode);
       String parentLocation = helper.contentLocations().get(parent);

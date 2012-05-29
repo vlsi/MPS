@@ -10,8 +10,8 @@ public abstract class BuildLayout_TransparentContainer_BehaviorDescriptor extend
   public BuildLayout_TransparentContainer_BehaviorDescriptor() {
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildLayout_TransparentContainer_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_TransparentContainer_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {

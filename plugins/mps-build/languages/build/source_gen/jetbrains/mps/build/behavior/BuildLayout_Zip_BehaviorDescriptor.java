@@ -17,8 +17,8 @@ public class BuildLayout_Zip_BehaviorDescriptor extends BuildLayout_NamedContain
     return BuildLayout_Zip_Behavior.virtual_hasPrefixAttribute_6408167411310575232(thisNode);
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildLayout_Zip_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_Zip_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public boolean virtual_isFile_1368030936106753986(SNode thisNode) {

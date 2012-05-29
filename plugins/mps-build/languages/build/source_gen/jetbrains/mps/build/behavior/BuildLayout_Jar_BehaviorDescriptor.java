@@ -17,8 +17,8 @@ public class BuildLayout_Jar_BehaviorDescriptor extends BuildLayout_NamedContain
     return BuildLayout_Jar_Behavior.virtual_hasPrefixAttribute_6408167411310575232(thisNode);
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildLayout_Jar_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_Jar_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {

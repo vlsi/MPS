@@ -25,7 +25,7 @@ public class BuildMpsLayout_Plugin_Behavior {
     sb.append(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "plugin", false), "containerName", true), null));
   }
 
-  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     // TODO extract! (it is a copy of Folder behavior) 
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
@@ -74,7 +74,7 @@ public class BuildMpsLayout_Plugin_Behavior {
     return true;
   }
 
-  public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+  public static boolean virtual_exports_6547494638219603457(SNode thisNode, final Object object) {
     // TODO extract! (it is a copy of Folder behavior) 
     if (object instanceof SNode) {
       final SNode node = (SNode) object;
@@ -82,6 +82,13 @@ public class BuildMpsLayout_Plugin_Behavior {
         return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), "target", false) == node;
+          }
+        });
+      }
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
+        return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return BuildMps_IdeaPluginContent_Behavior.call_exports_6547494638219603457(it, object);
           }
         });
       }

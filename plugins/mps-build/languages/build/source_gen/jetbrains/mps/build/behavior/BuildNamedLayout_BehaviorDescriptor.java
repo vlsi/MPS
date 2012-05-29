@@ -16,8 +16,8 @@ public class BuildNamedLayout_BehaviorDescriptor extends BuildAspect_BehaviorDes
     return BuildNamedLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildNamedLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildNamedLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {

@@ -18,8 +18,8 @@ public class BuildMpsLayout_Plugin_BehaviorDescriptor extends BuildLayout_Abstra
     return BuildMpsLayout_Plugin_Behavior.virtual_getApproximateName_5610619299014531547(thisNode);
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildMpsLayout_Plugin_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildMpsLayout_Plugin_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {

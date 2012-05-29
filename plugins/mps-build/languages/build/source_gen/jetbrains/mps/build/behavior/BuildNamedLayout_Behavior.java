@@ -32,7 +32,7 @@ public class BuildNamedLayout_Behavior {
     sb.append(SPropertyOperations.getString(thisNode, "name"));
   }
 
-  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     // nop 
   }
 }

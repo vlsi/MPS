@@ -11,7 +11,7 @@ public class BuildExternalLayoutDependency_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
+  public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     String location = "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "layout", false), "name") + "}";
     helper.locations().put(thisNode, location);
     helper.contentLocations().put(thisNode, location);

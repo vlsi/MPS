@@ -10,8 +10,8 @@ public abstract class BuildLayout_Node_BehaviorDescriptor extends BaseConcept_Be
   public BuildLayout_Node_BehaviorDescriptor() {
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildLayout_Node_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_Node_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public boolean virtual_isFolder_1368030936106753980(SNode thisNode) {

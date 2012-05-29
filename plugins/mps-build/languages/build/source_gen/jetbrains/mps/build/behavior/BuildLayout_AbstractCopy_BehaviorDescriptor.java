@@ -9,8 +9,8 @@ public abstract class BuildLayout_AbstractCopy_BehaviorDescriptor extends BuildL
   public BuildLayout_AbstractCopy_BehaviorDescriptor() {
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildLayout_AbstractCopy_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_AbstractCopy_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {

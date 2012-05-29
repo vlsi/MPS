@@ -4,7 +4,6 @@ package jetbrains.mps.build.util;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.Collections;
 import jetbrains.mps.build.behavior.BuildSource_JavaLibrary_Behavior;
 import java.util.List;
 import java.util.ArrayList;
@@ -18,16 +17,16 @@ public class JavaExportUtil {
   public JavaExportUtil() {
   }
 
-  public static Iterable<SNode> requireLibrary(final VisibleArtifacts artifacts, SNode library, SNode contextNode) {
+  public static void requireLibrary(final VisibleArtifacts artifacts, SNode library, SNode contextNode, RequiredDependenciesBuilder builder) {
     if (SNodeOperations.getContainingRoot(library) == SNodeOperations.getContainingRoot(contextNode)) {
-      return null;
+      return;
     }
 
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(library), "jetbrains.mps.build.structure.BuildSource_JavaLibrary");
     if (target == null || SNodeOperations.getModel(target).isTransient()) {
       // problem with transient models, already reported 
-      return Collections.emptyList();
+      return;
     }
 
     if (BuildSource_JavaLibrary_Behavior.call_canExportByParts_5610619299014309362(target)) {
@@ -36,7 +35,7 @@ public class JavaExportUtil {
       for (SNode element : ListSequence.fromList(SLinkOperations.getTargets(target, "elements", true))) {
         SNode jcp = SNodeOperations.as(element, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP");
         if ((jcp == null)) {
-          return null;
+          return;
         }
         SNode classpath = SLinkOperations.getTarget(jcp, "classpath", true);
         if (SNodeOperations.isInstanceOf(classpath, "jetbrains.mps.build.structure.BuildSource_JavaJar")) {
@@ -63,7 +62,8 @@ public class JavaExportUtil {
 
       if (ListSequence.fromList(result).isNotEmpty()) {
         artifacts.needsFetch(contextNode);
-        return result;
+        builder.addAll(result);
+        return;
       }
     }
 
@@ -71,19 +71,18 @@ public class JavaExportUtil {
     if (artifact != null) {
       artifacts.needsFetch(contextNode);
       if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary")) {
-        return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true)).select(new ISelector<SNode, SNode>() {
+        builder.addAll(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_ExportAsJavaLibrary"), "children", true)).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SNodeOperations.as(artifacts.findArtifact(it), "jetbrains.mps.build.structure.BuildLayout_Node");
           }
-        });
+        }));
       } else {
-        return Sequence.<SNode>singleton(artifact);
+        builder.add(artifact);
       }
     }
-    return null;
   }
 
-  public static Iterable<SNode> requireModule(VisibleArtifacts artifacts, SNode module, SNode contextNode) {
+  public static void requireModule(VisibleArtifacts artifacts, SNode module, SNode contextNode, RequiredDependenciesBuilder builder) {
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(module), "jetbrains.mps.build.structure.BuildSource_JavaModule");
 
@@ -96,7 +95,7 @@ public class JavaExportUtil {
         return SLinkOperations.getTarget(it, "path", true);
       }
     })).concat(Sequence.fromIterable(Sequence.<SNode>singleton(target)));
-    List<SNode> result = new ArrayList<SNode>();
+    boolean hasDependencies = false;
     for (SNode n : Sequence.fromIterable(required)) {
       if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getContainingRoot(contextNode)) {
         continue;
@@ -104,7 +103,8 @@ public class JavaExportUtil {
 
       SNode artifact = SNodeOperations.as(artifacts.findArtifact(n), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (artifact != null) {
-        ListSequence.fromList(result).addElement(artifact);
+        builder.add(artifact);
+        hasDependencies = true;
       }
     }
 
@@ -113,10 +113,7 @@ public class JavaExportUtil {
         continue;
       }
 
-      Iterable<SNode> libNodes = requireLibrary(artifacts, lib, contextNode);
-      if (libNodes != null) {
-        ListSequence.fromList(result).addSequence(Sequence.fromIterable(libNodes));
-      }
+      requireLibrary(artifacts, lib, contextNode, builder);
     }
 
     for (SNode extJar : CollectionSequence.fromCollection(closure.getExternalJars())) {
@@ -126,16 +123,14 @@ public class JavaExportUtil {
 
       SNode jarNode = requireJar(artifacts, extJar, contextNode);
       if (jarNode != null) {
-        ListSequence.fromList(result).addElement(jarNode);
+        builder.add(jarNode);
+        hasDependencies = true;
       }
     }
 
-    if (ListSequence.fromList(result).isNotEmpty()) {
+    if (hasDependencies) {
       artifacts.needsFetch(contextNode);
-      return result;
     }
-
-    return null;
   }
 
   public static SNode requireJar(VisibleArtifacts artifacts, SNode jar, SNode contextNode) {

@@ -14,8 +14,8 @@ public class BuildLayout_BehaviorDescriptor extends BuildLayout_AbstractContaine
     return BuildLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {

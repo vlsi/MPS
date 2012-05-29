@@ -10,6 +10,8 @@ import java.util.HashSet;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
 
 public class UnpackHelper extends DependenciesHelper {
   private final VisibleArtifacts visible;
@@ -50,7 +52,7 @@ public class UnpackHelper extends DependenciesHelper {
     evaluated = true;
 
     for (SNode n : required) {
-      BuildLayout_PathElement_Behavior.call_unpack_7128123785277710736(n, this);
+      BuildLayout_PathElement_Behavior.call_unpack_7128123785277710736(n, this, Sequence.fromIterable(Collections.<Object>emptyList()));
     }
   }
 

@@ -24,7 +24,7 @@ public class BuildMps_Module_Behavior {
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     MPSModulesClosure closure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).closure();
 
-    List<SNode> result = new ArrayList<SNode>();
+    boolean needsFetch = false;
     List<SNode> requiredJars = new ArrayList<SNode>();
     for (SNode m : Sequence.fromIterable(closure.getModules())) {
       if (SNodeOperations.getContainingRoot(m) == SNodeOperations.getContainingRoot(thisNode)) {
@@ -33,7 +33,8 @@ public class BuildMps_Module_Behavior {
 
       SNode artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (artifact != null) {
-        ListSequence.fromList(result).addElement(artifact);
+        builder.add(artifact);
+        needsFetch = true;
       }
 
       for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
@@ -55,7 +56,8 @@ public class BuildMps_Module_Behavior {
         if ((SLinkOperations.getTarget(dep, "customLocation", true) != null)) {
           artifact = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(dep, "customLocation", true), artifacts);
           if (artifact != null) {
-            ListSequence.fromList(result).addElement(artifact);
+            builder.add(artifact);
+            needsFetch = true;
           }
         } else {
           ListSequence.fromList(requiredJars).addElement(SLinkOperations.getTarget(dep, "path", true));
@@ -77,7 +79,8 @@ public class BuildMps_Module_Behavior {
         if ((SLinkOperations.getTarget(jarRuntime, "customLocation", true) != null)) {
           SNode artifact = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(jarRuntime, "customLocation", true), artifacts);
           if (artifact != null) {
-            ListSequence.fromList(result).addElement(artifact);
+            builder.add(artifact);
+            needsFetch = true;
           }
         } else {
           ListSequence.fromList(requiredJars).addElement(SLinkOperations.getTarget(jarRuntime, "path", true));
@@ -88,7 +91,8 @@ public class BuildMps_Module_Behavior {
     for (SNode path : ListSequence.fromList(requiredJars)) {
       SNode artifact = SNodeOperations.as(artifacts.findArtifact(path), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (artifact != null) {
-        ListSequence.fromList(result).addElement(artifact);
+        builder.add(artifact);
+        needsFetch = true;
         if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
           SNode file = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
           if ((file != null)) {
@@ -102,7 +106,7 @@ public class BuildMps_Module_Behavior {
     MPSModulesClosure.RequiredJavaModules requiredJava = closure.getRequiredJava();
     for (SNode jm : Sequence.fromIterable(requiredJava.getModules())) {
       if (requiredJava.isReexported(jm)) {
-        ListSequence.fromList(result).addSequence(Sequence.fromIterable(JavaExportUtil.requireModule(artifacts, jm, thisNode)));
+        JavaExportUtil.requireModule(artifacts, jm, thisNode, builder);
       } else {
         if (SNodeOperations.getContainingRoot(jm) == SNodeOperations.getContainingRoot(thisNode)) {
           continue;
@@ -110,14 +114,14 @@ public class BuildMps_Module_Behavior {
 
         SNode artifact = SNodeOperations.as(artifacts.findArtifact(jm), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
-          ListSequence.fromList(result).addElement(artifact);
+          needsFetch = true;
+          builder.add(artifact);
         }
       }
     }
 
-    if (ListSequence.fromList(result).isNotEmpty()) {
+    if (needsFetch) {
       artifacts.needsFetch(thisNode);
-      builder.addAll(result);
     }
   }
 }

@@ -9,8 +9,8 @@ public class BuildProjectDependency_BehaviorDescriptor extends BuildDependency_B
   public BuildProjectDependency_BehaviorDescriptor() {
   }
 
-  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper) {
-    BuildProjectDependency_Behavior.virtual_unpack_7128123785277710736(thisNode, helper);
+  public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
+    BuildProjectDependency_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
