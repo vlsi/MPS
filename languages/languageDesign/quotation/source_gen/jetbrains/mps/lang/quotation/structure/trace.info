@@ -3,22 +3,22 @@
   <unitInfo fileName="Quotation_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Quotation_Language" />
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.StructureAspectDescriptor" />
   <root nodeId="1196350785110">
-    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="9" startPosition="87" endLine="10" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="10" startPosition="102" endLine="11" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
-    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="11" startPosition="45" endLine="12" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
-    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="13" startPosition="0" endLine="14" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLabel#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="14" startPosition="27" endLine="15" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLabel#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="15" startPosition="37" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpression#()Ljetbrains/mps/smodel/INodeAdapter;" />
-    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="16" startPosition="36" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setExpression#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="13" startPosition="0" endLine="14" endPosition="27" />
-    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="14" startPosition="27" endLine="15" endPosition="37">
+    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="10" startPosition="102" endLine="11" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="11" startPosition="102" endLine="12" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
+    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="12" startPosition="45" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPRESSION" />
+    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="14" startPosition="0" endLine="15" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLabel#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="15" startPosition="27" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLabel#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="16" startPosition="37" endLine="17" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExpression#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="17" startPosition="36" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setExpression#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="14" startPosition="0" endLine="15" endPosition="27" />
+    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="15" startPosition="27" endLine="16" endPosition="37">
       <varInfo nodeId="1196350785110" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="15" startPosition="37" endLine="16" endPosition="36" />
-    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="16" startPosition="36" endLine="17" endPosition="45">
+    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="16" startPosition="37" endLine="17" endPosition="36" />
+    <scopeInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="17" startPosition="36" endLine="18" endPosition="45">
       <varInfo nodeId="1196350785110" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" />
+    <unitInfo nodeId="1196350785110" fileName="AbstractAntiquotation.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" />
   </root>
   <root nodeId="1196350785112">
     <nodeInfo nodeId="1196350785112" fileName="Antiquotation.java" startLine="15" startPosition="83" endLine="16" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
