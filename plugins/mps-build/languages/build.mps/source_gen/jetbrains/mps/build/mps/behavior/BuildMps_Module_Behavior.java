@@ -27,14 +27,13 @@ public class BuildMps_Module_Behavior {
     boolean needsFetch = false;
     List<SNode> requiredJars = new ArrayList<SNode>();
     for (SNode m : Sequence.fromIterable(closure.getModules())) {
-      if (SNodeOperations.getContainingRoot(m) == SNodeOperations.getContainingRoot(thisNode)) {
-        continue;
-      }
-
-      SNode artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
-      if (artifact != null) {
-        builder.add(artifact);
-        needsFetch = true;
+      SNode artifact;
+      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
+        artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
+        if (artifact != null) {
+          builder.add(artifact);
+          needsFetch = true;
+        }
       }
 
       for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
@@ -60,16 +59,16 @@ public class BuildMps_Module_Behavior {
             needsFetch = true;
           }
         } else {
+          if (SNodeOperations.getContainingRoot(m) == SNodeOperations.getContainingRoot(thisNode)) {
+            continue;
+          }
+
           ListSequence.fromList(requiredJars).addElement(SLinkOperations.getTarget(dep, "path", true));
         }
       }
     }
 
     for (SNode lr : Sequence.fromIterable(closure.getLanguagesWithRuntime())) {
-      if (SNodeOperations.getContainingRoot(lr) == SNodeOperations.getContainingRoot(thisNode)) {
-        continue;
-      }
-
       for (SNode runtime : SLinkOperations.getTargets(lr, "runtime", true)) {
         if (!(SNodeOperations.isInstanceOf(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime"))) {
           continue;
@@ -83,6 +82,10 @@ public class BuildMps_Module_Behavior {
             needsFetch = true;
           }
         } else {
+          if (SNodeOperations.getContainingRoot(lr) == SNodeOperations.getContainingRoot(thisNode)) {
+            continue;
+          }
+
           ListSequence.fromList(requiredJars).addElement(SLinkOperations.getTarget(jarRuntime, "path", true));
         }
       }

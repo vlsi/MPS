@@ -6,6 +6,5 @@ import jetbrains.mps.smodel.SNode;
 
 public interface RequiredDependenciesBuilder {
   public void add(SNode node);
-  public void addAll(Iterable<SNode> nodes);
   public void addWithContent(SNode node);
 }

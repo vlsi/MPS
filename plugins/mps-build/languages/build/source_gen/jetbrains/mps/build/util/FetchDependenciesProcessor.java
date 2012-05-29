@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -63,6 +62,7 @@ public class FetchDependenciesProcessor {
       this.helper = helper;
     }
 
+    @Override
     public void add(SNode node) {
       if (!(check(node))) {
         return;
@@ -70,6 +70,7 @@ public class FetchDependenciesProcessor {
       helper.add(node, false);
     }
 
+    @Override
     public void addWithContent(SNode node) {
       if (!(check(node))) {
         return;
@@ -87,14 +88,6 @@ public class FetchDependenciesProcessor {
         return false;
       }
       return true;
-    }
-
-    public void addAll(Iterable<SNode> nodes) {
-      for (SNode n : Sequence.fromIterable(nodes)) {
-        if (n != null) {
-          add(n);
-        }
-      }
     }
   }
 
