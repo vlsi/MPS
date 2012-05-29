@@ -219,4 +219,11 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     }
     return newLastNode != null ? new NodeRangeSelection(getEditorComponent(), myFirstNode, newLastNode) : null;
   }
+
+  @Override
+  public void ensureVisible() {
+    EditorCell lastCellToSelect = getEditorComponent().findNodeCell(myLastNode);
+    assert lastCellToSelect != null;
+    getEditorComponent().scrollToCell(lastCellToSelect);
+  }
 }
