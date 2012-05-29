@@ -16,7 +16,6 @@
 package jetbrains.mps.newTypesystem.state;
 
 import gnu.trove.THashMap;
-import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
@@ -28,6 +27,8 @@ import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.validation.IModelValidationSettings;
+import jetbrains.mps.validation.ValidationSettings;
 
 import java.util.*;
 
@@ -160,7 +161,9 @@ public class NodeMaps {
     SNode type = myState.getEquations().expandNode(var, finalExpansion);
     updateNodeToType(node, type, null);
     if (finalExpansion && (type == null || TypesUtil.isVariable(type))) {
-      myState.getTypeCheckingContext().reportWarning(node, "Type "+ type+ " was not calculated", null, null, null, new NodeMessageTarget());
+      if (!ValidationSettings.getInstance().getModelValidationSettings().isDisableTypeWasNotCalculated()) {
+        myState.getTypeCheckingContext().reportWarning(node, "Type "+ type+ " was not calculated", null, null, null, new NodeMessageTarget());
+      }
     }
   }
   
