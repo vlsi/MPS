@@ -29,6 +29,7 @@ import jetbrains.mps.build.util.MacroHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
 import jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior;
 import jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -717,12 +718,13 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("module")), _context));
+    SNode artifact = SNodeOperations.as(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("module")), _context), "jetbrains.mps.build.structure.BuildSource_JavaModule");
+    SNode layoutNode = helper.artifacts().get(artifact);
     if (layoutNode == null) {
       _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name") + " was not found in the layout");
       return "???";
     }
-    String val = helper.locations().get(layoutNode);
+    String val = BuildLayout_PathElement_Behavior.call_location_7117056644539862594(layoutNode, helper, artifact);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), "name"));
       return "???";

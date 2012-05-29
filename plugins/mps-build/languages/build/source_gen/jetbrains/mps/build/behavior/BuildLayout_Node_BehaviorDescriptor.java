@@ -4,10 +4,15 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.util.UnpackHelper;
 
 public abstract class BuildLayout_Node_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements BuildLayout_PathElement_BehaviorDescriptor {
   public BuildLayout_Node_BehaviorDescriptor() {
+  }
+
+  public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
+    return BuildLayout_Node_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
   }
 
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
@@ -22,8 +27,8 @@ public abstract class BuildLayout_Node_BehaviorDescriptor extends BaseConcept_Be
     return BuildLayout_Node_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
 
-  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
-    return BuildLayout_Node_Behavior.virtual_exports_6547494638219603457(thisNode, object);
+  public boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
+    return BuildLayout_Node_Behavior.virtual_exports_6547494638219603457(thisNode, artifactId);
   }
 
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {

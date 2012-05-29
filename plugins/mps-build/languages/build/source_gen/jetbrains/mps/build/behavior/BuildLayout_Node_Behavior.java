@@ -4,6 +4,7 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
+import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -24,8 +25,12 @@ public class BuildLayout_Node_Behavior {
     // nop 
   }
 
-  public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
+  public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
     return false;
+  }
+
+  public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
+    return helper.locations().get(thisNode);
   }
 
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
@@ -57,9 +62,9 @@ public class BuildLayout_Node_Behavior {
     descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277723766, helper, artifacts);
   }
 
-  public static boolean call_exports_6547494638219603457(SNode thisNode, Object object) {
+  public static boolean call_exports_6547494638219603457(SNode thisNode, Object artifactId) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, object);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, artifactId);
   }
 
   public static boolean call_isFolder_1368030936106753980(SNode thisNode) {
@@ -76,8 +81,8 @@ public class BuildLayout_Node_Behavior {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_unpack_7128123785277710736", PARAMETERS_7128123785277723766, helper, artifacts);
   }
 
-  public static boolean callSuper_exports_6547494638219603457(SNode thisNode, String callerConceptFqName, Object object) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, object);
+  public static boolean callSuper_exports_6547494638219603457(SNode thisNode, String callerConceptFqName, Object artifactId) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Node"), callerConceptFqName, "virtual_exports_6547494638219603457", PARAMETERS_6547494638219603457, artifactId);
   }
 
   public static boolean callSuper_isFolder_1368030936106753980(SNode thisNode, String callerConceptFqName) {

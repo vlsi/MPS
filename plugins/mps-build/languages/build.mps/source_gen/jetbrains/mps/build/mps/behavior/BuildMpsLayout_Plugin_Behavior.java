@@ -10,9 +10,12 @@ import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior;
+import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.behavior.BuildLayout_Container_Behavior;
-import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
 
 public class BuildMpsLayout_Plugin_Behavior {
   public static void init(SNode thisNode) {
@@ -54,6 +57,46 @@ public class BuildMpsLayout_Plugin_Behavior {
     }
   }
 
+  public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, final Object artifactId) {
+    if (artifactId instanceof SNode) {
+      SNode node = (SNode) artifactId;
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")) {
+        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return BuildMps_IdeaPluginContent_Behavior.call_exports_6547494638219603457(it, artifactId);
+          }
+        })) {
+          SNode module = SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
+          return helper.locations().get(thisNode) + "/languages/" + SPropertyOperations.getString(module, "name") + ".jar";
+        }
+        return null;
+      }
+    }
+    return BuildLayout_PathElement_Behavior.callSuper_location_7117056644539862594(thisNode, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", helper, artifactId);
+  }
+
+  public static boolean virtual_exports_6547494638219603457(SNode thisNode, final Object artifactId) {
+    // TODO extract! (it is a copy of Folder behavior) 
+    if (artifactId instanceof SNode) {
+      final SNode node = (SNode) artifactId;
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
+        return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), "target", false) == node;
+          }
+        });
+      }
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")) {
+        return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return BuildMps_IdeaPluginContent_Behavior.call_exports_6547494638219603457(it, artifactId);
+          }
+        });
+      }
+    }
+    return BuildLayout_Node_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", artifactId);
+  }
+
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return BuildMpsLayout_Plugin_Behavior.call_getOutputPath_WithMacro_280273048052535414(thisNode, context);
   }
@@ -72,27 +115,5 @@ public class BuildMpsLayout_Plugin_Behavior {
 
   public static boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return true;
-  }
-
-  public static boolean virtual_exports_6547494638219603457(SNode thisNode, final Object object) {
-    // TODO extract! (it is a copy of Folder behavior) 
-    if (object instanceof SNode) {
-      final SNode node = (SNode) object;
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
-        return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), "target", false) == node;
-          }
-        });
-      }
-      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-        return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return BuildMps_IdeaPluginContent_Behavior.call_exports_6547494638219603457(it, object);
-          }
-        });
-      }
-    }
-    return BuildLayout_Node_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", object);
   }
 }
