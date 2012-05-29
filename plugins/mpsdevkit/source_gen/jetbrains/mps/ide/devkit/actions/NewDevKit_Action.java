@@ -7,10 +7,10 @@ import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -18,6 +18,8 @@ import jetbrains.mps.ide.devkit.newDevkitDialog.NewDevKitDialog;
 import java.awt.Frame;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
 
@@ -31,17 +33,9 @@ public class NewDevKit_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    // should be enabled only in project new action group 
-    return ((String) MapSequence.fromMap(_params).get("namespace")) == null;
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "NewDevKit", t);
@@ -75,10 +69,18 @@ public class NewDevKit_Action extends BaseAction {
       NewDevKitDialog dialog = new NewDevKitDialog(((Frame) MapSequence.fromMap(_params).get("frame")));
       dialog.setProject(((MPSProject) MapSequence.fromMap(_params).get("project")));
       dialog.showDialog();
-      DevKit devkit = dialog.getResult();
+      final DevKit devkit = dialog.getResult();
       if (devkit == null) {
         return;
       }
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ((StandaloneMPSProject) ((MPSProject) MapSequence.fromMap(_params).get("project"))).setFolderFor(devkit, (((String) MapSequence.fromMap(_params).get("namespace")) == null ?
+            "" :
+            ((String) MapSequence.fromMap(_params).get("namespace"))
+          ));
+        }
+      });
       ProjectPane projectPane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
       projectPane.rebuildTree();
       projectPane.selectModule(devkit, false);
