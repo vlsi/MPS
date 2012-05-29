@@ -220,6 +220,10 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/xmlLiterals/languages/xmlLiterals/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/plainText/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../testbench/languages">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/languages/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/languages/solutions/pluginSolution/source_gen" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="kernel" />
