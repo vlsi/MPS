@@ -33,7 +33,7 @@
   <unitInfo fileName="QueriesGenerated.java" startLine="312" startPosition="38" endLine="332" endPosition="9" unitName="jetbrains.mps.build.actions.QueriesGenerated$7" />
   <unitInfo fileName="QueriesGenerated.java" startLine="345" startPosition="36" endLine="364" endPosition="9" unitName="jetbrains.mps.build.actions.QueriesGenerated$8" />
   <unitInfo fileName="QueriesGenerated.java" startLine="368" startPosition="57" endLine="382" endPosition="13" unitName="jetbrains.mps.build.actions.QueriesGenerated$9" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.actions.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.actions.StringUtils" />
   <root nodeId="1258644073389099675">
     <nodeInfo nodeId="1500819558096177299" fileName="QueriesGenerated.java" startLine="443" startPosition="65" endLine="444" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1500819558096177305" fileName="QueriesGenerated.java" startLine="444" startPosition="121" endLine="445" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

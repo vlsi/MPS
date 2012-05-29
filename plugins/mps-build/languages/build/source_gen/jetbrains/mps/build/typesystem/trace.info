@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.typesystem.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.typesystem.StringUtils" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.build.typesystem.TypesystemDescriptor" />
   <root nodeId="1258644073389049735">
     <nodeInfo nodeId="1258644073389052168" fileName="check_BuildSource_JavaLibraryJar_NonTypesystemRule.java" startLine="21" startPosition="121" endLine="22" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

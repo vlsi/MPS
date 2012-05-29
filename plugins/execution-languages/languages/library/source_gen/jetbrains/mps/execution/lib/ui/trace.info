@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.lib.ui.IconContainer" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.execution.lib.ui.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.execution.lib.ui.StringUtils" />
   <root nodeId="1240470842553498753">
     <nodeInfo nodeId="1240470842553498998" fileName="AbstractMainNodeChooser.java" startLine="31" startPosition="76" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="1240470842553499001" fileName="AbstractMainNodeChooser.java" startLine="32" startPosition="23" endLine="33" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLegacyListenersMap" />

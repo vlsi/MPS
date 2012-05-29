@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.testbench.junit.runners.StringUtils" />
   <root nodeId="1036071220598694533">
     <nodeInfo nodeId="1178539434126727742" fileName="ModuleSymbolicSuite.java" startLine="21" startPosition="63" endLine="22" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NO_TESTS" />
     <nodeInfo nodeId="1036071220598694544" fileName="ModuleSymbolicSuite.java" startLine="23" startPosition="0" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunners" />

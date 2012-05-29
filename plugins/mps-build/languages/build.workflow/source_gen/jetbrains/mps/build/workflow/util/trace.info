@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.workflow.util.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.util.StringUtils" />
   <root nodeId="8169228734285724684">
     <nodeInfo nodeId="8169228734285725042" fileName="XmlSignature.java" startLine="17" startPosition="27" endLine="18" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sb" />
     <nodeInfo nodeId="8169228734285725047" fileName="XmlSignature.java" startLine="18" startPosition="55" endLine="19" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasErrors" />

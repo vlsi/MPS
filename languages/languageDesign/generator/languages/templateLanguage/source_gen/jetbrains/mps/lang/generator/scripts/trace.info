@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.generator.scripts.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.scripts.StringUtils" />
   <root nodeId="2533362239921665181">
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="17" startPosition="84" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2533362239921665181" fileName="UpdateGeneratorMacros_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

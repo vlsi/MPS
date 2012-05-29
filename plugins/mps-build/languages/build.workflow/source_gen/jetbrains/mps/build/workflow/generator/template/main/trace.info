@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="QueriesGenerated.java" startLine="38" startPosition="0" endLine="824" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.template.main.QueriesGenerated" />
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.template.main.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.workflow.generator.template.main.StringUtils" />
   <root nodeId="1117643560963147795">
     <nodeInfo nodeId="1117643560963171462" fileName="QueriesGenerated.java" startLine="390" startPosition="121" endLine="391" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1117643560963147798" fileName="QueriesGenerated.java" startLine="389" startPosition="145" endLine="392" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />

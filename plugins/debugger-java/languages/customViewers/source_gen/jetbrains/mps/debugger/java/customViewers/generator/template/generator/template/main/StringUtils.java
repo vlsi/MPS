@@ -55,6 +55,13 @@ package jetbrains.mps.debugger.java.customViewers.generator.template.generator.t
     return str.substring(start, end);
   }
 
+  /*package*/ static String substring(String str, int start) {
+    if (str == null) {
+      return null;
+    }
+    return substring(str, start, str.length());
+  }
+
   /*package*/ static boolean isEmpty(String str) {
     return str == null || str.length() == 0;
   }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.model.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.model.StringUtils" />
   <root nodeId="1247371618987946835">
     <nodeInfo nodeId="1247371618987946836" fileName="EvaluationAuxScope.java" startLine="28" startPosition="58" endLine="29" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModule" />
     <nodeInfo nodeId="1247371618987946844" fileName="EvaluationAuxScope.java" startLine="31" startPosition="57" endLine="32" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

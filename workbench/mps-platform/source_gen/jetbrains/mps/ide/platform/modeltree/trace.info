@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.ide.platform.modeltree.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.platform.modeltree.StringUtils" />
   <root nodeId="4288082098349207686">
     <nodeInfo nodeId="4288082098349207687" fileName="ModelTreeBuilder.java" startLine="21" startPosition="73" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
     <nodeInfo nodeId="4288082098349207909" fileName="ModelTreeBuilder.java" startLine="24" startPosition="39" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

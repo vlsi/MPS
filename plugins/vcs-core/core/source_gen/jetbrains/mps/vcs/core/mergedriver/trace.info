@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.core.mergedriver.StringUtils" />
   <root nodeId="3342666646761693517">
     <nodeInfo nodeId="3342666646761693518" fileName="MergeDriverMain.java" startLine="20" startPosition="30" endLine="21" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFLICT_START" />
     <nodeInfo nodeId="3342666646761693522" fileName="MergeDriverMain.java" startLine="21" startPosition="57" endLine="22" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONFLICT_END" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.textGen.editor.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.textGen.editor.StringUtils" />
   <root nodeId="1233670266779">
     <nodeInfo nodeId="1233670612117" fileName="ConceptTextGenDeclaration_Editor.java" startLine="228" startPosition="58" endLine="228" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7991274449437422235" fileName="ConceptTextGenDeclaration_Editor.java" startLine="245" startPosition="58" endLine="245" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

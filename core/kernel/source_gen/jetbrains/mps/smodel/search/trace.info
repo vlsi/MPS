@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.smodel.search.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.smodel.search.StringUtils" />
   <root nodeId="4642948870877862679">
     <nodeInfo nodeId="4642948870877888900" fileName="IReferenceInfoResolver.java" startLine="8" startPosition="41" endLine="12" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="4642948870877888900" fileName="IReferenceInfoResolver.java" startLine="8" startPosition="41" endLine="12" endPosition="83">
