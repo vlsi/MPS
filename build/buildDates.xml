@@ -27,33 +27,6 @@
       </idea-plugin>
     </echoxml>
     <mkdir dir="${build.layout}/plugins/mps-dates/languages" />
-    <mkdir dir="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.dates.runtime" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar" />
-    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar/META-INF" />
-    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar/META-INF/module.xml">
-      <module namespace="jetbrains.mps.baseLanguage.dates.runtime" type="solution" uuid="2ebbb458-8ebb-481e-a5d7-9e27903323d4">
-        <dependencies>
-          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
-          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
-          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
-        </dependencies>
-        <library jar="joda-time-1.6.jar" />
-        <sources jar="jetbrains.mps.baseLanguage.dates.runtime-src.jar" descriptor="jetbrains.mps.baseLanguage.dates.runtime.msd" />
-      </module>
-    </echoxml>
-    <jar destfile="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.dates.runtime/jetbrains.mps.baseLanguage.dates.runtime.jar">
-      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" />
-      <fileset dir="${mps_home}/languages/util/dates/runtime" includes="icons/**, resources/**" />
-      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar" />
-    </jar>
-    <jar destfile="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.dates.runtime/jetbrains.mps.baseLanguage.dates.runtime-src.jar">
-      <fileset dir="${mps_home}/languages/util/dates/runtime/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/util/dates/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
-    </jar>
-    <copy todir="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.dates.runtime">
-      <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
-    </copy>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.jar/META-INF/module.xml">
@@ -112,6 +85,32 @@
       <zipfileset file="${mps_home}/languages/util/dates/internal/internal.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/dates/internal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.baseLanguage.dates.runtime" type="solution" uuid="2ebbb458-8ebb-481e-a5d7-9e27903323d4">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+        </dependencies>
+        <library jar="joda-time-1.6.jar" />
+        <sources jar="jetbrains.mps.baseLanguage.dates.runtime-src.jar" descriptor="jetbrains.mps.baseLanguage.dates.runtime.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.dates.runtime.jar">
+      <fileset dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" />
+      <fileset dir="${mps_home}/languages/util/dates/runtime" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.dates.runtime.jar" />
+    </jar>
+    <jar destfile="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.dates.runtime-src.jar">
+      <fileset dir="${mps_home}/languages/util/dates/runtime/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/languages/util/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/util/dates/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+    </jar>
+    <copy todir="${build.layout}/plugins/mps-dates/languages">
+      <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
+    </copy>
     <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
