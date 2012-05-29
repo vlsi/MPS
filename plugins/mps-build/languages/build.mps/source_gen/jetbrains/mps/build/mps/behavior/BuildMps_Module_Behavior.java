@@ -31,7 +31,7 @@ public class BuildMps_Module_Behavior {
       if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
         artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
-          builder.add(artifact);
+          builder.add(artifact, m);
           needsFetch = true;
         }
       }
@@ -118,7 +118,7 @@ public class BuildMps_Module_Behavior {
         SNode artifact = SNodeOperations.as(artifacts.findArtifact(jm), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
           needsFetch = true;
-          builder.add(artifact);
+          builder.add(artifact, jm);
         }
       }
     }

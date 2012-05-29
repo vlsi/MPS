@@ -67,7 +67,15 @@ public class FetchDependenciesProcessor {
       if (!(check(node))) {
         return;
       }
-      helper.add(node, false);
+      helper.add(node, false, null);
+    }
+
+    @Override
+    public void add(SNode node, Object artifactId) {
+      if (!(check(node)) || !(checkArtifactId(artifactId))) {
+        return;
+      }
+      helper.add(node, false, artifactId);
     }
 
     @Override
@@ -75,7 +83,7 @@ public class FetchDependenciesProcessor {
       if (!(check(node))) {
         return;
       }
-      helper.add(node, true);
+      helper.add(node, true, null);
     }
 
     private boolean check(SNode node) {
@@ -85,6 +93,14 @@ public class FetchDependenciesProcessor {
       }
       if (!(artifacts.contains(node))) {
         genContext.showErrorMessage(dep, "returned node which is not available in dependencies: " + node.getDebugText());
+        return false;
+      }
+      return true;
+    }
+
+    private boolean checkArtifactId(Object artifactId) {
+      if (artifactId instanceof SNode && ((SNode) artifactId).getModel().isTransient()) {
+        genContext.showErrorMessage(dep, "cannot register artifact in transient model " + ((SNode) artifactId).getDebugText());
         return false;
       }
       return true;
