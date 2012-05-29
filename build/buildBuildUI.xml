@@ -17,7 +17,11 @@
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-build" />
-    <mkdir dir="${build.layout}/plugins/mps-build/languages" />
+    <mkdir dir="${build.layout}/plugins/mps-build/META-INF" />
+    <copy todir="${build.layout}/plugins/mps-build/META-INF">
+      <fileset file="${mps_home}/plugins/mps-build/META-INF/pluginSolutions.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/plugins/mps-build/pluginSolutions" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar/META-INF/module.xml">
@@ -35,15 +39,15 @@
         <sources jar="jetbrains.mps.build.mps.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.mps.pluginSolution.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.mps.pluginSolution.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.mps.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    <jar destfile="${build.layout}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution-src.jar">
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.pluginSolution.jar/META-INF" />
@@ -62,15 +66,15 @@
         <sources jar="jetbrains.mps.build.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.pluginSolution.jar">
+    <jar destfile="${build.layout}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" />
-      <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.build.pluginSolution.jar" />
     </jar>
-    <jar destfile="${build.layout}/plugins/mps-build/languages/jetbrains.mps.build.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    <jar destfile="${build.layout}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution-src.jar">
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
@@ -108,7 +112,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.pluginSolution/source_gen" />
+        <path location="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -140,7 +144,7 @@
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.mps.pluginSolution">
-      <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -149,7 +153,7 @@
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution/source_gen" />
+        <path location="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -184,7 +188,7 @@
       </classpath>
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.pluginSolution">
-      <fileset dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>

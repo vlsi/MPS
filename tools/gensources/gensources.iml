@@ -181,7 +181,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/deprecated/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.tests/test_gen" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-configurations/languages/migration/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/commands/source_gen" isTestSource="false" />
@@ -190,7 +190,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build.startup/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build.workflow/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/solutions/jetbrains.mps.build.pluginSolution/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$/../../samples">
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/agreementLanguage/source_gen" isTestSource="false" />
