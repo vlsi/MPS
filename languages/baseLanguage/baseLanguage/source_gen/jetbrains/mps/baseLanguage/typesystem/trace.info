@@ -15740,78 +15740,78 @@
     <unitInfo nodeId="1260930188116714148" fileName="PrimitiveTypesInInstanceOfNotAllowed_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.PrimitiveTypesInInstanceOfNotAllowed_NonTypesystemRule" />
   </root>
   <root nodeId="1387988544209571090">
-    <nodeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="26" startPosition="11" endLine="27" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1387988544209571100" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="29" startPosition="33" endLine="30" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="32" startPosition="19" endLine="33" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="33" startPosition="65" endLine="34" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="34" startPosition="217" endLine="35" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1387988544209571120" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="38" startPosition="19" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1387988544209571120" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="39" startPosition="72" endLine="40" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="51" startPosition="46" endLine="52" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="56" startPosition="5" endLine="57" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="57" startPosition="117" endLine="58" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="62" startPosition="30" endLine="63" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="17" startPosition="122" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_BinaryOperation_InferenceRule#()V" />
-    <nodeInfo nodeId="1387988544209571120" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="37" startPosition="24" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="55" startPosition="68" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="31" startPosition="39" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1387988544209571118" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="37" startPosition="22" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="54" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1387988544209571107" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="30" startPosition="184" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="28" startPosition="72" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="27" startPosition="236" endLine="44" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="25" startPosition="27" endLine="45" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="24" startPosition="65" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="23" startPosition="228" endLine="47" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="21" startPosition="122" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="18" startPosition="49" endLine="18" endPosition="49" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="51" startPosition="46" endLine="52" endPosition="66" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="62" startPosition="30" endLine="63" endPosition="17" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="17" startPosition="122" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="1387988544209571120" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="38" startPosition="19" endLine="40" endPosition="277">
+    <nodeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="24" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="27" startPosition="11" endLine="28" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1387988544209571100" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="30" startPosition="33" endLine="31" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="33" startPosition="19" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="34" startPosition="65" endLine="35" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="35" startPosition="217" endLine="36" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1387988544209571120" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="39" startPosition="19" endLine="40" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1387988544209571120" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="40" startPosition="72" endLine="41" endPosition="442" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="52" startPosition="46" endLine="53" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="57" startPosition="5" endLine="58" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="58" startPosition="117" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="63" startPosition="30" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="18" startPosition="122" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_BinaryOperation_InferenceRule#()V" />
+    <nodeInfo nodeId="1387988544209571120" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="38" startPosition="24" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="56" startPosition="68" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="32" startPosition="39" endLine="37" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1387988544209571118" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="38" startPosition="22" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1387988544209571107" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="31" startPosition="184" endLine="43" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="29" startPosition="72" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="28" startPosition="236" endLine="45" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="26" startPosition="27" endLine="46" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="25" startPosition="65" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="24" startPosition="228" endLine="48" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="22" startPosition="122" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="19" startPosition="49" endLine="19" endPosition="49" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="52" startPosition="46" endLine="53" endPosition="66" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="63" startPosition="30" endLine="64" endPosition="17" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="18" startPosition="122" endLine="20" endPosition="3" />
+    <scopeInfo nodeId="1387988544209571120" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="39" startPosition="19" endLine="41" endPosition="442">
       <varInfo nodeId="1387988544209571120" varName="_reporter_2309309498" />
       <varInfo nodeId="1387988544209571120" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="56" startPosition="5" endLine="58" endPosition="45">
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="57" startPosition="5" endLine="59" endPosition="45">
       <varInfo nodeId="1387988544209571090" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="32" startPosition="19" endLine="35" endPosition="264">
+    <scopeInfo nodeId="1387988544209571109" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="33" startPosition="19" endLine="36" endPosition="264">
       <varInfo nodeId="1387988544209571109" varName="_info_12389875345" />
       <varInfo nodeId="1387988544209571109" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1387988544209571119" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="37" startPosition="24" endLine="41" endPosition="19" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="55" startPosition="68" endLine="59" endPosition="5" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1387988544209571108" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="31" startPosition="39" endLine="36" endPosition="19" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="54" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1387988544209571119" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="38" startPosition="24" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="56" startPosition="68" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1387988544209571108" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="32" startPosition="39" endLine="37" endPosition="19" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1387988544209571090" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1387988544209571099" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="29" startPosition="33" endLine="42" endPosition="17">
+    <scopeInfo nodeId="1387988544209571099" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="30" startPosition="33" endLine="43" endPosition="17">
       <varInfo nodeId="1387988544209571101" varName="opType" />
     </scopeInfo>
-    <scopeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="28" startPosition="72" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="26" startPosition="11" endLine="44" endPosition="133">
+    <scopeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="29" startPosition="72" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="27" startPosition="11" endLine="45" endPosition="133">
       <varInfo nodeId="1387988544209571098" varName="rightType" />
     </scopeInfo>
-    <scopeInfo nodeId="1387988544209571097" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="25" startPosition="27" endLine="45" endPosition="11" />
-    <scopeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="24" startPosition="65" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="47" endPosition="127">
+    <scopeInfo nodeId="1387988544209571097" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="26" startPosition="27" endLine="46" endPosition="11" />
+    <scopeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="25" startPosition="65" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="23" startPosition="5" endLine="48" endPosition="127">
       <varInfo nodeId="1387988544209571096" varName="leftType" />
     </scopeInfo>
-    <scopeInfo nodeId="1387988544209571091" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="21" startPosition="122" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="20" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1387988544209571091" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="22" startPosition="122" endLine="49" endPosition="5" />
+    <scopeInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="21" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1387988544209571090" varName="operation" />
       <varInfo nodeId="1387988544209571090" varName="status" />
       <varInfo nodeId="1387988544209571090" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="17" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule" />
-    <unitInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="24" startPosition="53" endLine="47" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule$1" />
-    <unitInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="28" startPosition="60" endLine="44" endPosition="13" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule$2" />
+    <unitInfo nodeId="1387988544209571090" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule" />
+    <unitInfo nodeId="1387988544209571096" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="25" startPosition="53" endLine="48" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule$1" />
+    <unitInfo nodeId="1387988544209571098" fileName="typeof_BinaryOperation_InferenceRule.java" startLine="29" startPosition="60" endLine="45" endPosition="13" unitName="jetbrains.mps.baseLanguage.typesystem.typeof_BinaryOperation_InferenceRule$2" />
   </root>
   <root nodeId="1461424660015406123">
     <nodeInfo nodeId="1461424660015429875" fileName="typeof_EscapeOperation_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
