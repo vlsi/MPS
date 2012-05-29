@@ -6194,8 +6194,8 @@
     <nodeInfo nodeId="6592112598314499058" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="121" startPosition="42" endLine="122" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6592112598314499058" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="123" startPosition="5" endLine="124" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6592112598314499058" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="124" startPosition="34" endLine="125" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="128" startPosition="89" endLine="129" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="129" startPosition="98" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="128" startPosition="89" endLine="129" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="129" startPosition="99" endLine="130" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="130" startPosition="48" endLine="131" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="132" startPosition="5" endLine="133" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="133" startPosition="42" endLine="134" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6366,7 +6366,7 @@
     <nodeInfo nodeId="6592112598314499061" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="303" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="6592112598314499031" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="339" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="6592112598314499058" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="117" startPosition="94" endLine="123" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="129" startPosition="98" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="129" startPosition="99" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6592112598314499061" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="150" startPosition="48" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6592112598314499031" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="163" startPosition="106" endLine="169" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238980147629899307" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="182" startPosition="59" endLine="188" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -6562,7 +6562,7 @@
       <varInfo nodeId="6592112598314499031" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="6592112598314499058" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="117" startPosition="94" endLine="123" endPosition="5" />
-    <scopeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="129" startPosition="98" endLine="135" endPosition="5" />
+    <scopeInfo nodeId="6592112598314499025" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="129" startPosition="99" endLine="135" endPosition="5" />
     <scopeInfo nodeId="6592112598314499031" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="163" startPosition="106" endLine="169" endPosition="5" />
     <scopeInfo nodeId="6592112598314499022" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="195" startPosition="26" endLine="201" endPosition="73" />
     <scopeInfo nodeId="6592112598314885536" fileName="BuildMps_IdeaPlugin_Editor.java" startLine="216" startPosition="26" endLine="222" endPosition="73" />

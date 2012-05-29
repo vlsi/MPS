@@ -2694,7 +2694,7 @@
           </node>
         </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6592112598314499025">
-          <property name="text" nameId="tpc2.1073389577007" value="depenencies:" />
+          <property name="text" nameId="tpc2.1073389577007" value="dependencies:" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="o2va.1203598923024" resolveInfo="keyword" />
           <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="6592112598314499033">
             <property name="flag" nameId="tpc2.1186414551515" value="true" />

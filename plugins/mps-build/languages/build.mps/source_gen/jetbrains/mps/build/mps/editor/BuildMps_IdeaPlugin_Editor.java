@@ -126,7 +126,7 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_dvtb4y_i3a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "depenencies:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
     editorCell.setCellId("Constant_dvtb4y_i3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
