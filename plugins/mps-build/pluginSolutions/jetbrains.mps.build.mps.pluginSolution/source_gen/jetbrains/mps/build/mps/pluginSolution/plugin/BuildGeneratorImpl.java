@@ -160,7 +160,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SPropertyOperations.set(buildProject, "internalBaseDirectory", relativeToModuleProjectPath);
     } catch (RelativePathHelper.PathException e) {
       if (log.isWarnEnabled()) {
-        log.warn("Cant calculate project path relative to module " + targetModelDescriptor.getModule(), e);
+        log.warn("Can't calculate project path relative to module " + targetModelDescriptor.getModule(), e);
       }
     }
 
@@ -304,6 +304,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private void createContent(List<NodeData> selectedData, SNode folder, Set<SNode> modules, SModel targetSModel) {
+    // what on earth is going on here... 
     Map<NodeData, SNode> createdComponent = MapSequence.fromMap(new HashMap<NodeData, SNode>());
     Set<SNode> topLevel = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (NodeData data : ListSequence.fromList(selectedData)) {

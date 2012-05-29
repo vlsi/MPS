@@ -22,7 +22,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
   }
 
   public String getDescription() {
-    return "Build would be located in new solution.";
+    return "Select a solution to create a new build script.";
   }
 
   protected void setChecked(boolean checked) {

@@ -5111,7 +5111,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8722937377469656458">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8722937377469656459">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8722937377469656460">
-            <property name="value" nameId="tpee.1070475926801" value="Languages and solutions included in build." />
+            <property name="value" nameId="tpee.1070475926801" value="Select languages and solutions included in build script." />
           </node>
         </node>
       </node>
@@ -6222,7 +6222,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8722937377469656939">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8722937377469656940">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8722937377469656941">
-            <property name="value" nameId="tpee.1070475926801" value="Build would be located in new model." />
+            <property name="value" nameId="tpee.1070475926801" value="Select a model to create a new build script." />
           </node>
         </node>
       </node>
@@ -6285,7 +6285,7 @@
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="8722937377469656971">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8722937377469656972">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8722937377469656973">
-                <property name="value" nameId="tpee.1070475926801" value="Empty model name not allowed." />
+                <property name="value" nameId="tpee.1070475926801" value="Empty model name is not allowed." />
               </node>
             </node>
           </node>
@@ -6330,7 +6330,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8722937377469656989">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8722937377469656990">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8722937377469656991">
-            <property name="value" nameId="tpee.1070475926801" value="Build would be located in new solution." />
+            <property name="value" nameId="tpee.1070475926801" value="Select a solution to create a new build script." />
           </node>
         </node>
       </node>
@@ -10306,7 +10306,7 @@
                     </node>
                   </node>
                   <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8668191939847130138">
-                    <property name="value" nameId="tpee.1070475926801" value="Cant calculate project path relative to module " />
+                    <property name="value" nameId="tpee.1070475926801" value="Can't calculate project path relative to module " />
                   </node>
                 </node>
                 <node role="exception" roleId="tpib.1167227561449" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8668191939847130139">
@@ -11814,6 +11814,11 @@
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SModelType" typeId="tp25.1143226024141" id="8722937377469658819" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8722937377469658820">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="1081893801789112381">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="1081893801789112383">
+            <property name="text" nameId="tpee.6329021646629104958" value="what on earth is going on here..." />
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8722937377469658821">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8722937377469658822">
             <property name="name" nameId="tpck.1169194664001" value="createdComponent" />
@@ -12856,21 +12861,21 @@
         <property name="name" nameId="tpck.1169194664001" value="MPS" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1021458544535352467" resolveInfo="DependencyStep.DependencyKind" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2213834095232740560">
-          <property name="value" nameId="tpee.1070475926801" value="Add dependency on MPS." />
+          <property name="value" nameId="tpee.1070475926801" value="Add dependency on MPS" />
         </node>
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1021458544535376366">
         <property name="name" nameId="tpck.1169194664001" value="IDEA_AND_MPS_PLUGIN" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1021458544535352467" resolveInfo="DependencyStep.DependencyKind" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1021458544535113773">
-          <property name="value" nameId="tpee.1070475926801" value="Add dependency on IDEA with MPS plugin." />
+          <property name="value" nameId="tpee.1070475926801" value="Add dependency on IDEA with MPS plugin" />
         </node>
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1021458544535376368">
         <property name="name" nameId="tpck.1169194664001" value="NONE" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1021458544535352467" resolveInfo="DependencyStep.DependencyKind" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1021458544535113790">
-          <property name="value" nameId="tpee.1070475926801" value="Do not add dependencies." />
+          <property name="value" nameId="tpee.1070475926801" value="Do not add dependencies" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1021458544535352466" />
@@ -13359,7 +13364,7 @@
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2210957714906460221">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dbrf.~JCheckBox%d&lt;init&gt;(java%dlang%dString,boolean)" resolveInfo="JCheckBox" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2210957714906460222">
-                  <property name="value" nameId="tpee.1070475926801" value="Pack modules as IDEA plugin." />
+                  <property name="value" nameId="tpee.1070475926801" value="Pack modules as IDEA plugin" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2210957714906684207">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="2210957714906684176">
@@ -13767,7 +13772,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2210957714906436674">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2210957714906436675">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2210957714906436676">
-            <property name="value" nameId="tpee.1070475926801" value="Type of package to build." />
+            <property name="value" nameId="tpee.1070475926801" value="Select which type of package to build: a zip archive or a plugin for IDEA." />
           </node>
         </node>
       </node>

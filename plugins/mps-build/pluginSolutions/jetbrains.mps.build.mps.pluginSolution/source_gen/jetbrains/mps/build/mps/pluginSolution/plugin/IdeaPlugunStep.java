@@ -32,7 +32,7 @@ public class IdeaPlugunStep extends AbstractStep {
   public JComponent createMainComponent() {
     JPanel panel = new JPanel(new GridBagLayout());
 
-    myPackAsIdeaPlugin = new JCheckBox("Pack modules as IDEA plugin.", myGenerator.isPackAsIdeaPlugin());
+    myPackAsIdeaPlugin = new JCheckBox("Pack modules as IDEA plugin", myGenerator.isPackAsIdeaPlugin());
     myPackAsIdeaPlugin.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         myGenerator.setPackAsIdeaPlugin(myPackAsIdeaPlugin.isSelected());
@@ -73,7 +73,7 @@ public class IdeaPlugunStep extends AbstractStep {
   }
 
   public String getDescription() {
-    return "Type of package to build.";
+    return "Select which type of package to build: a zip archive or a plugin for IDEA.";
   }
 
   @Override

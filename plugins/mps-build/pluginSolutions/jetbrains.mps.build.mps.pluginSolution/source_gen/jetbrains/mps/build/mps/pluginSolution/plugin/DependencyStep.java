@@ -65,9 +65,9 @@ public class DependencyStep extends AbstractStep {
   }
 
   public static   enum DependencyKind {
-    MPS("Add dependency on MPS."),
-    IDEA_AND_MPS_PLUGIN("Add dependency on IDEA with MPS plugin."),
-    NONE("Do not add dependencies.");
+    MPS("Add dependency on MPS"),
+    IDEA_AND_MPS_PLUGIN("Add dependency on IDEA with MPS plugin"),
+    NONE("Do not add dependencies");
 
     public static final int DEFAULT = 0;
 
