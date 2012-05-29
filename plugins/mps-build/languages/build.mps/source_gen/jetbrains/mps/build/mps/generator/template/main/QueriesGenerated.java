@@ -226,6 +226,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "module", false), "name") + ".jar";
   }
 
+  public static Object propertyMacro_GetPropertyValue_6673387549253644754(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "group", false), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_7753544965996882380(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "codename", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
@@ -458,7 +462,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1462305029084461806(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a77(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a87(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
   }
 
   public static SNode sourceNodeQuery_2303926226081111358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -973,7 +977,7 @@ public class QueriesGenerated {
     );
   }
 
-  private static boolean neq_x583g4_a0a0a77(Object a, Object b) {
+  private static boolean neq_x583g4_a0a0a87(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

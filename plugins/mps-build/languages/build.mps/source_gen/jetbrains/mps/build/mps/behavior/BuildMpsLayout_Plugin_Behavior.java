@@ -61,13 +61,21 @@ public class BuildMpsLayout_Plugin_Behavior {
     if (artifactId instanceof SNode) {
       SNode node = (SNode) artifactId;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule")) {
+        final SNode module = SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
         if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return BuildMps_IdeaPluginContent_Behavior.call_exports_6547494638219603457(it, artifactId);
           }
         })) {
-          SNode module = SNodeOperations.cast(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
-          return helper.locations().get(thisNode) + "/languages/" + SPropertyOperations.getString(module, "name") + ".jar";
+          SNode group = SNodeOperations.as(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "plugin", false), "content", true)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup"), "group", false), "modules", true)).contains(module);
+            }
+          }).first(), "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup");
+          return helper.locations().get(thisNode) + "/languages/" + ((group != null ?
+            SPropertyOperations.getString(SLinkOperations.getTarget(group, "group", false), "name") + "/" :
+            ""
+          )) + SPropertyOperations.getString(module, "name") + ".jar";
         }
         return null;
       }
