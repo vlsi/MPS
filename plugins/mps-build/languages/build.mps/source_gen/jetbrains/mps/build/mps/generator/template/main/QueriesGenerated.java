@@ -845,6 +845,10 @@ public class QueriesGenerated {
     });
   }
 
+  public static Iterable sourceNodesQuery_6673387549253815203(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "children", true);
+  }
+
   public static Iterable sourceNodesQuery_6592112598314986092(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "group", false), "modules", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

@@ -7,14 +7,15 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import java.util.Stack;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Stack;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ArtifactsRelativePathHelper {
@@ -24,11 +25,24 @@ public class ArtifactsRelativePathHelper {
   public ArtifactsRelativePathHelper(VisibleArtifacts output, SNode anchor) {
     this.artifacts = output;
 
-    SNode parent = output.parent(anchor);
+    final Wrappers._T<SNode> parent = new Wrappers._T<SNode>(output.parent(anchor));
     StringBuilder sb = new StringBuilder();
-    while (parent != null) {
-      MapSequence.fromMap(prefixes).put(parent, sb.toString());
-      parent = output.parent(parent);
+    while (parent.value != null) {
+      MapSequence.fromMap(prefixes).put(parent.value, sb.toString());
+      if (SNodeOperations.isInstanceOf(parent.value, "jetbrains.mps.build.structure.BuildLayout_Folder")) {
+        for (SNode sfolder : ListSequence.fromList(SNodeOperations.getAllSiblings(parent.value, false)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_Folder") && it != parent.value && equalFolders(SNodeOperations.cast(parent.value, "jetbrains.mps.build.structure.BuildLayout_Folder"), SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_Folder"));
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_Folder");
+          }
+        })) {
+          MapSequence.fromMap(prefixes).put(sfolder, sb.toString());
+        }
+      }
+      parent.value = output.parent(parent.value);
       sb.append("../");
     }
   }
@@ -89,6 +103,31 @@ public class ArtifactsRelativePathHelper {
         return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildTextStringPart"), "text");
       }
     }), " ");
+  }
+
+  private boolean equalFolders(SNode left, SNode right) {
+    if (SNodeOperations.getParent(left) != SNodeOperations.getParent(right)) {
+      return false;
+    }
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(left, "containerName", true), "parts", true)).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildTextStringPart");
+      }
+    }) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(right, "containerName", true), "parts", true)).all(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildTextStringPart");
+      }
+    })) {
+      return eq_fa9ylc_a0a0b0d(SPropertyOperations.getString(left, "name"), SPropertyOperations.getString(right, "name"));
+    }
+    return false;
+  }
+
+  private static boolean eq_fa9ylc_a0a0b0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public static class RelativePathException extends Exception {
