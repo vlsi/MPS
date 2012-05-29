@@ -292,11 +292,17 @@ public class MergeRootsDialog extends BaseDialog {
       resetState();
     }
     myModelsDialog.rootsDialogClosed();
-    myMineEditor.dispose();
+    if (myMineEditor != null) {
+      myMineEditor.dispose();
+    }
     myMineEditor = null;
-    myResultEditor.dispose();
+    if (myResultEditor != null) {
+      myResultEditor.dispose();
+    }
     myResultEditor = null;
-    myRepositoryEditor.dispose();
+    if (myRepositoryEditor != null) {
+      myRepositoryEditor.dispose();
+    }
     myRepositoryEditor = null;
     ListSequence.fromList(myTrapeciumStrips).visitAll(new IVisitor<ChangeTrapeciumStrip>() {
       public void visit(ChangeTrapeciumStrip s) {
