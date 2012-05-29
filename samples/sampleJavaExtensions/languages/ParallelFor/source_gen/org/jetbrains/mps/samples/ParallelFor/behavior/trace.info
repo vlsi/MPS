@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="NonThreadSafeClass_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_BehaviorDescriptor" />
-  <unitInfo fileName="ParallelFor_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
+  <unitInfo fileName="ParallelFor_BehaviorDescriptor.java" startLine="15" startPosition="0" endLine="64" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelFor_BehaviorDescriptor" />
   <unitInfo fileName="ParallelLoopVariable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ParallelLoopVariable_BehaviorDescriptor" />
   <unitInfo fileName="ThreadPool_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
   <unitInfo fileName="ThreadSafe_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_BehaviorDescriptor" />

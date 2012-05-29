@@ -6,7 +6,7 @@
 
   <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
   <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}"/>
-  <property name="buildMPS.version" value="${import.buildMPS.buildMPS.version}"/>
+  <property name="buildMPS.version" value="${import.buildMPS.buildCore.version}"/>
 
   <property name="mps.bat" value="mps.bat"/>
   <property name="mps.vmoptions" value="mps.vmoptions"/>

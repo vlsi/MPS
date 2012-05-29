@@ -34,7 +34,7 @@ public class ParallelForSample {
 
         final int localA = a;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
               log("Starting calculation for number " + localA + " in thread " + Thread.currentThread());
@@ -85,7 +85,7 @@ public class ParallelForSample {
 
         final int localA = b;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
               log("Touching " + doNotMessupWith);
@@ -139,7 +139,7 @@ public class ParallelForSample {
 
         final String localA = c;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
               log("Name: " + localA);

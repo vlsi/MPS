@@ -24,9 +24,9 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
+import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -112,8 +112,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     try {
       TypeChecker.getInstance().enableGlobalSubtypingCache();
-      Set<Pair<Intention, SNode>> intentions = ModelAccess.instance().runReadAction(computable);
-      return intentions;
+      return ModelAccess.instance().runReadAction(computable);
     } finally {
       TypeChecker.getInstance().clearGlobalSubtypingCache();
     }
@@ -128,10 +127,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     assert node != null : "node == null - inconsistent editor state";
     List<Intention> intentions;
     if (!query.isInstantiate()) {
-      intentions = getIntentionsFor(node, context.getScope(), query.getTerminated());
+      intentions = getIntentionsFor(node, query.getTerminated());
     } else {
       intentions = new ArrayList<Intention>();
-      for (Intention intention : getIntentionsFor(node, context.getScope(), query.getTerminated())) {
+      for (Intention intention : getIntentionsFor(node, query.getTerminated())) {
         if (query.getTerminated().compute()) return new ArrayList<Intention>();
         if (intention.isParameterized()) {
           Method method = null;
@@ -189,22 +188,17 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         }
       }
     }
-
     return result;
   }
 
-  private List<Intention> getIntentionsFor(SNode node, IScope scope, Computable<Boolean> terminated) {
+  private List<Intention> getIntentionsFor(SNode node, Computable<Boolean> terminated) {
     String conceptFqName = node.getConceptFqName();
-    Set<Language> visibleLanguages = new HashSet<Language>(SModelOperations.getLanguages(node.getModel(), scope));
     List<Intention> result = new ArrayList<Intention>();
     for (String ancestor : LanguageHierarchyCache.getAncestorsNames(conceptFqName)) {
       Set<Intention> intentions = myIntentions.get(ancestor);
       if (intentions == null) continue;
       for (Intention intention : intentions) {
         if (terminated.compute()) return new ArrayList<Intention>();
-        Language language = getIntentionLanguage(intention);
-        if (!intention.getType().equals(IntentionType.MIGRATION) && language != null && !visibleLanguages.contains(language))
-          continue;
         result.add(intention);
       }
     }
@@ -264,7 +258,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     checkLoaded();
     ModuleReference ref = myIntentionsLanguages.get(intention.getClass());
     if (ref == null) return null;
-    return ModuleRepositoryFacade.getInstance().getModule(ref,Language.class);
+    return ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
   }
 
   @Nullable
@@ -381,17 +375,6 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
         return false;
       }
     };
-
-    public QueryDescriptor(Class<? extends Intention> intentionClass, boolean instantiate, boolean enabledOnly, Computable<Boolean> terminated, boolean currentNodeOnly) {
-      myIntentionClass = intentionClass;
-      myInstantiate = instantiate;
-      myEnabledOnly = enabledOnly;
-      myCurrentNodeOnly = currentNodeOnly;
-
-      if (terminated != null) {
-        myTerminated = terminated;
-      }
-    }
 
     public QueryDescriptor() {
 

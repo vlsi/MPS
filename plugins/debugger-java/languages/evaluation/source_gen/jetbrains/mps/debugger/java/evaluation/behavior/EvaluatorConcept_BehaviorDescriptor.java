@@ -24,6 +24,10 @@ public class EvaluatorConcept_BehaviorDescriptor extends BaseConcept_BehaviorDes
     return EvaluatorConcept_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
   }
 
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
+  }
+
   public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
     return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
   }

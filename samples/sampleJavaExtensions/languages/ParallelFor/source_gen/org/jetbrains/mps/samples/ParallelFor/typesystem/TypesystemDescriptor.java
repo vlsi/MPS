@@ -21,6 +21,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

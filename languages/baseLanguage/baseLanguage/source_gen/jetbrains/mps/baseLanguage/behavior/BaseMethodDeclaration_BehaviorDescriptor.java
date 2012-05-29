@@ -32,6 +32,10 @@ public abstract class BaseMethodDeclaration_BehaviorDescriptor extends GenericDe
     return IStatementListContainer_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return BaseMethodDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }

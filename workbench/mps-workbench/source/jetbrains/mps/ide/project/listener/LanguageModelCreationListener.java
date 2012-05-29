@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.project.listener;
 
 import jetbrains.mps.library.GeneralPurpose_DevKit;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.*;
 
@@ -27,11 +28,11 @@ public class LanguageModelCreationListener extends ModelCreationListener {
     return Arrays.asList(language.getStructureModelDescriptor().getSModelReference().toString());
   }
 
-  public boolean isApplicable(SModelDescriptor m) {
+  public boolean isApplicable(IModule module, SModelDescriptor m) {
     return m.getModule() instanceof Language;
   }
 
-  public void onCreate(SModelDescriptor model) {
+  public void onCreate(IModule module, SModelDescriptor model) {
     Language language = (Language) model.getModule();
     model.getSModel().addLanguage(language.getModuleReference());
 

@@ -16,17 +16,18 @@
 package jetbrains.mps.ide.project.listener;
 
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class LanguageAspectCreationListener extends ModelCreationListener {
-  public boolean isApplicable(SModelDescriptor m) {
+  public boolean isApplicable(IModule module, SModelDescriptor m) {
     return m.getModule() instanceof Language && ((Language) m.getModule()).getAspectForModel(m) != null;
   }
 
-  public void onCreate(final SModelDescriptor model) {
+  public void onCreate(IModule module, final SModelDescriptor model) {
     final EditableSModelDescriptor emd = ((EditableSModelDescriptor) model);
     Language language = (Language) model.getModule();
     LanguageAspect aspect = language.getAspectForModel(model);

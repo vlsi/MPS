@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.project.listener;
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public abstract class ModelCreationListener {
-  public abstract boolean isApplicable(SModelDescriptor m);
+  public abstract boolean isApplicable(IModule module, SModelDescriptor m);
 
-  public abstract void onCreate(SModelDescriptor m);
+  public abstract void onCreate(IModule module, SModelDescriptor m);
 }

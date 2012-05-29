@@ -27,7 +27,7 @@ public class SimpleParallelForSample {
 
         final int localA = a;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
               SimpleParallelForSample.Logger.log("Current value: " + localA);
@@ -61,6 +61,7 @@ public class SimpleParallelForSample {
     }
     // Set nowait to true to allow the main thread to continue without waiting for the tasks to finish 
     System.out.println("The main thread is done");
+    System.getSecurityManager();
   }
 
   public static class Logger {

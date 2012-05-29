@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.modules.GeneratorDependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.structure.modules.*;
@@ -203,17 +205,6 @@ public class Generator extends AbstractModule {
 
   public IFile getBundleHome() {
     return null;
-  }
-
-  @Override
-  public Collection<ModuleReference> getUsedLanguagesReferences() {
-    Set<ModuleReference> result = new LinkedHashSet<ModuleReference>(super.getUsedLanguagesReferences());
-    for (Language l : LibraryInitializer.getInstance().getBootstrapModules(Language.class)) {
-      if (!result.contains(l.getModuleReference())) {
-        result.add(l.getModuleReference());
-      }
-    }
-    return result;
   }
 
   public String getGeneratorOutputPath() {

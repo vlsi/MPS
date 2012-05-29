@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.project.listener;
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Generator;
@@ -22,16 +23,19 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 
 public class GeneratorModelCreationListener extends ModelCreationListener {
-  public boolean isApplicable(SModelDescriptor model) {
+  public boolean isApplicable(IModule module, SModelDescriptor model) {
     return model.getModule() instanceof Generator;
   }
 
-  public void onCreate(SModelDescriptor model) {
+  public void onCreate(IModule module, SModelDescriptor model) {
     if (SModelStereotype.isGeneratorModel(model)) {
+      model.getSModel().addDevKit(BootstrapLanguages.DEVKIT_GENERAL);
       model.getSModel().addLanguage(BootstrapLanguages.GENERATOR);
+      model.getSModel().addLanguage(BootstrapLanguages.GENERATOR_CONTEXT);
+      assert module instanceof Generator : "creating @generator model in module " + module.getClass().getSimpleName();
+      model.getSModel().addModelImport(((Generator) module).getSourceLanguage().getStructureModelDescriptor().getSModelReference(), false);
     } else {
       model.getSModel().addDevKit(BootstrapLanguages.DEVKIT_GENERAL);
     }
-    model.getSModel().addLanguage(BootstrapLanguages.GENERATOR_CONTEXT);
   }
 }

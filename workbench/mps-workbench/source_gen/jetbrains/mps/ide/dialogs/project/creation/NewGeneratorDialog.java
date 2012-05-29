@@ -32,16 +32,14 @@ import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.library.GeneralPurpose_DevKit;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -180,11 +178,12 @@ public class NewGeneratorDialog extends BaseDialog {
     ModelRoot templateModelsRoot = new ModelRoot();
     templateModelsRoot.setPath(templateModelsDir.getAbsolutePath());
     generatorDescriptor.getModelRoots().add(templateModelsRoot);
-    generatorDescriptor.getUsedDevkits().add(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    generatorDescriptor.getUsedDevkits().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
+    generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference());
+    generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5")).getModuleReference());
     languageDescriptor.getGenerators().add(generatorDescriptor);
     language.setLanguageDescriptor(languageDescriptor, true);
     ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
       public void run() {
         language.save();
       }
@@ -205,18 +204,14 @@ public class NewGeneratorDialog extends BaseDialog {
         break;
       }
     }
-    if (!(alreadyOwnsTemplateModel)) {
-      EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(new SModelFqName(getTemplateModelPrefix(sourceLanguage) + "." + "main", SModelStereotype.GENERATOR), newGenerator.getSModelRoots().iterator().next(), null);
-      SModel templateModel = templateModelDescriptor.getSModel();
-      templateModel.addLanguage(BootstrapLanguages.GENERATOR);
-      templateModel.addLanguage(ModuleReference.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"));
-      templateModel.addDevKit(GeneralPurpose_DevKit.get().getModuleReference());
-      templateModel.addModelImport(sourceLanguage.getStructureModelDescriptor().getSModelReference(), false);
-      // <node> 
-      SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
-      SPropertyOperations.set(mappingConfiguration, "name", "main");
-      SModelOperations.addRootNode(templateModel, mappingConfiguration);
-      templateModelDescriptor.save();
+    if (alreadyOwnsTemplateModel) {
+      return;
     }
+    EditableSModelDescriptor templateModelDescriptor = newGenerator.createModel(new SModelFqName(getTemplateModelPrefix(sourceLanguage) + "." + "main", SModelStereotype.GENERATOR), newGenerator.getSModelRoots().iterator().next(), null);
+    SModel templateModel = templateModelDescriptor.getSModel();
+    SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, "jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
+    SPropertyOperations.set(mappingConfiguration, "name", "main");
+    SModelOperations.addRootNode(templateModel, mappingConfiguration);
+    templateModelDescriptor.save();
   }
 }

@@ -41,6 +41,10 @@ public class ClosureLiteral_BehaviorDescriptor extends Expression_BehaviorDescri
     return ClosureLiteral_Behavior.virtual_isClosure_3262277503800835439(thisNode);
   }
 
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
+  }
+
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return ClosureLiteral_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
