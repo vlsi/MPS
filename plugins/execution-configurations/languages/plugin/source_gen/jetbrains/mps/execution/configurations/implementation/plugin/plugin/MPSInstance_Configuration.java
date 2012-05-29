@@ -45,10 +45,10 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if ((this.getConfigurationPath() == null || this.getConfigurationPath().length() == 0)) {
+    if (StringUtils.isEmpty(this.getConfigurationPath())) {
       throw new RuntimeConfigurationException("Configuration path is empty.");
     }
-    if ((this.getSystemPath() == null || this.getSystemPath().length() == 0)) {
+    if (StringUtils.isEmpty(this.getSystemPath())) {
       throw new RuntimeConfigurationException("System path is empty.");
     }
   }
@@ -115,14 +115,14 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public String expandPath(String path) {
-    if ((path == null || path.length() == 0)) {
+    if (StringUtils.isEmpty(path)) {
       return path;
     }
     return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
   }
 
   public String shinkPath(String path) {
-    if ((path == null || path.length() == 0)) {
+    if (StringUtils.isEmpty(path)) {
       return path;
     }
     return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
@@ -166,7 +166,7 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   private void replacePathMacro(Element element, Project project) {
     String path = "path";
     String value = element.getAttributeValue(path);
-    if ((value != null && value.length() > 0)) {
+    if (StringUtils.isNotEmpty(value)) {
       element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectFile(project).getPath())).expandPath(value));
     }
     for (Object child : element.getChildren()) {

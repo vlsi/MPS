@@ -80,7 +80,7 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
 
     protected void doRemove(AnActionEvent e) {
       String errorMessage = BoundListPanel.this.removeSelectedWithCheck();
-      if ((errorMessage == null || errorMessage.length() == 0)) {
+      if (StringUtils.isEmpty(errorMessage)) {
         return;
       }
       if (!(myAllowRemoveAnyway)) {

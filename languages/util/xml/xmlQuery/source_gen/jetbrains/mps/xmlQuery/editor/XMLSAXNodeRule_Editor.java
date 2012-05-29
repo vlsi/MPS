@@ -430,7 +430,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_b42orx_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SPropertyOperations.getString(node, "tagName") != null && SPropertyOperations.getString(node, "tagName").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "tagName"));
   }
 
   private static boolean renderingCondition_b42orx_a9a(SNode node, EditorContext editorContext, IScope scope) {

@@ -9,20 +9,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class KeyValueCommandPart extends AbstractCommandPart implements CommandPart {
   public KeyValueCommandPart(@Nullable String key, @Nullable String value) {
-    if ((key != null && key.length() > 0) && (value != null && value.length() > 0)) {
+    if (StringUtils.isNotEmpty(key) && StringUtils.isNotEmpty(value)) {
       addCommands(key);
       addCommands(ProcessHandlerBuilder.splitCommandInParts(value));
     }
   }
 
   public KeyValueCommandPart(@Nullable String key, @Nullable File value) {
-    if ((key != null && key.length() > 0) && (value != null) && ((value.getAbsolutePath() != null && value.getAbsolutePath().length() > 0))) {
+    if (StringUtils.isNotEmpty(key) && (value != null) && (StringUtils.isNotEmpty(value.getAbsolutePath()))) {
       addCommands(key, value.getAbsolutePath());
     }
   }
 
   public KeyValueCommandPart(@Nullable String key, @Nullable CommandPart value) {
-    if ((key != null && key.length() > 0) && (value != null)) {
+    if (StringUtils.isNotEmpty(key) && (value != null)) {
       List<String> commandList = value.getCommandList();
       if (ListSequence.fromList(commandList).isNotEmpty()) {
         addCommands(key);

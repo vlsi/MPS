@@ -396,7 +396,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if ((pattern == null || pattern.length() == 0)) {
+            if (StringUtils.isEmpty(pattern)) {
               return "text";
             }
             {

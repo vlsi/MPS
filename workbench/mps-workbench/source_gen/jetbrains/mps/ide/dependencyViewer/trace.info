@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.dependencyViewer.StringUtils" />
   <root nodeId="8294989614925456943">
     <nodeInfo nodeId="8294989614925457236" fileName="DependenciesPanel.java" startLine="36" startPosition="47" endLine="37" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitTree" />
     <nodeInfo nodeId="8294989614925457239" fileName="DependenciesPanel.java" startLine="37" startPosition="36" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTargetsView" />
@@ -774,7 +775,7 @@
     <nodeInfo nodeId="8294989614925458703" fileName="TargetsView.java" startLine="152" startPosition="82" endLine="153" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925458709" fileName="TargetsView.java" startLine="156" startPosition="34" endLine="157" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6554537591061570737" fileName="TargetsView.java" startLine="160" startPosition="55" endLine="161" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6554537591061570757" fileName="TargetsView.java" startLine="162" startPosition="65" endLine="163" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6554537591061570757" fileName="TargetsView.java" startLine="162" startPosition="46" endLine="163" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8294989614925458717" fileName="TargetsView.java" startLine="164" startPosition="7" endLine="165" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925458732" fileName="TargetsView.java" startLine="169" startPosition="47" endLine="170" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8294989614925458672" fileName="TargetsView.java" startLine="140" startPosition="73" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyNodeRepresentator#()V" />
@@ -828,7 +829,7 @@
     <scopeInfo nodeId="8294989614925458690" fileName="TargetsView.java" startLine="148" startPosition="48" endLine="149" endPosition="18" />
     <scopeInfo nodeId="8294989614925458702" fileName="TargetsView.java" startLine="152" startPosition="82" endLine="153" endPosition="23" />
     <scopeInfo nodeId="8294989614925458708" fileName="TargetsView.java" startLine="156" startPosition="34" endLine="157" endPosition="34" />
-    <scopeInfo nodeId="6554537591061570748" fileName="TargetsView.java" startLine="162" startPosition="65" endLine="163" endPosition="55" />
+    <scopeInfo nodeId="6554537591061570748" fileName="TargetsView.java" startLine="162" startPosition="46" endLine="163" endPosition="55" />
     <scopeInfo nodeId="8294989614925458731" fileName="TargetsView.java" startLine="169" startPosition="47" endLine="170" endPosition="36" />
     <scopeInfo nodeId="8294989614925458550" fileName="TargetsView.java" startLine="109" startPosition="79" endLine="111" endPosition="39" />
     <scopeInfo nodeId="8294989614925458672" fileName="TargetsView.java" startLine="140" startPosition="73" endLine="142" endPosition="5" />

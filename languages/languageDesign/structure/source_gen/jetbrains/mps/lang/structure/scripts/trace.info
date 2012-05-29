@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.structure.scripts.StringUtils" />
   <root nodeId="4376713410984067201">
     <nodeInfo nodeId="4376713410984067201" fileName="RemoveBackslashesFromIconPath_MigrationScript.java" startLine="12" startPosition="92" endLine="13" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4376713410984067201" fileName="RemoveBackslashesFromIconPath_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -49,7 +50,7 @@
     <nodeInfo nodeId="4975090607137555731" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4975090607137661815" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="34" startPosition="70" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4975090607137727009" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="37" startPosition="66" endLine="38" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4975090607137662194" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="40" startPosition="145" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4975090607137662194" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="40" startPosition="87" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4975090607137662199" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="42" startPosition="9" endLine="43" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9161136784551155313" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="48" startPosition="43" endLine="49" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9161136784551302798" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="51" startPosition="84" endLine="52" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -59,7 +60,7 @@
     <nodeInfo nodeId="4975090607137555731" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="68" startPosition="59" endLine="69" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9161136784551302536" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="73" startPosition="70" endLine="74" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9161136784551302540" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="76" startPosition="66" endLine="77" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9161136784551302557" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="78" startPosition="9" endLine="79" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9161136784551302557" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="78" startPosition="9" endLine="79" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9161136784551302566" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="82" startPosition="52" endLine="83" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="9161136784551302574" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="84" startPosition="120" endLine="85" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9161136784551302771" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="88" startPosition="43" endLine="89" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -95,7 +96,7 @@
     <scopeInfo nodeId="4975090607137555731" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="75" />
     <scopeInfo nodeId="4975090607137661808" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="34" startPosition="70" endLine="35" endPosition="23" />
     <scopeInfo nodeId="4975090607137725254" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="37" startPosition="66" endLine="38" endPosition="23" />
-    <scopeInfo nodeId="4975090607137661820" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="40" startPosition="145" endLine="41" endPosition="23" />
+    <scopeInfo nodeId="4975090607137661820" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="40" startPosition="87" endLine="41" endPosition="23" />
     <scopeInfo nodeId="9161136784551155312" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="48" startPosition="43" endLine="49" endPosition="327" />
     <scopeInfo nodeId="4975090607137555731" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="55" startPosition="42" endLine="56" endPosition="21" />
     <scopeInfo nodeId="4975090607137555731" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="60" startPosition="31" endLine="61" endPosition="44" />
@@ -126,7 +127,7 @@
     <scopeInfo nodeId="4975090607137555734" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="46" startPosition="52" endLine="52" endPosition="141">
       <varInfo nodeId="9161136784551155302" varName="aliasProperty" />
     </scopeInfo>
-    <scopeInfo nodeId="9161136784551302530" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="72" startPosition="59" endLine="79" endPosition="146" />
+    <scopeInfo nodeId="9161136784551302530" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="72" startPosition="59" endLine="79" endPosition="88" />
     <scopeInfo nodeId="4975090607137555731" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="45" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="4975090607137555731" varName="node" />
     </scopeInfo>

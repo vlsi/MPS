@@ -108,7 +108,7 @@ public class ModelPlusImportedScope extends Scope {
         if (conceptToCheck != null && !(node.isInstanceOfConcept(conceptToCheck))) {
           continue;
         }
-        if ((prefix != null && prefix.length() > 0)) {
+        if (StringUtils.isNotEmpty(prefix)) {
           String refText = getReferenceText(null, node);
           if (refText == null || !(refText.startsWith(prefix))) {
             continue;
@@ -122,7 +122,7 @@ public class ModelPlusImportedScope extends Scope {
 
   public String getReferenceText(SNode contextNode, SNode node) {
     String resolveInfo = node.getResolveInfo();
-    if ((resolveInfo != null && resolveInfo.length() > 0)) {
+    if (StringUtils.isNotEmpty(resolveInfo)) {
       return resolveInfo;
     }
     return node.getPresentation();

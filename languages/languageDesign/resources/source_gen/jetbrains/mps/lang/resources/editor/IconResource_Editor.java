@@ -151,7 +151,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SPropertyOperations.getString(node, "path") == null || SPropertyOperations.getString(node, "path").length() == 0);
+    return StringUtils.isEmpty(SPropertyOperations.getString(node, "path"));
   }
 
   private static boolean renderingCondition_79r3b6_a0a0(SNode node, EditorContext editorContext, IScope scope) {

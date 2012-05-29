@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.ExtensionDescriptor" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.structure.pluginSolution.plugin.StringUtils" />
   <root nodeId="5487985028841902889">
     <nodeInfo nodeId="5487985028841902889" fileName="Structure_ActionGroup.java" startLine="11" startPosition="65" endLine="12" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5487985028841902889" fileName="Structure_ActionGroup.java" startLine="12" startPosition="76" endLine="13" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -232,9 +233,9 @@
     <nodeInfo nodeId="5487985028841903094" fileName="HelpHelper.java" startLine="33" startPosition="62" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841903102" fileName="HelpHelper.java" startLine="35" startPosition="59" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841903115" fileName="HelpHelper.java" startLine="41" startPosition="25" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841903120" fileName="HelpHelper.java" startLine="43" startPosition="5" endLine="44" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841903120" fileName="HelpHelper.java" startLine="43" startPosition="5" endLine="44" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841903136" fileName="HelpHelper.java" startLine="48" startPosition="25" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841903141" fileName="HelpHelper.java" startLine="50" startPosition="5" endLine="51" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5487985028841903141" fileName="HelpHelper.java" startLine="50" startPosition="5" endLine="51" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841903159" fileName="HelpHelper.java" startLine="55" startPosition="42" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841903173" fileName="HelpHelper.java" startLine="58" startPosition="37" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841903180" fileName="HelpHelper.java" startLine="59" startPosition="46" endLine="60" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -295,8 +296,8 @@
     <scopeInfo nodeId="5487985028841903015" fileName="HelpHelper.java" startLine="94" startPosition="0" endLine="97" endPosition="5">
       <varInfo nodeId="5487985028841903025" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841903112" fileName="HelpHelper.java" startLine="40" startPosition="60" endLine="44" endPosition="209" />
-    <scopeInfo nodeId="5487985028841903133" fileName="HelpHelper.java" startLine="47" startPosition="60" endLine="51" endPosition="279" />
+    <scopeInfo nodeId="5487985028841903112" fileName="HelpHelper.java" startLine="40" startPosition="60" endLine="44" endPosition="121" />
+    <scopeInfo nodeId="5487985028841903133" fileName="HelpHelper.java" startLine="47" startPosition="60" endLine="51" endPosition="156" />
     <scopeInfo nodeId="5487985028841903256" fileName="HelpHelper.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="5487985028841903259" varName="node" />
     </scopeInfo>

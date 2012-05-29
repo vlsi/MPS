@@ -57,7 +57,7 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         final String text = getText();
-        if ((text == null || text.length() == 0)) {
+        if (StringUtils.isEmpty(text)) {
           setNode(null);
           return;
         }

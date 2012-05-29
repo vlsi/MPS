@@ -39,6 +39,7 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PluginDependency_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencePage_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.behavior.PreferencesComponentDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.StringUtils" />
     <classNode dependClassName="jetbrains.mps.lang.plugin.generator.util.PluginNameUtils" />
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.IconResource_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -56,6 +57,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.plugin.generator.baseLanguage.template.main.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

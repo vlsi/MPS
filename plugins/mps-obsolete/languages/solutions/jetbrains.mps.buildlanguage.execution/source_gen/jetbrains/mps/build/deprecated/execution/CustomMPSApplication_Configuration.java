@@ -61,7 +61,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if ((this.getConfigurationId() == null || this.getConfigurationId().length() == 0)) {
+    if (StringUtils.isEmpty(this.getConfigurationId())) {
       throw new RuntimeConfigurationException("Configuration to run is not selected.");
     } else if ((getConfiguration() == null)) {
       throw new RuntimeConfigurationException("Could not find configuration with id " + this.getConfigurationId() + ".");

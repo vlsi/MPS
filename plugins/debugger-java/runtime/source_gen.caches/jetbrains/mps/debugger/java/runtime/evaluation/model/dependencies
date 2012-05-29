@@ -29,6 +29,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.MyInMemoryJavaGenerationHandler" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.StringUtils" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationCacheContainer" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationOptions" />
@@ -160,6 +161,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.StackFrameContext" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.StringUtils" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -270,6 +272,7 @@
     <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.StringUtils" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -296,6 +299,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription" file="VariableDescription.java">
     <classNode dependClassName="java.lang.Object" />

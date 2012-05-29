@@ -53,7 +53,7 @@ public class SolutionDescriptorPersistence {
           final boolean result_8ckma3_a5a0a0g0b0a = AttributeUtils.booleanWithDefault(solutionElement.getAttributeValue("compileInMPS"), false);
           result_8ckma3_a0a0g0b0a.setCompileInMPS(result_8ckma3_a5a0a0g0b0a);
 
-          if ((solutionElement.getAttributeValue("generatorOutputPath") != null && solutionElement.getAttributeValue("generatorOutputPath").length() > 0)) {
+          if (StringUtils.isNotEmpty(solutionElement.getAttributeValue("generatorOutputPath"))) {
             final String result_8ckma3_a0a7a0a0g0b0a = macroHelper.expandPath(solutionElement.getAttributeValue("generatorOutputPath"));
             result_8ckma3_a0a0g0b0a.setOutputPath(result_8ckma3_a0a7a0a0g0b0a);
           }

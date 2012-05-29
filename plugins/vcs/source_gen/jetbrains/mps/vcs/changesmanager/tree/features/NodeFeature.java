@@ -20,7 +20,7 @@ public class NodeFeature extends AbstractNodeFeature {
     SNode parentNode = SNodeOperations.getParent(node);
     if (parentNode == null) {
       String virtualPackage = SPropertyOperations.getString(node, "virtualPackage");
-      if ((virtualPackage == null || virtualPackage.length() == 0)) {
+      if (StringUtils.isEmpty(virtualPackage)) {
         return null;
       } else {
         return new VirtualPackageFeature(getModelReference(), virtualPackage);

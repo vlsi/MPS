@@ -80,11 +80,11 @@ public class MacroReference_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_yfwtie_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SPropertyOperations.getString(node, "name") != null && SPropertyOperations.getString(node, "name").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "name"));
   }
 
   private static boolean renderingCondition_yfwtie_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SPropertyOperations.getString(node, "name") == null || SPropertyOperations.getString(node, "name").length() == 0);
+    return StringUtils.isEmpty(SPropertyOperations.getString(node, "name"));
   }
 
   public static class MacroReference_component_cellMenu_a0a0 implements SubstituteInfoPart {

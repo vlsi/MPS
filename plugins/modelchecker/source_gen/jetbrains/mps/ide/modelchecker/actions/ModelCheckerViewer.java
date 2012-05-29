@@ -256,7 +256,7 @@ public abstract class ModelCheckerViewer extends JPanel {
     }
 
     public Icon getCategoryIcon(String category) {
-      if ((category != null && category.length() > 0)) {
+      if (StringUtils.isNotEmpty(category)) {
         if (category.startsWith(ModelChecker.SEVERITY_ERROR)) {
           return Icons.ERROR_ICON;
         } else if (category.startsWith(ModelChecker.SEVERITY_WARNING)) {

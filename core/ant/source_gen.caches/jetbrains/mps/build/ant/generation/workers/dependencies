@@ -168,6 +168,9 @@
     <classNode dependClassName="jetbrains.mps.vfs.impl.JarEntryFile" />
     <classNode extendsClassName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.workers.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.workers.TestGenerationWorker" file="TestGenerationWorker.java">
     <classNode dependClassName="java.io.BufferedOutputStream" />
     <classNode dependClassName="java.io.File" />
@@ -209,6 +212,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestListener" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.XmlTestReporter" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.BuildMakeService" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.StringUtils" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />

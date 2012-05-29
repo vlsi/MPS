@@ -23,7 +23,7 @@ public class PathProvider {
     StringBuilder sb = new StringBuilder("${build.tmp}/");
     int before;
     for (String s : categories) {
-      if ((s == null || s.length() == 0)) {
+      if (StringUtils.isEmpty(s)) {
         continue;
       }
       before = sb.length();

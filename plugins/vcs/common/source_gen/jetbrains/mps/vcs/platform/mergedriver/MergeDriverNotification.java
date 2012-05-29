@@ -16,7 +16,6 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.ThreadUtils;
-import org.apache.commons.lang.StringUtils;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.notification.NotificationType;
 import com.intellij.notification.NotificationListener;
@@ -73,12 +72,12 @@ public class MergeDriverNotification {
       }
     }).where(new IWhereFilter<String>() {
       public boolean accept(String vn) {
-        return (vn != null && vn.length() > 0);
+        return StringUtils.isNotEmpty(vn);
       }
     }));
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        String whichVcses = StringUtils.join(SetSequence.fromSet(vcsNames).select(new ISelector<String, String>() {
+        String whichVcses = org.apache.commons.lang.StringUtils.join(SetSequence.fromSet(vcsNames).select(new ISelector<String, String>() {
           public String select(String vn) {
             return AllVcses.getInstance(myProject).getByName(vn).getDisplayName();
           }

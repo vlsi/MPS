@@ -104,7 +104,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if ((pattern == null || pattern.length() == 0) || pattern.startsWith("&")) {
+            if (StringUtils.isEmpty(pattern) || pattern.startsWith("&")) {
               return "text";
             }
             if (XmlNameUtil.isAttValue(pattern)) {
@@ -135,7 +135,7 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode attr = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlAttribute", null);
             String attrName = "name";
-            if (!((pattern == null || pattern.length() == 0))) {
+            if (!(StringUtils.isEmpty(pattern))) {
               String name = pattern;
               if (pattern.endsWith("=")) {
                 name = name.substring(0, name.length() - 1);
@@ -153,7 +153,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if (!((pattern == null || pattern.length() == 0))) {
+            if (!(StringUtils.isEmpty(pattern))) {
               String name = pattern;
               if (pattern.endsWith("=")) {
                 name = name.substring(0, name.length() - 1);
@@ -216,7 +216,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if ((pattern == null || pattern.length() == 0)) {
+            if (StringUtils.isEmpty(pattern)) {
               return "text";
             }
             if (XmlNameUtil.isCharData(pattern)) {
@@ -251,7 +251,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if ((pattern == null || pattern.length() == 0)) {
+            if (StringUtils.isEmpty(pattern)) {
               return "text";
             }
             if (XmlNameUtil.isXmlString(pattern)) {

@@ -685,6 +685,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.ide.migration.migration25.StringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
@@ -719,6 +720,9 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.migration.migration25.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.migration25.UpdateRefactoringVersions_Action" file="UpdateRefactoringVersions_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

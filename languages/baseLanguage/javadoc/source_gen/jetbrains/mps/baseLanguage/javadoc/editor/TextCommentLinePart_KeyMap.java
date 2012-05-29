@@ -130,7 +130,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
           nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).last();
           int index = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).count() - 1;
           ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)));
-          if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && (SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text") != null && SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length() > 0)) {
+          if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
             caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
           } else {
             caret = 0;
@@ -147,7 +147,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
         if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
           nodeToSelect = SNodeOperations.getPrevSibling(node);
           SNode linePart = SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-          if ((SPropertyOperations.getString(linePart, "text") == null || SPropertyOperations.getString(linePart, "text").length() == 0)) {
+          if (StringUtils.isEmpty(SPropertyOperations.getString(linePart, "text"))) {
             SNodeOperations.deleteNode(nodeToSelect);
             nodeToSelect = node;
           } else {
@@ -201,9 +201,9 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
       final Wrappers._T<SNode> nodeToSelect = new Wrappers._T<SNode>(null);
       final Wrappers._int caret = new Wrappers._int(-1);
       EditorCell_Label selectedCell = ((EditorCell_Label) editorContext.getSelectedCell());
-      if ((selectedCell.getSelectedText() != null && selectedCell.getSelectedText().length() > 0)) {
+      if (StringUtils.isNotEmpty(selectedCell.getSelectedText())) {
         selectedCell.deleteSelection();
-        if ((selectedCell.getText() == null || selectedCell.getText().length() == 0)) {
+        if (StringUtils.isEmpty(selectedCell.getText())) {
           if ((SNodeOperations.getNextSibling(node) == null)) {
             CommentLine_Behavior.call_tryMergeToRight_439148907936414403(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), SNodeOperations.getIndexInParent(node));
           } else {
@@ -243,7 +243,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
                 nodeToSelect.value = ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
                 int index = SNodeOperations.getIndexInParent(node);
                 ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)));
-                if (SNodeOperations.isInstanceOf(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && (SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text") != null && SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length() > 0)) {
+                if (SNodeOperations.isInstanceOf(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
                   caret.value = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
                 } else {
                   caret.value = 0;
@@ -261,7 +261,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
           //  Caret is at the end of text part inside comment line 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
             nodeToSelect.value = SNodeOperations.getNextSibling(node);
-            if ((SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text") == null || SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length() == 0)) {
+            if (StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
               SNodeOperations.deleteNode(nodeToSelect.value);
               nodeToSelect.value = node;
             } else {

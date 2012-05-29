@@ -134,7 +134,7 @@ public class QueriesGenerated {
     String[] options = MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(_context.getNode()).split("\\s");
     List<SNode> lines = ListSequence.fromList(new ArrayList<SNode>());
     for (String option : options) {
-      if ((option == null || option.length() == 0)) {
+      if (StringUtils.isEmpty(option)) {
         continue;
       }
 

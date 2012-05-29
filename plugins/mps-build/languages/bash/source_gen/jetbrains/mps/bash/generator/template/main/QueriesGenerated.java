@@ -30,7 +30,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_6382090206703015630(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String result = SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "comment", true), "comment");
-    if ((result == null || result.length() == 0)) {
+    if (StringUtils.isEmpty(result)) {
       result = "<< comment >>";
     }
     return result;

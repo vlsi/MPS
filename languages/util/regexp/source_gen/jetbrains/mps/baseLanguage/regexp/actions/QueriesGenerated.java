@@ -261,7 +261,7 @@ public class QueriesGenerated {
             SNode node = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", _context.getCurrentTargetNode());
             SPropertyOperations.set(node, "name", (pattern.endsWith(":") ?
               pattern.substring(1, pattern.length() - 1) :
-              ((pattern == null || pattern.length() == 0) ?
+              (StringUtils.isEmpty(pattern) ?
                 "" :
                 pattern.substring(1)
               )

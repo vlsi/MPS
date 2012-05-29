@@ -147,6 +147,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" file="CommentLine_Behavior.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -193,6 +194,7 @@
   <dependency className="jetbrains.mps.baseLanguage.javadoc.behavior.HTMLElement_Behavior" file="HTMLElement_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.behavior.CommentLine_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -295,6 +297,9 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.behavior.BaseVariableDocReference_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.javadoc.behavior.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.behavior.TextCommentLinePart_BehaviorDescriptor" file="TextCommentLinePart_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

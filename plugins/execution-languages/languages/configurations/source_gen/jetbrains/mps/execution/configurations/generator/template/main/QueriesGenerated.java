@@ -416,7 +416,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1754312393816976127(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path").length() > 0);
+    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_2535050848643232592(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -424,7 +424,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7244675116808166482(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path") != null && SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_1594211126127687772(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -448,11 +448,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1474977673367994580(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SPropertyOperations.getString(_context.getNode(), "path") != null && SPropertyOperations.getString(_context.getNode(), "path").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "path"));
   }
 
   public static boolean ifMacro_Condition_6396510228602727619(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SPropertyOperations.getString(_context.getNode(), "alias") == null || SPropertyOperations.getString(_context.getNode(), "alias").length() == 0);
+    return StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "alias"));
   }
 
   public static boolean ifMacro_Condition_3726880020403335400(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -90,6 +90,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.ModelMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.SimpleMerger" />
+    <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.StringUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.core.mergedriver.TextMerger" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeDriverBackupUtil" />
     <classNode dependClassName="org.apache.log4j.PropertyConfigurator" />
@@ -148,6 +149,9 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
+  </dependency>
+  <dependency className="jetbrains.mps.vcs.core.mergedriver.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.TextMerger" file="TextMerger.java">
     <classNode dependClassName="de.regnis.q.sequence.line.QSequenceLineRAByteData" />

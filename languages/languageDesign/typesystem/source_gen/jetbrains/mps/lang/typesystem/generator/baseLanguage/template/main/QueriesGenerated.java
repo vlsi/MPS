@@ -218,7 +218,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_4197825331980858388(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SPropertyOperations.getString(_context.getNode(), "fqName") == null || SPropertyOperations.getString(_context.getNode(), "fqName").length() == 0);
+    return StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "fqName"));
   }
 
   public static boolean baseMappingRule_Condition_1175150707078(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

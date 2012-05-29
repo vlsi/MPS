@@ -21,7 +21,7 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     component.addDependency(concept);
     for (SNode link : ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(concept))) {
-      if ((SPropertyOperations.getString(link, "role") == null || SPropertyOperations.getString(link, "role").length() == 0)) {
+      if (StringUtils.isEmpty(SPropertyOperations.getString(link, "role"))) {
         continue;
       }
       component.addDependency(link);

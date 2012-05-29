@@ -5,7 +5,7 @@ package jetbrains.mps.execution.api.commands;
 
 public class PropertyCommandPart extends AbstractCommandPart implements CommandPart {
   public PropertyCommandPart(String key, String value) {
-    if ((key != null && key.length() > 0) && (value != null && value.length() > 0)) {
+    if (StringUtils.isNotEmpty(key) && StringUtils.isNotEmpty(value)) {
       addCommands("-D" + key + "=" + value);
     }
   }

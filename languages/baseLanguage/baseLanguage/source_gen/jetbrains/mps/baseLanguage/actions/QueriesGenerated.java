@@ -1977,7 +1977,7 @@ __switch__:
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
                 SNode param = (SNode) conceptDeclaration;
-                if ((SConceptPropertyOperations.getString(param, "alias") == null || SConceptPropertyOperations.getString(param, "alias").length() == 0) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SConceptPropertyOperations.getBoolean(param, "abstract")) {
+                if (StringUtils.isEmpty(SConceptPropertyOperations.getString(param, "alias")) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SConceptPropertyOperations.getBoolean(param, "abstract")) {
                   continue;
                 }
                 ListSequence.fromList(result).addElement(param);
@@ -3931,10 +3931,7 @@ __switch__:
         }
 
         public String getMatchingText(String pattern) {
-          return ((pattern == null ?
-            null :
-            pattern.trim()
-          ));
+          return StringUtils.trimBoth(pattern);
         }
 
         public String getVisibleMatchingText(String pattern) {

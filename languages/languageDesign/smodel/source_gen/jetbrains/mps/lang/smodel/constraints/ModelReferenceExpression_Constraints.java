@@ -28,10 +28,10 @@ public class ModelReferenceExpression_Constraints extends BaseConstraintsDescrip
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "fqName";
-        if ((SPropertyOperations.getString(node, "name") == null || SPropertyOperations.getString(node, "name").length() == 0)) {
+        if (StringUtils.isEmpty(SPropertyOperations.getString(node, "name"))) {
           return null;
         }
-        return SPropertyOperations.getString(node, "name") + (((SPropertyOperations.getString(node, "stereotype") == null || SPropertyOperations.getString(node, "stereotype").length() == 0) ?
+        return SPropertyOperations.getString(node, "name") + ((StringUtils.isEmpty(SPropertyOperations.getString(node, "stereotype")) ?
           "" :
           "@" + SPropertyOperations.getString(node, "stereotype")
         ));

@@ -25,14 +25,14 @@ public class BuildJavaPlugin_Behavior {
       return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
         public String getName(SNode jo) {
           String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName");
-          return ((optionsName == null || optionsName.length() == 0) ?
+          return (StringUtils.isEmpty(optionsName) ?
             "<default options>" :
             optionsName
           );
         }
       }, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
-          return (SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName") != null && SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName").length() > 0);
+          return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
         }
       });
     }

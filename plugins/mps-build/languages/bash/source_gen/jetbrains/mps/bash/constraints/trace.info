@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.bash.constraints.ConstraintsAspectDescriptor" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.bash.constraints.StringUtils" />
   <root nodeId="3147078024747719682">
     <nodeInfo nodeId="3147078024747719682" fileName="ArgumentList_Constraints.java" startLine="14" startPosition="73" endLine="15" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
     <nodeInfo nodeId="3147078024747719682" fileName="ArgumentList_Constraints.java" startLine="17" startPosition="37" endLine="18" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -119,7 +120,7 @@
     <nodeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="20" startPosition="82" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="29" startPosition="84" endLine="30" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3263637656460664800" fileName="HexIntegerLiteral_Constraints.java" startLine="31" startPosition="135" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3263637656460664800" fileName="HexIntegerLiteral_Constraints.java" startLine="31" startPosition="82" endLine="32" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3263637656460664804" fileName="HexIntegerLiteral_Constraints.java" startLine="33" startPosition="9" endLine="34" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="36" startPosition="7" endLine="37" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="14" startPosition="78" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HexIntegerLiteral_Constraints#()V" />
@@ -131,7 +132,7 @@
     <nodeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="18" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
     <scopeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="15" startPosition="42" endLine="16" endPosition="60" />
     <scopeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="3263637656460664793" fileName="HexIntegerLiteral_Constraints.java" startLine="31" startPosition="135" endLine="32" endPosition="23" />
+    <scopeInfo nodeId="3263637656460664793" fileName="HexIntegerLiteral_Constraints.java" startLine="31" startPosition="82" endLine="32" endPosition="23" />
     <scopeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="14" startPosition="78" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3263637656460340490" fileName="HexIntegerLiteral_Constraints.java" startLine="30" startPosition="38" endLine="34" endPosition="89" />
     <scopeInfo nodeId="3263637656460340487" fileName="HexIntegerLiteral_Constraints.java" startLine="22" startPosition="82" endLine="27" endPosition="0" />

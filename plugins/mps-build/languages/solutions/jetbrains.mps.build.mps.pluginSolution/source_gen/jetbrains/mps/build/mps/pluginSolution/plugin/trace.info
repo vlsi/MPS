@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.StringUtils" />
   <root nodeId="6937807405124198153">
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="34" startPosition="67" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="35" startPosition="66" endLine="36" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -28,7 +29,7 @@
     <nodeInfo nodeId="8503529127541528492" fileName="ImportAllModulesFromFolder_Action.java" startLine="87" startPosition="92" endLine="88" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2617896750899030033" fileName="ImportAllModulesFromFolder_Action.java" startLine="88" startPosition="76" endLine="89" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2617896750899030039" fileName="ImportAllModulesFromFolder_Action.java" startLine="91" startPosition="27" endLine="92" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8503529127541541687" fileName="ImportAllModulesFromFolder_Action.java" startLine="93" startPosition="98" endLine="94" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8503529127541541687" fileName="ImportAllModulesFromFolder_Action.java" startLine="93" startPosition="81" endLine="94" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="99" startPosition="35" endLine="100" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2617896750899030077" fileName="ImportAllModulesFromFolder_Action.java" startLine="101" startPosition="9" endLine="102" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1572311180462136191" fileName="ImportAllModulesFromFolder_Action.java" startLine="104" startPosition="40" endLine="105" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -95,7 +96,7 @@
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="72" startPosition="70" endLine="73" endPosition="19" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="76" startPosition="62" endLine="77" endPosition="19" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="78" startPosition="5" endLine="79" endPosition="86" />
-    <scopeInfo nodeId="8503529127541540925" fileName="ImportAllModulesFromFolder_Action.java" startLine="93" startPosition="98" endLine="94" endPosition="89" />
+    <scopeInfo nodeId="8503529127541540925" fileName="ImportAllModulesFromFolder_Action.java" startLine="93" startPosition="81" endLine="94" endPosition="89" />
     <scopeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="99" startPosition="35" endLine="100" endPosition="58" />
     <scopeInfo nodeId="8503529127541528510" fileName="ImportAllModulesFromFolder_Action.java" startLine="104" startPosition="40" endLine="105" endPosition="52" />
     <scopeInfo nodeId="1572311180462136212" fileName="ImportAllModulesFromFolder_Action.java" startLine="108" startPosition="48" endLine="109" endPosition="15" />

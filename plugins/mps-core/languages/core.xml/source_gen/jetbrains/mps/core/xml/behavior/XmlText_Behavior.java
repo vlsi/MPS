@@ -20,7 +20,7 @@ public class XmlText_Behavior {
   }
 
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
-    if ((SPropertyOperations.getString(thisNode, "value") == null || SPropertyOperations.getString(thisNode, "value").length() == 0) && (SNodeOperations.getNextSibling(thisNode) != null)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
       return !(XmlPart_Behavior.call_onNewLine_2133624044437631588(thisNode));
     }
     return false;
@@ -30,7 +30,7 @@ public class XmlText_Behavior {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent")) {
       SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlContent");
-      return SConceptPropertyOperations.getBoolean(leftContent, "textLike") || (SPropertyOperations.getString(thisNode, "value") == null || SPropertyOperations.getString(thisNode, "value").length() == 0) && (SNodeOperations.getNextSibling(thisNode) == null);
+      return SConceptPropertyOperations.getBoolean(leftContent, "textLike") || StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;
   }
