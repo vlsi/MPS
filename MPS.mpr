@@ -34,6 +34,9 @@
       <modulePath path="${project}/core/analyzers/solutions/sandbox/sandbox.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/ant/jetbrains.mps.build.antsupport.msd" folder="core" />
       <modulePath path="${project}/core/dependencies/dependencies.msd" folder="core" />
+      <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" folder="devkits" />
+      <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" folder="devkits" />
+      <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.language-design.devkit" folder="devkits" />
       <modulePath path="${project}/core/findUsages-runtime/runtime.msd" folder="core" />
       <modulePath path="${project}/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="core" />
       <modulePath path="${project}/core/generator/solutions/tests/tests.msd" folder="core.generator" />
@@ -64,7 +67,6 @@
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.unittest/jetbrains.mps.baseLanguage.unittest.msd" folder="baseLanguage.unitTest" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" folder="baseLanguage" />
-      <modulePath path="${project}/languages/baseLanguage/baseLanguage/solutions/pluginSolution/pluginSolution.msd" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/blTypes/blTypes.mpl" folder="baseLanguage" />
       <modulePath path="${project}/languages/baseLanguage/checkDot/languages/checkedDots/checkedDots.mpl" folder="baseLanguage.checkedDots" />
@@ -122,7 +124,6 @@
       <modulePath path="${project}/languages/languageDesign/checkedName/checkedName.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/constraints/constraints.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/dataFlow/dataFlow.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/languageDesign/dataFlow/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/editor/editor.mpl" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/languages/editorTest/editorTest.mpl" folder="core.editor" />
       <modulePath path="${project}/languages/languageDesign/editor/languages/table/runtime/jetbrains.mps.table.runtime.msd" folder="core.editor" />
@@ -342,6 +343,9 @@
       <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/quickQueryLanguage.mpl" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
+      <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/pluginSolution.msd" folder="baseLanguage" />
+      <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/pluginSolution.msd" folder="language-design" />
+      <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />

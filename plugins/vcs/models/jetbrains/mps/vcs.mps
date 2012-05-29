@@ -1285,7 +1285,7 @@
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8222824327012905331">
                         <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8222824327012905332">
-                          <property name="value" nameId="tpee.1070475926801" value="You have yor project file unmerged. It is strongly recommended to merge it before continuing. " />
+                          <property name="value" nameId="tpee.1070475926801" value="You have your project file unmerged. It is strongly recommended to merge it before continuing. " />
                         </node>
                         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8222824327012905333">
                           <property name="value" nameId="tpee.1070475926801" value="\nDo you want to merge it now?" />

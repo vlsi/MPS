@@ -13,6 +13,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 
 public class HierarchyViewTool extends AbstractHierarchyView {
@@ -61,11 +62,11 @@ public class HierarchyViewTool extends AbstractHierarchyView {
     super.createTool();
     myModelListener = new HierarchyModelListener(this.myHierarchyTree);
     this.myCreationListener = new ModelCreationListener() {
-      public boolean isApplicable(SModelDescriptor m) {
+      public boolean isApplicable(IModule module, SModelDescriptor m) {
         return m.getModule() instanceof Language && LanguageAspect.STRUCTURE.equals(((Language) m.getModule()).getAspectForModel(m));
       }
 
-      public void onCreate(SModelDescriptor m) {
+      public void onCreate(IModule module, SModelDescriptor m) {
         onCreateStructureModel(m);
       }
     };

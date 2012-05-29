@@ -93,6 +93,10 @@ public class ConceptMethodDeclaration_Behavior {
     return SLinkOperations.getTarget(thisNode, "overriddenMethod", false);
   }
 
+  public static boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+    return false;
+  }
+
   public static SNode call_getNearestOverriddenMethod_5014346297260520836(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
     return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"), "virtual_getNearestOverriddenMethod_5358895268254685434", PARAMETERS_5014346297260520836);

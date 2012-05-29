@@ -88,8 +88,8 @@ public abstract class AbstractModule implements IModule {
     model.setChanged(true);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
-      if (listener.isApplicable(model)) {
-        listener.onCreate(model);
+      if (listener.isApplicable(this, model)) {
+        listener.onCreate(this, model);
       }
     }
 

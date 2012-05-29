@@ -47,7 +47,7 @@ public class ThreadSafeSample {
 
         final String localA = name;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
               try {
@@ -93,7 +93,7 @@ public class ThreadSafeSample {
 
         final String localA = name;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
               String finalString = localA + fixedValue.toUpperCase() + fixedFieldValue;

@@ -16,6 +16,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new MarkAsNonThreadSafe_Intention(), "2975785153735230347");
     add(new MarkAsThreadSafe_Intention(), "2975785153735208385");
     add(new MarkInstanceMethodCallAsThreadSafe_Intention(), "5384012304952490058");
+    add(new MarkLocalInstanceMethodCallAsThreadSafe_Intention(), "3540747636396581099");
+    add(new MarkLocalStaticMethodCallAsThreadSafe_Intention(), "3540747636396475561");
     add(new MarkStaticMethodCallAsThreadSafe_Intention(), "5384012304952498864");
     add(new MarkVariableDeclarationAsThreadSafe_Intention(), "2975785153735290139");
     add(new TurnToForEachStatement_Intention(), "5384012304952504715");
@@ -23,6 +25,8 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     add(new UnmarkAsNonThreadSafe_Intention(), "2975785153735235995");
     add(new UnmarkAsThreadSafe_Intention(), "2975785153735222149");
     add(new UnmarkInstanceMethodCallAsThreadSafe_Intention(), "5384012304952537573");
+    add(new UnmarkLocalInstanceMethodCallAsThreadSafe_Intention(), "3540747636396569349");
+    add(new UnmarkLocalStaticMethodCallAsThreadSafe_Intention(), "3540747636396569313");
     add(new UnmarkStaticMethodCallAsThreadSafe_Intention(), "5384012304952503177");
     add(new UnmarkVariableAsThreadSafe_Intention(), "2975785153735291445");
   }

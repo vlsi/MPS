@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.nodeidmap;
 
 import gnu.trove.TLongObjectHashMap;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Regular;
@@ -23,6 +24,7 @@ import jetbrains.mps.smodel.SNodeId.Regular;
 import java.util.Arrays;
 
 public class RegularNodeIdMap implements INodeIdToNodeMap {
+  private static Logger LOG = Logger.getLogger(RegularNodeIdMap.class);
   private final TLongObjectHashMap<SNode> myRegularMap = new TLongObjectHashMap<SNode>();
 
   public int size() {
@@ -30,22 +32,32 @@ public class RegularNodeIdMap implements INodeIdToNodeMap {
   }
 
   public SNode get(SNodeId key) {
+    if (!(key instanceof Regular)) return null;
     return myRegularMap.get(((Regular) key).getId());
   }
 
   public SNode put(SNodeId key, SNode value) {
+    if (!(key instanceof Regular)) {
+      LOG.error("Trying to add node with id class "+key.getClass().getName()+" to a regular model");
+      return null;
+    }
     return myRegularMap.put(((Regular) key).getId(), value);
   }
 
   public boolean containsKey(SNodeId key) {
+    if (!(key instanceof Regular)) return false;
     return myRegularMap.containsKey(((Regular) key).getId());
   }
 
   public SNode remove(SNodeId key) {
+    if (!(key instanceof Regular)){
+      LOG.error("Trying to remove node with id class "+key.getClass().getName()+" from a regular model");
+      return null;
+    }
     return myRegularMap.remove(((Regular) key).getId());
   }
 
   public Iterable<SNode> values() {
-    return ((Iterable) Arrays.asList((myRegularMap.getValues())));
+    return ((Iterable) Arrays.asList(myRegularMap.getValues()));
   }
 }

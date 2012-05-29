@@ -11,4 +11,5 @@ public interface IMethodLike_BehaviorDescriptor {
   public SNode virtual_getBody_1239354440022(SNode thisNode);
   public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode);
   public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode);
+  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode);
 }

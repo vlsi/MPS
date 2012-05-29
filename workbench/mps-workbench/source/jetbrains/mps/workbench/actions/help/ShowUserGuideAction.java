@@ -39,6 +39,6 @@ public class ShowUserGuideAction extends ShowSiteAction {
   }
 
   protected String getSiteURL() {
-    return "http://confluence.jetbrains.com/display/MPSD2/MPS+User%27s+Guide";
+    return "http://confluence.jetbrains.com/display/MPSD25/MPS+User%27s+Guide";
   }
 }
