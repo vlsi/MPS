@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.StringUtils" />
   <root nodeId="3201398707754971881">
     <nodeInfo nodeId="3201398707754971893" fileName="ModelFeature.java" startLine="10" startPosition="64" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3201398707754971909" fileName="ModelFeature.java" startLine="15" startPosition="30" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.StringUtils" />
   <root nodeId="1560298786499491521">
     <nodeInfo nodeId="1560298786499491542" fileName="ValidateableBoundPanel.java" startLine="35" startPosition="64" endLine="36" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
     <nodeInfo nodeId="1560298786499491545" fileName="ValidateableBoundPanel.java" startLine="36" startPosition="34" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCaption" />

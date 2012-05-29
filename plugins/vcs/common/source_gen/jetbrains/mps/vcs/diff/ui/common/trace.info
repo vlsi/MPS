@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.StringUtils" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.StringUtils" />
   <root nodeId="4652592318748334972">
     <nodeInfo nodeId="4652592318748334972" fileName="Bounds.java" startLine="9" startPosition="19" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4652592318748334972" fileName="Bounds.java" startLine="13" startPosition="45" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
