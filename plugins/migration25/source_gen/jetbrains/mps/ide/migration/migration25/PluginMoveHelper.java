@@ -110,14 +110,16 @@ public class PluginMoveHelper {
             String newIconMacro = SPropertyOperations.getString(it, "path").replace(MacrosFactory.LANGUAGE_DESCRIPTOR, MacrosFactory.SOLUTION_DESCRIPTOR);
             String newIconPath = MacrosFactory.moduleDescriptor(solution).expandPath(newIconMacro, solution.getDescriptorFile());
 
+            SPropertyOperations.set(it, "path", newIconMacro);
+
             IFile file = FileSystem.getInstance().getFile(iconPath);
             if (!(file.exists())) {
               return;
             }
 
-            file.move(FileSystem.getInstance().getFile(newIconPath).getParent());
-
-            SPropertyOperations.set(it, "path", newIconMacro);
+            IFile parent = FileSystem.getInstance().getFile(newIconPath).getParent();
+            parent.mkdirs();
+            file.move(parent);
           }
         });
       }
