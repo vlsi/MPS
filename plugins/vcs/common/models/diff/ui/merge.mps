@@ -1627,6 +1627,9 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="708166622413807819" resolveInfo="md" />
                 </node>
               </node>
+              <node role="typeArgument" roleId="tpee.4972241301747169160" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1743514473788392824">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="pvwh.~BaseAction" resolveInfo="BaseAction" />
+              </node>
             </node>
           </node>
         </node>
