@@ -68,7 +68,6 @@
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="7923290658387314698">
       <property name="name" nameId="tpck.1169194664001" value="mc_pre" />
-      <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="true" />
     </node>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="1144956008583654942">
       <property name="name" nameId="tpck.1169194664001" value="InterfaceBehaviorDescriptor" />
@@ -78,7 +77,6 @@
     </node>
     <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="2644693874449963587">
       <property name="name" nameId="tpck.1169194664001" value="mc_create_holder" />
-      <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="true" />
     </node>
   </roots>
   <root id="1225195370212">
