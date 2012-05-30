@@ -16,6 +16,7 @@
   <unitInfo fileName="ActionParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionParameterReference_BehaviorDescriptor" />
   <unitInfo fileName="ActionParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionParameter_BehaviorDescriptor" />
   <unitInfo fileName="ActionPlaceSpecification_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionPlaceSpecification_BehaviorDescriptor" />
+  <unitInfo fileName="ActionReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionReference_BehaviorDescriptor" />
   <unitInfo fileName="ActionType_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ActionType_BehaviorDescriptor" />
   <unitInfo fileName="AddElementStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.AddElementStatement_BehaviorDescriptor" />
   <unitInfo fileName="AddKeystrokeStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.AddKeystrokeStatement_BehaviorDescriptor" />
@@ -24,7 +25,7 @@
   <unitInfo fileName="BaseNodeBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseNodeBlock_BehaviorDescriptor" />
   <unitInfo fileName="BaseProjectOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescriptor" />
   <unitInfo fileName="BaseToolDeclaration_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BaseToolDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildGroupBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.BuildGroupBlock_BehaviorDescriptor" />
   <unitInfo fileName="ButtonCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ButtonCreator_BehaviorDescriptor" />
   <unitInfo fileName="CloseTabOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.CloseTabOperation_BehaviorDescriptor" />
@@ -79,6 +80,7 @@
   <unitInfo fileName="ModificationStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.ModificationStatement_BehaviorDescriptor" />
   <unitInfo fileName="NewCreateBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.NewCreateBlock_BehaviorDescriptor" />
   <unitInfo fileName="NodesBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.NodesBlock_BehaviorDescriptor" />
+  <unitInfo fileName="NonDumbAwareActions_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.NonDumbAwareActions_BehaviorDescriptor" />
   <unitInfo fileName="OnAfterReadBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.OnAfterReadBlock_BehaviorDescriptor" />
   <unitInfo fileName="OnBeforeWriteBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.OnBeforeWriteBlock_BehaviorDescriptor" />
   <unitInfo fileName="OrderConstraints_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.plugin.behavior.OrderConstraints_BehaviorDescriptor" />
