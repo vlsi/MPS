@@ -29,6 +29,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
@@ -246,7 +247,7 @@ public class NextPreviousTraverser {
     return null;
   }
 
-  private class TheAction extends BaseAction {
+  private class TheAction extends BaseAction implements DumbAware {
     private boolean myPrevious;
 
     private TheAction(boolean previous) {

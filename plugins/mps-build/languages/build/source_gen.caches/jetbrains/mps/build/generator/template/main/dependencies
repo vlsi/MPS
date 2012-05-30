@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.build.generator.template.main.QueriesGenerated" file="QueriesGenerated.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Container_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_EchoProperties_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_EchoXml_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_SingleFile_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildSource_SingleFolder_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildVariableMacroInitValue_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.generator.template.main.StringUtils" />
+    <classNode dependClassName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper" />
+    <classNode dependClassName="jetbrains.mps.build.util.Context" />
+    <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
+    <classNode dependClassName="jetbrains.mps.build.util.FetchDependenciesProcessor" />
+    <classNode dependClassName="jetbrains.mps.build.util.FileSetUtil" />
+    <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
+    <classNode dependClassName="jetbrains.mps.build.util.JavaModulesClosure" />
+    <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
+    <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
+    <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.util.Pair" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.generator.template.main.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+</dependenciesRoot>
+

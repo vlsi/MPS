@@ -32,7 +32,7 @@ public class LibraryStubDescriptor_Constraints extends BaseConstraintsDescriptor
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "moduleName";
         {
-          if ((SPropertyOperations.getString(node, "moduleId") == null || SPropertyOperations.getString(node, "moduleId").length() == 0)) {
+          if (StringUtils.isEmpty(SPropertyOperations.getString(node, "moduleId"))) {
             return null;
           }
 

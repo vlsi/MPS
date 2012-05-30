@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.project.structure.stub.StringUtils" />
   <root nodeId="4198951972171372748">
     <nodeInfo nodeId="4198951972171373441" fileName="ProjectStructureBuilder.java" startLine="34" startPosition="47" endLine="35" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySource" />
     <nodeInfo nodeId="2721285250110487901" fileName="ProjectStructureBuilder.java" startLine="35" startPosition="42" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />

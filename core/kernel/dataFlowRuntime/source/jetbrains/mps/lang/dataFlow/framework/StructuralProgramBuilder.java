@@ -151,6 +151,7 @@ public abstract class StructuralProgramBuilder<N> {
           instruction.setJumpTo(position);
         } catch (DataflowBuilderException e) {
           Logger.getLogger(StructuralProgramBuilder.class).warning("JumpTo instruction reference to outer node");
+          instruction.getProgram().setHasOuterJumps(true);
         }
       }
     });
@@ -165,6 +166,7 @@ public abstract class StructuralProgramBuilder<N> {
           instruction.setJumpTo(position);
         } catch (DataflowBuilderException e) {
           Logger.getLogger(StructuralProgramBuilder.class).warning("IfJumpTo instruction reference to outer node");
+          instruction.getProgram().setHasOuterJumps(true);
         }
       }
     });

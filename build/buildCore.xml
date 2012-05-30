@@ -2,6 +2,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildCore" />
   <property name="build.layout" location="${build.dir}/artifacts/buildCore" />
+  <property name="version" value="2.5 EAP" />
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.IDEA" location="${idea_home}" />
@@ -1208,6 +1209,7 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.smodel-src.jar" descriptor="smodel.mpl" />
@@ -2053,6 +2055,7 @@
     <copy todir="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     </copy>
+    <echo file="${build.layout}/build.properties">buildCore.version=${version}</echo>
   </target>
   
   <target name="fetchDependencies" />

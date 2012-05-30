@@ -15,16 +15,17 @@
  */
 package jetbrains.mps.ide.project.listener;
 
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.smodel.*;
 
 public class TestsModelCreationListener extends ModelCreationListener {
-  public boolean isApplicable(SModelDescriptor model) {
+  public boolean isApplicable(IModule module, SModelDescriptor model) {
     return SModelStereotype.isTestModel(model);
   }
 
-  public void onCreate(SModelDescriptor model) {
+  public void onCreate(IModule module, SModelDescriptor model) {
     if (!new GlobalModuleDependenciesManager(model.getModule()).getUsedLanguages().contains(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.UNITTEST, Language.class))) {
       model.getModule().addUsedLanguage(BootstrapLanguages.UNITTEST);
     }

@@ -109,7 +109,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showNode(final String namespace, final String id) throws RemoteException {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
           if (!(namespace.equals(descriptor.getSModelReference().getLongName()))) {
@@ -136,7 +136,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showConceptNode(final String fqName) throws RemoteException {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         SNode concept = SModelUtil.findConceptDeclaration(fqName, GlobalScope.getInstance());
         NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), concept, true, false);

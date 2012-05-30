@@ -187,13 +187,22 @@ public class ShowImplementationComponent extends JPanel {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-      IOperationContext operationContext = myEditor.getEditor().getOperationContext();
-      final SNode selectedNode = myItemToNode.get((String) myNodeChooser.getSelectedItem());
-      NavigationSupport.getInstance().openNode(operationContext, selectedNode, true, true);
-      NavigationSupport.getInstance().selectInTree(operationContext, selectedNode, false);
-      if (myClosePopup) {
-        myPopup.cancel();
-      }
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        @Override
+        public void run() {
+          IOperationContext operationContext = myEditor.getEditor().getOperationContext();
+          SNode selectedNode = myItemToNode.get((String) myNodeChooser.getSelectedItem());
+          if (selectedNode.isDisposed() || !(selectedNode.isRegistered()) || selectedNode.getModel().getModelDescriptor() != null) {
+            return;
+          }
+          // TODO: use node pointers here
+          NavigationSupport.getInstance().openNode(operationContext, selectedNode, true, true);
+          NavigationSupport.getInstance().selectInTree(operationContext, selectedNode, false);
+          if (myClosePopup) {
+            myPopup.cancel();
+          }
+        }
+      });
     }
   }
 }

@@ -56,7 +56,7 @@ public class AllMembersJavaStubs extends AbstractModelRootManager {
           smd = (BaseStubModelDescriptor) descriptor;
           ListSequence.fromList(result).addElement(descriptor);
         } else {
-          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(module.getModuleReference(), "debugger_java", false), module);
+          smd = new JavaStubModelDescriptor(modelReference, new JavaStubModelDataSource(module.getModuleReference(), false), module);
           ListSequence.fromList(result).addElement(smd);
         }
         ((JavaStubModelDataSource) smd.getSource()).addPath(AllMembersJavaStubs.this.child(startPath, subpackage));

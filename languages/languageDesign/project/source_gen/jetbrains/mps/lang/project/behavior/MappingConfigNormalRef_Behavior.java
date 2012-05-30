@@ -16,13 +16,13 @@ public class MappingConfigNormalRef_Behavior {
   }
 
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
-    if ((SPropertyOperations.getString(thisNode, "modelUID") == null || SPropertyOperations.getString(thisNode, "modelUID").length() == 0)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "modelUID"))) {
       return false;
     }
     if (SPropertyOperations.getString(thisNode, "modelUID").equals("*")) {
       return true;
     }
-    if ((SPropertyOperations.getString(thisNode, "nodeID") == null || SPropertyOperations.getString(thisNode, "nodeID").length() == 0)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "nodeID"))) {
       return false;
     }
     return true;

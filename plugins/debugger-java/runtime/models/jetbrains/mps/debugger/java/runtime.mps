@@ -11544,6 +11544,7 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7280914690732957232" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="2891782949125205937">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="2891782949125205938">
             <property name="text" nameId="tpee.6329021646629104958" value=" negative port number means the caller leaves to debugger to decide at which hport to listen" />
@@ -11552,7 +11553,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2891782949125169920">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2891782949125169921">
             <property name="name" nameId="tpck.1169194664001" value="portArg" />
-            <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+            <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125169922">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sxpz.~Connector$Argument" resolveInfo="Connector.Argument" />
             </node>
@@ -11622,10 +11623,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7280914690732957235" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2891782949125169948">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="2891782949125169949">
             <property name="name" nameId="tpck.1169194664001" value="timeoutArg" />
-            <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+            <property name="isFinal" nameId="tpee.1176718929932" value="false" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125169950">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sxpz.~Connector$Argument" resolveInfo="Connector.Argument" />
             </node>
@@ -11667,6 +11669,54 @@
               <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="2891782949125205940">
                 <property name="text" nameId="tpee.6329021646629104958" value=" wait forever" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7280914690732957233" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7280914690732957238">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7280914690732957239">
+            <property name="name" nameId="tpck.1169194664001" value="hostArgument" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7280914690732957240">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="sxpz.~Connector$Argument" resolveInfo="Connector.Argument" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7280914690732957261">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7280914690732957242">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125169390" resolveInfo="myArguments" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7280914690732957267">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Map%dget(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="get" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7280914690732957268">
+                  <property name="value" nameId="tpee.1070475926801" value="hostname" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="7280914690732957303">
+          <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="7280914690732957304">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7280914690732957330">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7280914690732957350">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7280914690732957331">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7280914690732957239" resolveInfo="hostArgument" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7280914690732957355">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="sxpz.~Connector$Argument%dsetValue(java%dlang%dString)%cvoid" resolveInfo="setValue" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7280914690732957376">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7280914690732957356">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125169395" resolveInfo="myConnectionSettings" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7280914690732957382">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mcvh.3432969378036016572" resolveInfo="getHostName" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotEqualsExpression" typeId="tpee.1073239437375" id="7280914690732957326">
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7280914690732957329" />
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7280914690732957307">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7280914690732957239" resolveInfo="hostArgument" />
             </node>
           </node>
         </node>

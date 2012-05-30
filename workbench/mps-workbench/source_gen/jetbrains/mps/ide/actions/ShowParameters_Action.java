@@ -32,6 +32,11 @@ public class ShowParameters_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (ShowParameters_Action.this.getCellNode(_params) == null) {
       return false;

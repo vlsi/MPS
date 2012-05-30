@@ -409,9 +409,12 @@
         <action id="ShowLog" class="com.intellij.ide.actions.ShowLogAction"/>
         <separator/>
         <action id="OnlineDocAction" class="com.intellij.ide.actions.OnlineDocAction"/>
-        <action id="Help.KeymapReference" class="com.intellij.ide.actions.RefCardAction"
-                icon="/general/defaultKeymap.png"/>
-        <action id="Help.JetBrainsTV" class="com.intellij.openapi.wm.impl.welcomeScreen.JetBrainsTvAction"/>
+        <!-- MPS Patch Start-->
+        <action id="Help.KeymapReference"
+                class="jetbrains.mps.workbench.actions.help.ShowDefaultKeymap"
+                text="Default Keymap Reference"/>
+        <action id="Help.JetBrainsTV" class="jetbrains.mps.workbench.actions.help.MPSJetBrainsTvAction"/>
+        <!-- MPS Patch End-->
         <separator/>
         <action id="CheckForUpdate" class="com.intellij.openapi.updateSettings.impl.CheckForUpdateAction"/>
 

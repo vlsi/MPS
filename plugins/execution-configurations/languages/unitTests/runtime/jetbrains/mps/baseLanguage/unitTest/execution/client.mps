@@ -993,9 +993,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5881102044690179200">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5881102044690179201">
             <property name="name" nameId="tpck.1169194664001" value="node" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="5881102044690179202">
-              <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="5881102044690179050" resolveInfo="N" />
-            </node>
+            <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2696770507970005245" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5881102044690179203">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690179054" resolveInfo="getNode" />
             </node>
@@ -1086,9 +1084,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5881102044690179225">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="5881102044690179226">
                 <property name="name" nameId="tpck.1169194664001" value="node" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="5881102044690179227">
-                  <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="5881102044690179050" resolveInfo="N" />
-                </node>
+                <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="2696770507970005248" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalInstanceMethodCall" typeId="tpee.3066917033203108594" id="5881102044690179228">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5881102044690179054" resolveInfo="getNode" />
                 </node>

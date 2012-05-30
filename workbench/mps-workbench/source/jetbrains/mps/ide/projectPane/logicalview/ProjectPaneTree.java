@@ -83,12 +83,8 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
   }
 
   public void editNode(final SNode node, IOperationContext context, boolean focus) {
-    boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return !node.isRoot();
-      }
-    });
-    myProjectPane.editNode(node, context, focus, select);
+    ModelAccess.assertLegalWrite();
+    myProjectPane.editNode(node, context, focus);
   }
 
   public boolean isAutoOpen() {

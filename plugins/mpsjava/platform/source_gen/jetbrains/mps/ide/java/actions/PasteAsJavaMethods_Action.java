@@ -28,6 +28,11 @@ public class PasteAsJavaMethods_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null) && JavaPaster.areDataAvailableInClipboard();
   }

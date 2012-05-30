@@ -22,7 +22,7 @@ public class Order_Behavior {
 
   public static String call_getGeneratedClassName_3038738109029038654(SNode thisNode) {
     String n;
-    if ((SPropertyOperations.getString(thisNode, "name") == null || SPropertyOperations.getString(thisNode, "name").length() == 0)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "name"))) {
       n = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false), "name");
     } else {
       n = SPropertyOperations.getString(thisNode, "name");

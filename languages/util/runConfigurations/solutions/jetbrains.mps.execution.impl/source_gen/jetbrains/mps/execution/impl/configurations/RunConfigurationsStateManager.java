@@ -9,8 +9,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.ide.IdeMain;
-import org.jdom.Element;
-import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.ui.RunContentManagerImpl;
@@ -24,9 +22,12 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.openapi.extensions.Extensions;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import org.jdom.Element;
 
 public class RunConfigurationsStateManager implements ProjectComponent {
   protected static Log log = LogFactory.getLog(RunConfigurationsStateManager.class);
@@ -48,8 +49,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
       disposeRunConfigurations();
     }
   };
-  private Element myState = null;
-  private Element mySharedState = null;
+  private RunConfigurationsStateManager.State myState = null;
 
   public RunConfigurationsStateManager(Project project, PluginReloader pluginReloader) {
     myProject = project;
@@ -66,39 +66,26 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     if (myProject.isDisposed()) {
       return;
     }
+
     getRunManager().initializeConfigurationTypes(RunConfigurationsStateManager.getConfigurationTypes());
-    RunConfiguration[] runConfigurations = getRunManager().getAllConfigurations();
-    if (runConfigurations != null && runConfigurations.length > 0) {
-      if (log.isErrorEnabled()) {
-        log.error("Already has loaded configurations. We do not want to owerwrite them.");
-      }
-    } else {
-      if (myState != null) {
-        try {
-          getRunManager().readExternal(myState);
-        } catch (InvalidDataException e) {
-          if (log.isErrorEnabled()) {
-            log.error("", e);
-          }
-        }
-      }
-      if (mySharedState != null) {
-        try {
-          getSharedConfigurationManager().readExternal(mySharedState);
-        } catch (InvalidDataException e) {
-          if (log.isErrorEnabled()) {
-            log.error("", e);
-          }
+
+    if (myState != null) {
+      try {
+        myState.restoreState();
+        myState = null;
+      } catch (InvalidDataException e) {
+        if (log.isErrorEnabled()) {
+          log.error("Can't read execution configurations state.", e);
         }
       }
     }
-    reInitializeManagers();
   }
 
   public void disposeRunConfigurations() {
     assert !(myProject.isDisposed());
     ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
     RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
+
     for (RunContentDescriptor d : contentManager.getAllDescriptors()) {
       if (d.getAttachedContent() == null) {
         if (log.isWarnEnabled()) {
@@ -113,17 +100,17 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         d.getAttachedContent().getManager().removeAllContents(true);
       }
     }
-    Element newState = new Element("root");
-    try {
-      getRunManager().writeExternal(newState);
-      myState = newState;
-    } catch (WriteExternalException e) {
-      if (log.isErrorEnabled()) {
-        log.error("", e);
+
+    if (myState == null) {
+      try {
+        myState = new RunConfigurationsStateManager.State();
+        getRunManager().clearAll();
+      } catch (WriteExternalException e) {
+        if (log.isErrorEnabled()) {
+          log.error("Can't save run configurations state.", e);
+        }
       }
     }
-    mySharedState = getSharedConfigurationManager().getState();
-    getRunManager().clearAll();
   }
 
   private RunManagerImpl getRunManager() {
@@ -132,28 +119,6 @@ public class RunConfigurationsStateManager implements ProjectComponent {
 
   private ProjectRunConfigurationManager getSharedConfigurationManager() {
     return myProject.getComponent(ProjectRunConfigurationManager.class);
-  }
-
-  private void reInitializeManagers() {
-    Element newState = new Element("root");
-    Element newSharedState = new Element("root");
-    try {
-      // save 
-      getRunManager().writeExternal(newState);
-      getSharedConfigurationManager().writeExternal(newSharedState);
-
-      // read 
-      getRunManager().readExternal(newState);
-      getSharedConfigurationManager().readExternal(newSharedState);
-    } catch (WriteExternalException wee) {
-      if (log.isErrorEnabled()) {
-        log.error("", wee);
-      }
-    } catch (InvalidDataException ide) {
-      if (log.isErrorEnabled()) {
-        log.error("", ide);
-      }
-    }
   }
 
   @NonNls
@@ -171,19 +136,42 @@ public class RunConfigurationsStateManager implements ProjectComponent {
   }
 
   public static ConfigurationType[] getConfigurationTypes() {
-    final ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
-    final List<ConfigurationType> result = new ArrayList<ConfigurationType>();
-    Set<String> uniqTypes = new HashSet<String>();
+    ConfigurationType[] configurationTypes = Extensions.getExtensions(ConfigurationType.CONFIGURATION_TYPE_EP);
+    List<ConfigurationType> result = ListSequence.fromList(new ArrayList<ConfigurationType>());
+    Set<String> uniqTypes = SetSequence.fromSet(new HashSet<String>());
+
     for (ConfigurationType type : configurationTypes) {
-      if (!(uniqTypes.contains(type.getClass().getName()))) {
+      String typeId = type.getClass().getName();
+      if (!(SetSequence.fromSet(uniqTypes).contains(typeId))) {
         result.add(type);
-        uniqTypes.add(type.getClass().getName());
+        SetSequence.fromSet(uniqTypes).addElement(typeId);
       }
     }
+
     return result.toArray(new ConfigurationType[result.size()]);
   }
 
   public static RunConfigurationsStateManager getInstance(Project project) {
     return project.getComponent(RunConfigurationsStateManager.class);
+  }
+
+  private class State {
+    private final Element myState;
+    private final Element mySharedState;
+
+    public State() throws WriteExternalException {
+      Element newState = new Element("root");
+      getRunManager().writeExternal(newState);
+      myState = newState;
+
+      Element newSharedState = new Element("root");
+      getSharedConfigurationManager().writeExternal(newSharedState);
+      mySharedState = newSharedState;
+    }
+
+    public void restoreState() throws InvalidDataException {
+      getRunManager().readExternal(myState);
+      getSharedConfigurationManager().readExternal(mySharedState);
+    }
   }
 }

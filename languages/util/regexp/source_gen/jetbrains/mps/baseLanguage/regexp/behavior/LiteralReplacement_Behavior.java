@@ -20,7 +20,7 @@ public class LiteralReplacement_Behavior {
   }
 
   public static boolean call_isValid_3796137614137567952(SNode thisNode) {
-    if ((SPropertyOperations.getString(thisNode, "text") == null || SPropertyOperations.getString(thisNode, "text").length() == 0)) {
+    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text"))) {
       return false;
     }
     return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;

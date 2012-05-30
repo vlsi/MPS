@@ -364,6 +364,9 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Add Model Import by Root" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="EditMenuActions" />
     </node>
+    <node type="tp4k.NonDumbAwareActions" typeId="tp4k.1512255007353869532" id="3824306434922117722">
+      <property name="name" nameId="tpck.1169194664001" value="DefaultNonDumbAware" />
+    </node>
   </roots>
   <root id="4362199797783336771">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="4362199797783336772">
@@ -7708,6 +7711,11 @@
           </node>
         </node>
       </node>
+    </node>
+  </root>
+  <root id="3824306434922117722">
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3824306434922117724">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="3467203700125709807" resolveInfo="AddModelImportByRoot" />
     </node>
   </root>
 </model>

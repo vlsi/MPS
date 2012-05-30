@@ -38,7 +38,7 @@
   
   <target name="java.compile.MPS-plugin">
     <mkdir dir="${build.tmp}/java/out/MPS-plugin" />
-    <javac destdir="${build.tmp}/java/out/MPS-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/MPS-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/MPSPlugin/source" />

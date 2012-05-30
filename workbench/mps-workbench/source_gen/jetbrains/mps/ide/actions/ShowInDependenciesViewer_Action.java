@@ -29,8 +29,13 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return check_hezs1a_a0a0a0(as_nkoo1o_a0a0a0a0(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
+    return check_hezs1a_a0a0a0(as_nkoo1o_a0a0a0a1(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -62,8 +67,8 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule from = check_hezs1a_a0a0a(as_nkoo1o_a0a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
-      IModule to = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0d(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
+      IModule from = check_hezs1a_a0a0a(as_nkoo1o_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
+      IModule to = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0e(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
       DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -93,21 +98,21 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     return null;
   }
 
-  private static <T> T as_nkoo1o_a0a0a0a0(Object o, Class<T> type) {
+  private static <T> T as_nkoo1o_a0a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_nkoo1o_a0a0a0a0d(Object o, Class<T> type) {
+  private static <T> T as_nkoo1o_a0a0a0a0e(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_nkoo1o_a0a0b0a0d(Object o, Class<T> type) {
+  private static <T> T as_nkoo1o_a0a0b0a0e(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

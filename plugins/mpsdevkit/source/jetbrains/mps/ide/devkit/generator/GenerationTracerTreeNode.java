@@ -173,7 +173,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
 
   public void autoscroll() {
     super.autoscroll();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SNode nodeToOpen = myTracerNode.getNodePointer().getNode();
@@ -186,7 +186,7 @@ public class GenerationTracerTreeNode extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
         SNodePointer nodePointer = myTracerNode.getNodePointer();

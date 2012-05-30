@@ -38,6 +38,11 @@ public class NewModel_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     String stereotype = NewModel_Action.this.getStereotype(_params);
     if (stereotype == null) {
@@ -172,7 +177,7 @@ public class NewModel_Action extends BaseAction {
       String name = gen.getName();
       String genNamespace = gen.getSourceLanguage().getModuleFqName() + ".generator";
 
-      if ((name == null || name.length() == 0)) {
+      if (StringUtils.isEmpty(name)) {
         return genNamespace;
       }
       return genNamespace + "." + name;

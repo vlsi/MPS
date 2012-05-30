@@ -68,14 +68,16 @@ public class CellAction_PasteNode extends EditorCellAction {
     final EditorComponent editorComponent = context.getNodeEditorComponent();
     EditorCell pasteTargetCell = getCellToPasteTo(editorComponent.getSelectedCell());
     final CellInfo pasteTargetCellInfo = pasteTargetCell.getCellInfo();
-    SNode selectedNode = pasteTargetCell.getSNode();
-    final SNodePointer selectedNodePointer = new SNodePointer(selectedNode);
-    final SModel model = selectedNode.getModel();
+    final SNode nodeSelected = pasteTargetCell.getSNode();
+    final SNodePointer selectedNodePointer = new SNodePointer(nodeSelected);
+    final SModel model = nodeSelected.getModel();
+    // sometimes model is not in repository (paste in merge dialog)
+    final boolean inRepository = model.getModelDescriptor() == selectedNodePointer.getModel();
 
-    PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
+      PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
     if (data == null || data.getNodes().isEmpty()) {
       data = CopyPasteUtil.getConvertedFromClipboard(model, context.getOperationContext().getProject());
-      if (data == null) return;
+      if (data == null || data.getNodes().isEmpty()) return;
     }
     final PasteNodeData pasteNodeData = data;
 
@@ -94,7 +96,7 @@ public class CellAction_PasteNode extends EditorCellAction {
             if (addImportsRunnable != null) {
               addImportsRunnable.run();
             }
-            SNode selectedNode = selectedNodePointer.getNode();
+            SNode selectedNode = inRepository ? selectedNodePointer.getNode() : nodeSelected;
             if (selectedNode.isDisposed()) {
               StringBuilder errorText = new StringBuilder("Selected node is disposed: " + selectedNode.toString());
               SModelReference modelReference = selectedNodePointer.getModelReference();

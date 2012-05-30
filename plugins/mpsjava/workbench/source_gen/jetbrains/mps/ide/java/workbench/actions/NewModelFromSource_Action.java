@@ -45,6 +45,11 @@ public class NewModelFromSource_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     String stereotype = NewModelFromSource_Action.this.getStereotype(_params);
     if (stereotype == null) {

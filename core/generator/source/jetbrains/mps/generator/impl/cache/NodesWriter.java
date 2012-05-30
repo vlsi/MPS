@@ -19,9 +19,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Map;
@@ -144,11 +142,18 @@ public class NodesWriter {
       os.writeInt(USER_MODEL_REFERENCE);
       os.writeModelReference((SModelReference) object);
     } else if (object instanceof Serializable) {
+      // two-phase write
+      try {
+        ObjectOutputStream dummy = new ObjectOutputStream(NullOutputStream.INSTANCE);
+        dummy.writeObject(object);
+      }
+      catch (NotSerializableException ignore) {
+        object = null;
+      }
       os.writeInt(USER_SERIALIZABLE);
       ObjectOutputStream objectOutput = new ObjectOutputStream(os);
       objectOutput.writeObject(object);
     }
-
   }
 
   protected boolean isKnownUserObject(Object object) {
@@ -158,5 +163,25 @@ public class NodesWriter {
       || object instanceof SNodeId
       || object instanceof SModelId
       || object instanceof SModelReference;
+  }
+
+  private static class NullOutputStream extends  OutputStream {
+
+    private static NullOutputStream INSTANCE = new NullOutputStream();
+
+    @Override
+    public void write(int b) throws IOException {
+      // > /dev/null
+    }
+
+    @Override
+    public void write(byte[] b) throws IOException {
+      // > /dev/null
+    }
+
+    @Override
+    public void write(byte[] b, int off, int len) throws IOException {
+      // > /dev/null
+    }
   }
 }

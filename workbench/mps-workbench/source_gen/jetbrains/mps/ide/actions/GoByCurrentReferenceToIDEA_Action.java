@@ -24,8 +24,6 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.navigation.NavigationProvider;
@@ -42,6 +40,11 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
     if (targetNode == null) {
@@ -52,7 +55,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     }
     String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    return eq_xgilk9_a0f0a(stubSter, targetSter);
+    return eq_xgilk9_a0f0b(stubSter, targetSter);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -129,10 +132,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     }
   }
 
-  private void open(SNode targetNode, final Map<String, Object> _params) {
-    NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), targetNode, true, !(targetNode.isRoot()));
-  }
-
   private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {
     SModelReference ref = SNodeOperations.getModel(targetNode).getSModelReference();
     boolean isClassifier = SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -184,7 +183,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
   }
 
-  private static boolean eq_xgilk9_a0f0a(Object a, Object b) {
+  private static boolean eq_xgilk9_a0f0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

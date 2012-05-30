@@ -32,6 +32,11 @@ public class ImplementMethod_Action extends BaseAction {
     this.setMnemonic("I".charAt(0));
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     return !(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).isInspector()) && (classConcept != null) && ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, classConcept, "virtual_getMethodsToImplement_5418393554803775106", new Class[]{SNode.class}))).isNotEmpty();

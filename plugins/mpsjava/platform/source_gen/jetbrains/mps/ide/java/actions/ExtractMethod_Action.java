@@ -37,6 +37,11 @@ public class ExtractMethod_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }

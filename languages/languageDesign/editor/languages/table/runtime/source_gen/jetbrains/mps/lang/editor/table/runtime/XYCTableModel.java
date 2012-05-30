@@ -64,6 +64,9 @@ public class XYCTableModel implements TableModel {
   }
 
   public void insertRow(int rowNumber) {
+    if (rowNumber == 0) {
+      rowNumber = 1;
+    }
     Utils.insertElementAt(y(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, "target", false)), null), rowNumber - 1);
     for (int i = 0; i < getColumnCount() - 1; i++) {
       int idx = dataidx(rowNumber, i + 1);

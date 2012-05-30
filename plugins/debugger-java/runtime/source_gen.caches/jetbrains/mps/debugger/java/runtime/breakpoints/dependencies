@@ -20,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.StringUtils" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -159,6 +160,9 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.breakpoints.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

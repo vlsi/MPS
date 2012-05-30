@@ -538,11 +538,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_CyclicHierarchy_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_DefaultSuperConstructorThrowables_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_DefaultSuperConstructorThrowables_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_DuplicateClassifierNames_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

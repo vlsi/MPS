@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.editor" uuid="5b1f863d-65a0-41a6-a801-33896be24202" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${solution_descriptor}/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
     <modelRoot path="${solution_descriptor}/solution" />
   </models>
   <sourcePath />

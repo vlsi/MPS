@@ -431,7 +431,7 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gp0hv6_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SPropertyOperations.getString(node, "shortcutChar") != null && SPropertyOperations.getString(node, "shortcutChar").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "shortcutChar"));
   }
 
   private static boolean renderingCondition_gp0hv6_a2a(SNode node, EditorContext editorContext, IScope scope) {

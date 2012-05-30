@@ -117,7 +117,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
       private Project myProject = getProject();
 
       public void navigate(boolean requestFocus) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
             SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
             if (descriptor == null) {

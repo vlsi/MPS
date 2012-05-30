@@ -353,7 +353,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public boolean isComplete() {
-      return getModelPaths().isEmpty();
+      return true;
     }
 
     private List<String> getModelPaths () {
@@ -540,7 +540,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public boolean isComplete() {
-      return !myExcludedActions.containsAll(myAllActions);
+      return !myAllActions.isEmpty() && !myExcludedActions.containsAll(myAllActions);
     }
 
     @Override

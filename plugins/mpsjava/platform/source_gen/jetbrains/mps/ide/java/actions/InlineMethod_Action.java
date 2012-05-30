@@ -34,6 +34,11 @@ public class InlineMethod_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._T<Boolean> b = new Wrappers._T<Boolean>(false);
     ModelAccess.instance().runReadAction(new Runnable() {

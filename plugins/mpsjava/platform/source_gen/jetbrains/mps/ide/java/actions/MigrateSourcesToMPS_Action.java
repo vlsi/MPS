@@ -35,6 +35,11 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     ModuleDescriptor moduleDescr = ((IModule) MapSequence.fromMap(_params).get("module")).getModuleDescriptor();
     return moduleDescr != null && !(moduleDescr.getSourcePaths().isEmpty());

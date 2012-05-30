@@ -38,6 +38,11 @@ public class GoToEditorDeclaration_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
@@ -124,7 +129,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
       if (editorNode == null) {
         return;
       }
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, true, true);
           NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), editorNode, false);

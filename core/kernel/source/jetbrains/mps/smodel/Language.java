@@ -22,7 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.StubSolution;
-import jetbrains.mps.project.dependency.LanguageDependenciesManager;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
@@ -557,15 +557,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
       DeploymentDescriptor dd = myLanguageDescriptor.getDeploymentDescriptor();
       if (dd == null) return;
-
-      for (ModuleReference mr : myLanguageDescriptor.getRuntimeModules()) {
-        IModule rtm = MPSModuleRepository.getInstance().getModule(mr);
-        if (rtm != null && rtm.getBundleHome() != null) {
-          if (rtm.getBundleHome().getName().startsWith("mps-") && rtm.getBundleHome().getPath().startsWith(PathManager.getHomePath())) {
-            dd.getRuntimeJars().add("/" + rtm.getBundleHome().getPath().substring(PathManager.getHomePath().length()));
-          }
-        }
-      }
 
       for (String jarFile : dd.getRuntimeJars()) {
         IFile jar = jarFile.startsWith("/")

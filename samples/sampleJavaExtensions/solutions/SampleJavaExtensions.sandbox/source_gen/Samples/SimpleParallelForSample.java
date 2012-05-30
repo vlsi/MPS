@@ -8,7 +8,6 @@ import java.util.concurrent.CountDownLatch;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.Collections;
 import utils.ParallelLoopException;
 
 public class SimpleParallelForSample {
@@ -24,15 +23,15 @@ public class SimpleParallelForSample {
       final CountDownLatch latch_e0a = new CountDownLatch(Sequence.fromIterable(numbers).count());
       final List<Exception> exceptions_e0a = new CopyOnWriteArrayList<Exception>();
 
-      for (final int a : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<Integer>(), numbers))) {
+      for (final int a : numbers) {
 
         final int localA = a;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               SimpleParallelForSample.Logger.log("Current value: " + localA);
+
               // Notice there's no need to declare the InterruptedException on the main method 
               Thread.sleep(1000);
               value.length();
@@ -62,6 +61,7 @@ public class SimpleParallelForSample {
     }
     // Set nowait to true to allow the main thread to continue without waiting for the tasks to finish 
     System.out.println("The main thread is done");
+    System.getSecurityManager();
   }
 
   public static class Logger {

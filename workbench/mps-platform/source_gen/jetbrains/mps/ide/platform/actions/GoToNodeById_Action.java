@@ -31,6 +31,11 @@ public class GoToNodeById_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -71,17 +76,14 @@ public class GoToNodeById_Action extends BaseAction {
       if (value == null) {
         return;
       }
-      value = ((value == null ?
-        null :
-        value.trim()
-      ));
+      value = StringUtils.trimBoth(value);
       final SNodeId id = SNodeId.fromString(value);
       if (id == null) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);
         return;
       }
       final String trimmedValue = value;
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           SNode node;
           node = ((SModelDescriptor) MapSequence.fromMap(_params).get("CONTEXT_MODEL")).getSModel().getNodeById(id);

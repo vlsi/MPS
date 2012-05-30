@@ -20,10 +20,10 @@ public class CommentLine_Behavior {
       int offset = SPropertyOperations.getString(leftPart, "text").length();
       SNode rightPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
 
-      String text = (((SPropertyOperations.getString(leftPart, "text") == null || SPropertyOperations.getString(leftPart, "text").length() == 0) ?
+      String text = ((StringUtils.isEmpty(SPropertyOperations.getString(leftPart, "text")) ?
         "" :
         SPropertyOperations.getString(leftPart, "text")
-      )) + (((SPropertyOperations.getString(rightPart, "text") == null || SPropertyOperations.getString(rightPart, "text").length() == 0) ?
+      )) + ((StringUtils.isEmpty(SPropertyOperations.getString(rightPart, "text")) ?
         "" :
         SPropertyOperations.getString(rightPart, "text")
       ));

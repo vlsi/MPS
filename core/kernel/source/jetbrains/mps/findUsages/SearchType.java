@@ -17,17 +17,14 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportProvider;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
-import java.util.Map.Entry;
+import java.util.Set;
 
 public abstract class SearchType<T, R> {
   //--------const---------
@@ -57,100 +54,6 @@ public abstract class SearchType<T, R> {
     BaseSModelDescriptorWithSource mws = (BaseSModelDescriptorWithSource) model;
     if (!(mws.getSource() instanceof FastFindSupportProvider)) return null;
 
-    String ffsId = ((FastFindSupportProvider) mws.getSource()).getFastFindSupportId();
-    return FastFindSupportRegistry.getInstance().getFastFindSupport(ffsId);
-  }
-
-  //--------impl----------
-
-  private static class UsagesSearchType extends SearchType<SReference, SNode> {
-    public MultiMap<SModelDescriptor, SNode> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
-      MultiMap<SModelDescriptor, SNode> result = new MultiMap<SModelDescriptor, SNode>();
-      MultiMap<FastFindSupport, SModelDescriptor> gm = groupModels(models);
-      for (Entry<FastFindSupport, Collection<SModelDescriptor>> e : gm.entrySet()) {
-        if (e.getKey() == null) {
-          for (SModelDescriptor model : e.getValue()) {
-            result.putValues(model, nodes);
-          }
-          continue;
-        }
-
-        result.putAllValues(e.getKey().findModelsWithPossibleUsages((Set<SModelDescriptor>) e.getValue(), nodes));
-      }
-      return result;
-    }
-
-    public Set<SReference> findInModel(MultiMap<SModelDescriptor, SNode> models, @Nullable Computable<Boolean> callback) {
-      Set<SReference> result = new HashSet<SReference>();
-      for (Entry<SModelDescriptor, Collection<SNode>> e : models.entrySet()) {
-        SModel model = e.getKey().getSModel();
-        if (model == null) continue;
-
-        for (SNode root : model.roots()) {
-          addUsages(root, e.getValue(), result);
-        }
-
-        if (callback != null && !callback.compute()) break;
-      }
-      return result;
-    }
-
-    private void addUsages(SNode current, Collection<SNode> nodes, Set<SReference> result) {
-      for (SReference ref : current.getReferences()) {
-        if (nodes.contains(ref.getTargetNode())) {
-          result.add(ref);
-        }
-      }
-      for (SNode child : current.getChildren()) {
-        addUsages(child, nodes, result);
-      }
-    }
-  }
-
-  private static class InstancesSearchType extends SearchType<SNode, String> {
-    private final boolean myExact;
-
-    private InstancesSearchType(boolean exact) {
-      myExact = exact;
-    }
-
-    public MultiMap<SModelDescriptor, String> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
-      Set<String> conceptNames = new HashSet<String>();
-      for (SNode node : nodes) {
-        conceptNames.add(node.getName());
-        if (!myExact) {
-          conceptNames.addAll(LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(node)));
-        }
-      }
-
-      MultiMap<SModelDescriptor, String> result = new MultiMap<SModelDescriptor, String>();
-      MultiMap<FastFindSupport, SModelDescriptor> gm = groupModels(models);
-      for (Entry<FastFindSupport, Collection<SModelDescriptor>> e : gm.entrySet()) {
-        if (e.getKey() == null) {
-          for (SModelDescriptor model : e.getValue()) {
-            result.putValues(model, conceptNames);
-          }
-          continue;
-        }
-
-        result.putAllValues(e.getKey().findModelsWithPossibleInstances((Set<SModelDescriptor>) e.getValue(), conceptNames));
-      }
-      return result;
-    }
-
-    public Set<SNode> findInModel(MultiMap<SModelDescriptor, String> models, @Nullable Computable<Boolean> callback) {
-      Set<SNode> result = new HashSet<SNode>();
-      for (Entry<SModelDescriptor, Collection<String>> e : models.entrySet()) {
-        SModel model = e.getKey().getSModel();
-        if (model == null) continue;
-
-        for (String conceptName : e.getValue()) {
-          result.addAll(model.getFastNodeFinder().getNodes(conceptName, !myExact));
-        }
-
-        if (callback != null && !callback.compute()) break;
-      }
-      return result;
-    }
+    return ((FastFindSupportProvider) mws.getSource()).getFastFindSupport();
   }
 }

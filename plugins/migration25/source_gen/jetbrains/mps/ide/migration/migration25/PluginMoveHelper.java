@@ -95,7 +95,7 @@ public class PluginMoveHelper {
         SModel m = ListSequence.fromList(models).first().getSModel();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (it != null) && (SPropertyOperations.getString(it, "path") != null && SPropertyOperations.getString(it, "path").length() > 0) && !(isValid(it));
+            return (it != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path")) && !(isValid(it));
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
@@ -110,14 +110,16 @@ public class PluginMoveHelper {
             String newIconMacro = SPropertyOperations.getString(it, "path").replace(MacrosFactory.LANGUAGE_DESCRIPTOR, MacrosFactory.SOLUTION_DESCRIPTOR);
             String newIconPath = MacrosFactory.moduleDescriptor(solution).expandPath(newIconMacro, solution.getDescriptorFile());
 
+            SPropertyOperations.set(it, "path", newIconMacro);
+
             IFile file = FileSystem.getInstance().getFile(iconPath);
             if (!(file.exists())) {
               return;
             }
 
-            file.move(FileSystem.getInstance().getFile(newIconPath).getParent());
-
-            SPropertyOperations.set(it, "path", newIconMacro);
+            IFile parent = FileSystem.getInstance().getFile(newIconPath).getParent();
+            parent.mkdirs();
+            file.move(parent);
           }
         });
       }

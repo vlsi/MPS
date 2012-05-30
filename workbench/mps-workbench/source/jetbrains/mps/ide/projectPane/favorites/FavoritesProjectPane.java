@@ -218,12 +218,8 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     }
 
     public void editNode(final SNode node, IOperationContext context, boolean focus) {
-      boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          return !node.isRoot();
-        }
-      });
-      FavoritesProjectPane.this.editNode(node, context, focus, select);
+      ModelAccess.assertLegalWrite();
+      FavoritesProjectPane.this.editNode(node, context, focus);
     }
 
     @Override

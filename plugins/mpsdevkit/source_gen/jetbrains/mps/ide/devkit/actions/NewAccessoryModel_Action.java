@@ -34,6 +34,11 @@ public class NewAccessoryModel_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setText(((((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof ProjectModuleTreeNode ?

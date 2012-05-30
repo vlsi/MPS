@@ -38,6 +38,11 @@ public class InlineLocalVariable_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean result = SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
     return result && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());

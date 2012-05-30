@@ -38,7 +38,9 @@ public class ModelValidator {
     ModelAccess.assertLegalRead();
 
     List<String> errors = new ArrayList<String>();
-
+    if (myModel.isTransient()) {
+      return errors;
+    }
     if (myModel instanceof StubModel) {
       errors.add(messageFromModelReadException(((StubModel) myModel).getCause()));
       return errors;

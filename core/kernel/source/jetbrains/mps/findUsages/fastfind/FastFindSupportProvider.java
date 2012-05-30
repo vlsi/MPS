@@ -18,6 +18,5 @@ package jetbrains.mps.findUsages.fastfind;
 import org.jetbrains.annotations.NotNull;
 
 public interface FastFindSupportProvider {
-  @NotNull
-  String getFastFindSupportId();
+  @NotNull() FastFindSupport getFastFindSupport();
 }

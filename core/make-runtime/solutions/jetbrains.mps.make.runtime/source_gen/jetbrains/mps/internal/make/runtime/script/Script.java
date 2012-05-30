@@ -291,10 +291,7 @@ with_targets:
               }
             }
 
-            String workName = "__" + ((trg.getName().toString() == null ?
-              null :
-              trg.getName().toString().trim()
-            )) + "__";
+            String workName = "__" + StringUtils.trimBoth(trg.getName().toString()) + "__";
             monit.currentProgress().beginWork(workName, 1000, (trg.requiresInput() || trg.producesOutput() ?
               1000 :
               10

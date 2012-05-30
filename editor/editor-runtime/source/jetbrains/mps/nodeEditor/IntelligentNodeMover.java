@@ -126,6 +126,10 @@ class IntelligentNodeMover {
     }
 
     final SNode prevChild = siblingWithTheSameRole(current);
+    if (prevChild == null) {
+      LOG.error("Prev. child is null. isForward = " + forward() + "; index = " + current.getParent().getChildren(role).indexOf(current));
+      return;
+    }
 
     SNode innermostContainer = findNodeAtBoundary(targetType, prevChild, true);
     if (innermostContainer != null) {

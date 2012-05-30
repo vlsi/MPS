@@ -33,6 +33,11 @@ public class ShowGenerationActions_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     ActionGroup group = ((ActionGroup) ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.GenerationActions_ActionGroup"));
     group.update(event);

@@ -16,6 +16,7 @@
 package jetbrains.mps.lang.editor.generator.internal;
 
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellContext;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
@@ -35,6 +36,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public abstract class AbstractCellMenuPart_PropertyPostfixHints implements SubstituteInfoPart {
+  private static final Logger LOG = Logger.getLogger(AbstractCellMenuPart_PropertyPostfixHints.class);
+
   public List<INodeSubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
     SNode node = (SNode) cellContext.get(PropertyCellContext.EDITED_NODE);
     final SNode property = (SNode) cellContext.get(PropertyCellContext.PROPERTY_DECLARATION);
@@ -47,6 +50,15 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     if (postfixes == null) {
       postfixes = new ArrayList<String>();
     }
+    for (int i = 0; i < postfixes.size();) {
+      if (postfixes.get(i) == null) {
+        LOG.error("Invalid postfix value (null) was returned from: " + this.getClass() + "; getPostfixes() method");
+        postfixes.remove(i);
+      } else {
+        i++;
+      }
+    }
+
     final PostfixGroup postfixGroup = new PostfixGroup(postfixes);
     final PropertySupport propertySupport = PropertySupport.getPropertySupport(property);
     for (final String postfix : postfixes) {

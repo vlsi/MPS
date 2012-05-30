@@ -505,7 +505,7 @@ public class UsagesTree extends MPSTree {
   }
 
   private void goByNodeLink(final UsagesTreeNode treeNode, final boolean inProjectIfPossible, final boolean focus) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         if (treeNode.getUserObject() == null) {
           return;
@@ -672,7 +672,7 @@ public class UsagesTree extends MPSTree {
   }
 
   public void navigateToNode(final SNode node, boolean focus) {
-    ModelAccess.assertLegalRead();
+    ModelAccess.assertLegalWrite();
 
     SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
     if (modelDescriptor == null) return;

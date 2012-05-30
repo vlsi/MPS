@@ -281,7 +281,7 @@ public abstract class MpsLoadTask extends Task {
       //         absolutePath("core/kernel/xmlQuery/runtime"), 
       //         absolutePath("platform/gtext"), 
       //         absolutePath("platform/builders"), 
-      pathsToLook = new File[]{absolutePath("core"), absolutePath("lib"), absolutePath("plugins/mpsbuild/languages/solutions/jetbrains.mps.build.mps.runtime"), absolutePath("languages/baseLanguage/closures/runtime"), absolutePath("languages/baseLanguage/collections/runtime"), absolutePath("languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search"), absolutePath("workbench/typesystemUi/classes"), absolutePath("MPSPlugin/apiclasses")};
+      pathsToLook = new File[]{absolutePath("core"), absolutePath("lib"), absolutePath("plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime"), absolutePath("languages/baseLanguage/closures/runtime"), absolutePath("languages/baseLanguage/collections/runtime"), absolutePath("languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search"), absolutePath("workbench/typesystemUi/classes"), absolutePath("MPSPlugin/apiclasses")};
     } else {
       pathsToLook = new File[]{absolutePath("lib"), absolutePath("plugin"), absolutePath("plugins")};
     }

@@ -31,6 +31,11 @@ public class ShowNodeMessages_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return !(ListSequence.fromList(((List<EditorMessage>) ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node"))))).isEmpty());
   }

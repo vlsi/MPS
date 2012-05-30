@@ -123,15 +123,6 @@ public class ModuleUtil {
 
   ////////
 
-  public static <T extends IModule> List<T> refsToModules(Iterable<ModuleReference> refs, Class<T> ofClass) {
-    List<T> result = new ArrayList<T>();
-    for (ModuleReference ref : refs) {
-      T module = ModuleRepositoryFacade.getInstance().getModule(ref, ofClass);
-      if (module == null) continue;
-      result.add(module);
-    }
-    return result;
-  }
 
   @Deprecated
   public static List<Language> refsToLanguages(Iterable<ModuleReference> refs) {

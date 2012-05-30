@@ -516,7 +516,7 @@
       </node>
     </node>
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8589065642488591261">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5ajx.5658809246031045243" resolveInfo="EditorCellPainter" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5ajx.8424806882555133838" resolveInfo="DebuggerCellPainter" />
       <node role="parameter" roleId="tpee.1109201940907" type="tpee.TypeVariableReference" typeId="tpee.1109283449304" id="8589065642488591262">
         <link role="typeVariableDeclaration" roleId="tpee.1109283546497" targetNodeId="8589065642488591263" resolveInfo="B" />
       </node>

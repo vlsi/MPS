@@ -72,7 +72,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     if (!(after.equals(""))) {
       this.addNodeById(after);
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         BaseEditorTestBody.this.myBefore = BaseEditorTestBody.this.getNodeById(before);
         BaseEditorTestBody.this.myStart = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(before));

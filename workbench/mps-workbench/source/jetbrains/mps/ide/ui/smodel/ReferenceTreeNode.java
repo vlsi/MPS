@@ -36,7 +36,7 @@ public class ReferenceTreeNode extends TextTreeNode {
   }
 
   public void doubleClick() {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         SNode target = myRef.getTargetNode();
         if (target == null) return;

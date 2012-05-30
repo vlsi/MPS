@@ -4,6 +4,7 @@ package jetbrains.mps.lang.quotation.behavior;
 
 import jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IAntisuppressErrors_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 
-public interface AbstractAntiquotation_BehaviorDescriptor extends IMetaLevelChanger_BehaviorDescriptor, IAntisuppressErrors_BehaviorDescriptor {
+public interface AbstractAntiquotation_BehaviorDescriptor extends IMetaLevelChanger_BehaviorDescriptor, IAntisuppressErrors_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
 }

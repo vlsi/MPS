@@ -22,6 +22,7 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.icons.IconManager;
@@ -178,7 +179,7 @@ public class CreateRootNodeGroup extends BaseGroup {
     }
   }
 
-  private class NewRootNodeAction extends BaseAction {
+  private class NewRootNodeAction extends BaseAction implements DumbAware {
     private Project myProject;
     private IScope myScope;
     public IOperationContext myContext;
@@ -216,7 +217,7 @@ public class CreateRootNodeGroup extends BaseGroup {
           node.setProperty(SModelTreeNode.PACK, myPackage);
           myModelDescriptor.getSModel().addRoot(node);
 
-          ModelAccess.instance().runReadInEDT(new Runnable() {
+          ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
               if (!trySelectInCurrentPane(node)) {

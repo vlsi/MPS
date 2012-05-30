@@ -159,7 +159,7 @@ public class TargetsView extends UsagesView {
 
     public String getResultsText(TextOptions options) {
       String presentation = myParent.getCurrentScope().getPresentation();
-      if ((presentation == null || presentation.length() == 0)) {
+      if (StringUtils.isEmpty(presentation)) {
         presentation = "the left tree scope selection";
       }
       return "Dependencies of " + presentation;

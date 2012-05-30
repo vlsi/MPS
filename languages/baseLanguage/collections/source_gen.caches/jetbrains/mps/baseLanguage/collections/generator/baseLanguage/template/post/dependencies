@@ -5,6 +5,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.StringUtils" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />
@@ -22,6 +23,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

@@ -35,6 +35,11 @@ public class GetModelContentsFromSource_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     IModule module = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getModule();
     if (module == null) {

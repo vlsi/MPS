@@ -42,6 +42,11 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateEqualsAndHashCode_Action.this.getClassConcept(_params);
     return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
@@ -94,7 +99,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
 
       SNodePointer[] selectedFields = Sequence.fromIterable(((Iterable<SNodePointer>) selectFieldsDialog.getSelectedElements())).toGenericArray(SNodePointer.class);
       final SNode thisExp = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-      final SNode equalsDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a21a0a3().createNode(thisExp, thisExp, classConcept, classConcept);
+      final SNode equalsDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a21a0a4().createNode(thisExp, thisExp, classConcept, classConcept);
       SNode thatDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
 
       SNode thatRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
@@ -110,30 +115,30 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
         SNode checkStmt;
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.FloatType")) {
-            checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0a5a02a0a3().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal));
+            checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0a5a02a0a4().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal));
           } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.DoubleType")) {
-            checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0a0f0u0a0d().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal));
+            checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0a0f0u0a0e().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal));
           } else {
-            checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0a0f0u0a0d_0().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal));
+            checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0a0f0u0a0e_0().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal));
           }
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-          checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0f0u0a0d().createNode(SNodeOperations.copyNode(fieldRefLocal), thatRef, SNodeOperations.copyNode(fieldRefOperation));
+          checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0f0u0a0e().createNode(SNodeOperations.copyNode(fieldRefLocal), thatRef, SNodeOperations.copyNode(fieldRefOperation));
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-          checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a1f0u0a0d().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), thatRef, SNodeOperations.copyNode(fieldRefOperation));
+          checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a1f0u0a0e().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), thatRef, SNodeOperations.copyNode(fieldRefOperation));
         } else {
-          checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0f0u0a0d_0().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), thatRef, SNodeOperations.copyNode(fieldRefOperation));
+          checkStmt = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0f0u0a0e_0().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), thatRef, SNodeOperations.copyNode(fieldRefOperation));
         }
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(checkStmt);
       }
       SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.Statement");
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0w0a0d().createNode());
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0w0a0e().createNode());
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(equalsDeclaration);
       // Method equals() is generated, now hashCode method body generation begins  
-      SNode hashCodeDeclaration = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a52a0a3().createNode());
-      SNode resultDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a62a0a3().createNode();
+      SNode hashCodeDeclaration = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a52a0a4().createNode());
+      SNode resultDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a62a0a4().createNode();
       SNode resultReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
       SLinkOperations.setTarget(resultReference, "variableDeclaration", SLinkOperations.getTarget(resultDeclaration, "localVariableDeclaration", true), false);
-      SNode tempDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a92a0a3().createNode();
+      SNode tempDeclaration = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a92a0a4().createNode();
       SNode tempReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
       SLinkOperations.setTarget(tempReference, "variableDeclaration", SLinkOperations.getTarget(tempDeclaration, "localVariableDeclaration", true), false);
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).any(new IWhereFilter<SNode>() {
@@ -148,30 +153,30 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
         final SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         SLinkOperations.setTarget(fieldRefLocal, "variableDeclaration", field, false);
         SNode calcStatement;
-        SNode mulExpression = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a3a43a0a3().createNode(resultReference);
+        SNode mulExpression = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a3a43a0a4().createNode(resultReference);
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a4a43a0a3().createNode(resultReference, SNodeOperations.copyNode(fieldRefLocal), mulExpression);
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a4a43a0a4().createNode(resultReference, SNodeOperations.copyNode(fieldRefLocal), mulExpression);
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.LongType")) {
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0e0ib0a0d().createNode(mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), resultReference);
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0e0ib0a0e().createNode(mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), resultReference);
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ByteType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.CharType") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ShortType")) {
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a1e0ib0a0d().createNode(SNodeOperations.copyNode(fieldRefLocal), mulExpression, resultReference);
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a1e0ib0a0e().createNode(SNodeOperations.copyNode(fieldRefLocal), mulExpression, resultReference);
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.DoubleType")) {
-          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0c4a43a0a3().createNode(tempReference, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal)));
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a1a2e0ib0a0d().createNode(resultReference, mulExpression, tempReference, tempReference);
+          ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0c4a43a0a4().createNode(tempReference, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal)));
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a1a2e0ib0a0e().createNode(resultReference, mulExpression, tempReference, tempReference);
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.FloatType")) {
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a3e0ib0a0d().createNode(resultReference, mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal));
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a3e0ib0a0e().createNode(resultReference, mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal));
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.StringType")) {
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a4e0ib0a0d().createNode(resultReference, mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal));
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a4e0ib0a0e().createNode(resultReference, mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal));
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a5e0ib0a0d().createNode(mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), resultReference);
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a5e0ib0a0e().createNode(mulExpression, SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), resultReference);
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a6e0ib0a0d().createNode(SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), mulExpression, resultReference);
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a6e0ib0a0e().createNode(SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), mulExpression, resultReference);
         } else {
-          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0e0ib0a0d_0().createNode(SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), mulExpression, resultReference);
+          calcStatement = new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0a0e0ib0a0e_0().createNode(SNodeOperations.copyNode(fieldRefLocal), SNodeOperations.copyNode(fieldRefLocal), mulExpression, resultReference);
         }
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(calcStatement);
       }
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0jb0a0d().createNode(resultReference));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", true)).addElement(new GenerateEqualsAndHashCode_Action.QuotationClass_9sawe3_a0a0jb0a0e().createNode(resultReference));
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(equalsDeclaration);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -184,8 +189,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
 
-  public static class QuotationClass_9sawe3_a0a21a0a3 {
-    public QuotationClass_9sawe3_a0a21a0a3() {
+  public static class QuotationClass_9sawe3_a0a21a0a4 {
+    public QuotationClass_9sawe3_a0a21a0a4() {
     }
 
     public SNode createNode(Object parameter_73, Object parameter_74, Object parameter_75, Object parameter_76) {
@@ -442,8 +447,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a0a5a02a0a3 {
-    public QuotationClass_9sawe3_a0a0a0a5a02a0a3() {
+  public static class QuotationClass_9sawe3_a0a0a0a5a02a0a4 {
+    public QuotationClass_9sawe3_a0a0a0a5a02a0a4() {
     }
 
     public SNode createNode(Object parameter_23, Object parameter_24, Object parameter_25) {
@@ -547,8 +552,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a0a0f0u0a0d {
-    public QuotationClass_9sawe3_a0a0a0a0f0u0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a0a0f0u0a0e {
+    public QuotationClass_9sawe3_a0a0a0a0f0u0a0e() {
     }
 
     public SNode createNode(Object parameter_23, Object parameter_24, Object parameter_25) {
@@ -652,8 +657,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a0a0f0u0a0d_0 {
-    public QuotationClass_9sawe3_a0a0a0a0f0u0a0d_0() {
+  public static class QuotationClass_9sawe3_a0a0a0a0f0u0a0e_0 {
+    public QuotationClass_9sawe3_a0a0a0a0f0u0a0e_0() {
     }
 
     public SNode createNode(Object parameter_19, Object parameter_20, Object parameter_21) {
@@ -742,8 +747,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a0f0u0a0d {
-    public QuotationClass_9sawe3_a0a0a0f0u0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a0f0u0a0e {
+    public QuotationClass_9sawe3_a0a0a0f0u0a0e() {
     }
 
     public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23) {
@@ -840,8 +845,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a1f0u0a0d {
-    public QuotationClass_9sawe3_a0a0a1f0u0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a1f0u0a0e {
+    public QuotationClass_9sawe3_a0a0a1f0u0a0e() {
     }
 
     public SNode createNode(Object parameter_41, Object parameter_42, Object parameter_43, Object parameter_44, Object parameter_45, Object parameter_46) {
@@ -1021,8 +1026,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a0f0u0a0d_0 {
-    public QuotationClass_9sawe3_a0a0a0f0u0a0d_0() {
+  public static class QuotationClass_9sawe3_a0a0a0f0u0a0e_0 {
+    public QuotationClass_9sawe3_a0a0a0f0u0a0e_0() {
     }
 
     public SNode createNode(Object parameter_47, Object parameter_48, Object parameter_49, Object parameter_50, Object parameter_51, Object parameter_52) {
@@ -1221,8 +1226,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0w0a0d {
-    public QuotationClass_9sawe3_a0a0w0a0d() {
+  public static class QuotationClass_9sawe3_a0a0w0a0e {
+    public QuotationClass_9sawe3_a0a0w0a0e() {
     }
 
     public SNode createNode() {
@@ -1245,8 +1250,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a52a0a3 {
-    public QuotationClass_9sawe3_a0a0a52a0a3() {
+  public static class QuotationClass_9sawe3_a0a0a52a0a4 {
+    public QuotationClass_9sawe3_a0a0a52a0a4() {
     }
 
     public SNode createNode() {
@@ -1288,8 +1293,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a62a0a3 {
-    public QuotationClass_9sawe3_a0a62a0a3() {
+  public static class QuotationClass_9sawe3_a0a62a0a4 {
+    public QuotationClass_9sawe3_a0a62a0a4() {
     }
 
     public SNode createNode() {
@@ -1325,8 +1330,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a92a0a3 {
-    public QuotationClass_9sawe3_a0a92a0a3() {
+  public static class QuotationClass_9sawe3_a0a92a0a4 {
+    public QuotationClass_9sawe3_a0a92a0a4() {
     }
 
     public SNode createNode() {
@@ -1355,8 +1360,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a3a43a0a3 {
-    public QuotationClass_9sawe3_a0a3a43a0a3() {
+  public static class QuotationClass_9sawe3_a0a3a43a0a4 {
+    public QuotationClass_9sawe3_a0a3a43a0a4() {
     }
 
     public SNode createNode(Object parameter_7) {
@@ -1393,8 +1398,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a0e0ib0a0d {
-    public QuotationClass_9sawe3_a0a0a0e0ib0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a0e0ib0a0e {
+    public QuotationClass_9sawe3_a0a0a0e0ib0a0e() {
     }
 
     public SNode createNode(Object parameter_29, Object parameter_30, Object parameter_31, Object parameter_32) {
@@ -1521,8 +1526,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a1e0ib0a0d {
-    public QuotationClass_9sawe3_a0a0a1e0ib0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a1e0ib0a0e {
+    public QuotationClass_9sawe3_a0a0a1e0ib0a0e() {
     }
 
     public SNode createNode(Object parameter_17, Object parameter_18, Object parameter_19) {
@@ -1604,8 +1609,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a0c4a43a0a3 {
-    public QuotationClass_9sawe3_a0a0a0c4a43a0a3() {
+  public static class QuotationClass_9sawe3_a0a0a0c4a43a0a4 {
+    public QuotationClass_9sawe3_a0a0a0c4a43a0a4() {
     }
 
     public SNode createNode(Object parameter_23, Object parameter_24, Object parameter_25) {
@@ -1709,8 +1714,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a1a2e0ib0a0d {
-    public QuotationClass_9sawe3_a0a1a2e0ib0a0d() {
+  public static class QuotationClass_9sawe3_a0a1a2e0ib0a0e {
+    public QuotationClass_9sawe3_a0a1a2e0ib0a0e() {
     }
 
     public SNode createNode(Object parameter_29, Object parameter_30, Object parameter_31, Object parameter_32) {
@@ -1837,8 +1842,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a4a43a0a3 {
-    public QuotationClass_9sawe3_a0a0a4a43a0a3() {
+  public static class QuotationClass_9sawe3_a0a0a4a43a0a4 {
+    public QuotationClass_9sawe3_a0a0a4a43a0a4() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14, Object parameter_15) {
@@ -1908,8 +1913,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a3e0ib0a0d {
-    public QuotationClass_9sawe3_a0a0a3e0ib0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a3e0ib0a0e {
+    public QuotationClass_9sawe3_a0a0a3e0ib0a0e() {
     }
 
     public SNode createNode(Object parameter_27, Object parameter_28, Object parameter_29, Object parameter_30) {
@@ -2033,8 +2038,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a4e0ib0a0d {
-    public QuotationClass_9sawe3_a0a0a4e0ib0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a4e0ib0a0e {
+    public QuotationClass_9sawe3_a0a0a4e0ib0a0e() {
     }
 
     public SNode createNode(Object parameter_31, Object parameter_32, Object parameter_33, Object parameter_34) {
@@ -2170,8 +2175,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a5e0ib0a0d {
-    public QuotationClass_9sawe3_a0a0a5e0ib0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a5e0ib0a0e {
+    public QuotationClass_9sawe3_a0a0a5e0ib0a0e() {
     }
 
     public SNode createNode(Object parameter_27, Object parameter_28, Object parameter_29, Object parameter_30) {
@@ -2294,8 +2299,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a6e0ib0a0d {
-    public QuotationClass_9sawe3_a0a0a6e0ib0a0d() {
+  public static class QuotationClass_9sawe3_a0a0a6e0ib0a0e {
+    public QuotationClass_9sawe3_a0a0a6e0ib0a0e() {
     }
 
     public SNode createNode(Object parameter_35, Object parameter_36, Object parameter_37, Object parameter_38) {
@@ -2442,8 +2447,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0a0e0ib0a0d_0 {
-    public QuotationClass_9sawe3_a0a0a0e0ib0a0d_0() {
+  public static class QuotationClass_9sawe3_a0a0a0e0ib0a0e_0 {
+    public QuotationClass_9sawe3_a0a0a0e0ib0a0e_0() {
     }
 
     public SNode createNode(Object parameter_35, Object parameter_36, Object parameter_37, Object parameter_38) {
@@ -2590,8 +2595,8 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_9sawe3_a0a0jb0a0d {
-    public QuotationClass_9sawe3_a0a0jb0a0d() {
+  public static class QuotationClass_9sawe3_a0a0jb0a0e {
+    public QuotationClass_9sawe3_a0a0jb0a0e() {
     }
 
     public SNode createNode(Object parameter_5) {

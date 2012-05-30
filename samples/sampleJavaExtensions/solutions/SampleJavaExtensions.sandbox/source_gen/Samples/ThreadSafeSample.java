@@ -7,7 +7,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.Collections;
 import utils.ParallelLoopException;
 
 public class ThreadSafeSample {
@@ -44,14 +43,13 @@ public class ThreadSafeSample {
       final CountDownLatch latch_n0a = new CountDownLatch(ListSequence.fromList(names).count());
       final List<Exception> exceptions_n0a = new CopyOnWriteArrayList<Exception>();
 
-      for (final String name : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<String>(), names))) {
+      for (final String name : names) {
 
         final String localA = name;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               try {
                 // Notice no warning nor error reported 
                 box.store(localA);
@@ -85,20 +83,19 @@ public class ThreadSafeSample {
     // By annotating a local variable, field or parameter declaration as thread safe you indicate that calling methods 
     // on the object is thread-safe 
     // Alt + Enter on variable declarations will let you mark and unmark them as thread-safe 
-    final String fixedValue = "fixed value";
+    final String fixedValue = " fixed value ";
 
     {
       final CountDownLatch latch_u0a = new CountDownLatch(ListSequence.fromList(names).count());
       final List<Exception> exceptions_u0a = new CopyOnWriteArrayList<Exception>();
 
-      for (final String name : Collections.unmodifiableList(ListSequence.fromListWithValues(new ArrayList<String>(), names))) {
+      for (final String name : names) {
 
         final String localA = name;
 
-        Runnable runnable = new Runnable() {
+        final Runnable runnable = new Runnable() {
           public void run() {
             try {
-              System.out.println("FooBar");
               String finalString = localA + fixedValue.toUpperCase() + fixedFieldValue;
               log("Result: " + finalString);
             } catch (RuntimeException e) {

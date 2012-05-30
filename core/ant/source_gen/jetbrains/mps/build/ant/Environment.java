@@ -110,6 +110,7 @@ public class Environment {
       if (myLoadBootstrapLibraries) {
         libraryPaths.addAll(PathManager.getBootstrapPaths());
         libraryPaths.add(PathManager.getLanguagesPath());
+        libraryPaths.addAll(PathManager.getExtensionsPaths());
       }
       for (String libName : myLibraries.keySet()) {
         libraryPaths.add(myLibraries.get(libName).getAbsolutePath());

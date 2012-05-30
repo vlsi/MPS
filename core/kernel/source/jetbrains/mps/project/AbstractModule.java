@@ -18,8 +18,8 @@ package jetbrains.mps.project;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
-import jetbrains.mps.project.dependency.DependenciesManager;
-import jetbrains.mps.project.dependency.ModuleDependenciesManager;
+import jetbrains.mps.project.dependency.modules.DependenciesManager;
+import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -88,8 +88,8 @@ public abstract class AbstractModule implements IModule {
     model.setChanged(true);
 
     for (ModelCreationListener listener : ourModelCreationListeners) {
-      if (listener.isApplicable(model)) {
-        listener.onCreate(model);
+      if (listener.isApplicable(this, model)) {
+        listener.onCreate(this, model);
       }
     }
 
@@ -125,7 +125,14 @@ public abstract class AbstractModule implements IModule {
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
     for (Dependency dep : descriptor.getDependencies()) {
-      if (ObjectUtils.equals(dep.getModuleRef(), moduleRef)) return;
+      if (!ObjectUtils.equals(dep.getModuleRef(), moduleRef)) continue;
+
+      if (reexport && !dep.isReexport()) {
+        dep.setReexport(true);
+        invalidateCaches();
+        save();
+      }
+      return;
     }
 
     Dependency dep = new Dependency();
@@ -288,7 +295,7 @@ public abstract class AbstractModule implements IModule {
       String suffix = descriptor.getCompileInMPS() ? "classes_gen" : "classes";
       if (canonicalPath.endsWith(suffix)) {
         IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
-        if(dd != null && parent != null) {
+        if (dd != null && parent != null) {
           parent = parent.getParent();
         }
         IFile classes = parent != null ? parent.getDescendant(suffix) : null;

@@ -9,7 +9,11 @@
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
+  <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
+  <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
@@ -34,6 +38,12 @@
     <mkdir dir="${build.layout}/plugins/mps-core/languages" />
     <copy todir="${build.layout}/plugins/mps-core/languages">
       <fileset dir="${artifacts.buildCore}/mps-core/languages" />
+    </copy>
+    <copy todir="${build.layout}/plugins/mps-core/languages">
+      <fileset dir="${artifacts.buildCoreEx}/languages" />
+    </copy>
+    <copy todir="${build.layout}/plugins/mps-core/languages">
+      <fileset dir="${artifacts.buildCoreEx}/plugins/mps-core/languages" />
     </copy>
     <mkdir dir="${build.layout}/plugins/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/asm.jar" todir="${build.layout}/plugins/mps-core/lib" />
@@ -71,7 +81,7 @@
       <zipfileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" prefix="META-INF" />
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
-    <echo file="${build.layout}/plugins/mps-core/build.number">plugin.version=${plugin.version}</echo>
+    <echo file="${build.layout}/plugins/mps-core/build.number">version=${buildCore.version}${line.separator}plugin.version=${plugin.version}</echo>
     <mkdir dir="${build.layout}/plugins/mps-vcs" />
     <mkdir dir="${build.layout}/plugins/mps-vcs/lib" />
     <jar destfile="${build.layout}/plugins/mps-vcs/lib/mps-vcs-core.jar">
@@ -94,6 +104,9 @@
       <fileset dir="${build.tmp}/java/out/mps-vcs-platform" />
       <fileset dir="${build.tmp}/default/mps-vcs-platform.jar" />
     </jar>
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildBuild}/plugins" />
+    </copy>
     <mkdir dir="${build.tmp}/default/mps-java.jar" />
     <mkdir dir="${build.tmp}/default/mps-java.jar/META-INF" />
     <copy todir="${build.tmp}/default/mps-java.jar/META-INF">
@@ -111,11 +124,13 @@
       <fileset dir="${build.tmp}/java/out/mps-java" />
       <fileset dir="${build.tmp}/default/mps-java.jar" />
     </jar>
-    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${plugin.version}${line.separator}buildPlugin.date=${date}</echo>
+    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${plugin.version}${line.separator}buildPlugin.date=${date}${line.separator}buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
@@ -212,6 +227,7 @@
       <src>
         <path location="${mps_home}/plugins/vcs/common/source" />
         <path location="${mps_home}/plugins/vcs/common/source_gen" />
+        <path location="${mps_home}/IdeaPlugin/mps-vcs/source" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
@@ -240,6 +256,7 @@
     <copy todir="${build.tmp}/java/out/mps-vcs-platform">
       <fileset dir="${mps_home}/plugins/vcs/common/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/vcs/common/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/mps-vcs/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

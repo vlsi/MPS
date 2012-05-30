@@ -25,6 +25,11 @@ public class ShowHelpForRoot_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return HelpHelper.helpForRootIsAvailable(((SNode) MapSequence.fromMap(_params).get("node"))) && HelpHelper.getDefaultHelpFor(((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) != HelpHelper.HelpType.ROOT_NODE;
   }

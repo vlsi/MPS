@@ -33,6 +33,7 @@ public class Program {
   private Map<Object, Integer> myEnds = new HashMap<Object, Integer>();
   private Stack<Object> myCreationStack = new Stack<Object>();
   private List<Object> myVariables = new ArrayList<Object>();
+  private boolean hasOuterJumps = false;
 
   public List<Instruction> getInstructions() {
     return Collections.unmodifiableList((List<? extends Instruction>) myInstructions);
@@ -169,7 +170,6 @@ public class Program {
     if (myStarts.containsKey(o)) {
       int start = getStart(o);
       int end = getEnd(o);
-      assert start <= end;
       if (start <= end) {
         return new ArrayList<Instruction>(myInstructions.subList(start, end));
       }
@@ -397,6 +397,14 @@ public class Program {
      Instruction i = null;
      myInstructions.indexOf(i);
       return myStarts.containsKey(o);
+   }
+
+   public boolean hasOuterJumps() {
+     return hasOuterJumps;
+   }
+
+   public void setHasOuterJumps(boolean hasOuterJumps) {
+     this.hasOuterJumps = hasOuterJumps;
    }
 
    public void updateJumpsOnInsert(int position, boolean before) {

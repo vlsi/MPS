@@ -130,9 +130,10 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
           final ToolWindowManager manager = ToolWindowManager.getInstance(getProject());
           manager.notifyByBalloon(TOOL_WINDOW_ID, MessageType.INFO, notFoundMsg, null, null);
         } else if (resCount == 1 && !showOne) {
-          ModelAccess.instance().runReadAction(new Runnable() {
+          ModelAccess.instance().runWriteInEDT(new Runnable() {
             public void run() {
               SNode node = ((SearchResult<SNode>) searchResults.getSearchResults().get(0)).getObject();
+              // TODO: use node pointers here
               if (node != null) {
                 IOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
                 NavigationSupport.getInstance().openNode(context, node, true, !(node.isRoot()));

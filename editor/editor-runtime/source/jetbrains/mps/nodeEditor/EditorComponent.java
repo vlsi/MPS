@@ -19,6 +19,7 @@ import com.intellij.ide.*;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.keymap.KeymapManager;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.IdeFrame;
@@ -1777,7 +1778,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                       for (final Pair<String, String> id : herror.getAdditionalRulesIds()) {
                         popupMenu.add(new AbstractAction("Go To Rule " + id.o2) {
                           public void actionPerformed(ActionEvent e) {
-                            ModelAccess.instance().runReadAction(new Runnable() {
+                            ModelAccess.instance().runWriteInEDT(new Runnable() {
                               public void run() {
                                 GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, id);
                                 dialog.dispose();
@@ -1788,7 +1789,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                       }
                       popupMenu.add(new AbstractAction("Go To Immediate Rule") {
                         public void actionPerformed(ActionEvent e) {
-                          ModelAccess.instance().runReadAction(new Runnable() {
+                          ModelAccess.instance().runWriteInEDT(new Runnable() {
                             public void run() {
                               GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
                                 herror.getRuleId()));
@@ -1799,7 +1800,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
                       });
                       popupMenu.show(dialog, button.getX(), button.getY() + button.getHeight());
                     } else {
-                      ModelAccess.instance().runReadAction(new Runnable() {
+                      ModelAccess.instance().runWriteInEDT(new Runnable() {
                         public void run() {
                           GoToTypeErrorRuleUtil.goToRuleById(myOperationContext, new Pair<String, String>(herror.getRuleModel(),
                             herror.getRuleId()));
@@ -2967,7 +2968,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myBracesHighlighter;
   }
 
-  private static class MyBaseAction extends BaseAction {
+  private static class MyBaseAction extends BaseAction implements DumbAware {
     private final EditorCellKeyMapAction myAction;
     private final EditorContext myEditorContext;
 

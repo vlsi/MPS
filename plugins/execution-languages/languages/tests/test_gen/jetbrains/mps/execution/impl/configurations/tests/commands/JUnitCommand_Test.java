@@ -72,7 +72,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
         } else if (exitcode < 0) {
           Assert.fail("Process running too long.");
         }
-        if ((checkListener.getMessages() != null && checkListener.getMessages().length() > 0)) {
+        if (StringUtils.isNotEmpty(checkListener.getMessages())) {
           Assert.fail(checkListener.getMessages());
         }
       } catch (ExecutionException e) {

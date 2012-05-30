@@ -25,9 +25,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Queryable;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -121,16 +121,13 @@ public class MPSProjectViewNode extends ProjectViewNode<SNodePointer> implements
 
   @Override
   public void navigate(final boolean requestFocus) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
         SNode root = getValue().getNode();
         if (root == null) return;
 
         ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
-
-        // TODO implement NavigationSupport!!!!! get rid of MPSEditorOpener
-        new MPSEditorOpener(getProject()).openNode(root, context, requestFocus, false);
-        // TODO use NavigationSupport.getInstance().openNode(context, root, requestFocus, true);
+        NavigationSupport.getInstance().openNode(context, root, requestFocus, false);
       }
     });
   }

@@ -27,6 +27,11 @@ public class AddModuleToProject_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     for (IModule module : ((List<IModule>) MapSequence.fromMap(_params).get("modules"))) {
       if (((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules().contains(module)) {

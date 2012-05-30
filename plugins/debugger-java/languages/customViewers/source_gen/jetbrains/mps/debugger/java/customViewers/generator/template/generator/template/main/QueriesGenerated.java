@@ -74,7 +74,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4089989733346843275(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SPropertyOperations.getString(_context.getNode(), "iconPath") != null && SPropertyOperations.getString(_context.getNode(), "iconPath").length() > 0);
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "iconPath"));
   }
 
   public static boolean ifMacro_Condition_264293128390879160(final IOperationContext operationContext, final IfMacroContext _context) {

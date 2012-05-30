@@ -1104,39 +1104,41 @@
     <nodeInfo nodeId="1106247515661683899" fileName="XYCTableModel.java" startLine="55" startPosition="46" endLine="56" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="941853673534992694" fileName="XYCTableModel.java" startLine="57" startPosition="49" endLine="58" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1106247515661683971" fileName="XYCTableModel.java" startLine="58" startPosition="45" endLine="59" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1106247515661684041" fileName="XYCTableModel.java" startLine="66" startPosition="40" endLine="67" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="941853673534992793" fileName="XYCTableModel.java" startLine="68" startPosition="52" endLine="69" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1106247515661684113" fileName="XYCTableModel.java" startLine="69" startPosition="42" endLine="70" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="941853673534992830" fileName="XYCTableModel.java" startLine="75" startPosition="34" endLine="76" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534992848" fileName="XYCTableModel.java" startLine="78" startPosition="33" endLine="79" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534992868" fileName="XYCTableModel.java" startLine="81" startPosition="33" endLine="82" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534992879" fileName="XYCTableModel.java" startLine="83" startPosition="5" endLine="84" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534992907" fileName="XYCTableModel.java" startLine="88" startPosition="34" endLine="89" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534992913" fileName="XYCTableModel.java" startLine="91" startPosition="19" endLine="92" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="941853673534992927" fileName="XYCTableModel.java" startLine="94" startPosition="22" endLine="95" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="941853673534992942" fileName="XYCTableModel.java" startLine="96" startPosition="5" endLine="97" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="941853673534992950" fileName="XYCTableModel.java" startLine="98" startPosition="51" endLine="99" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="941853673534992982" fileName="XYCTableModel.java" startLine="104" startPosition="34" endLine="105" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534992989" fileName="XYCTableModel.java" startLine="107" startPosition="19" endLine="108" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534992998" fileName="XYCTableModel.java" startLine="110" startPosition="22" endLine="111" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534993008" fileName="XYCTableModel.java" startLine="112" startPosition="5" endLine="113" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="941853673534993016" fileName="XYCTableModel.java" startLine="114" startPosition="52" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534993023" fileName="XYCTableModel.java" startLine="116" startPosition="5" endLine="117" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="941853673534993034" fileName="XYCTableModel.java" startLine="120" startPosition="40" endLine="121" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6635613118814996593" fileName="XYCTableModel.java" startLine="122" startPosition="52" endLine="123" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="941853673534993043" fileName="XYCTableModel.java" startLine="123" startPosition="38" endLine="124" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5513737939527436789" fileName="XYCTableModel.java" startLine="67" startPosition="25" endLine="68" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1106247515661684041" fileName="XYCTableModel.java" startLine="69" startPosition="5" endLine="70" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="941853673534992793" fileName="XYCTableModel.java" startLine="71" startPosition="52" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1106247515661684113" fileName="XYCTableModel.java" startLine="72" startPosition="42" endLine="73" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="941853673534992830" fileName="XYCTableModel.java" startLine="78" startPosition="34" endLine="79" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534992848" fileName="XYCTableModel.java" startLine="81" startPosition="33" endLine="82" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534992868" fileName="XYCTableModel.java" startLine="84" startPosition="33" endLine="85" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534992879" fileName="XYCTableModel.java" startLine="86" startPosition="5" endLine="87" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534992907" fileName="XYCTableModel.java" startLine="91" startPosition="34" endLine="92" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534992913" fileName="XYCTableModel.java" startLine="94" startPosition="19" endLine="95" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="941853673534992927" fileName="XYCTableModel.java" startLine="97" startPosition="22" endLine="98" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="941853673534992942" fileName="XYCTableModel.java" startLine="99" startPosition="5" endLine="100" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="941853673534992950" fileName="XYCTableModel.java" startLine="101" startPosition="51" endLine="102" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="941853673534992982" fileName="XYCTableModel.java" startLine="107" startPosition="34" endLine="108" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534992989" fileName="XYCTableModel.java" startLine="110" startPosition="19" endLine="111" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534992998" fileName="XYCTableModel.java" startLine="113" startPosition="22" endLine="114" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534993008" fileName="XYCTableModel.java" startLine="115" startPosition="5" endLine="116" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="941853673534993016" fileName="XYCTableModel.java" startLine="117" startPosition="52" endLine="118" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534993023" fileName="XYCTableModel.java" startLine="119" startPosition="5" endLine="120" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="941853673534993034" fileName="XYCTableModel.java" startLine="123" startPosition="40" endLine="124" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6635613118814996593" fileName="XYCTableModel.java" startLine="125" startPosition="52" endLine="126" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="941853673534993043" fileName="XYCTableModel.java" startLine="126" startPosition="38" endLine="127" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="941853673534992768" fileName="XYCTableModel.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteColumn#(I)V" />
-    <nodeInfo nodeId="941853673534992828" fileName="XYCTableModel.java" startLine="74" startPosition="68" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992839" fileName="XYCTableModel.java" startLine="77" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992859" fileName="XYCTableModel.java" startLine="80" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992898" fileName="XYCTableModel.java" startLine="87" startPosition="50" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992908" fileName="XYCTableModel.java" startLine="90" startPosition="5" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992925" fileName="XYCTableModel.java" startLine="93" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992948" fileName="XYCTableModel.java" startLine="97" startPosition="35" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992973" fileName="XYCTableModel.java" startLine="103" startPosition="48" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992984" fileName="XYCTableModel.java" startLine="106" startPosition="5" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534992996" fileName="XYCTableModel.java" startLine="109" startPosition="5" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="941853673534993014" fileName="XYCTableModel.java" startLine="113" startPosition="35" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5513737939527436734" fileName="XYCTableModel.java" startLine="66" startPosition="40" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992828" fileName="XYCTableModel.java" startLine="77" startPosition="68" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992839" fileName="XYCTableModel.java" startLine="80" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992859" fileName="XYCTableModel.java" startLine="83" startPosition="5" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992898" fileName="XYCTableModel.java" startLine="90" startPosition="50" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992908" fileName="XYCTableModel.java" startLine="93" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992925" fileName="XYCTableModel.java" startLine="96" startPosition="5" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992948" fileName="XYCTableModel.java" startLine="100" startPosition="35" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992973" fileName="XYCTableModel.java" startLine="106" startPosition="48" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992984" fileName="XYCTableModel.java" startLine="109" startPosition="5" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534992996" fileName="XYCTableModel.java" startLine="112" startPosition="5" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="941853673534993014" fileName="XYCTableModel.java" startLine="116" startPosition="35" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="941853673534992599" fileName="XYCTableModel.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="x#()Ljava/util/List;" />
     <nodeInfo nodeId="941853673534992610" fileName="XYCTableModel.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="y#()Ljava/util/List;" />
     <nodeInfo nodeId="941853673534992621" fileName="XYCTableModel.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="c#()Ljava/util/List;" />
@@ -1144,15 +1146,15 @@
     <nodeInfo nodeId="941853673534992642" fileName="XYCTableModel.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getColumnCount#()I" />
     <nodeInfo nodeId="941853673534992652" fileName="XYCTableModel.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dataidx#(II)I" />
     <nodeInfo nodeId="941853673534992692" fileName="XYCTableModel.java" startLine="56" startPosition="161" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="941853673534992791" fileName="XYCTableModel.java" startLine="67" startPosition="158" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="941853673534993041" fileName="XYCTableModel.java" startLine="121" startPosition="62" endLine="125" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="941853673534992791" fileName="XYCTableModel.java" startLine="70" startPosition="158" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="941853673534993041" fileName="XYCTableModel.java" startLine="124" startPosition="62" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="941853673534992554" fileName="XYCTableModel.java" startLine="22" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XYCTableModel#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="941853673534992675" fileName="XYCTableModel.java" startLine="54" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertColumn#(I)V" />
-    <nodeInfo nodeId="941853673534992774" fileName="XYCTableModel.java" startLine="65" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertRow#(I)V" />
-    <nodeInfo nodeId="941853673534993028" fileName="XYCTableModel.java" startLine="119" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteRow#(I)V" />
-    <nodeInfo nodeId="941853673534992820" fileName="XYCTableModel.java" startLine="73" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubstituteInfo#(II)Ljetbrains/mps/nodeEditor/cellMenu/NodeSubstituteInfo;" />
-    <nodeInfo nodeId="941853673534992890" fileName="XYCTableModel.java" startLine="86" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createElement#(II)V" />
-    <nodeInfo nodeId="941853673534992965" fileName="XYCTableModel.java" startLine="102" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="941853673534993028" fileName="XYCTableModel.java" startLine="122" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteRow#(I)V" />
+    <nodeInfo nodeId="941853673534992774" fileName="XYCTableModel.java" startLine="65" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertRow#(I)V" />
+    <nodeInfo nodeId="941853673534992820" fileName="XYCTableModel.java" startLine="76" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubstituteInfo#(II)Ljetbrains/mps/nodeEditor/cellMenu/NodeSubstituteInfo;" />
+    <nodeInfo nodeId="941853673534992890" fileName="XYCTableModel.java" startLine="89" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createElement#(II)V" />
+    <nodeInfo nodeId="941853673534992965" fileName="XYCTableModel.java" startLine="105" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAt#(II)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="941853673534992773" fileName="XYCTableModel.java" startLine="63" startPosition="46" endLine="63" endPosition="46" />
     <scopeInfo nodeId="941853673534992601" fileName="XYCTableModel.java" startLine="31" startPosition="26" endLine="32" endPosition="52" />
     <scopeInfo nodeId="941853673534992612" fileName="XYCTableModel.java" startLine="35" startPosition="26" endLine="36" endPosition="52" />
@@ -1160,24 +1162,25 @@
     <scopeInfo nodeId="941853673534992635" fileName="XYCTableModel.java" startLine="43" startPosition="28" endLine="44" endPosition="50" />
     <scopeInfo nodeId="941853673534992645" fileName="XYCTableModel.java" startLine="47" startPosition="31" endLine="48" endPosition="50" />
     <scopeInfo nodeId="941853673534992654" fileName="XYCTableModel.java" startLine="51" startPosition="40" endLine="52" endPosition="58" />
-    <scopeInfo nodeId="941853673534992829" fileName="XYCTableModel.java" startLine="75" startPosition="34" endLine="76" endPosition="18" />
-    <scopeInfo nodeId="941853673534992847" fileName="XYCTableModel.java" startLine="78" startPosition="33" endLine="79" endPosition="93" />
-    <scopeInfo nodeId="941853673534992867" fileName="XYCTableModel.java" startLine="81" startPosition="33" endLine="82" endPosition="93" />
-    <scopeInfo nodeId="941853673534992906" fileName="XYCTableModel.java" startLine="88" startPosition="34" endLine="89" endPosition="13" />
-    <scopeInfo nodeId="941853673534992912" fileName="XYCTableModel.java" startLine="91" startPosition="19" endLine="92" endPosition="138" />
-    <scopeInfo nodeId="941853673534992926" fileName="XYCTableModel.java" startLine="94" startPosition="22" endLine="95" endPosition="135" />
-    <scopeInfo nodeId="941853673534992949" fileName="XYCTableModel.java" startLine="98" startPosition="51" endLine="99" endPosition="161" />
-    <scopeInfo nodeId="941853673534992981" fileName="XYCTableModel.java" startLine="104" startPosition="34" endLine="105" endPosition="18" />
-    <scopeInfo nodeId="941853673534992988" fileName="XYCTableModel.java" startLine="107" startPosition="19" endLine="108" endPosition="33" />
-    <scopeInfo nodeId="941853673534992997" fileName="XYCTableModel.java" startLine="110" startPosition="22" endLine="111" endPosition="30" />
-    <scopeInfo nodeId="941853673534993015" fileName="XYCTableModel.java" startLine="114" startPosition="52" endLine="115" endPosition="18" />
+    <scopeInfo nodeId="5513737939527436735" fileName="XYCTableModel.java" startLine="67" startPosition="25" endLine="68" endPosition="20" />
+    <scopeInfo nodeId="941853673534992829" fileName="XYCTableModel.java" startLine="78" startPosition="34" endLine="79" endPosition="18" />
+    <scopeInfo nodeId="941853673534992847" fileName="XYCTableModel.java" startLine="81" startPosition="33" endLine="82" endPosition="93" />
+    <scopeInfo nodeId="941853673534992867" fileName="XYCTableModel.java" startLine="84" startPosition="33" endLine="85" endPosition="93" />
+    <scopeInfo nodeId="941853673534992906" fileName="XYCTableModel.java" startLine="91" startPosition="34" endLine="92" endPosition="13" />
+    <scopeInfo nodeId="941853673534992912" fileName="XYCTableModel.java" startLine="94" startPosition="19" endLine="95" endPosition="138" />
+    <scopeInfo nodeId="941853673534992926" fileName="XYCTableModel.java" startLine="97" startPosition="22" endLine="98" endPosition="135" />
+    <scopeInfo nodeId="941853673534992949" fileName="XYCTableModel.java" startLine="101" startPosition="51" endLine="102" endPosition="161" />
+    <scopeInfo nodeId="941853673534992981" fileName="XYCTableModel.java" startLine="107" startPosition="34" endLine="108" endPosition="18" />
+    <scopeInfo nodeId="941853673534992988" fileName="XYCTableModel.java" startLine="110" startPosition="19" endLine="111" endPosition="33" />
+    <scopeInfo nodeId="941853673534992997" fileName="XYCTableModel.java" startLine="113" startPosition="22" endLine="114" endPosition="30" />
+    <scopeInfo nodeId="941853673534993015" fileName="XYCTableModel.java" startLine="117" startPosition="52" endLine="118" endPosition="18" />
     <scopeInfo nodeId="941853673534992693" fileName="XYCTableModel.java" startLine="57" startPosition="49" endLine="59" endPosition="150">
       <varInfo nodeId="941853673534992695" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534992792" fileName="XYCTableModel.java" startLine="68" startPosition="52" endLine="70" endPosition="150">
+    <scopeInfo nodeId="941853673534992792" fileName="XYCTableModel.java" startLine="71" startPosition="52" endLine="73" endPosition="150">
       <varInfo nodeId="941853673534992794" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534993042" fileName="XYCTableModel.java" startLine="122" startPosition="52" endLine="124" endPosition="91">
+    <scopeInfo nodeId="941853673534993042" fileName="XYCTableModel.java" startLine="125" startPosition="52" endLine="127" endPosition="91">
       <varInfo nodeId="6635613118814996594" varName="idx" />
     </scopeInfo>
     <scopeInfo nodeId="941853673534992768" fileName="XYCTableModel.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
@@ -1195,16 +1198,15 @@
     <scopeInfo nodeId="941853673534992692" fileName="XYCTableModel.java" startLine="56" startPosition="161" endLine="60" endPosition="5">
       <varInfo nodeId="941853673534992711" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534992791" fileName="XYCTableModel.java" startLine="67" startPosition="158" endLine="71" endPosition="5">
+    <scopeInfo nodeId="941853673534992791" fileName="XYCTableModel.java" startLine="70" startPosition="158" endLine="74" endPosition="5">
       <varInfo nodeId="941853673534992810" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534993041" fileName="XYCTableModel.java" startLine="121" startPosition="62" endLine="125" endPosition="5">
+    <scopeInfo nodeId="941853673534993041" fileName="XYCTableModel.java" startLine="124" startPosition="62" endLine="128" endPosition="5">
       <varInfo nodeId="941853673534993056" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="941853673534992557" fileName="XYCTableModel.java" startLine="23" startPosition="104" endLine="28" endPosition="35" />
     <scopeInfo nodeId="941853673534992680" fileName="XYCTableModel.java" startLine="55" startPosition="46" endLine="60" endPosition="5" />
-    <scopeInfo nodeId="941853673534992779" fileName="XYCTableModel.java" startLine="66" startPosition="40" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="941853673534993033" fileName="XYCTableModel.java" startLine="120" startPosition="40" endLine="125" endPosition="5" />
+    <scopeInfo nodeId="941853673534993033" fileName="XYCTableModel.java" startLine="123" startPosition="40" endLine="128" endPosition="5" />
     <scopeInfo nodeId="941853673534992554" fileName="XYCTableModel.java" startLine="22" startPosition="0" endLine="29" endPosition="3">
       <varInfo nodeId="941853673534992594" varName="clink" />
       <varInfo nodeId="941853673534992596" varName="editorContext" />
@@ -1215,32 +1217,33 @@
     <scopeInfo nodeId="941853673534992675" fileName="XYCTableModel.java" startLine="54" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="941853673534992678" varName="columnNumber" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534992774" fileName="XYCTableModel.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="941853673534992777" varName="rowNumber" />
-    </scopeInfo>
-    <scopeInfo nodeId="941853673534993028" fileName="XYCTableModel.java" startLine="119" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="941853673534992779" fileName="XYCTableModel.java" startLine="66" startPosition="40" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="941853673534993028" fileName="XYCTableModel.java" startLine="122" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="941853673534993031" varName="rowNumber" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534992827" fileName="XYCTableModel.java" startLine="74" startPosition="68" endLine="84" endPosition="91" />
-    <scopeInfo nodeId="941853673534992820" fileName="XYCTableModel.java" startLine="73" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="941853673534992827" fileName="XYCTableModel.java" startLine="77" startPosition="68" endLine="87" endPosition="91" />
+    <scopeInfo nodeId="941853673534992774" fileName="XYCTableModel.java" startLine="65" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="941853673534992777" varName="rowNumber" />
+    </scopeInfo>
+    <scopeInfo nodeId="941853673534992820" fileName="XYCTableModel.java" startLine="76" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="941853673534992823" varName="column" />
       <varInfo nodeId="941853673534992821" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534992897" fileName="XYCTableModel.java" startLine="87" startPosition="50" endLine="100" endPosition="5">
+    <scopeInfo nodeId="941853673534992897" fileName="XYCTableModel.java" startLine="90" startPosition="50" endLine="103" endPosition="5">
       <varInfo nodeId="941853673534992943" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534992972" fileName="XYCTableModel.java" startLine="103" startPosition="48" endLine="117" endPosition="24">
+    <scopeInfo nodeId="941853673534992972" fileName="XYCTableModel.java" startLine="106" startPosition="48" endLine="120" endPosition="24">
       <varInfo nodeId="941853673534993009" varName="idx" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534992890" fileName="XYCTableModel.java" startLine="86" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="941853673534992890" fileName="XYCTableModel.java" startLine="89" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="941853673534992895" varName="column" />
       <varInfo nodeId="941853673534992893" varName="row" />
     </scopeInfo>
-    <scopeInfo nodeId="941853673534992965" fileName="XYCTableModel.java" startLine="102" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="941853673534992965" fileName="XYCTableModel.java" startLine="105" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="941853673534992970" varName="column" />
       <varInfo nodeId="941853673534992968" varName="row" />
     </scopeInfo>
-    <unitInfo nodeId="941853673534992537" fileName="XYCTableModel.java" startLine="16" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.XYCTableModel" />
+    <unitInfo nodeId="941853673534992537" fileName="XYCTableModel.java" startLine="16" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.editor.table.runtime.XYCTableModel" />
   </root>
 </debugInfo>
 

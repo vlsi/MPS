@@ -143,11 +143,11 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public void migrate() {
-    if ((this.getModel() != null && this.getModel().length() > 0)) {
+    if (StringUtils.isNotEmpty(this.getModel())) {
       this.getJUnitSettings().setModel(this.getModel());
       this.setModel(null);
     }
-    if ((this.getModule() != null && this.getModule().length() > 0)) {
+    if (StringUtils.isNotEmpty(this.getModule())) {
       this.getJUnitSettings().setModule(this.getModule());
       this.setModule(null);
     }

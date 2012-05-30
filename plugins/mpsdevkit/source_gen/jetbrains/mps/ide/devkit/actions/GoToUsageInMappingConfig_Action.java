@@ -33,6 +33,11 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node")))))) {
       return false;

@@ -29,6 +29,11 @@ public class RenameFavoritesList_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
@@ -63,7 +68,7 @@ public class RenameFavoritesList_Action extends BaseAction {
       FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
       String oldName = pane.getSubId();
       String newName = Messages.showInputDialog("Input favorites list new name", "New Name For Favorites List", Messages.getQuestionIcon(), oldName, null);
-      if (newName == null || (newName == null || newName.length() == 0)) {
+      if (newName == null || StringUtils.isEmpty(newName)) {
         return;
       }
       MPSFavoritesManager favoritesManager = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSFavoritesManager.class);

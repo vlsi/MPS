@@ -45,9 +45,11 @@ public abstract class NavigationSupport implements CoreComponent {
     INSTANCE = null;
   }
 
-
   /**
-   * Opens node in the editor. Requires: model read, EDT.
+   * Opens node in the editor. Requires: model write, EDT.
+   *
+   * Model write is required because saveAll() will be called by implementation
+   * of this method (IDEA API calls).
    *
    * @param node    alive node from model repository
    * @param context context

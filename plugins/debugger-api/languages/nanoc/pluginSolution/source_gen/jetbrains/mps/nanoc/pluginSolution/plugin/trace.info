@@ -2,6 +2,7 @@
 <debugInfo>
   <unitInfo fileName="BeforeTasksInitializer_CustomProjectPlugin.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.BeforeTasksInitializer_CustomProjectPlugin" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
+  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.StringUtils" />
   <root nodeId="5487985028841967290">
     <nodeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="15" startPosition="90" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="16" startPosition="45" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="icon" />
@@ -675,7 +676,7 @@
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="32" startPosition="5" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="37" startPosition="30" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="39" startPosition="5" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967839" fileName="Gcc_Command.java" startLine="44" startPosition="125" endLine="45" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5487985028841967839" fileName="Gcc_Command.java" startLine="44" startPosition="98" endLine="45" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="5487985028841967843" fileName="Gcc_Command.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5487985028841967844" fileName="Gcc_Command.java" startLine="47" startPosition="0" endLine="48" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967858" fileName="Gcc_Command.java" startLine="49" startPosition="35" endLine="50" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -731,7 +732,7 @@
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="23" startPosition="24" endLine="23" endPosition="24" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="30" startPosition="30" endLine="31" endPosition="41" />
     <scopeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="37" startPosition="30" endLine="38" endPosition="41" />
-    <scopeInfo nodeId="5487985028841967838" fileName="Gcc_Command.java" startLine="44" startPosition="125" endLine="45" endPosition="89" />
+    <scopeInfo nodeId="5487985028841967838" fileName="Gcc_Command.java" startLine="44" startPosition="98" endLine="45" endPosition="89" />
     <scopeInfo nodeId="5487985028841967857" fileName="Gcc_Command.java" startLine="49" startPosition="35" endLine="50" endPosition="103" />
     <scopeInfo nodeId="7114233001712015526" fileName="Gcc_Command.java" startLine="56" startPosition="29" endLine="57" endPosition="48" />
     <scopeInfo nodeId="5487985028841967654" fileName="Gcc_Command.java" startLine="69" startPosition="34" endLine="70" endPosition="37" />

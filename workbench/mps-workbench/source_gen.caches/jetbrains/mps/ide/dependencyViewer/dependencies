@@ -114,6 +114,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.dependencyViewer.StringUtils" file="StringUtils.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.dependencyViewer.TargetsView" file="TargetsView.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Class" />
@@ -127,6 +130,7 @@
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.DependenciesPanel" />
     <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.Scope" />
+    <classNode dependClassName="jetbrains.mps.ide.dependencyViewer.StringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantLoadSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.CantSaveSomethingException" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.CategoryKind" />

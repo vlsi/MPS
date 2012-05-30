@@ -564,7 +564,7 @@ public class QueriesGenerated {
     }
     String result = "";
     for (SNode tagWrapper : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tags", true))) {
-      if ((result != null && result.length() > 0)) {
+      if (StringUtils.isNotEmpty(result)) {
         result += SideTransformHintSubstituteActionsHelper.SIDE_TRANSFORM_TAG_SEPARATOR;
       }
       result += SPropertyOperations.getString_def(tagWrapper, "tag", null);

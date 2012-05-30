@@ -190,7 +190,7 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     final PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
     String value = propertiesComponent.getValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id);
     float proportion = defaultProportion;
-    if ((value != null && value.length() > 0)) {
+    if (StringUtils.isNotEmpty(value)) {
       try {
         proportion = Float.parseFloat(value);
       } catch (NumberFormatException ignore) {

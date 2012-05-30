@@ -1,8 +1,9 @@
 <project name="unpackAndTest" default="default" basedir=".">
+  <property name="mps.zip.path" value="artifacts" />
   <property name="projectsdir" value="${basedir}/../../../projects" />
   <property name="mps.ant.workdir" value="${java.io.tmpdir}/mps.ant.workdir" />
   <property name="tmpdir" value="${mps.ant.workdir}/testproject" />
-  <property name="mps.zip" value="${mps_home}/artifacts/${build.number}.zip" />
+  <property name="mps.zip" value="${mps_home}/${mps.zip.path}/${build.number}.zip" />
   <property name="mps.build.dir" value="${mps.ant.workdir}/MPS ${version}" />
   <target name="init">
     <fail unless="mps_home" message="mps_home undefined" />

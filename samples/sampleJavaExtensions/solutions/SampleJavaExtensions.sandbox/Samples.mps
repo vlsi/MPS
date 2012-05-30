@@ -43,6 +43,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2975785153735164887">
       <property name="name" nameId="tpck.1169194664001" value="DropBox" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2975785153735223829">
       <property name="name" nameId="tpck.1169194664001" value="ThreadSafeSample" />
@@ -938,7 +939,6 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8923957828369582225" resolveInfo="a" />
                   </node>
                 </node>
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="cgfx.ThreadSafe" typeId="cgfx.2975785153735111398" id="3988640388184820782" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="5384012304952504713">
@@ -1195,7 +1195,6 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3988640388184820777">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7793246093816008676" resolveInfo="b" />
                 </node>
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="cgfx.ThreadSafe" typeId="cgfx.2975785153735111398" id="3988640388184820778" />
               </node>
             </node>
           </node>
@@ -2269,7 +2268,7 @@
             <property name="name" nameId="tpck.1169194664001" value="fixedValue" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="2975785153735291410" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2975785153735291412">
-              <property name="value" nameId="tpee.1070475926801" value="fixed value" />
+              <property name="value" nameId="tpee.1070475926801" value=" fixed value " />
             </node>
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="cgfx.ThreadSafe" typeId="cgfx.2975785153735111398" id="2975785153735296295" />
           </node>
@@ -2488,6 +2487,7 @@
                 </node>
               </node>
             </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="4697196167066005441" />
             <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="3988640388184820767">
               <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="3988640388184820768">
                 <property name="text" nameId="tpee.6329021646629104958" value="Notice there's no need to declare the InterruptedException on the main method" />
@@ -2500,7 +2500,6 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3988640388184807573">
                   <property name="value" nameId="tpee.1068580320021" value="1000" />
                 </node>
-                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="cgfx.ThreadSafe" typeId="cgfx.2975785153735111398" id="3988640388184811528" />
               </node>
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4723123923088182036">
@@ -2546,6 +2545,12 @@
                 <property name="value" nameId="tpee.1070475926801" value="The main thread is done" />
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3540747636396746989">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3540747636396747939">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~System%dgetSecurityManager()%cjava%dlang%dSecurityManager" resolveInfo="getSecurityManager" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lb.~System" resolveInfo="System" />
           </node>
         </node>
       </node>

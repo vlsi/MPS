@@ -6,7 +6,6 @@
   <tstamp>
     <format property="date" pattern="yyyyMMdd" />
   </tstamp>
-  <property name="version" value="2.5 EAP" />
   <property name="build.vcs.number" value="HEAD" />
   <property name="teamcity.buildConfName" value="local" />
   <property file="${basedir}/build.number" prefix="loaded.for.idea.platform.build.number" />
@@ -15,19 +14,21 @@
   <property name="idea_home" location="" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
-  <property name="artifacts.buildCoreUI" location="${build.dir}/artifacts/buildCoreUI" />
+  <property name="artifacts.buildDates" location="${build.dir}/artifacts/buildDates" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
-  <property name="artifacts.buildExecution" location="${build.dir}/artifacts/buildExecution" />
-  <property name="artifacts.buildUtilLanguages" location="${build.dir}/artifacts/buildUtilLanguages" />
-  <property name="artifacts.buildUiLanguages" location="${build.dir}/artifacts/buildUiLanguages" />
+  <property name="artifacts.buildDevKit" location="${build.dir}/artifacts/buildDevKit" />
+  <property name="artifacts.buildTroveCollections" location="${build.dir}/artifacts/buildTroveCollections" />
+  <property name="artifacts.buildExperimental" location="${build.dir}/artifacts/buildExperimental" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.buildBuildUI" location="${build.dir}/artifacts/buildBuildUI" />
   <property name="artifacts.buildVcs" location="${build.dir}/artifacts/buildVcs" />
   <property name="artifacts.buildDebuggerPlugin" location="${build.dir}/artifacts/buildDebuggerPlugin" />
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
-  <property name="artifacts.buildBuildlanguageDeprecated" location="${build.dir}/artifacts/buildBuildlanguageDeprecated" />
+  <property name="artifacts.buildObsolete" location="${build.dir}/artifacts/buildObsolete" />
   <property name="artifacts.IDEA" location="${idea_home}" />
+  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
+  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <target name="assemble" depends="fetchDependencies">
     <mkdir dir="${build.layout}/bin" />
@@ -49,19 +50,7 @@
       <fileset dir="${artifacts.buildCoreEx}/languages" />
     </copy>
     <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildCoreUI}/languages" />
-    </copy>
-    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildWorkbench}/languages" />
-    </copy>
-    <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildExecution}/languages" />
-    </copy>
-    <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildUtilLanguages}/languages" />
-    </copy>
-    <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildUiLanguages}/languages" />
     </copy>
     <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
@@ -111,7 +100,16 @@
     </copy>
     <mkdir dir="${build.layout}/plugins" />
     <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildCoreEx}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildDates}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildPlugins}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildDevKit}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildBuild}/plugins" />
@@ -123,13 +121,19 @@
       <fileset dir="${artifacts.buildVcs}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildTroveCollections}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildDebuggerPlugin}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildExecutionPlugin}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
-      <fileset dir="${artifacts.buildBuildlanguageDeprecated}/plugins" />
+      <fileset dir="${artifacts.buildObsolete}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildExperimental}/plugins" />
     </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">
@@ -150,9 +154,17 @@
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
     </zip>
-    <echo file="${build.layout}/build.number">build.number=${build.number}${line.separator}date=${date}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${version}${line.separator}idea.platform.build.number=${idea.platform.build.number}</echo>
+    <echo file="${build.layout}/build.number">build.number=${build.number}${line.separator}date=${date}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${buildCore.version}${line.separator}idea.platform.build.number=${idea.platform.build.number}</echo>
     <copy todir="${build.layout}">
       <fileset file="${basedir}/about.txt" />
+    </copy>
+    <copy todir="${build.layout}">
+      <fileset file="${basedir}/releaseNotes.txt" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="\$version\$" replace="${buildCore.version}" flags="" />
+        </tokenfilter>
+      </filterchain>
     </copy>
     <copy todir="${build.layout}">
       <fileset file="${basedir}/readme.txt" />
@@ -163,24 +175,24 @@
     <copy todir="${build.layout}">
       <fileset file="${basedir}/entryPoints.xml" />
     </copy>
-    <echo file="${build.layout}/build.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.date=${date}${line.separator}buildMPS.version=${version}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}${line.separator}buildMPS.idea.platform.build.number=${idea.platform.build.number}</echo>
+    <echo file="${build.layout}/build.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.date=${date}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}${line.separator}buildMPS.idea.platform.build.number=${idea.platform.build.number}${line.separator}buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildCoreUI.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildDates.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildExecution.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildUtilLanguages.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildUiLanguages.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildDevKit.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildExperimental.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildBuildlanguageDeprecated.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildObsolete.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
