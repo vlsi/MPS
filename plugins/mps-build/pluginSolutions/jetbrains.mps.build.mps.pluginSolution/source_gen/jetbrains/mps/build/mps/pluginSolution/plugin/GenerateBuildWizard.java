@@ -46,9 +46,13 @@ public class GenerateBuildWizard extends AbstractWizard {
   public void initWizard() {
     Step moduleStep = new SolutionStep(myProject, myGenerator, myErrorHandler);
     Step modelStep = new ModelStep(myProject, myGenerator, myErrorHandler);
+    Step dependencyStep = new DependencyStep(myGenerator, myErrorHandler);
+    Step pluginStep = new IdeaPlugunStep(myGenerator, myErrorHandler);
     Step languagesStep = new LanguagesStep(myProject, myGenerator, myErrorHandler);
     addStep(moduleStep);
     addStep(modelStep);
+    addStep(dependencyStep);
+    addStep(pluginStep);
     addStep(languagesStep);
     init();
   }
