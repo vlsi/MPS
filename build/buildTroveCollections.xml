@@ -56,6 +56,7 @@
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
+    <mkdir dir="${build.layout}/plugins/mps-trove/languages" />
     <mkdir dir="${build.tmp}/default/collections_trove.runtime.jar" />
     <mkdir dir="${build.tmp}/default/collections_trove.runtime.jar/META-INF" />
     <echoxml file="${build.tmp}/default/collections_trove.runtime.jar/META-INF/module.xml">
@@ -79,6 +80,7 @@
       <zipfileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
+    <mkdir dir="${build.layout}/plugins/mps-trove/languages" />
     <copy todir="${build.layout}/plugins/mps-trove/languages">
       <fileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/lib/trove-2.1.0.jar" />
     </copy>
