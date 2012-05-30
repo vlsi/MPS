@@ -26,6 +26,8 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.border.CompoundBorder" />
+    <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="javax.swing.border.EtchedBorder" />
     <classNode extendsClassName="com.intellij.ide.wizard.StepAdapter" />
   </dependency>

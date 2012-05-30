@@ -10,6 +10,8 @@ import javax.swing.JComponent;
 import javax.swing.Icon;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 
 public abstract class AbstractStep extends StepAdapter {
@@ -49,9 +51,11 @@ public abstract class AbstractStep extends StepAdapter {
   protected void createComponent() {
     if (this.myMainPanel == null) {
       this.myMainPanel = new JPanel(new GridBagLayout());
-      this.myMainPanel.add(new JLabel(this.getDescription()), this.createConstraint(0, 0));
+      JLabel label = new JLabel(this.getDescription());
+      label.setBorder(new EmptyBorder(5, 2, 10, 2));
+      this.myMainPanel.add(label, this.createConstraint(0, 0));
       JComponent mainComponent = this.createMainComponent();
-      mainComponent.setBorder(new EtchedBorder());
+      mainComponent.setBorder(new CompoundBorder(new EtchedBorder(), new EmptyBorder(2, 2, 2, 2)));
       this.myMainPanel.add(mainComponent, this.createConstraint(1, 0));
       this.myMainPanel.add(new JPanel(), this.createConstraint(2, 1));
     }
