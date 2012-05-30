@@ -32,6 +32,11 @@ public class CutNode_Action extends BaseAction {
     this.addPlace(null);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
       if (SNodeOperations.getParent(node) != SNodeOperations.getParent(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first())) {

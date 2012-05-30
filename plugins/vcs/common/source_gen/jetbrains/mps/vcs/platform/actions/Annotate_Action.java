@@ -24,6 +24,11 @@ public class Annotate_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return AnnotationHelper.isAnnotateable(((EditorComponent) MapSequence.fromMap(_params).get("editor")));
   }

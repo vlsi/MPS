@@ -27,6 +27,11 @@ public class CollapseAll_Action extends BaseAction {
     this.setMnemonic("A".charAt(0));
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return CollapseAll_Action.this.getAction(_params) != null;
   }

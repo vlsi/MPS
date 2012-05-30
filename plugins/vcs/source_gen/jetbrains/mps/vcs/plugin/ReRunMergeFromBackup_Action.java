@@ -41,6 +41,11 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
     if (manager.getAllVersionedRoots().length == 0) {

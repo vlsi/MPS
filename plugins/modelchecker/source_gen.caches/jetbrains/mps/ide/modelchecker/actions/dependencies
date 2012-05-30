@@ -93,6 +93,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -124,6 +125,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
@@ -153,6 +155,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -214,6 +217,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
@@ -270,6 +274,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
@@ -300,6 +305,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
@@ -728,6 +734,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />

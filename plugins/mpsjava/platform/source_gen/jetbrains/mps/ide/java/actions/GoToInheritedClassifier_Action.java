@@ -49,6 +49,11 @@ public class GoToInheritedClassifier_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.ClassConcept") || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("classifierNode")), "jetbrains.mps.baseLanguage.structure.Interface");
   }

@@ -44,6 +44,11 @@ public class GenerateToString_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateToString_Action.this.getClassConcept(_params);
     return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
@@ -110,24 +115,24 @@ public class GenerateToString_Action extends BaseAction {
         SNode field = SNodeOperations.cast(fieldPtr.getNode(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         SNode fieldRef = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
         SLinkOperations.setTarget(fieldRef, "variableDeclaration", field, false);
-        SNode item = new GenerateToString_Action.QuotationClass_dpuufu_a0a3a51a0a3().createNode(((fieldPtr == firstField ?
+        SNode item = new GenerateToString_Action.QuotationClass_dpuufu_a0a3a51a0a4().createNode(((fieldPtr == firstField ?
           "" :
           ", "
         )) + SPropertyOperations.getString(field, "name") + "=");
         if (fieldPtr == firstField) {
-          currentExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a0a4a51a0a3().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
-          currentExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a1a4a51a0a3().createNode(fieldRef, currentExpression);
+          currentExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a0a4a51a0a4().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+          currentExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a1a4a51a0a4().createNode(fieldRef, currentExpression);
         } else {
-          currentExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a0a0e0p0a0d().createNode(item, currentExpression);
-          currentExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a1a0e0p0a0d().createNode(fieldRef, currentExpression);
+          currentExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a0a0e0p0a0e().createNode(item, currentExpression);
+          currentExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a1a0e0p0a0e().createNode(fieldRef, currentExpression);
         }
       }
       if (selectedFields == null || selectedFields.length == 0) {
-        rightmostExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a0a61a0a3().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
+        rightmostExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a0a61a0a4().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
       } else {
-        rightmostExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a0a0q0a0d().createNode(currentExpression);
+        rightmostExpression = new GenerateToString_Action.QuotationClass_dpuufu_a0a0a0q0a0e().createNode(currentExpression);
       }
-      SNode method = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateToString_Action.QuotationClass_dpuufu_a0a0a71a0a3().createNode(rightmostExpression));
+      SNode method = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateToString_Action.QuotationClass_dpuufu_a0a0a71a0a4().createNode(rightmostExpression));
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(method);
 
     } catch (Throwable t) {
@@ -141,8 +146,8 @@ public class GenerateToString_Action extends BaseAction {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
 
-  public static class QuotationClass_dpuufu_a0a3a51a0a3 {
-    public QuotationClass_dpuufu_a0a3a51a0a3() {
+  public static class QuotationClass_dpuufu_a0a3a51a0a4 {
+    public QuotationClass_dpuufu_a0a3a51a0a4() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -159,8 +164,8 @@ public class GenerateToString_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_dpuufu_a0a0a4a51a0a3 {
-    public QuotationClass_dpuufu_a0a0a4a51a0a3() {
+  public static class QuotationClass_dpuufu_a0a0a4a51a0a4 {
+    public QuotationClass_dpuufu_a0a0a4a51a0a4() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -197,8 +202,8 @@ public class GenerateToString_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_dpuufu_a0a1a4a51a0a3 {
-    public QuotationClass_dpuufu_a0a1a4a51a0a3() {
+  public static class QuotationClass_dpuufu_a0a1a4a51a0a4 {
+    public QuotationClass_dpuufu_a0a1a4a51a0a4() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -242,8 +247,8 @@ public class GenerateToString_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_dpuufu_a0a0a0e0p0a0d {
-    public QuotationClass_dpuufu_a0a0a0e0p0a0d() {
+  public static class QuotationClass_dpuufu_a0a0a0e0p0a0e {
+    public QuotationClass_dpuufu_a0a0a0e0p0a0e() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -287,8 +292,8 @@ public class GenerateToString_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_dpuufu_a0a1a0e0p0a0d {
-    public QuotationClass_dpuufu_a0a1a0e0p0a0d() {
+  public static class QuotationClass_dpuufu_a0a1a0e0p0a0e {
+    public QuotationClass_dpuufu_a0a1a0e0p0a0e() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -332,8 +337,8 @@ public class GenerateToString_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_dpuufu_a0a0a61a0a3 {
-    public QuotationClass_dpuufu_a0a0a61a0a3() {
+  public static class QuotationClass_dpuufu_a0a0a61a0a4 {
+    public QuotationClass_dpuufu_a0a0a61a0a4() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -350,8 +355,8 @@ public class GenerateToString_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_dpuufu_a0a0a0q0a0d {
-    public QuotationClass_dpuufu_a0a0a0q0a0d() {
+  public static class QuotationClass_dpuufu_a0a0a0q0a0e {
+    public QuotationClass_dpuufu_a0a0a0q0a0e() {
     }
 
     public SNode createNode(Object parameter_7) {
@@ -388,8 +393,8 @@ public class GenerateToString_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_dpuufu_a0a0a71a0a3 {
-    public QuotationClass_dpuufu_a0a0a71a0a3() {
+  public static class QuotationClass_dpuufu_a0a0a71a0a4 {
+    public QuotationClass_dpuufu_a0a0a71a0a4() {
     }
 
     public SNode createNode(Object parameter_15) {

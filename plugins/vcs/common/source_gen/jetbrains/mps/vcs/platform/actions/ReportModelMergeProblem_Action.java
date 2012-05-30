@@ -42,6 +42,11 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<VcsDirectoryMapping> mappings = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getDirectoryMappings();
     return ListSequence.fromList(mappings).any(new IWhereFilter<VcsDirectoryMapping>() {

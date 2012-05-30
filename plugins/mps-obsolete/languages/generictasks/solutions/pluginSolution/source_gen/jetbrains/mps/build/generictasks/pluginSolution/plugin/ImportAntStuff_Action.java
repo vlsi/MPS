@@ -26,6 +26,11 @@ public class ImportAntStuff_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) && (((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName().contains("jetbrains.mps.build.generictasks"));
   }

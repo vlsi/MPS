@@ -37,6 +37,11 @@ public class CreateDefaultEditor_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     if (conceptDeclaration == null || SConceptPropertyOperations.getBoolean(conceptDeclaration, "abstract") || SPropertyOperations.getString(conceptDeclaration, "name") == null) {

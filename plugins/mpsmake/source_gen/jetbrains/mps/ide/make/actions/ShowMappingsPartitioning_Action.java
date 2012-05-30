@@ -29,6 +29,11 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 1;
   }

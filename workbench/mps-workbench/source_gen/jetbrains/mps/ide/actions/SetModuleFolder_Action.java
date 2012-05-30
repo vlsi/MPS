@@ -29,6 +29,11 @@ public class SetModuleFolder_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(((IModule) MapSequence.fromMap(_params).get("module")));
   }

@@ -30,6 +30,11 @@ public class CommentStatements_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (SNodeOperations.getAncestor(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null) && !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isReadOnly());
   }

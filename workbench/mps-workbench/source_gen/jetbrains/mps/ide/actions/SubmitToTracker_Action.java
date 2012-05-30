@@ -34,6 +34,11 @@ public class SubmitToTracker_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<IMessage> messages = ((List<IMessage>) MapSequence.fromMap(_params).get("messages"));
     return ListSequence.fromList(messages).any(new IWhereFilter<IMessage>() {

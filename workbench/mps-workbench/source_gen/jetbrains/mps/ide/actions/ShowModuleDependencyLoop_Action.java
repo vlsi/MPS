@@ -27,8 +27,13 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return check_mdxcvg_a0a0((as_hir9am_a0a0a0a(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class)));
+    return check_mdxcvg_a0a0((as_hir9am_a0a0a0b(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class)));
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -62,7 +67,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowLoops(as_hir9am_a0a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class));
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowLoops(as_hir9am_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowModuleDependencyLoop", t);
@@ -77,14 +82,14 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
     return false;
   }
 
-  private static <T> T as_hir9am_a0a0a0a(Object o, Class<T> type) {
+  private static <T> T as_hir9am_a0a0a0b(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_hir9am_a0a0a0a0d(Object o, Class<T> type) {
+  private static <T> T as_hir9am_a0a0a0a0e(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

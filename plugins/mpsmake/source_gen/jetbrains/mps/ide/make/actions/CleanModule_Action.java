@@ -33,6 +33,11 @@ public class CleanModule_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     IModule m = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
     return m != null && m.isCompileInMPS();

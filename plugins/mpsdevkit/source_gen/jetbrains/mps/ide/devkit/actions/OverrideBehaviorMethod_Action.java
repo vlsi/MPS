@@ -30,6 +30,11 @@ public class OverrideBehaviorMethod_Action extends BaseAction {
     this.setMnemonic("O".charAt(0));
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.lang.behavior.structure.ConceptBehavior", true, false) != null);
   }

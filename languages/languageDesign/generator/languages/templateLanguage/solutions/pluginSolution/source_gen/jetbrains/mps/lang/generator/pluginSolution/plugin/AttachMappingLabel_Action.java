@@ -45,6 +45,11 @@ public class AttachMappingLabel_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode node = ((SNode) MapSequence.fromMap(_params).get("nodeSelected"));
     if (!(BaseConcept_Behavior.call_isInTemplates_1213877396627(node))) {

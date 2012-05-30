@@ -35,6 +35,11 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<SModelDescriptor> models = VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles")));
     if (!(VcsActionsUtil.isMakePluginInstalled()) || IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {

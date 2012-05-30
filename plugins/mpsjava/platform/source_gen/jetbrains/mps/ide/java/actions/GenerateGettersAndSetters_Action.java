@@ -40,6 +40,11 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateGettersAndSetters_Action.this.getClassConcept(_params);
     return classConcept != null && Sequence.fromIterable(GenerateGettersAndSetters_Action.this.getFieldDeclarationsWithoutGetterOrSetter(classConcept, _params)).isNotEmpty();
@@ -95,11 +100,11 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
         final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, project);
         SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-        ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0e0o0a0d().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
+        ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0e0o0a0e().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
 
         final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, project);
         String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, project);
-        lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0a8a41a0a3().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
+        lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Action.QuotationClass_lel3v6_a0a0a8a41a0a4().createNode(SNodeOperations.copyNode(fieldReference), SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
       }
       if (lastAdded != null) {
         ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(lastAdded);
@@ -134,8 +139,8 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
     });
   }
 
-  public static class QuotationClass_lel3v6_a0a0e0o0a0d {
-    public QuotationClass_lel3v6_a0a0e0o0a0d() {
+  public static class QuotationClass_lel3v6_a0a0e0o0a0e {
+    public QuotationClass_lel3v6_a0a0e0o0a0e() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14, Object parameter_15) {
@@ -198,8 +203,8 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_lel3v6_a0a0a8a41a0a3 {
-    public QuotationClass_lel3v6_a0a0a8a41a0a3() {
+  public static class QuotationClass_lel3v6_a0a0a8a41a0a4 {
+    public QuotationClass_lel3v6_a0a0a8a41a0a4() {
     }
 
     public SNode createNode(Object parameter_21, Object parameter_22, Object parameter_23, Object parameter_24) {

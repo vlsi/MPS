@@ -9,6 +9,7 @@
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.FindInstancesByCondition_Action" file="FindInstancesByCondition_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -165,6 +166,7 @@
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementQueryAction_Action" file="ReplacementQueryAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />

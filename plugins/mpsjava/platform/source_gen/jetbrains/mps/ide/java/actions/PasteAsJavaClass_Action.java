@@ -30,6 +30,11 @@ public class PasteAsJavaClass_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SModel m = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModel();
     return m != null && SModelOperations.hasLanguage(m, ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference()) && JavaPaster.areDataAvailableInClipboard();

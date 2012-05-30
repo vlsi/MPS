@@ -30,6 +30,11 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -99,7 +104,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
   /*package*/ void updateImportVersions(DefaultSModelDescriptor model, final Map<String, Object> _params) {
     SModel m = model.getSModel();
     for (SModel.ImportElement importElement : ListSequence.fromList(SModelOperations.getAllImportElements(model.getSModel()))) {
-      DefaultSModelDescriptor usedModel = as_hexye9_a0a0a1a4(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
+      DefaultSModelDescriptor usedModel = as_hexye9_a0a0a1a5(SModelRepository.getInstance().getModelDescriptor(importElement.getModelReference()), DefaultSModelDescriptor.class);
       if (usedModel == null) {
         continue;
       }
@@ -119,7 +124,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     }
   }
 
-  private static <T> T as_hexye9_a0a0a1a4(Object o, Class<T> type) {
+  private static <T> T as_hexye9_a0a0a1a5(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

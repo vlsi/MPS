@@ -27,6 +27,11 @@ public class ShowClassInHierarchy_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (ShowClassInHierarchy_Action.this.getContextClassifier(_params) != null);
   }

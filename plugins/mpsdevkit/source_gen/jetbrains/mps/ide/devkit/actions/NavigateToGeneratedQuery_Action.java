@@ -27,6 +27,11 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     // check that node in generator? 
     SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node")));
