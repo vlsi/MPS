@@ -68,11 +68,13 @@ public class CellAction_PasteNode extends EditorCellAction {
     final EditorComponent editorComponent = context.getNodeEditorComponent();
     EditorCell pasteTargetCell = getCellToPasteTo(editorComponent.getSelectedCell());
     final CellInfo pasteTargetCellInfo = pasteTargetCell.getCellInfo();
-    SNode selectedNode = pasteTargetCell.getSNode();
-    final SNodePointer selectedNodePointer = new SNodePointer(selectedNode);
-    final SModel model = selectedNode.getModel();
+    final SNode nodeSelected = pasteTargetCell.getSNode();
+    final SNodePointer selectedNodePointer = new SNodePointer(nodeSelected);
+    final SModel model = nodeSelected.getModel();
+    // sometimes model is not in repository (paste in merge dialog)
+    final boolean inRepository = model.getModelDescriptor() == selectedNodePointer.getModel();
 
-    PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
+      PasteNodeData data = CopyPasteUtil.getPasteNodeDataFromClipboard(model);
     if (data == null || data.getNodes().isEmpty()) {
       data = CopyPasteUtil.getConvertedFromClipboard(model);
       if (data == null) return;
@@ -89,7 +91,7 @@ public class CellAction_PasteNode extends EditorCellAction {
 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            SNode selectedNode = selectedNodePointer.getNode();
+            SNode selectedNode = inRepository ? selectedNodePointer.getNode() : nodeSelected;
             assert !selectedNode.isDisposed();
             EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
             assert selectedCell != null;
