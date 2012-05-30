@@ -47,6 +47,7 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
   private MyPreferencesPage myPreferencesPage;
 
   private boolean myDisableCheckOpenAPI = true;
+  private boolean myDisableTypeWasNotCalculated = true;
 
   public ModelValidationSettings(MPSCoreComponents coreComponents) {
   }
@@ -65,6 +66,10 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
 
   public boolean isDisableCheckOpenAPI() {
     return myDisableCheckOpenAPI;
+  }
+
+  public boolean isDisableTypeWasNotCalculated() {
+    return myDisableTypeWasNotCalculated;
   }
 
   public static ModelValidationSettings getInstance() {
@@ -131,24 +136,28 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
 
   public class MyPreferencesPage extends JPanel {
     private JCheckBox myCheckBoxOpenAPI = new JCheckBox("Disable nonpublic API usage check");
+    private JCheckBox myCheckBoxTypeWasNotCalculated = new JCheckBox("Disable 'type was not calculated' check");
 
     public MyPreferencesPage() {
       super(new BorderLayout());
       Box box = Box.createVerticalBox();
       box.add(myCheckBoxOpenAPI);
+      box.add(myCheckBoxTypeWasNotCalculated);
       add(box, BorderLayout.WEST);
     }
 
     public void commit() {
       myDisableCheckOpenAPI = myCheckBoxOpenAPI.isSelected();
+      myDisableTypeWasNotCalculated = myCheckBoxTypeWasNotCalculated.isSelected();
     }
 
     public void reset() {
       myCheckBoxOpenAPI.setSelected(myDisableCheckOpenAPI);
+      myCheckBoxTypeWasNotCalculated.setSelected(myDisableTypeWasNotCalculated);
     }
 
     public boolean isModified() {
-      return myDisableCheckOpenAPI != myCheckBoxOpenAPI.isSelected();
+      return myDisableCheckOpenAPI != myCheckBoxOpenAPI.isSelected() || myDisableTypeWasNotCalculated != myCheckBoxTypeWasNotCalculated.isSelected();
     }
   }
 
@@ -156,15 +165,18 @@ public class ModelValidationSettings implements SearchableConfigurable, Persiste
   public MyState getState() {
     MyState result = new MyState();
     result.myDisableCheckOpenAPI = myDisableCheckOpenAPI;
+    result.myDisableTypeWasNotCalculated = myDisableTypeWasNotCalculated;
     return result;
   }
 
   @Override
   public void loadState(MyState state) {
     myDisableCheckOpenAPI = state.myDisableCheckOpenAPI;
+    myDisableTypeWasNotCalculated = state.myDisableTypeWasNotCalculated;
   }
 
   public static class MyState {
     public boolean myDisableCheckOpenAPI = true;
+    public boolean myDisableTypeWasNotCalculated = true;
   }
 }

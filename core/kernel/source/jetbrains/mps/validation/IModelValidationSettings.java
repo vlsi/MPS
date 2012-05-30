@@ -21,4 +21,5 @@ package jetbrains.mps.validation;
 public interface IModelValidationSettings {
 
   boolean isDisableCheckOpenAPI();
+  boolean isDisableTypeWasNotCalculated();
 }

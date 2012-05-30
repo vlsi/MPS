@@ -21787,8 +21787,43 @@
                 <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="1387988544209571118">
                   <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="1387988544209571119">
                     <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="1387988544209571120">
-                      <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1387988544209571121">
-                        <property name="value" nameId="tpee.1070475926801" value="operation is not applicable to these operands" />
+                      <node role="errorString" roleId="tpd4.1175517851849" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5104703949834061290">
+                        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5104703949834061293">
+                          <property name="value" nameId="tpee.1070475926801" value="'" />
+                        </node>
+                        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5104703949833899815">
+                          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5104703949833899791">
+                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5104703949833899760">
+                              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5104703949833899737">
+                                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="5104703949833899731">
+                                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1387988544209571121">
+                                    <property name="value" nameId="tpee.1070475926801" value="Operator '" />
+                                  </node>
+                                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5104703949833899784">
+                                    <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="5104703949833899763">
+                                      <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1387988544209571092" resolveInfo="operation" />
+                                    </node>
+                                    <node role="operation" roleId="tpee.1197027833540" type="tp25.SConceptPropertyAccess" typeId="tp25.1145994841052" id="5104703949833979671">
+                                      <link role="conceptProperty" roleId="tp25.1145994841055" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5104703949833899734">
+                                  <property name="value" nameId="tpee.1070475926801" value="' cannot be applied to '" />
+                                </node>
+                              </node>
+                              <node role="rightExpression" roleId="tpee.1081773367579" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="5104703949833899818">
+                                <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1387988544209571133" resolveInfo="leftType" />
+                              </node>
+                            </node>
+                            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5104703949833899794">
+                              <property name="value" nameId="tpee.1070475926801" value="', '" />
+                            </node>
+                          </node>
+                          <node role="rightExpression" roleId="tpee.1081773367579" type="tpd4.WhenConcreteVariableReference" typeId="tpd4.1205762656241" id="5104703949833899819">
+                            <link role="whenConcreteVar" roleId="tpd4.1205762683928" targetNodeId="1387988544209571127" resolveInfo="rightType" />
+                          </node>
+                        </node>
                       </node>
                       <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1387988544209571122">
                         <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1387988544209571092" resolveInfo="operation" />
