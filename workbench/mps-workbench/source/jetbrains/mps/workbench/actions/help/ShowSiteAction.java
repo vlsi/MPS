@@ -17,11 +17,12 @@ package jetbrains.mps.workbench.actions.help;
 
 import com.intellij.ide.BrowserUtil;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.project.DumbAware;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import java.util.Map;
 
-public abstract class ShowSiteAction extends BaseAction {
+public abstract class ShowSiteAction extends BaseAction implements DumbAware {
   protected ShowSiteAction(String name) {
     super(name);
     setDisableOnNoProject(false);

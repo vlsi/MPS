@@ -1210,6 +1210,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="todo" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968192621" />
+    <node type="tp4k.NonDumbAwareActions" typeId="tp4k.1512255007353869532" id="3856909620694994569">
+      <property name="name" nameId="tpck.1169194664001" value="DefaultNonDumbAware" />
+    </node>
   </roots>
   <root id="1204991218714">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148419636">
@@ -12378,6 +12381,9 @@
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1451404987992951060" />
+    </node>
+    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3856909620694994564">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ph2v.~DumbAware" resolveInfo="DumbAware" />
     </node>
   </root>
   <root id="6267318242960657894">
@@ -29530,5 +29536,16 @@
     </node>
   </root>
   <root id="7162597690968192621" />
+  <root id="3856909620694994569">
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3856909620694994570">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5033107305426734988" resolveInfo="FastFindNodeUsages" />
+    </node>
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3856909620694994572">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5033107305426766812" resolveInfo="FindSpecificNodeUsages" />
+    </node>
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3856909620695301355">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="3906874221886742303" resolveInfo="GoToRootNode" />
+    </node>
+  </root>
 </model>
 

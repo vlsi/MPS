@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public abstract class GoToNeighbourRootActions {
     return new GoToNeighbourRootActions.TheAction(true);
   }
 
-  private class TheAction extends BaseAction {
+  private class TheAction extends BaseAction implements DumbAware {
     private boolean myNext;
 
     public TheAction(boolean next) {
