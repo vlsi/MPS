@@ -34,7 +34,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public abstract class BaseAction extends AnAction implements DumbAware {
+public abstract class BaseAction extends AnAction {
   private boolean myIsAlwaysVisible = true;
   private boolean myExecuteOutsideCommand = false;
   private boolean myDisableOnNoProject = true;
