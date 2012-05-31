@@ -28,8 +28,8 @@ public class NodeWithContext {
     myContext = context;
   }
 
-  public SNode getNode() {
-    return myNodePointer.getNode();
+  public SNodePointer getNode() {
+    return myNodePointer;
   }
 
   public IOperationContext getContext() {

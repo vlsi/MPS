@@ -22,11 +22,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithContext> {
-  public void navigate(Project project, NodeWithContext object, boolean focus, boolean select) {
-    SNode node = object.getNode();
-    if (node == null) return;
+  public boolean canNavigate(Project project, NodeWithContext object) {
     IOperationContext context = object.getContext();
-    if (context == null) return;
-    NavigationSupport.getInstance().openNode(context, node, focus, select);
+    if (context == null) return false;
+
+    return NodePointerNavigationHandler.isCorrectNode(object.getNode());
+  }
+
+  public void navigate(Project project, NodeWithContext object, boolean focus, boolean select) {
+    NavigationSupport.getInstance().openNode(object.getContext(), object.getNode().getNode(), focus, select);
   }
 }

@@ -17,10 +17,7 @@ package jetbrains.mps.messages;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -126,8 +123,14 @@ public class Message implements IMessage {
       error = false;
     }
 
+    if (obj instanceof INodeAdapter){
+      //todo enable after 2.5
+      //  LOG.error("Stop using node adapters. Changing hint object to a reference.", new Throwable());
+      myHintObject = BaseAdapter.fromAdapter(((INodeAdapter) obj));
+    }
+
     if (error) {
-      //can't enable it because of LogEnrty's hint object
+      //todo enable after 2.5
       //  LOG.error("Adding a message with " + obj.getClass().getSimpleName() + " hint object. This can lead to memleaks. Changing hint object to a reference.", new Throwable());
     }
   }
