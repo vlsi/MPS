@@ -61,6 +61,9 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
       return false;
     }
+    if (!(MapSequence.fromMap(_params).get("modelDescriptor") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")).isReadOnly()) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;

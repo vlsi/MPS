@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.ModelAccess;
@@ -76,6 +77,9 @@ public class RenameModel_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));

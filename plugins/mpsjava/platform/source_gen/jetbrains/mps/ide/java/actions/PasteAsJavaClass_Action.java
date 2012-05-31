@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 
@@ -64,6 +65,9 @@ public class PasteAsJavaClass_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
