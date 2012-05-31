@@ -391,6 +391,7 @@
       <modulePath path="${project}/samples/sampleJavaExtensions/languages/SampleExtensions/SampleExtensions.mpl" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleJavaExtensions/solutions/MoneyRuntime/MoneyRuntime.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleJavaExtensions/solutions/ParallelForUtils/ParallelForUtils.msd" folder="samples.sampleJavaExtensions" />
+      <modulePath path="${project}/samples/sampleJavaExtensions/solutions/SampleJavaExtensions.build/SampleJavaExtensions.build.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleJavaExtensions/solutions/SampleJavaExtensions.sandbox/SampleJavaExtensions.sandbox.msd" folder="samples.sampleJavaExtensions" />
       <modulePath path="${project}/samples/sampleLanguage/sampleLanguage.mpl" folder="debugger" />
       <modulePath path="${project}/samples/sampleLanguage/solutions/sandbox/jetbrains.mps.samples.sampleLanguage.sandbox.msd" folder="samples" />
