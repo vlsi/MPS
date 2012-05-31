@@ -14,6 +14,8 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
+import jetbrains.mps.scope.EmptyScope;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -75,6 +77,10 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
+    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
+      return new EmptyScope();
+    }
+
     // collect extended classifiers 
     List<SNode> extendedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
     if ((extendsClass != null)) {
@@ -89,6 +95,10 @@ public class InstanceMethodDeclaration_Behavior {
   }
 
   public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, SNode interfaceNode, SNode[] extendsInterfaces) {
+    if (ClassifierScopeUtils.isHierarchyCyclic(interfaceNode)) {
+      return new EmptyScope();
+    }
+
     return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromIterable(Sequence.fromArray(extendsInterfaces)).concat(Sequence.fromIterable(Sequence.fromArray(new SNode[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")}))));
   }
 

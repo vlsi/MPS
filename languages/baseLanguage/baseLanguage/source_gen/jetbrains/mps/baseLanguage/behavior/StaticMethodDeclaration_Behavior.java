@@ -15,6 +15,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.scope.EmptyScope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
@@ -69,6 +70,10 @@ public class StaticMethodDeclaration_Behavior {
   }
 
   public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
+    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
+      return new EmptyScope();
+    }
+
     // collect extended classifiers 
     List<SNode> extendedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
     if ((extendsClass != null)) {

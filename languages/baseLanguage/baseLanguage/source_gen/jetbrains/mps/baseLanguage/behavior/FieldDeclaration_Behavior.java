@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -126,6 +127,10 @@ public class FieldDeclaration_Behavior {
   }
 
   public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode[] implementsInterfaces) {
+    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
+      return new EmptyScope();
+    }
+
     // todo: not .field but .children.filter, .field only as optimize 
     Scope fields = new NamedElementsScope(SLinkOperations.getTargets(classNode, "field", true));
     if ((extendsClass != null)) {
