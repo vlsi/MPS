@@ -1335,13 +1335,17 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7266073704221024074(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true)).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return SLinkOperations.getTargets(it, "condition", true);
+      }
+    }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "condition", true), "jetbrains.mps.lang.plugin.structure.CustomCondition");
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.CustomCondition");
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SNodeOperations.cast(SLinkOperations.getTarget(it, "condition", true), "jetbrains.mps.lang.plugin.structure.CustomCondition");
+        return SNodeOperations.cast(it, "jetbrains.mps.lang.plugin.structure.CustomCondition");
       }
     });
   }
