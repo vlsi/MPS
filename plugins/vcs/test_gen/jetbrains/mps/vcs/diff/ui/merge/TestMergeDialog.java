@@ -64,7 +64,10 @@ public class TestMergeDialog {
     if (args.length == 0) {
       System.out.print("Input path to model zip: ");
       String line = new Scanner(System.in).nextLine();
-      args = new String[]{StringUtils.trimBoth(line)};
+      args = new String[]{((line == null ?
+        null :
+        line.trim()
+      ))};
     }
     IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
     TestMain.configureMPS();
