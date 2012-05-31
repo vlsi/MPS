@@ -83,10 +83,4 @@ public class ConceptRef {
     SNode n = null;
     List<SNode> subConcepts1 = SConceptOperations.getAllSubConcepts(SNodeOperations.getConceptDeclaration(n), model, scope);
   }
-
-  public void concept_instances(IScope scope) {
-    List<SNode> instances = SConceptOperations.findConceptInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation"), null);
-    SNode concept = null;
-    List<SNode> instances2 = SConceptOperations.findConceptInstances(concept, scope);
-  }
 }
