@@ -243,4 +243,9 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   public SModelDescriptor resolveModel(SModelReference reference) {
     return SModelRepository.getInstance().getModelDescriptor(reference);
   }
+
+  @Override
+  public boolean isTransient() {
+    return false;
+  }
 }
