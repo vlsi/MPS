@@ -33,10 +33,6 @@
       <property name="name" nameId="tpck.1169194664001" value="expression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="rightTransform" />
     </node>
-    <node type="tpdg.SideTransformHintSubstituteActions" typeId="tpdg.1138079416598" id="1205263868336">
-      <property name="name" nameId="tpck.1169194664001" value="applyAncestorActions" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="rightTransform" />
-    </node>
     <node type="tpdg.NodeSubstituteActions" typeId="tpdg.1112056943463" id="1206021156875">
       <property name="name" nameId="tpck.1169194664001" value="staticMethodAccess" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="substitute" />
@@ -2257,23 +2253,6 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1179535648246">
                   <property name="value" nameId="tpee.1070475926801" value="downcast to lower semantic level" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
-  <root id="1205263868336">
-    <node role="actionsBuilder" roleId="tpdg.1138079416599" type="tpdg.SideTransformHintSubstituteActionsBuilder" typeId="tpdg.1138079221458" id="1205263933103">
-      <link role="applicableConcept" roleId="tpdg.1138079221462" targetNodeId="tp25.1204762015203" resolveInfo="IAttributeAccessQualifier" />
-      <node role="part" roleId="tpdg.1177442283389" type="tpdg.IncludeRightTransformForNodePart" typeId="tpdg.1180111159572" id="1205263951293">
-        <node role="nodeBlock" roleId="tpdg.1180111489972" type="tpdg.QueryFunction_SideTransform_NodeQuery" typeId="tpdg.1178537049112" id="1205263951294">
-          <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1205263951295">
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1205263963905">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1205263965110">
-                <node role="operand" roleId="tpee.1197027771414" type="tpdg.ConceptFunctionParameter_sourceNode" typeId="tpdg.1177497140107" id="1205263963906" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1205263968331" />
               </node>
             </node>
           </node>
