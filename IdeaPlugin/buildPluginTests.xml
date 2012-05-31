@@ -106,15 +106,15 @@
         <path location="${mps_home}/testbench/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-core.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-editor.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-plugin.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/mps-backend.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-plugin.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-backend.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -124,8 +124,8 @@
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/asm.jar" />
-        <fileset file="${artifacts.buildPlugin}/plugins/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
       </classpath>
