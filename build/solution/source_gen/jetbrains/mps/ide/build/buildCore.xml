@@ -2056,6 +2056,15 @@
     <copy todir="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
     </copy>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/closures/runtime/source_gen" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/collections/runtime/source_gen" />
+    </jar>
+    <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.runtime-src.jar">
+      <fileset dir="${mps_home}/languages/baseLanguage/tuples/runtime/source_gen" />
+    </jar>
     <echo file="${build.layout}/build.properties">buildCore.version=${version}</echo>
   </target>
   
