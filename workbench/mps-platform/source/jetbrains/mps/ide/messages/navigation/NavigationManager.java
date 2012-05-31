@@ -21,14 +21,13 @@ import jetbrains.mps.ide.messages.FileWithLogicalPosition;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.FileWithPosition;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class NavigationManager {
@@ -48,24 +47,30 @@ public class NavigationManager {
     myHandlers.put(ModuleReference.class, new ModuleReferenceNavigationHandler());
   }
 
-  /**
-   *  Navigates to the object. Requires: model write, EDT.
-   */
   public void navigateTo(Project project, Object o, boolean focus, boolean select) {
     ModelAccess.assertLegalWrite();
 
-    Class cls = o.getClass();
-
-    for (Class c : myHandlers.keySet()) {
-      if (c.isInstance(o)) {
-        myHandlers.get(c).navigate(project, o, focus, select);
-        return;
-      }
-    }
-
-    if (cls.getSuperclass() == null) {
+    List<INavigationHandler> handlers = getHandlers(project, o);
+    if (handlers.isEmpty()){
       LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
       return;
     }
+
+    for (INavigationHandler h : handlers) {
+      h.navigate(project, o, focus, select);
+    }
+  }
+
+  private List<INavigationHandler> getHandlers(Project project, Object o){
+    ArrayList<INavigationHandler> result = new ArrayList<INavigationHandler>();
+    for (Class c : myHandlers.keySet()) {
+      if (!c.isInstance(o)) continue;
+
+      INavigationHandler handler = myHandlers.get(c);
+      if (!handler.canNavigate(project, o)) continue;
+
+      result.add(handler);
+    }
+    return result;
   }
 }
