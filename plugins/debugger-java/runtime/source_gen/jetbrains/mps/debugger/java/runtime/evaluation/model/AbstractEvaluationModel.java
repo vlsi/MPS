@@ -135,7 +135,7 @@ public abstract class AbstractEvaluationModel {
 
       String source = handler.getSources().get(fullClassName);
 
-      if (successful && StringUtils.isNotEmpty(source)) {
+      if (successful && (source != null && source.length() > 0)) {
         if (isDeveloperMode()) {
           System.err.println(source);
         }
@@ -150,7 +150,7 @@ public abstract class AbstractEvaluationModel {
           evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
         }
         return evaluator;
-      } else if (StringUtils.isNotEmpty(source) && !(successful)) {
+      } else if ((source != null && source.length() > 0) && !(successful)) {
         String text = "Errors during compilation";
         if (compilationResult.hasErrors()) {
           text += ":\n" + compilationResult.getMessage();

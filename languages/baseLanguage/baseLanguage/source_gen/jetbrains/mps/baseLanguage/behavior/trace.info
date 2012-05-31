@@ -143,7 +143,7 @@
   <unitInfo fileName="IntegerType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IntegerType_BehaviorDescriptor" />
   <unitInfo fileName="Interface_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.Interface_BehaviorDescriptor" />
   <unitInfo fileName="IsEmptyOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsEmptyOperation_BehaviorDescriptor" />
-  <unitInfo fileName="IsNotEmptyOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsNotEmptyOperation_BehaviorDescriptor" />
+  <unitInfo fileName="IsNotEmptyOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsNotEmptyOperation_BehaviorDescriptor" />
   <unitInfo fileName="LeftShiftAssignmentExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LeftShiftAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="LessThanExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LessThanExpression_BehaviorDescriptor" />
   <unitInfo fileName="LessThanOrEqualsExpression_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.LessThanOrEqualsExpression_BehaviorDescriptor" />
@@ -10104,14 +10104,6 @@
     <unitInfo nodeId="1225271178070" fileName="StringType_Behavior.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringType_Behavior" />
     <unitInfo nodeId="6639374232683319215" fileName="StringType_Behavior.java" startLine="30" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.StringType_Behavior$QuotationClass_h5fjpv_a0a0d" />
   </root>
-  <root nodeId="1225271315970">
-    <nodeInfo nodeId="1225271315970" fileName="BaseStringOperation_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1225271315972" fileName="BaseStringOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1225271315970" fileName="BaseStringOperation_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0">
-      <varInfo nodeId="1225271315970" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1225271315970" fileName="BaseStringOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseStringOperation_Behavior" />
-  </root>
   <root nodeId="1225280605263">
     <nodeInfo nodeId="1225280605263" fileName="IParameter_Behavior.java" startLine="11" startPosition="34" endLine="12" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1225280611056" />
     <nodeInfo nodeId="1225280605263" fileName="IParameter_Behavior.java" startLine="12" startPosition="66" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_1225282371351" />
@@ -10894,6 +10886,20 @@
     </scopeInfo>
     <unitInfo nodeId="1244292059682911437" fileName="CommentedStatementsBlock_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CommentedStatementsBlock_Behavior" />
   </root>
+  <root nodeId="1457547649399766338">
+    <nodeInfo nodeId="2254597628748958065" fileName="BaseStringOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1457547649399766338" fileName="BaseStringOperation_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1457547649399766338" fileName="BaseStringOperation_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_operandCanBeNull_323410281720656291#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="1457547649399766340" fileName="BaseStringOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="2254597628748958063" fileName="BaseStringOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" />
+    <scopeInfo nodeId="1457547649399766338" fileName="BaseStringOperation_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0">
+      <varInfo nodeId="1457547649399766338" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1457547649399766338" fileName="BaseStringOperation_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="1457547649399766338" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="1457547649399766338" fileName="BaseStringOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseStringOperation_Behavior" />
+  </root>
   <root nodeId="1955452033143960286">
     <nodeInfo nodeId="2832018561209142530" fileName="AbstractLoopStatement_Behavior.java" startLine="20" startPosition="57" endLine="21" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2832018561209142558" fileName="AbstractLoopStatement_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -10959,20 +10965,6 @@
     <scopeInfo nodeId="2102329369853788156" fileName="VoidType_Behavior.java" startLine="29" startPosition="0" endLine="42" endPosition="0" />
     <unitInfo nodeId="2102329369853775247" fileName="VoidType_Behavior.java" startLine="14" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VoidType_Behavior" />
     <unitInfo nodeId="2102329369853788156" fileName="VoidType_Behavior.java" startLine="26" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.VoidType_Behavior$QuotationClass_s71av5_a0a0b" />
-  </root>
-  <root nodeId="2254597628748958058">
-    <nodeInfo nodeId="2254597628748958065" fileName="IsNotEmptyOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_operandCanBeNull_323410281720656291#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="2254597628748958060" fileName="IsNotEmptyOperation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2254597628748958063" fileName="IsNotEmptyOperation_Behavior.java" startLine="11" startPosition="85" endLine="12" endPosition="16" />
-    <scopeInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="7" startPosition="43" endLine="10" endPosition="0">
-      <varInfo nodeId="2254597628748958058" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="2254597628748958058" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2254597628748958058" fileName="IsNotEmptyOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.IsNotEmptyOperation_Behavior" />
   </root>
   <root nodeId="2496361171403550946">
     <nodeInfo nodeId="2496361171403550946" fileName="ForeachStatement_Behavior.java" startLine="15" startPosition="40" endLine="16" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_2496361171403550949" />

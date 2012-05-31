@@ -208,7 +208,7 @@ public class Java_Command {
 
   public ProcessHandler createProcess(CommandPart programParameter, String className, List<File> classPath) throws ExecutionException {
     File java = Java_Command.getJavaCommand(myJrePath_String);
-    if (StringUtils.isEmpty(className)) {
+    if ((className == null || className.length() == 0)) {
       throw new ExecutionException("Classname is empty");
     }
     if (check_yvpt_a0c0a2(programParameter) >= Java_Command.getMaxCommandLine()) {
@@ -270,7 +270,7 @@ public class Java_Command {
   }
 
   public static boolean isUnitNode(SNode node) {
-    return StringUtils.isNotEmpty(Java_Command.getClassName(node));
+    return isNotEmpty_kk96hj_a0a0b(Java_Command.getClassName(node));
   }
 
   private static String getClassName(final SNode node) {
@@ -372,10 +372,10 @@ public class Java_Command {
   }
 
   public static File getJavaCommand(@Nullable String javaHome) throws ExecutionException {
-    if (StringUtils.isEmpty(javaHome) || !(new File(javaHome).exists())) {
+    if ((javaHome == null || javaHome.length() == 0) || !(new File(javaHome).exists())) {
       javaHome = Java_Command.getJdkHome();
     }
-    if (StringUtils.isEmpty(javaHome)) {
+    if ((javaHome == null || javaHome.length() == 0)) {
       throw new ExecutionException("Could not find valid java home.");
     }
     return new File(Java_Command.getJavaCommandPath(javaHome));
@@ -402,7 +402,7 @@ public class Java_Command {
     if (systemJavaHome.endsWith("jre") && new File(systemJdkHome + File.separator + "bin").exists()) {
       ListSequence.fromList(homes).addElement(systemJdkHome);
     }
-    if (StringUtils.isNotEmpty(System.getenv("JAVA_HOME"))) {
+    if (isNotEmpty_kk96hj_a0e0k(System.getenv("JAVA_HOME"))) {
       ListSequence.fromList(homes).addElement(System.getenv("JAVA_HOME"));
     }
     ListSequence.fromList(homes).addElement(systemJavaHome);
@@ -493,6 +493,10 @@ public class Java_Command {
     return null;
   }
 
+  public static boolean isNotEmpty_kk96hj_a0a0b(String str) {
+    return str != null && str.length() > 0;
+  }
+
   private static boolean eq_kk96hj_a0a0b0a1a0c0a0a0a0b0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
@@ -505,6 +509,10 @@ public class Java_Command {
       a.equals(b) :
       a == b
     );
+  }
+
+  public static boolean isNotEmpty_kk96hj_a0e0k(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static class QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0b0c {

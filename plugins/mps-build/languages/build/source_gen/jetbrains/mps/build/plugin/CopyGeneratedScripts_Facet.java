@@ -99,7 +99,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                   public boolean acceptWritten(IFile file) {
                     if (!(Sequence.fromIterable(Sequence.fromArray(new String[]{"dependencies", "generated", "trace.info"})).contains(file.getName()))) {
                       String destPath = MapSequence.fromMap(MapSequence.fromMap(pa.global().properties(new ITarget.Name("jetbrains.mps.build.CopyGeneratedScripts.collectScriptDirectories"), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).get(tres.modelDescriptor().getSModelReference())).get(file.getName());
-                      if (StringUtils.isNotEmpty(destPath)) {
+                      if ((destPath != null && destPath.length() > 0)) {
                         IFile destFile = FileSystem.getInstance().getFileByPath(destPath);
                         ListSequence.fromList(toCopy).addElement(MultiTuple.<IFile,IFile>from(file, destFile));
                         monitor.reportFeedback(new IFeedback.INFORMATION(String.valueOf("Copying " + ListSequence.fromList(toCopy).last())));
@@ -221,7 +221,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                       String targetXml = ((String) descendant.getUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY));
                       if (!(fileName.endsWith(".xml"))) {
                         String ext = Utils.getExtensionWithDot(fileName);
-                        if (StringUtils.isEmpty(ext)) {
+                        if ((ext == null || ext.length() == 0)) {
                           // do not copy 
                           monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("Ignored " + fileName)));
                           continue;

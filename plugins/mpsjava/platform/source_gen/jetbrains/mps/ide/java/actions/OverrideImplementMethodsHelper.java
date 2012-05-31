@@ -146,7 +146,7 @@ public class OverrideImplementMethodsHelper {
         }
         String prefix = ((String) BehaviorManager.getInstance().invoke(Object.class, variable, "virtual_getPrefix_3012473318495495520", new Class[]{SNode.class, Project.class}, myProject));
         String suffix = ((String) BehaviorManager.getInstance().invoke(Object.class, variable, "virtual_getSuffix_3012473318495499856", new Class[]{SNode.class, Project.class}, myProject));
-        String mainName = (StringUtils.isEmpty(prefix) ?
+        String mainName = ((prefix == null || prefix.length() == 0) ?
           name :
           NameUtil.capitalize(name)
         );

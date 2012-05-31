@@ -61,7 +61,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (StringUtils.isEmpty(this.getConfigurationId())) {
+    if (isEmpty_pdwtc4_a0a0a0a(this.getConfigurationId())) {
       throw new RuntimeConfigurationException("Configuration to run is not selected.");
     } else if ((getConfiguration() == null)) {
       throw new RuntimeConfigurationException("Could not find configuration with id " + this.getConfigurationId() + ".");
@@ -187,6 +187,10 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
 
   public Object[] createGenerateBuildTask() {
     return new Object[]{SNodeOperations.cast(this.getNode().getNode(), "jetbrains.mps.build.packaging.structure.Layout")};
+  }
+
+  public static boolean isEmpty_pdwtc4_a0a0a0a(String str) {
+    return str == null || str.length() == 0;
   }
 
   public class MyState {

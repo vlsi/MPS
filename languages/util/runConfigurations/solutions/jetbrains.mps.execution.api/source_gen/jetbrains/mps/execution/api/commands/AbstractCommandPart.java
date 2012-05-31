@@ -30,7 +30,7 @@ public abstract class AbstractCommandPart implements CommandPart {
   protected final void addCommands(Iterable<String> list) {
     ListSequence.fromList(myCommand).addSequence(Sequence.fromIterable(list).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
-        return StringUtils.isNotEmpty(it);
+        return (it != null && it.length() > 0);
       }
     }));
   }

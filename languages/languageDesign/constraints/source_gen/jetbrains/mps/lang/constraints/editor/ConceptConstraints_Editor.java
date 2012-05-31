@@ -756,7 +756,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_g00aa7_a21d0(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && StringUtils.isNotEmpty(SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath"));
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && isNotEmpty_g00aa7_a0a0a01(SPropertyOperations.getString(((SNode) SLinkOperations.getTarget(node, "concept", false)), "iconPath"));
   }
 
   private static boolean renderingCondition_g00aa7_a1a21d0(SNode node, EditorContext editorContext, IScope scope) {
@@ -765,6 +765,10 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_g00aa7_a1m3a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "canBeRoot", true) != null);
+  }
+
+  public static boolean isNotEmpty_g00aa7_a0a0a01(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static class _Inline_g00aa7_a1a extends InlineCellProvider {

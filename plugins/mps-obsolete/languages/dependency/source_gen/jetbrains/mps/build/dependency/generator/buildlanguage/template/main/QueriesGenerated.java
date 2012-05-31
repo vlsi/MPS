@@ -38,7 +38,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4102882025198635369(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String value = SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "includeResources");
-    return (StringUtils.isEmpty(value) ?
+    return ((value == null || value.length() == 0) ?
       "**/*.png, **/trace.info" :
       value
     );
@@ -114,11 +114,11 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_4102882025198635389(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode outer = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription");
-    return StringUtils.isEmpty(SPropertyOperations.getString(outer, "excludeResources")) || StringUtils.isNotEmpty(SPropertyOperations.getString(outer, "includeResources"));
+    return isEmpty_x583g4_a0a1a32(SPropertyOperations.getString(outer, "excludeResources")) || isNotEmpty_x583g4_a0a1a32(SPropertyOperations.getString(outer, "includeResources"));
   }
 
   public static boolean ifMacro_Condition_4102882025198635351(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "excludeResources"));
+    return isNotEmpty_x583g4_a0a0y(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.build.dependency.structure.ModuleDescription"), "excludeResources"));
   }
 
   public static boolean ifMacro_Condition_1219772493889(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -247,5 +247,17 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1235489497642(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "moduleDescription", true);
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a1a32(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isEmpty_x583g4_a0a1a32(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0y(String str) {
+    return str != null && str.length() > 0;
   }
 }

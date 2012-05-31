@@ -101,13 +101,13 @@ public class EvaluatorConcept_Behavior {
     if (operation == null) {
       return "????";
     }
-    if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(operation, "alias"))) {
+    if (isNotEmpty_29c8r0_a0b0g(SConceptPropertyOperations.getString(operation, "alias"))) {
       return SConceptPropertyOperations.getString(operation, "alias");
     }
     if (SNodeOperations.isInstanceOf(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "name") + "(" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(operation, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).foldLeft("", new ILeftCombinator<SNode, String>() {
         public String combine(String s, SNode it) {
-          return ((StringUtils.isEmpty(s) ?
+          return (((s == null || s.length() == 0) ?
             "" :
             s + ","
           )) + EvaluatorConcept_Behavior.call_getPresentation_9172312269976661829(thisNode, it);
@@ -142,6 +142,10 @@ public class EvaluatorConcept_Behavior {
 
   public static SNode callSuper_getExpectedRetType_5211667636169798165(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_5211667636169798165);
+  }
+
+  public static boolean isNotEmpty_29c8r0_a0b0g(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static class QuotationClass_29c8r0_a0a0d {

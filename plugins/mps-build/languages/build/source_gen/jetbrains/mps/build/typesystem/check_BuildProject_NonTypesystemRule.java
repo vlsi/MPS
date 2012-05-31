@@ -19,7 +19,7 @@ public class check_BuildProject_NonTypesystemRule extends AbstractNonTypesystemR
   }
 
   public void applyRule(final SNode project, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (StringUtils.isNotEmpty(SPropertyOperations.getString(project, "fileName")) && !(SPropertyOperations.getString(project, "fileName").endsWith(".xml"))) {
+    if (isNotEmpty_4157vu_a0a0a0(SPropertyOperations.getString(project, "fileName")) && !(SPropertyOperations.getString(project, "fileName").endsWith(".xml"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("fileName");
@@ -41,5 +41,9 @@ public class check_BuildProject_NonTypesystemRule extends AbstractNonTypesystemR
 
   public boolean overrides() {
     return false;
+  }
+
+  public static boolean isNotEmpty_4157vu_a0a0a0(String str) {
+    return str != null && str.length() > 0;
   }
 }

@@ -25,14 +25,14 @@ public class BuildJavaPlugin_Behavior {
       return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
         public String getName(SNode jo) {
           String optionsName = SPropertyOperations.getString(SNodeOperations.cast(jo, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName");
-          return (StringUtils.isEmpty(optionsName) ?
+          return ((optionsName == null || optionsName.length() == 0) ?
             "<default options>" :
             optionsName
           );
         }
       }, new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
         public Boolean invoke(SNode node) {
-          return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+          return isNotEmpty_bn484n_a0a0b0a0a0b(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
         }
       });
     }
@@ -54,5 +54,9 @@ public class BuildJavaPlugin_Behavior {
     }
 
     return null;
+  }
+
+  public static boolean isNotEmpty_bn484n_a0a0b0a0a0b(String str) {
+    return str != null && str.length() > 0;
   }
 }

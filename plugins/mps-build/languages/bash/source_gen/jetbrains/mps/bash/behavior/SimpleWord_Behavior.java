@@ -16,17 +16,17 @@ public class SimpleWord_Behavior {
   }
 
   public static boolean call_splitValue_3147078024759753598(SNode thisNode, String value, IScope scope) {
-    if (StringUtils.isEmpty(value)) {
+    if ((value == null || value.length() == 0)) {
       return false;
     }
     SNode refConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.IConcreteWordUnit");
     for (SNode unit : ListSequence.fromList(SConceptOperations.getAllSubConcepts(refConcept, SNodeOperations.getModel(thisNode), scope))) {
-      if (StringUtils.isNotEmpty(SConceptPropertyOperations.getString(unit, "pattern"))) {
+      if (isNotEmpty_ur4wq2_a0a0c0b(SConceptPropertyOperations.getString(unit, "pattern"))) {
         int index = value.indexOf(SConceptPropertyOperations.getString(unit, "pattern"));
         if (index != -1) {
           SNode endOfWord = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
           String dummy = value.substring(index + SConceptPropertyOperations.getString(unit, "pattern").length());
-          if (StringUtils.isNotEmpty(dummy)) {
+          if ((dummy != null && dummy.length() > 0)) {
             SPropertyOperations.set(endOfWord, "word", dummy);
             SNodeOperations.insertNextSiblingChild(thisNode, endOfWord);
           }
@@ -42,5 +42,9 @@ public class SimpleWord_Behavior {
       }
     }
     return false;
+  }
+
+  public static boolean isNotEmpty_ur4wq2_a0a0c0b(String str) {
+    return str != null && str.length() > 0;
   }
 }

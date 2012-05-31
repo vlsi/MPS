@@ -33,7 +33,7 @@ public class FoldHTMLElement_Intention extends BaseIntention implements Intentio
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    String name = (StringUtils.isEmpty(SPropertyOperations.getString(node, "name")) ?
+    String name = (isEmpty_ngv5m6_a0a0a0e(SPropertyOperations.getString(node, "name")) ?
       "..." :
       SPropertyOperations.getString(node, "name")
     );
@@ -53,5 +53,9 @@ public class FoldHTMLElement_Intention extends BaseIntention implements Intentio
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.javadoc.intentions";
+  }
+
+  public static boolean isEmpty_ngv5m6_a0a0a0e(String str) {
+    return str == null || str.length() == 0;
   }
 }

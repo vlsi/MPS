@@ -16,13 +16,13 @@ public class MappingConfigNormalRef_Behavior {
   }
 
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "modelUID"))) {
+    if (isEmpty_v108kq_a0a0b(SPropertyOperations.getString(thisNode, "modelUID"))) {
       return false;
     }
     if (SPropertyOperations.getString(thisNode, "modelUID").equals("*")) {
       return true;
     }
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "nodeID"))) {
+    if (isEmpty_v108kq_a0c0b(SPropertyOperations.getString(thisNode, "nodeID"))) {
       return false;
     }
     return true;
@@ -35,5 +35,13 @@ public class MappingConfigNormalRef_Behavior {
 
   public static boolean callSuper_isComplete_2721285250110400383(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), callerConceptFqName, "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383);
+  }
+
+  public static boolean isEmpty_v108kq_a0a0b(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isEmpty_v108kq_a0c0b(String str) {
+    return str == null || str.length() == 0;
   }
 }

@@ -416,7 +416,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1754312393816976127(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return (SLinkOperations.getTarget(_context.getNode(), "icon", true) != null) && isNotEmpty_x583g4_a0a0a88(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_2535050848643232592(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -424,7 +424,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7244675116808166482(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+    return isNotEmpty_x583g4_a0a0md(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
 
   public static boolean ifMacro_Condition_1594211126127687772(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -448,11 +448,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1474977673367994580(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "path"));
+    return isNotEmpty_x583g4_a0a0rd(SPropertyOperations.getString(_context.getNode(), "path"));
   }
 
   public static boolean ifMacro_Condition_6396510228602727619(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isEmpty(SPropertyOperations.getString(_context.getNode(), "alias"));
+    return isEmpty_x583g4_a0a0sd(SPropertyOperations.getString(_context.getNode(), "alias"));
   }
 
   public static boolean ifMacro_Condition_3726880020403335400(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -674,6 +674,22 @@ public class QueriesGenerated {
       return SLinkOperations.getTargets(checkedDotOperand, "beforeTask", true);
     }
     return null;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0a88(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0md(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0rd(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isEmpty_x583g4_a0a0sd(String str) {
+    return str == null || str.length() == 0;
   }
 
   public static class QuotationClass_x583g4_a0a0a0xc {

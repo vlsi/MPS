@@ -33,7 +33,7 @@ public class CheckedModuleReference_Constraints extends BaseConstraintsDescripto
         String propertyName = "moduleId";
         {
           String original = SPropertyOperations.getString(node, "moduleId");
-          if (StringUtils.isEmpty(original)) {
+          if ((original == null || original.length() == 0)) {
             return original;
           }
           ModuleReference moduleReference = ModuleReference.fromString(original);

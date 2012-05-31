@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.actions.StringUtils" />
   <root nodeId="1204991215587">
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="11" startPosition="67" endLine="12" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="1204991215587" fileName="NodeActions_ActionGroup.java" startLine="12" startPosition="78" endLine="13" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
@@ -1641,7 +1640,7 @@
     <nodeInfo nodeId="686066472821691753" fileName="NewModel_Action.java" startLine="171" startPosition="89" endLine="172" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="686066472821692472" fileName="NewModel_Action.java" startLine="172" startPosition="34" endLine="173" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="686066472821692483" fileName="NewModel_Action.java" startLine="173" startPosition="85" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="686066472821692452" fileName="NewModel_Action.java" startLine="175" startPosition="38" endLine="176" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="686066472821692452" fileName="NewModel_Action.java" startLine="175" startPosition="49" endLine="176" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="686066472821692470" fileName="NewModel_Action.java" startLine="177" startPosition="7" endLine="178" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1218634788292" fileName="NewModel_Action.java" startLine="179" startPosition="5" endLine="180" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6351584993764441300" fileName="NewModel_Action.java" startLine="101" startPosition="14" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1707,7 +1706,7 @@
     <scopeInfo nodeId="650390925806007079" fileName="NewModel_Action.java" startLine="150" startPosition="27" endLine="151" endPosition="38" />
     <scopeInfo nodeId="2006872123071116610" fileName="NewModel_Action.java" startLine="158" startPosition="98" endLine="159" endPosition="105" />
     <scopeInfo nodeId="650390925806007108" fileName="NewModel_Action.java" startLine="162" startPosition="27" endLine="163" endPosition="33" />
-    <scopeInfo nodeId="686066472821691762" fileName="NewModel_Action.java" startLine="175" startPosition="38" endLine="176" endPosition="28" />
+    <scopeInfo nodeId="686066472821691762" fileName="NewModel_Action.java" startLine="175" startPosition="49" endLine="176" endPosition="28" />
     <scopeInfo nodeId="1215903504454" fileName="NewModel_Action.java" startLine="56" startPosition="7" endLine="58" endPosition="63">
       <varInfo nodeId="1215903504454" varName="enabled" />
     </scopeInfo>
@@ -6740,102 +6739,102 @@
     <nodeInfo nodeId="3948484860556681809" fileName="JavaStackTraceFilter.java" startLine="24" startPosition="48" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2162966196216183936" fileName="JavaStackTraceFilter.java" startLine="29" startPosition="61" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3948484860556682106" fileName="JavaStackTraceFilter.java" startLine="33" startPosition="71" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556681865" fileName="JavaStackTraceFilter.java" startLine="38" startPosition="86" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556681867" fileName="JavaStackTraceFilter.java" startLine="40" startPosition="5" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3948484860556681868" fileName="JavaStackTraceFilter.java" startLine="41" startPosition="0" endLine="42" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681879" fileName="JavaStackTraceFilter.java" startLine="42" startPosition="109" endLine="43" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681886" fileName="JavaStackTraceFilter.java" startLine="43" startPosition="42" endLine="44" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681895" fileName="JavaStackTraceFilter.java" startLine="45" startPosition="27" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556681900" fileName="JavaStackTraceFilter.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3948484860556681901" fileName="JavaStackTraceFilter.java" startLine="48" startPosition="0" endLine="49" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681909" fileName="JavaStackTraceFilter.java" startLine="49" startPosition="62" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681918" fileName="JavaStackTraceFilter.java" startLine="51" startPosition="34" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556681923" fileName="JavaStackTraceFilter.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3948484860556681924" fileName="JavaStackTraceFilter.java" startLine="54" startPosition="0" endLine="55" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681934" fileName="JavaStackTraceFilter.java" startLine="55" startPosition="80" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3948484860556681935" fileName="JavaStackTraceFilter.java" startLine="56" startPosition="0" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681957" fileName="JavaStackTraceFilter.java" startLine="61" startPosition="7" endLine="62" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681967" fileName="JavaStackTraceFilter.java" startLine="63" startPosition="27" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556681974" fileName="JavaStackTraceFilter.java" startLine="65" startPosition="5" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3948484860556681975" fileName="JavaStackTraceFilter.java" startLine="66" startPosition="0" endLine="67" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681981" fileName="JavaStackTraceFilter.java" startLine="67" startPosition="37" endLine="68" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556681986" fileName="JavaStackTraceFilter.java" startLine="69" startPosition="9" endLine="70" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3948484860556681997" fileName="JavaStackTraceFilter.java" startLine="71" startPosition="39" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556681999" fileName="JavaStackTraceFilter.java" startLine="73" startPosition="5" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3948484860556682014" fileName="JavaStackTraceFilter.java" startLine="76" startPosition="37" endLine="77" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556682023" fileName="JavaStackTraceFilter.java" startLine="78" startPosition="27" endLine="79" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556682028" fileName="JavaStackTraceFilter.java" startLine="80" startPosition="9" endLine="81" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556682292" fileName="JavaStackTraceFilter.java" startLine="83" startPosition="7" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3948484860556682075" fileName="JavaStackTraceFilter.java" startLine="88" startPosition="35" endLine="89" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3948484860556682033" fileName="JavaStackTraceFilter.java" startLine="93" startPosition="5" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1228715910319901615" fileName="JavaStackTraceFilter.java" startLine="95" startPosition="26" endLine="96" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1258376351369404331" fileName="JavaStackTraceFilter.java" startLine="97" startPosition="32" endLine="98" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1228715910319901643" fileName="JavaStackTraceFilter.java" startLine="101" startPosition="47" endLine="102" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3948484860556682208" fileName="JavaStackTraceFilter.java" startLine="105" startPosition="5" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556681865" fileName="JavaStackTraceFilter.java" startLine="41" startPosition="56" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556681867" fileName="JavaStackTraceFilter.java" startLine="43" startPosition="5" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3948484860556681868" fileName="JavaStackTraceFilter.java" startLine="44" startPosition="0" endLine="45" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681879" fileName="JavaStackTraceFilter.java" startLine="45" startPosition="109" endLine="46" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681886" fileName="JavaStackTraceFilter.java" startLine="46" startPosition="42" endLine="47" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681895" fileName="JavaStackTraceFilter.java" startLine="48" startPosition="27" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556681900" fileName="JavaStackTraceFilter.java" startLine="50" startPosition="5" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3948484860556681901" fileName="JavaStackTraceFilter.java" startLine="51" startPosition="0" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681909" fileName="JavaStackTraceFilter.java" startLine="52" startPosition="62" endLine="53" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681918" fileName="JavaStackTraceFilter.java" startLine="54" startPosition="34" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556681923" fileName="JavaStackTraceFilter.java" startLine="56" startPosition="5" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3948484860556681924" fileName="JavaStackTraceFilter.java" startLine="57" startPosition="0" endLine="58" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681934" fileName="JavaStackTraceFilter.java" startLine="58" startPosition="80" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3948484860556681935" fileName="JavaStackTraceFilter.java" startLine="59" startPosition="0" endLine="60" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681957" fileName="JavaStackTraceFilter.java" startLine="64" startPosition="7" endLine="65" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681967" fileName="JavaStackTraceFilter.java" startLine="66" startPosition="27" endLine="67" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556681974" fileName="JavaStackTraceFilter.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3948484860556681975" fileName="JavaStackTraceFilter.java" startLine="69" startPosition="0" endLine="70" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681981" fileName="JavaStackTraceFilter.java" startLine="70" startPosition="37" endLine="71" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556681986" fileName="JavaStackTraceFilter.java" startLine="72" startPosition="9" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3948484860556681997" fileName="JavaStackTraceFilter.java" startLine="74" startPosition="39" endLine="75" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556681999" fileName="JavaStackTraceFilter.java" startLine="76" startPosition="5" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3948484860556682014" fileName="JavaStackTraceFilter.java" startLine="79" startPosition="37" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556682023" fileName="JavaStackTraceFilter.java" startLine="81" startPosition="27" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556682028" fileName="JavaStackTraceFilter.java" startLine="83" startPosition="9" endLine="84" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556682292" fileName="JavaStackTraceFilter.java" startLine="86" startPosition="7" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3948484860556682075" fileName="JavaStackTraceFilter.java" startLine="91" startPosition="35" endLine="92" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3948484860556682033" fileName="JavaStackTraceFilter.java" startLine="96" startPosition="5" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1228715910319901615" fileName="JavaStackTraceFilter.java" startLine="98" startPosition="26" endLine="99" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1258376351369404331" fileName="JavaStackTraceFilter.java" startLine="100" startPosition="32" endLine="101" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1228715910319901643" fileName="JavaStackTraceFilter.java" startLine="104" startPosition="47" endLine="105" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3948484860556682208" fileName="JavaStackTraceFilter.java" startLine="108" startPosition="5" endLine="109" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2162966196216183922" fileName="JavaStackTraceFilter.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaStackTraceFilter#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="3948484860556681856" fileName="JavaStackTraceFilter.java" startLine="37" startPosition="88" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3948484860556681893" fileName="JavaStackTraceFilter.java" startLine="44" startPosition="41" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3948484860556681916" fileName="JavaStackTraceFilter.java" startLine="50" startPosition="48" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3948484860556681965" fileName="JavaStackTraceFilter.java" startLine="62" startPosition="41" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3948484860556682021" fileName="JavaStackTraceFilter.java" startLine="77" startPosition="79" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3948484860556682073" fileName="JavaStackTraceFilter.java" startLine="87" startPosition="47" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1258376351369404300" fileName="JavaStackTraceFilter.java" startLine="96" startPosition="89" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3948484860556681893" fileName="JavaStackTraceFilter.java" startLine="47" startPosition="41" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3948484860556681916" fileName="JavaStackTraceFilter.java" startLine="53" startPosition="48" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3948484860556681965" fileName="JavaStackTraceFilter.java" startLine="65" startPosition="41" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3948484860556682021" fileName="JavaStackTraceFilter.java" startLine="80" startPosition="79" endLine="83" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3948484860556682073" fileName="JavaStackTraceFilter.java" startLine="90" startPosition="47" endLine="93" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1258376351369404300" fileName="JavaStackTraceFilter.java" startLine="99" startPosition="89" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2162966196216183759" fileName="JavaStackTraceFilter.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryToParseLine#(Ljava/lang/String;I)Lcom/intellij/execution/filters/Filter/Result;" />
-    <nodeInfo nodeId="3948484860556681942" fileName="JavaStackTraceFilter.java" startLine="57" startPosition="46" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="970473428820204647" fileName="JavaStackTraceFilter.java" startLine="100" startPosition="121" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="3948484860556681942" fileName="JavaStackTraceFilter.java" startLine="60" startPosition="46" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="970473428820204647" fileName="JavaStackTraceFilter.java" startLine="103" startPosition="121" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Lcom/intellij/openapi/project/Project;)V" />
     <nodeInfo nodeId="2162966196216183927" fileName="JavaStackTraceFilter.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyFilter#(Ljava/lang/String;I)Lcom/intellij/execution/filters/Filter/Result;" />
-    <nodeInfo nodeId="3948484860556681984" fileName="JavaStackTraceFilter.java" startLine="68" startPosition="25" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="970473428820204628" fileName="JavaStackTraceFilter.java" startLine="99" startPosition="7" endLine="104" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556682067" fileName="JavaStackTraceFilter.java" startLine="86" startPosition="121" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="3948484860556682048" fileName="JavaStackTraceFilter.java" startLine="85" startPosition="29" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3948484860556682010" fileName="JavaStackTraceFilter.java" startLine="75" startPosition="105" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="3948484860556682000" fileName="JavaStackTraceFilter.java" startLine="74" startPosition="0" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3948484860556682294" fileName="JavaStackTraceFilter.java" startLine="84" startPosition="0" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3948484860556682034" fileName="JavaStackTraceFilter.java" startLine="94" startPosition="0" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3948484860556681848" fileName="JavaStackTraceFilter.java" startLine="36" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryToParseLine#(Ljava/lang/String;ILcom/intellij/openapi/project/Project;)Lcom/intellij/execution/filters/Filter/Result;" />
+    <nodeInfo nodeId="3948484860556681984" fileName="JavaStackTraceFilter.java" startLine="71" startPosition="25" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="970473428820204628" fileName="JavaStackTraceFilter.java" startLine="102" startPosition="7" endLine="107" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556681856" fileName="JavaStackTraceFilter.java" startLine="37" startPosition="88" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3948484860556682067" fileName="JavaStackTraceFilter.java" startLine="89" startPosition="121" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="navigate#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="3948484860556682048" fileName="JavaStackTraceFilter.java" startLine="88" startPosition="29" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3948484860556682010" fileName="JavaStackTraceFilter.java" startLine="78" startPosition="105" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="3948484860556682000" fileName="JavaStackTraceFilter.java" startLine="77" startPosition="0" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3948484860556682294" fileName="JavaStackTraceFilter.java" startLine="87" startPosition="0" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3948484860556682034" fileName="JavaStackTraceFilter.java" startLine="97" startPosition="0" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3948484860556681848" fileName="JavaStackTraceFilter.java" startLine="36" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryToParseLine#(Ljava/lang/String;ILcom/intellij/openapi/project/Project;)Lcom/intellij/execution/filters/Filter/Result;" />
     <scopeInfo nodeId="2162966196216183925" fileName="JavaStackTraceFilter.java" startLine="24" startPosition="48" endLine="25" endPosition="24" />
     <scopeInfo nodeId="2162966196216183935" fileName="JavaStackTraceFilter.java" startLine="29" startPosition="61" endLine="30" endPosition="67" />
     <scopeInfo nodeId="2162966196216183766" fileName="JavaStackTraceFilter.java" startLine="33" startPosition="71" endLine="34" endPosition="46" />
-    <scopeInfo nodeId="3948484860556681864" fileName="JavaStackTraceFilter.java" startLine="38" startPosition="86" endLine="39" endPosition="18" />
-    <scopeInfo nodeId="3948484860556681894" fileName="JavaStackTraceFilter.java" startLine="45" startPosition="27" endLine="46" endPosition="18" />
-    <scopeInfo nodeId="3948484860556681917" fileName="JavaStackTraceFilter.java" startLine="51" startPosition="34" endLine="52" endPosition="18" />
-    <scopeInfo nodeId="3948484860556681966" fileName="JavaStackTraceFilter.java" startLine="63" startPosition="27" endLine="64" endPosition="18" />
-    <scopeInfo nodeId="3948484860556681985" fileName="JavaStackTraceFilter.java" startLine="69" startPosition="9" endLine="70" endPosition="46" />
-    <scopeInfo nodeId="3948484860556681993" fileName="JavaStackTraceFilter.java" startLine="71" startPosition="0" endLine="72" endPosition="18">
+    <scopeInfo nodeId="3948484860556681864" fileName="JavaStackTraceFilter.java" startLine="41" startPosition="56" endLine="42" endPosition="18" />
+    <scopeInfo nodeId="3948484860556681894" fileName="JavaStackTraceFilter.java" startLine="48" startPosition="27" endLine="49" endPosition="18" />
+    <scopeInfo nodeId="3948484860556681917" fileName="JavaStackTraceFilter.java" startLine="54" startPosition="34" endLine="55" endPosition="18" />
+    <scopeInfo nodeId="3948484860556681966" fileName="JavaStackTraceFilter.java" startLine="66" startPosition="27" endLine="67" endPosition="18" />
+    <scopeInfo nodeId="3948484860556681985" fileName="JavaStackTraceFilter.java" startLine="72" startPosition="9" endLine="73" endPosition="46" />
+    <scopeInfo nodeId="3948484860556681993" fileName="JavaStackTraceFilter.java" startLine="74" startPosition="0" endLine="75" endPosition="18">
       <varInfo nodeId="3948484860556681994" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="3948484860556681996" fileName="JavaStackTraceFilter.java" startLine="71" startPosition="39" endLine="72" endPosition="18" />
-    <scopeInfo nodeId="3948484860556682022" fileName="JavaStackTraceFilter.java" startLine="78" startPosition="27" endLine="79" endPosition="22" />
-    <scopeInfo nodeId="3948484860556682074" fileName="JavaStackTraceFilter.java" startLine="88" startPosition="35" endLine="89" endPosition="96" />
-    <scopeInfo nodeId="1258376351369404301" fileName="JavaStackTraceFilter.java" startLine="97" startPosition="32" endLine="98" endPosition="20" />
-    <scopeInfo nodeId="970473428820204652" fileName="JavaStackTraceFilter.java" startLine="101" startPosition="47" endLine="102" endPosition="66" />
+    <scopeInfo nodeId="3948484860556681996" fileName="JavaStackTraceFilter.java" startLine="74" startPosition="39" endLine="75" endPosition="18" />
+    <scopeInfo nodeId="3948484860556682022" fileName="JavaStackTraceFilter.java" startLine="81" startPosition="27" endLine="82" endPosition="22" />
+    <scopeInfo nodeId="3948484860556682074" fileName="JavaStackTraceFilter.java" startLine="91" startPosition="35" endLine="92" endPosition="96" />
+    <scopeInfo nodeId="1258376351369404301" fileName="JavaStackTraceFilter.java" startLine="100" startPosition="32" endLine="101" endPosition="20" />
+    <scopeInfo nodeId="970473428820204652" fileName="JavaStackTraceFilter.java" startLine="104" startPosition="47" endLine="105" endPosition="66" />
     <scopeInfo nodeId="2162966196216183922" fileName="JavaStackTraceFilter.java" startLine="23" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="3948484860556681799" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3948484860556682072" fileName="JavaStackTraceFilter.java" startLine="87" startPosition="47" endLine="90" endPosition="11" />
+    <scopeInfo nodeId="3948484860556682072" fileName="JavaStackTraceFilter.java" startLine="90" startPosition="47" endLine="93" endPosition="11" />
     <scopeInfo nodeId="2162966196216183759" fileName="JavaStackTraceFilter.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="2162966196216183760" varName="line" />
       <varInfo nodeId="2162966196216183762" varName="offset" />
     </scopeInfo>
-    <scopeInfo nodeId="970473428820204647" fileName="JavaStackTraceFilter.java" startLine="100" startPosition="121" endLine="104" endPosition="0">
+    <scopeInfo nodeId="970473428820204647" fileName="JavaStackTraceFilter.java" startLine="103" startPosition="121" endLine="107" endPosition="0">
       <varInfo nodeId="970473428820204650" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="2162966196216183927" fileName="JavaStackTraceFilter.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="2162966196216183932" varName="length" />
       <varInfo nodeId="2162966196216183930" varName="line" />
     </scopeInfo>
-    <scopeInfo nodeId="3948484860556682013" fileName="JavaStackTraceFilter.java" startLine="76" startPosition="37" endLine="81" endPosition="38">
+    <scopeInfo nodeId="3948484860556682013" fileName="JavaStackTraceFilter.java" startLine="79" startPosition="37" endLine="84" endPosition="38">
       <varInfo nodeId="3948484860556682015" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3948484860556682067" fileName="JavaStackTraceFilter.java" startLine="86" startPosition="121" endLine="92" endPosition="0">
+    <scopeInfo nodeId="3948484860556682067" fileName="JavaStackTraceFilter.java" startLine="89" startPosition="121" endLine="95" endPosition="0">
       <varInfo nodeId="3948484860556682070" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="3948484860556682295" fileName="JavaStackTraceFilter.java" startLine="85" startPosition="29" endLine="92" endPosition="9" />
-    <scopeInfo nodeId="3948484860556682010" fileName="JavaStackTraceFilter.java" startLine="75" startPosition="105" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="3948484860556682035" fileName="JavaStackTraceFilter.java" startLine="95" startPosition="26" endLine="104" endPosition="9">
+    <scopeInfo nodeId="3948484860556682295" fileName="JavaStackTraceFilter.java" startLine="88" startPosition="29" endLine="95" endPosition="9" />
+    <scopeInfo nodeId="3948484860556682010" fileName="JavaStackTraceFilter.java" startLine="78" startPosition="105" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="3948484860556682035" fileName="JavaStackTraceFilter.java" startLine="98" startPosition="26" endLine="107" endPosition="9">
       <varInfo nodeId="1228715910319901616" varName="virtualFile" />
     </scopeInfo>
-    <scopeInfo nodeId="3948484860556681855" fileName="JavaStackTraceFilter.java" startLine="37" startPosition="88" endLine="106" endPosition="16">
+    <scopeInfo nodeId="3948484860556681855" fileName="JavaStackTraceFilter.java" startLine="37" startPosition="88" endLine="109" endPosition="16">
       <varInfo nodeId="3948484860556681910" varName="closingParenIndex" />
       <varInfo nodeId="3948484860556681976" varName="fileName" />
       <varInfo nodeId="3948484860556681936" varName="lastDot" />
@@ -6849,15 +6848,15 @@
       <varInfo nodeId="3948484860556681880" varName="tmpStr" />
       <varInfo nodeId="3948484860556681943" varName="unitName" />
     </scopeInfo>
-    <scopeInfo nodeId="3948484860556681848" fileName="JavaStackTraceFilter.java" startLine="36" startPosition="0" endLine="108" endPosition="0">
+    <scopeInfo nodeId="3948484860556681848" fileName="JavaStackTraceFilter.java" startLine="36" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="3948484860556681849" varName="line" />
       <varInfo nodeId="3948484860556681851" varName="offset" />
       <varInfo nodeId="3948484860556682103" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="2162966196216183754" fileName="JavaStackTraceFilter.java" startLine="19" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.ide.actions.JavaStackTraceFilter" />
-    <unitInfo nodeId="3948484860556682008" fileName="JavaStackTraceFilter.java" startLine="75" startPosition="77" endLine="83" endPosition="5" unitName="jetbrains.mps.ide.actions.JavaStackTraceFilter$1" />
-    <unitInfo nodeId="3948484860556682065" fileName="JavaStackTraceFilter.java" startLine="86" startPosition="104" endLine="92" endPosition="7" unitName="jetbrains.mps.ide.actions.JavaStackTraceFilter$2" />
-    <unitInfo nodeId="970473428820204645" fileName="JavaStackTraceFilter.java" startLine="100" startPosition="104" endLine="104" endPosition="7" unitName="jetbrains.mps.ide.actions.JavaStackTraceFilter$3" />
+    <unitInfo nodeId="2162966196216183754" fileName="JavaStackTraceFilter.java" startLine="19" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.ide.actions.JavaStackTraceFilter" />
+    <unitInfo nodeId="3948484860556682008" fileName="JavaStackTraceFilter.java" startLine="78" startPosition="77" endLine="86" endPosition="5" unitName="jetbrains.mps.ide.actions.JavaStackTraceFilter$1" />
+    <unitInfo nodeId="3948484860556682065" fileName="JavaStackTraceFilter.java" startLine="89" startPosition="104" endLine="95" endPosition="7" unitName="jetbrains.mps.ide.actions.JavaStackTraceFilter$2" />
+    <unitInfo nodeId="970473428820204645" fileName="JavaStackTraceFilter.java" startLine="103" startPosition="104" endLine="107" endPosition="7" unitName="jetbrains.mps.ide.actions.JavaStackTraceFilter$3" />
   </root>
   <root nodeId="2214103008221911161">
     <nodeInfo nodeId="2214103008221911161" fileName="FindModelUsages_ActionGroup.java" startLine="8" startPosition="71" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -8211,8 +8210,8 @@
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907756759" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -13218,9 +13217,7 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="3" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="43" startPosition="87" endLine="48" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="104" startPosition="59" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="80" startPosition="26" endLine="86" endPosition="9">
-      <varInfo nodeId="7889360268649425705" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="80" startPosition="26" endLine="86" endPosition="9" />
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="118" startPosition="111" endLine="124" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="42" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />
@@ -13847,7 +13844,7 @@
     <nodeInfo nodeId="4910920182626568533" fileName="RenameFavoritesList_Action.java" startLine="62" startPosition="9" endLine="63" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4910920182626568623" fileName="RenameFavoritesList_Action.java" startLine="63" startPosition="120" endLine="64" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4910920182626568592" fileName="RenameFavoritesList_Action.java" startLine="64" startPosition="39" endLine="65" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4910920182626568620" fileName="RenameFavoritesList_Action.java" startLine="66" startPosition="60" endLine="67" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4910920182626568620" fileName="RenameFavoritesList_Action.java" startLine="66" startPosition="74" endLine="67" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4910920182626568541" fileName="RenameFavoritesList_Action.java" startLine="68" startPosition="7" endLine="69" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4910920182626568552" fileName="RenameFavoritesList_Action.java" startLine="70" startPosition="37" endLine="71" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4910920182626568634" fileName="RenameFavoritesList_Action.java" startLine="72" startPosition="7" endLine="73" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -13876,7 +13873,7 @@
     <scopeInfo nodeId="8243555296290550384" fileName="RenameFavoritesList_Action.java" startLine="43" startPosition="33" endLine="44" endPosition="94" />
     <scopeInfo nodeId="8243555296290550384" fileName="RenameFavoritesList_Action.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
     <scopeInfo nodeId="8243555296290550384" fileName="RenameFavoritesList_Action.java" startLine="55" startPosition="62" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="4910920182626568603" fileName="RenameFavoritesList_Action.java" startLine="66" startPosition="60" endLine="67" endPosition="15" />
+    <scopeInfo nodeId="4910920182626568603" fileName="RenameFavoritesList_Action.java" startLine="66" startPosition="74" endLine="67" endPosition="15" />
     <scopeInfo nodeId="4910920182626568551" fileName="RenameFavoritesList_Action.java" startLine="70" startPosition="37" endLine="71" endPosition="15" />
     <scopeInfo nodeId="8243555296290550384" fileName="RenameFavoritesList_Action.java" startLine="78" startPosition="33" endLine="79" endPosition="93" />
     <scopeInfo nodeId="8243555296290550384" fileName="RenameFavoritesList_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63">

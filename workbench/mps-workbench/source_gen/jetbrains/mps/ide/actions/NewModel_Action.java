@@ -172,7 +172,7 @@ public class NewModel_Action extends BaseAction {
       String name = gen.getName();
       String genNamespace = gen.getSourceLanguage().getModuleFqName() + ".generator";
 
-      if (StringUtils.isEmpty(name)) {
+      if ((name == null || name.length() == 0)) {
         return genNamespace;
       }
       return genNamespace + "." + name;

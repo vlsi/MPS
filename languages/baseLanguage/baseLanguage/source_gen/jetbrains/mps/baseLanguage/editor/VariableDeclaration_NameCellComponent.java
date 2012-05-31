@@ -89,7 +89,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
         for (String name : names) {
           String prefix = VariableDeclaration_Behavior.call_getPrefix_3012473318495495520(node, project);
           String suffix = VariableDeclaration_Behavior.call_getSuffix_3012473318495499856(node, project);
-          String mainName = (StringUtils.isEmpty(prefix) ?
+          String mainName = ((prefix == null || prefix.length() == 0) ?
             name :
             NameUtil.capitalize(name)
           );

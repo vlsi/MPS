@@ -307,7 +307,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1237984687060(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "separator"));
+    return SPropertyOperations.getBoolean(_context.getNode(), "withSeparator") || isNotEmpty_x583g4_a0a0a66(SPropertyOperations.getString(_context.getNode(), "separator"));
   }
 
   public static boolean ifMacro_Condition_1237470933865(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -436,6 +436,10 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1236348444985(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "list", true), "statement", true);
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0a66(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static class QuotationClass_x583g4_a1a0a0j {
