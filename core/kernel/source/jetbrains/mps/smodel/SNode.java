@@ -131,7 +131,7 @@ public final class SNode {
   SModel getModelInternal() {
     return myModel;
   }
-  
+
   public StackTraceElement[] getModelDisposedTrace() {
     if (myModel != null) {
       return myModel.getDisposedStacktrace();
@@ -541,9 +541,9 @@ public final class SNode {
       }
     }
     if (count > 1) {
-      String errorMessage = "ERROR: " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getSModelReference() + "\n";
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getSModelReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
-      LOG.error(errorMessage, this);
+      LOG.error(errorMessage, new Throwable(), this);
     }
     NodeReadEventsCaster.fireNodeChildReadAccess(this, role, foundChild);
     return foundChild;
@@ -736,7 +736,7 @@ public final class SNode {
 
     assert wasRole != null;
     SModel model = getModel();
-    if (model!=null && ModelChange.needFireEvents(model, this)) {
+    if (model != null && ModelChange.needFireEvents(model, this)) {
       model.fireBeforeChildRemovedEvent(this, wasRole, wasChild, anchor);
     }
 
@@ -744,7 +744,7 @@ public final class SNode {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    if(model == null) return;
+    if (model == null) return;
 
     model.performUndoableAction(new RemoveChildUndoableAction(this, anchor, wasRole, wasChild));
 
@@ -786,7 +786,7 @@ public final class SNode {
       child.changeModel(model);
     }
 
-    if (model==null) return;
+    if (model == null) return;
 
     model.performUndoableAction(new InsertChildAtUndoableAction(this, anchor, _role, child));
 
@@ -1072,7 +1072,7 @@ public final class SNode {
     _reference().add(i, reference);
 
     SModel model = getModel();
-    if (model==null) return;
+    if (model == null) return;
 
     model.performUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
 
@@ -1426,7 +1426,7 @@ public final class SNode {
 
   public Language getLanguage() {
     String languageNamespace = getLanguageNamespace();
-    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace,Language.class);
+    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo
