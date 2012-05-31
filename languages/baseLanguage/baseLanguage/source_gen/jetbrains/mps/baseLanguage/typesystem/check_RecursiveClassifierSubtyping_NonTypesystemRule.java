@@ -7,9 +7,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,9 +20,11 @@ public class check_RecursiveClassifierSubtyping_NonTypesystemRule extends Abstra
   }
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SNodeOperations.getReferences(classifier);
     if (ClassifierScopeUtils.isHierarchyCyclic(classifier)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("name");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classifier, "Recursive classifiers subtyping", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "945838171799900038", null, errorTarget);
       }
     }
