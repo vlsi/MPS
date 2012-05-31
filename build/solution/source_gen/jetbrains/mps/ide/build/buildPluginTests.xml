@@ -25,9 +25,8 @@
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes">
-    <mkdir dir="${build.layout}/plugins" />
-    <mkdir dir="${build.layout}/plugins/mps-core" />
-    <mkdir dir="${build.layout}/plugins/mps-core/lib" />
+    <mkdir dir="${build.layout}/mps-core" />
+    <mkdir dir="${build.layout}/mps-core/lib" />
     <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar" />
     <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains" />
     <mkdir dir="${build.tmp}/default/mps-plugin-tests.jar/jetbrains/mps" />
@@ -63,7 +62,7 @@
       </fileset>
       <flattenmapper />
     </copy>
-    <jar destfile="${build.layout}/plugins/mps-core/lib/mps-plugin-tests.jar">
+    <jar destfile="${build.layout}/mps-core/lib/mps-plugin-tests.jar">
       <fileset dir="${build.tmp}/java/out/mps-plugin-tests" />
       <zipfileset file="${mps_home}/IdeaPlugin/tests/editorTests/models/test.mps" prefix="jetbrains/mps/idea/core/tests" />
       <fileset dir="${build.tmp}/default/mps-plugin-tests.jar" />

@@ -12,7 +12,6 @@
   <property file="${basedir}/build.number" prefix="loaded.for.idea.platform.build.number" />
   <property name="idea.platform.build.number" value="${loaded.for.idea.platform.build.number.idea.platform.build.number}" />
   <property name="mps_home" location="${basedir}" />
-  <property name="idea_home" location="" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
   <property name="artifacts.buildDates" location="${build.dir}/artifacts/buildDates" />
@@ -27,7 +26,7 @@
   <property name="artifacts.buildDebuggerPlugin" location="${build.dir}/artifacts/buildDebuggerPlugin" />
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
   <property name="artifacts.buildObsolete" location="${build.dir}/artifacts/buildObsolete" />
-  <property name="artifacts.IDEA" location="${idea_home}" />
+  <property name="artifacts.IDEA" location="${mps_home}" />
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
@@ -91,6 +90,22 @@
       <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
       <fileset dir="${build.tmp}/default/branding.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/MPS-src.zip" />
+    <copy todir="${build.tmp}/default/MPS-src.zip">
+      <fileset dir="${mps_home}">
+        <include name="MPSPlugin/**/*.java" />
+        <include name="core/**/*.java" />
+        <include name="languages/**/*.java" />
+        <include name="plugins/**/*.java" />
+        <include name="workbench/**/*.java" />
+        <include name="testbench/**/*.java" />
+        <exclude name="**/sandbox/**" />
+      </fileset>
+      <regexpmapper from="(.*)(/|\\)(src|sources|source|source_gen|source-api)(/|\\)(.*)" to="\5" />
+    </copy>
+    <zip destfile="${build.layout}/lib/MPS-src.zip">
+      <fileset dir="${build.tmp}/default/MPS-src.zip" />
+    </zip>
     <mkdir dir="${build.layout}/license" />
     <copy todir="${build.layout}/license">
       <fileset dir="${basedir}/license" />
