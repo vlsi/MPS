@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
@@ -51,6 +52,10 @@ public class ClassifierScopeUtils {
     return getClassifierAndSuperClassifiersData(classifier).classifiers;
   }
 
+  public static boolean isHierarchyCyclic(SNode classifier) {
+    return getClassifierAndSuperClassifiersData(classifier).isCyclic;
+  }
+
   private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(final SNode classifier) {
     if (SNodeOperations.getModel(classifier).isTransient()) {
       return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
@@ -66,18 +71,32 @@ public class ClassifierScopeUtils {
   private static class ClassifierAndSuperClassifiersData {
     /*package*/ final Set<SNode> classifiers;
     /*package*/ final Map<SNode, SNode> typeByTypeVariable;
+    /*package*/ final boolean isCyclic;
 
     /*package*/ ClassifierAndSuperClassifiersData(SNode topClassifier) {
       typeByTypeVariable = MapSequence.fromMap(new HashMap<SNode, SNode>());
       classifiers = SetSequence.fromSet(new LinkedHashSet<SNode>());
-      collectImplementedAndExtended(topClassifier, null);
+      isCyclic = collectImplementedAndExtended(topClassifier, SetSequence.fromSet(new HashSet<SNode>()), null);
     }
 
-    private void collectImplementedAndExtended(SNode classifier, List<SNode> typeParms) {
+    /**
+     * 
+     * 
+     * @param classifier classifier
+     * @param subClassifiers subClassifiers
+     * @param typeParms typeParams
+     * @return is hierarchy cyclic?
+     */
+    private boolean collectImplementedAndExtended(SNode classifier, Set<SNode> subClassifiers, List<SNode> typeParms) {
+      if (SetSequence.fromSet(subClassifiers).contains(classifier)) {
+        return true;
+      }
       if ((classifier == null) || SetSequence.fromSet(classifiers).contains(classifier)) {
-        return;
+        return false;
       }
       SetSequence.fromSet(classifiers).addElement(classifier);
+      SetSequence.fromSet(subClassifiers).addElement(classifier);
+
       if (ListSequence.fromList(typeParms).isNotEmpty()) {
         Iterator<SNode> typeVars = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).iterator();
         for (SNode typeParm : typeParms) {
@@ -90,8 +109,13 @@ public class ClassifierScopeUtils {
       }
 
       for (SNode superType : ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getExtendedClassifierTypes_2201875424516179426", new Class[]{SNode.class}))) {
-        collectImplementedAndExtended(SLinkOperations.getTarget(superType, "classifier", false), SLinkOperations.getTargets(superType, "parameter", true));
+        if (collectImplementedAndExtended(SLinkOperations.getTarget(superType, "classifier", false), subClassifiers, SLinkOperations.getTargets(superType, "parameter", true))) {
+          return true;
+        }
       }
+
+      SetSequence.fromSet(subClassifiers).removeElement(classifier);
+      return false;
     }
   }
 }
