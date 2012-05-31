@@ -16,7 +16,7 @@ import jetbrains.mps.refactoring.framework.RefactoringContext;
       }
       // generation switched off temporary 
       refactoringContext.setDoesGenerateModels(false);
-      doExecute(refactoringContext);
+      executeSimple(refactoringContext);
     } catch (Throwable t) {
       myLog.error(t);
     }
