@@ -90,7 +90,7 @@
     </zip>
     <mkdir dir="${build.layout}/license" />
     <copy todir="${build.layout}/license">
-      <fileset dir="${basedir}/license" />
+      <fileset dir="${artifacts.buildStandalone}/license" />
     </copy>
     <mkdir dir="${build.layout}/plugin" />
     <copy todir="${build.layout}/plugin">

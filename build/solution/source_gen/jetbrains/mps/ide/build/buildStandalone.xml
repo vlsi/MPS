@@ -35,6 +35,10 @@
     <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildWorkbench}/lib" />
     </copy>
+    <mkdir dir="${build.layout}/license" />
+    <copy todir="${build.layout}/license">
+      <fileset dir="${basedir}/license" />
+    </copy>
     <mkdir dir="${build.layout}/plugins" />
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildCoreEx}/plugins" />
