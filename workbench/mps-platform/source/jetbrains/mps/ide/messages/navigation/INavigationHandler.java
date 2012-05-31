@@ -18,6 +18,6 @@ package jetbrains.mps.ide.messages.navigation;
 import com.intellij.openapi.project.Project;
 
 interface INavigationHandler<T> {
-  boolean canNavigate(Project project, T object);
-  void navigate(Project project, T object, boolean focus, boolean select);
+  boolean canNavigate(T object);
+  void navigate(T object, Project project, boolean focus, boolean select);
 }

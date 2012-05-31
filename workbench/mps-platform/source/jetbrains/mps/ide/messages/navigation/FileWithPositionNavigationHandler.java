@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.messages.navigation;
 
-import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.editor.LogicalPosition;
 import com.intellij.openapi.editor.ScrollType;
 import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
@@ -24,16 +22,15 @@ import com.intellij.openapi.fileEditor.TextEditor;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.make.FileWithPosition;
 
 class FileWithPositionNavigationHandler implements INavigationHandler<FileWithPosition> {
-  public boolean canNavigate(Project project, FileWithPosition pos) {
+  public boolean canNavigate(FileWithPosition pos) {
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
     return vf != null;
   }
 
-  public void navigate(Project project, FileWithPosition pos, boolean focus, boolean select) {
+  public void navigate(FileWithPosition pos, Project project, boolean focus, boolean select) {
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
     if (vf == null) return;
 

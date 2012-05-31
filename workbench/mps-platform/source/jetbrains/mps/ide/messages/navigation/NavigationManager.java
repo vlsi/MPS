@@ -47,30 +47,36 @@ public class NavigationManager {
     myHandlers.put(ModuleReference.class, new ModuleReferenceNavigationHandler());
   }
 
+  public boolean canNavigateTo(Object o) {
+    ModelAccess.assertLegalRead();
+    return getHandlers(o).isEmpty();
+  }
+
   public void navigateTo(Project project, Object o, boolean focus, boolean select) {
-    ModelAccess.assertLegalWrite();
+    ModelAccess.assertLegalRead();
 
-    List<INavigationHandler> handlers = getHandlers(project, o);
-    if (handlers.isEmpty()){
-      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
-      return;
-    }
-
-    for (INavigationHandler h : handlers) {
-      h.navigate(project, o, focus, select);
+    for (INavigationHandler h : getHandlers(o)) {
+      h.navigate(o, project, focus, select);
     }
   }
 
-  private List<INavigationHandler> getHandlers(Project project, Object o){
+  private List<INavigationHandler> getHandlers(Object o) {
     ArrayList<INavigationHandler> result = new ArrayList<INavigationHandler>();
+    boolean hasHandler = false;
     for (Class c : myHandlers.keySet()) {
       if (!c.isInstance(o)) continue;
 
       INavigationHandler handler = myHandlers.get(c);
-      if (!handler.canNavigate(project, o)) continue;
+      hasHandler = true;
+      if (!handler.canNavigate(o)) continue;
 
       result.add(handler);
     }
+
+    if (!hasHandler) {
+      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
+    }
+
     return result;
   }
 }

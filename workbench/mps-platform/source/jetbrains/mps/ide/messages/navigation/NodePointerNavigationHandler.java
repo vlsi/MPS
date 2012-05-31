@@ -20,13 +20,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 class NodePointerNavigationHandler implements INavigationHandler<SNodePointer> {
-  public boolean canNavigate(Project project, SNodePointer object) {
+  public boolean canNavigate(SNodePointer object) {
     return isCorrectNode(object);
   }
 
@@ -45,7 +44,7 @@ class NodePointerNavigationHandler implements INavigationHandler<SNodePointer> {
     return true;
   }
 
-  public void navigate(Project project, SNodePointer node, boolean focus, boolean select) {
+  public void navigate(SNodePointer node, Project project, boolean focus, boolean select) {
     IModule module = node.getNode().getModel().getModelDescriptor().getModule();
     ModuleContext context = new ModuleContext(module, ProjectHelper.toMPSProject(project));
 

@@ -19,17 +19,16 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
 
 class NodeWithContextNavigationHandler implements INavigationHandler<NodeWithContext> {
-  public boolean canNavigate(Project project, NodeWithContext object) {
+  public boolean canNavigate(NodeWithContext object) {
     IOperationContext context = object.getContext();
     if (context == null) return false;
 
     return NodePointerNavigationHandler.isCorrectNode(object.getNode());
   }
 
-  public void navigate(Project project, NodeWithContext object, boolean focus, boolean select) {
+  public void navigate(NodeWithContext object, Project project, boolean focus, boolean select) {
     NavigationSupport.getInstance().openNode(object.getContext(), object.getNode().getNode(), focus, select);
   }
 }

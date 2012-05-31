@@ -310,7 +310,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
           item = (IMessage) myModel.getElementAt(index);
         }
 
-        if (item != null && item.getHintObject() != null && myAutoscrollToSourceAction.isSelected(null)) {
+        if (item != null && myAutoscrollToSourceAction.isSelected(null) && MessagesListCellRenderer.canNavigate(item)) {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         } else {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));

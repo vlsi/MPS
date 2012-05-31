@@ -27,12 +27,12 @@ import jetbrains.mps.ide.messages.FileWithLogicalPosition;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 
 class FileWithLogicalPositionNavigationHandler implements INavigationHandler<FileWithLogicalPosition> {
-  public boolean canNavigate(Project project, FileWithLogicalPosition pos) {
+  public boolean canNavigate(FileWithLogicalPosition pos) {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
     return vf != null;
   }
 
-  public void navigate(Project project, FileWithLogicalPosition pos, boolean focus, boolean select) {
+  public void navigate(FileWithLogicalPosition pos, Project project, boolean focus, boolean select) {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
     if (vf == null) return;
 

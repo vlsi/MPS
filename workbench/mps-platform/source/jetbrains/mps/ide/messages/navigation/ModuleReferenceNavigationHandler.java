@@ -24,12 +24,12 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 class ModuleReferenceNavigationHandler implements INavigationHandler<ModuleReference> {
-  public boolean canNavigate(Project project, ModuleReference object) {
+  public boolean canNavigate(ModuleReference object) {
     IModule module = MPSModuleRepository.getInstance().getModule(object);
     return module != null;
   }
 
-  public void navigate(Project project, ModuleReference object, boolean focus, boolean select) {
+  public void navigate(ModuleReference object, Project project, boolean focus, boolean select) {
     IModule module = MPSModuleRepository.getInstance().getModule(object);
     if (module == null) return;
 
