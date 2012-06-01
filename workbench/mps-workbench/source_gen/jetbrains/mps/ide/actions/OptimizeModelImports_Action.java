@@ -6,17 +6,20 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import java.util.List;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
-import java.util.List;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
@@ -36,9 +39,21 @@ public class OptimizeModelImports_Action extends BaseAction {
     return true;
   }
 
+  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    List<SModelDescriptor> m = ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models"));
+    return ListSequence.fromList(m).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return it instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) it).isReadOnly());
+      }
+    }).isNotEmpty();
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event, _params);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "OptimizeModelImports", t);
