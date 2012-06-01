@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class BTestCase_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements ITestCase_BehaviorDescriptor {
   public BTestCase_BehaviorDescriptor() {
@@ -28,6 +29,10 @@ public class BTestCase_BehaviorDescriptor extends ClassConcept_BehaviorDescripto
 
   public List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     return BTestCase_Behavior.virtual_getTestMethods_2148145109766218395(thisNode);
+  }
+
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
