@@ -5449,6 +5449,29 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9024276490549299660">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9024276490549299661">
+            <property name="name" nameId="tpck.1169194664001" value="aspectsOption" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9024276490549299662">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4rt1.~DeleteDialog$DeleteOption" resolveInfo="DeleteDialog.DeleteOption" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9024276490549299663">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9024276490549299664">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog$DeleteOption%d&lt;init&gt;(java%dlang%dString,boolean,boolean)" resolveInfo="DeleteDialog.DeleteOption" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9024276490549299665">
+                  <property name="value" nameId="tpee.1070475926801" value="Delete Aspects" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549299666">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549299667">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="9024276490549299659" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1229266477424">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1229266477425">
             <property name="name" nameId="tpck.1169194664001" value="dialogNeeded" />
@@ -5543,6 +5566,9 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192624">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192586" resolveInfo="safeOption" />
                     </node>
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549299669">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549299661" resolveInfo="aspectsOption" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -5602,6 +5628,14 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192586" resolveInfo="safeOption" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="9024276490549192652">
+                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4rt1.~DeleteDialog$DeleteOption%dselected" resolveInfo="selected" />
+                        </node>
+                      </node>
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9024276490549299692">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549299671">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549299661" resolveInfo="aspectsOption" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="9024276490549299697">
                           <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4rt1.~DeleteDialog$DeleteOption%dselected" resolveInfo="selected" />
                         </node>
                       </node>
@@ -26125,6 +26159,10 @@
         <property name="name" nameId="tpck.1169194664001" value="safe" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="8321617901826003076" />
       </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="9024276490549300692">
+        <property name="name" nameId="tpck.1169194664001" value="aspects" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="9024276490549300694" />
+      </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8321617901826003077">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8321617901826003078">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8321617901826003079">
@@ -26153,6 +26191,16 @@
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8321617901826003089">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8321617901826003075" resolveInfo="safe" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9024276490549300703">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="9024276490549300704">
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="9024276490549300712">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549300700" resolveInfo="myAspects" />
+            </node>
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="9024276490549300708">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549300692" resolveInfo="aspects" />
             </node>
           </node>
         </node>
@@ -26913,6 +26961,11 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="9024276490549300700">
+      <property name="name" nameId="tpck.1169194664001" value="myAspects" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="9024276490549300701" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="9024276490549300702" />
     </node>
   </root>
   <root id="2003512433031647631">

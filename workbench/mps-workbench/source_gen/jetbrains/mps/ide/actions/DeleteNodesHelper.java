@@ -21,11 +21,13 @@ public class DeleteNodesHelper {
   private List<SNode> myNodes;
   private IOperationContext myContext;
   private boolean mySafe;
+  private boolean myAspects;
 
-  public DeleteNodesHelper(List<SNode> nodes, IOperationContext context, boolean safe) {
+  public DeleteNodesHelper(List<SNode> nodes, IOperationContext context, boolean safe, boolean aspects) {
     myNodes = nodes;
     myContext = context;
     mySafe = safe;
+    myAspects = aspects;
   }
 
   public void deleteNodes(boolean fromProjectPane) {

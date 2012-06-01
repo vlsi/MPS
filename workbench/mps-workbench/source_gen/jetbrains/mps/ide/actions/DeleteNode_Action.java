@@ -75,6 +75,8 @@ public class DeleteNode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
+      final DeleteDialog.DeleteOption aspectsOption = new DeleteDialog.DeleteOption("Delete Aspects", true, true);
+
       final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -87,7 +89,7 @@ public class DeleteNode_Action extends BaseAction {
         }
       });
       if (dialogNeeded.value) {
-        DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?", safeOption);
+        DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?", safeOption, aspectsOption);
         dialog.show();
         if (!(dialog.isOK())) {
           return;
@@ -95,7 +97,7 @@ public class DeleteNode_Action extends BaseAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), safeOption.selected).deleteNodes(true);
+          new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), safeOption.selected, aspectsOption.selected).deleteNodes(true);
         }
       });
     } catch (Throwable t) {
