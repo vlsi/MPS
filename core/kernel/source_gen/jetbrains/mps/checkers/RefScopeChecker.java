@@ -8,12 +8,15 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
@@ -38,8 +41,14 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);
       }
-
-      Scope refScope = ModelConstraintsUtil.getScope(ref, operationContext);
+      if (node == null || SNodeOperations.getModel(node) == null) {
+        return;
+      }
+      IModule module = check_bt3k2y_a0k0c0a(SNodeOperations.getModel(node).getModelDescriptor());
+      if (module == null) {
+        return;
+      }
+      Scope refScope = ModelConstraintsUtil.getScope(ref, new ModuleOperationContext(module));
       if (refScope instanceof ErrorScope) {
         component.addError(node, ((ErrorScope) refScope).getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       } else if (!(refScope.contains(target))) {
@@ -58,5 +67,12 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       }
     }
+  }
+
+  private static IModule check_bt3k2y_a0k0c0a(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }
