@@ -201,7 +201,7 @@ public class DebuggerToolPanel {
 
     @Override
     public Object getElementAt(int index) {
-      List<IThread> threads = getThreads();
+      List<? extends IThread> threads = getThreads();
       if (index >= threads.size()) {
         return null;
       }
@@ -212,7 +212,7 @@ public class DebuggerToolPanel {
       fireContentsChanged(DebuggerToolPanel.this, -1, getSize());
     }
 
-    private List<IThread> getThreads() {
+    private List<? extends IThread> getThreads() {
       return myUiState.getThreads();
     }
   }

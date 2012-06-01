@@ -30,6 +30,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private final String myClassFqName;
   private final int myIndex;
   private final ThreadReference myThreadReference;
+  private JavaLocation myJavaLocation;
 
   public JavaStackFrame(ThreadReference threadReference, int i) {
     super(new Pair<ThreadReference, Integer>(threadReference, i));

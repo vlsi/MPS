@@ -7,6 +7,7 @@ import jetbrains.mps.debug.api.programState.IThread;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IStackFrame;
+import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Collections;
 import java.util.Map;
 import jetbrains.mps.debug.api.programState.IWatchable;
@@ -25,14 +26,18 @@ public abstract class AbstractUiState {
   public abstract IThread getThread();
 
   @NotNull
-  public abstract List<IThread> getThreads();
+  public abstract List<? extends IThread> getThreads();
 
   @Nullable
   public abstract IStackFrame getStackFrame();
 
   public abstract boolean isPausedOnBreakpoint();
 
-  protected abstract IThread findThread();
+  @Deprecated
+  @ToRemove(version = 2.5)
+  protected IThread findThread() {
+    return null;
+  }
 
   protected abstract AbstractUiState selectThreadInternal(@Nullable IThread thread);
 

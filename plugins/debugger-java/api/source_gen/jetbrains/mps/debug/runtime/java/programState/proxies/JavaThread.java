@@ -31,7 +31,7 @@ public class JavaThread extends ProxyForJava implements IThread {
     myThreadReference = threadReference;
   }
 
-  public synchronized void initialize() {
+  private synchronized void initializeFrames() {
     if (myInitialized) {
       return;
     }
@@ -49,19 +49,19 @@ public class JavaThread extends ProxyForJava implements IThread {
 
   @Override
   public List<IStackFrame> getFrames() {
-    initialize();
+    initializeFrames();
     return myStackFrames;
   }
 
   @Override
   public int getFramesCount() {
-    initialize();
+    initializeFrames();
     return myStackFrames.size();
   }
 
   @Nullable
   public IStackFrame getFrame(int index) {
-    initialize();
+    initializeFrames();
     return ListSequence.fromList(myStackFrames).getElement(index);
   }
 
