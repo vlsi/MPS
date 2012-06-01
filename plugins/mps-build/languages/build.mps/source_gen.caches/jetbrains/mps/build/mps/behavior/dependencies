@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_ExtractedModuleDependency_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Group_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginDependency_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroup_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginModule_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin_BehaviorDescriptor" />
@@ -262,6 +263,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginDependency_BehaviorDescriptor" file="BuildMps_IdeaPluginDependency_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor" file="BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />

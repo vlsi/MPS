@@ -33,8 +33,13 @@ public class CompareTransientModels_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientModelsModule.TransientSModelDescriptor && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientModelsModule.TransientSModelDescriptor && eq_5whyyr_a0a0a0(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0).getLongName(), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1).getLongName());
+    return ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientModelsModule.TransientSModelDescriptor && ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientModelsModule.TransientSModelDescriptor && eq_5whyyr_a0a0a1(((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(0).getLongName(), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")).get(1).getLongName());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -81,7 +86,7 @@ public class CompareTransientModels_Action extends BaseAction {
     }
   }
 
-  private static boolean eq_5whyyr_a0a0a0(Object a, Object b) {
+  private static boolean eq_5whyyr_a0a0a1(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

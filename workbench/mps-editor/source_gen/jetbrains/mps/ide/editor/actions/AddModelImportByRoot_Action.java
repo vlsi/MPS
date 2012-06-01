@@ -41,6 +41,11 @@ public class AddModelImportByRoot_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return false;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModelDescriptor) MapSequence.fromMap(_params).get("model")) instanceof EditableSModelDescriptor;
   }
@@ -134,14 +139,14 @@ public class AddModelImportByRoot_Action extends BaseAction {
     EditorCell selectedCell = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell();
     if (selectedCell instanceof EditorCell_Label) {
       EditorCell_Label editorCellLabel = (EditorCell_Label) selectedCell;
-      if (editorCellLabel.isErrorState() && !(isEmpty_3mx29z_a0a0b0c0e(editorCellLabel.getText()))) {
+      if (editorCellLabel.isErrorState() && !(isEmpty_3mx29z_a0a0b0c0f(editorCellLabel.getText()))) {
         return editorCellLabel;
       }
     }
     return null;
   }
 
-  public static boolean isEmpty_3mx29z_a0a0b0c0e(String str) {
+  public static boolean isEmpty_3mx29z_a0a0b0c0f(String str) {
     return str == null || str.length() == 0;
   }
 }

@@ -33,6 +33,11 @@ public class DeleteModules_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((Integer) MapSequence.fromMap(_params).get("selSize")) == 0) {
       return false;

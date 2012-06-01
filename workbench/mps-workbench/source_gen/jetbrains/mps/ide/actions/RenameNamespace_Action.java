@@ -33,6 +33,11 @@ public class RenameNamespace_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane(_params) != null && !(((NamespaceTextNode) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isFinalName());
   }

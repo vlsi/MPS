@@ -12,31 +12,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AttributeQualifier_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.AllAttributesQualifier_BehaviorDescriptor" file="AllAttributesQualifier_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.IAttributeAccessQualifier_BehaviorDescriptor" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.AttributeAccessOperation_Behavior" file="AttributeAccessOperation_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccess_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.AttributeAccessOperation_BehaviorDescriptor" file="AttributeAccessOperation_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AttributeAccessOperation_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccess_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.SNodeOperation_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.AttributeAccess_Behavior" file="AttributeAccess_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -109,8 +84,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AllAttributeQualifier_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AllAttributesQualifier_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AttributeAccessOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.AttributeAccess_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.CheckedModuleReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ConceptFqNameRefExpression_BehaviorDescriptor" />
@@ -137,7 +110,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.IfInstanceOfVarReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.IfInstanceOfVariable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LanguageReferenceExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkAttributeAccessQualifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkAttributeQualifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkList_AddAllOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkList_AddChildOperation_BehaviorDescriptor" />
@@ -163,7 +135,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Model_RootsIncludingImportedOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Model_RootsOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.NodeAttributeAccessQualifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.NodeAttributeQualifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.NodePointerExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.NodeRefExpression_BehaviorDescriptor" />
@@ -210,11 +181,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.OperationParm_SameMetaLevel_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.OperationParm_StopConceptList_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.PoundExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.PropertyAttributeAccessQualifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.PropertyAttributeQualifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.PropertyNameRefExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.PropertyQualifier_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.PropertyRefQualifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Property_HasValue_Enum_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Property_HasValue_Simple_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.Property_RemoveOperation_BehaviorDescriptor" />
@@ -391,7 +360,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BinaryOperation_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.IAttributeAccessQualifier_BehaviorDescriptor" file="IAttributeAccessQualifier_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior" file="ILinkAccessQualifierContainer_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -472,38 +440,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.LinkAttributeAccessQualifier_Behavior" file="LinkAttributeAccessQualifier_Behavior.java">
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IOperation_Behavior" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.LinkAttributeAccessQualifier_BehaviorDescriptor" file="LinkAttributeAccessQualifier_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.IAttributeAccessQualifier_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccess_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.LinkAttributeAccessQualifier_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.LinkAttributeQualifier_Behavior" file="LinkAttributeQualifier_Behavior.java">
@@ -701,22 +637,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.NodeAttributeAccessQualifier_Behavior" file="NodeAttributeAccessQualifier_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.NodeAttributeAccessQualifier_BehaviorDescriptor" file="NodeAttributeAccessQualifier_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.IAttributeAccessQualifier_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccess_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.NodeAttributeAccessQualifier_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.NodeAttributeQualifier_Behavior" file="NodeAttributeQualifier_Behavior.java">
@@ -1052,22 +972,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.PropertyAttributeAccessQualifier_Behavior" file="PropertyAttributeAccessQualifier_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.PropertyAttributeAccessQualifier_BehaviorDescriptor" file="PropertyAttributeAccessQualifier_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.IAttributeAccessQualifier_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.ILinkAccess_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.PropertyAttributeAccessQualifier_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.behavior.PropertyAttributeQualifier_Behavior" file="PropertyAttributeQualifier_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -1091,17 +995,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.IPropertyQualifier_BehaviorDescriptor" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.PropertyRefQualifier_Behavior" file="PropertyRefQualifier_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.behavior.PropertyRefQualifier_BehaviorDescriptor" file="PropertyRefQualifier_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.behavior.IPropertyAccessQualifier_BehaviorDescriptor" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>

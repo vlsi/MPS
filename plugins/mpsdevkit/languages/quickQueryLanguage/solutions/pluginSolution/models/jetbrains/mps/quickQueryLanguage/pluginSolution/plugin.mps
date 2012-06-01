@@ -90,6 +90,9 @@
       <property name="caption" nameId="tp4k.6547237850567462620" value="Replacement" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967871525" />
+    <node type="tp4k.NonDumbAwareActions" typeId="tp4k.1512255007353869532" id="3856909620695009137">
+      <property name="name" nameId="tpck.1169194664001" value="Default" />
+    </node>
   </roots>
   <root id="5487985028841942626">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="5487985028841942627">
@@ -3957,5 +3960,13 @@
     </node>
   </root>
   <root id="7162597690967871525" />
+  <root id="3856909620695009137">
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3856909620695009217">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5487985028841942626" resolveInfo="FindInstancesByCondition" />
+    </node>
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3856909620695009219">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5487985028841943773" resolveInfo="ReplacementQueryAction" />
+    </node>
+  </root>
 </model>
 

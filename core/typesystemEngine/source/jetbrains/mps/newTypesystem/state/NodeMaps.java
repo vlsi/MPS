@@ -156,14 +156,19 @@ public class NodeMaps {
     return result;
   }
 
+  private boolean showTypeWasNotCalculated() {
+    ValidationSettings instance = ValidationSettings.getInstance();
+    if (instance == null) return false;
+    IModelValidationSettings modelValidationSettings = instance.getModelValidationSettings();
+    return modelValidationSettings != null && !modelValidationSettings.isDisableTypeWasNotCalculated();
+  }
+
   public void expandNode(SNode node, boolean finalExpansion) {
     SNode var = myNodesToTypes.get(node);
     SNode type = myState.getEquations().expandNode(var, finalExpansion);
     updateNodeToType(node, type, null);
-    if (finalExpansion && (type == null || TypesUtil.isVariable(type))) {
-      if (!ValidationSettings.getInstance().getModelValidationSettings().isDisableTypeWasNotCalculated()) {
-        myState.getTypeCheckingContext().reportWarning(node, "Type "+ type+ " was not calculated", null, null, null, new NodeMessageTarget());
-      }
+    if (finalExpansion && showTypeWasNotCalculated() && (type == null || TypesUtil.isVariable(type))) {
+      myState.getTypeCheckingContext().reportWarning(node, "Type "+ type+ " was not calculated", null, null, null, new NodeMessageTarget());
     }
   }
   

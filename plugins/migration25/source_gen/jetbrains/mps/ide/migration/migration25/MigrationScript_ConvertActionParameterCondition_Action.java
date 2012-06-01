@@ -31,6 +31,11 @@ public class MigrationScript_ConvertActionParameterCondition_Action extends Base
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());

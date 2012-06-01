@@ -26,6 +26,11 @@ public class MakeProject_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return !(IMakeService.INSTANCE.get().isSessionActive());
   }

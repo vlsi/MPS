@@ -1,21 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="eem55m8bqqry3t53m41kg2y675ulkja">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3pfv61ztw43crdi9n56ftoapjvy39kp" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2jracueon20ixsh4dwbr6tefdboveeh" />
-  <dep model="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)" hash="3afscnqq0y645djn28o5di4rdtzfqfy" />
-  <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" hash="5m0oa3iqqfbc3ww93dw3g3plcozj7o0" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="cjjcrmqt5lv677i5sk6zmmo0417aixa" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="cmd60507xhkoe4c48chqmcyr68ebp62" />
-  <common>
-    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)" />
-    <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="Language.java" />
-  </common>
-</dependencies>
+<dependencies version="2" modelHash="eem55m8bqqry3t53m41kg2y675ulkja" />
 

@@ -24,6 +24,11 @@ public class FindPrevious_Action extends BaseAction {
     this.setMnemonic("V".charAt(0));
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().isVisible();
   }

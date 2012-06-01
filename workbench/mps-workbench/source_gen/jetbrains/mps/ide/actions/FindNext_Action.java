@@ -24,6 +24,11 @@ public class FindNext_Action extends BaseAction {
     this.setMnemonic("N".charAt(0));
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().isVisible();
   }

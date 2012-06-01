@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.actions;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
@@ -26,7 +27,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import java.util.Map;
 
-public class NewMPSProjectAction extends BaseAction {
+public class NewMPSProjectAction extends BaseAction implements DumbAware {
   private static final Icon NEW_ICON_WELCOME_SCREEN = new ImageIcon(OpenMPSProjectAction.class.getResource("newWelcomeScreen.png"));
 
   public NewMPSProjectAction() {

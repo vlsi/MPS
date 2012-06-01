@@ -44,6 +44,11 @@ public class ShowImplementations_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.ClassConcept") && SPropertyOperations.getBoolean(SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass") || SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.Classifier");
   }

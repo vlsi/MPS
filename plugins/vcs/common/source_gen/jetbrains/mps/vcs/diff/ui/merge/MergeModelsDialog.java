@@ -386,7 +386,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
     protected Iterable<BaseAction> getRootActions() {
       MergeModelsDialog md = MergeModelsDialog.this;
-      return Arrays.asList(new InvokeMergeRootsAction(md), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
+      return Arrays.<BaseAction>asList(new InvokeMergeRootsAction(md), AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
     }
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {

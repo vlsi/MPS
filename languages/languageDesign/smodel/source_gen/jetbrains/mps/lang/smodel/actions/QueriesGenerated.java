@@ -393,20 +393,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_IAttributeAccessQualifier_1205263933103(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      Computable computable = new Computable() {
-        public Object compute() {
-          return SNodeOperations.getParent(_context.getSourceNode());
-        }
-      };
-      SNode node = (SNode) computable.compute();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
-    }
-    return result;
-  }
-
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_SEnumOperation_1241013269073(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {

@@ -30,6 +30,11 @@ public class AnalyzeStacktrace_Action extends BaseAction {
     this.setMnemonic("s".charAt(0));
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (MPSActionPlaces.MPS_MESSAGES_POPUP.equals(event.getPlace())) {
       return ((Throwable) MapSequence.fromMap(_params).get("exception")) != null;

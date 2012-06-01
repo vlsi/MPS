@@ -30,6 +30,11 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")) instanceof EditableSModelDescriptor;
   }
@@ -54,6 +59,9 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSCommonDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
+      return false;
+    }
+    if (!(MapSequence.fromMap(_params).get("modelDescriptor") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));

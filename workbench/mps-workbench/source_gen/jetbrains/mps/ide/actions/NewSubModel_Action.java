@@ -32,6 +32,11 @@ public class NewSubModel_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean correctStereotype = false;
     String stereotype = ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getStereotype();

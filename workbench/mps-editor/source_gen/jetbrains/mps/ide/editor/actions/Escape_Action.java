@@ -24,6 +24,11 @@ public class Escape_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;

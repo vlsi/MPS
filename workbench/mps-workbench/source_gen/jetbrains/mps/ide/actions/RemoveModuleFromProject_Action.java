@@ -35,6 +35,11 @@ public class RemoveModuleFromProject_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     IModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
     if (module == null) {

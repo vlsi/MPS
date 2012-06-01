@@ -27,6 +27,11 @@ public class DeleteFavoritesList_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }

@@ -40,6 +40,11 @@ public class GenerateGetters_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateGetters_Action.this.getClassConcept(_params);
     return classConcept != null && Sequence.fromIterable(GenerateGetters_Action.this.getFieldDeclarationsWithoutGetters(classConcept, _params)).isNotEmpty();
@@ -96,7 +101,7 @@ public class GenerateGetters_Action extends BaseAction {
         // Method creation begins 
         SNode fieldReference = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference", null);
         SLinkOperations.setTarget(fieldReference, "variableDeclaration", field, false);
-        SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGetters_Action.QuotationClass_jzv2hd_a0a0a5a41a0a3().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
+        SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGetters_Action.QuotationClass_jzv2hd_a0a0a5a41a0a4().createNode(SLinkOperations.getTarget(field, "type", true), fieldReference, getterName));
         lastAdded = added;
       }
       if (lastAdded != null) {
@@ -128,8 +133,8 @@ public class GenerateGetters_Action extends BaseAction {
     });
   }
 
-  public static class QuotationClass_jzv2hd_a0a0a5a41a0a3 {
-    public QuotationClass_jzv2hd_a0a0a5a41a0a3() {
+  public static class QuotationClass_jzv2hd_a0a0a5a41a0a4 {
+    public QuotationClass_jzv2hd_a0a0a5a41a0a4() {
     }
 
     public SNode createNode(Object parameter_13, Object parameter_14, Object parameter_15) {

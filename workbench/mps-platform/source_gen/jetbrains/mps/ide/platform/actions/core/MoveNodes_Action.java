@@ -37,6 +37,11 @@ public class MoveNodes_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "MoveNodes"), ((List<SNode>) MapSequence.fromMap(_params).get("target")));
   }

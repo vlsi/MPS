@@ -98,7 +98,7 @@ public class LanguagesStep extends AbstractStep {
   }
 
   public String getDescription() {
-    return "Languages and solutions included in build.";
+    return "Select languages and solutions included in build script.";
   }
 
   public void _commit(boolean finish) {

@@ -34,6 +34,11 @@ public class GenerateMainMethod_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
     return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).any(new IWhereFilter<SNode>() {
@@ -69,7 +74,7 @@ public class GenerateMainMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
-      SNode methodNode = new GenerateMainMethod_Action.QuotationClass_8edthv_a0a1a0a3().createNode();
+      SNode methodNode = new GenerateMainMethod_Action.QuotationClass_8edthv_a0a1a0a4().createNode();
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).addElement(methodNode);
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(SLinkOperations.getTarget(methodNode, "body", true));
     } catch (Throwable t) {
@@ -83,8 +88,8 @@ public class GenerateMainMethod_Action extends BaseAction {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
 
-  public static class QuotationClass_8edthv_a0a1a0a3 {
-    public QuotationClass_8edthv_a0a1a0a3() {
+  public static class QuotationClass_8edthv_a0a1a0a4 {
+    public QuotationClass_8edthv_a0a1a0a4() {
     }
 
     public SNode createNode() {

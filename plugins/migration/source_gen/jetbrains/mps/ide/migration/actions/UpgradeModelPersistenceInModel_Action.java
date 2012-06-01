@@ -11,6 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.ide.migration.persistence.PersistenceUpdater;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.Frame;
@@ -23,6 +24,11 @@ public class UpgradeModelPersistenceInModel_Action extends BaseAction {
     super("Upgrade Model Persistence in Selected Model", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
+  }
+
+  @Override
+  public boolean isDumbAware() {
+    return true;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -46,6 +52,9 @@ public class UpgradeModelPersistenceInModel_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("modelDescriptor", event.getData(MPSCommonDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("modelDescriptor") == null) {
+      return false;
+    }
+    if (!(MapSequence.fromMap(_params).get("modelDescriptor") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor")).isReadOnly()) {
       return false;
     }
     return true;

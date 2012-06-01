@@ -297,73 +297,73 @@
     <unitInfo nodeId="8733553229778909741" fileName="ModelDifferenceDialog.java" startLine="247" startPosition="0" endLine="290" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog$ModelDifferenceTree" />
   </root>
   <root nodeId="8733553229778918876">
-    <nodeInfo nodeId="8733553229778918882" fileName="RevertRootsAction.java" startLine="19" startPosition="60" endLine="20" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDifferenceDialog" />
-    <nodeInfo nodeId="8733553229778918889" fileName="RevertRootsAction.java" startLine="22" startPosition="73" endLine="23" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8733553229778918895" fileName="RevertRootsAction.java" startLine="23" startPosition="76" endLine="24" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918943" fileName="RevertRootsAction.java" startLine="37" startPosition="28" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918956" fileName="RevertRootsAction.java" startLine="44" startPosition="73" endLine="45" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918960" fileName="RevertRootsAction.java" startLine="45" startPosition="31" endLine="46" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8733553229778918969" fileName="RevertRootsAction.java" startLine="46" startPosition="75" endLine="47" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8733553229778918983" fileName="RevertRootsAction.java" startLine="47" startPosition="222" endLine="48" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918990" fileName="RevertRootsAction.java" startLine="48" startPosition="48" endLine="49" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918997" fileName="RevertRootsAction.java" startLine="49" startPosition="48" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8733553229778919029" fileName="RevertRootsAction.java" startLine="58" startPosition="42" endLine="59" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8733553229778919036" fileName="RevertRootsAction.java" startLine="61" startPosition="11" endLine="62" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778919040" fileName="RevertRootsAction.java" startLine="64" startPosition="5" endLine="65" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778919049" fileName="RevertRootsAction.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()V" />
-    <nodeInfo nodeId="8733553229778919053" fileName="RevertRootsAction.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoots#()[Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="8733553229778918885" fileName="RevertRootsAction.java" startLine="21" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RevertRootsAction#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;)V" />
-    <nodeInfo nodeId="8733553229778918922" fileName="RevertRootsAction.java" startLine="29" startPosition="57" endLine="33" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="36" startPosition="87" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
-    <nodeInfo nodeId="8733553229778919003" fileName="RevertRootsAction.java" startLine="51" startPosition="33" endLine="55" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="57" startPosition="97" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNodeId;)Z" />
-    <nodeInfo nodeId="8733553229778918936" fileName="RevertRootsAction.java" startLine="35" startPosition="7" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="28" startPosition="142" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNodeId;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8733553229778919021" fileName="RevertRootsAction.java" startLine="56" startPosition="12" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8733553229778918911" fileName="RevertRootsAction.java" startLine="27" startPosition="74" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8733553229778919019" fileName="RevertRootsAction.java" startLine="56" startPosition="10" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8733553229778919001" fileName="RevertRootsAction.java" startLine="50" startPosition="26" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8733553229778918901" fileName="RevertRootsAction.java" startLine="26" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8733553229778918945" fileName="RevertRootsAction.java" startLine="42" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="8733553229778918942" fileName="RevertRootsAction.java" startLine="37" startPosition="28" endLine="38" endPosition="16" />
-    <scopeInfo nodeId="8733553229778919028" fileName="RevertRootsAction.java" startLine="58" startPosition="42" endLine="59" endPosition="27" />
-    <scopeInfo nodeId="8733553229778919035" fileName="RevertRootsAction.java" startLine="61" startPosition="11" endLine="62" endPosition="38" />
-    <scopeInfo nodeId="8733553229778918888" fileName="RevertRootsAction.java" startLine="22" startPosition="73" endLine="24" endPosition="52" />
-    <scopeInfo nodeId="8733553229778919049" fileName="RevertRootsAction.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="8733553229778919053" fileName="RevertRootsAction.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="8733553229778918885" fileName="RevertRootsAction.java" startLine="21" startPosition="0" endLine="25" endPosition="3">
+    <nodeInfo nodeId="8733553229778918882" fileName="RevertRootsAction.java" startLine="20" startPosition="81" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDifferenceDialog" />
+    <nodeInfo nodeId="8733553229778918889" fileName="RevertRootsAction.java" startLine="23" startPosition="73" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8733553229778918895" fileName="RevertRootsAction.java" startLine="24" startPosition="76" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918943" fileName="RevertRootsAction.java" startLine="38" startPosition="28" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918956" fileName="RevertRootsAction.java" startLine="45" startPosition="73" endLine="46" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918960" fileName="RevertRootsAction.java" startLine="46" startPosition="31" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8733553229778918969" fileName="RevertRootsAction.java" startLine="47" startPosition="75" endLine="48" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8733553229778918983" fileName="RevertRootsAction.java" startLine="48" startPosition="222" endLine="49" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918990" fileName="RevertRootsAction.java" startLine="49" startPosition="48" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918997" fileName="RevertRootsAction.java" startLine="50" startPosition="48" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8733553229778919029" fileName="RevertRootsAction.java" startLine="59" startPosition="42" endLine="60" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8733553229778919036" fileName="RevertRootsAction.java" startLine="62" startPosition="11" endLine="63" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778919040" fileName="RevertRootsAction.java" startLine="65" startPosition="5" endLine="66" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778919049" fileName="RevertRootsAction.java" startLine="68" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()V" />
+    <nodeInfo nodeId="8733553229778919053" fileName="RevertRootsAction.java" startLine="70" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRoots#()[Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="8733553229778918885" fileName="RevertRootsAction.java" startLine="22" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RevertRootsAction#(Ljetbrains/mps/vcs/diff/ui/ModelDifferenceDialog;)V" />
+    <nodeInfo nodeId="8733553229778918922" fileName="RevertRootsAction.java" startLine="30" startPosition="57" endLine="34" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="37" startPosition="87" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="8733553229778919003" fileName="RevertRootsAction.java" startLine="52" startPosition="33" endLine="56" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="58" startPosition="97" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNodeId;)Z" />
+    <nodeInfo nodeId="8733553229778918936" fileName="RevertRootsAction.java" startLine="36" startPosition="7" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="29" startPosition="142" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNodeId;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8733553229778919021" fileName="RevertRootsAction.java" startLine="57" startPosition="12" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8733553229778918911" fileName="RevertRootsAction.java" startLine="28" startPosition="74" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8733553229778919019" fileName="RevertRootsAction.java" startLine="57" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8733553229778919001" fileName="RevertRootsAction.java" startLine="51" startPosition="26" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8733553229778918901" fileName="RevertRootsAction.java" startLine="27" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8733553229778918945" fileName="RevertRootsAction.java" startLine="43" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <scopeInfo nodeId="8733553229778918942" fileName="RevertRootsAction.java" startLine="38" startPosition="28" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="8733553229778919028" fileName="RevertRootsAction.java" startLine="59" startPosition="42" endLine="60" endPosition="27" />
+    <scopeInfo nodeId="8733553229778919035" fileName="RevertRootsAction.java" startLine="62" startPosition="11" endLine="63" endPosition="38" />
+    <scopeInfo nodeId="8733553229778918888" fileName="RevertRootsAction.java" startLine="23" startPosition="73" endLine="25" endPosition="52" />
+    <scopeInfo nodeId="8733553229778919049" fileName="RevertRootsAction.java" startLine="68" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8733553229778919053" fileName="RevertRootsAction.java" startLine="70" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="8733553229778918885" fileName="RevertRootsAction.java" startLine="22" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="8733553229778918899" varName="modelDifferenceDialog" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918921" fileName="RevertRootsAction.java" startLine="29" startPosition="57" endLine="33" endPosition="10" />
-    <scopeInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="36" startPosition="87" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="8733553229778919002" fileName="RevertRootsAction.java" startLine="51" startPosition="33" endLine="55" endPosition="8" />
-    <scopeInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="57" startPosition="97" endLine="61" endPosition="0">
+    <scopeInfo nodeId="8733553229778918921" fileName="RevertRootsAction.java" startLine="30" startPosition="57" endLine="34" endPosition="10" />
+    <scopeInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="37" startPosition="87" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="8733553229778919002" fileName="RevertRootsAction.java" startLine="52" startPosition="33" endLine="56" endPosition="8" />
+    <scopeInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="58" startPosition="97" endLine="62" endPosition="0">
       <varInfo nodeId="8733553229778919027" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="28" startPosition="142" endLine="35" endPosition="0">
+    <scopeInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="29" startPosition="142" endLine="36" endPosition="0">
       <varInfo nodeId="8733553229778918920" varName="r" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778919020" fileName="RevertRootsAction.java" startLine="56" startPosition="12" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="8733553229778918910" fileName="RevertRootsAction.java" startLine="27" startPosition="74" endLine="40" endPosition="7">
+    <scopeInfo nodeId="8733553229778919020" fileName="RevertRootsAction.java" startLine="57" startPosition="12" endLine="64" endPosition="7" />
+    <scopeInfo nodeId="8733553229778918910" fileName="RevertRootsAction.java" startLine="28" startPosition="74" endLine="41" endPosition="7">
       <varInfo nodeId="8733553229778918912" varName="changes" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918901" fileName="RevertRootsAction.java" startLine="26" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="8733553229778918901" fileName="RevertRootsAction.java" startLine="27" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="8733553229778918904" varName="event" />
       <varInfo nodeId="8733553229778918906" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918955" fileName="RevertRootsAction.java" startLine="44" startPosition="73" endLine="65" endPosition="54">
+    <scopeInfo nodeId="8733553229778918955" fileName="RevertRootsAction.java" startLine="45" startPosition="73" endLine="66" endPosition="54">
       <varInfo nodeId="8733553229778918970" varName="enabled" />
       <varInfo nodeId="8733553229778918961" varName="newModel" />
       <varInfo nodeId="8733553229778918998" varName="what" />
     </scopeInfo>
-    <scopeInfo nodeId="8733553229778918945" fileName="RevertRootsAction.java" startLine="42" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="8733553229778918945" fileName="RevertRootsAction.java" startLine="43" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="8733553229778918948" varName="event" />
       <varInfo nodeId="8733553229778918950" varName="map" />
     </scopeInfo>
-    <unitInfo nodeId="8733553229778918876" fileName="RevertRootsAction.java" startLine="19" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
-    <unitInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="28" startPosition="104" endLine="35" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$1" />
-    <unitInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="36" startPosition="57" endLine="40" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$2" />
-    <unitInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="57" startPosition="72" endLine="61" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$3" />
+    <unitInfo nodeId="8733553229778918876" fileName="RevertRootsAction.java" startLine="20" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction" />
+    <unitInfo nodeId="8733553229778918920" fileName="RevertRootsAction.java" startLine="29" startPosition="104" endLine="36" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$1" />
+    <unitInfo nodeId="8733553229778918941" fileName="RevertRootsAction.java" startLine="37" startPosition="57" endLine="41" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$2" />
+    <unitInfo nodeId="8733553229778919027" fileName="RevertRootsAction.java" startLine="58" startPosition="72" endLine="62" endPosition="7" unitName="jetbrains.mps.vcs.diff.ui.RevertRootsAction$3" />
   </root>
   <root nodeId="8733553229778919208">
     <nodeInfo nodeId="8733553229778919295" fileName="RootDifferenceDialog.java" startLine="56" startPosition="81" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelDialog" />

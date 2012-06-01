@@ -28,6 +28,11 @@ public class GoToTypeErrorRule_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     IErrorReporter error = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getErrorReporterFor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectedCell());
     return !(error == null || error.getRuleId() == null || error.getRuleModel() == null || !(error.getAdditionalRulesIds().isEmpty()));

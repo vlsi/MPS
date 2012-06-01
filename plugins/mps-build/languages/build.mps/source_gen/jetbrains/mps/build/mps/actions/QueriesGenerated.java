@@ -6,13 +6,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -45,6 +45,14 @@ public class QueriesGenerated {
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPlugin_1238980147630030570(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "pluginXml", true) == null);
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPluginModule_4034578608468849423(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "customPackaging"));
+  }
+
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BuildMps_IdeaPluginGroup_4034578608469015663(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "customPackaging", true)).isEmpty();
   }
 
   public static void nodeFactory_NodeSetup_BuildMps_AbstractModule_8369506495128727677(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -191,6 +199,50 @@ public class QueriesGenerated {
 
         public String getMatchingText(String pattern) {
           return "from file";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildMps_IdeaPluginModule_4034578608468849422(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SPropertyOperations.set(_context.getSourceNode(), "customPackaging", "" + true);
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "(custom packaging)";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_BuildMps_IdeaPluginGroup_4034578608469015649(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SLinkOperations.addNewChild(_context.getSourceNode(), "customPackaging", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
+          return _context.getSourceNode();
+        }
+
+        public String getMatchingText(String pattern) {
+          return "(custom packaging)";
         }
 
         public String getVisibleMatchingText(String pattern) {

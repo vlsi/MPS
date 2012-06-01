@@ -40,6 +40,11 @@ public class SetNodePackage_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode n) {

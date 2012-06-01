@@ -91,7 +91,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
   }
 
   public String getDescription() {
-    return "Build would be located in new model.";
+    return "Select a model to create a new build script.";
   }
 
   protected boolean isCheckBoxEnabled() {
@@ -104,7 +104,7 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
 
   protected String getWarningText(String text) {
     if (text.equals("")) {
-      return "Empty model name not allowed.";
+      return "Empty model name is not allowed.";
     }
     return "Model " + text + " already exists, choose another name.";
   }

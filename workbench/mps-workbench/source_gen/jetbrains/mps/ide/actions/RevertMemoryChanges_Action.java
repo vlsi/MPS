@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class RevertMemoryChanges_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -21,6 +22,11 @@ public class RevertMemoryChanges_Action extends BaseAction {
     super("Revert Memory Changes", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
+  }
+
+  @Override
+  public boolean isDumbAware() {
+    return true;
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
@@ -47,6 +53,9 @@ public class RevertMemoryChanges_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     return true;

@@ -40,6 +40,11 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode targetNode = ((EditorCell) MapSequence.fromMap(_params).get("cell")).getSNodeWRTReference();
     if (targetNode == null) {
@@ -50,7 +55,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     }
     String targetSter = SNodeOperations.getModel(targetNode).getStereotype();
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-    return eq_xgilk9_a0f0a(stubSter, targetSter);
+    return eq_xgilk9_a0f0b(stubSter, targetSter);
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -178,7 +183,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     return ref.getLongName() + "." + SPropertyOperations.getString(classifier, "name");
   }
 
-  private static boolean eq_xgilk9_a0f0a(Object a, Object b) {
+  private static boolean eq_xgilk9_a0f0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

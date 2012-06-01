@@ -29,6 +29,11 @@ public class GoToOverridingMethod_Action extends BaseAction {
     this.setExecuteOutsideCommand(true);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return GoToHelper.hasApplicableFinder(((SNode) MapSequence.fromMap(_params).get("methodNode")), GoToOverridingMethod_Action.this.getFinderName(_params));
   }

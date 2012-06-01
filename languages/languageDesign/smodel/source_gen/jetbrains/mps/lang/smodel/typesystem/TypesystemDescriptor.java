@@ -91,15 +91,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_AllAttributesQualifier_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_AttributeAccess_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_AttributeAccessOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -151,10 +143,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_LinkAttributeAccessQualifier_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_LinkList_RemoveAllChildrenOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -176,10 +164,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_ModuleReferenceExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_NodeAttributeAccessQualifier_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -271,15 +255,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_PropertyAttributeAccessQualifier_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_PropertyNameRefExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_PropertyRefQualifier_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -404,10 +380,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_Node_GetReferentSearchScopeOperation_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_PropertyAttributeAccessQualifier_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

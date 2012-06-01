@@ -33,6 +33,11 @@ public class NewDirectory_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setIcon(IdeIcons.OPENED_FOLDER);

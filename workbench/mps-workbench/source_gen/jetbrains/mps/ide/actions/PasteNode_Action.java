@@ -44,6 +44,11 @@ public class PasteNode_Action extends BaseAction {
     this.addPlace(null);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean searchPanelInactive = ((Editor) MapSequence.fromMap(_params).get("editor")) == null || !(((EditorComponent) ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent().getEditorComponent()).isSearchPanelVisible());
     return searchPanelInactive && ((SModelDescriptor) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModelDescriptor && PasteNode_Action.this.canPasteNodes(_params);

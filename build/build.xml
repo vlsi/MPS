@@ -5,9 +5,10 @@
   <target name="build">
     <ant antfile="buildCore.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildCoreEx.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildWorkbench.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildStandalone.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDates.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildTroveCollections.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="buildWorkbench.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDevKit.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExperimental.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildBuild.xml" inheritAll="true" useNativeBasedir="true" />

@@ -25,6 +25,11 @@ public class SelectLeft_Action extends BaseAction {
     this.setExecuteOutsideCommand(false);
   }
 
+  @Override
+  public boolean isDumbAware() {
+    return true;
+  }
+
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return EditorActionUtils.isReadonlyActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) && ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSelectionManager().getSelection() instanceof SingularSelection;
   }

@@ -22,6 +22,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
@@ -40,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class GoToModelPlatformAction extends BaseAction {
+public class GoToModelPlatformAction extends BaseAction implements DumbAware {
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;

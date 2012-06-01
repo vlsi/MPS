@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildMPSPlugin_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_FolderWithSources_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_ModuleJars_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars_BehaviorDescriptor" />
@@ -22,6 +22,7 @@
   <unitInfo fileName="BuildMps_Group_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_Group_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_IdeaPluginContent_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_IdeaPluginDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginDependency_BehaviorDescriptor" />
+  <unitInfo fileName="BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_IdeaPluginGroup_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginGroup_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_IdeaPluginModule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginModule_BehaviorDescriptor" />
   <unitInfo fileName="BuildMps_IdeaPlugin_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMps_IdeaPlugin_BehaviorDescriptor" />

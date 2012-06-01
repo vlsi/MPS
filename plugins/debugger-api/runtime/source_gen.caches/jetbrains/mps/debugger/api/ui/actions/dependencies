@@ -66,6 +66,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -115,6 +116,7 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
@@ -141,6 +143,7 @@
   <dependency className="jetbrains.mps.debugger.api.ui.actions.GoToBreakpointSourceAction_Action" file="GoToBreakpointSourceAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -163,6 +166,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -197,6 +201,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -214,6 +219,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -269,6 +275,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -286,6 +293,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -303,6 +311,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -321,6 +330,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -337,6 +347,7 @@
   <dependency className="jetbrains.mps.debugger.api.ui.actions.ViewBreakpointSourceAction_Action" file="ViewBreakpointSourceAction_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -358,6 +369,7 @@
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
