@@ -51,7 +51,7 @@ public class BuildLayout_Import_Constraints extends BaseConstraintsDescriptor {
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             SNode contextProject = SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.build.structure.BuildProject", true, false);
             String target = null;
-            if ((_context.getContextNode() != null)) {
+            if ((_context.getContextNode() != null) && contextProject != null) {
               Scope importedArtifactsScope = ScopeUtil.getVisibleArtifactsScope(contextProject, false);
               if (importedArtifactsScope != null && !(importedArtifactsScope instanceof ModelPlusImportedScope)) {
                 target = importedArtifactsScope.getReferenceText(_context.getContextNode(), _context.getParameterNode());
