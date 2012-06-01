@@ -18,6 +18,8 @@ package jetbrains.mps.ide.messages;
 import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
@@ -39,7 +41,12 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
       ((Message) message).getCreationTimeString() + "\t: " + message :
       message.getText();
 
-    component.setForeground(canNavigate(message) ? Color.BLUE : Color.BLACK);
+    boolean canNavigate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return canNavigate(message);
+      }
+    });
+    component.setForeground(canNavigate ? Color.BLUE : Color.BLACK);
     component.setText(text);
 
     switch (message.getKind()) {

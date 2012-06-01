@@ -41,6 +41,7 @@ import jetbrains.mps.messages.IMessageList;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -310,7 +311,14 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
           item = (IMessage) myModel.getElementAt(index);
         }
 
-        if (item != null && myAutoscrollToSourceAction.isSelected(null) && MessagesListCellRenderer.canNavigate(item)) {
+        final IMessage finalItem = item;
+        boolean canNavigate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            return NavigationManager.getInstance().canNavigateTo(finalItem);
+          }
+        });
+
+        if (item != null && myAutoscrollToSourceAction.isSelected(null) && canNavigate) {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         } else {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
