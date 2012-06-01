@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -28,16 +31,19 @@ public class ConceptDeclaration_Behavior {
   public static List<SNode> call_getAllMethodsInPriorityOrder_9106339407519386338(SNode thisNode) {
     List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
 
-    ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
-    SNode extendsNode = ((SLinkOperations.getTarget(thisNode, "extends", false) != null) ?
-      SLinkOperations.getTarget(thisNode, "extends", false) :
-      SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")
-    );
-    if (extendsNode != thisNode) {
-      // todo: more clearly! 
-      ListSequence.fromList(methods).addSequence(ListSequence.fromList(ConceptDeclaration_Behavior.call_getAllMethodsInPriorityOrder_9106339407519386338(extendsNode)));
+    // collect methods from extended concepts 
+    Set<SNode> extendedConcepts = SetSequence.fromSet(new HashSet<SNode>());
+    SNode concept = thisNode;
+    while ((concept != null) && !(SetSequence.fromSet(extendedConcepts).contains(concept))) {
+      SetSequence.fromSet(extendedConcepts).addElement(concept);
+      ListSequence.fromList(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(concept, LanguageAspect.BEHAVIOR), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "method", true)));
+      concept = ((SLinkOperations.getTarget(thisNode, "extends", false) != null) ?
+        SLinkOperations.getTarget(thisNode, "extends", false) :
+        SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626")
+      );
     }
 
+    // collect methods from implemented interfaces 
     for (SNode interfaceConcept : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "intfc", false) != null);
