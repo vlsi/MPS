@@ -72,8 +72,9 @@ public class DeleteModels_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Models", "Are you sure you want to delete selected models?");
-      dialog.setOptions(false, true, true, false);
+      final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
+      final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", true, false);
+      DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Models", "Are you sure you want to delete selected models?", safeOption, filesOption);
       dialog.show();
       if (!(dialog.isOK())) {
         return;
@@ -84,7 +85,7 @@ public class DeleteModels_Action extends BaseAction {
             if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
               continue;
             }
-            DeleteModelHelper.deleteModel(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("contextModule")), model, dialog.isSafe(), dialog.isDeleteFiles());
+            DeleteModelHelper.deleteModel(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("contextModule")), model, safeOption.selected, filesOption.selected);
           }
         }
       });

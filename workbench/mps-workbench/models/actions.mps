@@ -5427,12 +5427,25 @@
     </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1229266351428">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1229266351429">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1229266469074">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1229266469075">
-            <property name="name" nameId="tpck.1169194664001" value="safe" />
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="1229266469076" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1229266472484">
-              <property name="value" nameId="tpee.1068580123138" value="false" />
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9024276490549192585">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9024276490549192586">
+            <property name="name" nameId="tpck.1169194664001" value="safeOption" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9024276490549192587">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4rt1.~DeleteDialog$DeleteOption" resolveInfo="DeleteDialog.DeleteOption" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9024276490549192588">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9024276490549192589">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog$DeleteOption%d&lt;init&gt;(java%dlang%dString,boolean,boolean)" resolveInfo="DeleteDialog.DeleteOption" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9024276490549192590">
+                  <property name="value" nameId="tpee.1070475926801" value="Safe Delete" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192591">
+                  <property name="value" nameId="tpee.1068580123138" value="false" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192592">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -5514,7 +5527,7 @@
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1229266865402">
                   <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1229266868810">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString)" resolveInfo="DeleteDialog" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString,jetbrains%dmps%dworkbench%ddialogs%dDeleteDialog$DeleteOption%d%d%d)" resolveInfo="DeleteDialog" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1229266873670">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1229266873671" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1229266873672">
@@ -5527,28 +5540,9 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1229266892098">
                       <property name="value" nameId="tpee.1070475926801" value="Are you sure you want to delete selected node?" />
                     </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1229266899210">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1229266902969">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1229266899211">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1229266857602" resolveInfo="dialog" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1229266907394">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%dsetOptions(boolean,boolean,boolean,boolean)%cvoid" resolveInfo="setOptions" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1229266910051">
-                    <property name="value" nameId="tpee.1068580123138" value="false" />
-                  </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1229266913194">
-                    <property name="value" nameId="tpee.1068580123138" value="true" />
-                  </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1229266914181">
-                    <property name="value" nameId="tpee.1068580123138" value="false" />
-                  </node>
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1229266916183">
-                    <property name="value" nameId="tpee.1068580123138" value="false" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192624">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192586" resolveInfo="safeOption" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -5578,21 +5572,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1229266944298">
-              <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1229266945707">
-                <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1229266947726">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1229266947100">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1229266857602" resolveInfo="dialog" />
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1229266950761">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%disSafe()%cboolean" resolveInfo="isSafe" />
-                  </node>
-                </node>
-                <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1229266944299">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1229266469075" resolveInfo="safe" />
-                </node>
-              </node>
-            </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1229266818880">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1229266477425" resolveInfo="dialogNeeded" />
@@ -5618,8 +5597,13 @@
                           <link role="member" roleId="tp4f.1205756909548" targetNodeId="1229266423997" resolveInfo="context" />
                         </node>
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1229273307392">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1229266469075" resolveInfo="safe" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9024276490549192646">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192625">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192586" resolveInfo="safeOption" />
+                        </node>
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="9024276490549192652">
+                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4rt1.~DeleteDialog$DeleteOption%dselected" resolveInfo="selected" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -6902,6 +6886,26 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9024276490549192767">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9024276490549192768">
+            <property name="name" nameId="tpck.1169194664001" value="filesOption" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9024276490549192769">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4rt1.~DeleteDialog$DeleteOption" resolveInfo="DeleteDialog.DeleteOption" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9024276490549192770">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9024276490549192771">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog$DeleteOption%d&lt;init&gt;(java%dlang%dString,boolean,boolean)" resolveInfo="DeleteDialog.DeleteOption" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9024276490549192772">
+                  <property name="value" nameId="tpee.1070475926801" value="Delete Files" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192773">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192774" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1241021416744">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1241021416745">
             <property name="name" nameId="tpck.1169194664001" value="dialog" />
@@ -6910,7 +6914,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1241021416747">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1241021416748">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString)" resolveInfo="DeleteDialog" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString,jetbrains%dmps%dworkbench%ddialogs%dDeleteDialog$DeleteOption%d%d%d)" resolveInfo="DeleteDialog" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1241021416749">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1241021416750" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1241021416751">
@@ -6923,28 +6927,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1241021416753">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1241021397765" resolveInfo="message" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1241021419441">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1241021420725">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1241021419442">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1241021416745" resolveInfo="dialog" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1241021422834">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%dsetOptions(boolean,boolean,boolean,boolean)%cvoid" resolveInfo="setOptions" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1241021424194">
-                <property name="value" nameId="tpee.1068580123138" value="false" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1241021425196">
-                <property name="value" nameId="tpee.1068580123138" value="false" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1241021432700">
-                <property name="value" nameId="tpee.1068580123138" value="true" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3575273646046394908">
-                <property name="value" nameId="tpee.1068580123138" value="false" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192778">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192768" resolveInfo="filesOption" />
+                </node>
               </node>
             </node>
           </node>
@@ -7001,20 +6986,15 @@
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="3575273646046394940">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="3575273646046394912" resolveInfo="module" />
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575273646046394933">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3575273646046394934">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1241021416745" resolveInfo="dialog" />
-                        </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3575273646046394935">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%disSafe()%cboolean" resolveInfo="isSafe" />
-                        </node>
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192839">
+                        <property name="value" nameId="tpee.1068580123138" value="false" />
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575273646046394936">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3575273646046394937">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1241021416745" resolveInfo="dialog" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9024276490549192832">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192811">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192768" resolveInfo="filesOption" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3575273646046394938">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%disDeleteFiles()%cboolean" resolveInfo="isDeleteFiles" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="9024276490549192837">
+                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4rt1.~DeleteDialog$DeleteOption%dselected" resolveInfo="selected" />
                         </node>
                       </node>
                     </node>
@@ -7159,6 +7139,48 @@
     </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="3575273646046443827">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3575273646046443828">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9024276490549192683">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9024276490549192684">
+            <property name="name" nameId="tpck.1169194664001" value="safeOption" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9024276490549192685">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4rt1.~DeleteDialog$DeleteOption" resolveInfo="DeleteDialog.DeleteOption" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9024276490549192686">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9024276490549192687">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog$DeleteOption%d&lt;init&gt;(java%dlang%dString,boolean,boolean)" resolveInfo="DeleteDialog.DeleteOption" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9024276490549192688">
+                  <property name="value" nameId="tpee.1070475926801" value="Safe Delete" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192689">
+                  <property name="value" nameId="tpee.1068580123138" value="false" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192690">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="9024276490549192692">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="9024276490549192693">
+            <property name="name" nameId="tpck.1169194664001" value="filesOption" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="9024276490549192694">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4rt1.~DeleteDialog$DeleteOption" resolveInfo="DeleteDialog.DeleteOption" />
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="9024276490549192695">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="9024276490549192696">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog$DeleteOption%d&lt;init&gt;(java%dlang%dString,boolean,boolean)" resolveInfo="DeleteDialog.DeleteOption" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="9024276490549192697">
+                  <property name="value" nameId="tpee.1070475926801" value="Delete Files" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192698">
+                  <property name="value" nameId="tpee.1068580123138" value="true" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9024276490549192699" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3575273646046443839">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3575273646046443840">
             <property name="name" nameId="tpck.1169194664001" value="dialog" />
@@ -7167,7 +7189,7 @@
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3575273646046443843">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3575273646046443844">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString)" resolveInfo="DeleteDialog" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%d&lt;init&gt;(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dlang%dString,jetbrains%dmps%dworkbench%ddialogs%dDeleteDialog$DeleteOption%d%d%d)" resolveInfo="DeleteDialog" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575273646046443845">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="3575273646046443846" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="3575273646046443847">
@@ -7180,28 +7202,12 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575273646046443852">
                   <property name="value" nameId="tpee.1070475926801" value="Are you sure you want to delete selected models?" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3575273646046443855">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575273646046443856">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3575273646046443857">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575273646046443840" resolveInfo="dialog" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3575273646046443858">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%dsetOptions(boolean,boolean,boolean,boolean)%cvoid" resolveInfo="setOptions" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3575273646046443859">
-                <property name="value" nameId="tpee.1068580123138" value="false" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3575273646046443860">
-                <property name="value" nameId="tpee.1068580123138" value="true" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3575273646046443861">
-                <property name="value" nameId="tpee.1068580123138" value="true" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3575273646046443862">
-                <property name="value" nameId="tpee.1068580123138" value="false" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192691">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192684" resolveInfo="safeOption" />
+                </node>
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192701">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192693" resolveInfo="filesOption" />
+                </node>
               </node>
             </node>
           </node>
@@ -7281,20 +7287,20 @@
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="3575273646046443928">
                         <link role="variable" roleId="tp2q.1153944258490" targetNodeId="3575273646046443878" resolveInfo="model" />
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575273646046443929">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3575273646046443930">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575273646046443840" resolveInfo="dialog" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9024276490549192724">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192703">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192684" resolveInfo="safeOption" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3575273646046443931">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%disSafe()%cboolean" resolveInfo="isSafe" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="9024276490549192729">
+                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4rt1.~DeleteDialog$DeleteOption%dselected" resolveInfo="selected" />
                         </node>
                       </node>
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3575273646046443932">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3575273646046443933">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575273646046443840" resolveInfo="dialog" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9024276490549192753">
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9024276490549192732">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9024276490549192693" resolveInfo="filesOption" />
                         </node>
-                        <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3575273646046443934">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rt1.~DeleteDialog%disDeleteFiles()%cboolean" resolveInfo="isDeleteFiles" />
+                        <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="9024276490549192758">
+                          <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="4rt1.~DeleteDialog$DeleteOption%dselected" resolveInfo="selected" />
                         </node>
                       </node>
                     </node>
