@@ -65,7 +65,7 @@ public class IdeaPlugunStep extends AbstractStep {
   private void updatePluginXmlChooser() {
     myPluginXmlChooser.setEditable(myGenerator.isPackAsIdeaPlugin());
     String pluginXml = myPluginXmlChooser.getText();
-    if (myGenerator.isPackAsIdeaPlugin() && (StringUtils.isEmpty(pluginXml) || !(new File(pluginXml).exists()))) {
+    if (myGenerator.isPackAsIdeaPlugin() && ((pluginXml == null || pluginXml.length() == 0) || !(new File(pluginXml).exists()))) {
       myHandler.setErrorText("Path to plugin.xml file required.");
     } else {
       myHandler.setErrorText(null);

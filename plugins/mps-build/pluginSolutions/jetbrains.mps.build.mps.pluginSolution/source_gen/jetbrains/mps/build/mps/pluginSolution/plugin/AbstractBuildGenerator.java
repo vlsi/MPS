@@ -122,7 +122,7 @@ public abstract class AbstractBuildGenerator {
   }
 
   public boolean isValid() {
-    return (this.isValidModelName(this.myModelName) || !(this.myCreateModel)) && (this.isValidSolutionName(this.mySolutionName) || !(this.myCreateSolution)) && (!(myPackAsIdeaPlugin) || (StringUtils.isNotEmpty(myPathToPluginXml) && new File(myPathToPluginXml).exists()));
+    return (this.isValidModelName(this.myModelName) || !(this.myCreateModel)) && (this.isValidSolutionName(this.mySolutionName) || !(this.myCreateSolution)) && (!(myPackAsIdeaPlugin) || ((myPathToPluginXml != null && myPathToPluginXml.length() > 0) && new File(myPathToPluginXml).exists()));
   }
 
   public DependencyStep.DependencyKind getDependencyKind() {

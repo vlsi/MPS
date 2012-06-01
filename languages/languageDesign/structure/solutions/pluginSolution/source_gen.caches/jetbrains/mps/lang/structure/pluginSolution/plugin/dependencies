@@ -59,6 +59,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -97,6 +98,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -124,6 +126,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.MoveProperyUp_Action" file="MoveProperyUp_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -181,6 +184,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameConcept_Action" file="RenameConcept_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -207,6 +211,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameLink_Action" file="RenameLink_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -233,6 +238,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.RenameProperty_Action" file="RenameProperty_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -259,6 +265,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.SafeDeleteConcept_Action" file="SafeDeleteConcept_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />
@@ -280,6 +287,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.SafeDeleteLink_Action" file="SafeDeleteLink_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Arrays" />
@@ -301,6 +309,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowDefaultHelp_Action" file="ShowDefaultHelp_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -320,6 +329,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForAspect_Action" file="ShowHelpForAspect_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -338,6 +348,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForNode_Action" file="ShowHelpForNode_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
@@ -356,6 +367,7 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelpForRoot_Action" file="ShowHelpForRoot_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
