@@ -430,7 +430,7 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_b42orx_a3a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "tagName"));
+    return isNotEmpty_b42orx_a0a0b(SPropertyOperations.getString(node, "tagName"));
   }
 
   private static boolean renderingCondition_b42orx_a9a(SNode node, EditorContext editorContext, IScope scope) {
@@ -459,6 +459,10 @@ public class XMLSAXNodeRule_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_b42orx_a61a(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "isCompact")) || (SLinkOperations.getTarget(node, "validator", true) != null);
+  }
+
+  public static boolean isNotEmpty_b42orx_a0a0b(String str) {
+    return str != null && str.length() > 0;
   }
 
   private static class attrsListHandler_b42orx_k0 extends RefNodeListHandler {

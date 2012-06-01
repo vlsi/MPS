@@ -28,7 +28,7 @@ public class ProcessHandlerBuilder {
   }
 
   public ProcessHandlerBuilder append(@Nullable String command) {
-    if (!(StringUtils.isEmpty(command))) {
+    if (!((command == null || command.length() == 0))) {
       ListSequence.fromList(myCommandLine).addSequence(Sequence.fromIterable(splitCommandInParts(command)));
     }
     return this;
@@ -64,7 +64,7 @@ public class ProcessHandlerBuilder {
   @Deprecated
   @ToRemove(version = 2.1)
   public ProcessHandlerBuilder appendKey(@Nullable String key, String... parameter) {
-    if (StringUtils.isNotEmpty(key) && parameter.length > 0) {
+    if ((key != null && key.length() > 0) && parameter.length > 0) {
       return append("-" + key).append(parameter);
     }
     return this;
@@ -73,7 +73,7 @@ public class ProcessHandlerBuilder {
   @Deprecated
   @ToRemove(version = 2.1)
   public ProcessHandlerBuilder appendKey(@Nullable String key, @NotNull List<String> parameters) {
-    if (StringUtils.isNotEmpty(key) && ListSequence.fromList(parameters).isNotEmpty()) {
+    if ((key != null && key.length() > 0) && ListSequence.fromList(parameters).isNotEmpty()) {
       return append("-" + key).append(parameters);
     }
     return this;
@@ -100,7 +100,7 @@ public class ProcessHandlerBuilder {
       Process process = builder.start();
       DefaultProcessHandler processHandler = new DefaultProcessHandler(process, ListSequence.fromList(myCommandLine).foldLeft("", new ILeftCombinator<String, String>() {
         public String combine(String s, String it) {
-          return (StringUtils.isEmpty(s) ?
+          return ((s == null || s.length() == 0) ?
             it :
             s + " " + it
           );

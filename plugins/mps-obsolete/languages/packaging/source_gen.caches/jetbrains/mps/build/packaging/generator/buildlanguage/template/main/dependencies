@@ -42,7 +42,6 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Plugin_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Util" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
@@ -77,9 +76,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.packaging.generator.buildlanguage.template.main.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

@@ -115,7 +115,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
 
   @Nullable
   public SNode getTarget() {
-    if (StringUtils.isEmpty(this.getTargetId())) {
+    if (isEmpty_skhqmd_a0a0h(this.getTargetId())) {
       return null;
     }
     final Wrappers._T<SNode> target = new Wrappers._T<SNode>();
@@ -182,6 +182,10 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
 
   public Object[] createMakeNodePointersTask() {
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
+  }
+
+  public static boolean isEmpty_skhqmd_a0a0h(String str) {
+    return str == null || str.length() == 0;
   }
 
   public class MyState {

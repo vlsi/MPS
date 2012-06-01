@@ -20,7 +20,7 @@ public class BreakStatement_TextGen extends SNodeTextGen {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "loopLabelReference", true), "loopLabel", false), "name"));
       this.append(";");
-    } else if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "label"))) {
+    } else if (isNotEmpty_e6b90q_a0a2a0(SPropertyOperations.getString(node, "label"))) {
       this.appendWithIndent("break ");
       this.append(SPropertyOperations.getString(node, "label"));
       this.append(";");
@@ -30,5 +30,9 @@ public class BreakStatement_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.fillPositionInfo(this, node, TraceableConcept_Behavior.call_getTraceableProperty_5067982036267369901(SNodeOperations.cast(node, "jetbrains.mps.lang.traceable.structure.TraceableConcept")));
     }
+  }
+
+  public static boolean isNotEmpty_e6b90q_a0a2a0(String str) {
+    return str != null && str.length() > 0;
   }
 }

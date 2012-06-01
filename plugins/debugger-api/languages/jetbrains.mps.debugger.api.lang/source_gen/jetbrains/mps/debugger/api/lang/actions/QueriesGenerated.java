@@ -79,7 +79,7 @@ public class QueriesGenerated {
         Computable computable = new Computable() {
           public Object compute() {
             SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
-            if (debuggerType != null && StringUtils.isNotEmpty(SPropertyOperations.getString(debuggerType, "name"))) {
+            if (debuggerType != null && isNotEmpty_x583g4_a0a1a0a0a0a0c0a0b0b(SPropertyOperations.getString(debuggerType, "name"))) {
               IBreakpointsProvider provider = Debuggers.getInstance().getDebuggerByName(SPropertyOperations.getString(debuggerType, "name")).getBreakpointsProvider();
               if (provider != null) {
                 return (List<IBreakpointKind>) provider.getAllKinds();
@@ -116,5 +116,9 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a1a0a0a0a0c0a0b0b(String str) {
+    return str != null && str.length() > 0;
   }
 }

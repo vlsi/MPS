@@ -21,7 +21,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.Make_Facet.Target_make.Parameters" />
-    <classNode dependClassName="jetbrains.mps.lang.resources.plugin.StringUtils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
@@ -67,9 +66,6 @@
     <classNode dependClassName="jetbrains.mps.lang.resources.plugin.Binaries_Facet" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.resources.plugin.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

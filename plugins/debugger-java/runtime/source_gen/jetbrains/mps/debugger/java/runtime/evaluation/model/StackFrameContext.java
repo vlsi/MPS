@@ -344,7 +344,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       return false;
     }
     String staticContextTypeName = getStaticContextTypeName();
-    if (StringUtils.isEmpty(staticContextTypeName)) {
+    if ((staticContextTypeName == null || staticContextTypeName.length() == 0)) {
       return false;
     }
     return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));

@@ -4,32 +4,6 @@ package jetbrains.mps.baseLanguage.collections.trove.generator.template.main;
 
 
 /*package*/ class StringUtils {
-  public StringUtils() {
-  }
-
-  /*package*/ static String stripStart(String str, String chars) {
-    int strLen;
-    if (str == null || (strLen = str.length()) == 0) {
-      return str;
-    }
-    int start = 0;
-    while ((start != strLen) && (chars.indexOf(str.charAt(start)) != -1)) {
-      start++;
-    }
-    return str.substring(start);
-  }
-
-  /*package*/ static String stripEnd(String str, String chars) {
-    int end;
-    if (str == null || (end = str.length()) == 0) {
-      return str;
-    }
-    while ((0 != end) && (chars.indexOf(str.charAt(end - 1)) != -1)) {
-      end--;
-    }
-    return str.substring(0, end);
-  }
-
   /*package*/ static String substring(String str, int start, int end) {
     if (str == null) {
       return null;
@@ -60,20 +34,5 @@ package jetbrains.mps.baseLanguage.collections.trove.generator.template.main;
       return null;
     }
     return substring(str, start, str.length());
-  }
-
-  /*package*/ static boolean isEmpty(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  /*package*/ static boolean isNotEmpty(String str) {
-    return str != null && str.length() > 0;
-  }
-
-  /*package*/ static String trimBoth(String str) {
-    return (str == null ?
-      null :
-      str.trim()
-    );
   }
 }

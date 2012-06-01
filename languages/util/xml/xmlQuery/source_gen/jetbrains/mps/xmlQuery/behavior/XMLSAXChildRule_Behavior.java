@@ -11,9 +11,17 @@ public class XMLSAXChildRule_Behavior {
   }
 
   public static String call_getTagName_3444414697307503271(SNode thisNode) {
-    if ((SLinkOperations.getTarget(thisNode, "rule", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName")) && (SPropertyOperations.getBoolean(thisNode, "overrideTag") == false || StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "tagName")))) {
+    if ((SLinkOperations.getTarget(thisNode, "rule", false) != null) && isNotEmpty_twisza_a0a0a0b(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName")) && (SPropertyOperations.getBoolean(thisNode, "overrideTag") == false || isEmpty_twisza_a0a0a0a1(SPropertyOperations.getString(thisNode, "tagName")))) {
       return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "rule", false), "tagName");
     }
     return SPropertyOperations.getString(thisNode, "tagName");
+  }
+
+  public static boolean isNotEmpty_twisza_a0a0a0b(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isEmpty_twisza_a0a0a0a1(String str) {
+    return str == null || str.length() == 0;
   }
 }

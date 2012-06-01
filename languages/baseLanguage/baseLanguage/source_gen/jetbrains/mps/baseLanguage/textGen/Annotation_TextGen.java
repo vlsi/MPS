@@ -31,7 +31,7 @@ public class Annotation_TextGen extends SNodeTextGen {
       this.append("static ");
     }
     this.appendWithIndent("@interface ");
-    if (StringUtils.isEmpty(SPropertyOperations.getString(node, "name"))) {
+    if (isEmpty_ydmu3t_a0f0a(SPropertyOperations.getString(node, "name"))) {
       this.foundError("annotation name is empty");
       this.append("???");
     } else {
@@ -56,5 +56,9 @@ public class Annotation_TextGen extends SNodeTextGen {
 
   public String getExtension(SNode node) {
     return "java";
+  }
+
+  public static boolean isEmpty_ydmu3t_a0f0a(String str) {
+    return str == null || str.length() == 0;
   }
 }

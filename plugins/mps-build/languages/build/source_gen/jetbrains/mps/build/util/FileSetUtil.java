@@ -120,10 +120,10 @@ public class FileSetUtil {
     String dirmode = null;
     while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
       if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
-        if (filemode == null && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode"))) {
+        if (filemode == null && isNotEmpty_ae3l0k_a0a0a0a3a6(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode"))) {
           filemode = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "filemode");
         }
-        if (dirmode == null && StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode"))) {
+        if (dirmode == null && isNotEmpty_ae3l0k_a0a1a0a3a6(SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode"))) {
           dirmode = SPropertyOperations.getString(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode"), "dirmode");
         }
       }
@@ -140,5 +140,13 @@ public class FileSetUtil {
 
   public static boolean isExplicit(SNode fileset) {
     return getFilesetContainer(fileset) == null;
+  }
+
+  public static boolean isNotEmpty_ae3l0k_a0a0a0a3a6(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_ae3l0k_a0a1a0a3a6(String str) {
+    return str != null && str.length() > 0;
   }
 }

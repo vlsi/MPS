@@ -64,7 +64,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        if (StringUtils.isNotEmpty(SPropertyOperations.getString(node, "scriptsFolder"))) {
+        if (isNotEmpty_6u5ptb_a0a0e0a0a0c0a(SPropertyOperations.getString(node, "scriptsFolder"))) {
           SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0e0a0a0c0a().createNode(Layout_Behavior.getBasedirName_1226509010730(), SPropertyOperations.getString(node, "scriptsFolder")), true);
         } else {
           SLinkOperations.setTarget(node, "scriptsDirectory", new DirctoriesInLayout_MigrationScript.QuotationClass_6u5ptb_a0a0a0a0a4a0a0a2a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
@@ -100,6 +100,10 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
+  }
+
+  public static boolean isNotEmpty_6u5ptb_a0a0e0a0a0c0a(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static class QuotationClass_6u5ptb_a0a0a0a0e0a0a0b0a {

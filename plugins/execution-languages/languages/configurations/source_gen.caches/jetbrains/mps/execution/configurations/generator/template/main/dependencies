@@ -16,7 +16,6 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.RunConfigurationExecutor_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.RunConfiguration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.behavior.StartProcessHandlerStatement_Behavior" />
-    <classNode dependClassName="jetbrains.mps.execution.configurations.generator.template.main.StringUtils" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentConfiguration_Behavior" />
     <classNode dependClassName="jetbrains.mps.execution.settings.behavior.PersistentPropertyDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
@@ -48,9 +47,6 @@
     <classNode dependClassName="jetbrains.mps.util.NodeNameUtil" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-  </dependency>
-  <dependency className="jetbrains.mps.execution.configurations.generator.template.main.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

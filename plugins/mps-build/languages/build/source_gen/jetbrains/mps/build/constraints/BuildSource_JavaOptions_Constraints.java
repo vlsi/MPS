@@ -55,7 +55,7 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "optionsName";
-        return StringUtils.isEmpty((SPropertyOperations.getString(propertyValue))) || NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
+        return isEmpty_c7ipzi_a0a0a1a1a0b0a1a2((SPropertyOperations.getString(propertyValue))) || NameUtil.isValidProjectPartName((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;
@@ -67,5 +67,9 @@ public class BuildSource_JavaOptions_Constraints extends BaseConstraintsDescript
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildJavaPlugin");
       }
     }) || parentNode.getConceptFqName().startsWith("jetbrains.mps.lang.generator");
+  }
+
+  public static boolean isEmpty_c7ipzi_a0a0a1a1a0b0a1a2(String str) {
+    return str == null || str.length() == 0;
   }
 }

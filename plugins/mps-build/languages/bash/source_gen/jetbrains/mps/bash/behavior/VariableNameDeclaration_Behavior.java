@@ -18,7 +18,7 @@ public class VariableNameDeclaration_Behavior {
 
   public static SNode getDefinedName_9034131902192956167(IScope scope, String name) {
     for (SNode definedVar : ListSequence.fromList(SConceptOperations.findConceptInstances(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.VariableNameDeclaration"), scope))) {
-      if (StringUtils.isNotEmpty(SPropertyOperations.getString(definedVar, "name")) && SPropertyOperations.getString(definedVar, "name").equals(name)) {
+      if (isNotEmpty_3wnjjz_a0a0a0a1(SPropertyOperations.getString(definedVar, "name")) && SPropertyOperations.getString(definedVar, "name").equals(name)) {
         return definedVar;
       }
     }
@@ -54,10 +54,18 @@ public class VariableNameDeclaration_Behavior {
 
   public static SNode testName_9034131902194480300(SNode node, String name) {
     for (SNode v : ListSequence.fromList(VariableNameDeclaration_Behavior.getDefinedInShell_9034131902194381915(node))) {
-      if (StringUtils.isNotEmpty(SPropertyOperations.getString(v, "name")) && SPropertyOperations.getString(v, "name").equals(name)) {
+      if (isNotEmpty_3wnjjz_a0a0a0a4(SPropertyOperations.getString(v, "name")) && SPropertyOperations.getString(v, "name").equals(name)) {
         return v;
       }
     }
     return null;
+  }
+
+  public static boolean isNotEmpty_3wnjjz_a0a0a0a1(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_3wnjjz_a0a0a0a4(String str) {
+    return str != null && str.length() > 0;
   }
 }

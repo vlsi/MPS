@@ -26,7 +26,7 @@ public class UpdateIcons_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "iconPath")) && (SLinkOperations.getTarget(node, "icon", true) == null);
+        return isNotEmpty_q0m4lh_a0a0a3a0a0a1a0(SPropertyOperations.getString(node, "iconPath")) && (SLinkOperations.getTarget(node, "icon", true) == null);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -53,7 +53,7 @@ public class UpdateIcons_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "icon")) && (SLinkOperations.getTarget(node, "toolIcon", true) == null);
+        return isNotEmpty_q0m4lh_a0a0a3a0a0a2a0(SPropertyOperations.getString(node, "icon")) && (SLinkOperations.getTarget(node, "toolIcon", true) == null);
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -66,5 +66,13 @@ public class UpdateIcons_MigrationScript extends BaseMigrationScript {
         return true;
       }
     });
+  }
+
+  public static boolean isNotEmpty_q0m4lh_a0a0a3a0a0a1a0(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_q0m4lh_a0a0a3a0a0a2a0(String str) {
+    return str != null && str.length() > 0;
   }
 }

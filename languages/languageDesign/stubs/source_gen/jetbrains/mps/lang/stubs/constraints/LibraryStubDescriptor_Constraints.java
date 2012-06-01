@@ -32,7 +32,7 @@ public class LibraryStubDescriptor_Constraints extends BaseConstraintsDescriptor
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "moduleName";
         {
-          if (StringUtils.isEmpty(SPropertyOperations.getString(node, "moduleId"))) {
+          if (isEmpty_wbjwhz_a0a0b0b0a1a0b0a(SPropertyOperations.getString(node, "moduleId"))) {
             return null;
           }
 
@@ -51,5 +51,9 @@ public class LibraryStubDescriptor_Constraints extends BaseConstraintsDescriptor
       }
     });
     return properties;
+  }
+
+  public static boolean isEmpty_wbjwhz_a0a0b0b0a1a0b0a(String str) {
+    return str == null || str.length() == 0;
   }
 }

@@ -54,7 +54,10 @@ public class UnitTestProcessListener extends ProcessAdapter {
     if (text == null) {
       return;
     }
-    String textTrimmed = StringUtils.trimBoth(text);
+    String textTrimmed = ((text == null ?
+      null :
+      text.trim()
+    ));
     TestEvent testEvent = TestEvent.parse(textTrimmed);
     if (testEvent != null) {
       myLastEvent = testEvent;

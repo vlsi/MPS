@@ -237,7 +237,11 @@ public class BeforeTask_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_bndx6c_a2a0(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "alias"));
+    return isNotEmpty_bndx6c_a0a0a(SPropertyOperations.getString(node, "alias"));
+  }
+
+  public static boolean isNotEmpty_bndx6c_a0a0a(String str) {
+    return str != null && str.length() > 0;
   }
 
   private static class parameterListHandler_bndx6c_b2a extends RefNodeListHandler {

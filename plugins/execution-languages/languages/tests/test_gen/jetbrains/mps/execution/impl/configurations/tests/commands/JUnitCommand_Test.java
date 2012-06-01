@@ -72,7 +72,7 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
         } else if (exitcode < 0) {
           Assert.fail("Process running too long.");
         }
-        if (StringUtils.isNotEmpty(checkListener.getMessages())) {
+        if (isNotEmpty_16es9m_a0k0a0c0(checkListener.getMessages())) {
           Assert.fail(checkListener.getMessages());
         }
       } catch (ExecutionException e) {
@@ -96,6 +96,10 @@ public class JUnitCommand_Test extends BaseTransformationTest4 {
         }
       });
       return result;
+    }
+
+    public static boolean isNotEmpty_16es9m_a0k0a0c0(String str) {
+      return str != null && str.length() > 0;
     }
 
     private static boolean eq_16es9m_a0a0a0a0a0a0a1a0a0a0a1a3a(Object a, Object b) {

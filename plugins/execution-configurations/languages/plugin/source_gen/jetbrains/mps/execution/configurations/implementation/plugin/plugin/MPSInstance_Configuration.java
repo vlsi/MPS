@@ -45,10 +45,10 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    if (StringUtils.isEmpty(this.getConfigurationPath())) {
+    if (isEmpty_uovwmm_a0a0a0a(this.getConfigurationPath())) {
       throw new RuntimeConfigurationException("Configuration path is empty.");
     }
-    if (StringUtils.isEmpty(this.getSystemPath())) {
+    if (isEmpty_uovwmm_a0b0a0a(this.getSystemPath())) {
       throw new RuntimeConfigurationException("System path is empty.");
     }
   }
@@ -115,14 +115,14 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
 
   public String expandPath(String path) {
-    if (StringUtils.isEmpty(path)) {
+    if ((path == null || path.length() == 0)) {
       return path;
     }
     return MacrosFactory.getGlobal().expandPath(path).replace(File.separator, "/");
   }
 
   public String shinkPath(String path) {
-    if (StringUtils.isEmpty(path)) {
+    if ((path == null || path.length() == 0)) {
       return path;
     }
     return MacrosFactory.getGlobal().shrinkPath(path).replace(File.separator, "/");
@@ -166,7 +166,7 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   private void replacePathMacro(Element element, Project project) {
     String path = "path";
     String value = element.getAttributeValue(path);
-    if (StringUtils.isNotEmpty(value)) {
+    if ((value != null && value.length() > 0)) {
       element.setAttribute(path, MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(getProjectFile(project).getPath())).expandPath(value));
     }
     for (Object child : element.getChildren()) {
@@ -220,6 +220,14 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   @Override
   public boolean canExecute(String executorId) {
     return MPSInstance_Configuration_RunProfileState.canExecute(executorId);
+  }
+
+  public static boolean isEmpty_uovwmm_a0a0a0a(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isEmpty_uovwmm_a0b0a0a(String str) {
+    return str == null || str.length() == 0;
   }
 
   public class MyState {

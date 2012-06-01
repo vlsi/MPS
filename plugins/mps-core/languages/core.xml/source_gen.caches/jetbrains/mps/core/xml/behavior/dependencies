@@ -27,9 +27,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.core.xml.behavior.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlAttribute_Behavior" file="XmlAttribute_Behavior.java">
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -272,7 +269,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlTextValue_Behavior" file="XmlTextValue_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.StringUtils" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlValuePart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -287,7 +284,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlText_Behavior" file="XmlText_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.StringUtils" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -321,7 +318,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.behavior.XmlWhitespace_Behavior" file="XmlWhitespace_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.core.xml.behavior.StringUtils" />
+    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.core.xml.behavior.XmlPart_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

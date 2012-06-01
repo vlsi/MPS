@@ -61,7 +61,7 @@ public class PackagingBuildScript_Configuration_RunProfileState implements RunPr
     });
     if (compile.value) {
       if (!(new File(Java_Command.getJdkHome() + File.separator + "lib" + File.separator + "tools.jar").exists())) {
-        options = ((StringUtils.isEmpty(options) ?
+        options = (((options == null || options.length() == 0) ?
           "" :
           options + " "
         )) + "-lib" + " " + CommonPaths.getToolsJar();

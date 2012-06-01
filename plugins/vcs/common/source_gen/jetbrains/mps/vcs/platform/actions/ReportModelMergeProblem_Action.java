@@ -51,7 +51,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     List<VcsDirectoryMapping> mappings = ProjectLevelVcsManager.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).getDirectoryMappings();
     return ListSequence.fromList(mappings).any(new IWhereFilter<VcsDirectoryMapping>() {
       public boolean accept(VcsDirectoryMapping m) {
-        return StringUtils.isNotEmpty(m.getVcs());
+        return isNotEmpty_6wdzvw_a0a0a0a1a0(m.getVcs());
       }
     });
   }
@@ -139,5 +139,9 @@ public class ReportModelMergeProblem_Action extends BaseAction {
 
   private void showNoBackupsAvailable(final Map<String, Object> _params) {
     Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
+  }
+
+  public static boolean isNotEmpty_6wdzvw_a0a0a0a1a0(String str) {
+    return str != null && str.length() > 0;
   }
 }
