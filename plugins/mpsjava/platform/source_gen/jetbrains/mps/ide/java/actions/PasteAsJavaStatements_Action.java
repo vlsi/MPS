@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.java.util.JavaPaster;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.java.parser.FeatureKind;
 import jetbrains.mps.project.MPSProject;
@@ -61,6 +62,13 @@ public class PasteAsJavaStatements_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("anchorNode", event.getData(MPSCommonDataKeys.NODE));
     if (MapSequence.fromMap(_params).get("anchorNode") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
