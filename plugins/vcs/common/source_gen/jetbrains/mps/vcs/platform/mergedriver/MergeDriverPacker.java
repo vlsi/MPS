@@ -129,6 +129,8 @@ public abstract class MergeDriverPacker {
 
   protected abstract Set<String> getClasspathInternal();
 
+  protected abstract String getVCSCoreFileName();
+
   public Set<String> getClasspath(boolean withSvnkit) {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
     if (InternalFlag.isInternalMode()) {
@@ -145,7 +147,7 @@ public abstract class MergeDriverPacker {
           return mpsCorePath + File.separator + it;
         }
       }));
-      SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + File.separator + "lib" + File.separator + "mps-vcs-core.jar");
+      SetSequence.fromSet(classpathItems).addElement(getVCSCorePluginPath() + File.separator + "lib" + File.separator + getVCSCoreFileName());
     }
 
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(ideaLibJars).select(new ISelector<String, String>() {
