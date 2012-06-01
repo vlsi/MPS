@@ -36,18 +36,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.RelativePathHelper;
 import java.util.Set;
+import java.util.LinkedHashSet;
 import com.intellij.openapi.application.PathMacros;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.build.mps.util.PathConverter;
 import jetbrains.mps.build.mps.util.VisibleModules;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.build.mps.util.ModuleLoader;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -109,10 +109,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     smodel.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build", Language.class).getModuleReference());
     smodel.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.mps", Language.class).getModuleReference());
 
-    if (getDependencyKind() != DependencyStep.DependencyKind.NONE) {
-      moduleDescriptor.getDependencies().add(new Dependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("422c2909-59d6-41a9-b318-40e6256b250f")).getModuleReference(), false));
-      smodel.addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getSModelReference(), false);
-    }
+    moduleDescriptor.getDependencies().add(new Dependency(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("422c2909-59d6-41a9-b318-40e6256b250f")).getModuleReference(), false));
+    smodel.addModelImport(SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.build", "")).getSModel().getModelDescriptor().getSModelReference(), false);
   }
 
   public SModelDescriptor getSModelDescriptor(ProgressIndicator indicator) {
@@ -165,19 +163,26 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
 
     // deps and macro 
-    Set<String> userMacroNames = PathMacros.getInstance().getUserMacroNames();
+    Set<String> userMacroNames = new LinkedHashSet<String>(PathMacros.getInstance().getUserMacroNames());
     List<SNode> macroses = new ArrayList<SNode>();
     List<SNode> dependencies = new ArrayList<SNode>();
-    for (String macro : SetSequence.fromSet(userMacroNames)) {
-      ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0o0e().createNode(macro));
-    }
-    if (eq_un708i_a0p0e(getDependencyKind(), DependencyStep.DependencyKind.MPS)) {
-      ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0p0e().createNode());
-      ListSequence.fromList(dependencies).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0b0p0e().createNode(SNodeOperations.getNode("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)", "4301118715654192646")));
-    } else if (eq_un708i_a0a51a4(getDependencyKind(), DependencyStep.DependencyKind.IDEA_AND_MPS_PLUGIN)) {
-      SNode macro = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0p0e_0().createNode();
+    if (eq_un708i_a0o0e(getDependencyKind(), DependencyStep.DependencyKind.MPS)) {
+      SNode macro = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a41a4().createNode();
       ListSequence.fromList(macroses).addElement(macro);
-      ListSequence.fromList(dependencies).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0c0a51a4().createNode(macro));
+      ListSequence.fromList(dependencies).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0c0o0e().createNode(macro));
+      userMacroNames.remove("mps_home");
+    } else if (eq_un708i_a0a41a4(getDependencyKind(), DependencyStep.DependencyKind.IDEA)) {
+      SNode macro = new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0o0e().createNode();
+      ListSequence.fromList(macroses).addElement(macro);
+      userMacroNames.remove("idea_home");
+      ListSequence.fromList(dependencies).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0d0a41a4().createNode(macro));
+      macro = new BuildGeneratorImpl.QuotationClass_un708i_a0a4a0o0e().createNode(macro);
+      ListSequence.fromList(macroses).addElement(macro);
+      userMacroNames.remove("plugins_home");
+      ListSequence.fromList(dependencies).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0h0a41a4().createNode(macro));
+    }
+    for (String macro : SetSequence.fromSet(userMacroNames)) {
+      ListSequence.fromList(macroses).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0p0e().createNode(macro));
     }
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "macros", true)).addSequence(ListSequence.fromList(macroses));
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "dependencies", true)).addSequence(ListSequence.fromList(dependencies));
@@ -266,31 +271,16 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private Tuples._2<List<SNode>, SNode> createProjectContent(String name, List<NodeData> data, SModel targetSModel) {
-    if (isPackAsIdeaPlugin()) {
-      Set<ModuleData> moduleData = SetSequence.fromSet(new LinkedHashSet<ModuleData>());
-      extractModules(data, moduleData);
-      SNode group = new BuildGeneratorImpl.QuotationClass_un708i_a0a2a0a9().createNode(SetSequence.fromSet(moduleData).select(new ISelector<ModuleData, SNode>() {
-        public SNode select(ModuleData it) {
-          return createModuleNode(it);
-        }
-      }).toListSequence(), name);
-      SNode plugin = new BuildGeneratorImpl.QuotationClass_un708i_a0a3a0a9().createNode(name, name, name);
-      ListSequence.fromList(SLinkOperations.getTargets(plugin, "content", true)).addElement(new BuildGeneratorImpl.QuotationClass_un708i_a0a0e0a0j().createNode(group));
-
-      try {
-        SLinkOperations.setTarget(plugin, "pluginXml", createPathFromFullPath(getPathToPluginXml()), true);
-      } catch (RelativePathHelper.PathException e) {
-        if (log.isWarnEnabled()) {
-          log.warn("Can't calculate relative path for specified plugin.xml " + getPathToPluginXml(), e);
-        }
+    Set<ModuleData> moduleData = SetSequence.fromSet(new LinkedHashSet<ModuleData>());
+    extractModules(data, moduleData);
+    SNode group = new BuildGeneratorImpl.QuotationClass_un708i_a0a2a9().createNode(SetSequence.fromSet(moduleData).select(new ISelector<ModuleData, SNode>() {
+      public SNode select(ModuleData it) {
+        return createModuleNode(it);
       }
-      return MultiTuple.<List<SNode>,SNode>from(Sequence.fromIterable(Sequence.fromArray(new SNode[]{plugin, group})).toListSequence(), new BuildGeneratorImpl.QuotationClass_un708i_a1a7a0a9().createNode(name + ".zip", plugin));
-    } else {
-      Set<SNode> modules = SetSequence.fromSet(new LinkedHashSet<SNode>());
-      SNode folder = new BuildGeneratorImpl.QuotationClass_un708i_a0a1a0a0j().createNode(name);
-      createContent(data, folder, modules, targetSModel);
-      return MultiTuple.<List<SNode>,SNode>from(SetSequence.fromSet(modules).toListSequence(), new BuildGeneratorImpl.QuotationClass_un708i_a1a3a0a0j().createNode(name + ".zip", folder));
-    }
+    }).toListSequence(), name);
+    SNode plugin = new BuildGeneratorImpl.QuotationClass_un708i_a0a3a9().createNode(name, group, name, name);
+
+    return MultiTuple.<List<SNode>,SNode>from(Sequence.fromIterable(Sequence.fromArray(new SNode[]{plugin, group})).toListSequence(), new BuildGeneratorImpl.QuotationClass_un708i_a1a5a9().createNode(name + ".zip", plugin));
   }
 
   private void extractModules(List<NodeData> data, Set<ModuleData> extracted) {
@@ -344,40 +334,22 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  private static boolean eq_un708i_a0p0e(Object a, Object b) {
+  private static boolean eq_un708i_a0o0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_un708i_a0a51a4(Object a, Object b) {
+  private static boolean eq_un708i_a0a41a4(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_un708i_a0a0a0o0e {
-    public QuotationClass_un708i_a0a0a0o0e() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("name", (String) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a0a0a0p0e {
-    public QuotationClass_un708i_a0a0a0p0e() {
+  public static class QuotationClass_un708i_a0a0a41a4 {
+    public QuotationClass_un708i_a0a0a41a4() {
     }
 
     public SNode createNode() {
@@ -394,26 +366,33 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0b0p0e {
-    public QuotationClass_un708i_a0a0b0p0e() {
+  public static class QuotationClass_un708i_a0a0c0o0e {
+    public QuotationClass_un708i_a0a0c0o0e() {
     }
 
-    public SNode createNode(Object parameter_3) {
+    public SNode createNode(Object parameter_5) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("script", (SNode) parameter_3);
-        result = quotedNode1_2;
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.addReference(SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4301118715654192646")));
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.setReferent("macro", (SNode) parameter_5);
+          quotedNode_1.addChild("artifacts", quotedNode1_4);
+        }
+        result = quotedNode1_3;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a0p0e_0 {
-    public QuotationClass_un708i_a0a0a0p0e_0() {
+  public static class QuotationClass_un708i_a0a0a0o0e {
+    public QuotationClass_un708i_a0a0a0o0e() {
     }
 
     public SNode createNode() {
@@ -430,8 +409,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0c0a51a4 {
-    public QuotationClass_un708i_a0a0c0a51a4() {
+  public static class QuotationClass_un708i_a0a0d0a41a4 {
+    public QuotationClass_un708i_a0a0d0a41a4() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -450,6 +429,81 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("artifacts", quotedNode1_4);
         }
         result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a4a0o0e {
+    public QuotationClass_un708i_a0a4a0o0e() {
+    }
+
+    public SNode createNode(Object parameter_7) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        quotedNode1_4.setProperty("name", "plugins_home");
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.setReferent("macro", (SNode) parameter_7);
+          {
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildCompositePath", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_6 = quotedNode_3;
+            quotedNode1_6.setProperty("head", "plugins");
+            quotedNode_2.addChild("compositePart", quotedNode1_6);
+          }
+          quotedNode_1.addChild("defaultPath", quotedNode1_5);
+        }
+        result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a0h0a41a4 {
+    public QuotationClass_un708i_a0a0h0a41a4() {
+    }
+
+    public SNode createNode(Object parameter_5) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_1;
+        quotedNode1_3.addReference(SReference.create("script", quotedNode1_3, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("5148601452480491524")));
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_2;
+          quotedNode1_4.setReferent("macro", (SNode) parameter_5);
+          quotedNode_1.addChild("artifacts", quotedNode1_4);
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_un708i_a0a0a0p0e {
+    public QuotationClass_un708i_a0a0a0p0e() {
+    }
+
+    public SNode createNode(Object parameter_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildFolderMacro", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.setProperty("name", (String) parameter_3);
+        result = quotedNode1_2;
       }
       return result;
     }
@@ -623,8 +677,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a2a0a9 {
-    public QuotationClass_un708i_a0a2a0a9() {
+  public static class QuotationClass_un708i_a0a2a9 {
+    public QuotationClass_un708i_a0a2a9() {
     }
 
     public SNode createNode(Object parameter_5, Object parameter_6) {
@@ -649,11 +703,11 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a3a0a9 {
-    public QuotationClass_un708i_a0a3a0a9() {
+  public static class QuotationClass_un708i_a0a3a9 {
+    public QuotationClass_un708i_a0a3a9() {
     }
 
-    public SNode createNode(Object parameter_15, Object parameter_16, Object parameter_17) {
+    public SNode createNode(Object parameter_19, Object parameter_20, Object parameter_21, Object parameter_22) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_1 = null;
@@ -663,69 +717,65 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
       SNode quotedNode_5 = null;
       SNode quotedNode_6 = null;
       SNode quotedNode_7 = null;
+      SNode quotedNode_8 = null;
+      SNode quotedNode_9 = null;
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_8 = quotedNode_1;
-        quotedNode1_8.setProperty("id", (String) parameter_17);
+        SNode quotedNode1_10 = quotedNode_1;
+        quotedNode1_10.setProperty("id", (String) parameter_22);
         {
           quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_9 = quotedNode_2;
+          SNode quotedNode1_11 = quotedNode_2;
           {
-            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_10 = quotedNode_5;
-            quotedNode1_10.setProperty("text", (String) parameter_15);
-            quotedNode_2.addChild("parts", quotedNode1_10);
+            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_12 = quotedNode_7;
+            quotedNode1_12.setProperty("text", (String) parameter_19);
+            quotedNode_2.addChild("parts", quotedNode1_12);
           }
-          quotedNode_1.addChild("name", quotedNode1_9);
+          quotedNode_1.addChild("name", quotedNode1_11);
         }
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_11 = quotedNode_3;
+          SNode quotedNode1_13 = quotedNode_3;
           {
-            quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_12 = quotedNode_6;
-            quotedNode1_12.setProperty("text", (String) parameter_16);
-            quotedNode_3.addChild("parts", quotedNode1_12);
-          }
-          quotedNode_1.addChild("containerName", quotedNode1_11);
-        }
-        {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_13 = quotedNode_4;
-          {
-            quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_14 = quotedNode_7;
+            quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_14 = quotedNode_8;
             quotedNode1_14.setProperty("text", "1.0");
-            quotedNode_4.addChild("parts", quotedNode1_14);
+            quotedNode_3.addChild("parts", quotedNode1_14);
           }
           quotedNode_1.addChild("version", quotedNode1_13);
         }
-        result = quotedNode1_8;
+        {
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_15 = quotedNode_4;
+          quotedNode1_15.setReferent("group", (SNode) parameter_20);
+          quotedNode_1.addChild("content", quotedNode1_15);
+        }
+        {
+          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_16 = quotedNode_5;
+          quotedNode1_16.addReference(SReference.create("target", quotedNode1_16, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("4973949960459588488")));
+          quotedNode_1.addChild("dependencies", quotedNode1_16);
+        }
+        {
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_17 = quotedNode_6;
+          {
+            quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_18 = quotedNode_9;
+            quotedNode1_18.setProperty("text", (String) parameter_21);
+            quotedNode_6.addChild("parts", quotedNode1_18);
+          }
+          quotedNode_1.addChild("containerName", quotedNode1_17);
+        }
+        result = quotedNode1_10;
       }
       return result;
     }
   }
 
-  public static class QuotationClass_un708i_a0a0e0a0j {
-    public QuotationClass_un708i_a0a0e0a0j() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setReferent("group", (SNode) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a1a7a0a9 {
-    public QuotationClass_un708i_a1a7a0a9() {
+  public static class QuotationClass_un708i_a1a5a9 {
+    public QuotationClass_un708i_a1a5a9() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10) {
@@ -756,82 +806,6 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
           quotedNode_1.addChild("children", quotedNode1_8);
         }
         result = quotedNode1_5;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a0a1a0a0j {
-    public QuotationClass_un708i_a0a1a0a0j() {
-    }
-
-    public SNode createNode(Object parameter_7) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Folder", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_5 = quotedNode_2;
-          {
-            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_6 = quotedNode_3;
-            quotedNode1_6.setProperty("text", (String) parameter_7);
-            quotedNode_2.addChild("parts", quotedNode1_6);
-          }
-          quotedNode_1.addChild("containerName", quotedNode1_5);
-        }
-        result = quotedNode1_4;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_un708i_a1a3a0a0j {
-    public QuotationClass_un708i_a1a3a0a0j() {
-    }
-
-    public SNode createNode(Object parameter_11, Object parameter_12) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      SNode quotedNode_5 = null;
-      SNode quotedNode_6 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Zip", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_7 = quotedNode_1;
-        {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, GlobalScope.getInstance(), false);
-          SNode quotedNode1_8 = quotedNode_2;
-          {
-            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, GlobalScope.getInstance(), false);
-            SNode quotedNode1_9 = quotedNode_4;
-            quotedNode1_9.setProperty("text", (String) parameter_11);
-            quotedNode_2.addChild("parts", quotedNode1_9);
-          }
-          quotedNode_1.addChild("containerName", quotedNode1_8);
-        }
-        {
-          quotedNode_3 = (SNode) parameter_12;
-          SNode quotedNode1_10;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_10 = HUtil.copyIfNecessary(quotedNode_3);
-          } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_10 = quotedNode_3;
-          }
-          if (quotedNode1_10 != null) {
-            quotedNode_1.addChild("children", HUtil.copyIfNecessary(quotedNode1_10));
-          }
-        }
-        result = quotedNode1_7;
       }
       return result;
     }
