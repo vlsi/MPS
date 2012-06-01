@@ -97,8 +97,9 @@ public abstract class AbstractUiState {
   }
 
   @NotNull
+  @Deprecated
+  @ToRemove(version = 2.5)
   public Map<IWatchable, IValue> getWatchableValues() {
-    //  todo is this method really used? 
     IStackFrame stackFrame = getStackFrame();
     if (stackFrame != null) {
       return stackFrame.getWatchableValues();
@@ -116,6 +117,8 @@ public abstract class AbstractUiState {
   }
 
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2.5)
   public IValue getVariableValue(IWatchable variable) {
     IStackFrame stackFrame = getStackFrame();
     if (stackFrame != null) {
@@ -125,6 +128,8 @@ public abstract class AbstractUiState {
   }
 
   @Nullable
+  @Deprecated
+  @ToRemove(version = 2.5)
   public String getSourceFileName() {
     IStackFrame stackFrame = getStackFrame();
     if (stackFrame == null) {
@@ -133,6 +138,8 @@ public abstract class AbstractUiState {
     return stackFrame.getLocation().getFileName();
   }
 
+  @Deprecated
+  @ToRemove(version = 2.5)
   public int getPosition() {
     IStackFrame stackFrame = getStackFrame();
     if (stackFrame == null) {
