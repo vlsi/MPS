@@ -87,6 +87,9 @@ public class PasteNode_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("contextModel") == null) {
       return false;
     }
+    if (!(MapSequence.fromMap(_params).get("contextModel") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("contextModel")).isReadOnly()) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
     return true;
   }
