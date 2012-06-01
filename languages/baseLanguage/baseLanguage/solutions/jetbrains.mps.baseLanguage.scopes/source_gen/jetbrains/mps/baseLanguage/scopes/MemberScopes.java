@@ -22,6 +22,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import jetbrains.mps.lang.scopes.runtime.FilteringScope;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MemberScopes {
   private static ThreadLocal<Set<Tuples._2<SNode, SNode>>> inCalculatingScopes = new ThreadLocal() {
@@ -113,6 +115,10 @@ public class MemberScopes {
   }
 
   public static Scope visibleClassifierMembers(SNode contextClassifier, SNode kind, SNode contextNode) {
-    return visibleClassifierMembers(((Scope) BehaviorManager.getInstance().invoke(Object.class, contextClassifier, "virtual_getMembers_2201875424515824604", new Class[]{SNode.class, SNode.class}, kind)), contextClassifier, contextNode);
+    Scope membersScope = Classifier_Behavior.call_getMembers_2201875424515824604(contextClassifier, kind);
+    if (membersScope == null) {
+      throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, "name") + " and kind " + SPropertyOperations.getString(kind, "name") + " is null");
+    }
+    return visibleClassifierMembers(membersScope, contextClassifier, contextNode);
   }
 }
