@@ -990,7 +990,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6769912430829078916(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0xh(SPropertyOperations.getString(_context.getNode(), "shortcutChar"));
+    return isNotEmpty_x583g4_a0a0zh(SPropertyOperations.getString(_context.getNode(), "shortcutChar"));
   }
 
   public static boolean ifMacro_Condition_3038738109029045717(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1034,7 +1034,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6789255557380212758(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "isPopup") && isNotEmpty_x583g4_a0a0a612(SPropertyOperations.getString(_context.getNode(), "caption"));
+    return SPropertyOperations.getBoolean(_context.getNode(), "isPopup") && isNotEmpty_x583g4_a0a0a812(SPropertyOperations.getString(_context.getNode(), "caption"));
   }
 
   public static boolean ifMacro_Condition_6789255557380212884(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1693,11 +1693,11 @@ public class QueriesGenerated {
     );
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0xh(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0zh(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0a612(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0a812(String str) {
     return str != null && str.length() > 0;
   }
 

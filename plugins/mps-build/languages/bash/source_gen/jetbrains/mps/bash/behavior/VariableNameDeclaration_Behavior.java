@@ -43,10 +43,14 @@ public class VariableNameDeclaration_Behavior {
 
   public static SNode testName_9034131902194480300(SNode node, String name) {
     for (SNode v : ListSequence.fromList(VariableNameDeclaration_Behavior.getDefinedInShell_9034131902194381915(node))) {
-      if (StringUtils.isNotEmpty(SPropertyOperations.getString(v, "name")) && SPropertyOperations.getString(v, "name").equals(name)) {
+      if (isNotEmpty_3wnjjz_a0a0a0a3(SPropertyOperations.getString(v, "name")) && SPropertyOperations.getString(v, "name").equals(name)) {
         return v;
       }
     }
     return null;
+  }
+
+  public static boolean isNotEmpty_3wnjjz_a0a0a0a3(String str) {
+    return str != null && str.length() > 0;
   }
 }
