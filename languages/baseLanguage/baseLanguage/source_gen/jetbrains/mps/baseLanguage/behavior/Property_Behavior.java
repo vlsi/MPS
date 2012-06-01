@@ -11,6 +11,7 @@ import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.scope.EmptyScope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -78,6 +79,10 @@ public class Property_Behavior {
   }
 
   public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode[] implementsInterfaces) {
+    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
+      return new EmptyScope();
+    }
+
     Scope properties = new NamedElementsScope(ListSequence.fromList(SNodeOperations.getChildren(classNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Property");

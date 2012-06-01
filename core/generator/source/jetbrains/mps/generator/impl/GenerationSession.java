@@ -631,7 +631,7 @@ public class GenerationSession {
           if (o instanceof SNode) {
             mySessionContext.keepTransientModel(((SNode) o).getModel(), false);
           } else if (o instanceof NodeWithContext) {
-            SNode node = ((NodeWithContext) o).getNode();
+            SNode node = ((NodeWithContext) o).getNode().getNode();
             if (node != null) {
               mySessionContext.keepTransientModel(node.getModel(), false);
             }
