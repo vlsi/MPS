@@ -17,7 +17,7 @@
     <nodeInfo nodeId="1021458544535492393" fileName="DependencyStep.java" startLine="37" startPosition="36" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1021458544535403268" fileName="DependencyStep.java" startLine="42" startPosition="5" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="2213834095232630421" fileName="DependencyStep.java" startLine="43" startPosition="0" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2213834095232630419" fileName="DependencyStep.java" startLine="47" startPosition="34" endLine="48" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2213834095232630419" fileName="DependencyStep.java" startLine="47" startPosition="34" endLine="48" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1021458544535492513" fileName="DependencyStep.java" startLine="52" startPosition="23" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1021458544535492515" fileName="DependencyStep.java" startLine="53" startPosition="18" endLine="54" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1021458544535492521" fileName="DependencyStep.java" startLine="55" startPosition="35" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -41,7 +41,7 @@
     <nodeInfo nodeId="1021458544535376430" fileName="DependencyStep.java" startLine="29" startPosition="0" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2213834095232630402" fileName="DependencyStep.java" startLine="24" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMainComponent#()Ljavax/swing/JComponent;" />
     <scopeInfo nodeId="1021458544535492366" fileName="DependencyStep.java" startLine="37" startPosition="36" endLine="38" endPosition="36" />
-    <scopeInfo nodeId="2213834095232630411" fileName="DependencyStep.java" startLine="47" startPosition="34" endLine="48" endPosition="25" />
+    <scopeInfo nodeId="2213834095232630411" fileName="DependencyStep.java" startLine="47" startPosition="34" endLine="48" endPosition="39" />
     <scopeInfo nodeId="1021458544535492520" fileName="DependencyStep.java" startLine="55" startPosition="35" endLine="56" endPosition="53" />
     <scopeInfo nodeId="1021458544535352470" fileName="DependencyStep.java" startLine="76" startPosition="33" endLine="77" endPosition="20" />
     <scopeInfo nodeId="1021458544535402518" fileName="DependencyStep.java" startLine="80" startPosition="29" endLine="81" endPosition="20" />

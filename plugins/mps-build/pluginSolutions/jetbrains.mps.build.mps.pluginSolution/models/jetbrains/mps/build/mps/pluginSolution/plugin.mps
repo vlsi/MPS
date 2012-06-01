@@ -12709,21 +12709,21 @@
         <property name="name" nameId="tpck.1169194664001" value="MPS" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1021458544535352467" resolveInfo="DependencyStep.DependencyKind" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2213834095232740560">
-          <property name="value" nameId="tpee.1070475926801" value="Build plug-in for MPS" />
+          <property name="value" nameId="tpee.1070475926801" value="Plug-in for MPS" />
         </node>
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="1021458544535376366">
         <property name="name" nameId="tpck.1169194664001" value="IDEA" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1021458544535352467" resolveInfo="DependencyStep.DependencyKind" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1021458544535113773">
-          <property name="value" nameId="tpee.1070475926801" value="Build plug-in for IntelliJ IDEA" />
+          <property name="value" nameId="tpee.1070475926801" value="Plug-in for IntelliJ IDEA" />
         </node>
       </node>
       <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3256085672520499111">
         <property name="name" nameId="tpck.1169194664001" value="STANDALONE" />
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1021458544535352467" resolveInfo="DependencyStep.DependencyKind" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3256085672520499112">
-          <property name="value" nameId="tpee.1070475926801" value="Create Standalone IDE for your Languages" />
+          <property name="value" nameId="tpee.1070475926801" value="Standalone IDE" />
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1021458544535352466" />
@@ -12992,7 +12992,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="2213834095232630411">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2213834095232630419">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2213834095232630420">
-            <property name="value" nameId="tpee.1070475926801" value="Select type" />
+            <property name="value" nameId="tpee.1070475926801" value="Select distribution type." />
           </node>
         </node>
       </node>

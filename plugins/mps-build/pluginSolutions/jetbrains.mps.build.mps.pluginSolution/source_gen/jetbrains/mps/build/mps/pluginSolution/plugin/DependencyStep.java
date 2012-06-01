@@ -45,7 +45,7 @@ public class DependencyStep extends AbstractStep {
   }
 
   public String getDescription() {
-    return "Select type";
+    return "Select distribution type.";
   }
 
   @Override
@@ -65,9 +65,9 @@ public class DependencyStep extends AbstractStep {
   }
 
   public static   enum DependencyKind {
-    MPS("Build plug-in for MPS"),
-    IDEA("Build plug-in for IntelliJ IDEA"),
-    STANDALONE("Create Standalone IDE for your Languages");
+    MPS("Plug-in for MPS"),
+    IDEA("Plug-in for IntelliJ IDEA"),
+    STANDALONE("Standalone IDE");
 
     public static final int DEFAULT = 0;
 
