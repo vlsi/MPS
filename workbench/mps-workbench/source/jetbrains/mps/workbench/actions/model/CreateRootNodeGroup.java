@@ -36,6 +36,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -76,6 +77,12 @@ public class CreateRootNodeGroup extends BaseGroup {
     SModelDescriptor modelDescriptor = event.getData(MPSDataKeys.CONTEXT_MODEL);
     if (modelDescriptor == null) {
       setEnabledState(event.getPresentation(), false);
+      return;
+    }
+
+    if (!(modelDescriptor instanceof EditableSModelDescriptor) || (((EditableSModelDescriptor) modelDescriptor).isReadOnly())){
+      event.getPresentation().setEnabled(false);
+      event.getPresentation().setVisible(false);
       return;
     }
 
