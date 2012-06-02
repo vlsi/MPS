@@ -4,12 +4,14 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.programState.IStackFrame" file="IStackFrame.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.ILocation" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IThread" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
   </dependency>
   <dependency className="jetbrains.mps.debug.api.programState.IThread" file="IThread.java">
     <classNode dependClassName="java.lang.String" />

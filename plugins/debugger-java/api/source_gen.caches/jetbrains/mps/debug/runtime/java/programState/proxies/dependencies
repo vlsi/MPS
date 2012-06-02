@@ -13,11 +13,9 @@
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" file="JavaStackFrame.java">
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
-    <classNode dependClassName="com.sun.jdi.InvalidStackFrameException" />
     <classNode dependClassName="com.sun.jdi.LocalVariable" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="com.sun.jdi.StackFrame" />
-    <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -25,7 +23,6 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
@@ -36,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />

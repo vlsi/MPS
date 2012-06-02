@@ -237,7 +237,6 @@
     <classNode extendsClassName="jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.StackFrameContext" file="StackFrameContext.java">
-    <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.ArrayType" />
     <classNode dependClassName="com.sun.jdi.BooleanType" />
     <classNode dependClassName="com.sun.jdi.ByteType" />
@@ -247,12 +246,10 @@
     <classNode dependClassName="com.sun.jdi.FloatType" />
     <classNode dependClassName="com.sun.jdi.IntegerType" />
     <classNode dependClassName="com.sun.jdi.InvalidStackFrameException" />
-    <classNode dependClassName="com.sun.jdi.LocalVariable" />
     <classNode dependClassName="com.sun.jdi.LongType" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="com.sun.jdi.PrimitiveType" />
     <classNode dependClassName="com.sun.jdi.ShortType" />
-    <classNode dependClassName="com.sun.jdi.StackFrame" />
     <classNode dependClassName="com.sun.jdi.Type" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -267,10 +264,13 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.transform.TransformatorBuilder" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.StringUtils" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.VariableDescription" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />

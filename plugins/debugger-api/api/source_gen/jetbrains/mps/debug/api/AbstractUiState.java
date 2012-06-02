@@ -92,10 +92,6 @@ public abstract class AbstractUiState {
 
   @NotNull
   public List<IWatchable> getWatchables() {
-    return fetchWatchables();
-  }
-
-  protected List<IWatchable> fetchWatchables() {
     IStackFrame stackFrame = getStackFrame();
     if (stackFrame != null) {
       return stackFrame.getVisibleWatchables();

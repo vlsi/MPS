@@ -39,8 +39,11 @@ public class PausedJavaUiState extends JavaUiStateImpl {
 
     myThreadIndex = findThreadIndex();
     assert myThreadIndex >= 0;
+    getThread().initializeFrames();
+
     myStackFrameIndex = findStackFrameIndex();
-    ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(fetchWatchables()));
+    getStackFrame().initializeWatchables();
+    ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
   /**
@@ -49,15 +52,18 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   private PausedJavaUiState(@NotNull PausedJavaUiState previousState, DebugSession debugSession, int currentThreadIndex) {
     super(debugSession);
     myThreadIndex = currentThreadIndex;
-
     assert currentThreadIndex >= 0;
 
     initializeThreads();
+
     myContext = findContext(previousState);
     assert myContext != null;
-    //  in case some botva is going on 
+
+    getThread().initializeFrames();
+
     myStackFrameIndex = findStackFrameIndex();
-    ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(fetchWatchables()));
+    getStackFrame().initializeWatchables();
+    ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
   /**
@@ -69,8 +75,11 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     myContext = previousState.myContext;
     myThreadIndex = previousState.myThreadIndex;
     myStackFrameIndex = frameIndex;
+
     initializeThreads();
-    ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(fetchWatchables()));
+    getThread().initializeFrames();
+    getStackFrame().initializeWatchables();
+    ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
   private synchronized void initializeThreads() {
@@ -145,8 +154,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   public void selectFrame(final int frame) {
     myDebugSession.getEventsProcessor().invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        // <node> 
-        AbstractUiState newState = selectFrameInternal(frame);
+        PausedJavaUiState newState = selectFrameInternal(frame);
         if (newState != PausedJavaUiState.this) {
           myAbstractDebugSession.trySetState(PausedJavaUiState.this, newState);
         }
@@ -168,7 +176,6 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     return getEventsProcessor().getSuspendManager().getPausedContexts().contains(myContext);
   }
 
-  @Nullable
   public JavaThread getThread() {
     return (JavaThread) ListSequence.fromList(myThreads).getElement(myThreadIndex);
   }
@@ -218,14 +225,9 @@ public class PausedJavaUiState extends JavaUiStateImpl {
 
   @NotNull
   public List<IWatchable> getWatchables() {
-    return myWatchables;
-  }
-
-  @Override
-  protected List<IWatchable> fetchWatchables() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
-    watchables.addAll(super.fetchWatchables());
-    watchables.addAll(getAdditionalWatchables());
+    watchables.addAll(super.getWatchables());
+    watchables.addAll(myWatchables);
     return watchables;
   }
 
