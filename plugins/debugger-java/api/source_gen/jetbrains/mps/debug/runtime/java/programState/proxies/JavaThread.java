@@ -14,6 +14,7 @@ import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.sun.jdi.IncompatibleThreadStateException;
+import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 
 public class JavaThread extends ProxyForJava implements IThread {
@@ -38,11 +39,15 @@ public class JavaThread extends ProxyForJava implements IThread {
     myInitialized = true;
     try {
       for (int i = 0; i < myThreadReference.frameCount(); i++) {
-        myStackFrames.add(new JavaStackFrame(myThreadReference, i));
+        myStackFrames.add(new JavaStackFrame(this, i));
       }
     } catch (IncompatibleThreadStateException ex) {
       if (log.isDebugEnabled()) {
         log.debug("IncompatibleThreadStateException", ex);
+      }
+    } catch (AbsentInformationException e) {
+      if (log.isDebugEnabled()) {
+        log.debug("AbsecntInformationException", e);
       }
     }
   }

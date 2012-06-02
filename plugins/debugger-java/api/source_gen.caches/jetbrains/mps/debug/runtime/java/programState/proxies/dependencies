@@ -3,19 +3,20 @@
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation" file="JavaLocation.java">
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.Location" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.ILocation" />
-    <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ProxyForJava" />
   </dependency>
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" file="JavaStackFrame.java">
     <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
+    <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
     <classNode dependClassName="com.sun.jdi.InvalidStackFrameException" />
     <classNode dependClassName="com.sun.jdi.LocalVariable" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="com.sun.jdi.StackFrame" />
-    <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
@@ -36,12 +37,14 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IStackFrame" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ProxyForJava" />
   </dependency>
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread" file="JavaThread.java">
+    <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="java.lang.Override" />

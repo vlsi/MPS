@@ -21,9 +21,10 @@ import com.sun.jdi.event.StepEvent;
 import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import com.sun.jdi.event.EventQueue;
 import com.sun.jdi.event.EventSet;
-import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import com.sun.jdi.event.VMDeathEvent;
 import com.sun.jdi.event.VMDisconnectEvent;
 import com.sun.jdi.VMDisconnectedException;
@@ -270,6 +271,14 @@ public class DebugVMEventsProcessor {
     // synthetic methods (whatever synthetic methods are). 
     // see idea debugger settings for the full list 
     myRequestManager.enableRequest(stepRequest);
+  }
+
+  public void invokeInManagerThread(final _FunctionTypes._void_P0_E0 command) {
+    getManagerThread().schedule(new DebuggerCommand() {
+      protected void action() throws Exception {
+        command.invoke();
+      }
+    });
   }
 
   private static void preprocessEvent(SuspendContext suspendContext, ThreadReference thread) {

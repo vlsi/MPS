@@ -10,7 +10,6 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.VirtualMachine;
 import org.jetbrains.annotations.Nullable;
-import com.sun.jdi.Location;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 
 public abstract class Evaluator {
@@ -43,8 +42,7 @@ public abstract class Evaluator {
 
   @Nullable
   protected String getThisFQName() {
-    Location location = this.myUiState.getStackFrame().getLocation().getLocation();
-    return location.declaringType().name();
+    return myUiState.getStackFrame().getLocation().getUnitName();
   }
 
   public abstract IValueProxy evaluate() throws EvaluationException;

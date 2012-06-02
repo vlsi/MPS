@@ -7,10 +7,10 @@ import jetbrains.mps.debug.api.programState.IThread;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.debug.api.programState.IStackFrame;
-import jetbrains.mps.util.annotation.ToRemove;
 import java.util.Collections;
-import java.util.Map;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.util.annotation.ToRemove;
+import java.util.Map;
 import jetbrains.mps.debug.api.programState.IValue;
 
 public abstract class AbstractUiState {
@@ -32,12 +32,6 @@ public abstract class AbstractUiState {
   public abstract IStackFrame getStackFrame();
 
   public abstract boolean isPausedOnBreakpoint();
-
-  @Deprecated
-  @ToRemove(version = 2.5)
-  protected IThread findThread() {
-    return null;
-  }
 
   protected abstract AbstractUiState selectThreadInternal(@Nullable IThread thread);
 
@@ -97,6 +91,25 @@ public abstract class AbstractUiState {
   }
 
   @NotNull
+  public List<IWatchable> getWatchables() {
+    return fetchWatchables();
+  }
+
+  protected List<IWatchable> fetchWatchables() {
+    IStackFrame stackFrame = getStackFrame();
+    if (stackFrame != null) {
+      return stackFrame.getVisibleWatchables();
+    }
+    return Collections.emptyList();
+  }
+
+  @Deprecated
+  @ToRemove(version = 2.5)
+  protected IThread findThread() {
+    return null;
+  }
+
+  @NotNull
   @Deprecated
   @ToRemove(version = 2.5)
   public Map<IWatchable, IValue> getWatchableValues() {
@@ -105,15 +118,6 @@ public abstract class AbstractUiState {
       return stackFrame.getWatchableValues();
     }
     return Collections.emptyMap();
-  }
-
-  @NotNull
-  public List<IWatchable> getWatchables() {
-    IStackFrame stackFrame = getStackFrame();
-    if (stackFrame != null) {
-      return stackFrame.getVisibleWatchables();
-    }
-    return Collections.emptyList();
   }
 
   @Nullable

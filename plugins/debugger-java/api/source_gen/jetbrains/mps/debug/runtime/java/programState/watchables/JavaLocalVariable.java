@@ -13,9 +13,8 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.SNode;
-import com.sun.jdi.Location;
+import jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.runtime.java.programState.JavaWatchablesCategory;
 
@@ -57,14 +56,11 @@ public class JavaLocalVariable extends JavaWatchable implements IWatchable {
 
   @Override
   public SNode getNode() {
-    try {
-      Location location = myStackFrame.getStackFrame().location();
-      SNode snode = TraceInfoUtil.getVar(location.declaringType().name(), location.sourceName(), location.lineNumber(), myLocalVariable.name());
-      return snode;
-    } catch (AbsentInformationException ex) {
-      LOG.error(ex);
+    JavaLocation location = myStackFrame.getLocation();
+    if (location == null) {
       return null;
     }
+    return TraceInfoUtil.getVar(location.getUnitName(), location.getFileName(), location.getLineNumber(), myLocalVariable.name());
   }
 
   @Override

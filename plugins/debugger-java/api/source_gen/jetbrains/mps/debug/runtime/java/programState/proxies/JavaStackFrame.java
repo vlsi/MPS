@@ -4,10 +4,11 @@ package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.logging.Logger;
-import com.sun.jdi.ThreadReference;
+import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.util.Pair;
 import com.sun.jdi.StackFrame;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.IValue;
@@ -17,8 +18,8 @@ import com.sun.jdi.Value;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject;
-import com.sun.jdi.AbsentInformationException;
 import java.util.Collections;
+import com.sun.jdi.IncompatibleThreadStateException;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext;
@@ -29,38 +30,39 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
 
   private final String myClassFqName;
   private final int myIndex;
-  private final ThreadReference myThreadReference;
-  private JavaLocation myJavaLocation;
+  private final JavaLocation myLocation;
+  private final JavaThread myThread;
 
-  public JavaStackFrame(ThreadReference threadReference, int i) {
-    super(new Pair<ThreadReference, Integer>(threadReference, i));
+  public JavaStackFrame(JavaThread threadReference, int i) throws AbsentInformationException {
+    super(new Pair<JavaThread, Integer>(threadReference, i));
     myIndex = i;
-    myThreadReference = threadReference;
-    myClassFqName = getLocation().getUnitName();
+    myThread = threadReference;
+    StackFrame stackFrame = getStackFrame();
+    if (stackFrame != null) {
+      myLocation = new JavaLocation(stackFrame.location());
+      myClassFqName = myLocation.getUnitName();
+    } else {
+      myLocation = null;
+      myClassFqName = null;
+    }
   }
 
   @Override
+  @Nullable
   public JavaLocation getLocation() {
-    StackFrame stackFrame = getStackFrame();
-    if (stackFrame == null) {
-      return null;
-    }
-    return new JavaLocation(stackFrame.location());
+    return myLocation;
   }
 
   @Override
   public JavaThread getThread() {
-    StackFrame stackFrame = getStackFrame();
-    if (stackFrame == null) {
-      return null;
-    }
-    return new JavaThread(stackFrame.thread());
+    return myThread;
   }
 
   @Nullable
   public StackFrame getStackFrame() {
+    assert !(ModelAccess.instance().isInEDT());
     try {
-      return myThreadReference.frame(myIndex);
+      return myThread.getThread().frame(myIndex);
     } catch (Throwable t) {
       LOG.error(t);
       return null;
@@ -73,8 +75,9 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
 
   @Override
   public Map<IWatchable, IValue> getWatchableValues() {
+    assert !(ModelAccess.instance().isInEDT());
     try {
-      StackFrame stackFrame = getStackFrame();
+      StackFrame stackFrame = myThread.getThread().frame(myIndex);
       Map<IWatchable, IValue> result = new HashMap<IWatchable, IValue>();
       if (stackFrame != null) {
         Map<LocalVariable, Value> map = stackFrame.getValues(stackFrame.visibleVariables());
@@ -91,23 +94,26 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     } catch (AbsentInformationException ex) {
       //  doing nothing 
       return Collections.emptyMap();
+    } catch (IncompatibleThreadStateException e) {
+      return Collections.emptyMap();
     }
   }
 
   @Override
   public List<IWatchable> getVisibleWatchables() {
+    assert !(ModelAccess.instance().isInEDT());
     try {
-      StackFrame stackFrame = getStackFrame();
+      StackFrame stackFrame = myThread.getThread().frame(myIndex);
       List<IWatchable> result = new ArrayList<IWatchable>();
       if (stackFrame != null) {
         for (LocalVariable variable : stackFrame.visibleVariables()) {
-          result.add(new JavaLocalVariable(variable, this, myClassFqName, myThreadReference));
+          result.add(new JavaLocalVariable(variable, this, myClassFqName, myThread.getThread()));
         }
         ObjectReference thisObject = stackFrame.thisObject();
         if (thisObject != null) {
-          result.add(new JavaThisObject(thisObject, this, myClassFqName, myThreadReference));
+          result.add(new JavaThisObject(thisObject, this, myClassFqName, myThread.getThread()));
         } else {
-          result.add(new JavaStaticContext(getStackFrame().location().declaringType(), myClassFqName, myThreadReference));
+          result.add(new JavaStaticContext(stackFrame.location().declaringType(), myClassFqName, myThread.getThread()));
         }
       }
       return result;
@@ -118,14 +124,20 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     } catch (AbsentInformationException ex) {
       //  doing nothing, variables are just not available for us 
       return Collections.emptyList();
+    } catch (IncompatibleThreadStateException e) {
+      return Collections.emptyList();
     }
   }
 
   @Override
   public IValue getValue(IWatchable watchable) {
-    if (watchable instanceof JavaLocalVariable) {
-      JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
-      return ValueUtil.getInstance().fromJDI(getStackFrame().getValue(localVariable.getLocalVariable()), myClassFqName, myThreadReference);
+    assert !(ModelAccess.instance().isInEDT());
+    try {
+      if (watchable instanceof JavaLocalVariable) {
+        JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
+        return ValueUtil.getInstance().fromJDI(myThread.getThread().frame(myIndex).getValue(localVariable.getLocalVariable()), myClassFqName, myThread.getThread());
+      }
+    } catch (IncompatibleThreadStateException e) {
     }
     return null;
   }
@@ -135,26 +147,42 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     if (this == o) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (o == null || this.getClass() != o.getClass()) {
       return false;
     }
-    if (!(super.equals(o))) {
-      return false;
-    }
+
     JavaStackFrame that = (JavaStackFrame) o;
     if (myIndex != that.myIndex) {
       return false;
     }
-    if (!(myThreadReference.equals(that.myThreadReference))) {
+    if ((myLocation != null ?
+      !(myLocation.equals(that.myLocation)) :
+      that.myLocation != null
+    )) {
       return false;
     }
+    if ((myThread != null ?
+      !(myThread.equals(that.myThread)) :
+      that.myThread != null
+    )) {
+      return false;
+    }
+
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + myThreadReference.hashCode() * 31 + myIndex;
+    int result = 0;
+    result = 31 * result + myIndex;
+    result = 31 * result + ((myLocation != null ?
+      ((Object) myLocation).hashCode() :
+      0
+    ));
+    result = 31 * result + ((myThread != null ?
+      ((Object) myThread).hashCode() :
+      0
+    ));
     return result;
   }
 }
