@@ -53,6 +53,11 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
   }
 
   @Override
+  protected String getVCSCoreFileName() {
+    return "mps-vcs-core.jar";
+  }
+
+  @Override
   public void initComponent() {
     MergeDriverPacker.setInstance(this);
   }

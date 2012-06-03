@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.FieldDeclaration_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class DefaultClassifierFieldDeclaration_BehaviorDescriptor extends FieldDeclaration_BehaviorDescriptor implements IMember_BehaviorDescriptor {
   public DefaultClassifierFieldDeclaration_BehaviorDescriptor() {
@@ -23,6 +24,10 @@ public class DefaultClassifierFieldDeclaration_BehaviorDescriptor extends FieldD
 
   public SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
     return DefaultClassifierFieldDeclaration_Behavior.virtual_getVisiblity_1213877352965(thisNode);
+  }
+
+  public String virtual_getFqName_1213877404258(SNode thisNode) {
+    return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
 
   public SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
