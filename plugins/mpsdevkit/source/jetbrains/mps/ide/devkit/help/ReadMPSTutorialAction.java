@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.help;
+package jetbrains.mps.ide.devkit.help;
 
-public class ShowTheSimplestLanguageScreenCastAction extends ShowSiteAction {
-  public ShowTheSimplestLanguageScreenCastAction() {
-    super("The Simplest Language ScreenCast");
+public class ReadMPSTutorialAction extends ShowSiteAction {
 
-    getTemplatePresentation().setIcon(Icons.SCREENCAST);
+  public ReadMPSTutorialAction() {
+    super("Online Tutorial");
+    getTemplatePresentation().setIcon(Icons.TUTORIAL);
   }
 
   protected String getSiteURL() {
-    return "http://www.vimeo.com/1284260";
+    return "http://www.jetbrains.com/mps/docs/tutorial.html";
   }
 }

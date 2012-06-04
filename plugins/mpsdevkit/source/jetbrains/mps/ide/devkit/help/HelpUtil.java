@@ -13,14 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.help;
+package jetbrains.mps.ide.devkit.help;
 
-public class ShowTutorialAction extends ShowSiteAction {
-  public ShowTutorialAction() {
-    super("Tutorial");
-  }
+import com.intellij.ide.BrowserUtil;
+import jetbrains.mps.logging.Logger;
 
-  protected String getSiteURL() {
-    return "http://www.jetbrains.com/mps/docs/tutorial.html";
+import java.io.File;
+import java.net.MalformedURLException;
+
+public class HelpUtil {
+
+  private static final Logger LOG = Logger.getLogger(HelpUtil.class);
+
+  static void showInBrowserWindow(String helpPath) {
+    try {
+      BrowserUtil.launchBrowser(new File(helpPath).toURL().toString());
+    } catch (MalformedURLException e) {
+      LOG.error(e);
+    }
   }
 }

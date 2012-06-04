@@ -49,4 +49,60 @@
     <mps.LanguageLibrary dir="/"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
+  <actions>
+    <group id="MPSWelcomeDocumentationMenu">
+      <action id="ReadMPSTutorial"
+              class="jetbrains.mps.ide.devkit.help.ReadMPSTutorialAction"
+              text="Read The Tutorial"
+              description="You can read a tutorial on how to create a simple language with MPS"/>
+      <action id="ShowMPSDocumentation"
+              class="jetbrains.mps.ide.devkit.help.ShowDocumentationAction"
+              text="Browse MPS Documentation"
+              description="You can browse online documentation on MPS"/>
+
+      <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
+    </group>
+    <group id="MPSHelpMenu">
+      <!-- MPS Patch Start-->
+      <action id="ShowUserGuide"
+              class="jetbrains.mps.ide.devkit.help.ShowUserGuideAction"
+              text="User Guide"/>
+      <action id="ShowTutorial"
+              class="jetbrains.mps.ide.devkit.help.ShowTutorialAction"
+              text="Tutorial"/>
+      <action id="ShowDocumentation"
+              class="jetbrains.mps.ide.devkit.help.ShowDocumentationMenuAction"
+              text="Online Documentation"/>
+
+      <separator/>
+
+      <action id="ShowHomepage"
+              class="jetbrains.mps.ide.devkit.help.ShowHomepageAction"
+              text="MPS Home"/>
+      <action id="ShowMPSBlogAction"
+              class="jetbrains.mps.ide.devkit.help.ShowBlogAction"
+              text="Blog"/>
+      <action id="ShowCommunitySite"
+              class="jetbrains.mps.ide.devkit.help.ShowCommunitySiteAction"
+              text="Community"/>
+
+      <separator/>
+
+      <action id="ShowTrackerAction"
+              class="jetbrains.mps.ide.devkit.help.ShowTrackerAction"
+              text="Issue Tracker"/>
+      <!-- MPS Patch End-->
+      <separator/>
+      <!-- MPS Patch Start-->
+      <action id="Help.KeymapReference"
+              class="jetbrains.mps.ide.devkit.help.ShowDefaultKeymap"
+              text="Default Keymap Reference"/>
+      <action id="Help.JetBrainsTV" class="jetbrains.mps.ide.devkit.help.MPSJetBrainsTvAction"/>
+      <!-- MPS Patch End-->
+      <separator/>
+      <add-to-group group-id="MPSHelp" anchor="last"/>
+    </group>
+  </actions>
+
+
 </idea-plugin>

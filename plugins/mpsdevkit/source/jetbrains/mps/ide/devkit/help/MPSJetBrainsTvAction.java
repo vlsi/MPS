@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.help;
+package jetbrains.mps.ide.devkit.help;
 
 import com.intellij.openapi.wm.impl.welcomeScreen.JetBrainsTvAction;
 

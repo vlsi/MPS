@@ -13,23 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.help;
+package jetbrains.mps.ide.devkit.help;
 
-import com.intellij.ide.BrowserUtil;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.blame.command.Command;
 
-import java.io.File;
-import java.net.MalformedURLException;
+public class ShowTrackerAction extends ShowSiteAction {
+  public ShowTrackerAction() {
+    super("Issue Tracker");
+  }
 
-public class HelpUtil {
-
-  private static final Logger LOG = Logger.getLogger(HelpUtil.class);
-
-  static void showInBrowserWindow(String helpPath) {
-    try {
-      BrowserUtil.launchBrowser(new File(helpPath).toURL().toString());
-    } catch (MalformedURLException e) {
-      LOG.error(e);
-    }
+  protected String getSiteURL() {
+    return Command.YOUTRACK_BASE_URL + "/issues/MPS";
   }
 }

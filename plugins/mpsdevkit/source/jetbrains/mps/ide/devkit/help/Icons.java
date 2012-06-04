@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.help;
+package jetbrains.mps.ide.devkit.help;
 
-import jetbrains.mps.ide.blame.command.Command;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 
-public class ShowTrackerAction extends ShowSiteAction {
-  public ShowTrackerAction() {
-    super("Issue Tracker");
-  }
-
-  protected String getSiteURL() {
-    return Command.YOUTRACK_BASE_URL + "/issues/MPS";
-  }
+public class Icons {
+  public static final Icon READ_HELP_ICON = new ImageIcon(Icons.class.getResource("readHelp.png"));
+  public static final Icon SCREENCAST = new ImageIcon(Icons.class.getResource("screencast.png"));
+  public static final Icon DOCUMENTATION = new ImageIcon(Icons.class.getResource("documentation.png"));
+  public static final Icon TUTORIAL = new ImageIcon(Icons.class.getResource("tutorial.png"));
 }
