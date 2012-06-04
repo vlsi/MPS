@@ -31,6 +31,8 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.MessageView.SERVICE;
 import com.intellij.usageView.UsageViewBundle;
+import com.intellij.util.ui.update.MergingUpdateQueue;
+import com.intellij.util.ui.update.Update;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.actions.MPSActionPlaces;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -94,9 +96,12 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
   private AtomicInteger myMessagesInProgress = new AtomicInteger();
   private MessageToolSearchPanel mySearchPanel = null;
   private Project myProject;
+  private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, true, myComponent, null, null, true);
+  private Object myUpdateIdentity = new Object();
 
   protected MessageList(Project project) {
     this.myProject = project;
+    myUpdateQueue.setRestartTimerOnAdd(true);
   }
 
   public void show(boolean setActive) {
@@ -137,7 +142,8 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
 
     myMessagesInProgress.incrementAndGet();
 
-    SwingUtilities.invokeLater(new Runnable() {
+    myUpdateQueue.queue(new Update(myUpdateIdentity) {
+      @Override
       public void run() {
         if (isDisposed()) {
           return;
