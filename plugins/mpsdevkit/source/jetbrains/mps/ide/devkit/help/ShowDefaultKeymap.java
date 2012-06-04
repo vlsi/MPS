@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.help;
+package jetbrains.mps.ide.devkit.help;
 
-public class ShowBlogAction extends ShowSiteAction {
-  public ShowBlogAction() {
-    super("Blog");
+public class ShowDefaultKeymap extends ShowSiteAction {
+  public ShowDefaultKeymap() {
+    super("Default Keymap Reference");
   }
 
   protected String getSiteURL() {
-    return "http://blogs.jetbrains.com/mps/";
+    return "http://confluence.jetbrains.com/display/MPSD25/Default+Keymap+Reference";
   }
 }

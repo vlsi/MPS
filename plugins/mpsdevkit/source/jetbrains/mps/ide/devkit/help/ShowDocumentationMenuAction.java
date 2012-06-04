@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.help;
+package jetbrains.mps.ide.devkit.help;
 
-public class ShowCommunitySiteAction extends ShowSiteAction {
-  public ShowCommunitySiteAction() {
-    super("Community");
+public class ShowDocumentationMenuAction extends ShowSiteAction {
+  public ShowDocumentationMenuAction() {
+    super("Online Documentation");
   }
 
   protected String getSiteURL() {
-    return "http://devnet.jetbrains.net/community/mps";
+    return "http://www.jetbrains.com/mps/documentation/index.html";
   }
 }

@@ -373,49 +373,14 @@
         <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
         <action id="ProductivityGude" class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>
         <separator/>
-        <!-- MPS Patch Start-->
-        <action id="ShowUserGuide"
-                class="jetbrains.mps.workbench.actions.help.ShowUserGuideAction"
-                text="User Guide"/>
-        <action id="ShowTutorial"
-                class="jetbrains.mps.workbench.actions.help.ShowTutorialAction"
-                text="Tutorial"/>
-        <action id="ShowDocumentation"
-                class="jetbrains.mps.workbench.actions.help.ShowDocumentationMenuAction"
-                text="Online Documentation"/>
 
-        <separator/>
-
-        <action id="ShowHomepage"
-                class="jetbrains.mps.workbench.actions.help.ShowHomepageAction"
-                text="MPS Home"/>
-        <action id="ShowMPSBlogAction"
-                class="jetbrains.mps.workbench.actions.help.ShowBlogAction"
-                text="Blog"/>
-        <action id="ShowCommunitySite"
-                class="jetbrains.mps.workbench.actions.help.ShowCommunitySiteAction"
-                text="Community"/>
-
-        <separator/>
-
-        <action id="ShowTrackerAction"
-                class="jetbrains.mps.workbench.actions.help.ShowTrackerAction"
-                text="Issue Tracker"/>
-        <!-- MPS Patch End-->
-        <separator/>
-
+        <group id="MPSHelp">
+        </group>
         <action id="TechnicalSupport" class="com.intellij.ide.actions.TechnicalSupportAction"/>
         <action id="SendFeedback" class="com.intellij.ide.actions.SendFeedbackAction"/>
         <action id="ShowLog" class="com.intellij.ide.actions.ShowLogAction"/>
         <separator/>
         <action id="OnlineDocAction" class="com.intellij.ide.actions.OnlineDocAction"/>
-        <!-- MPS Patch Start-->
-        <action id="Help.KeymapReference"
-                class="jetbrains.mps.workbench.actions.help.ShowDefaultKeymap"
-                text="Default Keymap Reference"/>
-        <action id="Help.JetBrainsTV" class="jetbrains.mps.workbench.actions.help.MPSJetBrainsTvAction"/>
-        <!-- MPS Patch End-->
-        <separator/>
         <action id="CheckForUpdate" class="com.intellij.openapi.updateSettings.impl.CheckForUpdateAction"/>
 
         <action id="About" class="com.intellij.ide.actions.AboutAction"/>

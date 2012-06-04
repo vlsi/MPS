@@ -79,19 +79,6 @@
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="AnalyzeMenu"/>
     </group>
 
-    <group id="MPSWelcomeDocumentationMenu">
-      <action id="ReadMPSTutorial"
-              class="jetbrains.mps.workbench.actions.help.ReadMPSTutorialAction"
-              text="Read The Tutorial"
-              description="You can read a tutorial on how to create a simple language with MPS"/>
-      <action id="ShowMPSDocumentation"
-              class="jetbrains.mps.workbench.actions.help.ShowDocumentationAction"
-              text="Browse MPS Documentation"
-              description="You can browse online documentation on MPS"/>
-
-      <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
-    </group>
-
     <group id="MPSWelcomeGettingStartedMenu">
       <action id="CreateNewProjectAction"
               class="jetbrains.mps.workbench.actions.NewMPSProjectAction"
