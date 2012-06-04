@@ -74,7 +74,7 @@ public class NavigationManager {
     }
 
     if (!hasHandler) {
-      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
+//      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
     }
 
     return result;
