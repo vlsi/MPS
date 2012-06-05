@@ -942,6 +942,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.PluginFactoriesRegistry" />
     <classNode dependClassName="jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
