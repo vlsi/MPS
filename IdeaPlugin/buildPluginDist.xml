@@ -10,6 +10,7 @@
   <property name="buildCore.version" value="${import.buildPlugin.buildCore.version}" />
   
   <target name="assemble" depends="fetchDependencies">
+    <mkdir dir="${build.layout}" />
     <zip destfile="${build.layout}/mps-core-${buildPlugin.plugin.version}.zip">
       <fileset dir="${artifacts.buildPlugin}" />
     </zip>
