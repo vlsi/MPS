@@ -66,7 +66,6 @@
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.java.programState.proxies.ProxyForJava" />
@@ -74,7 +73,6 @@
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.ProxyForJava" file="ProxyForJava.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
   </dependency>
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.ValueUtil" file="ValueUtil.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -89,6 +87,7 @@
   </dependency>
   <dependency className="jetbrains.mps.debug.runtime.java.programState.proxies.ValueWrapper" file="ValueWrapper.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="com.sun.jdi.VirtualMachine" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />

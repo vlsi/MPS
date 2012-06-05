@@ -89,13 +89,13 @@ import jetbrains.mps.util.NameUtil;
 
   @NotNull
   private IObjectValueProxy createValueProxy() {
-    return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(myValue, myThreadReference);
+    return (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(myValue);
   }
 
   @Nullable
   public JavaValue executeMethod(String methodName, String jniSignature, Object... args) {
     try {
-      return ValueUtil.getInstance().fromJDIRaw(createValueProxy().invokeMethod(methodName, jniSignature, args).getJDIValue(), myClassFQName, myThreadReference);
+      return ValueUtil.getInstance().fromJDIRaw(createValueProxy().invokeMethod(methodName, jniSignature, myThreadReference, args).getJDIValue(), myClassFQName, myThreadReference);
     } catch (EvaluationException e) {
       return null;
     }

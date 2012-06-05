@@ -7,135 +7,135 @@
     <nodeInfo nodeId="7494124042451449909" fileName="EvaluationUtils.java" startLine="96" startPosition="25" endLine="97" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7494124042451516240" fileName="EvaluationUtils.java" startLine="103" startPosition="69" endLine="104" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7494124042451516967" fileName="EvaluationUtils.java" startLine="109" startPosition="139" endLine="110" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451517187" fileName="EvaluationUtils.java" startLine="116" startPosition="131" endLine="117" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451517199" fileName="EvaluationUtils.java" startLine="123" startPosition="94" endLine="124" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451517209" fileName="EvaluationUtils.java" startLine="130" startPosition="102" endLine="131" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451517247" fileName="EvaluationUtils.java" startLine="137" startPosition="170" endLine="138" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451517483" fileName="EvaluationUtils.java" startLine="144" startPosition="161" endLine="145" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451517495" fileName="EvaluationUtils.java" startLine="151" startPosition="168" endLine="152" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451517677" fileName="EvaluationUtils.java" startLine="157" startPosition="134" endLine="158" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451517913" fileName="EvaluationUtils.java" startLine="163" startPosition="150" endLine="164" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451518037" fileName="EvaluationUtils.java" startLine="170" startPosition="137" endLine="171" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451518047" fileName="EvaluationUtils.java" startLine="177" startPosition="140" endLine="178" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7494124042451518057" fileName="EvaluationUtils.java" startLine="183" startPosition="100" endLine="184" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4727801710070562723" fileName="EvaluationUtils.java" startLine="196" startPosition="9" endLine="197" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4727801710070562686" fileName="EvaluationUtils.java" startLine="199" startPosition="69" endLine="200" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4727801710070562681" fileName="EvaluationUtils.java" startLine="201" startPosition="14" endLine="202" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4727801710070562700" fileName="EvaluationUtils.java" startLine="204" startPosition="42" endLine="205" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4727801710070562708" fileName="EvaluationUtils.java" startLine="206" startPosition="38" endLine="207" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4963955491753986465" fileName="EvaluationUtils.java" startLine="209" startPosition="61" endLine="210" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4963955491753986477" fileName="EvaluationUtils.java" startLine="211" startPosition="7" endLine="212" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4727801710070562716" fileName="EvaluationUtils.java" startLine="213" startPosition="27" endLine="214" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4963955491753976931" fileName="EvaluationUtils.java" startLine="228" startPosition="9" endLine="229" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="231" startPosition="32" endLine="232" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="235" startPosition="32" endLine="236" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="239" startPosition="32" endLine="240" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="243" startPosition="32" endLine="244" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="247" startPosition="33" endLine="248" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4963955491753977102" fileName="EvaluationUtils.java" startLine="250" startPosition="5" endLine="251" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4727801710070561559" fileName="EvaluationUtils.java" startLine="260" startPosition="33" endLine="261" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()null" />
-    <nodeInfo nodeId="4963955491753976892" fileName="EvaluationUtils.java" startLine="270" startPosition="43" endLine="271" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()null" />
-    <nodeInfo nodeId="4727801710070561566" fileName="EvaluationUtils.java" startLine="280" startPosition="95" endLine="281" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThreadReference" />
-    <nodeInfo nodeId="4727801710070562735" fileName="EvaluationUtils.java" startLine="283" startPosition="63" endLine="284" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4727801710070562740" fileName="EvaluationUtils.java" startLine="287" startPosition="56" endLine="288" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451517187" fileName="EvaluationUtils.java" startLine="116" startPosition="131" endLine="117" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2365735977280850391" fileName="EvaluationUtils.java" startLine="123" startPosition="94" endLine="124" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7494124042451517199" fileName="EvaluationUtils.java" startLine="124" startPosition="33" endLine="125" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451517209" fileName="EvaluationUtils.java" startLine="131" startPosition="102" endLine="132" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451517247" fileName="EvaluationUtils.java" startLine="138" startPosition="170" endLine="139" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451517483" fileName="EvaluationUtils.java" startLine="145" startPosition="161" endLine="146" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451517495" fileName="EvaluationUtils.java" startLine="152" startPosition="168" endLine="153" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451517677" fileName="EvaluationUtils.java" startLine="158" startPosition="134" endLine="159" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451517913" fileName="EvaluationUtils.java" startLine="164" startPosition="150" endLine="165" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451518037" fileName="EvaluationUtils.java" startLine="171" startPosition="137" endLine="172" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7494124042451518047" fileName="EvaluationUtils.java" startLine="178" startPosition="140" endLine="179" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2365735977280854279" fileName="EvaluationUtils.java" startLine="184" startPosition="100" endLine="185" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7494124042451518057" fileName="EvaluationUtils.java" startLine="185" startPosition="54" endLine="186" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4727801710070562723" fileName="EvaluationUtils.java" startLine="198" startPosition="9" endLine="199" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4727801710070562686" fileName="EvaluationUtils.java" startLine="201" startPosition="69" endLine="202" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4727801710070562681" fileName="EvaluationUtils.java" startLine="203" startPosition="14" endLine="204" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4727801710070562700" fileName="EvaluationUtils.java" startLine="206" startPosition="42" endLine="207" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4727801710070562708" fileName="EvaluationUtils.java" startLine="208" startPosition="38" endLine="209" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4963955491753986465" fileName="EvaluationUtils.java" startLine="211" startPosition="61" endLine="212" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4963955491753986477" fileName="EvaluationUtils.java" startLine="213" startPosition="7" endLine="214" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4727801710070562716" fileName="EvaluationUtils.java" startLine="215" startPosition="27" endLine="216" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4963955491753976931" fileName="EvaluationUtils.java" startLine="230" startPosition="9" endLine="231" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="233" startPosition="32" endLine="234" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="237" startPosition="32" endLine="238" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="241" startPosition="32" endLine="242" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="245" startPosition="32" endLine="246" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="249" startPosition="33" endLine="250" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4963955491753977102" fileName="EvaluationUtils.java" startLine="252" startPosition="5" endLine="253" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4727801710070561559" fileName="EvaluationUtils.java" startLine="262" startPosition="33" endLine="263" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()null" />
+    <nodeInfo nodeId="4963955491753976892" fileName="EvaluationUtils.java" startLine="272" startPosition="43" endLine="273" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()null" />
+    <nodeInfo nodeId="4727801710070561566" fileName="EvaluationUtils.java" startLine="282" startPosition="95" endLine="283" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThreadReference" />
+    <nodeInfo nodeId="4727801710070562735" fileName="EvaluationUtils.java" startLine="285" startPosition="63" endLine="286" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4727801710070562740" fileName="EvaluationUtils.java" startLine="289" startPosition="56" endLine="290" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4727801710070561577" fileName="EvaluationUtils.java" startLine="34" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EvaluationUtils#()V" />
     <nodeInfo nodeId="7494124042451449857" fileName="EvaluationUtils.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
     <nodeInfo nodeId="7494124042451449861" fileName="EvaluationUtils.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
     <nodeInfo nodeId="7494124042451515032" fileName="EvaluationUtils.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArrayElementAt#(Lcom/sun/jdi/ArrayReference;I)Lcom/sun/jdi/Value;" />
     <nodeInfo nodeId="7494124042451515132" fileName="EvaluationUtils.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findFields#(Lcom/sun/jdi/ClassType;)Ljava/util/List;" />
     <nodeInfo nodeId="7494124042451515312" fileName="EvaluationUtils.java" startLine="60" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instanceOf#(Lcom/sun/jdi/Type;Ljava/lang/String;Lcom/sun/jdi/VirtualMachine;)Z" />
-    <nodeInfo nodeId="7494124042451515617" fileName="EvaluationUtils.java" startLine="80" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createArrayProxy#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;I)Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;" />
-    <nodeInfo nodeId="7494124042451515667" fileName="EvaluationUtils.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createArrayProxyFromValues#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;" />
-    <nodeInfo nodeId="7494124042451515817" fileName="EvaluationUtils.java" startLine="90" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unboxValue#(Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;)Ljetbrains/mps/debug/evaluation/proxies/PrimitiveValueProxy;" />
+    <nodeInfo nodeId="7494124042451515617" fileName="EvaluationUtils.java" startLine="80" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createArrayProxy#(Ljava/lang/String;Lcom/sun/jdi/VirtualMachine;I)Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;" />
+    <nodeInfo nodeId="7494124042451515667" fileName="EvaluationUtils.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createArrayProxyFromValues#(Ljava/lang/String;Lcom/sun/jdi/VirtualMachine;null)Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;" />
+    <nodeInfo nodeId="7494124042451515817" fileName="EvaluationUtils.java" startLine="90" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unboxValue#(Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/PrimitiveValueProxy;" />
     <nodeInfo nodeId="966640927460541557" fileName="EvaluationUtils.java" startLine="92" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStringPresentation#(Lcom/sun/jdi/Value;Lcom/sun/jdi/ThreadReference;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4727801710070562679" fileName="EvaluationUtils.java" startLine="201" startPosition="12" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4727801710070562679" fileName="EvaluationUtils.java" startLine="203" startPosition="12" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7494124042451515108" fileName="EvaluationUtils.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findField#(Lcom/sun/jdi/ClassType;Ljava/lang/String;)Lcom/sun/jdi/Field;" />
     <nodeInfo nodeId="7494124042451515156" fileName="EvaluationUtils.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findConstructor#(Lcom/sun/jdi/ClassType;Ljava/lang/String;)Lcom/sun/jdi/Method;" />
     <nodeInfo nodeId="7494124042451515180" fileName="EvaluationUtils.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findMethod#(Lcom/sun/jdi/ClassType;Ljava/lang/String;Ljava/lang/String;)Lcom/sun/jdi/Method;" />
     <nodeInfo nodeId="7494124042451515224" fileName="EvaluationUtils.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findClassType#(Ljava/lang/String;Lcom/sun/jdi/VirtualMachine;)Lcom/sun/jdi/ReferenceType;" />
     <nodeInfo nodeId="7494124042451515268" fileName="EvaluationUtils.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findClassTypeSilently#(Ljava/lang/String;Lcom/sun/jdi/VirtualMachine;)Lcom/sun/jdi/ReferenceType;" />
-    <nodeInfo nodeId="7494124042451515356" fileName="EvaluationUtils.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariableValue#(Ljava/lang/String;Lcom/sun/jdi/StackFrame;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="7494124042451515380" fileName="EvaluationUtils.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toIterableProxy#(Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7494124042451515356" fileName="EvaluationUtils.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVariableValue#(Ljava/lang/String;Lcom/sun/jdi/StackFrame;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
+    <nodeInfo nodeId="7494124042451515380" fileName="EvaluationUtils.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toIterableProxy#(Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;Lcom/sun/jdi/ThreadReference;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="7494124042451515417" fileName="EvaluationUtils.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toIterableProxyFromArray#(Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="7494124042451515467" fileName="EvaluationUtils.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeStaticMethod#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="7494124042451515517" fileName="EvaluationUtils.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStaticField#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
+    <nodeInfo nodeId="7494124042451515517" fileName="EvaluationUtils.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStaticField#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/VirtualMachine;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
     <nodeInfo nodeId="7494124042451515567" fileName="EvaluationUtils.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeConstructorProxy#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;" />
-    <nodeInfo nodeId="7494124042451515717" fileName="EvaluationUtils.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClass#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
+    <nodeInfo nodeId="7494124042451515717" fileName="EvaluationUtils.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClass#(Ljava/lang/String;Lcom/sun/jdi/VirtualMachine;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
     <nodeInfo nodeId="7494124042451515767" fileName="EvaluationUtils.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="boxValue#(Ljetbrains/mps/debug/evaluation/proxies/PrimitiveValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;" />
     <nodeInfo nodeId="7494124042451449905" fileName="EvaluationUtils.java" startLine="95" startPosition="47" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4963955491753986463" fileName="EvaluationUtils.java" startLine="208" startPosition="34" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="230" startPosition="53" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="230" startPosition="53" endLine="233" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="234" startPosition="53" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="234" startPosition="53" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="238" startPosition="45" endLine="241" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="238" startPosition="45" endLine="241" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="242" startPosition="56" endLine="245" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="242" startPosition="56" endLine="245" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="246" startPosition="37" endLine="249" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="246" startPosition="37" endLine="249" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4727801710070561569" fileName="EvaluationUtils.java" startLine="282" startPosition="0" endLine="285" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThreadInvocatable#(Lcom/sun/jdi/ThreadReference;)V" />
-    <nodeInfo nodeId="4727801710070561574" fileName="EvaluationUtils.java" startLine="286" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentThreadReference#()Lcom/sun/jdi/ThreadReference;" />
-    <nodeInfo nodeId="4727801710070562675" fileName="EvaluationUtils.java" startLine="198" startPosition="37" endLine="203" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4963955491753986463" fileName="EvaluationUtils.java" startLine="210" startPosition="34" endLine="213" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="232" startPosition="53" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="232" startPosition="53" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="236" startPosition="53" endLine="239" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="236" startPosition="53" endLine="239" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="240" startPosition="45" endLine="243" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="240" startPosition="45" endLine="243" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="244" startPosition="56" endLine="247" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="244" startPosition="56" endLine="247" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="248" startPosition="37" endLine="251" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="248" startPosition="37" endLine="251" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4727801710070561569" fileName="EvaluationUtils.java" startLine="284" startPosition="0" endLine="287" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThreadInvocatable#(Lcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="4727801710070561574" fileName="EvaluationUtils.java" startLine="288" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentThreadReference#()Lcom/sun/jdi/ThreadReference;" />
+    <nodeInfo nodeId="4727801710070562675" fileName="EvaluationUtils.java" startLine="200" startPosition="37" endLine="205" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7494124042451449889" fileName="EvaluationUtils.java" startLine="94" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/debug/evaluation/EvaluationUtils;" />
     <nodeInfo nodeId="4727801710070561581" fileName="EvaluationUtils.java" startLine="100" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getElementAt#(Lcom/sun/jdi/ArrayReference;I)Lcom/sun/jdi/Value;" />
     <nodeInfo nodeId="4727801710070561973" fileName="EvaluationUtils.java" startLine="106" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInstanceOf#(Lcom/sun/jdi/Type;Ljava/lang/String;Lcom/sun/jdi/VirtualMachine;)Z" />
-    <nodeInfo nodeId="4727801710070562169" fileName="EvaluationUtils.java" startLine="154" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createArray#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;I)Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;" />
-    <nodeInfo nodeId="4727801710070562252" fileName="EvaluationUtils.java" startLine="160" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createArrayFromValues#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;" />
-    <nodeInfo nodeId="4727801710070562499" fileName="EvaluationUtils.java" startLine="180" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unbox#(Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;)Ljetbrains/mps/debug/evaluation/proxies/PrimitiveValueProxy;" />
+    <nodeInfo nodeId="4727801710070562169" fileName="EvaluationUtils.java" startLine="155" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createArray#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;I)Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;" />
+    <nodeInfo nodeId="4727801710070562252" fileName="EvaluationUtils.java" startLine="161" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createArrayFromValues#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;" />
     <nodeInfo nodeId="4727801710070562011" fileName="EvaluationUtils.java" startLine="112" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getValue#(Ljava/lang/String;Lcom/sun/jdi/StackFrame;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="4727801710070562069" fileName="EvaluationUtils.java" startLine="119" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toIterable#(Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4727801710070562084" fileName="EvaluationUtils.java" startLine="126" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toIterableFromArray#(Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4727801710070562099" fileName="EvaluationUtils.java" startLine="133" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeStatic#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="4727801710070562125" fileName="EvaluationUtils.java" startLine="140" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStaticFieldValue#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="4727801710070562144" fileName="EvaluationUtils.java" startLine="147" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeConstructor#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;" />
-    <nodeInfo nodeId="4727801710070562303" fileName="EvaluationUtils.java" startLine="166" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClassValue#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="4727801710070562333" fileName="EvaluationUtils.java" startLine="173" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="box#(Ljetbrains/mps/debug/evaluation/proxies/PrimitiveValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;" />
-    <nodeInfo nodeId="4727801710070562672" fileName="EvaluationUtils.java" startLine="195" startPosition="121" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4963955491753976918" fileName="EvaluationUtils.java" startLine="227" startPosition="115" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4727801710070562664" fileName="EvaluationUtils.java" startLine="186" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="handleInvocationExceptions#(Ljetbrains/mps/debug/evaluation/EvaluationUtils/Invocatable;)null" />
-    <nodeInfo nodeId="4963955491753976908" fileName="EvaluationUtils.java" startLine="217" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="consumeEvaluationException#(Ljetbrains/mps/debug/evaluation/EvaluationUtils/EvaluationInvocatable;null)null" />
+    <nodeInfo nodeId="4727801710070562084" fileName="EvaluationUtils.java" startLine="127" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toIterableFromArray#(Ljetbrains/mps/debug/evaluation/proxies/IArrayValueProxy;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4727801710070562099" fileName="EvaluationUtils.java" startLine="134" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeStatic#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
+    <nodeInfo nodeId="4727801710070562125" fileName="EvaluationUtils.java" startLine="141" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStaticFieldValue#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
+    <nodeInfo nodeId="4727801710070562144" fileName="EvaluationUtils.java" startLine="148" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="invokeConstructor#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;" />
+    <nodeInfo nodeId="4727801710070562303" fileName="EvaluationUtils.java" startLine="167" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getClassValue#(Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
+    <nodeInfo nodeId="4727801710070562333" fileName="EvaluationUtils.java" startLine="174" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="box#(Ljetbrains/mps/debug/evaluation/proxies/PrimitiveValueProxy;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;" />
+    <nodeInfo nodeId="4727801710070562499" fileName="EvaluationUtils.java" startLine="181" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="unbox#(Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;)Ljetbrains/mps/debug/evaluation/proxies/PrimitiveValueProxy;" />
+    <nodeInfo nodeId="4727801710070562069" fileName="EvaluationUtils.java" startLine="119" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toIterable#(Ljetbrains/mps/debug/evaluation/proxies/IObjectValueProxy;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4727801710070562672" fileName="EvaluationUtils.java" startLine="197" startPosition="121" endLine="217" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4963955491753976918" fileName="EvaluationUtils.java" startLine="229" startPosition="115" endLine="252" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4727801710070562664" fileName="EvaluationUtils.java" startLine="188" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="handleInvocationExceptions#(Ljetbrains/mps/debug/evaluation/EvaluationUtils/Invocatable;)null" />
+    <nodeInfo nodeId="4963955491753976908" fileName="EvaluationUtils.java" startLine="219" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="consumeEvaluationException#(Ljetbrains/mps/debug/evaluation/EvaluationUtils/EvaluationInvocatable;null)null" />
     <scopeInfo nodeId="4727801710070561580" fileName="EvaluationUtils.java" startLine="35" startPosition="28" endLine="35" endPosition="28" />
     <scopeInfo nodeId="7494124042451449907" fileName="EvaluationUtils.java" startLine="96" startPosition="25" endLine="97" endPosition="22" />
     <scopeInfo nodeId="4727801710070561588" fileName="EvaluationUtils.java" startLine="103" startPosition="69" endLine="104" endPosition="73" />
     <scopeInfo nodeId="4727801710070561982" fileName="EvaluationUtils.java" startLine="109" startPosition="139" endLine="110" endPosition="81" />
-    <scopeInfo nodeId="4727801710070562020" fileName="EvaluationUtils.java" startLine="116" startPosition="131" endLine="117" endPosition="90" />
-    <scopeInfo nodeId="4727801710070562077" fileName="EvaluationUtils.java" startLine="123" startPosition="94" endLine="124" endPosition="69" />
-    <scopeInfo nodeId="4727801710070562092" fileName="EvaluationUtils.java" startLine="130" startPosition="102" endLine="131" endPosition="78" />
-    <scopeInfo nodeId="4727801710070562113" fileName="EvaluationUtils.java" startLine="137" startPosition="170" endLine="138" endPosition="114" />
-    <scopeInfo nodeId="4727801710070562134" fileName="EvaluationUtils.java" startLine="144" startPosition="161" endLine="145" endPosition="95" />
-    <scopeInfo nodeId="4727801710070562156" fileName="EvaluationUtils.java" startLine="151" startPosition="168" endLine="152" endPosition="112" />
-    <scopeInfo nodeId="4727801710070562178" fileName="EvaluationUtils.java" startLine="157" startPosition="134" endLine="158" endPosition="92" />
-    <scopeInfo nodeId="4727801710070562262" fileName="EvaluationUtils.java" startLine="163" startPosition="150" endLine="164" endPosition="102" />
-    <scopeInfo nodeId="4727801710070562310" fileName="EvaluationUtils.java" startLine="170" startPosition="137" endLine="171" endPosition="78" />
-    <scopeInfo nodeId="4727801710070562340" fileName="EvaluationUtils.java" startLine="177" startPosition="140" endLine="178" endPosition="88" />
-    <scopeInfo nodeId="4727801710070562504" fileName="EvaluationUtils.java" startLine="183" startPosition="100" endLine="184" endPosition="64" />
-    <scopeInfo nodeId="4727801710070562722" fileName="EvaluationUtils.java" startLine="196" startPosition="9" endLine="197" endPosition="34" />
-    <scopeInfo nodeId="4727801710070562685" fileName="EvaluationUtils.java" startLine="199" startPosition="69" endLine="200" endPosition="128" />
-    <scopeInfo nodeId="4727801710070562680" fileName="EvaluationUtils.java" startLine="201" startPosition="14" endLine="202" endPosition="49" />
-    <scopeInfo nodeId="4727801710070562698" fileName="EvaluationUtils.java" startLine="204" startPosition="0" endLine="205" endPosition="55">
+    <scopeInfo nodeId="4727801710070562020" fileName="EvaluationUtils.java" startLine="116" startPosition="131" endLine="117" endPosition="79" />
+    <scopeInfo nodeId="4727801710070562092" fileName="EvaluationUtils.java" startLine="131" startPosition="102" endLine="132" endPosition="78" />
+    <scopeInfo nodeId="4727801710070562113" fileName="EvaluationUtils.java" startLine="138" startPosition="170" endLine="139" endPosition="114" />
+    <scopeInfo nodeId="4727801710070562134" fileName="EvaluationUtils.java" startLine="145" startPosition="161" endLine="146" endPosition="112" />
+    <scopeInfo nodeId="4727801710070562156" fileName="EvaluationUtils.java" startLine="152" startPosition="168" endLine="153" endPosition="112" />
+    <scopeInfo nodeId="4727801710070562178" fileName="EvaluationUtils.java" startLine="158" startPosition="134" endLine="159" endPosition="109" />
+    <scopeInfo nodeId="4727801710070562262" fileName="EvaluationUtils.java" startLine="164" startPosition="150" endLine="165" endPosition="119" />
+    <scopeInfo nodeId="4727801710070562310" fileName="EvaluationUtils.java" startLine="171" startPosition="137" endLine="172" endPosition="95" />
+    <scopeInfo nodeId="4727801710070562340" fileName="EvaluationUtils.java" startLine="178" startPosition="140" endLine="179" endPosition="88" />
+    <scopeInfo nodeId="4727801710070562722" fileName="EvaluationUtils.java" startLine="198" startPosition="9" endLine="199" endPosition="34" />
+    <scopeInfo nodeId="4727801710070562685" fileName="EvaluationUtils.java" startLine="201" startPosition="69" endLine="202" endPosition="128" />
+    <scopeInfo nodeId="4727801710070562680" fileName="EvaluationUtils.java" startLine="203" startPosition="14" endLine="204" endPosition="49" />
+    <scopeInfo nodeId="4727801710070562698" fileName="EvaluationUtils.java" startLine="206" startPosition="0" endLine="207" endPosition="55">
       <varInfo nodeId="4727801710070562704" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562699" fileName="EvaluationUtils.java" startLine="204" startPosition="42" endLine="205" endPosition="55" />
-    <scopeInfo nodeId="4727801710070562706" fileName="EvaluationUtils.java" startLine="206" startPosition="0" endLine="207" endPosition="55">
+    <scopeInfo nodeId="4727801710070562699" fileName="EvaluationUtils.java" startLine="206" startPosition="42" endLine="207" endPosition="55" />
+    <scopeInfo nodeId="4727801710070562706" fileName="EvaluationUtils.java" startLine="208" startPosition="0" endLine="209" endPosition="55">
       <varInfo nodeId="4727801710070562712" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562707" fileName="EvaluationUtils.java" startLine="206" startPosition="38" endLine="207" endPosition="55" />
-    <scopeInfo nodeId="4963955491753986464" fileName="EvaluationUtils.java" startLine="209" startPosition="61" endLine="210" endPosition="60" />
-    <scopeInfo nodeId="4727801710070562714" fileName="EvaluationUtils.java" startLine="213" startPosition="0" endLine="214" endPosition="39">
+    <scopeInfo nodeId="4727801710070562707" fileName="EvaluationUtils.java" startLine="208" startPosition="38" endLine="209" endPosition="55" />
+    <scopeInfo nodeId="4963955491753986464" fileName="EvaluationUtils.java" startLine="211" startPosition="61" endLine="212" endPosition="60" />
+    <scopeInfo nodeId="4727801710070562714" fileName="EvaluationUtils.java" startLine="215" startPosition="0" endLine="216" endPosition="39">
       <varInfo nodeId="4727801710070562720" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562715" fileName="EvaluationUtils.java" startLine="213" startPosition="27" endLine="214" endPosition="39" />
-    <scopeInfo nodeId="4963955491753976919" fileName="EvaluationUtils.java" startLine="228" startPosition="9" endLine="229" endPosition="34" />
-    <scopeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="231" startPosition="32" endLine="232" endPosition="24" />
-    <scopeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="235" startPosition="32" endLine="236" endPosition="24" />
-    <scopeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="239" startPosition="32" endLine="240" endPosition="24" />
-    <scopeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="243" startPosition="32" endLine="244" endPosition="24" />
-    <scopeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="247" startPosition="33" endLine="248" endPosition="25" />
-    <scopeInfo nodeId="4727801710070561559" fileName="EvaluationUtils.java" startLine="260" startPosition="33" endLine="261" endPosition="151" />
-    <scopeInfo nodeId="4963955491753976892" fileName="EvaluationUtils.java" startLine="270" startPosition="43" endLine="271" endPosition="49" />
-    <scopeInfo nodeId="4727801710070562734" fileName="EvaluationUtils.java" startLine="283" startPosition="63" endLine="284" endPosition="42" />
-    <scopeInfo nodeId="4727801710070562739" fileName="EvaluationUtils.java" startLine="287" startPosition="56" endLine="288" endPosition="31" />
+    <scopeInfo nodeId="4727801710070562715" fileName="EvaluationUtils.java" startLine="215" startPosition="27" endLine="216" endPosition="39" />
+    <scopeInfo nodeId="4963955491753976919" fileName="EvaluationUtils.java" startLine="230" startPosition="9" endLine="231" endPosition="34" />
+    <scopeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="233" startPosition="32" endLine="234" endPosition="24" />
+    <scopeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="237" startPosition="32" endLine="238" endPosition="24" />
+    <scopeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="241" startPosition="32" endLine="242" endPosition="24" />
+    <scopeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="245" startPosition="32" endLine="246" endPosition="24" />
+    <scopeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="249" startPosition="33" endLine="250" endPosition="25" />
+    <scopeInfo nodeId="4727801710070561559" fileName="EvaluationUtils.java" startLine="262" startPosition="33" endLine="263" endPosition="151" />
+    <scopeInfo nodeId="4963955491753976892" fileName="EvaluationUtils.java" startLine="272" startPosition="43" endLine="273" endPosition="49" />
+    <scopeInfo nodeId="4727801710070562734" fileName="EvaluationUtils.java" startLine="285" startPosition="63" endLine="286" endPosition="42" />
+    <scopeInfo nodeId="4727801710070562739" fileName="EvaluationUtils.java" startLine="289" startPosition="56" endLine="290" endPosition="31" />
     <scopeInfo nodeId="4727801710070561577" fileName="EvaluationUtils.java" startLine="34" startPosition="0" endLine="36" endPosition="3" />
     <scopeInfo nodeId="7494124042451449857" fileName="EvaluationUtils.java" startLine="37" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="7494124042451449861" fileName="EvaluationUtils.java" startLine="39" startPosition="0" endLine="41" endPosition="0" />
@@ -153,21 +153,24 @@
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515617" fileName="EvaluationUtils.java" startLine="80" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="7494124042451514371" varName="className" />
+      <varInfo nodeId="7494124042451514373" varName="machine" />
       <varInfo nodeId="7494124042451514375" varName="size" />
-      <varInfo nodeId="7494124042451514373" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515667" fileName="EvaluationUtils.java" startLine="82" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="7494124042451514460" varName="args" />
       <varInfo nodeId="7494124042451514456" varName="className" />
-      <varInfo nodeId="7494124042451514458" varName="threadReference" />
+      <varInfo nodeId="7494124042451514458" varName="machine" />
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515817" fileName="EvaluationUtils.java" startLine="90" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="2365735977280854192" varName="threadReference" />
       <varInfo nodeId="7494124042451514707" varName="valueProxy" />
     </scopeInfo>
     <scopeInfo nodeId="966640927460541557" fileName="EvaluationUtils.java" startLine="92" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="966640927460655304" varName="reference" />
       <varInfo nodeId="966640927460541617" varName="value" />
     </scopeInfo>
+    <scopeInfo nodeId="4727801710070562077" fileName="EvaluationUtils.java" startLine="123" startPosition="94" endLine="125" endPosition="75" />
+    <scopeInfo nodeId="4727801710070562504" fileName="EvaluationUtils.java" startLine="184" startPosition="100" endLine="186" endPosition="70" />
     <scopeInfo nodeId="7494124042451515108" fileName="EvaluationUtils.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="7494124042451513808" varName="fieldName" />
       <varInfo nodeId="7494124042451513806" varName="referenceType" />
@@ -190,11 +193,11 @@
       <varInfo nodeId="7494124042451514019" varName="virtualMachine" />
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515356" fileName="EvaluationUtils.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="7494124042451514209" varName="reference" />
       <varInfo nodeId="7494124042451514207" varName="stackFrame" />
       <varInfo nodeId="7494124042451514205" varName="varName" />
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515380" fileName="EvaluationUtils.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="2365735977280850375" varName="threadReference" />
       <varInfo nodeId="7494124042451514268" varName="valueProxy" />
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515417" fileName="EvaluationUtils.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
@@ -210,7 +213,7 @@
     <scopeInfo nodeId="7494124042451515517" fileName="EvaluationUtils.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="7494124042451514323" varName="className" />
       <varInfo nodeId="7494124042451514325" varName="fieldName" />
-      <varInfo nodeId="7494124042451514327" varName="threadReference" />
+      <varInfo nodeId="7494124042451514327" varName="machine" />
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515567" fileName="EvaluationUtils.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="7494124042451514350" varName="args" />
@@ -220,50 +223,50 @@
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515717" fileName="EvaluationUtils.java" startLine="84" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="7494124042451514509" varName="className" />
-      <varInfo nodeId="7494124042451514511" varName="threadReference" />
+      <varInfo nodeId="7494124042451514511" varName="machine" />
     </scopeInfo>
     <scopeInfo nodeId="7494124042451515767" fileName="EvaluationUtils.java" startLine="87" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="7494124042451514541" varName="primitiveValueProxy" />
       <varInfo nodeId="7494124042451514543" varName="threadReference" />
     </scopeInfo>
     <scopeInfo nodeId="7494124042451449892" fileName="EvaluationUtils.java" startLine="95" startPosition="47" endLine="98" endPosition="5" />
-    <scopeInfo nodeId="4963955491753976920" fileName="EvaluationUtils.java" startLine="230" startPosition="0" endLine="233" endPosition="7">
+    <scopeInfo nodeId="4963955491753976920" fileName="EvaluationUtils.java" startLine="232" startPosition="0" endLine="235" endPosition="7">
       <varInfo nodeId="4963955491753976921" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4963955491753976923" fileName="EvaluationUtils.java" startLine="230" startPosition="53" endLine="233" endPosition="7" />
-    <scopeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="230" startPosition="53" endLine="233" endPosition="7" />
-    <scopeInfo nodeId="4963955491753977077" fileName="EvaluationUtils.java" startLine="234" startPosition="0" endLine="237" endPosition="7">
+    <scopeInfo nodeId="4963955491753976923" fileName="EvaluationUtils.java" startLine="232" startPosition="53" endLine="235" endPosition="7" />
+    <scopeInfo nodeId="4963955491753976934" fileName="EvaluationUtils.java" startLine="232" startPosition="53" endLine="235" endPosition="7" />
+    <scopeInfo nodeId="4963955491753977077" fileName="EvaluationUtils.java" startLine="236" startPosition="0" endLine="239" endPosition="7">
       <varInfo nodeId="4963955491753977078" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4963955491753977080" fileName="EvaluationUtils.java" startLine="234" startPosition="53" endLine="237" endPosition="7" />
-    <scopeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="234" startPosition="53" endLine="237" endPosition="7" />
-    <scopeInfo nodeId="4963955491753977085" fileName="EvaluationUtils.java" startLine="238" startPosition="0" endLine="241" endPosition="7">
+    <scopeInfo nodeId="4963955491753977080" fileName="EvaluationUtils.java" startLine="236" startPosition="53" endLine="239" endPosition="7" />
+    <scopeInfo nodeId="4963955491753977082" fileName="EvaluationUtils.java" startLine="236" startPosition="53" endLine="239" endPosition="7" />
+    <scopeInfo nodeId="4963955491753977085" fileName="EvaluationUtils.java" startLine="240" startPosition="0" endLine="243" endPosition="7">
       <varInfo nodeId="4963955491753977086" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4963955491753977088" fileName="EvaluationUtils.java" startLine="238" startPosition="45" endLine="241" endPosition="7" />
-    <scopeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="238" startPosition="45" endLine="241" endPosition="7" />
-    <scopeInfo nodeId="4963955491753986485" fileName="EvaluationUtils.java" startLine="242" startPosition="0" endLine="245" endPosition="7">
+    <scopeInfo nodeId="4963955491753977088" fileName="EvaluationUtils.java" startLine="240" startPosition="45" endLine="243" endPosition="7" />
+    <scopeInfo nodeId="4963955491753977090" fileName="EvaluationUtils.java" startLine="240" startPosition="45" endLine="243" endPosition="7" />
+    <scopeInfo nodeId="4963955491753986485" fileName="EvaluationUtils.java" startLine="244" startPosition="0" endLine="247" endPosition="7">
       <varInfo nodeId="4963955491753986486" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4963955491753986488" fileName="EvaluationUtils.java" startLine="242" startPosition="56" endLine="245" endPosition="7" />
-    <scopeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="242" startPosition="56" endLine="245" endPosition="7" />
-    <scopeInfo nodeId="4963955491753977093" fileName="EvaluationUtils.java" startLine="246" startPosition="0" endLine="249" endPosition="7">
+    <scopeInfo nodeId="4963955491753986488" fileName="EvaluationUtils.java" startLine="244" startPosition="56" endLine="247" endPosition="7" />
+    <scopeInfo nodeId="4963955491753986496" fileName="EvaluationUtils.java" startLine="244" startPosition="56" endLine="247" endPosition="7" />
+    <scopeInfo nodeId="4963955491753977093" fileName="EvaluationUtils.java" startLine="248" startPosition="0" endLine="251" endPosition="7">
       <varInfo nodeId="4963955491753977094" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4963955491753977096" fileName="EvaluationUtils.java" startLine="246" startPosition="37" endLine="249" endPosition="7" />
-    <scopeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="246" startPosition="37" endLine="249" endPosition="7" />
-    <scopeInfo nodeId="4727801710070561569" fileName="EvaluationUtils.java" startLine="282" startPosition="0" endLine="285" endPosition="5">
+    <scopeInfo nodeId="4963955491753977096" fileName="EvaluationUtils.java" startLine="248" startPosition="37" endLine="251" endPosition="7" />
+    <scopeInfo nodeId="4963955491753986490" fileName="EvaluationUtils.java" startLine="248" startPosition="37" endLine="251" endPosition="7" />
+    <scopeInfo nodeId="4727801710070561569" fileName="EvaluationUtils.java" startLine="284" startPosition="0" endLine="287" endPosition="5">
       <varInfo nodeId="4727801710070561572" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4963955491753986458" fileName="EvaluationUtils.java" startLine="208" startPosition="0" endLine="212" endPosition="46">
+    <scopeInfo nodeId="4963955491753986458" fileName="EvaluationUtils.java" startLine="210" startPosition="0" endLine="214" endPosition="46">
       <varInfo nodeId="4963955491753986459" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4963955491753986461" fileName="EvaluationUtils.java" startLine="208" startPosition="34" endLine="212" endPosition="46" />
-    <scopeInfo nodeId="4727801710070561574" fileName="EvaluationUtils.java" startLine="286" startPosition="0" endLine="290" endPosition="0" />
-    <scopeInfo nodeId="4727801710070562673" fileName="EvaluationUtils.java" startLine="198" startPosition="0" endLine="203" endPosition="7">
+    <scopeInfo nodeId="4963955491753986461" fileName="EvaluationUtils.java" startLine="210" startPosition="34" endLine="214" endPosition="46" />
+    <scopeInfo nodeId="4727801710070561574" fileName="EvaluationUtils.java" startLine="288" startPosition="0" endLine="292" endPosition="0" />
+    <scopeInfo nodeId="4727801710070562673" fileName="EvaluationUtils.java" startLine="200" startPosition="0" endLine="205" endPosition="7">
       <varInfo nodeId="4727801710070562696" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562674" fileName="EvaluationUtils.java" startLine="198" startPosition="37" endLine="203" endPosition="7" />
+    <scopeInfo nodeId="4727801710070562674" fileName="EvaluationUtils.java" startLine="200" startPosition="37" endLine="205" endPosition="7" />
     <scopeInfo nodeId="7494124042451449889" fileName="EvaluationUtils.java" startLine="94" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="4727801710070561581" fileName="EvaluationUtils.java" startLine="100" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="4727801710070561584" varName="array" />
@@ -274,76 +277,76 @@
       <varInfo nodeId="4727801710070561980" varName="machine" />
       <varInfo nodeId="4727801710070561976" varName="what" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562169" fileName="EvaluationUtils.java" startLine="154" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="4727801710070562169" fileName="EvaluationUtils.java" startLine="155" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="4727801710070562172" varName="className" />
       <varInfo nodeId="4727801710070562176" varName="size" />
       <varInfo nodeId="4727801710070562174" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562252" fileName="EvaluationUtils.java" startLine="160" startPosition="0" endLine="166" endPosition="0">
+    <scopeInfo nodeId="4727801710070562252" fileName="EvaluationUtils.java" startLine="161" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="4727801710070562259" varName="args" />
       <varInfo nodeId="4727801710070562255" varName="className" />
       <varInfo nodeId="4727801710070562257" varName="threadReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="4727801710070562499" fileName="EvaluationUtils.java" startLine="180" startPosition="0" endLine="186" endPosition="0">
-      <varInfo nodeId="4727801710070562502" varName="valueProxy" />
     </scopeInfo>
     <scopeInfo nodeId="4727801710070562011" fileName="EvaluationUtils.java" startLine="112" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="4727801710070562018" varName="reference" />
       <varInfo nodeId="4727801710070562016" varName="stackFrame" />
       <varInfo nodeId="4727801710070562014" varName="varName" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562069" fileName="EvaluationUtils.java" startLine="119" startPosition="0" endLine="126" endPosition="0">
-      <varInfo nodeId="4727801710070562075" varName="valueProxy" />
-    </scopeInfo>
-    <scopeInfo nodeId="4727801710070562084" fileName="EvaluationUtils.java" startLine="126" startPosition="0" endLine="133" endPosition="0">
+    <scopeInfo nodeId="4727801710070562084" fileName="EvaluationUtils.java" startLine="127" startPosition="0" endLine="134" endPosition="0">
       <varInfo nodeId="4727801710070562090" varName="valueProxy" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562099" fileName="EvaluationUtils.java" startLine="133" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="4727801710070562099" fileName="EvaluationUtils.java" startLine="134" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="4727801710070562110" varName="args" />
       <varInfo nodeId="4727801710070562102" varName="className" />
       <varInfo nodeId="4727801710070562106" varName="jniSignature" />
       <varInfo nodeId="4727801710070562104" varName="name" />
       <varInfo nodeId="4727801710070562108" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562125" fileName="EvaluationUtils.java" startLine="140" startPosition="0" endLine="147" endPosition="0">
+    <scopeInfo nodeId="4727801710070562125" fileName="EvaluationUtils.java" startLine="141" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="4727801710070562128" varName="className" />
       <varInfo nodeId="4727801710070562130" varName="fieldName" />
       <varInfo nodeId="4727801710070562132" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562144" fileName="EvaluationUtils.java" startLine="147" startPosition="0" endLine="154" endPosition="0">
+    <scopeInfo nodeId="4727801710070562144" fileName="EvaluationUtils.java" startLine="148" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="4727801710070562153" varName="args" />
       <varInfo nodeId="4727801710070562147" varName="className" />
       <varInfo nodeId="4727801710070562149" varName="jniSignature" />
       <varInfo nodeId="4727801710070562151" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562303" fileName="EvaluationUtils.java" startLine="166" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="4727801710070562303" fileName="EvaluationUtils.java" startLine="167" startPosition="0" endLine="174" endPosition="0">
       <varInfo nodeId="4727801710070562306" varName="className" />
       <varInfo nodeId="4727801710070562308" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562333" fileName="EvaluationUtils.java" startLine="173" startPosition="0" endLine="180" endPosition="0">
+    <scopeInfo nodeId="4727801710070562333" fileName="EvaluationUtils.java" startLine="174" startPosition="0" endLine="181" endPosition="0">
       <varInfo nodeId="4727801710070562336" varName="primitiveValueProxy" />
       <varInfo nodeId="4727801710070562338" varName="threadReference" />
     </scopeInfo>
-    <scopeInfo nodeId="4727801710070562671" fileName="EvaluationUtils.java" startLine="195" startPosition="121" endLine="215" endPosition="5" />
-    <scopeInfo nodeId="4963955491753976911" fileName="EvaluationUtils.java" startLine="227" startPosition="115" endLine="251" endPosition="19" />
-    <scopeInfo nodeId="4727801710070562664" fileName="EvaluationUtils.java" startLine="186" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="4727801710070562499" fileName="EvaluationUtils.java" startLine="181" startPosition="0" endLine="188" endPosition="0">
+      <varInfo nodeId="4727801710070562502" varName="valueProxy" />
+    </scopeInfo>
+    <scopeInfo nodeId="4727801710070562069" fileName="EvaluationUtils.java" startLine="119" startPosition="0" endLine="127" endPosition="0">
+      <varInfo nodeId="4727801710070562075" varName="valueProxy" />
+    </scopeInfo>
+    <scopeInfo nodeId="4727801710070562671" fileName="EvaluationUtils.java" startLine="197" startPosition="121" endLine="217" endPosition="5" />
+    <scopeInfo nodeId="4963955491753976911" fileName="EvaluationUtils.java" startLine="229" startPosition="115" endLine="253" endPosition="19" />
+    <scopeInfo nodeId="4727801710070562664" fileName="EvaluationUtils.java" startLine="188" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="4727801710070562668" varName="invocatable" />
     </scopeInfo>
-    <scopeInfo nodeId="4963955491753976908" fileName="EvaluationUtils.java" startLine="217" startPosition="0" endLine="253" endPosition="0">
+    <scopeInfo nodeId="4963955491753976908" fileName="EvaluationUtils.java" startLine="219" startPosition="0" endLine="255" endPosition="0">
       <varInfo nodeId="4963955491753977105" varName="failure" />
       <varInfo nodeId="4963955491753976914" varName="invocatable" />
     </scopeInfo>
-    <unitInfo nodeId="4727801710070561555" fileName="EvaluationUtils.java" startLine="30" startPosition="0" endLine="292" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
-    <unitInfo nodeId="4963955491753976889" fileName="EvaluationUtils.java" startLine="264" startPosition="0" endLine="273" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$EvaluationInvocatable" />
-    <unitInfo nodeId="4727801710070560806" fileName="EvaluationUtils.java" startLine="254" startPosition="0" endLine="263" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$Invocatable" />
-    <unitInfo nodeId="4727801710070560807" fileName="EvaluationUtils.java" startLine="274" startPosition="0" endLine="291" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$ThreadInvocatable" />
+    <unitInfo nodeId="4727801710070561555" fileName="EvaluationUtils.java" startLine="30" startPosition="0" endLine="294" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
+    <unitInfo nodeId="4963955491753976889" fileName="EvaluationUtils.java" startLine="266" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$EvaluationInvocatable" />
+    <unitInfo nodeId="4727801710070560806" fileName="EvaluationUtils.java" startLine="256" startPosition="0" endLine="265" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$Invocatable" />
+    <unitInfo nodeId="4727801710070560807" fileName="EvaluationUtils.java" startLine="276" startPosition="0" endLine="293" endPosition="0" unitName="jetbrains.mps.debug.evaluation.EvaluationUtils$ThreadInvocatable" />
   </root>
   <root nodeId="4727801710070563175">
     <nodeInfo nodeId="4727801710070563177" fileName="Evaluator.java" startLine="15" startPosition="33" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUiState" />
     <nodeInfo nodeId="4727801710070563180" fileName="Evaluator.java" startLine="16" startPosition="32" endLine="17" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myThisObject" />
     <nodeInfo nodeId="4727801710070563189" fileName="Evaluator.java" startLine="19" startPosition="41" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4727801710070563193" fileName="Evaluator.java" startLine="20" startPosition="24" endLine="21" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7157912897227775527" fileName="Evaluator.java" startLine="22" startPosition="34" endLine="23" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7157912897227775527" fileName="Evaluator.java" startLine="22" startPosition="34" endLine="23" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4727801710070563220" fileName="Evaluator.java" startLine="27" startPosition="47" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4727801710070563226" fileName="Evaluator.java" startLine="31" startPosition="47" endLine="32" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4727801710070563236" fileName="Evaluator.java" startLine="35" startPosition="37" endLine="36" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -357,7 +360,7 @@
     <nodeInfo nodeId="4727801710070563242" fileName="Evaluator.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVM#()Lcom/sun/jdi/VirtualMachine;" />
     <nodeInfo nodeId="4727801710070563254" fileName="Evaluator.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThisFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="4727801710070563183" fileName="Evaluator.java" startLine="18" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Evaluator#(Ljetbrains/mps/debug/runtime/JavaUiState;)V" />
-    <scopeInfo nodeId="4727801710070563203" fileName="Evaluator.java" startLine="22" startPosition="34" endLine="23" endPosition="130" />
+    <scopeInfo nodeId="4727801710070563203" fileName="Evaluator.java" startLine="22" startPosition="34" endLine="23" endPosition="97" />
     <scopeInfo nodeId="4727801710070563219" fileName="Evaluator.java" startLine="27" startPosition="47" endLine="28" endPosition="24" />
     <scopeInfo nodeId="4727801710070563225" fileName="Evaluator.java" startLine="31" startPosition="47" endLine="32" endPosition="45" />
     <scopeInfo nodeId="4727801710070563235" fileName="Evaluator.java" startLine="35" startPosition="37" endLine="36" endPosition="53" />
@@ -460,9 +463,9 @@
     <nodeInfo nodeId="4727801710070563992" fileName="TargetVMEvaluationException.java" startLine="22" startPosition="70" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4727801710070564005" fileName="TargetVMEvaluationException.java" startLine="26" startPosition="113" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4727801710070564018" fileName="TargetVMEvaluationException.java" startLine="28" startPosition="34" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7157912897227775558" fileName="TargetVMEvaluationException.java" startLine="31" startPosition="9" endLine="32" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4727801710070564055" fileName="TargetVMEvaluationException.java" startLine="32" startPosition="132" endLine="33" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4727801710070564065" fileName="TargetVMEvaluationException.java" startLine="33" startPosition="136" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7157912897227775558" fileName="TargetVMEvaluationException.java" startLine="31" startPosition="9" endLine="32" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070564055" fileName="TargetVMEvaluationException.java" startLine="32" startPosition="115" endLine="33" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4727801710070564065" fileName="TargetVMEvaluationException.java" startLine="33" startPosition="153" endLine="34" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4727801710070564071" fileName="TargetVMEvaluationException.java" startLine="34" startPosition="42" endLine="35" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4727801710070564090" fileName="TargetVMEvaluationException.java" startLine="36" startPosition="40" endLine="37" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4727801710070564099" fileName="TargetVMEvaluationException.java" startLine="37" startPosition="93" endLine="38" endPosition="336" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -6,7 +6,6 @@ import jetbrains.mps.debug.api.programState.IValue;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
 import com.sun.jdi.ThreadReference;
-import jetbrains.mps.smodel.ModelAccess;
 
 public abstract class JavaValue extends ProxyForJava implements IValue {
   @Nullable
@@ -23,16 +22,10 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
 
   @Nullable
   public Value getValue() {
-    assert !(ModelAccess.instance().isInEDT());
     return myValue;
   }
 
   public String getClassFQName() {
     return myClassFQName;
-  }
-
-  public ThreadReference getThreadReference() {
-    assert !(ModelAccess.instance().isInEDT());
-    return myThreadReference;
   }
 }

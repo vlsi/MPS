@@ -6,7 +6,6 @@ import jetbrains.mps.debug.evaluation.proxies.ValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import com.sun.jdi.ArrayReference;
-import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
@@ -15,6 +14,7 @@ import com.sun.jdi.Value;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import com.sun.jdi.InvalidTypeException;
 import com.sun.jdi.ClassNotLoadedException;
+import com.sun.jdi.ThreadReference;
 import com.sun.jdi.ClassType;
 import com.sun.jdi.Method;
 import java.util.List;
@@ -23,8 +23,8 @@ import com.sun.jdi.IncompatibleThreadStateException;
 import jetbrains.mps.debug.evaluation.proxies.INullValueProxy;
 
 /*package*/ class ArrayValueProxy extends ValueProxy implements IArrayValueProxy, IObjectValueProxy {
-  public ArrayValueProxy(ArrayReference value, ThreadReference threadReference) {
-    super(value, threadReference);
+  public ArrayValueProxy(ArrayReference value) {
+    super(value);
   }
 
   @NotNull
@@ -41,7 +41,7 @@ import jetbrains.mps.debug.evaluation.proxies.INullValueProxy;
   @NotNull
   @Override
   public IValueProxy getElementAt(int index) {
-    return MirrorUtil.getInstance().getValueProxy(EvaluationUtils.getElementAt(getArrayValue(), index), myThreadReference);
+    return MirrorUtil.getInstance().getValueProxy(EvaluationUtils.getElementAt(getArrayValue(), index));
   }
 
   @Override
@@ -61,28 +61,28 @@ import jetbrains.mps.debug.evaluation.proxies.INullValueProxy;
   }
 
   @Override
-  public IValueProxy invokeMethod(String name, String jniSignature, Object... args) throws EvaluationException {
+  public IValueProxy invokeMethod(String name, String jniSignature, final ThreadReference threadReference, Object... args) throws EvaluationException {
     // we can't use Evaluators similar method cause we find methods in Object, but invoke them for Array 
-    ClassType objectType = (ClassType) EvaluationUtils.getInstance().findClassType("java.lang.Object", myThreadReference.virtualMachine());
+    ClassType objectType = (ClassType) EvaluationUtils.getInstance().findClassType("java.lang.Object", myValue.virtualMachine());
     final Method method = EvaluationUtils.getInstance().findMethod(objectType, name, jniSignature);
-    final List<Value> argValues = MirrorUtil.getInstance().getValues(myThreadReference, args);
-    return EvaluationUtils.handleInvocationExceptions(new EvaluationUtils.ThreadInvocatable<IValueProxy>(myThreadReference) {
+    final List<Value> argValues = MirrorUtil.getInstance().getValues(myValue.virtualMachine(), args);
+    return EvaluationUtils.handleInvocationExceptions(new EvaluationUtils.ThreadInvocatable<IValueProxy>(threadReference) {
       @Override
       public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
-        Value result = getArrayValue().invokeMethod(myThreadReference, method, argValues, 0);
-        return MirrorUtil.getInstance().getValueProxy(result, myThreadReference);
+        Value result = getArrayValue().invokeMethod(threadReference, method, argValues, 0);
+        return MirrorUtil.getInstance().getValueProxy(result);
       }
     });
   }
 
   @Override
-  public IValueProxy invokeSuperMethod(String name, String jniSignature, Object... args) {
+  public IValueProxy invokeSuperMethod(String name, String jniSignature, ThreadReference threadRefence, Object... args) {
     throw new UnsupportedOperationException("Can't invoke super for an array");
   }
 
   @Override
   public boolean isInstanceOf(String typename) throws EvaluationException {
-    return EvaluationUtils.isInstanceOf(myValue.type(), typename, myThreadReference.virtualMachine());
+    return EvaluationUtils.isInstanceOf(myValue.type(), typename, myValue.virtualMachine());
   }
 
   @Override

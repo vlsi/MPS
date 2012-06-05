@@ -20,7 +20,7 @@ public abstract class Evaluator {
     myUiState = uiState;
     ObjectReference objectReference = uiState.getThisObject();
     if (objectReference != null) {
-      myThisObject = (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(objectReference, uiState.getThread().getThread());
+      myThisObject = (IObjectValueProxy) MirrorUtil.getInstance().getValueProxy(objectReference);
     }
   }
 
