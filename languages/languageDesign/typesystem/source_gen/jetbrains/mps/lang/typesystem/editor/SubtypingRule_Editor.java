@@ -201,7 +201,7 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_156sr0_a3b1a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "supertypes");
     editorCell.setCellId("Constant_156sr0_a3b1a");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {
