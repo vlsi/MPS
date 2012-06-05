@@ -5,15 +5,19 @@ package jetbrains.mps.lang.core.refactorings;
 import jetbrains.mps.refactoring.framework.BaseRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.SNode;
+import java.util.Set;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
-import java.util.List;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ArrayList;
 
 public class SafeDelete extends BaseRefactoring {
@@ -29,22 +33,41 @@ public class SafeDelete extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    SNodeOperations.deleteNode(refactoringContext.getSelectedNode());
+    ListSequence.fromList(refactoringContext.getSelectedNodes()).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        if (!(it.isDeleted())) {
+          SNodeOperations.deleteNode(it);
+        }
+      }
+    });
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    SearchResults<SNode> searchResults = FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+    final Set<SearchResult<SNode>> results = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
 
-    List<SearchResult<SNode>> searchResultsList = searchResults.getSearchResults();
-    List<SearchResult<SNode>> searchResultsCopy = ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), searchResultsList);
+    ListSequence.fromList(refactoringContext.getSelectedNodes()).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        SearchResults<SNode> searchResults = FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+        SetSequence.fromSet(results).addSequence(ListSequence.fromList(searchResults.getSearchResults()));
+      }
+    });
 
-    for (SearchResult<SNode> searchResult : searchResultsCopy) {
+    Set<SNode> nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(results).select(new ISelector<SearchResult<SNode>, SNode>() {
+      public SNode select(SearchResult<SNode> it) {
+        return it.getObject();
+      }
+    }));
+    for (SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), results)) {
       SNode resultNode = searchResult.getObject();
-      if (ListSequence.fromList(SNodeOperations.getAncestors(resultNode, null, true)).contains(refactoringContext.getSelectedNode())) {
-        searchResults.remove(searchResult);
+
+      for (SNode anc : ListSequence.fromList(SNodeOperations.getAncestors(resultNode, null, false))) {
+        if (SetSequence.fromSet(nodes).contains(anc)) {
+          SetSequence.fromSet(results).removeElement(searchResult);
+          break;
+        }
       }
     }
 
-    return searchResults;
+    return new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), refactoringContext.getSelectedNodes()), SetSequence.fromSet(results).toListSequence());
   }
 }

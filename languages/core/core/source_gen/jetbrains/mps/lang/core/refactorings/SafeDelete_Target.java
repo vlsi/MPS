@@ -13,7 +13,7 @@ public class SafeDelete_Target implements IRefactoringTarget {
   }
 
   public boolean allowMultipleTargets() {
-    return false;
+    return true;
   }
 
   public boolean isApplicableToEntityType(Object entity) {

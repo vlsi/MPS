@@ -68,76 +68,108 @@
   </root>
   <root nodeId="1851015849775217755">
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="11" startPosition="52" endLine="12" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="15" startPosition="41" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="15" startPosition="41" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="19" startPosition="58" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="23" startPosition="39" endLine="24" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="24" startPosition="51" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="26" startPosition="5" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="27" startPosition="52" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1851015849775217769" fileName="SafeDelete.java" startLine="31" startPosition="69" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8527005260551193786" fileName="SafeDelete.java" startLine="35" startPosition="86" endLine="36" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8527005260551219723" fileName="SafeDelete.java" startLine="36" startPosition="236" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8527005260551219666" fileName="SafeDelete.java" startLine="37" startPosition="0" endLine="38" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8527005260551219674" fileName="SafeDelete.java" startLine="38" startPosition="83" endLine="39" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8527005260551219684" fileName="SafeDelete.java" startLine="39" startPosition="139" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8527005260551219687" fileName="SafeDelete.java" startLine="41" startPosition="64" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8527005260551219806" fileName="SafeDelete.java" startLine="43" startPosition="135" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8527005260551219710" fileName="SafeDelete.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8527005260551219711" fileName="SafeDelete.java" startLine="47" startPosition="0" endLine="48" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="27" startPosition="39" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="31" startPosition="52" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7207185148941975965" fileName="SafeDelete.java" startLine="38" startPosition="32" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8527005260551219674" fileName="SafeDelete.java" startLine="45" startPosition="86" endLine="46" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8527005260551219684" fileName="SafeDelete.java" startLine="46" startPosition="101" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8527005260551193786" fileName="SafeDelete.java" startLine="49" startPosition="35" endLine="50" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7207185148941976112" fileName="SafeDelete.java" startLine="50" startPosition="240" endLine="51" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7207185148941987136" fileName="SafeDelete.java" startLine="53" startPosition="7" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7207185148941987183" fileName="SafeDelete.java" startLine="56" startPosition="51" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8527005260551219687" fileName="SafeDelete.java" startLine="60" startPosition="125" endLine="61" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7207185148941987249" fileName="SafeDelete.java" startLine="61" startPosition="50" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8527005260551219806" fileName="SafeDelete.java" startLine="64" startPosition="55" endLine="65" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7207185148941987261" fileName="SafeDelete.java" startLine="65" startPosition="67" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="8527005260551219710" fileName="SafeDelete.java" startLine="69" startPosition="5" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8527005260551219711" fileName="SafeDelete.java" startLine="70" startPosition="0" endLine="71" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="7" startPosition="62" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SafeDelete_Target#()V" />
-    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="19" startPosition="49" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SafeDelete#()V" />
+    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="23" startPosition="49" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SafeDelete#()V" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="23" startPosition="52" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8527005260551219785" fileName="SafeDelete.java" startLine="42" startPosition="50" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7207185148941975888" fileName="SafeDelete.java" startLine="37" startPosition="35" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allowMultipleTargets#()Z" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="8527005260551219685" fileName="SafeDelete.java" startLine="40" startPosition="0" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+    <nodeInfo nodeId="7207185148941987179" fileName="SafeDelete.java" startLine="55" startPosition="156" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/ide/findusages/model/SearchResult;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7207185148941987214" fileName="SafeDelete.java" startLine="63" startPosition="102" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7207185148941976062" fileName="SafeDelete.java" startLine="48" startPosition="97" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7207185148941987141" fileName="SafeDelete.java" startLine="54" startPosition="0" endLine="59" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7207185148941975855" fileName="SafeDelete.java" startLine="36" startPosition="97" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7207185148941976006" fileName="SafeDelete.java" startLine="47" startPosition="0" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7207185148941987251" fileName="SafeDelete.java" startLine="62" startPosition="0" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="34" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
+    <nodeInfo nodeId="1851015849775217769" fileName="SafeDelete.java" startLine="35" startPosition="69" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+    <nodeInfo nodeId="8527005260551219685" fileName="SafeDelete.java" startLine="59" startPosition="8" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="44" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAffectedNodes#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)Ljetbrains/mps/ide/findusages/model/SearchResults;" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="8" startPosition="30" endLine="8" endPosition="30" />
-    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="20" startPosition="23" endLine="20" endPosition="23" />
+    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="24" startPosition="23" endLine="24" endPosition="23" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="11" startPosition="52" endLine="12" endPosition="46" />
-    <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="15" startPosition="41" endLine="16" endPosition="17" />
+    <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="15" startPosition="41" endLine="16" endPosition="16" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="19" startPosition="58" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="23" startPosition="39" endLine="24" endPosition="30" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="24" startPosition="51" endLine="25" endPosition="19" />
-    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="27" startPosition="52" endLine="28" endPosition="35" />
-    <scopeInfo nodeId="1851015849775217758" fileName="SafeDelete.java" startLine="31" startPosition="69" endLine="32" endPosition="69" />
-    <scopeInfo nodeId="8527005260551219786" fileName="SafeDelete.java" startLine="43" startPosition="135" endLine="44" endPosition="43" />
+    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="27" startPosition="39" endLine="28" endPosition="30" />
+    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="31" startPosition="52" endLine="32" endPosition="35" />
+    <scopeInfo nodeId="7207185148941975890" fileName="SafeDelete.java" startLine="38" startPosition="32" endLine="39" endPosition="41" />
+    <scopeInfo nodeId="7207185148941987180" fileName="SafeDelete.java" startLine="56" startPosition="51" endLine="57" endPosition="30" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="7" startPosition="62" endLine="9" endPosition="3" />
-    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="19" startPosition="49" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="23" startPosition="49" endLine="25" endPosition="3" />
+    <scopeInfo nodeId="7207185148941976063" fileName="SafeDelete.java" startLine="49" startPosition="35" endLine="51" endPosition="106">
+      <varInfo nodeId="8527005260551193787" varName="searchResults" />
+    </scopeInfo>
+    <scopeInfo nodeId="7207185148941987215" fileName="SafeDelete.java" startLine="64" startPosition="55" endLine="66" endPosition="16" />
+    <scopeInfo nodeId="7207185148941975856" fileName="SafeDelete.java" startLine="37" startPosition="35" endLine="40" endPosition="9" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1851015849775217765" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="23" startPosition="52" endLine="27" endPosition="16" />
     <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="1851015849775217755" varName="refactoringContext" />
+    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="7207185148941987179" fileName="SafeDelete.java" startLine="55" startPosition="156" endLine="59" endPosition="0">
+      <varInfo nodeId="7207185148941987179" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8527005260551219686" fileName="SafeDelete.java" startLine="41" startPosition="64" endLine="45" endPosition="7">
-      <varInfo nodeId="8527005260551219688" varName="resultNode" />
+    <scopeInfo nodeId="7207185148941987254" fileName="SafeDelete.java" startLine="63" startPosition="102" endLine="67" endPosition="9" />
+    <scopeInfo nodeId="7207185148941976062" fileName="SafeDelete.java" startLine="48" startPosition="97" endLine="53" endPosition="0">
+      <varInfo nodeId="7207185148941976062" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8527005260551219685" fileName="SafeDelete.java" startLine="40" startPosition="0" endLine="46" endPosition="5">
-      <varInfo nodeId="8527005260551219707" varName="searchResult" />
+    <scopeInfo nodeId="7207185148941975855" fileName="SafeDelete.java" startLine="36" startPosition="97" endLine="42" endPosition="0">
+      <varInfo nodeId="7207185148941975855" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7207185148941987251" fileName="SafeDelete.java" startLine="62" startPosition="0" endLine="68" endPosition="7">
+      <varInfo nodeId="7207185148941987251" varName="anc" />
     </scopeInfo>
     <scopeInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1851015849775217765" varName="entity" />
     </scopeInfo>
-    <scopeInfo nodeId="1851015849775217768" fileName="SafeDelete.java" startLine="35" startPosition="86" endLine="48" endPosition="25">
-      <varInfo nodeId="8527005260551193787" varName="searchResults" />
-      <varInfo nodeId="8527005260551219675" varName="searchResultsCopy" />
-      <varInfo nodeId="8527005260551219667" varName="searchResultsList" />
+    <scopeInfo nodeId="1851015849775217758" fileName="SafeDelete.java" startLine="35" startPosition="69" endLine="42" endPosition="7" />
+    <scopeInfo nodeId="8527005260551219686" fileName="SafeDelete.java" startLine="60" startPosition="125" endLine="68" endPosition="7">
+      <varInfo nodeId="8527005260551219688" varName="resultNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="34" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1851015849775217755" varName="refactoringContext" />
     </scopeInfo>
-    <unitInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.SafeDelete" />
+    <scopeInfo nodeId="8527005260551219685" fileName="SafeDelete.java" startLine="59" startPosition="8" endLine="69" endPosition="5">
+      <varInfo nodeId="8527005260551219707" varName="searchResult" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851015849775217768" fileName="SafeDelete.java" startLine="45" startPosition="86" endLine="71" endPosition="168">
+      <varInfo nodeId="7207185148941987142" varName="nodes" />
+      <varInfo nodeId="8527005260551219675" varName="results" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="44" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="1851015849775217755" varName="refactoringContext" />
+    </scopeInfo>
+    <unitInfo nodeId="1851015849775217755" fileName="SafeDelete.java" startLine="23" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.SafeDelete" />
+    <unitInfo nodeId="7207185148941975855" fileName="SafeDelete.java" startLine="36" startPosition="78" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.core.refactorings.SafeDelete$1" />
+    <unitInfo nodeId="7207185148941976062" fileName="SafeDelete.java" startLine="48" startPosition="78" endLine="53" endPosition="5" unitName="jetbrains.mps.lang.core.refactorings.SafeDelete$2" />
+    <unitInfo nodeId="7207185148941987179" fileName="SafeDelete.java" startLine="55" startPosition="115" endLine="59" endPosition="5" unitName="jetbrains.mps.lang.core.refactorings.SafeDelete$3" />
     <unitInfo nodeId="1851015849775217765" fileName="SafeDelete_Target.java" startLine="7" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.core.refactorings.SafeDelete_Target" />
   </root>
   <root nodeId="7012097027058633272">
