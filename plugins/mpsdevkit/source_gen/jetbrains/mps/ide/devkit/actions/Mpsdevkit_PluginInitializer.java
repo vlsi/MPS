@@ -9,7 +9,6 @@ import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 
 public class Mpsdevkit_PluginInitializer implements ApplicationComponent {
   public Mpsdevkit_PluginInitializer() {
@@ -35,10 +34,8 @@ public class Mpsdevkit_PluginInitializer implements ApplicationComponent {
   }
 
   public void initComponent() {
-    NewProjectWizard.setSkipLanguageStep(false);
   }
 
   public void disposeComponent() {
-    NewProjectWizard.setSkipLanguageStep(true);
   }
 }

@@ -60,6 +60,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.MPS7408" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.Nulls" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.util.A" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.util.Foo" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.util.MPS11114" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.util.Sum" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ArrayUtils" />
