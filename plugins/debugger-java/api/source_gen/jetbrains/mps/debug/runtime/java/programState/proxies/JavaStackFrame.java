@@ -81,7 +81,7 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   }
 
   @Override
-  public List<IWatchable> getVisibleWatchables() {
+  public synchronized List<IWatchable> getVisibleWatchables() {
     List<IWatchable> watchables = ListSequence.fromList(new ArrayList<IWatchable>());
     ListSequence.fromList(watchables).addSequence(ListSequence.fromList(myVariables));
     if (myContextWatchable != null) {
@@ -90,15 +90,15 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     return watchables;
   }
 
-  public List<JavaLocalVariable> getVisibleVariables() {
+  public synchronized List<JavaLocalVariable> getVisibleVariables() {
     return myVariables;
   }
 
-  public IWatchable getContextWatchable() {
+  public synchronized IWatchable getContextWatchable() {
     return myContextWatchable;
   }
 
-  public void initializeWatchables() {
+  public synchronized void initializeWatchables() {
     if (myInitialized) {
       return;
     }

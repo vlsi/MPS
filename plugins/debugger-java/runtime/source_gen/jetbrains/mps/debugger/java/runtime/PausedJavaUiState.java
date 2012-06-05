@@ -42,7 +42,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     getThread().initializeFrames();
 
     myStackFrameIndex = findStackFrameIndex();
-    getStackFrame().initializeWatchables();
+    check_vzg6vq_a01a0(getStackFrame(), this);
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
@@ -62,7 +62,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     getThread().initializeFrames();
 
     myStackFrameIndex = findStackFrameIndex();
-    getStackFrame().initializeWatchables();
+    check_vzg6vq_a21a1(getStackFrame(), this);
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
@@ -229,6 +229,20 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     watchables.addAll(super.getWatchables());
     watchables.addAll(myWatchables);
     return watchables;
+  }
+
+  private static void check_vzg6vq_a01a0(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.initializeWatchables();
+    }
+
+  }
+
+  private static void check_vzg6vq_a21a1(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.initializeWatchables();
+    }
+
   }
 
   private static ObjectReference check_vzg6vq_a0a1a3(StackFrame checkedDotOperand) {

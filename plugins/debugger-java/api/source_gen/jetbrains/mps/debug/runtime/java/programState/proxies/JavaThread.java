@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.AbsentInformationException;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.integration.ui.icons.Icons;
 
 public class JavaThread extends ProxyForJava implements IThread {
@@ -23,13 +24,16 @@ public class JavaThread extends ProxyForJava implements IThread {
   @NotNull
   private final ThreadReference myThreadReference;
   @Nullable
-  private Icon myCachedIcon = null;
+  private final Icon myCachedIcon;
   private final List<IStackFrame> myStackFrames = ListSequence.fromList(new ArrayList<IStackFrame>());
   private boolean myInitialized = false;
+  private final String myPresentation;
 
   public JavaThread(@NotNull ThreadReference threadReference) {
     super(threadReference);
     myThreadReference = threadReference;
+    myPresentation = calculatePresentation();
+    myCachedIcon = calculateIcon();
   }
 
   public synchronized void initializeFrames() {
@@ -53,22 +57,23 @@ public class JavaThread extends ProxyForJava implements IThread {
   }
 
   @Override
-  public List<IStackFrame> getFrames() {
+  public synchronized List<IStackFrame> getFrames() {
     return myStackFrames;
   }
 
   @Override
-  public int getFramesCount() {
+  public synchronized int getFramesCount() {
     return myStackFrames.size();
   }
 
   @Nullable
-  public IStackFrame getFrame(int index) {
+  public synchronized IStackFrame getFrame(int index) {
     return ListSequence.fromList(myStackFrames).getElement(index);
   }
 
   @NotNull
   public ThreadReference getThread() {
+    assert !(ModelAccess.instance().isInEDT());
     return myThreadReference;
   }
 
@@ -79,24 +84,29 @@ public class JavaThread extends ProxyForJava implements IThread {
 
   @Override
   public String getPresentation() {
-    ThreadReference thread = myThreadReference;
-    return thread.name() + " (" + thread.referenceType().name() + " from group " + thread.threadGroup().name() + ") : " + JavaThread.getThreadStatusText(thread.status());
+    return myPresentation;
+  }
+
+  private String calculatePresentation() {
+    assert !(ModelAccess.instance().isInEDT());
+    return myThreadReference.name() + " (" + myThreadReference.referenceType().name() + " from group " + myThreadReference.threadGroup().name() + ") : " + JavaThread.getThreadStatusText(myThreadReference.status());
   }
 
   @Override
   public Icon getPresentationIcon() {
-    if (myCachedIcon == null) {
-      ThreadReference thread = myThreadReference;
-      if (thread.isAtBreakpoint()) {
-        myCachedIcon = Icons.THREAD_AT_BREAKPOINT;
-      } else
-      if (thread.isSuspended()) {
-        myCachedIcon = Icons.THREAD_SUSPENDED;
-      } else {
-        myCachedIcon = Icons.THREAD_RUNNING;
-      }
-    }
     return myCachedIcon;
+  }
+
+  private Icon calculateIcon() {
+    assert !(ModelAccess.instance().isInEDT());
+    if (myThreadReference.isAtBreakpoint()) {
+      return Icons.THREAD_AT_BREAKPOINT;
+    } else
+    if (myThreadReference.isSuspended()) {
+      return Icons.THREAD_SUSPENDED;
+    } else {
+      return Icons.THREAD_RUNNING;
+    }
   }
 
   private static String getThreadStatusText(int statusId) {
