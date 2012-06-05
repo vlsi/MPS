@@ -168,7 +168,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   }
 
   @NotNull
-  public List<? extends IThread> getThreads() {
+  public synchronized List<? extends IThread> getThreads() {
     return myThreads;
   }
 
@@ -176,12 +176,12 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     return getEventsProcessor().getSuspendManager().getPausedContexts().contains(myContext);
   }
 
-  public JavaThread getThread() {
+  public synchronized JavaThread getThread() {
     return (JavaThread) ListSequence.fromList(myThreads).getElement(myThreadIndex);
   }
 
   @Nullable
-  public JavaStackFrame getStackFrame() {
+  public synchronized JavaStackFrame getStackFrame() {
     if (myStackFrameIndex == AbstractUiState.NO_FRAME) {
       return null;
     }
@@ -224,7 +224,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   }
 
   @NotNull
-  public List<IWatchable> getWatchables() {
+  public synchronized List<IWatchable> getWatchables() {
     List<IWatchable> watchables = new ArrayList<IWatchable>();
     watchables.addAll(super.getWatchables());
     watchables.addAll(myWatchables);

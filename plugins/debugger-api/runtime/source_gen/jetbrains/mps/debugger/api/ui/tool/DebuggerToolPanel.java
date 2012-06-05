@@ -228,6 +228,9 @@ public class DebuggerToolPanel {
 
     @Override
     public Object getElementAt(int index) {
+      if (index >= myUiState.getStackFramesCount()) {
+        return null;
+      }
       return myUiState.getStackFrame(index);
     }
 

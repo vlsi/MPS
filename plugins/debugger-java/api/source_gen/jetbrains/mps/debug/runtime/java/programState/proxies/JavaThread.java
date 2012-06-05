@@ -73,7 +73,6 @@ public class JavaThread extends ProxyForJava implements IThread {
 
   @NotNull
   public ThreadReference getThread() {
-    assert !(ModelAccess.instance().isInEDT());
     return myThreadReference;
   }
 
