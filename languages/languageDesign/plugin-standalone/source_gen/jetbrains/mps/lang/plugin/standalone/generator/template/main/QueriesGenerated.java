@@ -202,11 +202,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6996282843575694857(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "init", true) != null;
+    return SLinkOperations.getTarget(_context.getNode(), "init", true) != null && SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "init", true), "body", true) != null;
   }
 
   public static boolean ifMacro_Condition_6996282843575694854(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "dispose", true) != null;
+    return SLinkOperations.getTarget(_context.getNode(), "dispose", true) != null && SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "dispose", true), "body", true) != null;
   }
 
   public static boolean ifMacro_Condition_5521353027966538515(final IOperationContext operationContext, final IfMacroContext _context) {
