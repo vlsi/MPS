@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Build_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.structure.Build_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.build.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.build.structure.StructureAspectDescriptor" />
   <root nodeId="1979010778009209124">
     <nodeInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1979010778009209124" fileName="BuildLayout_TarCompression.java" startLine="13" startPosition="0" endLine="14" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />

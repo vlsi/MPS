@@ -13937,6 +13937,14 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="9126048691954704079">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.9126048691954557131" resolveInfo="BuildLayout_Comment" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="9126048691954704081" />
+    </node>
+    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="9126048691954857772">
+      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="3ior.7389400916848036997" resolveInfo="BuildLayout_Node" />
+      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.AbandonInput_RuleConsequence" typeId="tpf8.1202776937179" id="9126048691954857774" />
+    </node>
   </root>
 </model>
 
