@@ -47,7 +47,7 @@ public class DeleteNodesHelper {
 
   public void deleteNodes(boolean safe, boolean aspects, boolean fromProjectPane) {
     if (aspects) {
-      myNodesToDelete = ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, SNode>() {
+      ListSequence.fromList(myNodesToDelete).addSequence(ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(final SNode node) {
           List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(myContext.getProject()), node);
           return ListSequence.fromList(tabs).translate(new ITranslator2<RelationDescriptor, SNode>() {
@@ -59,7 +59,7 @@ public class DeleteNodesHelper {
             }
           });
         }
-      }).toListSequence();
+      }));
     }
 
     ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
