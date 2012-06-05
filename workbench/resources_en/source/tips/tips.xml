@@ -10,10 +10,16 @@
   <tip file="GoToDefinition.html"/>
   <tip file="InsertEnter.html"/>
   <tip file="GoToConcept.html"/>
+  <tip file="DeleteLine.html"/>
   <tip file="LeftTransform.html"/>
   <tip file="SurroundWith.html"/>
+  <tip file="DuplicateLine.html"/>
+  <tip file="ImportModel.html"/>
+  <tip file="ImportRoot.html"/>
+  <tip file="ShowStructure.html"/>
   <tip file="NodeExplorer.html"/>
   <tip file="GoToAction.html"/>
+  <tip file="ToolButtons.html"/>
   <tip file="FindUsages.html"/>
   <tip file="ShowHierarchy.html"/>
   <tip file="ShowError.html"/>
