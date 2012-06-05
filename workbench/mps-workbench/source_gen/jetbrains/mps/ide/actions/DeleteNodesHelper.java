@@ -6,10 +6,12 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Collections;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.Iterator;
@@ -24,15 +26,30 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 public class DeleteNodesHelper {
   private List<SNode> myNodesToDelete;
   private IOperationContext myContext;
-  private boolean mySafe;
 
-  public DeleteNodesHelper(List<SNode> nodes, final IOperationContext context, boolean safe, boolean aspects) {
+  public DeleteNodesHelper(List<SNode> nodes, IOperationContext context) {
     myContext = context;
-    mySafe = safe;
+    myNodesToDelete = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
+  }
+
+  public boolean hasOptions() {
+    return ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, RelationDescriptor>() {
+      public Iterable<RelationDescriptor> translate(final SNode node) {
+        List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(myContext.getProject()), node);
+        return ListSequence.fromList(tabs).where(new IWhereFilter<RelationDescriptor>() {
+          public boolean accept(RelationDescriptor it) {
+            return it.isSingle() && it.isApplicable(node) && !(it.getNodes(node).isEmpty());
+          }
+        });
+      }
+    }).isNotEmpty();
+  }
+
+  public void deleteNodes(boolean safe, boolean aspects, boolean fromProjectPane) {
     if (aspects) {
-      myNodesToDelete = ListSequence.fromList(nodes).translate(new ITranslator2<SNode, SNode>() {
+      myNodesToDelete = ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(final SNode node) {
-          List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(context.getProject()), node);
+          List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(myContext.getProject()), node);
           return ListSequence.fromList(tabs).translate(new ITranslator2<RelationDescriptor, SNode>() {
             public Iterable<SNode> translate(RelationDescriptor tab) {
               return (tab.isSingle() && tab.isApplicable(node) ?
@@ -43,12 +60,8 @@ public class DeleteNodesHelper {
           });
         }
       }).toListSequence();
-    } else {
-      myNodesToDelete = nodes;
     }
-  }
 
-  public void deleteNodes(boolean fromProjectPane) {
     ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
     for (Iterator<SNode> iterator = myNodesToDelete.iterator(); iterator.hasNext();) {
       SNode sNode = iterator.next();
@@ -56,15 +69,11 @@ public class DeleteNodesHelper {
         projectPane.rebuildTree();
         projectPane.selectNextNode(sNode);
       }
-      doDeleteNode(sNode);
-    }
-  }
-
-  private void doDeleteNode(SNode node) {
-    if (mySafe) {
-      safeDelete(myContext, node);
-    } else {
-      delete(node);
+      if (safe) {
+        safeDelete(myContext, sNode);
+      } else {
+        delete(sNode);
+      }
     }
   }
 
