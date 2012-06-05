@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.util.MPS11114;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.tuples.util.Sum;
+import jetbrains.mps.baseLanguage.tuples.util.Foo;
 
 public class IndexedTuples_Test extends TestCase {
   public void test_empty() throws Exception {
@@ -203,6 +204,13 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertNull(pair2);
     pair2 = MultiTuple.<Integer,String>from(2, "2");
     Assert.assertNotNull(pair2);
+  }
+
+  public void test_mps16045() throws Exception {
+    String s = Foo.getTuple()._0();
+    Assert.assertEquals("bar", s);
+    int i = (int) Foo.getTuple()._1();
+    Assert.assertSame(22, i);
   }
 
   public Tuples._2<String, Character> toTuple(String s, char c) {
