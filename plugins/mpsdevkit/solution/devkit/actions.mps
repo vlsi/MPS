@@ -100,6 +100,7 @@
   <import index="2t1w" modelUID="f:java_stub#cac2fef0-41a6-4fcd-923f-f893d536b2ab#jetbrains.mps.ide.devkit.structureview(jetbrains.mps.ide.mpsdevkit/jetbrains.mps.ide.devkit.structureview@java_stub)" version="-1" />
   <import index="1d7m" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" version="-1" />
   <import index="lgzw" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" version="-1" />
+  <import index="llbr" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.dialogs.project.newproject(MPS.Workbench/jetbrains.mps.workbench.dialogs.project.newproject@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
@@ -732,7 +733,34 @@
       </node>
     </node>
   </root>
-  <root id="8586967776370586377" />
+  <root id="8586967776370586377">
+    <node role="init" roleId="tp4k.3386199702747797720" type="tpee.ConceptFunction" typeId="tpee.1137021947720" id="3386199702747906365">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3386199702747906366">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3386199702747906808">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3386199702747907224">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="llbr.~NewProjectWizard%dsetSkipLanguageStep(boolean)%cvoid" resolveInfo="setSkipLanguageStep" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="llbr.~NewProjectWizard" resolveInfo="NewProjectWizard" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3386199702747907225">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="dispose" roleId="tp4k.3386199702747860073" type="tpee.ConceptFunction" typeId="tpee.1137021947720" id="3386199702747906367">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3386199702747906368">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3386199702747907226">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3386199702747907228">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="llbr.~NewProjectWizard%dsetSkipLanguageStep(boolean)%cvoid" resolveInfo="setSkipLanguageStep" />
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="llbr.~NewProjectWizard" resolveInfo="NewProjectWizard" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3386199702747907229">
+              <property name="value" nameId="tpee.1068580123138" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
   <root id="5883033498657755836">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="5883033498657755837">
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="tprs.1204991221264" resolveInfo="ProjectNewActions" />

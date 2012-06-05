@@ -7,9 +7,9 @@ import jetbrains.mps.plugins.PluginFactoriesRegistry;
 import jetbrains.mps.plugins.AbstractPluginFactory;
 import jetbrains.mps.plugins.applicationplugins.BaseApplicationPlugin;
 import jetbrains.mps.plugins.projectplugins.BaseProjectPlugin;
-import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.workbench.dialogs.project.newproject.NewProjectWizard;
 
 public class Mpsdevkit_PluginInitializer implements ApplicationComponent {
   public Mpsdevkit_PluginInitializer() {
