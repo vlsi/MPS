@@ -35,7 +35,7 @@ public class DeleteNodesHelper {
           List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(context.getProject()), node);
           return ListSequence.fromList(tabs).translate(new ITranslator2<RelationDescriptor, SNode>() {
             public Iterable<SNode> translate(RelationDescriptor tab) {
-              return (tab.isApplicable(node) ?
+              return (tab.isSingle() && tab.isApplicable(node) ?
                 tab.getNodes(node) :
                 Collections.<SNode>emptyList()
               );
