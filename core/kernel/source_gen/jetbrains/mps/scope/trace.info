@@ -105,40 +105,44 @@
     <unitInfo nodeId="3734116213129936110" fileName="Scope.java" startLine="114" startPosition="180" endLine="118" endPosition="5" unitName="jetbrains.mps.scope.Scope$1" />
   </root>
   <root nodeId="5452980714151229091">
-    <nodeInfo nodeId="5452980714151232869" fileName="DelegatingScope.java" startLine="8" startPosition="44" endLine="9" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="wrapped" />
-    <nodeInfo nodeId="5452980714151232880" fileName="DelegatingScope.java" startLine="11" startPosition="41" endLine="12" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5452980714151232891" fileName="DelegatingScope.java" startLine="15" startPosition="59" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5452980714151314459" fileName="DelegatingScope.java" startLine="19" startPosition="72" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5452980714151314467" fileName="DelegatingScope.java" startLine="23" startPosition="65" endLine="24" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3587601930838143734" fileName="DelegatingScope.java" startLine="28" startPosition="39" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5452980714151232873" fileName="DelegatingScope.java" startLine="10" startPosition="0" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingScope#(Ljetbrains/mps/scope/Scope;)V" />
-    <nodeInfo nodeId="5452980714151232847" fileName="DelegatingScope.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="5452980714151232855" fileName="DelegatingScope.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5452980714151232861" fileName="DelegatingScope.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3587601930838143709" fileName="DelegatingScope.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="5452980714151232877" fileName="DelegatingScope.java" startLine="11" startPosition="41" endLine="12" endPosition="27" />
-    <scopeInfo nodeId="5452980714151232854" fileName="DelegatingScope.java" startLine="15" startPosition="59" endLine="16" endPosition="49" />
-    <scopeInfo nodeId="5452980714151232860" fileName="DelegatingScope.java" startLine="19" startPosition="72" endLine="20" endPosition="48" />
-    <scopeInfo nodeId="5452980714151232868" fileName="DelegatingScope.java" startLine="23" startPosition="65" endLine="24" endPosition="55" />
-    <scopeInfo nodeId="3587601930838143728" fileName="DelegatingScope.java" startLine="28" startPosition="39" endLine="29" endPosition="34" />
-    <scopeInfo nodeId="5452980714151232873" fileName="DelegatingScope.java" startLine="10" startPosition="0" endLine="13" endPosition="3">
-      <varInfo nodeId="5452980714151232878" varName="wrapped" />
-    </scopeInfo>
-    <scopeInfo nodeId="5452980714151232847" fileName="DelegatingScope.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="5452980714151232869" fileName="DelegatingScope.java" startLine="9" startPosition="44" endLine="10" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="wrapped" />
+    <nodeInfo nodeId="4925842136633799920" fileName="DelegatingScope.java" startLine="13" startPosition="26" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4925842136633799923" fileName="DelegatingScope.java" startLine="14" startPosition="17" endLine="15" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5452980714151232880" fileName="DelegatingScope.java" startLine="16" startPosition="5" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5452980714151232891" fileName="DelegatingScope.java" startLine="20" startPosition="59" endLine="21" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452980714151314459" fileName="DelegatingScope.java" startLine="24" startPosition="72" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5452980714151314467" fileName="DelegatingScope.java" startLine="28" startPosition="65" endLine="29" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3587601930838143734" fileName="DelegatingScope.java" startLine="33" startPosition="39" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4925842136633726424" fileName="DelegatingScope.java" startLine="12" startPosition="50" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5452980714151232847" fileName="DelegatingScope.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="5452980714151232855" fileName="DelegatingScope.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="5452980714151232861" fileName="DelegatingScope.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3587601930838143709" fileName="DelegatingScope.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5452980714151232873" fileName="DelegatingScope.java" startLine="11" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingScope#(Ljetbrains/mps/scope/Scope;)V" />
+    <scopeInfo nodeId="5452980714151232854" fileName="DelegatingScope.java" startLine="20" startPosition="59" endLine="21" endPosition="49" />
+    <scopeInfo nodeId="5452980714151232860" fileName="DelegatingScope.java" startLine="24" startPosition="72" endLine="25" endPosition="48" />
+    <scopeInfo nodeId="5452980714151232868" fileName="DelegatingScope.java" startLine="28" startPosition="65" endLine="29" endPosition="55" />
+    <scopeInfo nodeId="3587601930838143728" fileName="DelegatingScope.java" startLine="33" startPosition="39" endLine="34" endPosition="34" />
+    <scopeInfo nodeId="4925842136633726425" fileName="DelegatingScope.java" startLine="13" startPosition="26" endLine="15" endPosition="43" />
+    <scopeInfo nodeId="5452980714151232847" fileName="DelegatingScope.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="5452980714151232850" varName="contextNode" />
       <varInfo nodeId="5452980714151232852" varName="refText" />
     </scopeInfo>
-    <scopeInfo nodeId="5452980714151232855" fileName="DelegatingScope.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="5452980714151232855" fileName="DelegatingScope.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="5452980714151232858" varName="prefix" />
     </scopeInfo>
-    <scopeInfo nodeId="5452980714151232861" fileName="DelegatingScope.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="5452980714151232861" fileName="DelegatingScope.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5452980714151232864" varName="contextNode" />
       <varInfo nodeId="5452980714151232866" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3587601930838143709" fileName="DelegatingScope.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="5452980714151232877" fileName="DelegatingScope.java" startLine="12" startPosition="50" endLine="17" endPosition="27" />
+    <scopeInfo nodeId="3587601930838143709" fileName="DelegatingScope.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="3587601930838143712" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5452980714151229091" fileName="DelegatingScope.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.scope.DelegatingScope" />
+    <scopeInfo nodeId="5452980714151232873" fileName="DelegatingScope.java" startLine="11" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="5452980714151232878" varName="wrapped" />
+    </scopeInfo>
+    <unitInfo nodeId="5452980714151229091" fileName="DelegatingScope.java" startLine="9" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.scope.DelegatingScope" />
   </root>
   <root nodeId="7712479415687661167">
     <nodeInfo nodeId="7712479415687706032" fileName="ErrorScope.java" startLine="6" startPosition="44" endLine="7" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="message" />
