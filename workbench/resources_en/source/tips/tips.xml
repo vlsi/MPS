@@ -1,5 +1,23 @@
 <tips>
+  <tip file="BlockSelection.html"/>
+  <tip file="Intentions.html"/>
+  <tip file="SWIntentions.html"/>
+  <tip file="CamelHumps.html"/>
+  <tip file="CodeCompletion.html"/>
+  <tip file="Inspector.html"/>
+  <tip file="ShowType.html"/>
+  <tip file="TabNavigation.html"/>
+  <tip file="GoToDefinition.html"/>
+  <tip file="InsertEnter.html"/>
   <tip file="GoToConcept.html"/>
   <tip file="LeftTransform.html"/>
   <tip file="SurroundWith.html"/>
+  <tip file="NodeExplorer.html"/>
+  <tip file="GoToAction.html"/>
+  <tip file="FindUsages.html"/>
+  <tip file="ShowHierarchy.html"/>
+  <tip file="ShowError.html"/>
+  <tip file="gotoModel.html"/>
+  <tip file="HelpMenu.html"/>
+  <tip file="JetBrainsTV.html"/>
 </tips>
