@@ -70,4 +70,11 @@ public class buildStyles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     return style;
   }
+
+  public static Style getComment(final EditorCell cell) {
+    Style style = new Style(cell);
+    style.set(StyleAttributes.TEXT_COLOR, new Color(4161375));
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    return style;
+  }
 }

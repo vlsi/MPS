@@ -17,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildInputSingleFolder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildJavaPlugin_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Comment_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_CopyFilterReplaceRegex_BehaviorDescriptor" />
@@ -380,6 +381,12 @@
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.UnpackHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildLayout_Comment_BehaviorDescriptor" file="BuildLayout_Comment_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_BehaviorDescriptor" file="BuildLayout_CompileOutputOf_BehaviorDescriptor.java">

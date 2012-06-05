@@ -23,8 +23,11 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.List;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -68,6 +71,7 @@ public class FixMissingImportsInProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      // Using ModulereReferences here instead of modules because module can be re-created during  MissingDependenciesFixer execution. 
       Queue<ModuleReference> modules = QueueSequence.fromQueueWithValues(new LinkedList<ModuleReference>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModuleReferences());
       while (QueueSequence.fromQueue(modules).isNotEmpty()) {
         IModule module = ModuleRepositoryFacade.getInstance().getModule(QueueSequence.fromQueue(modules).removeFirstElement());
@@ -82,15 +86,26 @@ public class FixMissingImportsInProject_Action extends BaseAction {
             }
           }));
         }
-        for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
-          if (!(SModelStereotype.isUserModel(model))) {
+
+        // Using SModelReferences because SModelDescriptors can be re-created during MissingDependenciesFixer execution. 
+        List<SModelReference> modelReferences = ListSequence.fromList(new LinkedList<SModelReference>());
+        for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+          ListSequence.fromList(modelReferences).addElement(modelDescriptor.getSModelReference());
+        }
+
+        for (SModelReference modelReference : ListSequence.fromList(modelReferences)) {
+          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+          if (modelDescriptor == null) {
             continue;
           }
-          if (!(model instanceof EditableSModelDescriptor)) {
+          if (!(SModelStereotype.isUserModel(modelDescriptor))) {
+            continue;
+          }
+          if (!(modelDescriptor instanceof EditableSModelDescriptor)) {
             continue;
           }
 
-          new MissingDependenciesFixer(model).fix(false);
+          new MissingDependenciesFixer(modelDescriptor).fix(false);
         }
         module.invalidateCaches();
       }

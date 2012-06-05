@@ -192,6 +192,10 @@
     <component>
       <implementation-class>jetbrains.mps.workbench.structureview.NodeStructureViewProviderImpl</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.diagnostic.DiagnosticUpdater</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

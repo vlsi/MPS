@@ -1036,7 +1036,7 @@
           <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1198243909542">
             <property name="vertical" nameId="tpc2.1073389446425" value="false" />
             <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1198243909543">
-              <property name="text" nameId="tpc2.1073389577007" value="rule" />
+              <property name="text" nameId="tpc2.1073389577007" value="supertypes" />
               <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1186415544875" resolveInfo="KeyWord" />
               <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingRightStyleClassItem" typeId="tpc2.1215007897487" id="1217335470371">
                 <property name="value" nameId="tpc2.1215007802031" value="0.0" />

@@ -13,6 +13,7 @@
   <property name="buildCore.version" value="${import.buildMPS.buildCore.version}" />
   
   <target name="assemble" depends="fetchDependencies">
+    <mkdir dir="${build.layout}" />
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz" />
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildCore.version}" />
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildCore.version}/bin" />

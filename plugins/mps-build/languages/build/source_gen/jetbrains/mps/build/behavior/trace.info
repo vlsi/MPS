@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="164" endPosition="0" unitName="jetbrains.mps.build.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildAspect_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildAspect_BehaviorDescriptor" />
   <unitInfo fileName="BuildCompositePath_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCompositePath_BehaviorDescriptor" />
   <unitInfo fileName="BuildCustomWorkflow_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCustomWorkflow_BehaviorDescriptor" />
@@ -25,6 +25,7 @@
   <unitInfo fileName="BuildLayout_AbstractContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_AbstractCopy_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_AbstractCopy_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_BehaviorDescriptor" />
+  <unitInfo fileName="BuildLayout_Comment_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Comment_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_CompileOutputOf_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_ContainerAcceptingFileSet_BehaviorDescriptor" />
   <unitInfo fileName="BuildLayout_Container_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Container_BehaviorDescriptor" />
@@ -1307,7 +1308,7 @@
   <root nodeId="5584673629410192611">
     <nodeInfo nodeId="5584673629410321098" fileName="BuildLayout_Behavior.java" startLine="13" startPosition="116" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1117643560963359435" fileName="BuildLayout_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963359438" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1117643560963359438" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8739007987174736714" fileName="BuildLayout_Behavior.java" startLine="25" startPosition="109" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5908258303322131066" fileName="BuildLayout_Behavior.java" startLine="29" startPosition="122" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5908258303322131073" fileName="BuildLayout_Behavior.java" startLine="30" startPosition="43" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1321,7 +1322,7 @@
     <scopeInfo nodeId="5584673629410192613" fileName="BuildLayout_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5584673629410192616" fileName="BuildLayout_Behavior.java" startLine="13" startPosition="116" endLine="14" endPosition="29" />
     <scopeInfo nodeId="1117643560963359428" fileName="BuildLayout_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1117643560963359420" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="16" />
+    <scopeInfo nodeId="1117643560963359420" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="57" />
     <scopeInfo nodeId="1368030936106736626" fileName="BuildLayout_Behavior.java" startLine="25" startPosition="109" endLine="26" endPosition="19" />
     <scopeInfo nodeId="5584673629410192611" fileName="BuildLayout_Behavior.java" startLine="9" startPosition="35" endLine="12" endPosition="0">
       <varInfo nodeId="5584673629410192611" varName="thisNode" />

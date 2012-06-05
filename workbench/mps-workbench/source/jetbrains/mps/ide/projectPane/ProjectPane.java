@@ -196,6 +196,9 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
     myUpdateQueue.queue(new AbstractUpdate(UpateID.REBUILD) {
       public void run() {
+        if (getTree() == null) {
+          return;
+        }
         getTree().rebuildNow();
       }
     });
