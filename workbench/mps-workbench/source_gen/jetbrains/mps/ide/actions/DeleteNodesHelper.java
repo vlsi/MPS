@@ -5,10 +5,14 @@ package jetbrains.mps.ide.actions;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.project.ProjectHelper;
+import java.util.Collections;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.Iterator;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.refactoring.framework.IRefactoring;
@@ -18,32 +22,35 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 
 public class DeleteNodesHelper {
-  private List<SNode> myNodes;
+  private List<SNode> myNodesToDelete;
   private IOperationContext myContext;
   private boolean mySafe;
-  private boolean myAspects;
 
-  public DeleteNodesHelper(List<SNode> nodes, IOperationContext context, boolean safe, boolean aspects) {
-    myNodes = nodes;
+  public DeleteNodesHelper(List<SNode> nodes, final IOperationContext context, boolean safe, boolean aspects) {
     myContext = context;
     mySafe = safe;
-    myAspects = aspects;
+    if (aspects) {
+      myNodesToDelete = ListSequence.fromList(nodes).translate(new ITranslator2<SNode, SNode>() {
+        public Iterable<SNode> translate(final SNode node) {
+          List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(context.getProject()), node);
+          return ListSequence.fromList(tabs).translate(new ITranslator2<RelationDescriptor, SNode>() {
+            public Iterable<SNode> translate(RelationDescriptor tab) {
+              return (tab.isApplicable(node) ?
+                tab.getNodes(node) :
+                Collections.<SNode>emptyList()
+              );
+            }
+          });
+        }
+      }).toListSequence();
+    } else {
+      myNodesToDelete = nodes;
+    }
   }
 
   public void deleteNodes(boolean fromProjectPane) {
-    if (myNodes.size() == 0) {
-      return;
-    }
     ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
-    if (myNodes.size() == 1) {
-      deleteSingle(projectPane, fromProjectPane, myNodes.get(0));
-    } else {
-      deleteMultiple(fromProjectPane, projectPane);
-    }
-  }
-
-  private void deleteMultiple(boolean fromProjectPane, ProjectPane projectPane) {
-    for (Iterator<SNode> iterator = myNodes.iterator(); iterator.hasNext();) {
+    for (Iterator<SNode> iterator = myNodesToDelete.iterator(); iterator.hasNext();) {
       SNode sNode = iterator.next();
       if (!(iterator.hasNext()) && fromProjectPane) {
         projectPane.rebuildTree();
@@ -53,31 +60,20 @@ public class DeleteNodesHelper {
     }
   }
 
-  private void deleteSingle(ProjectPane projectPane, boolean fromProjectPane, SNode node) {
-    MPSTreeNode nextNode = null;
-    fromProjectPane = fromProjectPane && projectPane.getTree() != null;
-    if (fromProjectPane) {
-      nextNode = projectPane.findNextTreeNode(node);
-    }
-    doDeleteNode(node);
-    if (!(mySafe) && fromProjectPane) {
-      projectPane.getTree().selectNode(nextNode);
-    }
-  }
-
   private void doDeleteNode(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && node.isRoot()) {
-      if (mySafe) {
-        safeDelete(myContext, node);
-      } else {
-        delete(node);
-      }
+    if (mySafe) {
+      safeDelete(myContext, node);
     } else {
       delete(node);
     }
   }
 
   private void delete(SNode node) {
+    // this can happen if we already executed safe delete refactoring for concept and this node is a concept aspect 
+    if (node.isDeleted()) {
+      return;
+    }
+
     node.delete();
   }
 

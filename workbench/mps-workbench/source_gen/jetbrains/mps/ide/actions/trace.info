@@ -13568,7 +13568,9 @@
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="7889360268649440578" fileName="SetNodePackage_Action.java" startLine="48" startPosition="87" endLine="53" endPosition="7" />
     <scopeInfo nodeId="1680229125543348954" fileName="SetNodePackage_Action.java" startLine="109" startPosition="59" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="85" startPosition="26" endLine="91" endPosition="9" />
+    <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="85" startPosition="26" endLine="91" endPosition="9">
+      <varInfo nodeId="7889360268649425705" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="1680229125543349051" fileName="SetNodePackage_Action.java" startLine="123" startPosition="111" endLine="129" endPosition="13" />
     <scopeInfo nodeId="7889360268649425705" fileName="SetNodePackage_Action.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="7889360268649425705" varName="_params" />
@@ -14427,141 +14429,128 @@
     <unitInfo nodeId="8243555296290550439" fileName="Favorites_ActionGroup.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.actions.Favorites_ActionGroup" />
   </root>
   <root nodeId="8321617901826003055">
-    <nodeInfo nodeId="8321617901826003057" fileName="DeleteNodesHelper.java" startLine="20" startPosition="32" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodes" />
-    <nodeInfo nodeId="8321617901826003061" fileName="DeleteNodesHelper.java" startLine="21" startPosition="30" endLine="22" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="8321617901826003064" fileName="DeleteNodesHelper.java" startLine="22" startPosition="38" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySafe" />
-    <nodeInfo nodeId="9024276490549300700" fileName="DeleteNodesHelper.java" startLine="23" startPosition="25" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAspects" />
-    <nodeInfo nodeId="8321617901826003078" fileName="DeleteNodesHelper.java" startLine="26" startPosition="105" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003082" fileName="DeleteNodesHelper.java" startLine="27" startPosition="20" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003086" fileName="DeleteNodesHelper.java" startLine="28" startPosition="24" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9024276490549300703" fileName="DeleteNodesHelper.java" startLine="29" startPosition="18" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003103" fileName="DeleteNodesHelper.java" startLine="34" startPosition="30" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321617901826003104" fileName="DeleteNodesHelper.java" startLine="36" startPosition="5" endLine="37" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321617901826003125" fileName="DeleteNodesHelper.java" startLine="38" startPosition="30" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003120" fileName="DeleteNodesHelper.java" startLine="40" startPosition="12" endLine="41" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003152" fileName="DeleteNodesHelper.java" startLine="46" startPosition="78" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321617901826003166" fileName="DeleteNodesHelper.java" startLine="48" startPosition="53" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003170" fileName="DeleteNodesHelper.java" startLine="49" startPosition="34" endLine="50" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003175" fileName="DeleteNodesHelper.java" startLine="51" startPosition="7" endLine="52" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003188" fileName="DeleteNodesHelper.java" startLine="56" startPosition="91" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321617901826003192" fileName="DeleteNodesHelper.java" startLine="57" startPosition="32" endLine="58" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003205" fileName="DeleteNodesHelper.java" startLine="59" startPosition="26" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003212" fileName="DeleteNodesHelper.java" startLine="61" startPosition="5" endLine="62" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003221" fileName="DeleteNodesHelper.java" startLine="63" startPosition="39" endLine="64" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003258" fileName="DeleteNodesHelper.java" startLine="70" startPosition="19" endLine="71" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003254" fileName="DeleteNodesHelper.java" startLine="72" startPosition="14" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003246" fileName="DeleteNodesHelper.java" startLine="75" startPosition="12" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003268" fileName="DeleteNodesHelper.java" startLine="80" startPosition="35" endLine="81" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003280" fileName="DeleteNodesHelper.java" startLine="84" startPosition="78" endLine="85" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321617901826003320" fileName="DeleteNodesHelper.java" startLine="86" startPosition="25" endLine="87" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321617901826003313" fileName="DeleteNodesHelper.java" startLine="89" startPosition="106" endLine="90" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003306" fileName="DeleteNodesHelper.java" startLine="92" startPosition="103" endLine="93" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003299" fileName="DeleteNodesHelper.java" startLine="94" startPosition="12" endLine="95" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003321" fileName="DeleteNodesHelper.java" startLine="96" startPosition="5" endLine="97" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321617901826003326" fileName="DeleteNodesHelper.java" startLine="97" startPosition="97" endLine="98" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321617901826003332" fileName="DeleteNodesHelper.java" startLine="98" startPosition="86" endLine="99" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003337" fileName="DeleteNodesHelper.java" startLine="99" startPosition="59" endLine="100" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003353" fileName="DeleteNodesHelper.java" startLine="102" startPosition="25" endLine="103" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003361" fileName="DeleteNodesHelper.java" startLine="105" startPosition="7" endLine="106" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003368" fileName="DeleteNodesHelper.java" startLine="106" startPosition="62" endLine="107" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003384" fileName="DeleteNodesHelper.java" startLine="109" startPosition="25" endLine="110" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2183214647889848944" fileName="DeleteNodesHelper.java" startLine="110" startPosition="55" endLine="111" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003118" fileName="DeleteNodesHelper.java" startLine="40" startPosition="10" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321617901826003252" fileName="DeleteNodesHelper.java" startLine="72" startPosition="12" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321617901826003244" fileName="DeleteNodesHelper.java" startLine="75" startPosition="10" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321617901826003297" fileName="DeleteNodesHelper.java" startLine="94" startPosition="10" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8321617901826003096" fileName="DeleteNodesHelper.java" startLine="33" startPosition="52" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003202" fileName="DeleteNodesHelper.java" startLine="58" startPosition="71" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003215" fileName="DeleteNodesHelper.java" startLine="62" startPosition="23" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003158" fileName="DeleteNodesHelper.java" startLine="47" startPosition="36" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003262" fileName="DeleteNodesHelper.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delete#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8321617901826003349" fileName="DeleteNodesHelper.java" startLine="101" startPosition="57" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8321617901826003112" fileName="DeleteNodesHelper.java" startLine="37" startPosition="107" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003250" fileName="DeleteNodesHelper.java" startLine="69" startPosition="123" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003292" fileName="DeleteNodesHelper.java" startLine="91" startPosition="10" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003342" fileName="DeleteNodesHelper.java" startLine="100" startPosition="45" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003380" fileName="DeleteNodesHelper.java" startLine="108" startPosition="18" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8321617901826003067" fileName="DeleteNodesHelper.java" startLine="25" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteNodesHelper#(Ljava/util/List;Ljetbrains/mps/smodel/IOperationContext;ZZ)V" />
-    <nodeInfo nodeId="8321617901826003375" fileName="DeleteNodesHelper.java" startLine="107" startPosition="64" endLine="113" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321617901826003141" fileName="DeleteNodesHelper.java" startLine="45" startPosition="81" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8321617901826003287" fileName="DeleteNodesHelper.java" startLine="88" startPosition="10" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003234" fileName="DeleteNodesHelper.java" startLine="68" startPosition="41" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003133" fileName="DeleteNodesHelper.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteMultiple#(ZLjetbrains/mps/ide/projectPane/ProjectPane;)V" />
-    <nodeInfo nodeId="8321617901826003283" fileName="DeleteNodesHelper.java" startLine="85" startPosition="28" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321617901826003090" fileName="DeleteNodesHelper.java" startLine="32" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteNodes#(Z)V" />
-    <nodeInfo nodeId="8321617901826003178" fileName="DeleteNodesHelper.java" startLine="55" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteSingle#(Ljetbrains/mps/ide/projectPane/ProjectPane;ZLjetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8321617901826003228" fileName="DeleteNodesHelper.java" startLine="67" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDeleteNode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8321617901826003272" fileName="DeleteNodesHelper.java" startLine="83" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="safeDelete#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="8321617901826003102" fileName="DeleteNodesHelper.java" startLine="34" startPosition="30" endLine="35" endPosition="13" />
-    <scopeInfo nodeId="8321617901826003124" fileName="DeleteNodesHelper.java" startLine="38" startPosition="30" endLine="39" endPosition="65" />
-    <scopeInfo nodeId="8321617901826003119" fileName="DeleteNodesHelper.java" startLine="40" startPosition="12" endLine="41" endPosition="51" />
-    <scopeInfo nodeId="8321617901826003204" fileName="DeleteNodesHelper.java" startLine="59" startPosition="26" endLine="60" endPosition="52" />
-    <scopeInfo nodeId="8321617901826003220" fileName="DeleteNodesHelper.java" startLine="63" startPosition="39" endLine="64" endPosition="49" />
-    <scopeInfo nodeId="8321617901826003257" fileName="DeleteNodesHelper.java" startLine="70" startPosition="19" endLine="71" endPosition="36" />
-    <scopeInfo nodeId="8321617901826003253" fileName="DeleteNodesHelper.java" startLine="72" startPosition="14" endLine="73" endPosition="21" />
-    <scopeInfo nodeId="8321617901826003245" fileName="DeleteNodesHelper.java" startLine="75" startPosition="12" endLine="76" endPosition="19" />
-    <scopeInfo nodeId="8321617901826003267" fileName="DeleteNodesHelper.java" startLine="80" startPosition="35" endLine="81" endPosition="18" />
-    <scopeInfo nodeId="8321617901826003319" fileName="DeleteNodesHelper.java" startLine="86" startPosition="25" endLine="87" endPosition="13" />
-    <scopeInfo nodeId="8321617901826003312" fileName="DeleteNodesHelper.java" startLine="89" startPosition="106" endLine="90" endPosition="281" />
-    <scopeInfo nodeId="8321617901826003305" fileName="DeleteNodesHelper.java" startLine="92" startPosition="103" endLine="93" endPosition="281" />
-    <scopeInfo nodeId="8321617901826003298" fileName="DeleteNodesHelper.java" startLine="94" startPosition="12" endLine="95" endPosition="276" />
-    <scopeInfo nodeId="8321617901826003352" fileName="DeleteNodesHelper.java" startLine="102" startPosition="25" endLine="103" endPosition="97" />
-    <scopeInfo nodeId="8321617901826003165" fileName="DeleteNodesHelper.java" startLine="48" startPosition="53" endLine="50" endPosition="42" />
-    <scopeInfo nodeId="8321617901826003383" fileName="DeleteNodesHelper.java" startLine="109" startPosition="25" endLine="111" endPosition="91" />
-    <scopeInfo nodeId="8321617901826003077" fileName="DeleteNodesHelper.java" startLine="26" startPosition="105" endLine="30" endPosition="24" />
-    <scopeInfo nodeId="8321617901826003262" fileName="DeleteNodesHelper.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
+    <nodeInfo nodeId="9195750563139996806" fileName="DeleteNodesHelper.java" startLine="24" startPosition="32" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodesToDelete" />
+    <nodeInfo nodeId="8321617901826003061" fileName="DeleteNodesHelper.java" startLine="25" startPosition="38" endLine="26" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
+    <nodeInfo nodeId="8321617901826003064" fileName="DeleteNodesHelper.java" startLine="26" startPosition="38" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySafe" />
+    <nodeInfo nodeId="8321617901826003082" fileName="DeleteNodesHelper.java" startLine="29" startPosition="111" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003086" fileName="DeleteNodesHelper.java" startLine="30" startPosition="24" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="26949397867639754" fileName="DeleteNodesHelper.java" startLine="34" startPosition="60" endLine="35" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9195750563139996814" fileName="DeleteNodesHelper.java" startLine="46" startPosition="12" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003104" fileName="DeleteNodesHelper.java" startLine="51" startPosition="52" endLine="52" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321617901826003152" fileName="DeleteNodesHelper.java" startLine="53" startPosition="86" endLine="54" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321617901826003166" fileName="DeleteNodesHelper.java" startLine="55" startPosition="53" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003170" fileName="DeleteNodesHelper.java" startLine="56" startPosition="34" endLine="57" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003175" fileName="DeleteNodesHelper.java" startLine="58" startPosition="7" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003258" fileName="DeleteNodesHelper.java" startLine="64" startPosition="17" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003246" fileName="DeleteNodesHelper.java" startLine="66" startPosition="12" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="26949397867730257" fileName="DeleteNodesHelper.java" startLine="71" startPosition="35" endLine="72" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="26949397867730254" fileName="DeleteNodesHelper.java" startLine="73" startPosition="27" endLine="74" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="26949397867730255" fileName="DeleteNodesHelper.java" startLine="75" startPosition="5" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8321617901826003268" fileName="DeleteNodesHelper.java" startLine="76" startPosition="0" endLine="77" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003280" fileName="DeleteNodesHelper.java" startLine="80" startPosition="78" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321617901826003320" fileName="DeleteNodesHelper.java" startLine="82" startPosition="25" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321617901826003313" fileName="DeleteNodesHelper.java" startLine="85" startPosition="106" endLine="86" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003306" fileName="DeleteNodesHelper.java" startLine="88" startPosition="103" endLine="89" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003299" fileName="DeleteNodesHelper.java" startLine="90" startPosition="12" endLine="91" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003321" fileName="DeleteNodesHelper.java" startLine="92" startPosition="5" endLine="93" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321617901826003326" fileName="DeleteNodesHelper.java" startLine="93" startPosition="97" endLine="94" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8321617901826003332" fileName="DeleteNodesHelper.java" startLine="94" startPosition="86" endLine="95" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003337" fileName="DeleteNodesHelper.java" startLine="95" startPosition="59" endLine="96" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003353" fileName="DeleteNodesHelper.java" startLine="98" startPosition="25" endLine="99" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003361" fileName="DeleteNodesHelper.java" startLine="101" startPosition="7" endLine="102" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003368" fileName="DeleteNodesHelper.java" startLine="102" startPosition="62" endLine="103" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003384" fileName="DeleteNodesHelper.java" startLine="105" startPosition="25" endLine="106" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2183214647889848944" fileName="DeleteNodesHelper.java" startLine="106" startPosition="55" endLine="107" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9195750563139996812" fileName="DeleteNodesHelper.java" startLine="46" startPosition="10" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321617901826003244" fileName="DeleteNodesHelper.java" startLine="66" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8321617901826003297" fileName="DeleteNodesHelper.java" startLine="90" startPosition="10" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="26949397867730222" fileName="DeleteNodesHelper.java" startLine="72" startPosition="116" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="26949397867639800" fileName="DeleteNodesHelper.java" startLine="37" startPosition="70" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321617901826003158" fileName="DeleteNodesHelper.java" startLine="54" startPosition="36" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="26949397867730276" fileName="DeleteNodesHelper.java" startLine="97" startPosition="57" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8321617901826003234" fileName="DeleteNodesHelper.java" startLine="63" startPosition="41" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8321617901826003292" fileName="DeleteNodesHelper.java" startLine="87" startPosition="10" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="26949397867730275" fileName="DeleteNodesHelper.java" startLine="96" startPosition="45" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8321617901826003380" fileName="DeleteNodesHelper.java" startLine="104" startPosition="18" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8321617901826003375" fileName="DeleteNodesHelper.java" startLine="103" startPosition="64" endLine="109" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="26949397867639796" fileName="DeleteNodesHelper.java" startLine="36" startPosition="102" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/plugins/relations/RelationDescriptor;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="9195750563139996906" fileName="DeleteNodesHelper.java" startLine="35" startPosition="138" endLine="43" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8321617901826003141" fileName="DeleteNodesHelper.java" startLine="52" startPosition="107" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="8321617901826003228" fileName="DeleteNodesHelper.java" startLine="62" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDeleteNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8321617901826003287" fileName="DeleteNodesHelper.java" startLine="84" startPosition="10" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8321617901826003262" fileName="DeleteNodesHelper.java" startLine="70" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="delete#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8321617901826003283" fileName="DeleteNodesHelper.java" startLine="81" startPosition="28" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9195750563139996902" fileName="DeleteNodesHelper.java" startLine="33" startPosition="97" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="8321617901826003090" fileName="DeleteNodesHelper.java" startLine="50" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="deleteNodes#(Z)V" />
+    <nodeInfo nodeId="9195750563139996847" fileName="DeleteNodesHelper.java" startLine="32" startPosition="18" endLine="45" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9195750563139996800" fileName="DeleteNodesHelper.java" startLine="31" startPosition="18" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8321617901826003067" fileName="DeleteNodesHelper.java" startLine="28" startPosition="0" endLine="49" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteNodesHelper#(Ljava/util/List;Ljetbrains/mps/smodel/IOperationContext;ZZ)V" />
+    <nodeInfo nodeId="8321617901826003272" fileName="DeleteNodesHelper.java" startLine="79" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="safeDelete#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="9195750563139996813" fileName="DeleteNodesHelper.java" startLine="46" startPosition="12" endLine="47" endPosition="30" />
+    <scopeInfo nodeId="8321617901826003249" fileName="DeleteNodesHelper.java" startLine="64" startPosition="17" endLine="65" endPosition="34" />
+    <scopeInfo nodeId="8321617901826003245" fileName="DeleteNodesHelper.java" startLine="66" startPosition="12" endLine="67" endPosition="19" />
+    <scopeInfo nodeId="26949397867730223" fileName="DeleteNodesHelper.java" startLine="73" startPosition="27" endLine="74" endPosition="13" />
+    <scopeInfo nodeId="8321617901826003319" fileName="DeleteNodesHelper.java" startLine="82" startPosition="25" endLine="83" endPosition="13" />
+    <scopeInfo nodeId="8321617901826003312" fileName="DeleteNodesHelper.java" startLine="85" startPosition="106" endLine="86" endPosition="281" />
+    <scopeInfo nodeId="8321617901826003305" fileName="DeleteNodesHelper.java" startLine="88" startPosition="103" endLine="89" endPosition="281" />
+    <scopeInfo nodeId="8321617901826003298" fileName="DeleteNodesHelper.java" startLine="90" startPosition="12" endLine="91" endPosition="276" />
+    <scopeInfo nodeId="26949397867730277" fileName="DeleteNodesHelper.java" startLine="98" startPosition="25" endLine="99" endPosition="97" />
+    <scopeInfo nodeId="8321617901826003165" fileName="DeleteNodesHelper.java" startLine="55" startPosition="53" endLine="57" endPosition="42" />
+    <scopeInfo nodeId="8321617901826003383" fileName="DeleteNodesHelper.java" startLine="105" startPosition="25" endLine="107" endPosition="91" />
+    <scopeInfo nodeId="26949397867639797" fileName="DeleteNodesHelper.java" startLine="37" startPosition="70" endLine="41" endPosition="16" />
+    <scopeInfo nodeId="26949397867730276" fileName="DeleteNodesHelper.java" startLine="97" startPosition="57" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="8321617901826003233" fileName="DeleteNodesHelper.java" startLine="63" startPosition="41" endLine="68" endPosition="5" />
+    <scopeInfo nodeId="8321617901826003380" fileName="DeleteNodesHelper.java" startLine="104" startPosition="18" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="8321617901826003151" fileName="DeleteNodesHelper.java" startLine="53" startPosition="86" endLine="59" endPosition="26">
+      <varInfo nodeId="8321617901826003153" varName="sNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="8321617901826003267" fileName="DeleteNodesHelper.java" startLine="71" startPosition="35" endLine="77" endPosition="18" />
+    <scopeInfo nodeId="26949397867639796" fileName="DeleteNodesHelper.java" startLine="36" startPosition="102" endLine="43" endPosition="0">
+      <varInfo nodeId="26949397867639796" varName="tab" />
+    </scopeInfo>
+    <scopeInfo nodeId="8321617901826003141" fileName="DeleteNodesHelper.java" startLine="52" startPosition="107" endLine="60" endPosition="5">
+      <varInfo nodeId="8321617901826003145" varName="iterator" />
+    </scopeInfo>
+    <scopeInfo nodeId="8321617901826003228" fileName="DeleteNodesHelper.java" startLine="62" startPosition="0" endLine="70" endPosition="0">
+      <varInfo nodeId="8321617901826003231" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9195750563139996903" fileName="DeleteNodesHelper.java" startLine="34" startPosition="60" endLine="43" endPosition="13">
+      <varInfo nodeId="26949397867639755" varName="tabs" />
+    </scopeInfo>
+    <scopeInfo nodeId="8321617901826003095" fileName="DeleteNodesHelper.java" startLine="51" startPosition="52" endLine="60" endPosition="5">
+      <varInfo nodeId="8321617901826003105" varName="projectPane" />
+    </scopeInfo>
+    <scopeInfo nodeId="8321617901826003262" fileName="DeleteNodesHelper.java" startLine="70" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="8321617901826003265" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8321617901826003349" fileName="DeleteNodesHelper.java" startLine="101" startPosition="57" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="8321617901826003249" fileName="DeleteNodesHelper.java" startLine="69" startPosition="123" endLine="74" endPosition="7" />
-    <scopeInfo nodeId="8321617901826003380" fileName="DeleteNodesHelper.java" startLine="108" startPosition="18" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="8321617901826003067" fileName="DeleteNodesHelper.java" startLine="25" startPosition="0" endLine="31" endPosition="3">
+    <scopeInfo nodeId="9195750563139996902" fileName="DeleteNodesHelper.java" startLine="33" startPosition="97" endLine="45" endPosition="0">
+      <varInfo nodeId="9195750563139996902" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8321617901826003090" fileName="DeleteNodesHelper.java" startLine="50" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="8321617901826003093" varName="fromProjectPane" />
+    </scopeInfo>
+    <scopeInfo nodeId="9195750563139996801" fileName="DeleteNodesHelper.java" startLine="32" startPosition="18" endLine="45" endPosition="26" />
+    <scopeInfo nodeId="8321617901826003077" fileName="DeleteNodesHelper.java" startLine="29" startPosition="111" endLine="48" endPosition="5" />
+    <scopeInfo nodeId="8321617901826003067" fileName="DeleteNodesHelper.java" startLine="28" startPosition="0" endLine="49" endPosition="3">
       <varInfo nodeId="9024276490549300692" varName="aspects" />
       <varInfo nodeId="8321617901826003073" varName="context" />
       <varInfo nodeId="8321617901826003070" varName="nodes" />
       <varInfo nodeId="8321617901826003075" varName="safe" />
     </scopeInfo>
-    <scopeInfo nodeId="8321617901826003151" fileName="DeleteNodesHelper.java" startLine="46" startPosition="78" endLine="52" endPosition="26">
-      <varInfo nodeId="8321617901826003153" varName="sNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321617901826003140" fileName="DeleteNodesHelper.java" startLine="45" startPosition="81" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="8321617901826003141" fileName="DeleteNodesHelper.java" startLine="45" startPosition="81" endLine="53" endPosition="5">
-      <varInfo nodeId="8321617901826003145" varName="iterator" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321617901826003095" fileName="DeleteNodesHelper.java" startLine="33" startPosition="52" endLine="42" endPosition="5">
-      <varInfo nodeId="8321617901826003105" varName="projectPane" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321617901826003187" fileName="DeleteNodesHelper.java" startLine="56" startPosition="91" endLine="65" endPosition="5">
-      <varInfo nodeId="8321617901826003189" varName="nextNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321617901826003233" fileName="DeleteNodesHelper.java" startLine="68" startPosition="41" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="8321617901826003133" fileName="DeleteNodesHelper.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="8321617901826003136" varName="fromProjectPane" />
-      <varInfo nodeId="8321617901826003138" varName="projectPane" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321617901826003090" fileName="DeleteNodesHelper.java" startLine="32" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="8321617901826003093" varName="fromProjectPane" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321617901826003178" fileName="DeleteNodesHelper.java" startLine="55" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="8321617901826003183" varName="fromProjectPane" />
-      <varInfo nodeId="8321617901826003185" varName="node" />
-      <varInfo nodeId="8321617901826003181" varName="projectPane" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321617901826003228" fileName="DeleteNodesHelper.java" startLine="67" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="8321617901826003231" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321617901826003279" fileName="DeleteNodesHelper.java" startLine="84" startPosition="78" endLine="113" endPosition="14">
+    <scopeInfo nodeId="8321617901826003279" fileName="DeleteNodesHelper.java" startLine="80" startPosition="78" endLine="109" endPosition="14">
       <varInfo nodeId="8321617901826003322" varName="refactoring" />
       <varInfo nodeId="8321617901826003281" varName="refactoringClass" />
       <varInfo nodeId="8321617901826003327" varName="refactoringContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8321617901826003272" fileName="DeleteNodesHelper.java" startLine="83" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="8321617901826003272" fileName="DeleteNodesHelper.java" startLine="79" startPosition="0" endLine="111" endPosition="0">
       <varInfo nodeId="8321617901826003275" varName="context" />
       <varInfo nodeId="8321617901826003277" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="8321617901826003055" fileName="DeleteNodesHelper.java" startLine="20" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteNodesHelper" />
-    <unitInfo nodeId="8321617901826003348" fileName="DeleteNodesHelper.java" startLine="101" startPosition="45" endLine="105" endPosition="5" unitName="jetbrains.mps.ide.actions.DeleteNodesHelper$1" />
-    <unitInfo nodeId="8321617901826003379" fileName="DeleteNodesHelper.java" startLine="108" startPosition="8" endLine="113" endPosition="5" unitName="jetbrains.mps.ide.actions.DeleteNodesHelper$2" />
+    <unitInfo nodeId="8321617901826003055" fileName="DeleteNodesHelper.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.ide.actions.DeleteNodesHelper" />
+    <unitInfo nodeId="9195750563139996902" fileName="DeleteNodesHelper.java" startLine="33" startPosition="67" endLine="45" endPosition="7" unitName="jetbrains.mps.ide.actions.DeleteNodesHelper$1" />
+    <unitInfo nodeId="26949397867730276" fileName="DeleteNodesHelper.java" startLine="97" startPosition="45" endLine="101" endPosition="5" unitName="jetbrains.mps.ide.actions.DeleteNodesHelper$2" />
+    <unitInfo nodeId="26949397867639796" fileName="DeleteNodesHelper.java" startLine="36" startPosition="59" endLine="43" endPosition="11" unitName="jetbrains.mps.ide.actions.DeleteNodesHelper$2" />
+    <unitInfo nodeId="8321617901826003379" fileName="DeleteNodesHelper.java" startLine="104" startPosition="8" endLine="109" endPosition="5" unitName="jetbrains.mps.ide.actions.DeleteNodesHelper$3" />
   </root>
   <root nodeId="885275291024029562">
     <nodeInfo nodeId="885275291024029562" fileName="View_ActionGroup.java" startLine="8" startPosition="60" endLine="9" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
