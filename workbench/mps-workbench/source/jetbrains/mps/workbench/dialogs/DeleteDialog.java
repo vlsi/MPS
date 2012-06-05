@@ -64,10 +64,9 @@ public class DeleteDialog extends DialogWrapper {
       gbc.insets = new Insets(4, 8, 0, 8);
 
       DeleteOption option = myOptions[i];
-      JCheckBox cb = new JCheckBox(option.caption, option.selected);
-      cb.setEnabled(option.enabled);
+      myCheckBoxes[i] = new JCheckBox(option.caption, option.selected);
+      myCheckBoxes[i].setEnabled(option.enabled);
       panel.add(myCheckBoxes[i], gbc);
-      myCheckBoxes[i] = cb;
     }
 
     return panel;
