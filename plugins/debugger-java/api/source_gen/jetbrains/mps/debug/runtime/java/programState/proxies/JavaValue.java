@@ -10,8 +10,8 @@ import com.sun.jdi.ThreadReference;
 public abstract class JavaValue extends ProxyForJava implements IValue {
   @Nullable
   protected final Value myValue;
-  protected String myClassFQName;
-  protected ThreadReference myThreadReference;
+  protected final String myClassFQName;
+  protected final ThreadReference myThreadReference;
 
   public JavaValue(Value value, String classFQname, ThreadReference threadReference) {
     super(value);
@@ -27,9 +27,5 @@ public abstract class JavaValue extends ProxyForJava implements IValue {
 
   public String getClassFQName() {
     return myClassFQName;
-  }
-
-  public ThreadReference getThreadReference() {
-    return myThreadReference;
   }
 }

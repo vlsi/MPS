@@ -14,7 +14,7 @@ import jetbrains.mps.debugger.api.ui.tree.VariablesTree;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
-import jetbrains.mps.debugger.java.runtime.JavaUiStateImpl;
+import jetbrains.mps.debug.runtime.JavaUiState;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
@@ -69,7 +69,7 @@ public class CopyValueAction_Action extends BaseAction {
         return;
       }
 
-      JavaUiStateImpl uiState = evaluationProvider.getDebugSession().getUiState();
+      JavaUiState uiState = evaluationProvider.getDebugSession().getUiState();
 
       ThreadReference thread = check_d54g7t_a0i0a(check_d54g7t_a0a8a0(uiState));
       if (thread == null) {
@@ -92,7 +92,7 @@ public class CopyValueAction_Action extends BaseAction {
     return null;
   }
 
-  private static JavaThread check_d54g7t_a0a8a0(JavaUiStateImpl checkedDotOperand) {
+  private static JavaThread check_d54g7t_a0a8a0(JavaUiState checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

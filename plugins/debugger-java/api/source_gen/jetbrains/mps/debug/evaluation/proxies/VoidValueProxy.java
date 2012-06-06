@@ -4,11 +4,10 @@ package jetbrains.mps.debug.evaluation.proxies;
 
 import org.jetbrains.annotations.NotNull;
 import com.sun.jdi.Value;
-import com.sun.jdi.ThreadReference;
 
 public class VoidValueProxy extends ValueProxy implements IValueProxy {
-  public VoidValueProxy(@NotNull Value v, @NotNull ThreadReference threadReference) {
-    super(v, threadReference);
+  public VoidValueProxy(@NotNull Value v) {
+    super(v);
   }
 
   @Override
