@@ -82,8 +82,8 @@ public class DeleteNode_Action extends BaseAction {
         }
       });
 
-      final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
-      final DeleteDialog.DeleteOption aspectsOption = new DeleteDialog.DeleteOption("Delete Aspects", true, true);
+      DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
+      DeleteDialog.DeleteOption aspectsOption = new DeleteDialog.DeleteOption("Delete Aspects", true, true);
       if (dialogNeeded.value) {
         DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?", safeOption, aspectsOption);
         dialog.show();
@@ -91,11 +91,7 @@ public class DeleteNode_Action extends BaseAction {
           return;
         }
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          helper.deleteNodes(safeOption.selected, aspectsOption.selected, true);
-        }
-      });
+      helper.deleteNodes(safeOption.selected, aspectsOption.selected, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "DeleteNode", t);
