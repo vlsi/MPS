@@ -157,7 +157,6 @@ public class PluginMoveHelper {
       project.setFolderFor(s, project.getFolderFor(l));
     }
     s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
-    s.save();
 
     final String modelName = s.getModuleFqName() + ".plugin";
     List<SModelDescriptor> solModels = s.getOwnModelDescriptors();
@@ -188,6 +187,7 @@ public class PluginMoveHelper {
 
     jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
 
+    s.save();
     SModelRepository.getInstance().saveAll();
   }
 
