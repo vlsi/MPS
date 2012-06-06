@@ -6,17 +6,16 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
-import java.util.Arrays;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.actions.DeleteNodesHelper;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.IOperationContext;
 
 public class SafeDelete_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -33,16 +32,9 @@ public class SafeDelete_Action extends BaseAction {
     return true;
   }
 
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.core.refactorings" + "." + "SafeDelete"), ((SNode) MapSequence.fromMap(_params).get("node")));
-  }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      {
-        boolean enabled = this.isApplicable(event, _params);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "SafeDelete", t);
@@ -55,6 +47,7 @@ public class SafeDelete_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
@@ -64,16 +57,12 @@ public class SafeDelete_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("mpsproject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    if (MapSequence.fromMap(_params).get("mpsproject") == null) {
-      return false;
-    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.SafeDelete", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("node")), ((MPSProject) MapSequence.fromMap(_params).get("mpsproject"))));
+      new DeleteNodesHelper(ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) MapSequence.fromMap(_params).get("node"))), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).deleteNodes(true, true, false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "SafeDelete", t);

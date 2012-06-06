@@ -89,8 +89,8 @@ public class DeleteModules_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
-      final DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Modules", message);
-      dialog.setOptions(false, false, true, false);
+      final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", true, false);
+      DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Modules", message, filesOption);
       dialog.show();
       if (!(dialog.isOK())) {
         return;
@@ -98,7 +98,7 @@ public class DeleteModules_Action extends BaseAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           for (IModule module : ListSequence.fromList(((List<IModule>) MapSequence.fromMap(_params).get("modules")))) {
-            DeleteModuleHelper.deleteModule(((Project) MapSequence.fromMap(_params).get("project")), module, dialog.isSafe(), dialog.isDeleteFiles());
+            DeleteModuleHelper.deleteModule(((Project) MapSequence.fromMap(_params).get("project")), module, false, filesOption.selected);
           }
         }
       });

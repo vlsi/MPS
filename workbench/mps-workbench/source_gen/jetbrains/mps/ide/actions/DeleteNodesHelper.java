@@ -5,109 +5,180 @@ package jetbrains.mps.ide.actions;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import java.util.Iterator;
-import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.refactoring.framework.RefactoringUtil;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import java.util.Iterator;
+import java.util.Collections;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
+import java.util.Set;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 
 public class DeleteNodesHelper {
-  private List<SNode> myNodes;
+  private List<SNode> myNodesToDelete;
   private IOperationContext myContext;
-  private boolean mySafe;
 
-  public DeleteNodesHelper(List<SNode> nodes, IOperationContext context, boolean safe) {
-    myNodes = nodes;
+  public DeleteNodesHelper(List<SNode> nodes, IOperationContext context) {
     myContext = context;
-    mySafe = safe;
+    myNodesToDelete = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
   }
 
-  public void deleteNodes(boolean fromProjectPane) {
-    if (myNodes.size() == 0) {
-      return;
-    }
-    ProjectPane projectPane = ProjectPane.getInstance(ProjectHelper.toIdeaProject(myContext.getProject()));
-    if (myNodes.size() == 1) {
-      deleteSingle(projectPane, fromProjectPane, myNodes.get(0));
-    } else {
-      deleteMultiple(fromProjectPane, projectPane);
-    }
-  }
-
-  private void deleteMultiple(boolean fromProjectPane, ProjectPane projectPane) {
-    for (Iterator<SNode> iterator = myNodes.iterator(); iterator.hasNext();) {
-      SNode sNode = iterator.next();
-      if (!(iterator.hasNext()) && fromProjectPane) {
-        projectPane.rebuildTree();
-        projectPane.selectNextNode(sNode);
+  public boolean hasOptions() {
+    return ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, RelationDescriptor>() {
+      public Iterable<RelationDescriptor> translate(final SNode node) {
+        List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(myContext.getProject()), node);
+        return ListSequence.fromList(tabs).where(new IWhereFilter<RelationDescriptor>() {
+          public boolean accept(RelationDescriptor it) {
+            return it.isSingle() && it.isApplicable(node) && !(it.getNodes(node).isEmpty());
+          }
+        });
       }
-      doDeleteNode(sNode);
-    }
+    }).isNotEmpty();
   }
 
-  private void deleteSingle(ProjectPane projectPane, boolean fromProjectPane, SNode node) {
-    MPSTreeNode nextNode = null;
-    fromProjectPane = fromProjectPane && projectPane.getTree() != null;
-    if (fromProjectPane) {
-      nextNode = projectPane.findNextTreeNode(node);
-    }
-    doDeleteNode(node);
-    if (!(mySafe) && fromProjectPane) {
-      projectPane.getTree().selectNode(nextNode);
-    }
-  }
+  public void deleteNodes(final boolean safe, final boolean aspects, final boolean fromProjectPane) {
+    assert !(ModelAccess.instance().canRead()) : "can lead to deadlock";
 
-  private void doDeleteNode(SNode node) {
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && node.isRoot()) {
-      if (mySafe) {
-        safeDelete(myContext, node);
-      } else {
-        delete(node);
+    final Project ideaProject = ProjectHelper.toIdeaProject(myContext.getProject());
+    final _FunctionTypes._void_P0_E0 performer = new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        ProjectPane projectPane = ProjectPane.getInstance(ideaProject);
+
+        for (Iterator<SNode> iterator = myNodesToDelete.iterator(); iterator.hasNext();) {
+          SNode sNode = iterator.next();
+          if (!(iterator.hasNext()) && fromProjectPane) {
+            projectPane.rebuildTree();
+            projectPane.selectNextNode(sNode);
+          }
+          if (sNode.isDeleted()) {
+            continue;
+          }
+          sNode.delete();
+        }
       }
-    } else {
-      delete(node);
-    }
-  }
-
-  private void delete(SNode node) {
-    node.delete();
-  }
-
-  private void safeDelete(final IOperationContext context, final SNode node) {
-    String refactoringClass;
-    if ((node == null)) {
-      return;
-    } else
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1851015849775237139"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
-    } else
-    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.LinkDeclaration")) {
-      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1851015849775217786"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
-    } else {
-      refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getNode("r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)", "1851015849775217755"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
-    }
-    final IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(refactoringClass);
-    final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
-    refactoringContext.setCurrentOperationContext(context);
-    refactoringContext.setSelectedNode(node);
+    };
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        refactoringContext.setSelectedModel(SNodeOperations.getModel(node).getModelDescriptor());
+        if (aspects) {
+          List<SNode> addNodes = ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, SNode>() {
+            public Iterable<SNode> translate(final SNode node) {
+              List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ideaProject, node);
+              return ListSequence.fromList(tabs).translate(new ITranslator2<RelationDescriptor, SNode>() {
+                public Iterable<SNode> translate(RelationDescriptor tab) {
+                  return (tab.isSingle() && tab.isApplicable(node) ?
+                    tab.getNodes(node) :
+                    Collections.<SNode>emptyList()
+                  );
+                }
+              });
+            }
+          }).toListSequence();
+          ListSequence.fromList(myNodesToDelete).addSequence(ListSequence.fromList(addNodes));
+        }
       }
     });
-    refactoringContext.setSelectedModule(context.getModule());
-    refactoringContext.setSelectedProject(context.getProject());
-    new Thread() {
-      public void run() {
-        refactoringContext.setRefactoring(refactoring);
-        RefactoringAccess.getInstance().getRefactoringFacade().execute(refactoringContext);
+
+    if (!(safe)) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          performer.invoke();
+        }
+      });
+      return;
+    }
+
+    ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Finding Usages", true) {
+      public void run(@NotNull final ProgressIndicator p0) {
+        final Set<SearchResult<SNode>> results = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+
+            ListSequence.fromList(myNodesToDelete).visitAll(new IVisitor<SNode>() {
+              public void visit(SNode it) {
+                SearchResults<SNode> usages = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
+                SetSequence.fromSet(results).addSequence(ListSequence.fromList(usages.getSearchResults()));
+
+                if (p0.isCanceled()) {
+                  return;
+                }
+
+                if (SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+                  SearchResults<SNode> instances = FindUtils.getSearchResults(new EmptyProgressMonitor(), it, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+                  SetSequence.fromSet(results).addSequence(ListSequence.fromList(instances.getSearchResults()));
+                }
+
+                if (p0.isCanceled()) {
+                  return;
+                }
+              }
+            });
+          }
+        });
+
+        if (p0.isCanceled()) {
+          return;
+        }
+
+        Set<SNode> nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(results).select(new ISelector<SearchResult<SNode>, SNode>() {
+          public SNode select(SearchResult<SNode> it) {
+            return it.getObject();
+          }
+        }));
+        for (SearchResult<SNode> searchResult : ListSequence.fromListWithValues(new ArrayList<SearchResult<SNode>>(), results)) {
+          SNode resultNode = searchResult.getObject();
+
+          for (SNode anc : ListSequence.fromList(SNodeOperations.getAncestors(resultNode, null, false))) {
+            if (SetSequence.fromSet(nodes).contains(anc)) {
+              SetSequence.fromSet(results).removeElement(searchResult);
+              break;
+            }
+          }
+        }
+        final SearchResults sr = new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
+
+        if (p0.isCanceled()) {
+          return;
+        }
+
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
+              public void performAction(RefactoringViewItem refactoringViewItem) {
+                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                  public void run() {
+                    performer.invoke();
+                  }
+                });
+                refactoringViewItem.close();
+              }
+            }, sr, false, "Safe Delete");
+          }
+        });
       }
-    }.start();
+    });
   }
 }

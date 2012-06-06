@@ -17,8 +17,6 @@ public class RefactoringAdditions_ActionGroup extends GeneratedActionGroup {
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameConcept_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameLink_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.RenameProperty_Action");
-      RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.SafeDeleteConcept_Action");
-      RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.SafeDeleteLink_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.MoveLinkUp_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.MoveProperyUp_Action");
       RefactoringAdditions_ActionGroup.this.addAction("jetbrains.mps.lang.structure.pluginSolution.plugin.MoveConcepts_Action");
