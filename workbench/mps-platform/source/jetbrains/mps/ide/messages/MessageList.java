@@ -152,8 +152,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
           return;
         }
 
-        final List<IMessage> messagesToAdd = new ArrayList<IMessage>();
-        int maxWidth = -1;
+        List<IMessage> messagesToAdd = new ArrayList<IMessage>();
         while (!myMessagesQueue.isEmpty()) {
           IMessage message = myMessagesQueue.remove();
           myMessagesInProgress.decrementAndGet();
@@ -163,25 +162,33 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
           }
           myMessages.add(message);
           updateMessageCounters(message, 1);
-
-          maxWidth = Math.max(maxWidth, getMessageWidth(message));
         }
 
-        int toRemoveCount = 0;
-        if (myMessages.size() + messagesToAdd.size() > MAX_SIZE) {
-          for(int i=0; i<messagesToAdd.size(); i++) {
+        int messagesToRemove = 0;
+        if (myMessages.size() > MAX_SIZE) {
+          for (int i = Math.min(myMessages.size() - MAX_SIZE, myMessages.size()); i > 0; i--)
+          {
             IMessage toRemove = myMessages.remove();
             updateMessageCounters(toRemove, -1);
             if (isVisible(toRemove)) {
-              toRemoveCount++;
+              messagesToRemove++;
             }
+          }
+          if (messagesToRemove > myModel.getSize()) {
+            messagesToAdd = messagesToAdd.subList(messagesToRemove - myModel.getSize(), messagesToAdd.size());
+            messagesToRemove = myModel.getSize();
           }
         }
 
-        if (toRemoveCount > 0) {
-          myModel.removeFirst(toRemoveCount);
+        if (messagesToRemove > 0) {
+          myModel.removeFirst(messagesToRemove);
         }
         myModel.addAll(messagesToAdd);
+
+        int maxWidth = -1;
+        for (IMessage message : messagesToAdd) {
+          maxWidth = Math.max(maxWidth, getMessageWidth(message));
+        }
 
         int index = myModel.getSize() - 1;
         if (myList.getAutoscrolls()) {
@@ -454,9 +461,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     }
     myList.setFixedCellWidth(width);
 
-    for (IMessage m : messagesToAdd) {
-      myModel.add(m);
-    }
+    myModel.addAll(messagesToAdd);
   }
 
   private int getMessageWidth(IMessage message) {
