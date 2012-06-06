@@ -9,7 +9,9 @@
     <fileset file="${artifacts.JarFromA}/buildA/abcde.jar" />
   </path>
   
-  <target name="assemble" depends="classes" />
+  <target name="assemble" depends="classes">
+    <mkdir dir="${build.layout}" />
+  </target>
   
   <target name="build" depends="assemble, check" />
   

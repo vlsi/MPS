@@ -6,7 +6,6 @@ import jetbrains.mps.debug.evaluation.proxies.ValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import com.sun.jdi.ClassType;
 import com.sun.jdi.ObjectReference;
-import com.sun.jdi.ThreadReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
@@ -16,6 +15,7 @@ import com.sun.jdi.Value;
 import jetbrains.mps.debug.evaluation.proxies.MirrorUtil;
 import java.util.List;
 import java.util.ArrayList;
+import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import com.sun.jdi.Method;
 import com.sun.jdi.InvocationException;
@@ -26,8 +26,8 @@ import com.sun.jdi.IncompatibleThreadStateException;
 /*package*/ class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
   private ClassType myReferenceType;
 
-  public ObjectValueProxy(ObjectReference v, ThreadReference threadReference) {
-    super(v, threadReference);
+  public ObjectValueProxy(ObjectReference v) {
+    super(v);
     myReferenceType = (ClassType) v.referenceType();
   }
 
@@ -41,53 +41,53 @@ import com.sun.jdi.IncompatibleThreadStateException;
     ObjectReference value = getObjectValue();
     Field f = EvaluationUtils.getInstance().findField(myReferenceType, fieldName);
     Value result = value.getValue(f);
-    return MirrorUtil.getInstance().getValueProxy(result, myThreadReference);
+    return MirrorUtil.getInstance().getValueProxy(result);
   }
 
   public List<IValueProxy> getFieldValues() {
     List<Field> fields = EvaluationUtils.getInstance().findFields(myReferenceType);
     List<IValueProxy> fieldValues = new ArrayList<IValueProxy>();
     for (Field field : fields) {
-      fieldValues.add(MirrorUtil.getInstance().getValueProxy(getObjectValue().getValue(field), myThreadReference));
+      fieldValues.add(MirrorUtil.getInstance().getValueProxy(getObjectValue().getValue(field)));
     }
     return fieldValues;
   }
 
   @Override
-  public IValueProxy invokeMethod(String name, String jniSignature, Object... args) throws EvaluationException {
+  public IValueProxy invokeMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
     ClassType classType = myReferenceType;
     int options = 0;
-    return invoke(name, jniSignature, classType, options, args);
+    return invoke(name, jniSignature, classType, options, threadReference, args);
   }
 
   @Override
-  public IValueProxy invokeSuperMethod(String name, String jniSignature, Object... args) throws EvaluationException {
+  public IValueProxy invokeSuperMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
     ClassType classType = myReferenceType;
     ClassType superclass = classType.superclass();
     if (superclass == null) {
       throw new InvalidEvaluatedExpressionException("Can't invoke super method: class " + classType.name() + " has no superclasses.");
     }
     int options = ObjectReference.INVOKE_NONVIRTUAL;
-    return invoke(name, jniSignature, superclass, options, args);
+    return invoke(name, jniSignature, superclass, options, threadReference, args);
   }
 
   @Override
   public boolean isInstanceOf(String typename) throws EvaluationException {
-    return EvaluationUtils.isInstanceOf(myReferenceType, typename, myThreadReference.virtualMachine());
+    return EvaluationUtils.isInstanceOf(myReferenceType, typename, myValue.virtualMachine());
   }
 
-  protected IValueProxy invoke(String name, String jniSignature, ClassType classType, final int options, Object[] args) throws EvaluationException {
+  protected IValueProxy invoke(String name, String jniSignature, ClassType classType, final int options, final ThreadReference threadReference, Object[] args) throws EvaluationException {
     // TODO merge with Evaluator methods invocation 
     final Method method = classType.concreteMethodByName(name, jniSignature);
     if (method == null) {
       throw new InvalidEvaluatedExpressionException("Concrete method " + name + " with signature " + jniSignature + " not found in " + classType + ".");
     }
-    final List<Value> argValues = MirrorUtil.getInstance().getValues(myThreadReference, args);
-    return EvaluationUtils.handleInvocationExceptions(new EvaluationUtils.ThreadInvocatable<IValueProxy>(myThreadReference) {
+    final List<Value> argValues = MirrorUtil.getInstance().getValues(myValue.virtualMachine(), args);
+    return EvaluationUtils.handleInvocationExceptions(new EvaluationUtils.ThreadInvocatable<IValueProxy>(threadReference) {
       @Override
       public IValueProxy invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException {
-        Value result = getObjectValue().invokeMethod(myThreadReference, method, argValues, options);
-        return MirrorUtil.getInstance().getValueProxy(result, myThreadReference);
+        Value result = getObjectValue().invokeMethod(threadReference, method, argValues, options);
+        return MirrorUtil.getInstance().getValueProxy(result);
       }
     });
   }

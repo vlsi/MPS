@@ -57,11 +57,11 @@ public class MapViewer_WrapperFactory extends ValueWrapperFactory {
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
-      PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I"));
+      PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I", getThreadReference()));
       result.add(new CollectionsWatchables.MyWatchable_size(ValueUtil.getInstance().fromJDI(size.getJDIValue(), getThreadReference()), "size"));
 
-      IObjectValueProxy entries = ((IObjectValueProxy) value.invokeMethod("entrySet", "()Ljava/util/Set;"));
-      for (IObjectValueProxy entry : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(entries)) {
+      IObjectValueProxy entries = ((IObjectValueProxy) value.invokeMethod("entrySet", "()Ljava/util/Set;", getThreadReference()));
+      for (IObjectValueProxy entry : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(entries, getThreadReference())) {
         result.add(new CollectionsWatchables.MyWatchable_entry(ValueUtil.getInstance().fromJDI(entry.getJDIValue(), getThreadReference()), "entry"));
       }
 

@@ -4,127 +4,154 @@ package jetbrains.mps.debug.runtime.java.programState.proxies;
 
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.logging.Logger;
-import com.sun.jdi.ThreadReference;
+import jetbrains.mps.debug.api.programState.IWatchable;
+import java.util.List;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.util.Pair;
 import com.sun.jdi.StackFrame;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
-import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.IValue;
-import java.util.HashMap;
+import java.util.Collections;
+import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.LocalVariable;
-import com.sun.jdi.Value;
-import jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject;
-import com.sun.jdi.AbsentInformationException;
-import java.util.Collections;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext;
-import com.sun.jdi.InvalidStackFrameException;
 
 public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private static final Logger LOG = Logger.getLogger(JavaStackFrame.class);
 
   private final String myClassFqName;
   private final int myIndex;
-  private final ThreadReference myThreadReference;
+  private final JavaLocation myLocation;
+  private final JavaThread myThread;
+  private IWatchable myContextWatchable;
+  private final List<JavaLocalVariable> myVariables = ListSequence.fromList(new ArrayList<JavaLocalVariable>());
+  private boolean myInitialized;
 
-  public JavaStackFrame(ThreadReference threadReference, int i) {
-    super(new Pair<ThreadReference, Integer>(threadReference, i));
+  public JavaStackFrame(JavaThread threadReference, int i) throws AbsentInformationException {
+    super(new Pair<JavaThread, Integer>(threadReference, i));
     myIndex = i;
-    myThreadReference = threadReference;
-    myClassFqName = getLocation().getUnitName();
+    myThread = threadReference;
+    StackFrame stackFrame = getStackFrame();
+    if (stackFrame != null) {
+      myLocation = new JavaLocation(stackFrame.location());
+      myClassFqName = myLocation.getUnitName();
+    } else {
+      myLocation = null;
+      myClassFqName = null;
+    }
   }
 
   @Override
+  @Nullable
   public JavaLocation getLocation() {
-    StackFrame stackFrame = getStackFrame();
-    if (stackFrame == null) {
-      return null;
-    }
-    return new JavaLocation(stackFrame.location());
+    return myLocation;
   }
 
   @Override
   public JavaThread getThread() {
-    StackFrame stackFrame = getStackFrame();
-    if (stackFrame == null) {
-      return null;
-    }
-    return new JavaThread(stackFrame.thread());
-  }
-
-  @Nullable
-  public StackFrame getStackFrame() {
-    try {
-      return myThreadReference.frame(myIndex);
-    } catch (Throwable t) {
-      LOG.error(t);
-      return null;
-    }
+    return myThread;
   }
 
   public String getClassFqName() {
     return myClassFqName;
   }
 
-  @Override
-  public Map<IWatchable, IValue> getWatchableValues() {
+  @Nullable
+  public StackFrame getStackFrame() {
+    assert !(ModelAccess.instance().isInEDT());
     try {
-      StackFrame stackFrame = getStackFrame();
-      Map<IWatchable, IValue> result = new HashMap<IWatchable, IValue>();
-      if (stackFrame != null) {
-        Map<LocalVariable, Value> map = stackFrame.getValues(stackFrame.visibleVariables());
-        for (LocalVariable variable : map.keySet()) {
-          result.put(new JavaLocalVariable(variable, this, myClassFqName, stackFrame.thread()), ValueUtil.getInstance().fromJDI(map.get(variable), myClassFqName, stackFrame.thread()));
-        }
-        ObjectReference thisObject = stackFrame.thisObject();
-        if (thisObject != null) {
-          JavaThisObject object = new JavaThisObject(thisObject, this, myClassFqName, stackFrame.thread());
-          result.put(object, object.getValue());
-        }
-      }
-      return result;
-    } catch (AbsentInformationException ex) {
-      //  doing nothing 
-      return Collections.emptyMap();
+      return getFrame();
+    } catch (Throwable t) {
+      LOG.error(t);
+      return null;
     }
   }
 
   @Override
-  public List<IWatchable> getVisibleWatchables() {
-    try {
-      StackFrame stackFrame = getStackFrame();
-      List<IWatchable> result = new ArrayList<IWatchable>();
-      if (stackFrame != null) {
-        for (LocalVariable variable : stackFrame.visibleVariables()) {
-          result.add(new JavaLocalVariable(variable, this, myClassFqName, myThreadReference));
-        }
-        ObjectReference thisObject = stackFrame.thisObject();
-        if (thisObject != null) {
-          result.add(new JavaThisObject(thisObject, this, myClassFqName, myThreadReference));
-        } else {
-          result.add(new JavaStaticContext(getStackFrame().location().declaringType(), myClassFqName, myThreadReference));
-        }
-      }
-      return result;
-    } catch (InvalidStackFrameException ex) {
-      LOG.warning("InvalidStackFrameException", ex);
-      //  TODO something should be done here. See, for instance, how idea deals with those exceptions 
-      return Collections.emptyList();
-    } catch (AbsentInformationException ex) {
-      //  doing nothing, variables are just not available for us 
-      return Collections.emptyList();
+  public Map<IWatchable, IValue> getWatchableValues() {
+    assert false : "Deprecated method getWatchableValues is used.";
+    return Collections.emptyMap();
+  }
+
+  @Override
+  public synchronized List<IWatchable> getVisibleWatchables() {
+    List<IWatchable> watchables = ListSequence.fromList(new ArrayList<IWatchable>());
+    ListSequence.fromList(watchables).addSequence(ListSequence.fromList(myVariables));
+    if (myContextWatchable != null) {
+      ListSequence.fromList(watchables).addElement(myContextWatchable);
     }
+    return watchables;
+  }
+
+  public synchronized List<JavaLocalVariable> getVisibleVariables() {
+    return myVariables;
+  }
+
+  public synchronized IWatchable getContextWatchable() {
+    return myContextWatchable;
+  }
+
+  public synchronized void initializeWatchables() {
+    if (myInitialized) {
+      return;
+    }
+    myInitialized = true;
+    try {
+      ListSequence.fromList(myVariables).addSequence(ListSequence.fromList(fetchVisibleVariables()));
+      myContextWatchable = fetchContextWatchable();
+    } catch (IncompatibleThreadStateException ignore) {
+    } catch (AbsentInformationException ignore) {
+    }
+  }
+
+  private List<JavaLocalVariable> fetchVisibleVariables() throws IncompatibleThreadStateException, AbsentInformationException {
+    assert !(ModelAccess.instance().isInEDT());
+
+    StackFrame stackFrame = getFrame();
+    List<JavaLocalVariable> result = new ArrayList<JavaLocalVariable>();
+    if (stackFrame != null) {
+      for (LocalVariable variable : stackFrame.visibleVariables()) {
+        result.add(new JavaLocalVariable(variable, this, myClassFqName, myThread.getThread()));
+      }
+    }
+    return result;
+  }
+
+  private IWatchable fetchContextWatchable() throws IncompatibleThreadStateException {
+    assert !(ModelAccess.instance().isInEDT());
+
+    StackFrame stackFrame = getFrame();
+    if (stackFrame != null) {
+      ObjectReference thisObject = stackFrame.thisObject();
+      if (thisObject != null) {
+        return new JavaThisObject(thisObject, this, myClassFqName, myThread.getThread());
+      } else {
+        return new JavaStaticContext(stackFrame.location().declaringType(), myClassFqName, myThread.getThread());
+      }
+    }
+    return null;
+  }
+
+  private StackFrame getFrame() throws IncompatibleThreadStateException {
+    return myThread.getThread().frame(myIndex);
   }
 
   @Override
   public IValue getValue(IWatchable watchable) {
-    if (watchable instanceof JavaLocalVariable) {
-      JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
-      return ValueUtil.getInstance().fromJDI(getStackFrame().getValue(localVariable.getLocalVariable()), myClassFqName, myThreadReference);
+    assert !(ModelAccess.instance().isInEDT());
+    try {
+      if (watchable instanceof JavaLocalVariable) {
+        JavaLocalVariable localVariable = (JavaLocalVariable) watchable;
+        return ValueUtil.getInstance().fromJDI(getFrame().getValue(localVariable.getLocalVariable()), myClassFqName, myThread.getThread());
+      }
+    } catch (IncompatibleThreadStateException e) {
     }
     return null;
   }
@@ -134,26 +161,42 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     if (this == o) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (o == null || this.getClass() != o.getClass()) {
       return false;
     }
-    if (!(super.equals(o))) {
-      return false;
-    }
+
     JavaStackFrame that = (JavaStackFrame) o;
     if (myIndex != that.myIndex) {
       return false;
     }
-    if (!(myThreadReference.equals(that.myThreadReference))) {
+    if ((myLocation != null ?
+      !(myLocation.equals(that.myLocation)) :
+      that.myLocation != null
+    )) {
       return false;
     }
+    if ((myThread != null ?
+      !(myThread.equals(that.myThread)) :
+      that.myThread != null
+    )) {
+      return false;
+    }
+
     return true;
   }
 
   @Override
   public int hashCode() {
-    int result = super.hashCode();
-    result = 31 * result + myThreadReference.hashCode() * 31 + myIndex;
+    int result = 0;
+    result = 31 * result + myIndex;
+    result = 31 * result + ((myLocation != null ?
+      ((Object) myLocation).hashCode() :
+      0
+    ));
+    result = 31 * result + ((myThread != null ?
+      ((Object) myThread).hashCode() :
+      0
+    ));
     return result;
   }
 }

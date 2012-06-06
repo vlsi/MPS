@@ -19,6 +19,10 @@ import org.junit.Test;
 import org.junit.Assert;
 import jetbrains.mps.ide.messages.MessageList.FastListModel;
 
+import javax.swing.event.ListDataEvent;
+import javax.swing.event.ListDataListener;
+import java.util.Arrays;
+
 public class MessageViewListModelTest {
   private FastListModel myModel = new FastListModel(2);
 
@@ -75,6 +79,107 @@ public class MessageViewListModelTest {
     myModel.clear();
 
     Assert.assertEquals(0, myModel.getSize());
+  }
 
+  @Test
+  public void addAllOne() {
+    myModel.addListDataListener(new MyListDataListener(){
+      int addedOnce = 1;
+      @Override
+      public void intervalAdded(ListDataEvent e) {
+        Assert.assertTrue(--addedOnce == 0);
+      }
+    });
+    myModel.addAll(Arrays.asList("b"));
+    Assert.assertEquals(1, myModel.getSize());
+  }
+
+  @Test
+  public void addAllTwo() {
+    myModel.addListDataListener(new MyListDataListener(){
+      int addedOnce = 1;
+      @Override
+      public void intervalAdded(ListDataEvent e) {
+        Assert.assertTrue(--addedOnce == 0);
+      }
+    });
+    myModel.addAll(Arrays.asList("a","b"));
+    Assert.assertEquals(2, myModel.getSize());
+  }
+
+  @Test
+  public void addAllNone() {
+    myModel.addListDataListener(new MyListDataListener());
+    myModel.addAll(Arrays.asList());
+  }
+
+  @Test(expected = RuntimeException.class)
+  public void addAllOverflow() {
+    myModel.addListDataListener(new MyListDataListener());
+    myModel.addAll(Arrays.asList("a","b","c"));
+    Assert.assertTrue(false);
+  }
+
+  @Test
+  public void removeFirstOne() {
+    myModel.add("a");
+    myModel.add("b");
+    myModel.addListDataListener(new MyListDataListener(){
+      int removedOnce = 1;
+      @Override
+      public void intervalRemoved(ListDataEvent e) {
+        Assert.assertTrue(--removedOnce == 0);
+      }
+    });
+    myModel.removeFirst(1);
+    Assert.assertEquals(1, myModel.getSize());
+  }
+
+  @Test
+  public void removeFirstTwo() {
+    myModel.add("a");
+    myModel.add("b");
+    myModel.addListDataListener(new MyListDataListener(){
+      int removedOnce = 1;
+      @Override
+      public void intervalRemoved(ListDataEvent e) {
+        Assert.assertTrue(--removedOnce == 0);
+      }
+    });
+    myModel.removeFirst(2);
+    Assert.assertEquals(0, myModel.getSize());
+  }
+
+  @Test(expected = RuntimeException.class)
+  public void removeFirstUnderflow() {
+    myModel.add("a");
+    myModel.add("b");
+    myModel.addListDataListener(new MyListDataListener());
+    myModel.removeFirst(3);
+    Assert.assertTrue(false);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void removeFirstIllegal() {
+    myModel.addListDataListener(new MyListDataListener());
+    myModel.removeFirst(0);
+    Assert.assertTrue(false);
+  }
+
+  private static class MyListDataListener implements ListDataListener {
+    @Override
+    public void intervalAdded(ListDataEvent e) {
+      Assert.assertTrue(false);
+    }
+
+    @Override
+    public void intervalRemoved(ListDataEvent e) {
+      Assert.assertTrue(false);
+    }
+
+    @Override
+    public void contentsChanged(ListDataEvent e) {
+      Assert.assertTrue(false);
+    }
   }
 }
