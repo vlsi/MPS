@@ -107,6 +107,12 @@ public class MessageViewListModelTest {
     Assert.assertEquals(2, myModel.getSize());
   }
 
+  @Test
+  public void addAllNone() {
+    myModel.addListDataListener(new MyListDataListener());
+    myModel.addAll(Arrays.asList());
+  }
+
   @Test(expected = RuntimeException.class)
   public void addAllOverflow() {
     myModel.addListDataListener(new MyListDataListener());

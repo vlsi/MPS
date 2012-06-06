@@ -582,6 +582,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     }
 
     public void addAll(Collection items) {
+      if (items.isEmpty()) return;
       if (mySize + items.size() > myItems.length) throw new RuntimeException("Buffer overflow");
       int intervalStart = mySize;
       for (Object item : items) {
