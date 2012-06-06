@@ -31,6 +31,9 @@
     <node type="cx9y.NamedTupleDeclaration" typeId="cx9y.1239360506533" id="9171470541351200515">
       <property name="name" nameId="tpck.1169194664001" value="Sample" />
     </node>
+    <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8836955480108767185">
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+    </node>
   </roots>
   <root id="1240933467754">
     <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="1240933472056">
@@ -257,6 +260,34 @@
       <node role="type" roleId="cx9y.1239462974287" type="tpee.LongType" typeId="tpee.1068581242867" id="9171470541351200522" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9171470541351200516" />
+  </root>
+  <root id="8836955480108767185">
+    <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="8836955480108767191">
+      <property name="name" nameId="tpck.1169194664001" value="getTuple" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8836955480108767193" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8836955480108767194">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8836955480108772148">
+          <node role="expression" roleId="tpee.1068580123156" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="8836955480108772149">
+            <node role="component" roleId="cx9y.1238853845806" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8836955480108772152">
+              <property name="value" nameId="tpee.1070475926801" value="bar" />
+            </node>
+            <node role="component" roleId="cx9y.1238853845806" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8836955480108772154">
+              <property name="value" nameId="tpee.1068580320021" value="22" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" roleId="tpee.1068580123133" type="cx9y.IndexedTupleType" typeId="cx9y.1238852151516" id="8836955480108767195">
+        <node role="componentType" roleId="cx9y.1238852204892" type="tpee.StringType" typeId="tpee.1225271177708" id="8836955480108772145" />
+        <node role="componentType" roleId="cx9y.1238852204892" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8836955480108772147" />
+      </node>
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8836955480108767186" />
+    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="8836955480108767187">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8836955480108767188" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8836955480108767189" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8836955480108767190" />
+    </node>
   </root>
 </model>
 
