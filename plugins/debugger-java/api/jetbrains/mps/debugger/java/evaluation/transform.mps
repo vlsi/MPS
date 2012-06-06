@@ -4544,6 +4544,13 @@
                                         <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2476748692227886067">
                                           <property name="value" nameId="tpee.1070475926801" value="()Ljava/lang/String;" />
                                         </node>
+                                        <node role="actualArgument" roleId="tp68.1174318197094" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="8447820492402934983">
+                                          <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
+                                          <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8447820492402934984">
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
+                                          </node>
+                                          <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="8447820492402934985" />
+                                        </node>
                                         <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2476748692227886068">
                                           <node role="expression" roleId="tpee.1079359253376" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2476748692227886069">
                                             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.Antiquotation" typeId="tp3r.1196350785112" id="2476748692227886070">
@@ -4786,6 +4793,13 @@
                                         </node>
                                         <node role="actualArgument" roleId="tp68.1174318197094" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2476748692227886167">
                                           <property name="value" nameId="tpee.1070475926801" value="()Ljava/lang/String;" />
+                                        </node>
+                                        <node role="actualArgument" roleId="tp68.1174318197094" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="8447820492402934987">
+                                          <property name="methodName" nameId="tp68.1174294288199" value="getThreadReference" />
+                                          <node role="returnType" roleId="tp68.1174313653259" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8447820492402934988">
+                                            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~ThreadReference" resolveInfo="ThreadReference" />
+                                          </node>
+                                          <node role="instance" roleId="tp68.1174317636233" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="8447820492402934989" />
                                         </node>
                                         <node role="instance" roleId="tp68.1174317636233" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="2476748692227886168">
                                           <node role="expression" roleId="tpee.1079359253376" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2476748692227886169">
