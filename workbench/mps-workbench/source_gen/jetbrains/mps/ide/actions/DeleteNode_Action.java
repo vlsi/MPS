@@ -13,12 +13,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 
 public class DeleteNode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -74,32 +73,25 @@ public class DeleteNode_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._boolean safe = new Wrappers._boolean(false);
+      final DeleteNodesHelper helper = new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+
       final Wrappers._boolean dialogNeeded = new Wrappers._boolean(false);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (SNode node : ((List<SNode>) MapSequence.fromMap(_params).get("nodes"))) {
-            if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && node.isRoot()) {
-              dialogNeeded.value = true;
-              break;
-            }
-          }
+          dialogNeeded.value = helper.hasOptions();
         }
       });
+
+      DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
+      DeleteDialog.DeleteOption aspectsOption = new DeleteDialog.DeleteOption("Delete Aspects", true, true);
       if (dialogNeeded.value) {
-        DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?");
-        dialog.setOptions(false, true, false, false);
+        DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Node", "Are you sure you want to delete selected node?", safeOption, aspectsOption);
         dialog.show();
         if (!(dialog.isOK())) {
           return;
         }
-        safe.value = dialog.isSafe();
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), safe.value).deleteNodes(true);
-        }
-      });
+      helper.deleteNodes(safeOption.selected, aspectsOption.selected, true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "DeleteNode", t);

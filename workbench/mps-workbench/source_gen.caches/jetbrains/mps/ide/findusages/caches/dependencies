@@ -46,6 +46,7 @@
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndex" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />
+    <classNode dependClassName="gnu.trove.THashSet" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.Set" />

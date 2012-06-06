@@ -17,7 +17,6 @@ package jetbrains.mps.workbench.dialogs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.ui.StateRestoringCheckBox;
 
 import javax.swing.*;
 import java.awt.GridBagConstraints;
@@ -25,36 +24,17 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 
 public class DeleteDialog extends DialogWrapper {
-  private String myCaption;
   private String myMessage;
-  private JCheckBox mySafeCheckbox;
-  private JCheckBox myDeleteFilesCheckbox;
+  private DeleteOption[] myOptions;
+  private JCheckBox[] myCheckBoxes;
 
-  private boolean mySafe = true;
-  private boolean myDeleteFiles = true;
-
-  public DeleteDialog(Project project, String caption, String message) {
+  public DeleteDialog(Project project, String caption, String message, DeleteOption... options) {
     super(project, true);
-    myCaption = caption;
     myMessage = message;
+    myOptions = options;
 
-    setTitle(myCaption);
+    setTitle(caption);
     init();
-  }
-
-  public void setOptions(boolean safe, boolean safeEnabled, boolean deleteFiles, boolean deleteFilesEnabled) {
-    mySafeCheckbox.setSelected(safe);
-    mySafeCheckbox.setEnabled(safeEnabled);
-    myDeleteFilesCheckbox.setSelected(deleteFiles);
-    myDeleteFilesCheckbox.setEnabled(deleteFilesEnabled);
-  }
-
-  public boolean isSafe() {
-    return mySafe;
-  }
-
-  public boolean isDeleteFiles() {
-    return myDeleteFiles;
   }
 
   protected Action[] createActions() {
@@ -75,21 +55,19 @@ public class DeleteDialog extends DialogWrapper {
     gbc.anchor = GridBagConstraints.WEST;
     panel.add(new JLabel(myMessage), gbc);
 
-    gbc.gridy++;
-    gbc.gridx = 0;
-    gbc.weightx = 0.0;
-    gbc.gridwidth = 1;
-    gbc.insets = new Insets(4, 8, 0, 8);
-    mySafeCheckbox = new JCheckBox("Safe delete");
-    panel.add(mySafeCheckbox, gbc);
+    myCheckBoxes = new JCheckBox[myOptions.length];
+    for (int i = 0; i < myOptions.length; i++) {
+      gbc.gridy++;
+      gbc.gridx = 0;
+      gbc.weightx = 0.0;
+      gbc.gridwidth = 1;
+      gbc.insets = new Insets(4, 8, 0, 8);
 
-    gbc.gridy++;
-    gbc.gridx = 0;
-    gbc.weightx = 0.0;
-    gbc.gridwidth = 1;
-    gbc.insets = new Insets(0, 8, 4, 8);
-    myDeleteFilesCheckbox = new StateRestoringCheckBox("Delete files");
-    panel.add(myDeleteFilesCheckbox, gbc);
+      DeleteOption option = myOptions[i];
+      myCheckBoxes[i] = new JCheckBox(option.caption, option.selected);
+      myCheckBoxes[i].setEnabled(option.enabled);
+      panel.add(myCheckBoxes[i], gbc);
+    }
 
     return panel;
   }
@@ -99,8 +77,22 @@ public class DeleteDialog extends DialogWrapper {
   }
 
   protected void doOKAction() {
-    mySafe = mySafeCheckbox.isSelected();
-    myDeleteFiles = myDeleteFilesCheckbox.isSelected();
+    for (int i = 0; i < myOptions.length; i++) {
+      myOptions[i].selected = myCheckBoxes[i].isSelected();
+    }
     super.doOKAction();
   }
+
+  public static class DeleteOption {
+    public String caption;
+    public boolean selected;
+    public boolean enabled;
+
+    public DeleteOption(String caption, boolean selected, boolean enabled) {
+      this.caption = caption;
+      this.selected = selected;
+      this.enabled = enabled;
+    }
+  }
 }
+

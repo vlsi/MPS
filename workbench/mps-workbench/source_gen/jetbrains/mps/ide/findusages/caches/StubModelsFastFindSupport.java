@@ -20,9 +20,10 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
+import gnu.trove.THashSet;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import java.util.Collection;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VfsUtilCore;
@@ -72,37 +73,50 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
 
   private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
     MultiMap<SModelDescriptor, T> result = new SetBasedMultiMap<SModelDescriptor, T>();
+
+    // get all files in scope 
+    final ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
+
+    Set<StubModelDataSource> sources = new THashSet<StubModelDataSource>();
+    final Set<VirtualFile> dirs = new THashSet<VirtualFile>();
+
+    for (final SModelDescriptor sm : models) {
+      assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
+      ModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
+      assert source instanceof StubModelDataSource : source.getClass().getName();
+      StubModelDataSource sms = (StubModelDataSource) source;
+      if (sources.contains(sms)) {
+        continue;
+      }
+
+      sources.add(sms);
+      Collection<String> filenames = sms.getFilesToListen();
+      for (String path : filenames) {
+        final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
+        if (vf == null) {
+          if (log.isWarnEnabled()) {
+            log.warn("File " + path + ", which belows to model source of model " + sm.getSModelReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
+          }
+          continue;
+        }
+        VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor() {
+          public boolean visitFile(@NotNull VirtualFile file) {
+            if (file.isDirectory()) {
+              return dirs.add(file);
+            }
+            scopeFiles.addLink(sm, file);
+            return true;
+          }
+        });
+      }
+
+    }
+
     for (T elem : elems) {
       String nodeId = (id == null ?
         elem.toString() :
         id.value(elem)
       );
-      // get all files in scope 
-      final ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
-      for (final SModelDescriptor sm : models) {
-        assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
-        ModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
-        assert source instanceof StubModelDataSource : source.getClass().getName();
-        Collection<String> filenames = ((StubModelDataSource) source).getFilesToListen();
-        for (String path : filenames) {
-          final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
-          if (vf == null) {
-            if (log.isWarnEnabled()) {
-              log.warn("File " + path + ", which belows to model source of model " + sm.getSModelReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
-            }
-            continue;
-          }
-          VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor() {
-            public boolean visitFile(@NotNull VirtualFile file) {
-              if (file.isDirectory()) {
-                return true;
-              }
-              scopeFiles.addLink(sm, file);
-              return true;
-            }
-          });
-        }
-      }
       // filter files with usages 
       ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
       Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);
