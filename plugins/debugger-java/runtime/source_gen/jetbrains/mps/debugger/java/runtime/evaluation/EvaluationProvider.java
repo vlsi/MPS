@@ -150,7 +150,6 @@ public class EvaluationProvider implements IEvaluationProvider {
           @Override
           public void run() {
             EditWatchDialog editWatchDialog = new EditWatchDialog(new ProjectOperationContext(ProjectHelper.toMPSProject(myDebugSession.getProject())), EvaluationProvider.this, model, new _FunctionTypes._void_P0_E0() {
-              @Override
               public void invoke() {
                 addWatch(model);
               }
