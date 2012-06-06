@@ -20,7 +20,6 @@ import com.sun.jdi.LongValue;
 import com.sun.jdi.ObjectReference;
 import com.sun.jdi.Field;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
-import com.sun.jdi.ThreadReference;
 import com.sun.jdi.VoidValue;
 import jetbrains.mps.debug.evaluation.proxies.VoidValueProxy;
 import com.sun.jdi.ArrayReference;
@@ -113,41 +112,41 @@ public class MirrorUtilImpl extends MirrorUtil {
   }
 
   @NotNull
-  public IValueProxy getValueProxyFromJava(@Nullable Object javaValue, ThreadReference threadReference) {
-    Value v = getJDIValueFromRaw(javaValue, threadReference.virtualMachine());
-    return getValueProxy(v, threadReference);
+  public IValueProxy getValueProxyFromJava(@Nullable Object javaValue, VirtualMachine machine) {
+    Value v = getJDIValueFromRaw(javaValue, machine);
+    return getValueProxy(v);
   }
 
   @NotNull
-  public IValueProxy getValueProxy(@Nullable Value value, @NotNull ThreadReference threadReference) {
+  public IValueProxy getValueProxy(@Nullable Value value) {
     if (value == null) {
       return new NullValueProxy();
     }
     if (value instanceof VoidValue) {
-      return new VoidValueProxy(value, threadReference);
+      return new VoidValueProxy(value);
     }
     if (value instanceof ArrayReference) {
-      return new ArrayValueProxy((ArrayReference) value, threadReference);
+      return new ArrayValueProxy((ArrayReference) value);
     } else
     if (value instanceof ObjectReference) {
-      return new ObjectValueProxy((ObjectReference) value, threadReference);
+      return new ObjectValueProxy((ObjectReference) value);
     } else
     if (value instanceof PrimitiveValue) {
-      return new PrimitiveValueProxy((PrimitiveValue) value, threadReference);
+      return new PrimitiveValueProxy((PrimitiveValue) value);
     } else {
       throw new UnsupportedOperationException();
     }
   }
 
   @NotNull
-  public List<Value> getValues(ThreadReference threadReference, Object... args) {
+  public List<Value> getValues(VirtualMachine machine, Object... args) {
     List<Value> argValues = new ArrayList<Value>();
     for (Object arg : args) {
       Value v;
       if (arg instanceof ValueProxy) {
         v = ((IValueProxy) arg).getJDIValue();
       } else {
-        v = getJDIValueFromRaw(arg, threadReference.virtualMachine());
+        v = getJDIValueFromRaw(arg, machine);
       }
       argValues.add(v);
     }

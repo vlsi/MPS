@@ -6,7 +6,9 @@
   <property name="artifacts.buildMpsC" location="${build.dir}/artifacts/buildMpsC" />
   <property name="artifacts.JarFromA" location="${basedir}/jetbrains.mps.build.sandbox/samples" />
   
-  <target name="assemble" depends="classes" />
+  <target name="assemble" depends="classes">
+    <mkdir dir="${build.layout}" />
+  </target>
   
   <target name="buildDependents">
     <ant antfile="jetbrains.mps.build.sandbox/samples/buildMpsC.xml" inheritAll="false" useNativeBasedir="true" />

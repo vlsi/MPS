@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.proxies;
 
 import jetbrains.mps.debug.evaluation.proxies.INullValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
+import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.evaluation.EvaluationException;
@@ -18,12 +19,12 @@ import jetbrains.mps.debug.evaluation.EvaluationException;
   }
 
   @Override
-  public IValueProxy invokeMethod(String name, String jniSignature, Object... args) {
+  public IValueProxy invokeMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) {
     throw new NullPointerException("NPE; Invoking method " + name + " with signature " + jniSignature + " for null.");
   }
 
   @Override
-  public IValueProxy invokeSuperMethod(String name, String jniSignature, Object... args) {
+  public IValueProxy invokeSuperMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) {
     throw new NullPointerException("NPE; Invoking super method " + name + " with signature " + jniSignature + " for null.");
   }
 

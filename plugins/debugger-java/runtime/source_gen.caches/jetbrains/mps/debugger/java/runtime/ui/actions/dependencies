@@ -46,11 +46,11 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IValue" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.EvaluationUtils" />
+    <classNode dependClassName="jetbrains.mps.debug.runtime.JavaUiState" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaValue" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.DebugActionsUtil" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.JavaUiStateImpl" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" />
     <classNode dependClassName="jetbrains.mps.ide.datatransfer.CopyPasteUtil" />
     <classNode dependClassName="org.apache.commons.logging.Log" />

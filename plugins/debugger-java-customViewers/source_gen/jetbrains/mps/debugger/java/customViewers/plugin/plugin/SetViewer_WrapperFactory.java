@@ -58,10 +58,10 @@ public class SetViewer_WrapperFactory extends ValueWrapperFactory {
       // again, same as ListViewer 
       List<CustomJavaWatchable> watchables = new ArrayList<CustomJavaWatchable>();
 
-      PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I"));
+      PrimitiveValueProxy size = ((PrimitiveValueProxy) value.invokeMethod("size", "()I", getThreadReference()));
       watchables.add(new CollectionsWatchables.MyWatchable_size(ValueUtil.getInstance().fromJDI(size.getJDIValue(), getThreadReference()), "size"));
 
-      for (IObjectValueProxy element : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(value)) {
+      for (IObjectValueProxy element : EvaluationUtils.getInstance().<IObjectValueProxy>toIterableProxy(value, getThreadReference())) {
         watchables.add(new CollectionsWatchables.MyWatchable_element(ValueUtil.getInstance().fromJDI(element.getJDIValue(), getThreadReference()), "element"));
       }
 

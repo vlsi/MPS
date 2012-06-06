@@ -1886,7 +1886,7 @@ __switch__:
         Computable computable = new Computable() {
           public Object compute() {
             IClassifiersSearchScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
-            List<SNode> visibleClassifiers = (List<SNode>) searchScope.getClassifierNodes();
+            List<SNode> visibleClassifiers = searchScope.getClassifierNodes();
             List<SNode> classifiers = new ArrayList<SNode>();
             for (SNode cls : visibleClassifiers) {
               ListSequence.fromList(classifiers).addElement(cls);

@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.LanguageID;
 import java.util.Collection;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -112,7 +111,7 @@ public class EvaluationAuxModule extends AbstractModule {
     for (String stub : SetSequence.fromSet(myStubPaths)) {
       ModelRoot root = new ModelRoot();
       root.setPath(stub);
-      root.setManager(LanguageID.JAVA_MANAGER);
+      root.setManager(STUBS_MANAGER);
       try {
         SModelRoot smodelRoot = new SModelRoot(root);
         Collection<SModelDescriptor> loaded = smodelRoot.getManager().load(root, this);
