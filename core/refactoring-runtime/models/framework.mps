@@ -9263,7 +9263,7 @@
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972815228" resolveInfo="l" />
                         </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4792031542972815254">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetClass(java%dlang%dString)%cjava%dlang%dClass" resolveInfo="getClass" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Language%dgetClass(java%dlang%dString)%cjava%dlang%dClass" resolveInfo="getClass" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4792031542972815255">
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972815203" resolveInfo="className" />
                           </node>
