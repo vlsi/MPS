@@ -44,8 +44,7 @@ public class RefactoringFacade {
   public void executeSimple(final RefactoringContext context) {
     ThreadUtils.assertEDT();
     final IRefactoring refactoring = context.getRefactoring();
-    List<SModel> modelsToGenerate;
-    modelsToGenerate = getModelsToGenerate(refactoring, context);
+    List<SModel> modelsToGenerate = getModelsToGenerate(refactoring, context);
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         try {
@@ -80,13 +79,13 @@ public class RefactoringFacade {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final boolean cancelled = RefactoringAccess.getInstance().showRefactoringDialog(ideaProject, refactoringContext, refactoring, !(modelsToGenerate.isEmpty()));
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          public void run() {
-            if (!(cancelled)) {
+        if (!(cancelled)) {
+          ModelAccess.instance().runWriteInEDT(new Runnable() {
+            public void run() {
               executeSimple(refactoringContext);
             }
-          }
-        });
+          });
+        }
 
       }
     });
@@ -96,10 +95,9 @@ public class RefactoringFacade {
     ThreadUtils.assertEDT();
     ModelAccess.assertLegalRead();
     boolean success = refactoringContext.getRefactoring().init(refactoringContext);
-    if (!(success)) {
-      return;
+    if (success) {
+      findUsagesAndRun(refactoringContext);
     }
-    findUsagesAndRun(refactoringContext);
   }
 
   private void findUsagesAndRun(final RefactoringContext refactoringContext) {
@@ -108,49 +106,60 @@ public class RefactoringFacade {
         ProgressManager.getInstance().run(new Task.Modal(ProjectHelper.toIdeaProject(refactoringContext.getCurrentOperationContext().getProject()), "Finding usages...", false) {
           public void run(@NotNull ProgressIndicator indicator) {
             indicator.setIndeterminate(true);
-            final Wrappers._boolean resultsFound = new Wrappers._boolean(false);
-            final Wrappers._T<SearchResults> result = new Wrappers._T<SearchResults>(null);
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                try {
-                  jetbrains.mps.project.Project project = refactoringContext.getSelectedProject();
-                  refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
-                  IRefactoring refactoring = refactoringContext.getRefactoring();
-                  result.value = refactoring.getAffectedNodes(refactoringContext);
-                  resultsFound.value = result.value != null;
-                } catch (Throwable t) {
-                  myLog.error(t);
-                }
-              }
-            });
-            if (!(resultsFound.value)) {
-              int promptResult = JOptionPane.showConfirmDialog(MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
-              if (promptResult == JOptionPane.YES_OPTION) {
-                resultsFound.value = true;
-              }
-
-            }
-            if (!(resultsFound.value)) {
-              return;
-            }
-            final SearchResults usages = result.value;
-            ModelAccess.instance().runReadInEDT(new Runnable() {
-              public void run() {
-                refactoringContext.setUsages(usages);
-                if (!(usages.getSearchResults().isEmpty())) {
-                  showRefactoring(refactoringContext, usages);
-                } else {
-                  doExecuteWithDialog(refactoringContext);
-                }
-              }
-            });
-
+            SearchResults usages = findUsagesSimple(refactoringContext);
+            showConfirmDialogAndExecuteInUI(usages, refactoringContext);
           }
         });
 
       }
     });
 
+  }
+
+  private SearchResults findUsagesSimple(final RefactoringContext refactoringContext) {
+    final Wrappers._T<SearchResults> result = new Wrappers._T<SearchResults>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          jetbrains.mps.project.Project project = refactoringContext.getSelectedProject();
+          refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
+          IRefactoring refactoring = refactoringContext.getRefactoring();
+          result.value = refactoring.getAffectedNodes(refactoringContext);
+        } catch (Throwable t) {
+          myLog.error(t);
+        }
+      }
+    });
+    return result.value;
+  }
+
+  private void showConfirmDialogAndExecuteInUI(SearchResults result, final RefactoringContext refactoringContext) {
+    if (result == null) {
+      final SearchResults usages = result;
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          int promptResult = JOptionPane.showConfirmDialog(MPSCommonDataKeys.FRAME.getData(DataManager.getInstance().getDataContext()), "An exception occurred during searching affected nodes. Do you want to continue anyway?", "Exception", JOptionPane.YES_NO_OPTION);
+          if (promptResult == JOptionPane.YES_OPTION) {
+            executeInUI(usages, refactoringContext);
+          }
+        }
+      });
+    } else {
+      executeInUI(result, refactoringContext);
+    }
+  }
+
+  private void executeInUI(final SearchResults usages, final RefactoringContext refactoringContext) {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        refactoringContext.setUsages(usages);
+        if (!(usages.getSearchResults().isEmpty())) {
+          showRefactoring(refactoringContext, usages);
+        } else {
+          doExecuteWithDialog(refactoringContext);
+        }
+      }
+    });
   }
 
   private void showRefactoring(final RefactoringContext refactoringContext, final SearchResults searchResults) {
@@ -262,7 +271,9 @@ public class RefactoringFacade {
     modifier.addModelsToModify(sourceModels);
     SNode.setNodeMemberAccessModifier(modifier);
     for (SModel model : sourceModels) {
-      descriptors.add(model.getModelDescriptor());
+      if (!(model.isDisposed())) {
+        descriptors.add(model.getModelDescriptor());
+      }
     }
 
     final IOperationContext operationContext = new ProjectOperationContext(context.getSelectedProject());
