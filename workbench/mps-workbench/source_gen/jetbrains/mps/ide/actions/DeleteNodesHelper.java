@@ -168,7 +168,12 @@ public class DeleteNodesHelper {
           public void run() {
             RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
               public void performAction(RefactoringViewItem refactoringViewItem) {
-                performer.invoke();
+                ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+                  public void run() {
+                    performer.invoke();
+                  }
+                });
+                refactoringViewItem.close();
               }
             }, sr, false, "Safe Delete");
           }
