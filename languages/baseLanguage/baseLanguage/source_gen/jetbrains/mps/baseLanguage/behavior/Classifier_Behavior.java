@@ -188,7 +188,8 @@ public class Classifier_Behavior {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface")) {
       return true;
     }
-    return !(SPropertyOperations.getBoolean(thisNode, "nonStatic"));
+    // ignore the value of nonStatic for top-level classes 
+    return SNodeOperations.getParent(thisNode) == null || !(SPropertyOperations.getBoolean(thisNode, "nonStatic"));
   }
 
   public static boolean call_isInner_521412098689998677(SNode thisNode) {
