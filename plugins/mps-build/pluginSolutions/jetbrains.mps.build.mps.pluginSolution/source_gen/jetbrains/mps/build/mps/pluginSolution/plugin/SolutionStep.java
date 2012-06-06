@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.annotations.NotNull;
 
 public class SolutionStep extends TwoOptionsStep<IModule> {
   private final MPSProject myMpsProject;
@@ -87,5 +88,11 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
       return "Empty solution name not allowed.";
     }
     return "Module " + text + " already exists, choose another name.";
+  }
+
+  @NotNull
+  @Override
+  public String getImageText() {
+    return "Script Solution";
   }
 }

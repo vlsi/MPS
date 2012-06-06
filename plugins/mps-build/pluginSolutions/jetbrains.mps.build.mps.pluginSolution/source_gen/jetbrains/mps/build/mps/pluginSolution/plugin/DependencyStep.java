@@ -11,6 +11,7 @@ import jetbrains.mps.ide.common.LayoutUtil;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import com.intellij.ide.wizard.CommitStepException;
+import org.jetbrains.annotations.NotNull;
 
 public class DependencyStep extends AbstractStep {
   private final AbstractBuildGenerator myGenerator;
@@ -45,7 +46,7 @@ public class DependencyStep extends AbstractStep {
   }
 
   public String getDescription() {
-    return "Select distribution type.";
+    return "Select distribution kind.";
   }
 
   @Override
@@ -62,6 +63,12 @@ public class DependencyStep extends AbstractStep {
   public void _commit(boolean finished) throws CommitStepException {
     super._commit(finished);
     myGenerator.setDependencyKind(DependencyStep.DependencyKind.values()[mySelectedIndex]);
+  }
+
+  @NotNull
+  @Override
+  public String getImageText() {
+    return "Distribution Kind";
   }
 
   public static   enum DependencyKind {
