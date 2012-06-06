@@ -230,15 +230,27 @@ public class XMLSAXChildRule_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_wbyfib_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a0(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   private static boolean renderingCondition_wbyfib_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && (StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && (isEmpty_wbyfib_a0a0a0a1(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName")) || SPropertyOperations.getBoolean(node, "overrideTag"));
   }
 
   private static boolean renderingCondition_wbyfib_a1a_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "rule", false) != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
+    return (SLinkOperations.getTarget(node, "rule", false) != null) && isNotEmpty_wbyfib_a0a0a2(SPropertyOperations.getString(SLinkOperations.getTarget(node, "rule", false), "tagName"));
+  }
+
+  public static boolean isEmpty_wbyfib_a0a0a0a0(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isEmpty_wbyfib_a0a0a0a1(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isNotEmpty_wbyfib_a0a0a2(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static class _Inline_wbyfib_a2a extends InlineCellProvider {

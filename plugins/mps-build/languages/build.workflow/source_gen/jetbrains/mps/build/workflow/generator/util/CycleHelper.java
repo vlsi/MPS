@@ -74,7 +74,7 @@ public class CycleHelper {
     for (SNode jm : modules) {
       CycleHelper.Module module = new CycleHelper.Module(jm);
       map.put(jm, module);
-      if (StringUtils.isEmpty(SPropertyOperations.getString(jm, "outputFolder"))) {
+      if (isEmpty_yc0kju_a0c0e0b(SPropertyOperations.getString(jm, "outputFolder"))) {
         genContext.showErrorMessage(jm, "empty output path");
       } else if (SPropertyOperations.getString(jm, "outputFolder").endsWith("/") || SPropertyOperations.getString(jm, "outputFolder").endsWith("\\")) {
         genContext.showErrorMessage(jm, "output path shouldn't end with slash");
@@ -192,6 +192,10 @@ public class CycleHelper {
       SPropertyOperations.set(cycleX, "name", "java.modules.cycle." + ++cycleCounter);
       SPropertyOperations.set(cycleX, "outputFolder", SPropertyOperations.getString(project, "temporaryFolder") + "/" + SPropertyOperations.getString(cycleX, "name"));
     }
+  }
+
+  public static boolean isEmpty_yc0kju_a0c0e0b(String str) {
+    return str == null || str.length() == 0;
   }
 
   public class Module implements IVertex {

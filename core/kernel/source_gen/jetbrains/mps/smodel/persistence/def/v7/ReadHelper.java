@@ -50,7 +50,7 @@ public class ReadHelper {
   }
 
   public SModelReference getSModelReference(@NotNull String ix) {
-    return (StringUtils.isEmpty(ix) ?
+    return ((ix == null || ix.length() == 0) ?
       myModelRef :
       MapSequence.fromMap(myModelByIx).get(ix)
     );

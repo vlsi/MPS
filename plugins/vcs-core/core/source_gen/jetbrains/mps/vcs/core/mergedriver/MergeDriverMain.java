@@ -127,7 +127,7 @@ public class MergeDriverMain {
 
   private static void configureLog4j() {
     String logPath = System.getProperty(LOG_PROPERTY);
-    if (StringUtils.isEmpty(logPath)) {
+    if ((logPath == null || logPath.length() == 0)) {
       return;
     }
     Properties p = new Properties();

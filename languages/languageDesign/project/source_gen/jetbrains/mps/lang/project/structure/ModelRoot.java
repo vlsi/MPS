@@ -11,7 +11,6 @@ import jetbrains.mps.project.GlobalScope;
 public class ModelRoot extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.project.structure.ModelRoot";
   public static final String PATH = "path";
-  public static final String PREFIX = "prefix";
   public static final String MANAGER = "manager";
 
   public ModelRoot(SNode node) {
@@ -24,14 +23,6 @@ public class ModelRoot extends BaseConcept {
 
   public void setPath(String value) {
     this.setProperty(ModelRoot.PATH, value);
-  }
-
-  public String getPrefix() {
-    return this.getProperty(ModelRoot.PREFIX);
-  }
-
-  public void setPrefix(String value) {
-    this.setProperty(ModelRoot.PREFIX, value);
   }
 
   public ModelRootManager getManager() {

@@ -12,7 +12,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.appendNewLine();
-    if (StringUtils.isEmpty(SPropertyOperations.getString(node, "name"))) {
+    if (isEmpty_ft61kc_a0b0a(SPropertyOperations.getString(node, "name"))) {
       this.foundError("enum constant without name");
       this.appendWithIndent("???");
     } else {
@@ -39,5 +39,9 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
       this.appendNewLine();
       this.appendWithIndent("}");
     }
+  }
+
+  public static boolean isEmpty_ft61kc_a0b0a(String str) {
+    return str == null || str.length() == 0;
   }
 }

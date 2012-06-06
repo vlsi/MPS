@@ -41,14 +41,14 @@ public class HelpHelper {
     if ((node == null)) {
       return false;
     }
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL"));
+    return isNotEmpty_nv0oxj_a0b0c(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL"));
   }
 
   public static boolean helpForRootIsAvailable(SNode node) {
     if ((node == null)) {
       return false;
     }
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL"));
+    return isNotEmpty_nv0oxj_a0b0d(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL"));
   }
 
   public static boolean helpForAspectIsAvailable(IModule module, SModelDescriptor model) {
@@ -83,6 +83,14 @@ public class HelpHelper {
 
   public static void showHelpForNode(SNode node) {
     BrowserUtil.launchBrowser(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL"));
+  }
+
+  public static boolean isNotEmpty_nv0oxj_a0b0c(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_nv0oxj_a0b0d(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static   enum HelpType {

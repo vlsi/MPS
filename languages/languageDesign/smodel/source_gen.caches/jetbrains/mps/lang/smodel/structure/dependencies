@@ -17,41 +17,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.structure.AllAttributesQualifier" file="AllAttributesQualifier.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.structure.AttributeAccess" file="AttributeAccess.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.structure.AttributeQualifier" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.ILinkAccess" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.SNodeOperation" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.structure.AttributeAccessOperation" file="AttributeAccessOperation.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.IOperation" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.structure.ILinkAccess" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.structure.SNodeOperation" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -283,10 +254,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" file="IAttributeAccessQualifier.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.structure.ILinkAccess" file="ILinkAccess.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
@@ -360,23 +327,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier" file="LinkAttributeAccessQualifier.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.ILinkAccess" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.ILinkAccessQualifier" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.structure.LinkAttributeQualifier" file="LinkAttributeQualifier.java">
     <classNode dependClassName="java.lang.String" />
@@ -633,21 +583,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier" file="NodeAttributeAccessQualifier.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.ILinkAccess" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier" file="NodeAttributeQualifier.java">
     <classNode dependClassName="java.lang.String" />
@@ -1108,22 +1043,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier" file="PropertyAttributeAccessQualifier.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.IAttributeAccessQualifier" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.ILinkAccess" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier" file="PropertyAttributeQualifier.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.structure.AttributeQualifier" />
@@ -1152,20 +1071,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.structure.IPropertyQualifier" />
-    <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.structure.PropertyRefQualifier" file="PropertyRefQualifier.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.Attribute" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.structure.IPropertyAccessQualifier" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.PropertyDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

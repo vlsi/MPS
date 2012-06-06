@@ -28,11 +28,13 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import java.util.Collection;
-import jetbrains.mps.util.IterableUtil;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import java.util.Collection;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
@@ -202,12 +204,18 @@ public class ClassifiersScope extends FilteringScope {
   }
 
   private Iterable<SModelDescriptor> getVisibleModels() {
-    Collection<IModule> visibleModules = IterableUtil.asCollection(scope.getVisibleModules());
-    return Sequence.fromIterable(((Iterable<IModule>) visibleModules)).translate(new ITranslator2<IModule, SModelDescriptor>() {
+    Set<SModelDescriptor> visibleModels = SetSequence.fromSet(new HashSet<SModelDescriptor>());
+    SetSequence.fromSet(visibleModels).addElement(model.getModelDescriptor());
+    SetSequence.fromSet(visibleModels).addSequence(Sequence.fromIterable(((Iterable<IModule>) scope.getVisibleModules())).translate(new ITranslator2<IModule, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IModule it) {
         return it.getOwnModelDescriptors();
       }
-    }).distinct();
+    }).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return !(it.isTransient());
+      }
+    }));
+    return visibleModels;
   }
 
   @Nullable

@@ -142,6 +142,16 @@
     <scopeInfo nodeId="429408675341322628" fileName="Sum.java" startLine="13" startPosition="0" endLine="16" endPosition="3" />
     <unitInfo nodeId="429408675341322626" fileName="Sum.java" startLine="11" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.Sum" />
   </root>
+  <root nodeId="8836955480108767185">
+    <nodeInfo nodeId="8836955480108772148" fileName="Foo.java" startLine="12" startPosition="55" endLine="13" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8836955480108767187" fileName="Foo.java" startLine="8" startPosition="18" endLine="10" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Foo#()V" />
+    <nodeInfo nodeId="8836955480108767191" fileName="Foo.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTuple#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+    <scopeInfo nodeId="8836955480108767190" fileName="Foo.java" startLine="9" startPosition="16" endLine="9" endPosition="16" />
+    <scopeInfo nodeId="8836955480108767194" fileName="Foo.java" startLine="12" startPosition="55" endLine="13" endPosition="54" />
+    <scopeInfo nodeId="8836955480108767187" fileName="Foo.java" startLine="8" startPosition="18" endLine="10" endPosition="3" />
+    <scopeInfo nodeId="8836955480108767191" fileName="Foo.java" startLine="11" startPosition="0" endLine="15" endPosition="0" />
+    <unitInfo nodeId="8836955480108767185" fileName="Foo.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.util.Foo" />
+  </root>
   <root nodeId="9171470541351200515">
     <nodeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="9" startPosition="19" endLine="10" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="9171470541351200515" fileName="Sample.java" startLine="13" startPosition="42" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

@@ -26,13 +26,20 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
     super(module);
   }
 
+  @Override
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
     for (ModuleReference gen : myModule.getModuleDescriptor().getDepGenerators()) {
-      if (MPSModuleRepository.getInstance().getModule(gen) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(gen) == null) {
         errors.add("Can't find generator dependency: " + gen.getModuleFqName());
       }
     }
+    return errors;
+  }
+
+  @Override
+  public List<String> getWarnings() {
+    List<String> warnings = new ArrayList<String>(super.getWarnings());
     Set<String> usedLanguages = new HashSet<String>();
     for (SModelDescriptor model : myModule.getOwnTemplateModels()) {
       if(SModelStereotype.isGeneratorModel(model)) {
@@ -55,9 +62,9 @@ public class GeneratorValidator extends BaseModuleValidator<Generator> {
       if(language == null) continue;
 
       if (!extendedLanguages.contains(lang) && !language.getRuntimeModulesReferences().isEmpty()) {
-        errors.add(sourceLanguage + " should extend " + lang);
+        warnings.add(sourceLanguage + " should extend " + lang);
       }
     }
-    return errors;
+    return warnings;
   }
 }

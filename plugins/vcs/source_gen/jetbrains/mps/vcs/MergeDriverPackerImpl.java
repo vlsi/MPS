@@ -68,4 +68,8 @@ public class MergeDriverPackerImpl extends MergeDriverPacker implements Applicat
   public void disposeComponent() {
     MergeDriverPacker.setInstance(null);
   }
+
+  protected String getVCSCoreFileName() {
+    return "vcs-core.jar";
+  }
 }

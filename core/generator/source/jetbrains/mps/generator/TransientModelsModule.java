@@ -294,5 +294,10 @@ public class TransientModelsModule extends ClassLoadingModule   {
       }
       return super.resolveModel(reference);
     }
+
+    @Override
+    public boolean isTransient() {
+      return true;
+    }
   }
 }

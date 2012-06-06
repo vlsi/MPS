@@ -74,7 +74,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_4089989733346843275(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "iconPath"));
+    return isNotEmpty_x583g4_a0a0k(SPropertyOperations.getString(_context.getNode(), "iconPath"));
   }
 
   public static boolean ifMacro_Condition_264293128390879160(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -218,6 +218,10 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(valueParameter, "valueProxyType", SNodeOperations.copyNode(valueProxyType), true);
       }
     }
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0k(String str) {
+    return str != null && str.length() > 0;
   }
 
   private static boolean eq_x583g4_a0a0a0a93(Object a, Object b) {

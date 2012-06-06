@@ -100,6 +100,7 @@
   <import index="2t1w" modelUID="f:java_stub#cac2fef0-41a6-4fcd-923f-f893d536b2ab#jetbrains.mps.ide.devkit.structureview(jetbrains.mps.ide.mpsdevkit/jetbrains.mps.ide.devkit.structureview@java_stub)" version="-1" />
   <import index="1d7m" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" version="-1" />
   <import index="lgzw" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.regex(JDK/java.util.regex@java_stub)" version="-1" />
+  <import index="llbr" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.dialogs.project.newproject(MPS.Workbench/jetbrains.mps.workbench.dialogs.project.newproject@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
@@ -546,6 +547,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Code" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968047817" />
+    <node type="tgbt.ApplicationPluginDeclaration" typeId="tgbt.481983775135178840" id="6996282843575781808">
+      <property name="name" nameId="tpck.1169194664001" value="MPSDevkit" />
+    </node>
   </roots>
   <root id="8586967776370449177">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8586967776370449178">
@@ -13385,5 +13389,33 @@
     </node>
   </root>
   <root id="7162597690968047817" />
+  <root id="6996282843575781808">
+    <node role="initBlock" roleId="tgbt.481983775135178842" type="tgbt.ApplicationPluginInitBlock" typeId="tgbt.481983775135178851" id="6996282843575781809">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6996282843575781810">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3386199702747906808">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3386199702747907224">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="llbr.~NewProjectWizard" resolveInfo="NewProjectWizard" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="llbr.~NewProjectWizard%dsetSkipLanguageStep(boolean)%cvoid" resolveInfo="setSkipLanguageStep" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3386199702747907225">
+              <property name="value" nameId="tpee.1068580123138" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="disposeBlock" roleId="tgbt.481983775135178843" type="tgbt.ApplicationPluginDisposeBlock" typeId="tgbt.481983775135178846" id="6996282843575781811">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6996282843575781812">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6996282843575781813">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6996282843575781814">
+            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="llbr.~NewProjectWizard" resolveInfo="NewProjectWizard" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="llbr.~NewProjectWizard%dsetSkipLanguageStep(boolean)%cvoid" resolveInfo="setSkipLanguageStep" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6996282843575781815">
+              <property name="value" nameId="tpee.1068580123138" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
 </model>
 

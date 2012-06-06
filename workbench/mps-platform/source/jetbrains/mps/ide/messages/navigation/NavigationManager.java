@@ -21,14 +21,13 @@ import jetbrains.mps.ide.messages.FileWithLogicalPosition;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.FileWithPosition;
 import jetbrains.mps.messages.NodeWithContext;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class NavigationManager {
@@ -46,30 +45,38 @@ public class NavigationManager {
     myHandlers.put(FileWithLogicalPosition.class, new FileWithLogicalPositionNavigationHandler());
     myHandlers.put(SNodePointer.class, new NodePointerNavigationHandler());
     myHandlers.put(ModuleReference.class, new ModuleReferenceNavigationHandler());
-
-    myHandlers.put(SNode.class, new NodeNavigationHandler());
-    myHandlers.put(INodeAdapter.class, new NodeAdapterNavigationHandler());
-    myHandlers.put(IModule.class, new ModuleNavigationHandler());
   }
 
-  /**
-   *  Navigates to the object. Requires: model write, EDT.
-   */
+  public boolean canNavigateTo(Object o) {
+    ModelAccess.assertLegalRead();
+    return getHandlers(o).isEmpty();
+  }
+
   public void navigateTo(Project project, Object o, boolean focus, boolean select) {
-    ModelAccess.assertLegalWrite();
+    ModelAccess.assertLegalRead();
 
-    Class cls = o.getClass();
+    for (INavigationHandler h : getHandlers(o)) {
+      h.navigate(o, project, focus, select);
+    }
+  }
 
+  private List<INavigationHandler> getHandlers(Object o) {
+    ArrayList<INavigationHandler> result = new ArrayList<INavigationHandler>();
+    boolean hasHandler = false;
     for (Class c : myHandlers.keySet()) {
-      if (c.isInstance(o)) {
-        myHandlers.get(c).navigate(project, o, focus, select);
-        return;
-      }
+      if (!c.isInstance(o)) continue;
+
+      INavigationHandler handler = myHandlers.get(c);
+      hasHandler = true;
+      if (!handler.canNavigate(o)) continue;
+
+      result.add(handler);
     }
 
-    if (cls.getSuperclass() == null) {
-      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
-      return;
+    if (!hasHandler) {
+//      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
     }
+
+    return result;
   }
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.StringUtils" />
   <root nodeId="2768238731211617618">
     <nodeInfo nodeId="2768238731211617618" fileName="MoveElementsUp_Action.java" startLine="16" startPosition="55" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="2768238731211617618" fileName="MoveElementsUp_Action.java" startLine="17" startPosition="40" endLine="18" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -4501,8 +4500,9 @@
     <nodeInfo nodeId="8826788828227257387" fileName="AddModelImportByRoot_Action.java" startLine="136" startPosition="90" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3467203700125709811" fileName="AddModelImportByRoot_Action.java" startLine="138" startPosition="5" endLine="139" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3467203700125709821" fileName="AddModelImportByRoot_Action.java" startLine="140" startPosition="51" endLine="141" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3467203700125709829" fileName="AddModelImportByRoot_Action.java" startLine="142" startPosition="96" endLine="143" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3467203700125709829" fileName="AddModelImportByRoot_Action.java" startLine="142" startPosition="101" endLine="143" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3467203700125709844" fileName="AddModelImportByRoot_Action.java" startLine="145" startPosition="5" endLine="146" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3467203700125709833" fileName="AddModelImportByRoot_Action.java" startLine="149" startPosition="62" endLine="150" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="67" startPosition="95" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4522,6 +4522,7 @@
     <nodeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="74" startPosition="5" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="78" startPosition="5" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4958753532934746765" fileName="AddModelImportByRoot_Action.java" startLine="103" startPosition="57" endLine="107" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3467203700125709833" fileName="AddModelImportByRoot_Action.java" startLine="148" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_3mx29z_a0a0b0c0f#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddModelImportByRoot_Action#()V" />
     <nodeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="8826788828227257464" fileName="AddModelImportByRoot_Action.java" startLine="95" startPosition="0" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -4553,7 +4554,8 @@
     <scopeInfo nodeId="4958753532934746840" fileName="AddModelImportByRoot_Action.java" startLine="123" startPosition="74" endLine="124" endPosition="158" />
     <scopeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="129" startPosition="33" endLine="130" endPosition="94" />
     <scopeInfo nodeId="8826788828227256778" fileName="AddModelImportByRoot_Action.java" startLine="136" startPosition="90" endLine="137" endPosition="18" />
-    <scopeInfo nodeId="3467203700125709828" fileName="AddModelImportByRoot_Action.java" startLine="142" startPosition="96" endLine="143" endPosition="31" />
+    <scopeInfo nodeId="3467203700125709828" fileName="AddModelImportByRoot_Action.java" startLine="142" startPosition="101" endLine="143" endPosition="31" />
+    <scopeInfo nodeId="3467203700125709833" fileName="AddModelImportByRoot_Action.java" startLine="149" startPosition="62" endLine="150" endPosition="44" />
     <scopeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="55" startPosition="7" endLine="57" endPosition="63">
       <varInfo nodeId="3467203700125709807" varName="enabled" />
     </scopeInfo>
@@ -4578,6 +4580,9 @@
     <scopeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="78" startPosition="5" endLine="82" endPosition="5" />
     <scopeInfo nodeId="3467203700125709820" fileName="AddModelImportByRoot_Action.java" startLine="140" startPosition="51" endLine="144" endPosition="7">
       <varInfo nodeId="3467203700125709822" varName="editorCellLabel" />
+    </scopeInfo>
+    <scopeInfo nodeId="3467203700125709833" fileName="AddModelImportByRoot_Action.java" startLine="148" startPosition="0" endLine="152" endPosition="0">
+      <varInfo nodeId="3467203700125709833" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="3" />
     <scopeInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
@@ -4615,7 +4620,7 @@
       <varInfo nodeId="3467203700125709807" varName="_params" />
       <varInfo nodeId="3467203700125709807" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="34" startPosition="0" endLine="149" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action" />
+    <unitInfo nodeId="3467203700125709807" fileName="AddModelImportByRoot_Action.java" startLine="34" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action" />
     <unitInfo nodeId="4958753532934746761" fileName="AddModelImportByRoot_Action.java" startLine="102" startPosition="240" endLine="127" endPosition="7" unitName="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action$1" />
   </root>
   <root nodeId="3774693388238498747">

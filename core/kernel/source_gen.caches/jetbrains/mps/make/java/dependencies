@@ -8,7 +8,6 @@
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.make.java.ModelDependencies" />
     <classNode dependClassName="jetbrains.mps.make.java.RootDependencies" />
-    <classNode dependClassName="jetbrains.mps.make.java.StringUtils" />
     <classNode dependClassName="jetbrains.mps.util.InternUtil" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.Locator" />
@@ -41,9 +40,6 @@
     <classNode dependClassName="org.jdom.Attribute" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode extendsClassName="java.lang.Comparable" />
-  </dependency>
-  <dependency className="jetbrains.mps.make.java.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

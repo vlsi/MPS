@@ -35,16 +35,20 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
   private ProjectOptions myOptions = new ProjectOptions();
   private Project myCurrentProject;
 
+  private static boolean skipLanguageStep = true;
+
   public NewProjectWizard(String title, Project currentProject) {
     super(title, currentProject);
     myCurrentProject = currentProject;
 
-    myOptions.setCreateNewLanguage(true);
+    myOptions.setCreateNewLanguage(!skipLanguageStep);
     myOptions.setCreateNewSolution(true);
 
     addStep(new ProjectStep(myOptions));
     // FIXME contribute from devkit
-    addStep(new LanguageStep(myOptions));
+    if (!skipLanguageStep) {
+      addStep(new LanguageStep(myOptions));
+    }
     addStep(new SolutionStep(myOptions));
 
     // MPS-13491
@@ -60,6 +64,10 @@ public class NewProjectWizard extends AbstractWizard<BaseStep> {
     assert panel != null;
     panel.doLayout();
     return panel;
+  }
+
+  public static void setSkipLanguageStep(boolean skipLanguageStep) {
+    NewProjectWizard.skipLanguageStep = skipLanguageStep;
   }
 
   protected void doNextAction() {

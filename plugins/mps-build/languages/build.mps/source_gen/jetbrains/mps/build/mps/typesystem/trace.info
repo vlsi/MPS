@@ -1,7 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.StringUtils" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.TypesystemDescriptor" />
+  <root nodeId="1392391688313307201">
+    <nodeInfo nodeId="1392391688313307240" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="25" startPosition="119" endLine="26" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313364576" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="29" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364586" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313365259" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313365251" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="36" startPosition="45" endLine="37" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="39" startPosition="9" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="40" startPosition="62" endLine="41" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="41" startPosition="61" endLine="42" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313364612" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="47" startPosition="39" endLine="48" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364654" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="50" startPosition="9" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313364680" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="52" startPosition="206" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="56" startPosition="9" endLine="57" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="57" startPosition="62" endLine="58" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="58" startPosition="60" endLine="59" endPosition="310" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="65" startPosition="46" endLine="66" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="70" startPosition="5" endLine="71" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="71" startPosition="117" endLine="72" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="76" startPosition="30" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="21" startPosition="141" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_IdeaPlugin_Dependencies_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="1392391688313364665" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="51" startPosition="45" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="27" startPosition="132" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="31" startPosition="45" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="46" startPosition="131" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="69" startPosition="68" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="38" startPosition="28" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="55" startPosition="28" endLine="60" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1392391688313365265" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="37" startPosition="105" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313365099" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="54" startPosition="7" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1392391688313364600" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="45" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1392391688313364564" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="26" startPosition="83" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="22" startPosition="60" endLine="22" endPosition="60" />
+    <scopeInfo nodeId="1392391688313364575" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="29" endPosition="111" />
+    <scopeInfo nodeId="1392391688313364585" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="32" startPosition="37" endLine="33" endPosition="103" />
+    <scopeInfo nodeId="1392391688313364611" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="47" startPosition="39" endLine="48" endPosition="110" />
+    <scopeInfo nodeId="1392391688313364666" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="52" startPosition="206" endLine="53" endPosition="62" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="65" startPosition="46" endLine="66" endPosition="67" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="76" startPosition="30" endLine="77" endPosition="17" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="21" startPosition="141" endLine="23" endPosition="3" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="70" startPosition="5" endLine="72" endPosition="45">
+      <varInfo nodeId="1392391688313307201" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313365267" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="39" startPosition="9" endLine="42" endPosition="227">
+      <varInfo nodeId="1392391688313365267" varName="_reporter_2309309498" />
+      <varInfo nodeId="1392391688313365267" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364665" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="51" startPosition="45" endLine="54" endPosition="7">
+      <varInfo nodeId="1392391688313364667" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313365157" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="56" startPosition="9" endLine="59" endPosition="310">
+      <varInfo nodeId="1392391688313365157" varName="_reporter_2309309498" />
+      <varInfo nodeId="1392391688313365157" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="27" startPosition="132" endLine="31" endPosition="0">
+      <varInfo nodeId="1392391688313364574" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="31" startPosition="45" endLine="35" endPosition="0">
+      <varInfo nodeId="1392391688313364584" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="46" startPosition="131" endLine="50" endPosition="0">
+      <varInfo nodeId="1392391688313364610" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="69" startPosition="68" endLine="73" endPosition="5" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="1392391688313365266" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="38" startPosition="28" endLine="43" endPosition="9" />
+    <scopeInfo nodeId="1392391688313365100" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="55" startPosition="28" endLine="60" endPosition="9" />
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="1392391688313307201" varName="argument" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364567" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="44" endPosition="7">
+      <varInfo nodeId="1392391688313365260" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364603" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="50" startPosition="9" endLine="61" endPosition="7">
+      <varInfo nodeId="1392391688313364655" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364600" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="45" startPosition="5" endLine="62" endPosition="5">
+      <varInfo nodeId="1392391688313364600" varName="group" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364564" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="26" startPosition="83" endLine="45" endPosition="5">
+      <varInfo nodeId="1392391688313364564" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313307202" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="25" startPosition="119" endLine="62" endPosition="5">
+      <varInfo nodeId="1392391688313307241" varName="helper" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1392391688313307201" varName="plugin" />
+      <varInfo nodeId="1392391688313307201" varName="status" />
+      <varInfo nodeId="1392391688313307201" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="1392391688313307201" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule" />
+    <unitInfo nodeId="1392391688313364574" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="27" startPosition="109" endLine="31" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$1" />
+    <unitInfo nodeId="1392391688313364584" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="31" startPosition="18" endLine="35" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$2" />
+    <unitInfo nodeId="1392391688313364610" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="46" startPosition="108" endLine="50" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.check_IdeaPlugin_Dependencies_NonTypesystemRule$3" />
+  </root>
+  <root nodeId="1392391688313307204">
+    <nodeInfo nodeId="1392391688313307212" fileName="IdeaPluginDependenciesHelper.java" startLine="19" startPosition="43" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="plugin" />
+    <nodeInfo nodeId="1392391688313350425" fileName="IdeaPluginDependenciesHelper.java" startLine="20" startPosition="23" endLine="21" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="visible" />
+    <nodeInfo nodeId="1392391688313307215" fileName="IdeaPluginDependenciesHelper.java" startLine="23" startPosition="53" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313363935" fileName="IdeaPluginDependenciesHelper.java" startLine="27" startPosition="31" endLine="28" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313364145" fileName="IdeaPluginDependenciesHelper.java" startLine="28" startPosition="35" endLine="29" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313363978" fileName="IdeaPluginDependenciesHelper.java" startLine="29" startPosition="50" endLine="30" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313364210" fileName="IdeaPluginDependenciesHelper.java" startLine="34" startPosition="30" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364211" fileName="IdeaPluginDependenciesHelper.java" startLine="36" startPosition="5" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1392391688313364219" fileName="IdeaPluginDependenciesHelper.java" startLine="39" startPosition="39" endLine="40" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364282" fileName="IdeaPluginDependenciesHelper.java" startLine="43" startPosition="37" endLine="44" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364409" fileName="IdeaPluginDependenciesHelper.java" startLine="48" startPosition="39" endLine="49" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364482" fileName="IdeaPluginDependenciesHelper.java" startLine="52" startPosition="50" endLine="53" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364524" fileName="IdeaPluginDependenciesHelper.java" startLine="56" startPosition="103" endLine="57" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313350463" fileName="IdeaPluginDependenciesHelper.java" startLine="62" startPosition="26" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313350144" fileName="IdeaPluginDependenciesHelper.java" startLine="65" startPosition="100" endLine="66" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313350344" fileName="IdeaPluginDependenciesHelper.java" startLine="68" startPosition="41" endLine="69" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313350505" fileName="IdeaPluginDependenciesHelper.java" startLine="71" startPosition="9" endLine="72" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313350508" fileName="IdeaPluginDependenciesHelper.java" startLine="73" startPosition="5" endLine="74" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1392391688313364749" fileName="IdeaPluginDependenciesHelper.java" startLine="79" startPosition="30" endLine="80" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313364972" fileName="IdeaPluginDependenciesHelper.java" startLine="80" startPosition="161" endLine="81" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313364888" fileName="IdeaPluginDependenciesHelper.java" startLine="82" startPosition="14" endLine="83" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313364886" fileName="IdeaPluginDependenciesHelper.java" startLine="82" startPosition="12" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1392391688313307206" fileName="IdeaPluginDependenciesHelper.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaPluginDependenciesHelper#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1392391688313364159" fileName="IdeaPluginDependenciesHelper.java" startLine="33" startPosition="62" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313364492" fileName="IdeaPluginDependenciesHelper.java" startLine="55" startPosition="25" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1392391688313350434" fileName="IdeaPluginDependenciesHelper.java" startLine="61" startPosition="67" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313364215" fileName="IdeaPluginDependenciesHelper.java" startLine="38" startPosition="127" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1392391688313364278" fileName="IdeaPluginDependenciesHelper.java" startLine="42" startPosition="45" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1392391688313364407" fileName="IdeaPluginDependenciesHelper.java" startLine="47" startPosition="127" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1392391688313364480" fileName="IdeaPluginDependenciesHelper.java" startLine="51" startPosition="51" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1392391688313350340" fileName="IdeaPluginDependenciesHelper.java" startLine="67" startPosition="194" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1392391688313350276" fileName="IdeaPluginDependenciesHelper.java" startLine="66" startPosition="189" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1392391688313307221" fileName="IdeaPluginDependenciesHelper.java" startLine="26" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildVisible#()V" />
+    <nodeInfo nodeId="1392391688313364745" fileName="IdeaPluginDependenciesHelper.java" startLine="78" startPosition="58" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313364739" fileName="IdeaPluginDependenciesHelper.java" startLine="77" startPosition="103" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1392391688313364338" fileName="IdeaPluginDependenciesHelper.java" startLine="37" startPosition="0" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313364396" fileName="IdeaPluginDependenciesHelper.java" startLine="46" startPosition="25" endLine="55" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1392391688313318494" fileName="IdeaPluginDependenciesHelper.java" startLine="64" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1392391688313364710" fileName="IdeaPluginDependenciesHelper.java" startLine="76" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="printUnsatisfiedDependencies#(Ljava/lang/StringBuilder;Ljetbrains/mps/smodel/SNode;Z)V" />
+    <nodeInfo nodeId="1392391688313307228" fileName="IdeaPluginDependenciesHelper.java" startLine="60" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUnsatisfiedDependencies#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1392391688313363968" fileName="IdeaPluginDependenciesHelper.java" startLine="32" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectVisible#(Ljetbrains/mps/smodel/SNode;Ljava/util/Set;)V" />
+    <scopeInfo nodeId="1392391688313307209" fileName="IdeaPluginDependenciesHelper.java" startLine="23" startPosition="53" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="1392391688313364160" fileName="IdeaPluginDependenciesHelper.java" startLine="34" startPosition="30" endLine="35" endPosition="13" />
+    <scopeInfo nodeId="1392391688313364216" fileName="IdeaPluginDependenciesHelper.java" startLine="39" startPosition="39" endLine="40" endPosition="111" />
+    <scopeInfo nodeId="1392391688313364279" fileName="IdeaPluginDependenciesHelper.java" startLine="43" startPosition="37" endLine="44" endPosition="147" />
+    <scopeInfo nodeId="1392391688313364408" fileName="IdeaPluginDependenciesHelper.java" startLine="48" startPosition="39" endLine="49" endPosition="110" />
+    <scopeInfo nodeId="1392391688313364481" fileName="IdeaPluginDependenciesHelper.java" startLine="52" startPosition="50" endLine="53" endPosition="190" />
+    <scopeInfo nodeId="1392391688313364495" fileName="IdeaPluginDependenciesHelper.java" startLine="56" startPosition="103" endLine="57" endPosition="76" />
+    <scopeInfo nodeId="1392391688313350435" fileName="IdeaPluginDependenciesHelper.java" startLine="62" startPosition="26" endLine="63" endPosition="21" />
+    <scopeInfo nodeId="1392391688313350341" fileName="IdeaPluginDependenciesHelper.java" startLine="68" startPosition="41" endLine="69" endPosition="41" />
+    <scopeInfo nodeId="1392391688313364887" fileName="IdeaPluginDependenciesHelper.java" startLine="82" startPosition="14" endLine="83" endPosition="93" />
+    <scopeInfo nodeId="1392391688313364747" fileName="IdeaPluginDependenciesHelper.java" startLine="79" startPosition="30" endLine="81" endPosition="24" />
+    <scopeInfo nodeId="1392391688313307206" fileName="IdeaPluginDependenciesHelper.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
+      <varInfo nodeId="1392391688313307210" varName="plugin" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313307224" fileName="IdeaPluginDependenciesHelper.java" startLine="27" startPosition="31" endLine="30" endPosition="40">
+      <varInfo nodeId="1392391688313364146" varName="seenPlugins" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364492" fileName="IdeaPluginDependenciesHelper.java" startLine="55" startPosition="25" endLine="58" endPosition="5">
+      <varInfo nodeId="1392391688313364492" varName="dep" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364215" fileName="IdeaPluginDependenciesHelper.java" startLine="38" startPosition="127" endLine="42" endPosition="0">
+      <varInfo nodeId="1392391688313364215" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364278" fileName="IdeaPluginDependenciesHelper.java" startLine="42" startPosition="45" endLine="46" endPosition="0">
+      <varInfo nodeId="1392391688313364278" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364407" fileName="IdeaPluginDependenciesHelper.java" startLine="47" startPosition="127" endLine="51" endPosition="0">
+      <varInfo nodeId="1392391688313364407" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364480" fileName="IdeaPluginDependenciesHelper.java" startLine="51" startPosition="51" endLine="55" endPosition="0">
+      <varInfo nodeId="1392391688313364480" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313350340" fileName="IdeaPluginDependenciesHelper.java" startLine="67" startPosition="194" endLine="71" endPosition="0">
+      <varInfo nodeId="1392391688313350340" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313307221" fileName="IdeaPluginDependenciesHelper.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1392391688313364740" fileName="IdeaPluginDependenciesHelper.java" startLine="78" startPosition="58" endLine="84" endPosition="7" />
+    <scopeInfo nodeId="1392391688313318495" fileName="IdeaPluginDependenciesHelper.java" startLine="65" startPosition="100" endLine="72" endPosition="17">
+      <varInfo nodeId="1392391688313350145" varName="runtimeDependencies" />
+      <varInfo nodeId="1392391688313350277" varName="seq" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364713" fileName="IdeaPluginDependenciesHelper.java" startLine="77" startPosition="103" endLine="85" endPosition="5" />
+    <scopeInfo nodeId="1392391688313364739" fileName="IdeaPluginDependenciesHelper.java" startLine="77" startPosition="103" endLine="85" endPosition="5">
+      <varInfo nodeId="1392391688313364741" varName="uns" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313364710" fileName="IdeaPluginDependenciesHelper.java" startLine="76" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="1392391688313364719" varName="includeModuleName" />
+      <varInfo nodeId="1392391688313364716" varName="module" />
+      <varInfo nodeId="1392391688313364714" varName="sb" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313307231" fileName="IdeaPluginDependenciesHelper.java" startLine="61" startPosition="67" endLine="74" endPosition="65" />
+    <scopeInfo nodeId="1392391688313307228" fileName="IdeaPluginDependenciesHelper.java" startLine="60" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="1392391688313307348" varName="module" />
+    </scopeInfo>
+    <scopeInfo nodeId="1392391688313363971" fileName="IdeaPluginDependenciesHelper.java" startLine="33" startPosition="62" endLine="58" endPosition="5" />
+    <scopeInfo nodeId="1392391688313363968" fileName="IdeaPluginDependenciesHelper.java" startLine="32" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="1392391688313363976" varName="plugin" />
+      <varInfo nodeId="1392391688313364163" varName="seen" />
+    </scopeInfo>
+    <unitInfo nodeId="1392391688313307204" fileName="IdeaPluginDependenciesHelper.java" startLine="19" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper" />
+    <unitInfo nodeId="1392391688313364215" fileName="IdeaPluginDependenciesHelper.java" startLine="38" startPosition="104" endLine="42" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$1" />
+    <unitInfo nodeId="1392391688313364278" fileName="IdeaPluginDependenciesHelper.java" startLine="42" startPosition="18" endLine="46" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$2" />
+    <unitInfo nodeId="1392391688313364407" fileName="IdeaPluginDependenciesHelper.java" startLine="47" startPosition="104" endLine="51" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$3" />
+    <unitInfo nodeId="1392391688313364480" fileName="IdeaPluginDependenciesHelper.java" startLine="51" startPosition="21" endLine="55" endPosition="5" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$4" />
+    <unitInfo nodeId="1392391688313350340" fileName="IdeaPluginDependenciesHelper.java" startLine="67" startPosition="171" endLine="71" endPosition="7" unitName="jetbrains.mps.build.mps.typesystem.IdeaPluginDependenciesHelper$5" />
+  </root>
   <root nodeId="2531699772406302326">
     <nodeInfo nodeId="8757919848289156012" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="31" startPosition="222" endLine="32" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8757919848289156013" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="33" startPosition="5" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -29,7 +235,7 @@
     <nodeInfo nodeId="8757919848289155923" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="30" startPosition="125" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2531699772406321798" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="57" startPosition="59" endLine="60" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1500819558096418876" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="37" startPosition="215" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2531699772406302731" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="46" startPosition="46" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2531699772406302731" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="46" startPosition="63" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2531699772406302922" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="67" startPosition="233" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2531699772406302326" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="2531699772406302326" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="81" startPosition="68" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -67,7 +273,7 @@
     <scopeInfo nodeId="2531699772406302326" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="2531699772406302326" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="81" startPosition="68" endLine="85" endPosition="5" />
     <scopeInfo nodeId="2531699772406302326" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="3189788309732166660" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="46" startPosition="46" endLine="51" endPosition="17" />
+    <scopeInfo nodeId="3189788309732166660" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="46" startPosition="63" endLine="51" endPosition="17" />
     <scopeInfo nodeId="2531699772406302922" fileName="check_ModulesImport_NonTypesystemRule.java" startLine="65" startPosition="9" endLine="71" endPosition="11">
       <varInfo nodeId="2531699772406302922" varName="_reporter_2309309498" />
       <varInfo nodeId="2531699772406302922" varName="errorTarget" />

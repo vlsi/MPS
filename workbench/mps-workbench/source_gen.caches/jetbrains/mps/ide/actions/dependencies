@@ -1584,7 +1584,6 @@
     <classNode dependClassName="java.lang.NumberFormatException" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.common.FileOpenUtil" />
     <classNode dependClassName="jetbrains.mps.ide.navigation.NodeNavigatable" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
@@ -1959,7 +1958,6 @@
     <classNode dependClassName="jetbrains.mps.ide.StereotypeProvider" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.actions.NewModelUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewModelDialog" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.NamespaceTextNode" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.ProjectPane" />
@@ -2513,7 +2511,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.StringUtils" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.FavoritesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager" />
@@ -2573,6 +2570,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelRootUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -2662,6 +2660,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.DefaultSModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.descriptor.EditableSModelDescriptor" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -3153,9 +3152,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode extendsClassName="com.intellij.openapi.project.DumbAware" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.actions.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.SubmitToTracker_Action" file="SubmitToTracker_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

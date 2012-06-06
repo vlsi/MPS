@@ -143,11 +143,11 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public void migrate() {
-    if (StringUtils.isNotEmpty(this.getModel())) {
+    if (isNotEmpty_p90f5h_a0a0q(this.getModel())) {
       this.getJUnitSettings().setModel(this.getModel());
       this.setModel(null);
     }
-    if (StringUtils.isNotEmpty(this.getModule())) {
+    if (isNotEmpty_p90f5h_a0b0q(this.getModule())) {
       this.getJUnitSettings().setModule(this.getModule());
       this.setModule(null);
     }
@@ -215,6 +215,14 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
 
   public Object[] createMakeNodePointersTask() {
     return new Object[]{this.getTestsToMake()};
+  }
+
+  public static boolean isNotEmpty_p90f5h_a0a0q(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_p90f5h_a0b0q(String str) {
+    return str != null && str.length() > 0;
   }
 
   public class MyState {

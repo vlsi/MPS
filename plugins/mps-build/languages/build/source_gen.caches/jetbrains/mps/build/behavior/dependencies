@@ -17,6 +17,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildInputSingleFolder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildJavaPlugin_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Comment_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_CopyFilterReplaceRegex_BehaviorDescriptor" />
@@ -300,7 +301,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildPlugin_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.util.DescendantsScope" />
     <classNode dependClassName="jetbrains.mps.build.util.ScopeUtil" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -381,6 +381,12 @@
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.UnpackHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.behavior.BuildLayout_Comment_BehaviorDescriptor" file="BuildLayout_Comment_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_CompileOutputOf_BehaviorDescriptor" file="BuildLayout_CompileOutputOf_BehaviorDescriptor.java">
@@ -578,7 +584,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_Filemode_Behavior" file="BuildLayout_Filemode_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -603,14 +608,17 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.UnpackHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -985,7 +993,6 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildMacro_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildPlugin_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.DescendantsScope" />
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
@@ -1025,7 +1032,6 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -1052,7 +1058,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildFolderMacro_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -1094,7 +1099,6 @@
   <dependency className="jetbrains.mps.build.behavior.BuildSourceProjectRelativePath_Behavior" file="BuildSourceProjectRelativePath_Behavior.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
@@ -1530,9 +1534,6 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildVariableMacro_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.behavior.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

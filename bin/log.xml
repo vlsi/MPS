@@ -28,7 +28,7 @@
         </layout>
     </appender>
 
-    <appender name="DIALOG" class="com.intellij.diagnostic.DialogAppender">
+    <appender name="DIALOG" class="jetbrains.mps.diagnostic.DialogAppender">
     </appender>
 
     <appender name="FILE" class="org.apache.log4j.RollingFileAppender">

@@ -6,10 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 public class BuildLayout_Folder_Behavior {
   public static void init(SNode thisNode) {
@@ -25,15 +28,7 @@ public class BuildLayout_Folder_Behavior {
     String folderLocation = parentLocation + "/" + BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), helper.getMacroHelper());
     helper.locations().put(thisNode, folderLocation);
     helper.contentLocations().put(thisNode, folderLocation);
-    for (SNode ic : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent");
-      }
-    })) {
+    for (SNode ic : Sequence.fromIterable(BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(thisNode))) {
       SNode node = SNodeOperations.as(SLinkOperations.getTarget(ic, "target", false), "jetbrains.mps.build.structure.BuildLayout_PathElement");
       if ((node != null)) {
         // note: if node is imported directly - do not override its original location 
@@ -59,13 +54,34 @@ public class BuildLayout_Folder_Behavior {
     if (object instanceof SNode) {
       final SNode node = (SNode) object;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Node")) {
-        return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).any(new IWhereFilter<SNode>() {
+        return Sequence.fromIterable(BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(thisNode)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent"), "target", false) == node;
+            return SLinkOperations.getTarget(it, "target", false) == node;
           }
         });
       }
     }
     return BuildLayout_Node_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.structure.BuildLayout_Folder", object);
+  }
+
+  public static Iterable<SNode> call_getImportContentChildren_7045211410692956036(SNode thisNode) {
+    List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildLayout_ImportContent");
+      }
+    }).toListSequence();
+    return ListSequence.fromList(list).concat(ListSequence.fromList(list).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "target", false), "jetbrains.mps.build.structure.BuildLayout_Folder");
+      }
+    }).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(SNodeOperations.cast(SLinkOperations.getTarget(it, "target", false), "jetbrains.mps.build.structure.BuildLayout_Folder"));
+      }
+    }));
   }
 }

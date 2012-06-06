@@ -45,7 +45,7 @@ public class DependencyStep extends AbstractStep {
   }
 
   public String getDescription() {
-    return "Dependency on MPS build scripts.";
+    return "Select distribution type.";
   }
 
   @Override
@@ -65,9 +65,9 @@ public class DependencyStep extends AbstractStep {
   }
 
   public static   enum DependencyKind {
-    MPS("Add dependency on MPS"),
-    IDEA_AND_MPS_PLUGIN("Add dependency on IDEA with MPS plugin"),
-    NONE("Do not add dependencies");
+    MPS("Plug-in for MPS"),
+    IDEA("Plug-in for IntelliJ IDEA"),
+    STANDALONE("Standalone IDE");
 
     public static final int DEFAULT = 0;
 

@@ -20,7 +20,7 @@ public class LiteralReplacement_Behavior {
   }
 
   public static boolean call_isValid_3796137614137567952(SNode thisNode) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text"))) {
+    if (isEmpty_r6ccyf_a0a0c(SPropertyOperations.getString(thisNode, "text"))) {
       return false;
     }
     return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
@@ -93,5 +93,9 @@ public class LiteralReplacement_Behavior {
 
   public static String callSuper_toString_3796137614137538916(SNode thisNode, String callerConceptFqName, SNode search) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
+  }
+
+  public static boolean isEmpty_r6ccyf_a0a0c(String str) {
+    return str == null || str.length() == 0;
   }
 }

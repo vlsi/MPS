@@ -45,7 +45,7 @@ public class BuildProject_Behavior {
       // model is packaged, i.e. no base path for it 
       return null;
     }
-    if (StringUtils.isNotEmpty(SPropertyOperations.getString(thisNode, "internalBaseDirectory"))) {
+    if (isNotEmpty_save77_a0c0c(SPropertyOperations.getString(thisNode, "internalBaseDirectory"))) {
       try {
         return relativePathHelper.makeAbsolute(SPropertyOperations.getString(thisNode, "internalBaseDirectory"));
       } catch (RelativePathHelper.PathException ex) {
@@ -64,7 +64,7 @@ public class BuildProject_Behavior {
   }
 
   public static String call_getOutputFileName_4915877860351551360(SNode thisNode) {
-    return (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "fileName")) ?
+    return (isEmpty_save77_a0a0a4(SPropertyOperations.getString(thisNode, "fileName")) ?
       "build.xml" :
       SPropertyOperations.getString(thisNode, "fileName")
     );
@@ -213,6 +213,14 @@ public class BuildProject_Behavior {
 
   public static boolean call_canEditBaseDir_631271972590018330(SNode thisNode) {
     return true;
+  }
+
+  public static boolean isNotEmpty_save77_a0c0c(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isEmpty_save77_a0a0a4(String str) {
+    return str == null || str.length() == 0;
   }
 
   private static boolean neq_save77_a0c0l(Object a, Object b) {

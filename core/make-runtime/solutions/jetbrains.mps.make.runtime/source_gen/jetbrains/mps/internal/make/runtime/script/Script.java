@@ -291,7 +291,7 @@ with_targets:
               }
             }
 
-            String workName = "__" + StringUtils.trimBoth(trg.getName().toString()) + "__";
+            String workName = "__" + trim_kfmnat_a0a0a9a1a4a0a0a0k(trg.getName().toString()) + "__";
             monit.currentProgress().beginWork(workName, 1000, (trg.requiresInput() || trg.producesOutput() ?
               1000 :
               10
@@ -364,6 +364,13 @@ with_targets:
         }
       }
     });
+  }
+
+  public static String trim_kfmnat_a0a0a9a1a4a0a0a0k(String str) {
+    return (str == null ?
+      null :
+      str.trim()
+    );
   }
 
   private class ParametersPool implements IPropertiesPool {

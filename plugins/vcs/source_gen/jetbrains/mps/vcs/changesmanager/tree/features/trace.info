@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.features.StringUtils" />
   <root nodeId="3201398707754971881">
     <nodeInfo nodeId="3201398707754971893" fileName="ModelFeature.java" startLine="10" startPosition="64" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="3201398707754971909" fileName="ModelFeature.java" startLine="15" startPosition="30" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -117,7 +116,7 @@
     <nodeInfo nodeId="8214059917935787121" fileName="NodeFeature.java" startLine="18" startPosition="30" endLine="19" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5060092229902868509" fileName="NodeFeature.java" startLine="19" startPosition="44" endLine="20" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8214059917935787140" fileName="NodeFeature.java" startLine="21" startPosition="29" endLine="22" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8214059917935787158" fileName="NodeFeature.java" startLine="23" startPosition="48" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8214059917935787158" fileName="NodeFeature.java" startLine="23" startPosition="69" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8214059917935787163" fileName="NodeFeature.java" startLine="25" startPosition="14" endLine="26" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5060092229902868524" fileName="NodeFeature.java" startLine="28" startPosition="5" endLine="29" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5060092229902868534" fileName="NodeFeature.java" startLine="34" startPosition="28" endLine="35" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -128,7 +127,7 @@
     <nodeInfo nodeId="5060092229902868517" fileName="NodeFeature.java" startLine="20" startPosition="55" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5060092229902868504" fileName="NodeFeature.java" startLine="16" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParent#()Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;" />
     <scopeInfo nodeId="5060092229902868499" fileName="NodeFeature.java" startLine="13" startPosition="48" endLine="14" endPosition="23" />
-    <scopeInfo nodeId="8214059917935787149" fileName="NodeFeature.java" startLine="23" startPosition="48" endLine="24" endPosition="20" />
+    <scopeInfo nodeId="8214059917935787149" fileName="NodeFeature.java" startLine="23" startPosition="69" endLine="24" endPosition="20" />
     <scopeInfo nodeId="8214059917935787162" fileName="NodeFeature.java" startLine="25" startPosition="14" endLine="26" endPosition="78" />
     <scopeInfo nodeId="5060092229902868533" fileName="NodeFeature.java" startLine="34" startPosition="28" endLine="35" endPosition="51" />
     <scopeInfo nodeId="5060092229902868496" fileName="NodeFeature.java" startLine="12" startPosition="54" endLine="15" endPosition="3">

@@ -133,7 +133,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2059109515400317575(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
+    return (isNotEmpty_x583g4_a0a0a0w(SPropertyOperations.getString(_context.getNode(), "compiler")) && SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ") ?
       "javac2" :
       "javac"
     );
@@ -191,7 +191,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7385586609667799754(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(((String) _context.getVariable("var:deps")));
+    return isNotEmpty_x583g4_a0a0jb(((String) _context.getVariable("var:deps")));
   }
 
   public static boolean ifMacro_Condition_2059109515400531495(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -207,7 +207,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1841835149314837357(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "baseDirectory"));
+    return isNotEmpty_x583g4_a0a0mb(SPropertyOperations.getString(_context.getNode(), "baseDirectory"));
   }
 
   public static boolean ifMacro_Condition_1659807394254658074(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -223,7 +223,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2059109515400349923(final IOperationContext operationContext, final IfMacroContext _context) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "compiler")) && !(SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ"));
+    return isNotEmpty_x583g4_a0a0a24(SPropertyOperations.getString(_context.getNode(), "compiler")) && !(SPropertyOperations.getString(_context.getNode(), "compiler").equals("IntelliJ"));
   }
 
   public static boolean ifMacro_Condition_1659807394254493284(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -451,6 +451,22 @@ public class QueriesGenerated {
       }
     }
     return parts;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0a0w(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0jb(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0mb(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0a24(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static class Pattern_x583g4_a0a0a17 extends GeneratedMatchingPattern implements IMatchingPattern {

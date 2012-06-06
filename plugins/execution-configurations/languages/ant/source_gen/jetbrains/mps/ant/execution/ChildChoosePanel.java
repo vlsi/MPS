@@ -72,7 +72,7 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
   }
 
   private void selectChild(@Nullable String childId) {
-    if (StringUtils.isEmpty(childId) || (this.myNode == null)) {
+    if ((childId == null || childId.length() == 0) || (this.myNode == null)) {
       this.myChild = null;
       return;
     }

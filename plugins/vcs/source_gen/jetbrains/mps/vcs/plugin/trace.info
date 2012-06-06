@@ -314,8 +314,8 @@
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="75" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3531023421907347091" fileName="plugin.xml" startLine="22" startPosition="90" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -753,50 +753,53 @@
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="61" startPosition="70" endLine="62" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="63" startPosition="5" endLine="64" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="65" startPosition="62" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="67" startPosition="5" endLine="68" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7545884443035896376" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="72" startPosition="9" endLine="73" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7545884443035896384" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="73" startPosition="113" endLine="74" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2090008153514921062" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="76" startPosition="27" endLine="77" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="81" startPosition="33" endLine="82" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="64" startPosition="198" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="70" startPosition="5" endLine="71" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7545884443035896376" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="9" endLine="76" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7545884443035896384" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="76" startPosition="113" endLine="77" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2090008153514921062" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="79" startPosition="27" endLine="80" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="84" startPosition="33" endLine="85" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="56" startPosition="95" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="60" startPosition="96" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="64" startPosition="89" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="80" startPosition="27" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="80" startPosition="27" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="63" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="67" startPosition="89" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="83" startPosition="27" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="83" startPosition="27" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="43" startPosition="9" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="70" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="78" startPosition="70" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowDifferencesWithModelOnDisk_Action#()V" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="2090008153514912140" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="74" startPosition="178" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2090008153514912140" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="77" startPosition="178" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="59" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="71" startPosition="96" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="74" startPosition="96" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="41" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="55" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="70" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="73" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="55" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="34" startPosition="32" endLine="35" endPosition="16" />
     <scopeInfo nodeId="7545884443035896438" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="38" startPosition="87" endLine="39" endPosition="120" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="49" startPosition="33" endLine="50" endPosition="105" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="61" startPosition="70" endLine="62" endPosition="19" />
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="65" startPosition="62" endLine="66" endPosition="19" />
-    <scopeInfo nodeId="2090008153514912149" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="76" startPosition="27" endLine="77" endPosition="132" />
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="81" startPosition="33" endLine="82" endPosition="104" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="64" startPosition="198" endLine="65" endPosition="19" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="68" startPosition="62" endLine="69" endPosition="19" />
+    <scopeInfo nodeId="2090008153514912149" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="79" startPosition="27" endLine="80" endPosition="132" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="84" startPosition="33" endLine="85" endPosition="104" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="44" startPosition="7" endLine="46" endPosition="63">
       <varInfo nodeId="7545884443035896373" varName="enabled" />
     </scopeInfo>
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="27" startPosition="50" endLine="30" endPosition="41" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="48" startPosition="27" endLine="51" endPosition="7" />
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="80" startPosition="0" endLine="83" endPosition="7">
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="83" startPosition="0" endLine="86" endPosition="7">
       <varInfo nodeId="7545884443035896373" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="80" startPosition="27" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="83" startPosition="27" endLine="86" endPosition="7" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="7545884443035896373" varName="_params" />
       <varInfo nodeId="7545884443035896373" varName="event" />
@@ -806,32 +809,32 @@
       <varInfo nodeId="7545884443035896373" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="48" startPosition="27" endLine="52" endPosition="44" />
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="63" startPosition="5" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="70" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="66" startPosition="5" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="78" startPosition="70" endLine="82" endPosition="0" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="72" startPosition="9" endLine="79" endPosition="9">
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="59" startPosition="5" endLine="66" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="9" endLine="82" endPosition="9">
       <varInfo nodeId="7545884443035896385" varName="disk" />
       <varInfo nodeId="7545884443035896377" varName="memory" />
     </scopeInfo>
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="56" startPosition="95" endLine="68" endPosition="16" />
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="71" startPosition="96" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="74" startPosition="96" endLine="87" endPosition="5" />
     <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="41" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="7545884443035896373" varName="_params" />
       <varInfo nodeId="7545884443035896373" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="55" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="56" startPosition="95" endLine="71" endPosition="16" />
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="73" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="7545884443035896373" varName="_params" />
       <varInfo nodeId="7545884443035896373" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="70" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="55" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="7545884443035896373" varName="_params" />
       <varInfo nodeId="7545884443035896373" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="23" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
-    <unitInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="75" startPosition="58" endLine="79" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action$1" />
+    <unitInfo nodeId="7545884443035896373" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="23" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action" />
+    <unitInfo nodeId="2090008153514912148" fileName="ShowDifferencesWithModelOnDisk_Action.java" startLine="78" startPosition="58" endLine="82" endPosition="7" unitName="jetbrains.mps.vcs.plugin.ShowDifferencesWithModelOnDisk_Action$1" />
   </root>
   <root nodeId="7545884443035896622">
     <nodeInfo nodeId="7545884443035896622" fileName="VCSModelActions_ActionGroup.java" startLine="8" startPosition="71" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

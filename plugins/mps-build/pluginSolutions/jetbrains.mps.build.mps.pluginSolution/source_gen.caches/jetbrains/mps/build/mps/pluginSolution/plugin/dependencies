@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" file="AbstractBuildGenerator.java">
-    <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.NodeData" />
-    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
@@ -48,8 +46,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorUtil" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.ModuleData" />
@@ -64,7 +60,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -210,7 +205,6 @@
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.DependencyStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" />
-    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IdeaPlugunStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.SolutionStep" />
@@ -218,28 +212,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" file="IErrorHandler.java">
     <classNode dependClassName="java.lang.String" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.IdeaPlugunStep" file="IdeaPlugunStep.java">
-    <classNode dependClassName="com.intellij.ide.wizard.CommitStepException" />
-    <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="java.awt.GridBagLayout" />
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.awt.event.ActionListener" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.JCheckBox" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.JLabel" />
-    <classNode dependClassName="javax.swing.JPanel" />
-    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
-    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" />
-    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.StringUtils" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.ui.FieldWithPathChooseDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
-    <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action" file="ImportAllModulesFromFolder_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
@@ -256,7 +228,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportModuleHelper" />
-    <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
@@ -428,9 +399,6 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" file="TwoOptionsStep.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

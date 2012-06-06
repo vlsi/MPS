@@ -271,7 +271,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     if (ApplicationManager.getApplication().isDisposed()) {
       return;
     }
-    if (IMakeService.INSTANCE.get().isSessionActive()) {
+    IMakeService makeService = ApplicationManager.getApplication().getComponent(IMakeService.class);
+    if (makeService != null &&  makeService.isSessionActive()) {
       return;
     }
     // SwingUtilities.invokeLater(new Runnable() {

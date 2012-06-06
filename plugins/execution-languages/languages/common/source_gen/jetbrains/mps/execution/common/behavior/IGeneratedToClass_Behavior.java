@@ -40,7 +40,7 @@ public class IGeneratedToClass_Behavior {
   }
 
   public static String call_getGeneratedClassName_946964771156905516(SNode thisNode, String name) {
-    if (StringUtils.isEmpty(name)) {
+    if ((name == null || name.length() == 0)) {
       return null;
     }
     return IGeneratedToClass_Behavior.call_getValidClassName_2572811016744662265(thisNode, name) + "_" + IGeneratedToClass_Behavior.call_getSuffix_946964771156905483(thisNode);

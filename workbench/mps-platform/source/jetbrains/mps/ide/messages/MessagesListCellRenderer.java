@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.ide.messages;
 
+import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
@@ -25,12 +28,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Component;
 
-/**
- * User: Alexander Shatalin
- * Date: 1/24/11
- */
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
-  @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
@@ -40,15 +38,16 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     component.setBorder(new EmptyBorder(0, 0, 0, 0));
 
     String text = (message instanceof Message) ?
-      ((Message)message).getCreationTimeString() + "\t: " + message :
+      ((Message) message).getCreationTimeString() + "\t: " + message :
       message.getText();
-    if (message.getHintObject() != null) {
-      component.setText(text);
-      component.setForeground(Color.BLUE);
-    } else {
-      component.setText(text);
-      component.setForeground(Color.BLACK);
-    }
+
+    boolean canNavigate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        return canNavigate(message);
+      }
+    });
+    component.setForeground(canNavigate ? Color.BLUE : Color.BLACK);
+    component.setText(text);
 
     switch (message.getKind()) {
       case INFORMATION:
@@ -63,5 +62,10 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     }
 
     return component;
+  }
+
+  public static boolean canNavigate(IMessage message) {
+    Object hint = message.getHintObject();
+    return hint != null && NavigationManager.getInstance().canNavigateTo(hint);
   }
 }

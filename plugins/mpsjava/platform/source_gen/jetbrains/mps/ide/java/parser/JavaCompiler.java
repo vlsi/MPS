@@ -184,7 +184,7 @@ public class JavaCompiler {
     assert dir.isDirectory();
     for (File file : dir.listFiles()) {
       if (file.isDirectory()) {
-        addSourceFromDirectory(file, packageNameWithoutPrefix + ((StringUtils.isEmpty(packageNameWithoutPrefix) ?
+        addSourceFromDirectory(file, packageNameWithoutPrefix + (((packageNameWithoutPrefix == null || packageNameWithoutPrefix.length() == 0) ?
           "" :
           "."
         )) + file.getName());

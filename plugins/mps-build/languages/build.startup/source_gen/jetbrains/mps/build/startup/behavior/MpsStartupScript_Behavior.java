@@ -17,7 +17,7 @@ public class MpsStartupScript_Behavior {
   }
 
   public static String call_getDefaultVmoptions_5842819808956701267(SNode thisNode) {
-    return StringUtils.trimBoth(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "vmOptions", true)).where(new IWhereFilter<SNode>() {
+    return trim_p7akvg_a0a0b(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "vmOptions", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.startup.structure.SimpleVmOptions") && !(SPropertyOperations.getBoolean(SNodeOperations.cast(it, "jetbrains.mps.build.startup.structure.SimpleVmOptions"), "commented"));
       }
@@ -50,5 +50,12 @@ public class MpsStartupScript_Behavior {
 
   public static String call_getVmOptionsExtension_5842819808956911479(SNode thisNode) {
     return "vmoptions";
+  }
+
+  public static String trim_p7akvg_a0a0b(String str) {
+    return (str == null ?
+      null :
+      str.trim()
+    );
   }
 }
