@@ -1438,12 +1438,6 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5487985028841904095">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5487985028841904169" resolveInfo="RenameProperty" />
       </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5487985028841904096">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5487985028841904146" resolveInfo="SafeDeleteConcept" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5487985028841904097">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="5487985028841904364" resolveInfo="SafeDeleteLink" />
-      </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="5487985028841904098">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="5487985028841904214" resolveInfo="MoveLinkUp" />
       </node>
