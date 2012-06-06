@@ -11,6 +11,7 @@
   <tip file="GoToDefinition.html"/>
   <tip file="InsertEnter.html"/>
   <tip file="GoToConcept.html"/>
+  <tip file="GoToModule.html"/>
   <tip file="GoToEditorDeclaration.html"/>
   <tip file="OverrideBehaviorMethod.html"/>
   <tip file="ImplementBehaviorMethod.html"/>

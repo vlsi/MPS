@@ -15,8 +15,15 @@
             successive-show="4"
             />
     <feature
-            id="goto.model"
+            id="navigation.goto.model"
             tip-file="gotoModel.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="navigation.goto.module"
+            tip-file="GoToModule.html"
             min-usage-count="5"
             first-show="1"
             successive-show="4"
