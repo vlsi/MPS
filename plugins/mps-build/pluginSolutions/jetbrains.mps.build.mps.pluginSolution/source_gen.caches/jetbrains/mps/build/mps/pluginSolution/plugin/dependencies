@@ -17,11 +17,14 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" file="AbstractStep.java">
     <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.Font" />
     <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="java.awt.Graphics2D" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.awt.RenderingHints" />
     <classNode dependClassName="java.awt.image.BufferedImage" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />
@@ -185,6 +188,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.IErrorHandler" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action" file="GenerateBuildForProjectAction_Action.java">
@@ -288,8 +292,8 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.LanguagesStep" file="LanguagesStep.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Comparator" />
     <classNode dependClassName="java.util.LinkedHashSet" />
@@ -298,6 +302,8 @@
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
+    <classNode dependClassName="javax.swing.border.CompoundBorder" />
+    <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="javax.swing.border.EtchedBorder" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.CheckBoxNamespaceNode" />
@@ -308,6 +314,7 @@
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.ModulesListData" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.NamespaceData" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.NodeData" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -318,11 +325,13 @@
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" />
     <classNode extendsClassName="jetbrains.mps.ide.projectPane.NamespaceTreeBuilder" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ModelStep" file="ModelStep.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
@@ -340,6 +349,7 @@
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.ModuleData" file="ModuleData.java">
@@ -399,6 +409,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.SolutionStep" file="SolutionStep.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractBuildGenerator" />
@@ -411,6 +422,7 @@
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.TwoOptionsStep" file="TwoOptionsStep.java">

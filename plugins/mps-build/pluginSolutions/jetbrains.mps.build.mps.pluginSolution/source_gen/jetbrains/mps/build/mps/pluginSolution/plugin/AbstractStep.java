@@ -11,6 +11,7 @@ import java.awt.Insets;
 import javax.swing.JComponent;
 import javax.swing.Icon;
 import java.awt.GridBagLayout;
+import java.awt.Dimension;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JLabel;
 import javax.swing.border.EmptyBorder;
@@ -26,6 +27,8 @@ import java.io.IOException;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 
 public abstract class AbstractStep extends StepAdapter {
   protected static Log log = LogFactory.getLog(AbstractStep.class);
@@ -66,7 +69,8 @@ public abstract class AbstractStep extends StepAdapter {
   protected void createComponent() {
     if (myMainPanel == null) {
 
-      myMainPanel = new JPanel(new GridBagLayout());
+      GridBagLayout layout = new GridBagLayout();
+      myMainPanel = new JPanel(layout);
 
       JComponent imagePanel = createImagePanel();
       GridBagConstraints imageConstraints = new GridBagConstraints();
@@ -87,6 +91,9 @@ public abstract class AbstractStep extends StepAdapter {
       stepConstraints.weightx = 1;
       stepConstraints.anchor = GridBagConstraints.NORTHWEST;
       stepConstraints.fill = GridBagConstraints.BOTH;
+      if (doLimitStepPanelHeight()) {
+        stepPanel.setPreferredSize(new Dimension(stepPanel.getPreferredSize().width, imagePanel.getPreferredSize().height));
+      }
       myMainPanel.add(stepPanel, stepConstraints);
     }
     myMainPanel.doLayout();
@@ -97,7 +104,11 @@ public abstract class AbstractStep extends StepAdapter {
     return "";
   }
 
-  private JPanel createStepPanel() {
+  protected boolean doLimitStepPanelHeight() {
+    return false;
+  }
+
+  protected JPanel createStepPanel() {
     JPanel stepPanel = new JPanel(new GridBagLayout());
     JLabel label = new JLabel(this.getDescription());
     label.setBorder(new EmptyBorder(5, 2, 10, 2));
@@ -125,7 +136,10 @@ public abstract class AbstractStep extends StepAdapter {
     assert bim != null : "Icon was not read. The possible reason is that PNG format was not recognized";
     Graphics graphics = bim.getGraphics();
     graphics.setColor(new Color(126, 124, 124));
-    graphics.setFont(new Font("Helvetica", Font.BOLD, 18));
+    graphics.setFont(new Font("Helvetica", Font.BOLD, 15));
+    if (graphics instanceof Graphics2D) {
+      ((Graphics2D) graphics).setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+    }
 
     int textWidth = graphics.getFontMetrics().charsWidth(imageText.toCharArray(), 0, imageText.length());
     int x = (info.getIconWidth() - textWidth) / 2;
