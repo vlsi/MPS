@@ -33,6 +33,7 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
@@ -157,17 +158,21 @@ public class DeleteNodesHelper {
             }
           }
         }
-        SearchResults sr = new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
+        final SearchResults sr = new SearchResults(SetSequence.fromSetWithValues(new HashSet<SNode>(), myNodesToDelete), SetSequence.fromSet(results).toListSequence());
 
         if (p0.isCanceled()) {
           return;
         }
 
-        RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
-          public void performAction(RefactoringViewItem refactoringViewItem) {
-            performer.invoke();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            RefactoringAccess.getInstance().showRefactoringView(ideaProject, new RefactoringViewAction() {
+              public void performAction(RefactoringViewItem refactoringViewItem) {
+                performer.invoke();
+              }
+            }, sr, false, "Safe Delete");
           }
-        }, sr, false, "Safe Delete");
+        });
       }
     });
   }
