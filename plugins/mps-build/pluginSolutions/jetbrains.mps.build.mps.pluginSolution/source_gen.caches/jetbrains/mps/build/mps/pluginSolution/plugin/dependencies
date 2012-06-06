@@ -16,17 +16,30 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" file="AbstractStep.java">
+    <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.Font" />
+    <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.awt.GridBagConstraints" />
     <classNode dependClassName="java.awt.GridBagLayout" />
     <classNode dependClassName="java.awt.Insets" />
+    <classNode dependClassName="java.awt.image.BufferedImage" />
+    <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="javax.imageio.ImageIO" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="javax.swing.ImageIcon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.border.CompoundBorder" />
     <classNode dependClassName="javax.swing.border.EmptyBorder" />
     <classNode dependClassName="javax.swing.border.EtchedBorder" />
+    <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.ide.wizard.StepAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl" file="BuildGeneratorImpl.java">

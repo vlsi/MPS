@@ -820,61 +820,138 @@
     <unitInfo nodeId="8722937377469655854" fileName="NodeData.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.NodeData" />
   </root>
   <root nodeId="8722937377469655891">
-    <nodeInfo nodeId="8722937377469655892" fileName="AbstractStep.java" startLine="17" startPosition="56" endLine="18" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
-    <nodeInfo nodeId="8722937377469655899" fileName="AbstractStep.java" startLine="23" startPosition="23" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655906" fileName="AbstractStep.java" startLine="27" startPosition="63" endLine="28" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469655911" fileName="AbstractStep.java" startLine="28" startPosition="52" endLine="29" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655917" fileName="AbstractStep.java" startLine="29" startPosition="43" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655923" fileName="AbstractStep.java" startLine="30" startPosition="16" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655929" fileName="AbstractStep.java" startLine="31" startPosition="18" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655935" fileName="AbstractStep.java" startLine="32" startPosition="18" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655941" fileName="AbstractStep.java" startLine="33" startPosition="19" endLine="34" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655952" fileName="AbstractStep.java" startLine="34" startPosition="38" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8722937377469655970" fileName="AbstractStep.java" startLine="42" startPosition="36" endLine="43" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655974" fileName="AbstractStep.java" startLine="43" startPosition="27" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8722937377469655982" fileName="AbstractStep.java" startLine="47" startPosition="25" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8722937377469656002" fileName="AbstractStep.java" startLine="52" startPosition="35" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1081893801789154314" fileName="AbstractStep.java" startLine="53" startPosition="57" endLine="54" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1081893801789154337" fileName="AbstractStep.java" startLine="54" startPosition="55" endLine="55" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469656011" fileName="AbstractStep.java" startLine="55" startPosition="52" endLine="56" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469656027" fileName="AbstractStep.java" startLine="56" startPosition="63" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469656033" fileName="AbstractStep.java" startLine="57" startPosition="60" endLine="58" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469656039" fileName="AbstractStep.java" startLine="58" startPosition="99" endLine="59" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469656051" fileName="AbstractStep.java" startLine="59" startPosition="71" endLine="60" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469656064" fileName="AbstractStep.java" startLine="61" startPosition="5" endLine="62" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469655986" fileName="AbstractStep.java" startLine="19" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractStep#()V" />
-    <nodeInfo nodeId="8722937377469655959" fileName="AbstractStep.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMainComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8722937377469655963" fileName="AbstractStep.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8722937377469655895" fileName="AbstractStep.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_init#()V" />
-    <nodeInfo nodeId="8722937377469655979" fileName="AbstractStep.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="8722937377469655967" fileName="AbstractStep.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8722937377469655995" fileName="AbstractStep.java" startLine="51" startPosition="36" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8722937377469655903" fileName="AbstractStep.java" startLine="26" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstraint#(II)Ljava/awt/GridBagConstraints;" />
-    <nodeInfo nodeId="8722937377469655991" fileName="AbstractStep.java" startLine="50" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#()V" />
-    <scopeInfo nodeId="8722937377469655989" fileName="AbstractStep.java" startLine="20" startPosition="25" endLine="20" endPosition="25" />
-    <scopeInfo nodeId="8722937377469655898" fileName="AbstractStep.java" startLine="23" startPosition="23" endLine="24" endPosition="27" />
-    <scopeInfo nodeId="8722937377469655981" fileName="AbstractStep.java" startLine="47" startPosition="25" endLine="48" endPosition="16" />
-    <scopeInfo nodeId="8722937377469655986" fileName="AbstractStep.java" startLine="19" startPosition="0" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="8722937377469655959" fileName="AbstractStep.java" startLine="37" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="8722937377469655963" fileName="AbstractStep.java" startLine="39" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="8722937377469655969" fileName="AbstractStep.java" startLine="42" startPosition="36" endLine="44" endPosition="28" />
-    <scopeInfo nodeId="8722937377469655895" fileName="AbstractStep.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8722937377469655979" fileName="AbstractStep.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="8722937377469655967" fileName="AbstractStep.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8722937377469655905" fileName="AbstractStep.java" startLine="27" startPosition="63" endLine="35" endPosition="13">
+    <nodeInfo nodeId="8722937377469655891" fileName="AbstractStep.java" startLine="30" startPosition="56" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="8722937377469655892" fileName="AbstractStep.java" startLine="32" startPosition="0" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainPanel" />
+    <nodeInfo nodeId="8722937377469655899" fileName="AbstractStep.java" startLine="38" startPosition="23" endLine="39" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655906" fileName="AbstractStep.java" startLine="42" startPosition="63" endLine="43" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8722937377469655911" fileName="AbstractStep.java" startLine="43" startPosition="52" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655917" fileName="AbstractStep.java" startLine="44" startPosition="43" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655923" fileName="AbstractStep.java" startLine="45" startPosition="16" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655929" fileName="AbstractStep.java" startLine="46" startPosition="18" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655935" fileName="AbstractStep.java" startLine="47" startPosition="18" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655941" fileName="AbstractStep.java" startLine="48" startPosition="19" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655952" fileName="AbstractStep.java" startLine="49" startPosition="38" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469655970" fileName="AbstractStep.java" startLine="57" startPosition="36" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469655974" fileName="AbstractStep.java" startLine="58" startPosition="27" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469655982" fileName="AbstractStep.java" startLine="62" startPosition="25" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3386423819778500059" fileName="AbstractStep.java" startLine="67" startPosition="30" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8722937377469656002" fileName="AbstractStep.java" startLine="68" startPosition="0" endLine="69" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147883" fileName="AbstractStep.java" startLine="69" startPosition="52" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3386423819778500034" fileName="AbstractStep.java" startLine="70" startPosition="0" endLine="71" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7032569005998147618" fileName="AbstractStep.java" startLine="71" startPosition="49" endLine="72" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7032569005998147614" fileName="AbstractStep.java" startLine="72" startPosition="69" endLine="73" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147676" fileName="AbstractStep.java" startLine="73" startPosition="33" endLine="74" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147685" fileName="AbstractStep.java" startLine="74" startPosition="33" endLine="75" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147739" fileName="AbstractStep.java" startLine="75" startPosition="38" endLine="76" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147748" fileName="AbstractStep.java" startLine="76" startPosition="37" endLine="77" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147804" fileName="AbstractStep.java" startLine="77" startPosition="61" endLine="78" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778500328" fileName="AbstractStep.java" startLine="78" startPosition="54" endLine="79" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147882" fileName="AbstractStep.java" startLine="79" startPosition="52" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3386423819778500321" fileName="AbstractStep.java" startLine="80" startPosition="0" endLine="81" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7032569005998147905" fileName="AbstractStep.java" startLine="81" startPosition="43" endLine="82" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7032569005998147910" fileName="AbstractStep.java" startLine="82" startPosition="68" endLine="83" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147916" fileName="AbstractStep.java" startLine="83" startPosition="32" endLine="84" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147922" fileName="AbstractStep.java" startLine="84" startPosition="32" endLine="85" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147928" fileName="AbstractStep.java" startLine="85" startPosition="37" endLine="86" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998198872" fileName="AbstractStep.java" startLine="86" startPosition="36" endLine="87" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147934" fileName="AbstractStep.java" startLine="87" startPosition="34" endLine="88" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7032569005998147940" fileName="AbstractStep.java" startLine="88" startPosition="60" endLine="89" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778507060" fileName="AbstractStep.java" startLine="89" startPosition="53" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469656064" fileName="AbstractStep.java" startLine="91" startPosition="5" endLine="92" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778468383" fileName="AbstractStep.java" startLine="96" startPosition="32" endLine="97" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3386423819778500161" fileName="AbstractStep.java" startLine="100" startPosition="36" endLine="101" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778500167" fileName="AbstractStep.java" startLine="101" startPosition="55" endLine="102" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778500174" fileName="AbstractStep.java" startLine="102" startPosition="53" endLine="103" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778500184" fileName="AbstractStep.java" startLine="103" startPosition="50" endLine="104" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778500191" fileName="AbstractStep.java" startLine="104" startPosition="63" endLine="105" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778500196" fileName="AbstractStep.java" startLine="105" startPosition="58" endLine="106" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778500210" fileName="AbstractStep.java" startLine="106" startPosition="97" endLine="107" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778500217" fileName="AbstractStep.java" startLine="107" startPosition="71" endLine="108" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778500310" fileName="AbstractStep.java" startLine="108" startPosition="70" endLine="109" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3386423819778495066" fileName="AbstractStep.java" startLine="112" startPosition="41" endLine="113" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778495070" fileName="AbstractStep.java" startLine="113" startPosition="47" endLine="114" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778499961" fileName="AbstractStep.java" startLine="114" startPosition="38" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3386423819778495090" fileName="AbstractStep.java" startLine="115" startPosition="0" endLine="116" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778495096" fileName="AbstractStep.java" startLine="116" startPosition="45" endLine="117" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778495112" fileName="AbstractStep.java" startLine="118" startPosition="9" endLine="119" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778499927" fileName="AbstractStep.java" startLine="121" startPosition="33" endLine="122" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778495119" fileName="AbstractStep.java" startLine="124" startPosition="5" endLine="125" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="3386423819778495124" fileName="AbstractStep.java" startLine="125" startPosition="104" endLine="126" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778495130" fileName="AbstractStep.java" startLine="126" startPosition="42" endLine="127" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778495139" fileName="AbstractStep.java" startLine="127" startPosition="48" endLine="128" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3386423819778499969" fileName="AbstractStep.java" startLine="128" startPosition="59" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3386423819778495148" fileName="AbstractStep.java" startLine="129" startPosition="0" endLine="130" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778495163" fileName="AbstractStep.java" startLine="130" startPosition="105" endLine="131" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778495174" fileName="AbstractStep.java" startLine="131" startPosition="50" endLine="132" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3386423819778495178" fileName="AbstractStep.java" startLine="132" startPosition="16" endLine="133" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9155551433208397249" fileName="AbstractStep.java" startLine="133" startPosition="77" endLine="134" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469655986" fileName="AbstractStep.java" startLine="34" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractStep#()V" />
+    <nodeInfo nodeId="8722937377469655959" fileName="AbstractStep.java" startLine="52" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMainComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8722937377469655963" fileName="AbstractStep.java" startLine="54" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3386423819778499927" fileName="AbstractStep.java" startLine="120" startPosition="29" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3386423819778499927" fileName="AbstractStep.java" startLine="120" startPosition="29" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8722937377469655895" fileName="AbstractStep.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="_init#()V" />
+    <nodeInfo nodeId="8722937377469655979" fileName="AbstractStep.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="8722937377469655967" fileName="AbstractStep.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="3386423819778468336" fileName="AbstractStep.java" startLine="94" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImageText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="3386423819778495100" fileName="AbstractStep.java" startLine="117" startPosition="29" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8722937377469655903" fileName="AbstractStep.java" startLine="41" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstraint#(II)Ljava/awt/GridBagConstraints;" />
+    <nodeInfo nodeId="3386423819778500157" fileName="AbstractStep.java" startLine="99" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createStepPanel#()Ljavax/swing/JPanel;" />
+    <nodeInfo nodeId="8722937377469655995" fileName="AbstractStep.java" startLine="66" startPosition="36" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3386423819778495062" fileName="AbstractStep.java" startLine="111" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createImagePanel#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8722937377469655991" fileName="AbstractStep.java" startLine="65" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent#()V" />
+    <scopeInfo nodeId="8722937377469655989" fileName="AbstractStep.java" startLine="35" startPosition="25" endLine="35" endPosition="25" />
+    <scopeInfo nodeId="8722937377469655898" fileName="AbstractStep.java" startLine="38" startPosition="23" endLine="39" endPosition="27" />
+    <scopeInfo nodeId="8722937377469655981" fileName="AbstractStep.java" startLine="62" startPosition="25" endLine="63" endPosition="16" />
+    <scopeInfo nodeId="3386423819778468339" fileName="AbstractStep.java" startLine="96" startPosition="32" endLine="97" endPosition="14" />
+    <scopeInfo nodeId="3386423819778495111" fileName="AbstractStep.java" startLine="118" startPosition="9" endLine="119" endPosition="35" />
+    <scopeInfo nodeId="3386423819778499927" fileName="AbstractStep.java" startLine="121" startPosition="33" endLine="122" endPosition="41" />
+    <scopeInfo nodeId="8722937377469655986" fileName="AbstractStep.java" startLine="34" startPosition="0" endLine="36" endPosition="3" />
+    <scopeInfo nodeId="8722937377469655959" fileName="AbstractStep.java" startLine="52" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="8722937377469655963" fileName="AbstractStep.java" startLine="54" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8722937377469655969" fileName="AbstractStep.java" startLine="57" startPosition="36" endLine="59" endPosition="28" />
+    <scopeInfo nodeId="3386423819778495101" fileName="AbstractStep.java" startLine="120" startPosition="0" endLine="123" endPosition="7">
+      <varInfo nodeId="3386423819778495109" varName="e" />
+    </scopeInfo>
+    <scopeInfo nodeId="3386423819778495102" fileName="AbstractStep.java" startLine="120" startPosition="29" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="3386423819778499927" fileName="AbstractStep.java" startLine="120" startPosition="29" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="8722937377469655895" fileName="AbstractStep.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="8722937377469655979" fileName="AbstractStep.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="8722937377469655967" fileName="AbstractStep.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="3386423819778468336" fileName="AbstractStep.java" startLine="94" startPosition="0" endLine="99" endPosition="0" />
+    <scopeInfo nodeId="8722937377469655905" fileName="AbstractStep.java" startLine="42" startPosition="63" endLine="50" endPosition="13">
       <varInfo nodeId="8722937377469655907" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469656001" fileName="AbstractStep.java" startLine="52" startPosition="35" endLine="60" endPosition="70">
-      <varInfo nodeId="1081893801789154315" varName="label" />
-      <varInfo nodeId="8722937377469656028" varName="mainComponent" />
+    <scopeInfo nodeId="3386423819778500160" fileName="AbstractStep.java" startLine="100" startPosition="36" endLine="109" endPosition="21">
+      <varInfo nodeId="3386423819778500154" varName="label" />
+      <varInfo nodeId="3386423819778500156" varName="mainComponent" />
+      <varInfo nodeId="3386423819778500155" varName="stepPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469655903" fileName="AbstractStep.java" startLine="26" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="8722937377469655903" fileName="AbstractStep.java" startLine="41" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="8722937377469655955" varName="row" />
       <varInfo nodeId="8722937377469655957" varName="wy" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469655994" fileName="AbstractStep.java" startLine="51" startPosition="36" endLine="62" endPosition="32" />
-    <scopeInfo nodeId="8722937377469655991" fileName="AbstractStep.java" startLine="50" startPosition="0" endLine="64" endPosition="0" />
-    <unitInfo nodeId="8722937377469655891" fileName="AbstractStep.java" startLine="17" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" />
+    <scopeInfo nodeId="3386423819778500157" fileName="AbstractStep.java" startLine="99" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="3386423819778495065" fileName="AbstractStep.java" startLine="112" startPosition="41" endLine="134" endPosition="42">
+      <varInfo nodeId="3386423819778495097" varName="bim" />
+      <varInfo nodeId="3386423819778495125" varName="graphics" />
+      <varInfo nodeId="3386423819778495071" varName="imageText" />
+      <varInfo nodeId="3386423819778495067" varName="imageUrl" />
+      <varInfo nodeId="3386423819778495091" varName="info" />
+      <varInfo nodeId="3386423819778495149" varName="textWidth" />
+      <varInfo nodeId="3386423819778495164" varName="x" />
+      <varInfo nodeId="3386423819778495175" varName="y" />
+    </scopeInfo>
+    <scopeInfo nodeId="8722937377469656001" fileName="AbstractStep.java" startLine="67" startPosition="30" endLine="90" endPosition="50">
+      <varInfo nodeId="7032569005998147619" varName="imageConstraints" />
+      <varInfo nodeId="3386423819778500035" varName="imagePanel" />
+      <varInfo nodeId="7032569005998147906" varName="stepConstraints" />
+      <varInfo nodeId="3386423819778500322" varName="stepPanel" />
+    </scopeInfo>
+    <scopeInfo nodeId="3386423819778495062" fileName="AbstractStep.java" startLine="111" startPosition="0" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="8722937377469655994" fileName="AbstractStep.java" startLine="66" startPosition="36" endLine="92" endPosition="27" />
+    <scopeInfo nodeId="8722937377469655991" fileName="AbstractStep.java" startLine="65" startPosition="0" endLine="94" endPosition="0" />
+    <unitInfo nodeId="8722937377469655891" fileName="AbstractStep.java" startLine="30" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.AbstractStep" />
   </root>
   <root nodeId="8722937377469656070">
     <nodeInfo nodeId="8722937377469656071" fileName="IErrorHandler.java" startLine="6" startPosition="32" endLine="7" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setErrorText#(Ljava/lang/String;)V" />
