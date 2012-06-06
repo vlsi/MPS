@@ -7,5 +7,49 @@
             first-show="1"
             successive-show="4"
             />
+    <feature
+            id="navigation.goto.editorDeclaration"
+            tip-file="GoToEditorDeclaration.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="goto.model"
+            tip-file="gotoModel.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="navigation.goto.action"
+            tip-file="GoToAction.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="navigation.goto.definition"
+            tip-file="GoToDefinition.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+  </group>
+  <group id="refactoring">
+    <feature
+            id="refactoring.overrideBehaviorMethod"
+            tip-file="OverrideBehaviorMethod.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="refactoring.implementBehaviorMethod"
+            tip-file="ImplementBehaviorMethod.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
   </group>
 </component>
