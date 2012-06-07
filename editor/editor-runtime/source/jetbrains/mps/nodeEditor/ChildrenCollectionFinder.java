@@ -25,17 +25,23 @@ import org.jetbrains.annotations.NotNull;
 
 public class ChildrenCollectionFinder {
   @NotNull
-  private EditorCell myCurrent;
-  private boolean myForward;
+  private final EditorCell myCurrent;
+  private final boolean myForward;
+  private final boolean myCheckFirst;
 
-  public ChildrenCollectionFinder(@NotNull EditorCell current, boolean forward) {
+  public ChildrenCollectionFinder(@NotNull EditorCell current, boolean forward, boolean checkFirst) {
     myCurrent = current;
     myForward = forward;
+    myCheckFirst = checkFirst;
   }
 
   public EditorCell find() {
     return ModelAccess.instance().runReadAction(new Computable<EditorCell>() {
       public EditorCell compute() {
+        if (myCheckFirst && isMultipleCollectionCell(myCurrent)) {
+          return myCurrent;
+        }
+
         DfsTraverser traverser = new DfsTraverser(myCurrent, myForward);
 
         SNode selectedNode = myCurrent.getSNode();
@@ -47,22 +53,27 @@ public class ChildrenCollectionFinder {
             return null;
           }
 
-          if (current.getRole() != null) {
-            String role = current.getRole();
-            SNode linkDeclaration = currentNode.getLinkDeclaration(role);
-            if (linkDeclaration != null &&
-              !SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration) &&
-              SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {
-              return current;
-            } else if (myCurrent != current) {
-              return new ChildrenCollectionFinder(current, true).find();
-            }
+          if (isMultipleCollectionCell(current)) {
+            return current;
           }
-
           traverser.next();
         }
         return null;
       }
     });
+  }
+
+  private static boolean isMultipleCollectionCell(EditorCell current) {
+    if (current.getRole() != null) {
+      String role = current.getRole();
+      SNode currentNode = current.getSNode();
+      SNode linkDeclaration = currentNode.getLinkDeclaration(role);
+      if (linkDeclaration != null &&
+        !SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration) &&
+        SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {
+        return true;
+      }
+    }
+    return false;
   }
 }
