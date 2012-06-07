@@ -36,6 +36,7 @@ import com.intellij.util.ui.update.Update;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.actions.MPSActionPlaces;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.ide.messages.MessagesListCellRenderer.NavStatus;
 import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
 import jetbrains.mps.messages.IMessage;
@@ -166,8 +167,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
 
         int messagesToRemove = 0;
         if (myMessages.size() > MAX_SIZE) {
-          for (int i = Math.min(myMessages.size() - MAX_SIZE, myMessages.size()); i > 0; i--)
-          {
+          for (int i = Math.min(myMessages.size() - MAX_SIZE, myMessages.size()); i > 0; i--) {
             IMessage toRemove = myMessages.remove();
             updateMessageCounters(toRemove, -1);
             if (isVisible(toRemove)) {
@@ -337,18 +337,19 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
       public void mouseMoved(MouseEvent e) {
         int index = myList.locationToIndex(e.getPoint());
 
-        final IMessage item = index != -1 ? (IMessage) myModel.getElementAt(index) : null;
-        boolean canNavigate = item != null ? ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-          public Boolean compute() {
-            return NavigationManager.getInstance().canNavigateTo(item);
-          }
-        }) : false;
-
-        if (item != null && myAutoscrollToSourceAction.isSelected(null) && canNavigate) {
-          myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        } else {
+        final IMessage message = index != -1 ? (IMessage) myModel.getElementAt(index) : null;
+        if (message == null || !myAutoscrollToSourceAction.isSelected(null)) {
           myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+          return;
         }
+
+        boolean canNavigate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            return MessagesListCellRenderer.canNavigate(message) == NavStatus.YES;
+          }
+        });
+
+        myList.setCursor(Cursor.getPredefinedCursor(canNavigate ? Cursor.HAND_CURSOR : Cursor.DEFAULT_CURSOR));
       }
     });
   }
@@ -610,12 +611,12 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
 
     public void removeFirst(int count) {
       if (count <= 0) {
-        throw new IllegalArgumentException("Illegal count value "+count);
+        throw new IllegalArgumentException("Illegal count value " + count);
       }
       if (mySize - count < 0) {
         throw new RuntimeException("Buffer underflow");
       }
-      for (int i=0; i<count; i++) {
+      for (int i = 0; i < count; i++) {
         myItems[myStart] = null;
         myStart = (myStart + 1) % myItems.length;
         mySize--;
@@ -691,13 +692,13 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
         Throwable exc = null;
         for (Object message : myList.getSelectedValues()) {
           exc = ((IMessage) message).getException();
-          if(exc != null) break;
+          if (exc != null) break;
         }
         return exc;
       }
-      if(MPSCommonDataKeys.MESSAGES.getName().equals(id)) {
+      if (MPSCommonDataKeys.MESSAGES.getName().equals(id)) {
         Object[] selectedValues = myList.getSelectedValues();
-        if(selectedValues == null || selectedValues.length == 0) {
+        if (selectedValues == null || selectedValues.length == 0) {
           return null;
         }
 
@@ -742,7 +743,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
           myList.setSelectedIndex(current);
           myList.ensureIndexIsVisible(current);
         }
-        return new OccurenceInfo(new NavigatableAdapter(){
+        return new OccurenceInfo(new NavigatableAdapter() {
           @Override
           public void navigate(boolean requestFocus) {
             openCurrentMessageIfPossible();

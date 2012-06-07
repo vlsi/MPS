@@ -44,8 +44,23 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
       ((Message) message).getCreationTimeString() + "\t: " + message :
       message.getText();
 
-    component.setForeground(canNavigate(message) ? Color.BLUE : Color.BLACK);
-    component.setText(text);
+
+    NavStatus ns = ModelAccess.instance().runReadAction(new Computable<NavStatus>() {
+      public NavStatus compute() {
+        return canNavigate(message);
+      }
+    });
+
+    if (ns == NavStatus.NO) {
+      component.setForeground(Color.BLACK);
+      component.setText(text);
+    } else if (ns == NavStatus.OUTDATED) {
+      component.setForeground(Color.BLACK);
+      component.setText("[outdated] " + message.getHintObject().toString() + ":" + text);
+    } else if (ns == NavStatus.YES) {
+      component.setForeground(Color.BLUE);
+      component.setText(text);
+    }
 
     switch (message.getKind()) {
       case INFORMATION:
@@ -62,8 +77,15 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     return component;
   }
 
-  public static boolean canNavigate(IMessage message) {
+  public static NavStatus canNavigate(IMessage message) {
     Object hint = message.getHintObject();
-    return hint != null;
+    if (hint == null) return NavStatus.NO;
+    return NavigationManager.getInstance().canNavigateTo(hint) ? NavStatus.YES : NavStatus.OUTDATED;
+  }
+
+  public enum NavStatus {
+    NO,
+    OUTDATED,
+    YES
   }
 }
