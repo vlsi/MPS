@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,7 +28,6 @@ import java.awt.Color;
 import java.awt.Component;
 
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
-
   private static final EmptyBorder EMPTY_BORDER = new EmptyBorder(0, 0, 0, 0);
 
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
