@@ -86,6 +86,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameSolution_Action());
     addAction(new RevertMemoryChanges_Action());
     addAction(new SafeDeleteModuleDependency_Action());
+    addAction(new SafeDelete_Action());
     addAction(new SetBookmarkNoNumber_Action());
     addAction(new SetModuleFolder_Action());
     addAction(new SetNodePackage_Action());
