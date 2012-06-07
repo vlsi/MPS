@@ -29,24 +29,22 @@ import java.awt.Color;
 import java.awt.Component;
 
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
+
+  private static final EmptyBorder EMPTY_BORDER = new EmptyBorder(0, 0, 0, 0);
+
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
     final IMessage message = (IMessage) value;
 
     component.setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
-    component.setBorder(new EmptyBorder(0, 0, 0, 0));
+    component.setBorder(EMPTY_BORDER);
 
     String text = (message instanceof Message) ?
       ((Message) message).getCreationTimeString() + "\t: " + message :
       message.getText();
 
-    boolean canNavigate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
-        return canNavigate(message);
-      }
-    });
-    component.setForeground(canNavigate ? Color.BLUE : Color.BLACK);
+    component.setForeground(canNavigate(message) ? Color.BLUE : Color.BLACK);
     component.setText(text);
 
     switch (message.getKind()) {
@@ -66,6 +64,6 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
 
   public static boolean canNavigate(IMessage message) {
     Object hint = message.getHintObject();
-    return hint != null && NavigationManager.getInstance().canNavigateTo(hint);
+    return hint != null;
   }
 }
