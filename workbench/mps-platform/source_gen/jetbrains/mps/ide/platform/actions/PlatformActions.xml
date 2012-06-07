@@ -1,15 +1,12 @@
 <components>
   <actions>
-    <action id="jetbrains.mps.ide.platform.actions.GoToNodeById_Action"
-            class="jetbrains.mps.ide.platform.actions.GoToNodeById_Action">
+    <action id="jetbrains.mps.ide.platform.actions.GoToNodeById_Action" class="jetbrains.mps.ide.platform.actions.GoToNodeById_Action">
       <keyboard-shortcut first-keystroke="ctrl G" keymap="$default"/>
     </action>
-    <action id="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action"
-            class="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action">
+    <action id="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action" class="jetbrains.mps.ide.platform.actions.core.MoveNodes_Action">
       <keyboard-shortcut first-keystroke=" F6" keymap="$default"/>
     </action>
-    <action id="jetbrains.mps.ide.platform.actions.core.Rename_Action"
-            class="jetbrains.mps.ide.platform.actions.core.Rename_Action">
+    <action id="jetbrains.mps.ide.platform.actions.core.Rename_Action" class="jetbrains.mps.ide.platform.actions.core.Rename_Action">
       <keyboard-shortcut first-keystroke="shift F6" keymap="$default"/>
     </action>
     <group id="Code_ActionGroupstructure"/>
