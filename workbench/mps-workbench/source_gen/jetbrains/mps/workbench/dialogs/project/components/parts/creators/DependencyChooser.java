@@ -13,6 +13,8 @@ import java.util.Set;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.VisibleModuleRegistry;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -30,7 +32,11 @@ public class DependencyChooser implements Computable<List<Dependency>> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Set<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-        allModuleRefs.value = SetSequence.fromSet(modules).select(new ISelector<IModule, ModuleReference>() {
+        allModuleRefs.value = SetSequence.fromSet(modules).where(new IWhereFilter<IModule>() {
+          public boolean accept(IModule it) {
+            return VisibleModuleRegistry.getInstance().isVisible(it);
+          }
+        }).select(new ISelector<IModule, ModuleReference>() {
           public ModuleReference select(IModule it) {
             return it.getModuleReference();
           }

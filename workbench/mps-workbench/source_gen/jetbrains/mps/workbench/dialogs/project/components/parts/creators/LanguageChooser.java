@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.VisibleModuleRegistry;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 
@@ -26,9 +28,13 @@ public class LanguageChooser implements Computable<List<ModuleReference>> {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         Iterable<Language> langs = GlobalScope.getInstance().getVisibleLanguages();
-        langRefs.value = Sequence.fromIterable(langs).select(new ISelector<Language, ModuleReference>() {
-          public ModuleReference select(Language it) {
-            return it.getModuleReference();
+        langRefs.value = Sequence.fromIterable(langs).where(new IWhereFilter<Language>() {
+          public boolean accept(Language lang) {
+            return VisibleModuleRegistry.getInstance().isVisible(lang);
+          }
+        }).select(new ISelector<Language, ModuleReference>() {
+          public ModuleReference select(Language lang) {
+            return lang.getModuleReference();
           }
         }).toListSequence();
       }
