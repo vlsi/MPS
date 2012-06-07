@@ -58,7 +58,7 @@ public class TestMakeOnRealProject {
   private Solution myCreatedRuntimeSolution;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
-  private MPSModuleOwner myModuleOwner = new MPSModuleOwner() {
+  private MPSModuleOwner myModuleOwner = new BaseMPSModuleOwner() {
 
   };
 

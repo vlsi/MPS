@@ -116,6 +116,11 @@ public abstract class Project implements MPSModuleOwner {
 
   public abstract String getName();
 
+  @Override
+  public boolean isHidden() {
+    return false;
+  }
+
   public class ProjectScope extends DefaultScope {
 
     protected Set<IModule> getInitialModules() {

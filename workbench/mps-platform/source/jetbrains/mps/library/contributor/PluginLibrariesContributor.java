@@ -69,4 +69,8 @@ public class PluginLibrariesContributor implements LibraryContributor, Applicati
   public String getComponentName() {
     return PluginLibrariesContributor.class.getSimpleName();
   }
+
+  public boolean hiddenLanguages() {
+    return false;
+  }
 }

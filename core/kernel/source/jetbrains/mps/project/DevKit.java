@@ -221,4 +221,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return getName();
   }
 
+  public boolean isHidden() {
+    return false;
+  }
+
 }

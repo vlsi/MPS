@@ -46,6 +46,11 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   }
 
   @Override
+  public boolean hiddenLanguages() {
+    return false;
+  }
+
+  @Override
   public void initComponent() {
     LibraryInitializer.getInstance().addContributor(this);
   }

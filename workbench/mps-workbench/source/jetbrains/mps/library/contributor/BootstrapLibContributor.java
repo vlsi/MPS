@@ -52,4 +52,9 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
   public String getComponentName() {
     return BootstrapLibContributor.class.getSimpleName();
   }
+
+  @Override
+  public boolean hiddenLanguages() {
+    return true;
+  }
 }

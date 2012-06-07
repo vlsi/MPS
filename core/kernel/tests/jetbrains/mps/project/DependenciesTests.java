@@ -23,10 +23,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.TestLanguage;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.util.IterableUtil;
 import org.junit.After;
@@ -40,7 +37,7 @@ import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
 public class DependenciesTests {
-  private static final MPSModuleOwner OWNER = new MPSModuleOwner() {
+  private static final MPSModuleOwner OWNER = new BaseMPSModuleOwner() {
   };
 
   @Rule

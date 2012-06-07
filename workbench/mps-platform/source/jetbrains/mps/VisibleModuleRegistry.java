@@ -32,7 +32,9 @@ public class VisibleModuleRegistry implements ApplicationComponent {
   public boolean isVisible(IModule module) {
     //project modules
     //contributed by plugin
-    Set<MPSModuleOwner> owners = ModuleRepositoryFacade.getInstance().getModuleOwners(module);
+    for (MPSModuleOwner owner : ModuleRepositoryFacade.getInstance().getModuleOwners(module)) {
+      if (!owner.isHidden()) return true;
+    }
     //satisfying a mask
     VisibleModuleMask[] extensions = VisibleModuleMask.EP_VISIBLE_MODULES.getExtensions();
     for (VisibleModuleMask e:extensions) {

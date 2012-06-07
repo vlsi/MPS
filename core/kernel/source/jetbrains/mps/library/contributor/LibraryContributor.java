@@ -20,6 +20,8 @@ import java.util.Set;
 public interface LibraryContributor {
   public Set<LibDescriptor> getLibraries();
 
+  public boolean hiddenLanguages();
+
   public class LibDescriptor{
     public String path;
     public ClassLoader parentLoader;
