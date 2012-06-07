@@ -108,7 +108,19 @@ public class MoveLinkUp_Action extends BaseAction {
           default:
         }
       }
-      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveLinkUp", Arrays.asList("targetConcept", "mergeLinks"), Arrays.asList(targetConcept, mergeLinks), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      final Boolean merge = mergeLinks;
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          if (!(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))).isRegistered()) || ((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))).isDisposed()) {
+            return;
+          }
+          if (!(((SNode) targetConcept).isRegistered()) || ((SNode) targetConcept).isDisposed()) {
+            return;
+          }
+          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveLinkUp", Arrays.asList("targetConcept", "mergeLinks"), Arrays.asList(targetConcept, merge), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+        }
+      });
+
 
 
     } catch (Throwable t) {

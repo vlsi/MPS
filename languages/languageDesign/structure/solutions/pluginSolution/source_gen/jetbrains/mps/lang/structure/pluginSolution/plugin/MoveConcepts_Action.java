@@ -26,11 +26,11 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.ide.refactoring.SModelReferenceDialog;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import com.intellij.openapi.ui.Messages;
@@ -123,7 +123,20 @@ public class MoveConcepts_Action extends BaseAction {
       if (targetModel == null) {
         return;
       }
-      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveConcepts", Arrays.asList("targetModel"), Arrays.asList(targetModel), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
+            if (!(((SNode) node).isRegistered()) || ((SNode) node).isDisposed()) {
+              return;
+            }
+          }
+          if (!(SModelRepository.getInstance().getModelDescriptor(targetModel).isRegistered())) {
+            return;
+          }
+          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MoveConcepts", Arrays.asList("targetModel"), Arrays.asList(targetModel), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+        }
+      });
+
 
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

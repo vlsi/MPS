@@ -90,11 +90,23 @@ public class MoveProperyUp_Action extends BaseAction {
         return;
       }
 
-      SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "property");
+      final SNode targetConcept = MoveUpDialog.getConcept(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SNode) MapSequence.fromMap(_params).get("target")), "property");
       if (targetConcept == null) {
         return;
       }
-      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MovePropertyUp", Arrays.asList("targetConcept"), Arrays.asList(targetConcept), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          if (!(((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))).isRegistered()) || ((SNode) ((SNode) MapSequence.fromMap(_params).get("target"))).isDisposed()) {
+            return;
+          }
+          if (!(((SNode) targetConcept).isRegistered()) || ((SNode) targetConcept).isDisposed()) {
+            return;
+          }
+
+          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.structure.refactorings.MovePropertyUp", Arrays.asList("targetConcept"), Arrays.asList(targetConcept), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+        }
+      });
+
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MoveProperyUp", t);

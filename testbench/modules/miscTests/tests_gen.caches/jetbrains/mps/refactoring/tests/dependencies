@@ -59,9 +59,11 @@
     <classNode extendsClassName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RefactoringTestFacade" file="RefactoringTestFacade.java">
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringFacade" />
   </dependency>
   <dependency className="jetbrains.mps.refactoring.tests.RenameConceptRefactoringTester" file="RenameConceptRefactoringTester.java">

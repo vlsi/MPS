@@ -11,10 +11,10 @@ import java.util.Iterator;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 
 public class DeleteNodesHelper {
@@ -80,7 +80,7 @@ public class DeleteNodesHelper {
   }
 
   private void safeDelete(final IOperationContext context, final SNode node) {
-    String refactoringClass;
+    final String refactoringClass;
     if ((node == null)) {
       return;
     } else
@@ -92,22 +92,19 @@ public class DeleteNodesHelper {
     } else {
       refactoringClass = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getNode("r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)", "1851015849775217755"), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     }
-    final IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(refactoringClass);
-    final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
-    refactoringContext.setCurrentOperationContext(context);
-    refactoringContext.setSelectedNode(node);
-    ModelAccess.instance().runReadAction(new Runnable() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
+        final IRefactoring refactoring = RefactoringUtil.getRefactoringByClassName(refactoringClass);
+        final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
+        refactoringContext.setCurrentOperationContext(context);
+        refactoringContext.setSelectedNode(node);
         refactoringContext.setSelectedModel(SNodeOperations.getModel(node).getModelDescriptor());
-      }
-    });
-    refactoringContext.setSelectedModule(context.getModule());
-    refactoringContext.setSelectedProject(context.getProject());
-    new Thread() {
-      public void run() {
+        refactoringContext.setSelectedModule(context.getModule());
+        refactoringContext.setSelectedProject(context.getProject());
         refactoringContext.setRefactoring(refactoring);
         RefactoringAccess.getInstance().getRefactoringFacade().execute(refactoringContext);
+
       }
-    }.start();
+    });
   }
 }

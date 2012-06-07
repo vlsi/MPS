@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import javax.swing.JOptionPane;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.Dimension;
@@ -25,13 +27,21 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   }
 
   protected void doRefactoringAction() {
-    Object selectedObject = myChooser.getSelectedObject();
+    final Object selectedObject = myChooser.getSelectedObject();
     if (!(selectedObject instanceof SNode)) {
       JOptionPane.showMessageDialog(myChooser.getComponent(), "Choose node", "Node can't be moved", JOptionPane.INFORMATION_MESSAGE);
       return;
     }
-    if (myNodeFilter == null || myNodeFilter.checkForObject(((SNode) selectedObject), myNodeToMove, myNodeToMove.getModel().getModelDescriptor(), myChooser.getComponent())) {
-      mySelectedObject = ((SNode) selectedObject);
+    final Wrappers._boolean doRefactoring = new Wrappers._boolean(false);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        if (myNodeFilter == null || myNodeFilter.checkForObject(((SNode) selectedObject), myNodeToMove, myNodeToMove.getModel().getModelDescriptor(), myChooser.getComponent())) {
+          mySelectedObject = ((SNode) selectedObject);
+          doRefactoring.value = true;
+        }
+      }
+    });
+    if (doRefactoring.value) {
       super.doRefactoringAction();
     }
   }
