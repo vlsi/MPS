@@ -946,14 +946,6 @@
                                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="9218072571024216434">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5493844864801812938" resolveInfo="value" />
                                 </node>
-                                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="9218072571024216437">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="9218072571024216436">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="264293128390879180" resolveInfo="javaValue" />
-                                  </node>
-                                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="9218072571024216441">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y3sp.3432969378036015493" resolveInfo="getThreadReference" />
-                                  </node>
-                                </node>
                               </node>
                             </node>
                           </node>

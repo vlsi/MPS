@@ -34,15 +34,15 @@ public class ModuleRenderer extends ProjectLevelRenderer {
   }
 
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
-    ModuleReference moduleReference = (ModuleReference) value;
     final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+    ModuleReference moduleReference = (ModuleReference) value;
+    if (moduleReference == null) {
+      return result;
+    }
     setText(getItemLabel(value));
     final IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-    if (module == null) {
-      if (!(isSelected)) {
-        setForeground(Color.RED);
-      }
-      return result;
+    if (module == null && !(isSelected)) {
+      setForeground(Color.RED);
     }
     return result;
   }

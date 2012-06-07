@@ -298,11 +298,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
       for (Pair<MPSNodeVirtualFile, String> renamedFile : myRenamedFiles) {
         MPSNodeVirtualFile vf = renamedFile.o1;
-        String oldName = vf.getName();
-        String newName = renamedFile.o2;
-        fireBeforePropertyChange(this, vf, VirtualFile.PROP_NAME, oldName, newName);
         vf.updateFields();
-        firePropertyChanged(this, vf, VirtualFile.PROP_NAME, oldName, newName);
       }
     }
 

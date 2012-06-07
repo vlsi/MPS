@@ -39,6 +39,7 @@
   <import index="hxuy" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.dataFlow.framework(MPS.Core/jetbrains.mps.lang.dataFlow.framework@java_stub)" version="-1" />
   <import index="pz2c" modelUID="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" version="-1" />
   <import index="o8zo" modelUID="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" version="-1" />
+  <import index="fnmy" modelUID="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" version="-1" />
   <import index="tp3t" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" implicit="yes" />
   <import index="bj1v" modelUID="r:8b09f5e2-b403-4747-aaa3-eac5acb1f753(jetbrains.mps.lang.dataFlow.analyzers.structure)" version="1" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
@@ -989,6 +990,9 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="3497441244465827965">
       <property name="name" nameId="tpck.1169194664001" value="check_BaseAssignmentExpression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="assignments" />
+    </node>
+    <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="7300472450067262862">
+      <property name="name" nameId="tpck.1169194664001" value="check_RecursiveClassifierSubtyping" />
     </node>
   </roots>
   <root id="1175495245176">
@@ -30928,6 +30932,44 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="3497441244465827967">
       <property name="name" nameId="tpck.1169194664001" value="assignment" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1215693861676" resolveInfo="BaseAssignmentExpression" />
+    </node>
+  </root>
+  <root id="7300472450067262862">
+    <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="945838171799818030">
+      <property name="name" nameId="tpck.1169194664001" value="classifier" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
+    </node>
+    <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="945838171799818031">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5792415235472578027">
+        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5792415235472578049">
+          <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="5792415235472578028">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="945838171799818030" resolveInfo="classifier" />
+          </node>
+          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetReferencesOperation" typeId="tp25.8758390115028452779" id="5792415235472578055" />
+        </node>
+      </node>
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="945838171799818032">
+        <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="945838171799818034">
+          <node role="statement" roleId="tpee.1068581517665" type="tpd4.ReportErrorStatement" typeId="tpd4.1175517767210" id="945838171799900038">
+            <node role="errorString" roleId="tpd4.1175517851849" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="945838171799900041">
+              <property name="value" nameId="tpee.1070475926801" value="Recursive classifiers subtyping" />
+            </node>
+            <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="945838171799900042">
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="945838171799818030" resolveInfo="classifier" />
+            </node>
+            <node role="messageTarget" roleId="tpd4.1227096836496" type="tpd4.PropertyMessageTarget" typeId="tpd4.1227096498176" id="5792415235472546502">
+              <link role="propertyDeclaration" roleId="tpd4.1227096521710" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+        <node role="condition" roleId="tpee.1068580123160" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="945838171799900036">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.1797998667266830373" resolveInfo="isHierarchyCyclic" />
+          <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.4304267140677045312" resolveInfo="ClassifierScopeUtils" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="945838171799900037">
+            <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="945838171799818030" resolveInfo="classifier" />
+          </node>
+        </node>
+      </node>
     </node>
   </root>
 </model>

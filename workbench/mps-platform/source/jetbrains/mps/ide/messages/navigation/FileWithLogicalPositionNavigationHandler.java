@@ -26,21 +26,20 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.messages.FileWithLogicalPosition;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 
-/**
- * User: Sinchuk Sergey
- * Date: 13.06.2010
- */
 class FileWithLogicalPositionNavigationHandler implements INavigationHandler<FileWithLogicalPosition> {
-  @Override
-  public void navigate(Project project, FileWithLogicalPosition pos, boolean focus, boolean select) {
+  public boolean canNavigate(FileWithLogicalPosition pos) {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
+    return vf != null;
+  }
 
+  public void navigate(FileWithLogicalPosition pos, Project project, boolean focus, boolean select) {
+    VirtualFile vf = VirtualFileUtils.getVirtualFile(pos.getFile());
     if (vf == null) return;
 
-    FileEditor[] result = FileEditorManager.getInstance(project).openFile(vf, true);
+    for (FileEditor fe: FileEditorManager.getInstance(project).openFile(vf, true)){
+      if (!(fe instanceof TextEditor)) continue;
 
-    if (result.length == 1 && result[0] instanceof TextEditor) {
-      TextEditor te = (TextEditor) result[0];
+      TextEditor te = (TextEditor) fe;
       int line = pos.getLine();
       int column = pos.getColumn();
       Document document = te.getEditor().getDocument();
@@ -51,6 +50,7 @@ class FileWithLogicalPositionNavigationHandler implements INavigationHandler<Fil
       LogicalPosition position = new LogicalPosition(line, column);
       te.getEditor().getCaretModel().moveToLogicalPosition(position);
       te.getEditor().getScrollingModel().scrollToCaret(ScrollType.MAKE_VISIBLE);
+      return;
     }
   }
 }

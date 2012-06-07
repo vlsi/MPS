@@ -1886,7 +1886,7 @@ __switch__:
         Computable computable = new Computable() {
           public Object compute() {
             IClassifiersSearchScope searchScope = new VisibleClassifiersScope(_context.getParentNode(), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
-            List<SNode> visibleClassifiers = (List<SNode>) searchScope.getClassifierNodes();
+            List<SNode> visibleClassifiers = searchScope.getClassifierNodes();
             List<SNode> classifiers = new ArrayList<SNode>();
             for (SNode cls : visibleClassifiers) {
               ListSequence.fromList(classifiers).addElement(cls);
@@ -1977,7 +1977,7 @@ __switch__:
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
                 SNode param = (SNode) conceptDeclaration;
-                if (StringUtils.isEmpty(SConceptPropertyOperations.getString(param, "alias")) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SConceptPropertyOperations.getBoolean(param, "abstract")) {
+                if (isEmpty_x583g4_a0a0b0a0c0a0a0a0a2a0a1a701(SConceptPropertyOperations.getString(param, "alias")) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SConceptPropertyOperations.getBoolean(param, "abstract")) {
                   continue;
                 }
                 ListSequence.fromList(result).addElement(param);
@@ -3931,7 +3931,10 @@ __switch__:
         }
 
         public String getMatchingText(String pattern) {
-          return StringUtils.trimBoth(pattern);
+          return ((pattern == null ?
+            null :
+            pattern.trim()
+          ));
         }
 
         public String getVisibleMatchingText(String pattern) {
@@ -4231,6 +4234,10 @@ __switch__:
         actions.remove();
       }
     }
+  }
+
+  public static boolean isEmpty_x583g4_a0a0b0a0c0a0a0a0a2a0a1a701(String str) {
+    return str == null || str.length() == 0;
   }
 
   public static class QuotationClass_x583g4_a1a0a0hb {

@@ -47,7 +47,7 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
 
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-            return ((StringUtils.isEmpty(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ?
+            return ((isEmpty_q5t0js_a0a0a0b0a0a0b0a1a0b0a(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ?
               "<default options>" :
               SPropertyOperations.getString(_context.getParameterNode(), "optionsName")
             ));
@@ -72,5 +72,9 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
       }
     });
     return references;
+  }
+
+  public static boolean isEmpty_q5t0js_a0a0a0b0a0a0b0a1a0b0a(String str) {
+    return str == null || str.length() == 0;
   }
 }

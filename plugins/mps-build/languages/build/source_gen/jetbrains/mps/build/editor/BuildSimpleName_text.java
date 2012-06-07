@@ -62,7 +62,7 @@ public class BuildSimpleName_text extends EditorCellKeyMap {
       if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildStringPart"))) {
         return false;
       }
-      return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "text"));
+      return isNotEmpty_4bhgsw_a0c0e0(SPropertyOperations.getString(node, "text"));
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
@@ -86,6 +86,10 @@ public class BuildSimpleName_text extends EditorCellKeyMap {
 
     public String getKeyStroke() {
       return " $";
+    }
+
+    public static boolean isNotEmpty_4bhgsw_a0c0e0(String str) {
+      return str != null && str.length() > 0;
     }
   }
 }

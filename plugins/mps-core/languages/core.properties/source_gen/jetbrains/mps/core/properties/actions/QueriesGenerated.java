@@ -26,7 +26,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode pd = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.core.properties.structure.PropertiesDeclaration", null);
-            if (!(StringUtils.isEmpty(pattern))) {
+            if (!((pattern == null || pattern.length() == 0))) {
               String name = pattern;
               if (pattern.endsWith("=")) {
                 name = name.substring(0, name.length() - 1);
@@ -37,7 +37,7 @@ public class QueriesGenerated {
           }
 
           public String getMatchingText(String pattern) {
-            if (!(StringUtils.isEmpty(pattern)) && !(pattern.equals("#"))) {
+            if (!((pattern == null || pattern.length() == 0)) && !(pattern.equals("#"))) {
               String name = pattern;
               if (pattern.endsWith("=")) {
                 name = name.substring(0, name.length() - 1);

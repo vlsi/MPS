@@ -124,7 +124,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void extendedInterface(SNode interface1, final SNodeTextGen textGen) {
-    Set<String> dependencies = (Set<String>) BaseLanguageTextGen.getUserObjects(TextGenManager.EXTENDS, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.EXTENDS, textGen);
     SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(interface1));
   }
 
@@ -137,7 +137,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void extendedClasses(SNode classConcept, final SNodeTextGen textGen) {
-    Set<String> dependencies = (Set<String>) BaseLanguageTextGen.getUserObjects(TextGenManager.EXTENDS, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.EXTENDS, textGen);
     SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(classConcept));
   }
 
@@ -155,7 +155,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void fileHeader(SNode cls, final SNodeTextGen textGen) {
-    Set<String> names = (Set<String>) BaseLanguageTextGen.getUserObjects(TextGenManager.IMPORT, textGen);
+    Set<String> names = BaseLanguageTextGen.getUserObjects(TextGenManager.IMPORT, textGen);
     String newImport = BaseLanguageTextGen.getPackageName(cls, textGen) + "." + SPropertyOperations.getString(cls, "name");
     SetSequence.fromSet(names).addElement(newImport);
     if (cls.isRoot()) {
@@ -294,7 +294,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   protected static void addDependency(String name, final SNodeTextGen textGen) {
-    Set<String> dependencies = (Set<String>) BaseLanguageTextGen.getUserObjects(TextGenManager.DEPENDENCY, textGen);
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.DEPENDENCY, textGen);
     SetSequence.fromSet(dependencies).addElement(name);
   }
 

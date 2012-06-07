@@ -16,6 +16,8 @@ import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
+import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.LazyScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -89,6 +91,10 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static Scope virtual_getScopeForInterface_1251851371723365208(SNode thisNode, final SNode interfaceNode, SNode[] extendsInterfaces) {
+    if (ClassifierScopeUtils.isHierarchyCyclic(interfaceNode)) {
+      return new EmptyScope();
+    }
+
     List<Scope> extendsScopes = ListSequence.fromList(new ArrayList<Scope>());
     for (final SNode extendsClassifier : extendsInterfaces) {
       if ((extendsClassifier != null)) {
@@ -104,6 +110,10 @@ public class StaticFieldDeclaration_Behavior {
   }
 
   public static Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, final SNode classNode, @Nullable final SNode extendsClass, SNode[] implementsInterfaces) {
+    if (ClassifierScopeUtils.isHierarchyCyclic(classNode)) {
+      return new EmptyScope();
+    }
+
     List<Scope> extendsScopes = ListSequence.fromList(new ArrayList<Scope>());
     if ((extendsClass != null)) {
       ListSequence.fromList(extendsScopes).addElement(new LazyScope(new _FunctionTypes._return_P0_E0<Scope>() {

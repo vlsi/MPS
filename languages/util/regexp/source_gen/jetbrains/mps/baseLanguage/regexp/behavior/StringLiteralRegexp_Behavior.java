@@ -22,7 +22,7 @@ public class StringLiteralRegexp_Behavior {
   }
 
   public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
-    if (StringUtils.isEmpty(SPropertyOperations.getString(thisNode, "text"))) {
+    if (isEmpty_mq2s4l_a0a0c(SPropertyOperations.getString(thisNode, "text"))) {
       return false;
     }
     return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
@@ -103,5 +103,9 @@ public class StringLiteralRegexp_Behavior {
 
   public static boolean isHexChar_8949395081772969908(char c) {
     return Character.isDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
+  }
+
+  public static boolean isEmpty_mq2s4l_a0a0c(String str) {
+    return str == null || str.length() == 0;
   }
 }

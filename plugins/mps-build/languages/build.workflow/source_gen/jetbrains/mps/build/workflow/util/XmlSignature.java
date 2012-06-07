@@ -60,7 +60,7 @@ public class XmlSignature {
     for (SNode content : SLinkOperations.getTargets(element, "content", true)) {
       if (SNodeOperations.isInstanceOf(content, "jetbrains.mps.core.xml.structure.XmlBaseElement")) {
         add(SNodeOperations.cast(content, "jetbrains.mps.core.xml.structure.XmlElement"));
-      } else if (SNodeOperations.isInstanceOf(content, "jetbrains.mps.core.xml.structure.XmlText") && StringUtils.isEmpty(SPropertyOperations.getString(SNodeOperations.cast(content, "jetbrains.mps.core.xml.structure.XmlText"), "value"))) {
+      } else if (SNodeOperations.isInstanceOf(content, "jetbrains.mps.core.xml.structure.XmlText") && isEmpty_sz4ke8_a0a0a0f0b(SPropertyOperations.getString(SNodeOperations.cast(content, "jetbrains.mps.core.xml.structure.XmlText"), "value"))) {
         // ignore 
       } else {
         hasErrors = true;
@@ -112,5 +112,9 @@ public class XmlSignature {
 
   public boolean hasErrors() {
     return hasErrors;
+  }
+
+  public static boolean isEmpty_sz4ke8_a0a0a0f0b(String str) {
+    return str == null || str.length() == 0;
   }
 }

@@ -51,7 +51,6 @@
     <classNode extendsClassName="jetbrains.mps.debug.evaluation.Invocatable" />
   </dependency>
   <dependency className="jetbrains.mps.debug.evaluation.Evaluator" file="Evaluator.java">
-    <classNode dependClassName="com.sun.jdi.Location" />
     <classNode dependClassName="com.sun.jdi.ObjectReference" />
     <classNode dependClassName="com.sun.jdi.StackFrame" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />

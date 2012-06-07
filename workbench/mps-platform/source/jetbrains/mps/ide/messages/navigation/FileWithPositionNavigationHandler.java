@@ -25,19 +25,24 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.make.FileWithPosition;
 
 class FileWithPositionNavigationHandler implements INavigationHandler<FileWithPosition> {
-  public void navigate(Project project, FileWithPosition pos, boolean focus, boolean select) {
+  public boolean canNavigate(FileWithPosition pos) {
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
+    return vf != null;
+  }
 
+  public void navigate(FileWithPosition pos, Project project, boolean focus, boolean select) {
+    VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(pos.getFile());
     if (vf == null) return;
 
-    FileEditor[] result = FileEditorManager.getInstance(project).openFile(vf, true);
+    for (FileEditor fe: FileEditorManager.getInstance(project).openFile(vf, true)){
+      if (!(fe instanceof TextEditor)) continue;
 
-    if (result.length == 1 && result[0] instanceof TextEditor) {
-      TextEditor te = (TextEditor) result[0];
+      TextEditor te = (TextEditor) fe;
       int offset = pos.getOffset();
       int maxOff = te.getEditor().getDocument().getTextLength();
       te.getEditor().getCaretModel().moveToOffset(Math.min(offset, maxOff));
       te.getEditor().getScrollingModel().scrollToCaret(ScrollType.MAKE_VISIBLE);
+      return;
     }
   }
 }

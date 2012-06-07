@@ -28,15 +28,23 @@ public class ModelReferenceExpression_Constraints extends BaseConstraintsDescrip
       @Override
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "fqName";
-        if (StringUtils.isEmpty(SPropertyOperations.getString(node, "name"))) {
+        if (isEmpty_3o6mlk_a0a0b0b0a1a0b0a(SPropertyOperations.getString(node, "name"))) {
           return null;
         }
-        return SPropertyOperations.getString(node, "name") + ((StringUtils.isEmpty(SPropertyOperations.getString(node, "stereotype")) ?
+        return SPropertyOperations.getString(node, "name") + ((isEmpty_3o6mlk_a0a0a1a1a1a0b0a1a0(SPropertyOperations.getString(node, "stereotype")) ?
           "" :
           "@" + SPropertyOperations.getString(node, "stereotype")
         ));
       }
     });
     return properties;
+  }
+
+  public static boolean isEmpty_3o6mlk_a0a0b0b0a1a0b0a(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isEmpty_3o6mlk_a0a0a1a1a1a0b0a1a0(String str) {
+    return str == null || str.length() == 0;
   }
 }

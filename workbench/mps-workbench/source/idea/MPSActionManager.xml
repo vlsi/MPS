@@ -79,29 +79,16 @@
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="AnalyzeMenu"/>
     </group>
 
-    <group id="MPSWelcomeDocumentationMenu">
-      <action id="ReadMPSTutorial"
-              class="jetbrains.mps.workbench.actions.help.ReadMPSTutorialAction"
-              text="Read The Tutorial"
-              description="You can read a tutorial on how to create a simple language with MPS"/>
-      <action id="ShowMPSDocumentation"
-              class="jetbrains.mps.workbench.actions.help.ShowDocumentationAction"
-              text="Browse MPS Documentation"
-              description="You can browse online documentation on MPS"/>
-
-      <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
-    </group>
-
     <group id="MPSWelcomeGettingStartedMenu">
       <action id="CreateNewProjectAction"
               class="jetbrains.mps.workbench.actions.NewMPSProjectAction"
-              text="Create New MPS Project"
+              text="Create New Project"
               description="You can create a new project with this action"/>
 
       <action id="OpenExistingProjectAction"
               class="jetbrains.mps.workbench.actions.OpenMPSProjectAction"
-              text="Open MPS Project"
-              description="You can open existing MPS project with this action"/>
+              text="Open Project"
+              description="You can open existing project with this action"/>
 
       <!--<action id="OpenRecenProjectAciton"-->
       <!--class="com.intellij.openapi.wm.impl.welcomeScreen.RecentProjectsAction"-->

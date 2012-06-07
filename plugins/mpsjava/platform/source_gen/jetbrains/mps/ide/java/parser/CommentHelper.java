@@ -31,7 +31,7 @@ public class CommentHelper {
       return result;
     }
     // remove start prefix 
-    if (StringUtils.trimBoth(Sequence.fromIterable(lines).first()).equals(start)) {
+    if (trim_rf742u_a0a4a1(Sequence.fromIterable(lines).first()).equals(start)) {
       lines = Sequence.fromIterable(lines).skip(1);
     } else if (Sequence.fromIterable(lines).first().startsWith(start)) {
       ListSequence.fromList(result).addElement(Sequence.fromIterable(lines).first().substring(start.length()));
@@ -41,26 +41,26 @@ public class CommentHelper {
     if (Sequence.fromIterable(lines).isNotEmpty()) {
       int mintrim = Sequence.fromIterable(lines).first().length();
       for (String line : Sequence.fromIterable(lines)) {
-        if (StringUtils.isNotEmpty(line)) {
+        if ((line != null && line.length() > 0)) {
           mintrim = Math.min(mintrim, line.length() - StringUtils.stripStart(line, " \n\r\t").length());
         }
       }
       boolean trimok = mintrim > 0;
       String prefix = Sequence.fromIterable(lines).first().substring(0, mintrim);
       for (String line : Sequence.fromIterable(lines)) {
-        if (StringUtils.isNotEmpty(line)) {
+        if ((line != null && line.length() > 0)) {
           trimok = trimok && line.startsWith(prefix);
         }
       }
       for (String line : Sequence.fromIterable(lines)) {
-        ListSequence.fromList(result).addElement((trimok && StringUtils.isNotEmpty(line) ?
+        ListSequence.fromList(result).addElement((trimok && (line != null && line.length() > 0) ?
           line.substring(mintrim) :
           line
         ));
       }
     }
-    if (StringUtils.isNotEmpty(end) && ListSequence.fromList(result).isNotEmpty()) {
-      if (StringUtils.trimBoth(ListSequence.fromList(result).last()).equals(end)) {
+    if ((end != null && end.length() > 0) && ListSequence.fromList(result).isNotEmpty()) {
+      if (trim_rf742u_a0a0a7a1(ListSequence.fromList(result).last()).equals(end)) {
         ListSequence.fromList(result).removeLastElement();
       } else if (ListSequence.fromList(result).last().endsWith(end)) {
         String last = ListSequence.fromList(result).removeLastElement();
@@ -80,5 +80,19 @@ public class CommentHelper {
     } else {
       return processLines(lines, "/*", "*/");
     }
+  }
+
+  public static String trim_rf742u_a0a4a1(String str) {
+    return (str == null ?
+      null :
+      str.trim()
+    );
+  }
+
+  public static String trim_rf742u_a0a0a7a1(String str) {
+    return (str == null ?
+      null :
+      str.trim()
+    );
   }
 }

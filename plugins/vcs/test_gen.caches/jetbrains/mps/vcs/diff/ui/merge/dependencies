@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.vcs.diff.ui.merge.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.merge.TestMergeDialog" file="TestMergeDialog.java">
     <classNode dependClassName="com.intellij.idea.IdeaTestApplication" />
     <classNode dependClassName="com.intellij.mock.MockProjectEx" />
@@ -36,7 +33,6 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.StringUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.platform.util.MergeBackupUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.util.MergeVersion" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />

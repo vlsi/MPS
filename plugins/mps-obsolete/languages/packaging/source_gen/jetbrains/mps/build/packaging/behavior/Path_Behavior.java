@@ -68,7 +68,7 @@ public class Path_Behavior {
   }
 
   public static boolean call_hasMacro_4323997179924030474(SNode thisNode) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name"));
+    return isNotEmpty_jfcfx2_a0a0h(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", true), "name"));
   }
 
   public static String call_getName_1221141245424(SNode thisNode) {
@@ -78,5 +78,9 @@ public class Path_Behavior {
 
   public static String callSuper_getName_1221141245424(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.Path"), callerConceptFqName, "virtual_getName_1221141245424", PARAMETERS_1221141245424);
+  }
+
+  public static boolean isNotEmpty_jfcfx2_a0a0h(String str) {
+    return str != null && str.length() > 0;
   }
 }

@@ -788,14 +788,10 @@
     <nodeInfo nodeId="1181953543593" fileName="ConceptRef.java" startLine="81" startPosition="62" endLine="82" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1181953582963" fileName="ConceptRef.java" startLine="82" startPosition="180" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1181953605568" fileName="ConceptRef.java" startLine="83" startPosition="19" endLine="84" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182280576926" fileName="ConceptRef.java" startLine="87" startPosition="47" endLine="88" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182280588605" fileName="ConceptRef.java" startLine="88" startPosition="173" endLine="89" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182280646351" fileName="ConceptRef.java" startLine="89" startPosition="25" endLine="90" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1173133630403" fileName="ConceptRef.java" startLine="18" startPosition="65" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1180482960664" fileName="ConceptRef.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="concept_conceptProperties#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1180542870136" fileName="ConceptRef.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="concept_conceptLinkTargets#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1181953387737" fileName="ConceptRef.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="concept_hierarchy2#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IScope;)V" />
-    <nodeInfo nodeId="1182280228035" fileName="ConceptRef.java" startLine="86" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="concept_instances#(Ljetbrains/mps/smodel/IScope;)V" />
     <nodeInfo nodeId="1173133347096" fileName="ConceptRef.java" startLine="15" startPosition="25" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="concept_ref_1#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1177011565489" fileName="ConceptRef.java" startLine="24" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instanceOf_1#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1180456939140" fileName="ConceptRef.java" startLine="62" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="concept_hierarchy1#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -811,11 +807,6 @@
       <varInfo nodeId="1181953582964" varName="n" />
       <varInfo nodeId="1181953543594" varName="subConcepts" />
       <varInfo nodeId="1181953605569" varName="subConcepts1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182280228038" fileName="ConceptRef.java" startLine="87" startPosition="47" endLine="90" endPosition="85">
-      <varInfo nodeId="1182280588606" varName="concept" />
-      <varInfo nodeId="1182280576927" varName="instances" />
-      <varInfo nodeId="1182280646352" varName="instances2" />
     </scopeInfo>
     <scopeInfo nodeId="1180482960664" fileName="ConceptRef.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1180482998701" varName="exprConcept" />
@@ -833,9 +824,6 @@
     <scopeInfo nodeId="1181953387737" fileName="ConceptRef.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
       <varInfo nodeId="1206984437899" varName="model" />
       <varInfo nodeId="1206984441334" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182280228035" fileName="ConceptRef.java" startLine="86" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="1182280633502" varName="scope" />
     </scopeInfo>
     <scopeInfo nodeId="1173133347096" fileName="ConceptRef.java" startLine="15" startPosition="25" endLine="24" endPosition="0">
       <varInfo nodeId="1173133606677" varName="node" />
@@ -870,7 +858,7 @@
       <varInfo nodeId="1180457006292" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="1180543684770" fileName="ConceptRef.java" startLine="41" startPosition="0" endLine="62" endPosition="0" />
-    <unitInfo nodeId="1173133339986" fileName="ConceptRef.java" startLine="15" startPosition="0" endLine="93" endPosition="0" unitName="smodelLanguage.samples.ConceptRef" />
+    <unitInfo nodeId="1173133339986" fileName="ConceptRef.java" startLine="15" startPosition="0" endLine="87" endPosition="0" unitName="smodelLanguage.samples.ConceptRef" />
   </root>
   <root nodeId="1206559673195">
     <nodeInfo nodeId="1206561988994" fileName="Attributes.java" startLine="14" startPosition="51" endLine="15" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

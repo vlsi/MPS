@@ -87,13 +87,21 @@ public class BuildRelativePath_Behavior {
     if ((SLinkOperations.getTarget(cp, "tail", true) == null)) {
       return null;
     }
-    if (StringUtils.isEmpty(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
+    if (isEmpty_wij6l5_a0b0i(SPropertyOperations.getString(SLinkOperations.getTarget(cp, "tail", true), "head"))) {
       return BuildRelativePath_Behavior.next_8654221991637156927(SLinkOperations.getTarget(cp, "tail", true));
     }
     return SLinkOperations.getTarget(cp, "tail", true);
   }
 
   public static boolean isEmptyTail_8654221991637157686(SNode cp) {
-    return cp == null || StringUtils.isEmpty(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(cp, "tail", true));
+    return cp == null || isEmpty_wij6l5_a0a0a0j(SPropertyOperations.getString(cp, "head")) && BuildRelativePath_Behavior.isEmptyTail_8654221991637157686(SLinkOperations.getTarget(cp, "tail", true));
+  }
+
+  public static boolean isEmpty_wij6l5_a0b0i(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isEmpty_wij6l5_a0a0a0j(String str) {
+    return str == null || str.length() == 0;
   }
 }

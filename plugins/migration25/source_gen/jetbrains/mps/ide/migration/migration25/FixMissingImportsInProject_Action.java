@@ -12,15 +12,22 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.Queue;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.List;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -64,24 +71,41 @@ public class FixMissingImportsInProject_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Queue<IModule> modules = QueueSequence.fromQueueWithValues(new LinkedList<IModule>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModules());
+      // Using ModulereReferences here instead of modules because module can be re-created during  MissingDependenciesFixer execution. 
+      Queue<ModuleReference> modules = QueueSequence.fromQueueWithValues(new LinkedList<ModuleReference>(), ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class).getModuleReferences());
       while (QueueSequence.fromQueue(modules).isNotEmpty()) {
-        IModule module = QueueSequence.fromQueue(modules).removeFirstElement();
+        IModule module = ModuleRepositoryFacade.getInstance().getModule(QueueSequence.fromQueue(modules).removeFirstElement());
         if (module.isPackaged()) {
           continue;
         }
         if (module instanceof Language) {
-          QueueSequence.fromQueue(modules).addSequence(CollectionSequence.fromCollection(((Language) module).getGenerators()));
+          Iterable<Generator> generators = ((Language) module).getGenerators();
+          QueueSequence.fromQueue(modules).addSequence(Sequence.fromIterable(generators).select(new ISelector<Generator, ModuleReference>() {
+            public ModuleReference select(Generator it) {
+              return it.getModuleReference();
+            }
+          }));
         }
-        for (SModelDescriptor model : ListSequence.fromList(module.getOwnModelDescriptors())) {
-          if (!(SModelStereotype.isUserModel(model))) {
+
+        // Using SModelReferences because SModelDescriptors can be re-created during MissingDependenciesFixer execution. 
+        List<SModelReference> modelReferences = ListSequence.fromList(new LinkedList<SModelReference>());
+        for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
+          ListSequence.fromList(modelReferences).addElement(modelDescriptor.getSModelReference());
+        }
+
+        for (SModelReference modelReference : ListSequence.fromList(modelReferences)) {
+          SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
+          if (modelDescriptor == null) {
             continue;
           }
-          if (!(model instanceof EditableSModelDescriptor)) {
+          if (!(SModelStereotype.isUserModel(modelDescriptor))) {
+            continue;
+          }
+          if (!(modelDescriptor instanceof EditableSModelDescriptor)) {
             continue;
           }
 
-          new MissingDependenciesFixer(model).fix(false);
+          new MissingDependenciesFixer(modelDescriptor).fix(false);
         }
         module.invalidateCaches();
       }

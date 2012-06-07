@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.structure.typesystem.StringUtils" />
   <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.structure.typesystem.TypesystemDescriptor" />
   <root nodeId="1212181746947">
     <nodeInfo nodeId="1227876791998" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="72" startPosition="27" endLine="72" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -484,7 +483,7 @@
   </root>
   <root nodeId="7469468981580405274">
     <nodeInfo nodeId="7469468981580452397" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="25" startPosition="131" endLine="26" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7469468981580452418" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="27" startPosition="36" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7469468981580452418" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="27" startPosition="47" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7469468981580452449" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="31" startPosition="39" endLine="32" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7469468981580406086" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="35" startPosition="7" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7469468981580406086" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="36" startPosition="60" endLine="37" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -504,7 +503,7 @@
     <nodeInfo nodeId="7469468981580406090" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="29" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7469468981580405274" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
     <scopeInfo nodeId="7469468981580405274" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="22" startPosition="58" endLine="22" endPosition="58" />
-    <scopeInfo nodeId="7469468981580452409" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="27" startPosition="36" endLine="28" endPosition="13" />
+    <scopeInfo nodeId="7469468981580452409" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="27" startPosition="47" endLine="28" endPosition="13" />
     <scopeInfo nodeId="7469468981580452448" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="31" startPosition="39" endLine="32" endPosition="90" />
     <scopeInfo nodeId="7469468981580405274" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="43" startPosition="46" endLine="44" endPosition="79" />
     <scopeInfo nodeId="7469468981580405274" fileName="check_DuplicatedConceptName_NonTypesystemRule.java" startLine="54" startPosition="30" endLine="55" endPosition="17" />

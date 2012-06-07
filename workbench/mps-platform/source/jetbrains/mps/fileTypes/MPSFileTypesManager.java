@@ -55,19 +55,4 @@ public class MPSFileTypesManager implements ApplicationComponent {
     if (vfile == null) return false;
     return vfile.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
   }
-
-
-  public boolean isModuleFile(String path) {
-    if (path == null) return false;
-    FileType type = FileTypeManager.getInstance().getFileTypeByFileName(path);
-    return type.equals(MPSFileTypeFactory.LANGUAGE_FILE_TYPE) ||
-      type.equals(MPSFileTypeFactory.SOLUTION_FILE_TYPE) ||
-      type.equals(MPSFileTypeFactory.DEVKIT_FILE_TYPE);
-  }
-
-  public boolean isModelFile(String path) {
-    if (path == null) return false;
-    FileType type = FileTypeManager.getInstance().getFileTypeByFileName(path);
-    return type.equals(MPSFileTypeFactory.MODEL_FILE_TYPE);
-  }
 }

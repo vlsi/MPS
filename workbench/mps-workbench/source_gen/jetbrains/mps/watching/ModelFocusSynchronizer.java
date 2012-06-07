@@ -61,7 +61,10 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
                   while (!(fileToRefresh.exists())) {
                     fileToRefresh = fileToRefresh.getParent();
                   }
-                  session.addFile(VirtualFileUtils.getVirtualFile(modelFile));
+                  VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(modelFile);
+                  if (virtualFile != null) {
+                    session.addFile(virtualFile);
+                  }
                 }
               }
             }

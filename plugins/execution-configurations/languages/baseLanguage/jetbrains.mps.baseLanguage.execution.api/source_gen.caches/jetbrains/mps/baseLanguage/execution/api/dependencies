@@ -58,7 +58,6 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.StringUtils" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebugger" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
@@ -102,9 +101,6 @@
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.execution.api.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

@@ -21,6 +21,7 @@
   <version>2.0</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
   <idea-version since-build="3000"/>
+  <depends>jetbrains.mps.ide.devkit</depends>
 
   <application-components>
     <component>
@@ -40,7 +41,7 @@
               class="jetbrains.mps.workbench.actions.welcomeScreen.OpenTheSimplestLanguageProjectAction"
               text="Open The Simplest Language Project"
               description="You can take a look at the simplest possible language with typical aspects of most languages. Click the icon or link to open the sample project."/>
-      <add-to-group group-id="MPSWelcomeDocumentationMenu" anchor="last"/>
+      <add-to-group group-id="WelcomeScreen.Documentation" anchor="last"/>
     </group>
   </actions>
 </idea-plugin>

@@ -10,7 +10,7 @@ public abstract class BaseStringOperation_BehaviorDescriptor extends BaseConcept
   }
 
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
-    return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
+    return BaseStringOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
   }
 
   public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {

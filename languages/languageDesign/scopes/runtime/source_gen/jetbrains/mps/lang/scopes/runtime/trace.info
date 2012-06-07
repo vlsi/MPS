@@ -260,67 +260,67 @@
     <unitInfo nodeId="8317913688490453131" fileName="CompositeWithParentScope.java" startLine="38" startPosition="20" endLine="42" endPosition="5" unitName="jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope$1" />
   </root>
   <root nodeId="3961775458390497664">
-    <nodeInfo nodeId="3961775458390497681" fileName="FilteringScope.java" startLine="13" startPosition="38" endLine="14" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3961775458390497755" fileName="FilteringScope.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497734" fileName="FilteringScope.java" startLine="22" startPosition="59" endLine="23" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3961775458390497748" fileName="FilteringScope.java" startLine="24" startPosition="31" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497752" fileName="FilteringScope.java" startLine="26" startPosition="5" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497757" fileName="FilteringScope.java" startLine="31" startPosition="72" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3535966925184171528" fileName="FilteringScope.java" startLine="34" startPosition="39" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497811" fileName="FilteringScope.java" startLine="42" startPosition="27" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497720" fileName="FilteringScope.java" startLine="44" startPosition="5" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497820" fileName="FilteringScope.java" startLine="50" startPosition="27" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497731" fileName="FilteringScope.java" startLine="52" startPosition="5" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497666" fileName="FilteringScope.java" startLine="12" startPosition="53" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FilteringScope#(Ljetbrains/mps/scope/Scope;)V" />
-    <nodeInfo nodeId="3961775458390497742" fileName="FilteringScope.java" startLine="23" startPosition="57" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3961775458390497805" fileName="FilteringScope.java" startLine="41" startPosition="65" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3961775458390497815" fileName="FilteringScope.java" startLine="49" startPosition="39" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3961775458390497671" fileName="FilteringScope.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExcluded#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3535966925184171526" fileName="FilteringScope.java" startLine="33" startPosition="85" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3961775458390497786" fileName="FilteringScope.java" startLine="32" startPosition="75" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3961775458390497711" fileName="FilteringScope.java" startLine="39" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3961775458390497724" fileName="FilteringScope.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="3961775458390497687" fileName="FilteringScope.java" startLine="20" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3961775458390497700" fileName="FilteringScope.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="3961775458390497669" fileName="FilteringScope.java" startLine="13" startPosition="38" endLine="14" endPosition="17" />
-    <scopeInfo nodeId="3961775458390497674" fileName="FilteringScope.java" startLine="17" startPosition="41" endLine="18" endPosition="17" />
-    <scopeInfo nodeId="3961775458390497743" fileName="FilteringScope.java" startLine="24" startPosition="31" endLine="25" endPosition="18" />
-    <scopeInfo nodeId="3535966925184171527" fileName="FilteringScope.java" startLine="34" startPosition="39" endLine="35" endPosition="33" />
-    <scopeInfo nodeId="3961775458390497806" fileName="FilteringScope.java" startLine="42" startPosition="27" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="3961775458390497816" fileName="FilteringScope.java" startLine="50" startPosition="27" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="3961775458390497666" fileName="FilteringScope.java" startLine="12" startPosition="53" endLine="15" endPosition="3">
+    <nodeInfo nodeId="3961775458390497681" fileName="FilteringScope.java" startLine="14" startPosition="47" endLine="15" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3961775458390497755" fileName="FilteringScope.java" startLine="18" startPosition="41" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497734" fileName="FilteringScope.java" startLine="23" startPosition="59" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3961775458390497748" fileName="FilteringScope.java" startLine="25" startPosition="31" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497752" fileName="FilteringScope.java" startLine="27" startPosition="5" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497757" fileName="FilteringScope.java" startLine="32" startPosition="72" endLine="33" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3535966925184171528" fileName="FilteringScope.java" startLine="35" startPosition="39" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497811" fileName="FilteringScope.java" startLine="43" startPosition="27" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497720" fileName="FilteringScope.java" startLine="45" startPosition="5" endLine="46" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497820" fileName="FilteringScope.java" startLine="51" startPosition="27" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497731" fileName="FilteringScope.java" startLine="53" startPosition="5" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497666" fileName="FilteringScope.java" startLine="13" startPosition="53" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FilteringScope#(Ljetbrains/mps/scope/Scope;)V" />
+    <nodeInfo nodeId="3961775458390497742" fileName="FilteringScope.java" startLine="24" startPosition="57" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3961775458390497805" fileName="FilteringScope.java" startLine="42" startPosition="65" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3961775458390497815" fileName="FilteringScope.java" startLine="50" startPosition="39" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3961775458390497671" fileName="FilteringScope.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExcluded#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3535966925184171526" fileName="FilteringScope.java" startLine="34" startPosition="85" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3961775458390497786" fileName="FilteringScope.java" startLine="33" startPosition="75" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3961775458390497711" fileName="FilteringScope.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3961775458390497724" fileName="FilteringScope.java" startLine="48" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3961775458390497687" fileName="FilteringScope.java" startLine="21" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3961775458390497700" fileName="FilteringScope.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
+    <scopeInfo nodeId="3961775458390497669" fileName="FilteringScope.java" startLine="14" startPosition="47" endLine="15" endPosition="17" />
+    <scopeInfo nodeId="3961775458390497674" fileName="FilteringScope.java" startLine="18" startPosition="41" endLine="19" endPosition="17" />
+    <scopeInfo nodeId="3961775458390497743" fileName="FilteringScope.java" startLine="25" startPosition="31" endLine="26" endPosition="18" />
+    <scopeInfo nodeId="3535966925184171527" fileName="FilteringScope.java" startLine="35" startPosition="39" endLine="36" endPosition="33" />
+    <scopeInfo nodeId="3961775458390497806" fileName="FilteringScope.java" startLine="43" startPosition="27" endLine="44" endPosition="18" />
+    <scopeInfo nodeId="3961775458390497816" fileName="FilteringScope.java" startLine="51" startPosition="27" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="3961775458390497666" fileName="FilteringScope.java" startLine="13" startPosition="53" endLine="16" endPosition="3">
       <varInfo nodeId="3961775458390497677" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390497671" fileName="FilteringScope.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="3961775458390497671" fileName="FilteringScope.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3961775458390497675" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3535966925184171526" fileName="FilteringScope.java" startLine="33" startPosition="85" endLine="37" endPosition="0">
+    <scopeInfo nodeId="3535966925184171526" fileName="FilteringScope.java" startLine="34" startPosition="85" endLine="38" endPosition="0">
       <varInfo nodeId="3535966925184171526" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390497718" fileName="FilteringScope.java" startLine="41" startPosition="65" endLine="45" endPosition="53" />
-    <scopeInfo nodeId="3961775458390497730" fileName="FilteringScope.java" startLine="49" startPosition="39" endLine="53" endPosition="32" />
-    <scopeInfo nodeId="3961775458390497694" fileName="FilteringScope.java" startLine="22" startPosition="59" endLine="27" endPosition="20">
+    <scopeInfo nodeId="3961775458390497718" fileName="FilteringScope.java" startLine="42" startPosition="65" endLine="46" endPosition="53" />
+    <scopeInfo nodeId="3961775458390497730" fileName="FilteringScope.java" startLine="50" startPosition="39" endLine="54" endPosition="32" />
+    <scopeInfo nodeId="3961775458390497694" fileName="FilteringScope.java" startLine="23" startPosition="59" endLine="28" endPosition="20">
       <varInfo nodeId="3961775458390497735" varName="resolved" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390497706" fileName="FilteringScope.java" startLine="31" startPosition="72" endLine="37" endPosition="7">
+    <scopeInfo nodeId="3961775458390497706" fileName="FilteringScope.java" startLine="32" startPosition="72" endLine="38" endPosition="7">
       <varInfo nodeId="3961775458390497758" varName="availableElements" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390497711" fileName="FilteringScope.java" startLine="39" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="3961775458390497711" fileName="FilteringScope.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="3961775458390497714" varName="contextNode" />
       <varInfo nodeId="3961775458390497716" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390497724" fileName="FilteringScope.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="3961775458390497724" fileName="FilteringScope.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="3961775458390497727" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390497687" fileName="FilteringScope.java" startLine="20" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="3961775458390497687" fileName="FilteringScope.java" startLine="21" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="3961775458390497690" varName="contextNode" />
       <varInfo nodeId="3961775458390497692" varName="refText" />
     </scopeInfo>
-    <scopeInfo nodeId="3961775458390497700" fileName="FilteringScope.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="3961775458390497700" fileName="FilteringScope.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="3961775458390497703" varName="prefix" />
     </scopeInfo>
-    <unitInfo nodeId="3961775458390497664" fileName="FilteringScope.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.scopes.runtime.FilteringScope" />
-    <unitInfo nodeId="3535966925184171526" fileName="FilteringScope.java" startLine="33" startPosition="62" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.scopes.runtime.FilteringScope$1" />
+    <unitInfo nodeId="3961775458390497664" fileName="FilteringScope.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.scopes.runtime.FilteringScope" />
+    <unitInfo nodeId="3535966925184171526" fileName="FilteringScope.java" startLine="34" startPosition="62" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.scopes.runtime.FilteringScope$1" />
   </root>
   <root nodeId="4819084825497241580">
     <nodeInfo nodeId="4819084825497241597" fileName="LazyScope.java" startLine="9" startPosition="48" endLine="10" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="scopePromise" />

@@ -94,7 +94,7 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
       @Override
       public Object convertForward(Object value) {
         RootReference rr = (RootReference) value;
-        return rr.getPath() + " (" + rr.getPrefix() + ")";
+        return rr.getPath();
       }
 
       @Override
@@ -147,10 +147,6 @@ public class CloneModelDialog extends BaseStretchingBindedDialog {
     if (myModelProperties.getRoot() == null) return "Please specify root";
     if (myModelProperties.getLongName() == null || myModelProperties.getLongName().length() == 0)
       return "Please specify name";
-    if (!myModelProperties.getLongName().startsWith(myModelProperties.getRoot().getPrefix()))
-      return "Incorrect namespace for specified root";
-    if (myModelProperties.getLongName().equals(myModelProperties.getRoot().getPrefix()))
-      return "Model fqName is the same as prefix. Can't import";
     if (myModelProperties.getImportedLanguages().size() < 1) return "Model must have at least one language";
     return null;
   }

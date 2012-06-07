@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import java.io.File;
 
 public abstract class AbstractBuildGenerator {
   private String myProjectName;
@@ -24,8 +23,6 @@ public abstract class AbstractBuildGenerator {
   private boolean myCreateModel = true;
   private final List<NodeData> myModules = ListSequence.fromList(new LinkedList<NodeData>());
   private DependencyStep.DependencyKind myDependencyKind = DependencyStep.DependencyKind.values()[DependencyStep.DependencyKind.DEFAULT];
-  private boolean myPackAsIdeaPlugin = false;
-  private String myPathToPluginXml;
 
   public AbstractBuildGenerator() {
   }
@@ -122,7 +119,7 @@ public abstract class AbstractBuildGenerator {
   }
 
   public boolean isValid() {
-    return (this.isValidModelName(this.myModelName) || !(this.myCreateModel)) && (this.isValidSolutionName(this.mySolutionName) || !(this.myCreateSolution)) && (!(myPackAsIdeaPlugin) || (StringUtils.isNotEmpty(myPathToPluginXml) && new File(myPathToPluginXml).exists()));
+    return (this.isValidModelName(this.myModelName) || !(this.myCreateModel)) && (this.isValidSolutionName(this.mySolutionName) || !(this.myCreateSolution));
   }
 
   public DependencyStep.DependencyKind getDependencyKind() {
@@ -131,21 +128,5 @@ public abstract class AbstractBuildGenerator {
 
   public void setDependencyKind(DependencyStep.DependencyKind dependencyKind) {
     myDependencyKind = dependencyKind;
-  }
-
-  public boolean isPackAsIdeaPlugin() {
-    return myPackAsIdeaPlugin;
-  }
-
-  public void setPackAsIdeaPlugin(boolean packAsIdeaPlugin) {
-    myPackAsIdeaPlugin = packAsIdeaPlugin;
-  }
-
-  public String getPathToPluginXml() {
-    return myPathToPluginXml;
-  }
-
-  public void setPathToPluginXml(String pathToPluginXml) {
-    myPathToPluginXml = pathToPluginXml;
   }
 }

@@ -96,7 +96,7 @@ public class PluginMoveHelper {
         SModel m = ListSequence.fromList(models).first().getSModel();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (it != null) && StringUtils.isNotEmpty(SPropertyOperations.getString(it, "path")) && !(isValid(it));
+            return (it != null) && isNotEmpty_qerz9l_a0a0a0a0a0c0a0a0b(SPropertyOperations.getString(it, "path")) && !(isValid(it));
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
@@ -158,7 +158,6 @@ public class PluginMoveHelper {
       project.setFolderFor(s, project.getFolderFor(l));
     }
     s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
-    s.save();
 
     final String modelName = s.getModuleFqName() + ".plugin";
     List<SModelDescriptor> solModels = s.getOwnModelDescriptors();
@@ -193,6 +192,7 @@ public class PluginMoveHelper {
 
     jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
 
+    s.save();
     SModelRepository.getInstance().saveAll();
   }
 
@@ -204,5 +204,9 @@ public class PluginMoveHelper {
 
   private String makePluginSolutionName(Language l, String name) {
     return l.getModuleFqName() + "." + name;
+  }
+
+  public static boolean isNotEmpty_qerz9l_a0a0a0a0a0c0a0a0b(String str) {
+    return str != null && str.length() > 0;
   }
 }

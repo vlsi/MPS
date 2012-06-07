@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.modelchecker.actions.StringUtils" />
   <root nodeId="1453248744423272128">
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="1" startPosition="0" endLine="1" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -1689,7 +1688,7 @@
     <nodeInfo nodeId="1453248744423275088" fileName="ModelCheckerViewer.java" startLine="270" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#(Ljetbrains/mps/ide/modelchecker/actions/ModelCheckerIssue;)Ljava/lang/String;" />
     <nodeInfo nodeId="1453248744423275635" fileName="ModelCheckerViewer.java" startLine="93" startPosition="47" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1453248744423275264" fileName="ModelCheckerViewer.java" startLine="134" startPosition="45" endLine="140" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1453248744423275057" fileName="ModelCheckerViewer.java" startLine="259" startPosition="45" endLine="266" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1453248744423275057" fileName="ModelCheckerViewer.java" startLine="259" startPosition="56" endLine="266" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1453248744423275293" fileName="ModelCheckerViewer.java" startLine="148" startPosition="33" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1453248744423275010" fileName="ModelCheckerViewer.java" startLine="249" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCategoryText#(Ljetbrains/mps/ide/findusages/view/treeholder/tree/TextOptions;Ljava/lang/String;Z)Ljava/lang/String;" />
     <nodeInfo nodeId="2130359981177982560" fileName="ModelCheckerViewer.java" startLine="160" startPosition="148" endLine="169" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1806,7 +1805,7 @@
     <scopeInfo nodeId="1453248744423275294" fileName="ModelCheckerViewer.java" startLine="149" startPosition="32" endLine="155" endPosition="17">
       <varInfo nodeId="1453248744423275296" varName="dialogAnswer1" />
     </scopeInfo>
-    <scopeInfo nodeId="1453248744423275056" fileName="ModelCheckerViewer.java" startLine="259" startPosition="45" endLine="266" endPosition="9" />
+    <scopeInfo nodeId="1453248744423275056" fileName="ModelCheckerViewer.java" startLine="259" startPosition="56" endLine="266" endPosition="9" />
     <scopeInfo nodeId="1453248744423275358" fileName="ModelCheckerViewer.java" startLine="185" startPosition="100" endLine="193" endPosition="15">
       <varInfo nodeId="1453248744423275360" varName="resultProvider" />
       <varInfo nodeId="1453248744423275366" varName="searchQuery" />

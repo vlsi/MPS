@@ -611,7 +611,7 @@
       </node>
     </node>
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3754131050835963977">
-      <property name="name" nameId="tpck.1169194664001" value="setProperty" />
+      <property name="name" nameId="tpck.1169194664001" value="setProperty2" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3754131050835963978">
         <property name="name" nameId="tpck.1169194664001" value="value" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3754131050835963979">
@@ -2755,7 +2755,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="865001690840233925">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.3908032508224771590" resolveInfo="build" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.3908032508224771601" resolveInfo="build" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="865001690840233926">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="865001690840233927">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />
@@ -3198,7 +3198,7 @@
         <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="889694274152291892">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="889694274152291894">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.889694274152177236" resolveInfo="KeyValueCommandPart" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.4642461663337170630" resolveInfo="KeyValueCommandPart" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="8234001627574019817">
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8234001627574019820">
                 <property name="value" nameId="tpee.1070475926801" value="" />
@@ -3281,7 +3281,7 @@
         <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="6868250101935630752">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="6868250101935630754">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.6868250101935613580" resolveInfo="ListCommandPart" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.6868250101935612522" resolveInfo="ListCommandPart" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6868250101935630756">
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="6868250101935630776">
                 <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="6868250101935630777">
@@ -3379,7 +3379,7 @@
         <property name="virtualPackage" nameId="tpck.1193676396447" value="newProcessBuilder" />
         <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2168104298250428189">
           <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2168104298250428190">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.6868250101935613580" resolveInfo="ListCommandPart" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.6868250101935612522" resolveInfo="ListCommandPart" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2168104298250428239">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="2168104298250428241">
                 <node role="initValue" roleId="tp2q.1237721435808" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2168104298250428191">
@@ -3615,7 +3615,7 @@
             <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="3897882468730045871">
               <node role="templateNode" roleId="tpf8.1177093586806" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3897882468730050121">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="lk2n.3908032508224771422" resolveInfo="ProcessHandlerBuilder" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.2459753140357986687" resolveInfo="startAndWait" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.454072909645320453" resolveInfo="startAndWait" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3897882468730050122">
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcNodeMacro" typeId="tpf8.1114706874351" id="3897882468730050137">
                     <node role="sourceNodeQuery" roleId="tpf8.1168024447342" type="tpf8.SourceSubstituteMacro_SourceNodeQuery" typeId="tpf8.1168024337012" id="3897882468730050138">
@@ -4036,7 +4036,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8980950851470008723">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.3908032508224771590" resolveInfo="build" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="lk2n.3908032508224771601" resolveInfo="build" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8980950851470008724">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8980950851470008725">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~File%d&lt;init&gt;(java%dlang%dString)" resolveInfo="File" />

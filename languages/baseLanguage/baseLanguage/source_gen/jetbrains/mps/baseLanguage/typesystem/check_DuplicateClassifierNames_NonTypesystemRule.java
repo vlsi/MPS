@@ -24,7 +24,7 @@ public class check_DuplicateClassifierNames_NonTypesystemRule extends AbstractNo
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final String name = SPropertyOperations.getString(classifier, "name");
-    if (StringUtils.isEmpty(name)) {
+    if ((name == null || name.length() == 0)) {
       return;
     }
     if (ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(classifier), "jetbrains.mps.baseLanguage.structure.Classifier")).any(new IWhereFilter<SNode>() {

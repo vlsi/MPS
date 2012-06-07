@@ -93,7 +93,7 @@ public enum JUnitRunTypes2 {
     }
 
     public String check(JUnitSettings_Configuration configuration, Project project) {
-      if (StringUtils.isEmpty(configuration.getModule())) {
+      if (isEmpty_torbaz_a0a0b3(configuration.getModule())) {
         return "Module is not selected.";
       }
       IModule module = TestUtils.getModule(configuration.getModule());
@@ -134,4 +134,8 @@ public enum JUnitRunTypes2 {
   public abstract Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project);
 
   public abstract String check(JUnitSettings_Configuration cofiguration, Project project);
+
+  public static boolean isEmpty_torbaz_a0a0b3(String str) {
+    return str == null || str.length() == 0;
+  }
 }

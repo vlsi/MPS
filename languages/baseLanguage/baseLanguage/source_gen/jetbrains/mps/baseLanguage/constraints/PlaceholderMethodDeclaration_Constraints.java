@@ -51,7 +51,7 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
       @Override
       public boolean validateValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "name";
-        return StringUtils.isEmpty((SPropertyOperations.getString(propertyValue)));
+        return isEmpty_5inea6_a0a0b0b0a1a0b0c((SPropertyOperations.getString(propertyValue)));
       }
     });
     return properties;
@@ -59,5 +59,9 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Interface");
+  }
+
+  public static boolean isEmpty_5inea6_a0a0b0b0a1a0b0c(String str) {
+    return str == null || str.length() == 0;
   }
 }

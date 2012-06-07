@@ -46,6 +46,8 @@ public interface EditorComponent {
 
   void changeSelection(EditorCell newSelectedCell);
 
+  void selectNode(SNode node);
+
   boolean isDisposed();
 
   EditorContext getEditorContext();

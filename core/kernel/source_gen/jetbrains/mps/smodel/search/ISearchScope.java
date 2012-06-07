@@ -36,7 +36,7 @@ interface ISearchScope {
     }
 
     public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
-      if (StringUtils.isEmpty(prefix)) {
+      if ((prefix == null || prefix.length() == 0)) {
         return searchScope.getNodes();
       }
       return searchScope.getNodes(new Condition<SNode>() {
@@ -52,7 +52,7 @@ interface ISearchScope {
 
     public String getReferenceText(SNode anchor, SNode target) {
       String resolveInfo = target.getResolveInfo();
-      if (StringUtils.isNotEmpty(resolveInfo)) {
+      if ((resolveInfo != null && resolveInfo.length() > 0)) {
         return resolveInfo;
       }
       return target.getPresentation();

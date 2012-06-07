@@ -60,7 +60,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.StringUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -199,9 +198,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.choosers.CommonChoosers" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.BaseChooserComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils" file="TestUtils.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -215,7 +211,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.ClonableList" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />

@@ -10,7 +10,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -22,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.apache.commons.lang.StringUtils" />
   </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_BehaviorDescriptor" file="AbstractProjectComponent_BehaviorDescriptor.java">
     <classNode dependClassName="java.io.File" />
@@ -41,7 +41,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -539,7 +538,6 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IPath_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.ITransparentProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Path_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -608,7 +606,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.buildlanguage.behavior.PropertyDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -822,7 +822,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IPath_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -876,6 +875,7 @@
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IPlugin_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Module_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
@@ -962,9 +962,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.packaging.behavior.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
-  </dependency>
   <dependency className="jetbrains.mps.build.packaging.behavior.UpdateWebsite_BehaviorDescriptor" file="UpdateWebsite_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1028,7 +1025,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IAbstractCompositeComponent_Behavior" />
-    <classNode dependClassName="jetbrains.mps.build.packaging.behavior.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

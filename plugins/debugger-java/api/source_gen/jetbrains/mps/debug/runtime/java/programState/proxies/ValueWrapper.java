@@ -12,6 +12,7 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 import java.util.ArrayList;
 import jetbrains.mps.debug.runtime.java.programState.watchables.CustomJavaWatchable;
 import com.sun.jdi.ThreadReference;
+import com.sun.jdi.VirtualMachine;
 
 public abstract class ValueWrapper extends JavaValue implements IValue {
   protected final JavaValue myWrappedValue;
@@ -21,7 +22,7 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
   public ValueWrapper(JavaValue value) {
     super(value.getValue(), value.getClassFQName(), value.myThreadReference);
     myWrappedValue = value;
-    myValueProxy = MirrorUtil.getInstance().getValueProxy(value.getValue(), value.myThreadReference);
+    myValueProxy = MirrorUtil.getInstance().getValueProxy(value.getValue());
   }
 
   @Override
@@ -52,5 +53,9 @@ public abstract class ValueWrapper extends JavaValue implements IValue {
 
   public ThreadReference getThreadReference() {
     return myThreadReference;
+  }
+
+  public VirtualMachine getVM() {
+    return myValue.virtualMachine();
   }
 }

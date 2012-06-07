@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="StringUtils.java" startLine="6" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ide.platform.modeltree.StringUtils" />
   <root nodeId="4288082098349207686">
     <nodeInfo nodeId="4288082098349207687" fileName="ModelTreeBuilder.java" startLine="21" startPosition="73" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
     <nodeInfo nodeId="4288082098349207909" fileName="ModelTreeBuilder.java" startLine="24" startPosition="39" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -44,7 +43,7 @@
     <nodeInfo nodeId="4288082098349207868" fileName="ModelTreeBuilder.java" startLine="93" startPosition="48" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4288082098349207935" fileName="ModelTreeBuilder.java" startLine="30" startPosition="61" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4288082098349207772" fileName="ModelTreeBuilder.java" startLine="67" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sortChildNodes#(Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4288082098349207815" fileName="ModelTreeBuilder.java" startLine="78" startPosition="49" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4288082098349207815" fileName="ModelTreeBuilder.java" startLine="78" startPosition="66" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4288082098349207860" fileName="ModelTreeBuilder.java" startLine="91" startPosition="99" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="4288082098349207813" fileName="ModelTreeBuilder.java" startLine="77" startPosition="50" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4288082098349207921" fileName="ModelTreeBuilder.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeExpanded#(Ljavax/swing/event/TreeExpansionEvent;)V" />
@@ -106,8 +105,8 @@
     <scopeInfo nodeId="4288082098349207772" fileName="ModelTreeBuilder.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="4288082098349207773" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="4288082098349207814" fileName="ModelTreeBuilder.java" startLine="78" startPosition="49" endLine="86" endPosition="7" />
-    <scopeInfo nodeId="4288082098349207815" fileName="ModelTreeBuilder.java" startLine="78" startPosition="49" endLine="86" endPosition="7">
+    <scopeInfo nodeId="4288082098349207814" fileName="ModelTreeBuilder.java" startLine="78" startPosition="66" endLine="86" endPosition="7" />
+    <scopeInfo nodeId="4288082098349207815" fileName="ModelTreeBuilder.java" startLine="78" startPosition="66" endLine="86" endPosition="7">
       <varInfo nodeId="4288082098349207842" varName="sub" />
     </scopeInfo>
     <scopeInfo nodeId="4288082098349207860" fileName="ModelTreeBuilder.java" startLine="91" startPosition="99" endLine="100" endPosition="5">

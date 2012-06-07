@@ -13,7 +13,7 @@ public class RelativePathHelper {
   }
 
   public String makeRelative(String fullPath) throws RelativePathHelper.PathException {
-    if (StringUtils.isEmpty(fullPath)) {
+    if ((fullPath == null || fullPath.length() == 0)) {
       return "";
     }
     String normalized = FileUtil.getAbsolutePath(fullPath).replace("\\", "/");
@@ -25,7 +25,7 @@ public class RelativePathHelper {
   }
 
   public String makeAbsolute(String shortPath) throws RelativePathHelper.PathException {
-    if (StringUtils.isEmpty(shortPath)) {
+    if ((shortPath == null || shortPath.length() == 0)) {
       return myBasePath;
     }
     shortPath = shortPath.replace("\\", "/");

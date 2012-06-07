@@ -14,7 +14,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.generator.util.StringUtils" />
     <classNode dependClassName="jetbrains.mps.build.workflow.util.XmlSignature" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -31,9 +30,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.make.dependencies.graph.IVertex" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.workflow.generator.util.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" file="SubTaskOrderHelper.java">
     <classNode dependClassName="java.lang.Integer" />

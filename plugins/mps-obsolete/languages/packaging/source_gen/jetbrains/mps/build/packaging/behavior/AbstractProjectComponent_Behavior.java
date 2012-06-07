@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -32,7 +33,7 @@ public class AbstractProjectComponent_Behavior {
   public static File call_getPath_1233752667763(SNode thisNode, SNode parentNode) {
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent")) {
       String parentTargetDir = IAbstractCompositeComponent_Behavior.call_getChildrenTargetDir_1237389224202(SNodeOperations.cast(parentNode, "jetbrains.mps.build.packaging.structure.IAbstractCompositeComponent"));
-      if (StringUtils.isEmpty(parentTargetDir)) {
+      if ((parentTargetDir == null || parentTargetDir.length() == 0)) {
         return new File(SPropertyOperations.getString(thisNode, "name"));
       }
       return new File(parentTargetDir + File.separator + SPropertyOperations.getString(thisNode, "name"));
@@ -79,7 +80,7 @@ public class AbstractProjectComponent_Behavior {
     if (!(SNodeOperations.isInstanceOf(snode, NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {
       return false;
     }
-    return org.apache.commons.lang.StringUtils.equalsIgnoreCase(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(snode, "name"));
+    return StringUtils.equalsIgnoreCase(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(snode, "name"));
   }
 
   public static File call_getPath_1213877333777(SNode thisNode) {

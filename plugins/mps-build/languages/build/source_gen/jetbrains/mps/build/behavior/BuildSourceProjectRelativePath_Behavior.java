@@ -11,7 +11,7 @@ public class BuildSourceProjectRelativePath_Behavior {
 
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
     String tail = BuildRelativePath_Behavior.call_getPathTail_1258644073389171001(thisNode);
-    return (StringUtils.isEmpty(tail) ?
+    return ((tail == null || tail.length() == 0) ?
       "${basedir}" :
       "${basedir}/" + tail
     );

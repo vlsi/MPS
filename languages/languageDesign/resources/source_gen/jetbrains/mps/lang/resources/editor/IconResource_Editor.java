@@ -151,7 +151,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_79r3b6_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isEmpty(SPropertyOperations.getString(node, "path"));
+    return isEmpty_79r3b6_a0a0a(SPropertyOperations.getString(node, "path"));
   }
 
   private static boolean renderingCondition_79r3b6_a0a0(SNode node, EditorContext editorContext, IScope scope) {
@@ -167,5 +167,9 @@ public class IconResource_Editor extends DefaultNodeEditor {
       Color.BLACK :
       Color.RED
     );
+  }
+
+  public static boolean isEmpty_79r3b6_a0a0a(String str) {
+    return str == null || str.length() == 0;
   }
 }

@@ -126,7 +126,7 @@ public class ScopeUtil {
     }
 
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
-      if (StringUtils.isEmpty(prefix)) {
+      if ((prefix == null || prefix.length() == 0)) {
         return Sequence.fromIterable(getAllNodes()).toListSequence();
       }
       List<SNode> result = new ArrayList<SNode>();

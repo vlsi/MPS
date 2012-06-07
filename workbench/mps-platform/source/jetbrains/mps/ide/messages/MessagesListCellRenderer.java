@@ -17,6 +17,8 @@ package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.JLabel;
@@ -25,29 +27,37 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 import java.awt.Component;
 
-/**
- * User: Alexander Shatalin
- * Date: 1/24/11
- */
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
-  @Override
+  private static final EmptyBorder EMPTY_BORDER = new EmptyBorder(0, 0, 0, 0);
+
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
     final IMessage message = (IMessage) value;
 
     component.setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
-    component.setBorder(new EmptyBorder(0, 0, 0, 0));
+    component.setBorder(EMPTY_BORDER);
 
     String text = (message instanceof Message) ?
-      ((Message)message).getCreationTimeString() + "\t: " + message :
+      ((Message) message).getCreationTimeString() + "\t: " + message :
       message.getText();
-    if (message.getHintObject() != null) {
-      component.setText(text);
-      component.setForeground(Color.BLUE);
-    } else {
-      component.setText(text);
+
+
+    NavStatus ns = ModelAccess.instance().runReadAction(new Computable<NavStatus>() {
+      public NavStatus compute() {
+        return canNavigate(message);
+      }
+    });
+
+    if (ns == NavStatus.NO) {
       component.setForeground(Color.BLACK);
+      component.setText(text);
+    } else if (ns == NavStatus.OUTDATED) {
+      component.setForeground(Color.BLACK);
+      component.setText("[outdated] " + message.getHintObject().toString() + ":" + text);
+    } else if (ns == NavStatus.YES) {
+      component.setForeground(Color.BLUE);
+      component.setText(text);
     }
 
     switch (message.getKind()) {
@@ -63,5 +73,18 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     }
 
     return component;
+  }
+
+  public static NavStatus canNavigate(IMessage message) {
+    Object hint = message.getHintObject();
+    if (hint == null) return NavStatus.NO;
+    return NavStatus.YES;
+    //return NavigationManager.getInstance().canNavigateTo(hint) ? NavStatus.YES : NavStatus.OUTDATED;
+  }
+
+  public enum NavStatus {
+    NO,
+    OUTDATED,
+    YES
   }
 }

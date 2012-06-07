@@ -59,6 +59,10 @@ public interface SModelDescriptor {
 
   //------
 
+  public boolean isTransient();
+
+  //------
+
   SModelDescriptor resolveModel(SModelReference reference);
 
   //--------------model listeners--------------------

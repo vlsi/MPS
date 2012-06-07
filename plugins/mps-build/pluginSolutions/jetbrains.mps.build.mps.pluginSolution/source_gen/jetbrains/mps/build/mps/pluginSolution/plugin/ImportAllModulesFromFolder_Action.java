@@ -95,7 +95,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           basePath.value = BuildProject_Behavior.call_getBasePath_4959435991187146924(((SNode) MapSequence.fromMap(_params).get("node")), Context.defaultContext());
-          if (basePath.value != null && StringUtils.isNotEmpty(basePath.value)) {
+          if (basePath.value != null && (basePath.value != null && basePath.value.length() > 0)) {
             projectFolder.value = FileSystem.getInstance().getFileByPath(basePath.value);
           }
         }

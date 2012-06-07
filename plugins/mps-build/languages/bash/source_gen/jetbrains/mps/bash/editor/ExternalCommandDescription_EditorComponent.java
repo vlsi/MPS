@@ -73,6 +73,10 @@ public class ExternalCommandDescription_EditorComponent extends AbstractCellProv
   }
 
   private static boolean renderingCondition_3xyrme_a0a(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "description"));
+    return isNotEmpty_3xyrme_a0a0a(SPropertyOperations.getString(node, "description"));
+  }
+
+  public static boolean isNotEmpty_3xyrme_a0a0a(String str) {
+    return str != null && str.length() > 0;
   }
 }

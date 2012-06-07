@@ -13,7 +13,6 @@
     <classNode dependClassName="jetbrains.mps.ide.icons.IconManager" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
     <classNode dependClassName="jetbrains.mps.ide.platform.modeltree.ModelTreeNode" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.modeltree.StringUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -38,9 +37,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode extendsClassName="javax.swing.tree.DefaultMutableTreeNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.platform.modeltree.StringUtils" file="StringUtils.java">
-    <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>
 

@@ -41,7 +41,7 @@ public class GoToModelAction extends BaseAction implements DumbAware {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 
-    FeatureUsageTracker.getInstance().triggerFeatureUsed("goto.model");
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.model");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseModelModel goToModelModel = new BaseModelModel(project) {

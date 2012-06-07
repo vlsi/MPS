@@ -431,11 +431,15 @@ public class EditorTab_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_gp0hv6_a2b1b0(SNode node, EditorContext editorContext, IScope scope) {
-    return StringUtils.isNotEmpty(SPropertyOperations.getString(node, "shortcutChar"));
+    return isNotEmpty_gp0hv6_a0a0b(SPropertyOperations.getString(node, "shortcutChar"));
   }
 
   private static boolean renderingCondition_gp0hv6_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
+  }
+
+  public static boolean isNotEmpty_gp0hv6_a0a0b(String str) {
+    return str != null && str.length() > 0;
   }
 
   public static class _Inline_gp0hv6_a1e1b0 extends InlineCellProvider {
