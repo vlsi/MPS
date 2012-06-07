@@ -17,6 +17,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.annotations.NotNull;
 
 public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
   public ModelStep(Project project, AbstractBuildGenerator buildGenerator, IErrorHandler handler) {
@@ -107,5 +108,11 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
       return "Empty model name is not allowed.";
     }
     return "Model " + text + " already exists, choose another name.";
+  }
+
+  @NotNull
+  @Override
+  public String getImageText() {
+    return "Script Model";
   }
 }

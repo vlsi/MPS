@@ -13,9 +13,15 @@ import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.util.containers.ManyToManyMap;
@@ -53,6 +59,11 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
   }
 
   public MultiMap<SModelDescriptor, SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
+    nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(nodes).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it.getSNodeId() instanceof SNodeId.Foreign;
+      }
+    }));
     MultiMap<SModelDescriptor, SNode> result = findModels(models, nodes, new Mapper<SNode, String>() {
       public String value(SNode key) {
         return key.getId();
@@ -68,11 +79,20 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
   }
 
   public MultiMap<SModelDescriptor, String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
+    final String blName = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleFqName();
+    conceptNames = SetSequence.fromSetWithValues(new HashSet<String>(), SetSequence.fromSet(conceptNames).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return NameUtil.namespaceFromConceptFQName(it).equals(blName);
+      }
+    }));
     return findModels(models, conceptNames, null);
   }
 
   private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
     MultiMap<SModelDescriptor, T> result = new SetBasedMultiMap<SModelDescriptor, T>();
+    if (elems.isEmpty()) {
+      return result;
+    }
 
     // get all files in scope 
     final ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();

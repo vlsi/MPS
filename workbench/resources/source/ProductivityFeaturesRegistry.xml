@@ -29,7 +29,7 @@
             successive-show="4"
             />
     <feature
-            id="navigation.goto.action"
+            id="navigation.popup.action"
             tip-file="GoToAction.html"
             min-usage-count="5"
             first-show="1"

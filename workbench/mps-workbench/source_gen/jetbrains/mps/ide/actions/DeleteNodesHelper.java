@@ -17,7 +17,6 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.Iterator;
-import java.util.Collections;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
@@ -53,7 +52,7 @@ public class DeleteNodesHelper {
         List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ProjectHelper.toIdeaProject(myContext.getProject()), node);
         return ListSequence.fromList(tabs).where(new IWhereFilter<RelationDescriptor>() {
           public boolean accept(RelationDescriptor it) {
-            return it.isSingle() && it.isApplicable(node) && !(it.getNodes(node).isEmpty());
+            return it.isApplicable(node) && !(it.getNodes(node).isEmpty());
           }
         });
       }
@@ -87,12 +86,18 @@ public class DeleteNodesHelper {
           List<SNode> addNodes = ListSequence.fromList(myNodesToDelete).translate(new ITranslator2<SNode, SNode>() {
             public Iterable<SNode> translate(final SNode node) {
               List<RelationDescriptor> tabs = ProjectPluginManager.getApplicableTabs(ideaProject, node);
-              return ListSequence.fromList(tabs).translate(new ITranslator2<RelationDescriptor, SNode>() {
-                public Iterable<SNode> translate(RelationDescriptor tab) {
-                  return (tab.isSingle() && tab.isApplicable(node) ?
-                    tab.getNodes(node) :
-                    Collections.<SNode>emptyList()
-                  );
+              return ListSequence.fromList(tabs).where(new IWhereFilter<RelationDescriptor>() {
+                public boolean accept(RelationDescriptor it) {
+                  return it.isApplicable(node);
+                }
+              }).translate(new ITranslator2<RelationDescriptor, SNode>() {
+                public Iterable<SNode> translate(final RelationDescriptor tab) {
+                  List<SNode> nodes = tab.getNodes(node);
+                  return ListSequence.fromList(nodes).where(new IWhereFilter<SNode>() {
+                    public boolean accept(SNode it) {
+                      return tab.getBaseNode(it) == node;
+                    }
+                  });
                 }
               });
             }

@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.actions.OverrideConceptMethodsAction;
@@ -79,6 +80,7 @@ public class OverrideBehaviorMethod_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.overrideBehaviorMethod");
       Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
       new OverrideConceptMethodsAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true).run();
     } catch (Throwable t) {
