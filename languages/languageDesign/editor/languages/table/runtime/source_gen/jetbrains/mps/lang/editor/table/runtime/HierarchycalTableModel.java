@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
@@ -54,9 +54,9 @@ public class HierarchycalTableModel extends AbstractTableModel {
 
   @Override
   public void insertRow(int rowNumber) {
-    SNode newRow = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false)), null);
+    SNode newRow = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false)), null);
     for (int i = 0; i < getColumnCount(); i++) {
-      newRow.addChild(SPropertyOperations.getString(myColumnsLinkDeclaration, "role"), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null));
+      newRow.addChild(SPropertyOperations.getString(myColumnsLinkDeclaration, "role"), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null));
     }
     Utils.insertElementAt(getRows(), newRow, rowNumber);
   }
@@ -71,7 +71,7 @@ public class HierarchycalTableModel extends AbstractTableModel {
   @Override
   public void insertColumn(int columnNumber) {
     for (SNode row : ListSequence.fromList(getRows())) {
-      SNode newColumn = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null);
+      SNode newColumn = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myColumnsLinkDeclaration, "target", false)), null);
       Utils.insertElementAt(getColumns(row), newColumn, columnNumber);
     }
   }
