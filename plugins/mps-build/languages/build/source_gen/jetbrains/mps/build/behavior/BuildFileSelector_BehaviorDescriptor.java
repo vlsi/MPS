@@ -4,7 +4,7 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public abstract class BuildFileSelector_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public abstract class BuildFileSelector_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements BuildLayout_CopyParameter_BehaviorDescriptor {
   public BuildFileSelector_BehaviorDescriptor() {
   }
 

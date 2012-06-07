@@ -17,7 +17,7 @@ public class BuildLayout_AbstractCopy_Behavior {
       String parentLocation = helper.contentLocations().get(parent);
       SNode path = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true);
       if (path != null) {
-        String lastSegment = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, null);
+        String lastSegment = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, helper.getMacroHelper());
         if (lastSegment != null) {
           String fileLocation = parentLocation + "/" + lastSegment;
           helper.locations().put(thisNode, fileLocation);
