@@ -80,7 +80,8 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
   public static NavStatus canNavigate(IMessage message) {
     Object hint = message.getHintObject();
     if (hint == null) return NavStatus.NO;
-    return NavigationManager.getInstance().canNavigateTo(hint) ? NavStatus.YES : NavStatus.OUTDATED;
+    return NavStatus.YES;
+    //return NavigationManager.getInstance().canNavigateTo(hint) ? NavStatus.YES : NavStatus.OUTDATED;
   }
 
   public enum NavStatus {
