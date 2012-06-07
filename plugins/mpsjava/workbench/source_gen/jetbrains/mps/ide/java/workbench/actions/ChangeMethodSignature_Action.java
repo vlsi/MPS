@@ -107,7 +107,7 @@ public class ChangeMethodSignature_Action extends BaseAction {
         }
       });
 
-      SNode methodToRefactor;
+      final SNode methodToRefactor;
       if (baseMethod.value != null && Messages.showYesNoDialog(((Frame) MapSequence.fromMap(_params).get("frame")), message.value, "Warinig", null) == 0) {
         methodToRefactor = baseMethod.value;
       } else {
@@ -116,11 +116,23 @@ public class ChangeMethodSignature_Action extends BaseAction {
 
       ChangeMethodSignatureDialog dialog = new ChangeMethodSignatureDialog(ProjectHelper.toIdeaProject(((MPSProject) MapSequence.fromMap(_params).get("project"))), methodToRefactor, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
       dialog.show();
-      List<ChangeMethodSignatureRefactoring> myRefactorings = dialog.getAllRefactorings();
+      final List<ChangeMethodSignatureRefactoring> myRefactorings = dialog.getAllRefactorings();
       if (ListSequence.fromList(myRefactorings).isEmpty()) {
         return;
       }
-      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature", Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), methodToRefactor, ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          if (!(((SNode) ((SNode) MapSequence.fromMap(_params).get("method"))).isRegistered()) || ((SNode) ((SNode) MapSequence.fromMap(_params).get("method"))).isDisposed()) {
+            return;
+          }
+          if (!(((SNode) methodToRefactor).isRegistered()) || ((SNode) methodToRefactor).isDisposed()) {
+            return;
+          }
+
+          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.ChangeMethodSignature", Arrays.asList("myRefactorings"), Arrays.asList(myRefactorings), methodToRefactor, ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+        }
+      });
+
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ChangeMethodSignature", t);
