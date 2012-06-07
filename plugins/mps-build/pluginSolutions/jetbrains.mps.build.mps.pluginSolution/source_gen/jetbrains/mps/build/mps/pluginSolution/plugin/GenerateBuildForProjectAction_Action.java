@@ -61,8 +61,7 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final GenerateBuildWizard wizard = new GenerateBuildWizard("Generate Build For Project", ((Project) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
-      wizard.initWizard();
+      final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Script", ((Project) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           wizard.show();

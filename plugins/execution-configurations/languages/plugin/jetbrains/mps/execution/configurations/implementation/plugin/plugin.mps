@@ -91,7 +91,7 @@
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6893245555985399815">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.execution.configurations" />
       <property name="name" nameId="tpck.1169194664001" value="Execution Configurations" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Execution configurations and debugger support for languages in MPS" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Execution configurations for MPS" />
       <property name="version" nameId="tp4k.5023285075122009369" value="1.0" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
@@ -117,9 +117,6 @@
     </node>
     <node type="uhxm.RunConfigurationProducer" typeId="uhxm.4366236229294105349" id="6062668769033909683">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="java" />
-    </node>
-    <node type="86gq.BreakpointCreator" typeId="86gq.3157158168562217892" id="6062668769033909813">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="debugger" />
     </node>
     <node type="uhxm.RunConfigurationKind" typeId="uhxm.2401501559171345994" id="6062668769034010588">
       <property name="name" nameId="tpck.1169194664001" value="JUnit Tests" />
@@ -1041,55 +1038,6 @@
       </node>
       <node role="source" roleId="uhxm.7301162575811113551" type="uhxm.NodeSource" typeId="uhxm.7301162575811126385" id="6062668769033909812">
         <link role="concept" roleId="uhxm.7301162575811126914" targetNodeId="4fqr.4666195181811081429" resolveInfo="IMainClass" />
-      </node>
-    </node>
-  </root>
-  <root id="6062668769033909813">
-    <node role="breakpointableConcepts" roleId="86gq.1270798772176052787" type="86gq.BreakpointableNodeItem" typeId="86gq.3157158168562219319" id="6062668769033909814">
-      <node role="createBreakpoint" roleId="86gq.3157158168562219320" type="86gq.ConceptFunction_CreateBreakpoint" typeId="86gq.3157158168562219322" id="6062668769033909815">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6062668769033909816">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6062668769033909817">
-            <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769033909818">
-              <node role="operand" roleId="tpee.1197027771414" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="6062668769033909819">
-                <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="6062668769033909820">
-                <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_LINE_BREAKPOINT" />
-                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Line Breakpoint" />
-                <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="6062668769033909821" />
-                <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="6062668769033909822" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="conceptsToCreateBreakpoint" roleId="86gq.5789575999242884576" type="86gq.ConceptDeclarationReference" typeId="86gq.5789575999242884574" id="6062668769033909823">
-        <link role="conceptDeclaration" roleId="86gq.5789575999242884575" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
-      </node>
-    </node>
-    <node role="breakpointableConcepts" roleId="86gq.1270798772176052787" type="86gq.BreakpointableNodeItem" typeId="86gq.3157158168562219319" id="6062668769033909824">
-      <node role="createBreakpoint" roleId="86gq.3157158168562219320" type="86gq.ConceptFunction_CreateBreakpoint" typeId="86gq.3157158168562219322" id="6062668769033909825">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6062668769033909826">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6062668769033909827">
-            <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769033909828">
-              <node role="operand" roleId="tpee.1197027771414" type="86gq.DebuggerReference" typeId="86gq.1104094430779068753" id="6062668769033909829">
-                <property name="debuggerName" nameId="86gq.1104094430779068757" value="Java" />
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="6062668769033909830">
-                <property name="kindName" nameId="86gq.2569394751387978475" value="JAVA_FIELD_BREAKPOINT" />
-                <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Java Field Breakpoint" />
-                <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="6062668769033909831" />
-                <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="6062668769033909832" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="conceptsToCreateBreakpoint" roleId="86gq.5789575999242884576" type="86gq.ConceptDeclarationReference" typeId="86gq.5789575999242884574" id="6062668769033909833">
-        <link role="conceptDeclaration" roleId="86gq.5789575999242884575" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
-      </node>
-      <node role="conceptsToCreateBreakpoint" roleId="86gq.5789575999242884576" type="86gq.ConceptDeclarationReference" typeId="86gq.5789575999242884574" id="6062668769033909834">
-        <link role="conceptDeclaration" roleId="86gq.5789575999242884575" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
       </node>
     </node>
   </root>

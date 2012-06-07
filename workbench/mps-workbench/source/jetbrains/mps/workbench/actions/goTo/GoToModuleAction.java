@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.actions.goTo;
 
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -44,7 +45,7 @@ public class GoToModuleAction extends BaseAction implements DumbAware {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 
-    //FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.popup.class");
+    FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
     //PsiDocumentManager.getInstance(project).commitAllDocuments();
 
     BaseModuleModel goToModuleModel = new BaseModuleModel(project, "module") {

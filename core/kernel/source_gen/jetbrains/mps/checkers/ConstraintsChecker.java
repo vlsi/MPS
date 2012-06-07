@@ -79,6 +79,9 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         component.addError(node, "Not rootable concept added as root", rule);
       }
     }
+    if (SNodeOperations.getConceptDeclaration(node) == null) {
+      component.addError(node, "Concept of a node was not found", null);
+    }
 
     for (final SNode child : SNodeOperations.getChildren(node)) {
       component.addDependency(child);

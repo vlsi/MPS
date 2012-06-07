@@ -56,6 +56,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
 import java.util.*;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -98,6 +99,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
   private Project myProject;
   private MergingUpdateQueue myUpdateQueue = new MergingUpdateQueue("MessageList", 500, true, myComponent, null, null, true);
   private Object myUpdateIdentity = new Object();
+  private ConcurrentLinkedQueue<IMessage> myMessagesQueue = new ConcurrentLinkedQueue<IMessage>();
 
   protected MessageList(Project project) {
     this.myProject = project;
@@ -137,10 +139,11 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     });
   }
 
-  public void add(final IMessage message) {
+  public void add(IMessage message) {
     if (MPSCore.getInstance().isTestMode()) return;
 
     myMessagesInProgress.incrementAndGet();
+    myMessagesQueue.add(message);
 
     myUpdateQueue.queue(new Update(myUpdateIdentity) {
       @Override
@@ -148,33 +151,55 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
         if (isDisposed()) {
           return;
         }
-        int messages = myMessagesInProgress.decrementAndGet();
 
-        if (myMessages.size() >= MAX_SIZE) {
-          IMessage toRemove = myMessages.remove();
-          updateMessageCounters(message, -1);
-          if (isVisible(toRemove)) {
-            myModel.removeFirst();
+        List<IMessage> messagesToAdd = new ArrayList<IMessage>();
+        while (!myMessagesQueue.isEmpty()) {
+          IMessage message = myMessagesQueue.remove();
+          myMessagesInProgress.decrementAndGet();
+
+          if (isVisible(message)) {
+            messagesToAdd.add(message);
+          }
+          myMessages.add(message);
+          updateMessageCounters(message, 1);
+        }
+
+        int messagesToRemove = 0;
+        if (myMessages.size() > MAX_SIZE) {
+          for (int i = Math.min(myMessages.size() - MAX_SIZE, myMessages.size()); i > 0; i--)
+          {
+            IMessage toRemove = myMessages.remove();
+            updateMessageCounters(toRemove, -1);
+            if (isVisible(toRemove)) {
+              messagesToRemove++;
+            }
+          }
+          if (messagesToRemove > myModel.getSize()) {
+            messagesToAdd = messagesToAdd.subList(messagesToRemove - myModel.getSize(), messagesToAdd.size());
+            messagesToRemove = myModel.getSize();
           }
         }
 
-        if (isVisible(message)) {
-          myModel.add(message);
-          int index = myModel.getSize() - 1;
-          if (myList.getAutoscrolls()) {
-            myList.getSelectionModel().setSelectionInterval(index, index);
-          }
-          if (messages == 0) {
-            myList.ensureIndexIsVisible(index);
-          }
+        if (messagesToRemove > 0) {
+          myModel.removeFirst(messagesToRemove);
+        }
+        myModel.addAll(messagesToAdd);
+
+        int maxWidth = -1;
+        for (IMessage message : messagesToAdd) {
+          maxWidth = Math.max(maxWidth, getMessageWidth(message));
         }
 
-        myMessages.add(message);
-        updateMessageCounters(message, 1);
+        int index = myModel.getSize() - 1;
+        if (myList.getAutoscrolls()) {
+          myList.getSelectionModel().setSelectionInterval(index, index);
+        }
+        if (myMessagesInProgress.get() == 0) {
+          myList.ensureIndexIsVisible(index);
+        }
 
-        int width = getMessageWidth(message);
-        if (width > myList.getFixedCellWidth()) {
-          myList.setFixedCellWidth(width);
+        if (maxWidth > myList.getFixedCellWidth()) {
+          myList.setFixedCellWidth(maxWidth);
         }
 
         updateHeader();
@@ -436,9 +461,7 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
     }
     myList.setFixedCellWidth(width);
 
-    for (IMessage m : messagesToAdd) {
-      myModel.add(m);
-    }
+    myModel.addAll(messagesToAdd);
   }
 
   private int getMessageWidth(IMessage message) {
@@ -563,6 +586,18 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
       fireIntervalAdded(this, mySize - 1, mySize - 1);
     }
 
+    public void addAll(Collection items) {
+      if (items.isEmpty()) return;
+      if (mySize + items.size() > myItems.length) throw new RuntimeException("Buffer overflow");
+      int intervalStart = mySize;
+      for (Object item : items) {
+        myItems[myEnd] = item;
+        myEnd = (myEnd + 1) % myItems.length;
+        mySize++;
+      }
+      fireIntervalAdded(this, intervalStart, mySize - 1);
+    }
+
     public void removeFirst() {
       if (mySize == 0) {
         throw new RuntimeException("Buffer underflow");
@@ -571,6 +606,21 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
       myStart = (myStart + 1) % myItems.length;
       mySize--;
       fireIntervalRemoved(this, 0, 0);
+    }
+
+    public void removeFirst(int count) {
+      if (count <= 0) {
+        throw new IllegalArgumentException("Illegal count value "+count);
+      }
+      if (mySize - count < 0) {
+        throw new RuntimeException("Buffer underflow");
+      }
+      for (int i=0; i<count; i++) {
+        myItems[myStart] = null;
+        myStart = (myStart + 1) % myItems.length;
+        mySize--;
+      }
+      fireIntervalRemoved(this, 0, count - 1);
     }
 
     public void clear() {

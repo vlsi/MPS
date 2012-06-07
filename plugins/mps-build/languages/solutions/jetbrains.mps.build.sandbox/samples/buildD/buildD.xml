@@ -8,6 +8,7 @@
   <property name="buildA.aver" value="${import.buildA.buildA.aver}" />
   
   <target name="assemble" depends="classes">
+    <mkdir dir="${build.layout}" />
     <jar destfile="${build.layout}/aaaa.jar">
       <fileset dir="${build.tmp}/java/out/AAA" />
     </jar>

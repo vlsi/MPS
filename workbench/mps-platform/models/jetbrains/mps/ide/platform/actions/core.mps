@@ -44,11 +44,6 @@
       <property name="name" nameId="tpck.1169194664001" value="DefaultCore" />
       <property name="isPluginXmlKeymap" nameId="tp4k.8646726056720906098" value="true" />
     </node>
-    <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8784230320738944314">
-      <property name="name" nameId="tpck.1169194664001" value="SafeDelete" />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Safe Delete" />
-    </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8784230320738948497">
       <property name="name" nameId="tpck.1169194664001" value="RenameUtil" />
     </node>
@@ -62,9 +57,6 @@
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="8784230320738943428">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8784230320738943429">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="8784230320738943353" resolveInfo="Rename" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="8784230320738944342">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="8784230320738944314" resolveInfo="SafeDelete" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="830211401282059662">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="830211401282058525" resolveInfo="MoveNodes" />
@@ -240,68 +232,10 @@
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_F6" />
       </node>
     </node>
-    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="8784230320738944339">
-      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="8784230320738944314" resolveInfo="SafeDelete" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6573807532044017016">
-        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
-      </node>
-    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="830211401282059664">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="830211401282058525" resolveInfo="MoveNodes" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="830211401282059665">
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_F6" />
-      </node>
-    </node>
-  </root>
-  <root id="8784230320738944314">
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionParameterDeclaration" typeId="tp4k.1205679047295" id="8784230320738944315">
-      <property name="name" nameId="tpck.1169194664001" value="node" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8784230320738944316" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="8784230320738944317" />
-      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8784230320738944318" />
-    </node>
-    <node role="parameter" roleId="tp4k.1217413222820" type="tp4k.ActionDataParameterDeclaration" typeId="tp4k.1217252042208" id="8784230320738944319">
-      <property name="name" nameId="tpck.1169194664001" value="mpsproject" />
-      <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dMPS_PROJECT" resolveInfo="MPS_PROJECT" />
-      <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8784230320738944320" />
-    </node>
-    <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8784230320738944321">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8784230320738944322">
-        <node role="statement" roleId="tpee.1068581517665" type="tp1h.ExecuteRefactoringStatement" typeId="tp1h.2298239814950983788" id="8784230320738944323">
-          <link role="refactoring" roleId="tp1h.2298239814950983795" targetNodeId="2yc6.1851015849775217755" resolveInfo="SafeDelete" />
-          <node role="target" roleId="tp1h.2298239814950983792" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8784230320738944324">
-            <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8784230320738944325" />
-            <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionParameterReferenceOperation" typeId="tp4k.1206092561075" id="8784230320738944326">
-              <link role="member" roleId="tp4f.1205756909548" targetNodeId="8784230320738944315" resolveInfo="node" />
-            </node>
-          </node>
-          <node role="project" roleId="tp1h.2298239814950983794" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8784230320738944327">
-            <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8784230320738944328" />
-            <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8784230320738944329">
-              <link role="member" roleId="tp4f.1205756909548" targetNodeId="8784230320738944319" resolveInfo="mpsproject" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8784230320738944330">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
-    </node>
-    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="8784230320738944331">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8784230320738944332">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8784230320738944333">
-          <node role="expression" roleId="tpee.1068580123156" type="tp1h.IsRefactoringApplicable" typeId="tp1h.6598645150040035709" id="8784230320738944334">
-            <link role="refactoring" roleId="tp1h.6598645150040035710" targetNodeId="2yc6.1851015849775217755" resolveInfo="SafeDelete" />
-            <node role="target" roleId="tp1h.6598645150040036518" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8784230320738944335">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="8784230320738944336" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionParameterReferenceOperation" typeId="tp4k.1206092561075" id="8784230320738944337">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="8784230320738944315" resolveInfo="node" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </root>

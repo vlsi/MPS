@@ -76,8 +76,10 @@ public class DeleteGenerator_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.");
-      dialog.setOptions(true, false, false, false);
+      final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", true, false);
+      final DeleteDialog.DeleteOption filesOption = new DeleteDialog.DeleteOption("Delete Files", false, false);
+
+      DeleteDialog dialog = new DeleteDialog(((Project) MapSequence.fromMap(_params).get("project")), "Delete Generator", "Are you sure you want to delete generator?\n\nThis operation is not undoable.", safeOption, filesOption);
       dialog.show();
       if (!(dialog.isOK())) {
         return;
@@ -88,7 +90,7 @@ public class DeleteGenerator_Action extends BaseAction {
           Language sourceLanguage = generator.getSourceLanguage();
           for (GeneratorDescriptor gen : ListSequence.fromList(sourceLanguage.getModuleDescriptor().getGenerators())) {
             if (generator.getModuleReference().getModuleId().equals(gen.getId())) {
-              DeleteGeneratorHelper.deleteGenerator(((Project) MapSequence.fromMap(_params).get("project")), sourceLanguage, generator, gen, dialog.isSafe(), dialog.isDeleteFiles());
+              DeleteGeneratorHelper.deleteGenerator(((Project) MapSequence.fromMap(_params).get("project")), sourceLanguage, generator, gen, safeOption.selected, filesOption.selected);
               break;
             }
           }

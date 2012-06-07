@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
@@ -34,6 +33,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import com.intellij.openapi.util.Disposer;
+import jetbrains.mps.debug.evaluation.Evaluator;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import jetbrains.mps.util.Computable;
@@ -119,7 +119,7 @@ public abstract class AbstractEvaluationModel {
   public abstract AbstractEvaluationModel copy(boolean isShowContext);
 
   @Nullable
-  public Evaluator evaluate() throws EvaluationException {
+  public Class generateAndLoadEvaluatorClass() throws EvaluationException {
     try {
 
       final String fullClassName = this.myAuxModel.getLongName() + "." + AbstractEvaluationModel.EVALUATOR_NAME;
@@ -140,16 +140,7 @@ public abstract class AbstractEvaluationModel {
           System.err.println(source);
         }
         ClassLoader parentClassLoader = this.myUiState.getClass().getClassLoader();
-        Class clazz = Class.forName(fullClassName, true, handler.getCompiler().getClassLoader(parentClassLoader));
-        Evaluator evaluator;
-        try {
-          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-        } catch (InvocationTargetException e) {
-          // try again 
-          myUiState = myDebugSession.refresh();
-          evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
-        }
-        return evaluator;
+        return Class.forName(fullClassName, true, handler.getCompiler().getClassLoader(parentClassLoader));
       } else if ((source != null && source.length() > 0) && !(successful)) {
         String text = "Errors during compilation";
         if (compilationResult.hasErrors()) {
@@ -161,6 +152,24 @@ public abstract class AbstractEvaluationModel {
       } else {
         throw new EvaluationException("Errors during generation.");
       }
+    } catch (EvaluationException e) {
+      throw e;
+    } catch (ClassNotFoundException e) {
+      throw new EvaluationException(e);
+    }
+  }
+
+  public Evaluator createEvaluatorInstance(Class clazz) throws EvaluationException {
+    try {
+      Evaluator evaluator;
+      try {
+        evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+      } catch (InvocationTargetException e) {
+        // try again 
+        myUiState = myDebugSession.refresh();
+        evaluator = (Evaluator) clazz.getConstructor(JavaUiState.class).newInstance(this.myUiState);
+      }
+      return evaluator;
     } catch (InvocationTargetException e) {
       // invocation target exceptions from newInstance method call via reflection 
       // second time, which means refresh did not help 
@@ -168,12 +177,13 @@ public abstract class AbstractEvaluationModel {
       // I personally think something should be done with all those exceptions 
       // other then hiding them from user 
       // but I do not know what 
-      // TODO think 
       throw new InvocationTargetEvaluationException(e.getCause());
-    } catch (EvaluationException e) {
-      throw e;
-    } catch (Throwable t) {
-      throw new EvaluationException(t);
+    } catch (NoSuchMethodException e) {
+      throw new EvaluationException(e);
+    } catch (IllegalAccessException e) {
+      throw new EvaluationException(e);
+    } catch (InstantiationException e) {
+      throw new EvaluationException(e);
     }
   }
 

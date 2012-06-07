@@ -11,8 +11,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
-import com.sun.jdi.StackFrame;
-import com.sun.jdi.Location;
+import jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
@@ -28,16 +27,16 @@ import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
-import com.sun.jdi.LocalVariable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaLocalVariable;
 import com.sun.jdi.Type;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.InvalidStackFrameException;
-import com.sun.jdi.AbsentInformationException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import com.sun.jdi.ObjectReference;
+import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject;
 import com.sun.jdi.PrimitiveType;
 import com.sun.jdi.BooleanType;
 import com.sun.jdi.ByteType;
@@ -50,6 +49,7 @@ import com.sun.jdi.CharType;
 import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.debug.evaluation.transform.TransformatorBuilder;
+import com.sun.jdi.ObjectReference;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -82,16 +82,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     SNode locationNode = null;
     if (javaStackFrame != null) {
-      StackFrame stackFrame = javaStackFrame.getStackFrame();
-      if (stackFrame != null) {
-        try {
-          Location location = stackFrame.location();
-          locationNode = TraceInfoUtil.getJavaNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
-        } catch (Throwable t) {
-          if (log.isErrorEnabled()) {
-            log.error("", t);
-          }
-        }
+      JavaLocation location = javaStackFrame.getLocation();
+      if (location != null) {
+        return TraceInfoUtil.getJavaNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
       }
     }
     return locationNode;
@@ -123,12 +116,12 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   public Map<String, VariableDescription> getVariables(final _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
     final Map<String, VariableDescription> result = MapSequence.fromMap(new LinkedHashMap<String, VariableDescription>(16, (float) 0.75, false));
 
-    foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, LocalVariable>() {
-      public Boolean invoke(LocalVariable variable) {
-        String name = variable.name();
+    foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, JavaLocalVariable>() {
+      public Boolean invoke(JavaLocalVariable variable) {
+        String name = variable.getName();
         Type jdiType = null;
         try {
-          jdiType = variable.type();
+          jdiType = variable.getLocalVariable().type();
           SNode type = getMpsTypeFromJdiType(jdiType, createClassifierType);
           if (type == null) {
             if (log.isWarnEnabled()) {
@@ -141,7 +134,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           }
         } catch (ClassNotLoadedException cne) {
           if (jdiType == null) {
-            SNode classifierType = createClassifierType.invoke(variable.typeName());
+            SNode classifierType = createClassifierType.invoke(variable.getLocalVariable().typeName());
             if (classifierType == null) {
               if (log.isWarnEnabled()) {
                 log.warn("Could not deduce type for a variable " + name);
@@ -167,48 +160,28 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   public void fillVariableDescription(String varName, VariableDescription description) {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     if (javaStackFrame != null) {
-      Location location = javaStackFrame.getLocation().getLocation();
-      if (location != null) {
-        try {
-          SNode node = TraceInfoUtil.getVar(getStaticContextTypeName(), location.sourceName(), location.lineNumber(), varName);
-          if ((node != null)) {
-            description.setHighLevelNode(node);
-          }
-        } catch (InvalidStackFrameException e) {
-          if (log.isWarnEnabled()) {
-            log.warn("InvalidStackFrameException", e);
-          }
-        } catch (AbsentInformationException e) {
-          if (log.isErrorEnabled()) {
-            log.error("", e);
-          }
+      JavaLocation javaLocation = javaStackFrame.getLocation();
+      try {
+        SNode node = TraceInfoUtil.getVar(getStaticContextTypeName(), javaLocation.getFileName(), javaLocation.getLineNumber(), varName);
+        if ((node != null)) {
+          description.setHighLevelNode(node);
+        }
+      } catch (InvalidStackFrameException e) {
+        if (log.isWarnEnabled()) {
+          log.warn("InvalidStackFrameException", e);
         }
       }
     }
   }
 
-  private void foreachVariable(_FunctionTypes._return_P1_E0<? extends Boolean, ? super LocalVariable> action) {
+  private void foreachVariable(_FunctionTypes._return_P1_E0<? extends Boolean, ? super JavaLocalVariable> action) {
     JavaStackFrame javaStackFrame = myUiState.getStackFrame();
     if (javaStackFrame != null) {
-      StackFrame stackFrame = javaStackFrame.getStackFrame();
-      if (stackFrame != null) {
-        try {
-          List<LocalVariable> variables = stackFrame.visibleVariables();
-          for (LocalVariable variable : ListSequence.fromList(variables)) {
-            if (action.invoke(variable)) {
-              return;
-            }
-          }
-        } catch (InvalidStackFrameException e) {
-          if (log.isWarnEnabled()) {
-            log.warn("InvalidStackFrameException", e);
-          }
-        } catch (AbsentInformationException e) {
-          if (log.isErrorEnabled()) {
-            log.error("", e);
-          }
+      List<JavaLocalVariable> visibleVariables = javaStackFrame.getVisibleVariables();
+      for (JavaLocalVariable variable : ListSequence.fromList(visibleVariables)) {
+        if (action.invoke(variable)) {
+          return;
         }
-
       }
     }
   }
@@ -236,13 +209,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   private String getStaticContextTypeName() {
     JavaStackFrame frame = myUiState.getStackFrame();
     if (frame != null) {
-      Location location = frame.getLocation().getLocation();
-      try {
-        return TraceInfoUtil.getUnitName(location.declaringType().name(), location.sourceName(), location.lineNumber());
-      } catch (AbsentInformationException e) {
-        if (log.isErrorEnabled()) {
-          log.error("", e);
-        }
+      JavaLocation location = frame.getLocation();
+      if (location != null) {
+        return TraceInfoUtil.getUnitName(location.getUnitName(), location.getFileName(), location.getLineNumber());
       }
     }
     return null;
@@ -251,14 +220,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   private SNode getStaticContextNode() {
     JavaStackFrame frame = myUiState.getStackFrame();
     if (frame != null) {
-      Location location = frame.getLocation().getLocation();
-      try {
-        SNode unitNode = TraceInfoUtil.getUnitNode(location.declaringType().name(), location.sourceName(), location.lineNumber());
-        return unitNode;
-      } catch (AbsentInformationException e) {
-        if (log.isErrorEnabled()) {
-          log.error("", e);
-        }
+      JavaLocation location = frame.getLocation();
+      if (location != null) {
+        return TraceInfoUtil.getUnitNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
       }
     }
     return null;
@@ -266,8 +230,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
   @Nullable
   public SNode getThisClassifierType(_FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType) {
-    ObjectReference thisObject = myUiState.getThisObject();
-    if (thisObject == null) {
+    IWatchable contextWatchable = myUiState.getStackFrame().getContextWatchable();
+    // todo 
+    if (contextWatchable == null || !(contextWatchable instanceof JavaThisObject)) {
       return null;
     }
 
@@ -310,12 +275,12 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
   public boolean isVariableVisible(final String variableName, final SNode variableType) {
     final Wrappers._boolean visible = new Wrappers._boolean(false);
-    foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, LocalVariable>() {
-      public Boolean invoke(LocalVariable variable) {
-        if (eq_4zsmpx_a0a0a0a0a1a21(variable.name(), variableName)) {
+    foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, JavaLocalVariable>() {
+      public Boolean invoke(JavaLocalVariable variable) {
+        if (eq_4zsmpx_a0a0a0a0a1a21(variable.getName(), variableName)) {
           try {
             String variableTypeSignature = TransformatorBuilder.getInstance().getJniSignatureFromType(variableType);
-            if (eq_4zsmpx_a0b0a0a0a0a0a1a21(variableTypeSignature, variable.type().signature())) {
+            if (eq_4zsmpx_a0b0a0a0a0a0a1a21(variableTypeSignature, variable.getLocalVariable().type().signature())) {
               visible.value = true;
               return true;
             }

@@ -19,6 +19,9 @@ public class DebugObjects {
     System.err.println(var);
     System.err.println("tuple = " + tuple);
     System.err.println("tuple = " + indexedTuple);
+    String stringVar = "one = ";
+    Object objectVar = new Integer(1);
+    System.err.println(stringVar + objectVar);
   }
 
   public void doStrangeThings() {

@@ -19,8 +19,11 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import javax.swing.JLabel;
+import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
-import java.awt.GridBagConstraints;
+import javax.swing.border.EmptyBorder;
+import jetbrains.mps.ide.common.LayoutUtil;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -128,17 +131,24 @@ public class LanguagesStep extends AbstractStep {
     }
   }
 
-  protected void createComponent() {
-    if (this.myMainPanel == null) {
-      this.myMainPanel = new JPanel(new GridBagLayout());
-      this.myMainPanel.add(new JLabel(this.getDescription()), this.createConstraint(0, 0));
-      JComponent mainComponent = this.createMainComponent();
-      mainComponent.setBorder(new EtchedBorder());
-      GridBagConstraints constraints = this.createConstraint(1, 1);
-      constraints.fill = GridBagConstraints.BOTH;
-      this.myMainPanel.add(mainComponent, constraints);
-    }
-    this.myMainPanel.doLayout();
+  protected JPanel createStepPanel() {
+    JPanel stepPanel = new JPanel(new GridBagLayout());
+    stepPanel.add(new JLabel(this.getDescription()), this.createConstraint(0, 0));
+    JComponent mainComponent = this.createMainComponent();
+    mainComponent.setBorder(new CompoundBorder(new EtchedBorder(), new EmptyBorder(2, 2, 2, 2)));
+    stepPanel.add(mainComponent, LayoutUtil.createPanelConstraints(1));
+    return stepPanel;
+  }
+
+  @NotNull
+  @Override
+  public String getImageText() {
+    return "Included Modules";
+  }
+
+  @Override
+  protected boolean doLimitStepPanelHeight() {
+    return true;
   }
 
   public static class MyTreeBuilder extends NamespaceTreeBuilder<CheckBoxNode, CheckBoxNamespaceNode> {
