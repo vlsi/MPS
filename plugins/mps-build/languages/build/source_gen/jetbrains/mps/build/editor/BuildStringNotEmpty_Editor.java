@@ -7,6 +7,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -25,6 +27,10 @@ public class BuildStringNotEmpty_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_vy9fh5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vy9fh5_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     editorCell.addEditorCell(this.createRefNodeList_vy9fh5_a0(editorContext, node));
     return editorCell;
   }
@@ -33,6 +39,7 @@ public class BuildStringNotEmpty_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new BuildStringNotEmpty_Editor.partsListHandler_vy9fh5_a0(node, "parts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parts");
+    forbid_Insert.setCellActions(editorCell, node, editorContext);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }

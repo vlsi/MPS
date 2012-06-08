@@ -4,7 +4,7 @@
   <name>Idea Integration for MPS</name>
   <description>Connects MPS to IDEA</description>
   <version>2.0</version>
-  <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
+  <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="3000"/>
 
   <application-components>

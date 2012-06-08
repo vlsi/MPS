@@ -140,6 +140,9 @@ public class RefactoringFacade {
           refactoringContext.setCurrentOperationContext(new ProjectOperationContext(project));
           IRefactoring refactoring = refactoringContext.getRefactoring();
           result.value = refactoring.getAffectedNodes(refactoringContext);
+          if (result.value == null) {
+            result.value = new SearchResults();
+          }
         } catch (Throwable t) {
           myLog.error(t);
         }

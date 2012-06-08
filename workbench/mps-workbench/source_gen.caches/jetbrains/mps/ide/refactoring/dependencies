@@ -188,7 +188,6 @@
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="javax.swing.JTextField" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.DialogDimensionsSettings" />
-    <classNode dependClassName="jetbrains.mps.project.SModelRoot" />
     <classNode dependClassName="jetbrains.mps.refactoring.renameModel.ModelRenamer" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFqName" />

@@ -8,7 +8,9 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum CellActionId {
   RIGHT_TRANSFORM("RIGHT_TRANSFORM", "right_transform_action_id"),
-  DELETE("DELETE", "delete_action_id");
+  DELETE("DELETE", "delete_action_id"),
+  INSERT("INSERT", "insert_action_id"),
+  INSERT_BEFORE("INSERT_BEFORE", "insert_before_action_id");
 
   private String myName;
   private String myValue;
@@ -34,6 +36,8 @@ public enum CellActionId {
     List<CellActionId> list = ListSequence.fromList(new LinkedList<CellActionId>());
     ListSequence.fromList(list).addElement(CellActionId.RIGHT_TRANSFORM);
     ListSequence.fromList(list).addElement(CellActionId.DELETE);
+    ListSequence.fromList(list).addElement(CellActionId.INSERT);
+    ListSequence.fromList(list).addElement(CellActionId.INSERT_BEFORE);
     return list;
   }
 
@@ -50,6 +54,12 @@ public enum CellActionId {
     }
     if (value.equals(CellActionId.DELETE.getValueAsString())) {
       return CellActionId.DELETE;
+    }
+    if (value.equals(CellActionId.INSERT.getValueAsString())) {
+      return CellActionId.INSERT;
+    }
+    if (value.equals(CellActionId.INSERT_BEFORE.getValueAsString())) {
+      return CellActionId.INSERT_BEFORE;
     }
     return CellActionId.getDefault();
   }
