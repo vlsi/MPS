@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -113,6 +114,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
       final List<String> finderClasses = ListSequence.fromList(new ArrayList<String>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
@@ -89,6 +90,7 @@ public class FindSpecificNodeUsages_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.findUsages");
       new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), true).invoke(((EditorCell) MapSequence.fromMap(_params).get("cell")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

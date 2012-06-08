@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -81,6 +82,7 @@ public class RenameVariable_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.rename");
       final Wrappers._T<SNode> varDeclNode = new Wrappers._T<SNode>();
       final Wrappers._T<String> oldName = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {

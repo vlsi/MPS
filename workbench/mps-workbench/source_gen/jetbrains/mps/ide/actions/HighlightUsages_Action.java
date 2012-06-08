@@ -11,6 +11,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -76,6 +77,7 @@ public class HighlightUsages_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.highlightUsages");
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();

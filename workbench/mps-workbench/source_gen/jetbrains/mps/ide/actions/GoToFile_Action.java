@@ -10,6 +10,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 
 public class GoToFile_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -49,6 +50,7 @@ public class GoToFile_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.file");
       GoToFile_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
