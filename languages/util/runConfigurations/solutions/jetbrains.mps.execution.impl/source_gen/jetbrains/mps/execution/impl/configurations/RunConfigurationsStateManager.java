@@ -10,6 +10,13 @@ import jetbrains.mps.plugins.PluginReloader;
 import jetbrains.mps.plugins.PluginReloadingListener;
 import jetbrains.mps.ide.IdeMain;
 import com.intellij.openapi.util.InvalidDataException;
+import java.util.List;
+import com.intellij.execution.ui.RunContentDescriptor;
+import com.intellij.openapi.application.ApplicationManager;
+import java.util.Iterator;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.ui.RunContentManagerImpl;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -17,8 +24,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.execution.configurations.RunConfiguration;
 import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import com.intellij.execution.ui.RunContentDescriptor;
-import com.intellij.openapi.util.WriteExternalException;
+import java.util.ArrayList;
 import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.RunManagerEx;
 import com.intellij.execution.impl.ProjectRunConfigurationManager;
@@ -26,9 +32,6 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.ConfigurationType;
 import com.intellij.openapi.extensions.Extensions;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -88,35 +91,31 @@ public class RunConfigurationsStateManager implements ProjectComponent {
 
   public void disposeRunConfigurations() {
     assert !(myProject.isDisposed());
-    ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
-    RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
+    final List<RunContentDescriptor> descriptors = collectDescriptorsToDispose();
 
-    Iterable<String> reloadableConfigurationNames = Sequence.fromIterable(Sequence.fromArray(getRunManager().getAllConfigurations())).where(new IWhereFilter<RunConfiguration>() {
-      public boolean accept(RunConfiguration it) {
-        return it.getClass().getClassLoader() instanceof ModuleClassLoader;
-      }
-    }).select(new ISelector<RunConfiguration, String>() {
-      public String select(RunConfiguration it) {
-        return it.getName();
-      }
-    });
-
-    for (RunContentDescriptor d : contentManager.getAllDescriptors()) {
-      if (Sequence.fromIterable(reloadableConfigurationNames).contains(d.getDisplayName())) {
-        if (d.getAttachedContent() == null) {
-          if (log.isWarnEnabled()) {
-            log.warn("Attached content of descriptor " + d.getDisplayName() + " is null.");
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        {
+          Iterator<RunContentDescriptor> d_it = ListSequence.fromList(descriptors).iterator();
+          RunContentDescriptor d_var;
+          while (d_it.hasNext()) {
+            d_var = d_it.next();
+            if (d_var.getAttachedContent() == null) {
+              if (log.isWarnEnabled()) {
+                log.warn("Attached content of descriptor " + d_var.getDisplayName() + " is null.");
+              }
+            } else
+            if (d_var.getAttachedContent().getManager() == null) {
+              if (log.isWarnEnabled()) {
+                log.warn("Manager of attached content of descriptor " + d_var.getDisplayName() + " is null.");
+              }
+            } else {
+              d_var.getAttachedContent().getManager().removeAllContents(true);
+            }
           }
-        } else
-        if (d.getAttachedContent().getManager() == null) {
-          if (log.isWarnEnabled()) {
-            log.warn("Manager of attached content of descriptor " + d.getDisplayName() + " is null.");
-          }
-        } else {
-          d.getAttachedContent().getManager().removeAllContents(true);
         }
       }
-    }
+    }, ModalityState.NON_MODAL);
 
     if (myState == null) {
       try {
@@ -128,6 +127,33 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         }
       }
     }
+  }
+
+  private List<RunContentDescriptor> collectDescriptorsToDispose() {
+    ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
+    final RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
+
+    final List<String> reloadableConfigurationNames = Sequence.fromIterable(Sequence.fromArray(getRunManager().getAllConfigurations())).where(new IWhereFilter<RunConfiguration>() {
+      public boolean accept(RunConfiguration it) {
+        return it.getClass().getClassLoader() instanceof ModuleClassLoader;
+      }
+    }).select(new ISelector<RunConfiguration, String>() {
+      public String select(RunConfiguration it) {
+        return it.getName();
+      }
+    }).toListSequence();
+    final List<RunContentDescriptor> descriptors = ListSequence.fromList(new ArrayList<RunContentDescriptor>());
+    {
+      Iterator<RunContentDescriptor> d_it = ListSequence.fromList(contentManager.getAllDescriptors()).iterator();
+      RunContentDescriptor d_var;
+      while (d_it.hasNext()) {
+        d_var = d_it.next();
+        if (ListSequence.fromList(reloadableConfigurationNames).contains(d_var.getDisplayName())) {
+          ListSequence.fromList(descriptors).addElement(d_var);
+        }
+      }
+    }
+    return descriptors;
   }
 
   private RunManagerImpl getRunManager() {
