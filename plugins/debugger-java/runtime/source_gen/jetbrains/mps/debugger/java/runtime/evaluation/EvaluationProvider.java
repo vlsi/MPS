@@ -8,6 +8,7 @@ import jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationAuxModule;
 import java.util.List;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import java.util.ArrayList;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -17,8 +18,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.runtime.JavaUiState;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog;
 import java.awt.event.WindowAdapter;
@@ -27,10 +29,8 @@ import javax.swing.JComponent;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.LowLevelEvaluationModel;
-import org.jetbrains.annotations.NotNull;
 
 public class EvaluationProvider implements IEvaluationProvider {
   private final DebugSession myDebugSession;
@@ -38,7 +38,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   private final List<AbstractEvaluationModel> myWatches = new ArrayList<AbstractEvaluationModel>();
   private final List<EvaluationProvider.IWatchListener> myWatchListeners = new ArrayList<EvaluationProvider.IWatchListener>();
 
-  public EvaluationProvider(DebugSession debugSession) {
+  public EvaluationProvider(@NotNull DebugSession debugSession) {
     myDebugSession = debugSession;
     DebugSessionManagerComponent.getInstance(myDebugSession.getProject()).addDebugSessionListener(new DebugSessionManagerComponent.DebugSessionAdapter() {
       @Override
@@ -90,9 +90,8 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   @Override
   public void showEvaluationDialog(final IOperationContext context, final List<SNodePointer> selectedNodes) {
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      @Override
-      public void run() {
+    myDebugSession.getEventsProcessor().invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
         JavaUiState state = myDebugSession.getUiState();
         if (state.isPausedOnBreakpoint()) {
           final AbstractEvaluationModel model = createLowLevelEvaluationModel(AbstractEvaluationModel.IS_DEVELOPER_MODE, selectedNodes);
@@ -129,9 +128,8 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void addWatch(final AbstractEvaluationModel evaluationModel) {
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      @Override
-      public void run() {
+    myDebugSession.getEventsProcessor().invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
         AbstractEvaluationModel copy = evaluationModel.copy(true);
         synchronized (myWatches) {
           myWatches.add(copy);
@@ -142,9 +140,8 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void createWatch() {
-    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-      @Override
-      public void run() {
+    myDebugSession.getEventsProcessor().invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
         final AbstractEvaluationModel model = createLowLevelEvaluationModel(true);
         if (model == null) {
           return;
@@ -153,7 +150,6 @@ public class EvaluationProvider implements IEvaluationProvider {
           @Override
           public void run() {
             EditWatchDialog editWatchDialog = new EditWatchDialog(new ProjectOperationContext(ProjectHelper.toMPSProject(myDebugSession.getProject())), EvaluationProvider.this, model, new _FunctionTypes._void_P0_E0() {
-              @Override
               public void invoke() {
                 addWatch(model);
               }
