@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.regex.Pattern;
 
 public class VisibleModuleRegistry implements ApplicationComponent {
   ConcurrentMap<String, Boolean> myCache = new ConcurrentHashMap<String, Boolean>();
@@ -62,7 +63,8 @@ public class VisibleModuleRegistry implements ApplicationComponent {
     //satisfying a mask
     VisibleModuleMask[] extensions = VisibleModuleMask.EP_VISIBLE_MODULES.getExtensions();
     for (VisibleModuleMask e:extensions) {
-      if (module.getModuleFqName().startsWith(e.mask)) {
+      Pattern p = Pattern.compile(e.mask);
+      if (p.matcher(module.getModuleFqName()).matches()) {
         return true;
       }
     }

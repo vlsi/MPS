@@ -49,6 +49,7 @@
     <mps.LanguageLibrary dir="/languages"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <mps.VisibleModuleMask mask="jetbrains.mps.baseLanguage"/>
+    <mps.VisibleModuleMask mask="jetbrains.mps.baseLanguage.*"/>
     <mps.VisibleModuleMask mask="jetbrains.mps.devkit.general-purpose"/>
   </extensions>
 </idea-plugin>
