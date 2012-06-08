@@ -252,4 +252,7 @@ public class SolutionIdea extends Solution {
     }
   }
 
+  public Module getIdeaModule() {
+    return myModule;
+  }
 }

@@ -17,15 +17,20 @@
 package jetbrains.mps.idea.core.actions;
 
 import com.intellij.openapi.Disposable;
+import com.intellij.openapi.module.Module;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.idea.core.facet.ui.ModuleRuntimeLibrariesManager;
 import jetbrains.mps.idea.core.icons.MPSIcons;
+import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.ui.ImportedModelsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 import jetbrains.mps.project.IModule;
@@ -34,203 +39,213 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.Nls;
 
-import javax.swing.*;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javax.swing.Icon;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.util.*;
 
 public class ModelPropertiesConfigurable implements Configurable, Disposable {
-    private EditableSModelDescriptor myDescriptor;
-    private UsedLanguagesTable myUsedLanguagesTable;
-    private List<ModuleReference> myUsedLanguages;
-    private Project myProject;
-    private ImportedModelsTable myImportedModelsTable;
-    private List<SModelReference> myImportedModels;
-    private JPanel myComponent;
-    private JComponent myTabbedPaneComponent;
-    private JTextField myPackageName;
-    private String myModelLongName;
-    private Set<ModuleReference> myVisibleLanguages;
+  private EditableSModelDescriptor myDescriptor;
+  private UsedLanguagesTable myUsedLanguagesTable;
+  private List<ModuleReference> myUsedLanguages;
+  private Project myProject;
+  private ImportedModelsTable myImportedModelsTable;
+  private List<SModelReference> myImportedModels;
+  private JPanel myComponent;
+  private JComponent myTabbedPaneComponent;
+  private JTextField myPackageName;
+  private String myModelLongName;
+  private Set<ModuleReference> myVisibleLanguages;
   private ModelPathsTab myModelPathsTab;
 
   public ModelPropertiesConfigurable(EditableSModelDescriptor descriptor, Project project) {
-        ModelAccess.instance().checkReadAccess();
-        myDescriptor = descriptor;
-        myImportedModelsTable.setDescriptor(myDescriptor);
-        myProject = project;
-        initState(myDescriptor.getSModel());
-    }
+    ModelAccess.instance().checkReadAccess();
+    myDescriptor = descriptor;
+    myImportedModelsTable.setDescriptor(myDescriptor);
+    myProject = project;
+    initState(myDescriptor.getSModel());
+  }
 
-    private void initState(SModel sModel) {
-        myUsedLanguages = sModel.importedLanguages();
-        myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
-        myModelLongName = myDescriptor.getLongName();
+  private void initState(SModel sModel) {
+    myUsedLanguages = sModel.importedLanguages();
+    myImportedModels = SModelOperations.getImportedModelUIDs(sModel);
+    myModelLongName = myDescriptor.getLongName();
+    IModule module = myDescriptor.getModule();
+    myVisibleLanguages = new HashSet<ModuleReference>();
+    for (Language visibleLanguage : module.getScope().getVisibleLanguages()) {
+      myVisibleLanguages.add(visibleLanguage.getModuleReference());
+    }
+    myModelPathsTab.initState(sModel);
+  }
+
+  private void createUIComponents() {
+    TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(this);
+    tabbedPane.addTab(MPSBundle.message("model.properties.configurable.imported.models.tab.title"), MPSIcons.MODELS_TAB_ICON, createImportedModelsTable(), MPSBundle.message("model.properties.configurable.imported.models.tab.tooltip"));
+    tabbedPane.addTab(MPSBundle.message("model.properties.configurable.used.languages.tab.title"), MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTable(), MPSBundle.message("model.properties.configurable.used.languages.tab.tooltip"));
+    tabbedPane.addTab(MPSBundle.message("model.properties.configurable.paths.tab.title"), MPSIcons.PATHS_TAB_ICON, createPathsComponent(), MPSBundle.message("model.properties.configurable.paths.tab.tooltip"));
+    myTabbedPaneComponent = tabbedPane.getComponent();
+  }
+
+  @Nls
+  @Override
+  public String getDisplayName() {
+    return MPSBundle.message("model.properties.configurable.display.name", myDescriptor.getLongName());
+  }
+
+  @Override
+  public Icon getIcon() {
+    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  @Override
+  public String getHelpTopic() {
+    return null;
+  }
+
+  @Override
+  public JComponent createComponent() {
+    reset();
+    return myComponent;
+  }
+
+  private JComponent createUsedLanguagesTable() {
+    myUsedLanguagesTable = new UsedLanguagesTable() {
+      @Override
+      protected SimpleTextAttributes getTextAttributes(ModuleReference element) {
+        if (myVisibleLanguages.contains(element)) {
+          return super.getTextAttributes(element);
+        }
+        return SimpleTextAttributes.GRAY_ATTRIBUTES;
+      }
+
+      @Override
+      public boolean isModified(List<ModuleReference> elements) {
+        return super.isModified(elements) || !myVisibleLanguages.containsAll(getElements());
+      }
+
+      @Override
+      protected String getToolTipText(ModuleReference element) {
+        if (myVisibleLanguages.contains(element)) {
+          return super.getToolTipText(element);
+        }
+        return MPSBundle.message("model.properties.configurable.used.language.not.imported.into.module.tooltip");
+      }
+    };
+    return myUsedLanguagesTable.createComponent();
+  }
+
+  private JComponent createImportedModelsTable() {
+    myImportedModelsTable = new ImportedModelsTable();
+    return myImportedModelsTable.createComponent();
+  }
+
+  private JComponent createPathsComponent() {
+    myModelPathsTab = new ModelPathsTab();
+    return myModelPathsTab.getRootPane();
+  }
+
+  @Override
+  public boolean isModified() {
+    return myImportedModelsTable.isModified(myImportedModels) ||
+      myUsedLanguagesTable.isModified(myUsedLanguages) ||
+      myModelPathsTab.isModified(myDescriptor.getSModel()) ||
+      !myModelLongName.equals(myPackageName.getText());
+  }
+
+  @Override
+  public void apply() throws ConfigurationException {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
+      @Override
+      public void run() {
+        SModel sModel = myDescriptor.getSModel();
         IModule module = myDescriptor.getModule();
-        myVisibleLanguages = new HashSet<ModuleReference>();
-        for (Language visibleLanguage : module.getScope().getVisibleLanguages()) {
-            myVisibleLanguages.add(visibleLanguage.getModuleReference());
-        }
-        myModelPathsTab.initState (sModel);
+
+        saveImportedModels(sModel);
+        saveUsedLanguages(sModel, module);
+        setLongName();
+
+        myModelPathsTab.saveState(sModel);
+
+        myDescriptor.save();
+        initState(sModel);
+
+        myComponent.repaint();
+      }
+    }, ProjectHelper.toMPSProject(myProject));
+  }
+
+  private void setLongName() {
+    if (myModelLongName.equals(myPackageName.getText())) {
+      return;
+    }
+    SModelFqName oldFqName = myDescriptor.getSModelReference().getSModelFqName();
+    SModelFqName newFqName = new SModelFqName(myPackageName.getText(), oldFqName.getStereotype());
+    myDescriptor.rename(newFqName, true);
+  }
+
+  private void saveUsedLanguages(SModel sModel, IModule module) {
+    List<ModuleReference> currentlyUsedLanguages = sModel.importedLanguages();
+    List<ModuleReference> usedLanguages = myUsedLanguagesTable.getElements();
+
+    Set<ModuleReference> languagesToRemove = new HashSet<ModuleReference>(currentlyUsedLanguages);
+    languagesToRemove.removeAll(usedLanguages);
+    for (ModuleReference language : languagesToRemove) {
+      sModel.deleteLanguage(language);
     }
 
-    private void createUIComponents() {
-        TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(this);
-        tabbedPane.addTab(MPSBundle.message("model.properties.configurable.imported.models.tab.title"), MPSIcons.MODELS_TAB_ICON, createImportedModelsTable(), MPSBundle.message("model.properties.configurable.imported.models.tab.tooltip"));
-        tabbedPane.addTab(MPSBundle.message("model.properties.configurable.used.languages.tab.title"), MPSIcons.LANGUAGES_TAB_ICON, createUsedLanguagesTable(), MPSBundle.message("model.properties.configurable.used.languages.tab.tooltip"));
-        tabbedPane.addTab(MPSBundle.message("model.properties.configurable.paths.tab.title"), MPSIcons.PATHS_TAB_ICON, createPathsComponent(), MPSBundle.message("model.properties.configurable.paths.tab.tooltip"));
-        myTabbedPaneComponent = tabbedPane.getComponent();
+    Set<ModuleReference> languagesToAdd = new HashSet<ModuleReference>(usedLanguages);
+    languagesToAdd.removeAll(currentlyUsedLanguages);
+    for (ModuleReference language : languagesToAdd) {
+      sModel.addLanguage(language);
     }
 
-    @Nls
-    @Override
-    public String getDisplayName() {
-        return MPSBundle.message("model.properties.configurable.display.name", myDescriptor.getLongName());
+    Collection<ModuleReference> addedLanguages = new ArrayList<ModuleReference>();
+    for (ModuleReference language : usedLanguages) {
+      if (module.getScope().getLanguage(language) == null) {
+        module.addUsedLanguage(language);
+        addedLanguages.add(language);
+      }
     }
 
-    @Override
-    public Icon getIcon() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    if (module instanceof SolutionIdea) {
+      Module ideaModule = ((SolutionIdea) module).getIdeaModule();
+      ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(ideaModule).getModifiableModel();
+      new ModuleRuntimeLibrariesManager(ideaModule, addedLanguages, modifiableModel).addMissingLibraries();
+      modifiableModel.commit();
+    }
+  }
+
+  private void saveImportedModels(SModel sModel) {
+    List<SModelReference> currentlyImportedModels = SModelOperations.getImportedModelUIDs(sModel);
+    List<SModelReference> importedModels = myImportedModelsTable.getElements();
+
+    Set<SModelReference> modelsToRemove = new HashSet<SModelReference>(currentlyImportedModels);
+    modelsToRemove.removeAll(importedModels);
+    for (SModelReference modelReference : modelsToRemove) {
+      sModel.deleteModelImport(modelReference);
     }
 
-    @Override
-    public String getHelpTopic() {
-        return null;
+    Set<SModelReference> modelsToAdd = new HashSet<SModelReference>(importedModels);
+    modelsToAdd.removeAll(currentlyImportedModels);
+    for (SModelReference modelReference : modelsToAdd) {
+      sModel.addModelImport(modelReference, false);
     }
+  }
 
-    @Override
-    public JComponent createComponent() {
-        reset();
-        return myComponent;
-    }
+  @Override
+  public void reset() {
+    myImportedModelsTable.setElements(myImportedModels);
+    myUsedLanguagesTable.setElements(myUsedLanguages);
+    myPackageName.setText(myModelLongName);
+  }
 
-    private JComponent createUsedLanguagesTable() {
-        myUsedLanguagesTable = new UsedLanguagesTable() {
-            @Override
-            protected SimpleTextAttributes getTextAttributes(ModuleReference element) {
-                if (myVisibleLanguages.contains(element)) {
-                    return super.getTextAttributes(element);
-                }
-                return SimpleTextAttributes.GRAY_ATTRIBUTES;
-            }
+  @Override
+  public void disposeUIResources() {
+    Disposer.dispose(this);
+  }
 
-            @Override
-            public boolean isModified(List<ModuleReference> elements) {
-                return super.isModified(elements) || !myVisibleLanguages.containsAll(getElements());
-            }
-
-            @Override
-            protected String getToolTipText(ModuleReference element) {
-                if (myVisibleLanguages.contains(element)) {
-                    return super.getToolTipText(element);
-                }
-                return MPSBundle.message("model.properties.configurable.used.language.not.imported.into.module.tooltip");
-            }
-        };
-        return myUsedLanguagesTable.createComponent();
-    }
-
-    private JComponent createImportedModelsTable() {
-        myImportedModelsTable = new ImportedModelsTable();
-        return myImportedModelsTable.createComponent();
-    }
-
-    private JComponent createPathsComponent() {
-      myModelPathsTab = new ModelPathsTab();
-      return myModelPathsTab.getRootPane();
-    }
-
-    @Override
-    public boolean isModified() {
-        return myImportedModelsTable.isModified(myImportedModels) ||
-                myUsedLanguagesTable.isModified(myUsedLanguages) ||
-                myModelPathsTab.isModified(myDescriptor.getSModel()) ||
-                !myModelLongName.equals(myPackageName.getText());
-    }
-
-    @Override
-    public void apply() throws ConfigurationException {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-            @Override
-            public void run() {
-                SModel sModel = myDescriptor.getSModel();
-                IModule module = myDescriptor.getModule();
-
-                saveImportedModels(sModel);
-                saveUsedLanguages(sModel, module);
-                setLongName();
-
-                myModelPathsTab.saveState (sModel);
-
-                myDescriptor.save();
-                initState(sModel);
-
-                myComponent.repaint();
-            }
-        }, ProjectHelper.toMPSProject(myProject));
-    }
-
-    private void setLongName() {
-        if (myModelLongName.equals(myPackageName.getText())) {
-            return;
-        }
-        SModelFqName oldFqName = myDescriptor.getSModelReference().getSModelFqName();
-        SModelFqName newFqName = new SModelFqName(myPackageName.getText(), oldFqName.getStereotype());
-        myDescriptor.rename(newFqName, true);
-    }
-
-    private void saveUsedLanguages(SModel sModel, IModule module) {
-        List<ModuleReference> currentlyUsedLanguages = sModel.importedLanguages();
-        List<ModuleReference> usedLanguages = myUsedLanguagesTable.getElements();
-
-        Set<ModuleReference> languagesToRemove = new HashSet<ModuleReference>(currentlyUsedLanguages);
-        languagesToRemove.removeAll(usedLanguages);
-        for (ModuleReference language : languagesToRemove) {
-            sModel.deleteLanguage(language);
-        }
-
-        Set<ModuleReference> languagesToAdd = new HashSet<ModuleReference>(usedLanguages);
-        languagesToAdd.removeAll(currentlyUsedLanguages);
-        for (ModuleReference language : languagesToAdd) {
-            sModel.addLanguage(language);
-        }
-
-        for (ModuleReference language : usedLanguages) {
-            if (module.getScope().getLanguage(language) == null) {
-                module.addUsedLanguage(language);
-            }
-        }
-    }
-
-    private void saveImportedModels(SModel sModel) {
-        List<SModelReference> currentlyImportedModels = SModelOperations.getImportedModelUIDs(sModel);
-        List<SModelReference> importedModels = myImportedModelsTable.getElements();
-
-        Set<SModelReference> modelsToRemove = new HashSet<SModelReference>(currentlyImportedModels);
-        modelsToRemove.removeAll(importedModels);
-        for (SModelReference modelReference : modelsToRemove) {
-            sModel.deleteModelImport(modelReference);
-        }
-
-        Set<SModelReference> modelsToAdd = new HashSet<SModelReference>(importedModels);
-        modelsToAdd.removeAll(currentlyImportedModels);
-        for (SModelReference modelReference : modelsToAdd) {
-            sModel.addModelImport(modelReference, false);
-        }
-    }
-
-    @Override
-    public void reset() {
-        myImportedModelsTable.setElements(myImportedModels);
-        myUsedLanguagesTable.setElements(myUsedLanguages);
-        myPackageName.setText(myModelLongName);
-    }
-
-    @Override
-    public void disposeUIResources() {
-        Disposer.dispose(this);
-    }
-
-    @Override
-    public void dispose() {
-    }
+  @Override
+  public void dispose() {
+  }
 }

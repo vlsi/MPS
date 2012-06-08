@@ -18,8 +18,14 @@ package jetbrains.mps.idea.core.facet.ui;
 
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.fileTypes.FileTypes;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.libraries.Library;
+import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
+import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer;
+import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer.LibraryLevel;
+import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainerFactory;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -44,16 +50,28 @@ import java.util.*;
 public class ModuleRuntimeLibrariesManager {
   private FacetEditorContext myContext;
   private Collection<ModuleReference> myAddedLanguages;
+  private ModifiableRootModel myModifiableRootModel;
+  private Library[] myProjectLibraries;
+  private LibrariesContainer myLibrariesContainer;
 
   public ModuleRuntimeLibrariesManager(FacetEditorContext context, Collection<ModuleReference> addedLanguages) {
     myContext = context;
     myAddedLanguages = addedLanguages;
+    myModifiableRootModel = myContext.getModifiableRootModel();
+    myProjectLibraries = myContext.getLibraries();
+  }
+
+  public ModuleRuntimeLibrariesManager(Module ideaModule, Collection<ModuleReference> addedLanguages, ModifiableRootModel modifiableModel) {
+    myAddedLanguages = addedLanguages;
+    myModifiableRootModel = modifiableModel;
+    myProjectLibraries = LibraryTablesRegistrar.getInstance().getLibraryTable(ideaModule.getProject()).getLibraries();
+    myLibrariesContainer = LibrariesContainerFactory.createContainer(ideaModule);
   }
 
   public void addMissingLibraries() {
     // local library files form IDEA module
     final Set<String> libFiles = new HashSet<String>();
-    myContext.getRootModel().orderEntries().forEachLibrary(new Processor<Library>() {
+    myModifiableRootModel.orderEntries().forEachLibrary(new Processor<Library>() {
       @Override
       public boolean process(Library library) {
         for (VirtualFile vFile : library.getFiles(OrderRootType.CLASSES)) {
@@ -64,7 +82,7 @@ public class ModuleRuntimeLibrariesManager {
     });
 
     Map<String, Library> projectLibFiles = new HashMap<String, Library>();
-    for (Library library : myContext.getLibraries()) {
+    for (Library library : myProjectLibraries) {
       for (VirtualFile file : library.getFiles(OrderRootType.CLASSES)) {
         projectLibFiles.put(file.getName(), library);
       }
@@ -99,12 +117,22 @@ public class ModuleRuntimeLibrariesManager {
     }
 
     for (Library projectLibrary : projectLibs2Add) {
-      myContext.getModifiableRootModel().addLibraryEntry(projectLibrary);
+      myModifiableRootModel.addLibraryEntry(projectLibrary);
     }
 
     for (String libraryName : projectLibs2Create.keySet()) {
       List<VirtualFile> libraryFiles = projectLibs2Create.get(libraryName);
-      myContext.getModifiableRootModel().addLibraryEntry(myContext.createProjectLibrary("mps." + libraryName, libraryFiles.toArray(new VirtualFile[libraryFiles.size()]), new VirtualFile[0]));
+      myModifiableRootModel.addLibraryEntry(createProjectLibrary(libraryName, libraryFiles));
+    }
+  }
+
+  private Library createProjectLibrary(String moduleName, List<VirtualFile> libraryFiles) {
+    VirtualFile[] roots = libraryFiles.toArray(new VirtualFile[libraryFiles.size()]);
+    String libName = "mps." + moduleName;
+    if (myContext != null) {
+      return myContext.createProjectLibrary(libName, roots, new VirtualFile[0]);
+    } else {
+      return myLibrariesContainer.createLibrary(libName, LibraryLevel.PROJECT, roots, new VirtualFile[0]);
     }
   }
 
