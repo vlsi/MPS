@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.migration.assistant;
 
+import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx.Listener;
 import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -31,7 +31,6 @@ import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
-import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -40,9 +39,10 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.persistence.def.v3.ModelPersistence3;
 
 import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -234,19 +234,19 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JPanel infoHolder = new JPanel(new BorderLayout());
       infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
 
-      JTextArea info = new JTextArea(
-        "Welcome to Migration Assistant!" +
-          "\n\n" +
-          "MPS has detected that your project requires migration before it can be used with this version of the product." +
-          "\n\n" +
-          "This wizard will guide you through the migration process. It's going to take a while." +
-          "\n\n" +
-          "Select Next to proceed with migration or Cancel if you wish to postpone it.",
-        15, 40);
-      info.setLineWrap(true);
-      info.setWrapStyleWord(true);
+      JTextPane info = new JTextPane();
+      info.setContentType("text/html");
+      info.setText("Welcome to Migration Assistant!" +
+        "<br><br>" +
+        "MPS has detected that your project requires migration before it can be used with this version of the product." +
+        "<br><br>" +
+        "This wizard will guide you through the migration process. It's going to take a while." +
+        "<br><br>" +
+        "Select Next to proceed with migration or Cancel if you wish to postpone it.");
       info.setEditable(false);
+      info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
+      info.setPreferredSize(new Dimension(300, 160));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -304,17 +304,17 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       final JPanel infoHolder = new JPanel(new BorderLayout());
       infoHolder.setBorder(BorderFactory.createEmptyBorder(2, 2, 2, 2));
 
-      final JTextArea info = new JTextArea(
-        "Some models in this project are stored in the persistence version that is no longer supported." +
-          "\n\n" +
-          "You have to manually upgrade persistence of these models using a previous version of MPS." +
-          "\n\n" +
-          "The migration cannot proceed.",
-        10, 40);
-      info.setLineWrap(true);
-      info.setWrapStyleWord(true);
+      JTextPane info = new JTextPane();
+      info.setContentType("text/html");
+      info.setText("Some models in this project are stored in the persistence version that is no longer supported." +
+        "<br><br>" +
+        "You have to manually upgrade persistence of these models using a previous version of MPS." +
+        "<br><br>" +
+        "The migration cannot proceed.");
       info.setEditable(false);
+      info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
+      info.setPreferredSize(new Dimension(300, 160));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -720,17 +720,29 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JPanel infoHolder = new JPanel(new BorderLayout());
       infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
 
-      JTextArea info = new JTextArea(
-        "Congratulations! Migration has completed successfully." +
-          "\n\n" +
-          "Your project files have been upgraded to be used with the latest version of MPS." +
-          "\n\n" +
-          "The wizard can now be closed and your project will be loaded.",
-        15, 40);
-      info.setLineWrap(true);
-      info.setWrapStyleWord(true);
+      JTextPane info = new JTextPane();
+      info.setContentType("text/html");
+      info.setText("Congratulations! Migration has completed successfully." +
+        "<br><br>" +
+        "Your project files have been upgraded to be used with the latest version of MPS." +
+        "<br><br>" +
+        "The wizard can now be closed and your project will be loaded." +
+        "<br><br>" +
+        "Now we recommend reading MPS 2.5 Migration Guide document at: " +
+        "<a href=\"http://confluence.jetbrains.com/display/MPS/Migration+to+MPS+2.5\">http://confluence.jetbrains.com/display/MPS/Migration+to+MPS+2.5</a> " +
+        "to control the project structure manually and ensure no more " +
+        "modifications are required.");
       info.setEditable(false);
+      info.addHyperlinkListener(new HyperlinkListener() {
+        public void hyperlinkUpdate(HyperlinkEvent e) {
+          if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+            BrowserUtil.launchBrowser(e.getURL().toString());
+          }
+        }
+      });
+      info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
+      info.setPreferredSize(new Dimension(300, 160));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
@@ -770,17 +782,29 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       JPanel infoHolder = new JPanel(new BorderLayout());
       infoHolder.setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
 
-      JTextArea info = new JTextArea(
-        "Warning! Although migration has completed, there were some errors during the process. Please review the errors log." +
-          "\n\n" +
-          "Your project files have been upgraded to be used with the latest version of MPS." +
-          "\n\n" +
-          "The wizard can now be closed and your project will be loaded.",
-        15, 40);
-      info.setLineWrap(true);
-      info.setWrapStyleWord(true);
+      JTextPane info = new JTextPane();
+      info.setContentType("text/html");
+      info.setText("Warning! Although migration has completed, there were some errors during the process. Please review the errors log." +
+        "<br><br>" +
+        "Your project files have been upgraded to be used with the latest version of MPS." +
+        "<br><br>" +
+        "The wizard can now be closed and your project will be loaded." +
+        "<br><br>" +
+        "Now we recommend reading MPS 2.5 Migration Guide document at: " +
+        "<a href=\"http://confluence.jetbrains.com/display/MPS/Migration+to+MPS+2.5\">http://confluence.jetbrains.com/display/MPS/Migration+to+MPS+2.5</a> " +
+        "to control the project structure manually and ensure no more " +
+        "modifications are required.");
       info.setEditable(false);
+      info.addHyperlinkListener(new HyperlinkListener() {
+        public void hyperlinkUpdate(HyperlinkEvent e) {
+          if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+            BrowserUtil.launchBrowser(e.getURL().toString());
+          }
+        }
+      });
+      info.setFocusable(false);
       info.setBorder(BorderFactory.createLoweredBevelBorder());
+      info.setPreferredSize(new Dimension(300, 160));
 
       infoHolder.add(info, BorderLayout.CENTER);
 
