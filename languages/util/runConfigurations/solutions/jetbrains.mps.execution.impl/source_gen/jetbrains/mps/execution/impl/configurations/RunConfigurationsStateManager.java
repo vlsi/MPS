@@ -12,6 +12,11 @@ import jetbrains.mps.ide.IdeMain;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.ui.RunContentManagerImpl;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.execution.configurations.RunConfiguration;
+import jetbrains.mps.runtime.ModuleClassLoader;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.execution.ui.RunContentDescriptor;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.execution.impl.RunManagerImpl;
@@ -86,18 +91,30 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
     RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
 
+    Iterable<String> reloadableConfigurationNames = Sequence.fromIterable(Sequence.fromArray(getRunManager().getAllConfigurations())).where(new IWhereFilter<RunConfiguration>() {
+      public boolean accept(RunConfiguration it) {
+        return it.getClass().getClassLoader() instanceof ModuleClassLoader;
+      }
+    }).select(new ISelector<RunConfiguration, String>() {
+      public String select(RunConfiguration it) {
+        return it.getName();
+      }
+    });
+
     for (RunContentDescriptor d : contentManager.getAllDescriptors()) {
-      if (d.getAttachedContent() == null) {
-        if (log.isWarnEnabled()) {
-          log.warn("Attached content of descriptor " + d.getDisplayName() + " is null.");
+      if (Sequence.fromIterable(reloadableConfigurationNames).contains(d.getDisplayName())) {
+        if (d.getAttachedContent() == null) {
+          if (log.isWarnEnabled()) {
+            log.warn("Attached content of descriptor " + d.getDisplayName() + " is null.");
+          }
+        } else
+        if (d.getAttachedContent().getManager() == null) {
+          if (log.isWarnEnabled()) {
+            log.warn("Manager of attached content of descriptor " + d.getDisplayName() + " is null.");
+          }
+        } else {
+          d.getAttachedContent().getManager().removeAllContents(true);
         }
-      } else
-      if (d.getAttachedContent().getManager() == null) {
-        if (log.isWarnEnabled()) {
-          log.warn("Manager of attached content of descriptor " + d.getDisplayName() + " is null.");
-        }
-      } else {
-        d.getAttachedContent().getManager().removeAllContents(true);
       }
     }
 
