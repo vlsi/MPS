@@ -9,15 +9,11 @@ import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
-import java.util.Set;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.VisibleModuleRegistry;
+import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 
 public class DependencyChooser implements Computable<List<Dependency>> {
@@ -31,12 +27,8 @@ public class DependencyChooser implements Computable<List<Dependency>> {
     final Wrappers._T<Iterable<ModuleReference>> allModuleRefs = new Wrappers._T<Iterable<ModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        Set<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-        allModuleRefs.value = SetSequence.fromSet(modules).where(new IWhereFilter<IModule>() {
-          public boolean accept(IModule it) {
-            return VisibleModuleRegistry.getInstance().isVisible(it);
-          }
-        }).select(new ISelector<IModule, ModuleReference>() {
+        Iterable<IModule> modules = new FilteredGlobalScope().getVisibleModules();
+        allModuleRefs.value = Sequence.fromIterable(modules).select(new ISelector<IModule, ModuleReference>() {
           public ModuleReference select(IModule it) {
             return it.getModuleReference();
           }

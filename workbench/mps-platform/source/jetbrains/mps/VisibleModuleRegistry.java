@@ -20,8 +20,11 @@ import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -29,10 +32,20 @@ import java.util.Set;
 public class VisibleModuleRegistry implements ApplicationComponent {
 
 
-  public boolean isVisible(IModule module) {
+  public boolean isVisible(final IModule module) {
     //project modules
     //contributed by plugin
-    for (MPSModuleOwner owner : ModuleRepositoryFacade.getInstance().getModuleOwners(module)) {
+    if (module == null) return false;
+    Set<MPSModuleOwner> moduleOwners = ModelAccess.instance().runReadAction(new Computable<Set<MPSModuleOwner>>() {
+      @Override
+      public Set<MPSModuleOwner> compute() {
+        return ModuleRepositoryFacade.getInstance().getModuleOwners(module);
+      }
+    });
+    for (MPSModuleOwner owner : moduleOwners) {
+      if (owner instanceof Language) {
+        return isVisible((Language) owner);
+      }
       if (!owner.isHidden()) return true;
     }
     //satisfying a mask
