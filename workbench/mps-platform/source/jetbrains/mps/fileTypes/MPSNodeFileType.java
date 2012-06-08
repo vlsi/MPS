@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.fileTypes;
 
-import com.intellij.lang.Language;
 import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.fileTypes.ex.FileTypeIdentifiableByVirtualFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -25,11 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
-public class MPSNodeFileType extends LanguageFileType implements FileTypeIdentifiableByVirtualFile {
-  protected MPSNodeFileType() {
-    super(MPSLanguage.getInstance());
-  }
-
+public class MPSNodeFileType implements FileType, FileTypeIdentifiableByVirtualFile {
   @NotNull
   public String getName() {
     return "MPS Node File Type";
@@ -42,10 +36,22 @@ public class MPSNodeFileType extends LanguageFileType implements FileTypeIdentif
 
   @NotNull
   public String getDefaultExtension() {
-    return ".mps";
+    return "impossibleext";
   }
 
   public Icon getIcon() {
+    return null;
+  }
+
+  public boolean isBinary() {
+    return false;
+  }
+
+  public boolean isReadOnly() {
+    return true;
+  }
+
+  public String getCharset(@NotNull VirtualFile file, byte[] content) {
     return null;
   }
 
