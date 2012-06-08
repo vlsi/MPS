@@ -11,7 +11,10 @@
   <tip file="GoToDefinition.html"/>
   <tip file="InsertEnter.html"/>
   <tip file="Escape.html"/>
+  <tip file="Rename.html"/>
   <tip file="IntroduceVariable.html"/>
+  <tip file="IntroduceConstant.html"/>
+  <tip file="IntroduceField.html"/>
   <tip file="ExtractMethod.html"/>
   <tip file="Inline.html"/>
   <tip file="NavigateBack.html"/>
@@ -20,6 +23,7 @@
   <tip file="HighlightUsagesInFile.html"/>
   <tip file="MoveUpDown.html"/>
   <tip file="GoToImplementation.html"/>
+  <tip file="GoToOverriden.html"/>
   <tip file="RecentFiles.html"/>
   <tip file="ParameterInfo.html"/>
   <tip file="CommitCtrlK.html"/>
