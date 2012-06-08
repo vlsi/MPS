@@ -283,7 +283,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
       //this is to partially fix MPS-14671
-      if (myUsagesView.getSearchResults().getSearchResults().size() > 500)
+      if (myUsagesView.getTreeComponent().getAllResultNodes().size() > 500)
         throw new CantSaveSomethingException("usages view size too big to save");
 
       Element usageViewXML = new Element(USAGE_VIEW);
