@@ -2697,7 +2697,7 @@
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="40" startPosition="71" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="44" startPosition="43" endLine="45" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="44" startPosition="43" endLine="45" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="49" startPosition="24" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="52" startPosition="72" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="55" startPosition="63" endLine="56" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2734,7 +2734,7 @@
     <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="31" startPosition="28" endLine="32" endPosition="24" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="44" startPosition="43" endLine="45" endPosition="31" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="44" startPosition="43" endLine="45" endPosition="40" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="49" startPosition="24" endLine="50" endPosition="39" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="52" startPosition="72" endLine="53" endPosition="42" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="55" startPosition="63" endLine="56" endPosition="33" />
