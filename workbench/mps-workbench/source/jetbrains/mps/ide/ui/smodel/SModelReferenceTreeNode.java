@@ -43,7 +43,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
     setNodeIdentifier(name);
     setAutoExpandable(true);
     Icon icon = Icons.MODEL_ICON;
-    icon = new LayeredIcon(icon, Icons.REFERENCE_ICON);
+    icon = new LayeredIcon(icon, Icons.ARROW_ICON);
     setIcon(icon);
   }
 
