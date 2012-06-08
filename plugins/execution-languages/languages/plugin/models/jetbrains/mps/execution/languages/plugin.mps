@@ -17,6 +17,7 @@
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
       <property name="loadModules" nameId="tp4k.8842945788826116904" value="true" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968035968" />
   </roots>

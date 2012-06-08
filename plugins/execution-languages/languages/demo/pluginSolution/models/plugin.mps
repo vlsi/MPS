@@ -59,6 +59,7 @@
       <property name="vendor" nameId="tp4k.5023285075122009371" value="a" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="a" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="a" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="a" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968033253" />
   </roots>
