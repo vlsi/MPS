@@ -28,14 +28,16 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 public class VisibleModuleRegistry implements ApplicationComponent {
-
+  ConcurrentMap<String, Boolean> myCache = new ConcurrentHashMap<String, Boolean>();
 
   public boolean isVisible(final IModule module) {
+    if (module == null) return false;
     //project modules
     //contributed by plugin
-    if (module == null) return false;
     Set<MPSModuleOwner> moduleOwners = ModelAccess.instance().runReadAction(new Computable<Set<MPSModuleOwner>>() {
       @Override
       public Set<MPSModuleOwner> compute() {
@@ -48,6 +50,15 @@ public class VisibleModuleRegistry implements ApplicationComponent {
       }
       if (!owner.isHidden()) return true;
     }
+    String moduleFqName = module.getModuleFqName();
+    Boolean result = myCache.get(moduleFqName);
+    if (result != null) return  result;
+    result = matchesMask(module);
+    myCache.put(moduleFqName, result);
+    return result;
+  }
+
+  private boolean matchesMask(final IModule module) {
     //satisfying a mask
     VisibleModuleMask[] extensions = VisibleModuleMask.EP_VISIBLE_MODULES.getExtensions();
     for (VisibleModuleMask e:extensions) {
