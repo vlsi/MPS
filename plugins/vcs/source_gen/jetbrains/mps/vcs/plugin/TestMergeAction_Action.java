@@ -17,8 +17,8 @@ import javax.swing.SwingUtilities;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModel;
-import java.io.File;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
+import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
 import jetbrains.mps.smodel.ModelAccess;
@@ -83,8 +83,8 @@ public class TestMergeAction_Action extends BaseAction {
           String resString;
           SModel[] zipped;
           try {
-            resString = File.createTempFile("mpstmd", "").getAbsolutePath();
             zipped = MergeBackupUtil.loadZippedModels(new File(vFile.getCanonicalPath()), MergeVersion.values());
+            resString = File.createTempFile("mpstmp", ".result").getAbsolutePath();
           } catch (Exception e) {
             e.printStackTrace();
             return;
@@ -100,22 +100,17 @@ public class TestMergeAction_Action extends BaseAction {
           });
           dialog.show();
           final SModel result = dialog.getResultModel();
-          if (result == null) {
-            dialog.close(0);
-          }
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              IFile iFile = FileSystem.getInstance().getFileByPath(resFile);
-              if (!(iFile.exists())) {
-                iFile.createNewFile();
+          if (result != null) {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                IFile iFile = FileSystem.getInstance().getFileByPath(resFile);
+                if (!(iFile.exists())) {
+                  iFile.createNewFile();
+                }
+                ModelPersistence.saveModel(result, iFile);
               }
-              ModelPersistence.saveModel(result, iFile);
-            }
-          });
-          dialog.close(0);
-
-          //  final SModel[] models = MergeBackupUtil.loadZippedModels(vFile, MergeVersion.values);  
-          //  final string resultFile = File.createTempFile("mpstmd", "").getAbsolutePath();  
+            });
+          }
         }
       });
     } catch (Throwable t) {
