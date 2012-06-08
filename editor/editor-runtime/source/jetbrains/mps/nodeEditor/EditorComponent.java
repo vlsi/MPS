@@ -2288,6 +2288,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   void executeCommand(final Runnable r) {
+    if (myInsideOfCommand) {
+      r.run();
+      return;
+    }
     myInsideOfCommand = true;
     try {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -2303,6 +2307,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   <T> T executeCommand(final Computable<T> c) {
+    if (myInsideOfCommand) {
+      return c.compute();
+    }
     myInsideOfCommand = true;
     try {
       return ModelAccess.instance().runWriteActionInCommand(c, getCurrentProject());

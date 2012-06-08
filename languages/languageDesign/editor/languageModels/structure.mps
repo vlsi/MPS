@@ -218,7 +218,7 @@
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1139535328871">
       <property name="name" nameId="tpck.1169194664001" value="CellActionId" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-      <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1139535329028" resolveInfo="right_transform" />
+      <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1139535387060" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535439104">
       <property name="name" nameId="tpck.1169194664001" value="CellActionMap_ExecuteFunction" />
@@ -1852,6 +1852,14 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1139535387060">
       <property name="externalValue" nameId="tpce.1083923523172" value="DELETE" />
       <property name="internalValue" nameId="tpce.1083923523171" value="delete_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1222746468862079483">
+      <property name="externalValue" nameId="tpce.1083923523172" value="INSERT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="insert_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1222746468862079484">
+      <property name="externalValue" nameId="tpce.1083923523172" value="INSERT_BEFORE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="insert_before_action_id" />
     </node>
   </root>
   <root id="1139535439104">
