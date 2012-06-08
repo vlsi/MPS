@@ -386,19 +386,45 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8549696200078010997">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8549696200078011004">
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8549696200078011007">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7192713018949592260">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7192713018949592261">
+            <property name="name" nameId="tpck.1169194664001" value="console" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7192713018949592262">
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4mnu.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
             </node>
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8549696200078010999">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8549696200078010998">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8549696200078009602" resolveInfo="builder" />
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="7192713018949592263">
+              <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7192713018949592264">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4mnu.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8549696200078011003">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zl7l.~TextConsoleBuilder%dgetConsole()%ccom%dintellij%dexecution%dui%dConsoleView" resolveInfo="getConsole" />
+              <node role="expression" roleId="tpee.1070534934092" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7192713018949592265">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7192713018949592266">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8549696200078009602" resolveInfo="builder" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7192713018949592267">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="zl7l.~TextConsoleBuilder%dgetConsole()%ccom%dintellij%dexecution%dui%dConsoleView" resolveInfo="getConsole" />
+                </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7192713018949617749">
+          <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7192713018949617750">
+            <property name="text" nameId="tpee.6329021646629104958" value="next line is to fix MPS-16030" />
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7192713018949592270">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7192713018949592286">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7192713018949592271">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7192713018949592261" resolveInfo="console" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7192713018949609735">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4mnu.~ConsoleViewImpl%dgetComponent()%cjavax%dswing%dJComponent" resolveInfo="getComponent" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7192713018949609737">
+          <node role="expression" roleId="tpee.1068581517676" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7192713018949609740">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7192713018949592261" resolveInfo="console" />
           </node>
         </node>
       </node>
