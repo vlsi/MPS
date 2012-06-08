@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -176,12 +177,16 @@ public class PluginMoveHelper {
         return !(isFromFacetLang(it));
       }
     });
-    RefactoringContext context = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel.value), Sequence.fromIterable(nodes2Refactor).toListSequence(), myProject);
+    final RefactoringContext context = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel.value), Sequence.fromIterable(nodes2Refactor).toListSequence(), myProject);
     RefactoringContext rc = (RefactoringContext) context;
     rc.setLocal(true);
     rc.setDoesGenerateModels(false);
 
-    RefactoringAccess.getInstance().getRefactoringFacade().executeSimple(context);
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        RefactoringAccess.getInstance().getRefactoringFacade().executeSimple(context);
+      }
+    });
 
     // <node> 
 

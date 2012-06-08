@@ -50,6 +50,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindModelUsages_Action());
     addAction(new FindNext_Action());
     addAction(new FindPrevious_Action());
+    addAction(new FindRootableConceptsWithoutIcons_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());

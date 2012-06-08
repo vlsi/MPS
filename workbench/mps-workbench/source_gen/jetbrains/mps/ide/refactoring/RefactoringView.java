@@ -9,6 +9,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
@@ -32,6 +33,14 @@ public class RefactoringView extends TabbedUsagesTool {
     return true;
   }
 
+  public void showRefactoringView(RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+    RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
+    myRefactoringViews.add(refactoringViewItem);
+    addContent(refactoringViewItem.getComponent(), refactoringContext.getRefactoring().getUserFriendlyName(), null, false);
+    refactoringViewItem.initUsagesView();
+    openTool(true);
+  }
+
   public void showRefactoringView(Project p, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(p, refactoringViewAction, searchResults, hasModelsToGenerate);
     myRefactoringViews.add(refactoringViewItem);
@@ -45,6 +54,10 @@ public class RefactoringView extends TabbedUsagesTool {
   }
 
   private class MyRefactoringViewItem extends RefactoringViewItemImpl {
+    public MyRefactoringViewItem(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+      super(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
+    }
+
     public MyRefactoringViewItem(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
       super(p, refactoringViewAction, searchResults, hasModelsToGenerate);
     }

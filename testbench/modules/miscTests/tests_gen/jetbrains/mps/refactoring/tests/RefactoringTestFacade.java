@@ -4,26 +4,27 @@ package jetbrains.mps.refactoring.tests;
 
 import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.smodel.ModelAccess;
 
 /*package*/ class RefactoringTestFacade extends RefactoringFacade {
   /*package*/ RefactoringTestFacade() {
   }
 
-  public void doExecuteInTest(RefactoringContext refactoringContext) {
+  public void doExecuteInTest(final RefactoringContext refactoringContext) {
     try {
       if (!(refactoringContext.getRefactoring().init(refactoringContext))) {
         myLog.error("refactoring can't be initialized");
       }
       // generation switched off temporary 
       refactoringContext.setDoesGenerateModels(false);
-      doExecute(refactoringContext);
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        public void run() {
+          executeSimple(refactoringContext);
+        }
+      });
     } catch (Throwable t) {
       myLog.error(t);
     }
-  }
-
-  public void executeInThread(RefactoringContext context) {
-    throw new UnsupportedOperationException();
   }
 
   public void execute(RefactoringContext context) {

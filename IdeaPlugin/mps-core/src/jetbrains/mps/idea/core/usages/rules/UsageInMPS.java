@@ -14,27 +14,10 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.refactoring;
+package jetbrains.mps.idea.core.usages.rules;
 
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 
-/**
- * User: shatalin
- * Date: 2/17/12
- */
-public class RefactoringFacadeImpl extends RefactoringFacade {
+import com.intellij.usages.Usage;
 
-  @Override
-  public void execute(RefactoringContext context) {
-    if (!context.getRefactoring().init(context)) {
-      return;
-    }
-    executeSimple(context);
-  }
-
-  @Override
-  public void executeInThread(RefactoringContext context) {
-    throw new UnsupportedOperationException();
-  }
+public interface UsageInMPS extends Usage {
 }

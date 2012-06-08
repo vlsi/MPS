@@ -73,16 +73,15 @@ public class FileSetUtil {
     });
   }
 
-  public static SNode getFilesetContainer(SNode fileset) {
-    SNode parent = SNodeOperations.getParent(fileset);
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) {
-      return SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet");
+  public static SNode getFilesetLayoutContainer(SNode contextContainer) {
+    if (SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet")) {
+      return SNodeOperations.cast(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet");
     }
-    while (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
-      parent = SNodeOperations.getParent(parent);
+    while (SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_Folder") || SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_Filemode")) {
+      contextContainer = SNodeOperations.as(SNodeOperations.getParent(contextContainer), "jetbrains.mps.build.structure.BuildLayout_Node");
     }
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasPrefixAttribute_6408167411310575232(SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
-      return SNodeOperations.cast(parent, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet");
+    if (SNodeOperations.isInstanceOf(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet") && BuildLayout_ContainerAcceptingFileSet_Behavior.call_hasPrefixAttribute_6408167411310575232(SNodeOperations.cast(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"))) {
+      return SNodeOperations.cast(contextContainer, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet");
     }
     return null;
   }
@@ -139,7 +138,7 @@ public class FileSetUtil {
   }
 
   public static boolean isExplicit(SNode fileset) {
-    return getFilesetContainer(fileset) == null;
+    return getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(fileset), "jetbrains.mps.build.structure.BuildLayout_Node")) == null;
   }
 
   public static boolean isNotEmpty_ae3l0k_a0a0a0a3a6(String str) {
