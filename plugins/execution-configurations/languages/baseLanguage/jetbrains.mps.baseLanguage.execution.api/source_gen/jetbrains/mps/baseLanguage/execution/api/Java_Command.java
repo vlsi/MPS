@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -33,7 +34,6 @@ import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.CollectionUtil;
@@ -51,6 +51,7 @@ import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
 import jetbrains.mps.debug.api.Debuggers;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -244,8 +245,18 @@ public class Java_Command {
     return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer.value);
   }
 
-  public ProcessHandler createProcess(SNodePointer nodePointer) throws ExecutionException {
-    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(nodePointer.getModel().getModule(), true)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(nodePointer));
+  public ProcessHandler createProcess(final SNodePointer nodePointer) throws ExecutionException {
+    IModule module = check_yvpt_a0a0a4(check_yvpt_a0a0a0e(nodePointer));
+    if (module == null) {
+      final Wrappers._T<String> text = new Wrappers._T<String>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          text.value = "Can't find module for node " + nodePointer;
+        }
+      });
+      throw new ExecutionException(text.value);
+    }
+    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(module, true)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(nodePointer));
   }
 
   public ProcessHandler createProcess(JavaRunParameters runParameters, final SNode node) throws ExecutionException {
@@ -456,6 +467,20 @@ public class Java_Command {
       return checkedDotOperand.getLength();
     }
     return 0;
+  }
+
+  private static IModule check_yvpt_a0a0a4(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_yvpt_a0a0a0e(SNodePointer checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
+    }
+    return null;
   }
 
   private static String check_yvpt_a0a0a0g(JavaRunParameters checkedDotOperand) {
