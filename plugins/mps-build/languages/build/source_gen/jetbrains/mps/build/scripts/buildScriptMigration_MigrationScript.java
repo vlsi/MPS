@@ -4,9 +4,127 @@ package jetbrains.mps.build.scripts;
 
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class buildScriptMigration_MigrationScript extends BaseMigrationScript {
   public buildScriptMigration_MigrationScript(IOperationContext operationContext) {
     super("buildScript migration");
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "update \"copy file\"";
+      }
+
+      public String getAdditionalInfo() {
+        return "update \"copy file\"";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.build.structure.BuildLayout_Copy";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildLayout_File", null);
+        SNodeOperations.replaceWithAnother(node, file);
+        SLinkOperations.setTarget(file, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true), true);
+      }
+
+      public boolean isShowAsIntention() {
+        return true;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "update \"copy files\"";
+      }
+
+      public String getAdditionalInfo() {
+        return "update \"copy files\"";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.build.structure.BuildLayout_Copy";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildLayout_Files", null);
+        SNodeOperations.replaceWithAnother(node, files);
+        SLinkOperations.setTarget(files, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "selectors", true)));
+      }
+
+      public boolean isShowAsIntention() {
+        return true;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "update \"custom copy file\"";
+      }
+
+      public String getAdditionalInfo() {
+        return "update \"custom copy file\"";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.build.structure.BuildLayout_CustomCopy";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode file = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildLayout_File", null);
+        SNodeOperations.replaceWithAnother(node, file);
+        SLinkOperations.setTarget(file, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(file, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "handlers", true)));
+      }
+
+      public boolean isShowAsIntention() {
+        return true;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "update \"custom copy files\"";
+      }
+
+      public String getAdditionalInfo() {
+        return "update \"custom copy files\"";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.build.structure.BuildLayout_CustomCopy";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNode files = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.build.structure.BuildLayout_Files", null);
+        SNodeOperations.replaceWithAnother(node, files);
+        SLinkOperations.setTarget(files, "path", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "dir", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles"), "selectors", true)));
+        ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "handlers", true)));
+      }
+
+      public boolean isShowAsIntention() {
+        return true;
+      }
+    });
   }
 }

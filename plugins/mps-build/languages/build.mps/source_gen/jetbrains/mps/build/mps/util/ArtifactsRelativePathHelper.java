@@ -86,6 +86,8 @@ public class ArtifactsRelativePathHelper {
       } else {
         throw new ArtifactsRelativePathHelper.RelativePathException("cannot build relative path for copy, fileset is " + node.getConceptShortName());
       }
+    } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_File") && isLast) {
+      return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_File"), "path", true), null);
     }
     throw new ArtifactsRelativePathHelper.RelativePathException("cannot build relative path for " + node.getConceptShortName());
   }

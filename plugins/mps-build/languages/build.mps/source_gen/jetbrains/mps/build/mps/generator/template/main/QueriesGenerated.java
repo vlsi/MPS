@@ -972,11 +972,11 @@ public class QueriesGenerated {
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("remotePath")), _context));
-    if (layoutNode == null || !(SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_Copy")) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_Copy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"))) {
+    if (layoutNode == null || !(SNodeOperations.isInstanceOf(layoutNode, "jetbrains.mps.build.structure.BuildLayout_File"))) {
       _context.showErrorMessage(_context.getNode(), "path " + BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(((SNode) _context.getVariable("remotePath"))) + " was not found in the layout");
       return null;
     }
-    return SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_Copy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
+    return SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_File");
   }
 
   private static boolean eq_x583g4_a0a0a0a0a0a0a3a41(Object a, Object b) {
