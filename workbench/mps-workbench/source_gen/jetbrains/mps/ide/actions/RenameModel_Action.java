@@ -16,10 +16,6 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelRootUtil;
 import jetbrains.mps.ide.refactoring.RenameModelDialog;
 import com.intellij.openapi.project.Project;
 import java.awt.Frame;
@@ -91,13 +87,7 @@ public class RenameModel_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<SModelRoot> root = new Wrappers._T<SModelRoot>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          root.value = ModelRootUtil.getSModelRoot(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
-        }
-      });
-      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), root.value, ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")))).showDialog();
+      new RenameModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((DefaultSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")))).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameModel", t);
