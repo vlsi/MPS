@@ -8,7 +8,7 @@
   <name>BaseLanguage Debugger Support</name>
   <description>Debugger support for baseLanguage extensions</description>
   <version>1.0</version>
-  <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
+  <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="3000"></idea-version>
     
   <depends>jetbrains.mps.debugger-java</depends>
