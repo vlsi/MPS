@@ -5,6 +5,7 @@ package jetbrains.mps.ide.java.platform.refactorings;
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -26,7 +27,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.event.TableModelEvent;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import com.intellij.ui.DocumentAdapter;
 import javax.swing.event.DocumentEvent;
 import java.awt.event.ItemListener;
@@ -51,6 +51,7 @@ public class ExtractMethodDialog extends RefactoringDialog {
   private boolean myCanRefactor;
   private JTextArea myPreviewArea = new JTextArea();
   private JTextArea myMessagesArea = new JTextArea();
+  private JTextField myNameField;
   private JCheckBox myDeclareStaticCheckBox;
   private VisibilityPanel myVisibilityPanel;
   private ExtractMethodDialog.ChooseContainerPanel myChooseContainerPanel;
@@ -236,11 +237,11 @@ public class ExtractMethodDialog extends RefactoringDialog {
     c.weightx = 1;
     c.weighty = 1;
     c.anchor = GridBagConstraints.FIRST_LINE_START;
-    final JTextField nameField = new JTextField(20);
-    methodPanel.add(nameField, c);
-    nameField.getDocument().addDocumentListener(new DocumentAdapter() {
+    myNameField = new JTextField(20);
+    methodPanel.add(myNameField, c);
+    myNameField.getDocument().addDocumentListener(new DocumentAdapter() {
       protected void textChanged(DocumentEvent p0) {
-        ExtractMethodDialog.this.myParameters.setName(nameField.getText());
+        ExtractMethodDialog.this.myParameters.setName(myNameField.getText());
         ExtractMethodDialog.this.update();
       }
     });
@@ -255,6 +256,10 @@ public class ExtractMethodDialog extends RefactoringDialog {
     methodPanel.add(this.myDeclareStaticCheckBox, c);
 
     return methodPanel;
+  }
+
+  public JComponent getPreferredFocusedComponent() {
+    return myNameField;
   }
 
   private JCheckBox createDeclareStaticCheckBox() {
