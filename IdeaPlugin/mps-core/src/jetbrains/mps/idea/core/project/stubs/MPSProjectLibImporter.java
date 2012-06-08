@@ -44,4 +44,9 @@ public class MPSProjectLibImporter extends BaseLibImporter implements ProjectCom
   public void projectClosed() {
 
   }
+
+  @Override
+  public boolean isHidden() {
+    return false;
+  }
 }
