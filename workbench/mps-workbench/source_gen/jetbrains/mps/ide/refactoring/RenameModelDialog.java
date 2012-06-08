@@ -8,7 +8,6 @@ import javax.swing.JTextField;
 import javax.swing.JCheckBox;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.project.SModelRoot;
 import java.awt.Frame;
 import java.awt.HeadlessException;
 import java.awt.GridBagLayout;
@@ -34,13 +33,11 @@ public class RenameModelDialog extends BaseDialog {
   private JCheckBox myUpdateAllReferences;
   private Project myProject;
   private EditableSModelDescriptor myModelDescriptor;
-  private SModelRoot myModelRoot;
 
-  public RenameModelDialog(Project project, Frame frame, SModelRoot root, EditableSModelDescriptor sm) throws HeadlessException {
+  public RenameModelDialog(Project project, Frame frame, EditableSModelDescriptor sm) throws HeadlessException {
     super(frame);
     myProject = project;
     myModelDescriptor = sm;
-    myModelRoot = root;
     setTitle("Rename Model");
     myMainPanel = new JPanel(new GridBagLayout());
     GridBagConstraints cLabel = new GridBagConstraints(0, 0, 1, 1, 0, 0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);

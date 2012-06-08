@@ -20,8 +20,8 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelAccess;
@@ -141,7 +141,7 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   public T[] find(boolean checkboxState) {
-    if (checkboxState) return find(GlobalScope.getInstance());
+    if (checkboxState) return find(new FilteredGlobalScope());
     MPSProject project = myProject.getComponent(MPSProject.class);
     return find(new ModulesOnlyScope(project.getModulesWithGenerators()));
   }

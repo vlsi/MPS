@@ -25,6 +25,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class BootstrapLibContributor implements LibraryContributor, ApplicationComponent {
+  //not public
   public Set<LibDescriptor> getLibraries() {
     Set<LibDescriptor> res = new HashSet<LibDescriptor>();
     for (String path : PathManager.getBootstrapPaths()) {
@@ -50,5 +51,10 @@ public class BootstrapLibContributor implements LibraryContributor, ApplicationC
   @NotNull
   public String getComponentName() {
     return BootstrapLibContributor.class.getSimpleName();
+  }
+
+  @Override
+  public boolean hiddenLanguages() {
+    return true;
   }
 }

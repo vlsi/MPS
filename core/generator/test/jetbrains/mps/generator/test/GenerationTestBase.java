@@ -55,7 +55,7 @@ import java.util.Map.Entry;
  */
 public class GenerationTestBase {
   private static boolean DEBUG = false;
-  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
   };
 
   @BeforeClass

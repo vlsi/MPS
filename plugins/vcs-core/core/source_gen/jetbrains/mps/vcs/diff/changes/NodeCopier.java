@@ -34,12 +34,13 @@ public class NodeCopier {
     SNode copy = CopyUtil.copyAndPreserveId(sourceNode);
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
       SNodeId nodeId = node.getSNodeId();
-      if (myModel.getNodeById(nodeId) != null) {
-        SNodeId replacedId = SModel.generateUniqueId();
-        node.setId(replacedId);
-        if (!(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
-          MapSequence.fromMap(myIdReplacementCache).put(nodeId, replacedId);
-        }
+      SNodeId replacedId = nodeId;
+      while (myModel.getNodeById(replacedId) != null) {
+        replacedId = SModel.generateUniqueId();
+      }
+      node.setId(replacedId);
+      if (replacedId != nodeId && !(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
+        MapSequence.fromMap(myIdReplacementCache).put(nodeId, replacedId);
       }
     }
     return copy;

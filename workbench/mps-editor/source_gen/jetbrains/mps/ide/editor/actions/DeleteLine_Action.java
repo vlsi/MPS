@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import java.util.Queue;
@@ -79,6 +80,7 @@ public class DeleteLine_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.deleteLine");
       if (((EditorCell) MapSequence.fromMap(_params).get("currentCell")) instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection) ((EditorCell) MapSequence.fromMap(_params).get("currentCell"));
         Queue<EditorCell_Collection> collections = QueueSequence.fromQueue(new LinkedList<EditorCell_Collection>());

@@ -131,6 +131,7 @@
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2392684134639444998">
       <property name="name" nameId="tpck.1169194664001" value="MuteBreakpoints" />

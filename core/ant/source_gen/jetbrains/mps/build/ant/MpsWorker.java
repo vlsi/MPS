@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -244,7 +244,7 @@ public abstract class MpsWorker {
           return ModulesMiner.getInstance().readModuleDescriptors((file.isDirectory() ?
             file :
             file.getParent()
-          ), new MPSModuleOwner() {});
+          ), new BaseMPSModuleOwner());
         }
       });
     }

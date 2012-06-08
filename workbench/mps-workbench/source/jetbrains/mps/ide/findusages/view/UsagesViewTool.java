@@ -35,8 +35,8 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.UsagesView.ButtonConfiguration;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -80,7 +80,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   //----CONSTRUCT STUFF----
 
   public UsagesViewTool(Project project) {
-    super(project, TOOL_WINDOW_ID , 3, jetbrains.mps.ide.projectPane.Icons.FIND_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, TOOL_WINDOW_ID, 3, jetbrains.mps.ide.projectPane.Icons.FIND_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   protected UsagesView getUsagesView(int index) {
@@ -282,6 +282,10 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     }
 
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
+      //this is to partially fix MPS-14671
+      if (myUsagesView.getTreeComponent().getAllResultNodes().size() > 500)
+        throw new CantSaveSomethingException("usages view size too big to save");
+
       Element usageViewXML = new Element(USAGE_VIEW);
       myUsagesView.write(usageViewXML, project);
       element.addContent(usageViewXML);

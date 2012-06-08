@@ -27,6 +27,9 @@ public class JavaConsoleCreator {
     for (Filter filter : Extensions.getExtensions(AnalyzeStacktraceUtil.EP_NAME, project)) {
       builder.addFilter(filter);
     }
-    return (ConsoleViewImpl) builder.getConsole();
+    ConsoleViewImpl console = (ConsoleViewImpl) builder.getConsole();
+    // next line is to fix MPS-16030 
+    console.getComponent();
+    return console;
   }
 }

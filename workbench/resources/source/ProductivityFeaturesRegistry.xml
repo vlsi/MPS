@@ -42,6 +42,80 @@
             first-show="1"
             successive-show="4"
             />
+    <feature
+            id="navigation.gotoImplementation"
+            tip-file="GoToImplementation.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="navigation.gotoOverriden"
+            tip-file="GoToOverriden.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="navigation.recent.files"
+            tip-file="RecentFiles.html"
+            min-usage-count="3"
+            first-show="3"
+            successive-show="5"
+            />
+    <feature
+            id="navigation.goto.rootNode"
+            tip-file="GoToClass.html"
+            min-usage-count="3"
+            first-show="3"
+            successive-show="5"
+            />
+    <feature
+            id="navigation.goto.file"
+            tip-file="GoToClass.html"
+            min-usage-count="3"
+            first-show="3"
+            successive-show="5"
+            />
+
+  </group>
+  <group id="editing">
+    <feature
+            id="editing.deleteLine"
+            tip-file="DeleteLine.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="editing.duplicateLine"
+            tip-file="DuplicateLine.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="editing.highlightUsages"
+            tip-file="HighlightUsagesInFile.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="editing.findUsages"
+            tip-file="FindUsages.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+    <feature
+            id="editing.showParameters"
+            tip-file="ParameterInfo.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="4"
+            />
+
   </group>
   <group id="refactoring">
     <feature
@@ -57,6 +131,48 @@
             min-usage-count="5"
             first-show="1"
             successive-show="4"
+            />
+    <feature
+            id="refactoring.introduceVariable"
+            tip-file="IntroduceVariable.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="3"
+            />
+    <feature
+            id="refactoring.introduceConstant"
+            tip-file="IntroduceConstant.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="3"
+            />
+    <feature
+            id="refactoring.introduceField"
+            tip-file="IntroduceField.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="3"
+            />
+    <feature
+            id="refactoring.extractMethod"
+            tip-file="ExtractMethod.html"
+            min-usage-count="5"
+            first-show="1"
+            successive-show="3"
+            />
+    <feature
+            id="refactoring.rename"
+            tip-file="Rename.html"
+            min-usage-count="2"
+            first-show="1"
+            successive-show="3"
+            />
+    <feature
+            id="refactoring.inline"
+            tip-file="Inline.html"
+            min-usage-count="2"
+            first-show="1"
+            successive-show="3"
             />
   </group>
 </component>

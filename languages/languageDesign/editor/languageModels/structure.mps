@@ -20,7 +20,6 @@
   <import index="mceb" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
@@ -218,7 +217,7 @@
     <node type="tpce.EnumerationDataTypeDeclaration" typeId="tpce.1082978164219" id="1139535328871">
       <property name="name" nameId="tpck.1169194664001" value="CellActionId" />
       <link role="memberDataType" roleId="tpce.1083171729157" targetNodeId="tpck.1082983041843" resolveInfo="string" />
-      <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1139535329028" resolveInfo="right_transform" />
+      <link role="defaultMember" roleId="tpce.1083241965437" targetNodeId="1139535329028" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1139535439104">
       <property name="name" nameId="tpck.1169194664001" value="CellActionMap_ExecuteFunction" />
@@ -1853,6 +1852,14 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1139535387060">
       <property name="externalValue" nameId="tpce.1083923523172" value="DELETE" />
       <property name="internalValue" nameId="tpce.1083923523171" value="delete_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1222746468862079483">
+      <property name="externalValue" nameId="tpce.1083923523172" value="INSERT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="insert_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1222746468862079484">
+      <property name="externalValue" nameId="tpce.1083923523172" value="INSERT_BEFORE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="insert_before_action_id" />
     </node>
   </root>
   <root id="1139535439104">
@@ -4178,7 +4185,7 @@
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="4526149749187937572">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpc2.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
+      <node role="target" roleId="tpce.1105736901241" type=".jetbrains.mps.lang.editor.structure.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
     </node>
   </root>
   <root id="280151408461567367">

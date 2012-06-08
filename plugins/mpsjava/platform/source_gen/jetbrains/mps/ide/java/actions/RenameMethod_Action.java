@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
@@ -88,6 +89,7 @@ public class RenameMethod_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.rename");
       final Wrappers._T<List<SNode>> overridingList = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

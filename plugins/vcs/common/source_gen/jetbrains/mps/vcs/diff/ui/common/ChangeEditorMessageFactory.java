@@ -94,7 +94,7 @@ public class ChangeEditorMessageFactory {
         id = parentId;
         messageTarget = new DeletedNodeMessageTarget(role, beginIndex);
       } else {
-        List<SNode> editedChildren = parentNode.getChildren(role);
+        List<SNode> editedChildren = editedModel.getNodeById(parentId).getChildren(role);
         for (int i = beginIndex; i < endIndex; i++) {
           ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
         }

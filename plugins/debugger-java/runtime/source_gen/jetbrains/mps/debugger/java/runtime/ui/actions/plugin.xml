@@ -8,7 +8,7 @@
   <name>name</name>
   <description>description</description>
   <version>version</version>
-  <vendor url="url">vendor</vendor>
+  <vendor url="url" logo="mock">vendor</vendor>
   <idea-version since-build="idea.ver"></idea-version>
     
     

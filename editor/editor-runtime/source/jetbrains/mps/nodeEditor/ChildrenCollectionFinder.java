@@ -21,18 +21,28 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 public class ChildrenCollectionFinder {
   @NotNull
   private final EditorCell myCurrent;
+  @NotNull
+  private final EditorCell myAnchor;
   private final boolean myForward;
   private final boolean myCheckFirst;
 
-  public ChildrenCollectionFinder(@NotNull EditorCell current, boolean forward, boolean checkFirst) {
+  public ChildrenCollectionFinder(@NotNull EditorCell current, @NotNull EditorCell anchor, boolean forward, boolean checkFirst) {
     myCurrent = current;
+    myAnchor = anchor;
     myForward = forward;
     myCheckFirst = checkFirst;
+  }
+
+  public ChildrenCollectionFinder(@NotNull EditorCell current, boolean forward, boolean checkFirst) {
+    this(current, current, forward, checkFirst);
   }
 
   public EditorCell find() {
@@ -41,15 +51,31 @@ public class ChildrenCollectionFinder {
         if (myCheckFirst && isMultipleCollectionCell(myCurrent)) {
           return myCurrent;
         }
-
+        SNode anchorNode = getLCA(myAnchor.getSNode(), myCurrent.getSNode());
+        if (anchorNode == null) {
+          return null;
+        }
+        // Note: traverser doesn't visit parent nodes of the current node,
+        // if our anchor is from another subtree, search parents (up to LCA) first
+        // TODO remove
+        if (anchorNode != myCurrent.getSNode()) {
+          EditorCell curr = myCurrent;
+          while (curr != null && curr.getSNode() != anchorNode) {
+            if (isMultipleCollectionCell(curr)) {
+              return curr;
+            }
+            curr = curr.getParent();
+          }
+          if (curr != null && curr.getSNode() == anchorNode && isMultipleCollectionCell(curr)) {
+            return curr;
+          }
+        }
         DfsTraverser traverser = new DfsTraverser(myCurrent, myForward);
-
-        SNode selectedNode = myCurrent.getSNode();
         while (traverser.getCurrent() != null) {
           EditorCell current = traverser.getCurrent();
           SNode currentNode = current.getSNode();
 
-          if (!selectedNode.isAncestorOf(currentNode)) {
+          if (!anchorNode.isAncestorOf(currentNode)) {
             return null;
           }
 
@@ -75,5 +101,21 @@ public class ChildrenCollectionFinder {
       }
     }
     return false;
+  }
+
+  private static SNode getLCA(SNode left, SNode right) {
+    if (left == right || right == null || left == null) {
+      return left == null ? right : left;
+    }
+    Set<SNode> parents = new HashSet<SNode>();
+    while (left != null) {
+      parents.add(left);
+      left = left.getParent();
+    }
+    while (right != null) {
+      if (parents.contains(right)) return right;
+      right = right.getParent();
+    }
+    return null;
   }
 }

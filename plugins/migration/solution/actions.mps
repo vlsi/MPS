@@ -54,6 +54,7 @@
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Provides actions to migrate models and languages developed using previous versions of MPS" />
       <property name="name" nameId="tpck.1169194664001" value="Migration" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2494245796547321807">
       <property name="name" nameId="tpck.1169194664001" value="UpgradeModelPersistenceInModule" />

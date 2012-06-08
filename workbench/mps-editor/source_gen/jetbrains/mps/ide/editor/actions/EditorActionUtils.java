@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -52,7 +53,7 @@ public class EditorActionUtils {
   /**
    * Should be executed inside read action
    */
-  /*package*/ static void callInsertAction(@NotNull EditorCell cell) {
+  public static void callInsertAction(@NotNull EditorCell cell) {
     if (cell.isErrorState() && cell.validate(false, true)) {
       return;
     }
@@ -61,9 +62,9 @@ public class EditorActionUtils {
       // Looking for the next child collection to the right from this cell 
       EditorCell cellWithRole = new ChildrenCollectionFinder(cell, true, false).find();
 
-      if (cellWithRole == null && cell.isLastPositionInBigCell() && hasSingleRolesAtRightBoundary(cell) && cell.getNextLeaf() != null) {
-        // Looking for the next child collection to the right from next leaf cell 
-        cellWithRole = new ChildrenCollectionFinder(cell.getNextLeaf(), true, true).find();
+      if (cellWithRole == null) {
+        // Looking for the next child collection in parents 
+        cellWithRole = getSiblingCollectionForInsert(cell, true);
       }
 
       if (cellWithRole != null && cellWithRole.executeAction(CellActionType.INSERT)) {
@@ -74,10 +75,26 @@ public class EditorActionUtils {
     cell.executeAction(CellActionType.INSERT);
   }
 
+  public static EditorCell getSiblingCollectionForInsert(@NotNull EditorCell cell, boolean forward) {
+    // TODO FIXME rewrite without hasSingleRolesAtLeftBoundary, cleanup ChildrenCollectionFinder 
+    EditorCell nextLeaf = (forward ?
+      cell.getNextLeaf() :
+      cell.getPrevLeaf()
+    );
+    if ((cell.isBigCell() || cell.isLastPositionInBigCell()) && ((forward ?
+      hasSingleRolesAtRightBoundary(cell) :
+      hasSingleRolesAtLeftBoundary(cell)
+    )) && nextLeaf != null) {
+      // Looking for the next child collection in parents 
+      return new ChildrenCollectionFinder(nextLeaf, cell, forward, true).find();
+    }
+    return null;
+  }
+
   /**
    * Should be executed inside read action
    */
-  /*package*/ static void callInsertBeforeAction(@NotNull EditorCell cell) {
+  public static void callInsertBeforeAction(@NotNull EditorCell cell) {
     if (cell.isErrorState() && cell.validate(true, true)) {
       return;
     }
@@ -86,9 +103,9 @@ public class EditorActionUtils {
       // Looking for the prev. child collection (to the left from this cell) 
       EditorCell cellWithRole = new ChildrenCollectionFinder(cell, false, false).find();
 
-      if (cellWithRole == null && cell.isFirstPositionInBigCell() && hasSingleRolesAtLeftBoundary(cell) && cell.getPrevLeaf() != null) {
-        // Looking for the prev. child collection (to the left from prev. leaf cell) 
-        cellWithRole = new ChildrenCollectionFinder(cell.getPrevLeaf(), false, true).find();
+      if (cellWithRole == null) {
+        // Looking for the next child collection in parents 
+        cellWithRole = getSiblingCollectionForInsert(cell, false);
       }
 
       if (cellWithRole != null && cellWithRole.executeAction(CellActionType.INSERT_BEFORE)) {
@@ -120,11 +137,19 @@ public class EditorActionUtils {
     }
 
     if (cell.isOnRightBoundary()) {
-      EditorCell_Collection parentCell = cell.getParent();
+      final EditorCell_Collection parentCell = cell.getParent();
       if (parentCell != null) {
-        EditorCell nextLeaf = cell.getNextLeaf();
-        if (nextLeaf != null && nextLeaf.getSNode() == parentCell.getSNode()) {
-          return true;
+        final EditorCell nextLeaf = cell.getNextLeaf();
+        if (nextLeaf != null) {
+          final Wrappers._boolean ancestor = new Wrappers._boolean(false);
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              ancestor.value = parentCell.getSNode().isAncestorOf(nextLeaf.getSNode());
+            }
+          });
+          if (ancestor.value) {
+            return true;
+          }
         }
         return hasSingleRolesAtRightBoundary(parentCell);
       }
@@ -145,11 +170,19 @@ public class EditorActionUtils {
     }
 
     if (cell.isOnLeftBoundary()) {
-      EditorCell_Collection parentCell = cell.getParent();
+      final EditorCell_Collection parentCell = cell.getParent();
       if (parentCell != null) {
-        EditorCell prevLeaf = cell.getPrevLeaf();
-        if (prevLeaf != null && prevLeaf.getSNode() == parentCell.getSNode()) {
-          return true;
+        final EditorCell prevLeaf = cell.getPrevLeaf();
+        if (prevLeaf != null) {
+          final Wrappers._boolean ancestor = new Wrappers._boolean(false);
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              ancestor.value = parentCell.getSNode().isAncestorOf(prevLeaf.getSNode());
+            }
+          });
+          if (ancestor.value) {
+            return true;
+          }
         }
         return hasSingleRolesAtLeftBoundary(parentCell);
       }

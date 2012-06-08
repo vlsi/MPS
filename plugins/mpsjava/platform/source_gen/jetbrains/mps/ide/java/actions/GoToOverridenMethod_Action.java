@@ -14,6 +14,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -106,6 +107,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriden");
       final Wrappers._T<Set<Tuples._2<SNodePointer, SNode>>> overridenMethods = new Wrappers._T<Set<Tuples._2<SNodePointer, SNode>>>();
       final String[] methodName = new String[1];
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Searching...", true) {

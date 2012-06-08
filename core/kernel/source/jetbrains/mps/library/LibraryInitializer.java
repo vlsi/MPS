@@ -42,6 +42,7 @@ public class LibraryInitializer implements CoreComponent {
   private Set<String> myLoadedLibs = new HashSet<String>();
   private Map<String, MPSModuleOwner> myLibsToOwners = new HashMap<String, MPSModuleOwner>();
   private Map<String, ClassLoader> myParentLoaders = new HashMap<String, ClassLoader>();
+  private Map<String, Boolean> myHiddenPaths = new HashMap<String, Boolean>();
 
   private MPSModuleRepository myRepo;
 
@@ -83,6 +84,10 @@ public class LibraryInitializer implements CoreComponent {
     for (LibraryContributor lc : myContributors) {
       for (LibDescriptor s : lc.getLibraries()) {
         myParentLoaders.put(s.path, s.parentLoader != null ? s.parentLoader : LibraryInitializer.class.getClassLoader());
+        Boolean oldValue = myHiddenPaths.get(s.path);
+        if (oldValue == null || !oldValue) {
+          myHiddenPaths.put(s.path, lc.hiddenLanguages());
+        }
       }
     }
 
@@ -126,7 +131,12 @@ public class LibraryInitializer implements CoreComponent {
     HashSet<String> toLoad = new HashSet<String>(newLibs);
     toLoad.removeAll(loadedLibs);
     for (String loadLib : toLoad) {
+      final Boolean hidden = myHiddenPaths.get(loadLib);
       MPSModuleOwner owner = new MPSModuleOwner() {
+        @Override
+        public boolean isHidden() {
+          return hidden != null && hidden;
+        }
       };
       myLibsToOwners.put(loadLib, owner);
       ModulesMiner.getInstance().readModuleDescriptors(FileSystem.getInstance().getFileByPath(loadLib), owner, refreshFiles);
