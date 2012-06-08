@@ -20,6 +20,8 @@ public class GenerateBuildWizard extends AbstractWizard {
     super(title, project);
     myProject = project;
     myGenerator = generator;
+
+    initWizard();
   }
 
   public String getHelpID() {

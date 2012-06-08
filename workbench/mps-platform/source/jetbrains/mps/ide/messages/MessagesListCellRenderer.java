@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.ide.messages.navigation.NavigationManager;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.smodel.ModelAccess;
@@ -29,25 +28,37 @@ import java.awt.Color;
 import java.awt.Component;
 
 public class MessagesListCellRenderer extends DefaultListCellRenderer {
+  private static final EmptyBorder EMPTY_BORDER = new EmptyBorder(0, 0, 0, 0);
+
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     JLabel component = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
     final IMessage message = (IMessage) value;
 
     component.setBackground(isSelected ? Color.LIGHT_GRAY : Color.WHITE);
-    component.setBorder(new EmptyBorder(0, 0, 0, 0));
+    component.setBorder(EMPTY_BORDER);
 
     String text = (message instanceof Message) ?
       ((Message) message).getCreationTimeString() + "\t: " + message :
       message.getText();
 
-    boolean canNavigate = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-      public Boolean compute() {
+
+    NavStatus ns = ModelAccess.instance().runReadAction(new Computable<NavStatus>() {
+      public NavStatus compute() {
         return canNavigate(message);
       }
     });
-    component.setForeground(canNavigate ? Color.BLUE : Color.BLACK);
-    component.setText(text);
+
+    if (ns == NavStatus.NO) {
+      component.setForeground(Color.BLACK);
+      component.setText(text);
+    } else if (ns == NavStatus.OUTDATED) {
+      component.setForeground(Color.BLACK);
+      component.setText("[outdated] " + message.getHintObject().toString() + ":" + text);
+    } else if (ns == NavStatus.YES) {
+      component.setForeground(Color.BLUE);
+      component.setText(text);
+    }
 
     switch (message.getKind()) {
       case INFORMATION:
@@ -64,8 +75,16 @@ public class MessagesListCellRenderer extends DefaultListCellRenderer {
     return component;
   }
 
-  public static boolean canNavigate(IMessage message) {
+  public static NavStatus canNavigate(IMessage message) {
     Object hint = message.getHintObject();
-    return hint != null && NavigationManager.getInstance().canNavigateTo(hint);
+    if (hint == null) return NavStatus.NO;
+    return NavStatus.YES;
+    //return NavigationManager.getInstance().canNavigateTo(hint) ? NavStatus.YES : NavStatus.OUTDATED;
+  }
+
+  public enum NavStatus {
+    NO,
+    OUTDATED,
+    YES
   }
 }

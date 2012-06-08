@@ -6,20 +6,45 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.IRefactoring;
 
 public abstract class RefactoringAccess {
   private static RefactoringAccess ourInstance;
 
+  private RefactoringFacade myRefactoringFacade;
+
   public RefactoringAccess() {
   }
 
-  public abstract RefactoringFacade getRefactoringFacade();
+  public RefactoringFacade getRefactoringFacade() {
+    if (myRefactoringFacade == null) {
+      myRefactoringFacade = new RefactoringFacade();
+    }
+    return myRefactoringFacade;
+  }
 
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SNode node);
 
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model);
 
   public abstract void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
+
+  public abstract boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate);
+
+  public boolean showRefactoringDialogBase(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
+    boolean result;
+    RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(project, refactoringContext, refactoring, hasModelsToGenerate);
+    if (dialog.needToBeShown()) {
+      dialog.show();
+      result = dialog.isCancelled();
+    } else {
+      result = false;
+    }
+    return result;
+  }
+
+  public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
 
   public static RefactoringAccess getInstance() {
     return ourInstance;

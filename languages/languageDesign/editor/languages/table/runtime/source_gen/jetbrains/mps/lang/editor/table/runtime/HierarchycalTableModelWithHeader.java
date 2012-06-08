@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -63,7 +63,7 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
 
   @Override
   public void insertColumn(int columnNumber) {
-    Utils.insertElementAt(getHeaderColumns(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, "target", false)), null), columnNumber);
+    Utils.insertElementAt(getHeaderColumns(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, "target", false)), null), columnNumber);
     super.insertColumn(columnNumber);
   }
 

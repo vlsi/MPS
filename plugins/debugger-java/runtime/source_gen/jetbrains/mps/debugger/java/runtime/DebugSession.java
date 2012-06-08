@@ -5,12 +5,12 @@ package jetbrains.mps.debugger.java.runtime;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import java.util.Set;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
-import org.jetbrains.annotations.NotNull;
 
 public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   private final DebugVMEventsProcessor myEventsProcessor;
@@ -25,7 +25,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   }
 
   protected JavaUiStateImpl createUiState() {
-    return new JavaUiStateImpl(null, this);
+    return new RunningJavaUiState(this);
   }
 
   public void resume() {
@@ -73,7 +73,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
     return myEventsProcessor;
   }
 
-  private void pause(SuspendContext suspendContext) {
+  private void pause(@NotNull SuspendContext suspendContext) {
     JavaUiStateImpl state = getUiState();
     setState(state, state.paused(suspendContext), false);
   }
@@ -171,7 +171,7 @@ public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
     @Override
     public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
       myExecutionState = AbstractDebugSession.ExecutionState.Stopped;
-      setState(getUiState(), new JavaUiStateImpl(null, DebugSession.this), false);
+      setState(getUiState(), new RunningJavaUiState(DebugSession.this), false);
       fireSessionResumed(DebugSession.this);
       //  TODO hack 
     }

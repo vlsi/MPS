@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import javax.swing.JCheckBox;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.Project;
 import java.awt.BorderLayout;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
@@ -45,6 +47,11 @@ public abstract class RefactoringViewItemImpl implements RefactoringViewItem {
   private RefactoringContext myRefactoringContext = null;
   private JCheckBox myGenerateModelsCheckbox;
   private JCheckBox myIsLocalCheckbox;
+
+  public RefactoringViewItemImpl(@NotNull RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
+    myRefactoringContext = refactoringContext;
+    init(refactoringViewAction, searchResults, hasModelsToGenerate, ProjectHelper.toIdeaProject(refactoringContext.getSelectedProject()));
+  }
 
   public RefactoringViewItemImpl(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
     init(refactoringViewAction, searchResults, hasModelsToGenerate, p);

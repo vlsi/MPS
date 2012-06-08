@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -17,15 +16,16 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import javax.swing.JOptionPane;
 
 public class CommitUtil {
-  public static void refactorRenameNode(final IOperationContext context, final SNode node, String newName) {
+  public static void refactorRenameNode(final IOperationContext context, final SNode node, final String newName) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SModelRepository.getInstance().saveAll();
       }
     });
-    final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
-    ModelAccess.instance().runReadAction(new Runnable() {
+
+    ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
+        IRefactoring refactoring;
         SNode refactoringNode = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration") ?
           SNodeOperations.getNode("r:de5b7214-45ee-4f6d-89bf-acde59cdb050(jetbrains.mps.lang.structure.refactorings)", "1347577327951781517") :
           (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.PropertyDeclaration") ?
@@ -36,36 +36,32 @@ public class CommitUtil {
             )
           )
         );
-        refactoring.value = (refactoringNode != null ?
+        refactoring = (refactoringNode != null ?
           RefactoringUtil.getRefactoringByClassName(INamedConcept_Behavior.call_getFqName_1213877404258(refactoringNode)) :
           null
         );
-      }
-    });
-    if (refactoring.value == null) {
-      return;
-    }
+        if (refactoring == null) {
+          return;
+        }
 
-    final RefactoringContext refactoringContext = new RefactoringContext(refactoring.value);
-    refactoringContext.setCurrentOperationContext(context);
-    refactoringContext.setSelectedNode(node);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        refactoringContext.setSelectedModel(SNodeOperations.getModel(node).getModelDescriptor());
-      }
-    });
-    refactoringContext.setSelectedModule(context.getModule());
-    refactoringContext.setSelectedProject(context.getProject());
+        final RefactoringContext refactoringContext = new RefactoringContext(refactoring);
+        refactoringContext.setCurrentOperationContext(context);
+        refactoringContext.setSelectedNode(node);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            refactoringContext.setSelectedModel(SNodeOperations.getModel(node).getModelDescriptor());
+          }
+        });
+        refactoringContext.setSelectedModule(context.getModule());
+        refactoringContext.setSelectedProject(context.getProject());
 
-    // set new name parameter for refactoring to skip initial dialog 
-    refactoringContext.setParameter("newName", newName);
-    final IRefactoring fRefactoring = refactoring.value;
-    new Thread() {
-      public void run() {
+        // set new name parameter for refactoring to skip initial dialog 
+        refactoringContext.setParameter("newName", newName);
+        final IRefactoring fRefactoring = refactoring;
         refactoringContext.setRefactoring(fRefactoring);
-        RefactoringAccess.getInstance().getRefactoringFacade().executeInThread(refactoringContext);
+        RefactoringAccess.getInstance().getRefactoringFacade().execute(refactoringContext);
       }
-    }.start();
+    });
   }
 
   public static boolean commitRename(EditorContext editorContext, SNode node, String oldValue, String newValue) {

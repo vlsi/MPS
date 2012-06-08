@@ -120,6 +120,16 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     }
   }
 
+  public static List<RelationDescriptor> getApplicableTabs(Project p, SNode node) {
+    List<RelationDescriptor> result = new ArrayList<RelationDescriptor>();
+    List<RelationDescriptor> tabs = p.getComponent(ProjectPluginManager.class).getTabDescriptors();
+    for (RelationDescriptor tab : tabs) {
+      if (!tab.isApplicable(node)) continue;
+      result.add(tab);
+    }
+    return result;
+  }
+
   //----------------RELOAD STUFF---------------------  
 
   public void loadPlugins() {

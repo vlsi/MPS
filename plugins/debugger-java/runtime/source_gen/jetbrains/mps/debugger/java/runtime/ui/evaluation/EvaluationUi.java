@@ -10,15 +10,16 @@ import jetbrains.mps.debugger.java.runtime.DebugSession;
 import jetbrains.mps.debug.api.SessionChangeAdapter;
 import org.jetbrains.annotations.NotNull;
 import java.awt.BorderLayout;
-import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debugger.java.runtime.SuspendContext;
+import jetbrains.mps.debug.evaluation.Evaluator;
 import jetbrains.mps.debug.evaluation.proxies.IValueProxy;
 import jetbrains.mps.debug.evaluation.EvaluationException;
 import jetbrains.mps.debug.evaluation.InvalidEvaluatedExpressionException;
 import jetbrains.mps.debug.evaluation.InvocationTargetEvaluationException;
 import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 
@@ -55,14 +56,15 @@ public abstract class EvaluationUi extends JPanel {
       return;
     }
     try {
-      final Evaluator evaluator = model.evaluate();
+      final Class clazz = model.generateAndLoadEvaluatorClass();
       setEvaluating(model);
       final DebugVMEventsProcessor eventsProcessor = myDebugSession.getEventsProcessor();
-      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-        public void run() {
+      eventsProcessor.invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
           SuspendContext suspendContext = eventsProcessor.getSuspendManager().getPausedContext();
           assert suspendContext != null;
           try {
+            Evaluator evaluator = model.createEvaluatorInstance(clazz);
             suspendContext.setIsEvaluating(true);
             IValueProxy evaluatedValue = evaluator.evaluate();
             if (evaluatedValue != null) {
@@ -74,10 +76,11 @@ public abstract class EvaluationUi extends JPanel {
             setFailure(e, null, model);
           } catch (Throwable t) {
             setFailure(t, null, model);
-            EvaluationUi.LOG.error(t);
+            LOG.error(t);
           } finally {
             suspendContext.setIsEvaluating(false);
           }
+
         }
       });
     } catch (InvalidEvaluatedExpressionException e) {

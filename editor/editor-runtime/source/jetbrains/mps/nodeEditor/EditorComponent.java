@@ -3082,7 +3082,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           }
           SNode snodeWRTReference = ModelAccess.instance().runReadAction(new Computable<SNode>() {
             public SNode compute() {
-              return editorCell.getSNodeWRTReference();
+              return isInvalid() ? null : editorCell.getSNodeWRTReference();
             }
           });
           if (editorCell.getSNode() == snodeWRTReference) {

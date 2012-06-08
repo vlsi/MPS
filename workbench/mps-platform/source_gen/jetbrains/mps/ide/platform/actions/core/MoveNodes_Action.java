@@ -17,12 +17,12 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.platform.refactoring.MoveNodesDialog;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
@@ -87,21 +87,38 @@ public class MoveNodes_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final Wrappers._T<Object> newNode = new Wrappers._T<Object>();
+      final Wrappers._T<SModelDescriptor> targetModelDescriptor = new Wrappers._T<SModelDescriptor>();
 
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          newNode.value = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), ((SModel) SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first())).getModelDescriptor(), new MoveNodesDialog.ModelFilter("Choose Node or Model") {
-            public boolean check(Object selectedObject, SModelDescriptor model) {
-              return selectedObject instanceof SNode || selectedObject instanceof SModelDescriptor;
-            }
-          });
+          targetModelDescriptor.value = ((SModel) SNodeOperations.getModel(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target"))).first())).getModelDescriptor();
         }
       });
-      if (newNode.value == null) {
+      final Object newNode = MoveNodesDialog.getSelectedObject(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject(), targetModelDescriptor.value, new MoveNodesDialog.ModelFilter("Choose Node or Model") {
+        public boolean check(Object selectedObject, SModelDescriptor model) {
+          return selectedObject instanceof SNode || selectedObject instanceof SModelDescriptor;
+        }
+      });
+      if (newNode == null) {
         return;
       }
-      RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newNode.value), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("target")))) {
+            if (!(((SNode) node).isRegistered()) || ((SNode) node).isDisposed()) {
+              return;
+            }
+          }
+          if (newNode instanceof SNode && (!(((SNode) newNode).isRegistered()) || ((SNode) newNode).isDisposed())) {
+            return;
+          }
+          if (newNode instanceof SModelDescriptor && (!(((SModelDescriptor) newNode).isRegistered()))) {
+            return;
+          }
+
+          RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(newNode), ((List<SNode>) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MoveNodes", t);

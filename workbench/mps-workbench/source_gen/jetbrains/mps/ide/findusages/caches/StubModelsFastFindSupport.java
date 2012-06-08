@@ -13,16 +13,23 @@ import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
+import gnu.trove.THashSet;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import java.util.Collection;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VfsUtilCore;
@@ -52,6 +59,11 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
   }
 
   public MultiMap<SModelDescriptor, SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
+    nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(nodes).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it.getSNodeId() instanceof SNodeId.Foreign;
+      }
+    }));
     MultiMap<SModelDescriptor, SNode> result = findModels(models, nodes, new Mapper<SNode, String>() {
       public String value(SNode key) {
         return key.getId();
@@ -67,42 +79,64 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
   }
 
   public MultiMap<SModelDescriptor, String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
+    final String blName = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleFqName();
+    conceptNames = SetSequence.fromSetWithValues(new HashSet<String>(), SetSequence.fromSet(conceptNames).where(new IWhereFilter<String>() {
+      public boolean accept(String it) {
+        return NameUtil.namespaceFromConceptFQName(it).equals(blName);
+      }
+    }));
     return findModels(models, conceptNames, null);
   }
 
   private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
     MultiMap<SModelDescriptor, T> result = new SetBasedMultiMap<SModelDescriptor, T>();
+    if (elems.isEmpty()) {
+      return result;
+    }
+
+    // get all files in scope 
+    final ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
+
+    Set<StubModelDataSource> sources = new THashSet<StubModelDataSource>();
+    final Set<VirtualFile> dirs = new THashSet<VirtualFile>();
+
+    for (final SModelDescriptor sm : models) {
+      assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
+      ModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
+      assert source instanceof StubModelDataSource : source.getClass().getName();
+      StubModelDataSource sms = (StubModelDataSource) source;
+      if (sources.contains(sms)) {
+        continue;
+      }
+
+      sources.add(sms);
+      Collection<String> filenames = sms.getFilesToListen();
+      for (String path : filenames) {
+        final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
+        if (vf == null) {
+          if (log.isWarnEnabled()) {
+            log.warn("File " + path + ", which belows to model source of model " + sm.getSModelReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
+          }
+          continue;
+        }
+        VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor() {
+          public boolean visitFile(@NotNull VirtualFile file) {
+            if (file.isDirectory()) {
+              return dirs.add(file);
+            }
+            scopeFiles.addLink(sm, file);
+            return true;
+          }
+        });
+      }
+
+    }
+
     for (T elem : elems) {
       String nodeId = (id == null ?
         elem.toString() :
         id.value(elem)
       );
-      // get all files in scope 
-      final ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
-      for (final SModelDescriptor sm : models) {
-        assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
-        ModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
-        assert source instanceof StubModelDataSource : source.getClass().getName();
-        Collection<String> filenames = ((StubModelDataSource) source).getFilesToListen();
-        for (String path : filenames) {
-          final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
-          if (vf == null) {
-            if (log.isWarnEnabled()) {
-              log.warn("File " + path + ", which belows to model source of model " + sm.getSModelReference().toString() + ", was not found in VFS. Assuming no usages in this file.");
-            }
-            continue;
-          }
-          VfsUtilCore.visitChildrenRecursively(vf, new VirtualFileVisitor() {
-            public boolean visitFile(@NotNull VirtualFile file) {
-              if (file.isDirectory()) {
-                return true;
-              }
-              scopeFiles.addLink(sm, file);
-              return true;
-            }
-          });
-        }
-      }
       // filter files with usages 
       ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
       Collection<VirtualFile> matchingFiles = FileBasedIndex.getInstance().getContainingFiles(IdIndex.NAME, new IdIndexEntry(nodeId, true), allFiles);

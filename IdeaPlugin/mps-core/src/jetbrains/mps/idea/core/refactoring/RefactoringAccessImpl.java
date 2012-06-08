@@ -22,8 +22,11 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.idea.core.ui.ModelOrNodeChooser;
+import jetbrains.mps.idea.core.ui.RefactoringViewItemImpl;
+import jetbrains.mps.refactoring.framework.IRefactoring;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
@@ -33,7 +36,6 @@ import org.jetbrains.annotations.NotNull;
  * Date: 2/20/12
  */
 public class RefactoringAccessImpl extends RefactoringAccess implements ApplicationComponent {
-  private RefactoringFacade myRefactoringFacade;
 
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
   }
@@ -54,26 +56,33 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
     return "IDEA Plugin-specific Refactoring Access implementation";
   }
 
-  @Override
-  public RefactoringFacade getRefactoringFacade() {
-    if (myRefactoringFacade == null) {
-      myRefactoringFacade = new RefactoringFacadeImpl();
-    }
-    return myRefactoringFacade;
-  }
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SNode node) {
-    throw new UnsupportedOperationException();
+    return new ModelOrNodeChooser(project, node);
   }
 
   @Override
   public ModelElementTargetChooser createTargetChooser(Project project, SModelDescriptor model) {
-    throw new UnsupportedOperationException();
+    return new ModelOrNodeChooser(project, model);
   }
 
-    @Override
-    public void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
-        throw new UnsupportedOperationException();
-    }
+  @Override
+  public boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
+    return showRefactoringDialogBase(project, refactoringContext, refactoring, false);
+  }
+
+  @Override
+  public void showRefactoringView(Project project, final RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
+    refactoringViewItem.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
+  }
+
+
+  @Override
+  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    RefactoringViewItemImpl refactoringViewItem = new RefactoringViewItemImpl();
+    refactoringViewItem.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
+  }
+
 }

@@ -103,8 +103,8 @@
     <nodeInfo nodeId="6957207478384132770" fileName="JavaObjectValue.java" startLine="82" startPosition="57" endLine="83" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6957207478384132782" fileName="JavaObjectValue.java" startLine="84" startPosition="31" endLine="85" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6957207478384132795" fileName="JavaObjectValue.java" startLine="86" startPosition="5" endLine="87" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7157912897227781602" fileName="JavaObjectValue.java" startLine="91" startPosition="48" endLine="92" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384132827" fileName="JavaObjectValue.java" startLine="97" startPosition="9" endLine="98" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7157912897227781602" fileName="JavaObjectValue.java" startLine="91" startPosition="48" endLine="92" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384132827" fileName="JavaObjectValue.java" startLine="97" startPosition="9" endLine="98" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132822" fileName="JavaObjectValue.java" startLine="99" startPosition="37" endLine="100" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132846" fileName="JavaObjectValue.java" startLine="104" startPosition="34" endLine="105" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132859" fileName="JavaObjectValue.java" startLine="108" startPosition="32" endLine="109" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -137,8 +137,8 @@
     <scopeInfo nodeId="6957207478384132682" fileName="JavaObjectValue.java" startLine="59" startPosition="32" endLine="60" endPosition="16" />
     <scopeInfo nodeId="6957207478384132689" fileName="JavaObjectValue.java" startLine="64" startPosition="40" endLine="65" endPosition="71" />
     <scopeInfo nodeId="6957207478384132781" fileName="JavaObjectValue.java" startLine="84" startPosition="31" endLine="85" endPosition="104" />
-    <scopeInfo nodeId="6957207478384132800" fileName="JavaObjectValue.java" startLine="91" startPosition="48" endLine="92" endPosition="98" />
-    <scopeInfo nodeId="6957207478384132826" fileName="JavaObjectValue.java" startLine="97" startPosition="9" endLine="98" endPosition="161" />
+    <scopeInfo nodeId="6957207478384132800" fileName="JavaObjectValue.java" startLine="91" startPosition="48" endLine="92" endPosition="79" />
+    <scopeInfo nodeId="6957207478384132826" fileName="JavaObjectValue.java" startLine="97" startPosition="9" endLine="98" endPosition="180" />
     <scopeInfo nodeId="6957207478384132820" fileName="JavaObjectValue.java" startLine="99" startPosition="0" endLine="100" endPosition="18">
       <varInfo nodeId="6957207478384132824" varName="e" />
     </scopeInfo>

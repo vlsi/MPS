@@ -26,6 +26,11 @@ public class Plugin_ApplicationPlugin extends BaseApplicationPlugin {
       ListSequence.fromList(res).addElement(plugin);
       plugin.init();
     }
+    {
+      BaseCustomApplicationPlugin plugin = new DebugInfoProvider_CustomApplicationPlugin();
+      ListSequence.fromList(res).addElement(plugin);
+      plugin.init();
+    }
     return res;
   }
 }

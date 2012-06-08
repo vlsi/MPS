@@ -5,9 +5,10 @@ package jetbrains.mps.debug.evaluation.proxies;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import com.sun.jdi.Value;
-import com.sun.jdi.ThreadReference;
 import java.util.List;
+import com.sun.jdi.VirtualMachine;
 import jetbrains.mps.util.annotation.ToRemove;
+import com.sun.jdi.ThreadReference;
 
 public abstract class MirrorUtil {
   protected static MirrorUtil INSTANCE;
@@ -17,16 +18,16 @@ public abstract class MirrorUtil {
   }
 
   @NotNull
-  public abstract IValueProxy getValueProxy(@Nullable Value value, @NotNull ThreadReference threadReference);
+  public abstract IValueProxy getValueProxy(@Nullable Value value);
 
   @NotNull
-  public abstract List<Value> getValues(ThreadReference threadReference, Object... args);
+  public abstract List<Value> getValues(VirtualMachine machine, Object... args);
 
   @NotNull
   public abstract Object getJavaValue(@NotNull Value jdiValue);
 
   @NotNull
-  public abstract IValueProxy getValueProxyFromJava(@Nullable Object javaValue, ThreadReference threadReference);
+  public abstract IValueProxy getValueProxyFromJava(@Nullable Object javaValue, VirtualMachine machine);
 
   public abstract void init();
 
@@ -42,6 +43,6 @@ public abstract class MirrorUtil {
   @Deprecated
   @ToRemove(version = 2.1)
   public static IValueProxy getValueProxyFromJavaValue(@Nullable Object javaValue, ThreadReference threadReference) {
-    return MirrorUtil.getInstance().getValueProxyFromJava(javaValue, threadReference);
+    return MirrorUtil.getInstance().getValueProxyFromJava(javaValue, threadReference.virtualMachine());
   }
 }
