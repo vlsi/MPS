@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.FilteredGlobalScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 
@@ -23,8 +23,8 @@ public class ModelChooser implements Computable<List<SModelReference>> {
   public List<SModelReference> compute() {
     List<SModelReference> models = ModelAccess.instance().runReadAction(new Computable<List<SModelReference>>() {
       public List<SModelReference> compute() {
-        List<SModelDescriptor> descriptors = GlobalScope.getInstance().getModelDescriptors();
-        return ListSequence.fromList(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
+        Iterable<SModelDescriptor> descriptors = new FilteredGlobalScope().getModelDescriptors();
+        return Sequence.fromIterable(descriptors).select(new ISelector<SModelDescriptor, SModelReference>() {
           public SModelReference select(SModelDescriptor it) {
             return it.getSModelReference();
           }

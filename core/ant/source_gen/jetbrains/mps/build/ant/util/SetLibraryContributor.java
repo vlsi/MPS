@@ -20,4 +20,8 @@ public class SetLibraryContributor implements LibraryContributor {
     }
     return res;
   }
+
+  public boolean hiddenLanguages() {
+    return false;
+  }
 }

@@ -514,6 +514,7 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.GoToEditorDeclaration_Action" file="GoToEditorDeclaration_Action.java">
+    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="java.awt.Frame" />
@@ -548,6 +549,7 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.GoToOverridingMethod_Action" file="GoToOverridingMethod_Action.java">
+    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -648,6 +650,7 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.ImplementBehaviorMethod_Action" file="ImplementBehaviorMethod_Action.java">
+    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -1154,6 +1157,7 @@
     <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTool" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.OverrideBehaviorMethod_Action" file="OverrideBehaviorMethod_Action.java">
+    <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

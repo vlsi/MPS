@@ -33,6 +33,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.VisibleModuleRegistry</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.messages.navigation.NavigationManager</implementation-class>
     </component>
 
@@ -65,6 +69,7 @@
 
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.LanguageLibrary" beanClass="jetbrains.mps.LanguageLibrary"/>
+    <extensionPoint qualifiedName="com.intellij.mps.VisibleModuleMask" beanClass="jetbrains.mps.VisibleModuleMask"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

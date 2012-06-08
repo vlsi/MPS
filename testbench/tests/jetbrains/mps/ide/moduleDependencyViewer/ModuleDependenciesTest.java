@@ -26,14 +26,11 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.TestLanguage;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.WriteAction;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
 import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -45,7 +42,7 @@ import java.util.UUID;
 import static junit.framework.Assert.assertEquals;
 
 public class ModuleDependenciesTest {
-  private static final MPSModuleOwner OWNER = new MPSModuleOwner() {
+  private static final MPSModuleOwner OWNER = new BaseMPSModuleOwner() {
   };
   @Rule
   public WriteAction wa = new WriteAction();

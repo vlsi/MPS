@@ -126,6 +126,10 @@ public class ModuleRepositoryFacade implements CoreComponent {
     }
   }
 
+  public Set<MPSModuleOwner> getModuleOwners(IModule module) {
+    return new HashSet<MPSModuleOwner>(REPO.getOwners(module));
+  }
+
   public static IModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
     IModule module;
     if (handle.getDescriptor() instanceof LanguageDescriptor) {

@@ -71,7 +71,7 @@ public class CheckProjectStructureHelper {
         public void run() {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
-              MPSModuleOwner mpsModuleOwner = new MPSModuleOwner() {
+              MPSModuleOwner mpsModuleOwner = new BaseMPSModuleOwner() {
               };
 
               for (ModulesMiner.ModuleHandle handle : handles) {

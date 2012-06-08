@@ -55,26 +55,5 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.refactorings.SafeDelete" file="SafeDelete.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
-    <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.core.refactorings.SafeDelete_Target" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
-    <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.framework.BaseRefactoring" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.core.refactorings.SafeDelete_Target" file="SafeDelete_Target.java">
-    <classNode dependClassName="java.lang.Object" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.framework.IRefactoringTarget" />
-  </dependency>
 </dependenciesRoot>
 

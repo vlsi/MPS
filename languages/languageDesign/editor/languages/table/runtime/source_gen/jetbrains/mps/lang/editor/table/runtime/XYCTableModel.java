@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
@@ -53,10 +53,10 @@ public class XYCTableModel implements TableModel {
   }
 
   public void insertColumn(int columnNumber) {
-    Utils.insertElementAt(x(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, "target", false)), null), columnNumber - 1);
+    Utils.insertElementAt(x(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, "target", false)), null), columnNumber - 1);
     for (int i = 0; i < getRowCount() - 1; i++) {
       int idx = dataidx(i + 1, columnNumber);
-      Utils.insertElementAt(c(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null), idx);
+      Utils.insertElementAt(c(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null), idx);
     }
   }
 
@@ -67,10 +67,10 @@ public class XYCTableModel implements TableModel {
     if (rowNumber == 0) {
       rowNumber = 1;
     }
-    Utils.insertElementAt(y(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, "target", false)), null), rowNumber - 1);
+    Utils.insertElementAt(y(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, "target", false)), null), rowNumber - 1);
     for (int i = 0; i < getColumnCount() - 1; i++) {
       int idx = dataidx(rowNumber, i + 1);
-      Utils.insertElementAt(c(), SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null), idx);
+      Utils.insertElementAt(c(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null), idx);
     }
   }
 
@@ -92,14 +92,14 @@ public class XYCTableModel implements TableModel {
       return;
     }
     if (row == 0) {
-      x().set(column - 1, SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, "target", false)), null));
+      x().set(column - 1, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(xlink, "target", false)), null));
     }
     if (column == 0) {
-      y().set(row - 1, SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, "target", false)), null));
+      y().set(row - 1, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(ylink, "target", false)), null));
     }
     int idx = dataidx(row, column);
     if (idx < ListSequence.fromList(c()).count()) {
-      ListSequence.fromList(c()).setElement(idx, SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null));
+      ListSequence.fromList(c()).setElement(idx, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(clink, "target", false)), null));
     }
   }
 

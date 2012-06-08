@@ -13,28 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package jetbrains.mps;
 
-package jetbrains.mps.idea.core.refactoring;
+import com.intellij.openapi.extensions.AbstractExtensionPointBean;
+import com.intellij.openapi.extensions.ExtensionPointName;
+import com.intellij.util.xmlb.annotations.Attribute;
 
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
+public class VisibleModuleMask extends AbstractExtensionPointBean {
+  public static final ExtensionPointName<VisibleModuleMask> EP_VISIBLE_MODULES = ExtensionPointName.create("com.intellij.mps.VisibleModuleMask");
 
-/**
- * User: shatalin
- * Date: 2/17/12
- */
-public class RefactoringFacadeImpl extends RefactoringFacade {
-
-  @Override
-  public void execute(RefactoringContext context) {
-    if (!context.getRefactoring().init(context)) {
-      return;
-    }
-    executeSimple(context);
-  }
-
-  @Override
-  public void executeInThread(RefactoringContext context) {
-    throw new UnsupportedOperationException();
-  }
+  @Attribute("mask")
+  public String mask;
 }

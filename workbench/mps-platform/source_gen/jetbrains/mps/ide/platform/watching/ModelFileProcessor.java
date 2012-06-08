@@ -14,6 +14,10 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.Language;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.SModelRoot;
@@ -68,7 +72,18 @@ import jetbrains.mps.smodel.descriptor.source.changes.ModelFileWatcher;
     SetSequence.fromSet(myInvalidatedSources).addSequence(ListSequence.fromList(sources));
 
     List<IModule> modules = findModelRootIntersection(file, false);
+
     SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(modules));
+    // todo remove when generators are disconnected from languages 
+    SetSequence.fromSet(myModulesWithChangedModelSets).addSequence(ListSequence.fromList(modules).where(new IWhereFilter<IModule>() {
+      public boolean accept(IModule it) {
+        return it instanceof Generator;
+      }
+    }).select(new ISelector<IModule, Language>() {
+      public Language select(IModule it) {
+        return ((Generator) it).getSourceLanguage();
+      }
+    }));
   }
 
   protected void processContentChanged(VirtualFile file) {

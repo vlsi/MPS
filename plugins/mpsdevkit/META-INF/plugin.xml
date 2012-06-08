@@ -48,6 +48,9 @@
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
+    <mps.VisibleModuleMask mask="jetbrains.mps.lang.*"/>
+    <mps.VisibleModuleMask mask="jetbrains.mps.devkit.language-design"/>
+    <mps.VisibleModuleMask mask="jetbrains.mps.devkit.bootstrap-languages"/>
   </extensions>
   <actions>
     <group id="MPSWelcomeDocumentationMenu">

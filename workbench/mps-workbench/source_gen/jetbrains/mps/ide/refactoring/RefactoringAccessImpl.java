@@ -4,7 +4,6 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.ide.platform.refactoring.RefactoringFacade;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -14,10 +13,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.IRefactoring;
 
 public class RefactoringAccessImpl extends RefactoringAccess implements ApplicationComponent {
-  private RefactoringFacade myRefactoringFacade;
-
   public RefactoringAccessImpl(MPSCoreComponents coreComponents) {
   }
 
@@ -48,10 +47,12 @@ public class RefactoringAccessImpl extends RefactoringAccess implements Applicat
     refactoringView.showRefactoringView(project, callback, searchResults, hasModelsToGenerate, name);
   }
 
-  public RefactoringFacade getRefactoringFacade() {
-    if (myRefactoringFacade == null) {
-      myRefactoringFacade = new RefactoringFacadeImpl();
-    }
-    return myRefactoringFacade;
+  public void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
+    RefactoringView refactoringView = refactoringContext.getCurrentOperationContext().getComponent(RefactoringView.class);
+    refactoringView.showRefactoringView(refactoringContext, callback, searchResults, hasModelsToGenerate);
+  }
+
+  public boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
+    return showRefactoringDialogBase(project, refactoringContext, refactoring, hasModelsToGenerate);
   }
 }

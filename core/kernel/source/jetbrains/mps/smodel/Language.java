@@ -612,6 +612,11 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return result;
   }
 
+  @Override
+  public boolean isHidden() {
+    return false;
+  }
+
   private class CachesInvalidator extends SModelAdapter {
     public CachesInvalidator() {
       super(SModelListenerPriority.PLATFORM);

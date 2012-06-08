@@ -20,6 +20,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.messages.FileWithLogicalPosition;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.FileWithPosition;
+import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
@@ -48,6 +49,7 @@ public class NavigationManager {
   }
 
   public boolean canNavigateTo(Object o) {
+    assert !(o instanceof IMessage) : "accepts object to navigate, not a message";
     ModelAccess.assertLegalRead();
     return getHandlers(o).isEmpty();
   }
@@ -74,7 +76,7 @@ public class NavigationManager {
     }
 
     if (!hasHandler) {
-//      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
+      LOG.warning("Can't navigate to " + o + ". There is no navigation handler for it.");
     }
 
     return result;

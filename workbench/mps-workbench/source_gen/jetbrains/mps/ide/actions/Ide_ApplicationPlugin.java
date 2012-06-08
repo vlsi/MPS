@@ -50,6 +50,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindModelUsages_Action());
     addAction(new FindNext_Action());
     addAction(new FindPrevious_Action());
+    addAction(new FindRootableConceptsWithoutIcons_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
@@ -86,6 +87,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new RenameSolution_Action());
     addAction(new RevertMemoryChanges_Action());
     addAction(new SafeDeleteModuleDependency_Action());
+    addAction(new SafeDelete_Action());
     addAction(new SetBookmarkNoNumber_Action());
     addAction(new SetModuleFolder_Action());
     addAction(new SetNodePackage_Action());

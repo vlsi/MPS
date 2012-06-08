@@ -16,6 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -107,6 +108,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.editorDeclaration");
       final Language l = ModelAccess.instance().runReadAction(new Computable<Language>() {
         public Language compute() {
           return SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node"))));

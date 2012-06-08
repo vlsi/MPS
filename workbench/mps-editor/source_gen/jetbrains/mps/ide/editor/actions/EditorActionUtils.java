@@ -59,11 +59,11 @@ public class EditorActionUtils {
 
     if (cell instanceof EditorCell_Label && !(isLinkCollection(cell))) {
       // Looking for the next child collection to the right from this cell 
-      EditorCell cellWithRole = new ChildrenCollectionFinder(cell, true).find();
+      EditorCell cellWithRole = new ChildrenCollectionFinder(cell, true, false).find();
 
       if (cellWithRole == null && cell.isLastPositionInBigCell() && hasSingleRolesAtRightBoundary(cell) && cell.getNextLeaf() != null) {
         // Looking for the next child collection to the right from next leaf cell 
-        cellWithRole = new ChildrenCollectionFinder(cell.getNextLeaf(), true).find();
+        cellWithRole = new ChildrenCollectionFinder(cell.getNextLeaf(), true, true).find();
       }
 
       if (cellWithRole != null && cellWithRole.executeAction(CellActionType.INSERT)) {
@@ -84,11 +84,11 @@ public class EditorActionUtils {
 
     if (cell instanceof EditorCell_Label && !(isLinkCollection(cell))) {
       // Looking for the prev. child collection (to the left from this cell) 
-      EditorCell cellWithRole = new ChildrenCollectionFinder(cell, false).find();
+      EditorCell cellWithRole = new ChildrenCollectionFinder(cell, false, false).find();
 
       if (cellWithRole == null && cell.isFirstPositionInBigCell() && hasSingleRolesAtLeftBoundary(cell) && cell.getPrevLeaf() != null) {
         // Looking for the prev. child collection (to the left from prev. leaf cell) 
-        cellWithRole = new ChildrenCollectionFinder(cell.getPrevLeaf(), false).find();
+        cellWithRole = new ChildrenCollectionFinder(cell.getPrevLeaf(), false, true).find();
       }
 
       if (cellWithRole != null && cellWithRole.executeAction(CellActionType.INSERT_BEFORE)) {
@@ -121,10 +121,13 @@ public class EditorActionUtils {
 
     if (cell.isOnRightBoundary()) {
       EditorCell_Collection parentCell = cell.getParent();
-      return (parentCell != null ?
-        hasSingleRolesAtRightBoundary(parentCell) :
-        true
-      );
+      if (parentCell != null) {
+        EditorCell nextLeaf = cell.getNextLeaf();
+        if (nextLeaf != null && nextLeaf.getSNode() == parentCell.getSNode()) {
+          return true;
+        }
+        return hasSingleRolesAtRightBoundary(parentCell);
+      }
     }
     return true;
   }
@@ -143,10 +146,13 @@ public class EditorActionUtils {
 
     if (cell.isOnLeftBoundary()) {
       EditorCell_Collection parentCell = cell.getParent();
-      return (parentCell != null ?
-        hasSingleRolesAtLeftBoundary(parentCell) :
-        true
-      );
+      if (parentCell != null) {
+        EditorCell prevLeaf = cell.getPrevLeaf();
+        if (prevLeaf != null && prevLeaf.getSNode() == parentCell.getSNode()) {
+          return true;
+        }
+        return hasSingleRolesAtLeftBoundary(parentCell);
+      }
     }
     return true;
   }

@@ -43,7 +43,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   private Map<SModelReference, ProjectStructureSModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, ProjectStructureSModelDescriptor>();
 
   private static ProjectStructureModule INSTANCE;
-  private final MPSModuleOwner myOwner = new MPSModuleOwner() {
+  private final MPSModuleOwner myOwner = new BaseMPSModuleOwner() {
   };
   private final ModuleRepositoryAdapter myListener = new ModuleRepositoryAdapter() {
     @Override

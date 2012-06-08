@@ -81,6 +81,7 @@
     <mps.LanguageLibrary dir="/languages"/>
     <mps.LanguageLibrary dir="/lib"/>
     <treeStructureProvider implementation="jetbrains.mps.idea.core.projectView.MPSTreeStructureProvider"/>
+    <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 

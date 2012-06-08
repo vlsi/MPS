@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
+import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.projectPane.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -25,7 +26,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.misc.hash.HashSet;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -60,7 +63,7 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private void populate() {
-    Set<IModule> modules = collectModules();
+    List<IModule> modules = (List<IModule>) new FilteredGlobalScope().getVisibleModules();
     {
       ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
       TextTreeNode solutions = new TextTreeNode("Solutions");
@@ -92,10 +95,6 @@ public class ProjectModulesPoolTreeNode extends TextTreeNode {
       builder.fillNode(devkits);
       add(devkits);
     }
-  }
-
-  private Set<IModule> collectModules() {
-    return MPSModuleRepository.getInstance().getAllModules();
   }
 
   private class ModulePoolNamespaceBuilder extends DefaultNamespaceTreeBuilder<ProjectModuleTreeNode> {

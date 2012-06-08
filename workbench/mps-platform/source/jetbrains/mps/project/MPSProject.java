@@ -90,4 +90,9 @@ public class MPSProject extends Project implements ProjectComponent {
   public void dispose(boolean reloadAll) {
     dispose();
   }
+
+  @Override
+  public boolean isHidden() {
+    return false;
+  }
 }

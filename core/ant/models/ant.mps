@@ -2853,8 +2853,8 @@
                                           <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="4003657351907888740">
                                             <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
                                             <property name="name" nameId="tpck.1169194664001" value="" />
-                                            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="cu2c.~MPSModuleOwner" resolveInfo="MPSModuleOwner" />
                                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                                            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="cu2c.~BaseMPSModuleOwner" resolveInfo="BaseMPSModuleOwner" />
                                           </node>
                                         </node>
                                       </node>
