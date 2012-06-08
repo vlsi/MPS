@@ -36,6 +36,7 @@ public class BootstrapLanguages {
   public static final ModuleReference DEVKIT_GENERAL = ModuleReference.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)");
   public static final ModuleReference DEVKIT_BOOTSTRAP = ModuleReference.fromString("e073aac8-8c71-4c23-be71-86bf7a6df0a2(jetbrains.mps.devkit.bootstrap-languages)");
   public static final ModuleReference DEVKIT_LANGUAGE_DESIGN = ModuleReference.fromString("2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)");
+  public static final ModuleReference JDK = ModuleReference.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)");
   public static final String concept_baseLanguage_Annotation = "jetbrains.mps.baseLanguage.structure.Annotation";
   public static final String concept_baseLanguage_ClassConcept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
   public static final String concept_baseLanguage_EnumClass = "jetbrains.mps.baseLanguage.structure.EnumClass";
