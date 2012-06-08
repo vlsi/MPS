@@ -8,7 +8,7 @@
   <name>MPS Obsolete Languages</name>
   <description>Discontinued legacy languages from previous versions of MPS. These languages will most probably be dropped in the next release.</description>
   <version>1.0</version>
-  <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
+  <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="3000"></idea-version>
     
   <depends>jetbrains.mps.execution.languages</depends>
