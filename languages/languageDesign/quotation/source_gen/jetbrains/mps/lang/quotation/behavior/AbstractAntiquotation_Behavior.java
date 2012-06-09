@@ -5,6 +5,7 @@ package jetbrains.mps.lang.quotation.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.core.behavior.IMetaLevelChanger_Behavior;
 import jetbrains.mps.scope.EmptyScope;
 
 public class AbstractAntiquotation_Behavior {
@@ -24,10 +25,20 @@ public class AbstractAntiquotation_Behavior {
   }
 
   public static Scope call_getScope_7939206742749757475(SNode thisNode, SNode kind) {
-    SNode quotation = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
-    if (quotation == null) {
+    SNode node = thisNode;
+    int metaLevelChange = 0;
+    while ((node != null)) {
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IMetaLevelChanger")) {
+        metaLevelChange += IMetaLevelChanger_Behavior.call_getMetaLevelChange_201537367881074474(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.IMetaLevelChanger"));
+      }
+      if (metaLevelChange == 0) {
+        break;
+      }
+      node = Scope.parent(node);
+    }
+    if ((node == null)) {
       return new EmptyScope();
     }
-    return Scope.getScope(Scope.parent(quotation), quotation, kind);
+    return Scope.getScope(Scope.parent(node), node, kind);
   }
 }
