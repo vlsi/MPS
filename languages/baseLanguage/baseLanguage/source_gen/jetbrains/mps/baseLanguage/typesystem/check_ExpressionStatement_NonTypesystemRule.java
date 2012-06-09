@@ -22,7 +22,7 @@ public class check_ExpressionStatement_NonTypesystemRule extends AbstractNonType
   public void applyRule(final SNode expressionStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(Expression_Behavior.call_isLegalAsStatement_1239211900844(SLinkOperations.getTarget(expressionStatement, "expression", true)) || ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(expressionStatement))) {
       MessageTarget errorTarget = new NodeMessageTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expressionStatement, "not a legal statement", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239212949442", null, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expressionStatement, "Not a statement", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239212949442", null, errorTarget);
     }
   }
 
