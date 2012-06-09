@@ -33,6 +33,10 @@
 
   <actions>
     <group id="MPSWelcomeSamplesMenu">
+      <action id="OpenSampleLanguageProject"
+              class="jetbrains.mps.workbench.actions.welcomeScreen.OpenSampleProjectAction"
+              text="Open Sample Project"
+              description="You can take a look at some MPS samples. Click the icon or link to open a sample project."/>
       <action id="OpenTheComplexNumberLanguageProject"
               class="jetbrains.mps.workbench.actions.welcomeScreen.OpenComplexLanguageProjectAction"
               text="Open Complex Numbers Project"
