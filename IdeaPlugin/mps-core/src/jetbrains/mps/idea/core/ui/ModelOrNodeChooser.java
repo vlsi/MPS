@@ -67,8 +67,12 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
       public Object[] getChildElements(Object element) {
         ArrayList<Object> result = new ArrayList<Object>();
         for (Object o : super.getChildElements(element)) {
-          if (o instanceof PsiFileNode && ((PsiFileNode) o).getValue().getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)) {
-            result.add(o);
+          if (o instanceof PsiFileNode) {
+            PsiFileNode fileNode = (PsiFileNode) o;
+            VirtualFile vFile = fileNode.getVirtualFile();
+            if (vFile != null && vFile.getFileType().equals(MPSFileTypeFactory.MODEL_FILE_TYPE)) {
+              result.add(o);
+            }
           } else if (o instanceof MPSProjectViewNode) {
             result.add(o);
           } else if (o instanceof PsiDirectoryNode) {
