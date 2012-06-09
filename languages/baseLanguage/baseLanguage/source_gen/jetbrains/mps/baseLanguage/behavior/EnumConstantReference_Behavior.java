@@ -5,11 +5,13 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class EnumConstantReference_Behavior {
   public static void init(SNode thisNode) {
@@ -17,8 +19,20 @@ public class EnumConstantReference_Behavior {
 
   public static Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     SNode enumClass = SLinkOperations.getTarget(thisNode, "enumClass", false);
-    String name = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "enumConstantDeclaration", false), "name");
-    return ReflectionUtil.getEnum(module, enumClass, name);
+    SNode e = SLinkOperations.getTarget(thisNode, "enumConstantDeclaration", false);
+    IModule m = check_p8mh91_a0c0a(SNodeOperations.getModel(e).getModelDescriptor());
+    if (m != null) {
+      Enum eClass = null;
+      try {
+        eClass = ReflectionUtil.getEnum(m, enumClass, SPropertyOperations.getString(e, "name"));
+      } catch (Throwable t) {
+        // do nothing 
+      }
+      if (eClass != null) {
+        return eClass;
+      }
+    }
+    return ReflectionUtil.getEnum(module, enumClass, SPropertyOperations.getString(e, "name"));
   }
 
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
@@ -26,5 +40,12 @@ public class EnumConstantReference_Behavior {
       Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(thisNode, "enumClass", false), thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) :
       new EmptyScope()
     );
+  }
+
+  private static IModule check_p8mh91_a0c0a(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }

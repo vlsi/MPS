@@ -26,6 +26,7 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class BaseMethodDeclaration_Behavior {
   private static Class[] PARAMETERS_5039675756633081786 = {SNode.class};
@@ -123,6 +124,18 @@ public class BaseMethodDeclaration_Behavior {
   }
 
   public static Method call_getMethod_1213877350393(SNode thisNode, IModule module) {
+    IModule m = check_tq0gdw_a0a0j(SNodeOperations.getModel(thisNode).getModelDescriptor());
+    if (m != null) {
+      Method method = null;
+      try {
+        method = ReflectionUtil.getMethod(m, SNodeOperations.getParent(thisNode), SPropertyOperations.getString(thisNode, "name"), BaseMethodDeclaration_Behavior.call_getParameterTypes_1213877350411(thisNode, m));
+      } catch (Throwable t) {
+        // do nothing 
+      }
+      if (method != null) {
+        return method;
+      }
+    }
     return ReflectionUtil.getMethod(module, SNodeOperations.getParent(thisNode), SPropertyOperations.getString(thisNode, "name"), BaseMethodDeclaration_Behavior.call_getParameterTypes_1213877350411(thisNode, module));
   }
 
@@ -333,6 +346,13 @@ public class BaseMethodDeclaration_Behavior {
 
   public static List<SNode> callSuper_getScopeVariables_2496361171403550901(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550901);
+  }
+
+  private static IModule check_tq0gdw_a0a0j(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 
   private static boolean neq_tq0gdw_a0a0q(Object a, Object b) {
