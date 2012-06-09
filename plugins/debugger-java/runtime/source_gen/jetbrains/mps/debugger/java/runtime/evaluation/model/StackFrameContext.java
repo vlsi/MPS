@@ -98,7 +98,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
 
     // todo duplication between this method and java.getClasspath 
-    // but this code is compiled in idea so we cant use Java_Command here:( 
+    // but java command is in execution.configurations plugin, so the dependency is backward 
     final ClasspathStringCollector visitor = new ClasspathStringCollector();
     locationModule.getClassPathItem().accept(visitor);
     ModelAccess.instance().runReadAction(new Runnable() {

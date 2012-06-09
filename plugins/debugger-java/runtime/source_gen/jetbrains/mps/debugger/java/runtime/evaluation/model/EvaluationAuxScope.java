@@ -69,11 +69,7 @@ import jetbrains.mps.smodel.SModelFqName;
     String stereotype = reference.getStereotype();
     SModelDescriptor descriptor = null;
     if (eq_otn35i_a0c0e(stereotype, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
-      if (EvaluationAuxModule.JAVA_STUBS) {
-        descriptor = myModelRepository.getModelDescriptor(new SModelFqName(myModule.getModuleFqName(), reference.getLongName(), SModelStereotype.getStubStereotypeForId(LanguageID.JAVA)));
-      } else {
-        descriptor = super.getModelDescriptor(new SModelReference(reference.getLongName(), SModelStereotype.getStubStereotypeForId(EvaluationAuxModule.DEBUGGER_JAVA_ID)));
-      }
+      descriptor = myModelRepository.getModelDescriptor(new SModelFqName(myModule.getModuleFqName(), reference.getLongName(), SModelStereotype.getStubStereotypeForId(LanguageID.JAVA)));
     }
     if (descriptor != null) {
       return descriptor;

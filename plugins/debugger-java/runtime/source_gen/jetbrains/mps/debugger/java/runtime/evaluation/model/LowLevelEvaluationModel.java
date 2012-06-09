@@ -255,10 +255,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   private void importStubForFqName(String fqName) {
-    SModelReference stubReference = ((EvaluationAuxModule.JAVA_STUBS ?
-      StubHelper.uidForPackageInStubs(fqName) :
-      StubHelper.uidForPackageInStubs(fqName, EvaluationAuxModule.DEBUGGER_JAVA_ID, myAuxModule.getModuleReference(), false)
-    ));
+    SModelReference stubReference = StubHelper.uidForPackageInStubs(fqName);
     if (stubReference == null) {
       if (log.isErrorEnabled()) {
         log.error("Stub for " + fqName + " was not found.");
