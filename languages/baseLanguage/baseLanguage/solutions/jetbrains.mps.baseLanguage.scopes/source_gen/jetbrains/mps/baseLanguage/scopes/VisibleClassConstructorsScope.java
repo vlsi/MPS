@@ -6,7 +6,7 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.scopes.runtime.FilteringScope;
+import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;

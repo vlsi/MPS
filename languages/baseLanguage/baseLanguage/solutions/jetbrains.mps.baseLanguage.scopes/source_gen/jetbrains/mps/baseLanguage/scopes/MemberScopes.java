@@ -20,7 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
-import jetbrains.mps.lang.scopes.runtime.FilteringScope;
+import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
