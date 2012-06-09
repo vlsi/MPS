@@ -30,9 +30,10 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
-import jetbrains.mps.scope.CompositeScope;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.scope.FilteringByNameScope;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -343,8 +344,23 @@ public class Classifier_Behavior {
       if (SConceptOperations.isSubConceptOf(concept_f0bb, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         // add instance fields + static fields 
         if (!(isStaticContext)) {
-          Scope scope = CompositeScope.createComposite(Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));
-          return Scopes.forMethods(kind, scope, ScopeUtils.lazyParentScope(thisNode, kind));
+          Scope instanceMethods = Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
+          Scope staticMethods = Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+          Set<String> filteredNames = SetSequence.fromSet(new HashSet<String>());
+          SetSequence.fromSet(filteredNames).addSequence(Sequence.fromIterable(instanceMethods.getAvailableElements(null)).select(new ISelector<SNode, String>() {
+            public String select(SNode it) {
+              return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "name");
+            }
+          }));
+          SetSequence.fromSet(filteredNames).addSequence(Sequence.fromIterable(staticMethods.getAvailableElements(null)).select(new ISelector<SNode, String>() {
+            public String select(SNode it) {
+              return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "name");
+            }
+          }));
+          return Scopes.forMethods(kind, (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") ?
+            staticMethods :
+            instanceMethods
+          ), new FilteringByNameScope(filteredNames, ScopeUtils.lazyParentScope(thisNode, kind)));
         } else {
           return Scopes.forMethods(kind, Classifier_Behavior.call_getMembers_2201875424515824604(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), ScopeUtils.lazyParentScope(thisNode, kind));
         }
