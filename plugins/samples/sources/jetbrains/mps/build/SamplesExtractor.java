@@ -128,10 +128,11 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   private String getSuffix() {
-    String versionName = myApplicationInfo.getVersionName();
-    int i = versionName.indexOf(MPS);
-    assert i >= 0;
-    return versionName.substring(i + MPS.length()).replaceAll("\\s+", "");
+    String majorVersion = myApplicationInfo.getMajorVersion();
+    assert majorVersion != null;
+    String minorVersion = myApplicationInfo.getMinorVersion();
+    assert minorVersion != null;
+    return majorVersion + "." + minorVersion;
   }
 
   private String getSamplesPathInMPSHome() {
