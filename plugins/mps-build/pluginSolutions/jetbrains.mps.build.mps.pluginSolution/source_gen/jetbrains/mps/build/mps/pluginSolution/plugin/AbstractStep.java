@@ -19,7 +19,7 @@ import jetbrains.mps.ide.common.LayoutUtil;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EtchedBorder;
 import java.net.URL;
-import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
+import jetbrains.mps.workbench.MPSApplicationInfo;
 import javax.swing.ImageIcon;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
@@ -121,7 +121,7 @@ public abstract class AbstractStep extends StepAdapter {
   }
 
   private JComponent createImagePanel() {
-    URL imageUrl = Icons.NEW_PROJECT_IMAGE_URL;
+    URL imageUrl = MPSApplicationInfo.getInstance().getDialogImageURL();
     String imageText = getImageText();
 
     ImageIcon info = new ImageIcon(imageUrl);

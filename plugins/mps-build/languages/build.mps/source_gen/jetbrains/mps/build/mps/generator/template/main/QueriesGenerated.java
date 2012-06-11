@@ -289,6 +289,10 @@ public class QueriesGenerated {
     return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
 
+  public static Object propertyMacro_GetPropertyValue_8108467228800460452(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "/" + BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "dialogImage", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1462305029084462431(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "shortName", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
@@ -466,7 +470,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1462305029084461806(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a97(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a08(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
   }
 
   public static SNode sourceNodeQuery_2303926226081111358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -547,6 +551,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1462305029084462298(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "aboutScreen", true);
+  }
+
+  public static SNode sourceNodeQuery_8108467228800460413(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "dialogImage", true);
   }
 
   public static Object templateArgumentQuery_8252715012761547166(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -993,7 +1001,7 @@ public class QueriesGenerated {
     );
   }
 
-  private static boolean neq_x583g4_a0a0a97(Object a, Object b) {
+  private static boolean neq_x583g4_a0a0a08(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

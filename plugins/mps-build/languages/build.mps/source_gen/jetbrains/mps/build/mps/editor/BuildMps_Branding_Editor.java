@@ -67,9 +67,11 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_1x254q_w2a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_1x254q_x2a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1x254q_y2a(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_1x254q_z2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1x254q_ab2a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1x254q_bb2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1x254q_z2a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1x254q_ab2a(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_1x254q_bb2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1x254q_cb2a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1x254q_db2a(editorContext, node));
     return editorCell;
   }
 
@@ -91,19 +93,19 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createCollection_1x254q_z2a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_1x254q_bb2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_1x254q_z2a");
+    editorCell.setCellId("Collection_1x254q_bb2a");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
-    editorCell.addEditorCell(this.createConstant_1x254q_a52c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1x254q_b52c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_1x254q_c52c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1x254q_d52c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1x254q_a72c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1x254q_b72c0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1x254q_c72c0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1x254q_d72c0(editorContext, node));
     return editorCell;
   }
 
@@ -250,8 +252,16 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_1x254q_y2a(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "welcome screen");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dialog image");
     editorCell.setCellId("Constant_1x254q_y2a");
+    buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_1x254q_ab2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "welcome screen");
+    editorCell.setCellId("Constant_1x254q_ab2a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -261,17 +271,17 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1x254q_a52c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1x254q_a72c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "caption");
-    editorCell.setCellId("Constant_1x254q_a52c0");
+    editorCell.setCellId("Constant_1x254q_a72c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_1x254q_c52c0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1x254q_c72c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "slogan");
-    editorCell.setCellId("Constant_1x254q_c52c0");
+    editorCell.setCellId("Constant_1x254q_c72c0");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -507,7 +517,28 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1x254q_b52c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1x254q_z2a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("dialogImage");
+    provider.setNoTargetText("<no dialogImage>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_1x254q_b72c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("welcomeCaption");
     provider.setNoTargetText("<no welcomeCaption>");
@@ -528,7 +559,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1x254q_d52c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1x254q_d72c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("welcomeSlogan");
     provider.setNoTargetText("<no welcomeSlogan>");
@@ -545,7 +576,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1x254q_ab2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1x254q_cb2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("updateWebsite");
     provider.setNoTargetText("<no updateWebsite>");
@@ -566,7 +597,7 @@ public class BuildMps_Branding_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_1x254q_bb2a(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_1x254q_db2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("help");
     provider.setNoTargetText("<no help>");

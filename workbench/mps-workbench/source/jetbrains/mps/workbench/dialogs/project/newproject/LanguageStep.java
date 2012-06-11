@@ -19,7 +19,7 @@ import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
+import jetbrains.mps.workbench.MPSApplicationInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -86,7 +86,7 @@ public class LanguageStep extends BaseStep {
   }
 
   public URL getImageURL() {
-    return Icons.NEW_PROJECT_IMAGE_URL;
+    return MPSApplicationInfo.getInstance().getDialogImageURL();
   }
 
   @NotNull

@@ -86,10 +86,14 @@ public class Context {
   }
 
   public String getBasePath_Local(SNode node) {
-    return BuildProject_Behavior.call_getBasePath_4959435991187146924(this.getBuildProject(node), this);
+    SNode buildProject = this.getBuildProject(node);
+    if ((buildProject == null)) {
+      return null;
+    }
+    return BuildProject_Behavior.call_getBasePath_4959435991187146924(buildProject, this);
   }
 
-  public RelativePathHelper getRelativePathHelper(SModel model) {
+  public RelativePathHelper getRelativePathHelper(@NotNull SModel model) {
     if (model.isTransient() && myGenerationContext != null) {
       model = myGenerationContext.getOriginalInputModel();
     }

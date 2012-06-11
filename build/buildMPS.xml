@@ -56,6 +56,7 @@
         <logo url="/splash.png" textcolor="002387" />
         <about url="/mpsAbout.png" />
         <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png" />
+        <dialogs-image url="/dialogImage.png" />
         <package code="code" />
         <names product="MPS" fullname="JetBrains MPS 2.5 EAP" />
         <update-urls check="http://www.jetbrains.com/mps/update.xml" update="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page" />
@@ -70,6 +71,7 @@
       <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsSlogan.png" />
       <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/splash.png" />
       <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/mpsAbout.png" />
+      <fileset file="${basedir}/workbench/mps-workbench/source/jetbrains/mps/workbench/icons/dialogImage.png" />
       <fileset dir="${build.tmp}/default/branding.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/MPS-src.zip" />

@@ -8325,6 +8325,32 @@
           <link role="macro" roleId="3ior.4903714810883702018" targetNodeId="244868996532550354" resolveInfo="date" />
         </node>
       </node>
+      <node role="dialogImage" roleId="kdzh.8108467228800445684" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8108467228800509871">
+        <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8108467228800509872">
+          <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8108467228800509873">
+            <property name="head" nameId="3ior.8618885170173601779" value="mps-workbench" />
+            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8108467228800509874">
+              <property name="head" nameId="3ior.8618885170173601779" value="source" />
+              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8108467228800509875">
+                <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8108467228800509876">
+                  <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8108467228800509877">
+                    <property name="head" nameId="3ior.8618885170173601779" value="workbench" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8108467228800509878">
+                      <property name="head" nameId="3ior.8618885170173601779" value="icons" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8108467228800509879">
+                        <property name="head" nameId="3ior.8618885170173601779" value="dialogImage.png" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="4301118715654465616">
       <property name="name" nameId="tpck.1169194664001" value="build.number" />
