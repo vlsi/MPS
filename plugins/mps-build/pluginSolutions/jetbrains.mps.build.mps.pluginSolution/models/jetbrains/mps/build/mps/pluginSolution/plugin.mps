@@ -13801,7 +13801,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="7100856898310891024">
-      <property name="path" nameId="1oap.8974276187400029899" value="/Users/evgeny/projects/mps/plugins/mps-build/languages/build/icons/buildProject.png" />
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/../../languages/build/icons/buildProject.png" />
     </node>
   </root>
   <root id="8722937377469659543">
