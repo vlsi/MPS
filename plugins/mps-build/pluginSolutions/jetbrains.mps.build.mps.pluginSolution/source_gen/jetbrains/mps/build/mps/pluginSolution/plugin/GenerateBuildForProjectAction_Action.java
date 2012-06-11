@@ -4,6 +4,7 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
@@ -18,11 +19,11 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 
 public class GenerateBuildForProjectAction_Action extends BaseAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = IconUtil.getIcon("buildProject.png");
   protected static Log log = LogFactory.getLog(GenerateBuildForProjectAction_Action.class);
 
   public GenerateBuildForProjectAction_Action() {
-    super("Build Script", "", ICON);
+    super("Build Solution", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -61,7 +62,7 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Script", ((Project) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
+      final GenerateBuildWizard wizard = new GenerateBuildWizard("New Build Solution", ((Project) MapSequence.fromMap(_params).get("project")), new BuildGeneratorImpl(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext"))));
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           wizard.show();
