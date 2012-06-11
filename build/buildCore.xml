@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildCore" />
   <property name="build.layout" location="${build.dir}/artifacts/buildCore" />
-  <property name="version" value="2.5 EAP" />
+  <property name="version" value="2.5" />
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.IDEA" location="${idea_home}" />

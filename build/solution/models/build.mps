@@ -819,7 +819,7 @@
       <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="6592112598314709134">
         <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="6592112598314709135">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="6592112598314709136">
-            <property name="text" nameId="3ior.4903714810883755350" value="2.5 EAP" />
+            <property name="text" nameId="3ior.4903714810883755350" value="2.5" />
           </node>
         </node>
       </node>
@@ -8113,7 +8113,6 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Branding" typeId="kdzh.7753544965996377997" id="7753544965996546378">
       <property name="major" nameId="kdzh.3497141547781541444" value="2" />
       <property name="minor" nameId="kdzh.3497141547781541445" value="5" />
-      <property name="eap" nameId="kdzh.3497141547781541446" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="MPS" />
       <node role="buildNumber" roleId="kdzh.6108265972537229337" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996546381">
         <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildVarRefStringPart" typeId="3ior.4903714810883702017" id="7753544965996568568">
@@ -8141,7 +8140,7 @@
       </node>
       <node role="fullName" roleId="kdzh.6108265972537372848" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996546387">
         <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568564">
-          <property name="text" nameId="3ior.4903714810883755350" value="JetBrains MPS 2.5 EAP" />
+          <property name="text" nameId="3ior.4903714810883755350" value="JetBrains MPS 2.5" />
         </node>
       </node>
       <node role="updateWebsite" roleId="kdzh.6108265972537335245" type="kdzh.BuildMps_BrandingUpdateSite" typeId="kdzh.7753544965996489991" id="7753544965996568505">
@@ -8157,7 +8156,7 @@
         </node>
         <node role="updateChannel" roleId="kdzh.8795525031433091059" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7753544965996568508">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568509">
-            <property name="text" nameId="3ior.4903714810883755350" value="MPS25EAP" />
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS25" />
           </node>
         </node>
       </node>
