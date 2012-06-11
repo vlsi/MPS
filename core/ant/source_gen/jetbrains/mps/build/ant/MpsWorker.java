@@ -241,7 +241,7 @@ public abstract class MpsWorker {
       tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
           IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
-          return ModulesMiner.getInstance().readModuleDescriptors(file, new BaseMPSModuleOwner() {});
+          return ModulesMiner.getInstance().readModuleDescriptors(file, new BaseMPSModuleOwner());
         }
       });
     }
