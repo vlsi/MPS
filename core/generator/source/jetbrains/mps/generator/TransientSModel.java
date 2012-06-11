@@ -37,4 +37,10 @@ public class TransientSModel extends SModel {
   public boolean isTransient() {
     return true;
   }
+
+  @Override
+  protected boolean canFireReadEvent() {
+    /* enables read access tracking for incremental generation */
+    return true;
+  }
 }
