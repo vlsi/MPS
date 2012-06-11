@@ -48,8 +48,13 @@
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <mps.LanguageLibrary dir="/languages"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
-    <mps.VisibleModuleMask mask="jetbrains.mps.baseLanguage"/>
-    <mps.VisibleModuleMask mask="jetbrains.mps.baseLanguage.*"/>
-    <mps.VisibleModuleMask mask="jetbrains.mps.devkit.general-purpose"/>
+    <mps.VisibleModuleMask mask="Ant"/>
+    <mps.VisibleModuleMask mask="closures.*"/>
+    <mps.VisibleModuleMask mask="collections.*"/>
+    <mps.VisibleModuleMask mask="JDK.*"/>
+    <mps.VisibleModuleMask mask="jetbrains\.mps\.ant"/>
+    <mps.VisibleModuleMask mask="jetbrains\.mps\.baseLanguage.*"/>
+    <mps.VisibleModuleMask mask="jetbrains\.mps\.devkit\.general-purpose"/>
+    <mps.VisibleModuleMask mask="jetbrains\.mps\.xml.*"/>
   </extensions>
 </idea-plugin>
