@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5sl4muxenutnb1qwgfrdi0lg3jbv9iu">
+<dependencies version="2" modelHash="9r4s07l1tc4m2jd6q7ymcgflgczn23o">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -9,7 +9,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="6vlx0lz6govs9r83a1bmfplozwba10d" />
+  <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="paopzk8jfsnmcuih1i7tbo5ylzao77" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
   <common hash="7nm6dyddzlf5tj47jdtu7fm8mj6r0y1" dependsOnNodes="true">
     <dep root="1265949165890536423" />
@@ -169,7 +169,7 @@
   <source id="6592112598314498926" name="BuildMpsLayout_Plugin" hash="-1188p9l8id712mo2zeejqg6qzoh13kh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6592112598314498932" name="BuildMps_IdeaPlugin" hash="-2q5ks736akpj1bcqj3j00hlhnkmbqgo">
+  <source id="6592112598314498932" name="BuildMps_IdeaPlugin" hash="bxe6xqkfuaad0hpoy6tatnyjd7fiisw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6592112598314499027" name="BuildMps_IdeaPluginDependency" hash="8d06qukzyabuqf0tfe4z8h9gj4k5ilu">

@@ -179,6 +179,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314498932">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Plugin" />
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPlugin" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/plugin.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.7389400916848073736" resolveInfo="BuildProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6592112598314499027">
