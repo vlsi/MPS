@@ -20,7 +20,6 @@ import java.util.List;
 import jetbrains.mps.plugins.actions.BaseKeymapChanges;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.plugins.custom.BaseCustomApplicationPlugin;
 
 public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide.mpsdevkit");
@@ -126,16 +125,6 @@ public class Mpsdevkit_ApplicationPlugin extends BaseApplicationPlugin {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());
     ListSequence.fromList(res).addElement(new Trace_KeymapChanges());
-    return res;
-  }
-
-  public List<BaseCustomApplicationPlugin> initCustomParts() {
-    List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
-    {
-      BaseCustomApplicationPlugin plugin = new MPSDevkit_CustomApplicationPlugin();
-      ListSequence.fromList(res).addElement(plugin);
-      plugin.init();
-    }
     return res;
   }
 }
