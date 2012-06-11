@@ -122,7 +122,7 @@ public class CreateRootNodeGroup extends BaseGroup {
 
     List<Language> modelLanguages = SModelOperations.getLanguages(modelDescriptor.getSModel(), scope);
     if (modelLanguages.size() == 0) {
-      add(ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.AddLanguageImport_Action"/* FIXME AddLanguageImport_Action.class.getName()*/));
+      add(ActionManager.getInstance().getAction("jetbrains.mps.ide.editor.actions.AddLanguageImport_Action"/* FIXME AddLanguageImport_Action.class.getName()*/));
     }
 
     LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
