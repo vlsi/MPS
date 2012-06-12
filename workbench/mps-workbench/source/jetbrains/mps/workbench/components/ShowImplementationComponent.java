@@ -23,6 +23,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelOwner;
@@ -45,6 +46,7 @@ public class ShowImplementationComponent extends JPanel {
   private JComponent myEditorPanel;
   private int mySelectedIndex = -1;
   private JBPopup myPopup;
+  private Project myProject;
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
     myNodes = nodes;
@@ -54,6 +56,7 @@ public class ShowImplementationComponent extends JPanel {
       myItemToNode.put(node.getModel().getSModelReference() + ":" + node.getSNodeId(), node);
     }
     init();
+    myProject = context.getProject();
     updateControls();
   }
 
@@ -92,7 +95,7 @@ public class ShowImplementationComponent extends JPanel {
     final SNode selectedNode = myItemToNode.get(selectedItem);
     final int index = myNodes.indexOf(selectedNode);
     if (mySelectedIndex == index) return;
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
         IModule module = selectedNode.getModel().getModelDescriptor().getModule();
         myLocationLabel.setText(module.getModuleFqName());
@@ -103,7 +106,7 @@ public class ShowImplementationComponent extends JPanel {
         mySelectedIndex = index;
         myEditorPanel.repaint();
       }
-    });
+    }, myProject);
   }
 
   private void init() {
