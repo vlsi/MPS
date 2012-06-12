@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-455gefq3i3i0qtqrlhuwbvjj8ke2snf">
+<dependencies version="2" modelHash="en7sk8lkffr7dq39i6baggvyccfum2t">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-8ddyvtwlgdy2b4rcc23nz4xk6wzma49" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-cw4cuvzqiy6cv9vv4yy2w5dj04351kw" />
   <dep model="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" hash="-4iv38643b336rgds590u3shyjqnrivh" />
@@ -76,7 +76,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildDistribution.xml" />
   </source>
-  <source id="4301118715654192646" name="buildMPS" hash="bd49ni63tgyjo89y0sekhc9unfb9lpa">
+  <source id="4301118715654192646" name="buildMPS" hash="-4kda89yhvc7h9l60deg7v2k8ioflrxy">
     <dep root="1392391688312941958" />
     <dep root="1545517825663017278" />
     <dep root="2075442863766408895" />

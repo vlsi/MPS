@@ -8140,7 +8140,7 @@
       </node>
       <node role="fullName" roleId="kdzh.6108265972537372848" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="7753544965996546387">
         <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7753544965996568564">
-          <property name="text" nameId="3ior.4903714810883755350" value="JetBrains MPS 2.5" />
+          <property name="text" nameId="3ior.4903714810883755350" value="JetBrains MPS" />
         </node>
       </node>
       <node role="updateWebsite" roleId="kdzh.6108265972537335245" type="kdzh.BuildMps_BrandingUpdateSite" typeId="kdzh.7753544965996489991" id="7753544965996568505">
