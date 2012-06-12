@@ -51,10 +51,18 @@ public class ModulesMiner {
   private ModulesMiner() {
   }
 
+  /*
+   *   use collectModules + ModuleRepositoryFacade.createModule
+   */
+  @Deprecated
   public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
     return readModuleDescriptors(dir, owner, false);
   }
 
+  /*
+   *   use collectModules + ModuleRepositoryFacade.createModule
+   */
+  @Deprecated
   public List<IModule> readModuleDescriptors(IFile dir, final MPSModuleOwner owner, boolean refreshFiles) {
     assertCanWrite();
 

@@ -33,7 +33,15 @@ import java.util.List;
  */
 public class ModelsMiner {
 
+  /*
+   * use #collectModelDescriptors(dir, models)
+   */
+  @Deprecated
   public static void collectModelDescriptors(IFile dir, ModelRoot modelRoot, Collection<ModelHandle> models) {
+    collectModelDescriptors(dir, models);
+  }
+
+  public static void collectModelDescriptors(IFile dir, Collection<ModelHandle> models) {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 
@@ -64,7 +72,7 @@ public class ModelsMiner {
     }
     for (IFile childDir : files) {
       if (childDir.isDirectory()) {
-        collectModelDescriptors(childDir, modelRoot, models);
+        collectModelDescriptors(childDir, models);
       }
     }
   }

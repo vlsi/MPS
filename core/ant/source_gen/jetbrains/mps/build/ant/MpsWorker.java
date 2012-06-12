@@ -30,8 +30,9 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleFileTracker;
 import java.util.Collections;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -241,7 +242,15 @@ public abstract class MpsWorker {
       tmpmodules = ModelAccess.instance().runWriteAction(new Computable<List<IModule>>() {
         public List<IModule> compute() {
           IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
-          return ModulesMiner.getInstance().readModuleDescriptors(file, new BaseMPSModuleOwner());
+          BaseMPSModuleOwner owner = new BaseMPSModuleOwner();
+          List<IModule> modules = new ArrayList<IModule>();
+          for (ModulesMiner.ModuleHandle moduleHandle : ModulesMiner.getInstance().collectModules(file, false)) {
+            IModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
+            if (module != null) {
+              modules.add(module);
+            }
+          }
+          return modules;
         }
       });
     }
