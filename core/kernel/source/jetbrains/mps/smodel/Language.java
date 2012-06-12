@@ -75,23 +75,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new MyClassLoader();
 
-  public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
-    assert descriptor != null;
-    assert descriptor.getId() != null;
-
-    Language language = new Language(descriptor, handle.getFile());
-
-    Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
-
-    if (registered == language) {
-      language.setLanguageDescriptor(descriptor, false);
-      createLanguageLibs(language, descriptor, MPSModuleRepository.getInstance());
-    }
-
-    return registered;
-  }
-
   protected Language(LanguageDescriptor descriptor, IFile file) {
     myDescriptorFile = file;
     myLanguageDescriptor = descriptor;
@@ -590,28 +573,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return res;
   }
 
-  private static void createLanguageLibs(Language language, LanguageDescriptor languageDescriptor, MPSModuleRepository repository) {
-    List<SolutionDescriptor> solutionDescriptors = createLanguageLibraryDescriptors(languageDescriptor);
-
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      jetbrains.mps.project.StubSolution.newInstance(sd, language);
-    }
-  }
-
-  private static List<SolutionDescriptor> createLanguageLibraryDescriptors(LanguageDescriptor ld) {
-    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
-    for (jetbrains.mps.project.structure.modules.StubSolution ss : ld.getStubSolutions()) {
-      SolutionDescriptor descriptor = new SolutionDescriptor();
-      descriptor.setId(ss.getId());
-      descriptor.setNamespace(ss.getName());
-
-      descriptor.setCompileInMPS(false);
-
-      result.add(descriptor);
-    }
-    return result;
-  }
-
   @Override
   public boolean isHidden() {
     return false;
@@ -648,5 +609,10 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       if (getPackage(pack) != null) return;
       definePackage(pack, null, null, null, null, null, null, null);
     }
+  }
+
+  @Deprecated
+  public static Language newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+    return (Language) ModuleRepositoryFacade.createModule(handle, moduleOwner);
   }
 }

@@ -25,9 +25,9 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.runtime.ModuleClassLoader;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -63,22 +63,8 @@ public class Solution extends ClassLoadingModule {
     return result;
   }
 
-  public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
-    assert descriptor != null;
-    assert descriptor.getId() != null;
-
-    Solution solution = new Solution(descriptor, handle.getFile());
-
-    Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
-    if (registered == solution) {
-      solution.setSolutionDescriptor(descriptor, false);
-    }
-
-    return registered;
-  }
-
-  protected Solution(SolutionDescriptor descriptor, IFile file) {
+  /* TODO make package local, move to appropriate package */
+  public Solution(SolutionDescriptor descriptor, IFile file) {
     myDescriptorFile = file;
     mySolutionDescriptor = descriptor;
     setModuleReference(descriptor.getModuleReference());
@@ -202,11 +188,16 @@ public class Solution extends ClassLoadingModule {
     return (SolutionDescriptor) ModulesMiner.getInstance().loadModuleDescriptor(file);
   }
 
-  public boolean canLoadFromSelf(){
+  public boolean canLoadFromSelf() {
     return getModuleDescriptor().getCompileInMPS();
   }
 
   public boolean canLoad() {
     return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
+  }
+
+  @Deprecated
+  public static Solution newInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+    return (Solution) ModuleRepositoryFacade.createModule(handle, moduleOwner);
   }
 }

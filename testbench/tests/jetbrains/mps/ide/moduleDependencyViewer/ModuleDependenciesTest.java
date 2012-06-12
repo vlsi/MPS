@@ -214,7 +214,7 @@ public class ModuleDependenciesTest {
     String uuid = UUID.randomUUID().toString();
     d.setNamespace(uuid);
     d.setId(ModuleId.fromString(uuid));
-    return DevKit.newInstance(new ModuleHandle(null, d), OWNER);
+    return (DevKit) ModuleRepositoryFacade.createModule(new ModuleHandle(null, d), OWNER);
   }
 
 }

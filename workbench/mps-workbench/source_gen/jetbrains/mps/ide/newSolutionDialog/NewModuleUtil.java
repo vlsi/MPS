@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -105,7 +106,7 @@ public class NewModuleUtil {
     assert !(descriptorFile.exists());
     SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    return Solution.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    return (Solution) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
   private static SolutionDescriptor createNewSolutionDescriptor(String namespace, IFile descriptorFile) {
@@ -138,7 +139,7 @@ public class NewModuleUtil {
     assert !(descriptorFile.exists());
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    return Language.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    return (Language) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 
   private static LanguageDescriptor createNewLanguageDescriptor(String languageNamespace, IFile descriptorFile) {
@@ -167,6 +168,6 @@ public class NewModuleUtil {
     assert !(descriptorFile.exists());
     DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
     DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);
-    return DevKit.newInstance(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
+    return (DevKit) ModuleRepositoryFacade.createModule(ModulesMiner.getInstance().loadModuleHandle(descriptorFile), moduleOwner);
   }
 }

@@ -131,16 +131,82 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public static IModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
-    IModule module;
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
-      module = Language.newInstance(handle, owner);
+      return newLanguageInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
-      module = Solution.newInstance(handle, owner);
+      return newSolutionInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
-      module = DevKit.newInstance(handle, owner);
+      return newDevKitInstance(handle, owner);
     } else {
       throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
     }
-    return module;
+  }
+
+  private static Language newLanguageInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+    LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
+    assert descriptor != null;
+    assert descriptor.getId() != null;
+
+    Language language = new Language(descriptor, handle.getFile());
+
+    Language registered = MPSModuleRepository.getInstance().registerModule(language, moduleOwner);
+
+    if (registered == language) {
+      language.setLanguageDescriptor(descriptor, false);
+      createLanguageLibs(language, descriptor, MPSModuleRepository.getInstance());
+    }
+
+    return registered;
+  }
+
+  private static void createLanguageLibs(Language language, LanguageDescriptor languageDescriptor, MPSModuleRepository repository) {
+    List<SolutionDescriptor> solutionDescriptors = createLanguageLibraryDescriptors(languageDescriptor);
+
+    for (SolutionDescriptor sd : solutionDescriptors) {
+      jetbrains.mps.project.StubSolution.newInstance(sd, language);
+    }
+  }
+
+  private static List<SolutionDescriptor> createLanguageLibraryDescriptors(LanguageDescriptor ld) {
+    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
+    for (jetbrains.mps.project.structure.modules.StubSolution ss : ld.getStubSolutions()) {
+      SolutionDescriptor descriptor = new SolutionDescriptor();
+      descriptor.setId(ss.getId());
+      descriptor.setNamespace(ss.getName());
+
+      descriptor.setCompileInMPS(false);
+
+      result.add(descriptor);
+    }
+    return result;
+  }
+
+  private static Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+    SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
+    assert descriptor != null;
+    assert descriptor.getId() != null;
+
+    Solution solution = new Solution(descriptor, handle.getFile());
+
+    Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
+    if (registered == solution) {
+      solution.setSolutionDescriptor(descriptor, false);
+    }
+
+    return registered;
+  }
+
+  private static DevKit newDevKitInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
+    DevkitDescriptor descriptor = (DevkitDescriptor) handle.getDescriptor();
+    assert descriptor != null;
+    assert descriptor.getId() != null;
+
+    DevKit result = new DevKit(descriptor, handle.getFile());
+
+    DevKit registered = MPSModuleRepository.getInstance().registerModule(result, moduleOwner);
+    if (registered == result) {
+      result.setDevKitDescriptor(descriptor, false);
+    }
+    return registered;
   }
 }
