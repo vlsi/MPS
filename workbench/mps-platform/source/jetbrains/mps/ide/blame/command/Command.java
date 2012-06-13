@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.blame.command;
 
 import com.intellij.openapi.application.ApplicationInfo;
+import com.intellij.openapi.application.ex.ApplicationInfoEx;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
 import org.apache.commons.httpclient.HttpClient;
@@ -115,10 +116,7 @@ public class Command {
   }
 
   public static String getVersion() {
-    String full = ApplicationInfo.getInstance().getVersionName();
-    if (full.contains("__VERSION__")) return null; //sources version
-    int index = full.indexOf(PROJECT + " ");
-    assert index > 0 : "wrong version format";
-    return full.substring(index + PROJECT.length() + 1);
+    String version = ApplicationInfo.getInstance().getMajorVersion() + "." + ApplicationInfo.getInstance().getMinorVersion();
+    return ApplicationInfoEx.getInstanceEx().isEAP() ? version + " EAP" : version;
   }
 }
