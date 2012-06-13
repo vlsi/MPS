@@ -170,7 +170,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     List<SNode> actualArgs = SLinkOperations.getTargets(methodCallNode, "actualArgument", true);
     List<SNode> candidates = getCandidates(methodCallNode, methodName);
-    if (candidates.isEmpty()) {
+    if (candidates == null || candidates.isEmpty()) {
       return;
     }
     SNode newTarget = null;
@@ -225,7 +225,9 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   public List<SNode> getCandidates(SNode methodCall, String methodName) {
-    return ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, methodName));
+    List<SNode> availableMethodDeclarations = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, methodName));
+    assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
+    return availableMethodDeclarations;
   }
 
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
