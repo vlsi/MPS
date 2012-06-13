@@ -20,39 +20,50 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopup;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.util.LinkedHashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ShowImplementationComponent extends JPanel {
   private JComboBox myNodeChooser;
   private JLabel myLocationLabel = new JLabel("<location>");
-  private JLabel myCountLanel = new JLabel("<count>");
+  private JLabel myCountLabel = new JLabel("<count>");
   private EmbeddableEditor myEditor;
-  private List<SNode> myNodes;
-  private Map<String, SNode> myItemToNode = new LinkedHashMap<String, SNode>();
   private JComponent myEditorPanel;
   private int mySelectedIndex = -1;
   private JBPopup myPopup;
+  private Project myProject;
+
+  private List<SNode> myNodes = new ArrayList<SNode>();
+  private List<Icon> myNodeIcons = new ArrayList<Icon>();
+  private List<String> myNodeLabels = new ArrayList<String>();
+  private List<Icon> myModuleIcons = new ArrayList<Icon>();
+  private List<String> myModuleLabels = new ArrayList<String>();
+  private List<SNodePointer> myOriginalNodePointers = new ArrayList<SNodePointer>();
 
   public ShowImplementationComponent(List<SNode> nodes, IOperationContext context) {
-    myNodes = nodes;
-    myEditor = new EmbeddableEditor(context, new ModelOwner() {
-    }, SNodeOperations.copyNode(nodes.get(0)), false);
-    for (SNode node : myNodes) {
-      myItemToNode.put(node.getModel().getSModelReference() + ":" + node.getSNodeId(), node);
+    ModelAccess.assertLegalRead();
+
+    for (SNode node : nodes) {
+      myNodes.add(SNodeOperations.copyNode(node));
+      myNodeIcons.add(IconManager.getIconFor(node, true));
+      myNodeLabels.add(node.getPresentation());
+      myModuleIcons.add(IconManager.getIconFor(node.getModel().getModelDescriptor().getModule()));
+      myModuleLabels.add(node.getModel().getModelDescriptor().getModule().getModuleFqName());
+      myOriginalNodePointers.add(new SNodePointer(node));
     }
+
+    myEditor = new EmbeddableEditor(context, new ModelOwner() {
+    }, myNodes.get(0), false);
+    myProject = context.getProject();
+
     init();
     updateControls();
   }
@@ -63,6 +74,18 @@ public class ShowImplementationComponent extends JPanel {
 
   public JComponent getPrefferedFocusableComponent() {
     return myNodeChooser;
+  }
+
+  public void dispose() {
+    for (SNode node : myNodes) {
+      node.delete();
+    }
+    myNodes = null;
+    myNodeIcons = null;
+    myNodeLabels = null;
+    myModuleIcons = null;
+    myModuleLabels = null;
+    myOriginalNodePointers = null;
   }
 
   private ActionToolbar createToolbar() {
@@ -88,22 +111,22 @@ public class ShowImplementationComponent extends JPanel {
   }
 
   private void updateControls() {
-    String selectedItem = (String) myNodeChooser.getSelectedItem();
-    final SNode selectedNode = myItemToNode.get(selectedItem);
-    final int index = myNodes.indexOf(selectedNode);
+    final int index = myNodeChooser.getSelectedIndex();
+    if (index == -1) {
+      return;
+    }
     if (mySelectedIndex == index) return;
-    ModelAccess.instance().runReadInEDT(new Runnable() {
+    ModelAccess.instance().runCommandInEDT(new Runnable() {
       public void run() {
-        IModule module = selectedNode.getModel().getModelDescriptor().getModule();
-        myLocationLabel.setText(module.getModuleFqName());
-        myLocationLabel.setIcon(IconManager.getIconFor(module));
-        myCountLanel.setText((index + 1) + " of " + myNodes.size());
-        myEditor.setNode(SNodeOperations.copyNode(myNodes.get(index)));
+        myLocationLabel.setText(myModuleLabels.get(index));
+        myLocationLabel.setIcon(myModuleIcons.get(index));
+        myCountLabel.setText((index + 1) + " of " + myNodes.size());
+        myEditor.setNode(myNodes.get(index));
         myEditor.setBackground(new Color(255, 255, 215));
         mySelectedIndex = index;
         myEditorPanel.repaint();
       }
-    });
+    }, myProject);
   }
 
   private void init() {
@@ -114,25 +137,21 @@ public class ShowImplementationComponent extends JPanel {
     add(northPanel, BorderLayout.NORTH);
     JPanel toolbarPanel = new JPanel(new FlowLayout());
     toolbarPanel.add(createToolbar().getComponent());
-    this.myNodeChooser = new JComboBox(myItemToNode.keySet().toArray());
+
+    this.myNodeChooser = new JComboBox(myNodeLabels.toArray());
     myNodeChooser.setRenderer(new DefaultListCellRenderer() {
       @Override
       public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
         super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-        updateControls();
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            SNode root = myItemToNode.get((String) value).getContainingRoot();
-            setIcon(IconManager.getIconFor(root, true));
-            setText(root.getPresentation());
-          }
-        });
+        if (index != -1) {
+          setIcon(myNodeIcons.get(index));
+          setText(myNodeLabels.get(index));
+        }
         return this;
       }
     });
     toolbarPanel.add(myNodeChooser);
-    toolbarPanel.add(myCountLanel);
+    toolbarPanel.add(myCountLabel);
     northPanel.add(toolbarPanel, BorderLayout.LINE_START);
     northPanel.add(myLocationLabel, BorderLayout.LINE_END);
 
@@ -190,12 +209,15 @@ public class ShowImplementationComponent extends JPanel {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {
-          IOperationContext operationContext = myEditor.getEditor().getOperationContext();
-          SNode selectedNode = myItemToNode.get((String) myNodeChooser.getSelectedItem());
-          if (selectedNode.isDisposed() || !(selectedNode.isRegistered()) || selectedNode.getModel().getModelDescriptor() != null) {
+          int selectedIndex = myNodeChooser.getSelectedIndex();
+          if (selectedIndex < 0) {
             return;
           }
-          // TODO: use node pointers here
+          IOperationContext operationContext = myEditor.getEditor().getOperationContext();
+          SNode selectedNode = myOriginalNodePointers.get(selectedIndex).getNode();
+          if (selectedNode == null) {
+            return;
+          }
           NavigationSupport.getInstance().openNode(operationContext, selectedNode, true, true);
           NavigationSupport.getInstance().selectInTree(operationContext, selectedNode, false);
           if (myClosePopup) {

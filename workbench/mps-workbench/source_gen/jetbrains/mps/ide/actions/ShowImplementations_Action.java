@@ -29,6 +29,8 @@ import jetbrains.mps.workbench.components.ShowImplementationComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.util.Computable;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
@@ -118,12 +120,22 @@ public class ShowImplementations_Action extends BaseAction {
           ListSequence.fromList(nodes).addElement(foundNode);
         }
       }
-      Project project = ((Project) MapSequence.fromMap(_params).get("project"));
+      final Project project = ((Project) MapSequence.fromMap(_params).get("project"));
       ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
         public void run() {
           String title = "Definition of " + ((SNode) MapSequence.fromMap(_params).get("node")).getPresentation();
-          ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
-          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setRequestFocus(true).setProject(((Project) MapSequence.fromMap(_params).get("project"))).setMovable(true).setResizable(true).setTitle(title).createPopup();
+          final ShowImplementationComponent component = new ShowImplementationComponent(nodes, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+
+          JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(component, component.getPrefferedFocusableComponent()).setRequestFocus(true).setProject(((Project) MapSequence.fromMap(_params).get("project"))).setMovable(true).setResizable(true).setTitle(title).setCancelCallback(new Computable<Boolean>() {
+            public Boolean compute() {
+              ModelAccess.instance().runCommandInEDT(new Runnable() {
+                public void run() {
+                  component.dispose();
+                }
+              }, ProjectHelper.toMPSProject(project));
+              return Boolean.TRUE;
+            }
+          }).createPopup();
           popup.show(new RelativePoint(((EditorCell) MapSequence.fromMap(_params).get("cell")).getEditor(), new Point(((EditorCell) MapSequence.fromMap(_params).get("cell")).getX(), ((EditorCell) MapSequence.fromMap(_params).get("cell")).getY())));
           component.getPrefferedFocusableComponent().setRequestFocusEnabled(true);
           component.setPopup(popup);

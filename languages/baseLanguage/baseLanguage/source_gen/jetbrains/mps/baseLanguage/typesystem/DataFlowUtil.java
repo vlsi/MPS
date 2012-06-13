@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ILocalDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ILocalReference_Behavior;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.errors.BaseQuickFixProvider;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -123,7 +124,7 @@ public class DataFlowUtil {
         if (refAncestor == null || (ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference) != null && SNodeOperations.getAncestor(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false) == refAncestor)) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable used before it is initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907669", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(read, "Variable '" + BaseConcept_Behavior.call_getPresentation_1213877396640(ILocalReference_Behavior.call_getDeclaration_3262277503800831941(localReference)) + "' might not have been initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1529050434900907669", null, errorTarget);
           }
         }
       }

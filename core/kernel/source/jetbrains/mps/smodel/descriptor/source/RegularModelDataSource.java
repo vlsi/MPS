@@ -212,7 +212,6 @@ public class RegularModelDataSource extends FileBasedModelDataSource implements 
     return true;
   }
 
-  @NotNull()
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }

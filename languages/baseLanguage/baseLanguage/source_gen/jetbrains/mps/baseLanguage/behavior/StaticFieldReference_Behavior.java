@@ -5,10 +5,11 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.reloading.ReflectionUtil;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.reloading.ReflectionUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class StaticFieldReference_Behavior {
   public static void init(SNode thisNode) {
@@ -16,8 +17,21 @@ public class StaticFieldReference_Behavior {
 
   public static Object virtual_eval_1213877519769(SNode thisNode, IModule module) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
-    String name = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "name");
-    return ReflectionUtil.getConstant(module, classifier, name);
+    SNode f = SLinkOperations.getTarget(thisNode, "variableDeclaration", false);
+
+    IModule m = check_o8sx3d_a0d0a(SNodeOperations.getModel(f).getModelDescriptor());
+    if (m != null) {
+      Object c = null;
+      try {
+        c = ReflectionUtil.getConstant(m, classifier, SPropertyOperations.getString(f, "name"));
+      } catch (Throwable t) {
+        // do nothing 
+      }
+      if (c != null) {
+        return c;
+      }
+    }
+    return ReflectionUtil.getConstant(module, classifier, SPropertyOperations.getString(f, "name"));
   }
 
   public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
@@ -34,5 +48,12 @@ public class StaticFieldReference_Behavior {
         null
       );
     }
+  }
+
+  private static IModule check_o8sx3d_a0d0a(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }

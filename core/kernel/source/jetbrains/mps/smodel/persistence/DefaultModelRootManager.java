@@ -38,7 +38,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
 
   public Collection<SModelDescriptor> load(@NotNull ModelRoot root, IModule module) {
     List<ModelHandle> models = new ArrayList<ModelHandle>();
-    ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), root, models);
+    ModelsMiner.collectModelDescriptors(FileSystem.getInstance().getFileByPath(root.getPath()), models);
 
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (ModelHandle handle : models) {

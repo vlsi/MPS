@@ -109,7 +109,6 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SubstituteNodeBuilderVariableReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.Substitute_SimpleString_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SurroundWithAction_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.WrapperSubstituteMenuPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />

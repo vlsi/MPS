@@ -42,8 +42,7 @@ public class AffectedVersionTest extends TestCase {
     HttpClient client = new HttpClient();
     Poster.setTimeouts(client);
 
-    Query q = new Query("", "");
-    Response r = Command.login(client, q);
+    Response r = Command.login(client, Query.ANONYMOUS);
     if (!r.isSuccess()) fail("Was not able to login anonymously");
 
     GetMethod p = new GetMethod(URL);

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.actions.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class SurroundWithAction_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
+public abstract class SurroundWithAction_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public SurroundWithAction_BehaviorDescriptor() {
   }
 

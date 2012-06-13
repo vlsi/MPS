@@ -285,7 +285,7 @@ public class TestMakeOnRealProject {
     runtimeSolutionDescriptorFile.createNewFile();
     SolutionDescriptorPersistence.saveSolutionDescriptor(runtimeSolutionDescriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(runtimeSolutionDescriptorFile));
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(runtimeSolutionDescriptorFile);
-    return Solution.newInstance(handle, myModuleOwner);
+    return (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
   }
 
   private Language createNewLanguage() {
@@ -304,7 +304,7 @@ public class TestMakeOnRealProject {
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d, MacrosFactory.forModuleFile(descriptorFile));
 
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
-    return Language.newInstance(handle, myModuleOwner);
+    return (Language) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
   }
 
   private Solution createNewSolution() {
@@ -326,7 +326,7 @@ public class TestMakeOnRealProject {
     SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, solutionDescriptor, MacrosFactory.forModuleFile(descriptorFile));
 
     ModuleHandle handle = ModulesMiner.getInstance().loadModuleHandle(descriptorFile);
-    return Solution.newInstance(handle, myModuleOwner);
+    return (Solution) ModuleRepositoryFacade.createModule(handle, myModuleOwner);
   }
 
 }

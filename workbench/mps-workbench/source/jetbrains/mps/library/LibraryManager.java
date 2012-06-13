@@ -21,6 +21,7 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.library.contributor.BootstrapLibContributor;
 import jetbrains.mps.workbench.WorkbenchPathManager;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -44,7 +45,12 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
 
-  public LibraryManager(MPSCoreComponents coreComponents) {
+  /**
+   *
+   * @param coreComponents
+   * @param bootstrapLibContributor for right initialization order
+   */
+  public LibraryManager(MPSCoreComponents coreComponents, BootstrapLibContributor bootstrapLibContributor) {
     super(coreComponents.getModuleRepository());
   }
 

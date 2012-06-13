@@ -11,11 +11,13 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5617550519002745363">
       <property name="name" nameId="tpck.1169194664001" value="BuildProject" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/buildProject.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5617550519002745364">
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/layout.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848004876" resolveInfo="BuildLayout_AbstractContainer" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5617550519002745375">
@@ -36,6 +38,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848036984">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Folder" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/layout.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848050060" resolveInfo="BuildLayout_NamedContainer" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848036997">
@@ -51,11 +54,13 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848050071">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Zip" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/archive.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848050060" resolveInfo="BuildLayout_NamedContainer" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848050074">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Jar" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/archive.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848050060" resolveInfo="BuildLayout_NamedContainer" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848073736">
@@ -66,6 +71,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848073784">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaModule" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/javaModule.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848073736" resolveInfo="BuildProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848073790">
@@ -81,11 +87,13 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848136194">
       <property name="name" nameId="tpck.1169194664001" value="BuildFolderMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/macro.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5617550519002745375" resolveInfo="BuildMacro" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7389400916848153117">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSourceMacroRelativePath" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/path.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7321017245476976379" resolveInfo="BuildRelativePath" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2754769020641429190">
@@ -106,6 +114,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6057319140845467763">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java.Library" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaLibrary" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/library.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848073736" resolveInfo="BuildProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6057319140845478688">
@@ -121,6 +130,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4993211115183325728">
       <property name="name" nameId="tpck.1169194664001" value="BuildProjectDependency" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Dependencies" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/dependency.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5617550519002745379" resolveInfo="BuildDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3542413272732529456">
@@ -135,6 +145,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5481553824944787378">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="SourcePath" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSourceProjectRelativePath" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/path.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7321017245476976379" resolveInfo="BuildRelativePath" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8618885170173601777">
@@ -164,6 +175,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3767587139141066978">
       <property name="name" nameId="tpck.1169194664001" value="BuildVariableMacro" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Macro" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/macro.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5617550519002745375" resolveInfo="BuildMacro" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5248329904288051100">
@@ -246,6 +258,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4380385936562003279">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Names" />
       <property name="name" nameId="tpck.1169194664001" value="BuildString" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/string.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1258644073388922138">
@@ -361,6 +374,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.External" />
       <property name="name" nameId="tpck.1169194664001" value="BuildExternalLayout" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/externalLayout.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848004876" resolveInfo="BuildLayout_AbstractContainer" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7181125477683218683">
@@ -375,6 +389,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7181125477683417252">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.External" />
       <property name="name" nameId="tpck.1169194664001" value="BuildExternalLayoutDependency" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/dependency.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5617550519002745379" resolveInfo="BuildDependency" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5610619299013057363">
@@ -413,6 +428,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="927724900262033858">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Project.Java" />
       <property name="name" nameId="tpck.1169194664001" value="BuildSource_JavaOptions" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/javaOptions.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848073736" resolveInfo="BuildProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1659807394254261074">
@@ -487,6 +503,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8577651205286814211">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.File" />
       <property name="name" nameId="tpck.1169194664001" value="BuildLayout_Tar" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/archive.png" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7389400916848050060" resolveInfo="BuildLayout_NamedContainer" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4198392933254416812">
@@ -1114,9 +1131,8 @@
     </node>
   </root>
   <root id="5248329904287857081">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5248329904287857083">
-      <property name="value" nameId="tpce.1105725733873" value="copy" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3558796834797002642">
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5248329904288140518">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1117643560963351145" resolveInfo="BuildLayout_FileSet" />
@@ -1943,7 +1959,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="5610619299013425874" resolveInfo="BuildSource_SingleFile" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="9126048691955220769">
-      <property name="value" nameId="tpce.1105725733873" value="file (new)" />
+      <property name="value" nameId="tpce.1105725733873" value="file" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="9126048691955221291">
@@ -1954,7 +1970,7 @@
   <root id="9126048691955220772" />
   <root id="2750015747481074431">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2750015747481074434">
-      <property name="value" nameId="tpce.1105725733873" value="files from (new)" />
+      <property name="value" nameId="tpce.1105725733873" value="files from" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2750015747481074432">

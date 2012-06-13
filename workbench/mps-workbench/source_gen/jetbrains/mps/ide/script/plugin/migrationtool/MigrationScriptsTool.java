@@ -98,10 +98,7 @@ public class MigrationScriptsTool extends TabbedUsagesTool {
           }
         };
         myViews.add(view);
-        String tabName = "";
-        if (myViews.size() > 1) {
-          tabName = "" + (myViews.size() - 1);
-        }
+        String tabName = "    ";
         Content content = addContent(view.getComponent(), tabName, IconManager.getIconForIHolder(query.getObjectHolder()), false);
         getContentManager().setSelectedContent(content);
       }

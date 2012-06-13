@@ -164,6 +164,9 @@ public abstract class BaseNodeEditor implements Editor {
 
     final BaseEditorState s = (BaseEditorState) state;
     if (s.myMemento != null) {
+      assert myEditorComponent != null;
+      assert myEditorComponent.getEditorContext() != null;
+
       getEditorContext().setMemento(s.myMemento);
     }
     if (s.myInspectorMemento != null) {

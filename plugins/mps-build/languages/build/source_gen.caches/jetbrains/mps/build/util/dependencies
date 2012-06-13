@@ -201,7 +201,6 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_Node_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildLayout_PathElement_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
-    <classNode dependClassName="jetbrains.mps.build.workflow.behavior.FilteringScope" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -212,6 +211,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.scope.DelegatingScope" />
+    <classNode dependClassName="jetbrains.mps.scope.FilteringScope" />
     <classNode dependClassName="jetbrains.mps.scope.ModelPlusImportedScope" />
     <classNode dependClassName="jetbrains.mps.scope.SimpleRoleScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

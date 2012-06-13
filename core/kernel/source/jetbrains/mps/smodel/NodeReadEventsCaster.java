@@ -105,27 +105,27 @@ public class NodeReadEventsCaster {
     }
 
     public void fireNodeChildReadAccess(SNode node, String childRole, SNode child) {
-      if (myEventsBlocked || !node.getModelInternal().canFireEvent()) return;
+      if (myEventsBlocked || !node.getModelInternal().canFireReadEvent()) return;
       myListenersStack.peek().nodeChildReadAccess(node, childRole, child);
     }
 
     public void fireNodePropertyReadAccess(SNode node, String propertyName, String value) {
-      if (myEventsBlocked || !node.getModelInternal().canFireEvent()) return;
+      if (myEventsBlocked || !node.getModelInternal().canFireReadEvent()) return;
       myListenersStack.peek().nodePropertyReadAccess(node, propertyName, value);
     }
 
     public void fireNodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-      if (myEventsBlocked || !node.getModelInternal().canFireEvent()) return;
+      if (myEventsBlocked || !node.getModelInternal().canFireReadEvent()) return;
       myListenersStack.peek().nodeReferentReadAccess(node, referentRole, referent);
     }
 
     public void fireNodeUnclassifiedReadAccess(SNode node) {
-      if (myEventsBlocked || !node.getModelInternal().canFireEvent()) return;
+      if (myEventsBlocked || !node.getModelInternal().canFireReadEvent()) return;
       myListenersStack.peek().nodeUnclassifiedReadAccess(node);
     }
 
     public void fireModelNodesReadAccess(SModel model) {
-      if (myEventsBlocked || !model.canFireEvent()) return;
+      if (myEventsBlocked || !model.canFireReadEvent()) return;
       myListenersStack.peek().modelNodesReadAccess(model);
     }
 

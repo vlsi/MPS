@@ -7,7 +7,7 @@ import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.scope.EmptyScope;
-import jetbrains.mps.lang.scopes.runtime.FilteringScope;
+import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;

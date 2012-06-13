@@ -139,7 +139,10 @@ public class LibraryInitializer implements CoreComponent {
         }
       };
       myLibsToOwners.put(loadLib, owner);
-      ModulesMiner.getInstance().readModuleDescriptors(FileSystem.getInstance().getFileByPath(loadLib), owner, refreshFiles);
+      List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(loadLib), refreshFiles);
+      for (ModuleHandle moduleHandle : moduleHandles) {
+        ModuleRepositoryFacade.createModule(moduleHandle, owner);
+      }
       fireOnLoad(owner);
     }
 
@@ -149,7 +152,7 @@ public class LibraryInitializer implements CoreComponent {
     LanguageRegistry.getInstance().loadLanguages();
     ExtensionRegistry.getInstance().loadExtensionDescriptors();
 
-    for (IModule m:MPSModuleRepository.getInstance().getAllModules()){
+    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       m.invalidateDependencies();
     }
   }

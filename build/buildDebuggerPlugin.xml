@@ -67,17 +67,12 @@
       <zipfileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <mkdir dir="${build.tmp}/default/nanocProject.zip" />
-    <mkdir dir="${build.tmp}/default/nanocProject.zip/nanocProject" />
-    <copy todir="${build.tmp}/default/nanocProject.zip/nanocProject">
-      <fileset dir="${mps_home}/plugins/debugger-api/languages/nanoc">
+    <zip destfile="${build.layout}/plugins/mps-debugger-api/nanocProject.zip">
+      <zipfileset dir="${mps_home}/plugins/debugger-api/languages/nanoc" prefix="nanocProject">
         <exclude name="**/*.class" />
         <exclude name="**/classes_gen/**" />
         <exclude name="**/classes_gen" />
-      </fileset>
-    </copy>
-    <zip destfile="${build.layout}/plugins/mps-debugger-api/nanocProject.zip">
-      <fileset dir="${build.tmp}/default/nanocProject.zip" />
+      </zipfileset>
     </zip>
     <mkdir dir="${build.layout}/plugins/mps-debugger-java" />
     <mkdir dir="${build.layout}/plugins/mps-debugger-java/META-INF" />

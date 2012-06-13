@@ -548,9 +548,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Code" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968047817" />
-    <node type="tgbt.ApplicationPluginDeclaration" typeId="tgbt.481983775135178840" id="6996282843575781808">
-      <property name="name" nameId="tpck.1169194664001" value="MPSDevkit" />
-    </node>
   </roots>
   <root id="8586967776370449177">
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8586967776370449178">
@@ -13469,33 +13466,5 @@
     </node>
   </root>
   <root id="7162597690968047817" />
-  <root id="6996282843575781808">
-    <node role="initBlock" roleId="tgbt.481983775135178842" type="tgbt.ApplicationPluginInitBlock" typeId="tgbt.481983775135178851" id="6996282843575781809">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6996282843575781810">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3386199702747906808">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3386199702747907224">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="llbr.~NewProjectWizard" resolveInfo="NewProjectWizard" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="llbr.~NewProjectWizard%dsetSkipLanguageStep(boolean)%cvoid" resolveInfo="setSkipLanguageStep" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3386199702747907225">
-              <property name="value" nameId="tpee.1068580123138" value="false" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="disposeBlock" roleId="tgbt.481983775135178843" type="tgbt.ApplicationPluginDisposeBlock" typeId="tgbt.481983775135178846" id="6996282843575781811">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6996282843575781812">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6996282843575781813">
-          <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6996282843575781814">
-            <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="llbr.~NewProjectWizard" resolveInfo="NewProjectWizard" />
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="llbr.~NewProjectWizard%dsetSkipLanguageStep(boolean)%cvoid" resolveInfo="setSkipLanguageStep" />
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="6996282843575781815">
-              <property name="value" nameId="tpee.1068580123138" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </root>
 </model>
 

@@ -20,10 +20,8 @@ import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import org.jetbrains.annotations.NonNls;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.UUID;
 

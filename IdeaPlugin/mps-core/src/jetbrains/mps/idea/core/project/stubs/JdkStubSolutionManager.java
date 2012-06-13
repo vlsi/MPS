@@ -36,6 +36,11 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
   private ProjectJdkTable myTable;
   private MessageBusConnection myListenerConnection;
 
+  @Override
+  public boolean isHidden() {
+    return false;
+  }
+
   @SuppressWarnings("UnusedParameters")
   public JdkStubSolutionManager(MPSCoreComponents core, ProjectJdkTable table) {
     myTable = table;

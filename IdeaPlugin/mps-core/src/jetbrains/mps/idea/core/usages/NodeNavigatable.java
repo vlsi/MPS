@@ -23,8 +23,10 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.pom.Navigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -53,20 +55,32 @@ public abstract class NodeNavigatable implements Navigatable {
   }
 
   @Override
-  public void navigate(boolean focus) {
-    if (canNavigate()) {
-      openEditor(focus);
-    }
+  public void navigate(final boolean focus) {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (canNavigate()) {
+          openEditor(focus);
+        }
+      }
+    });
   }
 
   public void openEditor(final boolean focus) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        NavigationSupport.getInstance().openNode(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), myNode, focus, !myNode.isRoot());
-      }
-    });
 
+
+    SModelDescriptor modelDescriptor = myNode.getModel().getModelDescriptor();
+    if (modelDescriptor == null) return;
+
+    IModule module = modelDescriptor.getModule();
+    if (module == null) return;
+
+
+    jetbrains.mps.project.Project project = ProjectHelper.toMPSProject(myProject);
+    if (project == null) return;
+
+    ModuleContext context = new ModuleContext(module, project);
+    NavigationSupport.getInstance().openNode(context, myNode, focus, !myNode.isRoot());
   }
 
   public abstract boolean isValid();

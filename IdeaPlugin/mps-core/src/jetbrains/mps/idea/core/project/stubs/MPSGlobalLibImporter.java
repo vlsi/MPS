@@ -32,4 +32,9 @@ public class MPSGlobalLibImporter extends BaseLibImporter implements Application
   protected LibraryTable getLibTable() {
     return myTable;
   }
+
+  @Override
+  public boolean isHidden() {
+    return false;
+  }
 }

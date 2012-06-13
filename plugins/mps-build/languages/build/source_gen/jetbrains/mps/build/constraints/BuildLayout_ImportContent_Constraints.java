@@ -20,7 +20,7 @@ import jetbrains.mps.build.util.ScopeUtil;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.build.workflow.behavior.FilteringScope;
+import jetbrains.mps.scope.FilteringScope;
 
 public class BuildLayout_ImportContent_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_cl5pbm_a0a2a0a0a1a0b0a1a0 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299013068425");

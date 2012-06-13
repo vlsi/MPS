@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
+import jetbrains.mps.workbench.MPSApplicationInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -26,7 +26,7 @@ import javax.lang.model.SourceVersion;
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.net.URL;
@@ -95,7 +95,7 @@ public class SolutionStep extends BaseStep {
   }
 
   public URL getImageURL() {
-    return Icons.NEW_PROJECT_IMAGE_URL;
+    return MPSApplicationInfo.getInstance().getDialogImageURL();
   }
 
   @NotNull

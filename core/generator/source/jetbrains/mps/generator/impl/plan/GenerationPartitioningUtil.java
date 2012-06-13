@@ -212,7 +212,10 @@ public class GenerationPartitioningUtil {
   }
 
   private static String asString(ModuleReference generatorRef) {
-    Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(generatorRef);
+    Generator generator = (Generator) ModuleRepositoryFacade.getInstance().getModule(generatorRef);
+    if (generator == null) {
+      return "unknown(" + generatorRef.toString() + ")";
+    }
     return generator.getAlias();
   }
 }

@@ -19,7 +19,7 @@ import com.intellij.ide.wizard.CommitStepException;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.workbench.WorkbenchPathManager;
-import jetbrains.mps.workbench.dialogs.project.newproject.icons.Icons;
+import jetbrains.mps.workbench.MPSApplicationInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -79,7 +79,7 @@ public class ProjectStep extends BaseStep {
   }
 
   public URL getImageURL() {
-    return Icons.NEW_PROJECT_IMAGE_URL;
+    return MPSApplicationInfo.getInstance().getDialogImageURL();
   }
 
   @NotNull

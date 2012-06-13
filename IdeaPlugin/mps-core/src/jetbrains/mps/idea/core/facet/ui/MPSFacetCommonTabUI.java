@@ -25,74 +25,84 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import java.util.Set;
 
 /**
  * evgeny, 10/26/11
  */
 public class MPSFacetCommonTabUI {
 
-    private JPanel rootPanel;
-    private JComponent myCentralComponent;
-    private JTextField mySolutionNamespace;
+  private JPanel rootPanel;
+  private JComponent myCentralComponent;
+  private JTextField mySolutionNamespace;
 
-    private Disposable myParentDisposable;
-    private MPSFacetSourcesTab mySourcesTab;
-    private MPSFacetPathsTab myPathsTab;
-    private FacetEditorContext myContext;
-    private UsedLanguagesTable myUsedLanguagesTab;
+  private Disposable myParentDisposable;
+  private MPSFacetSourcesTab mySourcesTab;
+  private MPSFacetPathsTab myPathsTab;
+  private FacetEditorContext myContext;
+  private UsedLanguagesTable myUsedLanguagesTab;
 
-    public MPSFacetCommonTabUI(FacetEditorContext context, Disposable parentDisposable) {
-        myParentDisposable = parentDisposable;
-        myContext = context;
+  public MPSFacetCommonTabUI(FacetEditorContext context, Disposable parentDisposable) {
+    myParentDisposable = parentDisposable;
+    myContext = context;
+  }
+
+  public void setData(MPSConfigurationBean data) {
+    refreshSolutionDescriptorName();
+    mySourcesTab.setData(data);
+    myPathsTab.setData(data);
+    myUsedLanguagesTab.setData(data);
+  }
+
+  private void refreshSolutionDescriptorName() {
+    ModifiableModuleModel moduleModel = ProjectStructureConfigurable.getInstance(myContext.getProject()).getContext().getModulesConfigurator().getModuleModel();
+    String moduleName = moduleModel.getNewName(myContext.getModule());
+    if (moduleName == null) {
+      moduleName = myContext.getModule().getName();
     }
+    mySolutionNamespace.setText(moduleName);
+  }
 
-    public void setData(MPSConfigurationBean data) {
-        refreshSolutionDescriptorName();
-        mySourcesTab.setData(data);
-        myPathsTab.setData(data);
-        myUsedLanguagesTab.setData(data);
-    }
+  public void getData(MPSConfigurationBean data) {
+    mySourcesTab.getData(data);
+    myPathsTab.getData(data);
+    myUsedLanguagesTab.getData(data);
+  }
 
-    private void refreshSolutionDescriptorName() {
-        ModifiableModuleModel moduleModel = ProjectStructureConfigurable.getInstance(myContext.getProject()).getContext().getModulesConfigurator().getModuleModel();
-        String moduleName = moduleModel.getNewName(myContext.getModule());
-        if (moduleName == null) {
-            moduleName = myContext.getModule().getName();
-        }
-        mySolutionNamespace.setText(moduleName);
-    }
+  public boolean isModified(MPSConfigurationBean data) {
+    return mySourcesTab.isModified(data) || myPathsTab.isModified(data) || myUsedLanguagesTab.isModified(data);
+  }
 
-    public void getData(MPSConfigurationBean data) {
-        mySourcesTab.getData(data);
-        myPathsTab.getData(data);
-        myUsedLanguagesTab.getData(data);
-    }
+  public JPanel getRootPanel() {
+    return rootPanel;
+  }
 
-    public boolean isModified(MPSConfigurationBean data) {
-        return mySourcesTab.isModified(data) || myPathsTab.isModified(data) || myUsedLanguagesTab.isModified(data);
-    }
+  private void createUIComponents() {
+    createCentralComponent();
+  }
 
-    public JPanel getRootPanel() {
-        return rootPanel;
-    }
+  private void createCentralComponent() {
+    TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(myParentDisposable);
+    tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myContext, myParentDisposable)).getRootPanel(), null);
+    tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab(myContext)).getRootPanel(), null);
+    tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, (myUsedLanguagesTab = new UsedLanguagesTable() {
+      @Override
+      protected void doAddElements(Set<ModuleReference> elementsToAdd) {
+        super.doAddElements(elementsToAdd);
+        new ModuleRuntimeLibrariesManager(myContext, elementsToAdd).addMissingLibraries();
+      }
+    }).createComponent(), null);
+    tabbedPane.addTab(MPSBundle.message("facet.devkits.tab.name"), MPSIcons.DEVKITS_TAB_ICON, new JPanel(), null);
+    myCentralComponent = tabbedPane.getComponent();
+  }
 
-    private void createUIComponents() {
-        createCentralComponent();
-    }
-
-    private void createCentralComponent() {
-        TabbedPaneWrapper tabbedPane = new TabbedPaneWrapper(myParentDisposable);
-        tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, (mySourcesTab = new MPSFacetSourcesTab(myContext, myParentDisposable)).getRootPanel(), null);
-        tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, (myPathsTab = new MPSFacetPathsTab(myContext)).getRootPanel(), null);
-        tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, (myUsedLanguagesTab = new UsedLanguagesTable()).createComponent(), null);
-        tabbedPane.addTab(MPSBundle.message("facet.devkits.tab.name"), MPSIcons.DEVKITS_TAB_ICON, new JPanel(), null);
-        myCentralComponent = tabbedPane.getComponent();
-    }
-
-    public void onTabEntering() {
-        refreshSolutionDescriptorName();
-        myPathsTab.onTabEntering();
-    }
+  public void onTabEntering() {
+    refreshSolutionDescriptorName();
+    myPathsTab.onTabEntering();
+  }
 }

@@ -22,13 +22,13 @@ import java.io.File;
 import java.util.List;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.build.ant.FileMPSProject;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -142,17 +142,7 @@ public class GeneratorWorker extends MpsWorker {
 
       FileMPSProject p = new FileMPSProject(file);
       p.init(new FileMPSProject.ProjectDescriptor(file));
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          ClassLoaderManager.getInstance().updateClassPath();
-          new ModuleMaker().make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
-        }
-      });
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        }
-      });
+      makeProject();
       p.projectOpened();
 
       info("Loaded project " + p);
@@ -168,12 +158,6 @@ public class GeneratorWorker extends MpsWorker {
     LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
     collectFromModuleFiles(modules);
-    // need to actually load the models 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-      }
-    });
     collectFromModelFiles(models);
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, models);
     if (go.hasAnythingToGenerate()) {
@@ -189,6 +173,20 @@ public class GeneratorWorker extends MpsWorker {
 
     dispose();
     showStatistic();
+  }
+
+  protected void makeProject() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().updateClassPath();
+        new ModuleMaker().make(MPSModuleRepository.getInstance().getAllModules(), new EmptyProgressMonitor());
+      }
+    });
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      }
+    });
   }
 
   private Iterable<IModule> withGenerators(Iterable<IModule> modules) {
@@ -293,8 +291,7 @@ public class GeneratorWorker extends MpsWorker {
 
   /**
    * We already have graphs in MPS, why we need this class here?
-   * 
-   * @param V vertex type
+   * V vertex type
    */
   public static class Graph<V> {
     private Set<V> vertices = SetSequence.fromSet(new HashSet<V>());

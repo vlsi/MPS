@@ -39,6 +39,10 @@ public interface IMakeService {
     public static void set(IMakeService service) {
       Component = service;
     }
+
+    public static boolean isSessionActive() {
+      return Component != null && Component.isSessionActive();
+    }
   }
 
 }

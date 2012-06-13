@@ -219,6 +219,10 @@ public class SModel {
     return isRegistered();
   }
 
+  protected boolean canFireReadEvent() {
+    return canFireEvent();
+  }
+
   boolean isRegistered() {
     return myModelDescriptor != null && myModelDescriptor.isRegistered();
   }
