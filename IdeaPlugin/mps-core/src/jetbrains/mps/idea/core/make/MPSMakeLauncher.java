@@ -27,11 +27,14 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.build.ant.AntBootstrap;
 import jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker;
+import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.util.PathManager;
 import org.apache.tools.ant.util.JavaEnvUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.*;
 
 public class MPSMakeLauncher {
 
