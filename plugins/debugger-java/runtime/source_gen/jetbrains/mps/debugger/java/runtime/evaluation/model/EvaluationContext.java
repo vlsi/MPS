@@ -9,6 +9,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
@@ -26,6 +29,20 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
   @Nullable
   public abstract SNode getLocationNode();
+
+  @Nullable
+  public IModule getLocationModule() {
+    SModel model = getLocationModel();
+    if (model == null) {
+      return null;
+    }
+    return model.getModelDescriptor().getModule();
+  }
+
+  @Nullable
+  protected SModel getLocationModel() {
+    return SNodeOperations.getModel(getLocationNode());
+  }
 
   public JavaUiState getUiState() {
     return myUiState;

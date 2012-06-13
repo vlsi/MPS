@@ -17,11 +17,9 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -34,6 +32,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.annotations.Nullable;
@@ -81,7 +80,8 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(((List<String>) CommonPaths.getJDKPath()))).union(ListSequence.fromList(getDebuggerStubPath())).visitAll(new IVisitor<String>() {
+        myAuxModule.setContextModule(myEvaluationContext.getLocationModule());
+        ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(getDebuggerStubPath())).visitAll(new IVisitor<String>() {
           public void visit(String it) {
             myAuxModule.addStubPath(it);
           }
@@ -107,7 +107,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   }
 
   private SModel getLocationModel() {
-    return SNodeOperations.getModel(myEvaluationContext.getLocationNode());
+    return myEvaluationContext.getLocationModel();
   }
 
   @Override
@@ -116,6 +116,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     if (myDebugSession.getEvaluationProvider().canEvaluate()) {
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
+          myAuxModule.setContextModule(myEvaluationContext.getLocationModule());
           createVars();
         }
       });

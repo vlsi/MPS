@@ -6,15 +6,13 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.debug.runtime.JavaUiState;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.AbstractModule;
@@ -32,6 +30,7 @@ import com.sun.jdi.Type;
 import com.sun.jdi.ClassNotLoadedException;
 import com.sun.jdi.InvalidStackFrameException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -61,20 +60,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
   public StackFrameContext(JavaUiState uiState) {
     super(uiState);
-  }
-
-  @Nullable
-  protected IModule getLocationModule() {
-    SModel model = getLocationModel();
-    if (model == null) {
-      return null;
-    }
-    return model.getModelDescriptor().getModule();
-  }
-
-  @Nullable
-  private SModel getLocationModel() {
-    return SNodeOperations.getModel(getLocationNode());
   }
 
   @Nullable
@@ -202,7 +187,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     } else {
       SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, null), true);
     }
-    SPropertyOperations.set(result, "highLevelNodeId", check_4zsmpx_a0a0g0h(highLevelNode).toString());
+    SPropertyOperations.set(result, "highLevelNodeId", check_4zsmpx_a0a0g0f(highLevelNode).toString());
     return result;
   }
 
@@ -244,31 +229,31 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     // TODO generics 
     if (type instanceof PrimitiveType) {
       if (type instanceof BooleanType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0a0b0l().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0a0b0j().createNode();
       }
       if (type instanceof ByteType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0b0b0l().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0b0b0j().createNode();
       }
       if (type instanceof ShortType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0c0b0l().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0c0b0j().createNode();
       }
       if (type instanceof LongType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0d0b0l().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0d0b0j().createNode();
       }
       if (type instanceof IntegerType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0e0b0l().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0e0b0j().createNode();
       }
       if (type instanceof DoubleType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0f0b0l().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0f0b0j().createNode();
       }
       if (type instanceof FloatType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0g0b0l().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0g0b0j().createNode();
       }
       if (type instanceof CharType) {
-        return new StackFrameContext.QuotationClass_4zsmpx_a0a0h0b0l().createNode();
+        return new StackFrameContext.QuotationClass_4zsmpx_a0a0h0b0j().createNode();
       }
     } else if (type instanceof ArrayType) {
-      return new StackFrameContext.QuotationClass_4zsmpx_a0a0a1a11().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType(), createClassifierType));
+      return new StackFrameContext.QuotationClass_4zsmpx_a0a0a1a9().createNode(getMpsTypeFromJdiType(((ArrayType) type).componentType(), createClassifierType));
     }
     return createClassifierType.invoke(type.name());
   }
@@ -277,10 +262,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     final Wrappers._boolean visible = new Wrappers._boolean(false);
     foreachVariable(new _FunctionTypes._return_P1_E0<Boolean, JavaLocalVariable>() {
       public Boolean invoke(JavaLocalVariable variable) {
-        if (eq_4zsmpx_a0a0a0a0a1a21(variable.getName(), variableName)) {
+        if (eq_4zsmpx_a0a0a0a0a1a01(variable.getName(), variableName)) {
           try {
             String variableTypeSignature = TransformatorBuilder.getInstance().getJniSignatureFromType(variableType);
-            if (eq_4zsmpx_a0b0a0a0a0a0a1a21(variableTypeSignature, variable.getLocalVariable().type().signature())) {
+            if (eq_4zsmpx_a0b0a0a0a0a0a1a01(variableTypeSignature, variable.getLocalVariable().type().signature())) {
               visible.value = true;
               return true;
             }
@@ -301,7 +286,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (thisObject == null) {
       return false;
     }
-    return eq_4zsmpx_a0c0n(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
+    return eq_4zsmpx_a0c0l(thisObject.referenceType().signature(), TransformatorBuilder.getInstance().getJniSignatureFromType(thisType));
   }
 
   public boolean isStaticContextTypeValid(SNode staticContextType) {
@@ -315,36 +300,36 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
   }
 
-  private static SNodeId check_4zsmpx_a0a0g0h(SNode checkedDotOperand) {
+  private static SNodeId check_4zsmpx_a0a0g0f(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSNodeId();
     }
     return null;
   }
 
-  private static boolean eq_4zsmpx_a0a0a0a0a1a21(Object a, Object b) {
+  private static boolean eq_4zsmpx_a0a0a0a0a1a01(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a21(Object a, Object b) {
+  private static boolean eq_4zsmpx_a0b0a0a0a0a0a1a01(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_4zsmpx_a0c0n(Object a, Object b) {
+  private static boolean eq_4zsmpx_a0c0l(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  public static class QuotationClass_4zsmpx_a0a0a0b0l {
-    public QuotationClass_4zsmpx_a0a0a0b0l() {
+  public static class QuotationClass_4zsmpx_a0a0a0b0j {
+    public QuotationClass_4zsmpx_a0a0a0b0j() {
     }
 
     public SNode createNode() {
@@ -360,8 +345,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0b0b0l {
-    public QuotationClass_4zsmpx_a0a0b0b0l() {
+  public static class QuotationClass_4zsmpx_a0a0b0b0j {
+    public QuotationClass_4zsmpx_a0a0b0b0j() {
     }
 
     public SNode createNode() {
@@ -377,8 +362,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0c0b0l {
-    public QuotationClass_4zsmpx_a0a0c0b0l() {
+  public static class QuotationClass_4zsmpx_a0a0c0b0j {
+    public QuotationClass_4zsmpx_a0a0c0b0j() {
     }
 
     public SNode createNode() {
@@ -394,8 +379,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0d0b0l {
-    public QuotationClass_4zsmpx_a0a0d0b0l() {
+  public static class QuotationClass_4zsmpx_a0a0d0b0j {
+    public QuotationClass_4zsmpx_a0a0d0b0j() {
     }
 
     public SNode createNode() {
@@ -411,8 +396,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0e0b0l {
-    public QuotationClass_4zsmpx_a0a0e0b0l() {
+  public static class QuotationClass_4zsmpx_a0a0e0b0j {
+    public QuotationClass_4zsmpx_a0a0e0b0j() {
     }
 
     public SNode createNode() {
@@ -428,8 +413,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0f0b0l {
-    public QuotationClass_4zsmpx_a0a0f0b0l() {
+  public static class QuotationClass_4zsmpx_a0a0f0b0j {
+    public QuotationClass_4zsmpx_a0a0f0b0j() {
     }
 
     public SNode createNode() {
@@ -445,8 +430,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0g0b0l {
-    public QuotationClass_4zsmpx_a0a0g0b0l() {
+  public static class QuotationClass_4zsmpx_a0a0g0b0j {
+    public QuotationClass_4zsmpx_a0a0g0b0j() {
     }
 
     public SNode createNode() {
@@ -462,8 +447,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0h0b0l {
-    public QuotationClass_4zsmpx_a0a0h0b0l() {
+  public static class QuotationClass_4zsmpx_a0a0h0b0j {
+    public QuotationClass_4zsmpx_a0a0h0b0j() {
     }
 
     public SNode createNode() {
@@ -479,8 +464,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     }
   }
 
-  public static class QuotationClass_4zsmpx_a0a0a1a11 {
-    public QuotationClass_4zsmpx_a0a0a1a11() {
+  public static class QuotationClass_4zsmpx_a0a0a1a9 {
+    public QuotationClass_4zsmpx_a0a0a1a9() {
     }
 
     public SNode createNode(Object parameter_5) {

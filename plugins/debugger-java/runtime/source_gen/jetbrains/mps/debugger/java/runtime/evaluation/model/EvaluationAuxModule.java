@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IScope;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
@@ -31,6 +33,8 @@ public class EvaluationAuxModule extends AbstractModule {
   private final Set<String> myStubPaths = SetSequence.fromSet(new HashSet<String>());
   private final Set<ModuleReference> myUsedLanguages = SetSequence.fromSet(new HashSet<ModuleReference>());
   private volatile IScope myScope;
+  @Nullable
+  private IModule myContextModule;
 
   public EvaluationAuxModule(Project project) {
     this.myProject = project;
@@ -124,5 +128,14 @@ public class EvaluationAuxModule extends AbstractModule {
   @NotNull
   public String toString() {
     return "Debug Evaluation Aux Module";
+  }
+
+  @Nullable
+  public IModule getContextModule() {
+    return myContextModule;
+  }
+
+  public void setContextModule(IModule contextModule) {
+    myContextModule = contextModule;
   }
 }
