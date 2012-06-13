@@ -20,7 +20,10 @@ import jetbrains.mps.ide.actions.CreateAspect_Action;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.*;
 import java.util.Iterator;
@@ -43,6 +46,12 @@ public abstract class AddAspectAction extends AnAction {
 
   public boolean displayTextInToolbar() {
     return true;
+  }
+
+  public void update(AnActionEvent e) {
+    SModelDescriptor model = e.getData(MPSDataKeys.CONTEXT_MODEL);
+    boolean enabled = model instanceof EditableSModelDescriptor && !((EditableSModelDescriptor) model).isReadOnly();
+    e.getPresentation().setEnabled(enabled);
   }
 
   public void actionPerformed(final AnActionEvent e) {
