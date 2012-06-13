@@ -54,6 +54,9 @@ public class InstanceMethodCallOperation_Behavior {
     if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
       return false;
     }
+    if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeArgument", true)).isNotEmpty()) {
+      return false;
+    }
     if (SLinkOperations.getTarget(SNodeOperations.cast(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"), "classConcept", false) == null) {
       return true;
     }
