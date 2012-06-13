@@ -10,18 +10,19 @@
     <nodeInfo nodeId="8464977774480012402" fileName="IMakeService.java" startLine="17" startPosition="138" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
     <nodeInfo nodeId="8464977774480012409" fileName="IMakeService.java" startLine="18" startPosition="62" endLine="19" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
     <nodeInfo nodeId="5959771872497636036" fileName="IMakeService.java" startLine="26" startPosition="32" endLine="27" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="Component" />
-    <nodeInfo nodeId="3466845146566212255" fileName="IMakeService.java" startLine="27" startPosition="42" endLine="28" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="emptyComponent" />
-    <nodeInfo nodeId="3466845146566212264" fileName="IMakeService.java" startLine="34" startPosition="30" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5959771872497636055" fileName="IMakeService.java" startLine="36" startPosition="7" endLine="37" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8540823926938077688" fileName="IMakeService.java" startLine="40" startPosition="50" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2572714605177025426" fileName="IMakeService.java" startLine="33" startPosition="30" endLine="34" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5959771872497636055" fileName="IMakeService.java" startLine="35" startPosition="7" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8540823926938077688" fileName="IMakeService.java" startLine="39" startPosition="50" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2572714605176943598" fileName="IMakeService.java" startLine="43" startPosition="45" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4523074738764584327" fileName="IMakeService.java" startLine="19" startPosition="65" endLine="21" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
     <nodeInfo nodeId="2082624981609760244" fileName="IMakeService.java" startLine="21" startPosition="71" endLine="23" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
     <nodeInfo nodeId="199467807261954019" fileName="IMakeService.java" startLine="23" startPosition="87" endLine="25" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="8695426379435177652" fileName="IMakeService.java" startLine="29" startPosition="0" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="INSTANCE#()V" />
-    <nodeInfo nodeId="5959771872497636041" fileName="IMakeService.java" startLine="33" startPosition="38" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8540823926938077682" fileName="IMakeService.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="set#(Ljetbrains/mps/make/IMakeService;)V" />
-    <nodeInfo nodeId="8695426379435177666" fileName="IMakeService.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="get#()Ljetbrains/mps/make/IMakeService;" />
-    <scopeInfo nodeId="8695426379435177655" fileName="IMakeService.java" startLine="30" startPosition="24" endLine="30" endPosition="24" />
+    <nodeInfo nodeId="8695426379435177652" fileName="IMakeService.java" startLine="28" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="INSTANCE#()V" />
+    <nodeInfo nodeId="5959771872497636041" fileName="IMakeService.java" startLine="32" startPosition="38" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8540823926938077682" fileName="IMakeService.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="set#(Ljetbrains/mps/make/IMakeService;)V" />
+    <nodeInfo nodeId="2572714605176943594" fileName="IMakeService.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isSessionActive#()Z" />
+    <nodeInfo nodeId="8695426379435177666" fileName="IMakeService.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="get#()Ljetbrains/mps/make/IMakeService;" />
+    <scopeInfo nodeId="8695426379435177655" fileName="IMakeService.java" startLine="29" startPosition="24" endLine="29" endPosition="24" />
     <scopeInfo nodeId="8695426379435237628" fileName="IMakeService.java" startLine="11" startPosition="31" endLine="12" endPosition="53">
       <varInfo nodeId="8695426379435237643" varName="session" />
     </scopeInfo>
@@ -50,8 +51,9 @@
     <scopeInfo nodeId="8464977774480012409" fileName="IMakeService.java" startLine="18" startPosition="62" endLine="19" endPosition="65">
       <varInfo nodeId="8464977774480012413" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="5959771872497636042" fileName="IMakeService.java" startLine="34" startPosition="30" endLine="35" endPosition="30" />
-    <scopeInfo nodeId="8540823926938077685" fileName="IMakeService.java" startLine="40" startPosition="50" endLine="41" endPosition="26" />
+    <scopeInfo nodeId="5959771872497636042" fileName="IMakeService.java" startLine="33" startPosition="30" endLine="34" endPosition="69" />
+    <scopeInfo nodeId="8540823926938077685" fileName="IMakeService.java" startLine="39" startPosition="50" endLine="40" endPosition="26" />
+    <scopeInfo nodeId="2572714605176943597" fileName="IMakeService.java" startLine="43" startPosition="45" endLine="44" endPosition="62" />
     <scopeInfo nodeId="4523074738764584327" fileName="IMakeService.java" startLine="19" startPosition="65" endLine="21" endPosition="71">
       <varInfo nodeId="4523074738764584328" varName="resources" />
     </scopeInfo>
@@ -64,14 +66,15 @@
       <varInfo nodeId="199467807261954020" varName="resources" />
       <varInfo nodeId="199467807261954027" varName="script" />
     </scopeInfo>
-    <scopeInfo nodeId="8695426379435177652" fileName="IMakeService.java" startLine="29" startPosition="0" endLine="31" endPosition="5" />
-    <scopeInfo nodeId="8695426379435177669" fileName="IMakeService.java" startLine="33" startPosition="38" endLine="37" endPosition="23" />
-    <scopeInfo nodeId="8540823926938077682" fileName="IMakeService.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="8695426379435177652" fileName="IMakeService.java" startLine="28" startPosition="0" endLine="30" endPosition="5" />
+    <scopeInfo nodeId="8695426379435177669" fileName="IMakeService.java" startLine="32" startPosition="38" endLine="36" endPosition="23" />
+    <scopeInfo nodeId="8540823926938077682" fileName="IMakeService.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="8540823926938077686" varName="service" />
     </scopeInfo>
-    <scopeInfo nodeId="8695426379435177666" fileName="IMakeService.java" startLine="32" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="11" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
-    <unitInfo nodeId="8695426379435177650" fileName="IMakeService.java" startLine="26" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.make.IMakeService$INSTANCE" />
+    <scopeInfo nodeId="2572714605176943594" fileName="IMakeService.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8695426379435177666" fileName="IMakeService.java" startLine="31" startPosition="0" endLine="38" endPosition="0" />
+    <unitInfo nodeId="2082624981609760242" fileName="IMakeService.java" startLine="11" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.IMakeService" />
+    <unitInfo nodeId="8695426379435177650" fileName="IMakeService.java" startLine="26" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.make.IMakeService$INSTANCE" />
   </root>
   <root nodeId="2958721966247272985">
     <nodeInfo nodeId="2958721966247272990" fileName="IHName.java" startLine="6" startPosition="28" endLine="7" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parentName#()null" />
@@ -81,82 +84,6 @@
     <scopeInfo nodeId="922321631991217137" fileName="IHName.java" startLine="7" startPosition="24" endLine="8" endPosition="23" />
     <scopeInfo nodeId="922321631991212069" fileName="IHName.java" startLine="8" startPosition="23" endLine="9" endPosition="25" />
     <unitInfo nodeId="2958721966247272985" fileName="IHName.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.make.IHName" />
-  </root>
-  <root nodeId="3466845146566212086">
-    <nodeInfo nodeId="3466845146566212099" fileName="EmptyMakeService.java" startLine="15" startPosition="54" endLine="16" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3466845146566212252" fileName="EmptyMakeService.java" startLine="20" startPosition="118" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3466845146566212194" fileName="EmptyMakeService.java" startLine="25" startPosition="88" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3466845146566212180" fileName="EmptyMakeService.java" startLine="30" startPosition="72" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3466845146566212156" fileName="EmptyMakeService.java" startLine="40" startPosition="139" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3466845146566212139" fileName="EmptyMakeService.java" startLine="44" startPosition="109" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3466845146566212124" fileName="EmptyMakeService.java" startLine="48" startPosition="93" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3466845146566212111" fileName="EmptyMakeService.java" startLine="52" startPosition="36" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3466845146566212088" fileName="EmptyMakeService.java" startLine="11" startPosition="55" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EmptyMakeService#()V" />
-    <nodeInfo nodeId="3466845146566212164" fileName="EmptyMakeService.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="3466845146566212158" fileName="EmptyMakeService.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-    <nodeInfo nodeId="3466845146566212101" fileName="EmptyMakeService.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeSession#(Ljetbrains/mps/make/MakeSession;)V" />
-    <nodeInfo nodeId="3466845146566212093" fileName="EmptyMakeService.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openNewSession#(Ljetbrains/mps/make/MakeSession;)Z" />
-    <nodeInfo nodeId="3466845146566212141" fileName="EmptyMakeService.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="3466845146566212126" fileName="EmptyMakeService.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="3466845146566212113" fileName="EmptyMakeService.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="3466845146566212107" fileName="EmptyMakeService.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSessionActive#()Z" />
-    <nodeInfo nodeId="3466845146566212196" fileName="EmptyMakeService.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="3466845146566212182" fileName="EmptyMakeService.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;)Ljava/util/concurrent/Future;" />
-    <nodeInfo nodeId="3466845146566212170" fileName="EmptyMakeService.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="make#(Ljava/lang/Iterable;)Ljava/util/concurrent/Future;" />
-    <scopeInfo nodeId="3466845146566212091" fileName="EmptyMakeService.java" startLine="12" startPosition="29" endLine="12" endPosition="29" />
-    <scopeInfo nodeId="3466845146566212169" fileName="EmptyMakeService.java" startLine="34" startPosition="66" endLine="34" endPosition="66" />
-    <scopeInfo nodeId="3466845146566212163" fileName="EmptyMakeService.java" startLine="37" startPosition="63" endLine="37" endPosition="63" />
-    <scopeInfo nodeId="3466845146566212106" fileName="EmptyMakeService.java" startLine="56" startPosition="49" endLine="56" endPosition="49" />
-    <scopeInfo nodeId="3466845146566212098" fileName="EmptyMakeService.java" startLine="15" startPosition="54" endLine="16" endPosition="17" />
-    <scopeInfo nodeId="3466845146566212251" fileName="EmptyMakeService.java" startLine="20" startPosition="118" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="3466845146566212193" fileName="EmptyMakeService.java" startLine="25" startPosition="88" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="3466845146566212179" fileName="EmptyMakeService.java" startLine="30" startPosition="72" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="3466845146566212155" fileName="EmptyMakeService.java" startLine="40" startPosition="139" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="3466845146566212138" fileName="EmptyMakeService.java" startLine="44" startPosition="109" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="3466845146566212123" fileName="EmptyMakeService.java" startLine="48" startPosition="93" endLine="49" endPosition="16" />
-    <scopeInfo nodeId="3466845146566212110" fileName="EmptyMakeService.java" startLine="52" startPosition="36" endLine="53" endPosition="17" />
-    <scopeInfo nodeId="3466845146566212088" fileName="EmptyMakeService.java" startLine="11" startPosition="55" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="3466845146566212164" fileName="EmptyMakeService.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="3466845146566212167" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212158" fileName="EmptyMakeService.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="3466845146566212159" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212101" fileName="EmptyMakeService.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="3466845146566212102" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212093" fileName="EmptyMakeService.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="3466845146566212096" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212141" fileName="EmptyMakeService.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="3466845146566212151" varName="controller" />
-      <varInfo nodeId="3466845146566212144" varName="resources" />
-      <varInfo nodeId="3466845146566212149" varName="script" />
-      <varInfo nodeId="3466845146566212142" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212126" fileName="EmptyMakeService.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="3466845146566212129" varName="resources" />
-      <varInfo nodeId="3466845146566212134" varName="script" />
-      <varInfo nodeId="3466845146566212127" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212113" fileName="EmptyMakeService.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="3466845146566212116" varName="resources" />
-      <varInfo nodeId="3466845146566212114" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212107" fileName="EmptyMakeService.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="3466845146566212196" fileName="EmptyMakeService.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="3466845146566212204" varName="controller" />
-      <varInfo nodeId="3466845146566212197" varName="resources" />
-      <varInfo nodeId="3466845146566212202" varName="script" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212182" fileName="EmptyMakeService.java" startLine="23" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="3466845146566212183" varName="resources" />
-      <varInfo nodeId="3466845146566212188" varName="script" />
-    </scopeInfo>
-    <scopeInfo nodeId="3466845146566212170" fileName="EmptyMakeService.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="3466845146566212171" varName="resources" />
-    </scopeInfo>
-    <unitInfo nodeId="3466845146566212086" fileName="EmptyMakeService.java" startLine="11" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.make.EmptyMakeService" />
   </root>
   <root nodeId="8464977774479999203">
     <nodeInfo nodeId="8464977774480012337" fileName="MakeNotification.java" startLine="7" startPosition="51" endLine="8" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kind" />
