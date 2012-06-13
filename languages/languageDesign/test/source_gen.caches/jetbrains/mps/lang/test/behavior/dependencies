@@ -67,7 +67,6 @@
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.CheckNodeForErrors_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.EditorComponentExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.EditorExpression_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.test.behavior.EditorOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.EditorTestCase_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.ExpressionContainer_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.INodeAnnotattion_BehaviorDescriptor" />
