@@ -21,21 +21,18 @@ import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 
 public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
-  public String getEditorTabTitle(Project project, VirtualFile file) {
+  public String getEditorTabTitle(final Project project, final VirtualFile file) {
     if (!(file instanceof MPSNodeVirtualFile)) return null;
-    final SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
-    if (node != null) {
-      final StringBuilder sb = new StringBuilder();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          sb.append(node.getPresentation());
-        }
-      });
-      return sb.toString();
-    }
-    return null;
+    return ModelAccess.instance().runReadAction(new Computable<String>() {
+      public String compute() {
+        SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
+        if (node == null) return "<no_name>";
+        return node.getPresentation();
+      }
+    });
   }
 }
