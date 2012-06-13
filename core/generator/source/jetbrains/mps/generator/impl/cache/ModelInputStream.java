@@ -57,7 +57,12 @@ public class ModelInputStream extends DataInputStream {
       }
       c = readByte();
     }
-    String res = sb == null ? readUTF() : sb.toString() + readUTF();
+    String res;
+    if (sb == null) {
+      res = readUTF();
+    } else {
+      res = sb.append(readUTF()).toString();
+    }
     myStrings.add(res);
     return res;
   }
