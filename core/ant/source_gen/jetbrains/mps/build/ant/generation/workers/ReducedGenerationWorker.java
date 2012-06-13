@@ -200,8 +200,11 @@ public class ReducedGenerationWorker extends GeneratorWorker {
 
   @Override
   protected void make() {
-    // TODO we do not need make in ReducedGenerationWorker 
-    super.make();
+    // we do not need make in ReducedGenerationWorker 
+  }
+
+  @Override
+  protected void makeProject() {
   }
 
   @Override
