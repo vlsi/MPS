@@ -104,7 +104,7 @@ public abstract class ClassLoadingModule extends AbstractModule implements IClas
       if (myClassLoadingDepsCache == null) {
         myClassLoadingDepsCache = new THashSet<IClassLoadingModule>();
         myClassLoadingDepsCache.add(this);
-        for (IModule m : new GlobalModuleDependenciesManager(this).getModules(Deptype.EXECUTE)) {
+        for (IModule m : new GlobalModuleDependenciesManager(this).getModules(Deptype.COMPILE)) {
           if (!(m instanceof ClassLoadingModule)) continue;
           myClassLoadingDepsCache.add((IClassLoadingModule) m);
         }
