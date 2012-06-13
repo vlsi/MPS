@@ -100,9 +100,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
       public void run() {
         Collection<LanguageRuntime> availableLanguages = myLanguageRegistry.getAvailableLanguages();
         if (availableLanguages != null) {
-          for (LanguageRuntime l : availableLanguages) {
-            myRulesManager.loadLanguage(l.getNamespace());
-          }
+          myRulesManager.loadLanguages(availableLanguages);
         }
         myLanguageRegistry.addRegistryListener(TypeChecker.this);
       }
@@ -116,9 +114,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   @Override
   public void languagesLoaded(Iterable<LanguageRuntime> languages) {
-    for (LanguageRuntime l : languages) {
-      myRulesManager.loadLanguage(l.getNamespace());
-    }
+    myRulesManager.loadLanguages(languages);
   }
 
   @Override
