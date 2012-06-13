@@ -15866,7 +15866,12 @@
             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~BasicConfigurator%dconfigure(org%dapache%dlog4j%dAppender)%cvoid" resolveInfo="configure" />
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1117107720588641332">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1117107720588641333">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~ConsoleAppender%d&lt;init&gt;()" resolveInfo="ConsoleAppender" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~ConsoleAppender%d&lt;init&gt;(org%dapache%dlog4j%dLayout)" resolveInfo="ConsoleAppender" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="3396448919603399670">
+                  <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="3396448919603407015">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ajxo.~SimpleLayout%d&lt;init&gt;()" resolveInfo="SimpleLayout" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

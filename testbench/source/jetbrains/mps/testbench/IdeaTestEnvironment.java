@@ -14,10 +14,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
+import org.apache.log4j.*;
 import org.jdom.JDOMException;
 
 import javax.swing.SwingUtilities;
@@ -31,7 +28,7 @@ public class IdeaTestEnvironment extends Environment {
 
   @Override
   public void setup() {
-    BasicConfigurator.configure(new ConsoleAppender());
+    BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
     Logger.getRootLogger().setLevel(Level.ERROR);
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     try {

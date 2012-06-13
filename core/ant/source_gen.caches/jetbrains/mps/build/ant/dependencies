@@ -48,6 +48,7 @@
     <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.apache.log4j.SimpleLayout" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.ExcludeNested" file="ExcludeNested.java">
     <classNode dependClassName="java.io.File" />
