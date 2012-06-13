@@ -14,6 +14,7 @@ import org.apache.tools.ant.BuildException;
 import java.util.Set;
 import java.util.Hashtable;
 import org.apache.tools.ant.util.JavaEnvUtils;
+import java.util.HashSet;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.apache.tools.ant.taskdefs.Execute;
@@ -151,14 +152,29 @@ public abstract class MpsLoadTask extends Task {
       } else {
         commandLine.addAll(myJvmArgs);
       }
+      String javaHome = JavaEnvUtils.getJavaHome();
       StringBuilder sb = new StringBuilder();
-      String pathSeparator = System.getProperty("path.separator");
+      Set<String> entries = new HashSet<String>();
+      String pathSeparator = "";
+      for (String entry : currentClassPathString.split(File.pathSeparator)) {
+        if (!(entries.contains(entry)) && !(startsWith(entry, javaHome))) {
+          entries.add(entry);
+          sb.append(pathSeparator);
+          sb.append(entry);
+          pathSeparator = File.pathSeparator;
+        }
+      }
       for (File cp : classPaths) {
-        sb.append(pathSeparator);
-        sb.append(cp.getAbsolutePath());
+        String entry = cp.getAbsolutePath();
+        if (!(entries.contains(entry))) {
+          entries.add(entry);
+          sb.append(pathSeparator);
+          sb.append(entry);
+          pathSeparator = File.pathSeparator;
+        }
       }
       commandLine.add("-classpath");
-      commandLine.add(currentClassPathString + sb.toString());
+      commandLine.add(sb.toString());
       commandLine.add(AntBootstrap.class.getCanonicalName());
       commandLine.add(getWorkerClass().getCanonicalName());
       dumpPropertiesToWhatToDo();
@@ -283,7 +299,7 @@ public abstract class MpsLoadTask extends Task {
       //         absolutePath("platform/builders"), 
       pathsToLook = new File[]{absolutePath("core"), absolutePath("lib"), absolutePath("plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runtime"), absolutePath("languages/baseLanguage/closures/runtime"), absolutePath("languages/baseLanguage/collections/runtime"), absolutePath("languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search"), absolutePath("workbench/typesystemUi/classes"), absolutePath("MPSPlugin/apiclasses")};
     } else {
-      pathsToLook = new File[]{absolutePath("lib"), absolutePath("plugin"), absolutePath("plugins")};
+      pathsToLook = new File[]{absolutePath("lib")};
     }
     Set<File> classPaths = new LinkedHashSet<File>();
     for (File path : pathsToLook) {
@@ -301,6 +317,10 @@ public abstract class MpsLoadTask extends Task {
       classPaths.add(mpsClasses);
     }
     return classPaths;
+  }
+
+  private boolean startsWith(String path, String prefix) {
+    return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(File.separator) || path.charAt(prefix.length()) == File.separatorChar);
   }
 
   protected abstract Class<? extends MpsWorker> getWorkerClass();
