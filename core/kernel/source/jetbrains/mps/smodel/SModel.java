@@ -104,7 +104,7 @@ public class SModel {
   public boolean isNotEditable() {
     assert !isDisposed();
     SModelDescriptor d = getModelDescriptor();
-    if (!(d instanceof EditableSModelDescriptor)) return false;
+    if (!(d instanceof EditableSModelDescriptor)) return true;
     return ((EditableSModelDescriptor) d).isReadOnly();
   }
 

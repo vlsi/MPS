@@ -19,7 +19,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -57,7 +56,7 @@ public abstract class BaseAction extends AnAction {
     myExecuteOutsideCommand = executeOutsideCommand;
   }
 
-  public boolean isExecuteOutsideCommand () {
+  public boolean isExecuteOutsideCommand() {
     return myExecuteOutsideCommand;
   }
 
@@ -106,7 +105,6 @@ public abstract class BaseAction extends AnAction {
       }
     }
 
-    // TODO rewrite! do not start read action in EDT directly (to avoid UI freeze)
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         if (myDisableOnNoProject && e.getData(PlatformDataKeys.PROJECT) == null) {
@@ -142,7 +140,7 @@ public abstract class BaseAction extends AnAction {
             doExecute(event, params);
           }
         }, getTemplatePresentation().getText(), null, false, project.getComponent(MPSProject.class));
-      }else {
+      } else {
         // deprecated API
         access.runWriteActionInCommand(new Runnable() {
           public void run() {
