@@ -364,7 +364,7 @@ public abstract class UsagesView implements IExternalizeable {
 
           @Override
           public void update(AnActionEvent e) {
-            e.getPresentation().setEnabled(myMakeSession.get() == null && !IMakeService.INSTANCE.get().isSessionActive());
+            e.getPresentation().setEnabled(myMakeSession.get() == null && !IMakeService.INSTANCE.isSessionActive());
           }
         });
       }

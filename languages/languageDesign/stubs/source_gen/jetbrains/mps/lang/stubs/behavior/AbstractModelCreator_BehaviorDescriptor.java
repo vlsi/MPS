@@ -5,7 +5,7 @@ package jetbrains.mps.lang.stubs.behavior;
 import jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifier_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
 
-public class AbstractModelCreator_BehaviorDescriptor extends DefaultClassifier_BehaviorDescriptor implements IClassifier_BehaviorDescriptor {
+public abstract class AbstractModelCreator_BehaviorDescriptor extends DefaultClassifier_BehaviorDescriptor implements IClassifier_BehaviorDescriptor {
   public AbstractModelCreator_BehaviorDescriptor() {
   }
 

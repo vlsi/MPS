@@ -271,8 +271,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     if (ApplicationManager.getApplication().isDisposed()) {
       return;
     }
-    IMakeService makeService = ApplicationManager.getApplication().getComponent(IMakeService.class);
-    if (makeService != null &&  makeService.isSessionActive()) {
+    if (IMakeService.INSTANCE.isSessionActive()) {
       return;
     }
     // SwingUtilities.invokeLater(new Runnable() {
@@ -550,7 +549,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private static <T> T runLoPrioRead(final Computable<T> computable) {
     T result;
     do {
-      while (IMakeService.INSTANCE.get().isSessionActive()) {
+      while (IMakeService.INSTANCE.isSessionActive()) {
         try {
           Thread.sleep(600);
         } catch (InterruptedException e) {
@@ -559,7 +558,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       result = ModelAccess.instance().runReadAction(new Computable<T>() {
         @Override
         public T compute() {
-          if (IMakeService.INSTANCE.get().isSessionActive() || ModelAccess.instance().hasScheduledWrites()) return null;
+          if (IMakeService.INSTANCE.isSessionActive() || ModelAccess.instance().hasScheduledWrites()) return null;
           return computable.compute();
         }
       });

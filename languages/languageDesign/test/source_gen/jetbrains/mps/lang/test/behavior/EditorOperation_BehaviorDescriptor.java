@@ -7,7 +7,7 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
-public class EditorOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
+public abstract class EditorOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor {
   public EditorOperation_BehaviorDescriptor() {
   }
 
