@@ -1095,7 +1095,6 @@
       <varInfo nodeId="4003657351907888028" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="1076338101818482910" fileName="MpsWorker.java" startLine="245" startPosition="41" endLine="49" endPosition="0" />
-    <unitInfo nodeId="4003657351907886909" fileName="MpsWorker.java" startLine="49" startPosition="0" endLine="496" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker" />
     <unitInfo nodeId="4003657351907887444" fileName="MpsWorker.java" startLine="130" startPosition="46" endLine="136" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$1" />
     <unitInfo nodeId="4003657351907887458" fileName="MpsWorker.java" startLine="141" startPosition="46" endLine="145" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$2" />
     <unitInfo nodeId="4003657351907888070" fileName="MpsWorker.java" startLine="234" startPosition="68" endLine="238" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$3" />
@@ -1930,7 +1929,7 @@
     <nodeInfo nodeId="4003657351907890995" fileName="MpsLoadTask.java" startLine="190" startPosition="62" endLine="191" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907891019" fileName="MpsLoadTask.java" startLine="192" startPosition="11" endLine="193" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4003657351907891030" fileName="MpsLoadTask.java" startLine="194" startPosition="21" endLine="195" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891012" fileName="MpsLoadTask.java" startLine="197" startPosition="31" endLine="198" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5130020741999193486" fileName="MpsLoadTask.java" startLine="197" startPosition="31" endLine="198" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="4003657351907890721" fileName="MpsLoadTask.java" startLine="200" startPosition="12" endLine="201" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4003657351907890736" fileName="MpsLoadTask.java" startLine="208" startPosition="43" endLine="209" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="4003657351907890760" fileName="MpsLoadTask.java" startLine="211" startPosition="7" endLine="212" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2160,10 +2159,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1060288745360407898" fileName="MpsLoadTask.java" startLine="185" startPosition="31" endLine="186" endPosition="36" />
     <scopeInfo nodeId="4003657351907891029" fileName="MpsLoadTask.java" startLine="194" startPosition="21" endLine="195" endPosition="36" />
-    <scopeInfo nodeId="4003657351907891010" fileName="MpsLoadTask.java" startLine="197" startPosition="0" endLine="198" endPosition="32">
+    <scopeInfo nodeId="4003657351907891010" fileName="MpsLoadTask.java" startLine="197" startPosition="0" endLine="198" endPosition="36">
       <varInfo nodeId="4003657351907891016" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891011" fileName="MpsLoadTask.java" startLine="197" startPosition="31" endLine="198" endPosition="32" />
+    <scopeInfo nodeId="4003657351907891011" fileName="MpsLoadTask.java" startLine="197" startPosition="31" endLine="198" endPosition="36" />
     <scopeInfo nodeId="4003657351907890734" fileName="MpsLoadTask.java" startLine="208" startPosition="0" endLine="209" endPosition="38">
       <varInfo nodeId="4003657351907890740" varName="e" />
     </scopeInfo>
