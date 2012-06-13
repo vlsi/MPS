@@ -176,6 +176,7 @@ public class CommonPaths {
     addIfExists(result, "/lib/mps-platform.jar");
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
+    addIfExists(result, "/lib/sanselan-0.98-snapshot.jar");
     addIfExists(result, "/lib/execution-api.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");
