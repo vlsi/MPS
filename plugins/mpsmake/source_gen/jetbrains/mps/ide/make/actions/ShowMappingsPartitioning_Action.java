@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.workbench.actions.model.PartitioningHelper;
 import com.intellij.openapi.project.Project;
 import java.awt.Frame;
@@ -70,6 +71,13 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
     }
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
     if (MapSequence.fromMap(_params).get("models") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
+    if (!(MapSequence.fromMap(_params).get("model") instanceof EditableSModelDescriptor) || ((EditableSModelDescriptor) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
       return false;
     }
     return true;
