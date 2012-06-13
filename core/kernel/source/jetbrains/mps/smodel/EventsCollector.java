@@ -15,15 +15,10 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
-import jetbrains.mps.smodel.event.SModelListener;
-import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 import java.util.*;
 
 public class EventsCollector {
@@ -41,42 +36,134 @@ public class EventsCollector {
   }
 
   private SModelListener createCommandEventsCollector() {
-    return (SModelListener) Proxy.newProxyInstance(
-      getClass().getClassLoader(),
-      new Class[]{SModelListener.class},
-      new InvocationHandler() {
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-          if (method.getName().equals("equals") && args.length == 1) {
-            return proxy == args[0];
+    return new SModelListener() {
+      @Override
+      public void languageAdded(SModelLanguageEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void languageRemoved(SModelLanguageEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void importAdded(SModelImportEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void importRemoved(SModelImportEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void devkitAdded(SModelDevKitEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void devkitRemoved(SModelDevKitEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void rootAdded(SModelRootEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void rootRemoved(SModelRootEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void beforeRootRemoved(SModelRootEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void beforeModelRenamed(SModelRenamedEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void modelRenamed(SModelRenamedEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void beforeModelFileChanged(SModelFileChangedEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void modelFileChanged(SModelFileChangedEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void propertyChanged(SModelPropertyEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void childAdded(SModelChildEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void childRemoved(SModelChildEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void beforeChildRemoved(SModelChildEvent event) {
+      }
+
+      @Override
+      public void referenceAdded(SModelReferenceEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void referenceRemoved(SModelReferenceEvent event) {
+        listenerInvoked(event);
+      }
+
+      @Override
+      public void modelSaved(SModelDescriptor sm) {
+      }
+
+      @Override
+      public void modelLoadingStateChanged(SModelDescriptor sm, ModelLoadingState oldState, ModelLoadingState newState) {
+      }
+
+      @Override
+      public void modelReplaced(SModelDescriptor md) {
+      }
+
+      @Override
+      public void beforeModelDisposed(SModel sm) {
+      }
+
+      @NotNull
+      @Override
+      public SModelListenerPriority getPriority() {
+        return SModelListenerPriority.CLIENT;
+      }
+
+      private void listenerInvoked(SModelEvent event) {
+        checkDisposed();
+
+        if (event != null) {
+          if (!myIsInCommand && !(event instanceof SModelFileChangedEvent)) {
+            throw new IllegalStateException("Event outside of a command");
           }
-
-          if (method.getName().equals("hashCode") && args == null) {
-            return this.hashCode();
-          }
-
-          if (method.getName().equals("getPriority") && args == null) {
-            return SModelListenerPriority.CLIENT;
-          }
-
-          if (method.getName().equals("beforeChildRemoved")) {
-            return null;
-          }
-
-          checkDisposed();
-
-          if (args != null && args.length == 1 && args[0] instanceof SModelEvent) {
-            SModelEvent e = (SModelEvent) args[0];
-            if (!myIsInCommand && !(e instanceof SModelFileChangedEvent)) {
-              throw new IllegalStateException("Event outside of a command");
-            }
-
-            myEvents.add(e);
-          }
-
-          return null;
+          myEvents.add(event);
         }
       }
-    );
+    };
   }
 
   public void add(@NotNull SModelDescriptor sm) {
