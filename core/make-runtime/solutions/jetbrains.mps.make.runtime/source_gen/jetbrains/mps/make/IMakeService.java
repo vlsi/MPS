@@ -25,13 +25,14 @@ public interface IMakeService {
   public Future<IResult> make(Iterable<? extends IResource> resources, IScript script, IScriptController controller);
   public static class INSTANCE {
     private static IMakeService Component;
+    private static EmptyMakeService emptyComponent = new EmptyMakeService();
 
     private INSTANCE() {
     }
 
     public static IMakeService get() {
       if (Component == null) {
-        throw new IllegalStateException("no make service component");
+        return emptyComponent;
       }
       return Component;
     }
