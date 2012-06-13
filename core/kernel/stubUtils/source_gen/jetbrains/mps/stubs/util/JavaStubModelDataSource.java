@@ -26,7 +26,6 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.ClassPathFactory;
 import java.io.File;
 import java.io.IOException;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 
@@ -98,7 +97,6 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
     return cp;
   }
 
-  @NotNull
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
   }

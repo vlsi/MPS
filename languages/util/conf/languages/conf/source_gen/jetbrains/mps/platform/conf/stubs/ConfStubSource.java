@@ -37,7 +37,6 @@ import org.jdom.JDOMException;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.SModelFqName;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
@@ -122,7 +121,6 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
     return 0;
   }
 
-  @NotNull
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(JavaStubModelDataSource.FAST_FIND_ID);
   }

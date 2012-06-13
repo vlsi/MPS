@@ -77,7 +77,6 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />
     <classNode extendsClassName="jetbrains.mps.stubs.util.MultiRootModelDataSource" />
