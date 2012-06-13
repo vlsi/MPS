@@ -195,7 +195,7 @@ public abstract class MpsLoadTask extends Task {
           processNonZeroExitCode(i);
         }
       } catch (IOException e) {
-        log(e, Project.MSG_ERR);
+        throw new BuildException(e);
       }
     } else {
       List<URL> classPathUrls = new ArrayList<URL>();
