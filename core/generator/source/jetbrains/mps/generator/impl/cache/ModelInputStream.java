@@ -47,7 +47,17 @@ public class ModelInputStream extends DataInputStream {
       int index = readInt();
       return myStrings.get(index);
     }
-    String res = readUTF();
+    StringBuilder sb = null;
+    while (c == 42) {
+      String prefix = readUTF();
+      if (sb == null) {
+        sb = new StringBuilder(prefix);
+      } else {
+        sb.append(prefix);
+      }
+      c = readByte();
+    }
+    String res = sb == null ? readUTF() : sb.toString() + readUTF();
     myStrings.add(res);
     return res;
   }

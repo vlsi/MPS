@@ -54,6 +54,12 @@ public class ModelOutputStream extends DataOutputStream {
       Integer index = stringToIndex.get(s);
       if(index == null) {
         stringToIndex.put(s, myStringIndex++);
+        while(s.length() > 16384) {
+          String prefix = s.substring(0, 16384);
+          writeByte(42);
+          writeUTF(prefix);
+          s = s.substring(16384);
+        }
         writeByte(0);
         writeUTF(s);
       } else {

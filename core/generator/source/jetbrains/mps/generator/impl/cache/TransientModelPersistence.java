@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class TransientModelPersistence {
 
-  private static final int VERSION = 3;
+  private static final int VERSION = 4;
   private final SModelReference myModelReference;
 
   public TransientModelPersistence(@NotNull SModelReference modelReference) {
