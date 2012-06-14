@@ -4,6 +4,7 @@ package jetbrains.mps.build.ant.generation.workers;
 
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.stubs.LibrariesLoader;
 import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
@@ -158,6 +159,11 @@ public class GeneratorWorker extends MpsWorker {
     LinkedHashSet<IModule> modules = new LinkedHashSet<IModule>();
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
     collectFromModuleFiles(modules);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        LibrariesLoader.getInstance().loadNewLibs();
+      }
+    });
     collectFromModelFiles(models);
     MpsWorker.ObjectsToProcess go = new MpsWorker.ObjectsToProcess(Collections.EMPTY_SET, modules, models);
     if (go.hasAnythingToGenerate()) {
