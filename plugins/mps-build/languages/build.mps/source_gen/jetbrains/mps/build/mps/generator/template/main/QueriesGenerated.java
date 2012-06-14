@@ -329,6 +329,17 @@ public class QueriesGenerated {
     return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "help", true), "url", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
   }
 
+  public static Object propertyMacro_GetPropertyValue_8877724874822463401(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "feedbackUrl", true), Context.defaultContext(_context).getMacros(((SNode) _context.getVariable("branding"))));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_8877724874822463478(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return (SPropertyOperations.getBoolean(((SNode) _context.getVariable("branding")), "eap") ?
+      "eap-url" :
+      "release-url"
+    );
+  }
+
   public static Object propertyMacro_GetPropertyValue_6592112598314984957(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "id");
   }
@@ -469,8 +480,12 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "help", true) != null);
   }
 
+  public static boolean ifMacro_Condition_8877724874822463465(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "feedbackUrl", true) != null);
+  }
+
   public static boolean ifMacro_Condition_1462305029084461806(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a08(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a38(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
   }
 
   public static SNode sourceNodeQuery_2303926226081111358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -1001,7 +1016,7 @@ public class QueriesGenerated {
     );
   }
 
-  private static boolean neq_x583g4_a0a0a08(Object a, Object b) {
+  private static boolean neq_x583g4_a0a0a38(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

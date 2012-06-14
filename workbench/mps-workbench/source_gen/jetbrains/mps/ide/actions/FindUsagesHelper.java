@@ -44,16 +44,18 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
   /*package*/ void invoke(final EditorCell cell, final SNode node, Frame frame, final IOperationContext context, final SModelDescriptor model) {
     // get node 
     final Wrappers._T<SNode> operationNode = new Wrappers._T<SNode>();
+    final Wrappers._T<String> concept = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         operationNode.value = (cell == null ?
           node :
           cell.getSNodeWRTReference()
         );
+        concept.value = operationNode.value.getConceptFqName();
       }
     });
     // show dialog 
-    final Wrappers._T<FindUsagesOptions> options = new Wrappers._T<FindUsagesOptions>(getOptionsComponent().getDefaultSearchOptions());
+    final Wrappers._T<FindUsagesOptions> options = new Wrappers._T<FindUsagesOptions>(getOptionsComponent().getDefaultOptions().getDefaultSearchOptions(concept.value));
     FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, myProject, frame);
     if (myWithDialog) {
       dialog.showDialog();
@@ -62,7 +64,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
       }
     }
     options.value = dialog.getResult();
-    getOptionsComponent().setDefaultSearchOptions(options.value);
+    getOptionsComponent().getDefaultOptions().setDefaultSearchOptions(concept.value, options.value);
     // start 
     final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
     final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();

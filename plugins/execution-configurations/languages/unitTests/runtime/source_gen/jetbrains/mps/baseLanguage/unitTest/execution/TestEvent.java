@@ -10,12 +10,12 @@ import java.util.regex.Matcher;
 import java.util.ArrayList;
 
 public class TestEvent {
-  public static String START_TEST_PREFIX = "<START_TEST>";
-  public static String END_TEST_PREFIX = "<END_TEST>";
-  public static String ERROR_TEST_PREFIX = "<TEST_ERROR_BEGIN>";
-  public static String ERROR_TEST_SUFFIX = "<TEST_ERROR_END>";
-  public static String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
-  public static String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
+  public static final String START_TEST_PREFIX = "<START_TEST>";
+  public static final String END_TEST_PREFIX = "<END_TEST>";
+  public static final String ERROR_TEST_PREFIX = "<TEST_ERROR_BEGIN>";
+  public static final String ERROR_TEST_SUFFIX = "<TEST_ERROR_END>";
+  public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
+  public static final String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
   private static List<String> ALL_TOKENS;
   private static Pattern REGEXP_6m48zo_a0a0b0b0c = Pattern.compile("([^:]+)(?::([^:]+))?:memory=(\\d+):time=(\\d+)", 0);
 

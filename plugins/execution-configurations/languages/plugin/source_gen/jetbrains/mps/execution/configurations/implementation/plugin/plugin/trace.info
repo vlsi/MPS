@@ -324,47 +324,76 @@
     <unitInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Factory" />
   </root>
   <root nodeId="6062668769033909641">
-    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="18" startPosition="64" endLine="19" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="20" startPosition="0" endLine="21" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="26" startPosition="61" endLine="27" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="27" startPosition="101" endLine="28" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="28" startPosition="83" endLine="29" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="29" startPosition="89" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="35" startPosition="25" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="39" startPosition="25" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="43" startPosition="51" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="47" startPosition="34" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="51" startPosition="63" endLine="52" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="55" startPosition="52" endLine="56" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="22" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaApplication_Kind#()V" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationTypeDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisplayName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addForeignFactory#(Lcom/intellij/execution/configurations/ConfigurationFactory;)V" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/JavaApplication_Kind;" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationFactories#()[Lcom/intellij/execution/configurations/ConfigurationFactory;" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="23" startPosition="33" endLine="23" endPosition="33" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="35" startPosition="25" endLine="36" endPosition="30" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="39" startPosition="25" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="43" startPosition="51" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="47" startPosition="34" endLine="48" endPosition="30" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="51" startPosition="63" endLine="52" endPosition="66" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="55" startPosition="52" endLine="56" endPosition="115" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="22" startPosition="0" endLine="24" endPosition="3" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="26" startPosition="61" endLine="30" endPosition="84">
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="26" startPosition="26" endLine="27" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="29" startPosition="35" endLine="30" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="31" startPosition="9" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="33" startPosition="7" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="34" startPosition="67" endLine="35" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="37" startPosition="35" endLine="38" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="39" startPosition="9" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="41" startPosition="7" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="44" startPosition="13" endLine="45" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="46" startPosition="0" endLine="47" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="52" startPosition="61" endLine="53" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="53" startPosition="101" endLine="54" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="54" startPosition="83" endLine="55" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="55" startPosition="89" endLine="56" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="61" startPosition="25" endLine="62" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="65" startPosition="25" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="69" startPosition="51" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="73" startPosition="34" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="77" startPosition="63" endLine="78" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="81" startPosition="52" endLine="82" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="48" startPosition="0" endLine="50" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaApplication_Kind#()V" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="28" startPosition="27" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="28" startPosition="27" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="36" startPosition="49" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="36" startPosition="49" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIcon#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationTypeDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDisplayName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addForeignFactory#(Lcom/intellij/execution/configurations/ConfigurationFactory;)V" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/JavaApplication_Kind;" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="27" startPosition="132" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="35" startPosition="79" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationFactories#()[Lcom/intellij/execution/configurations/ConfigurationFactory;" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="25" startPosition="77" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="24" startPosition="64" endLine="44" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="49" startPosition="33" endLine="49" endPosition="33" />
+    <scopeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="29" startPosition="35" endLine="30" endPosition="123" />
+    <scopeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="37" startPosition="35" endLine="38" endPosition="87" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="61" startPosition="25" endLine="62" endPosition="30" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="65" startPosition="25" endLine="66" endPosition="16" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="69" startPosition="51" endLine="70" endPosition="16" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="73" startPosition="34" endLine="74" endPosition="30" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="77" startPosition="63" endLine="78" endPosition="66" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="81" startPosition="52" endLine="82" endPosition="115" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="48" startPosition="0" endLine="50" endPosition="3" />
+    <scopeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="28" startPosition="27" endLine="31" endPosition="9" />
+    <scopeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="36" startPosition="49" endLine="39" endPosition="9" />
+    <scopeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="28" startPosition="27" endLine="32" endPosition="20" />
+    <scopeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="36" startPosition="49" endLine="40" endPosition="20" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="52" startPosition="61" endLine="56" endPosition="84">
       <varInfo nodeId="6062668769033909641" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="72" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="6062668769033909641" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="25" startPosition="0" endLine="32" endPosition="0" />
-    <unitInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="18" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JavaApplication_Kind" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="58" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="26" startPosition="26" endLine="42" endPosition="46">
+      <varInfo nodeId="6062668769033909642" varName="module" />
+      <varInfo nodeId="6062668769033909642" varName="path" />
+      <varInfo nodeId="6062668769033909642" varName="shortPath" />
+    </scopeInfo>
+    <scopeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="25" startPosition="77" endLine="44" endPosition="0" />
+    <unitInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="24" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JavaApplication_Kind" />
+    <unitInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="25" startPosition="39" endLine="44" endPosition="3" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JavaApplication_Kind$1" />
   </root>
   <root nodeId="6062668769033909643">
     <nodeInfo nodeId="6062668769033909643" fileName="Java_Configuration_RunProfileState.java" startLine="36" startPosition="159" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2468,8 +2497,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="35" endLine="12" endPosition="37" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="49" endLine="12" endPosition="50" conceptFqName="jetbrains.mps.gtext.structure.GText" />

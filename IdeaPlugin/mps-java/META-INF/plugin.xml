@@ -41,8 +41,8 @@
       <implementation-class>jetbrains.mps.idea.debugger.breakpoints.IdeaBreakpointsUiComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.debugger.TraceFileToResourcesAddition</implementation-class>
-    </component>    
+      <implementation-class>jetbrains.mps.idea.debugger.trace.TraceFilesManager</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent</implementation-class>
     </component>

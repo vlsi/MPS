@@ -23,17 +23,17 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.vcs.diff.ChangeSetImpl;
@@ -141,6 +141,7 @@ public class ChangesTracking {
   }
 
   private void update(boolean force) {
+    final Wrappers._boolean _force = new Wrappers._boolean(force);
     myQueue.assertSoftlyIsCommandThread();
     if (!(myDifference.isEnabled())) {
       return;
@@ -159,16 +160,22 @@ public class ChangesTracking {
       status = FileStatus.MERGED_WITH_CONFLICTS;
     }
 
-    if (myDifference.getChangeSet() != null && myDifference.getChangeSet().getNewModel() != myModelDescriptor.getSModel()) {
-      force = true;
+    if (myDifference.getChangeSet() != null) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (myDifference.getChangeSet().getNewModel() != myModelDescriptor.getSModel()) {
+            _force.value = true;
+          }
+        }
+      });
     }
 
-    if (myStatusOnLastUpdate == status && !(force)) {
+    if (myStatusOnLastUpdate == status && !(_force.value)) {
       return;
     }
     myDifference.removeChangeSet();
     myStatusOnLastUpdate = status;
-    if (FileStatus.NOT_CHANGED == status && !(force)) {
+    if (FileStatus.NOT_CHANGED == status && !(_force.value)) {
       return;
     }
     final Wrappers._T<SModel> baseVersionModel = new Wrappers._T<SModel>(null);

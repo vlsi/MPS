@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.Language;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
@@ -44,7 +44,10 @@ import jetbrains.mps.smodel.SModelFqName;
   @Override
   public List<Language> getVisibleLanguages() {
     Set<Language> result = SetSequence.fromSet(new HashSet<Language>());
-    SetSequence.fromSet(result).addSequence(CollectionSequence.fromCollection(super.getVisibleLanguages()));
+    IModule contextModule = myModule.getContextModule();
+    if (contextModule != null) {
+      SetSequence.fromSet(result).addSequence(Sequence.fromIterable(contextModule.getScope().getVisibleLanguages()));
+    }
     for (ModuleReference ref : SetSequence.fromSet(myModule.getUsedLanguagesReferences())) {
       Language language = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
       if (!(SetSequence.fromSet(result).contains(language))) {
@@ -66,22 +69,26 @@ import jetbrains.mps.smodel.SModelFqName;
 
   @Override
   public SModelDescriptor getModelDescriptor(@NotNull SModelReference reference) {
-    String stereotype = reference.getStereotype();
     SModelDescriptor descriptor = null;
-    if (eq_otn35i_a0c0e(stereotype, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
-      if (EvaluationAuxModule.JAVA_STUBS) {
+
+    IModule contextModule = myModule.getContextModule();
+    if (contextModule != null) {
+      descriptor = contextModule.getScope().getModelDescriptor(reference);
+    }
+    if (descriptor == null) {
+      String stereotype = reference.getStereotype();
+      if (eq_otn35i_a0b0e0e(stereotype, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
         descriptor = myModelRepository.getModelDescriptor(new SModelFqName(myModule.getModuleFqName(), reference.getLongName(), SModelStereotype.getStubStereotypeForId(LanguageID.JAVA)));
-      } else {
-        descriptor = super.getModelDescriptor(new SModelReference(reference.getLongName(), SModelStereotype.getStubStereotypeForId(EvaluationAuxModule.DEBUGGER_JAVA_ID)));
       }
     }
     if (descriptor != null) {
       return descriptor;
     }
+
     return super.getModelDescriptor(reference);
   }
 
-  private static boolean eq_otn35i_a0c0e(Object a, Object b) {
+  private static boolean eq_otn35i_a0b0e0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -7,28 +7,17 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
 import org.jdom.Element;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.make.StartupModuleMaker;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
-import jetbrains.mps.InternalFlag;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.startup.StartupManager;
 
-@State(name = "DefaultSearchOptionsComponent", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
+@State(name = "DefaultSearchOptions2", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
 })
 public class DefaultSearchOptionsComponent implements ProjectComponent, PersistentStateComponent<Element> {
-  private static final String DEFAULT_SEARCH_OPTIONS = "default_search_options";
-  private static Logger LOG = Logger.getLogger(DefaultSearchOptionsComponent.class);
-
-  private FindUsagesOptions myDefaultSearchOptions;
+  private DefaultOptionsContainer myDefaultOptions = null;
   private Project myProject;
   private Element myState;
 
@@ -36,74 +25,8 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     myProject = project;
   }
 
-  private FindUsagesOptions createDefaultOptions() {
-    final FindUsagesOptions result = new FindUsagesOptions();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        FindersOptions findersOptions = new FindersOptions("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
-
-        result.setOption(findersOptions);
-      }
-    });
-    ViewOptions viewOptions = new ViewOptions(true, false);
-    result.setOption(viewOptions);
-    ScopeOptions scopeOptions = new ScopeOptions((InternalFlag.isInternalMode() ?
-      ScopeOptions.GLOBAL_SCOPE :
-      ScopeOptions.PROJECT_SCOPE
-    ), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
-    result.setOption(scopeOptions);
-    return result;
-  }
-
-  public FindUsagesOptions getDefaultSearchOptions() {
-    return myDefaultSearchOptions;
-  }
-
-  public void setDefaultSearchOptions(FindUsagesOptions defaultSearchOptions) {
-    myDefaultSearchOptions = defaultSearchOptions;
-  }
-
-  public Element getState() {
-    if (myDefaultSearchOptions != null) {
-      Element defaultFindOptionsXML = new Element(DEFAULT_SEARCH_OPTIONS);
-      try {
-        myDefaultSearchOptions.write(defaultFindOptionsXML, myProject.getComponent(MPSProject.class));
-
-      } catch (CantSaveSomethingException e) {
-        LOG.error("error saving options", e);
-      }
-    }
-    return myState;
-  }
-
-  public void loadState(Element state) {
-    this.myState = (Element) state.clone();
-    if (myDefaultSearchOptions != null) {
-      readOptions(myState);
-    }
-  }
-
-  public void projectOpened() {
-    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
-      public void run() {
-        DefaultSearchOptionsComponent.this.myDefaultSearchOptions = createDefaultOptions();
-        if (myState != null) {
-          readOptions(myState);
-        }
-      }
-    });
-  }
-
-  public void projectClosed() {
-  }
-
-  private void readOptions(Element state) {
-    try {
-      myDefaultSearchOptions.read(state, myProject.getComponent(MPSProject.class));
-    } catch (CantLoadSomethingException e) {
-      LOG.error("error reading options", e);
-      myDefaultSearchOptions = new FindUsagesOptions(new FindersOptions(), new ScopeOptions(), new ViewOptions());
-    }
+  public DefaultOptionsContainer getDefaultOptions() {
+    return myDefaultOptions;
   }
 
   @NonNls
@@ -116,5 +39,36 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
   }
 
   public void disposeComponent() {
+  }
+
+  public Element getState() {
+    if (myDefaultOptions == null) {
+      return myState;
+    }
+    myState = myDefaultOptions.writeOptions(myProject.getComponent(MPSProject.class));
+    return myState;
+  }
+
+  public void loadState(Element state) {
+    myState = (Element) state.clone();
+    if (myDefaultOptions == null) {
+      return;
+    }
+    myDefaultOptions.readOptions(myState, myProject.getComponent(MPSProject.class));
+  }
+
+  public void projectOpened() {
+    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
+      public void run() {
+        myDefaultOptions = new DefaultOptionsContainer();
+        if (myState == null) {
+          return;
+        }
+        myDefaultOptions.readOptions(myState, myProject.getComponent(MPSProject.class));
+      }
+    });
+  }
+
+  public void projectClosed() {
   }
 }

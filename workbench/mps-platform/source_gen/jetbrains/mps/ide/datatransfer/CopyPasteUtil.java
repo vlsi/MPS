@@ -390,7 +390,7 @@ public class CopyPasteUtil {
             continue;
           }
           IModule module = modelDescriptor.getModule();
-          if (module == null) {
+          if (module == null || module == targetModule) {
             continue;
           }
 

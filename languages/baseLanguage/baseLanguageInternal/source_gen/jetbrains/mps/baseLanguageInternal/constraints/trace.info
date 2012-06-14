@@ -2,80 +2,87 @@
 <debugInfo>
   <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstraintsAspectDescriptor" />
   <root nodeId="1585405235656310170">
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="27" startPosition="74" endLine="28" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_r7ripe_a0a2a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="30" startPosition="38" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="35" startPosition="82" endLine="36" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="39" startPosition="37" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="44" startPosition="56" endLine="45" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="45" startPosition="42" endLine="46" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1585405235656310174" fileName="ConstantValue_Constraints.java" startLine="45" startPosition="42" endLine="46" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="48" startPosition="7" endLine="49" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="53" startPosition="83" endLine="54" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="57" startPosition="44" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656398268" fileName="ConstantValue_Constraints.java" startLine="66" startPosition="142" endLine="67" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656398267" fileName="ConstantValue_Constraints.java" startLine="73" startPosition="59" endLine="74" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="80" startPosition="61" endLine="81" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="85" startPosition="7" endLine="86" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstantValue_Constraints#()V" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="72" startPosition="87" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="37" startPosition="90" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="55" startPosition="89" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="64" startPosition="49" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="71" startPosition="135" endLine="76" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="78" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="69" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/smodel/search/ISearchScope;" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="36" startPosition="74" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="33" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="63" startPosition="56" endLine="83" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="60" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="54" startPosition="75" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="51" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="30" startPosition="38" endLine="31" endPosition="72" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="39" startPosition="37" endLine="40" endPosition="20" />
-    <scopeInfo nodeId="1585405235656310173" fileName="ConstantValue_Constraints.java" startLine="45" startPosition="42" endLine="46" endPosition="213" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="57" startPosition="44" endLine="58" endPosition="20" />
-    <scopeInfo nodeId="1585405235656398258" fileName="ConstantValue_Constraints.java" startLine="66" startPosition="142" endLine="67" endPosition="175" />
-    <scopeInfo nodeId="1585405235656398266" fileName="ConstantValue_Constraints.java" startLine="73" startPosition="59" endLine="74" endPosition="275" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="80" startPosition="61" endLine="81" endPosition="58" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="44" startPosition="56" endLine="46" endPosition="213">
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="29" startPosition="74" endLine="30" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_r7ripe_a0a2a0a0a1a0b0a1a1" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="32" startPosition="38" endLine="33" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="37" startPosition="82" endLine="38" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="41" startPosition="37" endLine="42" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="46" startPosition="56" endLine="47" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="47" startPosition="42" endLine="48" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1585405235656310174" fileName="ConstantValue_Constraints.java" startLine="47" startPosition="42" endLine="48" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="50" startPosition="7" endLine="51" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="55" startPosition="83" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="59" startPosition="44" endLine="60" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3189559528229799707" fileName="ConstantValue_Constraints.java" startLine="70" startPosition="47" endLine="71" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656398267" fileName="ConstantValue_Constraints.java" startLine="79" startPosition="59" endLine="80" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="86" startPosition="61" endLine="87" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="91" startPosition="7" endLine="92" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConstantValue_Constraints#()V" />
+    <nodeInfo nodeId="3189559528229799703" fileName="ConstantValue_Constraints.java" startLine="69" startPosition="231" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="78" startPosition="87" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="39" startPosition="90" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnGetter#()Z" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="57" startPosition="89" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="1585405235656398268" fileName="ConstantValue_Constraints.java" startLine="68" startPosition="142" endLine="73" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="77" startPosition="135" endLine="82" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IScope;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="66" startPosition="49" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="75" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/smodel/search/ISearchScope;" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="38" startPosition="74" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="35" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="65" startPosition="56" endLine="89" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="62" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="56" startPosition="75" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="53" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="32" startPosition="38" endLine="33" endPosition="72" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="41" startPosition="37" endLine="42" endPosition="20" />
+    <scopeInfo nodeId="1585405235656310173" fileName="ConstantValue_Constraints.java" startLine="47" startPosition="42" endLine="48" endPosition="213" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="59" startPosition="44" endLine="60" endPosition="20" />
+    <scopeInfo nodeId="3189559528229799704" fileName="ConstantValue_Constraints.java" startLine="70" startPosition="47" endLine="71" endPosition="133" />
+    <scopeInfo nodeId="1585405235656398266" fileName="ConstantValue_Constraints.java" startLine="79" startPosition="59" endLine="80" endPosition="275" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="86" startPosition="61" endLine="87" endPosition="58" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="46" startPosition="56" endLine="48" endPosition="213">
       <varInfo nodeId="1585405235656310170" varName="propertyName" />
     </scopeInfo>
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="3" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="72" startPosition="87" endLine="76" endPosition="0">
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="3" />
+    <scopeInfo nodeId="3189559528229799703" fileName="ConstantValue_Constraints.java" startLine="69" startPosition="231" endLine="73" endPosition="0">
+      <varInfo nodeId="3189559528229799703" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="78" startPosition="87" endLine="82" endPosition="0">
       <varInfo nodeId="1585405235656310170" varName="checkedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="37" startPosition="90" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="55" startPosition="89" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="64" startPosition="49" endLine="69" endPosition="0">
-      <varInfo nodeId="1585405235656310170" varName="_context" />
-      <varInfo nodeId="1585405235656310170" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="71" startPosition="135" endLine="76" endPosition="14" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="78" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="39" startPosition="90" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="57" startPosition="89" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1585405235656398258" fileName="ConstantValue_Constraints.java" startLine="68" startPosition="142" endLine="73" endPosition="15" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="77" startPosition="135" endLine="82" endPosition="14" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1585405235656310170" varName="node" />
       <varInfo nodeId="1585405235656310170" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="69" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="66" startPosition="49" endLine="75" endPosition="0">
       <varInfo nodeId="1585405235656310170" varName="_context" />
       <varInfo nodeId="1585405235656310170" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="35" startPosition="82" endLine="49" endPosition="22">
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="75" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1585405235656310170" varName="_context" />
+      <varInfo nodeId="1585405235656310170" varName="operationContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="37" startPosition="82" endLine="51" endPosition="22">
       <varInfo nodeId="1585405235656310170" varName="properties" />
     </scopeInfo>
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="33" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="63" startPosition="56" endLine="83" endPosition="10" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="60" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="53" startPosition="83" endLine="86" endPosition="22">
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="35" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="65" startPosition="56" endLine="89" endPosition="10" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="62" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="55" startPosition="83" endLine="92" endPosition="22">
       <varInfo nodeId="1585405235656310170" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="51" startPosition="0" endLine="88" endPosition="0" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="27" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="37" startPosition="36" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$1" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="55" startPosition="35" endLine="85" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$2" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="64" startPosition="19" endLine="83" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$3" />
-    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="72" startPosition="23" endLine="76" endPosition="13" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$4" />
+    <scopeInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="53" startPosition="0" endLine="94" endPosition="0" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="29" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="39" startPosition="36" endLine="50" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$1" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="57" startPosition="35" endLine="91" endPosition="5" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$2" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="66" startPosition="19" endLine="89" endPosition="9" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$3" />
+    <unitInfo nodeId="3189559528229799703" fileName="ConstantValue_Constraints.java" startLine="69" startPosition="208" endLine="73" endPosition="13" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$4" />
+    <unitInfo nodeId="1585405235656310170" fileName="ConstantValue_Constraints.java" startLine="78" startPosition="23" endLine="82" endPosition="13" unitName="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$4" />
   </root>
   <root nodeId="3421461530438560155">
     <nodeInfo nodeId="3421461530438560155" fileName="InternalAnonymousClass_Constraints.java" startLine="8" startPosition="47" endLine="9" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
