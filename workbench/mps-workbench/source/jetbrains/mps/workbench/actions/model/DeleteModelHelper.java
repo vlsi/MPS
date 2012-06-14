@@ -69,7 +69,11 @@ public class DeleteModelHelper {
   }
 
   public static void deleteGeneratedFiles(SModelDescriptor modelDescriptor) {
-    IFile moduleOutput = FileSystem.getInstance().getFileByPath(modelDescriptor.getModule().getOutputFor(modelDescriptor));
+    String moduleOutputPath = modelDescriptor.getModule().getOutputFor(modelDescriptor);
+    if (moduleOutputPath == null) {
+      return;
+    }
+    IFile moduleOutput = FileSystem.getInstance().getFileByPath(moduleOutputPath);
     FileGenerationUtil.getDefaultOutputDir(modelDescriptor, moduleOutput).delete();
     FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileGenerationUtil.getCachesDir(moduleOutput)).delete();
   }
