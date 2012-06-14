@@ -37,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.IDebugger" />
   </dependency>

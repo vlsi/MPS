@@ -46,6 +46,7 @@ import jetbrains.mps.vfs.IFile;
 import javax.swing.ImageIcon;
 import java.io.InputStream;
 import java.io.IOException;
+import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.EnumMap;
@@ -297,7 +298,7 @@ public class IconManager {
     return icon;
   }
 
-  public static Icon loadIcon(String iconPath, boolean cache) {
+  public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
     Icon icon = ourPathsToIcons.get(iconPath);
     if (icon == null) {
       IFile file = FileSystem.getInstance().getFileByPath(iconPath);

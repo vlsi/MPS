@@ -22,6 +22,7 @@ public class DebugObjects {
     String stringVar = "one = ";
     Object objectVar = new Integer(1);
     System.err.println(stringVar + objectVar);
+    objectVar = new Integer(2);
   }
 
   public void doStrangeThings() {
