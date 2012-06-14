@@ -6,35 +6,18 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.make.StartupModuleMaker;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
-import jetbrains.mps.InternalFlag;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSProject;
+import com.intellij.openapi.startup.StartupManager;
 
-import java.util.HashMap;
-import java.util.List;
-
-@State(name = "DefaultSearchOptions", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
+@State(name = "DefaultSearchOptions2", storages = {@Storage(id = "other", file = "$WORKSPACE_FILE$")
 })
 public class DefaultSearchOptionsComponent implements ProjectComponent, PersistentStateComponent<Element> {
-  private static final String DEFAULT_SEARCH_OPTIONS = "default_search_options";
-  private static final String SEARCH_OPTION = "search_option";
-  private static final String NODE_ID = "node";
-  private static Logger LOG = Logger.getLogger(DefaultSearchOptionsComponent.class);
-
-  private final HashMap<String, FindUsagesOptions> myDefaultSearchOptions = new HashMap<String, FindUsagesOptions>();
+  private DefaultOptionsContainer myDefaultOptions = null;
   private Project myProject;
   private Element myState;
 
@@ -42,83 +25,8 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     myProject = project;
   }
 
-  private FindUsagesOptions createDefaultOptions() {
-    final FindUsagesOptions result = new FindUsagesOptions();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        FindersOptions findersOptions = new FindersOptions("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
-
-        result.setOption(findersOptions);
-      }
-    });
-    ViewOptions viewOptions = new ViewOptions(true, false);
-    result.setOption(viewOptions);
-    ScopeOptions scopeOptions = new ScopeOptions((InternalFlag.isInternalMode() ?
-      ScopeOptions.GLOBAL_SCOPE :
-      ScopeOptions.PROJECT_SCOPE
-    ), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
-    result.setOption(scopeOptions);
-    return result;
-  }
-
-  public FindUsagesOptions getDefaultSearchOptions(String concept) {
-    FindUsagesOptions options = myDefaultSearchOptions.get(concept);
-    return options != null ? options : createDefaultOptions();
-  }
-
-  public void setDefaultSearchOptions(String concept, FindUsagesOptions defaultSearchOptions) {
-    myDefaultSearchOptions.put(concept, defaultSearchOptions);
-  }
-
-  public Element getState() {
-    if (myDefaultSearchOptions.isEmpty()) return myState;
-
-    Element defaultFindOptionsXML = new Element(DEFAULT_SEARCH_OPTIONS);
-    for (String np : myDefaultSearchOptions.keySet()) {
-      Element optionXML = new Element(SEARCH_OPTION);
-      try {
-        defaultFindOptionsXML.setAttribute(NODE_ID, np);
-        myDefaultSearchOptions.get(np).write(defaultFindOptionsXML, myProject.getComponent(MPSProject.class));
-        defaultFindOptionsXML.addContent(optionXML);
-      } catch (CantSaveSomethingException e) {
-        LOG.error("error saving options", e);
-      }
-    }
-    myState = defaultFindOptionsXML;
-    return myState;
-  }
-
-  public void loadState(Element state) {
-    myState = (Element) state.clone();
-    if (myDefaultSearchOptions.isEmpty()) return;
-    readOptions(myState);
-  }
-
-  public void projectOpened() {
-    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
-      public void run() {
-        if (myState == null) return;
-        readOptions(myState);
-      }
-    });
-  }
-
-  public void projectClosed() {
-
-  }
-
-  private void readOptions(Element state) {
-    myDefaultSearchOptions.clear();
-    for (Element optXML : (List<Element>)state.getChildren(SEARCH_OPTION)) {
-      String np = optXML.getAttributeValue(NODE_ID);
-      try {
-        FindUsagesOptions opt = new FindUsagesOptions();
-        opt.read(state, myProject.getComponent(MPSProject.class));
-        myDefaultSearchOptions.put(np, opt);
-      } catch (CantLoadSomethingException e) {
-        LOG.error("error reading options", e);
-      }
-    }
+  public DefaultOptionsContainer getDefaultOptions() {
+    return myDefaultOptions;
   }
 
   @NonNls
@@ -128,10 +36,39 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
   }
 
   public void initComponent() {
-
   }
 
   public void disposeComponent() {
+  }
 
+  public Element getState() {
+    if (myDefaultOptions == null) {
+      return myState;
+    }
+    myState = myDefaultOptions.writeOptions(myProject.getComponent(MPSProject.class));
+    return myState;
+  }
+
+  public void loadState(Element state) {
+    myState = (Element) state.clone();
+    if (myDefaultOptions == null) {
+      return;
+    }
+    myDefaultOptions.readOptions(myState, myProject.getComponent(MPSProject.class));
+  }
+
+  public void projectOpened() {
+    StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
+      public void run() {
+        myDefaultOptions = new DefaultOptionsContainer();
+        if (myState == null) {
+          return;
+        }
+        myDefaultOptions.readOptions(myState, myProject.getComponent(MPSProject.class));
+      }
+    });
+  }
+
+  public void projectClosed() {
   }
 }

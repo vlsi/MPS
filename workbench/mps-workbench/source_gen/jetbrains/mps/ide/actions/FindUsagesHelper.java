@@ -55,7 +55,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
       }
     });
     // show dialog 
-    final Wrappers._T<FindUsagesOptions> options = new Wrappers._T<FindUsagesOptions>(getOptionsComponent().getDefaultSearchOptions(concept.value));
+    final Wrappers._T<FindUsagesOptions> options = new Wrappers._T<FindUsagesOptions>(getOptionsComponent().getDefaultOptions().getDefaultSearchOptions(concept.value));
     FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, myProject, frame);
     if (myWithDialog) {
       dialog.showDialog();
@@ -64,7 +64,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
       }
     }
     options.value = dialog.getResult();
-    getOptionsComponent().setDefaultSearchOptions(concept.value, options.value);
+    getOptionsComponent().getDefaultOptions().setDefaultSearchOptions(concept.value, options.value);
     // start 
     final Wrappers._T<IResultProvider> provider = new Wrappers._T<IResultProvider>();
     final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();

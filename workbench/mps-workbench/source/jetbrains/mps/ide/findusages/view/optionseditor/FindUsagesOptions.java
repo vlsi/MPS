@@ -59,6 +59,10 @@ public class FindUsagesOptions implements Cloneable {
     return (T) myOptions.get(optionClass);
   }
 
+  public void removeOption(Class optionClass) {
+    myOptions.remove(optionClass);
+  }
+
   public void read(Element element, Project project) throws CantLoadSomethingException {
     for (Element optionXML : (List<Element>) element.getChildren(OPTION)) {
       String className = optionXML.getAttribute(CLASS_NAME).getValue();
