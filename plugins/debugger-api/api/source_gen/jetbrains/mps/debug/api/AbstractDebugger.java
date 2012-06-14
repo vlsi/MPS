@@ -7,6 +7,7 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
+import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
@@ -18,7 +19,7 @@ public abstract class AbstractDebugger<B extends IBreakpoint, K extends IBreakpo
   private final Debuggers myDebuggers;
   private IBreakpointsProvider<B, K> myBreakpointsProvider;
 
-  public AbstractDebugger(String name, Debuggers debuggers, BreakpointProvidersManager breakpointsProviderManager) {
+  public AbstractDebugger(@NonNls String name, @NotNull Debuggers debuggers, @NotNull BreakpointProvidersManager breakpointsProviderManager) {
     myName = name;
     myDebuggers = debuggers;
     myBreakpointsProviderManager = breakpointsProviderManager;

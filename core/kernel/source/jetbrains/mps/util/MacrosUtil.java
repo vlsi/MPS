@@ -18,8 +18,11 @@ package jetbrains.mps.util;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nls;
 
 public class MacrosUtil {
+
+  @Nls
   public static String expandPath(String path, String nodeModuleUID) {
     IFile moduleDescriptorFile = null;
     IModule module;

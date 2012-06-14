@@ -1,29 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.stubs.AllMembersJavaStubs" file="AllMembersJavaStubs.java">
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.project.IModule" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRoot" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
-    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
-    <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
-    <classNode dependClassName="jetbrains.mps.stubs.BaseStubModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
-    <classNode dependClassName="jetbrains.mps.stubs.util.JavaStubModelDataSource" />
-    <classNode dependClassName="jetbrains.mps.stubs.util.JavaStubModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.smodel.persistence.AbstractModelRootManager" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.stubs.JavaStubs" file="JavaStubs.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.String" />
