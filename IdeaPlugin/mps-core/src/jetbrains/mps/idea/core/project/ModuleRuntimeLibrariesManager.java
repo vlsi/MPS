@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.facet.ui;
+package jetbrains.mps.idea.core.project;
 
 import com.intellij.facet.ui.FacetEditorContext;
 import com.intellij.openapi.fileTypes.FileTypes;

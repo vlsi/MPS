@@ -174,6 +174,14 @@ public class SolutionIdea extends Solution {
   }
 
   @Override
+  public void addUsedLanguage(ModuleReference langRef) {
+    super.addUsedLanguage(langRef);
+    ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
+    new ModuleRuntimeLibrariesManager(myModule, Collections.singletonList(langRef), modifiableModel).addMissingLibraries();
+    modifiableModel.commit();
+  }
+
+  @Override
   public void invalidateDependencies() {
     super.invalidateDependencies();
     myDependencies = null;
@@ -250,9 +258,5 @@ public class SolutionIdea extends Solution {
 
       AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
     }
-  }
-
-  public Module getIdeaModule() {
-    return myModule;
   }
 }

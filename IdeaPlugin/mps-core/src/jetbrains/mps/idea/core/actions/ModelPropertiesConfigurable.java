@@ -17,20 +17,15 @@
 package jetbrains.mps.idea.core.actions;
 
 import com.intellij.openapi.Disposable;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.ModifiableRootModel;
-import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.TabbedPaneWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
-import jetbrains.mps.idea.core.facet.ui.ModuleRuntimeLibrariesManager;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.ui.ImportedModelsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 import jetbrains.mps.project.IModule;
@@ -206,13 +201,6 @@ public class ModelPropertiesConfigurable implements Configurable, Disposable {
         module.addUsedLanguage(language);
         addedLanguages.add(language);
       }
-    }
-
-    if (module instanceof SolutionIdea) {
-      Module ideaModule = ((SolutionIdea) module).getIdeaModule();
-      ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(ideaModule).getModifiableModel();
-      new ModuleRuntimeLibrariesManager(ideaModule, addedLanguages, modifiableModel).addMissingLibraries();
-      modifiableModel.commit();
     }
   }
 
