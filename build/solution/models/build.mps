@@ -8350,6 +8350,11 @@
           </node>
         </node>
       </node>
+      <node role="feedbackUrl" roleId="kdzh.8877724874822185910" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="8877724874822383606">
+        <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="8877724874822383607">
+          <property name="text" nameId="3ior.4903714810883755350" value="http://forum.jetbrains.com/forum/Meta-Programming-System" />
+        </node>
+      </node>
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="4301118715654465616">
       <property name="name" nameId="tpck.1169194664001" value="build.number" />
