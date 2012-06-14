@@ -48,7 +48,7 @@ public class FindUsagesOptions implements Cloneable {
     for (BaseOptions option : myOptions.values()) {
       optionsCopy.add(option.clone());
     }
-    return new FindUsagesOptions((BaseOptions[]) optionsCopy.toArray());
+    return new FindUsagesOptions(optionsCopy.toArray(new BaseOptions[optionsCopy.size()]));
   }
 
   public void setOption(BaseOptions options) {
