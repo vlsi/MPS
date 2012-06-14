@@ -20,7 +20,9 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.runtime.impl.ProviderGeneratedSearchScope;
 
@@ -64,7 +66,11 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+            return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return (SLinkOperations.getTarget(it, "initializer", true) != null) && SPropertyOperations.getBoolean(it, "isFinal");
+              }
+            });
           }
 
           @Override
