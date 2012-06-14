@@ -384,14 +384,16 @@
       <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="5538333046911349085">
         <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5538333046911349086">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5538333046911430949">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5538333046911430956">
-              <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5538333046911430959">
-                <node role="quotedNode" roleId="tp3r.1196350785114" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8969662674666983129" />
-              </node>
-              <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5538333046911430951">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2088411688569140115">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5538333046911430951">
                 <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="5538333046911430950" />
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkAccess" typeId="tp25.1138056143562" id="5538333046911430955">
-                  <link role="link" roleId="tp25.1138056516764" targetNodeId="tp4k.5538333046911298738" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="2088411688569140091">
+                  <link role="link" roleId="tp25.1138056546658" targetNodeId="tp4k.5538333046911298738" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="2088411688569140121">
+                <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="5538333046911430959">
+                  <node role="quotedNode" roleId="tp3r.1196350785114" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8969662674666983129" />
                 </node>
               </node>
             </node>
