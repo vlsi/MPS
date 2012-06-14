@@ -30,7 +30,7 @@ public class EditorTabTitleProviderImpl implements EditorTabTitleProvider {
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
         SNode node = MPSEditorUtil.getCurrentEditedNode(project, (MPSNodeVirtualFile) file);
-        if (node == null) return "<no_name>";
+        if (node == null) return null;
         return node.getPresentation();
       }
     });
