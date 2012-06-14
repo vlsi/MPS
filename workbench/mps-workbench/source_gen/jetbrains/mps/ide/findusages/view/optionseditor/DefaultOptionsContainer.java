@@ -5,10 +5,11 @@ package jetbrains.mps.ide.findusages.view.optionseditor;
 import jetbrains.mps.logging.Logger;
 import java.util.HashMap;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -23,7 +24,7 @@ public class DefaultOptionsContainer {
   private static Logger LOG = Logger.getLogger(DefaultSearchOptionsComponent.class);
 
   private final HashMap<String, FindersOptions> myDefaultFinders = new HashMap<String, FindersOptions>();
-  private FindUsagesOptions myDefaultOptions = createDefaultOptions();
+  private FindUsagesOptions myDefaultOptions = createDefaultSearchOptions();
 
   public DefaultOptionsContainer() {
   }
@@ -31,9 +32,10 @@ public class DefaultOptionsContainer {
   public FindUsagesOptions getDefaultSearchOptions(String concept) {
     FindUsagesOptions result = myDefaultOptions.clone();
     FindersOptions finders = myDefaultFinders.get(concept);
-    if (finders != null) {
-      result.setOption(finders);
-    }
+    result.setOption((finders != null ?
+      finders :
+      createDefaultFindersOption()
+    ));
     return result;
   }
 
@@ -43,14 +45,8 @@ public class DefaultOptionsContainer {
     myDefaultFinders.put(concept, defaultSearchOptions.getOption(FindersOptions.class));
   }
 
-  private FindUsagesOptions createDefaultOptions() {
+  private FindUsagesOptions createDefaultSearchOptions() {
     final FindUsagesOptions result = new FindUsagesOptions();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        FindersOptions findersOptions = new FindersOptions("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
-        result.setOption(findersOptions);
-      }
-    });
     ViewOptions viewOptions = new ViewOptions(true, false);
     result.setOption(viewOptions);
     ScopeOptions scopeOptions = new ScopeOptions(((InternalFlag.isInternalMode() ?
@@ -59,6 +55,16 @@ public class DefaultOptionsContainer {
     )), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
     result.setOption(scopeOptions);
     return result;
+  }
+
+  public FindersOptions createDefaultFindersOption() {
+    final Wrappers._T<FindersOptions> findersOptions = new Wrappers._T<FindersOptions>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        findersOptions.value = new FindersOptions("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+      }
+    });
+    return findersOptions.value;
   }
 
   public Element writeOptions(MPSProject project) {
@@ -88,12 +94,11 @@ public class DefaultOptionsContainer {
       for (Element findersXML : (List<Element>) state.getChildren(FINDERS_OPTION)) {
         String np = findersXML.getAttributeValue(NODE_ID);
         FindersOptions opt = new FindersOptions();
-        opt.read(state, project);
+        opt.read(findersXML, project);
         myDefaultFinders.put(np, opt);
       }
     } catch (CantLoadSomethingException e) {
-      myDefaultOptions = createDefaultOptions();
-      myDefaultOptions.removeOption(FindersOptions.class);
+      myDefaultOptions = createDefaultSearchOptions();
       myDefaultFinders.clear();
       LOG.error("error reading options", e);
     }
