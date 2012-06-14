@@ -55,6 +55,14 @@
     <component>
       <implementation-class>jetbrains.mps.ide.blame.dialog.BlameDialogComponent</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.caches.StubModelsIndexer</implementation-class>
+    </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport</implementation-class>
+    </component>
   </application-components>
 
   <project-components>
