@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class AddTypeParameters_Intention extends BaseIntention implements Intention {
@@ -42,7 +43,7 @@ public class AddTypeParameters_Intention extends BaseIntention implements Intent
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isEmpty() && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall"));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
