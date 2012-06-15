@@ -70,7 +70,7 @@ public class ClassifiersScope extends FilteringScope {
 
   @Override
   public SNode resolve(SNode contextNode, String refText) {
-    SModelReference targetModelReference = model.getSModelReference();
+    SModelReference targetModelReference = null;
     // hack for [model]node construction, remove it 
     if (refText.startsWith("[")) {
       String[] modelNameAndTheRest = refText.split("]");
@@ -95,12 +95,20 @@ public class ClassifiersScope extends FilteringScope {
     }
     // end of hack 
 
+    SModel targetModel = null;
+    if (targetModelReference != null && targetModelReference.getSModelId() != null) {
+      targetModel = check_npo0wh_a0a0g0c(scope.getModelDescriptor(targetModelReference));
+    }
+
     // todo: CRAP, rewrite it! 
     String classname = refText;
     int dotIndex = classname.lastIndexOf(".");
     if (dotIndex >= 0) {
       // try local nested classes 
-      List<SNode> localClassifiers = getClassifiersByRefName(model, classname);
+      List<SNode> localClassifiers = getClassifiersByRefName((targetModel != null ?
+        targetModel :
+        model
+      ), classname);
       if (ListSequence.fromList(localClassifiers).count() >= 1) {
         return ListSequence.fromList(localClassifiers).first();
       }
@@ -128,14 +136,13 @@ public class ClassifiersScope extends FilteringScope {
       return resolveClass(package_, null, classname);
     }
 
-    if (targetModelReference.getSModelId() != null) {
-      SModelDescriptor targetModel = scope.getModelDescriptor(targetModelReference);
-      if (targetModel == null) {
-        return null;
-      }
-      return ListSequence.fromList(getClassifiersByRefName(targetModel.getSModel(), classname)).first();
+    if (targetModel != null) {
+      return ListSequence.fromList(getClassifiersByRefName(targetModel, classname)).first();
     }
-    SModelFqName modelname = targetModelReference.getSModelFqName();
+    SModelFqName modelname = (targetModelReference == null ?
+      model.getSModelFqName() :
+      targetModelReference.getSModelFqName()
+    );
     return resolveClass(modelname.getLongName(), modelname.getStereotype(), classname);
   }
 
@@ -266,6 +273,13 @@ public class ClassifiersScope extends FilteringScope {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
       }
     });
+  }
+
+  private static SModel check_npo0wh_a0a0g0c(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
   }
 
   private static IModule check_npo0wh_a0b0a0e0d(SModelDescriptor checkedDotOperand) {
