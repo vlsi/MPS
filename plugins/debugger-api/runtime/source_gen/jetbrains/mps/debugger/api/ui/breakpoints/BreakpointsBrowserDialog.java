@@ -9,7 +9,6 @@ import javax.swing.JComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
-import com.intellij.openapi.actionSystem.AnAction;
 import javax.swing.JScrollPane;
 import java.util.Map;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointKind;
@@ -32,11 +31,11 @@ import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ToggleAction;
+import jetbrains.mps.debugger.api.ui.icons.Icons;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.AnAction;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.KeyStroke;
@@ -46,6 +45,7 @@ import java.awt.event.MouseEvent;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
@@ -60,7 +60,6 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
   private final BreakpointManagerComponent myBreakpointsManager;
   private final BreakpointProvidersManager myProvidersManager;
   private final BreakpointsUiComponent myBreakpointsUi;
-  private AnAction myDeleteBreakpointAction;
   private final JScrollPane myBreakpointsScrollPane;
   private final BreakpointsView[] myViews;
   private int myCurrentViewIndex;
@@ -164,29 +163,9 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
     group.add(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.GoToBreakpointSourceAction_Action")));
     group.add(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.ViewBreakpointSourceAction_Action")));
     group.add(createAddActionGroup());
-    myDeleteBreakpointAction = new AnAction("Delete", "Delete Breakpoint", Icons.REMOVE) {
-      @Override
-      public void actionPerformed(AnActionEvent e) {
-        final IBreakpoint breakpoint = getBreakpoint(e);
-        if (breakpoint == null) {
-          return;
-        }
-        ModelAccess.instance().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            myBreakpointsManager.removeBreakpoint(breakpoint);
-          }
-        });
-      }
-
-      @Override
-      public void update(AnActionEvent e) {
-        e.getPresentation().setEnabled(getBreakpoint(e) != null);
-      }
-    };
     group.add(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DeleteBreakpointAction_Action")));
     group.add(new Separator());
-    group.add(new ToggleAction("Tree View", "Toggle Tree/List View", jetbrains.mps.debugger.api.ui.icons.Icons.SHOW_AS_TREE) {
+    group.add(new ToggleAction("Tree View", "Toggle Tree/List View", Icons.BREAKPOINTS_DIALOG_TREE_VIEW) {
       @Override
       public boolean isSelected(AnActionEvent e) {
         return isTreeView();
@@ -198,7 +177,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         e.getPresentation().setText(myViews[1 - myCurrentViewIndex].getTitle());
       }
     });
-    group.add(new ToggleAction("Group By Module", "Group By Module", jetbrains.mps.ide.findusages.view.icons.Icons.MODULE_ICON) {
+    group.add(new ToggleAction("Group By Module", "Group By Module", Icons.BREAKPOINTS_DIALOG_GROUP_BY_MODULE) {
       @Override
       public void update(AnActionEvent e) {
         super.update(e);
@@ -221,7 +200,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         tree.update();
       }
     });
-    group.add(new ToggleAction("Group By Model", "Group By Model", jetbrains.mps.ide.findusages.view.icons.Icons.MODEL_ICON) {
+    group.add(new ToggleAction("Group By Model", "Group By Model", Icons.BREAKPOINTS_DIALOG_GROUP_BY_MODEL) {
       @Override
       public void update(AnActionEvent e) {
         super.update(e);
@@ -244,7 +223,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
         tree.update();
       }
     });
-    group.add(new ToggleAction("Group By Root", "Group By Root", jetbrains.mps.ide.findusages.view.icons.Icons.ROOT_ICON) {
+    group.add(new ToggleAction("Group By Root", "Group By Root", Icons.BREAKPOINTS_DIALOG_GROUP_BY_ROOT) {
       @Override
       public void update(AnActionEvent e) {
         super.update(e);
@@ -306,7 +285,7 @@ public class BreakpointsBrowserDialog extends BaseDialog implements DataProvider
       @Override
       public void update(AnActionEvent e) {
         super.update(e);
-        e.getPresentation().setIcon(Icons.ADD);
+        e.getPresentation().setIcon(jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.ADD);
       }
     };
     for (final IBreakpointKind kind : myProvidersManager.getAllKinds()) {
