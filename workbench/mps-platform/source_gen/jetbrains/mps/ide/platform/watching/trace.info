@@ -578,59 +578,60 @@
     <nodeInfo nodeId="8474613039627891611" fileName="FSChangesWatcher.java" startLine="150" startPosition="7" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8474613039627891639" fileName="FSChangesWatcher.java" startLine="155" startPosition="103" endLine="156" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8474613039627891641" fileName="FSChangesWatcher.java" startLine="156" startPosition="28" endLine="157" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891650" fileName="FSChangesWatcher.java" startLine="161" startPosition="42" endLine="162" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891651" fileName="FSChangesWatcher.java" startLine="163" startPosition="13" endLine="164" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891661" fileName="FSChangesWatcher.java" startLine="165" startPosition="36" endLine="166" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891662" fileName="FSChangesWatcher.java" startLine="167" startPosition="13" endLine="168" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891680" fileName="FSChangesWatcher.java" startLine="170" startPosition="83" endLine="171" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891729" fileName="FSChangesWatcher.java" startLine="181" startPosition="38" endLine="182" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891743" fileName="FSChangesWatcher.java" startLine="187" startPosition="38" endLine="188" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891756" fileName="FSChangesWatcher.java" startLine="193" startPosition="38" endLine="194" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891763" fileName="FSChangesWatcher.java" startLine="194" startPosition="108" endLine="195" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891768" fileName="FSChangesWatcher.java" startLine="195" startPosition="42" endLine="196" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891783" fileName="FSChangesWatcher.java" startLine="201" startPosition="9" endLine="202" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891785" fileName="FSChangesWatcher.java" startLine="202" startPosition="31" endLine="203" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891780" fileName="FSChangesWatcher.java" startLine="204" startPosition="15" endLine="205" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891403" fileName="FSChangesWatcher.java" startLine="209" startPosition="45" endLine="210" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891136" fileName="FSChangesWatcher.java" startLine="220" startPosition="64" endLine="221" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474613039627891149" fileName="FSChangesWatcher.java" startLine="222" startPosition="74" endLine="223" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8474613039627891162" fileName="FSChangesWatcher.java" startLine="226" startPosition="38" endLine="227" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891179" fileName="FSChangesWatcher.java" startLine="229" startPosition="47" endLine="230" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891225" fileName="FSChangesWatcher.java" startLine="230" startPosition="59" endLine="231" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891244" fileName="FSChangesWatcher.java" startLine="232" startPosition="9" endLine="233" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891256" fileName="FSChangesWatcher.java" startLine="237" startPosition="95" endLine="238" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="243" startPosition="40" endLine="244" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6250805187620582531" fileName="FSChangesWatcher.java" startLine="245" startPosition="15" endLine="246" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="9045182831066367240" fileName="FSChangesWatcher.java" startLine="248" startPosition="48" endLine="249" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="9045182831066369964" fileName="FSChangesWatcher.java" startLine="250" startPosition="13" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9045182831066367244" fileName="FSChangesWatcher.java" startLine="252" startPosition="58" endLine="253" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="9045182831066367251" fileName="FSChangesWatcher.java" startLine="255" startPosition="59" endLine="256" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9045182831066369668" fileName="FSChangesWatcher.java" startLine="257" startPosition="59" endLine="258" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9045182831066369927" fileName="FSChangesWatcher.java" startLine="259" startPosition="59" endLine="260" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3914755648473566346" fileName="FSChangesWatcher.java" startLine="261" startPosition="57" endLine="262" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3914755648473566432" fileName="FSChangesWatcher.java" startLine="263" startPosition="57" endLine="264" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3914755648473568719" fileName="FSChangesWatcher.java" startLine="264" startPosition="57" endLine="265" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3914755648473566402" fileName="FSChangesWatcher.java" startLine="265" startPosition="51" endLine="266" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3914755648473566410" fileName="FSChangesWatcher.java" startLine="266" startPosition="47" endLine="267" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891290" fileName="FSChangesWatcher.java" startLine="275" startPosition="43" endLine="276" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />
-    <nodeInfo nodeId="8474613039627891294" fileName="FSChangesWatcher.java" startLine="276" startPosition="32" endLine="277" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFinished#()V" />
-    <nodeInfo nodeId="8474613039627890964" fileName="FSChangesWatcher.java" startLine="213" startPosition="69" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BulkFileChangesListener#()V" />
+    <nodeInfo nodeId="8474613039627891651" fileName="FSChangesWatcher.java" startLine="159" startPosition="11" endLine="160" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627891650" fileName="FSChangesWatcher.java" startLine="162" startPosition="42" endLine="163" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1506051177045809775" fileName="FSChangesWatcher.java" startLine="164" startPosition="13" endLine="165" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891661" fileName="FSChangesWatcher.java" startLine="166" startPosition="36" endLine="167" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891662" fileName="FSChangesWatcher.java" startLine="168" startPosition="13" endLine="169" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891680" fileName="FSChangesWatcher.java" startLine="172" startPosition="81" endLine="173" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891729" fileName="FSChangesWatcher.java" startLine="182" startPosition="38" endLine="183" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891743" fileName="FSChangesWatcher.java" startLine="188" startPosition="38" endLine="189" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891756" fileName="FSChangesWatcher.java" startLine="194" startPosition="38" endLine="195" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627891763" fileName="FSChangesWatcher.java" startLine="195" startPosition="108" endLine="196" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891768" fileName="FSChangesWatcher.java" startLine="196" startPosition="42" endLine="197" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891783" fileName="FSChangesWatcher.java" startLine="202" startPosition="9" endLine="203" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891785" fileName="FSChangesWatcher.java" startLine="203" startPosition="31" endLine="204" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891780" fileName="FSChangesWatcher.java" startLine="205" startPosition="15" endLine="206" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891403" fileName="FSChangesWatcher.java" startLine="210" startPosition="45" endLine="211" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891136" fileName="FSChangesWatcher.java" startLine="221" startPosition="64" endLine="222" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474613039627891149" fileName="FSChangesWatcher.java" startLine="223" startPosition="74" endLine="224" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8474613039627891162" fileName="FSChangesWatcher.java" startLine="227" startPosition="38" endLine="228" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891179" fileName="FSChangesWatcher.java" startLine="230" startPosition="47" endLine="231" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891225" fileName="FSChangesWatcher.java" startLine="231" startPosition="59" endLine="232" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891244" fileName="FSChangesWatcher.java" startLine="233" startPosition="9" endLine="234" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891256" fileName="FSChangesWatcher.java" startLine="238" startPosition="95" endLine="239" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="244" startPosition="40" endLine="245" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6250805187620582531" fileName="FSChangesWatcher.java" startLine="246" startPosition="15" endLine="247" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="9045182831066367240" fileName="FSChangesWatcher.java" startLine="249" startPosition="48" endLine="250" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="9045182831066369964" fileName="FSChangesWatcher.java" startLine="251" startPosition="13" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9045182831066367244" fileName="FSChangesWatcher.java" startLine="253" startPosition="58" endLine="254" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="9045182831066367251" fileName="FSChangesWatcher.java" startLine="256" startPosition="59" endLine="257" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066369668" fileName="FSChangesWatcher.java" startLine="258" startPosition="59" endLine="259" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066369927" fileName="FSChangesWatcher.java" startLine="260" startPosition="59" endLine="261" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3914755648473566346" fileName="FSChangesWatcher.java" startLine="262" startPosition="57" endLine="263" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3914755648473566432" fileName="FSChangesWatcher.java" startLine="264" startPosition="57" endLine="265" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3914755648473568719" fileName="FSChangesWatcher.java" startLine="265" startPosition="57" endLine="266" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3914755648473566402" fileName="FSChangesWatcher.java" startLine="266" startPosition="51" endLine="267" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3914755648473566410" fileName="FSChangesWatcher.java" startLine="267" startPosition="47" endLine="268" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891290" fileName="FSChangesWatcher.java" startLine="276" startPosition="43" endLine="277" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />
+    <nodeInfo nodeId="8474613039627891294" fileName="FSChangesWatcher.java" startLine="277" startPosition="32" endLine="278" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFinished#()V" />
+    <nodeInfo nodeId="8474613039627890964" fileName="FSChangesWatcher.java" startLine="214" startPosition="69" endLine="216" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BulkFileChangesListener#()V" />
     <nodeInfo nodeId="8474613039627891418" fileName="FSChangesWatcher.java" startLine="86" startPosition="15" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474613039627891502" fileName="FSChangesWatcher.java" startLine="114" startPosition="12" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474613039627891558" fileName="FSChangesWatcher.java" startLine="130" startPosition="34" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474613039627891598" fileName="FSChangesWatcher.java" startLine="144" startPosition="27" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474613039627891604" fileName="FSChangesWatcher.java" startLine="147" startPosition="7" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891645" fileName="FSChangesWatcher.java" startLine="160" startPosition="33" endLine="163" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891655" fileName="FSChangesWatcher.java" startLine="164" startPosition="58" endLine="167" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891726" fileName="FSChangesWatcher.java" startLine="180" startPosition="76" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891740" fileName="FSChangesWatcher.java" startLine="186" startPosition="79" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627890968" fileName="FSChangesWatcher.java" startLine="216" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="8474613039627891140" fileName="FSChangesWatcher.java" startLine="221" startPosition="74" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891157" fileName="FSChangesWatcher.java" startLine="225" startPosition="29" endLine="228" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="242" startPosition="42" endLine="245" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="242" startPosition="42" endLine="245" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9045182831066367208" fileName="FSChangesWatcher.java" startLine="247" startPosition="13" endLine="250" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9045182831066366251" fileName="FSChangesWatcher.java" startLine="251" startPosition="0" endLine="254" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891645" fileName="FSChangesWatcher.java" startLine="161" startPosition="33" endLine="164" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891655" fileName="FSChangesWatcher.java" startLine="165" startPosition="38" endLine="168" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891726" fileName="FSChangesWatcher.java" startLine="181" startPosition="76" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891740" fileName="FSChangesWatcher.java" startLine="187" startPosition="79" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627890968" fileName="FSChangesWatcher.java" startLine="217" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="8474613039627891140" fileName="FSChangesWatcher.java" startLine="222" startPosition="74" endLine="225" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891157" fileName="FSChangesWatcher.java" startLine="226" startPosition="29" endLine="229" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="243" startPosition="42" endLine="246" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="243" startPosition="42" endLine="246" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9045182831066367208" fileName="FSChangesWatcher.java" startLine="248" startPosition="13" endLine="251" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9045182831066366251" fileName="FSChangesWatcher.java" startLine="252" startPosition="0" endLine="255" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474613039627891349" fileName="FSChangesWatcher.java" startLine="55" startPosition="108" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeRefreshStart#(Z)V" />
     <nodeInfo nodeId="8474613039627891357" fileName="FSChangesWatcher.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterRefreshFinish#(Z)V" />
     <nodeInfo nodeId="8474613039627891380" fileName="FSChangesWatcher.java" startLine="66" startPosition="91" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
@@ -640,44 +641,44 @@
     <nodeInfo nodeId="8474613039627891500" fileName="FSChangesWatcher.java" startLine="114" startPosition="10" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8474613039627891564" fileName="FSChangesWatcher.java" startLine="133" startPosition="5" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474613039627891631" fileName="FSChangesWatcher.java" startLine="154" startPosition="70" endLine="158" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891673" fileName="FSChangesWatcher.java" startLine="169" startPosition="88" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-    <nodeInfo nodeId="8474613039627891399" fileName="FSChangesWatcher.java" startLine="208" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;" />
-    <nodeInfo nodeId="8474613039627891168" fileName="FSChangesWatcher.java" startLine="228" startPosition="9" endLine="232" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8474613039627891673" fileName="FSChangesWatcher.java" startLine="171" startPosition="86" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+    <nodeInfo nodeId="8474613039627891399" fileName="FSChangesWatcher.java" startLine="209" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;" />
+    <nodeInfo nodeId="8474613039627891168" fileName="FSChangesWatcher.java" startLine="229" startPosition="9" endLine="233" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8474613039627891524" fileName="FSChangesWatcher.java" startLine="122" startPosition="44" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891666" fileName="FSChangesWatcher.java" startLine="168" startPosition="35" endLine="173" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891753" fileName="FSChangesWatcher.java" startLine="192" startPosition="70" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891666" fileName="FSChangesWatcher.java" startLine="170" startPosition="11" endLine="175" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891753" fileName="FSChangesWatcher.java" startLine="193" startPosition="70" endLine="198" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="8474613039627891442" fileName="FSChangesWatcher.java" startLine="76" startPosition="0" endLine="82" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FSChangesWatcher#(Lcom/intellij/util/messages/MessageBus;Lcom/intellij/openapi/project/ProjectManager;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
     <nodeInfo nodeId="8474613039627891471" fileName="FSChangesWatcher.java" startLine="100" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="8474613039627891624" fileName="FSChangesWatcher.java" startLine="153" startPosition="27" endLine="159" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8474613039627891720" fileName="FSChangesWatcher.java" startLine="179" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addReloadListener#(Ljetbrains/mps/ide/platform/watching/FSChangesWatcher/IReloadListener;)V" />
-    <nodeInfo nodeId="8474613039627891734" fileName="FSChangesWatcher.java" startLine="185" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeReloadListener#(Ljetbrains/mps/ide/platform/watching/FSChangesWatcher/IReloadListener;)V" />
-    <nodeInfo nodeId="8474613039627891778" fileName="FSChangesWatcher.java" startLine="200" startPosition="68" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="6250805187620582330" fileName="FSChangesWatcher.java" startLine="241" startPosition="66" endLine="247" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891720" fileName="FSChangesWatcher.java" startLine="180" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addReloadListener#(Ljetbrains/mps/ide/platform/watching/FSChangesWatcher/IReloadListener;)V" />
+    <nodeInfo nodeId="8474613039627891734" fileName="FSChangesWatcher.java" startLine="186" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeReloadListener#(Ljetbrains/mps/ide/platform/watching/FSChangesWatcher/IReloadListener;)V" />
+    <nodeInfo nodeId="8474613039627891778" fileName="FSChangesWatcher.java" startLine="201" startPosition="68" endLine="207" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="6250805187620582330" fileName="FSChangesWatcher.java" startLine="242" startPosition="66" endLine="248" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474613039627891412" fileName="FSChangesWatcher.java" startLine="84" startPosition="44" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="8474613039627891428" fileName="FSChangesWatcher.java" startLine="93" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="suspendTasksProcessing#()V" />
     <nodeInfo nodeId="8474613039627891490" fileName="FSChangesWatcher.java" startLine="111" startPosition="47" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474613039627891518" fileName="FSChangesWatcher.java" startLine="121" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#(Z)V" />
-    <nodeInfo nodeId="8474613039627891748" fileName="FSChangesWatcher.java" startLine="191" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReloadListeners#()Ljava/util/Set;" />
+    <nodeInfo nodeId="8474613039627891748" fileName="FSChangesWatcher.java" startLine="192" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReloadListeners#()Ljava/util/Set;" />
     <nodeInfo nodeId="8474613039627891343" fileName="FSChangesWatcher.java" startLine="54" startPosition="128" endLine="63" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManagerListener" />
     <nodeInfo nodeId="8474613039627891373" fileName="FSChangesWatcher.java" startLine="65" startPosition="90" endLine="74" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMakeListener" />
-    <nodeInfo nodeId="8474613039627891770" fileName="FSChangesWatcher.java" startLine="199" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeUnderBlockedReload#(Ljetbrains/mps/util/Computable;)null" />
+    <nodeInfo nodeId="8474613039627891770" fileName="FSChangesWatcher.java" startLine="200" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="executeUnderBlockedReload#(Ljetbrains/mps/util/Computable;)null" />
     <nodeInfo nodeId="8474613039627891408" fileName="FSChangesWatcher.java" startLine="83" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryToResumeTasksProcessing#()V" />
-    <nodeInfo nodeId="8474613039627891154" fileName="FSChangesWatcher.java" startLine="224" startPosition="7" endLine="234" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891642" fileName="FSChangesWatcher.java" startLine="160" startPosition="38" endLine="170" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891154" fileName="FSChangesWatcher.java" startLine="225" startPosition="7" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
     <nodeInfo nodeId="8474613039627891486" fileName="FSChangesWatcher.java" startLine="110" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMakeService#(Ljetbrains/mps/make/IMakeService;)V" />
     <nodeInfo nodeId="8474613039627891554" fileName="FSChangesWatcher.java" startLine="129" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="9045182831066294462" fileName="FSChangesWatcher.java" startLine="254" startPosition="13" endLine="268" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474613039627891642" fileName="FSChangesWatcher.java" startLine="159" startPosition="11" endLine="174" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891128" fileName="FSChangesWatcher.java" startLine="219" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="8474613039627891620" fileName="FSChangesWatcher.java" startLine="152" startPosition="38" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8474613039627891612" fileName="FSChangesWatcher.java" startLine="151" startPosition="0" endLine="176" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9045182831066367202" fileName="FSChangesWatcher.java" startLine="240" startPosition="27" endLine="269" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5978443222856231450" fileName="FSChangesWatcher.java" startLine="239" startPosition="59" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5978443222856231449" fileName="FSChangesWatcher.java" startLine="238" startPosition="79" endLine="271" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8474613039627891595" fileName="FSChangesWatcher.java" startLine="143" startPosition="30" endLine="177" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8474613039627891591" fileName="FSChangesWatcher.java" startLine="142" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="queueReload#()V" />
-    <nodeInfo nodeId="8474613039627891246" fileName="FSChangesWatcher.java" startLine="236" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processAfterEvent#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
-    <scopeInfo nodeId="8474613039627890967" fileName="FSChangesWatcher.java" startLine="214" startPosition="39" endLine="214" endPosition="39" />
-    <scopeInfo nodeId="8474613039627890975" fileName="FSChangesWatcher.java" startLine="217" startPosition="59" endLine="217" endPosition="59" />
+    <nodeInfo nodeId="9045182831066294462" fileName="FSChangesWatcher.java" startLine="255" startPosition="13" endLine="269" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474613039627891128" fileName="FSChangesWatcher.java" startLine="220" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="8474613039627891620" fileName="FSChangesWatcher.java" startLine="152" startPosition="38" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8474613039627891612" fileName="FSChangesWatcher.java" startLine="151" startPosition="0" endLine="177" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9045182831066367202" fileName="FSChangesWatcher.java" startLine="241" startPosition="27" endLine="270" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5978443222856231450" fileName="FSChangesWatcher.java" startLine="240" startPosition="59" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5978443222856231449" fileName="FSChangesWatcher.java" startLine="239" startPosition="79" endLine="272" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8474613039627891595" fileName="FSChangesWatcher.java" startLine="143" startPosition="30" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8474613039627891246" fileName="FSChangesWatcher.java" startLine="237" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processAfterEvent#(Lcom/intellij/openapi/vfs/newvfs/events/VFileEvent;Ljetbrains/mps/ide/platform/watching/ReloadSession;)V" />
+    <nodeInfo nodeId="8474613039627891591" fileName="FSChangesWatcher.java" startLine="142" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="queueReload#()V" />
+    <scopeInfo nodeId="8474613039627890967" fileName="FSChangesWatcher.java" startLine="215" startPosition="39" endLine="215" endPosition="39" />
+    <scopeInfo nodeId="8474613039627890975" fileName="FSChangesWatcher.java" startLine="218" startPosition="59" endLine="218" endPosition="59" />
     <scopeInfo nodeId="8474613039627891354" fileName="FSChangesWatcher.java" startLine="56" startPosition="51" endLine="57" endPosition="31" />
     <scopeInfo nodeId="8474613039627891362" fileName="FSChangesWatcher.java" startLine="60" startPosition="51" endLine="61" endPosition="35" />
     <scopeInfo nodeId="8474613039627891385" fileName="FSChangesWatcher.java" startLine="67" startPosition="62" endLine="68" endPosition="31" />
@@ -690,41 +691,41 @@
     <scopeInfo nodeId="8474613039627891559" fileName="FSChangesWatcher.java" startLine="131" startPosition="31" endLine="132" endPosition="13" />
     <scopeInfo nodeId="8474613039627891602" fileName="FSChangesWatcher.java" startLine="145" startPosition="36" endLine="146" endPosition="15" />
     <scopeInfo nodeId="8474613039627891609" fileName="FSChangesWatcher.java" startLine="148" startPosition="38" endLine="149" endPosition="15" />
-    <scopeInfo nodeId="8474613039627891649" fileName="FSChangesWatcher.java" startLine="161" startPosition="42" endLine="162" endPosition="21" />
-    <scopeInfo nodeId="8474613039627891660" fileName="FSChangesWatcher.java" startLine="165" startPosition="36" endLine="166" endPosition="21" />
-    <scopeInfo nodeId="8474613039627891679" fileName="FSChangesWatcher.java" startLine="170" startPosition="83" endLine="171" endPosition="52" />
-    <scopeInfo nodeId="8474613039627891728" fileName="FSChangesWatcher.java" startLine="181" startPosition="38" endLine="182" endPosition="38" />
-    <scopeInfo nodeId="8474613039627891742" fileName="FSChangesWatcher.java" startLine="187" startPosition="38" endLine="188" endPosition="41" />
-    <scopeInfo nodeId="8474613039627891779" fileName="FSChangesWatcher.java" startLine="204" startPosition="15" endLine="205" endPosition="35" />
-    <scopeInfo nodeId="8474613039627891402" fileName="FSChangesWatcher.java" startLine="209" startPosition="45" endLine="210" endPosition="84" />
-    <scopeInfo nodeId="8474613039627891148" fileName="FSChangesWatcher.java" startLine="222" startPosition="74" endLine="223" endPosition="15" />
-    <scopeInfo nodeId="8474613039627891161" fileName="FSChangesWatcher.java" startLine="226" startPosition="38" endLine="227" endPosition="68" />
-    <scopeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="243" startPosition="40" endLine="244" endPosition="120" />
-    <scopeInfo nodeId="9045182831066367209" fileName="FSChangesWatcher.java" startLine="248" startPosition="48" endLine="249" endPosition="23" />
-    <scopeInfo nodeId="9045182831066367242" fileName="FSChangesWatcher.java" startLine="252" startPosition="58" endLine="253" endPosition="23" />
-    <scopeInfo nodeId="9045182831066294502" fileName="FSChangesWatcher.java" startLine="255" startPosition="59" endLine="256" endPosition="55" />
-    <scopeInfo nodeId="9045182831066369905" fileName="FSChangesWatcher.java" startLine="257" startPosition="59" endLine="258" endPosition="47" />
-    <scopeInfo nodeId="9045182831066369926" fileName="FSChangesWatcher.java" startLine="259" startPosition="59" endLine="260" endPosition="47" />
-    <scopeInfo nodeId="3914755648473566340" fileName="FSChangesWatcher.java" startLine="261" startPosition="57" endLine="262" endPosition="47" />
-    <scopeInfo nodeId="8474613039627891290" fileName="FSChangesWatcher.java" startLine="275" startPosition="43" endLine="276" endPosition="32" />
-    <scopeInfo nodeId="8474613039627891294" fileName="FSChangesWatcher.java" startLine="276" startPosition="32" endLine="277" endPosition="33" />
+    <scopeInfo nodeId="8474613039627891649" fileName="FSChangesWatcher.java" startLine="162" startPosition="42" endLine="163" endPosition="21" />
+    <scopeInfo nodeId="8474613039627891660" fileName="FSChangesWatcher.java" startLine="166" startPosition="36" endLine="167" endPosition="21" />
+    <scopeInfo nodeId="8474613039627891679" fileName="FSChangesWatcher.java" startLine="172" startPosition="81" endLine="173" endPosition="50" />
+    <scopeInfo nodeId="8474613039627891728" fileName="FSChangesWatcher.java" startLine="182" startPosition="38" endLine="183" endPosition="38" />
+    <scopeInfo nodeId="8474613039627891742" fileName="FSChangesWatcher.java" startLine="188" startPosition="38" endLine="189" endPosition="41" />
+    <scopeInfo nodeId="8474613039627891779" fileName="FSChangesWatcher.java" startLine="205" startPosition="15" endLine="206" endPosition="35" />
+    <scopeInfo nodeId="8474613039627891402" fileName="FSChangesWatcher.java" startLine="210" startPosition="45" endLine="211" endPosition="84" />
+    <scopeInfo nodeId="8474613039627891148" fileName="FSChangesWatcher.java" startLine="223" startPosition="74" endLine="224" endPosition="15" />
+    <scopeInfo nodeId="8474613039627891161" fileName="FSChangesWatcher.java" startLine="227" startPosition="38" endLine="228" endPosition="68" />
+    <scopeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="244" startPosition="40" endLine="245" endPosition="120" />
+    <scopeInfo nodeId="9045182831066367209" fileName="FSChangesWatcher.java" startLine="249" startPosition="48" endLine="250" endPosition="23" />
+    <scopeInfo nodeId="9045182831066367242" fileName="FSChangesWatcher.java" startLine="253" startPosition="58" endLine="254" endPosition="23" />
+    <scopeInfo nodeId="9045182831066294502" fileName="FSChangesWatcher.java" startLine="256" startPosition="59" endLine="257" endPosition="55" />
+    <scopeInfo nodeId="9045182831066369905" fileName="FSChangesWatcher.java" startLine="258" startPosition="59" endLine="259" endPosition="47" />
+    <scopeInfo nodeId="9045182831066369926" fileName="FSChangesWatcher.java" startLine="260" startPosition="59" endLine="261" endPosition="47" />
+    <scopeInfo nodeId="3914755648473566340" fileName="FSChangesWatcher.java" startLine="262" startPosition="57" endLine="263" endPosition="47" />
+    <scopeInfo nodeId="8474613039627891290" fileName="FSChangesWatcher.java" startLine="276" startPosition="43" endLine="277" endPosition="32" />
+    <scopeInfo nodeId="8474613039627891294" fileName="FSChangesWatcher.java" startLine="277" startPosition="32" endLine="278" endPosition="33" />
     <scopeInfo nodeId="8474613039627891434" fileName="FSChangesWatcher.java" startLine="95" startPosition="27" endLine="97" endPosition="15" />
     <scopeInfo nodeId="8474613039627891565" fileName="FSChangesWatcher.java" startLine="134" startPosition="32" endLine="136" endPosition="27" />
     <scopeInfo nodeId="8474613039627891638" fileName="FSChangesWatcher.java" startLine="155" startPosition="103" endLine="157" endPosition="21" />
-    <scopeInfo nodeId="8474613039627891782" fileName="FSChangesWatcher.java" startLine="201" startPosition="9" endLine="203" endPosition="34" />
-    <scopeInfo nodeId="8474613039627890964" fileName="FSChangesWatcher.java" startLine="213" startPosition="69" endLine="215" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891172" fileName="FSChangesWatcher.java" startLine="229" startPosition="47" endLine="231" endPosition="52" />
+    <scopeInfo nodeId="8474613039627891782" fileName="FSChangesWatcher.java" startLine="202" startPosition="9" endLine="204" endPosition="34" />
+    <scopeInfo nodeId="8474613039627890964" fileName="FSChangesWatcher.java" startLine="214" startPosition="69" endLine="216" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891172" fileName="FSChangesWatcher.java" startLine="230" startPosition="47" endLine="232" endPosition="52" />
     <scopeInfo nodeId="8474613039627891501" fileName="FSChangesWatcher.java" startLine="114" startPosition="12" endLine="117" endPosition="7" />
     <scopeInfo nodeId="8474613039627891525" fileName="FSChangesWatcher.java" startLine="123" startPosition="83" endLine="126" endPosition="87" />
-    <scopeInfo nodeId="8474613039627891725" fileName="FSChangesWatcher.java" startLine="180" startPosition="76" endLine="183" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891739" fileName="FSChangesWatcher.java" startLine="186" startPosition="79" endLine="189" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891755" fileName="FSChangesWatcher.java" startLine="193" startPosition="38" endLine="196" endPosition="23">
+    <scopeInfo nodeId="8474613039627891725" fileName="FSChangesWatcher.java" startLine="181" startPosition="76" endLine="184" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891739" fileName="FSChangesWatcher.java" startLine="187" startPosition="79" endLine="190" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891755" fileName="FSChangesWatcher.java" startLine="194" startPosition="38" endLine="197" endPosition="23">
       <varInfo nodeId="8474613039627891757" varName="listeners" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627890968" fileName="FSChangesWatcher.java" startLine="216" startPosition="0" endLine="219" endPosition="0">
+    <scopeInfo nodeId="8474613039627890968" fileName="FSChangesWatcher.java" startLine="217" startPosition="0" endLine="220" endPosition="0">
       <varInfo nodeId="8474613039627890971" varName="events" />
     </scopeInfo>
-    <scopeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="242" startPosition="42" endLine="245" endPosition="15" />
+    <scopeInfo nodeId="6250805187620582382" fileName="FSChangesWatcher.java" startLine="243" startPosition="42" endLine="246" endPosition="15" />
     <scopeInfo nodeId="8474613039627891349" fileName="FSChangesWatcher.java" startLine="55" startPosition="108" endLine="59" endPosition="0">
       <varInfo nodeId="8474613039627891352" varName="async" />
     </scopeInfo>
@@ -741,21 +742,21 @@
     <scopeInfo nodeId="8474613039627891431" fileName="FSChangesWatcher.java" startLine="94" startPosition="40" endLine="98" endPosition="5" />
     <scopeInfo nodeId="8474613039627891479" fileName="FSChangesWatcher.java" startLine="106" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="8474613039627891630" fileName="FSChangesWatcher.java" startLine="154" startPosition="70" endLine="158" endPosition="13" />
-    <scopeInfo nodeId="8474613039627891673" fileName="FSChangesWatcher.java" startLine="169" startPosition="88" endLine="173" endPosition="0">
+    <scopeInfo nodeId="8474613039627891673" fileName="FSChangesWatcher.java" startLine="171" startPosition="86" endLine="175" endPosition="0">
       <varInfo nodeId="8474613039627891676" varName="progressIndicator" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891399" fileName="FSChangesWatcher.java" startLine="208" startPosition="0" endLine="212" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891168" fileName="FSChangesWatcher.java" startLine="228" startPosition="9" endLine="232" endPosition="9">
+    <scopeInfo nodeId="8474613039627891399" fileName="FSChangesWatcher.java" startLine="209" startPosition="0" endLine="213" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891168" fileName="FSChangesWatcher.java" startLine="229" startPosition="9" endLine="233" endPosition="9">
       <varInfo nodeId="8474613039627891170" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6250805187620582331" fileName="FSChangesWatcher.java" startLine="242" startPosition="42" endLine="246" endPosition="23" />
-    <scopeInfo nodeId="3914755648473566401" fileName="FSChangesWatcher.java" startLine="263" startPosition="57" endLine="267" endPosition="65">
+    <scopeInfo nodeId="6250805187620582331" fileName="FSChangesWatcher.java" startLine="243" startPosition="42" endLine="247" endPosition="23" />
+    <scopeInfo nodeId="3914755648473566401" fileName="FSChangesWatcher.java" startLine="264" startPosition="57" endLine="268" endPosition="65">
       <varInfo nodeId="3914755648473568720" varName="name" />
       <varInfo nodeId="3914755648473566433" varName="re" />
     </scopeInfo>
     <scopeInfo nodeId="8474613039627891414" fileName="FSChangesWatcher.java" startLine="85" startPosition="27" endLine="90" endPosition="23" />
     <scopeInfo nodeId="8474613039627891523" fileName="FSChangesWatcher.java" startLine="122" startPosition="44" endLine="127" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891752" fileName="FSChangesWatcher.java" startLine="192" startPosition="70" endLine="197" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891752" fileName="FSChangesWatcher.java" startLine="193" startPosition="70" endLine="198" endPosition="5" />
     <scopeInfo nodeId="8474613039627891442" fileName="FSChangesWatcher.java" startLine="76" startPosition="0" endLine="82" endPosition="3">
       <varInfo nodeId="8474613039627891447" varName="bus" />
       <varInfo nodeId="8474613039627891449" varName="projectManager" />
@@ -765,22 +766,23 @@
     <scopeInfo nodeId="8474613039627891624" fileName="FSChangesWatcher.java" startLine="153" startPosition="27" endLine="159" endPosition="11">
       <varInfo nodeId="8474613039627891628" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891720" fileName="FSChangesWatcher.java" startLine="179" startPosition="0" endLine="185" endPosition="0">
+    <scopeInfo nodeId="8474613039627891720" fileName="FSChangesWatcher.java" startLine="180" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="8474613039627891723" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891734" fileName="FSChangesWatcher.java" startLine="185" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="8474613039627891734" fileName="FSChangesWatcher.java" startLine="186" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="8474613039627891737" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891777" fileName="FSChangesWatcher.java" startLine="200" startPosition="68" endLine="206" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891777" fileName="FSChangesWatcher.java" startLine="201" startPosition="68" endLine="207" endPosition="5" />
     <scopeInfo nodeId="8474613039627891411" fileName="FSChangesWatcher.java" startLine="84" startPosition="44" endLine="91" endPosition="5" />
     <scopeInfo nodeId="8474613039627891428" fileName="FSChangesWatcher.java" startLine="93" startPosition="0" endLine="100" endPosition="0" />
     <scopeInfo nodeId="8474613039627891489" fileName="FSChangesWatcher.java" startLine="111" startPosition="47" endLine="119" endPosition="23" />
     <scopeInfo nodeId="8474613039627891518" fileName="FSChangesWatcher.java" startLine="121" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="8474613039627891519" varName="force" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891748" fileName="FSChangesWatcher.java" startLine="191" startPosition="0" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891156" fileName="FSChangesWatcher.java" startLine="225" startPosition="29" endLine="233" endPosition="22" />
-    <scopeInfo nodeId="8474613039627891770" fileName="FSChangesWatcher.java" startLine="199" startPosition="0" endLine="208" endPosition="0">
+    <scopeInfo nodeId="8474613039627891644" fileName="FSChangesWatcher.java" startLine="161" startPosition="33" endLine="169" endPosition="35" />
+    <scopeInfo nodeId="8474613039627891748" fileName="FSChangesWatcher.java" startLine="192" startPosition="0" endLine="200" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891156" fileName="FSChangesWatcher.java" startLine="226" startPosition="29" endLine="234" endPosition="22" />
+    <scopeInfo nodeId="8474613039627891770" fileName="FSChangesWatcher.java" startLine="200" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="8474613039627891774" varName="computable" />
     </scopeInfo>
     <scopeInfo nodeId="8474613039627891408" fileName="FSChangesWatcher.java" startLine="83" startPosition="0" endLine="93" endPosition="0" />
@@ -789,39 +791,38 @@
       <varInfo nodeId="8474613039627891516" varName="ms" />
     </scopeInfo>
     <scopeInfo nodeId="8474613039627891554" fileName="FSChangesWatcher.java" startLine="129" startPosition="0" endLine="142" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891644" fileName="FSChangesWatcher.java" startLine="160" startPosition="33" endLine="173" endPosition="15">
-      <varInfo nodeId="8474613039627891652" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="8474613039627891135" fileName="FSChangesWatcher.java" startLine="220" startPosition="64" endLine="234" endPosition="7">
+    <scopeInfo nodeId="8474613039627891135" fileName="FSChangesWatcher.java" startLine="221" startPosition="64" endLine="235" endPosition="7">
       <varInfo nodeId="8474613039627891137" varName="application" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891128" fileName="FSChangesWatcher.java" startLine="219" startPosition="0" endLine="236" endPosition="0">
+    <scopeInfo nodeId="8474613039627891128" fileName="FSChangesWatcher.java" startLine="220" startPosition="0" endLine="237" endPosition="0">
       <varInfo nodeId="8474613039627891131" varName="events" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891623" fileName="FSChangesWatcher.java" startLine="153" startPosition="27" endLine="174" endPosition="11" />
-    <scopeInfo nodeId="8474613039627891620" fileName="FSChangesWatcher.java" startLine="152" startPosition="38" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="9045182831066367205" fileName="FSChangesWatcher.java" startLine="241" startPosition="66" endLine="268" endPosition="13" />
-    <scopeInfo nodeId="5978443222856231451" fileName="FSChangesWatcher.java" startLine="240" startPosition="27" endLine="269" endPosition="11" />
-    <scopeInfo nodeId="9045182831066367202" fileName="FSChangesWatcher.java" startLine="240" startPosition="27" endLine="269" endPosition="11">
+    <scopeInfo nodeId="8474613039627891623" fileName="FSChangesWatcher.java" startLine="153" startPosition="27" endLine="175" endPosition="13">
+      <varInfo nodeId="8474613039627891652" varName="session" />
+    </scopeInfo>
+    <scopeInfo nodeId="8474613039627891620" fileName="FSChangesWatcher.java" startLine="152" startPosition="38" endLine="177" endPosition="0" />
+    <scopeInfo nodeId="9045182831066367205" fileName="FSChangesWatcher.java" startLine="242" startPosition="66" endLine="269" endPosition="13" />
+    <scopeInfo nodeId="5978443222856231451" fileName="FSChangesWatcher.java" startLine="241" startPosition="27" endLine="270" endPosition="11" />
+    <scopeInfo nodeId="9045182831066367202" fileName="FSChangesWatcher.java" startLine="241" startPosition="27" endLine="270" endPosition="11">
       <varInfo nodeId="9045182831066367202" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="8474613039627891597" fileName="FSChangesWatcher.java" startLine="144" startPosition="27" endLine="176" endPosition="9" />
-    <scopeInfo nodeId="5978443222856231450" fileName="FSChangesWatcher.java" startLine="239" startPosition="59" endLine="271" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891594" fileName="FSChangesWatcher.java" startLine="143" startPosition="30" endLine="177" endPosition="5" />
-    <scopeInfo nodeId="8474613039627891255" fileName="FSChangesWatcher.java" startLine="237" startPosition="95" endLine="271" endPosition="9" />
-    <scopeInfo nodeId="8474613039627891591" fileName="FSChangesWatcher.java" startLine="142" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="8474613039627891246" fileName="FSChangesWatcher.java" startLine="236" startPosition="0" endLine="273" endPosition="0">
+    <scopeInfo nodeId="5978443222856231450" fileName="FSChangesWatcher.java" startLine="240" startPosition="59" endLine="272" endPosition="0" />
+    <scopeInfo nodeId="8474613039627891597" fileName="FSChangesWatcher.java" startLine="144" startPosition="27" endLine="177" endPosition="9" />
+    <scopeInfo nodeId="8474613039627891255" fileName="FSChangesWatcher.java" startLine="238" startPosition="95" endLine="272" endPosition="9" />
+    <scopeInfo nodeId="8474613039627891594" fileName="FSChangesWatcher.java" startLine="143" startPosition="30" endLine="178" endPosition="5" />
+    <scopeInfo nodeId="8474613039627891246" fileName="FSChangesWatcher.java" startLine="237" startPosition="0" endLine="274" endPosition="0">
       <varInfo nodeId="8474613039627891251" varName="event" />
       <varInfo nodeId="8474613039627891253" varName="reloadSession" />
     </scopeInfo>
-    <unitInfo nodeId="8474613039627890958" fileName="FSChangesWatcher.java" startLine="43" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
+    <scopeInfo nodeId="8474613039627891591" fileName="FSChangesWatcher.java" startLine="142" startPosition="0" endLine="180" endPosition="0" />
+    <unitInfo nodeId="8474613039627890958" fileName="FSChangesWatcher.java" startLine="43" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
     <unitInfo nodeId="8474613039627891348" fileName="FSChangesWatcher.java" startLine="55" startPosition="78" endLine="63" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
-    <unitInfo nodeId="5978443222856231450" fileName="FSChangesWatcher.java" startLine="239" startPosition="47" endLine="271" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
+    <unitInfo nodeId="5978443222856231450" fileName="FSChangesWatcher.java" startLine="240" startPosition="47" endLine="272" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
     <unitInfo nodeId="8474613039627891378" fileName="FSChangesWatcher.java" startLine="66" startPosition="57" endLine="74" endPosition="3" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$2" />
-    <unitInfo nodeId="8474613039627891618" fileName="FSChangesWatcher.java" startLine="152" startPosition="24" endLine="176" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$3" />
-    <unitInfo nodeId="8474613039627891672" fileName="FSChangesWatcher.java" startLine="169" startPosition="50" endLine="173" endPosition="13" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$4" />
-    <unitInfo nodeId="8474613039627890961" fileName="FSChangesWatcher.java" startLine="213" startPosition="0" endLine="274" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$BulkFileChangesListener" />
-    <unitInfo nodeId="8474613039627891288" fileName="FSChangesWatcher.java" startLine="275" startPosition="0" endLine="279" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$IReloadListener" />
+    <unitInfo nodeId="8474613039627891618" fileName="FSChangesWatcher.java" startLine="152" startPosition="24" endLine="177" endPosition="7" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$3" />
+    <unitInfo nodeId="8474613039627891672" fileName="FSChangesWatcher.java" startLine="171" startPosition="48" endLine="175" endPosition="11" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$4" />
+    <unitInfo nodeId="8474613039627890961" fileName="FSChangesWatcher.java" startLine="214" startPosition="0" endLine="275" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$BulkFileChangesListener" />
+    <unitInfo nodeId="8474613039627891288" fileName="FSChangesWatcher.java" startLine="276" startPosition="0" endLine="280" endPosition="0" unitName="jetbrains.mps.ide.platform.watching.FSChangesWatcher$IReloadListener" />
   </root>
   <root nodeId="8526829049878328429">
     <nodeInfo nodeId="8526829049878328429" fileName="ReloadSession.java" startLine="15" startPosition="28" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />

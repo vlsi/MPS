@@ -157,21 +157,22 @@ public class FSChangesWatcher implements ApplicationComponent {
               return;
             }
           }
+          final ReloadSession session;
           synchronized (myLock) {
             if (myReloadSession == null) {
               return;
             }
-            final ReloadSession session = myReloadSession;
+            session = myReloadSession;
             if (session.isEmpty()) {
               return;
             }
             myReloadSession = null;
-            ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
-              public void run(@NotNull final ProgressIndicator progressIndicator) {
-                session.doReload(progressIndicator);
-              }
-            });
           }
+          ProgressManager.getInstance().run(new Task.Modal(null, "Reloading", false) {
+            public void run(@NotNull final ProgressIndicator progressIndicator) {
+              session.doReload(progressIndicator);
+            }
+          });
         }
       });
     }
