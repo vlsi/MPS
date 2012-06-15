@@ -73,13 +73,26 @@ public class Inequalities {
   }
 
   private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
+    SNode minNode = null;
     for (SNode node : unsorted) {
-      if (used.containsAll(myInputsToOutputsInc.getBySecond(node))) {
-        //    if (inputsToOutputs.getBySecond(node).isEmpty()) {
+      boolean independent = true;
+      for (SNode dependsOn : myInputsToOutputsInc.getBySecond(node)) {
+        if (used.contains(dependsOn)) {
+          continue;
+        }
+        if (!unsorted.contains(dependsOn)) {
+          continue;
+        }
+        independent = false;
+      }
+      if (independent) {
         return node;
       }
+      if (minNode == null || minNode.getName().compareTo(node.getName()) >= 0) {
+         minNode = node;
+      }
     }
-    return unsorted.iterator().next();
+    return minNode;
   }
 
   public List<RelationBlock> getRelationsToSolve() {
