@@ -9,7 +9,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import java.util.Collections;
+import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
@@ -42,6 +43,9 @@ public class InstanceMethodCallOperation_Behavior {
 
   public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
+    if ((SLinkOperations.getTarget(instanceType, "classifier", false) == null)) {
+      return Collections.emptyMap();
+    }
     return MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true));
   }
 

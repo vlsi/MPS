@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 
 public abstract class BaseMethodsScope extends Scope {
   private final Map<String, List<SNode>> nameToMethods;

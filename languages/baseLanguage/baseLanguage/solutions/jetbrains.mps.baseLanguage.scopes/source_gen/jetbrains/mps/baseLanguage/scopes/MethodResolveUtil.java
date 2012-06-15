@@ -22,9 +22,9 @@ import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
-import jetbrains.mps.baseLanguage.search.GenericTypesUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Iterator;
@@ -221,7 +221,7 @@ public class MethodResolveUtil {
     return result;
   }
 
-  public static Map<SNode, SNode> getTypesByTypeVars(SNode classifier, List<SNode> typeParameters) {
+  public static Map<SNode, SNode> getTypesByTypeVars(@NotNull SNode classifier, List<SNode> typeParameters) {
     Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierScopeUtils.resolveClassifierTypeVars(classifier))) {
       typeByTypeVar.put(elem.key(), elem.value());

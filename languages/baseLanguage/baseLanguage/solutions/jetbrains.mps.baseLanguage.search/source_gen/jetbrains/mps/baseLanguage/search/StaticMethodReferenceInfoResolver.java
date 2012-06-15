@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
@@ -16,7 +17,7 @@ import java.util.Map;
   private ClassifierAndSuperClassifiersScope mySearchScope;
 
   @Deprecated
-  public StaticMethodReferenceInfoResolver(ClassifierAndSuperClassifiersScope searchScope, SNode class_, List<SNode> actualArguments) {
+  public StaticMethodReferenceInfoResolver(ClassifierAndSuperClassifiersScope searchScope, @NotNull SNode class_, List<SNode> actualArguments) {
     this.myClass = class_;
     this.myActualArguments = actualArguments;
     this.mySearchScope = searchScope;
