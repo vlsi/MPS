@@ -2095,15 +2095,22 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550217">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550218">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550224">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="5543996881668550220">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5543996881668550221">
             <node role="expression" roleId="tpee.1068581517676" type="8sls.EvaluatorsThisExpression" typeId="8sls.6036237525966315974" id="5543996881668550222" />
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550223">
             <property name="name" nameId="tpck.1169194664001" value="thisExpression" />
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783736073">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783736074">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783402">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783736077">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2127,15 +2134,22 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667900337">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667900338">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900344">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="1454920206667900340">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1454920206667900341">
             <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalThisExpression" typeId="tp68.1202838164916" id="1454920206667900346" />
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900343">
             <property name="name" nameId="tpck.1169194664001" value="thisInternalExpression" />
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783736078">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783736079">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783403">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783736082">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2159,14 +2173,11 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550233">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550234">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550243">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="5543996881668550236">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5543996881668550237">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5543996881668550238">
               <node role="operand" roleId="tpee.1197027771414" type="8sls.EvaluatorsThisExpression" typeId="8sls.6036237525966315974" id="5543996881668550239" />
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="5543996881668550240">
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="2316063765783781331">
                 <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="5543996881668550209" resolveInfo="myField" />
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550241">
@@ -2176,6 +2187,16 @@
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550242">
             <property name="name" nameId="tpck.1169194664001" value="field" />
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783781325">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783781326">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783409">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781329">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2215,9 +2236,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667900361">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667900362">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900371">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="1454920206667900364">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1454920206667900365">
             <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalPartialFieldReference" typeId="tp68.1177590007607" id="4583341770697734719">
@@ -2228,6 +2246,16 @@
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900370">
             <property name="name" nameId="tpck.1169194664001" value="fieldInternal" />
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783781332">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783781333">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783410">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781336">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2267,12 +2295,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550258">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550259">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550266">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
-        <node role="staticContextType" roleId="8sls.7614982787448003602" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550267">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="5543996881668550261">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5543996881668550262">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5543996881668550263">
@@ -2285,6 +2307,26 @@
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550265">
             <property name="name" nameId="tpck.1169194664001" value="staticField" />
+          </node>
+        </node>
+        <node role="contextNode" roleId="8sls.4544608336420681237" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783781337">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783781338">
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781341">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783407">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783781342">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783781343">
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781346">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783408">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2332,12 +2374,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667900391">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667900392">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900399">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
-        <node role="staticContextType" roleId="8sls.7614982787448003602" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667900400">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="1454920206667900394">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1454920206667900395">
             <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalStaticFieldReference" typeId="tp68.1173995204289" id="1454920206667900402">
@@ -2347,6 +2383,26 @@
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="1454920206667900398">
             <property name="name" nameId="tpck.1169194664001" value="staticFieldInternal" />
+          </node>
+        </node>
+        <node role="contextNode" roleId="8sls.4544608336420681237" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783781350">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783781351">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781355">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781354">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783781356">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783781357">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781361">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781360">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2392,9 +2448,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5543996881668550283">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="5543996881668550284">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5543996881668550294">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="5543996881668550286">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5543996881668550287">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5543996881668550288">
@@ -2412,6 +2465,16 @@
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="5543996881668550293">
             <property name="name" nameId="tpck.1169194664001" value="method" />
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783781362">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783781363">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783406">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783781366">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2464,9 +2527,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667908298">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667908299">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667908309">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="1454920206667908301">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="1454920206667908302">
             <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalPartialInstanceMethodCall" typeId="tp68.1174294166120" id="1454920206667908311">
@@ -2534,12 +2594,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="607759879653675041">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="607759879653675042">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="607759879653675052">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
-        <node role="staticContextType" roleId="8sls.7614982787448003602" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="607759879653675067">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="607759879653675044">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="607759879653675045">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="607759879653675061">
@@ -2558,6 +2612,26 @@
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="607759879653675051">
             <property name="name" nameId="tpck.1169194664001" value="staticMethod" />
+          </node>
+        </node>
+        <node role="contextNode" roleId="8sls.4544608336420681237" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783783389">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783783390">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783404">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783393">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783783394">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783783395">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783405">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783398">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2614,12 +2688,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="1454920206667908335">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="1454920206667908336">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667908345">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
-        <node role="staticContextType" roleId="8sls.7614982787448003602" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1454920206667908346">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="1454920206667908338">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1454920206667908355">
             <node role="expression" roleId="tpee.1068580123156" type="tp68.InternalStaticMethodCall" typeId="tp68.1173990517731" id="1454920206667908348">
@@ -2857,9 +2925,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2932187755699706728">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="2932187755699706729">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2932187755699707953">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="2932187755699707955">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2932187755699707956">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="2932187755699707959">
@@ -2871,6 +2936,16 @@
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699710928">
             <property name="name" nameId="tpck.1169194664001" value="instanceof" />
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783783411">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783783412">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783416">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783415">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2924,9 +2999,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2932187755699923973">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="2932187755699923974">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2932187755699923975">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="2932187755699923977">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2932187755699923978">
             <node role="expression" roleId="tpee.1068581517676" type="8sls.EvaluatorsSuperMethodCall" typeId="8sls.6036237525966316030" id="2932187755699927574">
@@ -2938,6 +3010,16 @@
           </node>
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.TestNodeAnnotation" typeId="tp5g.1210673684636" id="2932187755699923982">
             <property name="name" nameId="tpck.1169194664001" value="super" />
+          </node>
+        </node>
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783783417">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783783418">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783422">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783421">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
+            </node>
           </node>
         </node>
       </node>
@@ -2990,9 +3072,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="2932187755699930360">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="2932187755699930361">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2932187755699930362">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="2932187755699930364">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2932187755699930365">
             <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2932187755699930370">
@@ -3047,9 +3126,6 @@
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="8441349676536412410">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="8sls.EvaluatorConcept" typeId="8sls.6036237525966182693" id="8441349676536412411">
         <property name="isShowContext" nameId="8sls.6036237525966243739" value="true" />
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8441349676536412412">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="5543996881668550191" resolveInfo="TestClass" />
-        </node>
         <node role="evaluatedStatements" roleId="8sls.1155520443816777472" type="tpee.StatementList" typeId="tpee.1068580123136" id="8441349676536412414">
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8441349676536412415">
             <node role="expression" roleId="tpee.1068581517676" type="tp68.InternalNewExpression" typeId="tp68.1173996401517" id="8441349676536412421">
@@ -9644,8 +9720,15 @@
             </node>
           </node>
         </node>
-        <node role="thisType" roleId="8sls.6036237525966243736" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1247401079809823574">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mi3h.~ExternalClasspathClassLoader" resolveInfo="ExternalClasspathClassLoader" />
+        <node role="thisNode" roleId="8sls.4544608336420681235" type="8sls.UnitNode" typeId="8sls.4336756357323803637" id="2316063765783783429">
+          <node role="debuggedType" roleId="8sls.4544608336420717468" type="8sls.DebuggedType" typeId="8sls.4544608336420691672" id="2316063765783783430">
+            <node role="lowType" roleId="8sls.4544608336420691673" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783434">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mi3h.~ExternalClasspathClassLoader" resolveInfo="ExternalClasspathClassLoader" />
+            </node>
+            <node role="highType" roleId="8sls.4544608336420691674" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2316063765783783433">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="mi3h.~ExternalClasspathClassLoader" resolveInfo="ExternalClasspathClassLoader" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

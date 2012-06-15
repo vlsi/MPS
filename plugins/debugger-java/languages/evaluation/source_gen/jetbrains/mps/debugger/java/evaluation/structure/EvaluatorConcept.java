@@ -5,7 +5,6 @@ package jetbrains.mps.debugger.java.evaluation.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.structure.IMethodLike;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
 import java.util.List;
@@ -20,8 +19,6 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike, IEvalu
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String IS_SHOW_CONTEXT = "isShowContext";
-  public static final String THIS_TYPE = "thisType";
-  public static final String STATIC_CONTEXT_TYPE = "staticContextType";
   public static final String THIS_NODE = "thisNode";
   public static final String CONTEXT_NODE = "contextNode";
   public static final String EVALUATED_STATEMENTS = "evaluatedStatements";
@@ -62,22 +59,6 @@ public class EvaluatorConcept extends BaseConcept implements IMethodLike, IEvalu
 
   public void setIsShowContext(boolean value) {
     this.setBooleanProperty(EvaluatorConcept.IS_SHOW_CONTEXT, value);
-  }
-
-  public ClassifierType getThisType() {
-    return (ClassifierType) this.getChild(ClassifierType.class, EvaluatorConcept.THIS_TYPE);
-  }
-
-  public void setThisType(ClassifierType node) {
-    super.setChild(EvaluatorConcept.THIS_TYPE, node);
-  }
-
-  public ClassifierType getStaticContextType() {
-    return (ClassifierType) this.getChild(ClassifierType.class, EvaluatorConcept.STATIC_CONTEXT_TYPE);
-  }
-
-  public void setStaticContextType(ClassifierType node) {
-    super.setChild(EvaluatorConcept.STATIC_CONTEXT_TYPE, node);
   }
 
   public UnitNode getThisNode() {
