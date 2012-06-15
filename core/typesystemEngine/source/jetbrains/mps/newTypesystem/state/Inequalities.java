@@ -75,11 +75,17 @@ public class Inequalities {
   private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
     SNode minNode = null;
     for (SNode node : unsorted) {
+      if (used.containsAll(myInputsToOutputsInc.getBySecond(node))) {
+        return node;
+      }
+    }
+    //if no absolutely independent nodes - than try more complicated way
+    for (SNode node : unsorted) {
       if (isIndependent(unsorted, used, node)) {
         return node;
       }
       if (minNode == null || minNode.getName().compareTo(node.getName()) >= 0) {
-         minNode = node;
+        minNode = node;
       }
     }
     //otherwise choose by name to be deterministic
@@ -88,12 +94,14 @@ public class Inequalities {
 
   private boolean isIndependent(Set<SNode> unsorted, Set<SNode> used, SNode var) {
     Queue<SNode> dependsOn = new LinkedList<SNode>();
+    Set<SNode> passed = new HashSet<SNode>();
     dependsOn.addAll(myInputsToOutputsInc.getBySecond(var));
     while (!dependsOn.isEmpty()) {
       SNode node = dependsOn.remove();
-      if (used.contains(node)) {
+      if (used.contains(node) || passed.contains(node)) {
         continue;
       }
+      passed.add(node);
       if (!unsorted.contains(node)) {
         dependsOn.addAll(myInputsToOutputsInc.getBySecond(node));
         continue;
