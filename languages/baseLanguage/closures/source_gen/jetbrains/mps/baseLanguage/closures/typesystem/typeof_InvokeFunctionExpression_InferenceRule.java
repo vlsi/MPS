@@ -47,8 +47,8 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
       typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "642108346586029345", true), _info_12389875345);
     }
     {
-      final SNode _representatorVar_juleau_g0a = typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342);
-      typeCheckingContext.whenConcrete(_representatorVar_juleau_g0a, new Runnable() {
+      final SNode ft = typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342);
+      typeCheckingContext.whenConcrete(ft, new Runnable() {
         public void run() {
           try {
             {
@@ -57,23 +57,17 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
               typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.getRepresentative(ret_typevar_642108346586029335), (SNode) FunctionTypeUtil.getResultType(typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342)), false, true, _info_12389875345);
             }
             {
-              SNode pt;
-              SNode fpt;
-              Iterator<SNode> pt_iterator = ListSequence.fromList(ptypes).iterator();
-              Iterator<SNode> fpt_iterator = ListSequence.fromList(FunctionTypeUtil.getParameterTypes(typeCheckingContext.getRepresentative(ftype_typevar_642108346586029342))).iterator();
-              while (true) {
-                if (!(pt_iterator.hasNext())) {
-                  break;
-                }
-                if (!(fpt_iterator.hasNext())) {
-                  break;
-                }
-                pt = pt_iterator.next();
-                fpt = fpt_iterator.next();
+              Iterator<SNode> pt_it = ListSequence.fromList(ptypes).iterator();
+              Iterator<SNode> fpt_it = ListSequence.fromList(FunctionTypeUtil.getParameterTypes(typeCheckingContext.getExpandedNode(ft))).iterator();
+              SNode pt_var;
+              SNode fpt_var;
+              while (pt_it.hasNext() && fpt_it.hasNext()) {
+                pt_var = pt_it.next();
+                fpt_var = fpt_it.next();
                 {
-                  SNode _nodeToCheck_1029348928467 = pt;
-                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033282", 0, null);
-                  typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2608385503904033284", true), (SNode) fpt, false, true, _info_12389875345);
+                  SNode _nodeToCheck_1029348928467 = pt_var;
+                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2762046050488680689", 0, null);
+                  typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "2762046050488680691", true), (SNode) fpt_var, false, true, _info_12389875345);
                 }
               }
             }
