@@ -48,7 +48,13 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
       try {
         method = this.getClass().getMethod(methodName, parametersTypes);
       } catch (NoSuchMethodException e) {
-        throw new RuntimeException(e);
+        // find by name
+        for (Method iMethod : this.getClass().getMethods()) {
+          if (iMethod.getName().equals(methodName)) {
+            return iMethod;
+          }
+        }
+        throw new RuntimeException("Can't find method in behavior descriptor class", e);
       }
 
       methods.put(methodName, method);
