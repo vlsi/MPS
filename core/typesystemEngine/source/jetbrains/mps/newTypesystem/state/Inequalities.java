@@ -75,24 +75,32 @@ public class Inequalities {
   private SNode getNodeWithNoInput(Set<SNode> unsorted, Set<SNode> used) {
     SNode minNode = null;
     for (SNode node : unsorted) {
-      boolean independent = true;
-      for (SNode dependsOn : myInputsToOutputsInc.getBySecond(node)) {
-        if (used.contains(dependsOn)) {
-          continue;
-        }
-        if (!unsorted.contains(dependsOn)) {
-          continue;
-        }
-        independent = false;
-      }
-      if (independent) {
+      if (isIndependent(unsorted, used, node)) {
         return node;
       }
       if (minNode == null || minNode.getName().compareTo(node.getName()) >= 0) {
          minNode = node;
       }
     }
+    //otherwise choose by name to be deterministic
     return minNode;
+  }
+
+  private boolean isIndependent(Set<SNode> unsorted, Set<SNode> used, SNode var) {
+    Queue<SNode> dependsOn = new LinkedList<SNode>();
+    dependsOn.addAll(myInputsToOutputsInc.getBySecond(var));
+    while (!dependsOn.isEmpty()) {
+      SNode node = dependsOn.remove();
+      if (used.contains(node)) {
+        continue;
+      }
+      if (!unsorted.contains(node)) {
+        dependsOn.addAll(myInputsToOutputsInc.getBySecond(node));
+        continue;
+      }
+      return false;
+    }
+    return true;
   }
 
   public List<RelationBlock> getRelationsToSolve() {
