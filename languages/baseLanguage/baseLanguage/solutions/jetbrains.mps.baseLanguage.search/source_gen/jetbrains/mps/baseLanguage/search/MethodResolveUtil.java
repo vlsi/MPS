@@ -225,9 +225,11 @@ public class MethodResolveUtil {
     return result;
   }
 
+  /**
+   * Use this method in baseLanguage.scopes module
+   */
   @Deprecated
   public static Map<SNode, SNode> getTypesByTypeVars(@NotNull SNode classifier, List<SNode> typeParameters) {
-    // use this method in baseLanguage.scopes module 
     Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierAndSuperClassifiersCache.getInstance(classifier).getTypeByTypeVariableMap())) {
       typeByTypeVar.put(elem.key(), elem.value());
