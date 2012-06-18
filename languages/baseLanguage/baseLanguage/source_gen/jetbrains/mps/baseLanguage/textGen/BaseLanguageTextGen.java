@@ -261,7 +261,7 @@ public abstract class BaseLanguageTextGen {
     } else {
       SNode targetNode = reference.getTargetNodeSilently();
       if (targetNode == null) {
-        textGen.foundError();
+        textGen.foundError("Target node is null for reference to classifier with role " + SLinkOperations.getRole(classifierRef) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + classifierRef.getSourceNode().getDebugText());
         return null;
       }
       return MultiTuple.<String,String>from(targetNode.getModel().getSModelReference().getLongName(), (SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier") ?
