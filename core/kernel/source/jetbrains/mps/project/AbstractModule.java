@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
@@ -94,6 +95,8 @@ public abstract class AbstractModule implements IModule {
     }
 
     model.save();
+
+    new MissingDependenciesFixer(model).fix(false);
 
     return model;
   }
