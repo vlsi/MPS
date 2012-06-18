@@ -20,7 +20,6 @@ import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -31,23 +30,21 @@ class CacheUtil {
   static Set<VirtualFile> getIndexableRoots() {
     final Set<VirtualFile> files = new HashSet<VirtualFile>();
 
-    for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      for (final SModelRoot root : m.getSModelRoots()) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            VirtualFile file = VirtualFileUtils.getVirtualFile(root.getPath());
-            if (file != null) { //i.e. files doesn't exist
-              files.add(file);
-            }
+    for (final IModule m : MPSModuleRepository.getInstance().getAllModules()) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          VirtualFile file = VirtualFileUtils.getVirtualFile(m.getBundleHome());
+          if (file != null) { //i.e. files doesn't exist
+            files.add(file);
           }
-        });
-      }
+        }
+      });
     }
 
     return files;
   }
 
-  public static boolean checkFile(VirtualFile file,ProjectRootManagerEx manager) {
+  public static boolean checkFile(VirtualFile file, ProjectRootManagerEx manager) {
     if (FileTypeManager.getInstance().isFileIgnored(file.getName())) return false;
     if (manager.getFileIndex().isIgnored(file)) return false;
     return true;
