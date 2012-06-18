@@ -37,6 +37,8 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
 
   @Nullable
   private Method getMethod(String methodName, Class[] parametersTypes) {
+    // memory visibility is not a problem: synchronized block below is memory barrier +
+    // it's okay to calculate method twice
     if (methods != null && methods.containsKey(methodName)) {
       return methods.get(methodName);
     }
