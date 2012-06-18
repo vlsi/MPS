@@ -9,12 +9,17 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
+import java.util.Collections;
+import jetbrains.mps.baseLanguage.scopes.MethodResolveUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class InstanceMethodCallOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -42,6 +47,9 @@ public class InstanceMethodCallOperation_Behavior {
 
   public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
+    if ((SLinkOperations.getTarget(instanceType, "classifier", false) == null)) {
+      return Collections.emptyMap();
+    }
     return MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true));
   }
 
@@ -66,9 +74,16 @@ public class InstanceMethodCallOperation_Behavior {
     if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
       return false;
     }
-    int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
     while (classifier != declarationClassifier) {
-      for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, thisNode, constraint)) {
+      for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")).getAvailableElements(SPropertyOperations.getString(declaration, "name"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+        }
+      })) {
         if (SPropertyOperations.getString(method, "name").equals(SPropertyOperations.getString(declaration, "name"))) {
           return false;
         }

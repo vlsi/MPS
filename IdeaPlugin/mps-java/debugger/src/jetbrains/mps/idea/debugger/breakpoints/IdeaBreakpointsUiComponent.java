@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.debugger.breakpoints;
 
 import com.intellij.debugger.DebuggerManagerEx;
+import com.intellij.debugger.engine.requests.RequestManagerImpl;
 import com.intellij.debugger.ui.breakpoints.Breakpoint;
 import com.intellij.debugger.ui.breakpoints.BreakpointManagerListener;
 import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
@@ -149,6 +150,10 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
         }
         if (breakpoint == null) {
             breakpoint = myDebuggerManager.getBreakpointManager().addLineBreakpoint(document, sourcePosition.getLineNumber());
+        }
+
+        if (breakpoint != null) {
+            RequestManagerImpl.createRequests(breakpoint);
         }
     }
 

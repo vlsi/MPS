@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.runtime.impl;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted.InterpretedBehaviorDescriptor;
+import org.jetbrains.annotations.Nullable;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -34,7 +35,10 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
   @Override
   public abstract String getConceptFqName();
 
+  @Nullable
   private Method getMethod(String methodName, Class[] parametersTypes) {
+    // memory visibility is not a problem: synchronized block below is memory barrier +
+    // it's okay to calculate method twice
     if (methods != null && methods.containsKey(methodName)) {
       return methods.get(methodName);
     }
@@ -48,13 +52,33 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
       try {
         method = this.getClass().getMethod(methodName, parametersTypes);
       } catch (NoSuchMethodException e) {
-        throw new RuntimeException(e);
+        // find by name
+        for (Method iMethod : this.getClass().getMethods()) {
+          if (iMethod.getName().equals(methodName)) {
+            return iMethod;
+          }
+        }
+        return null;
       }
 
       methods.put(methodName, method);
 
       return method;
     }
+  }
+
+  private static String getParameterTypesLogInfo(Class[] parametersTypes) {
+    StringBuilder result = new StringBuilder();
+    boolean isFirst = true;
+    for (Class parameterType : parametersTypes) {
+      if (!isFirst) {
+        result.append(", ");
+      } else {
+        isFirst = false;
+      }
+      result.append(String.format("%s(%s)", parameterType.getSimpleName(), String.valueOf(parameterType.getClassLoader())));
+    }
+    return result.toString();
   }
 
   @Override
@@ -68,8 +92,17 @@ public abstract class CompiledBehaviorDescriptor extends InterpretedBehaviorDesc
       params[0] = node;
       System.arraycopy(parameters, 0, params, 1, parameters.length);
 
+      Method method = getMethod(methodName, parametersTypes);
+      if (method == null) {
+        throw new RuntimeException(new NoSuchMethodException("No such method for " + methodName + " in " + getConceptFqName()));
+      }
+
       try {
-        return (T) getMethod(methodName, parametersTypes).invoke(this, params);
+        return (T) method.invoke(this, params);
+      } catch (IllegalArgumentException e) {
+        throw new IllegalArgumentException(
+          String.format("Declared method arguments differ from caller method arguments. Declared arguments: [%s], caller arguments: [%s]",
+            getParameterTypesLogInfo(method.getParameterTypes()), getParameterTypesLogInfo(parametersTypes)));
       } catch (IllegalAccessException e) {
         throw new RuntimeException(e);
       } catch (InvocationTargetException e) {

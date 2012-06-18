@@ -9,14 +9,16 @@ import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.Language;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -36,8 +38,12 @@ import jetbrains.mps.smodel.SModelFqName;
   @Override
   public Iterable<IModule> getVisibleModules() {
     List<IModule> result = ListSequence.fromList(new ArrayList<IModule>());
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(getVisibleLanguages()));
     ListSequence.fromList(result).addElement(myModule);
+    IModule contextModule = myModule.getContextModule();
+    if (contextModule != null) {
+      ListSequence.fromList(result).addElement(contextModule);
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(contextModule.getScope().getVisibleModules()));
+    }
     return result;
   }
 
@@ -59,7 +65,15 @@ import jetbrains.mps.smodel.SModelFqName;
 
   @Override
   public List<Solution> getVisibleSolutions() {
-    return ListSequence.fromList(new ArrayList<Solution>());
+    return Sequence.fromIterable(getVisibleModules()).where(new IWhereFilter<IModule>() {
+      public boolean accept(IModule it) {
+        return it instanceof Solution;
+      }
+    }).select(new ISelector<IModule, Solution>() {
+      public Solution select(IModule it) {
+        return ((Solution) it);
+      }
+    }).toListSequence();
   }
 
   @Override

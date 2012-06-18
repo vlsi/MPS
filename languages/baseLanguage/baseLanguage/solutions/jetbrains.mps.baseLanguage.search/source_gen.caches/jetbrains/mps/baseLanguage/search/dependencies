@@ -76,6 +76,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.cache.AbstractCache" />
     <classNode extendsClassName="jetbrains.mps.cache.DataSet" />
@@ -235,6 +236,7 @@
   <dependency className="jetbrains.mps.baseLanguage.search.MethodResolveUtil" file="MethodResolveUtil.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -263,6 +265,7 @@
     <classNode dependClassName="jetbrains.mps.typesystem.inference.util.StructuralNodeMap" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.ParameterScope" file="ParameterScope.java">
@@ -322,6 +325,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.smodel.search.IReferenceInfoResolver" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.search.SuperMethodCall_InstanceMethodScope" file="SuperMethodCall_InstanceMethodScope.java">

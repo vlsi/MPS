@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -110,15 +111,17 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     return dataSet.getTypeByTypeVariableMap();
   }
 
-  public static ClassifierAndSuperClassifiersCache getInstance(SNode topClassifierNode) {
+  public static ClassifierAndSuperClassifiersCache getInstance(@NotNull SNode topClassifierNode) {
     Object key = keyProducer.createKey(topClassifierNode);
+    if (SNodeOperations.getModel(topClassifierNode).getModelDescriptor() == null) {
+      return new ClassifierAndSuperClassifiersCache(key, topClassifierNode);
+    }
+
     return (ClassifierAndSuperClassifiersCache) CachesManager.getInstance().getCache(key, topClassifierNode, new CachesManager.CacheCreator<SNode>() {
       public AbstractCache create(Object key, SNode element) {
-        assert SNodeOperations.getModel(element).getModelDescriptor() != null : "Classifier cache root node has no model descriptor";
         return new ClassifierAndSuperClassifiersCache(key, element);
       }
     });
-
   }
 
   private static final class ClassifiersDataSet extends DataSet {
