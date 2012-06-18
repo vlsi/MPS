@@ -159,6 +159,7 @@
       <property name="name" nameId="tpck.1169194664001" value="DeleteBreakpointAction" />
       <property name="caption" nameId="tp4k.1205250923097" value="Delete" />
       <property name="description" nameId="tp4k.1213273179528" value="Delete Breakpoint" />
+      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546857272">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
@@ -2170,7 +2171,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6515087165749899707">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/ide/projectPane/nodes/reference.png" />
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/resources/breakpointsDialog/go_to_source.png" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="6515087165749901259">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6515087165749901260">
@@ -2311,7 +2312,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6515087165749935257">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/ide/projectPane/nodes/text.png" />
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/resources/breakpointsDialog/view_source.png" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="6515087165749935258">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6515087165749935259">
@@ -2471,7 +2472,7 @@
       </node>
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="418270182880377820">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/workbench/dialogs/project/components/parts/actions/icons/remove.png" />
+      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/resources/breakpointsDialog/delete_breakpoint.png" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="418270182880378078">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="418270182880378079">

@@ -19,7 +19,7 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class GoToBreakpointSourceAction_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("reference.png");
+  private static final Icon ICON = IconUtil.getIcon("go_to_source.png");
   protected static Log log = LogFactory.getLog(GoToBreakpointSourceAction_Action.class);
 
   public GoToBreakpointSourceAction_Action() {

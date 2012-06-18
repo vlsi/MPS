@@ -6,6 +6,13 @@ import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
 
 public class IconContainer {
+  protected static Icon ICON_a8 = IconUtil.getIcon("delete_breakpoint.png");
+  protected static Icon ICON_a9 = IconUtil.getIcon("go_to_source.png");
+  protected static Icon ICON_a01 = IconUtil.getIcon("group_by_model_1.png");
+  protected static Icon ICON_a11 = IconUtil.getIcon("group_by_module_1.png");
+  protected static Icon ICON_a21 = IconUtil.getIcon("group_by_root.png");
+  protected static Icon ICON_a31 = IconUtil.getIcon("view_source.png");
+  protected static Icon ICON_a41 = IconUtil.getIcon("tree_view.png");
   protected static Icon ICON_a0 = IconUtil.getIcon("db_set_breakpoint.png");
   protected static Icon ICON_a1 = IconUtil.getIcon("db_invalid_breakpoint.png");
   protected static Icon ICON_a2 = IconUtil.getIcon("db_disabled_breakpoint.png");

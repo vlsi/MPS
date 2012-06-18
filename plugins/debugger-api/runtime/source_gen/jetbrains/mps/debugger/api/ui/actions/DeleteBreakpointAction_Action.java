@@ -19,12 +19,12 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import com.intellij.openapi.project.Project;
 
 public class DeleteBreakpointAction_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("remove.png");
+  private static final Icon ICON = IconUtil.getIcon("delete_breakpoint.png");
   protected static Log log = LogFactory.getLog(DeleteBreakpointAction_Action.class);
 
   public DeleteBreakpointAction_Action() {
     super("Delete", "Delete Breakpoint", ICON);
-    this.setIsAlwaysVisible(false);
+    this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
 
