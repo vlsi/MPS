@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
@@ -35,6 +36,7 @@ import java.util.List;
  * Dec 10, 2007
  */
 public class DynamicReference extends SReferenceBase {
+  private static final Logger LOG = Logger.getLogger(DynamicReference.class);
 
   private DynamicReferenceOrigin myOrigin;
 
@@ -87,7 +89,13 @@ public class DynamicReference extends SReferenceBase {
 
     }
 
-    SNode targetNode = scope.resolve(getSourceNode(), getResolveInfo());
+    SNode targetNode = null;
+    try {
+      targetNode = scope.resolve(getSourceNode(), getResolveInfo());
+    } catch (Throwable t) {
+      LOG.warning("Exception was thrown while dynamic reference resolving", t);
+    }
+
     if (targetNode == null) {
       if (!silently) {
         reportErrorWithOrigin("cannot resolve reference by string: '" + getResolveInfo() + "'");

@@ -10,7 +10,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 
 public class StaticMethodDeclarationScope extends BaseMethodsScope {
   public StaticMethodDeclarationScope(SNode classNode, Iterable<SNode> extendedClassifiers) {

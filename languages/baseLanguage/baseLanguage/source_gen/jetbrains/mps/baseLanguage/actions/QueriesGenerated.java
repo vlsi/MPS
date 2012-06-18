@@ -804,10 +804,10 @@ __switch__:
                 }
                 SNode thisExpression = SNodeFactoryOperations.setNewChild(operationExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
 
-                int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
-                if (!(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode()), _context.getParentNode(), constraint)).contains((item)))) {
+                SNode constraint = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+                if (!(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(ClassConcept_Behavior.getContextClass_8008512149545173402(_context.getParentNode()), _context.getParentNode(), constraint).contains((item)))) {
                   SNode concept = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-                  while (concept != null && !(ListSequence.fromList(Classifier_Behavior.call_getVisibleMembers_1213877306257(concept, _context.getParentNode(), constraint)).contains((item)))) {
+                  while (concept != null && !(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(concept, _context.getParentNode(), constraint).contains((item)))) {
                     concept = SNodeOperations.getAncestor(concept, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
                   }
                   SLinkOperations.setTarget(thisExpression, "classConcept", concept, false);

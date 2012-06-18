@@ -86,6 +86,7 @@ public abstract class Type_BehaviorDescriptor extends BaseConcept_BehaviorDescri
     return Type_Behavior.virtual_selectOnVariableCreation_1213877337352(thisNode);
   }
 
+  @Deprecated
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return Type_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
