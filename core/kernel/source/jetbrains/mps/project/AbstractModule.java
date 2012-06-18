@@ -93,6 +93,8 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
+    model.save();
+
     return model;
   }
 
