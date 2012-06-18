@@ -124,6 +124,7 @@ public class Type_Behavior {
     return Type_Behavior.call_hasMissingParameters_3508583411997314206(thisNode);
   }
 
+  @Deprecated
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     {
       IMatchingPattern pattern_smb55n_a0n = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
