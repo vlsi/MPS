@@ -46,7 +46,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -278,7 +278,7 @@ public class CheckProjectStructureHelper {
         for (IModule sm : modules) {
           StringBuilder errorMessages = checkModule(sm);
           if (errorMessages.length() > 0) {
-            errors.add(errorMessages.toString());
+            errors.add("Error in module " + sm.getModuleFqName() + ": " + errorMessages.toString());
           }
         }
       }
