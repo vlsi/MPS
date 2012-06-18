@@ -18,7 +18,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class ViewBreakpointSourceAction_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("text.png");
+  private static final Icon ICON = IconUtil.getIcon("view_source.png");
   protected static Log log = LogFactory.getLog(ViewBreakpointSourceAction_Action.class);
 
   public ViewBreakpointSourceAction_Action() {

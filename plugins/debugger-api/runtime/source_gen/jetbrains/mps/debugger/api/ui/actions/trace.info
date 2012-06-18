@@ -65,11 +65,11 @@
     <unitInfo nodeId="4073774232572770202" fileName="Debugger_KeymapChanges.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.Debugger_KeymapChanges" />
   </root>
   <root nodeId="418270182880363898">
-    <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="21" startPosition="63" endLine="22" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="22" startPosition="66" endLine="23" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="21" startPosition="63" endLine="22" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="22" startPosition="77" endLine="23" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="25" startPosition="42" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="26" startPosition="47" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="27" startPosition="35" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="26" startPosition="47" endLine="27" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="27" startPosition="34" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418270182880363898" fileName="DeleteBreakpointAction_Action.java" startLine="32" startPosition="32" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418270182880378080" fileName="DeleteBreakpointAction_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="418270182880378089" fileName="DeleteBreakpointAction_Action.java" startLine="39" startPosition="96" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -148,8 +148,8 @@
     <unitInfo nodeId="4474271214083123233" fileName="DeleteBreakpointAction_Action.java" startLine="67" startPosition="47" endLine="72" endPosition="7" unitName="jetbrains.mps.debugger.api.ui.actions.DeleteBreakpointAction_Action$1" />
   </root>
   <root nodeId="6515087165749899624">
-    <nodeInfo nodeId="6515087165749899624" fileName="GoToBreakpointSourceAction_Action.java" startLine="21" startPosition="67" endLine="22" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="6515087165749899624" fileName="GoToBreakpointSourceAction_Action.java" startLine="22" startPosition="69" endLine="23" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="6515087165749899624" fileName="GoToBreakpointSourceAction_Action.java" startLine="21" startPosition="67" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6515087165749899624" fileName="GoToBreakpointSourceAction_Action.java" startLine="22" startPosition="72" endLine="23" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6515087165749899624" fileName="GoToBreakpointSourceAction_Action.java" startLine="25" startPosition="46" endLine="26" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6515087165749899624" fileName="GoToBreakpointSourceAction_Action.java" startLine="26" startPosition="41" endLine="27" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6515087165749899624" fileName="GoToBreakpointSourceAction_Action.java" startLine="27" startPosition="34" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -231,8 +231,8 @@
     <unitInfo nodeId="6515087165749899624" fileName="GoToBreakpointSourceAction_Action.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.debugger.api.ui.actions.GoToBreakpointSourceAction_Action" />
   </root>
   <root nodeId="6515087165749935206">
-    <nodeInfo nodeId="6515087165749935206" fileName="ViewBreakpointSourceAction_Action.java" startLine="20" startPosition="67" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="6515087165749935206" fileName="ViewBreakpointSourceAction_Action.java" startLine="21" startPosition="64" endLine="22" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="6515087165749935206" fileName="ViewBreakpointSourceAction_Action.java" startLine="20" startPosition="67" endLine="21" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="6515087165749935206" fileName="ViewBreakpointSourceAction_Action.java" startLine="21" startPosition="71" endLine="22" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6515087165749935206" fileName="ViewBreakpointSourceAction_Action.java" startLine="24" startPosition="46" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6515087165749935206" fileName="ViewBreakpointSourceAction_Action.java" startLine="25" startPosition="46" endLine="26" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6515087165749935206" fileName="ViewBreakpointSourceAction_Action.java" startLine="26" startPosition="34" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -489,8 +489,8 @@
     <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="75" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6762701973176605162" fileName="plugin.xml" startLine="22" startPosition="90" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />

@@ -125,8 +125,8 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
   public void createNodesToShow(EditableSModelDescriptor auxilaryModel, List<SNodePointer> nodesToImport) {
     myEvaluator = createEvaluator(auxilaryModel);
-    auxilaryModel.getSModel().addRoot(myEvaluator);
-    SModelOperations.validateLanguagesAndImports(auxilaryModel.getSModel(), false, true);
+    SModel smodel = auxilaryModel.getSModel();
+    smodel.addRoot(myEvaluator);
 
     SModel locationModel = getLocationModel();
     if (locationModel != null) {
@@ -135,6 +135,8 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
 
     createVars();
     tryToImport(nodesToImport);
+
+    SModelOperations.validateLanguagesAndImports(smodel, false, true);
   }
 
   protected SNode createEvaluator(SModelDescriptor model) {
