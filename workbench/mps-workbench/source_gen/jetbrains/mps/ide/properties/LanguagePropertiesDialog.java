@@ -32,7 +32,7 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
 
   public JPanel createCheckboxPanel() {
     List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
-    list.add(new StandardComponents.CheckboxDescriptor(myProperties, LanguageProperties.DO_NOT_GENERATE_ADAPTERS, "Do Not Generate Adapters"));
+    list.add(new StandardComponents.CheckboxDescriptor(myProperties, LanguageProperties.GENERATE_ADAPTERS, "Generate Adapters (deprecated, will be removed in 3.0)"));
     return StandardComponents.createCheckboxPanel(this, list);
   }
 
