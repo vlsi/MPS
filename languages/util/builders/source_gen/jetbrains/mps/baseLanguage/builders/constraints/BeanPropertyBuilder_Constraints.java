@@ -26,8 +26,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
@@ -68,9 +70,16 @@ public class BeanPropertyBuilder_Constraints extends BaseConstraintsDescriptor {
               return Sequence.fromIterable(Collections.<SNode>emptyList());
             }
             List<SNode> methods = new ArrayList<SNode>();
-            for (SNode m : Classifier_Behavior.call_getVisibleMembers_1213877306257(SLinkOperations.getTarget(classifierType, "classifier", false), _context.getEnclosingNode(), IClassifiersSearchScope.INSTANCE_METHOD)) {
+            for (SNode method : Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(SLinkOperations.getTarget(classifierType, "classifier", false), _context.getEnclosingNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+              }
+            }).select(new ISelector<SNode, SNode>() {
+              public SNode select(SNode it) {
+                return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+              }
+            })) {
 
-              SNode method = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
               if ((int) ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && BeanPropertyBuilder_Behavior.getPropertyName_2679357232284040711(SPropertyOperations.getString(method, "name")) != null) {
                 ListSequence.fromList(methods).addElement(method);
               }

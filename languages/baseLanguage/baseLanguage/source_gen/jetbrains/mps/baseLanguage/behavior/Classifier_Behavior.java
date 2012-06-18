@@ -69,6 +69,7 @@ public class Classifier_Behavior {
     return markIcons;
   }
 
+  @Deprecated
   public static List<SNode> call_getVisibleMembers_1213877306257(SNode thisNode, SNode contextNode, int constraint) {
     SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(ct, "classifier", thisNode, false);

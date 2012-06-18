@@ -12,7 +12,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class FieldReferenceOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -61,9 +62,16 @@ public class FieldReferenceOperation_Behavior {
     if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
       return false;
     }
-    int constraint = IClassifiersSearchScope.INSTANCE_FIELD;
     while (classifier != declarationClassifier) {
-      for (SNode fieldDeclaration : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, thisNode, constraint)) {
+      for (SNode fieldDeclaration : Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration")).getAvailableElements(SPropertyOperations.getString(field, "name"))).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        }
+      }).select(new ISelector<SNode, SNode>() {
+        public SNode select(SNode it) {
+          return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        }
+      })) {
         if (SPropertyOperations.getString(fieldDeclaration, "name") != null && SPropertyOperations.getString(fieldDeclaration, "name").equals(SPropertyOperations.getString(field, "name"))) {
           return false;
         }

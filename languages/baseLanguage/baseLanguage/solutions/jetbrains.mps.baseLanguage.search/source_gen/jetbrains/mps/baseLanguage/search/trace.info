@@ -1650,33 +1650,36 @@
     <nodeInfo nodeId="3161373106581140257" fileName="StaticMethodReferenceInfoResolver.java" startLine="34" startPosition="30" endLine="35" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3161373106581140264" fileName="StaticMethodReferenceInfoResolver.java" startLine="36" startPosition="5" endLine="37" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3161373106581140282" fileName="StaticMethodReferenceInfoResolver.java" startLine="38" startPosition="30" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3161373106581140289" fileName="StaticMethodReferenceInfoResolver.java" startLine="40" startPosition="5" endLine="41" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3161373106581140300" fileName="StaticMethodReferenceInfoResolver.java" startLine="41" startPosition="126" endLine="42" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5500967171011551098" fileName="StaticMethodReferenceInfoResolver.java" startLine="41" startPosition="33" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3161373106581140289" fileName="StaticMethodReferenceInfoResolver.java" startLine="43" startPosition="5" endLine="44" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3161373106581140300" fileName="StaticMethodReferenceInfoResolver.java" startLine="44" startPosition="126" endLine="45" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3161373106581140226" fileName="StaticMethodReferenceInfoResolver.java" startLine="26" startPosition="84" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3161373106581140243" fileName="StaticMethodReferenceInfoResolver.java" startLine="30" startPosition="77" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3161373106581140250" fileName="StaticMethodReferenceInfoResolver.java" startLine="33" startPosition="5" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3161373106581140275" fileName="StaticMethodReferenceInfoResolver.java" startLine="37" startPosition="83" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5500967171011519554" fileName="StaticMethodReferenceInfoResolver.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3161373106581140190" fileName="StaticMethodReferenceInfoResolver.java" startLine="18" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StaticMethodReferenceInfoResolver#(Ljetbrains/mps/baseLanguage/search/ClassifierAndSuperClassifiersScope;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="3161373106581140218" fileName="StaticMethodReferenceInfoResolver.java" startLine="25" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3161373106581140218" fileName="StaticMethodReferenceInfoResolver.java" startLine="25" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljava/lang/String;Ljetbrains/mps/smodel/SModelReference;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="3161373106581140230" fileName="StaticMethodReferenceInfoResolver.java" startLine="27" startPosition="32" endLine="28" endPosition="18" />
     <scopeInfo nodeId="3161373106581140247" fileName="StaticMethodReferenceInfoResolver.java" startLine="31" startPosition="28" endLine="32" endPosition="18" />
     <scopeInfo nodeId="3161373106581140256" fileName="StaticMethodReferenceInfoResolver.java" startLine="34" startPosition="30" endLine="35" endPosition="52" />
     <scopeInfo nodeId="3161373106581140281" fileName="StaticMethodReferenceInfoResolver.java" startLine="38" startPosition="30" endLine="39" endPosition="52" />
+    <scopeInfo nodeId="5500967171011519555" fileName="StaticMethodReferenceInfoResolver.java" startLine="41" startPosition="33" endLine="42" endPosition="18" />
     <scopeInfo nodeId="3161373106581140199" fileName="StaticMethodReferenceInfoResolver.java" startLine="20" startPosition="144" endLine="23" endPosition="37" />
     <scopeInfo nodeId="3161373106581140190" fileName="StaticMethodReferenceInfoResolver.java" startLine="18" startPosition="0" endLine="24" endPosition="3">
       <varInfo nodeId="3161373106581140196" varName="actualArguments" />
       <varInfo nodeId="3161373106581140194" varName="class_" />
       <varInfo nodeId="3161373106581140192" varName="searchScope" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140225" fileName="StaticMethodReferenceInfoResolver.java" startLine="26" startPosition="84" endLine="42" endPosition="99">
+    <scopeInfo nodeId="3161373106581140225" fileName="StaticMethodReferenceInfoResolver.java" startLine="26" startPosition="84" endLine="45" endPosition="99">
       <varInfo nodeId="3161373106581140234" varName="methods" />
       <varInfo nodeId="3161373106581140290" varName="typeByTypeVar" />
     </scopeInfo>
-    <scopeInfo nodeId="3161373106581140218" fileName="StaticMethodReferenceInfoResolver.java" startLine="25" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="3161373106581140218" fileName="StaticMethodReferenceInfoResolver.java" startLine="25" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="3161373106581140221" varName="referenceInfo" />
       <varInfo nodeId="3161373106581140223" varName="targetModelReference" />
     </scopeInfo>
-    <unitInfo nodeId="3161373106581140178" fileName="StaticMethodReferenceInfoResolver.java" startLine="13" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.StaticMethodReferenceInfoResolver" />
+    <unitInfo nodeId="3161373106581140178" fileName="StaticMethodReferenceInfoResolver.java" startLine="13" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.StaticMethodReferenceInfoResolver" />
   </root>
   <root nodeId="3161373106581140309">
     <nodeInfo nodeId="3161373106581140312" fileName="LocalVariablesScope.java" startLine="24" startPosition="62" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextNode" />

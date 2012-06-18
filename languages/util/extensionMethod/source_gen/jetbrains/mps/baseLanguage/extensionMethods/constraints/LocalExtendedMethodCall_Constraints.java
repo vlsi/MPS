@@ -19,11 +19,14 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
@@ -74,18 +77,29 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
             if (classifier == null) {
               return result;
             }
-            int constraint = IClassifiersSearchScope.INSTANCE_METHOD;
+            SNode constraint = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
 
             Set<String> names = SetSequence.fromSet(new HashSet<String>());
             while (classifier != null) {
-              for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
+              Iterable<SNode> methods = Sequence.fromIterable(Classifier_Behavior.call_getVisibleMembers_8083692786967356611(classifier, _context.getEnclosingNode(), constraint).getAvailableElements(null)).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+                }
+              }).select(new ISelector<SNode, SNode>() {
+                public SNode select(SNode it) {
+                  return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+                }
+              });
+
+              for (SNode method : methods) {
                 if (!(SetSequence.fromSet(names).contains(SPropertyOperations.getString(method, "name")))) {
                   ListSequence.fromList(result).addElement(method);
                 }
               }
-              for (SNode method : (List<SNode>) Classifier_Behavior.call_getVisibleMembers_1213877306257(classifier, _context.getEnclosingNode(), constraint)) {
+              for (SNode method : methods) {
                 SetSequence.fromSet(names).addElement(SPropertyOperations.getString(method, "name"));
               }
+
               classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
             }
             return result;
