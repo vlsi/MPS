@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
@@ -76,7 +77,7 @@ public abstract class AbstractModule implements IModule {
     IModelRootManager manager = root.getManager();
 
     if (!manager.canCreateModel(this, root.getModelRoot(), name)) {
-      LOG.error("Trying to create model root manager in root which doesn't support new models");
+      LOG.error("Can't create a model with this name under " + root.getPath() + "[" + root.getManager().getClass().getSimpleName() + "]");
       return null;
     }
 
@@ -92,6 +93,10 @@ public abstract class AbstractModule implements IModule {
         listener.onCreate(this, model);
       }
     }
+
+    model.save();
+
+    new MissingDependenciesFixer(model).fix(false);
 
     return model;
   }

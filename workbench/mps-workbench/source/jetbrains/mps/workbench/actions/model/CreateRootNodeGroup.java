@@ -47,7 +47,7 @@ import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.*;
+import javax.swing.Icon;
 import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -80,7 +80,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       return;
     }
 
-    if (!(modelDescriptor instanceof EditableSModelDescriptor) || (((EditableSModelDescriptor) modelDescriptor).isReadOnly())){
+    if (!(modelDescriptor instanceof EditableSModelDescriptor) || (((EditableSModelDescriptor) modelDescriptor).isReadOnly())) {
       event.getPresentation().setEnabled(false);
       event.getPresentation().setVisible(false);
       return;
@@ -136,15 +136,17 @@ public class CreateRootNodeGroup extends BaseGroup {
     if (aspect != null) {
       ModuleReference ref = aspect.getMainLanguage();
       Language lang = scope.getLanguage(ref);
-      modelLanguages.remove(lang);
+      if (lang != null) {
+        modelLanguages.remove(lang);
 
-      for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
-        if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
-          add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
+        for (SNode conceptDeclaration : lang.getConceptDeclarations()) {
+          if (ModelConstraintsManager.canBeRoot(context, NameUtil.nodeFQName(conceptDeclaration), modelDescriptor.getSModel())) {
+            add(new NewRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor));
+          }
         }
-      }
 
-      addSeparator();
+        addSeparator();
+      }
     }
 
     Collections.sort(modelLanguages, new ToStringComparator());
