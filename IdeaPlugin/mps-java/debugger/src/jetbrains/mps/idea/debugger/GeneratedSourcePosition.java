@@ -43,94 +43,94 @@ import org.jetbrains.annotations.Nullable;
  * some stuff as: node, psi file.
  */
 public class GeneratedSourcePosition {
-    private final String myTypeName;
-    private final String myFileName;
-    private final int myLineNumber;
+  private final String myTypeName;
+  private final String myFileName;
+  private final int myLineNumber;
 
-    public GeneratedSourcePosition(String typeName, String fileName, int lineNumber) {
-        myLineNumber = lineNumber;
-        myFileName = fileName;
-        myTypeName = typeName;
-    }
+  public GeneratedSourcePosition(String typeName, String fileName, int lineNumber) {
+    myLineNumber = lineNumber;
+    myFileName = fileName;
+    myTypeName = typeName;
+  }
 
-    public String getTypeName() {
-        return myTypeName;
-    }
+  public String getTypeName() {
+    return myTypeName;
+  }
 
-    public String getFileName() {
-        return myFileName;
-    }
+  public String getFileName() {
+    return myFileName;
+  }
 
-    public int getLineNumber() {
-        return myLineNumber;
-    }
+  public int getLineNumber() {
+    return myLineNumber;
+  }
 
-    @Nullable
-    public SNode getNode() {
-        return TraceInfoUtil.getJavaNode(myTypeName, myFileName, myLineNumber);
-    }
+  @Nullable
+  public SNode getNode() {
+    return TraceInfoUtil.getJavaNode(myTypeName, myFileName, myLineNumber);
+  }
 
-    @Nullable
-    public SNodePointer getNodePointer() {
-        return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-          @Override
-          public SNodePointer compute() {
-            SNode node = getNode();
-            if (node == null) {
-              return null;
-            }
-            return new SNodePointer(node);
-          }
-        });
-    }
-
-    @Nullable
-    public PsiFile getPsiFile(final Project project) {
-        final String fullPath = ModelAccess.instance().runReadAction(new Computable<String>() {
-            @Override
-            public String compute() {
-                SNode node = getNode();
-                if (node == null) return null;
-                SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-                IModule module = modelDescriptor.getModule();
-                if (!(module instanceof SolutionIdea)){
-                  return null;
-                }
-                IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()));
-                IFile file = defaultOutputDir.getDescendant(myFileName);
-                if (!file.exists()) {
-                    return null;
-                }
-                return file.getPath();
-            }
-        });
-
-        if (fullPath == null) {
-            return null;
+  @Nullable
+  public SNodePointer getNodePointer() {
+    return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+      @Override
+      public SNodePointer compute() {
+        SNode node = getNode();
+        if (node == null) {
+          return null;
         }
+        return new SNodePointer(node);
+      }
+    });
+  }
 
-        return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<PsiFile>() {
-            @Override
-            public PsiFile compute() {
-                VirtualFile file = LocalFileSystem.getInstance().findFileByPath(fullPath);
-                if (file == null) {
-                    return null;
-                }
-                return PsiManager.getInstance(project).findFile(file);
-            }
-        });
-    }
-
-    @Nullable
-    public static GeneratedSourcePosition fromNode(final SNode node) {
-        SModelDescriptor model = node.getModel().getModelDescriptor();
-        DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
-        if (debugInfo == null) {
-            return null;
+  @Nullable
+  public PsiFile getPsiFile(final Project project) {
+    final String fullPath = ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        SNode node = getNode();
+        if (node == null) return null;
+        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        IModule module = modelDescriptor.getModule();
+        if (!(module instanceof SolutionIdea)) {
+          return null;
         }
-        TraceablePositionInfo position = debugInfo.getPositionForNode(node.getSNodeId().toString());
-        if (position == null) return null;
+        IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()));
+        IFile file = defaultOutputDir.getDescendant(myFileName);
+        if (!file.exists()) {
+          return null;
+        }
+        return file.getPath();
+      }
+    });
 
-        return new GeneratedSourcePosition(debugInfo.getUnitNameForLine(position.getFileName(), position.getStartLine()), position.getFileName(), position.getStartLine());
+    if (fullPath == null) {
+      return null;
     }
+
+    return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<PsiFile>() {
+      @Override
+      public PsiFile compute() {
+        VirtualFile file = LocalFileSystem.getInstance().findFileByPath(fullPath);
+        if (file == null) {
+          return null;
+        }
+        return PsiManager.getInstance(project).findFile(file);
+      }
+    });
+  }
+
+  @Nullable
+  public static GeneratedSourcePosition fromNode(final SNode node) {
+    SModelDescriptor model = node.getModel().getModelDescriptor();
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
+    if (debugInfo == null) {
+      return null;
+    }
+    TraceablePositionInfo position = debugInfo.getPositionForNode(node.getSNodeId().toString());
+    if (position == null) return null;
+
+    return new GeneratedSourcePosition(debugInfo.getUnitNameForLine(position.getFileName(), position.getStartLine()), position.getFileName(), position.getStartLine());
+  }
 }
