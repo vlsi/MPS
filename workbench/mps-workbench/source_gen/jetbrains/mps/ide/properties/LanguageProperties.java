@@ -14,7 +14,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 
 public class LanguageProperties extends ModuleProperties {
   public static final String OUTPUT_PATH = "genPath";
-  public static final String DO_NOT_GENERATE_ADAPTERS = "doNotGenerateAdapters";
+  public static final String GENERATE_ADAPTERS = "generateAdapters";
 
   private String myGenPath;
   private List<SModelReference> myAccessoryModels;
@@ -22,7 +22,7 @@ public class LanguageProperties extends ModuleProperties {
   private List<ModuleReference> myRuntimeModules;
   private List<ClassPathEntry> myRuntimeClassPaths;
   private List<ModelRoot> myRuntimeStubModels;
-  private boolean myDoNotGenerateAdapters = false;
+  private boolean myGenerateAdapters = false;
   private List<StubSolution> myStubSolutions;
 
   public LanguageProperties() {
@@ -66,12 +66,12 @@ public class LanguageProperties extends ModuleProperties {
     return myRuntimeStubModels;
   }
 
-  public boolean isDoNotGenerateAdapters() {
-    return myDoNotGenerateAdapters;
+  public boolean isGenerateAdapters() {
+    return myGenerateAdapters;
   }
 
-  public void setDoNotGenerateAdapters(boolean doNotGenerateAdapters) {
-    myDoNotGenerateAdapters = doNotGenerateAdapters;
+  public void setGenerateAdapters(boolean doNotGenerateAdapters) {
+    myGenerateAdapters = doNotGenerateAdapters;
   }
 
   @Override
@@ -80,7 +80,7 @@ public class LanguageProperties extends ModuleProperties {
     super.loadFrom(descriptor);
     LanguageDescriptor d = (LanguageDescriptor) descriptor;
     myGenPath = d.getGenPath();
-    myDoNotGenerateAdapters = d.isDoNotGenerateAdapters();
+    myGenerateAdapters = !(d.isDoNotGenerateAdapters());
     myAccessoryModels.addAll(d.getAccessoryModels());
     myExtendedLanguages.addAll(d.getExtendedLanguages());
     myRuntimeModules.addAll(d.getRuntimeModules());
@@ -104,7 +104,7 @@ public class LanguageProperties extends ModuleProperties {
     super.saveTo(descriptor);
     LanguageDescriptor d = (LanguageDescriptor) descriptor;
     d.setGenPath(myGenPath);
-    d.setDoNotGenerateAdapters(myDoNotGenerateAdapters);
+    d.setDoNotGenerateAdapters(!(myGenerateAdapters));
     d.getAccessoryModels().clear();
     d.getAccessoryModels().addAll(myAccessoryModels);
     d.getExtendedLanguages().clear();

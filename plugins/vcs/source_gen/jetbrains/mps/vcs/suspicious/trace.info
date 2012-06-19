@@ -1,229 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="4093906047203395592">
-    <nodeInfo nodeId="4093906047203395635" fileName="SuspiciousModelIndex.java" startLine="36" startPosition="67" endLine="37" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
-    <nodeInfo nodeId="4093906047203395638" fileName="SuspiciousModelIndex.java" startLine="37" startPosition="48" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWatcher" />
-    <nodeInfo nodeId="4093906047203395641" fileName="SuspiciousModelIndex.java" startLine="38" startPosition="43" endLine="39" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />
-    <nodeInfo nodeId="4093906047203395644" fileName="SuspiciousModelIndex.java" startLine="39" startPosition="56" endLine="40" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTaskQueue" />
-    <nodeInfo nodeId="4093906047203395667" fileName="SuspiciousModelIndex.java" startLine="42" startPosition="111" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395671" fileName="SuspiciousModelIndex.java" startLine="43" startPosition="31" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395675" fileName="SuspiciousModelIndex.java" startLine="44" startPosition="24" endLine="45" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395687" fileName="SuspiciousModelIndex.java" startLine="48" startPosition="77" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395703" fileName="SuspiciousModelIndex.java" startLine="52" startPosition="76" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395715" fileName="SuspiciousModelIndex.java" startLine="58" startPosition="36" endLine="59" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203395728" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="45" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203395729" fileName="SuspiciousModelIndex.java" startLine="65" startPosition="5" endLine="66" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395751" fileName="SuspiciousModelIndex.java" startLine="68" startPosition="92" endLine="69" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395763" fileName="SuspiciousModelIndex.java" startLine="72" startPosition="85" endLine="73" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395776" fileName="SuspiciousModelIndex.java" startLine="79" startPosition="45" endLine="80" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203395777" fileName="SuspiciousModelIndex.java" startLine="81" startPosition="5" endLine="82" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395788" fileName="SuspiciousModelIndex.java" startLine="85" startPosition="54" endLine="86" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395799" fileName="SuspiciousModelIndex.java" startLine="87" startPosition="27" endLine="88" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395803" fileName="SuspiciousModelIndex.java" startLine="88" startPosition="63" endLine="89" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203395838" fileName="SuspiciousModelIndex.java" startLine="96" startPosition="56" endLine="97" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395817" fileName="SuspiciousModelIndex.java" startLine="101" startPosition="19" endLine="102" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395851" fileName="SuspiciousModelIndex.java" startLine="108" startPosition="89" endLine="109" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395862" fileName="SuspiciousModelIndex.java" startLine="109" startPosition="94" endLine="110" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395871" fileName="SuspiciousModelIndex.java" startLine="110" startPosition="103" endLine="111" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395883" fileName="SuspiciousModelIndex.java" startLine="112" startPosition="56" endLine="113" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395907" fileName="SuspiciousModelIndex.java" startLine="114" startPosition="32" endLine="115" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395912" fileName="SuspiciousModelIndex.java" startLine="115" startPosition="67" endLine="116" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395925" fileName="SuspiciousModelIndex.java" startLine="117" startPosition="27" endLine="118" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395930" fileName="SuspiciousModelIndex.java" startLine="118" startPosition="53" endLine="119" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395943" fileName="SuspiciousModelIndex.java" startLine="120" startPosition="30" endLine="121" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395949" fileName="SuspiciousModelIndex.java" startLine="121" startPosition="50" endLine="122" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395955" fileName="SuspiciousModelIndex.java" startLine="123" startPosition="11" endLine="124" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395901" fileName="SuspiciousModelIndex.java" startLine="127" startPosition="78" endLine="128" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395960" fileName="SuspiciousModelIndex.java" startLine="130" startPosition="5" endLine="131" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395971" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="52" endLine="133" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203395989" fileName="SuspiciousModelIndex.java" startLine="135" startPosition="27" endLine="136" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203396007" fileName="SuspiciousModelIndex.java" startLine="139" startPosition="49" endLine="140" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203396019" fileName="SuspiciousModelIndex.java" startLine="141" startPosition="35" endLine="142" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203396024" fileName="SuspiciousModelIndex.java" startLine="145" startPosition="5" endLine="146" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203395652" fileName="SuspiciousModelIndex.java" startLine="149" startPosition="49" endLine="150" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203396041" fileName="SuspiciousModelIndex.java" startLine="156" startPosition="33" endLine="157" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4093906047203396047" fileName="SuspiciousModelIndex.java" startLine="159" startPosition="77" endLine="160" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203396056" fileName="SuspiciousModelIndex.java" startLine="162" startPosition="5" endLine="163" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203396065" fileName="SuspiciousModelIndex.java" startLine="166" startPosition="52" endLine="167" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4093906047203396095" fileName="SuspiciousModelIndex.java" startLine="170" startPosition="69" endLine="171" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203396097" fileName="SuspiciousModelIndex.java" startLine="174" startPosition="5" endLine="175" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203395609" fileName="SuspiciousModelIndex.java" startLine="179" startPosition="113" endLine="180" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4093906047203395617" fileName="SuspiciousModelIndex.java" startLine="184" startPosition="45" endLine="185" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4093906047203395632" fileName="SuspiciousModelIndex.java" startLine="188" startPosition="64" endLine="189" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395723" fileName="SuspiciousModelIndex.java" startLine="62" startPosition="31" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203395771" fileName="SuspiciousModelIndex.java" startLine="78" startPosition="34" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203395833" fileName="SuspiciousModelIndex.java" startLine="95" startPosition="31" endLine="98" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4093906047203395892" fileName="SuspiciousModelIndex.java" startLine="126" startPosition="12" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203396014" fileName="SuspiciousModelIndex.java" startLine="140" startPosition="66" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203396039" fileName="SuspiciousModelIndex.java" startLine="155" startPosition="76" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203396045" fileName="SuspiciousModelIndex.java" startLine="158" startPosition="7" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203396088" fileName="SuspiciousModelIndex.java" startLine="169" startPosition="78" endLine="172" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203395599" fileName="SuspiciousModelIndex.java" startLine="178" startPosition="61" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTaskQueue#(Lcom/intellij/openapi/project/ProjectManager;Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
-    <nodeInfo nodeId="4093906047203395679" fileName="SuspiciousModelIndex.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModel#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Z)V" />
-    <nodeInfo nodeId="4093906047203395695" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModule#(Ljetbrains/mps/project/AbstractModule;Z)V" />
-    <nodeInfo nodeId="4093906047203395743" fileName="SuspiciousModelIndex.java" startLine="67" startPosition="68" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleSuspiciousModel#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Z)V" />
-    <nodeInfo nodeId="4093906047203395755" fileName="SuspiciousModelIndex.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleSuspiciousModule#(Ljetbrains/mps/project/AbstractModule;Z)V" />
-    <nodeInfo nodeId="4093906047203395794" fileName="SuspiciousModelIndex.java" startLine="86" startPosition="68" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203395938" fileName="SuspiciousModelIndex.java" startLine="119" startPosition="57" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203395985" fileName="SuspiciousModelIndex.java" startLine="134" startPosition="72" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4093906047203395648" fileName="SuspiciousModelIndex.java" startLine="148" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/vcs/suspicious/SuspiciousModelIndex;" />
-    <nodeInfo nodeId="4093906047203395625" fileName="SuspiciousModelIndex.java" startLine="187" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTask#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="4093906047203395657" fileName="SuspiciousModelIndex.java" startLine="41" startPosition="0" endLine="46" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspiciousModelIndex#(Lcom/intellij/openapi/project/ProjectManager;Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
-    <nodeInfo nodeId="4093906047203395978" fileName="SuspiciousModelIndex.java" startLine="133" startPosition="77" endLine="138" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203396081" fileName="SuspiciousModelIndex.java" startLine="168" startPosition="46" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4093906047203395613" fileName="SuspiciousModelIndex.java" startLine="182" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isProcessingAllowed#()Z" />
-    <nodeInfo nodeId="4093906047203395711" fileName="SuspiciousModelIndex.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4093906047203395829" fileName="SuspiciousModelIndex.java" startLine="94" startPosition="73" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4093906047203396002" fileName="SuspiciousModelIndex.java" startLine="138" startPosition="47" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4093906047203395767" fileName="SuspiciousModelIndex.java" startLine="77" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="4093906047203395822" fileName="SuspiciousModelIndex.java" startLine="93" startPosition="13" endLine="100" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203396070" fileName="SuspiciousModelIndex.java" startLine="167" startPosition="63" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203396032" fileName="SuspiciousModelIndex.java" startLine="154" startPosition="59" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4093906047203395737" fileName="SuspiciousModelIndex.java" startLine="66" startPosition="106" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395920" fileName="SuspiciousModelIndex.java" startLine="116" startPosition="72" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203395815" fileName="SuspiciousModelIndex.java" startLine="92" startPosition="25" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4093906047203396059" fileName="SuspiciousModelIndex.java" startLine="165" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInConflict#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="4093906047203396026" fileName="SuspiciousModelIndex.java" startLine="152" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getProjectForFile#(Lcom/intellij/openapi/vfs/VirtualFile;)Lcom/intellij/openapi/project/Project;" />
-    <nodeInfo nodeId="4093906047203395811" fileName="SuspiciousModelIndex.java" startLine="91" startPosition="68" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4093906047203395964" fileName="SuspiciousModelIndex.java" startLine="131" startPosition="57" endLine="145" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4093906047203395804" fileName="SuspiciousModelIndex.java" startLine="90" startPosition="5" endLine="105" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4093906047203395719" fileName="SuspiciousModelIndex.java" startLine="61" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="4093906047203395889" fileName="SuspiciousModelIndex.java" startLine="113" startPosition="43" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4093906047203395878" fileName="SuspiciousModelIndex.java" startLine="111" startPosition="61" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4093906047203395781" fileName="SuspiciousModelIndex.java" startLine="84" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeModels#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="4093906047203395843" fileName="SuspiciousModelIndex.java" startLine="107" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showMergeDialog#(Ljava/util/List;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="4093906047203395686" fileName="SuspiciousModelIndex.java" startLine="48" startPosition="77" endLine="49" endPosition="75" />
-    <scopeInfo nodeId="4093906047203395702" fileName="SuspiciousModelIndex.java" startLine="52" startPosition="76" endLine="53" endPosition="83" />
-    <scopeInfo nodeId="4093906047203395714" fileName="SuspiciousModelIndex.java" startLine="58" startPosition="36" endLine="59" endPosition="36" />
-    <scopeInfo nodeId="4093906047203395727" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="45" endLine="64" endPosition="13" />
-    <scopeInfo nodeId="4093906047203395750" fileName="SuspiciousModelIndex.java" startLine="68" startPosition="92" endLine="69" endPosition="36" />
-    <scopeInfo nodeId="4093906047203395762" fileName="SuspiciousModelIndex.java" startLine="72" startPosition="85" endLine="73" endPosition="38" />
-    <scopeInfo nodeId="4093906047203395775" fileName="SuspiciousModelIndex.java" startLine="79" startPosition="45" endLine="80" endPosition="13" />
-    <scopeInfo nodeId="4093906047203395837" fileName="SuspiciousModelIndex.java" startLine="96" startPosition="56" endLine="97" endPosition="46" />
-    <scopeInfo nodeId="4093906047203395816" fileName="SuspiciousModelIndex.java" startLine="101" startPosition="19" endLine="102" endPosition="67" />
-    <scopeInfo nodeId="4093906047203395900" fileName="SuspiciousModelIndex.java" startLine="127" startPosition="78" endLine="128" endPosition="35" />
-    <scopeInfo nodeId="4093906047203395988" fileName="SuspiciousModelIndex.java" startLine="135" startPosition="27" endLine="136" endPosition="111" />
-    <scopeInfo nodeId="4093906047203396018" fileName="SuspiciousModelIndex.java" startLine="141" startPosition="35" endLine="142" endPosition="37" />
-    <scopeInfo nodeId="4093906047203395651" fileName="SuspiciousModelIndex.java" startLine="149" startPosition="49" endLine="150" endPosition="88" />
-    <scopeInfo nodeId="4093906047203396040" fileName="SuspiciousModelIndex.java" startLine="156" startPosition="33" endLine="157" endPosition="17" />
-    <scopeInfo nodeId="4093906047203396046" fileName="SuspiciousModelIndex.java" startLine="159" startPosition="77" endLine="160" endPosition="23" />
-    <scopeInfo nodeId="4093906047203396094" fileName="SuspiciousModelIndex.java" startLine="170" startPosition="69" endLine="171" endPosition="22" />
-    <scopeInfo nodeId="4093906047203395608" fileName="SuspiciousModelIndex.java" startLine="179" startPosition="113" endLine="180" endPosition="50" />
-    <scopeInfo nodeId="4093906047203395616" fileName="SuspiciousModelIndex.java" startLine="184" startPosition="45" endLine="185" endPosition="80" />
-    <scopeInfo nodeId="4093906047203395631" fileName="SuspiciousModelIndex.java" startLine="188" startPosition="64" endLine="189" endPosition="25" />
-    <scopeInfo nodeId="4093906047203395798" fileName="SuspiciousModelIndex.java" startLine="87" startPosition="27" endLine="89" endPosition="13" />
-    <scopeInfo nodeId="4093906047203395942" fileName="SuspiciousModelIndex.java" startLine="120" startPosition="30" endLine="122" endPosition="40" />
-    <scopeInfo nodeId="4093906047203395666" fileName="SuspiciousModelIndex.java" startLine="42" startPosition="111" endLine="45" endPosition="37" />
-    <scopeInfo nodeId="4093906047203395832" fileName="SuspiciousModelIndex.java" startLine="95" startPosition="31" endLine="98" endPosition="15" />
-    <scopeInfo nodeId="4093906047203395833" fileName="SuspiciousModelIndex.java" startLine="95" startPosition="31" endLine="98" endPosition="15">
+    <nodeInfo nodeId="4093906047203395635" fileName="SuspiciousModelIndex.java" startLine="37" startPosition="67" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectManager" />
+    <nodeInfo nodeId="4093906047203395638" fileName="SuspiciousModelIndex.java" startLine="38" startPosition="48" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWatcher" />
+    <nodeInfo nodeId="4093906047203395641" fileName="SuspiciousModelIndex.java" startLine="39" startPosition="43" endLine="40" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />
+    <nodeInfo nodeId="4093906047203395644" fileName="SuspiciousModelIndex.java" startLine="40" startPosition="56" endLine="41" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTaskQueue" />
+    <nodeInfo nodeId="4093906047203395667" fileName="SuspiciousModelIndex.java" startLine="43" startPosition="111" endLine="44" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395671" fileName="SuspiciousModelIndex.java" startLine="44" startPosition="31" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395675" fileName="SuspiciousModelIndex.java" startLine="45" startPosition="24" endLine="46" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395687" fileName="SuspiciousModelIndex.java" startLine="49" startPosition="77" endLine="50" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395703" fileName="SuspiciousModelIndex.java" startLine="53" startPosition="76" endLine="54" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395715" fileName="SuspiciousModelIndex.java" startLine="59" startPosition="36" endLine="60" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203395728" fileName="SuspiciousModelIndex.java" startLine="64" startPosition="45" endLine="65" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203395729" fileName="SuspiciousModelIndex.java" startLine="66" startPosition="5" endLine="67" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395751" fileName="SuspiciousModelIndex.java" startLine="69" startPosition="92" endLine="70" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395763" fileName="SuspiciousModelIndex.java" startLine="73" startPosition="85" endLine="74" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395776" fileName="SuspiciousModelIndex.java" startLine="80" startPosition="45" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203395777" fileName="SuspiciousModelIndex.java" startLine="82" startPosition="5" endLine="83" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395851" fileName="SuspiciousModelIndex.java" startLine="86" startPosition="59" endLine="87" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203395862" fileName="SuspiciousModelIndex.java" startLine="87" startPosition="94" endLine="88" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203395871" fileName="SuspiciousModelIndex.java" startLine="88" startPosition="109" endLine="89" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4213817562888239064" fileName="SuspiciousModelIndex.java" startLine="89" startPosition="67" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4213817562888239092" fileName="SuspiciousModelIndex.java" startLine="92" startPosition="42" endLine="93" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4213817562888239116" fileName="SuspiciousModelIndex.java" startLine="94" startPosition="34" endLine="95" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4213817562888239121" fileName="SuspiciousModelIndex.java" startLine="95" startPosition="69" endLine="96" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4213817562888239180" fileName="SuspiciousModelIndex.java" startLine="96" startPosition="64" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4213817562888239186" fileName="SuspiciousModelIndex.java" startLine="98" startPosition="29" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4213817562888239134" fileName="SuspiciousModelIndex.java" startLine="100" startPosition="11" endLine="101" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4213817562888239139" fileName="SuspiciousModelIndex.java" startLine="101" startPosition="53" endLine="102" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4213817562888239152" fileName="SuspiciousModelIndex.java" startLine="103" startPosition="30" endLine="104" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4213817562888239158" fileName="SuspiciousModelIndex.java" startLine="104" startPosition="50" endLine="105" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4213817562888239164" fileName="SuspiciousModelIndex.java" startLine="106" startPosition="11" endLine="107" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4213817562888239110" fileName="SuspiciousModelIndex.java" startLine="109" startPosition="60" endLine="110" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4213817562888239200" fileName="SuspiciousModelIndex.java" startLine="113" startPosition="7" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4093906047203395960" fileName="SuspiciousModelIndex.java" startLine="114" startPosition="0" endLine="115" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4213817562888266797" fileName="SuspiciousModelIndex.java" startLine="115" startPosition="57" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4093906047203395971" fileName="SuspiciousModelIndex.java" startLine="119" startPosition="56" endLine="120" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203395989" fileName="SuspiciousModelIndex.java" startLine="120" startPosition="75" endLine="121" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203396007" fileName="SuspiciousModelIndex.java" startLine="122" startPosition="53" endLine="123" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203396019" fileName="SuspiciousModelIndex.java" startLine="124" startPosition="39" endLine="125" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4213817562888266830" fileName="SuspiciousModelIndex.java" startLine="128" startPosition="9" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4093906047203395838" fileName="SuspiciousModelIndex.java" startLine="133" startPosition="58" endLine="134" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395817" fileName="SuspiciousModelIndex.java" startLine="138" startPosition="19" endLine="139" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395652" fileName="SuspiciousModelIndex.java" startLine="145" startPosition="49" endLine="146" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203396041" fileName="SuspiciousModelIndex.java" startLine="152" startPosition="33" endLine="153" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="4093906047203396047" fileName="SuspiciousModelIndex.java" startLine="155" startPosition="77" endLine="156" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203396056" fileName="SuspiciousModelIndex.java" startLine="158" startPosition="5" endLine="159" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203396065" fileName="SuspiciousModelIndex.java" startLine="162" startPosition="52" endLine="163" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4093906047203396095" fileName="SuspiciousModelIndex.java" startLine="166" startPosition="69" endLine="167" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203396097" fileName="SuspiciousModelIndex.java" startLine="170" startPosition="5" endLine="171" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203395609" fileName="SuspiciousModelIndex.java" startLine="175" startPosition="113" endLine="176" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4093906047203395617" fileName="SuspiciousModelIndex.java" startLine="180" startPosition="45" endLine="181" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4093906047203395632" fileName="SuspiciousModelIndex.java" startLine="184" startPosition="64" endLine="185" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395723" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="31" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203395771" fileName="SuspiciousModelIndex.java" startLine="79" startPosition="34" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4213817562888239129" fileName="SuspiciousModelIndex.java" startLine="97" startPosition="0" endLine="100" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4213817562888239101" fileName="SuspiciousModelIndex.java" startLine="108" startPosition="14" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203396014" fileName="SuspiciousModelIndex.java" startLine="123" startPosition="70" endLine="126" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203395833" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="31" endLine="135" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4093906047203396039" fileName="SuspiciousModelIndex.java" startLine="151" startPosition="76" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203396045" fileName="SuspiciousModelIndex.java" startLine="154" startPosition="7" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203396088" fileName="SuspiciousModelIndex.java" startLine="165" startPosition="78" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203395599" fileName="SuspiciousModelIndex.java" startLine="174" startPosition="61" endLine="177" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTaskQueue#(Lcom/intellij/openapi/project/ProjectManager;Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
+    <nodeInfo nodeId="4093906047203395679" fileName="SuspiciousModelIndex.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModel#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Z)V" />
+    <nodeInfo nodeId="4093906047203395695" fileName="SuspiciousModelIndex.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addModule#(Ljetbrains/mps/project/AbstractModule;Z)V" />
+    <nodeInfo nodeId="4093906047203395743" fileName="SuspiciousModelIndex.java" startLine="68" startPosition="68" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleSuspiciousModel#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Z)V" />
+    <nodeInfo nodeId="4093906047203395755" fileName="SuspiciousModelIndex.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleSuspiciousModule#(Ljetbrains/mps/project/AbstractModule;Z)V" />
+    <nodeInfo nodeId="4213817562888239147" fileName="SuspiciousModelIndex.java" startLine="102" startPosition="57" endLine="106" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203395648" fileName="SuspiciousModelIndex.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="instance#()Ljetbrains/mps/vcs/suspicious/SuspiciousModelIndex;" />
+    <nodeInfo nodeId="4093906047203395625" fileName="SuspiciousModelIndex.java" startLine="183" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processTask#(Ljava/util/List;)V" />
+    <nodeInfo nodeId="4093906047203395657" fileName="SuspiciousModelIndex.java" startLine="42" startPosition="0" endLine="47" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SuspiciousModelIndex#(Lcom/intellij/openapi/project/ProjectManager;Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
+    <nodeInfo nodeId="4093906047203396081" fileName="SuspiciousModelIndex.java" startLine="164" startPosition="46" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4093906047203395613" fileName="SuspiciousModelIndex.java" startLine="178" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isProcessingAllowed#()Z" />
+    <nodeInfo nodeId="4093906047203395711" fileName="SuspiciousModelIndex.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4093906047203396002" fileName="SuspiciousModelIndex.java" startLine="121" startPosition="111" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4213817562888225833" fileName="SuspiciousModelIndex.java" startLine="131" startPosition="73" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4093906047203395767" fileName="SuspiciousModelIndex.java" startLine="78" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="4213817562888225832" fileName="SuspiciousModelIndex.java" startLine="130" startPosition="13" endLine="137" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203396070" fileName="SuspiciousModelIndex.java" startLine="163" startPosition="63" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4093906047203396032" fileName="SuspiciousModelIndex.java" startLine="150" startPosition="59" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4093906047203395737" fileName="SuspiciousModelIndex.java" startLine="67" startPosition="106" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395964" fileName="SuspiciousModelIndex.java" startLine="118" startPosition="25" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4093906047203395815" fileName="SuspiciousModelIndex.java" startLine="129" startPosition="0" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="4093906047203396059" fileName="SuspiciousModelIndex.java" startLine="161" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isInConflict#(Ljetbrains/mps/vfs/IFile;)Z" />
+    <nodeInfo nodeId="4093906047203396026" fileName="SuspiciousModelIndex.java" startLine="148" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getProjectForFile#(Lcom/intellij/openapi/vfs/VirtualFile;)Lcom/intellij/openapi/project/Project;" />
+    <nodeInfo nodeId="4093906047203395719" fileName="SuspiciousModelIndex.java" startLine="62" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="4213817562888239098" fileName="SuspiciousModelIndex.java" startLine="93" startPosition="35" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4213817562888239088" fileName="SuspiciousModelIndex.java" startLine="91" startPosition="73" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vcs/suspicious/Conflictable;)V" />
+    <nodeInfo nodeId="4213817562888239066" fileName="SuspiciousModelIndex.java" startLine="90" startPosition="0" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4213817562888239050" fileName="SuspiciousModelIndex.java" startLine="117" startPosition="68" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4093906047203395978" fileName="SuspiciousModelIndex.java" startLine="116" startPosition="0" endLine="142" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4093906047203395781" fileName="SuspiciousModelIndex.java" startLine="85" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mergeModelsLater#(Ljava/util/List;)V" />
+    <scopeInfo nodeId="4093906047203395686" fileName="SuspiciousModelIndex.java" startLine="49" startPosition="77" endLine="50" endPosition="75" />
+    <scopeInfo nodeId="4093906047203395702" fileName="SuspiciousModelIndex.java" startLine="53" startPosition="76" endLine="54" endPosition="83" />
+    <scopeInfo nodeId="4093906047203395714" fileName="SuspiciousModelIndex.java" startLine="59" startPosition="36" endLine="60" endPosition="36" />
+    <scopeInfo nodeId="4093906047203395727" fileName="SuspiciousModelIndex.java" startLine="64" startPosition="45" endLine="65" endPosition="13" />
+    <scopeInfo nodeId="4093906047203395750" fileName="SuspiciousModelIndex.java" startLine="69" startPosition="92" endLine="70" endPosition="36" />
+    <scopeInfo nodeId="4093906047203395762" fileName="SuspiciousModelIndex.java" startLine="73" startPosition="85" endLine="74" endPosition="38" />
+    <scopeInfo nodeId="4093906047203395775" fileName="SuspiciousModelIndex.java" startLine="80" startPosition="45" endLine="81" endPosition="13" />
+    <scopeInfo nodeId="4213817562888239183" fileName="SuspiciousModelIndex.java" startLine="98" startPosition="29" endLine="99" endPosition="19" />
+    <scopeInfo nodeId="4213817562888239109" fileName="SuspiciousModelIndex.java" startLine="109" startPosition="60" endLine="110" endPosition="27" />
+    <scopeInfo nodeId="4093906047203396018" fileName="SuspiciousModelIndex.java" startLine="124" startPosition="39" endLine="125" endPosition="41" />
+    <scopeInfo nodeId="4093906047203395837" fileName="SuspiciousModelIndex.java" startLine="133" startPosition="58" endLine="134" endPosition="46" />
+    <scopeInfo nodeId="4093906047203395816" fileName="SuspiciousModelIndex.java" startLine="138" startPosition="19" endLine="139" endPosition="67" />
+    <scopeInfo nodeId="4093906047203395651" fileName="SuspiciousModelIndex.java" startLine="145" startPosition="49" endLine="146" endPosition="88" />
+    <scopeInfo nodeId="4093906047203396040" fileName="SuspiciousModelIndex.java" startLine="152" startPosition="33" endLine="153" endPosition="17" />
+    <scopeInfo nodeId="4093906047203396046" fileName="SuspiciousModelIndex.java" startLine="155" startPosition="77" endLine="156" endPosition="23" />
+    <scopeInfo nodeId="4093906047203396094" fileName="SuspiciousModelIndex.java" startLine="166" startPosition="69" endLine="167" endPosition="22" />
+    <scopeInfo nodeId="4093906047203395608" fileName="SuspiciousModelIndex.java" startLine="175" startPosition="113" endLine="176" endPosition="50" />
+    <scopeInfo nodeId="4093906047203395616" fileName="SuspiciousModelIndex.java" startLine="180" startPosition="45" endLine="181" endPosition="80" />
+    <scopeInfo nodeId="4093906047203395631" fileName="SuspiciousModelIndex.java" startLine="184" startPosition="64" endLine="185" endPosition="30" />
+    <scopeInfo nodeId="4213817562888239151" fileName="SuspiciousModelIndex.java" startLine="103" startPosition="30" endLine="105" endPosition="40" />
+    <scopeInfo nodeId="4093906047203395666" fileName="SuspiciousModelIndex.java" startLine="43" startPosition="111" endLine="46" endPosition="37" />
+    <scopeInfo nodeId="4093906047203395833" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="31" endLine="135" endPosition="15">
       <varInfo nodeId="4093906047203395835" varName="conflictable" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203396087" fileName="SuspiciousModelIndex.java" startLine="169" startPosition="78" endLine="172" endPosition="9" />
-    <scopeInfo nodeId="4093906047203395599" fileName="SuspiciousModelIndex.java" startLine="178" startPosition="61" endLine="181" endPosition="5">
+    <scopeInfo nodeId="4213817562888225834" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="31" endLine="135" endPosition="15" />
+    <scopeInfo nodeId="4093906047203396087" fileName="SuspiciousModelIndex.java" startLine="165" startPosition="78" endLine="168" endPosition="9" />
+    <scopeInfo nodeId="4093906047203395599" fileName="SuspiciousModelIndex.java" startLine="174" startPosition="61" endLine="177" endPosition="5">
       <varInfo nodeId="4093906047203395602" varName="manager" />
       <varInfo nodeId="4093906047203395606" varName="virtualFileManager" />
       <varInfo nodeId="4093906047203395604" varName="watcher" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395679" fileName="SuspiciousModelIndex.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="4093906047203395679" fileName="SuspiciousModelIndex.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="4093906047203395684" varName="isInConflict" />
       <varInfo nodeId="4093906047203395682" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395695" fileName="SuspiciousModelIndex.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="4093906047203395695" fileName="SuspiciousModelIndex.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="4093906047203395698" varName="abstractModule" />
       <varInfo nodeId="4093906047203395700" varName="inConflict" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395743" fileName="SuspiciousModelIndex.java" startLine="67" startPosition="68" endLine="71" endPosition="0">
+    <scopeInfo nodeId="4093906047203395743" fileName="SuspiciousModelIndex.java" startLine="68" startPosition="68" endLine="72" endPosition="0">
       <varInfo nodeId="4093906047203395748" varName="inConflict" />
       <varInfo nodeId="4093906047203395746" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395755" fileName="SuspiciousModelIndex.java" startLine="71" startPosition="0" endLine="75" endPosition="0">
+    <scopeInfo nodeId="4093906047203395755" fileName="SuspiciousModelIndex.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="4093906047203395760" varName="inConflict" />
       <varInfo nodeId="4093906047203395758" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395770" fileName="SuspiciousModelIndex.java" startLine="78" startPosition="34" endLine="82" endPosition="26" />
-    <scopeInfo nodeId="4093906047203395985" fileName="SuspiciousModelIndex.java" startLine="134" startPosition="72" endLine="138" endPosition="0" />
-    <scopeInfo nodeId="4093906047203396006" fileName="SuspiciousModelIndex.java" startLine="139" startPosition="49" endLine="143" endPosition="9">
+    <scopeInfo nodeId="4093906047203395770" fileName="SuspiciousModelIndex.java" startLine="79" startPosition="34" endLine="83" endPosition="26" />
+    <scopeInfo nodeId="4093906047203396006" fileName="SuspiciousModelIndex.java" startLine="122" startPosition="53" endLine="126" endPosition="13">
       <varInfo nodeId="4093906047203396008" varName="conflictable" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395648" fileName="SuspiciousModelIndex.java" startLine="148" startPosition="0" endLine="152" endPosition="0" />
-    <scopeInfo nodeId="4093906047203395625" fileName="SuspiciousModelIndex.java" startLine="187" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="4093906047203395648" fileName="SuspiciousModelIndex.java" startLine="144" startPosition="0" endLine="148" endPosition="0" />
+    <scopeInfo nodeId="4093906047203395625" fileName="SuspiciousModelIndex.java" startLine="183" startPosition="0" endLine="187" endPosition="0">
       <varInfo nodeId="4093906047203395628" varName="tasks" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395657" fileName="SuspiciousModelIndex.java" startLine="41" startPosition="0" endLine="46" endPosition="3">
+    <scopeInfo nodeId="4093906047203395657" fileName="SuspiciousModelIndex.java" startLine="42" startPosition="0" endLine="47" endPosition="3">
       <varInfo nodeId="4093906047203395660" varName="manager" />
       <varInfo nodeId="4093906047203395664" varName="vfManager" />
       <varInfo nodeId="4093906047203395662" varName="watcher" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203396080" fileName="SuspiciousModelIndex.java" startLine="168" startPosition="46" endLine="173" endPosition="7" />
-    <scopeInfo nodeId="4093906047203396081" fileName="SuspiciousModelIndex.java" startLine="168" startPosition="46" endLine="173" endPosition="7">
+    <scopeInfo nodeId="4093906047203396080" fileName="SuspiciousModelIndex.java" startLine="164" startPosition="46" endLine="169" endPosition="7" />
+    <scopeInfo nodeId="4093906047203396081" fileName="SuspiciousModelIndex.java" startLine="164" startPosition="46" endLine="169" endPosition="7">
       <varInfo nodeId="4093906047203396085" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395613" fileName="SuspiciousModelIndex.java" startLine="182" startPosition="0" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="4093906047203395711" fileName="SuspiciousModelIndex.java" startLine="55" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="4093906047203395829" fileName="SuspiciousModelIndex.java" startLine="94" startPosition="73" endLine="100" endPosition="0" />
-    <scopeInfo nodeId="4093906047203396002" fileName="SuspiciousModelIndex.java" startLine="138" startPosition="47" endLine="144" endPosition="7">
+    <scopeInfo nodeId="4093906047203395613" fileName="SuspiciousModelIndex.java" startLine="178" startPosition="0" endLine="183" endPosition="0" />
+    <scopeInfo nodeId="4093906047203395711" fileName="SuspiciousModelIndex.java" startLine="56" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="4093906047203396002" fileName="SuspiciousModelIndex.java" startLine="121" startPosition="111" endLine="127" endPosition="11">
       <varInfo nodeId="4093906047203396004" varName="vfile" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203396038" fileName="SuspiciousModelIndex.java" startLine="155" startPosition="76" endLine="161" endPosition="7" />
-    <scopeInfo nodeId="4093906047203395767" fileName="SuspiciousModelIndex.java" startLine="77" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="4093906047203395821" fileName="SuspiciousModelIndex.java" startLine="93" startPosition="13" endLine="100" endPosition="13" />
-    <scopeInfo nodeId="4093906047203395924" fileName="SuspiciousModelIndex.java" startLine="117" startPosition="27" endLine="124" endPosition="27">
-      <varInfo nodeId="4093906047203395931" varName="files" />
-      <varInfo nodeId="4093906047203395926" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="4093906047203396032" fileName="SuspiciousModelIndex.java" startLine="154" startPosition="59" endLine="162" endPosition="5">
-      <varInfo nodeId="4093906047203396036" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="4093906047203396031" fileName="SuspiciousModelIndex.java" startLine="154" startPosition="59" endLine="163" endPosition="16" />
-    <scopeInfo nodeId="4093906047203396064" fileName="SuspiciousModelIndex.java" startLine="166" startPosition="52" endLine="175" endPosition="17">
-      <varInfo nodeId="4093906047203396066" varName="vfile" />
-    </scopeInfo>
-    <scopeInfo nodeId="4093906047203395814" fileName="SuspiciousModelIndex.java" startLine="92" startPosition="25" endLine="103" endPosition="9" />
-    <scopeInfo nodeId="4093906047203395906" fileName="SuspiciousModelIndex.java" startLine="114" startPosition="32" endLine="125" endPosition="9">
-      <varInfo nodeId="4093906047203395913" varName="prev" />
-      <varInfo nodeId="4093906047203395908" varName="vfile" />
-    </scopeInfo>
-    <scopeInfo nodeId="4093906047203395970" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="52" endLine="144" endPosition="7">
+    <scopeInfo nodeId="4213817562888225833" fileName="SuspiciousModelIndex.java" startLine="131" startPosition="73" endLine="137" endPosition="0" />
+    <scopeInfo nodeId="4093906047203396038" fileName="SuspiciousModelIndex.java" startLine="151" startPosition="76" endLine="157" endPosition="7" />
+    <scopeInfo nodeId="4093906047203395767" fileName="SuspiciousModelIndex.java" startLine="78" startPosition="0" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="4093906047203395821" fileName="SuspiciousModelIndex.java" startLine="130" startPosition="13" endLine="137" endPosition="13" />
+    <scopeInfo nodeId="4093906047203395970" fileName="SuspiciousModelIndex.java" startLine="119" startPosition="56" endLine="127" endPosition="11">
       <varInfo nodeId="4093906047203395972" varName="virtualFileList" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203396059" fileName="SuspiciousModelIndex.java" startLine="165" startPosition="0" endLine="177" endPosition="0">
-      <varInfo nodeId="4093906047203396062" varName="ifile" />
+    <scopeInfo nodeId="4093906047203396032" fileName="SuspiciousModelIndex.java" startLine="150" startPosition="59" endLine="158" endPosition="5">
+      <varInfo nodeId="4093906047203396036" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395722" fileName="SuspiciousModelIndex.java" startLine="62" startPosition="31" endLine="75" endPosition="7" />
-    <scopeInfo nodeId="4093906047203396026" fileName="SuspiciousModelIndex.java" startLine="152" startPosition="0" endLine="165" endPosition="0">
-      <varInfo nodeId="4093906047203396029" varName="f" />
+    <scopeInfo nodeId="4093906047203396031" fileName="SuspiciousModelIndex.java" startLine="150" startPosition="59" endLine="159" endPosition="16" />
+    <scopeInfo nodeId="4093906047203396064" fileName="SuspiciousModelIndex.java" startLine="162" startPosition="52" endLine="171" endPosition="17">
+      <varInfo nodeId="4093906047203396066" varName="vfile" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395811" fileName="SuspiciousModelIndex.java" startLine="91" startPosition="68" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="4093906047203395964" fileName="SuspiciousModelIndex.java" startLine="131" startPosition="57" endLine="145" endPosition="5">
+    <scopeInfo nodeId="4093906047203395964" fileName="SuspiciousModelIndex.java" startLine="118" startPosition="25" endLine="128" endPosition="9">
       <varInfo nodeId="4093906047203395968" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395719" fileName="SuspiciousModelIndex.java" startLine="61" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="4093906047203395882" fileName="SuspiciousModelIndex.java" startLine="112" startPosition="56" endLine="129" endPosition="7">
-      <varInfo nodeId="4093906047203395884" varName="ifile" />
+    <scopeInfo nodeId="4093906047203396059" fileName="SuspiciousModelIndex.java" startLine="161" startPosition="0" endLine="173" endPosition="0">
+      <varInfo nodeId="4093906047203396062" varName="ifile" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395878" fileName="SuspiciousModelIndex.java" startLine="111" startPosition="61" endLine="130" endPosition="5">
-      <varInfo nodeId="4093906047203395880" varName="conflictable" />
+    <scopeInfo nodeId="4093906047203395722" fileName="SuspiciousModelIndex.java" startLine="63" startPosition="31" endLine="76" endPosition="7" />
+    <scopeInfo nodeId="4213817562888239115" fileName="SuspiciousModelIndex.java" startLine="94" startPosition="34" endLine="107" endPosition="27">
+      <varInfo nodeId="4213817562888239140" varName="files" />
+      <varInfo nodeId="4213817562888239122" varName="prev" />
+      <varInfo nodeId="4213817562888239135" varName="project" />
+      <varInfo nodeId="4213817562888239117" varName="vfile" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395787" fileName="SuspiciousModelIndex.java" startLine="85" startPosition="54" endLine="105" endPosition="32">
-      <varInfo nodeId="4093906047203395789" varName="merged" />
+    <scopeInfo nodeId="4093906047203396026" fileName="SuspiciousModelIndex.java" startLine="148" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="4093906047203396029" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395781" fileName="SuspiciousModelIndex.java" startLine="84" startPosition="0" endLine="107" endPosition="0">
-      <varInfo nodeId="4093906047203395784" varName="models" />
+    <scopeInfo nodeId="4093906047203395719" fileName="SuspiciousModelIndex.java" startLine="62" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="4213817562888239089" fileName="SuspiciousModelIndex.java" startLine="92" startPosition="42" endLine="111" endPosition="9">
+      <varInfo nodeId="4213817562888239093" varName="ifile" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395850" fileName="SuspiciousModelIndex.java" startLine="108" startPosition="89" endLine="146" endPosition="20">
+    <scopeInfo nodeId="4213817562888239088" fileName="SuspiciousModelIndex.java" startLine="91" startPosition="73" endLine="113" endPosition="0">
+      <varInfo nodeId="4213817562888239088" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="4213817562888239051" fileName="SuspiciousModelIndex.java" startLine="118" startPosition="25" endLine="140" endPosition="9" />
+    <scopeInfo nodeId="4213817562888239050" fileName="SuspiciousModelIndex.java" startLine="117" startPosition="68" endLine="142" endPosition="0" />
+    <scopeInfo nodeId="4093906047203395787" fileName="SuspiciousModelIndex.java" startLine="86" startPosition="59" endLine="142" endPosition="45">
       <varInfo nodeId="4093906047203395863" varName="fileToConflictable" />
       <varInfo nodeId="4093906047203395852" varName="toMerge" />
       <varInfo nodeId="4093906047203395872" varName="toReload" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203395843" fileName="SuspiciousModelIndex.java" startLine="107" startPosition="0" endLine="148" endPosition="0">
-      <varInfo nodeId="4093906047203395847" varName="conflictableList" />
+    <scopeInfo nodeId="4093906047203395781" fileName="SuspiciousModelIndex.java" startLine="85" startPosition="0" endLine="144" endPosition="0">
+      <varInfo nodeId="4093906047203395784" varName="models" />
     </scopeInfo>
-    <unitInfo nodeId="4093906047203395592" fileName="SuspiciousModelIndex.java" startLine="36" startPosition="0" endLine="193" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex" />
-    <unitInfo nodeId="4093906047203395741" fileName="SuspiciousModelIndex.java" startLine="67" startPosition="42" endLine="75" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$1" />
-    <unitInfo nodeId="4093906047203395810" fileName="SuspiciousModelIndex.java" startLine="91" startPosition="56" endLine="105" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$2" />
-    <unitInfo nodeId="4093906047203395984" fileName="SuspiciousModelIndex.java" startLine="134" startPosition="60" endLine="138" endPosition="7" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3" />
-    <unitInfo nodeId="4093906047203395828" fileName="SuspiciousModelIndex.java" startLine="94" startPosition="61" endLine="100" endPosition="11" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3" />
-    <unitInfo nodeId="4093906047203395595" fileName="SuspiciousModelIndex.java" startLine="178" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$MyTaskQueue" />
+    <unitInfo nodeId="4093906047203395592" fileName="SuspiciousModelIndex.java" startLine="37" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex" />
+    <unitInfo nodeId="4093906047203395741" fileName="SuspiciousModelIndex.java" startLine="68" startPosition="42" endLine="76" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$1" />
+    <unitInfo nodeId="4213817562888239088" fileName="SuspiciousModelIndex.java" startLine="91" startPosition="47" endLine="113" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$2" />
+    <unitInfo nodeId="4213817562888239050" fileName="SuspiciousModelIndex.java" startLine="117" startPosition="56" endLine="142" endPosition="5" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$3" />
+    <unitInfo nodeId="4213817562888225833" fileName="SuspiciousModelIndex.java" startLine="131" startPosition="61" endLine="137" endPosition="11" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$4" />
+    <unitInfo nodeId="4093906047203395595" fileName="SuspiciousModelIndex.java" startLine="174" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex$MyTaskQueue" />
   </root>
   <root nodeId="4093906047203396099">
     <nodeInfo nodeId="4093906047203396134" fileName="Conflictable.java" startLine="21" startPosition="46" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

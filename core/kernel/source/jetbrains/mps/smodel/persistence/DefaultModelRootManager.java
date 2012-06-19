@@ -56,11 +56,6 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
   }
 
   public SModelDescriptor createModel(IModule module, @NotNull ModelRoot root, @NotNull SModelFqName fqName) {
-    if (SModelRepository.getInstance().getModelDescriptor(fqName) != null) {
-      LOG.error("Couldn't create new model \"" + fqName.getLongName() + "\" because such model exists");
-      return null;
-    }
-
     ModelDataSource modelSource = RegularModelDataSource.createSourceForModelUID(root, fqName, module);
     SModelReference ref = new SModelReference(fqName, SModelId.generate());
     return new DefaultSModelDescriptor(module, modelSource, ref, new DescriptorLoadResult());

@@ -4,6 +4,8 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
@@ -19,10 +21,17 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087258260");
-  private static SNodePointer breakingNode_8geshg_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104841231");
+  private static SNodePointer breakingNode_8geshg_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104841231");
 
   public ConceptDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+  }
+
+  public String getAlternativeIcon(SNode node) {
+    return (SPropertyOperations.getBoolean(node, "rootable") ?
+      "${language_descriptor}/icons/rootableConcept.png" :
+      "${language_descriptor}/icons/nonRootableConcept.png"
+    );
   }
 
   @Override
@@ -62,7 +71,7 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
 
           @Override
           public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_8geshg_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_8geshg_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
