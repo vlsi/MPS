@@ -24,7 +24,10 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
@@ -119,7 +122,13 @@ public class MpsSourcePosition extends SourcePosition {
       @Override
       public MpsSourcePosition compute() {
         GeneratedSourcePosition sourcePosition = new GeneratedSourcePosition(typeName, fileName, lineNumber);
-        if (sourcePosition.getNode() == null || sourcePosition.getPsiFile(project) == null) {
+        SNode node = sourcePosition.getNode();
+        if (node == null) {
+          return null;
+        }
+        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        IModule module = modelDescriptor.getModule();
+        if (!(module instanceof SolutionIdea)) {
           return null;
         }
         return new MpsSourcePosition(sourcePosition, project);

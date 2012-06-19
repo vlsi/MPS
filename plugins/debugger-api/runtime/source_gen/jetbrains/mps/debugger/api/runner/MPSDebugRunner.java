@@ -74,6 +74,7 @@ public class MPSDebugRunner extends GenericProgramRunner {
     AbstractDebugSessionCreator debugSessionCreator = debugger.createDebugSessionCreator(project);
     ExecutionResult executionResult = debugSessionCreator.startSession(executor, this, state, project);
     AbstractDebugSession debugSession = debugSessionCreator.getDebugSession();
+    assert debugSession.getProcessHandler() == executionResult.getProcessHandler() : "Two process handlers for the same debug session";
     DebugSessionManagerComponent.getInstance(project).addDebugSession(debugSession);
     DebuggerToolContentBuilder contentBuilder = new DebuggerToolContentBuilder(project, this, executor, executionResult, env);
     return contentBuilder.showRunContent(contentToReuse);
