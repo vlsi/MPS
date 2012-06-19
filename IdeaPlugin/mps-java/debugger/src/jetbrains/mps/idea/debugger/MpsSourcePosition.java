@@ -34,96 +34,96 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class MpsSourcePosition extends SourcePosition {
-    private final SNodePointer myNodePointer;
-    private final Project myProject;
-    private final NodeNavigatable myNavigatable;
-    private final GeneratedSourcePosition mySourcePosition;
+  private final SNodePointer myNodePointer;
+  private final Project myProject;
+  private final NodeNavigatable myNavigatable;
+  private final GeneratedSourcePosition mySourcePosition;
 
-    private MpsSourcePosition(GeneratedSourcePosition position, Project project) {
-        mySourcePosition = position;
-        myNodePointer = position.getNodePointer();
-        myProject = project;
+  private MpsSourcePosition(GeneratedSourcePosition position, Project project) {
+    mySourcePosition = position;
+    myNodePointer = position.getNodePointer();
+    myProject = project;
 
-        myNavigatable = new NodeNavigatable(ProjectHelper.toMPSProject(myProject), myNodePointer);
-    }
+    myNavigatable = new NodeNavigatable(ProjectHelper.toMPSProject(myProject), myNodePointer);
+  }
 
-    public MPSNodeVirtualFile getVirtualFile() {
-        return MPSNodesVirtualFileSystem.getInstance().getFileFor(myNodePointer);
-    }
+  public MPSNodeVirtualFile getVirtualFile() {
+    return MPSNodesVirtualFileSystem.getInstance().getFileFor(myNodePointer);
+  }
 
-    public MPSNodeVirtualFile getRootVirtualFile() {
-        SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-            @Override
-            public SNodePointer compute() {
-                return new SNodePointer(myNodePointer.getNode().getContainingRoot());
-            }
-        });
-        return MPSNodesVirtualFileSystem.getInstance().getFileFor(rootPointer);
-    }
+  public MPSNodeVirtualFile getRootVirtualFile() {
+    SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
+      @Override
+      public SNodePointer compute() {
+        return new SNodePointer(myNodePointer.getNode().getContainingRoot());
+      }
+    });
+    return MPSNodesVirtualFileSystem.getInstance().getFileFor(rootPointer);
+  }
 
-    @NotNull
-    @Override
-    public PsiFile getFile() {
-        return mySourcePosition.getPsiFile(myProject);
-    }
+  @NotNull
+  @Override
+  public PsiFile getFile() {
+    return mySourcePosition.getPsiFile(myProject);
+  }
 
-    @Override
-    public PsiElement getElementAt() {
-        return null;
-    }
+  @Override
+  public PsiElement getElementAt() {
+    return null;
+  }
 
-    @Override
-    public int getLine() {
-        // our lines start from 1, theirs from 0
-        return mySourcePosition.getLineNumber() - 1;
-    }
+  @Override
+  public int getLine() {
+    // our lines start from 1, theirs from 0
+    return mySourcePosition.getLineNumber() - 1;
+  }
 
-    @Override
-    public int getOffset() {
-        return 0;
-    }
+  @Override
+  public int getOffset() {
+    return 0;
+  }
 
-    @Override
-    public Editor openEditor(boolean requestFocus) {
-        FileEditorManager.getInstance(myProject).openFile(getRootVirtualFile(), requestFocus);
-        return null;
-    }
+  @Override
+  public Editor openEditor(boolean requestFocus) {
+    FileEditorManager.getInstance(myProject).openFile(getRootVirtualFile(), requestFocus);
+    return null;
+  }
 
-    @Override
-    public void navigate(boolean requestFocus) {
-        myNavigatable.navigate(requestFocus);
-    }
+  @Override
+  public void navigate(boolean requestFocus) {
+    myNavigatable.navigate(requestFocus);
+  }
 
-    @Override
-    public boolean canNavigate() {
-        return myNavigatable.canNavigate();
-    }
+  @Override
+  public boolean canNavigate() {
+    return myNavigatable.canNavigate();
+  }
 
-    @Override
-    public boolean canNavigateToSource() {
-        return myNavigatable.canNavigateToSource();
-    }
+  @Override
+  public boolean canNavigateToSource() {
+    return myNavigatable.canNavigateToSource();
+  }
 
-    public SNode getNode() {
-        return ModelAccess.instance().runReadAction(new Computable<SNode>() {
-            @Override
-            public SNode compute() {
-                return mySourcePosition.getNode();
-            }
-        });
-    }
+  public SNode getNode() {
+    return ModelAccess.instance().runReadAction(new Computable<SNode>() {
+      @Override
+      public SNode compute() {
+        return mySourcePosition.getNode();
+      }
+    });
+  }
 
-    @Nullable
-    public static MpsSourcePosition createPosition(final Project project, final String typeName, final String fileName, final int lineNumber) {
-        return ModelAccess.instance().runReadAction(new Computable<MpsSourcePosition>() {
-            @Override
-            public MpsSourcePosition compute() {
-                GeneratedSourcePosition sourcePosition = new GeneratedSourcePosition(typeName, fileName, lineNumber);
-                if (sourcePosition.getNode() == null || sourcePosition.getPsiFile(project) == null) {
-                    return null;
-                }
-                return new MpsSourcePosition(sourcePosition, project);
-            }
-        });
-    }
+  @Nullable
+  public static MpsSourcePosition createPosition(final Project project, final String typeName, final String fileName, final int lineNumber) {
+    return ModelAccess.instance().runReadAction(new Computable<MpsSourcePosition>() {
+      @Override
+      public MpsSourcePosition compute() {
+        GeneratedSourcePosition sourcePosition = new GeneratedSourcePosition(typeName, fileName, lineNumber);
+        if (sourcePosition.getNode() == null || sourcePosition.getPsiFile(project) == null) {
+          return null;
+        }
+        return new MpsSourcePosition(sourcePosition, project);
+      }
+    });
+  }
 }

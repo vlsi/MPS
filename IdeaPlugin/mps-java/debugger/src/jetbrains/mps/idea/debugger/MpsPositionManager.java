@@ -26,53 +26,48 @@ import com.sun.jdi.AbsentInformationException;
 import com.sun.jdi.Location;
 import com.sun.jdi.ReferenceType;
 import com.sun.jdi.request.ClassPrepareRequest;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public class MpsPositionManager implements PositionManager {
-    private final Project myProject;
-    private final DebugProcess myProcess;
+  private final Project myProject;
+  private final DebugProcess myProcess;
 
-    public MpsPositionManager(Project project, DebugProcess process) {
-        myProject = project;
-        myProcess = process;
-    }
+  public MpsPositionManager(Project project, DebugProcess process) {
+    myProject = project;
+    myProcess = process;
+  }
 
-    @Override
-    public SourcePosition getSourcePosition(@Nullable final Location location) throws NoDataException {
-        try {
-            MpsSourcePosition position = MpsSourcePosition.createPosition(myProject, location.declaringType().name(), location.sourceName(), location.lineNumber());
-            if (position != null) {
-                return position;
-            }
-        } catch (AbsentInformationException e) {
-            // todo
-            throw new NoDataException();
-        }
-        throw new NoDataException();
+  @Override
+  public SourcePosition getSourcePosition(@Nullable final Location location) throws NoDataException {
+    try {
+      MpsSourcePosition position = MpsSourcePosition.createPosition(myProject, location.declaringType().name(), location.sourceName(), location.lineNumber());
+      if (position != null) {
+        return position;
+      }
+    } catch (AbsentInformationException e) {
+      // todo
+      throw new NoDataException();
     }
+    throw new NoDataException();
+  }
 
-    @NotNull
-    @Override
-    public List<ReferenceType> getAllClasses(SourcePosition sourcePosition) throws NoDataException {
-        throw new NoDataException();
-    }
+  @NotNull
+  @Override
+  public List<ReferenceType> getAllClasses(SourcePosition sourcePosition) throws NoDataException {
+    throw new NoDataException();
+  }
 
-    @NotNull
-    @Override
-    public List<Location> locationsOfLine(ReferenceType referenceType, SourcePosition sourcePosition) throws NoDataException {
-        throw new NoDataException();
-    }
+  @NotNull
+  @Override
+  public List<Location> locationsOfLine(ReferenceType referenceType, SourcePosition sourcePosition) throws NoDataException {
+    throw new NoDataException();
+  }
 
-    @Override
-    public ClassPrepareRequest createPrepareRequest(ClassPrepareRequestor classPrepareRequestor, SourcePosition sourcePosition) throws NoDataException {
-        throw new NoDataException();
-    }
+  @Override
+  public ClassPrepareRequest createPrepareRequest(ClassPrepareRequestor classPrepareRequestor, SourcePosition sourcePosition) throws NoDataException {
+    throw new NoDataException();
+  }
 }

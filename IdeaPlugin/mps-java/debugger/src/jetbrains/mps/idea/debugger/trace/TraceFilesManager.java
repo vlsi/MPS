@@ -35,55 +35,57 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class TraceFilesManager implements ProjectComponent {
-    private final Project myProject;
-    private final CompilerConfiguration myCompilerConfiguration;
-    private MessageBusConnection myMessageBusConnection;
+  private final Project myProject;
+  private final CompilerConfiguration myCompilerConfiguration;
+  private MessageBusConnection myMessageBusConnection;
 
-    public TraceFilesManager(Project project, CompilerConfiguration compilerConfiguration) {
-        myProject = project;
-        myCompilerConfiguration = compilerConfiguration;
+  public TraceFilesManager(Project project, CompilerConfiguration compilerConfiguration) {
+    myProject = project;
+    myCompilerConfiguration = compilerConfiguration;
+  }
+
+  @Override
+  public void projectOpened() {
+    if (!myCompilerConfiguration.isResourceFile(TraceInfoCache.TRACE_FILE_NAME)) {
+      myCompilerConfiguration.addResourceFilePattern(TraceInfoCache.TRACE_FILE_NAME);
     }
+  }
 
-    @Override
-    public void projectOpened() {
-        if (!myCompilerConfiguration.isResourceFile(TraceInfoCache.TRACE_FILE_NAME)) {
-            myCompilerConfiguration.addResourceFilePattern(TraceInfoCache.TRACE_FILE_NAME);
+  @Override
+  public void projectClosed() {
+  }
+
+  @Override
+  public void initComponent() {
+    myMessageBusConnection = myProject.getMessageBus().connect();
+    myMessageBusConnection.subscribe(CompilerTopics.COMPILATION_STATUS, new CompilationStatusAdapter() {
+      @Override
+      public void compilationFinished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
+        super.compilationFinished(aborted, errors, warnings, compileContext);
+        Module[] affectedModules = compileContext.getCompileScope().getAffectedModules();
+        for (Module module : affectedModules) {
+          MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+          if (mpsFacet == null) {
+            continue;
+          }
+          List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(mpsFacet.getSolution());
+          for (SModelDescriptor descriptor : modelDescriptors) {
+            TraceInfoCache.getInstance().clean(descriptor);
+          }
         }
-    }
+      }
+    });
+  }
 
-    @Override
-    public void projectClosed() {
-    }
+  @Override
+  public void disposeComponent() {
+    myMessageBusConnection.disconnect();
+    myMessageBusConnection = null;
+  }
 
-    @Override
-    public void initComponent() {
-        myMessageBusConnection = myProject.getMessageBus().connect();
-        myMessageBusConnection.subscribe(CompilerTopics.COMPILATION_STATUS, new CompilationStatusAdapter(){
-            @Override
-            public void compilationFinished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-                super.compilationFinished(aborted, errors, warnings, compileContext);
-                Module[] affectedModules = compileContext.getCompileScope().getAffectedModules();
-                for (Module module : affectedModules) {
-                    MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-                    if (mpsFacet == null) {continue;}
-                    List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(mpsFacet.getSolution());
-                    for (SModelDescriptor descriptor : modelDescriptors) {
-                      TraceInfoCache.getInstance().clean(descriptor);
-                    }
-                }
-            }
-        });
-    }
-
-    @Override
-    public void disposeComponent() {
-        myMessageBusConnection.disconnect();
-        myMessageBusConnection = null;
-    }
-
-    @NotNull
-    @Override
-    public String getComponentName() {
-        return "Trace Files To Resources Addition";
-    }
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "Trace Files To Resources Addition";
+  }
 }

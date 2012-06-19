@@ -34,105 +34,105 @@ import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponentEx<DebuggerSession> implements ProjectComponent {
-    private DebuggerManagerEx myDebuggerManager;
-    private final DebuggerManagerListener myDebuggerManagerListener = new MyDebuggerManagerListener();
-    private final DebuggerContextListener mySessionListener = new MyDebuggerContextListener();
-    private final RunContentListener myRunContentListener = new MyRunContentListener();
-    private final ExecutionManager myExecutionManager;
+  private DebuggerManagerEx myDebuggerManager;
+  private final DebuggerManagerListener myDebuggerManagerListener = new MyDebuggerManagerListener();
+  private final DebuggerContextListener mySessionListener = new MyDebuggerContextListener();
+  private final RunContentListener myRunContentListener = new MyRunContentListener();
+  private final ExecutionManager myExecutionManager;
 
-    public IdeaDebuggerPositionHighlighter(Project project, FileEditorManager fileEditorManager, ExecutionManager executionManager) {
-        super(project, fileEditorManager);
-        myExecutionManager = executionManager;
+  public IdeaDebuggerPositionHighlighter(Project project, FileEditorManager fileEditorManager, ExecutionManager executionManager) {
+    super(project, fileEditorManager);
+    myExecutionManager = executionManager;
+  }
+
+  @Override
+  protected SNode getNode(DebuggerSession session) {
+    SourcePosition sourcePosition = session.getContextManager().getContext().getSourcePosition();
+    if (sourcePosition instanceof MpsSourcePosition) {
+      return ((MpsSourcePosition) sourcePosition).getNode();
+    }
+    return null;
+  }
+
+  @Override
+  public void initComponent() {
+    myDebuggerManager = DebuggerManagerEx.getInstanceEx(myProject);
+    myDebuggerManager.addDebuggerManagerListener(myDebuggerManagerListener);
+    myExecutionManager.getContentManager().addRunContentListener(myRunContentListener);
+  }
+
+  @Override
+  public void disposeComponent() {
+    myExecutionManager.getContentManager().removeRunContentListener(myRunContentListener);
+    myDebuggerManager.removeDebuggerManagerListener(myDebuggerManagerListener);
+  }
+
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return "Idea Debugger Position Highlighter";
+  }
+
+  @Override
+  public void projectOpened() {
+  }
+
+  @Override
+  public void projectClosed() {
+  }
+
+  @Override
+  protected DebuggerSession getCurrentSession() {
+    RunContentDescriptor selectedContent = myExecutionManager.getContentManager().getSelectedContent();
+    if (selectedContent == null) return null;
+    return myDebuggerManager.getSession(myDebuggerManager.getDebugProcess(selectedContent.getProcessHandler()));
+  }
+
+  private class MyDebuggerManagerListener implements DebuggerManagerListener {
+    @Override
+    public void sessionCreated(DebuggerSession session) {
+      session.getContextManager().addListener(mySessionListener);
     }
 
     @Override
-    protected SNode getNode(DebuggerSession session) {
-        SourcePosition sourcePosition = session.getContextManager().getContext().getSourcePosition();
-        if (sourcePosition instanceof MpsSourcePosition) {
-            return ((MpsSourcePosition) sourcePosition).getNode();
-        }
-        return null;
+    public void sessionAttached(DebuggerSession session) {
     }
 
     @Override
-    public void initComponent() {
-        myDebuggerManager = DebuggerManagerEx.getInstanceEx(myProject);
-        myDebuggerManager.addDebuggerManagerListener(myDebuggerManagerListener);
-        myExecutionManager.getContentManager().addRunContentListener(myRunContentListener);
+    public void sessionDetached(DebuggerSession session) {
     }
 
     @Override
-    public void disposeComponent() {
-        myExecutionManager.getContentManager().removeRunContentListener(myRunContentListener);
-        myDebuggerManager.removeDebuggerManagerListener(myDebuggerManagerListener);
+    public void sessionRemoved(DebuggerSession session) {
+      detachPainter(session);
+      session.getContextManager().removeListener(mySessionListener);
     }
+  }
 
-    @NotNull
+  private class MyDebuggerContextListener implements DebuggerContextListener {
     @Override
-    public String getComponentName() {
-        return "Idea Debugger Position Highlighter";
+    public void changeEvent(DebuggerContextImpl newContext, int event) {
+      reAttachPainter(newContext.getDebuggerSession());
     }
+  }
 
-    @Override
-    public void projectOpened() {
-    }
-
-    @Override
-    public void projectClosed() {
+  private class MyRunContentListener implements RunContentListener {
+    private MyRunContentListener() {
     }
 
     @Override
-    protected DebuggerSession getCurrentSession() {
-        RunContentDescriptor selectedContent = myExecutionManager.getContentManager().getSelectedContent();
-        if (selectedContent == null) return null;
-        return myDebuggerManager.getSession(myDebuggerManager.getDebugProcess(selectedContent.getProcessHandler()));
+    public void contentSelected(RunContentDescriptor descriptor) {
+      if (descriptor != null) {
+        DebugProcess debugProcess = myDebuggerManager.getDebugProcess(descriptor.getProcessHandler());
+        if (debugProcess != null) {
+          DebuggerSession debuggerSession = myDebuggerManager.getSession(debugProcess);
+          currentSessionChanged(debuggerSession);
+        }
+      }
     }
 
-    private class MyDebuggerManagerListener implements DebuggerManagerListener {
-        @Override
-        public void sessionCreated(DebuggerSession session) {
-            session.getContextManager().addListener(mySessionListener);
-        }
-
-        @Override
-        public void sessionAttached(DebuggerSession session) {
-        }
-
-        @Override
-        public void sessionDetached(DebuggerSession session) {
-        }
-
-        @Override
-        public void sessionRemoved(DebuggerSession session) {
-            detachPainter(session);
-            session.getContextManager().removeListener(mySessionListener);
-        }
+    @Override
+    public void contentRemoved(RunContentDescriptor descriptor) {
     }
-
-    private class MyDebuggerContextListener implements DebuggerContextListener {
-        @Override
-        public void changeEvent(DebuggerContextImpl newContext, int event) {
-            reAttachPainter(newContext.getDebuggerSession());
-        }
-    }
-
-    private class MyRunContentListener implements RunContentListener {
-        private MyRunContentListener() {
-        }
-
-        @Override
-        public void contentSelected(RunContentDescriptor descriptor) {
-            if (descriptor != null) {
-                DebugProcess debugProcess = myDebuggerManager.getDebugProcess(descriptor.getProcessHandler());
-                if (debugProcess != null) {
-                    DebuggerSession debuggerSession = myDebuggerManager.getSession(debugProcess);
-                    currentSessionChanged(debuggerSession);
-                }
-            }
-        }
-
-        @Override
-        public void contentRemoved(RunContentDescriptor descriptor) {
-        }
-    }
+  }
 }

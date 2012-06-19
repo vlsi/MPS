@@ -21,8 +21,8 @@ import com.intellij.debugger.PositionManagerFactory;
 import com.intellij.debugger.engine.DebugProcess;
 
 public class MpsPositionManagerFactory extends PositionManagerFactory {
-    @Override
-    public PositionManager createPositionManager(DebugProcess process) {
-        return new MpsPositionManager(process.getProject(), process);
-    }
+  @Override
+  public PositionManager createPositionManager(DebugProcess process) {
+    return new MpsPositionManager(process.getProject(), process);
+  }
 }

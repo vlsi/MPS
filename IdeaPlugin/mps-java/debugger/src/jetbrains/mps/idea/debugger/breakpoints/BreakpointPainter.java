@@ -23,39 +23,36 @@ import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.util.PsiUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
-
 /*package private*/ class BreakpointPainter extends BreakpointPainterEx<BreakpointWithHighlighter> {
-    public BreakpointPainter(BreakpointWithHighlighter breakpoint) {
-        super(breakpoint);
-    }
+  public BreakpointPainter(BreakpointWithHighlighter breakpoint) {
+    super(breakpoint);
+  }
 
-    @Override
-    protected SNode getSNode() {
-        return getNodeForBreakpoint(myBreakpoint);
-    }
+  @Override
+  protected SNode getSNode() {
+    return getNodeForBreakpoint(myBreakpoint);
+  }
 
-    @Nullable
-    public static SNode getNodeForBreakpoint(BreakpointWithHighlighter breakpoint) {
-        SourcePosition sourcePosition = breakpoint.getSourcePosition();
+  @Nullable
+  public static SNode getNodeForBreakpoint(BreakpointWithHighlighter breakpoint) {
+    SourcePosition sourcePosition = breakpoint.getSourcePosition();
 
-        String className = null;
-        PsiClass psiClass = JVMNameUtil.getClassAt(sourcePosition);
-        if (PsiUtil.isLocalOrAnonymousClass(psiClass)) {
-            PsiClass parentClass = TopLevelParentClassProvider.getTopLevelParentClass(psiClass);
-            if (parentClass == null) {
-                return null;
-            }
-            className = JVMNameUtil.getNonAnonymousClassName(parentClass);
-        } else {
-            className = JVMNameUtil.getNonAnonymousClassName(psiClass);
-        }
-        if (className == null) return null;
-        return new GeneratedSourcePosition(className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1).getNode();
+    String className = null;
+    PsiClass psiClass = JVMNameUtil.getClassAt(sourcePosition);
+    if (PsiUtil.isLocalOrAnonymousClass(psiClass)) {
+      PsiClass parentClass = TopLevelParentClassProvider.getTopLevelParentClass(psiClass);
+      if (parentClass == null) {
+        return null;
+      }
+      className = JVMNameUtil.getNonAnonymousClassName(parentClass);
+    } else {
+      className = JVMNameUtil.getNonAnonymousClassName(psiClass);
     }
+    if (className == null) return null;
+    return new GeneratedSourcePosition(className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1).getNode();
+  }
 }
