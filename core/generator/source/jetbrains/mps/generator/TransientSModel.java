@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class TransientSModel extends SModel {
   public TransientSModel(@NotNull SModelReference modelReference) {
-    super(modelReference, new RegularNodeIdMap());
+    super(modelReference);
   }
 
   @Override
