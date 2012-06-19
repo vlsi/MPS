@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -72,6 +73,7 @@ public class EmbeddableEditor {
     myIsEditable = editable;
     myModel = ((EditableSModelDescriptor) ProjectModels.createDescriptorFor(true));
     myModel.getSModel().addDevKit(GeneralPurpose_DevKit.MODULE_REFERENCE);
+    myModel.getSModel().addLanguage(ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)"));
     SModelRepository.getInstance().registerModelDescriptor(myModel, myOwner);
     setNode(node, true);
   }
