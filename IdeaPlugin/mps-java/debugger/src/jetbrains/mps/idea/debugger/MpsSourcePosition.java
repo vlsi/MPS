@@ -17,27 +17,17 @@
 package jetbrains.mps.idea.debugger;
 
 import com.intellij.debugger.SourcePosition;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.PsiManager;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
-import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
@@ -49,7 +39,7 @@ public class MpsSourcePosition extends SourcePosition {
     private final NodeNavigatable myNavigatable;
     private final GeneratedSourcePosition mySourcePosition;
 
-    public MpsSourcePosition(GeneratedSourcePosition position, Project project) {
+    private MpsSourcePosition(GeneratedSourcePosition position, Project project) {
         mySourcePosition = position;
         myNodePointer = position.getNodePointer();
         myProject = project;
@@ -129,7 +119,7 @@ public class MpsSourcePosition extends SourcePosition {
             @Override
             public MpsSourcePosition compute() {
                 GeneratedSourcePosition sourcePosition = new GeneratedSourcePosition(typeName, fileName, lineNumber);
-                if (sourcePosition.getNode() == null) {
+                if (sourcePosition.getNode() == null || sourcePosition.getPsiFile(project) == null) {
                     return null;
                 }
                 return new MpsSourcePosition(sourcePosition, project);

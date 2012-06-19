@@ -19,11 +19,14 @@ package jetbrains.mps.idea.debugger;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -70,14 +73,14 @@ public class GeneratedSourcePosition {
     @Nullable
     public SNodePointer getNodePointer() {
         return ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
-            @Override
-            public SNodePointer compute() {
-                SNode node = getNode();
-                if (node == null) {
-                    return null;
-                }
-                return new SNodePointer(node);
+          @Override
+          public SNodePointer compute() {
+            SNode node = getNode();
+            if (node == null) {
+              return null;
             }
+            return new SNodePointer(node);
+          }
         });
     }
 
@@ -89,8 +92,16 @@ public class GeneratedSourcePosition {
                 SNode node = getNode();
                 if (node == null) return null;
                 SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-                IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(modelDescriptor.getModule().getGeneratorOutputPath()));
-                return defaultOutputDir.getDescendant(myFileName).getPath();
+                IModule module = modelDescriptor.getModule();
+                if (!(module instanceof SolutionIdea)){
+                  return null;
+                }
+                IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()));
+                IFile file = defaultOutputDir.getDescendant(myFileName);
+                if (!file.exists()) {
+                    return null;
+                }
+                return file.getPath();
             }
         });
 
@@ -101,7 +112,11 @@ public class GeneratedSourcePosition {
         return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<PsiFile>() {
             @Override
             public PsiFile compute() {
-                return PsiManager.getInstance(project).findFile(LocalFileSystem.getInstance().findFileByPath(fullPath));
+                VirtualFile file = LocalFileSystem.getInstance().findFileByPath(fullPath);
+                if (file == null) {
+                    return null;
+                }
+                return PsiManager.getInstance(project).findFile(file);
             }
         });
     }
