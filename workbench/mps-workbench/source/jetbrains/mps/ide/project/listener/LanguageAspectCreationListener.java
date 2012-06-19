@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.project.listener;
 
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class LanguageAspectCreationListener extends ModelCreationListener {
   public boolean isApplicable(IModule module, SModelDescriptor m) {
@@ -28,24 +28,11 @@ public class LanguageAspectCreationListener extends ModelCreationListener {
   }
 
   public void onCreate(IModule module, final SModelDescriptor model) {
-    final EditableSModelDescriptor emd = ((EditableSModelDescriptor) model);
     Language language = (Language) model.getModule();
     LanguageAspect aspect = language.getAspectForModel(model);
 
     for (ModuleReference impLang : aspect.getAllLanguagesToImport(language)) {
       model.getSModel().addLanguage(impLang);
     }
-
-    if (ThreadUtils.isEventDispatchThread()) {
-      emd.save();
-    } else {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        public void run() {
-          emd.save();
-        }
-      });
-    }
-    language.setLanguageDescriptor(language.getModuleDescriptor(), false);
-    language.save();
   }
 }

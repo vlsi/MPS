@@ -13,10 +13,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import java.util.List;
-import java.util.Collection;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.openapi.application.ModalityState;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -24,11 +20,16 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Set;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.LinkedList;
+import com.intellij.openapi.application.ApplicationManager;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
+import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import jetbrains.mps.vcs.MPSVcsManager;
@@ -82,18 +83,54 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myTaskQueue.dispose();
   }
 
-  public void mergeModels(List<Conflictable> models) {
-    final Collection<Conflictable> merged = showMergeDialog(models);
-    if (merged.isEmpty()) {
-      FSChangesWatcher.instance().tryToResumeTasksProcessing();
-      return;
-    }
+  public void mergeModelsLater(List<Conflictable> models) {
+    final Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
+    final Map<VirtualFile, Conflictable> fileToConflictable = new LinkedHashMap<VirtualFile, Conflictable>();
+    final Set<Conflictable> toReload = new HashSet<Conflictable>();
+
+    ListSequence.fromList(models).visitAll(new IVisitor<Conflictable>() {
+      public void visit(Conflictable it) {
+        IFile ifile = it.getFile();
+        if (isInConflict(ifile)) {
+          VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
+          Conflictable prev = fileToConflictable.put(vfile, it);
+
+          if (prev != null) {
+            return;
+          }
+          Project project = getProjectForFile(vfile);
+          List<VirtualFile> files = toMerge.get(project);
+          if (files == null) {
+            files = new LinkedList<VirtualFile>();
+            toMerge.put(project, files);
+          }
+          files.add(vfile);
+        } else
+        if (it.isConflictDetected() || it.needReloading()) {
+          toReload.add(it);
+        }
+      }
+    });
+
+    FSChangesWatcher.instance().suspendTasksProcessing();
+
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
+        for (final Project project : toMerge.keySet()) {
+          List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
+          virtualFileList.addAll(AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project)));
+          for (VirtualFile vfile : virtualFileList) {
+            Conflictable conflictable = fileToConflictable.get(vfile);
+            if (conflictable != null) {
+              toReload.add(conflictable);
+            }
+          }
+        }
+
         try {
           ModelAccess.instance().runWriteActionInCommand(new Runnable() {
             public void run() {
-              for (Conflictable conflictable : merged) {
+              for (Conflictable conflictable : toReload) {
                 conflictable.reloadFromDisk();
               }
             }
@@ -102,48 +139,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
           FSChangesWatcher.instance().tryToResumeTasksProcessing();
         }
       }
-    }, ModalityState.NON_MODAL);
-  }
-
-  private Collection<Conflictable> showMergeDialog(List<Conflictable> conflictableList) {
-    final Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
-    Map<VirtualFile, Conflictable> fileToConflictable = new LinkedHashMap<VirtualFile, Conflictable>();
-    Set<Conflictable> toReload = new HashSet<Conflictable>();
-    for (Conflictable conflictable : conflictableList) {
-      IFile ifile = conflictable.getFile();
-      if (isInConflict(ifile)) {
-        VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
-        Conflictable prev = fileToConflictable.put(vfile, conflictable);
-        if (prev == null) {
-          Project project = getProjectForFile(vfile);
-          List<VirtualFile> files = toMerge.get(project);
-          if (files == null) {
-            files = new LinkedList<VirtualFile>();
-            toMerge.put(project, files);
-          }
-          files.add(vfile);
-        }
-      } else
-      if (conflictable.isConflictDetected() || conflictable.needReloading()) {
-        toReload.add(conflictable);
-      }
-    }
-    FSChangesWatcher.instance().suspendTasksProcessing();
-    for (final Project project : toMerge.keySet()) {
-      final List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
-      ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-        public void run() {
-          virtualFileList.addAll(AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project)));
-        }
-      }, ModalityState.defaultModalityState());
-      for (VirtualFile vfile : virtualFileList) {
-        Conflictable conflictable = fileToConflictable.get(vfile);
-        if (conflictable != null) {
-          toReload.add(conflictable);
-        }
-      }
-    }
-    return toReload;
+    }, ModalityState.defaultModalityState());
   }
 
   public static SuspiciousModelIndex instance() {
@@ -186,7 +182,7 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
 
     protected void processTask(final List<Conflictable> tasks) {
-      mergeModels(tasks);
+      mergeModelsLater(tasks);
     }
   }
 }

@@ -188,6 +188,7 @@ public class ProjectFactory {
     Language language = NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     languageDescriptor.getUsedDevkits().add(LanguageDesign_DevKit.MODULE_REFERENCE);
+    languageDescriptor.setDoNotGenerateAdapters(true);
     
     LanguageAspect.STRUCTURE.createNew(language, false);
     LanguageAspect.EDITOR.createNew(language, false);
