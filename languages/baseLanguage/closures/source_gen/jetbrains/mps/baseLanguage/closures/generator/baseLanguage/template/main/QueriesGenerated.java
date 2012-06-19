@@ -523,7 +523,13 @@ public class QueriesGenerated {
     SNode literal = _context.getNode();
     SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct == null) {
-      ct = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.cast(((SNode) _context.getVariable("var:nodeType")), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+      SNode closureType = ((SNode) _context.getVariable("var:nodeType"));
+      if (SNodeOperations.isInstanceOf(closureType, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
+        ct = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.cast(closureType, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+      } else if (closureType != null) {
+        _context.showErrorMessage(literal, "cannot calculate type for closure literal");
+        return null;
+      }
     }
     List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
     if (ListSequence.fromList(imds).count() > 0) {
