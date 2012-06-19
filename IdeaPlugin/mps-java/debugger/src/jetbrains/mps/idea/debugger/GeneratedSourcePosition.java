@@ -25,7 +25,6 @@ import com.intellij.psi.PsiManager;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
-import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -93,9 +92,6 @@ public class GeneratedSourcePosition {
         if (node == null) return null;
         SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
         IModule module = modelDescriptor.getModule();
-        if (!(module instanceof SolutionIdea)) {
-          return null;
-        }
         IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()));
         IFile file = defaultOutputDir.getDescendant(myFileName);
         if (!file.exists()) {
