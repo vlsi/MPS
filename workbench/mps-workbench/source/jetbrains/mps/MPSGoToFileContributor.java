@@ -85,15 +85,7 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
         public Icon getIcon(boolean open) {
           return FileTypeManager.getInstance().getFileTypeByFile(myFile).getIcon();
         }
-
-        public TextAttributesKey getTextAttributesKey() {
-          return null;
-        }
       };
-    }
-
-    public FileStatus getFileStatus() {
-      return FileStatusManager.getInstance(myProject).getStatus(myFile);
     }
 
     public void navigate(boolean requestFocus) {
@@ -133,5 +125,4 @@ public class MPSGoToFileContributor implements ChooseByNameContributor, DumbAwar
       return false;
     }
   }
-
 }
