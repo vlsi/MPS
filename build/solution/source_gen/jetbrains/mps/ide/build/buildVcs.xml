@@ -9,6 +9,7 @@
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildTroveCollections" location="${build.dir}/artifacts/buildTroveCollections" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
+  <property name="artifacts.buildMakePlugin" location="${build.dir}/artifacts/buildMakePlugin" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
@@ -62,6 +63,7 @@
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
@@ -132,7 +134,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.buildPlugins}/plugins/mps-make.jar" />
+        <fileset file="${artifacts.buildMakePlugin}/plugins/mps-make.jar" />
         <path refid="path.java.library.idea-vcs" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />

@@ -13,6 +13,7 @@
     <ant antfile="buildExperimental.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildBuild.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildPlugins.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildMakePlugin.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildVcs.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDebuggerPlugin.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExecutionPlugin.xml" inheritAll="true" useNativeBasedir="true" />

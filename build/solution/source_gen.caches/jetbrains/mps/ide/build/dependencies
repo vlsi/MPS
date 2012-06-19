@@ -13,6 +13,7 @@
   <dependency className="jetbrains.mps.ide.build.buildExecutionPlugin" file="buildExecutionPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildExperimental" file="buildExperimental.xml" />
   <dependency className="jetbrains.mps.ide.build.buildMPS" file="buildMPS.xml" />
+  <dependency className="jetbrains.mps.ide.build.buildMakePlugin" file="buildMakePlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildObsolete" file="buildObsolete.xml" />
   <dependency className="jetbrains.mps.ide.build.buildPlugin" file="buildPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildPluginDist" file="buildPluginDist.xml" />

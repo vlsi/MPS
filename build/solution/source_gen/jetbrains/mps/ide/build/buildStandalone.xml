@@ -7,11 +7,22 @@
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
+  <property name="artifacts.buildMakePlugin" location="${build.dir}/artifacts/buildMakePlugin" />
   <property name="artifacts.IDEA" location="${mps_home}" />
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
   <target name="assemble" depends="classes, fetchDependencies">
+    <mkdir dir="${build.layout}/bin" />
+    <copy todir="${build.layout}/bin">
+      <fileset file="${basedir}/bin/idea.properties" />
+    </copy>
+    <copy todir="${build.layout}/bin">
+      <fileset file="${basedir}/bin/log.xml" />
+    </copy>
+    <copy todir="${build.layout}/bin">
+      <fileset file="${basedir}/bin/log4j.dtd" />
+    </copy>
     <mkdir dir="${build.layout}/languages" />
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildCore}/mps-core/languages" />
@@ -66,6 +77,7 @@
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
