@@ -4,6 +4,8 @@ package jetbrains.mps.debugger.api.ui.tool;
 
 import com.intellij.openapi.Disposable;
 import org.jetbrains.annotations.NonNls;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.openapi.project.Project;
 import java.util.ArrayList;
@@ -19,6 +21,8 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import jetbrains.mps.workbench.action.BaseGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
+import jetbrains.mps.debug.api.AbstractDebugSession;
+import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import com.intellij.ui.content.Content;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.execution.ui.layout.PlaceInGrid;
@@ -34,6 +38,7 @@ import com.intellij.openapi.util.Disposer;
 public class DebuggerToolContentBuilder implements Disposable {
   @NonNls
   private static final String JAVA_RUNNER = "JavaRunner";
+  protected static Log log = LogFactory.getLog(DebuggerToolContentBuilder.class);
 
   private final ProgramRunner myRunner;
   private final Project myProject;
@@ -81,7 +86,14 @@ public class DebuggerToolContentBuilder implements Disposable {
 
   private void buildUi(RunnerLayoutUi ui, ExecutionConsole console) {
     ui.getOptions().setMoveToGridActionEnabled(true).setMinimizeActionEnabled(true);
-    new DebuggerToolPanel(myProject, myExecutionResult.getProcessHandler(), ui);
+    AbstractDebugSession debugSession = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(myExecutionResult.getProcessHandler());
+    if (debugSession == null) {
+      if (log.isErrorEnabled()) {
+        log.error("No debug session found for process handler " + myExecutionResult.getProcessHandler());
+      }
+    } else {
+      new DebuggerToolPanel(myProject, debugSession, ui);
+    }
     Content consoleContent = ui.createContent("Console2.0", console.getComponent(), "Console", IconLoader.getIcon("/debugger/console.png"), console.getPreferredFocusableComponent());
     consoleContent.setSearchComponent(console.getComponent());
     consoleContent.setCloseable(false);
