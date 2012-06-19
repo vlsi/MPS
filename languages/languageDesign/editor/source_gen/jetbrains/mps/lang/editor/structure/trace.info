@@ -2673,98 +2673,254 @@
   <root nodeId="1139535328871">
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="14" startPosition="0" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="15" startPosition="24" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="18" startPosition="43" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="19" startPosition="23" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="23" startPosition="27" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="27" startPosition="5" endLine="28" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="27" startPosition="36" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="29" startPosition="33" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="31" startPosition="28" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="35" startPosition="51" endLine="36" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="36" startPosition="84" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="37" startPosition="73" endLine="38" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="38" startPosition="49" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="38" startPosition="64" endLine="39" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="39" startPosition="64" endLine="40" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="40" startPosition="71" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="44" startPosition="43" endLine="45" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="49" startPosition="24" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="52" startPosition="72" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="55" startPosition="63" endLine="56" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="58" startPosition="63" endLine="59" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="61" startPosition="70" endLine="62" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="63" startPosition="5" endLine="64" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="54" startPosition="0" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="55" startPosition="24" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="58" startPosition="43" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="59" startPosition="23" endLine="60" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="63" startPosition="27" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="67" startPosition="36" endLine="68" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="71" startPosition="28" endLine="72" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="75" startPosition="51" endLine="76" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="76" startPosition="84" endLine="77" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="77" startPosition="73" endLine="78" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="78" startPosition="64" endLine="79" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="79" startPosition="64" endLine="80" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="80" startPosition="71" endLine="81" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="81" startPosition="67" endLine="82" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="82" startPosition="76" endLine="83" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="83" startPosition="62" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="84" startPosition="61" endLine="85" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="85" startPosition="63" endLine="86" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="86" startPosition="70" endLine="87" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="87" startPosition="69" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="88" startPosition="62" endLine="89" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="89" startPosition="63" endLine="90" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="90" startPosition="60" endLine="91" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="91" startPosition="62" endLine="92" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="92" startPosition="62" endLine="93" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="93" startPosition="62" endLine="94" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="94" startPosition="62" endLine="95" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="95" startPosition="61" endLine="96" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="96" startPosition="65" endLine="97" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="97" startPosition="67" endLine="98" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="98" startPosition="67" endLine="99" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="99" startPosition="66" endLine="100" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="100" startPosition="68" endLine="101" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="101" startPosition="67" endLine="102" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="102" startPosition="69" endLine="103" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="103" startPosition="70" endLine="104" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="104" startPosition="67" endLine="105" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="105" startPosition="69" endLine="106" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="106" startPosition="69" endLine="107" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="107" startPosition="68" endLine="108" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="108" startPosition="74" endLine="109" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="109" startPosition="75" endLine="110" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="110" startPosition="69" endLine="111" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="111" startPosition="73" endLine="112" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="112" startPosition="72" endLine="113" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="113" startPosition="66" endLine="114" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="114" startPosition="72" endLine="115" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="115" startPosition="62" endLine="116" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="116" startPosition="64" endLine="117" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="117" startPosition="66" endLine="118" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="118" startPosition="68" endLine="119" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="119" startPosition="72" endLine="120" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="120" startPosition="70" endLine="121" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="124" startPosition="43" endLine="125" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="129" startPosition="24" endLine="130" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="132" startPosition="72" endLine="133" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="135" startPosition="63" endLine="136" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="138" startPosition="63" endLine="139" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="141" startPosition="70" endLine="142" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="144" startPosition="66" endLine="145" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="147" startPosition="75" endLine="148" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="150" startPosition="61" endLine="151" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="153" startPosition="60" endLine="154" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="156" startPosition="62" endLine="157" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="159" startPosition="69" endLine="160" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="162" startPosition="68" endLine="163" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="165" startPosition="61" endLine="166" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="168" startPosition="62" endLine="169" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="171" startPosition="59" endLine="172" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="174" startPosition="61" endLine="175" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="177" startPosition="61" endLine="178" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="180" startPosition="61" endLine="181" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="183" startPosition="61" endLine="184" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="186" startPosition="60" endLine="187" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="189" startPosition="64" endLine="190" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="192" startPosition="66" endLine="193" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="195" startPosition="66" endLine="196" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="198" startPosition="65" endLine="199" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="201" startPosition="67" endLine="202" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="204" startPosition="66" endLine="205" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="207" startPosition="68" endLine="208" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="210" startPosition="69" endLine="211" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="213" startPosition="66" endLine="214" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="216" startPosition="68" endLine="217" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="219" startPosition="68" endLine="220" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="222" startPosition="67" endLine="223" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="225" startPosition="73" endLine="226" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="228" startPosition="74" endLine="229" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="231" startPosition="68" endLine="232" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="234" startPosition="72" endLine="235" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="237" startPosition="71" endLine="238" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="240" startPosition="65" endLine="241" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="243" startPosition="71" endLine="244" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="246" startPosition="61" endLine="247" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="249" startPosition="63" endLine="250" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="252" startPosition="65" endLine="253" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="255" startPosition="67" endLine="256" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="258" startPosition="71" endLine="259" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="261" startPosition="69" endLine="262" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="263" startPosition="5" endLine="264" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="10" startPosition="44" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="16" startPosition="47" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="24" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="30" startPosition="47" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="39" startPosition="59" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="48" startPosition="55" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="51" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="54" startPosition="5" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="57" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="60" startPosition="5" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="17" startPosition="0" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellActionId#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/editor/structure/CellActionId;" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="128" startPosition="55" endLine="131" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="131" startPosition="5" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="134" startPosition="5" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="137" startPosition="5" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="140" startPosition="5" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="143" startPosition="5" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="146" startPosition="5" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="149" startPosition="5" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="152" startPosition="5" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="155" startPosition="5" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="158" startPosition="5" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="161" startPosition="5" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="164" startPosition="5" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="167" startPosition="5" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="170" startPosition="5" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="173" startPosition="5" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="176" startPosition="5" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="179" startPosition="5" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="182" startPosition="5" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="185" startPosition="5" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="188" startPosition="5" endLine="191" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="191" startPosition="5" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="194" startPosition="5" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="197" startPosition="5" endLine="200" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="200" startPosition="5" endLine="203" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="203" startPosition="5" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="206" startPosition="5" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="209" startPosition="5" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="212" startPosition="5" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="215" startPosition="5" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="218" startPosition="5" endLine="221" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="221" startPosition="5" endLine="224" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="224" startPosition="5" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="227" startPosition="5" endLine="230" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="230" startPosition="5" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="233" startPosition="5" endLine="236" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="236" startPosition="5" endLine="239" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="239" startPosition="5" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="242" startPosition="5" endLine="245" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="245" startPosition="5" endLine="248" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="248" startPosition="5" endLine="251" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="251" startPosition="5" endLine="254" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="254" startPosition="5" endLine="257" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="257" startPosition="5" endLine="260" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="260" startPosition="5" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="57" startPosition="0" endLine="61" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellActionId#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/editor/structure/CellActionId;" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="14" startPosition="101" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="28" startPosition="101" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="9" startPosition="67" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="47" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/editor/structure/CellActionId;" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="74" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="127" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/editor/structure/CellActionId;" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="23" startPosition="27" endLine="24" endPosition="23" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="27" startPosition="36" endLine="28" endPosition="24" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="31" startPosition="28" endLine="32" endPosition="24" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="44" startPosition="43" endLine="45" endPosition="40" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="49" startPosition="24" endLine="50" endPosition="39" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="52" startPosition="72" endLine="53" endPosition="42" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="55" startPosition="63" endLine="56" endPosition="33" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="58" startPosition="63" endLine="59" endPosition="33" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="61" startPosition="70" endLine="62" endPosition="40" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="18" startPosition="43" endLine="20" endPosition="25" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="63" startPosition="27" endLine="64" endPosition="23" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="67" startPosition="36" endLine="68" endPosition="24" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="71" startPosition="28" endLine="72" endPosition="24" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="124" startPosition="43" endLine="125" endPosition="40" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="129" startPosition="24" endLine="130" endPosition="39" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="132" startPosition="72" endLine="133" endPosition="42" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="135" startPosition="63" endLine="136" endPosition="33" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="138" startPosition="63" endLine="139" endPosition="33" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="141" startPosition="70" endLine="142" endPosition="40" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="144" startPosition="66" endLine="145" endPosition="36" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="147" startPosition="75" endLine="148" endPosition="45" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="150" startPosition="61" endLine="151" endPosition="31" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="153" startPosition="60" endLine="154" endPosition="30" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="156" startPosition="62" endLine="157" endPosition="32" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="159" startPosition="69" endLine="160" endPosition="39" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="162" startPosition="68" endLine="163" endPosition="38" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="165" startPosition="61" endLine="166" endPosition="31" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="168" startPosition="62" endLine="169" endPosition="32" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="171" startPosition="59" endLine="172" endPosition="29" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="174" startPosition="61" endLine="175" endPosition="31" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="177" startPosition="61" endLine="178" endPosition="31" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="180" startPosition="61" endLine="181" endPosition="31" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="183" startPosition="61" endLine="184" endPosition="31" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="186" startPosition="60" endLine="187" endPosition="30" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="189" startPosition="64" endLine="190" endPosition="34" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="192" startPosition="66" endLine="193" endPosition="36" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="195" startPosition="66" endLine="196" endPosition="36" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="198" startPosition="65" endLine="199" endPosition="35" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="201" startPosition="67" endLine="202" endPosition="37" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="204" startPosition="66" endLine="205" endPosition="36" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="207" startPosition="68" endLine="208" endPosition="38" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="210" startPosition="69" endLine="211" endPosition="39" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="213" startPosition="66" endLine="214" endPosition="36" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="216" startPosition="68" endLine="217" endPosition="38" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="219" startPosition="68" endLine="220" endPosition="38" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="222" startPosition="67" endLine="223" endPosition="37" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="225" startPosition="73" endLine="226" endPosition="43" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="228" startPosition="74" endLine="229" endPosition="44" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="231" startPosition="68" endLine="232" endPosition="38" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="234" startPosition="72" endLine="235" endPosition="42" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="237" startPosition="71" endLine="238" endPosition="41" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="240" startPosition="65" endLine="241" endPosition="35" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="243" startPosition="71" endLine="244" endPosition="41" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="246" startPosition="61" endLine="247" endPosition="31" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="249" startPosition="63" endLine="250" endPosition="33" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="252" startPosition="65" endLine="253" endPosition="35" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="255" startPosition="67" endLine="256" endPosition="37" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="258" startPosition="71" endLine="259" endPosition="41" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="261" startPosition="69" endLine="262" endPosition="39" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="58" startPosition="43" endLine="60" endPosition="25" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
       <varInfo nodeId="1139535328871" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="17" startPosition="0" endLine="21" endPosition="3">
-      <varInfo nodeId="1139535328871" varName="name" />
-      <varInfo nodeId="1139535328871" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
       <varInfo nodeId="1139535328871" varName="constant" />
     </scopeInfo>
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="57" startPosition="0" endLine="61" endPosition="3">
+      <varInfo nodeId="1139535328871" varName="name" />
+      <varInfo nodeId="1139535328871" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
       <varInfo nodeId="1139535328871" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="35" startPosition="51" endLine="41" endPosition="16">
-      <varInfo nodeId="1139535328871" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1139535328871" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="34" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
       <varInfo nodeId="1139535328871" varName="constants" />
     </scopeInfo>
@@ -2777,11 +2933,15 @@
     <scopeInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="23" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1139535328871" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="48" startPosition="55" endLine="64" endPosition="37" />
-    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="47" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="75" startPosition="51" endLine="121" endPosition="16">
+      <varInfo nodeId="1139535328871" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="74" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="128" startPosition="55" endLine="264" endPosition="37" />
+    <scopeInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="127" startPosition="0" endLine="266" endPosition="0">
       <varInfo nodeId="1139535328871" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="9" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellActionId" />
+    <unitInfo nodeId="1139535328871" fileName="CellActionId.java" startLine="9" startPosition="0" endLine="267" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellActionId" />
     <unitInfo nodeId="1139535328871" fileName="CellActionId_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.CellActionId_PropertySupport" />
   </root>
   <root nodeId="1139535439104">

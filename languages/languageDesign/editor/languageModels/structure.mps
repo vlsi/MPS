@@ -20,6 +20,7 @@
   <import index="mceb" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="9a8" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
+  <import index="tpc2" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1071666914219">
       <property name="name" nameId="tpck.1169194664001" value="ConceptEditorDeclaration" />
@@ -1860,6 +1861,166 @@
     <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="1222746468862079484">
       <property name="externalValue" nameId="tpce.1083923523172" value="INSERT_BEFORE" />
       <property name="internalValue" nameId="tpce.1083923523171" value="insert_before_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657675082">
+      <property name="externalValue" nameId="tpce.1083923523172" value="BACKSPACE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="backspace_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707152">
+      <property name="externalValue" nameId="tpce.1083923523172" value="DELETE_TO_WORD_END" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="delete_to_word_end_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707153">
+      <property name="externalValue" nameId="tpce.1083923523172" value="COPY" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="copy_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707154">
+      <property name="externalValue" nameId="tpce.1083923523172" value="CUT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="cut_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707155">
+      <property name="externalValue" nameId="tpce.1083923523172" value="PASTE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="paste_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707156">
+      <property name="externalValue" nameId="tpce.1083923523172" value="PASTE_BEFORE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="paste_before_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707157">
+      <property name="externalValue" nameId="tpce.1083923523172" value="PASTE_AFTER" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="paste_after_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707158">
+      <property name="externalValue" nameId="tpce.1083923523172" value="LEFT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="left_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707159">
+      <property name="externalValue" nameId="tpce.1083923523172" value="RIGHT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="right_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707160">
+      <property name="externalValue" nameId="tpce.1083923523172" value="UP" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="up_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707161">
+      <property name="externalValue" nameId="tpce.1083923523172" value="DOWN" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="down_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707162">
+      <property name="externalValue" nameId="tpce.1083923523172" value="NEXT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="next_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707163">
+      <property name="externalValue" nameId="tpce.1083923523172" value="PREV" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="prev_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707164">
+      <property name="externalValue" nameId="tpce.1083923523172" value="HOME" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="home_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707165">
+      <property name="externalValue" nameId="tpce.1083923523172" value="END" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="end_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707166">
+      <property name="externalValue" nameId="tpce.1083923523172" value="PAGE_UP" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="page_up_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707167">
+      <property name="externalValue" nameId="tpce.1083923523172" value="PAGE_DOWN" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="page_down_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707168">
+      <property name="externalValue" nameId="tpce.1083923523172" value="ROOT_HOME" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="root_home_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707169">
+      <property name="externalValue" nameId="tpce.1083923523172" value="ROOT_END" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="root_end_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707170">
+      <property name="externalValue" nameId="tpce.1083923523172" value="LOCAL_HOME" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="local_home_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707171">
+      <property name="externalValue" nameId="tpce.1083923523172" value="LOCAL_END" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="local_end_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707172">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_LEFT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_left_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707173">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_RIGHT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_right_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707174">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_UP" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_up_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707175">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_DOWN" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_down_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707176">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_HOME" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_home_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707177">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_END" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_end_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707178">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_LOCAL_END" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_local_end_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707179">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_LOCAL_HOME" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_local_home_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707180">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_NEXT" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_next_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707181">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SELECT_PREVIOUS" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="select_previous_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707182">
+      <property name="externalValue" nameId="tpce.1083923523172" value="LEFT_TRANSFORM" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="left_transform_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707183">
+      <property name="externalValue" nameId="tpce.1083923523172" value="COMPLETE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="complete_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707184">
+      <property name="externalValue" nameId="tpce.1083923523172" value="COMPLETE_SMART" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="complete_smart_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707185">
+      <property name="externalValue" nameId="tpce.1083923523172" value="FOLD" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="fold_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707186">
+      <property name="externalValue" nameId="tpce.1083923523172" value="UNFOLD" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="unfold_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707187">
+      <property name="externalValue" nameId="tpce.1083923523172" value="FOLD_ALL" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="fold_all_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707188">
+      <property name="externalValue" nameId="tpce.1083923523172" value="UNFOLD_ALL" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="unfold_all_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707189">
+      <property name="externalValue" nameId="tpce.1083923523172" value="TOGGLE_FOLDING" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="toggle_folding_action_id" />
+    </node>
+    <node role="member" roleId="tpce.1083172003582" type="tpce.EnumerationMemberDeclaration" typeId="tpce.1083171877298" id="9025760234657707190">
+      <property name="externalValue" nameId="tpce.1083923523172" value="SHOW_MESSAGE" />
+      <property name="internalValue" nameId="tpce.1083923523171" value="show_message_action_id" />
     </node>
   </root>
   <root id="1139535439104">
@@ -4185,7 +4346,7 @@
     </node>
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="4526149749187937572">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" roleId="tpce.1105736901241" type=".jetbrains.mps.lang.editor.structure.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
+      <node role="target" roleId="tpce.1105736901241" type="tpc2.StyledTextType" typeId="3903367331818357915" id="1511134095826078599" />
     </node>
   </root>
   <root id="280151408461567367">
