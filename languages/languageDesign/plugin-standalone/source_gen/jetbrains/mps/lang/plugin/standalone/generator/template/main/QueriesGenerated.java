@@ -36,11 +36,21 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_7520713872864784973(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PluginUtils.needAppPlugin(_context);
+    if (!(PluginUtils.needAppPlugin(_context))) {
+      return false;
+    }
+
+    PluginUtils.checkPluginModelName(_context, _context.getNode());
+    return true;
   }
 
   public static boolean baseMappingRule_Condition_7520713872864784975(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return PluginUtils.needProjectPlugin(_context);
+    if (!(PluginUtils.needProjectPlugin(_context))) {
+      return false;
+    }
+
+    PluginUtils.checkPluginModelName(_context, _context.getNode());
+    return true;
   }
 
   public static Object propertyMacro_GetPropertyValue_1215281686867(final IOperationContext operationContext, final PropertyMacroContext _context) {
