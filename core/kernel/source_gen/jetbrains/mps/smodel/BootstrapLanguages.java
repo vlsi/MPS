@@ -19,6 +19,7 @@ public class BootstrapLanguages {
   public static final ModuleReference GENERATOR_PARAMETERS = ModuleReference.fromString("289fcc83-6543-41e8-a5ca-768235715ce4(jetbrains.mps.lang.generator.generationParameters)");
   public static final ModuleReference INTENTIONS = ModuleReference.fromString("d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)");
   public static final ModuleReference PLUGIN = ModuleReference.fromString("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)");
+  public static final ModuleReference MAKE_FACET = ModuleReference.fromString("696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)");
   public static final ModuleReference REFACTORING = ModuleReference.fromString("3ecd7c84-cde3-45de-886c-135ecc69b742(jetbrains.mps.lang.refactoring)");
   public static final ModuleReference SCRIPT = ModuleReference.fromString("0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)");
   public static final ModuleReference SHARED_CONCEPTS = ModuleReference.fromString("13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)");
