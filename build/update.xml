@@ -24,7 +24,7 @@
                url="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page"
                feedback="http://youtrack.jetbrains.net"
                majorVersion="2" minorVersoin="5">
-        <build number="MPS-25.9203" version="JetBrains MPS 2.5 RC2">
+        <build number="MPS-25.9210" version="JetBrains MPS 2.5 RC2">
           <message>JetBrains MPS 2.5 RC2 is available.</message>
         </build>
       </channel>
@@ -33,7 +33,7 @@
                url="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+EAP+Download+Page"
                feedback="http://youtrack.jetbrains.net"
                majorVersion="2" minorVersoin="5">
-        <build number="MPS-25.9203" version="JetBrains MPS 2.5 RC2">
+        <build number="MPS-25.9210" version="JetBrains MPS 2.5 RC2">
           <message>JetBrains MPS 2.5 RC2 is available.</message>
         </build>
       </channel>
