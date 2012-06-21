@@ -34,7 +34,6 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -182,12 +181,8 @@ public class NewGeneratorDialog extends BaseDialog {
     generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference());
     generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("d7706f63-9be2-479c-a3da-ae92af1e64d5")).getModuleReference());
     languageDescriptor.getGenerators().add(generatorDescriptor);
-    language.setLanguageDescriptor(languageDescriptor, true);
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      public void run() {
-        language.save();
-      }
-    });
+    language.setLanguageDescriptor(languageDescriptor, false);
+    language.save();
 
     return (Generator) MPSModuleRepository.getInstance().getModuleById(generatorDescriptor.getId());
   }
