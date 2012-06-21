@@ -16,6 +16,18 @@
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
+  <path id="path.javac2.classpath">
+    <fileset dir="${idea_home}/lib">
+      <include name="javac2.jar" />
+      <include name="jdom.jar" />
+      <include name="asm.jar" />
+      <include name="asm-commons.jar" />
+      <include name="jgoodies-forms.jar" />
+    </fileset>
+  </path>
+  
+  <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-obsolete" />
@@ -425,7 +437,7 @@
   
   <target name="java.compile.build-deprecated" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/build-deprecated" />
-    <javac destdir="${build.tmp}/java/out/build-deprecated" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/build-deprecated" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/source_gen" />
@@ -457,7 +469,7 @@
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/lib/tools.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/build-deprecated">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -465,7 +477,7 @@
   
   <target name="java.compile.jetbrains.mps.nanoj" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.nanoj" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.nanoj" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.nanoj" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/mps-lite/languages/nanoj/source_gen" />
@@ -498,7 +510,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.nanoj">
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/nanoj/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -506,7 +518,7 @@
   
   <target name="java.compile.jetbrains.mpslite" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mpslite" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mpslite" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mpslite" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" />
@@ -550,7 +562,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mpslite">
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -558,13 +570,13 @@
   
   <target name="java.compile.jetbrains.mpslite.pluginSolution">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mpslite.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mpslite.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mpslite.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" />
       </src>
       <classpath />
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mpslite.pluginSolution">
       <fileset dir="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -620,7 +632,7 @@
   
   <target name="java.compile.jetbrains.mps.buildlanguage" depends="java.compile.jetbrains.mps.xml.deprecated, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.buildlanguage" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.buildlanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.buildlanguage" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/buildlanguage/source_gen" />
@@ -660,7 +672,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.buildlanguage">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/buildlanguage/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -668,7 +680,7 @@
   
   <target name="java.compile.jetbrains.mps.build.custommps" depends="java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.mpsdist, java.compile.jetbrains.mps.build.packaging, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.custommps" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.custommps" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.custommps" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/custommps/source_gen" />
@@ -720,7 +732,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.custommps">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/custommps/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -728,7 +740,7 @@
   
   <target name="java.compile.jetbrains.mps.build.dependency" depends="java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.dependency" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.dependency" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.dependency" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/dependency/source_gen" />
@@ -766,7 +778,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.dependency">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/dependency/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -774,7 +786,7 @@
   
   <target name="java.compile.jetbrains.mps.build.generictasks" depends="java.compile.jetbrains.mps.xml.deprecated, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.generictasks" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.generictasks" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.generictasks" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/generictasks/source_gen" />
@@ -812,7 +824,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.generictasks">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/generictasks/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -820,7 +832,7 @@
   
   <target name="java.compile.jetbrains.mps.build.generictasks.pluginSolution" depends="java.compile.jetbrains.mps.xml.deprecated, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.generictasks.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.generictasks.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.generictasks.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/generictasks/solutions/pluginSolution/source_gen" />
@@ -857,7 +869,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.generictasks.pluginSolution">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/generictasks/solutions/pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -865,7 +877,7 @@
   
   <target name="java.compile.jetbrains.mps.build.mpsdist" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mpsdist" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.mpsdist" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mpsdist" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.mpsdist/source_gen" />
@@ -888,7 +900,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.mpsdist">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.mpsdist/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -896,7 +908,7 @@
   
   <target name="java.compile.jetbrains.mps.build.packaging" depends="java.compile.jetbrains.mps.build.dependency, java.compile.jetbrains.mps.build.generictasks, java.compile.jetbrains.mps.build.property, java.compile.jetbrains.mps.buildlanguage, java.compile.jetbrains.mps.xml.deprecated, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.packaging" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.packaging" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.packaging" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/packaging/source_gen" />
@@ -944,7 +956,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.packaging">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/packaging/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -952,7 +964,7 @@
   
   <target name="java.compile.jetbrains.mps.build.property" depends="java.compile.jetbrains.mps.xml.deprecated, java.compile.java.modules.cycle.1, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.property" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.build.property" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.property" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/property/source_gen" />
@@ -991,7 +1003,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <pathelement path="${build.tmp}/java.modules.cycle.1" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.build.property">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/property/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -999,7 +1011,7 @@
   
   <target name="java.compile.jetbrains.mps.xml.deprecated" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/xmlDeprecated/source_gen" />
@@ -1026,7 +1038,7 @@
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/xmlDeprecated/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -1034,13 +1046,13 @@
   
   <target name="java.compile.jetbrains.mps.xml.deprecated.pluginSolution">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated.pluginSolution" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/pluginSolution/source_gen" />
       </src>
       <classpath />
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.xml.deprecated.pluginSolution">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>

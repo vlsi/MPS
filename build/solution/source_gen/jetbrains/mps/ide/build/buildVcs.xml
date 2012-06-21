@@ -13,10 +13,22 @@
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
+  <path id="path.javac2.classpath">
+    <fileset dir="${idea_home}/lib">
+      <include name="javac2.jar" />
+      <include name="jdom.jar" />
+      <include name="asm.jar" />
+      <include name="asm-commons.jar" />
+      <include name="jgoodies-forms.jar" />
+    </fileset>
+  </path>
+  
   <path id="path.java.library.idea-vcs">
     <fileset dir="${artifacts.IDEA}/plugins/git4idea/lib" includes="*.jar" />
     <fileset dir="${artifacts.IDEA}/plugins/svn4idea/lib" includes="*.jar" />
   </path>
+  
+  <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
@@ -73,7 +85,7 @@
   
   <target name="java.compile.vcs-core" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/vcs-core" />
-    <javac destdir="${build.tmp}/java/out/vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/vcs-core" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/plugins/vcs-core/core/source_gen" />
       <classpath>
@@ -94,7 +106,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <path refid="path.java.library.idea-vcs" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/vcs-core">
       <fileset dir="${mps_home}/plugins/vcs-core/core/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -102,7 +114,7 @@
   
   <target name="java.compile.vcs" depends="java.compile.vcs-core, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/vcs" />
-    <javac destdir="${build.tmp}/java/out/vcs" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/vcs" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/vcs/source" />
@@ -135,7 +147,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/vcs">
       <fileset dir="${mps_home}/plugins/vcs/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/vcs/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />

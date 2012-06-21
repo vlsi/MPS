@@ -11,9 +11,21 @@
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
+  <path id="path.javac2.classpath">
+    <fileset dir="${idea_home}/lib">
+      <include name="javac2.jar" />
+      <include name="jdom.jar" />
+      <include name="asm.jar" />
+      <include name="asm-commons.jar" />
+      <include name="jgoodies-forms.jar" />
+    </fileset>
+  </path>
+  
   <path id="path.java.library.tools">
     <fileset file="${mps_home}/lib/tools.jar" />
   </path>
+  
+  <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/lib" />
@@ -212,7 +224,7 @@
   
   <target name="java.compile.debugger-api" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/debugger-api" />
-    <javac destdir="${build.tmp}/java/out/debugger-api" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/debugger-api" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-api/api/source_gen" />
@@ -240,7 +252,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/debugger-api">
       <fileset dir="${mps_home}/plugins/debugger-api/api/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/debugger-api/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -249,7 +261,7 @@
   
   <target name="java.compile.debugger-java" depends="java.compile.debugger-api, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/debugger-java" />
-    <javac destdir="${build.tmp}/java/out/debugger-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/debugger-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/api/source_gen" />
@@ -279,7 +291,7 @@
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.java.library.tools" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/debugger-java">
       <fileset dir="${mps_home}/plugins/debugger-java/api/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/debugger-java/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -288,7 +300,7 @@
   
   <target name="java.compile.debugger-java-customViewers" depends="java.compile.debugger-api, java.compile.debugger-java, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/debugger-java-customViewers" />
-    <javac destdir="${build.tmp}/java/out/debugger-java-customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/debugger-java-customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java-customViewers/source_gen" />
@@ -318,7 +330,7 @@
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.java.library.tools" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/debugger-java-customViewers">
       <fileset dir="${mps_home}/plugins/debugger-java-customViewers/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -326,7 +338,7 @@
   
   <target name="java.compile.jetbrains.mps.debugger.api.lang" depends="java.compile.debugger-api, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" />
@@ -372,7 +384,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.debugger.api.lang">
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -380,7 +392,7 @@
   
   <target name="java.compile.jetbrains.mps.debugger.java.privateMembers" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" />
@@ -410,7 +422,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.debugger.java.privateMembers">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -418,7 +430,7 @@
   
   <target name="java.compile.jetbrains.mps.debugger.java.customViewers" depends="java.compile.debugger-api, java.compile.debugger-java, java.compile.jetbrains.mps.debugger.java.evaluation, java.compile.jetbrains.mps.debugger.java.privateMembers, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" />
@@ -462,7 +474,7 @@
         <fileset file="${artifacts.buildWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.debugger.java.customViewers">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -470,7 +482,7 @@
   
   <target name="java.compile.jetbrains.mps.debugger.java.evaluation" depends="java.compile.jetbrains.mps.debugger.java.privateMembers, java.compile.debugger-api, java.compile.debugger-java, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" />
@@ -505,7 +517,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
