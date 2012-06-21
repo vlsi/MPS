@@ -132,11 +132,11 @@ public enum LanguageAspect {
   @Deprecated
   PLUGIN("plugin") {
     public ModuleReference getMainLanguage() {
-      return BootstrapLanguages.PLUGIN;
+      return BootstrapLanguages.MAKE_FACET;
     }
 
     public String getHelpURL() {
-      return "http://confluence.jetbrains.com/display/MPSD2/Plugin";
+      return "";
     }
   },
 
