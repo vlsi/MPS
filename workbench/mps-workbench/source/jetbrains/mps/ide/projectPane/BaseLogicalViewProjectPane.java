@@ -205,7 +205,9 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
     ModelAccess.instance().removeCommandListener(myModelAccessListener);
     MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
-    IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
+    if (IMakeService.INSTANCE.hasMakeService()) {
+      IMakeService.INSTANCE.get().removeListener(myMakeNotificationListener);
+    }
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
   }
 

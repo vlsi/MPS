@@ -41,7 +41,11 @@ public interface IMakeService {
     }
 
     public static boolean isSessionActive() {
-      return Component != null && Component.isSessionActive();
+      return IMakeService.INSTANCE.hasMakeService() && Component.isSessionActive();
+    }
+
+    public static boolean hasMakeService() {
+      return Component != null;
     }
   }
 
