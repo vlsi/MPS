@@ -34,7 +34,7 @@ import com.intellij.openapi.vfs.newvfs.events.VFileEvent;
 import com.intellij.openapi.application.Application;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
@@ -225,11 +225,11 @@ public class FSChangesWatcher implements ApplicationComponent {
       if (application.isDisposeInProgress() || application.isDisposed()) {
         return;
       }
-      if (ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
+      if (ListSequence.fromList(events).all(new IWhereFilter<VFileEvent>() {
         public boolean accept(VFileEvent it) {
-          return !(VirtualFileUtils.isEventFromSave(it));
+          return it.isFromRefresh();
         }
-      }).isEmpty()) {
+      })) {
         return;
       }
 
@@ -237,13 +237,16 @@ public class FSChangesWatcher implements ApplicationComponent {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
         }
-        for (final VFileEvent event : events) {
-          if (VirtualFileUtils.isEventFromSave(event)) {
-            continue;
+        ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
+          public boolean accept(VFileEvent it) {
+            return !(it.isFromRefresh());
           }
-          FSChangesWatcher.LOG.debug("Got event " + event);
-          processAfterEvent(event, myReloadSession);
-        }
+        }).visitAll(new IVisitor<VFileEvent>() {
+          public void visit(VFileEvent it) {
+            FSChangesWatcher.LOG.debug("Got event " + it);
+            processAfterEvent(it, myReloadSession);
+          }
+        });
         queueReload();
       }
     }

@@ -47,8 +47,4 @@ public class VirtualFileUtils {
       throw new RuntimeException("Attempt to get File for non local file." + f.getPath());
     }
   }
-
-  public static boolean isEventFromSave(VFileEvent event) {
-    return event.getRequestor() == IdeaFileSystemProvider.class;
-  }
 }
