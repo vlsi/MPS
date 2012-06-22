@@ -68,11 +68,12 @@ public class LibraryInitializer implements CoreComponent {
 	}
 
 	public ClassLoader getParentLoaderForModule(IClassLoadingModule module) {
-		for (String path : myParentLoaders.keySet()) {
-			String pluginPath = module.getPluginPath();
-			if (pluginPath == null) continue;
-			if (pluginPath.startsWith(FileSystem.getInstance().getFileByPath(path).getPath())) {
-				return myParentLoaders.get(path);
+		String pluginPath = module.getPluginPath();
+		if (pluginPath != null) {
+			for (String path : myParentLoaders.keySet()) {
+				if (pluginPath.startsWith(FileSystem.getInstance().getFileByPath(path).getPath())) {
+					return myParentLoaders.get(path);
+				}
 			}
 		}
 
@@ -82,20 +83,19 @@ public class LibraryInitializer implements CoreComponent {
 
 	public void update(boolean refreshFiles) {
 		myParentLoaders.clear();
+		Set<String> newLibs = new HashSet<String>();
 		for (LibraryContributor lc : myContributors) {
 			for (LibDescriptor s : lc.getLibraries()) {
 				IFile path = FileSystem.getInstance().getFileByPath(s.path);
-				IFile bundlePath = FileSystem.getInstance().getBundleHome(path);
+				IFile bundlePath = FileSystem.getInstance().isPackaged(path) ? FileSystem.getInstance().getBundleHome(path) : null;
 				myParentLoaders.put(bundlePath != null ? bundlePath.getPath() : s.path, s.parentLoader != null ? s.parentLoader : LibraryInitializer.class.getClassLoader());
+				newLibs.add(s.path);
 				Boolean oldValue = myHiddenPaths.get(s.path);
 				if (oldValue == null || !oldValue) {
 					myHiddenPaths.put(s.path, lc.hiddenLanguages());
 				}
 			}
 		}
-
-		Set<String> newLibs = new HashSet<String>(myParentLoaders.keySet());
-
 		reload(myLoadedLibs, newLibs, refreshFiles);
 
 		myLoadedLibs = newLibs;
