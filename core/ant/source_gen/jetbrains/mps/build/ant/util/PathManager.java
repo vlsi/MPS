@@ -20,6 +20,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import jetbrains.mps.library.contributor.LibraryContributor;
+import java.net.MalformedURLException;
+import jetbrains.mps.library.LibraryInitializer;
 
 public class PathManager {
   @NonNls
@@ -403,24 +406,46 @@ public class PathManager {
     return getHomePath() + File.separator + "languages";
   }
 
-  public static Collection<String> getExtensionsPaths() {
+  public static Collection<LibraryContributor.LibDescriptor> getExtensionsPaths() {
     String pluginsPath = System.getProperty("plugin.path");
-    List<String> paths = new ArrayList<String>();
+    List<LibraryContributor.LibDescriptor> paths = new ArrayList<LibraryContributor.LibDescriptor>();
     if (pluginsPath != null) {
       for (String plugin : pluginsPath.split(File.pathSeparator)) {
         File lib = new File(plugin + File.separator + "lib");
+        UrlClassLoader pluginCL = null;
         if (lib.exists() && lib.isDirectory()) {
           for (File jar : lib.listFiles(JARS)) {
-            paths.add(jar.getAbsolutePath() + MODULES_PREFIX);
+            if (pluginCL == null) {
+              pluginCL = createPluginClassLoader(lib);
+            }
+            paths.add(new LibraryContributor.LibDescriptor(jar.getAbsolutePath() + MODULES_PREFIX, pluginCL));
           }
         }
         File languages = new File(plugin + File.separator + "languages");
         if (languages.exists() && languages.isDirectory()) {
-          paths.add(languages.getAbsolutePath());
+          if (pluginCL == null) {
+            pluginCL = createPluginClassLoader(lib);
+          }
+          paths.add(new LibraryContributor.LibDescriptor(languages.getAbsolutePath(), pluginCL));
         }
       }
     }
     return Collections.unmodifiableCollection(paths);
+  }
+
+  private static UrlClassLoader createPluginClassLoader(File lib) {
+    List<URL> urls = new ArrayList<URL>();
+    File[] files = lib.listFiles(JARS);
+    if (files == null) {
+      return null;
+    }
+    for (File libjar : files) {
+      try {
+        urls.add(libjar.toURI().toURL());
+      } catch (MalformedURLException ignored) {
+      }
+    }
+    return new UrlClassLoader(urls, LibraryInitializer.class.getClassLoader());
   }
 
   private static class StringHolder {
