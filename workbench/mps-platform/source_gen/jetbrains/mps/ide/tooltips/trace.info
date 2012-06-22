@@ -79,14 +79,17 @@
     <nodeInfo nodeId="2977221198762589350" fileName="MPSToolTipManager.java" startLine="136" startPosition="5" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8917462567969353820" fileName="MPSToolTipManager.java" startLine="137" startPosition="18" endLine="138" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6281853519869717704" fileName="MPSToolTipManager.java" startLine="138" startPosition="36" endLine="139" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6281853519869763028" fileName="MPSToolTipManager.java" startLine="142" startPosition="59" endLine="143" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8917462567969266672" fileName="MPSToolTipManager.java" startLine="145" startPosition="6" endLine="146" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5943684961278747702" fileName="MPSToolTipManager.java" startLine="150" startPosition="28" endLine="151" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5943684961278747708" fileName="MPSToolTipManager.java" startLine="151" startPosition="23" endLine="152" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6281853519869763043" fileName="MPSToolTipManager.java" startLine="154" startPosition="31" endLine="155" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6281853519869763051" fileName="MPSToolTipManager.java" startLine="155" startPosition="26" endLine="156" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2977221198762589357" fileName="MPSToolTipManager.java" startLine="157" startPosition="5" endLine="158" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1657638272963450899" fileName="MPSToolTipManager.java" startLine="161" startPosition="49" endLine="162" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3467421744644281267" fileName="MPSToolTipManager.java" startLine="142" startPosition="59" endLine="143" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3467421744644281269" fileName="MPSToolTipManager.java" startLine="143" startPosition="97" endLine="144" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3467421744644281263" fileName="MPSToolTipManager.java" startLine="145" startPosition="58" endLine="146" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6281853519869763028" fileName="MPSToolTipManager.java" startLine="147" startPosition="9" endLine="148" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8917462567969266672" fileName="MPSToolTipManager.java" startLine="150" startPosition="6" endLine="151" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5943684961278747702" fileName="MPSToolTipManager.java" startLine="155" startPosition="28" endLine="156" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5943684961278747708" fileName="MPSToolTipManager.java" startLine="156" startPosition="23" endLine="157" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6281853519869763043" fileName="MPSToolTipManager.java" startLine="159" startPosition="31" endLine="160" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6281853519869763051" fileName="MPSToolTipManager.java" startLine="160" startPosition="26" endLine="161" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2977221198762589357" fileName="MPSToolTipManager.java" startLine="162" startPosition="5" endLine="163" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1657638272963450899" fileName="MPSToolTipManager.java" startLine="166" startPosition="49" endLine="167" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1657638272963439185" fileName="MPSToolTipManager.java" startLine="33" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSToolTipManager#()V" />
     <nodeInfo nodeId="5943684961278746336" fileName="MPSToolTipManager.java" startLine="94" startPosition="10" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1657638272963439200" fileName="MPSToolTipManager.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
@@ -98,13 +101,14 @@
     <nodeInfo nodeId="8917462567969266682" fileName="MPSToolTipManager.java" startLine="127" startPosition="98" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7105003223552462263" fileName="MPSToolTipManager.java" startLine="130" startPosition="5" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2977221198762589339" fileName="MPSToolTipManager.java" startLine="133" startPosition="5" endLine="136" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3467421744644281239" fileName="MPSToolTipManager.java" startLine="144" startPosition="88" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1142165476403807379" fileName="MPSToolTipManager.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showToolTip#(Ljetbrains/mps/ide/tooltips/ToolTipData;Ljavax/swing/JComponent;Ljava/awt/Point;)V" />
     <nodeInfo nodeId="1142165476403807404" fileName="MPSToolTipManager.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showToolTip#(Ljava/lang/String;Ljavax/swing/JComponent;Ljava/awt/Point;)V" />
-    <nodeInfo nodeId="5943684961278747695" fileName="MPSToolTipManager.java" startLine="149" startPosition="29" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6281853519869763034" fileName="MPSToolTipManager.java" startLine="153" startPosition="5" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1657638272963439215" fileName="MPSToolTipManager.java" startLine="160" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ide/tooltips/MPSToolTipManager;" />
-    <nodeInfo nodeId="1228803144333909139" fileName="MPSToolTipManager.java" startLine="165" startPosition="64" endLine="169" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2977221198762589344" fileName="MPSToolTipManager.java" startLine="172" startPosition="62" endLine="176" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5943684961278747695" fileName="MPSToolTipManager.java" startLine="154" startPosition="29" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6281853519869763034" fileName="MPSToolTipManager.java" startLine="158" startPosition="5" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1657638272963439215" fileName="MPSToolTipManager.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/ide/tooltips/MPSToolTipManager;" />
+    <nodeInfo nodeId="1228803144333909139" fileName="MPSToolTipManager.java" startLine="170" startPosition="64" endLine="174" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2977221198762589344" fileName="MPSToolTipManager.java" startLine="177" startPosition="62" endLine="181" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7530108077312637985" fileName="MPSToolTipManager.java" startLine="23" startPosition="61" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseMoved#(Ljava/awt/event/MouseEvent;)V" />
     <nodeInfo nodeId="1657638272963450913" fileName="MPSToolTipManager.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerComponent#(Ljava/awt/Component;)V" />
     <nodeInfo nodeId="6596378777518990186" fileName="MPSToolTipManager.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterComponent#(Ljava/awt/Component;)V" />
@@ -112,21 +116,21 @@
     <nodeInfo nodeId="6596378777519002553" fileName="MPSToolTipManager.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterComponentRightAligned#(Ljava/awt/Component;)V" />
     <nodeInfo nodeId="1142165476403803482" fileName="MPSToolTipManager.java" startLine="71" startPosition="56" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseMoved#(Ljava/awt/event/MouseEvent;)V" />
     <nodeInfo nodeId="5943684961278746292" fileName="MPSToolTipManager.java" startLine="91" startPosition="74" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6281853519869763015" fileName="MPSToolTipManager.java" startLine="140" startPosition="60" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canAutohideOn#(Lcom/intellij/ide/TooltipEvent;)Z" />
     <nodeInfo nodeId="7530108077312637934" fileName="MPSToolTipManager.java" startLine="22" startPosition="64" endLine="28" endPosition="4" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMouseListener" />
     <nodeInfo nodeId="1657638272963439194" fileName="MPSToolTipManager.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
     <nodeInfo nodeId="1142165476403803470" fileName="MPSToolTipManager.java" startLine="70" startPosition="46" endLine="76" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1228803144333909134" fileName="MPSToolTipManager.java" startLine="110" startPosition="103" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6281853519869717693" fileName="MPSToolTipManager.java" startLine="139" startPosition="27" endLine="145" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6462432499626686448" fileName="MPSToolTipManager.java" startLine="98" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContainingFrame#(Ljava/awt/Component;)Ljava/awt/Frame;" />
-    <nodeInfo nodeId="1228803144333909139" fileName="MPSToolTipManager.java" startLine="164" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_k25xh9_a0a0a0l#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="2977221198762589344" fileName="MPSToolTipManager.java" startLine="171" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_k25xh9_a0c0n#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1228803144333909139" fileName="MPSToolTipManager.java" startLine="169" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_k25xh9_a0a0a0l#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="2977221198762589344" fileName="MPSToolTipManager.java" startLine="176" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_k25xh9_a0c0n#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="1142165476403803454" fileName="MPSToolTipManager.java" startLine="69" startPosition="55" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6281853519869763015" fileName="MPSToolTipManager.java" startLine="140" startPosition="60" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canAutohideOn#(Lcom/intellij/ide/TooltipEvent;)Z" />
+    <nodeInfo nodeId="6281853519869717693" fileName="MPSToolTipManager.java" startLine="139" startPosition="27" endLine="150" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1142165476403803442" fileName="MPSToolTipManager.java" startLine="68" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRightAlignedMouseListener#()Ljava/awt/event/MouseAdapter;" />
-    <nodeInfo nodeId="5943684961278747691" fileName="MPSToolTipManager.java" startLine="148" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hideToolTip#()V" />
+    <nodeInfo nodeId="5943684961278747691" fileName="MPSToolTipManager.java" startLine="153" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hideToolTip#()V" />
     <nodeInfo nodeId="1228803144333909124" fileName="MPSToolTipManager.java" startLine="109" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showToolTip#(Ljetbrains/mps/ide/tooltips/ToolTipData;Ljavax/swing/JComponent;Ljava/awt/Point;Z)V" />
     <nodeInfo nodeId="6543815770065587500" fileName="MPSToolTipManager.java" startLine="80" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mouseMoved#(Ljava/awt/event/MouseEvent;Z)V" />
-    <nodeInfo nodeId="78827631726060875" fileName="MPSToolTipManager.java" startLine="126" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showToolTip#(Ljava/lang/String;Ljavax/swing/JComponent;Ljava/awt/Point;Z)V" />
+    <nodeInfo nodeId="78827631726060875" fileName="MPSToolTipManager.java" startLine="126" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showToolTip#(Ljava/lang/String;Ljavax/swing/JComponent;Ljava/awt/Point;Z)V" />
     <scopeInfo nodeId="1657638272963439188" fileName="MPSToolTipManager.java" startLine="34" startPosition="30" endLine="34" endPosition="30" />
     <scopeInfo nodeId="1657638272963439203" fileName="MPSToolTipManager.java" startLine="43" startPosition="34" endLine="43" endPosition="34" />
     <scopeInfo nodeId="1657638272963439207" fileName="MPSToolTipManager.java" startLine="46" startPosition="31" endLine="46" endPosition="31" />
@@ -144,15 +148,15 @@
     <scopeInfo nodeId="8917462567969266683" fileName="MPSToolTipManager.java" startLine="128" startPosition="23" endLine="129" endPosition="13" />
     <scopeInfo nodeId="7105003223552462264" fileName="MPSToolTipManager.java" startLine="131" startPosition="30" endLine="132" endPosition="70" />
     <scopeInfo nodeId="2977221198762589340" fileName="MPSToolTipManager.java" startLine="134" startPosition="40" endLine="135" endPosition="13" />
-    <scopeInfo nodeId="6281853519869763022" fileName="MPSToolTipManager.java" startLine="142" startPosition="59" endLine="143" endPosition="49" />
-    <scopeInfo nodeId="1657638272963439218" fileName="MPSToolTipManager.java" startLine="161" startPosition="49" endLine="162" endPosition="85" />
+    <scopeInfo nodeId="3467421744644281240" fileName="MPSToolTipManager.java" startLine="145" startPosition="58" endLine="146" endPosition="23" />
+    <scopeInfo nodeId="1657638272963439218" fileName="MPSToolTipManager.java" startLine="166" startPosition="49" endLine="167" endPosition="85" />
     <scopeInfo nodeId="1657638272963439185" fileName="MPSToolTipManager.java" startLine="33" startPosition="0" endLine="35" endPosition="3" />
     <scopeInfo nodeId="1657638272963450909" fileName="MPSToolTipManager.java" startLine="49" startPosition="54" endLine="51" endPosition="54" />
     <scopeInfo nodeId="6596378777518990189" fileName="MPSToolTipManager.java" startLine="54" startPosition="56" endLine="56" endPosition="57" />
     <scopeInfo nodeId="1142165476403803422" fileName="MPSToolTipManager.java" startLine="59" startPosition="66" endLine="61" endPosition="69" />
     <scopeInfo nodeId="6596378777519002556" fileName="MPSToolTipManager.java" startLine="64" startPosition="68" endLine="66" endPosition="72" />
-    <scopeInfo nodeId="5943684961278747701" fileName="MPSToolTipManager.java" startLine="150" startPosition="28" endLine="152" endPosition="23" />
-    <scopeInfo nodeId="6281853519869763035" fileName="MPSToolTipManager.java" startLine="154" startPosition="31" endLine="156" endPosition="26" />
+    <scopeInfo nodeId="5943684961278747701" fileName="MPSToolTipManager.java" startLine="155" startPosition="28" endLine="157" endPosition="23" />
+    <scopeInfo nodeId="6281853519869763035" fileName="MPSToolTipManager.java" startLine="159" startPosition="31" endLine="161" endPosition="26" />
     <scopeInfo nodeId="1657638272963439200" fileName="MPSToolTipManager.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="1657638272963439204" fileName="MPSToolTipManager.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="6462432499626686451" fileName="MPSToolTipManager.java" startLine="99" startPosition="57" endLine="103" endPosition="29" />
@@ -167,9 +171,9 @@
       <varInfo nodeId="1142165476403807413" varName="point" />
       <varInfo nodeId="1142165476403807409" varName="text" />
     </scopeInfo>
-    <scopeInfo nodeId="1657638272963439215" fileName="MPSToolTipManager.java" startLine="160" startPosition="0" endLine="164" endPosition="0" />
-    <scopeInfo nodeId="1228803144333909139" fileName="MPSToolTipManager.java" startLine="165" startPosition="64" endLine="169" endPosition="6" />
-    <scopeInfo nodeId="2977221198762589344" fileName="MPSToolTipManager.java" startLine="172" startPosition="62" endLine="176" endPosition="6" />
+    <scopeInfo nodeId="1657638272963439215" fileName="MPSToolTipManager.java" startLine="165" startPosition="0" endLine="169" endPosition="0" />
+    <scopeInfo nodeId="1228803144333909139" fileName="MPSToolTipManager.java" startLine="170" startPosition="64" endLine="174" endPosition="6" />
+    <scopeInfo nodeId="2977221198762589344" fileName="MPSToolTipManager.java" startLine="177" startPosition="62" endLine="181" endPosition="6" />
     <scopeInfo nodeId="7530108077312637985" fileName="MPSToolTipManager.java" startLine="23" startPosition="61" endLine="28" endPosition="0">
       <varInfo nodeId="7530108077312637988" varName="p0" />
     </scopeInfo>
@@ -188,29 +192,30 @@
     <scopeInfo nodeId="1142165476403803482" fileName="MPSToolTipManager.java" startLine="71" startPosition="56" endLine="76" endPosition="0">
       <varInfo nodeId="1142165476403803485" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6281853519869763015" fileName="MPSToolTipManager.java" startLine="140" startPosition="60" endLine="145" endPosition="0">
-      <varInfo nodeId="6281853519869763018" varName="event" />
-    </scopeInfo>
     <scopeInfo nodeId="1657638272963439194" fileName="MPSToolTipManager.java" startLine="36" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1142165476403803456" fileName="MPSToolTipManager.java" startLine="70" startPosition="46" endLine="76" endPosition="8" />
+    <scopeInfo nodeId="6281853519869763022" fileName="MPSToolTipManager.java" startLine="142" startPosition="59" endLine="148" endPosition="49" />
     <scopeInfo nodeId="6462432499626686448" fileName="MPSToolTipManager.java" startLine="98" startPosition="0" endLine="105" endPosition="0">
       <varInfo nodeId="6462432499626687729" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="1228803144333909139" fileName="MPSToolTipManager.java" startLine="164" startPosition="0" endLine="171" endPosition="0">
+    <scopeInfo nodeId="1228803144333909139" fileName="MPSToolTipManager.java" startLine="169" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="1228803144333909139" varName="a" />
       <varInfo nodeId="1228803144333909139" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2977221198762589344" fileName="MPSToolTipManager.java" startLine="171" startPosition="0" endLine="178" endPosition="0">
+    <scopeInfo nodeId="2977221198762589344" fileName="MPSToolTipManager.java" startLine="176" startPosition="0" endLine="183" endPosition="0">
       <varInfo nodeId="2977221198762589344" varName="a" />
       <varInfo nodeId="2977221198762589344" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="1142165476403803445" fileName="MPSToolTipManager.java" startLine="69" startPosition="55" endLine="78" endPosition="39" />
-    <scopeInfo nodeId="5943684961278747694" fileName="MPSToolTipManager.java" startLine="149" startPosition="29" endLine="158" endPosition="18" />
+    <scopeInfo nodeId="5943684961278747694" fileName="MPSToolTipManager.java" startLine="154" startPosition="29" endLine="163" endPosition="18" />
     <scopeInfo nodeId="1228803144333909133" fileName="MPSToolTipManager.java" startLine="110" startPosition="103" endLine="120" endPosition="39">
       <varInfo nodeId="1228803144333909163" varName="frame" />
     </scopeInfo>
+    <scopeInfo nodeId="6281853519869763015" fileName="MPSToolTipManager.java" startLine="140" startPosition="60" endLine="150" endPosition="0">
+      <varInfo nodeId="6281853519869763018" varName="event" />
+    </scopeInfo>
     <scopeInfo nodeId="1142165476403803442" fileName="MPSToolTipManager.java" startLine="68" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="5943684961278747691" fileName="MPSToolTipManager.java" startLine="148" startPosition="0" endLine="160" endPosition="0" />
+    <scopeInfo nodeId="5943684961278747691" fileName="MPSToolTipManager.java" startLine="153" startPosition="0" endLine="165" endPosition="0" />
     <scopeInfo nodeId="1228803144333909124" fileName="MPSToolTipManager.java" startLine="109" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="1228803144333909129" varName="component" />
       <varInfo nodeId="1228803144333909127" varName="data" />
@@ -227,19 +232,19 @@
       <varInfo nodeId="6543815770065587506" varName="event" />
       <varInfo nodeId="1142165476403803507" varName="rightAlined" />
     </scopeInfo>
-    <scopeInfo nodeId="78827631726060884" fileName="MPSToolTipManager.java" startLine="127" startPosition="98" endLine="146" endPosition="61">
+    <scopeInfo nodeId="78827631726060884" fileName="MPSToolTipManager.java" startLine="127" startPosition="98" endLine="151" endPosition="61">
       <varInfo nodeId="8917462567969353821" varName="label" />
     </scopeInfo>
-    <scopeInfo nodeId="78827631726060875" fileName="MPSToolTipManager.java" startLine="126" startPosition="0" endLine="148" endPosition="0">
+    <scopeInfo nodeId="78827631726060875" fileName="MPSToolTipManager.java" startLine="126" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="78827631726060880" varName="component" />
       <varInfo nodeId="78827631726060882" varName="point" />
       <varInfo nodeId="1142165476403803523" varName="rightAligned" />
       <varInfo nodeId="78827631726060878" varName="text" />
     </scopeInfo>
-    <unitInfo nodeId="1657638272963439183" fileName="MPSToolTipManager.java" startLine="22" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.ide.tooltips.MPSToolTipManager" />
+    <unitInfo nodeId="1657638272963439183" fileName="MPSToolTipManager.java" startLine="22" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.ide.tooltips.MPSToolTipManager" />
     <unitInfo nodeId="7530108077312637939" fileName="MPSToolTipManager.java" startLine="23" startPosition="45" endLine="28" endPosition="3" unitName="jetbrains.mps.ide.tooltips.MPSToolTipManager$1" />
     <unitInfo nodeId="1142165476403803480" fileName="MPSToolTipManager.java" startLine="71" startPosition="40" endLine="76" endPosition="7" unitName="jetbrains.mps.ide.tooltips.MPSToolTipManager$2" />
-    <unitInfo nodeId="6281853519869761381" fileName="MPSToolTipManager.java" startLine="140" startPosition="23" endLine="145" endPosition="5" unitName="jetbrains.mps.ide.tooltips.MPSToolTipManager$3" />
+    <unitInfo nodeId="6281853519869761381" fileName="MPSToolTipManager.java" startLine="140" startPosition="23" endLine="150" endPosition="5" unitName="jetbrains.mps.ide.tooltips.MPSToolTipManager$3" />
   </root>
   <root nodeId="3564103493663133593">
     <nodeInfo nodeId="3564103493663133595" fileName="TooltipComponent.java" startLine="7" startPosition="35" endLine="8" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMPSTooltipText#(Ljava/awt/event/MouseEvent;)Ljava/lang/String;" />
