@@ -4,6 +4,8 @@ package jetbrains.mps.ide.dialogs.project.creation;
 
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import javax.swing.JPanel;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import javax.swing.JTextField;
@@ -28,6 +30,8 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.openapi.vfs.VfsUtil;
+import java.io.IOException;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -45,6 +49,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NewGeneratorDialog extends BaseDialog {
   private static final DialogDimensionsSettings.DialogDimensions ourDefaultDimensionSettings = new DialogDimensionsSettings.DialogDimensions(200, 200, 400, 200);
+  protected static Log log = LogFactory.getLog(NewGeneratorDialog.class);
 
   private JPanel myContenetPane;
   private TextFieldWithBrowseButton myTemplateModelsDir;
@@ -127,7 +132,7 @@ public class NewGeneratorDialog extends BaseDialog {
 
   @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOK() {
-    String templateModelsPath = myTemplateModelsDir.getText();
+    final String templateModelsPath = myTemplateModelsDir.getText();
     if (templateModelsPath.length() == 0) {
       setErrorText("No template models root");
       return;
@@ -136,9 +141,6 @@ public class NewGeneratorDialog extends BaseDialog {
     if (!(dir.isAbsolute())) {
       setErrorText("Path should be absolute");
       return;
-    }
-    if (!(dir.exists())) {
-      dir.mkdirs();
     }
     final String name = myGeneratorName.getText();
     if (!(isValidName(name))) {
@@ -151,8 +153,16 @@ public class NewGeneratorDialog extends BaseDialog {
     final Wrappers._T<Generator> newGenerator = new Wrappers._T<Generator>(null);
     NewModuleUtil.runModuleCreation(project, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        newGenerator.value = createNewGenerator(mySourceLanguage, dir, name);
-        adjustTemplateModel(mySourceLanguage, newGenerator.value);
+        try {
+          VfsUtil.createDirectories(templateModelsPath);
+          newGenerator.value = createNewGenerator(mySourceLanguage, templateModelsPath, name);
+          adjustTemplateModel(mySourceLanguage, newGenerator.value);
+        } catch (IOException e) {
+          if (log.isErrorEnabled()) {
+            log.error("", e);
+          }
+          newGenerator.value = null;
+        }
       }
     });
 
@@ -169,13 +179,13 @@ public class NewGeneratorDialog extends BaseDialog {
     Disposer.dispose(myTemplateModelsDir);
   }
 
-  protected Generator createNewGenerator(final Language language, File templateModelsDir, String name) {
+  protected Generator createNewGenerator(final Language language, String templateModelsDir, String name) {
     final LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
     generatorDescriptor.setNamespace(name);
     ModelRoot templateModelsRoot = new ModelRoot();
-    templateModelsRoot.setPath(templateModelsDir.getAbsolutePath());
+    templateModelsRoot.setPath(templateModelsDir);
     generatorDescriptor.getModelRoots().add(templateModelsRoot);
     generatorDescriptor.getUsedDevkits().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
     generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference());
