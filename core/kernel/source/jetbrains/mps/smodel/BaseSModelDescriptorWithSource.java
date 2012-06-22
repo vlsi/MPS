@@ -51,7 +51,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
 
   private long mySourceTimestamp = -1;
 
-  protected abstract void reloadFromDisk();
+  protected abstract void reloadFromDiskSafe();
 
   protected long getSourceTimestamp(){
     return mySourceTimestamp;
@@ -65,7 +65,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     if (!needsReloading()) return;
 
     monitor.start("Reloading " + getLongName(), 1);
-    reloadFromDisk();
+    reloadFromDiskSafe();
     monitor.done();
   }
 

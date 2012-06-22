@@ -80,7 +80,7 @@ public class BaseStubModelDescriptor extends BaseSModelDescriptorWithSource impl
   /**
    * This method should be called either in EDT, inside WriteAction or in any other thread
    */
-  public void reloadFromDisk() {
+  public void reloadFromDiskSafe() {
     ModelAccess.assertLegalWrite();
 
     if (!getSource().hasModel(this)) {

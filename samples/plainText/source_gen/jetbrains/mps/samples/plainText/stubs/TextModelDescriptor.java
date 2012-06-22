@@ -23,7 +23,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     updateDiskTimestamp();
   }
 
-  protected void reloadFromDisk() {
+  protected void reloadFromDiskSafe() {
     final SModel old = myModel;
     check_bp2jat_a1a0(old);
 
