@@ -4,21 +4,17 @@ package jetbrains.mps.build.ant.util;
 
 import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.Set;
-import java.util.HashSet;
+import java.util.Collections;
 
 public class SetLibraryContributor implements LibraryContributor {
-  private Set<String> libraryPaths;
+  private Set<LibraryContributor.LibDescriptor> libraryPaths;
 
-  public SetLibraryContributor(Set<String> libraryPaths) {
+  public SetLibraryContributor(Set<LibraryContributor.LibDescriptor> libraryPaths) {
     this.libraryPaths = libraryPaths;
   }
 
   public Set<LibraryContributor.LibDescriptor> getLibraries() {
-    HashSet<LibraryContributor.LibDescriptor> res = new HashSet<LibraryContributor.LibDescriptor>();
-    for (String path : libraryPaths) {
-      res.add(new LibraryContributor.LibDescriptor(path, null));
-    }
-    return res;
+    return Collections.unmodifiableSet(libraryPaths);
   }
 
   public boolean hiddenLanguages() {

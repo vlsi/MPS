@@ -22,7 +22,9 @@ import java.util.HashMap;
 import jetbrains.mps.build.ant.util.PathUtil;
 import jetbrains.mps.build.ant.util.MapPathMacrosProvider;
 import java.util.Set;
+import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.build.ant.util.PathManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Level;
@@ -107,14 +109,17 @@ public class Environment {
 
   protected void loadLibraries() {
     if (myLibraryContibutor == null) {
-      Set<String> libraryPaths = new HashSet<String>();
+      Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
       if (myLoadBootstrapLibraries) {
-        libraryPaths.addAll(PathManager.getBootstrapPaths());
-        libraryPaths.add(PathManager.getLanguagesPath());
+        for (String bpath : CollectionSequence.fromCollection(PathManager.getBootstrapPaths())) {
+          libraryPaths.add(new LibraryContributor.LibDescriptor(bpath, null));
+        }
+        libraryPaths.add(new LibraryContributor.LibDescriptor(PathManager.getLanguagesPath(), null));
         libraryPaths.addAll(PathManager.getExtensionsPaths());
       }
       for (String libName : myLibraries.keySet()) {
-        libraryPaths.add(myLibraries.get(libName).getAbsolutePath());
+        libraryPaths.add(new LibraryContributor.LibDescriptor(myLibraries.get(libName).getAbsolutePath(), null));
+
       }
       this.myLibraryContibutor = new SetLibraryContributor(libraryPaths);
       LibraryInitializer.getInstance().addContributor(myLibraryContibutor);
