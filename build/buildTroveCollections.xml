@@ -32,6 +32,7 @@
         <id>jetbrains.mps.trove</id>
         <name>Trove Collections language for MPS</name>
         <version>${buildCore.version}</version>
+        <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
         <depends>jetbrains.mps.core</depends>
         
         <extensions defaultExtensionNs="com.intellij">
@@ -92,6 +93,10 @@
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime/collections_trove.runtime.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+    </jar>
+    <mkdir dir="${build.layout}/plugins/mps-trove/lib" />
+    <jar destfile="${build.layout}/plugins/mps-trove/lib/icons.jar">
+      <fileset file="${basedir}/workbench/mps-workbench/source/MPS_16.png" />
     </jar>
     <mkdir dir="${build.layout}/plugins/mps-trove/languages" />
     <copy todir="${build.layout}/plugins/mps-trove/languages">

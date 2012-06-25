@@ -74,10 +74,11 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_dvtb4y_d3a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_dvtb4y_e3a(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_dvtb4y_f3a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dvtb4y_g3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_dvtb4y_h3a(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_dvtb4y_i3a(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_dvtb4y_j3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_dvtb4y_g3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dvtb4y_h3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_dvtb4y_i3a(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_dvtb4y_j3a(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_dvtb4y_k3a(editorContext, node));
     return editorCell;
   }
 
@@ -113,9 +114,9 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_dvtb4y_g3a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dvtb4y_h3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
-    editorCell.setCellId("Constant_dvtb4y_g3a");
+    editorCell.setCellId("Constant_dvtb4y_h3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -125,9 +126,9 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_dvtb4y_i3a(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_dvtb4y_j3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
-    editorCell.setCellId("Constant_dvtb4y_i3a");
+    editorCell.setCellId("Constant_dvtb4y_j3a");
     buildStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -144,8 +145,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_dvtb4y_h3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_IdeaPlugin_Editor.contentListHandler_dvtb4y_h3a(node, "content", editorContext);
+  private EditorCell createRefNodeList_dvtb4y_i3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_IdeaPlugin_Editor.contentListHandler_dvtb4y_i3a(node, "content", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_content");
     {
@@ -158,8 +159,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNodeList_dvtb4y_j3a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new BuildMps_IdeaPlugin_Editor.dependenciesListHandler_dvtb4y_j3a(node, "dependencies", editorContext);
+  private EditorCell createRefNodeList_dvtb4y_k3a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new BuildMps_IdeaPlugin_Editor.dependenciesListHandler_dvtb4y_k3a(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies");
     {
@@ -251,6 +252,27 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_dvtb4y_g3a(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("vendor");
+    provider.setNoTargetText("<< no vendor >>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private EditorCell createProperty_dvtb4y_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("id");
@@ -296,8 +318,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     return (SLinkOperations.getTarget(node, "pluginXml", true) != null);
   }
 
-  private static class contentListHandler_dvtb4y_h3a extends RefNodeListHandler {
-    public contentListHandler_dvtb4y_h3a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class contentListHandler_dvtb4y_i3a extends RefNodeListHandler {
+    public contentListHandler_dvtb4y_i3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -332,8 +354,8 @@ public class BuildMps_IdeaPlugin_Editor extends DefaultNodeEditor {
     }
   }
 
-  private static class dependenciesListHandler_dvtb4y_j3a extends RefNodeListHandler {
-    public dependenciesListHandler_dvtb4y_j3a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_dvtb4y_k3a extends RefNodeListHandler {
+    public dependenciesListHandler_dvtb4y_k3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
