@@ -34,8 +34,10 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
 import java.util.ArrayList;
 import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.generator.GenerationFacade;
-import javax.swing.JOptionPane;
 import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -122,7 +124,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
 
   public SNode createNode(final SNode node, final SNode concept) {
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
-    final JFrame frame = WindowManager.getInstance().getFrame(project);
+    JFrame frame = WindowManager.getInstance().getFrame(project);
 
     final Wrappers._T<Language> language = new Wrappers._T<Language>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -141,6 +143,22 @@ public class Generator_TabDescriptor extends RelationDescriptor {
         return null;
       }
       ListSequence.fromList(genList).addElement(createdGenerator);
+    } else {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          for (Generator generator : genList) {
+            if (generator.getOwnTemplateModels().isEmpty()) {
+              continue;
+            }
+            return;
+          }
+          // this means there are generators, but no template models 
+          Generator firstGen = ListSequence.fromList(genList).first();
+          EditableSModelDescriptor templateModelDescriptor = firstGen.createModel(new SModelFqName(language.value.getModuleFqName() + ".generator.template.main", SModelStereotype.GENERATOR), firstGen.getSModelRoots().iterator().next(), null);
+          templateModelDescriptor.save();
+          language.value.save();
+        }
+      });
     }
 
     final List<SNode> mappings = new ArrayList<SNode>();
@@ -165,11 +183,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
             }
             model = generator.getOwnTemplateModels().get(0).getSModel();
           }
-
-          if (model == null) {
-            JOptionPane.showMessageDialog(frame, "create template model first");
-            return;
-          }
+          assert model != null : "model should have been already created";
 
           SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
           SPropertyOperations.set(node, "name", "main");
