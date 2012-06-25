@@ -153,13 +153,13 @@ public class ModuleRepositoryFacade implements CoreComponent {
 
     if (registered == language) {
       language.setLanguageDescriptor(descriptor, false);
-      createLanguageLibs(language, descriptor, MPSModuleRepository.getInstance());
+      createLanguageLibs(language, descriptor);
     }
 
     return registered;
   }
 
-  private static void createLanguageLibs(Language language, LanguageDescriptor languageDescriptor, MPSModuleRepository repository) {
+  public static void createLanguageLibs(Language language, LanguageDescriptor languageDescriptor) {
     List<SolutionDescriptor> solutionDescriptors = createLanguageLibraryDescriptors(languageDescriptor);
 
     for (SolutionDescriptor sd : solutionDescriptors) {

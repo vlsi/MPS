@@ -87,6 +87,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
         return !(m instanceof Solution && ((Solution) m) instanceof StubSolution);
       }
     });
+    ModuleRepositoryFacade.createLanguageLibs(this, getModuleDescriptor());
 
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
@@ -478,7 +479,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   public Collection<String> getOwnStubPaths() {
     if (isPackaged()) {
       return Collections.singletonList(
-          FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
+        FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
     }
 
     IFile classesGen = ProjectPathUtil.getClassesGenFolder(getDescriptorFile());
