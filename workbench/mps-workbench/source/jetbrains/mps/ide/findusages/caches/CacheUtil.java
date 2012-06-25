@@ -30,17 +30,16 @@ class CacheUtil {
   static Set<VirtualFile> getIndexableRoots() {
     final Set<VirtualFile> files = new HashSet<VirtualFile>();
 
-    for (final IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (final IModule m : MPSModuleRepository.getInstance().getAllModules()) {
           VirtualFile file = VirtualFileUtils.getVirtualFile(m.getBundleHome());
           if (file != null) { //i.e. files doesn't exist
             files.add(file);
           }
         }
-      });
-    }
-
+      }
+    });
     return files;
   }
 
