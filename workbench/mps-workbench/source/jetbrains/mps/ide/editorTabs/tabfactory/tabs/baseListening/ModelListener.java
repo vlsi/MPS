@@ -74,7 +74,7 @@ public abstract class ModelListener {
   }
 
   private class ModelRemovedAdapter extends SModelRepositoryAdapter {
-    public void modelDeleted(SModelDescriptor modelDescriptor) {
+    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
       SModelReference ref = modelDescriptor.getSModelReference();
       if (!myImportantNodes.containsKey(ref)) return;
 
