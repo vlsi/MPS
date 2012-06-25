@@ -146,6 +146,7 @@ public class MPSModuleRepository implements CoreComponent {
    * @return true if module was removed from ModuleRepository
    */
   private boolean doUnregisterModule(IModule module, MPSModuleOwner owner) {
+    ModelAccess.assertLegalWrite();
     assert myModules.contains(module) : "trying to unregister non-registered module: fqName=" + module.getModuleFqName() + "; file=" + module.getDescriptorFile();
 
     myModuleToOwners.removeLink(module, owner);
@@ -163,6 +164,7 @@ public class MPSModuleRepository implements CoreComponent {
   //---------------get by-----------------------------
 
   public Set<IModule> getAllModules() {
+    ModelAccess.assertLegalRead();
     return Collections.unmodifiableSet(myModules);
   }
 
@@ -234,6 +236,7 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   private void fireModuleAdded(IModule module) {
+    ModelAccess.assertLegalWrite();
     for (ModuleRepositoryListener listener : myModuleListeners) {
       try {
         listener.moduleAdded(module);
@@ -244,6 +247,7 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   private void fireBeforeModuleRemoved(IModule module) {
+    ModelAccess.assertLegalWrite();
     for (ModuleRepositoryListener listener : myModuleListeners) {
       try {
         listener.beforeModuleRemoved(module);
@@ -254,6 +258,7 @@ public class MPSModuleRepository implements CoreComponent {
   }
 
   private void fireModuleRemoved(IModule module) {
+    ModelAccess.assertLegalWrite();
     for (ModuleRepositoryListener listener : myModuleListeners) {
       try {
         listener.moduleRemoved(module);
@@ -265,6 +270,7 @@ public class MPSModuleRepository implements CoreComponent {
 
   //todo public?
   public void fireModuleChanged(IModule m) {
+    ModelAccess.assertLegalWrite();
     if (!myModules.contains(m)) return;
 
     for (ModuleRepositoryListener l : myModuleListeners) {
