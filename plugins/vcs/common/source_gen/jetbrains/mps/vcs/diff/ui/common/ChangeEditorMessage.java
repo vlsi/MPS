@@ -298,7 +298,10 @@ __switch__:
         };
       }
     }.invoke(editor.getRootCell());
-    Rectangle bounds = Sequence.fromIterable(leafCells).first().getBounds();
+    Rectangle bounds = check_myu41h_a0b0p(Sequence.fromIterable(leafCells).first());
+    if (bounds == null) {
+      return new Rectangle();
+    }
     for (EditorCell leaf : Sequence.fromIterable(leafCells).skip(1)) {
       if (leaf.getBounds().y == bounds.y) {
         bounds.add(leaf.getBounds());
@@ -454,6 +457,13 @@ __switch__:
   private static SNode check_myu41h_a0a0a0o(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
+    }
+    return null;
+  }
+
+  private static Rectangle check_myu41h_a0b0p(EditorCell checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getBounds();
     }
     return null;
   }
