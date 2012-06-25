@@ -30,6 +30,7 @@ import gnu.trove.decorator.TObjectIntHashMapDecorator;
 import gnu.trove.TObjectIntHashMap;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.smodel.SNode;
 
 public class Foo {
   public Foo() {
@@ -298,5 +299,17 @@ __switch__:
     DequeSequence.fromDeque(sti).addSequence(QueueSequence.fromQueue(qi));
     DequeSequence.fromDeque(sti).ofType(String.class);
     DequeSequence.fromDeque(sti).ofType(List.class);
+  }
+
+  public static void setofnodes() {
+    Set<SNode> son = SetSequence.fromSet(new HashSet<SNode>());
+    Set<SNode> csosn = new HashSet<SNode>();
+    Set<SNode> cson = new HashSet<SNode>();
+    son = csosn;
+    csosn = son;
+    son = cson;
+    cson = son;
+    csosn = cson;
+    cson = csosn;
   }
 }
