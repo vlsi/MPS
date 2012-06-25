@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.action;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.DumbAware;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Condition;
@@ -27,7 +28,7 @@ import java.awt.event.KeyEvent;
 import java.util.Arrays;
 import java.util.List;
 
-public class BaseGroup extends DefaultActionGroup {
+public class BaseGroup extends DefaultActionGroup implements DumbAware {
   private String myId = "";
   private boolean myIsInternal = false;
   private boolean myIsAlwaysVisible = true;
