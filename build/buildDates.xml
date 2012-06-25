@@ -11,6 +11,18 @@
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
+  <path id="path.javac2.classpath">
+    <fileset dir="${idea_home}/lib">
+      <include name="javac2.jar" />
+      <include name="jdom.jar" />
+      <include name="asm.jar" />
+      <include name="asm-commons.jar" />
+      <include name="jgoodies-forms.jar" />
+    </fileset>
+  </path>
+  
+  <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-dates" />
@@ -144,7 +156,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.dates" depends="java.compile.jetbrains.mps.baseLanguage.dates.runtime, java.compile.jetbrains.mps.baseLanguage.datesInternal, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/dates/source_gen" />
@@ -180,7 +192,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates">
       <fileset dir="${mps_home}/languages/util/dates/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -188,7 +200,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.datesInternal" depends="java.compile.jetbrains.mps.baseLanguage.dates.runtime, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/dates/internal/source_gen" />
@@ -220,7 +232,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.datesInternal">
       <fileset dir="${mps_home}/languages/util/dates/internal/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -228,7 +240,7 @@
   
   <target name="java.compile.jetbrains.mps.baseLanguage.dates.runtime" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/languages/util/dates/runtime/source_gen" />
@@ -238,7 +250,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-1.6.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime">
       <fileset dir="${mps_home}/languages/util/dates/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>

@@ -171,6 +171,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.net.MalformedURLException" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
@@ -184,6 +185,9 @@
     <classNode dependClassName="jetbrains.mps.build.ant.util.StringUtil" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.SystemInfo" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.URLUtil" />
+    <classNode dependClassName="jetbrains.mps.build.ant.util.UrlClassLoader" />
+    <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
+    <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
@@ -197,8 +201,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.util.SetLibraryContributor" file="SetLibraryContributor.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Set" />
     <classNode extendsClassName="jetbrains.mps.library.contributor.LibraryContributor" />
   </dependency>

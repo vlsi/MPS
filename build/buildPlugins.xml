@@ -13,6 +13,18 @@
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
   
+  <path id="path.javac2.classpath">
+    <fileset dir="${idea_home}/lib">
+      <include name="javac2.jar" />
+      <include name="jdom.jar" />
+      <include name="asm.jar" />
+      <include name="asm-commons.jar" />
+      <include name="jgoodies-forms.jar" />
+    </fileset>
+  </path>
+  
+  <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-java" />
@@ -110,7 +122,7 @@
   
   <target name="java.compile.ideaIntegration" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/ideaIntegration" />
-    <javac destdir="${build.tmp}/java/out/ideaIntegration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/ideaIntegration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/ideaIntegration/source" />
@@ -138,7 +150,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/ideaIntegration">
       <fileset dir="${mps_home}/plugins/ideaIntegration/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/ideaIntegration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -147,7 +159,7 @@
   
   <target name="java.compile.migrationAssistant" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/migrationAssistant" />
-    <javac destdir="${build.tmp}/java/out/migrationAssistant" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/migrationAssistant" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/migrationAssistant/source" />
@@ -174,7 +186,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/migrationAssistant">
       <fileset dir="${mps_home}/plugins/migrationAssistant/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -182,7 +194,7 @@
   
   <target name="java.compile.modelchecker" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/modelchecker" />
-    <javac destdir="${build.tmp}/java/out/modelchecker" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/modelchecker" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/modelchecker/source" />
@@ -210,7 +222,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/modelchecker">
       <fileset dir="${mps_home}/plugins/modelchecker/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/modelchecker/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -219,7 +231,7 @@
   
   <target name="java.compile.mps-java" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-java" />
-    <javac destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <pathelement path="${mps_home}/plugins/mpsjava/platform/source_gen" />
@@ -247,7 +259,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/mps-java">
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -256,7 +268,7 @@
   
   <target name="java.compile.mps-make" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-make" />
-    <javac destdir="${build.tmp}/java/out/mps-make" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/mps-make" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsmake/source_gen" />
@@ -283,7 +295,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/mps-make">
       <fileset dir="${mps_home}/plugins/mpsmake/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -291,7 +303,7 @@
   
   <target name="java.compile.samples" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/samples" />
-    <javac destdir="${build.tmp}/java/out/samples" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/samples" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/samples/sources" />
@@ -318,7 +330,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/samples">
       <fileset dir="${mps_home}/plugins/samples/sources" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -326,7 +338,7 @@
   
   <target name="java.compile.migration25" depends="java.compile.modelchecker, java.compile.mps-java, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/migration25" />
-    <javac destdir="${build.tmp}/java/out/migration25" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/migration25" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/migration25/source_gen" />
@@ -355,7 +367,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/migration25">
       <fileset dir="${mps_home}/plugins/migration25/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
@@ -363,7 +375,7 @@
   
   <target name="java.compile.jetbrains.mps.ide.java.migration" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration" />
-    <javac destdir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsjava/migration/source_gen" />
@@ -393,7 +405,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
-    </javac>
+    </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.ide.java.migration">
       <fileset dir="${mps_home}/plugins/mpsjava/migration/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
