@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.build.util.Context;
 
 public class BuildCompositePath_Behavior {
   public static void init(SNode thisNode) {
@@ -64,5 +65,15 @@ public class BuildCompositePath_Behavior {
         return it;
       }
     }, true).toListSequence();
+  }
+
+  public static File call_getFile_841084130032784919(SNode thisNode, Context context) {
+    String basePath = BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildRelativePath", false, false), context);
+    if ((basePath == null || basePath.length() == 0)) {
+      return null;
+    }
+
+    basePath += "/" + BuildCompositePath_Behavior.call_getPathToHead_3968971886499106107(thisNode);
+    return new File(basePath);
   }
 }
