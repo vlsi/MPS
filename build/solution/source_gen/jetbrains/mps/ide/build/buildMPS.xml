@@ -18,6 +18,7 @@
   <property name="artifacts.buildTroveCollections" location="${build.dir}/artifacts/buildTroveCollections" />
   <property name="artifacts.buildExperimental" location="${build.dir}/artifacts/buildExperimental" />
   <property name="artifacts.buildPlugins" location="${build.dir}/artifacts/buildPlugins" />
+  <property name="artifacts.buildMakePlugin" location="${build.dir}/artifacts/buildMakePlugin" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.buildBuildUI" location="${build.dir}/artifacts/buildBuildUI" />
   <property name="artifacts.buildVcs" location="${build.dir}/artifacts/buildVcs" />
@@ -110,6 +111,9 @@
       <fileset dir="${artifacts.buildPlugins}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
+      <fileset dir="${artifacts.buildMakePlugin}/plugins" />
+    </copy>
+    <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.buildDevKit}/plugins" />
     </copy>
     <copy todir="${build.layout}/plugins">
@@ -170,6 +174,7 @@
     <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExperimental.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildVcs.xml" inheritAll="false" useNativeBasedir="true" />

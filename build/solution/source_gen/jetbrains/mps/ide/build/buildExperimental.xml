@@ -33,6 +33,7 @@
         <id>jetbrains.mps.experimental</id>
         <name>MPS Experimental languages</name>
         <version>${buildCore.version}</version>
+        <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>com.intellij.modules.mps</depends>
         

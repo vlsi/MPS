@@ -187,7 +187,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     } else {
       SLinkOperations.setTarget(result, "debuggedType", VariableDescription.createDebuggedType(lowLevelType, null), true);
     }
-    SPropertyOperations.set(result, "highLevelNodeId", check_4zsmpx_a0a0g0f(highLevelNode).toString());
+    SPropertyOperations.set(result, "highLevelNodeId", check_4zsmpx_a0a6a5(check_4zsmpx_a0a0g0f(highLevelNode)));
     return result;
   }
 
@@ -298,6 +298,13 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       return false;
     }
     return staticContextTypeName.equals(((String) BehaviorManager.getInstance().invoke(Object.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Class[]{SNode.class})));
+  }
+
+  private static String check_4zsmpx_a0a6a5(SNodeId checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.toString();
+    }
+    return null;
   }
 
   private static SNodeId check_4zsmpx_a0a0g0f(SNode checkedDotOperand) {

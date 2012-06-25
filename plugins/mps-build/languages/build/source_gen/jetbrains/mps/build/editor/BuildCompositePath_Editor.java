@@ -10,26 +10,38 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import java.io.File;
+import jetbrains.mps.build.behavior.BuildCompositePath_Behavior;
+import jetbrains.mps.build.util.Context;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.style.AttributeCalculator;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_PropertyValues;
 import java.util.List;
-import jetbrains.mps.build.behavior.BuildCompositePath_Behavior;
 import jetbrains.mps.build.behavior.BuildRelativePath_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.util.Context;
 
 public class BuildCompositePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_n78otj_a(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_n78otj_a_0(editorContext, node);
   }
 
   private EditorCell createCollection_n78otj_a(EditorContext editorContext, SNode node) {
@@ -54,6 +66,13 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_n78otj_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_n78otj_a_0");
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_n78otj_a0(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_n78otj_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_n78otj_a1a");
@@ -65,6 +84,28 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
     }
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createReadOnlyModelAccessor_n78otj_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        File f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
+        return (f != null ?
+          f.getAbsolutePath() :
+          "unknown"
+        );
+      }
+
+      public void setText(String s) {
+      }
+
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, this.getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ReadOnlyModelAccessor_n78otj_a0");
     return editorCell;
   }
 
@@ -100,6 +141,20 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_head");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
+        public Color calculate(EditorCell cell) {
+          return BuildCompositePath_Editor._StyleParameter_QueryFunction_n78otj_a0a0((cell == null ?
+            null :
+            cell.getSNode()
+          ), (cell == null ?
+            null :
+            cell.getEditorContext()
+          ));
+        }
+      });
+    }
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new BuildCompositePath_Editor.BuildCompositePath_head_cellMenu_a0a0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -113,6 +168,17 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_n78otj_a1a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "tail", true) != null);
+  }
+
+  private static Color _StyleParameter_QueryFunction_n78otj_a0a0(SNode node, EditorContext editorContext) {
+    File f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
+    if (f == null) {
+      return Color.BLACK;
+    }
+    if (f.exists()) {
+      return new Color(0, 0, 0x80);
+    }
+    return Color.RED;
   }
 
   public static class BuildCompositePath_head_cellMenu_a0a0 extends AbstractCellMenuPart_PropertyValues {

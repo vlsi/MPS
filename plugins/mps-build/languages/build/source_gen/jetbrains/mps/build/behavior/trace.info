@@ -3113,81 +3113,96 @@
     <unitInfo nodeId="8577651205286949160" fileName="BuildLayout_Tar_Behavior.java" startLine="88" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildLayout_Tar_Behavior$QuotationClass_cokct5_a0a0c0f0b" />
   </root>
   <root nodeId="8618885170173674797">
-    <nodeInfo nodeId="5589818551502505428" fileName="BuildCompositePath_Behavior.java" startLine="18" startPosition="43" endLine="19" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8618885170173690695" fileName="BuildCompositePath_Behavior.java" startLine="23" startPosition="70" endLine="24" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8618885170173690722" fileName="BuildCompositePath_Behavior.java" startLine="25" startPosition="5" endLine="26" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1368030936106771183" fileName="BuildCompositePath_Behavior.java" startLine="29" startPosition="100" endLine="30" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1368030936106771261" fileName="BuildCompositePath_Behavior.java" startLine="31" startPosition="69" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1368030936106771306" fileName="BuildCompositePath_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3968971886499106200" fileName="BuildCompositePath_Behavior.java" startLine="38" startPosition="128" endLine="39" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3968971886499106205" fileName="BuildCompositePath_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4959435991187212206" fileName="BuildCompositePath_Behavior.java" startLine="44" startPosition="107" endLine="45" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4959435991187212286" fileName="BuildCompositePath_Behavior.java" startLine="46" startPosition="31" endLine="47" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4959435991187212293" fileName="BuildCompositePath_Behavior.java" startLine="48" startPosition="5" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3968971886499106209" fileName="BuildCompositePath_Behavior.java" startLine="50" startPosition="128" endLine="51" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4959435991187212237" fileName="BuildCompositePath_Behavior.java" startLine="52" startPosition="5" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4959435991187213551" fileName="BuildCompositePath_Behavior.java" startLine="53" startPosition="0" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4959435991187213593" fileName="BuildCompositePath_Behavior.java" startLine="55" startPosition="27" endLine="56" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4959435991187213640" fileName="BuildCompositePath_Behavior.java" startLine="59" startPosition="37" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4959435991187213695" fileName="BuildCompositePath_Behavior.java" startLine="63" startPosition="46" endLine="64" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8618885170173690681" fileName="BuildCompositePath_Behavior.java" startLine="22" startPosition="73" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1368030936106771191" fileName="BuildCompositePath_Behavior.java" startLine="30" startPosition="26" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3968971886499106112" fileName="BuildCompositePath_Behavior.java" startLine="37" startPosition="79" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4959435991187212275" fileName="BuildCompositePath_Behavior.java" startLine="45" startPosition="35" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3968971886499106225" fileName="BuildCompositePath_Behavior.java" startLine="49" startPosition="0" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4959435991187213577" fileName="BuildCompositePath_Behavior.java" startLine="54" startPosition="39" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="17" startPosition="42" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4959435991187213636" fileName="BuildCompositePath_Behavior.java" startLine="58" startPosition="109" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4959435991187213690" fileName="BuildCompositePath_Behavior.java" startLine="62" startPosition="115" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
-    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPath_8618885170173674800#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPathToHead_3968971886499106107#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getLastSegment_1368030936106771152#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/MacroHelper;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4959435991187213598" fileName="BuildCompositePath_Behavior.java" startLine="57" startPosition="5" endLine="66" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="43" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getHeadSuggestions_4959435991187212109#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <scopeInfo nodeId="8618885170173674799" fileName="BuildCompositePath_Behavior.java" startLine="18" startPosition="43" endLine="19" endPosition="50" />
-    <scopeInfo nodeId="8618885170173690683" fileName="BuildCompositePath_Behavior.java" startLine="23" startPosition="70" endLine="24" endPosition="181" />
-    <scopeInfo nodeId="1368030936106771193" fileName="BuildCompositePath_Behavior.java" startLine="31" startPosition="69" endLine="32" endPosition="59" />
-    <scopeInfo nodeId="3968971886499106114" fileName="BuildCompositePath_Behavior.java" startLine="38" startPosition="128" endLine="39" endPosition="247" />
-    <scopeInfo nodeId="4959435991187212276" fileName="BuildCompositePath_Behavior.java" startLine="46" startPosition="31" endLine="47" endPosition="60" />
-    <scopeInfo nodeId="3968971886499106227" fileName="BuildCompositePath_Behavior.java" startLine="50" startPosition="128" endLine="51" endPosition="206" />
-    <scopeInfo nodeId="4959435991187213578" fileName="BuildCompositePath_Behavior.java" startLine="55" startPosition="27" endLine="56" endPosition="60" />
-    <scopeInfo nodeId="4959435991187213637" fileName="BuildCompositePath_Behavior.java" startLine="59" startPosition="37" endLine="60" endPosition="28" />
-    <scopeInfo nodeId="4959435991187213691" fileName="BuildCompositePath_Behavior.java" startLine="63" startPosition="46" endLine="64" endPosition="18" />
-    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="17" startPosition="42" endLine="21" endPosition="0">
+    <nodeInfo nodeId="5589818551502505428" fileName="BuildCompositePath_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8618885170173690695" fileName="BuildCompositePath_Behavior.java" startLine="24" startPosition="70" endLine="25" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8618885170173690722" fileName="BuildCompositePath_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1368030936106771183" fileName="BuildCompositePath_Behavior.java" startLine="30" startPosition="100" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1368030936106771261" fileName="BuildCompositePath_Behavior.java" startLine="32" startPosition="69" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1368030936106771306" fileName="BuildCompositePath_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3968971886499106200" fileName="BuildCompositePath_Behavior.java" startLine="39" startPosition="128" endLine="40" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3968971886499106205" fileName="BuildCompositePath_Behavior.java" startLine="41" startPosition="5" endLine="42" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4959435991187212206" fileName="BuildCompositePath_Behavior.java" startLine="45" startPosition="107" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4959435991187212286" fileName="BuildCompositePath_Behavior.java" startLine="47" startPosition="31" endLine="48" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4959435991187212293" fileName="BuildCompositePath_Behavior.java" startLine="49" startPosition="5" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3968971886499106209" fileName="BuildCompositePath_Behavior.java" startLine="51" startPosition="128" endLine="52" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4959435991187212237" fileName="BuildCompositePath_Behavior.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4959435991187213551" fileName="BuildCompositePath_Behavior.java" startLine="54" startPosition="0" endLine="55" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4959435991187213593" fileName="BuildCompositePath_Behavior.java" startLine="56" startPosition="27" endLine="57" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4959435991187213640" fileName="BuildCompositePath_Behavior.java" startLine="60" startPosition="37" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4959435991187213695" fileName="BuildCompositePath_Behavior.java" startLine="64" startPosition="46" endLine="65" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841084130032785111" fileName="BuildCompositePath_Behavior.java" startLine="70" startPosition="87" endLine="71" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="841084130032785847" fileName="BuildCompositePath_Behavior.java" startLine="72" startPosition="55" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="841084130032785851" fileName="BuildCompositePath_Behavior.java" startLine="74" startPosition="5" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="841084130032785862" fileName="BuildCompositePath_Behavior.java" startLine="75" startPosition="0" endLine="76" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="841084130032785930" fileName="BuildCompositePath_Behavior.java" startLine="76" startPosition="99" endLine="77" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8618885170173690681" fileName="BuildCompositePath_Behavior.java" startLine="23" startPosition="73" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1368030936106771191" fileName="BuildCompositePath_Behavior.java" startLine="31" startPosition="26" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3968971886499106112" fileName="BuildCompositePath_Behavior.java" startLine="38" startPosition="79" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4959435991187212275" fileName="BuildCompositePath_Behavior.java" startLine="46" startPosition="35" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3968971886499106225" fileName="BuildCompositePath_Behavior.java" startLine="50" startPosition="0" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4959435991187213577" fileName="BuildCompositePath_Behavior.java" startLine="55" startPosition="39" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="841084130032785124" fileName="BuildCompositePath_Behavior.java" startLine="71" startPosition="199" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="18" startPosition="42" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4959435991187213636" fileName="BuildCompositePath_Behavior.java" startLine="59" startPosition="109" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4959435991187213690" fileName="BuildCompositePath_Behavior.java" startLine="63" startPosition="115" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPath_8618885170173674800#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPathToHead_3968971886499106107#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getLastSegment_1368030936106771152#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/MacroHelper;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4959435991187213598" fileName="BuildCompositePath_Behavior.java" startLine="58" startPosition="5" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="69" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFile_841084130032784919#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/build/util/Context;)Ljava/io/File;" />
+    <nodeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="44" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getHeadSuggestions_4959435991187212109#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
+    <scopeInfo nodeId="8618885170173674799" fileName="BuildCompositePath_Behavior.java" startLine="19" startPosition="43" endLine="20" endPosition="50" />
+    <scopeInfo nodeId="8618885170173690683" fileName="BuildCompositePath_Behavior.java" startLine="24" startPosition="70" endLine="25" endPosition="181" />
+    <scopeInfo nodeId="1368030936106771193" fileName="BuildCompositePath_Behavior.java" startLine="32" startPosition="69" endLine="33" endPosition="59" />
+    <scopeInfo nodeId="3968971886499106114" fileName="BuildCompositePath_Behavior.java" startLine="39" startPosition="128" endLine="40" endPosition="247" />
+    <scopeInfo nodeId="4959435991187212276" fileName="BuildCompositePath_Behavior.java" startLine="47" startPosition="31" endLine="48" endPosition="60" />
+    <scopeInfo nodeId="3968971886499106227" fileName="BuildCompositePath_Behavior.java" startLine="51" startPosition="128" endLine="52" endPosition="206" />
+    <scopeInfo nodeId="4959435991187213578" fileName="BuildCompositePath_Behavior.java" startLine="56" startPosition="27" endLine="57" endPosition="60" />
+    <scopeInfo nodeId="4959435991187213637" fileName="BuildCompositePath_Behavior.java" startLine="60" startPosition="37" endLine="61" endPosition="28" />
+    <scopeInfo nodeId="4959435991187213691" fileName="BuildCompositePath_Behavior.java" startLine="64" startPosition="46" endLine="65" endPosition="18" />
+    <scopeInfo nodeId="841084130032785125" fileName="BuildCompositePath_Behavior.java" startLine="72" startPosition="55" endLine="73" endPosition="18" />
+    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="18" startPosition="42" endLine="22" endPosition="0">
       <varInfo nodeId="8618885170173674797" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8618885170173674803" fileName="BuildCompositePath_Behavior.java" startLine="22" startPosition="73" endLine="26" endPosition="59" />
-    <scopeInfo nodeId="3968971886499106110" fileName="BuildCompositePath_Behavior.java" startLine="37" startPosition="79" endLine="41" endPosition="59" />
-    <scopeInfo nodeId="4959435991187213636" fileName="BuildCompositePath_Behavior.java" startLine="58" startPosition="109" endLine="62" endPosition="0">
+    <scopeInfo nodeId="8618885170173674803" fileName="BuildCompositePath_Behavior.java" startLine="23" startPosition="73" endLine="27" endPosition="59" />
+    <scopeInfo nodeId="3968971886499106110" fileName="BuildCompositePath_Behavior.java" startLine="38" startPosition="79" endLine="42" endPosition="59" />
+    <scopeInfo nodeId="4959435991187213636" fileName="BuildCompositePath_Behavior.java" startLine="59" startPosition="109" endLine="63" endPosition="0">
       <varInfo nodeId="4959435991187213636" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4959435991187213690" fileName="BuildCompositePath_Behavior.java" startLine="62" startPosition="115" endLine="66" endPosition="0">
+    <scopeInfo nodeId="4959435991187213690" fileName="BuildCompositePath_Behavior.java" startLine="63" startPosition="115" endLine="67" endPosition="0">
       <varInfo nodeId="4959435991187213690" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1368030936106771155" fileName="BuildCompositePath_Behavior.java" startLine="29" startPosition="100" endLine="34" endPosition="55">
+    <scopeInfo nodeId="1368030936106771155" fileName="BuildCompositePath_Behavior.java" startLine="30" startPosition="100" endLine="35" endPosition="55">
       <varInfo nodeId="1368030936106771184" varName="last" />
     </scopeInfo>
-    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8618885170173674797" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="8618885170173674797" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="841084130032784922" fileName="BuildCompositePath_Behavior.java" startLine="70" startPosition="87" endLine="77" endPosition="30">
+      <varInfo nodeId="841084130032785112" varName="basePath" />
+    </scopeInfo>
+    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1368030936106771157" varName="helper" />
       <varInfo nodeId="8618885170173674797" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4959435991187212112" fileName="BuildCompositePath_Behavior.java" startLine="44" startPosition="107" endLine="66" endPosition="30">
+    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="69" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="841084130032784960" varName="context" />
+      <varInfo nodeId="8618885170173674797" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="4959435991187212112" fileName="BuildCompositePath_Behavior.java" startLine="45" startPosition="107" endLine="67" endPosition="30">
       <varInfo nodeId="4959435991187213552" varName="file" />
       <varInfo nodeId="4959435991187212207" varName="relativePath" />
     </scopeInfo>
-    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="43" startPosition="0" endLine="68" endPosition="0">
+    <scopeInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="44" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="3968971886499110423" varName="basePath" />
       <varInfo nodeId="8618885170173674797" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="17" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior" />
-    <unitInfo nodeId="4959435991187213636" fileName="BuildCompositePath_Behavior.java" startLine="58" startPosition="82" endLine="62" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior$1" />
-    <unitInfo nodeId="4959435991187213690" fileName="BuildCompositePath_Behavior.java" startLine="62" startPosition="79" endLine="66" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior$2" />
+    <unitInfo nodeId="8618885170173674797" fileName="BuildCompositePath_Behavior.java" startLine="18" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior" />
+    <unitInfo nodeId="4959435991187213636" fileName="BuildCompositePath_Behavior.java" startLine="59" startPosition="82" endLine="63" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior$1" />
+    <unitInfo nodeId="4959435991187213690" fileName="BuildCompositePath_Behavior.java" startLine="63" startPosition="79" endLine="67" endPosition="5" unitName="jetbrains.mps.build.behavior.BuildCompositePath_Behavior$2" />
   </root>
   <root nodeId="9126048691955220764">
     <nodeInfo nodeId="9126048691955220860" fileName="BuildLayout_File_Behavior.java" startLine="15" startPosition="87" endLine="16" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

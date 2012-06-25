@@ -20,17 +20,18 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread" file="DebuggerManagerThread.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.util.Alarm" />
     <classNode dependClassName="com.sun.jdi.VMDisconnectedException" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommandQueue" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommandQueueClosedException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.IDebuggerCommand" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="java.lang.Thread" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.execution.IDebuggerManagerThread" />
   </dependency>

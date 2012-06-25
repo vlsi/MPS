@@ -4,24 +4,24 @@
     "http://plugins.intellij.net/plugin.dtd"
 >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
-  <id>jetbrains.mps.obsolete</id>
-  <name>MPS Obsolete Languages</name>
-  <description>Discontinued legacy languages from previous versions of MPS. These languages will most probably be dropped in the next release.</description>
+  <id>jetbrains.mps.build.deprecated</id>
+  <name>MPS Deprecated Build Languages</name>
+  <description>Legacy (deprecated) build languages for MPS</description>
   <version>1.0</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="3000"></idea-version>
-    
+  
   <depends>jetbrains.mps.execution.languages</depends>
   <depends>jetbrains.mps.execution.configurations</depends>
   <depends>jetbrains.mps.debugger-java</depends>
   <depends>jetbrains.mps.debugger-api</depends>
-    
+  
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.build.deprecated.execution.Execution_PluginInitializer</implementation-class>
     </component>
   </application-components>
-    
+  
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/"></mps.LanguageLibrary>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"></errorHandler>
