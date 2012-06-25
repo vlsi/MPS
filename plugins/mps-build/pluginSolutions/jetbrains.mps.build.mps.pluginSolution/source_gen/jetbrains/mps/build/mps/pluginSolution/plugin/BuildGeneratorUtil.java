@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.Computable;
@@ -43,13 +42,21 @@ public class BuildGeneratorUtil {
     return modelDescriptor.value;
   }
 
-  public static Solution createSolution(MPSProject mpsProject, String solutionName, String solutionBaseDir) {
-    IFile baseDirFile = FileSystem.getInstance().getFileByPath(solutionBaseDir);
-    if (!(baseDirFile.exists())) {
-      baseDirFile.mkdirs();
+  public static Solution createSolution(MPSProject mpsProject, String solutionName, IFile solutionBaseDirFile) {
+    String solutionBaseDirPath = solutionBaseDirFile.getPath();
+    if (!(BuildGeneratorUtil.isValidSolutionDir(solutionBaseDirFile))) {
+      int i = 0;
+      do {
+        solutionBaseDirFile = FileSystem.getInstance().getFileByPath(solutionBaseDirPath + i);
+        i++;
+      } while (!(BuildGeneratorUtil.isValidSolutionDir(solutionBaseDirFile)));
     }
-    String solutionFilePath = solutionBaseDir + File.separator + solutionName + MPSExtentions.DOT_SOLUTION;
-    final IFile solutionFile = FileSystem.getInstance().getFileByPath(solutionFilePath);
+
+    if (!(solutionBaseDirFile.exists())) {
+      solutionBaseDirFile.mkdirs();
+    }
+
+    final IFile solutionFile = solutionBaseDirFile.getDescendant(solutionName + MPSExtentions.DOT_SOLUTION);
     final Solution solution;
     if (solutionFile.exists()) {
       IModule module = ModelAccess.instance().runReadAction(new Computable<IModule>() {
@@ -68,6 +75,10 @@ public class BuildGeneratorUtil {
       solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionName, solutionFile);
     }
     return solution;
+  }
+
+  private static boolean isValidSolutionDir(IFile baseDirFile) {
+    return !(baseDirFile.getDescendant(Solution.SOLUTION_MODELS).exists()) || baseDirFile.getDescendant(Solution.SOLUTION_MODELS).getChildren().isEmpty();
   }
 
   public static Solution createSolutionFromFile(final MPSProject mpsProject, String solutionName, final IFile solutionDescriptorFile) {

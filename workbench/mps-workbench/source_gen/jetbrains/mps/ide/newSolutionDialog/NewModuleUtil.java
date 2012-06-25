@@ -115,7 +115,7 @@ public class NewModuleUtil {
     descriptor.setId(ModuleId.regular());
     final IFile modelsDir = descriptorFile.getParent().getDescendant(Solution.SOLUTION_MODELS);
     if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
-      throw new IllegalStateException("Trying to create a solution in an existing solution's directory");
+      throw new IllegalStateException("Trying to create a solution in an existing solution's directory: " + descriptorFile.getParent());
     } else {
       if (ModelAccess.instance().isInEDT()) {
         modelsDir.mkdirs();
