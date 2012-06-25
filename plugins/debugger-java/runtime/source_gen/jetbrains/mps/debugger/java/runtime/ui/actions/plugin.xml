@@ -10,12 +10,12 @@
   <version>version</version>
   <vendor url="url" logo="mock">vendor</vendor>
   <idea-version since-build="idea.ver"></idea-version>
-    
-    
+  
+  
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.ui.actions.Runtime_PluginInitializer</implementation-class>
     </component>
   </application-components>
-    
+  
 </idea-plugin>
