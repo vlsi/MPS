@@ -26,17 +26,10 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * @author Evgeny Gerashchenko
- * @since 22 March 2011
- */
 public class MPSEditorUtil {
   @Nullable
   public static SNode getCurrentEditedNode(@NotNull Project project, @NotNull MPSNodeVirtualFile file) {
-    FileEditor[] editors = FileEditorManager.getInstance(project).getEditors(file);
-    if (editors.length <= 0) return null;
-
-    FileEditor editor = editors[0];
+    FileEditor editor = FileEditorManager.getInstance(project).getSelectedEditor(file);
     if (!(editor instanceof MPSFileNodeEditor)) return null;
 
     Editor nodeEditor = ((MPSFileNodeEditor) editor).getNodeEditor();
