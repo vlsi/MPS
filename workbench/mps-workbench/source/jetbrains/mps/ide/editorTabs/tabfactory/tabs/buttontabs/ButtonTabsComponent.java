@@ -17,11 +17,12 @@ package jetbrains.mps.ide.editorTabs.tabfactory.tabs.buttontabs;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
-import jetbrains.mps.ide.relations.RelationComparator;
-import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.BaseTabsComponent;
+import jetbrains.mps.ide.relations.RelationComparator;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -29,6 +30,8 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.event.HierarchyEvent;
+import java.awt.event.HierarchyListener;
 import java.util.*;
 
 public class ButtonTabsComponent extends BaseTabsComponent {
@@ -37,7 +40,16 @@ public class ButtonTabsComponent extends BaseTabsComponent {
 
   public ButtonTabsComponent(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, JComponent editor, NodeChangeCallback callback, boolean showGrayed, IOperationContext operationContext) {
     super(baseNode, possibleTabs, editor, callback, showGrayed, null, operationContext);
-    updateTabs();
+
+    getComponent().addHierarchyListener(new HierarchyListener() {
+      public void hierarchyChanged(HierarchyEvent e) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            updateTabs();
+          }
+        });
+      }
+    });
   }
 
   public Component getComponentForTabIndex(int index) {
