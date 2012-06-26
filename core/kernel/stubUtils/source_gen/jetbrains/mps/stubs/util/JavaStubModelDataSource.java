@@ -28,6 +28,12 @@ import java.io.File;
 import java.io.IOException;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class JavaStubModelDataSource extends StubModelDataSource implements FastFindSupportProvider {
   public static final String FAST_FIND_ID = "java_stubs";
@@ -40,7 +46,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
   }
 
   protected Set<Language> getLanguagesToImport() {
-    Set<String> moduleIds = SetSequence.fromSet(new HashSet());
+    Set<String> moduleIds = SetSequence.fromSet(new HashSet<String>());
     SetSequence.fromSet(moduleIds).addElement(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleReference().getModuleId().toString());
     Iterable<Language> languages = SetSequence.fromSet(moduleIds).select(new ISelector<String, Language>() {
       public Language select(String it) {
@@ -68,7 +74,7 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
       return new HashSet<NodeDescriptor>();
     }
     HashSet res = new HashSet();
-    JavaStubsUtil.iterateClassPath(model.getModule().getModuleReference(), item, res, model.getLongName());
+    iterateClassPath(model.getModule().getModuleReference(), item, res, model.getLongName());
     return res;
   }
 
@@ -99,5 +105,43 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
 
   public FastFindSupport getFastFindSupport() {
     return FastFindSupportRegistry.getInstance().getFastFindSupport(FAST_FIND_ID);
+  }
+
+  public static void iterateClassPath(final ModuleReference module, final IClassPathItem item, Set<NodeDescriptor> result, final String pName) {
+    final SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
+    for (final String cls : item.getRootClasses(pName)) {
+      result.add(new NodeDescriptor() {
+        public String getName() {
+          return cls;
+        }
+
+        public SNode getConcept() {
+          ClassifierKind kind = item.getClassifierKind(("".equals(pName) ?
+            cls :
+            pName + "." + cls
+          ));
+          if (kind == ClassifierKind.CLASS) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+          }
+          if (kind == ClassifierKind.INTERFACE) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface");
+          }
+          if (kind == ClassifierKind.ANNOTATIONS) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation");
+          }
+          if (kind == ClassifierKind.ENUM) {
+            return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass");
+          }
+          return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
+        }
+
+        public SModelReference getModelReference() {
+          return model;
+        }
+      });
+    }
+    for (String subpack : item.getSubpackages(pName)) {
+      iterateClassPath(module, item, result, subpack);
+    }
   }
 }
