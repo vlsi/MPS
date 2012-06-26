@@ -48,6 +48,7 @@ import jetbrains.mps.make.IMakeService;
 import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.smodel.resources.ModelsToResources;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 
 public class RefactoringFacade {
@@ -304,6 +305,7 @@ public class RefactoringFacade {
             //  wait for end of make to remove member access modifier 
           }
         } catch (InterruptedException e) {
+        } catch (CancellationException ignore) {
         } catch (ExecutionException e) {
           e.printStackTrace();
         } finally {
