@@ -129,6 +129,7 @@ public abstract class AbstractModule implements IModule {
 
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
     for (Dependency dep : descriptor.getDependencies()) {
       if (!ObjectUtils.equals(dep.getModuleRef(), moduleRef)) continue;
 
@@ -151,6 +152,7 @@ public abstract class AbstractModule implements IModule {
 
   public void addUsedLanguage(ModuleReference langRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
     if (descriptor.getUsedLanguages().contains(langRef)) return;
 
     descriptor.getUsedLanguages().add(langRef);
@@ -161,6 +163,7 @@ public abstract class AbstractModule implements IModule {
 
   public void addUsedDevkit(ModuleReference devkitRef) {
     ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return;
     if (descriptor.getUsedDevkits().contains(devkitRef)) return;
 
     descriptor.getUsedDevkits().add(devkitRef);
@@ -239,7 +242,9 @@ public abstract class AbstractModule implements IModule {
   }
 
   protected Collection<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
-    return getModuleDescriptor().getStubModelEntries();
+    ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return Collections.emptySet();
+    return descriptor.getStubModelEntries();
   }
 
   //----classpath
@@ -397,7 +402,9 @@ public abstract class AbstractModule implements IModule {
     if (!isPackaged()) {
       Set<ModelRoot> visited = new HashSet<ModelRoot>();
       List<ModelRoot> remove = new ArrayList<ModelRoot>();
-      for (ModelRoot e : getModuleDescriptor().getStubModelEntries()) {
+      ModuleDescriptor descriptor = getModuleDescriptor();
+      if (descriptor == null) return;
+      for (ModelRoot e : descriptor.getStubModelEntries()) {
         if (visited.contains(e)) {
           remove.add(e);
         }
@@ -405,7 +412,7 @@ public abstract class AbstractModule implements IModule {
         visited.add(e);
       }
 
-      getModuleDescriptor().getStubModelEntries().removeAll(remove);
+      descriptor.getStubModelEntries().removeAll(remove);
     }
   }
 
@@ -535,13 +542,17 @@ public abstract class AbstractModule implements IModule {
     if ((myDescriptorFile == null) || !myDescriptorFile.exists()) {
       return false;
     }
+
+    final ModuleDescriptor descriptor = getModuleDescriptor();
+    if (descriptor == null) return false;
+
     String timestampString;
     if (ModelAccess.instance().canRead()) {
-      timestampString = getModuleDescriptor().getTimestamp();
+      timestampString = descriptor.getTimestamp();
     } else {
       timestampString = ModelAccess.instance().runReadAction(new Computable<String>() {
         public String compute() {
-          return getModuleDescriptor().getTimestamp();
+          return descriptor.getTimestamp();
         }
       });
     }
