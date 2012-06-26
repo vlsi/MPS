@@ -12025,6 +12025,29 @@
                   </node>
                 </node>
               </node>
+              <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2645375767751463014">
+                <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2645375767751463015">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2645375767751463016">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1021458544535498027" resolveInfo="dependencies" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddElementOperation" typeId="tp2q.1160612413312" id="2645375767751463017">
+                    <node role="argument" roleId="tp2q.1160612519549" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="2645375767751463018">
+                      <node role="quotedNode" roleId="tp3r.1196350785114" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6265574260762108788">
+                        <link role="script" roleId="3ior.5617550519002745380" targetNodeId="ffeo.6265574260762011003" resolveInfo="buildMakePlugin" />
+                        <node role="artifacts" roleId="3ior.4129895186893471026" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="2645375767751463036">
+                          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="ffeo.1392391688312941965" resolveInfo="mps_home" />
+                          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="2645375767751463043">
+                            <property name="linkRole" nameId="tpck.1757699476691236116" value="macro" />
+                            <node role="expression" roleId="tp3r.1196350785111" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2645375767751463045">
+                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3256085672520549758" resolveInfo="macro" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3256085672520549776">
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3256085672520549777">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3256085672520549778">
@@ -12622,12 +12645,6 @@
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562292">
                             <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.614687982853436655" resolveInfo="mps-core" />
                           </node>
-                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Comment" typeId="3ior.9126048691954557131" id="6265574260762010966">
-                            <property name="text" nameId="3ior.9126048691954700811" value="optional plugins" />
-                          </node>
-                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6265574260762108798">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.6265574260762011106" resolveInfo="mps-make.jar" />
-                          </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_Plugin" typeId="kdzh.6592112598314498926" id="3256085672520562293">
                             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3256085672520562294">
                               <property name="linkRole" nameId="tpck.1757699476691236116" value="plugin" />
@@ -12635,6 +12652,12 @@
                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3256085672520562194" resolveInfo="plugin" />
                               </node>
                             </node>
+                          </node>
+                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Comment" typeId="3ior.9126048691954557131" id="6265574260762010966">
+                            <property name="text" nameId="3ior.9126048691954700811" value="optional plugins" />
+                          </node>
+                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6265574260762108798">
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.6265574260762011106" resolveInfo="mps-make.jar" />
                           </node>
                           <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="3256085672520562296">
                             <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="3256085672520562297">
