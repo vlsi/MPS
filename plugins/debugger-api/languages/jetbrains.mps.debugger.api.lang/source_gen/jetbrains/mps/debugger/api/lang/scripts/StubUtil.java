@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.api.lang.scripts;
 
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.IModule;
@@ -14,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -33,15 +33,24 @@ public class StubUtil {
     if (model == null) {
       return false;
     }
-    return SModelStereotype.isStubModelStereotype(reference.getTargetSModelReference().getStereotype());
+    SModelReference targetSModelReference = reference.getTargetSModelReference();
+    if (targetSModelReference == null) {
+      return false;
+    }
+    return SModelStereotype.isStubModelStereotype(targetSModelReference.getStereotype());
   }
 
   @Nullable
   public static SModelDescriptor getDebuggerModelForReference(SReference reference) {
+    SModelReference targetSModelReference = reference.getTargetSModelReference();
+    if (targetSModelReference == null) {
+      return null;
+    }
+
     IModule debuggerApi = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cc7da2f6-419f-4133-a811-31fcd3295a85"));
     List<SModelDescriptor> debuggerModels = debuggerApi.getOwnModelDescriptors();
     for (SModelDescriptor debuggerModel : ListSequence.fromList(debuggerModels)) {
-      if (eq_g10q2g_a0a0c0b(debuggerModel.getLongName(), reference.getTargetSModelReference().getLongName())) {
+      if (eq_g10q2g_a0a0f0b(debuggerModel.getLongName(), targetSModelReference.getLongName())) {
         return debuggerModel;
       }
     }
@@ -90,7 +99,7 @@ public class StubUtil {
     }
   }
 
-  private static boolean eq_g10q2g_a0a0c0b(Object a, Object b) {
+  private static boolean eq_g10q2g_a0a0f0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

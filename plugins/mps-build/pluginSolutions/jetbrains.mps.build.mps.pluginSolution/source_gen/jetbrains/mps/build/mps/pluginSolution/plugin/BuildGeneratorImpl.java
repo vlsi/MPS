@@ -36,8 +36,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
-import com.intellij.openapi.vfs.VirtualFile;
-import java.io.File;
 import jetbrains.mps.project.MPSProject;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -190,10 +188,10 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     if (getCreateModel()) {
       Solution solution;
       if (getCreateSolution()) {
-        VirtualFile projectBaseDir = myProject.getBaseDir();
+        IFile projectBaseDir = FileSystem.getInstance().getFileByPath(myProject.getBaseDir().getPath());
         //  get solution 
         String solutionName = getNewSolutionName();
-        String solutionBaseDir = projectBaseDir.getPath() + File.separator + "solutions" + File.separator + solutionName;
+        IFile solutionBaseDir = projectBaseDir.getDescendant("solutions").getDescendant(solutionName);
         indicator.setText("Creating Solution...");
         solution = BuildGeneratorUtil.createSolution(getMpsProject(), solutionName, solutionBaseDir);
       } else {
