@@ -18,8 +18,8 @@
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-bolxcoaal79lq471sfxfkvgg56i2qwu" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-epqdwgxm3i05ike71az555g1jqz0af" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="2477vbyvtzsh7vo3tr3tayoxjyljmo5" />
-  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="cr2boeow4xoii4ubzkfpw3e4zxaqv5i" />
-  <dep model="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)" hash="-4jelnxphldsdoaal7d513w3h6bpko33" />
+  <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="-dzcv4hjam2x6b7h6v2vmxl4urke98ll" />
+  <dep model="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)" hash="3lxzccbwwkms99ghxykzu5na55yrs64" />
   <dep model="r:229ce18d-2bb0-4d5b-a7cd-cec65841e459(jetbrains.mps.lang.behavior.generator.template.main@generator)" hash="qoolfmn86lhxd33dis6mhm1zg0m9x6" />
   <dep model="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" hash="-9tlq0x6zv29tlhh5fji7guwhknpz8bb" />
   <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" hash="-3yz0ve0bk8m8n9yt5mgy2qfp7u5ldlh" />
@@ -81,6 +81,7 @@
     <file name="BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor.java" />
     <file name="BuildMps_IdeaPluginGroup_BehaviorDescriptor.java" />
     <file name="BuildMps_IdeaPluginModule_BehaviorDescriptor.java" />
+    <file name="BuildMps_IdeaPluginVendor_BehaviorDescriptor.java" />
     <file name="BuildMps_IdeaPlugin_BehaviorDescriptor.java" />
     <file name="BuildMps_Language_BehaviorDescriptor.java" />
     <file name="BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor.java" />
