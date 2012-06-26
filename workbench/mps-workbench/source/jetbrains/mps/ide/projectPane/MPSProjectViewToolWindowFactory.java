@@ -34,23 +34,17 @@ import jetbrains.mps.project.MPSProjectMigrationState;
  */
 public class MPSProjectViewToolWindowFactory implements ToolWindowFactory, DumbAware {
   public void createToolWindowContent(final Project project, final ToolWindow toolWindow) {
-    try {
-      MPSProjectMigrationState migrationState = project.getComponent(MPSProjectMigrationState.class);
-      if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
-        migrationState.addMigrationListener(new DEFAULT() {
-          @Override
-          public void migrationFinished(Project mpsProject) {
-            ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
-          }
-        });
-      }
-      else {
-        ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
-      }      
+    MPSProjectMigrationState migrationState = project.getComponent(MPSProjectMigrationState.class);
+    if (migrationState.isMigrationRequired() && migrationState.hasMigrationAgent()) {
+      migrationState.addMigrationListener(new DEFAULT() {
+        @Override
+        public void migrationFinished(Project mpsProject) {
+          ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
+        }
+      });
     }
-    catch (Throwable t) {
-      System.out.println("*** Oops");
-      t.printStackTrace();
+    else {
+      ((ProjectViewImpl) ProjectView.getInstance(project)).setupImpl(toolWindow);
     }
   }
 }
