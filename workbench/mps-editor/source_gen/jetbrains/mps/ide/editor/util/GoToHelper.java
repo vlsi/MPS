@@ -11,6 +11,7 @@ import jetbrains.mps.ide.navigation.NodeNavigatable;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.swing.ListCellRenderer;
+import jetbrains.mps.runtime.ModuleClassLoader;
 import javax.swing.JList;
 import com.intellij.ui.components.JBList;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
@@ -72,7 +73,8 @@ public class GoToHelper {
     GoToHelper.openTargets(point, navigatables, title, renderer);
   }
 
-  public static void openTargets(RelativePoint p, List<NodeNavigatable> targets, String title, ListCellRenderer listRenderer) {
+  private static void openTargets(RelativePoint p, List<NodeNavigatable> targets, String title, ListCellRenderer listRenderer) {
+    assert !(GoToHelper.class.getClassLoader() instanceof ModuleClassLoader) : "if this class is loaded by a reloadable classloader, this will cause memleaks. See MPS-13481";
     if (targets.isEmpty()) {
       return;
     }
