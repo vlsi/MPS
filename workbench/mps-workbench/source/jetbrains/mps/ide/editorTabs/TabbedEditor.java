@@ -63,7 +63,10 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
       SNodePointer node = getCurrentEditorComponent() == null ? null : getCurrentEditorComponent().getEditedNodePointer();
-      getComponent().remove(myTabsComponent.getComponent());
+      JComponent comp = myTabsComponent.getComponent();
+      if (comp != null) {
+        getComponent().remove(comp);
+      }
       installTabsComponent();
       if (node != null) {
         myTabsComponent.setLastNode(node);
