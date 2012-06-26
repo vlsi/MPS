@@ -35,6 +35,7 @@ public class ClassPathFactory {
 
   //--------------------------
 
+  private static final Object LOCK = new Object();
   private Map<String, RealClassPathItem> myCache = new HashMap<String, RealClassPathItem>();
   private List<CompositeClassPathItem> myCompositeClassPathItems = new ArrayList<CompositeClassPathItem>();
 
@@ -58,26 +59,28 @@ public class ClassPathFactory {
 
   @NotNull
   public RealClassPathItem createFromPath(String path, @Nullable String requestor) throws IOException {
-    if (myCache.containsKey(path)) return myCache.get(path);
+    synchronized (LOCK) {
+      if (myCache.containsKey(path)) return myCache.get(path);
 
-    boolean jared = path.contains("!/");
-    boolean exists = jared ? FileSystem.getInstance().getFileByPath(path).exists() : new File(path).exists();
-    if (!exists) {
-      String moduleString = requestor == null ? "" : (" in " + requestor.toString());
-      String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
-      LOG.debug(message, new Throwable());
-      NonExistingClassPathItem item = new NonExistingClassPathItem(path);
-      myCache.put(path, item);
-      return item;
+      boolean jared = path.contains("!/");
+      boolean exists = jared ? FileSystem.getInstance().getFileByPath(path).exists() : new File(path).exists();
+      if (!exists) {
+        String moduleString = requestor == null ? "" : (" in " + requestor.toString());
+        String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
+        LOG.debug(message, new Throwable());
+        NonExistingClassPathItem item = new NonExistingClassPathItem(path);
+        myCache.put(path, item);
+        return item;
+      }
+
+      if (!jared && new File(path).isDirectory()) {
+        myCache.put(path, new FileClassPathItem(path));
+      } else {
+        myCache.put(path, new JarFileClassPathItem(path));
+      }
+
+      return myCache.get(path);
     }
-
-    if (!jared && new File(path).isDirectory()) {
-      myCache.put(path, new FileClassPathItem(path));
-    } else {
-      myCache.put(path, new JarFileClassPathItem(path));
-    }
-
-    return myCache.get(path);
   }
 
   //--------------------------
@@ -85,20 +88,33 @@ public class ClassPathFactory {
   @UseCarefully
   //this is supposed to be used only on class reloading
   public void invalidateAll() {
-    for (RealClassPathItem p : myCache.values()) {
+    List<AbstractClassPathItem> invalidate = new ArrayList<AbstractClassPathItem>();
+
+    synchronized (LOCK) {
+      invalidate.addAll(myCache.values());
+      invalidate.addAll(myCompositeClassPathItems);
+
+      myCache = new HashMap<String, RealClassPathItem>();
+      myCompositeClassPathItems = new ArrayList<CompositeClassPathItem>();
+    }
+
+    for (AbstractClassPathItem p : invalidate) {
       p.invalidate();
     }
-    myCache.clear();
-    for (CompositeClassPathItem item : myCompositeClassPathItems) {
-      item.invalidate();
-    }
-    myCompositeClassPathItems.clear();
   }
 
   public void invalidate(Set<String> paths) {
-    for (String path : paths) {
-      if (!myCache.containsKey(path)) continue;
-      myCache.remove(path).invalidate();
+    List<AbstractClassPathItem> invalidate = new ArrayList<AbstractClassPathItem>();
+
+    synchronized (LOCK) {
+      for (String path : paths) {
+        if (!myCache.containsKey(path)) continue;
+        invalidate.add(myCache.remove(path));
+      }
+    }
+
+    for (AbstractClassPathItem p : invalidate) {
+      p.invalidate();
     }
   }
 
@@ -109,6 +125,8 @@ public class ClassPathFactory {
   }
 
   public void addCompositeClassPathItem(CompositeClassPathItem item) {
-    myCompositeClassPathItems.add(item);
+    synchronized (LOCK) {
+      myCompositeClassPathItems.add(item);
+    }
   }
 }
