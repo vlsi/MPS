@@ -196,12 +196,12 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private class MyTabRemovalListener extends ModelListener {
     protected void onImportantRootRemoved(SNodePointer node) {
-      if (!checkNodeRemoved(node)) return;
+      if (!isTabUpdateNeeded(node)) return;
       updateTabs();
     }
   }
 
-  protected abstract boolean checkNodeRemoved(SNodePointer node);
+  protected abstract boolean isTabUpdateNeeded(SNodePointer node);
 
   protected abstract void updateTabColors();
 
