@@ -16,6 +16,7 @@
 package jetbrains.mps.plugins.relations;
 
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -35,6 +36,13 @@ public abstract class RelationDescriptor implements Comparable<RelationDescripto
     return 0;
   }
 
+  /**
+   * Returns base node for a given node.
+   * Should return its argument if it is guaranteed that this node does not have a base node.
+   * Should return null if aspect is supposed to have a base node, but somewhy does not have it at the moment.
+   * @param aspect - a node to find base node for
+   * @return - base node, aspect or null (see description also)
+   */
   public SNode getBaseNode(SNode aspect) {
     return aspect;
   }
@@ -43,6 +51,7 @@ public abstract class RelationDescriptor implements Comparable<RelationDescripto
     return true;
   }
 
+  @NotNull
   public List<SNode> getNodes(SNode baseNode) {
     ArrayList<SNode> result = new ArrayList<SNode>();
     result.add(baseNode);

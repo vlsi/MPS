@@ -148,7 +148,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     myRealTabs.get(index).getSelectTabAction().actionPerformed(event);
   }
 
-  protected boolean checkNodeRemoved(SNodePointer node) {
+  protected boolean isTabUpdateNeeded(SNodePointer node) {
     if (myBaseNode.equals(node)) return false; //will be closed by idea
 
     if (getLastNode().equals(node)) {
