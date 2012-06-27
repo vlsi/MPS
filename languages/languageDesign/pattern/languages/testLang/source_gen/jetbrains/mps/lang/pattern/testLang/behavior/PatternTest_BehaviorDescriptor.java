@@ -8,7 +8,6 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_BehaviorDescriptor
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
@@ -25,7 +24,7 @@ public class PatternTest_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   }
 
   public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
-    return ITestable_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
+    return PatternTest_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
 
   public SNode virtual_getTestCase_1216134500045(SNode thisNode) {

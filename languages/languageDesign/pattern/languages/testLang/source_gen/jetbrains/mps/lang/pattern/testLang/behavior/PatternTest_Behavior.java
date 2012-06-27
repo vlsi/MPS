@@ -38,4 +38,8 @@ public class PatternTest_Behavior {
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     return "testMethod";
   }
+
+  public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
+    return true;
+  }
 }

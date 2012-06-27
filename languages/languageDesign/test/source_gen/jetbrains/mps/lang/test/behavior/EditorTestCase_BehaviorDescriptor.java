@@ -10,7 +10,6 @@ import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
-import jetbrains.mps.baseLanguage.unitTest.behavior.ITestable_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor, ITestCase_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
@@ -30,7 +29,7 @@ public class EditorTestCase_BehaviorDescriptor extends BaseConcept_BehaviorDescr
   }
 
   public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
-    return ITestable_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
+    return EditorTestCase_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
 
   public SNode virtual_getTestCase_1216134500045(SNode thisNode) {

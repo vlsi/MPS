@@ -34,4 +34,8 @@ public class EditorTestCase_Behavior {
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return SLinkOperations.getTarget(thisNode, "nodeToEdit", true) == child || SLinkOperations.getTarget(thisNode, "result", true) == child;
   }
+
+  public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
+    return true;
+  }
 }
