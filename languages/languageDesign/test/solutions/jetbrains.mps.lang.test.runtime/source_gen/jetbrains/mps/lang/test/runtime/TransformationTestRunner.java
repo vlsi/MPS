@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
+import java.util.Arrays;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.awt.Toolkit;
 import java.util.Map;
@@ -63,6 +64,9 @@ public class TransformationTestRunner {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model));
+            if (modelDescriptor == null) {
+              Assert.fail("Can't find model " + model + " in projects " + Arrays.toString(ProjectManager.getInstance().getOpenProjects()) + ".");
+            }
 
             test.setModelDescriptor(modelDescriptor);
             test.init();
