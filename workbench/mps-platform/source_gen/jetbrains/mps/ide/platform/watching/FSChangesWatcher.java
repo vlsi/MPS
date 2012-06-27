@@ -227,7 +227,7 @@ public class FSChangesWatcher implements ApplicationComponent {
       }
       if (ListSequence.fromList(events).all(new IWhereFilter<VFileEvent>() {
         public boolean accept(VFileEvent it) {
-          return it.isFromRefresh();
+          return !(it.isFromRefresh());
         }
       })) {
         return;
@@ -239,7 +239,7 @@ public class FSChangesWatcher implements ApplicationComponent {
         }
         ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
           public boolean accept(VFileEvent it) {
-            return !(it.isFromRefresh());
+            return it.isFromRefresh();
           }
         }).visitAll(new IVisitor<VFileEvent>() {
           public void visit(VFileEvent it) {
