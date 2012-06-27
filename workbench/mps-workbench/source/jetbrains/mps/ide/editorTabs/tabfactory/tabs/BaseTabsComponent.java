@@ -23,13 +23,13 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import gnu.trove.THashMap;
-import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.editorTabs.tabfactory.TabsComponent;
 import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
+import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -149,9 +149,13 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
     Map<RelationDescriptor, List<SNode>> result = new THashMap<RelationDescriptor, List<SNode>>();
     getTabRemovalListener().clearAspects();
+
+    SNode baseNode = myBaseNode.getNode();
+    if (baseNode == null) return result;
+
     for (RelationDescriptor d : myPossibleTabs) {
       List<SNode> nodes = new ArrayList<SNode>();
-      for (SNode n : d.getNodes(myBaseNode.getNode())) {
+      for (SNode n : d.getNodes(baseNode)) {
         if (n == null) continue;
         nodes.add(n);
       }
