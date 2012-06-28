@@ -5,18 +5,21 @@ package jetbrains.mps.workbench.dialogs.project.components.parts.creators;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 
 public class ModelRootChooser implements Computable<ModelRoot> {
   private final IBindedDialog myOwner;
+  private IFile myBundleHome;
 
-  public ModelRootChooser(IBindedDialog owner) {
+  public ModelRootChooser(IBindedDialog owner, IFile bundleHome) {
     myOwner = owner;
+    myBundleHome = bundleHome;
   }
 
   public ModelRoot compute() {
     TreeFileChooser chooser = new TreeFileChooser();
+    chooser.setInitialFile(myBundleHome);
     chooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
     IFile dir = chooser.showDialog(myOwner.getMainComponent());
     if (dir == null) {

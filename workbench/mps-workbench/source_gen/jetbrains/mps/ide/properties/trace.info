@@ -17,8 +17,8 @@
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="38" startPosition="115" endLine="39" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="39" startPosition="76" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="40" startPosition="70" endLine="41" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="41" startPosition="133" endLine="42" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="42" startPosition="155" endLine="43" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="41" startPosition="133" endLine="42" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="42" startPosition="174" endLine="43" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="43" startPosition="74" endLine="44" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="44" startPosition="114" endLine="45" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="45" startPosition="76" endLine="46" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -114,8 +114,8 @@
     <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="142" startPosition="115" endLine="143" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="143" startPosition="76" endLine="144" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="144" startPosition="70" endLine="145" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="145" startPosition="133" endLine="146" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="146" startPosition="155" endLine="147" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="145" startPosition="133" endLine="146" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="146" startPosition="174" endLine="147" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="147" startPosition="74" endLine="148" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="148" startPosition="114" endLine="149" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="149" startPosition="76" endLine="150" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -220,8 +220,8 @@
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="262" startPosition="115" endLine="263" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="263" startPosition="76" endLine="264" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="264" startPosition="70" endLine="265" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="265" startPosition="133" endLine="266" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="266" startPosition="155" endLine="267" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="265" startPosition="133" endLine="266" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="266" startPosition="174" endLine="267" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="267" startPosition="74" endLine="268" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="268" startPosition="114" endLine="269" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="269" startPosition="76" endLine="270" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -672,8 +672,8 @@
     <nodeInfo nodeId="7355563316698764051" fileName="StandardComponents.java" startLine="212" startPosition="63" endLine="213" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7355563316698764024" fileName="StandardComponents.java" startLine="213" startPosition="36" endLine="214" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="221" startPosition="39" endLine="222" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="222" startPosition="95" endLine="223" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="223" startPosition="78" endLine="224" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="222" startPosition="95" endLine="223" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="223" startPosition="90" endLine="224" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7355563316698764107" fileName="StandardComponents.java" startLine="224" startPosition="64" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="225" startPosition="0" endLine="226" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7355563316698764098" fileName="StandardComponents.java" startLine="226" startPosition="109" endLine="227" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -911,7 +911,7 @@
     <nodeInfo nodeId="7355563316698763895" fileName="StandardComponents.java" startLine="119" startPosition="63" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/workbench/dialogs/project/components/parts/boundpanels/BoundListPanel;" />
     <nodeInfo nodeId="4060390951635973269" fileName="StandardComponents.java" startLine="187" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSourcePathsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="7355563316698764023" fileName="StandardComponents.java" startLine="202" startPosition="118" endLine="216" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7355563316698764097" fileName="StandardComponents.java" startLine="219" startPosition="123" endLine="233" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7355563316698764097" fileName="StandardComponents.java" startLine="219" startPosition="147" endLine="233" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7355563316698764202" fileName="StandardComponents.java" startLine="263" startPosition="179" endLine="277" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4060390951635974723" fileName="StandardComponents.java" startLine="445" startPosition="0" endLine="459" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createProjectModulesPathsList#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="7355563316698763894" fileName="StandardComponents.java" startLine="118" startPosition="172" endLine="133" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -920,7 +920,7 @@
     <nodeInfo nodeId="4060390951635973221" fileName="StandardComponents.java" startLine="171" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createGeneratorsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="417" startPosition="87" endLine="433" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doEdit#()V" />
     <nodeInfo nodeId="1809539929827629313" fileName="StandardComponents.java" startLine="201" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createDepsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
-    <nodeInfo nodeId="1809539929827629486" fileName="StandardComponents.java" startLine="218" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRootsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
+    <nodeInfo nodeId="1809539929827629486" fileName="StandardComponents.java" startLine="218" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createModelRootsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;Ljetbrains/mps/vfs/IFile;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="1809539929827629623" fileName="StandardComponents.java" startLine="262" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createStubRootsPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;ZLjava/lang/String;Ljava/util/List;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="281" startPosition="80" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/workbench/dialogs/project/components/parts/boundpanels/BoundTablePanel;" />
     <nodeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="416" startPosition="71" endLine="433" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1142,7 +1142,7 @@
       <varInfo nodeId="4060390951635973272" varName="owner" />
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629323" fileName="StandardComponents.java" startLine="202" startPosition="118" endLine="216" endPosition="15" />
-    <scopeInfo nodeId="1809539929827629496" fileName="StandardComponents.java" startLine="219" startPosition="123" endLine="233" endPosition="15" />
+    <scopeInfo nodeId="1809539929827629496" fileName="StandardComponents.java" startLine="219" startPosition="147" endLine="233" endPosition="15" />
     <scopeInfo nodeId="1809539929827629633" fileName="StandardComponents.java" startLine="263" startPosition="179" endLine="277" endPosition="15" />
     <scopeInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="282" startPosition="39" endLine="296" endPosition="37">
       <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a0a0a0a0l" />
@@ -1189,6 +1189,7 @@
       <varInfo nodeId="1809539929827629316" varName="owner" />
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629486" fileName="StandardComponents.java" startLine="218" startPosition="0" endLine="235" endPosition="0">
+      <varInfo nodeId="8126194856994007471" varName="bundleHome" />
       <varInfo nodeId="1809539929827629491" varName="caption" />
       <varInfo nodeId="1809539929827629493" varName="list" />
       <varInfo nodeId="1809539929827629489" varName="owner" />
