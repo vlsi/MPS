@@ -106,6 +106,7 @@ public class SModelUtil {
     return SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.AggregationConceptLink"), "target", true);
   }
 
+  @NotNull
   public static SNode getBaseConcept() {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
   }

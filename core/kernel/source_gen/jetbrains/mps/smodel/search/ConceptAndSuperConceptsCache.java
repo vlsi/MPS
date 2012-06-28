@@ -4,8 +4,10 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.KeyProducer;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.HashSet;
@@ -22,12 +24,14 @@ import java.util.List;
  */
 /*package*/ class ConceptAndSuperConceptsCache extends AbstractCache {
   private static final KeyProducer keyProducer = new KeyProducer();
+  private static final Logger LOG = Logger.getLogger(ConceptAndSuperConceptsCache.class);
   private static final CachesManager.CacheCreator<SNode> CREATOR = new CachesManager.CacheCreator<SNode>() {
     public AbstractCache create(Object key, SNode element) {
       return new ConceptAndSuperConceptsCache(key, element);
     }
   };
 
+  @NotNull
   private SNode myTopConcept;
 
   protected ConceptAndSuperConceptsCache(Object key, SNode topConcept) {
@@ -42,8 +46,11 @@ import java.util.List;
       //  http://youtrack.jetbrains.net/issue/MPS-8362 
       //  http://youtrack.jetbrains.net/issue/MPS-8556 
       SModelDescriptor descriptor = concept.getModel().getModelDescriptor();
-      assert descriptor != null : getAssertionMessage(element, concept);
-      dependsOnModel.add(descriptor);
+      if (descriptor == null) {
+        LOG.error(getAssertionMessage(element, concept));
+      } else {
+        dependsOnModel.add(descriptor);
+      }
     }
     return dependsOnModel;
   }
@@ -62,6 +69,7 @@ import java.util.List;
     return "Model descriptor is null for concept: " + concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil_new: " + conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + ") same concept from Scope:" + conceptFromScope + "(" + System.identityHashCode(conceptFromScope) + "), element: " + element + "(" + System.identityHashCode(element) + "), myTopConcept: " + myTopConcept + "(" + System.identityHashCode(element) + ")";
   }
 
+  @NotNull
   public SNode getTopConcept() {
     return myTopConcept;
   }
@@ -102,6 +110,9 @@ import java.util.List;
   }
 
   public static ConceptAndSuperConceptsCache getInstance(SNode topConcept) {
+    if (topConcept == null) {
+      return null;
+    }
     Object key = keyProducer.createKey(topConcept);
     return (ConceptAndSuperConceptsCache) CachesManager.getInstance().getCache(key, topConcept, CREATOR);
   }
