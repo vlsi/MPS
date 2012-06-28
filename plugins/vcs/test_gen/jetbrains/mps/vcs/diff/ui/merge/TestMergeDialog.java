@@ -75,7 +75,7 @@ public class TestMergeDialog {
     final SModel[] models = new SModel[3];
     String resultFile;
     if (args.length == 2 || args.length == 1) {
-      final SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]), MergeVersion.values());
+      final SModel[] zipped = MergeBackupUtil.loadZippedModels(new File(args[0]), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
       models[0] = zipped[0];
       models[1] = zipped[1];
       models[2] = zipped[2];
