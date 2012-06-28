@@ -83,7 +83,7 @@ public class TestMergeAction_Action extends BaseAction {
           String resString;
           SModel[] zipped;
           try {
-            zipped = MergeBackupUtil.loadZippedModels(new File(vFile.getCanonicalPath()), MergeVersion.values());
+            zipped = MergeBackupUtil.loadZippedModels(new File(vFile.getCanonicalPath()), new MergeVersion[]{MergeVersion.BASE, MergeVersion.MINE, MergeVersion.REPOSITORY});
             resString = File.createTempFile("mpstmp", ".result").getAbsolutePath();
           } catch (Exception e) {
             e.printStackTrace();
