@@ -107,6 +107,9 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
   }
 
   private void installTabsComponent() {
+    if (myTabsComponent != null) {
+      myTabsComponent.dispose();
+    }
     myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getComponent(), new NodeChangeCallback() {
         public void changeNode(SNode newNode) {
           showNodeInternal(newNode, !newNode.isRoot(), true);

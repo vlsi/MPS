@@ -198,11 +198,8 @@ public class MPSFileNodeEditor extends UserDataHolderBase implements DocumentsEd
 
   public void recreateEditor() {
     if (myProject.isDisposed() || !isValid()) return;
-    //if (myNodeEditor instanceof NodeEditor) return;
     IOperationContext context = createOperationContext();
-    if (context == null) {
-      return;
-    }
+    if (context == null) return;
 
     myComponent.removeAll();
 
