@@ -19,24 +19,24 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 
 public class ModelLoadResult {
-	private ModelLoadingState state;
-	private SModel model;
+  private ModelLoadingState state;
+  private SModel model;
 
-	public ModelLoadResult(@NotNull SModel model, ModelLoadingState state) {
-		this.model = model;
-		this.state = state;
-	}
+  public ModelLoadResult(@NotNull SModel model, ModelLoadingState state) {
+    this.model = model;
+    this.state = state;
+  }
 
-	public ModelLoadingState getState() {
-		return state;
-	}
+  public ModelLoadingState getState() {
+    return state;
+  }
 
-	public void setState(ModelLoadingState state) {
-		this.state = state;
-	}
+  public void setState(ModelLoadingState state) {
+    this.state = state;
+  }
 
-	@NotNull
-	public SModel getModel() {
-		return model;
-	}
+  @NotNull
+  public SModel getModel() {
+    return model;
+  }
 }
