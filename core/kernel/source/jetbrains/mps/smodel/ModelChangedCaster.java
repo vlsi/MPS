@@ -20,30 +20,30 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 @Deprecated
 public class ModelChangedCaster {
-	private List<NodeModelChangedListener> myListeners = new CopyOnWriteArrayList<NodeModelChangedListener>();
-	private static ModelChangedCaster ourInstance = new ModelChangedCaster();
+  private List<NodeModelChangedListener> myListeners = new CopyOnWriteArrayList<NodeModelChangedListener>();
+  private static ModelChangedCaster ourInstance = new ModelChangedCaster();
 
-	private ModelChangedCaster() {
-	}
+  private ModelChangedCaster() {
+  }
 
-	@Deprecated
-	public static ModelChangedCaster getInstance() {
-		return ourInstance;
-	}
+  @Deprecated
+  public static ModelChangedCaster getInstance() {
+    return ourInstance;
+  }
 
-	void fireModelChanged(SNode node, SModel oldModel) {
-		for (NodeModelChangedListener listener : myListeners) {
-			listener.modelChanged(node, oldModel);
-		}
-	}
+  void fireModelChanged(SNode node, SModel oldModel) {
+    for (NodeModelChangedListener listener : myListeners) {
+      listener.modelChanged(node, oldModel);
+    }
+  }
 
-	@Deprecated
-	public synchronized void addListener(NodeModelChangedListener listener) {
-		myListeners.add(listener);
-	}
+  @Deprecated
+  public synchronized void addListener(NodeModelChangedListener listener) {
+    myListeners.add(listener);
+  }
 
-	@Deprecated
-	public synchronized void removeListener(NodeModelChangedListener listener) {
-		myListeners.remove(listener);
-	}
+  @Deprecated
+  public synchronized void removeListener(NodeModelChangedListener listener) {
+    myListeners.remove(listener);
+  }
 }

@@ -31,69 +31,69 @@ import org.jetbrains.annotations.Nullable;
  * This class has an aim to synchronize all loading processes
  */
 public abstract class UpdateableModel {
-	private final SModelDescriptor myDescriptor;
+  private final SModelDescriptor myDescriptor;
 
-	private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
-	private volatile SModel myModel = null;
+  private volatile ModelLoadingState myState = ModelLoadingState.NOT_LOADED;
+  private volatile SModel myModel = null;
 
-	public UpdateableModel(SModelDescriptor descriptor) {
-		myDescriptor = descriptor;
-	}
+  public UpdateableModel(SModelDescriptor descriptor) {
+    myDescriptor = descriptor;
+  }
 
-	public final ModelLoadingState getState() {
-		return myState;
-	}
+  public final ModelLoadingState getState() {
+    return myState;
+  }
 
-	//null in parameter means "give me th current model, don't attempt to load"
-	//with null parameter, no synch should occur
-	public final SModel getModel(@Nullable ModelLoadingState state) {
-		if (state == null) return myModel;
-		if (!ModelAccess.instance().canWrite()) {
-			synchronized (this) {
-				ensureLoadedTo(state);
-			}
-		} else {
-			ensureLoadedTo(state);
-		}
-		return myModel;
-	}
+  //null in parameter means "give me th current model, don't attempt to load"
+  //with null parameter, no synch should occur
+  public final SModel getModel(@Nullable ModelLoadingState state) {
+    if (state == null) return myModel;
+    if (!ModelAccess.instance().canWrite()) {
+      synchronized (this) {
+        ensureLoadedTo(state);
+      }
+    } else {
+      ensureLoadedTo(state);
+    }
+    return myModel;
+  }
 
-	private void ensureLoadedTo(final ModelLoadingState state) {
-		if (state.ordinal() <= myState.ordinal()) return;
-		myState = state;  //this is for elimination of infinite recursion
+  private void ensureLoadedTo(final ModelLoadingState state) {
+    if (state.ordinal() <= myState.ordinal()) return;
+    myState = state;  //this is for elimination of infinite recursion
 
-		ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
-			public ModelLoadResult compute() {
-				return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
-					public ModelLoadResult compute() {
-						return doLoad(state, myModel);
-					}
-				});
-			}
-		});
-		if (myModel != null) {
-			assert res.getModel() == myModel;
-		} else {
-			myModel = res.getModel();
-			myModel.setModelDescriptor(myDescriptor);
-		}
-		myState = res.getState();
-	}
+    ModelLoadResult res = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<ModelLoadResult>() {
+      public ModelLoadResult compute() {
+        return UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult>() {
+          public ModelLoadResult compute() {
+            return doLoad(state, myModel);
+          }
+        });
+      }
+    });
+    if (myModel != null) {
+      assert res.getModel() == myModel;
+    } else {
+      myModel = res.getModel();
+      myModel.setModelDescriptor(myDescriptor);
+    }
+    myState = res.getState();
+  }
 
-	protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current);
+  protected abstract ModelLoadResult doLoad(ModelLoadingState state, @Nullable SModel current);
 
-	public void replaceWith(SModel newModel, ModelLoadingState state) {
-		if (!ModelAccess.instance().canWrite()) {
-			synchronized (this) {
-				doReplace(newModel, state);
-			}
-		} else {
-			doReplace(newModel, state);
-		}
-	}
+  public void replaceWith(SModel newModel, ModelLoadingState state) {
+    if (!ModelAccess.instance().canWrite()) {
+      synchronized (this) {
+        doReplace(newModel, state);
+      }
+    } else {
+      doReplace(newModel, state);
+    }
+  }
 
-	private void doReplace(SModel newModel, ModelLoadingState state) {
-		myModel = newModel;
-		myState = state;
-	}
+  private void doReplace(SModel newModel, ModelLoadingState state) {
+    myModel = newModel;
+    myState = state;
+  }
 }
