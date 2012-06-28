@@ -22,36 +22,36 @@ import org.jetbrains.annotations.NotNull;
  * Aug 28, 2007
  */
 public class KeyProducer {
-	public KeyProducer() {
-	}
+  public KeyProducer() {
+  }
 
-	public Object createKey(@NotNull Object innerKey) {
-		return new Key(hashCode(), innerKey);
-	}
+  public Object createKey(@NotNull Object innerKey) {
+    return new Key(hashCode(), innerKey);
+  }
 
-	private static class Key {
-		private int myProducerHashCode;
-		private Object myInnerKey;
+  private static class Key {
+    private int myProducerHashCode;
+    private Object myInnerKey;
 
-		private Key(int producerHashCode, Object innerKey) {
-			myProducerHashCode = producerHashCode;
-			myInnerKey = innerKey;
-		}
+    private Key(int producerHashCode, Object innerKey) {
+      myProducerHashCode = producerHashCode;
+      myInnerKey = innerKey;
+    }
 
-		public boolean equals(Object o) {
-			if (this == o) return true;
-			if (false == o instanceof Key) return false;
-			Key key = (Key) o;
-			return myProducerHashCode == key.myProducerHashCode &&
-				myInnerKey.equals(key.myInnerKey);
-		}
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (false == o instanceof Key) return false;
+      Key key = (Key) o;
+      return myProducerHashCode == key.myProducerHashCode &&
+        myInnerKey.equals(key.myInnerKey);
+    }
 
-		public int hashCode() {
-			return 31 * myProducerHashCode + myInnerKey.hashCode();
-		}
+    public int hashCode() {
+      return 31 * myProducerHashCode + myInnerKey.hashCode();
+    }
 
-		public String toString() {
-			return myProducerHashCode + "/" + myInnerKey.toString();
-		}
-	}
+    public String toString() {
+      return myProducerHashCode + "/" + myInnerKey.toString();
+    }
+  }
 }

@@ -32,34 +32,34 @@ import java.util.HashSet;
  */
 public class MPSCompilerComponent implements ProjectComponent {
 
-	private Project project;
+  private Project project;
 
-	public MPSCompilerComponent(Project project) {
-		this.project = project;
-	}
+  public MPSCompilerComponent(Project project) {
+    this.project = project;
+  }
 
-	public void projectOpened() {
-		CompilerManager compilerManager = CompilerManager.getInstance(project);
-		compilerManager.addCompilableFileType(MPSFileTypeFactory.MODEL_FILE_TYPE);
+  public void projectOpened() {
+    CompilerManager compilerManager = CompilerManager.getInstance(project);
+    compilerManager.addCompilableFileType(MPSFileTypeFactory.MODEL_FILE_TYPE);
 
-		for (MPSCompiler2 compiler : compilerManager.getCompilers(MPSCompiler2.class)) {
-		  compilerManager.removeCompiler(compiler);
-		}
-        compilerManager.addCompiler(new MPSCompiler2(project));
-	}
+    for (MPSCompiler2 compiler : compilerManager.getCompilers(MPSCompiler2.class)) {
+      compilerManager.removeCompiler(compiler);
+    }
+    compilerManager.addCompiler(new MPSCompiler2(project));
+  }
 
-	public void projectClosed() {
-	}
+  public void projectClosed() {
+  }
 
-	public void initComponent() {
-	}
+  public void initComponent() {
+  }
 
-	public void disposeComponent() {
-	}
+  public void disposeComponent() {
+  }
 
-	@NotNull
-	public String getComponentName() {
-		return "MPS Compiler Component";
-	}
+  @NotNull
+  public String getComponentName() {
+    return "MPS Compiler Component";
+  }
 }
 

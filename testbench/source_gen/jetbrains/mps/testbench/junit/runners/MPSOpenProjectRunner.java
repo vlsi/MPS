@@ -13,11 +13,11 @@ import org.apache.log4j.Level;
 import jetbrains.mps.testbench.Testbench;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.TestMain;
-import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.util.PathUtil;
+import java.io.File;
 import com.intellij.openapi.application.PathMacros;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -59,7 +59,7 @@ public class MPSOpenProjectRunner extends Runner {
     if (ourMPSProject != null) {
       throw new InitializationError("One MPS project was already openned in this java process: " + ourMPSProject.getName() + " (on trying to open: " + projectPath + ")");
     }
-    ourMPSProject = TestMain.loadProject(new File(projectPath));
+    ourMPSProject = TestMain.PROJECT_CONTAINER.getProject(projectPath);
 
     // <node> 
     // <node> 
