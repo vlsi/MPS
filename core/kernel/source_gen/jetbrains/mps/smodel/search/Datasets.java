@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.DataSet;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import java.util.LinkedHashSet;
@@ -46,7 +47,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
   /*package*/ Datasets() {
   }
 
-  private static void collectImplementedAndExtended(SNode top, Set<SNode> result) {
+  private static void collectImplementedAndExtended(@NotNull SNode top, Set<SNode> result) {
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
     frontier.add(top);
@@ -84,7 +85,8 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
   /*package*/ static class ConceptsDataSet extends DataSet {
     public static final String ID = "CONCEPTS_DATASET";
 
-    private SNode myTopConcept;
+    @NotNull
+    private final SNode myTopConcept;
     private SNode[] myConcepts;
     private Set<SNode> myDependsOnNodes;
 
@@ -112,11 +114,17 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
         myDependsOnNodes.add(concept);
         if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(concept)) {
           for (SNode n : SNodeUtil.getInterfaceConceptDeclaration_ExtendsReferenceNodes(concept)) {
+            if (n == null) {
+              continue;
+            }
             myDependsOnNodes.add(n);
           }
         } else
         if (SNodeUtil.isInstanceOfConceptDeclaration(concept)) {
           for (SNode n : SNodeUtil.getConceptDeclaration_ImplementsReferenceNodes(concept)) {
+            if (n == null) {
+              continue;
+            }
             myDependsOnNodes.add(n);
           }
         }
@@ -292,7 +300,7 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
       SNode[] concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       FlattenIterable<SNode> allLinks = new FlattenIterable<SNode>(new ArrayList<Iterable<SNode>>(concepts.length));
       for (SNode concept : concepts) {
-        Iterable<SNode> list = SNodeUtil.getConcept_LinkDeclarations(concept);
+        Iterable<SNode> list = SNodeUtil.getConcept_LinkDeclarations((SNode) concept);
         allLinks.add(list);
         for (SNode link : list) {
           String role1 = SModelUtil.getLinkDeclarationRole(link);
