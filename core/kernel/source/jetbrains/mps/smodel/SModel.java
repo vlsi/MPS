@@ -128,7 +128,7 @@ public class SModel {
 	//---------incremental load--------
 
 	protected void enforceFullLoad() {
-		if (!(myModelDescriptor instanceof DefaultSModelDescriptor) || fullLoadUpdateMode) return;
+		if (!(myModelDescriptor instanceof DefaultSModelDescriptor)) return;
 		((DefaultSModelDescriptor) myModelDescriptor).getUpdateableModel().getModel(ModelLoadingState.FULLY_LOADED);
 	}
 
