@@ -17,11 +17,11 @@
 package jetbrains.mps.idea.debugger;
 
 import com.intellij.debugger.SourcePosition;
+import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
+import com.intellij.psi.*;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.ModelAccess;
@@ -69,7 +69,30 @@ public class MpsSourcePosition extends SourcePosition {
 
   @Override
   public PsiElement getElementAt() {
-    return null;
+    PsiFile psiFile = getFile();
+    Document document = PsiDocumentManager.getInstance(myProject).getDocument(psiFile);
+    if (document == null) {
+      return null;
+    }
+    int line = getLine();
+    if (line < 0) {
+      return psiFile;
+    }
+
+    int startOffset = document.getLineStartOffset(line);
+    PsiElement element = psiFile.findElementAt(startOffset);
+    for (; element instanceof PsiWhiteSpace || element instanceof PsiComment; element = psiFile.findElementAt(startOffset)) {
+      startOffset = element.getTextRange().getEndOffset();
+    }
+
+    if (element != null && element.getParent() instanceof PsiForStatement) {
+      PsiStatement initialization = ((PsiForStatement) element.getParent()).getInitialization();
+      if (initialization != null){
+        element = initialization;
+      }
+    }
+
+    return element;
   }
 
   @Override
@@ -80,6 +103,10 @@ public class MpsSourcePosition extends SourcePosition {
 
   @Override
   public int getOffset() {
+    PsiElement psiElement = getElementAt();
+    if (psiElement != null) {
+      return psiElement.getTextOffset();
+    }
     return 0;
   }
 
