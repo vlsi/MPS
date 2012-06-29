@@ -15,19 +15,18 @@ public class AddMissingDependencyAction extends BaseAction {
 
   protected static Log log = LogFactory.getLog(AddMissingDependencyAction.class);
 
-  public AddMissingDependencyAction(){
+  public AddMissingDependencyAction() {
     super("Add Missing Dependency", "", null);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
 
 
-
   @Override
   protected void doExecute(AnActionEvent e, Map<String, Object> params) {
     try {
       IScope scope = e.getData(MPSCommonDataKeys.SCOPE);
-      if (scope == null){
+      if (scope == null) {
         return;
       }
 
@@ -42,10 +41,10 @@ public class AddMissingDependencyAction extends BaseAction {
         if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
           SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
           IOperationContext context = e.getData(MPSCommonDataKeys.OPERATION_CONTEXT);
-          if (context == null){
+          if (context == null) {
             return;
           }
-          ModuleDependencyFacade.addModuleDependency(context.getModule(),sm.getModule());
+          ModuleDependencyFacade.addModuleDependency(context.getModule(), sm.getModule());
         }
       }
     } catch (Throwable t) {
@@ -58,17 +57,22 @@ public class AddMissingDependencyAction extends BaseAction {
 
   @Override
   public void doUpdate(AnActionEvent e, Map<String, Object> params) {
-    boolean enabled = isApplicable(e);
-    this.setEnabledState(e.getPresentation(), enabled);
+    try {
+      boolean enabled = isApplicable(e);
+      this.setEnabledState(e.getPresentation(), enabled);
+    } catch (Throwable t) {
+      if (log.isErrorEnabled()) {
+        log.error("User's action doUpdate method failed. Action:" + "RenameMethod", t);
+      }
+      this.disable(e.getPresentation());
+    }
   }
-
-
 
 
   public boolean isApplicable(AnActionEvent e) {
     IScope scope = e.getData(MPSCommonDataKeys.SCOPE);
 
-    if (scope == null){
+    if (scope == null) {
       return false;
     }
 
