@@ -905,7 +905,7 @@ public final class SNode {
     }
     SNode oldReferent = null;
     if (!toDelete.isEmpty()) {
-      oldReferent = toDelete.get(0).getTargetNode();
+      oldReferent = toDelete.get(0).getTargetNodeSilently();
     }
     if (toDelete.size() > 1) {
       LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
