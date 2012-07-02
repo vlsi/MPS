@@ -499,40 +499,6 @@
     </scopeInfo>
     <unitInfo nodeId="1137418540378" fileName="LinkPatternVariableDeclaration.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration" />
   </root>
-  <root nodeId="1149610113525">
-    <nodeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="7" startPosition="37" endLine="8" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PATTERN" />
-    <nodeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="10" startPosition="69" endLine="11" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="14" startPosition="56" endLine="15" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setPattern#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPattern#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="10" startPosition="69" endLine="11" endPosition="64" />
-    <scopeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="14" startPosition="56" endLine="15" endPosition="73" />
-    <scopeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1149610113525" varName="source" />
-      <varInfo nodeId="1149610113525" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1149610113525" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1149610113525" fileName="Pattern_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.Pattern_AnnotationLink" />
-  </root>
-  <root nodeId="1152030745648">
-    <nodeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="7" startPosition="39" endLine="8" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="AS_PATTERN" />
-    <nodeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="10" startPosition="73" endLine="11" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="14" startPosition="60" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setAsPattern#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAsPattern#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="10" startPosition="73" endLine="11" endPosition="69" />
-    <scopeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="14" startPosition="60" endLine="15" endPosition="80" />
-    <scopeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1152030745648" varName="source" />
-      <varInfo nodeId="1152030745648" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1152030745648" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1152030745648" fileName="AsPattern_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.pattern.structure.AsPattern_AnnotationLink" />
-  </root>
   <root nodeId="1649655856141352248">
     <nodeInfo nodeId="1649655856141352248" fileName="InsertAfterPosition.java" startLine="10" startPosition="57" endLine="11" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1649655856141352248" fileName="InsertAfterPosition.java" startLine="13" startPosition="42" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

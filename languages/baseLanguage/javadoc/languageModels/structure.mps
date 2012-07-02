@@ -21,13 +21,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="tag" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5349172909345530173" resolveInfo="BaseBlockDocTag" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="5349172909345532723">
-      <property name="role" nameId="tpce.1204740973143" value="methodDocComment" />
-      <property name="stereotype" nameId="tpce.1149608445162" value="node" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annot" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="5349172909345532724" resolveInfo="MethodDocComment" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5349172909345532724">
       <property name="name" nameId="tpck.1169194664001" value="MethodDocComment" />
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
@@ -86,21 +79,9 @@
       <property name="name" nameId="tpck.1169194664001" value="FieldDocComment" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5349172909345501395" resolveInfo="BaseDocComment" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="6832197706140958194">
-      <property name="role" nameId="tpce.1204740973143" value="fieldDocComment" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annot" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpee.1068390468200" resolveInfo="FieldDeclaration" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="6832197706140896242" resolveInfo="FieldDocComment" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2068944020170241612">
       <property name="name" nameId="tpck.1169194664001" value="ClassifierDocComment" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5349172909345501395" resolveInfo="BaseDocComment" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="2068944020170372969">
-      <property name="role" nameId="tpce.1204740973143" value="classifierDocComment" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annot" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="2068944020170241612" resolveInfo="ClassifierDocComment" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8970989240999019142">
       <property name="name" nameId="tpck.1169194664001" value="CommentLinePart" />
@@ -179,12 +160,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="reference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="5562345046718956738" resolveInfo="BaseVariableDocReference" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="4021391592916212750">
-      <property name="role" nameId="tpce.1204740973143" value="staticFieldDocComment" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annot" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="6832197706140896242" resolveInfo="FieldDocComment" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6612597108003615641">
       <property name="name" nameId="tpck.1169194664001" value="HTMLElement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="tag" />
@@ -242,7 +217,6 @@
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
   </root>
-  <root id="5349172909345532723" />
   <root id="5349172909345532724">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8465538089690917625">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -362,7 +336,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.5169995583184591164" resolveInfo="role" />
     </node>
   </root>
-  <root id="6832197706140958194" />
   <root id="2068944020170241612">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5216537374825317530">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpck.5169995583184591169" resolveInfo="attributed" />
@@ -379,7 +352,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8465538089690881930" resolveInfo="ParameterBlockDocTag" />
     </node>
   </root>
-  <root id="2068944020170372969" />
   <root id="8970989240999019142">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="8970989240999019146">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
@@ -536,7 +508,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1070462154015" resolveInfo="StaticFieldDeclaration" />
     </node>
   </root>
-  <root id="4021391592916212750" />
   <root id="6612597108003615641">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6612597108003615643">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

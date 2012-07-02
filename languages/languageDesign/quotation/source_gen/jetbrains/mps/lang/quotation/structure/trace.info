@@ -436,59 +436,6 @@
     </scopeInfo>
     <unitInfo nodeId="1196350785118" fileName="ListAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ListAntiquotation" />
   </root>
-  <root nodeId="1196350785119">
-    <nodeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="7" startPosition="43" endLine="8" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ANTIQUOTATION" />
-    <nodeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="10" startPosition="81" endLine="11" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="14" startPosition="68" endLine="15" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="10" startPosition="81" endLine="11" endPosition="76" />
-    <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="14" startPosition="68" endLine="15" endPosition="91" />
-    <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1196350785119" varName="source" />
-      <varInfo nodeId="1196350785119" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1196350785119" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1196350785119" fileName="Antiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.Antiquotation_AnnotationLink" />
-  </root>
-  <root nodeId="1196350785120">
-    <nodeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="7" startPosition="47" endLine="8" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LIST_ANTIQUOTATION" />
-    <nodeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="10" startPosition="89" endLine="11" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="14" startPosition="76" endLine="15" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setListAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getListAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="10" startPosition="89" endLine="11" endPosition="85" />
-    <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="14" startPosition="76" endLine="15" endPosition="104" />
-    <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1196350785120" varName="source" />
-      <varInfo nodeId="1196350785120" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1196350785120" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1196350785120" fileName="ListAntiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ListAntiquotation_AnnotationLink" />
-  </root>
-  <root nodeId="1196350785121">
-    <nodeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="7" startPosition="52" endLine="8" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFERENCE_ANTIQUOTATION" />
-    <nodeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="10" startPosition="120" endLine="11" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="14" startPosition="103" endLine="15" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setReferenceAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljava/lang/String;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljava/lang/String;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="10" startPosition="120" endLine="11" endPosition="113" />
-    <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="14" startPosition="103" endLine="15" endPosition="133" />
-    <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1196350785121" varName="propertyName" />
-      <varInfo nodeId="1196350785121" varName="source" />
-      <varInfo nodeId="1196350785121" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1196350785121" varName="linkRole" />
-      <varInfo nodeId="1196350785121" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1196350785121" fileName="ReferenceAntiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation_AnnotationLink" />
-  </root>
   <root nodeId="1196866233735">
     <nodeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="15" startPosition="95" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="16" startPosition="102" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LABEL" />
@@ -592,25 +539,6 @@
       <varInfo nodeId="1196866233735" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="1196866233735" fileName="PropertyAntiquotation.java" startLine="15" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation" />
-  </root>
-  <root nodeId="1196866560540">
-    <nodeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="7" startPosition="51" endLine="8" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_ANTIQUOTATION" />
-    <nodeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="10" startPosition="118" endLine="11" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="14" startPosition="105" endLine="15" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setPropertyAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljava/lang/String;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPropertyAntiquotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljava/lang/String;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="10" startPosition="118" endLine="11" endPosition="115" />
-    <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="14" startPosition="105" endLine="15" endPosition="138" />
-    <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1196866560540" varName="propertyName" />
-      <varInfo nodeId="1196866560540" varName="source" />
-      <varInfo nodeId="1196866560540" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1196866560540" varName="propertyName" />
-      <varInfo nodeId="1196866560540" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1196866560540" fileName="PropertyAntiquotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.quotation.structure.PropertyAntiquotation_AnnotationLink" />
   </root>
 </debugInfo>
 

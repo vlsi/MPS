@@ -60,11 +60,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.core.structure.Export_AnnotationLink" file="Export_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.ExportScope" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.core.structure.IAntisuppressErrors" file="IAntisuppressErrors.java">
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
@@ -156,6 +151,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
 </dependenciesRoot>
 

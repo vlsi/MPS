@@ -120,23 +120,6 @@
     </scopeInfo>
     <unitInfo nodeId="332248429538005856" fileName="MethodConditions.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.MethodConditions" />
   </root>
-  <root nodeId="332248429538005857">
-    <nodeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="7" startPosition="46" endLine="8" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PRECONDITION_LINK" />
-    <nodeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="10" startPosition="101" endLine="11" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="14" startPosition="88" endLine="15" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setPreconditionLink#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPreconditionLink#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="10" startPosition="101" endLine="11" endPosition="83" />
-    <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="14" startPosition="88" endLine="15" endPosition="101" />
-    <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="332248429538005857" varName="source" />
-      <varInfo nodeId="332248429538005857" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="332248429538005857" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="332248429538005857" fileName="PreconditionLink_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.structure.PreconditionLink_AnnotationLink" />
-  </root>
   <root nodeId="332248429538012435">
     <nodeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="10" startPosition="45" endLine="11" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="332248429538012435" fileName="Precondition.java" startLine="13" startPosition="35" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

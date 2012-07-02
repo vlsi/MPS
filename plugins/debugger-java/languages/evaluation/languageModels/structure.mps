@@ -5,7 +5,6 @@
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
-  <import index="8sls" modelUID="r:3a27a6eb-dfce-419d-9e4c-ca44cc01a2e2(jetbrains.mps.debugger.java.evaluation.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6036237525966182693">
       <property name="name" nameId="tpck.1169194664001" value="EvaluatorConcept" />
@@ -34,21 +33,9 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="4698880862823893385">
-      <property name="role" nameId="tpce.1204740973143" value="toEvaluateAnnotation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="4698880862823893381" resolveInfo="ToEvaluateAnnotation" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="9050639307831392587">
       <property name="name" nameId="tpck.1169194664001" value="LowLevelVariableReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.5497648299878491908" resolveInfo="BaseVariableReference" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="5816417461675171489">
-      <property name="role" nameId="tpce.1204740973143" value="unprocessedAnnotation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="5816417461675171490" resolveInfo="UnprocessedAnnotation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5816417461675171490">
       <property name="name" nameId="tpck.1169194664001" value="UnprocessedAnnotation" />
@@ -59,12 +46,6 @@
       <property name="name" nameId="tpck.1169194664001" value="DoNotTransformAnnotation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1707366700950402060" resolveInfo="GenerationHelperAnnotation" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="9146111288436274342">
-      <property name="role" nameId="tpce.1204740973143" value="doNotTransformAnnotation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annotations" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="9146111288436274341" resolveInfo="DoNotTransformAnnotation" />
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="9172312269976647291">
       <property name="name" nameId="tpck.1169194664001" value="IEvaluatorConcept" />
@@ -165,7 +146,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.5169995583184591164" resolveInfo="role" />
     </node>
   </root>
-  <root id="4698880862823893385" />
   <root id="9050639307831392587">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9050639307831393059">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -175,7 +155,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="6036237525966182694" resolveInfo="LowLevelVariable" />
     </node>
   </root>
-  <root id="5816417461675171489" />
   <root id="5816417461675171490">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5216537374825339149">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpck.5169995583184591169" resolveInfo="attributed" />
@@ -204,7 +183,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </root>
-  <root id="9146111288436274342" />
   <root id="9172312269976647291" />
   <root id="4336756357323803637">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="4336756357323803640">

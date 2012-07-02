@@ -40,16 +40,6 @@
       <property name="name" nameId="tpck.1169194664001" value="LinkPatternVariableDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049745" resolveInfo="LinkAttribute" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1149610113525">
-      <property name="role" nameId="tpce.1204740973143" value="pattern" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1136720037775" resolveInfo="Pattern" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1152030745648">
-      <property name="role" nameId="tpce.1204740973143" value="asPattern" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1136720037773" resolveInfo="AsPattern" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4413230749907733332">
       <property name="name" nameId="tpck.1169194664001" value="ActionAsPattern" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1136720037773" resolveInfo="AsPattern" />
@@ -193,8 +183,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.5169995583184591164" resolveInfo="role" />
     </node>
   </root>
-  <root id="1149610113525" />
-  <root id="1152030745648" />
   <root id="4413230749907733332">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8990057180226016446">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

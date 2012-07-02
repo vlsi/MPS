@@ -184,11 +184,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="types" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="721063219978402831">
-      <property name="role" nameId="tpce.1204740973143" value="toProcessMethod" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="721063219978402832" resolveInfo="ToProcessMethod" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="721063219978402832">
       <property name="name" nameId="tpck.1169194664001" value="ToProcessMethod" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
@@ -684,7 +679,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
-  <root id="721063219978402831" />
   <root id="721063219978402832">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="721063219978402834">
       <property name="value" nameId="tpce.1105725733873" value="to process method" />

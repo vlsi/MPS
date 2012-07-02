@@ -26,31 +26,9 @@
       <property name="name" nameId="tpck.1169194664001" value="ListAntiquotation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1196350785119">
-      <property name="role" nameId="tpce.1204740973143" value="antiquotation" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1196350785112" resolveInfo="Antiquotation" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1196350785120">
-      <property name="role" nameId="tpce.1204740973143" value="listAntiquotation" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1196350785118" resolveInfo="ListAntiquotation" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1196350785121">
-      <property name="stereotype" nameId="tpce.1149608445162" value="link" />
-      <property name="role" nameId="tpce.1204740973143" value="referenceAntiquotation" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1196350785117" resolveInfo="ReferenceAntiquotation" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1196866233735">
       <property name="name" nameId="tpck.1169194664001" value="PropertyAntiquotation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049750" resolveInfo="PropertyAttribute" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1196866560540">
-      <property name="role" nameId="tpce.1204740973143" value="propertyAntiquotation" />
-      <property name="stereotype" nameId="tpce.1149608445162" value="property" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1196866233735" resolveInfo="PropertyAntiquotation" />
     </node>
   </roots>
   <root id="1196350785110">
@@ -136,9 +114,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </root>
-  <root id="1196350785119" />
-  <root id="1196350785120" />
-  <root id="1196350785121" />
   <root id="1196866233735">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5126744752243295317">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1196350785110" resolveInfo="AbstractAntiquotation" />
@@ -152,6 +127,5 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </root>
-  <root id="1196866560540" />
 </model>
 

@@ -1265,25 +1265,6 @@
     </scopeInfo>
     <unitInfo nodeId="7658393498702771296" fileName="ReferenceAnnotataion.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion" />
   </root>
-  <root nodeId="7658393498702861285">
-    <nodeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="7" startPosition="49" endLine="8" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REFERENCE_ANNOTATION" />
-    <nodeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="10" startPosition="115" endLine="11" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="14" startPosition="98" endLine="15" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setReferenceAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljava/lang/String;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferenceAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljava/lang/String;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="10" startPosition="115" endLine="11" endPosition="107" />
-    <scopeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="14" startPosition="98" endLine="15" endPosition="125" />
-    <scopeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="7658393498702861285" varName="propertyName" />
-      <varInfo nodeId="7658393498702861285" varName="source" />
-      <varInfo nodeId="7658393498702861285" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="7658393498702861285" varName="linkRole" />
-      <varInfo nodeId="7658393498702861285" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="7658393498702861285" fileName="ReferenceAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotation_AnnotationLink" />
-  </root>
   <root nodeId="8497577741385080308">
     <nodeInfo nodeId="8497577741385080308" fileName="BracesStubBlock.java" startLine="14" startPosition="76" endLine="15" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="8497577741385080308" fileName="BracesStubBlock.java" startLine="15" startPosition="104" endLine="16" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

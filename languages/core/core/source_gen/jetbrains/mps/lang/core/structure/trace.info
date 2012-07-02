@@ -320,23 +320,6 @@
     <nodeInfo nodeId="3734116213129792499" fileName="ScopeProvider.java" startLine="7" startPosition="53" endLine="8" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="3734116213129792499" fileName="ScopeProvider.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.core.structure.ScopeProvider" />
   </root>
-  <root nodeId="376024488709664661">
-    <nodeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="6" startPosition="36" endLine="7" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EXPORT" />
-    <nodeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="9" startPosition="72" endLine="10" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="13" startPosition="59" endLine="14" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="8" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setExport#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getExport#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="9" startPosition="72" endLine="10" endPosition="62" />
-    <scopeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="13" startPosition="59" endLine="14" endPosition="75" />
-    <scopeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="8" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="376024488709664661" varName="source" />
-      <varInfo nodeId="376024488709664661" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="376024488709664661" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="376024488709664661" fileName="Export_AnnotationLink.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.core.structure.Export_AnnotationLink" />
-  </root>
   <root nodeId="4222318806802425298">
     <nodeInfo nodeId="4222318806802425298" fileName="SuppressErrorsAnnotation.java" startLine="12" startPosition="88" endLine="13" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="4222318806802425298" fileName="SuppressErrorsAnnotation.java" startLine="13" startPosition="100" endLine="14" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />

@@ -2424,23 +2424,6 @@
     </scopeInfo>
     <unitInfo nodeId="1224240836180" fileName="DeprecatedNodeAnnotation.java" startLine="15" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" />
   </root>
-  <root nodeId="1224241293279">
-    <nodeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="6" startPosition="44" endLine="7" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPRECATED_NODE" />
-    <nodeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="9" startPosition="104" endLine="10" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="13" startPosition="91" endLine="14" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="8" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setDeprecatedNode#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDeprecatedNode#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="9" startPosition="104" endLine="10" endPosition="79" />
-    <scopeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="13" startPosition="91" endLine="14" endPosition="105" />
-    <scopeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="8" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="1224241293279" varName="source" />
-      <varInfo nodeId="1224241293279" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1224241293279" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1224241293279" fileName="DeprecatedNode_AnnotationLink.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.DeprecatedNode_AnnotationLink" />
-  </root>
   <root nodeId="1224848324737">
     <nodeInfo nodeId="1224848324737" fileName="IStructureDeprecatable.java" startLine="7" startPosition="63" endLine="8" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <unitInfo nodeId="1224848324737" fileName="IStructureDeprecatable.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.structure.structure.IStructureDeprecatable" />

@@ -12,7 +12,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -111,40 +110,6 @@ public class QueriesUtil {
     return result;
   }
 
-  public static boolean AL_isNodeStereotypeAndSingular(SNode al) {
-    return SPropertyOperations.hasValue(al, "stereotype", "node", "node") && QueriesUtil.AL_isSingular(al);
-  }
-
-  public static boolean AL_isNodeStereotypeAndPlural(SNode al) {
-    return SPropertyOperations.hasValue(al, "stereotype", "node", "node") && QueriesUtil.AL_isPlural(al);
-  }
-
-  public static boolean AL_isPropertyStereotypeAndSingular(SNode al) {
-    return SPropertyOperations.hasValue(al, "stereotype", "property", "node") && QueriesUtil.AL_isSingular(al);
-  }
-
-  public static boolean AL_isPropertyStereotypeAndPlural(SNode al) {
-    return SPropertyOperations.hasValue(al, "stereotype", "property", "node") && QueriesUtil.AL_isPlural(al);
-  }
-
-  public static boolean AL_isLinkStereotypeAndSingular(SNode al) {
-    return SPropertyOperations.hasValue(al, "stereotype", "link", "node") && QueriesUtil.AL_isSingular(al);
-  }
-
-  public static boolean AL_isLinkStereotypeAndPlural(SNode al) {
-    return SPropertyOperations.hasValue(al, "stereotype", "link", "node") && QueriesUtil.AL_isPlural(al);
-  }
-
-  public static boolean AL_isSingular(SNode al) {
-    boolean b1 = SPropertyOperations.hasValue(al, "sourceCardinality", "0..1", "0..1");
-    return b1;
-  }
-
-  public static boolean AL_isPlural(SNode al) {
-    boolean b1 = SPropertyOperations.hasValue(al, "sourceCardinality", "0..n", "0..1");
-    return b1;
-  }
-
   public static String conceptClassFQName(SNode conceptDeclaration) {
     if ((conceptDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
@@ -154,22 +119,6 @@ public class QueriesUtil {
 
   public static String getEnumClassResolveInfo(SNode enumDeclaration) {
     return "[" + SModelOperations.getModelName(SNodeOperations.getModel(enumDeclaration)) + "]" + SPropertyOperations.getString(enumDeclaration, "name");
-  }
-
-  public static String AL_class_getterName(SNode node) {
-    return "get" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
-  }
-
-  public static String AL_class_listGetterName(SNode node) {
-    String role = NameUtil.pluralize(SPropertyOperations.getString(node, "role"));
-    return "get" + NameUtil.capitalize(role);
-  }
-
-  public static String AL_class_setterName(SNode node) {
-    if (QueriesUtil.AL_isSingular(node)) {
-      return "set" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
-    }
-    return "add" + NameUtil.capitalize(SPropertyOperations.getString(node, "role"));
   }
 
   public static Language getInputLanguage(SModel inputModel) {
