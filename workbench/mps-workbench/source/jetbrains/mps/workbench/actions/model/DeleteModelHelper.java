@@ -59,8 +59,6 @@ public class DeleteModelHelper {
       return;
     }
 
-    deleteGeneratedFiles(modelDescriptor);
-
     if (safeDelete) {
       safeDelete(project, modelDescriptor, deleteFiles);
     } else {
@@ -91,6 +89,7 @@ public class DeleteModelHelper {
     }
 
     if (deleteFiles && deleteIfAsked) {
+      deleteGeneratedFiles(modelDescriptor);
       SModelRepository.getInstance().deleteModel(modelDescriptor);
     }
 

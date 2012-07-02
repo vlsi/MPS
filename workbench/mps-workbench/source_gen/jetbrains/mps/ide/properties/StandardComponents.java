@@ -34,6 +34,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.Colu
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModelRootChooser;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor;
 import jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor;
@@ -59,7 +60,6 @@ import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
 import org.jdesktop.beansbinding.AutoBinding;
-import jetbrains.mps.vfs.IFile;
 import java.awt.Color;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
@@ -216,11 +216,11 @@ public class StandardComponents {
     }.invoke();
   }
 
-  public static JPanel createModelRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRoot> list) {
+  public static JPanel createModelRootsPanel(final IBindedDialog owner, final String caption, final List<ModelRoot> list, final IFile bundleHome) {
     return new _FunctionTypes._return_P0_E0<BoundTablePanel>() {
       public BoundTablePanel invoke() {
         final BoundTablePanel result_wf5hwp_a0a0a8 = new BoundTablePanel(owner, caption, list);
-        final Computable result_wf5hwp_a0a0a0a8 = new ModelRootChooser(owner);
+        final Computable result_wf5hwp_a0a0a0a8 = new ModelRootChooser(owner, bundleHome);
         result_wf5hwp_a0a0a8.setChooser(result_wf5hwp_a0a0a0a8);
 
         final ColumnDescriptor result_wf5hwp_a2a0a0a8 = new StringPathDescriptor(ModelRoot.PATH, "Path", -1);

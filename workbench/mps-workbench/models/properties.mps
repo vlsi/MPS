@@ -1251,6 +1251,12 @@
           </node>
         </node>
       </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8126194856994007471">
+        <property name="name" nameId="tpck.1169194664001" value="bundleHome" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8126194856994007867">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="59et.~IFile" resolveInfo="IFile" />
+        </node>
+      </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1809539929827629496">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7355563316698764097">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7355563316698764098">
@@ -1265,6 +1271,9 @@
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4igl.1560298786499496015" resolveInfo="ModelRootChooser" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7355563316698764106">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1809539929827629489" resolveInfo="owner" />
+                        </node>
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8126194856994007475">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8126194856994007471" resolveInfo="bundleHome" />
                         </node>
                       </node>
                     </node>
@@ -5082,6 +5091,14 @@
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5923576889075044715" resolveInfo="getModelRoots" />
                                 </node>
                               </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8126194856994007623">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8126194856994007604">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3201642974933961018" resolveInfo="l" />
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8126194856994007708">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetBundleHome()%cjetbrains%dmps%dvfs%dIFile" resolveInfo="getBundleHome" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -5814,6 +5831,14 @@
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="901357770590757929">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5923576889075044715" resolveInfo="getModelRoots" />
+                                </node>
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8126194856994007738">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8126194856994007719">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="901357770590757907" resolveInfo="g" />
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8126194856994007743">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~Generator%dgetBundleHome()%cjetbrains%dmps%dvfs%dIFile" resolveInfo="getBundleHome" />
                                 </node>
                               </node>
                             </node>
@@ -6633,6 +6658,14 @@
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="901357770590750278">
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5923576889075044715" resolveInfo="getModelRoots" />
+                                </node>
+                              </node>
+                              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8126194856994007773">
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8126194856994007754">
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="901357770590750078" resolveInfo="s" />
+                                </node>
+                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8126194856994007778">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetBundleHome()%cjetbrains%dmps%dvfs%dIFile" resolveInfo="getBundleHome" />
                                 </node>
                               </node>
                             </node>

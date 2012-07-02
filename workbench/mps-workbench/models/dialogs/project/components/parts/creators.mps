@@ -2155,6 +2155,12 @@
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="2968.~IBindedDialog" resolveInfo="IBindedDialog" />
         </node>
       </node>
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8126194856994007477">
+        <property name="name" nameId="tpck.1169194664001" value="bundleHome" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8126194856994007869">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="59et.~IFile" resolveInfo="IFile" />
+        </node>
+      </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1560298786499496019">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1560298786499496020">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="1560298786499496021">
@@ -2163,6 +2169,16 @@
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1560298786499496025">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499496017" resolveInfo="owner" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8126194856994007483">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8126194856994007484">
+            <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8126194856994007872">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8126194856994007480" resolveInfo="myBundleHome" />
+            </node>
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8126194856994007488">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8126194856994007477" resolveInfo="bundleHome" />
             </node>
           </node>
         </node>
@@ -2184,6 +2200,19 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1560298786499496033">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="1560298786499496034">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mfhd.~TreeFileChooser%d&lt;init&gt;()" resolveInfo="TreeFileChooser" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8126194856994007491">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8126194856994007507">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8126194856994007492">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499496031" resolveInfo="chooser" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8126194856994007513">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mfhd.~TreeFileChooser%dsetInitialFile(jetbrains%dmps%dvfs%dIFile)%cvoid" resolveInfo="setInitialFile" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8126194856994007874">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8126194856994007480" resolveInfo="myBundleHome" />
               </node>
             </node>
           </node>
@@ -2275,6 +2304,13 @@
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1560298786499496059" resolveInfo="result" />
           </node>
         </node>
+      </node>
+    </node>
+    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8126194856994007480">
+      <property name="name" nameId="tpck.1169194664001" value="myBundleHome" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8126194856994007481" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8126194856994007870">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="59et.~IFile" resolveInfo="IFile" />
       </node>
     </node>
   </root>
