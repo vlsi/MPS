@@ -5,17 +5,20 @@ package jetbrains.mps.debugger.java.runtime.execution;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.util.Alarm;
 import com.sun.jdi.VMDisconnectedException;
+import com.intellij.util.ui.Timer;
 
 public class DebuggerManagerThread implements IDebuggerManagerThread {
   private static final Logger LOG = Logger.getLogger(DebuggerManagerThread.class);
 
   private final DebuggerCommandQueue myCommandQueue;
   private volatile DebuggerManagerThread.WorkerThread myWorkerThread;
+  private DebuggerManagerThread.AngelOfDeath myAngelOfDeath;
 
   public DebuggerManagerThread() {
     myCommandQueue = new DebuggerCommandQueue();
+    myAngelOfDeath = new DebuggerManagerThread.AngelOfDeath();
+    myAngelOfDeath.start();
     startNewWorkerThread();
   }
 
@@ -38,35 +41,6 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
     } else {
       schedule(command);
     }
-  }
-
-  @Override
-  public void invokeTerminalCommand(@NotNull IDebuggerCommand command) {
-    final IDebuggerCommand currentCommand = myCommandQueue.getCurrentCommand();
-
-    if (DebuggerManagerThread.isManagerThread()) {
-      processCommand(command);
-    } else {
-      scheduleFirst(command);
-    }
-
-    Alarm alarm = new Alarm(Alarm.ThreadToUse.SHARED_THREAD);
-    alarm.addRequest(new Runnable() {
-      @Override
-      public void run() {
-        if (myCommandQueue.getCurrentCommand() == currentCommand) {
-          //  hanged 
-          myWorkerThread.interrupt();
-          startNewWorkerThread();
-
-          // this code only works when there is a hanged command already => user can stop debugger 
-          // if there is some potentially long command in the queue we cant help it 
-        }
-      }
-    }, IDebuggerManagerThread.COMMAND_TIMEOUT);
-    //  in idea they also deal with case in which current command takes to long to execute 
-    //  see DebuggerManagerThreadImpl.terminateAndInvoke 
-    //  thanks god the comment above exists 
   }
 
   @Override
@@ -144,6 +118,9 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
     public void run() {
       DebuggerManagerThread.LOG.debug("Worker thread started.");
       while (true) {
+        if (interrupted()) {
+          break;
+        }
         try {
           processCommand(myCommandQueue.get());
         } catch (VMDisconnectedException e) {
@@ -159,6 +136,24 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
         }
       }
       DebuggerManagerThread.LOG.debug("Worker thread " + this.toString() + " exited");
+    }
+  }
+
+  private class AngelOfDeath extends Timer {
+    private volatile IDebuggerCommand myCommandOnTrial;
+
+    public AngelOfDeath() {
+      super("Angel of death", IDebuggerManagerThread.COMMAND_TIMEOUT);
+    }
+
+    protected void onTimer() throws InterruptedException {
+      if (myCommandOnTrial != null && myCommandOnTrial == myCommandQueue.getCurrentCommand()) {
+        //  hanged 
+        myWorkerThread.interrupt();
+        startNewWorkerThread();
+      }
+
+      myCommandOnTrial = myCommandQueue.getCurrentCommand();
     }
   }
 }
