@@ -258,8 +258,6 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
     super.dispose();
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
-
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
 
         CleanupManager.getInstance().cleanup();
@@ -267,7 +265,6 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
-        ClassLoaderManager.getInstance().updateClassPath();
       }
     });
 
