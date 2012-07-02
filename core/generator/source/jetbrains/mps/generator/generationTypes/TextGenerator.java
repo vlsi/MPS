@@ -82,14 +82,15 @@ public class TextGenerator {
   private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, Object> outputNodeContents) {
     boolean hasErrors = false;
     ModelDependencies dependRoot = new ModelDependencies();
-    DebugInfo info = null;
-    if (myGenerateDebugInfo) {
-      status.setDebugInfo(info = new DebugInfo());
-    }
     status.setBLDependencies(dependRoot);
 
     SModel outputModel = status.getOutputModel();
     if (outputModel == null) return !hasErrors;
+
+    DebugInfo info = null;
+    if (myGenerateDebugInfo) {
+      status.setDebugInfo(info = new DebugInfo());
+    }
 
     StringBuilder[] buffers = new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768)};
 
