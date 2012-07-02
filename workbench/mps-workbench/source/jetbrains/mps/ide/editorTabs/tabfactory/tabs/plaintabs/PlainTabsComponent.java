@@ -191,7 +191,6 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   protected boolean isTabUpdateNeeded(SNodePointer node) {
-    if (myBaseNode.equals(node)) return false; //will be closed by idea
     if (!isOwn(node)) return false;
 
     onNodeChange(myBaseNode.getNode());
