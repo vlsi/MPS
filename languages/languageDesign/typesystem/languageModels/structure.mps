@@ -305,11 +305,6 @@
       <property name="name" nameId="tpck.1169194664001" value="Processed" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1223381132288">
-      <property name="role" nameId="tpce.1204740973143" value="processed" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1223381117053" resolveInfo="Processed" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1224760201579">
       <property name="name" nameId="tpck.1169194664001" value="InfoStatement" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068580123157" resolveInfo="Statement" />
@@ -414,16 +409,6 @@
       <property name="name" nameId="tpck.1169194664001" value="JoinContainer" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1238776879044">
-      <property name="role" nameId="tpce.1204740973143" value="MeetAnnotation" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1238776677112" resolveInfo="MeetContainer" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1238776969002">
-      <property name="role" nameId="tpce.1204740973143" value="JoinAnnotation" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1238776816380" resolveInfo="JoinContainer" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1240322207314">
       <property name="name" nameId="tpck.1169194664001" value="ConceptTypeClause" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1185788561607" resolveInfo="TypeClause" />
@@ -505,11 +490,6 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2990591960991114251">
       <property name="name" nameId="tpck.1169194664001" value="OriginalNodeId" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="2990591960991114326">
-      <property name="role" nameId="tpce.1204740973143" value="originalNodeIdAnnotation" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="2990591960991114251" resolveInfo="OriginalNodeId" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6136676636349908958">
       <property name="name" nameId="tpck.1169194664001" value="OverloadedOpIsApplicableFunction" />
@@ -1565,7 +1545,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </root>
-  <root id="1223381132288" />
   <root id="1224760201579">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1224760230762">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1939,8 +1918,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </root>
-  <root id="1238776879044" />
-  <root id="1238776969002" />
   <root id="1240322207314">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1240322227198">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -2220,7 +2197,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </root>
-  <root id="2990591960991114326" />
   <root id="6136676636349908958">
     <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="6136676636349908960">
       <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1137545148427" resolveInfo="conceptFunctionReturnType" />

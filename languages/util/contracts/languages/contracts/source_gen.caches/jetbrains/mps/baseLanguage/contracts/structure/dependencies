@@ -53,11 +53,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.contracts.structure.PreconditionLink_AnnotationLink" file="PreconditionLink_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.contracts.structure.MethodConditions" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.contracts.structure.ResultExpression" file="ResultExpression.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.Expression" />

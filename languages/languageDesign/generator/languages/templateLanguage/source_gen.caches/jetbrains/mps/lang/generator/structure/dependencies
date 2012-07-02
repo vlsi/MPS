@@ -436,12 +436,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.structure.NodeMacro_AnnotationLink" file="NodeMacro_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.structure.NodeMacro" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule" file="PatternReduction_MappingRule.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
@@ -473,11 +467,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.generator.structure.PropertyMacro_AnnotationLink" file="PropertyMacro_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.structure.PropertyMacro" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" file="PropertyMacro_GetPropertyValue.java">
     <classNode dependClassName="java.lang.String" />
@@ -522,11 +511,6 @@
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.generator.structure.ReferenceMacro_AnnotationLink" file="ReferenceMacro_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.structure.ReferenceMacro" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" file="ReferenceMacro_GetReferent.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.generator.structure.TemplateQueryBase" />
@@ -545,11 +529,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation_AnnotationLink" file="RootTemplateAnnotation_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.structure.Root_MappingRule" file="Root_MappingRule.java">
     <classNode dependClassName="java.lang.String" />
@@ -743,11 +722,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.generator.structure.TemplateFragment_AnnotationLink" file="TemplateFragment_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.generator.structure.TemplateFragment" />
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery" file="TemplateFragment_ContextNodeQuery.java">
     <classNode dependClassName="java.lang.String" />

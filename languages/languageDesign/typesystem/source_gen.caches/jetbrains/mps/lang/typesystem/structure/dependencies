@@ -646,11 +646,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.structure.JoinAnnotation_AnnotationLink" file="JoinAnnotation_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.JoinContainer" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.JoinContainer" file="JoinContainer.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.structure.NodeAttribute" />
@@ -726,11 +721,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.structure.MeetAnnotation_AnnotationLink" file="MeetAnnotation_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.MeetContainer" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.MeetContainer" file="MeetContainer.java">
     <classNode dependClassName="java.lang.String" />
@@ -880,11 +870,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.structure.OriginalNodeIdAnnotation_AnnotationLink" file="OriginalNodeIdAnnotation_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.OriginalNodeId" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction" file="OverloadedOpIsApplicableFunction.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.structure.ConceptFunction" />
@@ -975,11 +960,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.structure.Processed_AnnotationLink" file="Processed_AnnotationLink.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.structure.Processed" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget" file="PropertyMessageTarget.java">
     <classNode dependClassName="java.lang.String" />

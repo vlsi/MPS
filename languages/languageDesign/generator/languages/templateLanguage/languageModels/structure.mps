@@ -93,33 +93,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1149694466802">
-      <property name="stereotype" nameId="tpce.1149608445162" value="property" />
-      <property name="role" nameId="tpce.1204740973143" value="propertyMacro" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1087833241328" resolveInfo="PropertyMacro" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1149694500506">
-      <property name="role" nameId="tpce.1204740973143" value="nodeMacro" />
-      <property name="sourceCardinality" nameId="tpce.1204741022738" value="0..n" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1087833466690" resolveInfo="NodeMacro" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1149694518242">
-      <property name="stereotype" nameId="tpce.1149608445162" value="link" />
-      <property name="role" nameId="tpce.1204740973143" value="referenceMacro" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="macro" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1088761943574" resolveInfo="ReferenceMacro" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1149858605876">
-      <property name="role" nameId="tpce.1204740973143" value="templateFragment" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annotation" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1095672379244" resolveInfo="TemplateFragment" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1167087469898">
       <property name="name" nameId="tpck.1169194664001" value="CreateRootRule" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="rule" />
@@ -219,12 +192,6 @@
       <property name="name" nameId="tpck.1169194664001" value="RootTemplateAnnotation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="annotation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
-    </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="1168619445822">
-      <property name="role" nameId="tpce.1204740973143" value="rootTemplateAnnotation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="annotation" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="1168619357332" resolveInfo="RootTemplateAnnotation" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1169569792945">
       <property name="name" nameId="tpck.1169194664001" value="WeaveEach_RuleConsequence" />
@@ -851,10 +818,6 @@
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
   </root>
-  <root id="1149694466802" />
-  <root id="1149694500506" />
-  <root id="1149694518242" />
-  <root id="1149858605876" />
   <root id="1167087469898">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1167087469900">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1197,7 +1160,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </root>
-  <root id="1168619445822" />
   <root id="1169569792945">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1169569853122">
       <property name="role" nameId="tpce.1071599776563" value="template" />

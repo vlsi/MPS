@@ -1634,23 +1634,6 @@
     </scopeInfo>
     <unitInfo nodeId="680105146889009728" fileName="HighLevelCustomViewer.java" startLine="16" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer" />
   </root>
-  <root nodeId="721063219978402831">
-    <nodeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="7" startPosition="45" endLine="8" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TO_PROCESS_METHOD" />
-    <nodeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="10" startPosition="85" endLine="11" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="14" startPosition="72" endLine="15" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setToProcessMethod#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getToProcessMethod#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="10" startPosition="85" endLine="11" endPosition="82" />
-    <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="14" startPosition="72" endLine="15" endPosition="99" />
-    <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="721063219978402831" varName="source" />
-      <varInfo nodeId="721063219978402831" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="721063219978402831" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="721063219978402831" fileName="ToProcessMethod_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod_AnnotationLink" />
-  </root>
   <root nodeId="721063219978402832">
     <nodeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="11" startPosition="52" endLine="12" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="721063219978402832" fileName="ToProcessMethod.java" startLine="14" startPosition="38" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

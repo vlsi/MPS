@@ -175,12 +175,6 @@
       <property name="name" nameId="tpck.1169194664001" value="OverrideAnnotation" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="6247544121092588810">
-      <property name="role" nameId="tpce.1204740973143" value="OverrideLinkAnnotation" />
-      <property name="stereotype" nameId="tpce.1149608445162" value="node" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="6247544121092588772" resolveInfo="OverrideAnnotation" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6424935405034408143">
       <property name="name" nameId="tpck.1169194664001" value="ChildAspectDefinition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -845,7 +839,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpce.1071489288298" resolveInfo="LinkDeclaration" />
     </node>
   </root>
-  <root id="6247544121092588810" />
   <root id="6424935405034408143">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6030013275786405028">
       <property name="name" nameId="tpck.1169194664001" value="optional" />

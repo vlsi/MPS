@@ -4401,23 +4401,6 @@
     </scopeInfo>
     <unitInfo nodeId="1223381117053" fileName="Processed.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.Processed" />
   </root>
-  <root nodeId="1223381132288">
-    <nodeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="7" startPosition="39" endLine="8" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROCESSED" />
-    <nodeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="10" startPosition="73" endLine="11" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="14" startPosition="60" endLine="15" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setProcessed#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getProcessed#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="10" startPosition="73" endLine="11" endPosition="68" />
-    <scopeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="14" startPosition="60" endLine="15" endPosition="79" />
-    <scopeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1223381132288" varName="source" />
-      <varInfo nodeId="1223381132288" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1223381132288" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1223381132288" fileName="Processed_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.Processed_AnnotationLink" />
-  </root>
   <root nodeId="1224760201579">
     <nodeInfo nodeId="1224760201579" fileName="InfoStatement.java" startLine="15" startPosition="74" endLine="16" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1224760201579" fileName="InfoStatement.java" startLine="16" startPosition="95" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
@@ -5449,40 +5432,6 @@
     </scopeInfo>
     <unitInfo nodeId="1238776816380" fileName="JoinContainer.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.JoinContainer" />
   </root>
-  <root nodeId="1238776879044">
-    <nodeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="7" startPosition="44" endLine="8" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MEET_ANNOTATION" />
-    <nodeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="10" startPosition="82" endLine="11" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="14" startPosition="69" endLine="15" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setMeetAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMeetAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="10" startPosition="82" endLine="11" endPosition="79" />
-    <scopeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="14" startPosition="69" endLine="15" endPosition="94" />
-    <scopeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1238776879044" varName="source" />
-      <varInfo nodeId="1238776879044" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1238776879044" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1238776879044" fileName="MeetAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MeetAnnotation_AnnotationLink" />
-  </root>
-  <root nodeId="1238776969002">
-    <nodeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="7" startPosition="44" endLine="8" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JOIN_ANNOTATION" />
-    <nodeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="10" startPosition="82" endLine="11" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="14" startPosition="69" endLine="15" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setJoinAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getJoinAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="10" startPosition="82" endLine="11" endPosition="79" />
-    <scopeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="14" startPosition="69" endLine="15" endPosition="94" />
-    <scopeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="1238776969002" varName="source" />
-      <varInfo nodeId="1238776969002" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1238776969002" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="1238776969002" fileName="JoinAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.JoinAnnotation_AnnotationLink" />
-  </root>
   <root nodeId="1240322207314">
     <nodeInfo nodeId="1240322207314" fileName="ConceptTypeClause.java" startLine="13" startPosition="51" endLine="14" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1240322207314" fileName="ConceptTypeClause.java" startLine="14" startPosition="99" endLine="15" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MATCHING_CONCEPT" />
@@ -5842,23 +5791,6 @@
       <varInfo nodeId="2990591960991114251" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="2990591960991114251" fileName="OriginalNodeId.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OriginalNodeId" />
-  </root>
-  <root nodeId="2990591960991114326">
-    <nodeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="7" startPosition="54" endLine="8" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ORIGINAL_NODE_ID_ANNOTATION" />
-    <nodeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="10" startPosition="93" endLine="11" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="14" startPosition="80" endLine="15" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setOriginalNodeIdAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOriginalNodeIdAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="10" startPosition="93" endLine="11" endPosition="101" />
-    <scopeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="14" startPosition="80" endLine="15" endPosition="117" />
-    <scopeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="2990591960991114326" varName="source" />
-      <varInfo nodeId="2990591960991114326" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="2990591960991114326" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="2990591960991114326" fileName="OriginalNodeIdAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.OriginalNodeIdAnnotation_AnnotationLink" />
   </root>
   <root nodeId="3000845361816456520">
     <nodeInfo nodeId="3000845361816456520" fileName="DependentComputationItem_ApplicableBlock.java" startLine="11" startPosition="79" endLine="12" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

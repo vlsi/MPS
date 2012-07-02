@@ -40,13 +40,6 @@
     <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="201537367881071930">
       <property name="name" nameId="1169194664001" value="IMetaLevelChanger" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="376024488709664661">
-      <property name="role" nameId="tpce.1204740973143" value="export" />
-      <property name="stereotype" nameId="tpce.1149608445162" value="node" />
-      <property name="virtualPackage" nameId="1193676396447" value="export" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="5425021671150136555" resolveInfo="ExportScope" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5425021671150136555">
       <property name="name" nameId="1169194664001" value="ExportScope" />
       <property name="virtualPackage" nameId="1193676396447" value="export" />
@@ -170,9 +163,6 @@
   <root id="1233160296597" />
   <root id="1234971358450" />
   <root id="201537367881071930" />
-  <root id="376024488709664661">
-    <node role="smodelAttribute" roleId="5169995583184591170" type="tpck.ExportScopePublic" typeId="2565736246230036150" id="9136532523118437100" />
-  </root>
   <root id="5425021671150136555">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="4075196924244385128">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1137473854053" resolveInfo="abstract" />

@@ -149,40 +149,6 @@
     </scopeInfo>
     <unitInfo nodeId="4698880862823893381" fileName="ToEvaluateAnnotation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation" />
   </root>
-  <root nodeId="4698880862823893385">
-    <nodeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="7" startPosition="50" endLine="8" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TO_EVALUATE_ANNOTATION" />
-    <nodeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="10" startPosition="95" endLine="11" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="14" startPosition="82" endLine="15" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setToEvaluateAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getToEvaluateAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="10" startPosition="95" endLine="11" endPosition="92" />
-    <scopeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="14" startPosition="82" endLine="15" endPosition="114" />
-    <scopeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="4698880862823893385" varName="source" />
-      <varInfo nodeId="4698880862823893385" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="4698880862823893385" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="4698880862823893385" fileName="ToEvaluateAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation_AnnotationLink" />
-  </root>
-  <root nodeId="5816417461675171489">
-    <nodeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="7" startPosition="51" endLine="8" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UNPROCESSED_ANNOTATION" />
-    <nodeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="10" startPosition="97" endLine="11" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="14" startPosition="84" endLine="15" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setUnprocessedAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getUnprocessedAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="10" startPosition="97" endLine="11" endPosition="93" />
-    <scopeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="14" startPosition="84" endLine="15" endPosition="116" />
-    <scopeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="5816417461675171489" varName="source" />
-      <varInfo nodeId="5816417461675171489" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="5816417461675171489" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="5816417461675171489" fileName="UnprocessedAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation_AnnotationLink" />
-  </root>
   <root nodeId="5816417461675171490">
     <nodeInfo nodeId="5816417461675171490" fileName="UnprocessedAnnotation.java" startLine="10" startPosition="71" endLine="11" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="5816417461675171490" fileName="UnprocessedAnnotation.java" startLine="13" startPosition="44" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -591,23 +557,6 @@
       <varInfo nodeId="9146111288436274341" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="9146111288436274341" fileName="DoNotTransformAnnotation.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation" />
-  </root>
-  <root nodeId="9146111288436274342">
-    <nodeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="7" startPosition="54" endLine="8" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DO_NOT_TRANSFORM_ANNOTATION" />
-    <nodeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="10" startPosition="103" endLine="11" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="14" startPosition="90" endLine="15" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setDoNotTransformAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;Ljetbrains/mps/lang/core/structure/BaseConcept;)V" />
-    <nodeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDoNotTransformAnnotation#(Ljetbrains/mps/lang/core/structure/BaseConcept;)Ljetbrains/mps/lang/core/structure/BaseConcept;" />
-    <scopeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="10" startPosition="103" endLine="11" endPosition="101" />
-    <scopeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="14" startPosition="90" endLine="15" endPosition="127" />
-    <scopeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="9146111288436274342" varName="source" />
-      <varInfo nodeId="9146111288436274342" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="9146111288436274342" varName="source" />
-    </scopeInfo>
-    <unitInfo nodeId="9146111288436274342" fileName="DoNotTransformAnnotation_AnnotationLink.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation_AnnotationLink" />
   </root>
   <root nodeId="9172312269976647291">
     <nodeInfo nodeId="9172312269976647291" fileName="IEvaluatorConcept.java" startLine="7" startPosition="57" endLine="8" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

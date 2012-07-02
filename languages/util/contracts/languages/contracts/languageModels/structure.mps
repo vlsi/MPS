@@ -11,11 +11,6 @@
       <property name="name" nameId="tpck.1169194664001" value="MethodConditions" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="332248429538005857">
-      <property name="role" nameId="tpce.1204740973143" value="PreconditionLink" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="332248429538005856" resolveInfo="MethodConditions" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="332248429538012435">
       <property name="name" nameId="tpck.1169194664001" value="Precondition" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8892289062514160035" resolveInfo="Condition" />
@@ -53,7 +48,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
     </node>
   </root>
-  <root id="332248429538005857" />
   <root id="332248429538012435">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="8892289062513871989">
       <property name="value" nameId="tpce.1105725733873" value="precondition" />

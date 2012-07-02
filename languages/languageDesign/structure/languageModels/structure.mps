@@ -166,12 +166,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecatedAnnotation" />
       <link role="extends" roleId="1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="1149608206811" id="1224241293279">
-      <property name="role" nameId="1204740973143" value="deprecatedNode" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecatedAnnotation" />
-      <link role="target" roleId="1204741097161" targetNodeId="1224240836180" resolveInfo="DeprecatedNodeAnnotation" />
-      <link role="source" roleId="1149608246500" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
-    </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="1169125989551" id="1224848324737">
       <property name="name" nameId="tpck.1169194664001" value="IStructureDeprecatable" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="deprecatedAnnotation" />
@@ -687,7 +681,6 @@
       <link role="target" roleId="1105736807942" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
     </node>
   </root>
-  <root id="1224241293279" />
   <root id="1224848324737">
     <node role="extends" roleId="1169127546356" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1224848346098">
       <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1224608834445" resolveInfo="IDeprecatable" />

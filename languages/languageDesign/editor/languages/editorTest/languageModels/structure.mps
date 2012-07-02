@@ -37,12 +37,6 @@
       <property name="name" nameId="tpck.1169194664001" value="ReferenceAnnotataion" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.3364660638048049745" resolveInfo="LinkAttribute" />
     </node>
-    <node type="tpce.AnnotationLinkDeclaration" typeId="tpce.1149608206811" id="7658393498702861285">
-      <property name="role" nameId="tpce.1204740973143" value="referenceAnnotation" />
-      <property name="stereotype" nameId="tpce.1149608445162" value="link" />
-      <link role="source" roleId="tpce.1149608246500" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <link role="target" roleId="tpce.1204741097161" targetNodeId="7658393498702771296" resolveInfo="ReferenceAnnotataion" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5110219550149792114">
       <property name="name" nameId="tpck.1169194664001" value="SideTranformWrapper" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
@@ -153,7 +147,6 @@
       <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
   </root>
-  <root id="7658393498702861285" />
   <root id="5110219550149792114">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="5110219550150577779">
       <property name="value" nameId="tpce.1105725733873" value="side-transform-wrapper" />

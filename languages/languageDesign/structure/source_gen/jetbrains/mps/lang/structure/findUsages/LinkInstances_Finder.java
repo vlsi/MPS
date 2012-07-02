@@ -5,7 +5,6 @@ package jetbrains.mps.lang.structure.findUsages;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -14,6 +13,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.smodel.SReference;
@@ -34,10 +34,6 @@ public class LinkInstances_Finder extends GeneratedFinder {
 
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
-  }
-
-  public boolean isApplicable(SNode node) {
-    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration"));
   }
 
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
