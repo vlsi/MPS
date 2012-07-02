@@ -20,9 +20,6 @@ import java.net.URL;
 import jetbrains.mps.vfs.IFile;
 import java.io.InputStream;
 import java.io.IOException;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.reloading.CommonPaths;
 import org.jdom.Element;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -33,6 +30,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   protected static Log log = LogFactory.getLog(TraceInfoCache.class);
 
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
+  private final JavaTraceInfoResourceProvider myJavaTraceInfoProvider = new JavaTraceInfoResourceProvider();
 
   public TraceInfoCache(SModelRepository modelRepository) {
     super(modelRepository);
@@ -46,6 +44,8 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
       }
       INSTANCE = this;
     }
+    // todo: move (but remember that java provider is used in idea plugin as well) 
+    myProviders.add(myJavaTraceInfoProvider);
     super.init();
     CleanupManager.getInstance().addCleanupListener(new CleanupListener() {
       public void performCleanup() {
@@ -57,6 +57,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   @Override
   public void dispose() {
     super.dispose();
+    myProviders.remove(myJavaTraceInfoProvider);
     synchronized (INSTANCE_LOCK) {
       INSTANCE = null;
     }
@@ -131,27 +132,14 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Nullable
   private URL getCacheUrl(@NotNull SModelDescriptor sm, IModule module) {
-    IClassPathItem classPathItem;
-    ModuleDescriptor descriptor = module.getModuleDescriptor();
-    if (module.isCompileInMPS() || descriptor != null && !(descriptor.getStubModelEntries().isEmpty())) {
-      classPathItem = module.getClassPathItem();
-    } else {
-      classPathItem = CommonPaths.getMPSClassPath();
-    }
-    if (classPathItem == null) {
-      return null;
-    }
     String resourceName = traceInfoResourceName(sm);
-    URL url = classPathItem.getResource(resourceName);
-    if (url == null) {
-      for (TraceInfoCache.TraceInfoResourceProvider provider : myProviders) {
-        url = provider.getResource(module, resourceName);
-        if (url != null) {
-          return url;
-        }
+    for (TraceInfoCache.TraceInfoResourceProvider provider : myProviders) {
+      URL url = provider.getResource(module, resourceName);
+      if (url != null) {
+        return url;
       }
     }
-    return url;
+    return null;
   }
 
   @Override
