@@ -13,6 +13,7 @@ CONTENTS
 	plugins/            plugins for MPS
 	about.txt           software included in JetBrains MPS
 	build.number        information about current build
+	build.properties    properties of current build
 	mps.bat             bat-file for starting JetBrains MPS on Windows (may not be present for some distributions)
 	mps.sh              sh-file for starting JetBrains MPS on Unix (may not be present for some distributions)
 	readme.txt          this file

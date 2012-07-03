@@ -1,10 +1,11 @@
-New Features in MPS 2.0
+New Features in MPS 2.5
 
-- Customized Language IDEs (The MPS Rich Client Platform)
-- Make and build scripting
-- Run configurations - MPS debugging
-- Type-system tracing
-- VCS improvements
-- Performance and memory optimizations
+- MPS plugin for IntelliJ IDEA
+- New Build Language
+- Customizable scopes
+- Custom persistence for MPS models
+- Suppressing errors
+- New XML language
+- Dependencies analyzer & Module Dependencies Tool
 
 See more on MPS web site: http://www.jetbrains.com/mps/whatsnew/index.html
