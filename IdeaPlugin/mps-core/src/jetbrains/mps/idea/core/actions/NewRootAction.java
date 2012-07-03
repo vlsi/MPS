@@ -142,21 +142,23 @@ public class NewRootAction extends AnAction {
                 Solution solution = mpsFacet.getSolution();
                 myOperationContext = new ModuleContext(solution, mpsProject);
                 myModelDescriptor = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
-                ModelAccess.instance().runReadAction(new Runnable() {
+                if (myModelDescriptor != null) {
+                  ModelAccess.instance().runReadAction(new Runnable() {
                     @Override
                     public void run() {
-                        SModel model = myModelDescriptor.getSModel();
-                        List<Language> modelLanguages = SModelOperations.getLanguages(model, myOperationContext.getScope());
-                        for (Language language : modelLanguages) {
-                            for (SNode concept : language.getConceptDeclarations()) {
-                                String conceptFqName = NameUtil.nodeFQName(concept);
-                                if (ModelConstraintsManager.canBeRoot(myOperationContext, conceptFqName, model)) {
-                                    myConceptFqNameToNodePointerMap.put(conceptFqName, new SNodePointer(concept));
-                                }
-                            }
+                      SModel model = myModelDescriptor.getSModel();
+                      List<Language> modelLanguages = SModelOperations.getLanguages(model, myOperationContext.getScope());
+                      for (Language language : modelLanguages) {
+                        for (SNode concept : language.getConceptDeclarations()) {
+                          String conceptFqName = NameUtil.nodeFQName(concept);
+                          if (ModelConstraintsManager.canBeRoot(myOperationContext, conceptFqName, model)) {
+                            myConceptFqNameToNodePointerMap.put(conceptFqName, new SNodePointer(concept));
+                          }
                         }
+                      }
                     }
-                });
+                  });
+                }
                 return;
             }
         }
