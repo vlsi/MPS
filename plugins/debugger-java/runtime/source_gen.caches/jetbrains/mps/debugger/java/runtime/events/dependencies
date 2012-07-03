@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debugger.java.runtime.events.CommandPriority" file="CommandPriority.java" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.events.ContextManager" file="ContextManager.java">
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.EventContext" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.events.DebuggerManagerThread" file="DebuggerManagerThread.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.AbstractCommand" />
@@ -8,7 +19,14 @@
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.concurrent.ManagerThread" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.events.EventContext" file="EventContext.java">
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="com.sun.jdi.event.Event" />
     <classNode dependClassName="com.sun.jdi.event.EventSet" />
+    <classNode dependClassName="com.sun.jdi.event.LocatableEvent" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.events.EventsProcessor" file="EventsProcessor.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
@@ -24,16 +42,14 @@
     <classNode dependClassName="com.sun.jdi.request.EventRequest" />
     <classNode dependClassName="com.sun.jdi.request.StepRequest" />
     <classNode dependClassName="java.lang.InterruptedException" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RequestManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.CommandPriority" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.ContextManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.DebuggerManagerThread" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.EventContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.requests.StepRequestor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode extendsClassName="java.lang.Runnable" />
   </dependency>

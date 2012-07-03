@@ -5,9 +5,6 @@ package jetbrains.mps.debugger.java.runtime.events;
 import com.sun.jdi.VirtualMachine;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.event.StepEvent;
 import com.sun.jdi.request.EventRequest;
@@ -34,7 +31,7 @@ public class EventsProcessor {
   private VirtualMachine myVirtualMachine;
   protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
   private RequestManager myRequestManager;
-  private final List<EventContext> mySuspendedContexts = ListSequence.fromList(new ArrayList<EventContext>());
+  private final ContextManager myContextManager = new ContextManager();
 
   public EventsProcessor() {
   }
@@ -56,7 +53,7 @@ public class EventsProcessor {
 
   private void processClassPrepareEvent(EventContext context, ClassPrepareEvent event) {
     myRequestManager.processClassPrepared(event);
-    context.voteResume();
+    myContextManager.resume(context);
   }
 
   private void processStepEvent(EventContext context, StepEvent event) {
@@ -67,14 +64,13 @@ public class EventsProcessor {
       StepRequestor requestor = (StepRequestor) myRequestManager.findRequestor(stepRequest);
       int nextStep = requestor.nextStep(event);
       if (nextStep == StepRequestor.STOP) {
-        context.pause();
-        ListSequence.fromList(mySuspendedContexts).addElement(context);
+        myContextManager.pause(context);
         return;
       } else {
         addNewStepRequest(requestor, nextStep, event.thread(), context.getSuspendPolicy());
       }
     }
-    context.voteResume();
+    myContextManager.resume(context);
   }
 
   private void addNewStepRequest(StepRequestor stepRequestor, int stepType, ThreadReference threadReference, int suspendPolicy) {
@@ -95,6 +91,10 @@ public class EventsProcessor {
 
   private void processLocatableEvent(EventContext context, LocatableEvent event) {
     final ThreadReference thread = event.thread();
+    if (myContextManager.isEvaluated(thread)) {
+      myContextManager.resume(context);
+      return;
+    }
     myManagerThread.schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
       }
@@ -129,7 +129,7 @@ public class EventsProcessor {
             if (event instanceof LocatableEvent) {
               processLocatableEvent(context, (LocatableEvent) event);
             } else {
-              context.resume();
+              myContextManager.resume(context);
             }
           }
         }
