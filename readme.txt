@@ -1,4 +1,4 @@
-JETBRAINS MPS $version$ README FILE
+JETBRAINS MPS 2.5 README FILE
 
 Thank you for downloading JetBrains MPS!
 
