@@ -5,11 +5,27 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.requests.Requestor" />
   </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.requests.IRequestManager" file="IRequestManager.java" />
   <dependency className="jetbrains.mps.debugger.java.runtime.requests.LocatableEventRequestor" file="LocatableEventRequestor.java">
     <classNode dependClassName="com.sun.jdi.event.LocatableEvent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContextCommand" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.requests.Requestor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.requests.Requestor" file="Requestor.java" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.requests.StepRequestor" file="StepRequestor.java">
+    <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
+    <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
+    <classNode dependClassName="com.sun.jdi.Location" />
+    <classNode dependClassName="com.sun.jdi.StackFrame" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="com.sun.jdi.event.StepEvent" />
+    <classNode dependClassName="com.sun.jdi.request.StepRequest" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebuggableFramesSelector" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.requests.Requestor" />
+  </dependency>
 </dependenciesRoot>
 

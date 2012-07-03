@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.java.runtime.events.CommandPriority" file="CommandPriority.java" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.events.DebuggerManagerThread" file="DebuggerManagerThread.java">
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.AbstractCommand" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.CommandPriority" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.concurrent.ManagerThread" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.events.EventContext" file="EventContext.java">
+    <classNode dependClassName="com.sun.jdi.event.EventSet" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.events.EventsProcessor" file="EventsProcessor.java">
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="com.sun.jdi.VirtualMachine" />
+    <classNode dependClassName="com.sun.jdi.event.ClassPrepareEvent" />
+    <classNode dependClassName="com.sun.jdi.event.Event" />
+    <classNode dependClassName="com.sun.jdi.event.EventQueue" />
+    <classNode dependClassName="com.sun.jdi.event.EventSet" />
+    <classNode dependClassName="com.sun.jdi.event.LocatableEvent" />
+    <classNode dependClassName="com.sun.jdi.event.StepEvent" />
+    <classNode dependClassName="com.sun.jdi.event.VMDeathEvent" />
+    <classNode dependClassName="com.sun.jdi.event.VMDisconnectEvent" />
+    <classNode dependClassName="com.sun.jdi.request.EventRequest" />
+    <classNode dependClassName="com.sun.jdi.request.StepRequest" />
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RequestManager" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.CommandPriority" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.DebuggerManagerThread" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.EventContext" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.requests.StepRequestor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode extendsClassName="java.lang.Runnable" />
+  </dependency>
+</dependenciesRoot>
+
