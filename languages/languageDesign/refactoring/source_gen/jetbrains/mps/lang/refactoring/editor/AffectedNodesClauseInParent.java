@@ -35,6 +35,10 @@ public class AffectedNodesClauseInParent extends AbstractCellProvider {
   private EditorCell createCollection_33nozx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_33nozx_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition_33nozx_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_33nozx_a0(editorContext, node));
     }
