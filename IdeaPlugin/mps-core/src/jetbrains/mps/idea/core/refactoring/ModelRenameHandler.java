@@ -146,6 +146,8 @@ public class ModelRenameHandler implements RenameHandler {
   }
 
   private void deleteGeneratedFiles(SModelDescriptor modelDescriptor) {
+    // TODO: find a way to safely delete generated files. Until then, let's not make a mess
+    if (true) return;
     String moduleOutputPath = modelDescriptor.getModule().getOutputFor(modelDescriptor);
     if (moduleOutputPath == null) {
       return;
