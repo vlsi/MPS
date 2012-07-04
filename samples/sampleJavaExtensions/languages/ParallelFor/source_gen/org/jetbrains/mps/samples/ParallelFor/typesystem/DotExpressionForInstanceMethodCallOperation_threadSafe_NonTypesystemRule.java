@@ -82,7 +82,7 @@ public class DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesyste
             }
           }
 
-          if (!(ListSequence.fromList(CheckingRuleHelper.allowedClasses()).any(new IWhereFilter<SNode>() {
+          if (targetClassifier == null || !(ListSequence.fromList(CheckingRuleHelper.allowedClasses()).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SLinkOperations.getTarget(it, "classifier", false) == targetClassifier;
             }
