@@ -526,6 +526,25 @@ public abstract class AbstractModule implements IModule {
     return FileSystem.getInstance().getBundleHome(getDescriptorFile());
   }
 
+  public Collection<String> getIndexablePaths() {
+    ArrayList<String> result = new ArrayList<String>();
+
+    IFile home = getBundleHome();
+    if (home != null) {
+      String suffix = isPackaged() ? "!/" : "";
+      result.add(home.getPath() + suffix);
+    }
+
+    ModuleDescriptor d = getModuleDescriptor();
+    if (d==null) return result;
+
+    for (ModelRoot root : d.getModelRoots()) {
+      result.add(root.getPath());
+    }
+
+    return result;
+  }
+
   public boolean isCompileInMPS() {
     return false;
   }
