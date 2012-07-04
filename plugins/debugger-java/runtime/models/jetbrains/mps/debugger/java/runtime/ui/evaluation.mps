@@ -3731,7 +3731,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7406771907178600158" resolveInfo="eventsProcessor" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3247539798412785581">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ieao.4222091233089936629" resolveInfo="invokeInManagerThread" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ieao.2439092563176274535" resolveInfo="invokeInManagerThreadAndFork" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tp2c.ClosureLiteral" typeId="tp2c.1199569711397" id="3247539798412785582">
                     <node role="body" roleId="tp2c.1199569916463" type="tpee.StatementList" typeId="tpee.1068580123136" id="3247539798412785583">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7406771907178600175">
