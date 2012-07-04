@@ -134,7 +134,7 @@
     <nodeInfo nodeId="3540747636396649380" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="50" startPosition="106" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="3540747636396649371" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="54" startPosition="16" endLine="58" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3540747636396547859" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="76" startPosition="219" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3540747636396547916" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="85" startPosition="106" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3540747636396547916" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="85" startPosition="134" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="3540747636396547907" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="89" startPosition="16" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3540747636396547801" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="100" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="3540747636396547801" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="105" startPosition="68" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -186,7 +186,7 @@
       <varInfo nodeId="3540747636396649380" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="3540747636396649370" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="54" startPosition="16" endLine="58" endPosition="13" />
-    <scopeInfo nodeId="3540747636396547916" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="85" startPosition="106" endLine="89" endPosition="0">
+    <scopeInfo nodeId="3540747636396547916" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="85" startPosition="134" endLine="89" endPosition="0">
       <varInfo nodeId="3540747636396547916" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="3540747636396547906" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="89" startPosition="16" endLine="93" endPosition="13" />
@@ -229,7 +229,7 @@
     </scopeInfo>
     <unitInfo nodeId="3540747636396547801" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="123" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule" />
     <unitInfo nodeId="3540747636396649380" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="50" startPosition="83" endLine="54" endPosition="11" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule$1" />
-    <unitInfo nodeId="3540747636396547916" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="85" startPosition="83" endLine="89" endPosition="11" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule$2" />
+    <unitInfo nodeId="3540747636396547916" fileName="DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule.java" startLine="85" startPosition="111" endLine="89" endPosition="11" unitName="org.jetbrains.mps.samples.ParallelFor.typesystem.DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule$2" />
   </root>
   <root nodeId="3540747636396649292">
     <nodeInfo nodeId="3540747636396649302" fileName="CheckingRuleHelper.java" startLine="21" startPosition="46" endLine="22" endPosition="988" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
