@@ -277,6 +277,14 @@ public class DebugVMEventsProcessor {
     });
   }
 
+  public void invokeInManagerThreadAndFork(final _FunctionTypes._void_P0_E0 command) {
+    getManagerThread().scheduleAndFork(new DebuggerCommand() {
+      protected void action() throws Exception {
+        command.invoke();
+      }
+    });
+  }
+
   private static void preprocessEvent(SuspendContext suspendContext, ThreadReference thread) {
     // todo here a thread will be set to suspend context, dont know why 
     ThreadReference oldThread = suspendContext.getThread();

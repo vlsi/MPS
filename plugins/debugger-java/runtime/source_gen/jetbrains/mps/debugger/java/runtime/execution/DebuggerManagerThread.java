@@ -61,6 +61,41 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
     }
   }
 
+  @Override
+  public void scheduleAndFork(@NotNull final IDebuggerCommand command) {
+    if (myCommandQueue.isClosed()) {
+      command.notifyCancelled();
+    } else {
+      scheduleInternal(new CommandWrapper(command) {
+        @Override
+        public void run() throws Exception {
+          startNewWorkerThread();
+          try {
+            super.run();
+          } finally {
+            final DebuggerManagerThread.WorkerThread thread = (DebuggerManagerThread.WorkerThread) Thread.currentThread();
+            invokeAndWaitInternal(new DebuggerCommand() {
+              protected void action() throws Exception {
+                switchToThread(thread);
+              }
+
+              @Override
+              protected void commandCancelled() {
+                thread.interrupt();
+              }
+            });
+          }
+        }
+      });
+    }
+  }
+
+  private void switchToThread(DebuggerManagerThread.WorkerThread newThread) {
+    Thread currentThread = Thread.currentThread();
+    myWorkerThread = newThread;
+    currentThread.interrupt();
+  }
+
   private void scheduleFirstInternal(@NotNull IDebuggerCommand command) {
     LOG.debug("scheduleFirst " + command + " in " + this);
     myCommandQueue.pushBack(command, command.getPriority().ordinal());
@@ -122,6 +157,9 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
           break;
         }
         try {
+          if (interrupted()) {
+            break;
+          }
           processCommand(myCommandQueue.get());
         } catch (VMDisconnectedException e) {
           //  todo if not this exception this code could be in debug-api 

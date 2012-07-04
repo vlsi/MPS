@@ -19,8 +19,8 @@ import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
 import jetbrains.mps.smodel.persistence.def.v5.ModelPersistence5;
@@ -34,7 +34,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.xmlQuery.runtime.BreakParseSAXException;
 import jetbrains.mps.xmlQuery.runtime.XMLSAXHandler;
-import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
@@ -202,7 +201,7 @@ public class ModelPersistence {
       InputSource source = new InputSource(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
       return readModel(header, source, state);
     } catch (IOException e) {
-      throw new ModelReadException("Couldn't read model: " + e.getMessage(),  e, header);
+      throw new ModelReadException("Couldn't read model: " + e.getMessage(), e, header);
     } finally {
       FileUtil.closeFileSafe(in);
     }
@@ -419,7 +418,7 @@ public class ModelPersistence {
     }
   }
 
-  public static class IndexEntry{
+  public static class IndexEntry {
     public String data;
     public boolean caseSensitive;
 
@@ -428,11 +427,11 @@ public class ModelPersistence {
       this.caseSensitive = caseSensitive;
     }
   }
-  
+
   public static Map<IndexEntry, Integer> index(char[] data) throws ModelReadException {
     SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data))).getHeader();
     IModelPersistence mp = getModelPersistence(header);
-    assert mp != null;
+    assert mp != null : "Using unsupported persistence version: " + header.getPersistenceVersion();
     return mp.index(data);
   }
 
@@ -450,22 +449,18 @@ public class ModelPersistence {
           String value = attributes.getValue(idx);
           if (MODEL_UID.equals(name)) {
             myResult.setUID(value);
-          }
-          else if (SModelHeader.VERSION.equals(name)) {
+          } else if (SModelHeader.VERSION.equals(name)) {
             try {
               myResult.setVersion(Integer.parseInt(value));
             } catch (NumberFormatException ignored) {
             }
-          }
-          else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
+          } else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
             myResult.setDoNotGenerate(Boolean.parseBoolean(value));
-          }
-          else {
+          } else {
             myResult.getHeader().setOptionalProperty(name, XmlStringUtil.unescapeXml(value));
           }
         }
-      }
-      else if (PERSISTENCE.equals(qName)) {
+      } else if (PERSISTENCE.equals(qName)) {
         String s = attributes.getValue(PERSISTENCE_VERSION);
         if (s != null) {
           try {

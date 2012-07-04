@@ -59,7 +59,7 @@ public abstract class EvaluationUi extends JPanel {
       final Class clazz = model.generateAndLoadEvaluatorClass();
       setEvaluating(model);
       final DebugVMEventsProcessor eventsProcessor = myDebugSession.getEventsProcessor();
-      eventsProcessor.invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
+      eventsProcessor.invokeInManagerThreadAndFork(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           SuspendContext suspendContext = eventsProcessor.getSuspendManager().getPausedContext();
           assert suspendContext != null;

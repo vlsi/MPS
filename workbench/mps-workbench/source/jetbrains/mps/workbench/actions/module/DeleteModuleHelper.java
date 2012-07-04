@@ -17,11 +17,14 @@ package jetbrains.mps.workbench.actions.module;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
 import javax.swing.JOptionPane;
@@ -46,7 +49,7 @@ public class DeleteModuleHelper {
     //remove from project
     if (mpsProject.isProjectModule(module)) {
       mpsProject.removeModule(module.getModuleReference());
-      ((StandaloneMPSProject)mpsProject).update();
+      ((StandaloneMPSProject) mpsProject).update();
       project.save();
     }
 
@@ -54,10 +57,26 @@ public class DeleteModuleHelper {
       for (SModelDescriptor model : module.getOwnModelDescriptors()) {
         DeleteModelHelper.delete(module, model, true);
       }
+
+      deleteFile(module.getClassesGen().getPath());
+      deleteFile(module.getGeneratorOutputPath());
+      deleteFile(module.getTestsGeneratorOutputPath());
+      deleteFile(FileGenerationUtil.getCachesPath(module.getGeneratorOutputPath()));
+      if (module.getBundleHome().getChildren().isEmpty()){
+        deleteFile(module.getBundleHome().getPath());
+      }
+
       module.getDescriptorFile().delete();
       ModuleRepositoryFacade.getInstance().removeModuleForced(module);
     }
   }
+
+  private static void deleteFile(String path) {
+    IFile file = FileSystem.getInstance().getFileByPath(path);
+    if (!file.exists()) return;
+    file.delete();
+  }
+
 
   private static void safeDelete(Project project, IModule module, boolean deleteFiles) {
     LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());

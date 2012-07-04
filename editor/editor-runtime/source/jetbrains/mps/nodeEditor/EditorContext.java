@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -30,6 +31,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import jetbrains.mps.util.performance.PerformanceTracer;
 import jetbrains.mps.util.Computable;
 
+import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.util.List;
 
@@ -249,10 +251,20 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
   public void openInspector() {
-    InspectorTool inspector = getOperationContext().getComponent(InspectorTool.class);
-    if (inspector != null) {
-      inspector.openTool(true);
-    }
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+        IdeFocusManager.getGlobalInstance().doWhenFocusSettlesDown(new Runnable() {
+          @Override
+          public void run() {
+            final InspectorTool inspector = getOperationContext().getComponent(InspectorTool.class);
+            if (inspector != null) {
+              inspector.openTool(true);
+            }
+          }
+        });
+      }
+    });
   }
 
   public void selectAndSetCaret(final SNode node, final int position) {

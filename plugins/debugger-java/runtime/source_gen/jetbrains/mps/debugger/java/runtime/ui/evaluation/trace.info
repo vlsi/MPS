@@ -705,7 +705,7 @@
     <nodeInfo nodeId="7406771907178600324" fileName="EvaluationUi.java" startLine="116" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFailure#(Ljava/lang/Throwable;Ljava/lang/String;Ljetbrains/mps/debugger/java/runtime/evaluation/model/AbstractEvaluationModel;)V" />
     <nodeInfo nodeId="4519228156633494935" fileName="EvaluationUi.java" startLine="155" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paused#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
     <nodeInfo nodeId="7406771907178600187" fileName="EvaluationUi.java" startLine="65" startPosition="40" endLine="82" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3247539798412785582" fileName="EvaluationUi.java" startLine="62" startPosition="78" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
+    <nodeInfo nodeId="3247539798412785582" fileName="EvaluationUi.java" startLine="62" startPosition="85" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()V" />
     <nodeInfo nodeId="3247539798412785555" fileName="EvaluationUi.java" startLine="61" startPosition="89" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7406771907178600135" fileName="EvaluationUi.java" startLine="57" startPosition="5" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="7406771907178600119" fileName="EvaluationUi.java" startLine="52" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="evaluate#(Ljetbrains/mps/debugger/java/runtime/evaluation/model/AbstractEvaluationModel;)V" />
@@ -818,7 +818,7 @@
     <scopeInfo nodeId="3247539798412785583" fileName="EvaluationUi.java" startLine="63" startPosition="30" endLine="83" endPosition="0">
       <varInfo nodeId="7406771907178600176" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3247539798412785582" fileName="EvaluationUi.java" startLine="62" startPosition="78" endLine="85" endPosition="0" />
+    <scopeInfo nodeId="3247539798412785582" fileName="EvaluationUi.java" startLine="62" startPosition="85" endLine="85" endPosition="0" />
     <scopeInfo nodeId="7406771907178600147" fileName="EvaluationUi.java" startLine="58" startPosition="9" endLine="85" endPosition="9">
       <varInfo nodeId="7406771907178600149" varName="clazz" />
       <varInfo nodeId="7406771907178600158" varName="eventsProcessor" />
@@ -829,7 +829,7 @@
     </scopeInfo>
     <unitInfo nodeId="7406771907178600108" fileName="EvaluationUi.java" startLine="26" startPosition="0" endLine="195" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
     <unitInfo nodeId="3196684409400996596" fileName="EvaluationUi.java" startLine="160" startPosition="60" endLine="168" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1" />
-    <unitInfo nodeId="3247539798412785582" fileName="EvaluationUi.java" startLine="62" startPosition="48" endLine="85" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1" />
+    <unitInfo nodeId="3247539798412785582" fileName="EvaluationUi.java" startLine="62" startPosition="55" endLine="85" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1" />
     <unitInfo nodeId="3196684409400996682" fileName="EvaluationUi.java" startLine="175" startPosition="60" endLine="179" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$2" />
     <unitInfo nodeId="7406771907178600278" fileName="EvaluationUi.java" startLine="100" startPosition="28" endLine="105" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$2" />
     <unitInfo nodeId="612015978684721007" fileName="EvaluationUi.java" startLine="186" startPosition="60" endLine="190" endPosition="9" unitName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$3" />

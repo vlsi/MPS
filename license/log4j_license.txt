@@ -1,3 +1,6 @@
+LOG4J library (bundled in lib/log4j.jar under MPS installation home) license is attached below:
+-------------------------------------------------------------------------------------------------------
+
 /*
  * ============================================================================
  *                   The Apache Software License, Version 1.1

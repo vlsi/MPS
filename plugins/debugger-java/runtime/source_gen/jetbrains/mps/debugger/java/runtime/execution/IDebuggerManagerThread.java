@@ -11,5 +11,6 @@ public interface IDebuggerManagerThread {
   public void invoke(@NotNull IDebuggerCommand command);
   public void scheduleFirst(@NotNull IDebuggerCommand command);
   public void schedule(@NotNull IDebuggerCommand command);
+  public void scheduleAndFork(@NotNull IDebuggerCommand command);
   public void close();
 }

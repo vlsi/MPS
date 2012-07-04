@@ -1,3 +1,6 @@
+OROMatcher library (bundled in lib/oromatcher.jar under MPS installation home) license is attached below:
+
+----------------------------------------------------------------------------
 Original Reusable Objects, Inc.
 
 --------------------------------------------------------------------------------

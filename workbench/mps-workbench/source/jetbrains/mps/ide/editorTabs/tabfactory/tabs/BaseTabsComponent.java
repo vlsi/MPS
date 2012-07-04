@@ -196,6 +196,9 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private class MyTabRemovalListener extends ModelListener {
     protected void onImportantRootRemoved(SNodePointer node) {
+      if (myBaseNode.equals(node)) return; //will be closed by idea
+      if (myBaseNode.getNode()==null) return; //will be closed by idea
+
       if (!isTabUpdateNeeded(node)) return;
       updateTabs();
     }
