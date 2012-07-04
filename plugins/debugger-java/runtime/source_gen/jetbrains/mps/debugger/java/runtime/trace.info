@@ -262,93 +262,94 @@
     <nodeInfo nodeId="2891782949125205759" fileName="DebugVMEventsProcessor.java" startLine="271" startPosition="59" endLine="272" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2891782949125147084" fileName="DebugVMEventsProcessor.java" startLine="272" startPosition="52" endLine="273" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4222091233089936700" fileName="DebugVMEventsProcessor.java" startLine="278" startPosition="48" endLine="279" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205693" fileName="DebugVMEventsProcessor.java" startLine="284" startPosition="94" endLine="285" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125146718" fileName="DebugVMEventsProcessor.java" startLine="285" startPosition="72" endLine="286" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125146724" fileName="DebugVMEventsProcessor.java" startLine="286" startPosition="59" endLine="287" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205695" fileName="DebugVMEventsProcessor.java" startLine="288" startPosition="28" endLine="289" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205697" fileName="DebugVMEventsProcessor.java" startLine="289" startPosition="65" endLine="290" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205699" fileName="DebugVMEventsProcessor.java" startLine="290" startPosition="27" endLine="291" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125146396" fileName="DebugVMEventsProcessor.java" startLine="295" startPosition="57" endLine="296" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsStopped" />
-    <nodeInfo nodeId="2891782949125147092" fileName="DebugVMEventsProcessor.java" startLine="301" startPosition="46" endLine="302" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147097" fileName="DebugVMEventsProcessor.java" startLine="305" startPosition="46" endLine="306" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125147117" fileName="DebugVMEventsProcessor.java" startLine="310" startPosition="11" endLine="311" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147149" fileName="DebugVMEventsProcessor.java" startLine="313" startPosition="15" endLine="314" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147177" fileName="DebugVMEventsProcessor.java" startLine="316" startPosition="56" endLine="317" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125205649" fileName="DebugVMEventsProcessor.java" startLine="319" startPosition="23" endLine="320" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205651" fileName="DebugVMEventsProcessor.java" startLine="320" startPosition="66" endLine="321" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205653" fileName="DebugVMEventsProcessor.java" startLine="321" startPosition="63" endLine="322" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205655" fileName="DebugVMEventsProcessor.java" startLine="322" startPosition="93" endLine="323" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205657" fileName="DebugVMEventsProcessor.java" startLine="323" startPosition="83" endLine="324" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205659" fileName="DebugVMEventsProcessor.java" startLine="324" startPosition="25" endLine="325" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205661" fileName="DebugVMEventsProcessor.java" startLine="325" startPosition="29" endLine="326" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205663" fileName="DebugVMEventsProcessor.java" startLine="326" startPosition="114" endLine="327" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147262" fileName="DebugVMEventsProcessor.java" startLine="328" startPosition="56" endLine="329" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147257" fileName="DebugVMEventsProcessor.java" startLine="331" startPosition="61" endLine="332" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147250" fileName="DebugVMEventsProcessor.java" startLine="334" startPosition="61" endLine="335" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147243" fileName="DebugVMEventsProcessor.java" startLine="337" startPosition="53" endLine="338" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147236" fileName="DebugVMEventsProcessor.java" startLine="340" startPosition="58" endLine="341" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147230" fileName="DebugVMEventsProcessor.java" startLine="342" startPosition="28" endLine="343" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205665" fileName="DebugVMEventsProcessor.java" startLine="344" startPosition="21" endLine="345" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205667" fileName="DebugVMEventsProcessor.java" startLine="345" startPosition="70" endLine="346" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205669" fileName="DebugVMEventsProcessor.java" startLine="346" startPosition="62" endLine="347" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205671" fileName="DebugVMEventsProcessor.java" startLine="348" startPosition="55" endLine="349" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205673" fileName="DebugVMEventsProcessor.java" startLine="350" startPosition="49" endLine="351" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147200" fileName="DebugVMEventsProcessor.java" startLine="352" startPosition="41" endLine="353" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205675" fileName="DebugVMEventsProcessor.java" startLine="358" startPosition="41" endLine="359" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147134" fileName="DebugVMEventsProcessor.java" startLine="360" startPosition="44" endLine="361" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2891782949125147140" fileName="DebugVMEventsProcessor.java" startLine="362" startPosition="47" endLine="363" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2891782949125205677" fileName="DebugVMEventsProcessor.java" startLine="364" startPosition="33" endLine="365" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147103" fileName="DebugVMEventsProcessor.java" startLine="368" startPosition="40" endLine="369" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147109" fileName="DebugVMEventsProcessor.java" startLine="370" startPosition="43" endLine="371" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147114" fileName="DebugVMEventsProcessor.java" startLine="372" startPosition="17" endLine="373" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205679" fileName="DebugVMEventsProcessor.java" startLine="373" startPosition="29" endLine="374" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205681" fileName="DebugVMEventsProcessor.java" startLine="380" startPosition="50" endLine="381" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205683" fileName="DebugVMEventsProcessor.java" startLine="381" startPosition="116" endLine="382" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147268" fileName="DebugVMEventsProcessor.java" startLine="382" startPosition="71" endLine="383" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147275" fileName="DebugVMEventsProcessor.java" startLine="383" startPosition="99" endLine="384" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147281" fileName="DebugVMEventsProcessor.java" startLine="391" startPosition="66" endLine="392" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2891782949125147286" fileName="DebugVMEventsProcessor.java" startLine="396" startPosition="59" endLine="397" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125205743" fileName="DebugVMEventsProcessor.java" startLine="401" startPosition="46" endLine="402" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147290" fileName="DebugVMEventsProcessor.java" startLine="402" startPosition="53" endLine="403" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147294" fileName="DebugVMEventsProcessor.java" startLine="403" startPosition="58" endLine="404" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147299" fileName="DebugVMEventsProcessor.java" startLine="404" startPosition="49" endLine="405" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205745" fileName="DebugVMEventsProcessor.java" startLine="414" startPosition="46" endLine="415" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147308" fileName="DebugVMEventsProcessor.java" startLine="415" startPosition="52" endLine="416" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147312" fileName="DebugVMEventsProcessor.java" startLine="416" startPosition="36" endLine="417" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147316" fileName="DebugVMEventsProcessor.java" startLine="417" startPosition="58" endLine="418" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147324" fileName="DebugVMEventsProcessor.java" startLine="418" startPosition="116" endLine="419" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147329" fileName="DebugVMEventsProcessor.java" startLine="419" startPosition="53" endLine="420" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125146439" fileName="DebugVMEventsProcessor.java" startLine="424" startPosition="53" endLine="425" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsTerminateTargetVM" />
-    <nodeInfo nodeId="2891782949125147337" fileName="DebugVMEventsProcessor.java" startLine="427" startPosition="53" endLine="428" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147342" fileName="DebugVMEventsProcessor.java" startLine="431" startPosition="59" endLine="432" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125147352" fileName="DebugVMEventsProcessor.java" startLine="436" startPosition="25" endLine="437" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147369" fileName="DebugVMEventsProcessor.java" startLine="438" startPosition="36" endLine="439" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205747" fileName="DebugVMEventsProcessor.java" startLine="440" startPosition="16" endLine="441" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125205749" fileName="DebugVMEventsProcessor.java" startLine="441" startPosition="75" endLine="442" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147360" fileName="DebugVMEventsProcessor.java" startLine="442" startPosition="57" endLine="443" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147364" fileName="DebugVMEventsProcessor.java" startLine="443" startPosition="34" endLine="444" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147349" fileName="DebugVMEventsProcessor.java" startLine="446" startPosition="14" endLine="447" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125146456" fileName="DebugVMEventsProcessor.java" startLine="452" startPosition="74" endLine="453" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStepType" />
-    <nodeInfo nodeId="2891782949125147377" fileName="DebugVMEventsProcessor.java" startLine="455" startPosition="111" endLine="456" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2891782949125147379" fileName="DebugVMEventsProcessor.java" startLine="456" startPosition="28" endLine="457" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147386" fileName="DebugVMEventsProcessor.java" startLine="461" startPosition="46" endLine="462" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147390" fileName="DebugVMEventsProcessor.java" startLine="462" startPosition="58" endLine="463" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147402" fileName="DebugVMEventsProcessor.java" startLine="463" startPosition="151" endLine="464" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147407" fileName="DebugVMEventsProcessor.java" startLine="467" startPosition="31" endLine="468" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2891782949125146477" fileName="DebugVMEventsProcessor.java" startLine="476" startPosition="0" endLine="477" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJdiType" />
-    <nodeInfo nodeId="2891782949125147415" fileName="DebugVMEventsProcessor.java" startLine="479" startPosition="27" endLine="480" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125147420" fileName="DebugVMEventsProcessor.java" startLine="483" startPosition="29" endLine="484" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2439092563176274555" fileName="DebugVMEventsProcessor.java" startLine="286" startPosition="48" endLine="287" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205693" fileName="DebugVMEventsProcessor.java" startLine="292" startPosition="94" endLine="293" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125146718" fileName="DebugVMEventsProcessor.java" startLine="293" startPosition="72" endLine="294" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125146724" fileName="DebugVMEventsProcessor.java" startLine="294" startPosition="59" endLine="295" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205695" fileName="DebugVMEventsProcessor.java" startLine="296" startPosition="28" endLine="297" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205697" fileName="DebugVMEventsProcessor.java" startLine="297" startPosition="65" endLine="298" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205699" fileName="DebugVMEventsProcessor.java" startLine="298" startPosition="27" endLine="299" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125146396" fileName="DebugVMEventsProcessor.java" startLine="303" startPosition="57" endLine="304" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsStopped" />
+    <nodeInfo nodeId="2891782949125147092" fileName="DebugVMEventsProcessor.java" startLine="309" startPosition="46" endLine="310" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147097" fileName="DebugVMEventsProcessor.java" startLine="313" startPosition="46" endLine="314" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125147117" fileName="DebugVMEventsProcessor.java" startLine="318" startPosition="11" endLine="319" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125147149" fileName="DebugVMEventsProcessor.java" startLine="321" startPosition="15" endLine="322" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125147177" fileName="DebugVMEventsProcessor.java" startLine="324" startPosition="56" endLine="325" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125205649" fileName="DebugVMEventsProcessor.java" startLine="327" startPosition="23" endLine="328" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205651" fileName="DebugVMEventsProcessor.java" startLine="328" startPosition="66" endLine="329" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205653" fileName="DebugVMEventsProcessor.java" startLine="329" startPosition="63" endLine="330" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205655" fileName="DebugVMEventsProcessor.java" startLine="330" startPosition="93" endLine="331" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205657" fileName="DebugVMEventsProcessor.java" startLine="331" startPosition="83" endLine="332" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205659" fileName="DebugVMEventsProcessor.java" startLine="332" startPosition="25" endLine="333" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205661" fileName="DebugVMEventsProcessor.java" startLine="333" startPosition="29" endLine="334" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205663" fileName="DebugVMEventsProcessor.java" startLine="334" startPosition="114" endLine="335" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147262" fileName="DebugVMEventsProcessor.java" startLine="336" startPosition="56" endLine="337" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147257" fileName="DebugVMEventsProcessor.java" startLine="339" startPosition="61" endLine="340" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147250" fileName="DebugVMEventsProcessor.java" startLine="342" startPosition="61" endLine="343" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147243" fileName="DebugVMEventsProcessor.java" startLine="345" startPosition="53" endLine="346" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147236" fileName="DebugVMEventsProcessor.java" startLine="348" startPosition="58" endLine="349" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147230" fileName="DebugVMEventsProcessor.java" startLine="350" startPosition="28" endLine="351" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205665" fileName="DebugVMEventsProcessor.java" startLine="352" startPosition="21" endLine="353" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205667" fileName="DebugVMEventsProcessor.java" startLine="353" startPosition="70" endLine="354" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205669" fileName="DebugVMEventsProcessor.java" startLine="354" startPosition="62" endLine="355" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205671" fileName="DebugVMEventsProcessor.java" startLine="356" startPosition="55" endLine="357" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205673" fileName="DebugVMEventsProcessor.java" startLine="358" startPosition="49" endLine="359" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147200" fileName="DebugVMEventsProcessor.java" startLine="360" startPosition="41" endLine="361" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205675" fileName="DebugVMEventsProcessor.java" startLine="366" startPosition="41" endLine="367" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147134" fileName="DebugVMEventsProcessor.java" startLine="368" startPosition="44" endLine="369" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2891782949125147140" fileName="DebugVMEventsProcessor.java" startLine="370" startPosition="47" endLine="371" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="2891782949125205677" fileName="DebugVMEventsProcessor.java" startLine="372" startPosition="33" endLine="373" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147103" fileName="DebugVMEventsProcessor.java" startLine="376" startPosition="40" endLine="377" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147109" fileName="DebugVMEventsProcessor.java" startLine="378" startPosition="43" endLine="379" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147114" fileName="DebugVMEventsProcessor.java" startLine="380" startPosition="17" endLine="381" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205679" fileName="DebugVMEventsProcessor.java" startLine="381" startPosition="29" endLine="382" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205681" fileName="DebugVMEventsProcessor.java" startLine="388" startPosition="50" endLine="389" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205683" fileName="DebugVMEventsProcessor.java" startLine="389" startPosition="116" endLine="390" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147268" fileName="DebugVMEventsProcessor.java" startLine="390" startPosition="71" endLine="391" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125147275" fileName="DebugVMEventsProcessor.java" startLine="391" startPosition="99" endLine="392" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147281" fileName="DebugVMEventsProcessor.java" startLine="399" startPosition="66" endLine="400" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2891782949125147286" fileName="DebugVMEventsProcessor.java" startLine="404" startPosition="59" endLine="405" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125205743" fileName="DebugVMEventsProcessor.java" startLine="409" startPosition="46" endLine="410" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147290" fileName="DebugVMEventsProcessor.java" startLine="410" startPosition="53" endLine="411" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125147294" fileName="DebugVMEventsProcessor.java" startLine="411" startPosition="58" endLine="412" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147299" fileName="DebugVMEventsProcessor.java" startLine="412" startPosition="49" endLine="413" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205745" fileName="DebugVMEventsProcessor.java" startLine="422" startPosition="46" endLine="423" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147308" fileName="DebugVMEventsProcessor.java" startLine="423" startPosition="52" endLine="424" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147312" fileName="DebugVMEventsProcessor.java" startLine="424" startPosition="36" endLine="425" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125147316" fileName="DebugVMEventsProcessor.java" startLine="425" startPosition="58" endLine="426" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125147324" fileName="DebugVMEventsProcessor.java" startLine="426" startPosition="116" endLine="427" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147329" fileName="DebugVMEventsProcessor.java" startLine="427" startPosition="53" endLine="428" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125146439" fileName="DebugVMEventsProcessor.java" startLine="432" startPosition="53" endLine="433" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsTerminateTargetVM" />
+    <nodeInfo nodeId="2891782949125147337" fileName="DebugVMEventsProcessor.java" startLine="435" startPosition="53" endLine="436" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147342" fileName="DebugVMEventsProcessor.java" startLine="439" startPosition="59" endLine="440" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125147352" fileName="DebugVMEventsProcessor.java" startLine="444" startPosition="25" endLine="445" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125147369" fileName="DebugVMEventsProcessor.java" startLine="446" startPosition="36" endLine="447" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205747" fileName="DebugVMEventsProcessor.java" startLine="448" startPosition="16" endLine="449" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125205749" fileName="DebugVMEventsProcessor.java" startLine="449" startPosition="75" endLine="450" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147360" fileName="DebugVMEventsProcessor.java" startLine="450" startPosition="57" endLine="451" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147364" fileName="DebugVMEventsProcessor.java" startLine="451" startPosition="34" endLine="452" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147349" fileName="DebugVMEventsProcessor.java" startLine="454" startPosition="14" endLine="455" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125146456" fileName="DebugVMEventsProcessor.java" startLine="460" startPosition="74" endLine="461" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStepType" />
+    <nodeInfo nodeId="2891782949125147377" fileName="DebugVMEventsProcessor.java" startLine="463" startPosition="111" endLine="464" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="2891782949125147379" fileName="DebugVMEventsProcessor.java" startLine="464" startPosition="28" endLine="465" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147386" fileName="DebugVMEventsProcessor.java" startLine="469" startPosition="46" endLine="470" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2891782949125147390" fileName="DebugVMEventsProcessor.java" startLine="470" startPosition="58" endLine="471" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147402" fileName="DebugVMEventsProcessor.java" startLine="471" startPosition="151" endLine="472" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147407" fileName="DebugVMEventsProcessor.java" startLine="475" startPosition="31" endLine="476" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2891782949125146477" fileName="DebugVMEventsProcessor.java" startLine="484" startPosition="0" endLine="485" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJdiType" />
+    <nodeInfo nodeId="2891782949125147415" fileName="DebugVMEventsProcessor.java" startLine="487" startPosition="27" endLine="488" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147420" fileName="DebugVMEventsProcessor.java" startLine="491" startPosition="29" endLine="492" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2891782949125147559" fileName="DebugVMEventsProcessor.java" startLine="163" startPosition="14" endLine="165" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2891782949125146907" fileName="DebugVMEventsProcessor.java" startLine="213" startPosition="10" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125146399" fileName="DebugVMEventsProcessor.java" startLine="297" startPosition="0" endLine="299" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerEventThread#()V" />
-    <nodeInfo nodeId="2891782949125147228" fileName="DebugVMEventsProcessor.java" startLine="342" startPosition="26" endLine="344" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2891782949125146430" fileName="DebugVMEventsProcessor.java" startLine="409" startPosition="54" endLine="411" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PauseCommand#()V" />
-    <nodeInfo nodeId="2891782949125147347" fileName="DebugVMEventsProcessor.java" startLine="446" startPosition="12" endLine="448" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125146399" fileName="DebugVMEventsProcessor.java" startLine="305" startPosition="0" endLine="307" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebuggerEventThread#()V" />
+    <nodeInfo nodeId="2891782949125147228" fileName="DebugVMEventsProcessor.java" startLine="350" startPosition="26" endLine="352" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2891782949125146430" fileName="DebugVMEventsProcessor.java" startLine="417" startPosition="54" endLine="419" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PauseCommand#()V" />
+    <nodeInfo nodeId="2891782949125147347" fileName="DebugVMEventsProcessor.java" startLine="454" startPosition="12" endLine="456" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2891782949125147502" fileName="DebugVMEventsProcessor.java" startLine="152" startPosition="25" endLine="155" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125147036" fileName="DebugVMEventsProcessor.java" startLine="257" startPosition="136" endLine="260" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125146416" fileName="DebugVMEventsProcessor.java" startLine="390" startPosition="61" endLine="393" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResumeCommand#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
-    <nodeInfo nodeId="2891782949125146442" fileName="DebugVMEventsProcessor.java" startLine="426" startPosition="0" endLine="429" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StopCommand#(Z)V" />
-    <nodeInfo nodeId="2891782949125146480" fileName="DebugVMEventsProcessor.java" startLine="478" startPosition="0" endLine="481" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StepType#(I)V" />
+    <nodeInfo nodeId="2891782949125146416" fileName="DebugVMEventsProcessor.java" startLine="398" startPosition="61" endLine="401" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ResumeCommand#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
+    <nodeInfo nodeId="2891782949125146442" fileName="DebugVMEventsProcessor.java" startLine="434" startPosition="0" endLine="437" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StopCommand#(Z)V" />
+    <nodeInfo nodeId="2891782949125146480" fileName="DebugVMEventsProcessor.java" startLine="486" startPosition="0" endLine="489" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StepType#(I)V" />
     <nodeInfo nodeId="2891782949125146610" fileName="DebugVMEventsProcessor.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualMachine#()Lcom/sun/jdi/VirtualMachine;" />
     <nodeInfo nodeId="2891782949125146616" fileName="DebugVMEventsProcessor.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRequestManager#()Ljetbrains/mps/debugger/java/runtime/RequestManager;" />
     <nodeInfo nodeId="2891782949125146622" fileName="DebugVMEventsProcessor.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuspendManager#()Ljetbrains/mps/debugger/java/runtime/SuspendManager;" />
@@ -366,67 +367,70 @@
     <nodeInfo nodeId="2891782949125146984" fileName="DebugVMEventsProcessor.java" startLine="240" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pause#()V" />
     <nodeInfo nodeId="2891782949125146994" fileName="DebugVMEventsProcessor.java" startLine="244" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stop#(Z)V" />
     <nodeInfo nodeId="4222091233089936695" fileName="DebugVMEventsProcessor.java" startLine="277" startPosition="55" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
-    <nodeInfo nodeId="2891782949125146401" fileName="DebugVMEventsProcessor.java" startLine="300" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopListening#()V" />
-    <nodeInfo nodeId="2891782949125146404" fileName="DebugVMEventsProcessor.java" startLine="304" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStopped#()Z" />
-    <nodeInfo nodeId="2891782949125146447" fileName="DebugVMEventsProcessor.java" startLine="430" startPosition="0" endLine="434" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPriority#()Ljetbrains/mps/debugger/java/runtime/execution/IDebuggerCommand/CommandPriority;" />
-    <nodeInfo nodeId="2891782949125146459" fileName="DebugVMEventsProcessor.java" startLine="454" startPosition="0" endLine="458" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StepCommand#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor/StepType;)V" />
-    <nodeInfo nodeId="2891782949125146469" fileName="DebugVMEventsProcessor.java" startLine="466" startPosition="0" endLine="470" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStepType#()I" />
-    <nodeInfo nodeId="2891782949125146485" fileName="DebugVMEventsProcessor.java" startLine="482" startPosition="0" endLine="486" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJdiType#()I" />
+    <nodeInfo nodeId="2439092563176274550" fileName="DebugVMEventsProcessor.java" startLine="285" startPosition="62" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125146401" fileName="DebugVMEventsProcessor.java" startLine="308" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopListening#()V" />
+    <nodeInfo nodeId="2891782949125146404" fileName="DebugVMEventsProcessor.java" startLine="312" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStopped#()Z" />
+    <nodeInfo nodeId="2891782949125146447" fileName="DebugVMEventsProcessor.java" startLine="438" startPosition="0" endLine="442" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPriority#()Ljetbrains/mps/debugger/java/runtime/execution/IDebuggerCommand/CommandPriority;" />
+    <nodeInfo nodeId="2891782949125146459" fileName="DebugVMEventsProcessor.java" startLine="462" startPosition="0" endLine="466" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StepCommand#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor/StepType;)V" />
+    <nodeInfo nodeId="2891782949125146469" fileName="DebugVMEventsProcessor.java" startLine="474" startPosition="0" endLine="478" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStepType#()I" />
+    <nodeInfo nodeId="2891782949125146485" fileName="DebugVMEventsProcessor.java" startLine="490" startPosition="0" endLine="494" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJdiType#()I" />
     <nodeInfo nodeId="2891782949125146604" fileName="DebugVMEventsProcessor.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMulticaster#()Ljetbrains/mps/debugger/java/runtime/DebugProcessMulticaster;" />
     <nodeInfo nodeId="2891782949125147554" fileName="DebugVMEventsProcessor.java" startLine="160" startPosition="9" endLine="165" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125146905" fileName="DebugVMEventsProcessor.java" startLine="210" startPosition="5" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125146920" fileName="DebugVMEventsProcessor.java" startLine="217" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopConnecting#()V" />
     <nodeInfo nodeId="2891782949125146970" fileName="DebugVMEventsProcessor.java" startLine="235" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
     <nodeInfo nodeId="4222091233089936648" fileName="DebugVMEventsProcessor.java" startLine="276" startPosition="79" endLine="281" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125146729" fileName="DebugVMEventsProcessor.java" startLine="287" startPosition="37" endLine="292" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125147224" fileName="DebugVMEventsProcessor.java" startLine="339" startPosition="26" endLine="344" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125146421" fileName="DebugVMEventsProcessor.java" startLine="394" startPosition="0" endLine="399" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPriority#()Ljetbrains/mps/debugger/java/runtime/execution/IDebuggerCommand/CommandPriority;" />
-    <nodeInfo nodeId="2891782949125147358" fileName="DebugVMEventsProcessor.java" startLine="440" startPosition="14" endLine="445" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2439092563176274542" fileName="DebugVMEventsProcessor.java" startLine="284" startPosition="86" endLine="289" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125146729" fileName="DebugVMEventsProcessor.java" startLine="295" startPosition="37" endLine="300" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125147224" fileName="DebugVMEventsProcessor.java" startLine="347" startPosition="26" endLine="352" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125146421" fileName="DebugVMEventsProcessor.java" startLine="402" startPosition="0" endLine="407" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPriority#()Ljetbrains/mps/debugger/java/runtime/execution/IDebuggerCommand/CommandPriority;" />
+    <nodeInfo nodeId="2891782949125147358" fileName="DebugVMEventsProcessor.java" startLine="448" startPosition="14" endLine="453" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2891782949125146547" fileName="DebugVMEventsProcessor.java" startLine="51" startPosition="0" endLine="57" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DebugVMEventsProcessor#(Ljetbrains/mps/debug/api/BreakpointManagerComponent;Ljetbrains/mps/debugger/java/runtime/execution/IDebuggerManagerThread;)V" />
     <nodeInfo nodeId="2891782949125146581" fileName="DebugVMEventsProcessor.java" startLine="59" startPosition="43" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125146698" fileName="DebugVMEventsProcessor.java" startLine="115" startPosition="35" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125146952" fileName="DebugVMEventsProcessor.java" startLine="226" startPosition="30" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="2891782949125146774" fileName="DebugVMEventsProcessor.java" startLine="170" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassPrepareEvent#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Lcom/sun/jdi/event/ClassPrepareEvent;)V" />
-    <nodeInfo nodeId="2891782949125147173" fileName="DebugVMEventsProcessor.java" startLine="379" startPosition="62" endLine="386" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
-    <nodeInfo nodeId="2891782949125146466" fileName="DebugVMEventsProcessor.java" startLine="459" startPosition="0" endLine="466" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125147173" fileName="DebugVMEventsProcessor.java" startLine="387" startPosition="62" endLine="394" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125146466" fileName="DebugVMEventsProcessor.java" startLine="467" startPosition="0" endLine="474" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
     <nodeInfo nodeId="2891782949125147475" fileName="DebugVMEventsProcessor.java" startLine="143" startPosition="35" endLine="151" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2891782949125147007" fileName="DebugVMEventsProcessor.java" startLine="248" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="step#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor/StepType;Ljetbrains/mps/debugger/java/runtime/SuspendContext;)V" />
     <nodeInfo nodeId="4222091233089936629" fileName="DebugVMEventsProcessor.java" startLine="275" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeInManagerThread#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
-    <nodeInfo nodeId="2891782949125147220" fileName="DebugVMEventsProcessor.java" startLine="336" startPosition="26" endLine="344" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125147166" fileName="DebugVMEventsProcessor.java" startLine="378" startPosition="54" endLine="386" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125146424" fileName="DebugVMEventsProcessor.java" startLine="399" startPosition="0" endLine="407" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
-    <nodeInfo nodeId="2891782949125147356" fileName="DebugVMEventsProcessor.java" startLine="437" startPosition="60" endLine="445" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2439092563176274535" fileName="DebugVMEventsProcessor.java" startLine="283" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeInManagerThreadAndFork#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P0_E0;)V" />
+    <nodeInfo nodeId="2891782949125147220" fileName="DebugVMEventsProcessor.java" startLine="344" startPosition="26" endLine="352" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125147166" fileName="DebugVMEventsProcessor.java" startLine="386" startPosition="54" endLine="394" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125146424" fileName="DebugVMEventsProcessor.java" startLine="407" startPosition="0" endLine="415" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125147356" fileName="DebugVMEventsProcessor.java" startLine="445" startPosition="60" endLine="453" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125146575" fileName="DebugVMEventsProcessor.java" startLine="58" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="commitVM#(Lcom/sun/jdi/VirtualMachine;)V" />
     <nodeInfo nodeId="2891782949125147499" fileName="DebugVMEventsProcessor.java" startLine="151" startPosition="9" endLine="160" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125146935" fileName="DebugVMEventsProcessor.java" startLine="224" startPosition="50" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125146806" fileName="DebugVMEventsProcessor.java" startLine="179" startPosition="21" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2891782949125146433" fileName="DebugVMEventsProcessor.java" startLine="412" startPosition="0" endLine="422" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125146433" fileName="DebugVMEventsProcessor.java" startLine="420" startPosition="0" endLine="430" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
     <nodeInfo nodeId="2891782949125146688" fileName="DebugVMEventsProcessor.java" startLine="112" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="vmAttached#()V" />
-    <nodeInfo nodeId="2891782949125146710" fileName="DebugVMEventsProcessor.java" startLine="283" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="preprocessEvent#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Lcom/sun/jdi/ThreadReference;)V" />
-    <nodeInfo nodeId="2891782949125147216" fileName="DebugVMEventsProcessor.java" startLine="333" startPosition="26" endLine="344" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125146410" fileName="DebugVMEventsProcessor.java" startLine="377" startPosition="0" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeVMDeathEventInManagerThread#()V" />
+    <nodeInfo nodeId="2891782949125146710" fileName="DebugVMEventsProcessor.java" startLine="291" startPosition="0" endLine="302" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="preprocessEvent#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Lcom/sun/jdi/ThreadReference;)V" />
+    <nodeInfo nodeId="2891782949125147216" fileName="DebugVMEventsProcessor.java" startLine="341" startPosition="26" endLine="352" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125146410" fileName="DebugVMEventsProcessor.java" startLine="385" startPosition="0" endLine="396" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeVMDeathEventInManagerThread#()V" />
     <nodeInfo nodeId="2891782949125146927" fileName="DebugVMEventsProcessor.java" startLine="222" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeProcess#(Z)V" />
-    <nodeInfo nodeId="2891782949125147345" fileName="DebugVMEventsProcessor.java" startLine="435" startPosition="46" endLine="448" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125147345" fileName="DebugVMEventsProcessor.java" startLine="443" startPosition="46" endLine="456" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125146798" fileName="DebugVMEventsProcessor.java" startLine="177" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processVMDeathEvent#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Lcom/sun/jdi/event/Event;)V" />
     <nodeInfo nodeId="2891782949125146857" fileName="DebugVMEventsProcessor.java" startLine="196" startPosition="43" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125147212" fileName="DebugVMEventsProcessor.java" startLine="330" startPosition="26" endLine="344" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2891782949125146450" fileName="DebugVMEventsProcessor.java" startLine="434" startPosition="0" endLine="450" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
-    <nodeInfo nodeId="2891782949125147208" fileName="DebugVMEventsProcessor.java" startLine="327" startPosition="79" endLine="344" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125147212" fileName="DebugVMEventsProcessor.java" startLine="338" startPosition="26" endLine="352" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2891782949125146450" fileName="DebugVMEventsProcessor.java" startLine="442" startPosition="0" endLine="458" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125147208" fileName="DebugVMEventsProcessor.java" startLine="335" startPosition="79" endLine="352" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2891782949125147024" fileName="DebugVMEventsProcessor.java" startLine="256" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addNewStepRequest#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Lcom/sun/jdi/ThreadReference;Ljetbrains/mps/debugger/java/runtime/StepRequestor;I)V" />
     <nodeInfo nodeId="2891782949125146829" fileName="DebugVMEventsProcessor.java" startLine="191" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processStepEvent#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Lcom/sun/jdi/event/StepEvent;)V" />
     <nodeInfo nodeId="2891782949125146765" fileName="DebugVMEventsProcessor.java" startLine="131" startPosition="86" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
-    <nodeInfo nodeId="2891782949125147189" fileName="DebugVMEventsProcessor.java" startLine="318" startPosition="46" endLine="354" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2891782949125147189" fileName="DebugVMEventsProcessor.java" startLine="326" startPosition="46" endLine="362" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="2891782949125146759" fileName="DebugVMEventsProcessor.java" startLine="130" startPosition="72" endLine="167" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147184" fileName="DebugVMEventsProcessor.java" startLine="317" startPosition="112" endLine="355" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2891782949125147162" fileName="DebugVMEventsProcessor.java" startLine="315" startPosition="68" endLine="357" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
-    <nodeInfo nodeId="2891782949125147155" fileName="DebugVMEventsProcessor.java" startLine="314" startPosition="58" endLine="357" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125147184" fileName="DebugVMEventsProcessor.java" startLine="325" startPosition="112" endLine="363" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2891782949125147162" fileName="DebugVMEventsProcessor.java" startLine="323" startPosition="68" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="action#()V" />
+    <nodeInfo nodeId="2891782949125147155" fileName="DebugVMEventsProcessor.java" startLine="322" startPosition="58" endLine="365" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2891782949125146734" fileName="DebugVMEventsProcessor.java" startLine="123" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processLocatableEvent#(Ljetbrains/mps/debugger/java/runtime/SuspendContext;Lcom/sun/jdi/event/LocatableEvent;)V" />
-    <nodeInfo nodeId="2891782949125147127" fileName="DebugVMEventsProcessor.java" startLine="312" startPosition="32" endLine="366" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2891782949125147123" fileName="DebugVMEventsProcessor.java" startLine="311" startPosition="62" endLine="367" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2891782949125147100" fileName="DebugVMEventsProcessor.java" startLine="309" startPosition="23" endLine="375" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="2891782949125146407" fileName="DebugVMEventsProcessor.java" startLine="308" startPosition="0" endLine="377" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <scopeInfo nodeId="2891782949125147090" fileName="DebugVMEventsProcessor.java" startLine="298" startPosition="39" endLine="298" endPosition="39" />
-    <scopeInfo nodeId="2891782949125147306" fileName="DebugVMEventsProcessor.java" startLine="410" startPosition="28" endLine="410" endPosition="28" />
+    <nodeInfo nodeId="2891782949125147127" fileName="DebugVMEventsProcessor.java" startLine="320" startPosition="32" endLine="374" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="2891782949125147123" fileName="DebugVMEventsProcessor.java" startLine="319" startPosition="62" endLine="375" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2891782949125147100" fileName="DebugVMEventsProcessor.java" startLine="317" startPosition="23" endLine="383" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="2891782949125146407" fileName="DebugVMEventsProcessor.java" startLine="316" startPosition="0" endLine="385" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <scopeInfo nodeId="2891782949125147090" fileName="DebugVMEventsProcessor.java" startLine="306" startPosition="39" endLine="306" endPosition="39" />
+    <scopeInfo nodeId="2891782949125147306" fileName="DebugVMEventsProcessor.java" startLine="418" startPosition="28" endLine="418" endPosition="28" />
     <scopeInfo nodeId="2891782949125146613" fileName="DebugVMEventsProcessor.java" startLine="73" startPosition="45" endLine="74" endPosition="28" />
     <scopeInfo nodeId="2891782949125146619" fileName="DebugVMEventsProcessor.java" startLine="77" startPosition="45" endLine="78" endPosition="28" />
     <scopeInfo nodeId="2891782949125146625" fileName="DebugVMEventsProcessor.java" startLine="81" startPosition="45" endLine="82" endPosition="28" />
@@ -451,59 +455,60 @@
     <scopeInfo nodeId="2891782949125146999" fileName="DebugVMEventsProcessor.java" startLine="245" startPosition="39" endLine="246" endPosition="96" />
     <scopeInfo nodeId="2891782949125147040" fileName="DebugVMEventsProcessor.java" startLine="258" startPosition="29" endLine="259" endPosition="13" />
     <scopeInfo nodeId="4222091233089936699" fileName="DebugVMEventsProcessor.java" startLine="278" startPosition="48" endLine="279" endPosition="25" />
-    <scopeInfo nodeId="2891782949125147091" fileName="DebugVMEventsProcessor.java" startLine="301" startPosition="46" endLine="302" endPosition="25" />
-    <scopeInfo nodeId="2891782949125147096" fileName="DebugVMEventsProcessor.java" startLine="305" startPosition="46" endLine="306" endPosition="25" />
-    <scopeInfo nodeId="2891782949125147261" fileName="DebugVMEventsProcessor.java" startLine="328" startPosition="56" endLine="329" endPosition="65" />
-    <scopeInfo nodeId="2891782949125147256" fileName="DebugVMEventsProcessor.java" startLine="331" startPosition="61" endLine="332" endPosition="65" />
-    <scopeInfo nodeId="2891782949125147249" fileName="DebugVMEventsProcessor.java" startLine="334" startPosition="61" endLine="335" endPosition="90" />
-    <scopeInfo nodeId="2891782949125147242" fileName="DebugVMEventsProcessor.java" startLine="337" startPosition="53" endLine="338" endPosition="74" />
-    <scopeInfo nodeId="2891782949125147235" fileName="DebugVMEventsProcessor.java" startLine="340" startPosition="58" endLine="341" endPosition="84" />
-    <scopeInfo nodeId="2891782949125147229" fileName="DebugVMEventsProcessor.java" startLine="342" startPosition="28" endLine="343" endPosition="66" />
-    <scopeInfo nodeId="2891782949125147190" fileName="DebugVMEventsProcessor.java" startLine="348" startPosition="0" endLine="349" endPosition="37">
+    <scopeInfo nodeId="2439092563176274554" fileName="DebugVMEventsProcessor.java" startLine="286" startPosition="48" endLine="287" endPosition="25" />
+    <scopeInfo nodeId="2891782949125147091" fileName="DebugVMEventsProcessor.java" startLine="309" startPosition="46" endLine="310" endPosition="25" />
+    <scopeInfo nodeId="2891782949125147096" fileName="DebugVMEventsProcessor.java" startLine="313" startPosition="46" endLine="314" endPosition="25" />
+    <scopeInfo nodeId="2891782949125147261" fileName="DebugVMEventsProcessor.java" startLine="336" startPosition="56" endLine="337" endPosition="65" />
+    <scopeInfo nodeId="2891782949125147256" fileName="DebugVMEventsProcessor.java" startLine="339" startPosition="61" endLine="340" endPosition="65" />
+    <scopeInfo nodeId="2891782949125147249" fileName="DebugVMEventsProcessor.java" startLine="342" startPosition="61" endLine="343" endPosition="90" />
+    <scopeInfo nodeId="2891782949125147242" fileName="DebugVMEventsProcessor.java" startLine="345" startPosition="53" endLine="346" endPosition="74" />
+    <scopeInfo nodeId="2891782949125147235" fileName="DebugVMEventsProcessor.java" startLine="348" startPosition="58" endLine="349" endPosition="84" />
+    <scopeInfo nodeId="2891782949125147229" fileName="DebugVMEventsProcessor.java" startLine="350" startPosition="28" endLine="351" endPosition="66" />
+    <scopeInfo nodeId="2891782949125147190" fileName="DebugVMEventsProcessor.java" startLine="356" startPosition="0" endLine="357" endPosition="37">
       <varInfo nodeId="2891782949125147192" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147191" fileName="DebugVMEventsProcessor.java" startLine="348" startPosition="55" endLine="349" endPosition="37" />
-    <scopeInfo nodeId="2891782949125147194" fileName="DebugVMEventsProcessor.java" startLine="350" startPosition="0" endLine="351" endPosition="36">
+    <scopeInfo nodeId="2891782949125147191" fileName="DebugVMEventsProcessor.java" startLine="356" startPosition="55" endLine="357" endPosition="37" />
+    <scopeInfo nodeId="2891782949125147194" fileName="DebugVMEventsProcessor.java" startLine="358" startPosition="0" endLine="359" endPosition="36">
       <varInfo nodeId="2891782949125147196" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147195" fileName="DebugVMEventsProcessor.java" startLine="350" startPosition="49" endLine="351" endPosition="36" />
-    <scopeInfo nodeId="2891782949125147198" fileName="DebugVMEventsProcessor.java" startLine="352" startPosition="0" endLine="353" endPosition="56">
+    <scopeInfo nodeId="2891782949125147195" fileName="DebugVMEventsProcessor.java" startLine="358" startPosition="49" endLine="359" endPosition="36" />
+    <scopeInfo nodeId="2891782949125147198" fileName="DebugVMEventsProcessor.java" startLine="360" startPosition="0" endLine="361" endPosition="56">
       <varInfo nodeId="2891782949125147205" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147199" fileName="DebugVMEventsProcessor.java" startLine="352" startPosition="41" endLine="353" endPosition="56" />
-    <scopeInfo nodeId="2891782949125147128" fileName="DebugVMEventsProcessor.java" startLine="358" startPosition="0" endLine="359" endPosition="30">
+    <scopeInfo nodeId="2891782949125147199" fileName="DebugVMEventsProcessor.java" startLine="360" startPosition="41" endLine="361" endPosition="56" />
+    <scopeInfo nodeId="2891782949125147128" fileName="DebugVMEventsProcessor.java" startLine="366" startPosition="0" endLine="367" endPosition="30">
       <varInfo nodeId="2891782949125147130" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147129" fileName="DebugVMEventsProcessor.java" startLine="358" startPosition="41" endLine="359" endPosition="30" />
-    <scopeInfo nodeId="2891782949125147132" fileName="DebugVMEventsProcessor.java" startLine="360" startPosition="0" endLine="361" endPosition="20">
+    <scopeInfo nodeId="2891782949125147129" fileName="DebugVMEventsProcessor.java" startLine="366" startPosition="41" endLine="367" endPosition="30" />
+    <scopeInfo nodeId="2891782949125147132" fileName="DebugVMEventsProcessor.java" startLine="368" startPosition="0" endLine="369" endPosition="20">
       <varInfo nodeId="2891782949125147136" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147133" fileName="DebugVMEventsProcessor.java" startLine="360" startPosition="44" endLine="361" endPosition="20" />
-    <scopeInfo nodeId="2891782949125147138" fileName="DebugVMEventsProcessor.java" startLine="362" startPosition="0" endLine="363" endPosition="20">
+    <scopeInfo nodeId="2891782949125147133" fileName="DebugVMEventsProcessor.java" startLine="368" startPosition="44" endLine="369" endPosition="20" />
+    <scopeInfo nodeId="2891782949125147138" fileName="DebugVMEventsProcessor.java" startLine="370" startPosition="0" endLine="371" endPosition="20">
       <varInfo nodeId="2891782949125147142" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147139" fileName="DebugVMEventsProcessor.java" startLine="362" startPosition="47" endLine="363" endPosition="20" />
-    <scopeInfo nodeId="2891782949125147144" fileName="DebugVMEventsProcessor.java" startLine="364" startPosition="0" endLine="365" endPosition="30">
+    <scopeInfo nodeId="2891782949125147139" fileName="DebugVMEventsProcessor.java" startLine="370" startPosition="47" endLine="371" endPosition="20" />
+    <scopeInfo nodeId="2891782949125147144" fileName="DebugVMEventsProcessor.java" startLine="372" startPosition="0" endLine="373" endPosition="30">
       <varInfo nodeId="2891782949125147146" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147145" fileName="DebugVMEventsProcessor.java" startLine="364" startPosition="33" endLine="365" endPosition="30" />
-    <scopeInfo nodeId="2891782949125147101" fileName="DebugVMEventsProcessor.java" startLine="368" startPosition="0" endLine="369" endPosition="44">
+    <scopeInfo nodeId="2891782949125147145" fileName="DebugVMEventsProcessor.java" startLine="372" startPosition="33" endLine="373" endPosition="30" />
+    <scopeInfo nodeId="2891782949125147101" fileName="DebugVMEventsProcessor.java" startLine="376" startPosition="0" endLine="377" endPosition="44">
       <varInfo nodeId="2891782949125147105" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147102" fileName="DebugVMEventsProcessor.java" startLine="368" startPosition="40" endLine="369" endPosition="44" />
-    <scopeInfo nodeId="2891782949125147107" fileName="DebugVMEventsProcessor.java" startLine="370" startPosition="0" endLine="371" endPosition="44">
+    <scopeInfo nodeId="2891782949125147102" fileName="DebugVMEventsProcessor.java" startLine="376" startPosition="40" endLine="377" endPosition="44" />
+    <scopeInfo nodeId="2891782949125147107" fileName="DebugVMEventsProcessor.java" startLine="378" startPosition="0" endLine="379" endPosition="44">
       <varInfo nodeId="2891782949125147111" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147108" fileName="DebugVMEventsProcessor.java" startLine="370" startPosition="43" endLine="371" endPosition="44" />
-    <scopeInfo nodeId="2891782949125147280" fileName="DebugVMEventsProcessor.java" startLine="391" startPosition="66" endLine="392" endPosition="28" />
-    <scopeInfo nodeId="2891782949125147284" fileName="DebugVMEventsProcessor.java" startLine="396" startPosition="59" endLine="397" endPosition="51" />
-    <scopeInfo nodeId="2891782949125147336" fileName="DebugVMEventsProcessor.java" startLine="427" startPosition="53" endLine="428" endPosition="50" />
-    <scopeInfo nodeId="2891782949125147341" fileName="DebugVMEventsProcessor.java" startLine="431" startPosition="59" endLine="432" endPosition="51" />
-    <scopeInfo nodeId="2891782949125147368" fileName="DebugVMEventsProcessor.java" startLine="438" startPosition="36" endLine="439" endPosition="34" />
-    <scopeInfo nodeId="2891782949125147348" fileName="DebugVMEventsProcessor.java" startLine="446" startPosition="14" endLine="447" endPosition="25" />
-    <scopeInfo nodeId="2891782949125147406" fileName="DebugVMEventsProcessor.java" startLine="467" startPosition="31" endLine="468" endPosition="37" />
-    <scopeInfo nodeId="2891782949125147414" fileName="DebugVMEventsProcessor.java" startLine="479" startPosition="27" endLine="480" endPosition="26" />
-    <scopeInfo nodeId="2891782949125147419" fileName="DebugVMEventsProcessor.java" startLine="483" startPosition="29" endLine="484" endPosition="23" />
+    <scopeInfo nodeId="2891782949125147108" fileName="DebugVMEventsProcessor.java" startLine="378" startPosition="43" endLine="379" endPosition="44" />
+    <scopeInfo nodeId="2891782949125147280" fileName="DebugVMEventsProcessor.java" startLine="399" startPosition="66" endLine="400" endPosition="28" />
+    <scopeInfo nodeId="2891782949125147284" fileName="DebugVMEventsProcessor.java" startLine="404" startPosition="59" endLine="405" endPosition="51" />
+    <scopeInfo nodeId="2891782949125147336" fileName="DebugVMEventsProcessor.java" startLine="435" startPosition="53" endLine="436" endPosition="50" />
+    <scopeInfo nodeId="2891782949125147341" fileName="DebugVMEventsProcessor.java" startLine="439" startPosition="59" endLine="440" endPosition="51" />
+    <scopeInfo nodeId="2891782949125147368" fileName="DebugVMEventsProcessor.java" startLine="446" startPosition="36" endLine="447" endPosition="34" />
+    <scopeInfo nodeId="2891782949125147348" fileName="DebugVMEventsProcessor.java" startLine="454" startPosition="14" endLine="455" endPosition="25" />
+    <scopeInfo nodeId="2891782949125147406" fileName="DebugVMEventsProcessor.java" startLine="475" startPosition="31" endLine="476" endPosition="37" />
+    <scopeInfo nodeId="2891782949125147414" fileName="DebugVMEventsProcessor.java" startLine="487" startPosition="27" endLine="488" endPosition="26" />
+    <scopeInfo nodeId="2891782949125147419" fileName="DebugVMEventsProcessor.java" startLine="491" startPosition="29" endLine="492" endPosition="23" />
     <scopeInfo nodeId="2891782949125146607" fileName="DebugVMEventsProcessor.java" startLine="68" startPosition="51" endLine="70" endPosition="25" />
     <scopeInfo nodeId="2891782949125147441" fileName="DebugVMEventsProcessor.java" startLine="136" startPosition="68" endLine="138" endPosition="17" />
     <scopeInfo nodeId="2891782949125147546" fileName="DebugVMEventsProcessor.java" startLine="156" startPosition="49" endLine="158" endPosition="78" />
@@ -513,21 +518,21 @@
     <scopeInfo nodeId="2891782949125146923" fileName="DebugVMEventsProcessor.java" startLine="218" startPosition="33" endLine="220" endPosition="23" />
     <scopeInfo nodeId="2891782949125146953" fileName="DebugVMEventsProcessor.java" startLine="229" startPosition="17" endLine="231" endPosition="61" />
     <scopeInfo nodeId="2891782949125146976" fileName="DebugVMEventsProcessor.java" startLine="236" startPosition="62" endLine="238" endPosition="90" />
-    <scopeInfo nodeId="2891782949125146399" fileName="DebugVMEventsProcessor.java" startLine="297" startPosition="0" endLine="299" endPosition="5" />
-    <scopeInfo nodeId="2891782949125147113" fileName="DebugVMEventsProcessor.java" startLine="372" startPosition="17" endLine="374" endPosition="37" />
-    <scopeInfo nodeId="2891782949125146430" fileName="DebugVMEventsProcessor.java" startLine="409" startPosition="54" endLine="411" endPosition="5" />
-    <scopeInfo nodeId="2891782949125147376" fileName="DebugVMEventsProcessor.java" startLine="455" startPosition="111" endLine="457" endPosition="24" />
-    <scopeInfo nodeId="2891782949125146733" fileName="DebugVMEventsProcessor.java" startLine="288" startPosition="28" endLine="291" endPosition="77" />
-    <scopeInfo nodeId="2891782949125146416" fileName="DebugVMEventsProcessor.java" startLine="390" startPosition="61" endLine="393" endPosition="5">
+    <scopeInfo nodeId="2891782949125146399" fileName="DebugVMEventsProcessor.java" startLine="305" startPosition="0" endLine="307" endPosition="5" />
+    <scopeInfo nodeId="2891782949125147113" fileName="DebugVMEventsProcessor.java" startLine="380" startPosition="17" endLine="382" endPosition="37" />
+    <scopeInfo nodeId="2891782949125146430" fileName="DebugVMEventsProcessor.java" startLine="417" startPosition="54" endLine="419" endPosition="5" />
+    <scopeInfo nodeId="2891782949125147376" fileName="DebugVMEventsProcessor.java" startLine="463" startPosition="111" endLine="465" endPosition="24" />
+    <scopeInfo nodeId="2891782949125146733" fileName="DebugVMEventsProcessor.java" startLine="296" startPosition="28" endLine="299" endPosition="77" />
+    <scopeInfo nodeId="2891782949125146416" fileName="DebugVMEventsProcessor.java" startLine="398" startPosition="61" endLine="401" endPosition="5">
       <varInfo nodeId="2891782949125146419" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125146442" fileName="DebugVMEventsProcessor.java" startLine="426" startPosition="0" endLine="429" endPosition="5">
+    <scopeInfo nodeId="2891782949125146442" fileName="DebugVMEventsProcessor.java" startLine="434" startPosition="0" endLine="437" endPosition="5">
       <varInfo nodeId="2891782949125146445" varName="isTerminateTargetVM" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147385" fileName="DebugVMEventsProcessor.java" startLine="461" startPosition="46" endLine="464" endPosition="21">
+    <scopeInfo nodeId="2891782949125147385" fileName="DebugVMEventsProcessor.java" startLine="469" startPosition="46" endLine="472" endPosition="21">
       <varInfo nodeId="2891782949125147387" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125146480" fileName="DebugVMEventsProcessor.java" startLine="478" startPosition="0" endLine="481" endPosition="5">
+    <scopeInfo nodeId="2891782949125146480" fileName="DebugVMEventsProcessor.java" startLine="486" startPosition="0" endLine="489" endPosition="5">
       <varInfo nodeId="2891782949125146483" varName="jdiType" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125146554" fileName="DebugVMEventsProcessor.java" startLine="52" startPosition="118" endLine="56" endPosition="48" />
@@ -556,22 +561,23 @@
       <varInfo nodeId="2891782949125146997" varName="terminate" />
     </scopeInfo>
     <scopeInfo nodeId="4222091233089936695" fileName="DebugVMEventsProcessor.java" startLine="277" startPosition="55" endLine="281" endPosition="0" />
-    <scopeInfo nodeId="2891782949125146401" fileName="DebugVMEventsProcessor.java" startLine="300" startPosition="0" endLine="304" endPosition="0" />
-    <scopeInfo nodeId="2891782949125146404" fileName="DebugVMEventsProcessor.java" startLine="304" startPosition="0" endLine="308" endPosition="0" />
-    <scopeInfo nodeId="2891782949125147267" fileName="DebugVMEventsProcessor.java" startLine="380" startPosition="50" endLine="384" endPosition="52">
+    <scopeInfo nodeId="2439092563176274550" fileName="DebugVMEventsProcessor.java" startLine="285" startPosition="62" endLine="289" endPosition="0" />
+    <scopeInfo nodeId="2891782949125146401" fileName="DebugVMEventsProcessor.java" startLine="308" startPosition="0" endLine="312" endPosition="0" />
+    <scopeInfo nodeId="2891782949125146404" fileName="DebugVMEventsProcessor.java" startLine="312" startPosition="0" endLine="316" endPosition="0" />
+    <scopeInfo nodeId="2891782949125147267" fileName="DebugVMEventsProcessor.java" startLine="388" startPosition="50" endLine="392" endPosition="52">
       <varInfo nodeId="2891782949125147269" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147289" fileName="DebugVMEventsProcessor.java" startLine="401" startPosition="46" endLine="405" endPosition="52">
+    <scopeInfo nodeId="2891782949125147289" fileName="DebugVMEventsProcessor.java" startLine="409" startPosition="46" endLine="413" endPosition="52">
       <varInfo nodeId="2891782949125147291" varName="suspendManager" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125146447" fileName="DebugVMEventsProcessor.java" startLine="430" startPosition="0" endLine="434" endPosition="0" />
-    <scopeInfo nodeId="2891782949125147359" fileName="DebugVMEventsProcessor.java" startLine="440" startPosition="16" endLine="444" endPosition="35" />
-    <scopeInfo nodeId="2891782949125146459" fileName="DebugVMEventsProcessor.java" startLine="454" startPosition="0" endLine="458" endPosition="5">
+    <scopeInfo nodeId="2891782949125146447" fileName="DebugVMEventsProcessor.java" startLine="438" startPosition="0" endLine="442" endPosition="0" />
+    <scopeInfo nodeId="2891782949125147359" fileName="DebugVMEventsProcessor.java" startLine="448" startPosition="16" endLine="452" endPosition="35" />
+    <scopeInfo nodeId="2891782949125146459" fileName="DebugVMEventsProcessor.java" startLine="462" startPosition="0" endLine="466" endPosition="5">
       <varInfo nodeId="2891782949125146462" varName="suspendContext" />
       <varInfo nodeId="2891782949125146464" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125146469" fileName="DebugVMEventsProcessor.java" startLine="466" startPosition="0" endLine="470" endPosition="0" />
-    <scopeInfo nodeId="2891782949125146485" fileName="DebugVMEventsProcessor.java" startLine="482" startPosition="0" endLine="486" endPosition="0" />
+    <scopeInfo nodeId="2891782949125146469" fileName="DebugVMEventsProcessor.java" startLine="474" startPosition="0" endLine="478" endPosition="0" />
+    <scopeInfo nodeId="2891782949125146485" fileName="DebugVMEventsProcessor.java" startLine="490" startPosition="0" endLine="494" endPosition="0" />
     <scopeInfo nodeId="2891782949125146604" fileName="DebugVMEventsProcessor.java" startLine="67" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="2891782949125146807" fileName="DebugVMEventsProcessor.java" startLine="183" startPosition="15" endLine="188" endPosition="26" />
     <scopeInfo nodeId="2891782949125146920" fileName="DebugVMEventsProcessor.java" startLine="217" startPosition="0" endLine="222" endPosition="0" />
@@ -580,13 +586,14 @@
     </scopeInfo>
     <scopeInfo nodeId="2891782949125147015" fileName="DebugVMEventsProcessor.java" startLine="249" startPosition="98" endLine="254" endPosition="94" />
     <scopeInfo nodeId="4222091233089936632" fileName="DebugVMEventsProcessor.java" startLine="276" startPosition="79" endLine="281" endPosition="7" />
-    <scopeInfo nodeId="2891782949125146421" fileName="DebugVMEventsProcessor.java" startLine="394" startPosition="0" endLine="399" endPosition="0" />
+    <scopeInfo nodeId="2439092563176274541" fileName="DebugVMEventsProcessor.java" startLine="284" startPosition="86" endLine="289" endPosition="7" />
+    <scopeInfo nodeId="2891782949125146421" fileName="DebugVMEventsProcessor.java" startLine="402" startPosition="0" endLine="407" endPosition="0" />
     <scopeInfo nodeId="2891782949125146547" fileName="DebugVMEventsProcessor.java" startLine="51" startPosition="0" endLine="57" endPosition="3">
       <varInfo nodeId="2891782949125146550" varName="breakpointsManager" />
       <varInfo nodeId="2891782949125146552" varName="managerThread" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125146580" fileName="DebugVMEventsProcessor.java" startLine="59" startPosition="43" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="2891782949125147307" fileName="DebugVMEventsProcessor.java" startLine="414" startPosition="46" endLine="420" endPosition="46">
+    <scopeInfo nodeId="2891782949125147307" fileName="DebugVMEventsProcessor.java" startLine="422" startPosition="46" endLine="428" endPosition="46">
       <varInfo nodeId="2891782949125147317" varName="suspendContext" />
       <varInfo nodeId="2891782949125147313" varName="suspendManager" />
     </scopeInfo>
@@ -596,8 +603,8 @@
       <varInfo nodeId="2891782949125146777" varName="suspendContext" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125146947" fileName="DebugVMEventsProcessor.java" startLine="225" startPosition="122" endLine="232" endPosition="7" />
-    <scopeInfo nodeId="2891782949125147173" fileName="DebugVMEventsProcessor.java" startLine="379" startPosition="62" endLine="386" endPosition="0" />
-    <scopeInfo nodeId="2891782949125146466" fileName="DebugVMEventsProcessor.java" startLine="459" startPosition="0" endLine="466" endPosition="0" />
+    <scopeInfo nodeId="2891782949125147173" fileName="DebugVMEventsProcessor.java" startLine="387" startPosition="62" endLine="394" endPosition="0" />
+    <scopeInfo nodeId="2891782949125146466" fileName="DebugVMEventsProcessor.java" startLine="467" startPosition="0" endLine="474" endPosition="0" />
     <scopeInfo nodeId="2891782949125146691" fileName="DebugVMEventsProcessor.java" startLine="113" startPosition="29" endLine="121" endPosition="5" />
     <scopeInfo nodeId="2891782949125147007" fileName="DebugVMEventsProcessor.java" startLine="248" startPosition="0" endLine="256" endPosition="0">
       <varInfo nodeId="2891782949125147012" varName="suspendContext" />
@@ -606,26 +613,29 @@
     <scopeInfo nodeId="4222091233089936629" fileName="DebugVMEventsProcessor.java" startLine="275" startPosition="0" endLine="283" endPosition="0">
       <varInfo nodeId="4222091233089936638" varName="command" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125146717" fileName="DebugVMEventsProcessor.java" startLine="284" startPosition="94" endLine="292" endPosition="5">
+    <scopeInfo nodeId="2439092563176274535" fileName="DebugVMEventsProcessor.java" startLine="283" startPosition="0" endLine="291" endPosition="0">
+      <varInfo nodeId="2439092563176274536" varName="command" />
+    </scopeInfo>
+    <scopeInfo nodeId="2891782949125146717" fileName="DebugVMEventsProcessor.java" startLine="292" startPosition="94" endLine="300" endPosition="5">
       <varInfo nodeId="2891782949125146719" varName="oldThread" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147165" fileName="DebugVMEventsProcessor.java" startLine="378" startPosition="54" endLine="386" endPosition="9" />
-    <scopeInfo nodeId="2891782949125146424" fileName="DebugVMEventsProcessor.java" startLine="399" startPosition="0" endLine="407" endPosition="0" />
+    <scopeInfo nodeId="2891782949125147165" fileName="DebugVMEventsProcessor.java" startLine="386" startPosition="54" endLine="394" endPosition="9" />
+    <scopeInfo nodeId="2891782949125146424" fileName="DebugVMEventsProcessor.java" startLine="407" startPosition="0" endLine="415" endPosition="0" />
     <scopeInfo nodeId="2891782949125146575" fileName="DebugVMEventsProcessor.java" startLine="58" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="2891782949125146578" varName="vm" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147351" fileName="DebugVMEventsProcessor.java" startLine="436" startPosition="25" endLine="445" endPosition="9">
+    <scopeInfo nodeId="2891782949125147351" fileName="DebugVMEventsProcessor.java" startLine="444" startPosition="25" endLine="453" endPosition="9">
       <varInfo nodeId="2891782949125147353" varName="virtualMachine" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125146932" fileName="DebugVMEventsProcessor.java" startLine="223" startPosition="51" endLine="233" endPosition="5" />
-    <scopeInfo nodeId="2891782949125146433" fileName="DebugVMEventsProcessor.java" startLine="412" startPosition="0" endLine="422" endPosition="0" />
+    <scopeInfo nodeId="2891782949125146433" fileName="DebugVMEventsProcessor.java" startLine="420" startPosition="0" endLine="430" endPosition="0" />
     <scopeInfo nodeId="2891782949125146688" fileName="DebugVMEventsProcessor.java" startLine="112" startPosition="0" endLine="123" endPosition="0" />
     <scopeInfo nodeId="2891782949125146805" fileName="DebugVMEventsProcessor.java" startLine="178" startPosition="80" endLine="189" endPosition="5" />
-    <scopeInfo nodeId="2891782949125146710" fileName="DebugVMEventsProcessor.java" startLine="283" startPosition="0" endLine="294" endPosition="0">
+    <scopeInfo nodeId="2891782949125146710" fileName="DebugVMEventsProcessor.java" startLine="291" startPosition="0" endLine="302" endPosition="0">
       <varInfo nodeId="2891782949125146713" varName="suspendContext" />
       <varInfo nodeId="2891782949125146715" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125146410" fileName="DebugVMEventsProcessor.java" startLine="377" startPosition="0" endLine="388" endPosition="0" />
+    <scopeInfo nodeId="2891782949125146410" fileName="DebugVMEventsProcessor.java" startLine="385" startPosition="0" endLine="396" endPosition="0" />
     <scopeInfo nodeId="2891782949125146861" fileName="DebugVMEventsProcessor.java" startLine="197" startPosition="41" endLine="209" endPosition="35">
       <varInfo nodeId="2891782949125146882" varName="nextStepType" />
       <varInfo nodeId="2891782949125146869" varName="requestor" />
@@ -634,7 +644,7 @@
     <scopeInfo nodeId="2891782949125146927" fileName="DebugVMEventsProcessor.java" startLine="222" startPosition="0" endLine="235" endPosition="0">
       <varInfo nodeId="2891782949125146930" varName="closedByUser" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147344" fileName="DebugVMEventsProcessor.java" startLine="435" startPosition="46" endLine="448" endPosition="7" />
+    <scopeInfo nodeId="2891782949125147344" fileName="DebugVMEventsProcessor.java" startLine="443" startPosition="46" endLine="456" endPosition="7" />
     <scopeInfo nodeId="2891782949125146798" fileName="DebugVMEventsProcessor.java" startLine="177" startPosition="0" endLine="191" endPosition="0">
       <varInfo nodeId="2891782949125146803" varName="event" />
       <varInfo nodeId="2891782949125146801" varName="suspendContext" />
@@ -642,7 +652,7 @@
     <scopeInfo nodeId="2891782949125147035" fileName="DebugVMEventsProcessor.java" startLine="257" startPosition="136" endLine="273" endPosition="48">
       <varInfo nodeId="2891782949125147043" varName="stepRequest" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125146450" fileName="DebugVMEventsProcessor.java" startLine="434" startPosition="0" endLine="450" endPosition="0" />
+    <scopeInfo nodeId="2891782949125146450" fileName="DebugVMEventsProcessor.java" startLine="442" startPosition="0" endLine="458" endPosition="0" />
     <scopeInfo nodeId="2891782949125147024" fileName="DebugVMEventsProcessor.java" startLine="256" startPosition="0" endLine="275" endPosition="0">
       <varInfo nodeId="2891782949125147031" varName="stepRequestor" />
       <varInfo nodeId="2891782949125147029" varName="stepThread" />
@@ -657,7 +667,7 @@
       <varInfo nodeId="2891782949125146834" varName="event" />
       <varInfo nodeId="2891782949125146832" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147207" fileName="DebugVMEventsProcessor.java" startLine="319" startPosition="23" endLine="347" endPosition="25" />
+    <scopeInfo nodeId="2891782949125147207" fileName="DebugVMEventsProcessor.java" startLine="327" startPosition="23" endLine="355" endPosition="25" />
     <scopeInfo nodeId="2891782949125147422" fileName="DebugVMEventsProcessor.java" startLine="133" startPosition="48" endLine="165" endPosition="9">
       <varInfo nodeId="2891782949125147428" varName="pausedContext" />
       <varInfo nodeId="2891782949125147472" varName="requestHit" />
@@ -666,42 +676,43 @@
       <varInfo nodeId="2891782949125147424" varName="suspendManager" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125146765" fileName="DebugVMEventsProcessor.java" startLine="131" startPosition="86" endLine="167" endPosition="0" />
-    <scopeInfo nodeId="2891782949125147188" fileName="DebugVMEventsProcessor.java" startLine="318" startPosition="46" endLine="354" endPosition="19" />
-    <scopeInfo nodeId="2891782949125147184" fileName="DebugVMEventsProcessor.java" startLine="317" startPosition="112" endLine="355" endPosition="17">
+    <scopeInfo nodeId="2891782949125147188" fileName="DebugVMEventsProcessor.java" startLine="326" startPosition="46" endLine="362" endPosition="19" />
+    <scopeInfo nodeId="2891782949125147184" fileName="DebugVMEventsProcessor.java" startLine="325" startPosition="112" endLine="363" endPosition="17">
       <varInfo nodeId="2891782949125147186" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147176" fileName="DebugVMEventsProcessor.java" startLine="316" startPosition="56" endLine="355" endPosition="17">
+    <scopeInfo nodeId="2891782949125147176" fileName="DebugVMEventsProcessor.java" startLine="324" startPosition="56" endLine="363" endPosition="17">
       <varInfo nodeId="2891782949125147178" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147162" fileName="DebugVMEventsProcessor.java" startLine="315" startPosition="68" endLine="357" endPosition="0" />
+    <scopeInfo nodeId="2891782949125147162" fileName="DebugVMEventsProcessor.java" startLine="323" startPosition="68" endLine="365" endPosition="0" />
     <scopeInfo nodeId="2891782949125146741" fileName="DebugVMEventsProcessor.java" startLine="124" startPosition="103" endLine="168" endPosition="48">
       <varInfo nodeId="2891782949125146760" varName="suspendCommand" />
       <varInfo nodeId="2891782949125146743" varName="thread" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147148" fileName="DebugVMEventsProcessor.java" startLine="313" startPosition="15" endLine="357" endPosition="15">
+    <scopeInfo nodeId="2891782949125147148" fileName="DebugVMEventsProcessor.java" startLine="321" startPosition="15" endLine="365" endPosition="15">
       <varInfo nodeId="2891782949125147150" varName="eventSet" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125146734" fileName="DebugVMEventsProcessor.java" startLine="123" startPosition="0" endLine="170" endPosition="0">
       <varInfo nodeId="2891782949125146739" varName="event" />
       <varInfo nodeId="2891782949125146737" varName="suspendContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147126" fileName="DebugVMEventsProcessor.java" startLine="312" startPosition="32" endLine="366" endPosition="11" />
-    <scopeInfo nodeId="2891782949125147116" fileName="DebugVMEventsProcessor.java" startLine="310" startPosition="11" endLine="367" endPosition="9">
+    <scopeInfo nodeId="2891782949125147126" fileName="DebugVMEventsProcessor.java" startLine="320" startPosition="32" endLine="374" endPosition="11" />
+    <scopeInfo nodeId="2891782949125147116" fileName="DebugVMEventsProcessor.java" startLine="318" startPosition="11" endLine="375" endPosition="9">
       <varInfo nodeId="2891782949125147118" varName="eventQueue" />
     </scopeInfo>
-    <scopeInfo nodeId="2891782949125147099" fileName="DebugVMEventsProcessor.java" startLine="309" startPosition="23" endLine="375" endPosition="7" />
-    <scopeInfo nodeId="2891782949125146407" fileName="DebugVMEventsProcessor.java" startLine="308" startPosition="0" endLine="377" endPosition="0" />
-    <unitInfo nodeId="2891782949125146390" fileName="DebugVMEventsProcessor.java" startLine="34" startPosition="0" endLine="488" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
+    <scopeInfo nodeId="2891782949125147099" fileName="DebugVMEventsProcessor.java" startLine="317" startPosition="23" endLine="383" endPosition="7" />
+    <scopeInfo nodeId="2891782949125146407" fileName="DebugVMEventsProcessor.java" startLine="316" startPosition="0" endLine="385" endPosition="0" />
+    <unitInfo nodeId="2891782949125146390" fileName="DebugVMEventsProcessor.java" startLine="34" startPosition="0" endLine="496" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
     <unitInfo nodeId="2891782949125146764" fileName="DebugVMEventsProcessor.java" startLine="131" startPosition="47" endLine="167" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$1" />
-    <unitInfo nodeId="2891782949125147161" fileName="DebugVMEventsProcessor.java" startLine="315" startPosition="49" endLine="357" endPosition="13" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$1" />
+    <unitInfo nodeId="2891782949125147161" fileName="DebugVMEventsProcessor.java" startLine="323" startPosition="49" endLine="365" endPosition="13" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$1" />
     <unitInfo nodeId="4222091233089936693" fileName="DebugVMEventsProcessor.java" startLine="277" startPosition="36" endLine="281" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$2" />
-    <unitInfo nodeId="2891782949125147172" fileName="DebugVMEventsProcessor.java" startLine="379" startPosition="43" endLine="386" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$2" />
-    <unitInfo nodeId="2891782949125146393" fileName="DebugVMEventsProcessor.java" startLine="295" startPosition="0" endLine="389" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$DebuggerEventThread" />
-    <unitInfo nodeId="2891782949125146427" fileName="DebugVMEventsProcessor.java" startLine="409" startPosition="0" endLine="423" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$PauseCommand" />
-    <unitInfo nodeId="2891782949125146413" fileName="DebugVMEventsProcessor.java" startLine="390" startPosition="0" endLine="408" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$ResumeCommand" />
-    <unitInfo nodeId="2891782949125146453" fileName="DebugVMEventsProcessor.java" startLine="452" startPosition="0" endLine="471" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$StepCommand" />
-    <unitInfo nodeId="2891782949125146472" fileName="DebugVMEventsProcessor.java" startLine="472" startPosition="0" endLine="487" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$StepType" />
-    <unitInfo nodeId="2891782949125146436" fileName="DebugVMEventsProcessor.java" startLine="424" startPosition="0" endLine="451" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$StopCommand" />
+    <unitInfo nodeId="2891782949125147172" fileName="DebugVMEventsProcessor.java" startLine="387" startPosition="43" endLine="394" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$2" />
+    <unitInfo nodeId="2439092563176274548" fileName="DebugVMEventsProcessor.java" startLine="285" startPosition="43" endLine="289" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$3" />
+    <unitInfo nodeId="2891782949125146393" fileName="DebugVMEventsProcessor.java" startLine="303" startPosition="0" endLine="397" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$DebuggerEventThread" />
+    <unitInfo nodeId="2891782949125146427" fileName="DebugVMEventsProcessor.java" startLine="417" startPosition="0" endLine="431" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$PauseCommand" />
+    <unitInfo nodeId="2891782949125146413" fileName="DebugVMEventsProcessor.java" startLine="398" startPosition="0" endLine="416" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$ResumeCommand" />
+    <unitInfo nodeId="2891782949125146453" fileName="DebugVMEventsProcessor.java" startLine="460" startPosition="0" endLine="479" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$StepCommand" />
+    <unitInfo nodeId="2891782949125146472" fileName="DebugVMEventsProcessor.java" startLine="480" startPosition="0" endLine="495" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$StepType" />
+    <unitInfo nodeId="2891782949125146436" fileName="DebugVMEventsProcessor.java" startLine="432" startPosition="0" endLine="459" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor$StopCommand" />
   </root>
   <root nodeId="2891782949125147778">
     <nodeInfo nodeId="2891782949125167707" fileName="RequestManager.java" startLine="45" startPosition="61" endLine="46" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -2696,7 +2707,6 @@
     <scopeInfo nodeId="2891782949125171385" fileName="SuspendManager.java" startLine="227" startPosition="0" endLine="249" endPosition="0" />
     <scopeInfo nodeId="2891782949125171362" fileName="SuspendManager.java" startLine="191" startPosition="0" endLine="214" endPosition="0" />
     <unitInfo nodeId="2891782949125171479" fileName="SuspendManager.java" startLine="62" startPosition="27" endLine="17" endPosition="0" />
-    <unitInfo nodeId="2891782949125171334" fileName="SuspendManager.java" startLine="17" startPosition="0" endLine="251" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager" />
     <unitInfo nodeId="2891782949125171430" fileName="SuspendManager.java" startLine="37" startPosition="47" endLine="43" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$1" />
     <unitInfo nodeId="2891782949125171488" fileName="SuspendManager.java" startLine="56" startPosition="27" endLine="60" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$3" />
     <unitInfo nodeId="2891782949125145718" fileName="SuspendManager.java" startLine="187" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextByItSelf" />

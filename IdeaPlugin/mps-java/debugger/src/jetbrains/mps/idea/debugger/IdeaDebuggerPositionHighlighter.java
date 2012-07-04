@@ -94,11 +94,9 @@ public class IdeaDebuggerPositionHighlighter extends CurrentLinePositionComponen
       session.getContextManager().addListener(mySessionListener);
     }
 
-    @Override
     public void sessionAttached(DebuggerSession session) {
     }
 
-    @Override
     public void sessionDetached(DebuggerSession session) {
     }
 

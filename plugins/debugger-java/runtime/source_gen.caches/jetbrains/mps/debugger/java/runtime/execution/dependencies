@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.java.runtime.execution.CommandWrapper" file="CommandWrapper.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.execution.IDebuggerCommand" />
+  </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand" file="DebuggerCommand.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.InterruptedException" />
@@ -27,6 +31,8 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.CommandWrapper" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommandQueue" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommandQueueClosedException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.IDebuggerCommand" />

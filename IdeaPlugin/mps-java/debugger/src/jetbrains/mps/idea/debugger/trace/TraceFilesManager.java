@@ -18,7 +18,7 @@ package jetbrains.mps.idea.debugger.trace;
 
 import com.intellij.compiler.CompilerConfiguration;
 import com.intellij.facet.FacetManager;
-import com.intellij.openapi.compiler.CompilationStatusAdapter;
+import com.intellij.openapi.compiler.CompilationStatusListener;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompilerTopics;
 import com.intellij.openapi.components.ProjectComponent;
@@ -58,10 +58,9 @@ public class TraceFilesManager implements ProjectComponent {
   @Override
   public void initComponent() {
     myMessageBusConnection = myProject.getMessageBus().connect();
-    myMessageBusConnection.subscribe(CompilerTopics.COMPILATION_STATUS, new CompilationStatusAdapter() {
+    myMessageBusConnection.subscribe(CompilerTopics.COMPILATION_STATUS, new CompilationStatusListener() {
       @Override
       public void compilationFinished(boolean aborted, int errors, int warnings, CompileContext compileContext) {
-        super.compilationFinished(aborted, errors, warnings, compileContext);
         Module[] affectedModules = compileContext.getCompileScope().getAffectedModules();
         for (Module module : affectedModules) {
           MPSFacet mpsFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
@@ -73,6 +72,12 @@ public class TraceFilesManager implements ProjectComponent {
             TraceInfoCache.getInstance().clean(descriptor);
           }
         }
+      }
+
+      public void fileGenerated(String outputRoot, String relativePath) {
+        // in idea 11.0.2 there is no CompilationStatusAdapter and no such method;
+        // and in 11.1.* there is
+        // so added for compatibility with both versions
       }
     });
   }
