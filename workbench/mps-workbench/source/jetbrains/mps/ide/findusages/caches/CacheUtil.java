@@ -33,8 +33,10 @@ class CacheUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (final IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-          VirtualFile file = VirtualFileUtils.getVirtualFile(m.getBundleHome());
-          if (file != null) { //i.e. files doesn't exist
+
+          for (String path : m.getIndexablePaths()) {
+            VirtualFile file = VirtualFileUtils.getVirtualFile(path);
+            if (file==null) continue;
             files.add(file);
           }
         }
