@@ -4,24 +4,23 @@ package jetbrains.mps.debugger.java.runtime.concurrent;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.BlockingQueue;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.util.ui.Timer;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.CountDownLatch;
 
 public class ManagerThread {
-  public static final int COMMANT_TIMEOUT = 10000;
   protected static Log log = LogFactory.getLog(ManagerThread.class);
 
-  private final ICommandQueue myCommandQueue = new CommandQueue();
-  private volatile ManagerThread.WorkerThread myThread;
-  private final ManagerThread.AngelOfDeath myAngelOfDeath = new ManagerThread.AngelOfDeath();
+  private final BlockingQueue<_FunctionTypes._void_P0_E0> myCommandQueue = new LinkedBlockingQueue<_FunctionTypes._void_P0_E0>();
+  private final ManagerThread.WorkerThread myThread = new ManagerThread.WorkerThread();
+  private volatile boolean myClosed = false;
 
   public ManagerThread() {
-    myAngelOfDeath.start();
-    startNewThread();
+    myThread.start();
   }
 
-  public void invoke(ICommand command) {
+  public void invoke(_FunctionTypes._void_P0_E0 command) {
     if (isManagerThread()) {
       myThread.processCommand(command);
     } else {
@@ -29,16 +28,20 @@ public class ManagerThread {
     }
   }
 
-  public void invokeAndWait(ICommand command) {
+  public void invokeAndWait(final _FunctionTypes._void_P0_E0 command) {
     if (isManagerThread()) {
       myThread.processCommand(command);
     } else {
       final CountDownLatch countDown = new CountDownLatch(1);
-      schedule(new CommandDecorator(command, new _FunctionTypes._void_P0_E0() {
+      schedule(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
-          countDown.countDown();
+          try {
+            command.invoke();
+          } finally {
+            countDown.countDown();
+          }
         }
-      }));
+      });
       try {
         countDown.await();
       } catch (InterruptedException ignore) {
@@ -46,21 +49,12 @@ public class ManagerThread {
     }
   }
 
-  public void schedule(ICommand command) {
-    if (myCommandQueue.isClosed()) {
-      command.cancelled();
-    } else {
-      myCommandQueue.put(command);
-    }
-  }
-
-  public void startNewThread() {
-    myThread = new ManagerThread.WorkerThread();
-    myThread.start();
+  public void schedule(_FunctionTypes._void_P0_E0 command) {
+    myCommandQueue.offer(command);
   }
 
   public void close() {
-    myCommandQueue.close();
+    myClosed = true;
   }
 
   public static boolean isManagerThread() {
@@ -76,47 +70,28 @@ public class ManagerThread {
     }
 
     public void run() {
-      while (true) {
-        if (isInterrupted()) {
-          break;
+      try {
+        while (true) {
+          if (isInterrupted() || myClosed) {
+            break;
+          }
+          processCommand(myCommandQueue.take());
         }
-        try {
-          processCommand(myCommandQueue.poll());
-        } catch (ICommandQueue.QueueClosedException e) {
-          break;
-        }
+      } catch (InterruptedException ignore) {
       }
       if (log.isDebugEnabled()) {
         log.debug("Thread " + this + " finished working.");
       }
     }
 
-    private void processCommand(ICommand command) {
+    private void processCommand(_FunctionTypes._void_P0_E0 command) {
       try {
-        command.run();
+        command.invoke();
       } catch (Throwable t) {
         if (log.isErrorEnabled()) {
           log.error("Command " + command + " threw an exception.", t);
         }
       }
-    }
-  }
-
-  private class AngelOfDeath extends Timer {
-    private volatile ICommand myCommandOnTrial;
-
-    public AngelOfDeath() {
-      super("Angel of death", ManagerThread.COMMANT_TIMEOUT);
-    }
-
-    protected void onTimer() throws InterruptedException {
-      if (myCommandOnTrial != null && myCommandOnTrial == myCommandQueue.currentCommand()) {
-        //  hanged 
-        myThread.interrupt();
-        startNewThread();
-      }
-
-      myCommandOnTrial = myCommandQueue.currentCommand();
     }
   }
 }

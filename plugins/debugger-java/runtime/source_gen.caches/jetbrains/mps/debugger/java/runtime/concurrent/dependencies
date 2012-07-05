@@ -1,44 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.concurrent.AbstractCommand" file="AbstractCommand.java">
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.concurrent.ICommand" />
-  </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.concurrent.CommandDecorator" file="CommandDecorator.java">
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.concurrent.AbstractCommand" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.concurrent.ICommand" />
-  </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.concurrent.CommandQueue" file="CommandQueue.java">
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.concurrent.locks.Condition" />
-    <classNode dependClassName="java.util.concurrent.locks.ReentrantLock" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.ICommand" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.concurrent.ICommandQueue" />
-  </dependency>
-  <dependency className="jetbrains.mps.debugger.java.runtime.concurrent.ICommand" file="ICommand.java" />
-  <dependency className="jetbrains.mps.debugger.java.runtime.concurrent.ICommandQueue" file="ICommandQueue.java">
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.ICommand" />
-    <classNode extendsClassName="java.lang.Exception" />
-  </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.concurrent.ManagerThread" file="ManagerThread.java">
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.concurrent.BlockingQueue" />
     <classNode dependClassName="java.util.concurrent.CountDownLatch" />
+    <classNode dependClassName="java.util.concurrent.LinkedBlockingQueue" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.CommandDecorator" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.CommandQueue" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.ICommand" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.ICommandQueue" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode extendsClassName="com.intellij.util.ui.Timer" />
     <classNode extendsClassName="java.lang.Thread" />
   </dependency>
 </dependenciesRoot>

@@ -18,13 +18,13 @@ public class ContextManager {
   public ContextManager() {
   }
 
-  /*package*/ synchronized void pause(EventContext context) {
+  /*package*/ void pause(EventContext context) {
     // todo ??? 
     context.pause();
     ListSequence.fromList(mySuspendedContexts).addElement(context);
   }
 
-  /*package*/ synchronized void resume(EventContext context) {
+  /*package*/ void resume(EventContext context) {
     if (context.voteResume()) {
       ListSequence.fromList(mySuspendedContexts).removeElement(context);
     }

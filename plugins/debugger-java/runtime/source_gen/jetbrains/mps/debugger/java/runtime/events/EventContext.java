@@ -9,6 +9,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import com.sun.jdi.event.Event;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.debugger.java.runtime.concurrent.ManagerThread;
 
 
 /**
@@ -38,7 +39,8 @@ public class EventContext {
     myThreadReference = check_gqjtnu_a0g0a(event);
   }
 
-  /*package*/ synchronized boolean voteResume() {
+  /*package*/ boolean voteResume() {
+    ManagerThread.assertIsMangerThread();
     myVotesToVote--;
     if (myVotesToVote == 0 && !(myPaused)) {
       myEventSet.resume();
@@ -47,7 +49,8 @@ public class EventContext {
     return false;
   }
 
-  /*package*/ synchronized void pause() {
+  /*package*/ void pause() {
+    ManagerThread.assertIsMangerThread();
     myPaused = true;
   }
 
