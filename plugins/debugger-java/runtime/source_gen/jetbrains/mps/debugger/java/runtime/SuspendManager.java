@@ -92,11 +92,6 @@ public class SuspendManager {
     }
   }
 
-  private void pushPausedContext(SuspendContext suspendContext) {
-    LOG.assertLog(myEventContexts.contains(suspendContext));
-    myPausedContexts.addFirst(suspendContext);
-  }
-
   public boolean hasEventContext(SuspendContext suspendContext) {
     DebuggerManagerThread.assertIsManagerThread();
     return myEventContexts.contains(suspendContext);
@@ -126,14 +121,11 @@ public class SuspendManager {
       if (suspendContext.myIsVotedForResume) {
         resume(suspendContext);
       } else {
-        notifyPaused(suspendContext);
+        LOG.assertLog(myEventContexts.contains(suspendContext));
+        myPausedContexts.addFirst(suspendContext);
+        myDebugProcess.getMulticaster().paused(suspendContext);
       }
     }
-  }
-
-  private void notifyPaused(SuspendContext suspendContext) {
-    pushPausedContext(suspendContext);
-    myDebugProcess.getMulticaster().paused(suspendContext);
   }
 
   public void voteResume(SuspendContext suspendContext) {

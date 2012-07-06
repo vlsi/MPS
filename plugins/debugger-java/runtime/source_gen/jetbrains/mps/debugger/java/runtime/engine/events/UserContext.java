@@ -7,7 +7,10 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.request.EventRequest;
 
 /*package*/ class UserContext implements Context {
-  public UserContext() {
+  private final EventsProcessor myEventsProcessor;
+
+  public UserContext(EventsProcessor eventsProcessor) {
+    myEventsProcessor = eventsProcessor;
   }
 
   @Nullable
@@ -17,5 +20,10 @@ import com.sun.jdi.request.EventRequest;
 
   public int getSuspendPolicy() {
     return EventRequest.SUSPEND_ALL;
+  }
+
+  /*package*/ void resume() {
+    // todo when we get some other suspend policies, add some code here 
+    myEventsProcessor.getVirtualMachine().resume();
   }
 }
