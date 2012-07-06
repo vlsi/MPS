@@ -157,9 +157,6 @@ public class DebuggerManagerThread implements IDebuggerManagerThread {
           break;
         }
         try {
-          if (interrupted()) {
-            break;
-          }
           processCommand(myCommandQueue.get());
         } catch (VMDisconnectedException e) {
           //  todo if not this exception this code could be in debug-api 
