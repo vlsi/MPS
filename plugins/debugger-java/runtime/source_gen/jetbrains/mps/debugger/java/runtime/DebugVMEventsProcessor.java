@@ -211,11 +211,6 @@ public class DebugVMEventsProcessor {
     }
   }
 
-  private void stopConnecting() {
-    //  todo DebugProcessImpl.stopConnecting 
-    closeProcess(true);
-  }
-
   private void closeProcess(boolean closedByUser) {
     DebuggerManagerThread.assertIsManagerThread();
     if (myState.compareAndSet(STATE_INITIAL, STATE_DETACHING) || myState.compareAndSet(STATE_ATTACHED, STATE_DETACHING)) {
@@ -448,7 +443,8 @@ public class DebugVMEventsProcessor {
           virtualMachine.dispose();
         }
       } else {
-        stopConnecting();
+        //  todo DebugProcessImpl.stopConnecting 
+        closeProcess(true);
       }
     }
   }

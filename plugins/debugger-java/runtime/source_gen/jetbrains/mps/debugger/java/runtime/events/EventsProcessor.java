@@ -10,6 +10,10 @@ import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
 import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.IDebuggableFramesSelector;
+import jetbrains.mps.debugger.java.runtime.DebugProcessListener;
+import jetbrains.mps.debugger.java.runtime.DebugProcessMulticaster;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
 import jetbrains.mps.debugger.java.runtime.concurrent.Commands;
@@ -18,6 +22,7 @@ import jetbrains.mps.debugger.java.runtime.execution.SystemMessagesReporter;
 import jetbrains.mps.debugger.java.runtime.requests.LocatableEventRequestor;
 import jetbrains.mps.debugger.java.runtime.requests.StepRequestor;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -33,9 +38,88 @@ public class EventsProcessor {
   protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
   private RequestManager myRequestManager;
   private final ContextManager myContextManager = new ContextManager();
-  private final SystemMessagesReporter myReporter = new SystemMessagesReporter(null);
+  private final DebugProcessMulticaster myMulticaster = new DebugProcessMulticaster();
+  private final SystemMessagesReporter myReporter = new SystemMessagesReporter(myMulticaster);
+  private final BreakpointManagerComponent myBreakpointManager;
+  private IDebuggableFramesSelector myFramesSelector;
 
-  public EventsProcessor() {
+  public EventsProcessor(BreakpointManagerComponent breakpointsManagerComponent) {
+    myBreakpointManager = breakpointsManagerComponent;
+    myRequestManager = new RequestManager(null);
+    // todo? 
+  }
+
+  public void commitVm(@NotNull VirtualMachine vm) {
+    myVirtualMachine = vm;
+    if (myState.compareAndSet(STATE_INITIAL, STATE_ATTACHED)) {
+      myMulticaster.processAttached(this);
+    }
+    new Thread(myRunnable, "Debug Events Processor Thread").start();
+  }
+
+  public boolean isAttached() {
+    return myState.get() == STATE_ATTACHED;
+  }
+
+  private void closeProcess(boolean byUser) {
+    ManagerThread.assertIsMangerThread();
+
+    if (myState.compareAndSet(STATE_INITIAL, STATE_DETACHING) || myState.compareAndSet(STATE_ATTACHED, STATE_DETACHING)) {
+      myVirtualMachine = null;
+      try {
+        myManagerThread.close();
+      } finally {
+        myState.set(STATE_DETACHED);
+        myMulticaster.processDetached(this, byUser);
+      }
+    }
+  }
+
+  public void pause() {
+    myManagerThread.invoke(Commands.fromClosure(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        myVirtualMachine.suspend();
+        myMulticaster.paused(new UserContext());
+      }
+    }));
+  }
+
+  public void resume(@NotNull final Context context) {
+    myManagerThread.invoke(Commands.fromClosure(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        myContextManager.resume(context);
+        myMulticaster.resumed(context);
+      }
+    }));
+  }
+
+  public void step(@NotNull final EventsProcessor.StepKind kind, @NotNull final Context context) {
+    myManagerThread.invoke(Commands.fromClosure(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        int jdiType = kind.getJdiType();
+        addNewStepRequest(new StepRequestor(context.getThread(), jdiType, myFramesSelector), jdiType, context.getThread(), context.getSuspendPolicy());
+      }
+    }));
+  }
+
+  public void stop(final boolean terminate) {
+    myManagerThread.invoke(Commands.fromClosure(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        if (isAttached()) {
+          if (terminate) {
+            myVirtualMachine.exit(-1);
+          } else {
+            //  some VM's (like IBM VM 1.4.2 bundled with WebSpere) does not 
+            //  resume threads on dispose() like it should 
+            myVirtualMachine.resume();
+            myVirtualMachine.dispose();
+          }
+        } else {
+          //  todo DebugProcessImpl.stopConnecting 
+          closeProcess(true);
+        }
+      }
+    }));
   }
 
   private void processVmDeathEvent() {
@@ -44,14 +128,7 @@ public class EventsProcessor {
       myRunnable.stop();
       myRunnable = null;
     }
-
-    if (myState.compareAndSet(STATE_INITIAL, STATE_DETACHING) || myState.compareAndSet(STATE_ATTACHED, STATE_DETACHING)) {
-      myVirtualMachine = null;
-      myManagerThread.close();
-      myState.set(STATE_DETACHED);
-
-      // todo fire detached 
-    }
+    closeProcess(false);
   }
 
   private void processClassPrepareEvent(EventContext context, ClassPrepareEvent event) {
@@ -112,7 +189,7 @@ public class EventsProcessor {
     }
 
     // requestor may evaluate something inside, like a condition or an expression to print 
-    invokeEvaluation(new _FunctionTypes._void_P0_E0() {
+    scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         boolean resume = true;
         try {
@@ -136,7 +213,7 @@ public class EventsProcessor {
     }, thread);
   }
 
-  public void invokeEvaluation(final _FunctionTypes._void_P0_E0 evaluationCommand, final ThreadReference threadToEvaluateIn) {
+  public void scheduleEvaluation(final _FunctionTypes._void_P0_E0 evaluationCommand, final ThreadReference threadToEvaluateIn) {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
         myContextManager.startEvaluation(threadToEvaluateIn);
@@ -149,12 +226,28 @@ public class EventsProcessor {
     });
   }
 
+  public void schedule(_FunctionTypes._void_P0_E0 command, _FunctionTypes._void_P0_E0 cancel) {
+    myManagerThread.schedule(Commands.fromClosure(command, cancel));
+  }
+
+  public void schedule(_FunctionTypes._void_P0_E0 command) {
+    myManagerThread.schedule(Commands.fromClosure(command));
+  }
+
   public RequestManager getRequestManager() {
     return myRequestManager;
   }
 
   public ContextManager getContextManager() {
     return myContextManager;
+  }
+
+  public void addDebugProcessListener(DebugProcessListener listener) {
+    myMulticaster.addListener(listener);
+  }
+
+  public void removeDebugProcessListener(DebugProcessListener listener) {
+    myMulticaster.removeListener(listener);
   }
 
   public static boolean isOnPooledThread() {
@@ -213,6 +306,22 @@ public class EventsProcessor {
 
     public boolean isStopped() {
       return myIsStopped;
+    }
+  }
+
+  public static   enum StepKind {
+    Over(StepRequest.STEP_OVER),
+    Into(StepRequest.STEP_INTO),
+    Out(StepRequest.STEP_OUT);
+
+    private final int myJdiType;
+
+    StepKind(int jdiType) {
+      myJdiType = jdiType;
+    }
+
+    public int getJdiType() {
+      return myJdiType;
     }
   }
 }

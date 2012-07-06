@@ -107,6 +107,7 @@ public class ManagerThread {
           }
         }
       } catch (InterruptedException ignore) {
+        // do what? 
       }
       if (log.isDebugEnabled()) {
         log.debug("Thread " + this + " finished working.");

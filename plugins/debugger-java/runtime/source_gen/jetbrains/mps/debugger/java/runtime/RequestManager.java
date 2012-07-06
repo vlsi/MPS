@@ -40,7 +40,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.ClassType;
 import com.sun.jdi.InterfaceType;
-import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debugger.java.runtime.events.EventsProcessor;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 
@@ -305,34 +305,22 @@ public class RequestManager implements IRequestManager {
     });
   }
 
-  public class MyDebugProcessListener implements DebugProcessListener {
+  public class MyDebugProcessListener extends DebugProcessAdapter {
     public MyDebugProcessListener() {
     }
 
-    public void connectorIsReady() {
-    }
-
     @Override
-    public void paused(@NotNull SuspendContext suspendContext) {
-    }
-
-    @Override
-    public void resumed(@NotNull SuspendContext suspendContext) {
-    }
-
-    @Override
-    public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
+    public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
       myEventRequestManager = null;
       myRequestorToBelongedRequests.clear();
     }
 
     @Override
-    public void processAttached(@NotNull DebugVMEventsProcessor process) {
+    public void processAttached(@NotNull EventsProcessor process) {
       myEventRequestManager = myDebugEventsProcessor.getVirtualMachine().eventRequestManager();
       //  invoke later, so that requests are for sure created only _after_ 'processAttached()' methods of other listeneres are executed 
-      process.getManagerThread().schedule(new DebuggerCommand() {
-        @Override
-        protected void action() throws Exception {
+      process.schedule(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
           BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
           for (IBreakpoint breakpoint : breakpointManager.getAllIBreakpoints()) {
             if (breakpoint instanceof JavaBreakpoint) {

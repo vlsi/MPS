@@ -13,6 +13,8 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.debugger.java.runtime.events.EventsProcessor;
+import jetbrains.mps.debugger.java.runtime.events.Context;
 
 public class VMEventsProcessorManagerComponent implements ProjectComponent {
   private final Map<DebugVMEventsProcessor, DebugSession> myEventProcessorToSessionMap = new HashMap<DebugVMEventsProcessor, DebugSession>(1);
@@ -153,6 +155,31 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
     public void processAttached(@NotNull DebugVMEventsProcessor process) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.processAttached(process);
+      }
+    }
+
+    public void processAttached(@NotNull EventsProcessor process) {
+      for (DebugProcessListener listener : getAllProcessListeners()) {
+        listener.processAttached(process);
+      }
+    }
+
+    public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
+      for (DebugProcessListener listener : getAllProcessListeners()) {
+        listener.processDetached(process, closedByUser);
+      }
+      // <node> 
+    }
+
+    public void resumed(@NotNull Context suspendContext) {
+      for (DebugProcessListener listener : getAllProcessListeners()) {
+        listener.resumed(suspendContext);
+      }
+    }
+
+    public void paused(@NotNull Context suspendContext) {
+      for (DebugProcessListener listener : getAllProcessListeners()) {
+        listener.paused(suspendContext);
       }
     }
   }
