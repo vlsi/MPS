@@ -9,7 +9,7 @@ import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
-import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread;
 import java.util.List;
 import com.sun.jdi.ReferenceType;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +31,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
 
   public void createClassPrepareRequest(EventsProcessor debugProcess) {
     // this should be called on every breakpoint when DebugEventsProcessor is attached 
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     //  check is this breakpoint is enabled, vm reference is valid and there're no requests created yet 
     if (!(myIsEnabled)) {
       // || !debugProcess.isAttached() || debugProcess.getRequestManager().findRequests(this).isEmpty() 

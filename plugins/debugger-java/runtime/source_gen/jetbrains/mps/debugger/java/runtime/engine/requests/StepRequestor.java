@@ -4,7 +4,6 @@ package jetbrains.mps.debugger.java.runtime.engine.requests;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.api.IDebuggableFramesSelector;
-import jetbrains.mps.debugger.java.runtime.SuspendContext;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.IncompatibleThreadStateException;
@@ -25,10 +24,6 @@ public class StepRequestor implements Requestor {
   private String mySourceName;
   private final IDebuggableFramesSelector myFramesSelector;
 
-  public StepRequestor(SuspendContext context, int stepType, IDebuggableFramesSelector framesSelector) {
-    this(context.getThread(), stepType, framesSelector);
-  }
-
   public StepRequestor(ThreadReference thread, int stepType, IDebuggableFramesSelector framesSelector) {
     myStepType = stepType;
     myFramesSelector = framesSelector;
@@ -47,18 +42,6 @@ public class StepRequestor implements Requestor {
     } catch (AbsentInformationException e) {
       LOG.error(e);
     }
-  }
-
-  public int nextStep(SuspendContext context) {
-    ThreadReference thread = context.getThread();
-    if (thread == null) {
-      return defaultStepType();
-    }
-    StackFrame frame = context.getFrame();
-    if (frame == null) {
-      return defaultStepType();
-    }
-    return nextStep(thread, frame);
   }
 
   public int nextStep(StepEvent event) {

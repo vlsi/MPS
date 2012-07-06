@@ -15,27 +15,11 @@ public abstract class DebugProcessAdapter implements DebugProcessListener {
   }
 
   @Override
-  public void paused(@NotNull SuspendContext suspendContext) {
-  }
-
-  @Override
-  public void resumed(@NotNull SuspendContext suspendContext) {
-  }
-
-  @Override
   public void resumed(@NotNull Context suspendContext) {
   }
 
   @Override
   public void paused(@NotNull Context suspendContext) {
-  }
-
-  @Override
-  public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
-  }
-
-  @Override
-  public void processAttached(@NotNull DebugVMEventsProcessor process) {
   }
 
   @Override

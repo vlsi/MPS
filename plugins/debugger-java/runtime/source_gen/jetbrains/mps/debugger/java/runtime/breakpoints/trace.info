@@ -256,8 +256,8 @@
     <nodeInfo nodeId="2891782949125147791" fileName="JavaBreakpoint.java" startLine="25" startPosition="39" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="2596130676084741951" fileName="JavaBreakpoint.java" startLine="28" startPosition="45" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="2891782949125205763" fileName="JavaBreakpoint.java" startLine="32" startPosition="71" endLine="33" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2891782949125147810" fileName="JavaBreakpoint.java" startLine="33" startPosition="87" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205765" fileName="JavaBreakpoint.java" startLine="34" startPosition="50" endLine="35" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147810" fileName="JavaBreakpoint.java" startLine="33" startPosition="87" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205765" fileName="JavaBreakpoint.java" startLine="34" startPosition="41" endLine="35" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2891782949125205767" fileName="JavaBreakpoint.java" startLine="36" startPosition="25" endLine="37" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2891782949125147816" fileName="JavaBreakpoint.java" startLine="37" startPosition="104" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2891782949125147821" fileName="JavaBreakpoint.java" startLine="40" startPosition="23" endLine="41" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -135,34 +135,6 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
       }
     }
 
-    @Override
-    public void paused(@NotNull SuspendContext suspendContext) {
-      for (DebugProcessListener listener : getAllProcessListeners()) {
-        listener.paused(suspendContext);
-      }
-    }
-
-    @Override
-    public void resumed(@NotNull SuspendContext suspendContext) {
-      for (DebugProcessListener listener : getAllProcessListeners()) {
-        listener.resumed(suspendContext);
-      }
-    }
-
-    @Override
-    public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
-      for (DebugProcessListener listener : getAllProcessListeners()) {
-        listener.processDetached(process, closedByUser);
-      }
-    }
-
-    @Override
-    public void processAttached(@NotNull DebugVMEventsProcessor process) {
-      for (DebugProcessListener listener : getAllProcessListeners()) {
-        listener.processAttached(process);
-      }
-    }
-
     public void processAttached(@NotNull EventsProcessor process) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.processAttached(process);

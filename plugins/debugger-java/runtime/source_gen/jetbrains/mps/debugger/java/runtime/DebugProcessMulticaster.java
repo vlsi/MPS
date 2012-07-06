@@ -46,26 +46,6 @@ public class DebugProcessMulticaster {
     }
   }
 
-  public void paused(@NotNull SuspendContext suspendContext) {
-    for (DebugProcessListener listener : getListeners()) {
-      try {
-        listener.paused(suspendContext);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  public void resumed(@NotNull SuspendContext suspendContext) {
-    for (DebugProcessListener listener : getListeners()) {
-      try {
-        listener.resumed(suspendContext);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
   public void paused(@NotNull Context suspendContext) {
     for (DebugProcessListener listener : getListeners()) {
       try {
@@ -80,26 +60,6 @@ public class DebugProcessMulticaster {
     for (DebugProcessListener listener : getListeners()) {
       try {
         listener.resumed(suspendContext);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
-    for (DebugProcessListener listener : getListeners()) {
-      try {
-        listener.processDetached(process, closedByUser);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  public void processAttached(@NotNull DebugVMEventsProcessor process) {
-    for (DebugProcessListener listener : getListeners()) {
-      try {
-        listener.processAttached(process);
       } catch (Throwable t) {
         LOG.error(t);
       }

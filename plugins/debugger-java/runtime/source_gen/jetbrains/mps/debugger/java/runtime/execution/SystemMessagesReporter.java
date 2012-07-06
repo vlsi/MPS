@@ -11,7 +11,7 @@ import jetbrains.mps.debugger.java.runtime.DebugProcessMulticaster;
 import com.intellij.execution.process.ProcessOutputTypes;
 import jetbrains.mps.debugger.java.runtime.DebugProcessAdapter;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 
 public class SystemMessagesReporter {
   private String myName;
@@ -59,12 +59,12 @@ public class SystemMessagesReporter {
     }
 
     @Override
-    public void processAttached(@NotNull DebugVMEventsProcessor process) {
+    public void processAttached(@NotNull EventsProcessor process) {
       reportInformation("Connected to the target VM, " + myName);
     }
 
     @Override
-    public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
+    public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
       reportInformation("Disconnected from the target VM, " + myName);
     }
   }

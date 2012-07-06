@@ -21,12 +21,13 @@
   <import index="s81z" modelUID="r:c3ff9159-39c3-41c8-9ea4-b7e247afb1b4(jetbrains.mps.debugger.java.runtime.execution)" version="-1" />
   <import index="gcrp" modelUID="r:b4441af2-7d93-477f-8f98-ff1136374539(jetbrains.mps.debugger.java.runtime.breakpoints)" version="-1" />
   <import index="1l1h" modelUID="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" version="-1" />
+  <import index="1nsa" modelUID="r:0b933946-5ee4-42ea-9b69-bd1790a8e611(jetbrains.mps.debugger.java.runtime.engine)" version="-1" />
+  <import index="rw00" modelUID="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
-  <import index="rw00" modelUID="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" version="-1" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <roots>
@@ -1305,7 +1306,7 @@
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125146513" resolveInfo="myReporter" />
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125147517">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s81z.2891782949125170400" resolveInfo="reportInformation" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s81z.8961922059448808477" resolveInfo="reportInformation" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2891782949125147518">
                                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2891782949125147519">
                                             <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2891782949125147520">
@@ -2115,12 +2116,12 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="myReporter" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125146514">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s81z.2891782949125170337" resolveInfo="SystemMessagesReporter" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s81z.8961922059448808397" resolveInfo="SystemMessagesReporter" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="2891782949125146515" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2891782949125146516">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2891782949125146517">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s81z.2891782949125170379" resolveInfo="SystemMessagesReporter" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s81z.8961922059448808456" resolveInfo="SystemMessagesReporter" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="613652663728231624">
             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125146508" resolveInfo="myMulticaster" />
           </node>
@@ -2363,7 +2364,7 @@
     <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8197435796639346465">
       <property name="name" nameId="tpck.1169194664001" value="getSystemMessagesReporter" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8197435796639346466">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s81z.2891782949125170337" resolveInfo="SystemMessagesReporter" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="s81z.8961922059448808397" resolveInfo="SystemMessagesReporter" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8197435796639346467" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8197435796639346468">

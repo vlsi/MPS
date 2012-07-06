@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collections;
 import java.util.HashSet;
@@ -67,7 +67,7 @@ public class RequestManager implements IRequestManager {
 
   @Nullable
   public Requestor findRequestor(EventRequest request) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     return (request != null ?
       (Requestor) request.getProperty(REQUESTOR) :
       null
@@ -76,7 +76,7 @@ public class RequestManager implements IRequestManager {
 
   @NotNull
   public Set<EventRequest> findRequests(Requestor requestor) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     if (!(myRequestorToBelongedRequests.containsKey(requestor))) {
       return Collections.emptySet();
     }
@@ -98,7 +98,7 @@ public class RequestManager implements IRequestManager {
   }
 
   public void deleteRequests(Requestor requestor) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     if (!(myDebugEventsProcessor.isAttached())) {
       return;
     }
@@ -132,14 +132,14 @@ public class RequestManager implements IRequestManager {
 
   public BreakpointRequest createBreakpointRequest(JavaBreakpoint requestor, Location location) {
     // ------------------- requests creation 
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     BreakpointRequest request = myEventRequestManager.createBreakpointRequest(location);
     initRequest(requestor, request);
     return request;
   }
 
   public MethodEntryRequest createMethodEntryRequest(JavaBreakpoint requestor, ReferenceType type) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     MethodEntryRequest request = myEventRequestManager.createMethodEntryRequest();
     request.addClassFilter(type);
     initRequest(requestor, request);
@@ -147,7 +147,7 @@ public class RequestManager implements IRequestManager {
   }
 
   public MethodExitRequest createMethodExitRequest(JavaBreakpoint requestor, ReferenceType type) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     MethodExitRequest request = myEventRequestManager.createMethodExitRequest();
     request.addClassFilter(type);
     initRequest(requestor, request);
@@ -155,21 +155,21 @@ public class RequestManager implements IRequestManager {
   }
 
   public AccessWatchpointRequest createFieldAccessRequest(JavaBreakpoint requestor, Field field) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     AccessWatchpointRequest request = myEventRequestManager.createAccessWatchpointRequest(field);
     initRequest(requestor, request);
     return request;
   }
 
   public ModificationWatchpointRequest createFieldModificationRequest(JavaBreakpoint requestor, Field field) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     ModificationWatchpointRequest request = myEventRequestManager.createModificationWatchpointRequest(field);
     initRequest(requestor, request);
     return request;
   }
 
   public ExceptionRequest createExceptionRequest(JavaBreakpoint requestor, ReferenceType reference) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     ExceptionRequest request = myEventRequestManager.createExceptionRequest(reference, true, true);
     initRequest(requestor, request);
     return request;
@@ -186,7 +186,7 @@ public class RequestManager implements IRequestManager {
   }
 
   public void deleteStepRequests() {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     // todo what are these step requests to delete? 
     List<StepRequest> stepRequests = myEventRequestManager.stepRequests();
     if (stepRequests.size() > 0) {
@@ -225,7 +225,7 @@ public class RequestManager implements IRequestManager {
     // todo: some other types of requests; later 
     // ------------------- ~requests creation 
     // by classname 
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     ClassPrepareRequest classPrepareRequest = createClassPrepareRequest(requestor, classOrPatternToBeLoaded);
     classPrepareRequest.enable();
   }
@@ -241,13 +241,13 @@ public class RequestManager implements IRequestManager {
 
   public void enableRequest(EventRequest request) {
     // currently does no much more than request.enable() 
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     LOG.assertLog(findRequestor(request) != null);
     request.enable();
   }
 
   public void setInvalid(Requestor requestor, String message) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     myInvalidRequestsAndWarnings.put(requestor, message);
     ListSequence.fromList(myWarningsListeners).visitAll(new IVisitor<_FunctionTypes._void_P0_E0>() {
       public void visit(_FunctionTypes._void_P0_E0 it) {
@@ -258,7 +258,7 @@ public class RequestManager implements IRequestManager {
 
   @Nullable
   public String getWarning(Requestor requestor) {
-    DebuggerManagerThread.assertIsManagerThread();
+    ManagerThread.assertIsMangerThread();
     return myInvalidRequestsAndWarnings.get(requestor);
   }
 

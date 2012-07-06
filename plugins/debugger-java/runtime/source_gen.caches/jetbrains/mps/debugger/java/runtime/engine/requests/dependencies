@@ -22,7 +22,6 @@
     <classNode dependClassName="com.sun.jdi.request.StepRequest" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggableFramesSelector" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
