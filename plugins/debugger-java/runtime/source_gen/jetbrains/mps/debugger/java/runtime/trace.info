@@ -100,8 +100,8 @@
     <nodeInfo nodeId="2891782949125147448" fileName="DebugVMEventsProcessor.java" startLine="140" startPosition="28" endLine="141" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2891782949125147459" fileName="DebugVMEventsProcessor.java" startLine="141" startPosition="127" endLine="142" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2891782949125147471" fileName="DebugVMEventsProcessor.java" startLine="142" startPosition="113" endLine="143" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2891782949125147486" fileName="DebugVMEventsProcessor.java" startLine="144" startPosition="13" endLine="145" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2891782949125205709" fileName="DebugVMEventsProcessor.java" startLine="145" startPosition="91" endLine="146" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2891782949125147486" fileName="DebugVMEventsProcessor.java" startLine="144" startPosition="13" endLine="145" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2891782949125205709" fileName="DebugVMEventsProcessor.java" startLine="145" startPosition="89" endLine="146" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2891782949125205711" fileName="DebugVMEventsProcessor.java" startLine="146" startPosition="27" endLine="147" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2891782949125205713" fileName="DebugVMEventsProcessor.java" startLine="147" startPosition="130" endLine="148" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2891782949125147478" fileName="DebugVMEventsProcessor.java" startLine="149" startPosition="31" endLine="150" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2609,7 +2609,6 @@
     <scopeInfo nodeId="2891782949125171385" fileName="SuspendManager.java" startLine="227" startPosition="0" endLine="249" endPosition="0" />
     <scopeInfo nodeId="2891782949125171362" fileName="SuspendManager.java" startLine="191" startPosition="0" endLine="214" endPosition="0" />
     <unitInfo nodeId="2891782949125171479" fileName="SuspendManager.java" startLine="62" startPosition="27" endLine="17" endPosition="0" />
-    <unitInfo nodeId="2891782949125171430" fileName="SuspendManager.java" startLine="37" startPosition="47" endLine="43" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$1" />
     <unitInfo nodeId="2891782949125171488" fileName="SuspendManager.java" startLine="56" startPosition="27" endLine="60" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$3" />
     <unitInfo nodeId="2891782949125145718" fileName="SuspendManager.java" startLine="187" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextByItSelf" />
     <unitInfo nodeId="2891782949125145719" fileName="SuspendManager.java" startLine="161" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextFromSet" />

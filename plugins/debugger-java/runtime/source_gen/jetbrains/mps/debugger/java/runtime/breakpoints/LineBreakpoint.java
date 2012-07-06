@@ -19,8 +19,6 @@ import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InvalidLineNumberException;
 import com.sun.jdi.InternalException;
-import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;
-import com.sun.jdi.event.LocatableEvent;
 
 public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(LineBreakpoint.class);
@@ -67,33 +65,6 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
     } catch (Exception ex) {
       LOG.error(ex);
     }
-  }
-
-  @Override
-  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    // called when breakpoint is hit 
-    boolean result = super.processLocatableEvent(action, event);
-    if (!(result)) {
-      return false;
-    }
-    //     try { 
-    // todo conditions - later 
-    //   final EvaluationContextImpl evaluationContext = new EvaluationContextImpl( 
-    //   action.getSuspendContext(), 
-    //   frameProxy, 
-    //   getThisObject(context, event) 
-    // ); 
-    //  
-    // if(!evaluateCondition(evaluationContext, event)) { 
-    //   return false; 
-    // } 
-    // todo here some expressions may be evaluated; later 
-    //  runAction(evaluationContext, event); 
-    //     } catch (IncompatibleThreadStateException ex) { 
-    //       LOG.error(ex); 
-    //       return false; 
-    //     } 
-    return true;
   }
 
   protected String getClassNameToPrepare() {

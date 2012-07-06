@@ -142,7 +142,7 @@ public class DebugVMEventsProcessor {
         boolean resumePreferred = requestor != null && EventRequest.SUSPEND_NONE == requestor.getSuspendPolicy();
         boolean requestHit = false;
         try {
-          requestHit = (requestor != null) && requestor.processLocatableEvent(this, event);
+          requestHit = (requestor != null) && requestor.isRequestHitByEvent(null, event);
           //  } catch () { 
           //  todo: catch a special exception here, show modal window like "error evaluation breakpoint condition, do you want to 
           //  todo "stop at the breakpoint, Y/N etc. 

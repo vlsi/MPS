@@ -8,7 +8,7 @@
   <dependency className="jetbrains.mps.debugger.java.runtime.requests.IRequestManager" file="IRequestManager.java" />
   <dependency className="jetbrains.mps.debugger.java.runtime.requests.LocatableEventRequestor" file="LocatableEventRequestor.java">
     <classNode dependClassName="com.sun.jdi.event.LocatableEvent" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContextCommand" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.EventContext" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.requests.Requestor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.requests.Requestor" file="Requestor.java" />

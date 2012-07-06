@@ -2321,8 +2321,8 @@
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125147449" resolveInfo="requestor" />
                                   </node>
                                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2891782949125147496">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s8jc.2891782949125205205" resolveInfo="processLocatableEvent" />
-                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="2891782949125147497" />
+                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="s8jc.2891782949125205205" resolveInfo="isRequestHitByEvent" />
+                                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6676843613964998807" />
                                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2891782949125147498">
                                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2891782949125146739" resolveInfo="event" />
                                     </node>

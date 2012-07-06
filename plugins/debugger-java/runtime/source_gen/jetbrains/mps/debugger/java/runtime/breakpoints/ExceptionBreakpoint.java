@@ -11,7 +11,7 @@ import com.sun.jdi.request.ExceptionRequest;
 import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
-import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;
+import jetbrains.mps.debugger.java.runtime.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
 import org.jetbrains.annotations.NotNull;
 
@@ -50,7 +50,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   }
 
   @Override
-  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
+  public boolean isRequestHitByEvent(EventContext context, LocatableEvent event) {
     return true;
   }
 

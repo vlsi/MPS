@@ -14,11 +14,12 @@ import java.util.List;
 import com.sun.jdi.ReferenceType;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
-import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;
+import jetbrains.mps.debugger.java.runtime.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
-import jetbrains.mps.debugger.java.runtime.SuspendContext;
+import jetbrains.mps.debugger.java.runtime.events.EventsProcessor;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.IncompatibleThreadStateException;
+import com.sun.jdi.ThreadReference;
 
 public abstract class JavaBreakpoint extends AbstractBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private int mySuspendPolicy = EventRequest.SUSPEND_ALL;
@@ -105,35 +106,29 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
   }
 
   @Override
-  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    // called when breakpoint is hit 
-    final SuspendContext context = action.getSuspendContext();
+  public boolean isRequestHitByEvent(EventContext context, LocatableEvent event) {
+    assert EventsProcessor.isOnPooledThread();
     if (!(isValid())) {
-      context.getDebugProcess().getRequestManager().deleteRequests(this);
+      context.getRequestManager().deleteRequests(this);
       return false;
     }
     try {
-      final StackFrame stackFrame = context.getThread().frame(0);
+      final StackFrame stackFrame = check_e43rhl_a0a0c0m(event.thread());
       if (stackFrame == null) {
         //  might be if the thread has been collected 
         return false;
       }
-      // todo conditions - later 
-      //   final EvaluationContextImpl evaluationContext = new EvaluationContextImpl( 
-      //   action.getSuspendContext(), 
-      //   frameProxy, 
-      //   getThisObject(context, event) 
-      // ); 
-      //  
-      // if(!evaluateCondition(evaluationContext, event)) { 
-      //   return false; 
-      // } 
-      // todo here some expressions may be evaluated; later 
-      //  runAction(evaluationContext, event); 
     } catch (IncompatibleThreadStateException ex) {
       LOG.error(ex);
       return false;
     }
     return true;
+  }
+
+  private static StackFrame check_e43rhl_a0a0c0m(ThreadReference checkedDotOperand) throws IncompatibleThreadStateException {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.frame(0);
+    }
+    return null;
   }
 }

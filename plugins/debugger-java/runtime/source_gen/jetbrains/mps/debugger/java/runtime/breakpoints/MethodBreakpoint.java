@@ -18,7 +18,7 @@ import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;
+import jetbrains.mps.debugger.java.runtime.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.Method;
 import com.sun.jdi.event.MethodEntryEvent;
@@ -103,8 +103,8 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   }
 
   @Override
-  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    boolean result = super.processLocatableEvent(action, event);
+  public boolean isRequestHitByEvent(EventContext context, LocatableEvent event) {
+    boolean result = super.isRequestHitByEvent(context, event);
     if (!(result)) {
       return false;
     }

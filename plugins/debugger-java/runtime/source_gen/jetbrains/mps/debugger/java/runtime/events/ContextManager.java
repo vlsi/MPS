@@ -19,15 +19,13 @@ public class ContextManager {
   }
 
   /*package*/ void pause(EventContext context) {
-    // todo ??? 
-    context.pause();
+    // todo 
     ListSequence.fromList(mySuspendedContexts).addElement(context);
   }
 
   /*package*/ void resume(EventContext context) {
-    if (context.voteResume()) {
-      ListSequence.fromList(mySuspendedContexts).removeElement(context);
-    }
+    // todo 
+    ListSequence.fromList(mySuspendedContexts).removeElement(context);
   }
 
   public synchronized void startEvaluation(@NotNull ThreadReference threadReference) {

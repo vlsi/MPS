@@ -12,17 +12,13 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.events.EventContext" file="EventContext.java">
-    <classNode dependClassName="com.sun.jdi.ThreadReference" />
-    <classNode dependClassName="com.sun.jdi.event.Event" />
     <classNode dependClassName="com.sun.jdi.event.EventSet" />
-    <classNode dependClassName="com.sun.jdi.event.LocatableEvent" />
-    <classNode dependClassName="java.lang.Iterable" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.ManagerThread" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RequestManager" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.EventsProcessor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.events.EventsProcessor" file="EventsProcessor.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
     <classNode dependClassName="com.sun.jdi.ThreadReference" />
     <classNode dependClassName="com.sun.jdi.VirtualMachine" />
     <classNode dependClassName="com.sun.jdi.event.ClassPrepareEvent" />
@@ -39,9 +35,12 @@
     <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RequestManager" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.ManagerThread" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.ContextManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.EventContext" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.SystemMessagesReporter" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.requests.LocatableEventRequestor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.requests.StepRequestor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode extendsClassName="java.lang.Runnable" />

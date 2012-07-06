@@ -6,6 +6,7 @@ import jetbrains.mps.debugger.java.runtime.concurrent.ManagerThread;
 import com.sun.jdi.VirtualMachine;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.execution.SystemMessagesReporter;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.event.StepEvent;
 import com.sun.jdi.request.EventRequest;
@@ -13,9 +14,13 @@ import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debugger.java.runtime.requests.StepRequestor;
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.LocatableEvent;
+import jetbrains.mps.debugger.java.runtime.requests.LocatableEventRequestor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
+import com.sun.jdi.AbsentInformationException;
+import com.intellij.openapi.application.ApplicationManager;
 import com.sun.jdi.event.EventQueue;
 import com.sun.jdi.event.EventSet;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.sun.jdi.event.Event;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.sun.jdi.event.VMDeathEvent;
@@ -33,6 +38,7 @@ public class EventsProcessor {
   protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
   private RequestManager myRequestManager;
   private final ContextManager myContextManager = new ContextManager();
+  private final SystemMessagesReporter myReporter = new SystemMessagesReporter(null);
 
   public EventsProcessor() {
   }
@@ -93,14 +99,72 @@ public class EventsProcessor {
     myRequestManager.enableRequest(stepRequest);
   }
 
-  private void processLocatableEvent(EventContext context, LocatableEvent event) {
+  private void processLocatableEvent(final EventContext context, final LocatableEvent event) {
     ManagerThread.assertIsMangerThread();
+
+    // if inside evaluation, resume 
     final ThreadReference thread = event.thread();
     if (myContextManager.isEvaluated(thread)) {
       myContextManager.resume(context);
       return;
     }
-    // todo 
+
+    final LocatableEventRequestor requestor = (LocatableEventRequestor) myRequestManager.findRequestor(event.request());
+
+    // if no requestor or suspend none resume 
+    if (requestor == null || EventRequest.SUSPEND_NONE == requestor.getSuspendPolicy()) {
+      myContextManager.resume(context);
+    }
+
+    // requestor may evaluate something inside, like a condition or an expression to print 
+    invokeEvaluation(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        boolean resume = true;
+        try {
+          resume = !(requestor.isRequestHitByEvent(context, event));
+        } finally {
+          if (resume) {
+            myContextManager.resume(context);
+          } else {
+            try {
+              if (requestor instanceof JavaBreakpoint && ((JavaBreakpoint) requestor).isLogMessage()) {
+                // todo move to java breakpoint? 
+                myReporter.reportInformation("Breakpoint hit: " + ((JavaBreakpoint) requestor).getPresentation() + " " + event.location().sourceName() + ":" + event.location().lineNumber());
+              }
+            } catch (AbsentInformationException ignore) {
+            } finally {
+              myContextManager.pause(context);
+            }
+          }
+        }
+      }
+    }, thread);
+  }
+
+  public void invokeEvaluation(final _FunctionTypes._void_P0_E0 evaluationCommand, final ThreadReference threadToEvaluateIn) {
+    ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+      public void run() {
+        myContextManager.startEvaluation(threadToEvaluateIn);
+        try {
+          evaluationCommand.invoke();
+        } finally {
+          myContextManager.finishEvaluation(threadToEvaluateIn);
+        }
+      }
+    });
+  }
+
+  public RequestManager getRequestManager() {
+    return myRequestManager;
+  }
+
+  public ContextManager getContextManager() {
+    return myContextManager;
+  }
+
+  public static boolean isOnPooledThread() {
+    // it is sufficient to check for this two 
+    return !(ManagerThread.isManagerThread()) && !(ApplicationManager.getApplication().isDispatchThread());
   }
 
   public class EventProcessorRunnable implements Runnable {
@@ -116,7 +180,7 @@ public class EventsProcessor {
           final EventSet events = eventQueue.remove();
           myManagerThread.invokeAndWait(new _FunctionTypes._void_P0_E0() {
             public void invoke() {
-              EventContext context = new EventContext(events);
+              EventContext context = new EventContext(EventsProcessor.this, events);
               for (Event event : SetSequence.fromSet(events)) {
                 if (event instanceof VMDeathEvent) {
                   processVmDeathEvent();
@@ -140,7 +204,11 @@ public class EventsProcessor {
           });
         }
       } catch (InterruptedException e) {
-        processVmDeathEvent();
+        myManagerThread.invokeAndWait(new _FunctionTypes._void_P0_E0() {
+          public void invoke() {
+            processVmDeathEvent();
+          }
+        });
       }
     }
 
