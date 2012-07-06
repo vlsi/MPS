@@ -30,20 +30,19 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.DebugSession" file="DebugSession.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.JavaUiStateImpl" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RequestManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RunningJavaUiState" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.DebugProcessAdapter" />
@@ -107,16 +106,13 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.source.NodePositionProvider" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.JavaUiStateImpl" file="JavaUiStateImpl.java">
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.PausedJavaUiState" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RunningJavaUiState" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendManager" />
-    <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debug.runtime.JavaUiState" />
   </dependency>
@@ -139,7 +135,8 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.watchables.EventWatchablesCreator" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -180,7 +177,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.BreakpointManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpoint" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
@@ -211,7 +207,7 @@
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaStackFrame" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.JavaUiStateImpl" />
@@ -264,7 +260,6 @@
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent" file="VMEventsProcessorManagerComponent.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -273,13 +268,17 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.SuspendContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.DebugProcessListener" />
@@ -304,7 +303,6 @@
     <classNode dependClassName="com.sun.jdi.connect.ListeningConnector" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Error" />
-    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -315,6 +313,8 @@
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.BreakpointManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debug.api.IDebuggerSettings" />
     <classNode dependClassName="jetbrains.mps.debug.api.ToDebugAPI" />
@@ -323,13 +323,10 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugProcessAdapter" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugProcessMulticaster" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RunFailedException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.configurations.remote.RemoteProcessHandler" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.execution.IDebuggerManagerThread" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

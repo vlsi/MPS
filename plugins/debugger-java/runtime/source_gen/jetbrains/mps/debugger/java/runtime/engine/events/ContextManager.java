@@ -115,6 +115,10 @@ public class ContextManager {
     });
   }
 
+  public synchronized boolean isPausedOnEvent(Context context) {
+    return ListSequence.fromList(mySuspendedContexts).contains(context);
+  }
+
   public synchronized void startEvaluation(@NotNull ThreadReference threadReference) {
     SetSequence.fromSet(myEvaluatedThreads).addElement(threadReference);
   }

@@ -52,7 +52,7 @@ public class DebugVMEventsProcessor {
   public DebugVMEventsProcessor(BreakpointManagerComponent breakpointsManager, IDebuggerManagerThread managerThread) {
     myManagerThread = managerThread;
     myBreakpointManager = breakpointsManager;
-    myRequestManager = new RequestManager(this);
+    myRequestManager = null;
     mySuspendManager = new SuspendManager(this);
   }
 

@@ -4,6 +4,7 @@ package jetbrains.mps.debugger.java.runtime.engine.events;
 
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.ThreadReference;
+import org.jetbrains.annotations.NotNull;
 import com.sun.jdi.event.LocatableEvent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -17,7 +18,7 @@ public class EventContext implements Context {
   private final EventsProcessor myEventProcessor;
   private final ThreadReference myThreadReference;
 
-  public EventContext(EventsProcessor eventProcessor, EventSet eventSet) {
+  public EventContext(@NotNull EventsProcessor eventProcessor, @NotNull EventSet eventSet) {
     myEventSet = eventSet;
     myEventProcessor = eventProcessor;
     myVotesToVote = eventSet.size();
@@ -61,6 +62,11 @@ public class EventContext implements Context {
   /*package*/ void resume() {
     // only called from ContextManager 
     myEventSet.resume();
+  }
+
+  @NotNull
+  public EventSet getEventSet() {
+    return myEventSet;
   }
 
   private static ThreadReference check_gqjtnu_a0f0a(LocatableEvent checkedDotOperand) {

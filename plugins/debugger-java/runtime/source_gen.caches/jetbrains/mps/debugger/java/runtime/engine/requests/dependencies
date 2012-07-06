@@ -2,7 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.ClassPrepareRequestor" file="ClassPrepareRequestor.java">
     <classNode dependClassName="com.sun.jdi.ReferenceType" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.IRequestManager" file="IRequestManager.java" />

@@ -10,6 +10,7 @@ import java.util.Set;
 import com.sun.jdi.request.EventRequest;
 import com.intellij.util.containers.HashMap;
 import com.sun.jdi.request.EventRequestManager;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -40,7 +41,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.ClassType;
 import com.sun.jdi.InterfaceType;
-import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 
@@ -51,12 +51,12 @@ public class RequestManager implements IRequestManager {
 
   private final Map<Requestor, Set<EventRequest>> myRequestorToBelongedRequests = new HashMap<Requestor, Set<EventRequest>>();
   private EventRequestManager myEventRequestManager;
-  private DebugVMEventsProcessor myDebugEventsProcessor;
+  private EventsProcessor myDebugEventsProcessor;
   private final RequestManager.MyDebugProcessListener myDebugProcessListener = new RequestManager.MyDebugProcessListener();
   private final Map<Requestor, String> myInvalidRequestsAndWarnings = new HashMap<Requestor, String>();
   private final List<_FunctionTypes._void_P0_E0> myWarningsListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
-  public RequestManager(DebugVMEventsProcessor processor) {
+  public RequestManager(EventsProcessor processor) {
     myDebugEventsProcessor = processor;
     myDebugEventsProcessor.addDebugProcessListener(myDebugProcessListener);
   }
@@ -284,9 +284,8 @@ public class RequestManager implements IRequestManager {
   }
 
   public static void createClassPrepareRequests(final JavaBreakpoint breakpoint) {
-    VMEventsProcessorManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new VMEventsProcessorManagerComponent.AllDebugProcessesAction() {
-      @Override
-      public void run(DebugVMEventsProcessor processor) {
+    VMEventsProcessorManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new _FunctionTypes._void_P1_E0<EventsProcessor>() {
+      public void invoke(EventsProcessor processor) {
         if (processor.isAttached()) {
           breakpoint.createClassPrepareRequest(processor);
         }
@@ -295,9 +294,8 @@ public class RequestManager implements IRequestManager {
   }
 
   public static void removeClassPrepareRequests(final JavaBreakpoint breakpoint) {
-    VMEventsProcessorManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new VMEventsProcessorManagerComponent.AllDebugProcessesAction() {
-      @Override
-      public void run(DebugVMEventsProcessor processor) {
+    VMEventsProcessorManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new _FunctionTypes._void_P1_E0<EventsProcessor>() {
+      public void invoke(EventsProcessor processor) {
         if (processor.isAttached()) {
           processor.getRequestManager().deleteRequests(breakpoint);
         }

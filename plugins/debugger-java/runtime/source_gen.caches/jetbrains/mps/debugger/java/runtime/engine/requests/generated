@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-6tcwdvkkwn9hukvkgxlr2ee6ijrne8o">
+<dependencies version="2" modelHash="5fsn841o4am1k4hacmn198z9t028a91">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3pfv61ztw43crdi9n56ftoapjvy39kp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2jracueon20ixsh4dwbr6tefdboveeh" />
@@ -11,7 +11,7 @@
   <source id="2891782949125146377" name="Requestor" hash="-2jjinzpqo0wja3hxmuxot760u07hko8">
     <file name="Requestor.java" />
   </source>
-  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="8pxyogki29dtr09marfc5b3d22603lb">
+  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="95lws627ojyewvmka801yvkkdeidzsj">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ClassPrepareRequestor.java" />
   </source>

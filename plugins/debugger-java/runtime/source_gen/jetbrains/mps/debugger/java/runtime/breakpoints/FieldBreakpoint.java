@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
 import com.sun.jdi.Field;
@@ -67,7 +67,7 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
   }
 
   @Override
-  protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
+  protected void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
     if (!(updateFieldName())) {
       return;

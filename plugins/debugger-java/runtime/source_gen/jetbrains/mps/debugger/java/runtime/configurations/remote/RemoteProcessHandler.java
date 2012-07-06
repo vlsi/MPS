@@ -10,7 +10,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.java.runtime.DebugSession;
 import jetbrains.mps.debugger.java.runtime.DebugProcessAdapter;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import java.io.OutputStream;
 
 public class RemoteProcessHandler extends ProcessHandler {
@@ -28,8 +28,8 @@ public class RemoteProcessHandler extends ProcessHandler {
       final DebugSession session = (DebugSession) abstractSession;
       final DebugProcessAdapter listener = new DebugProcessAdapter() {
         @Override
-        public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
-          if (process == vmManager.getDebugVMEventsProcessor(session)) {
+        public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
+          if (process == vmManager.getEventsProcessor(session)) {
             vmManager.removeAllProcessListener(this);
             notifyProcessDetached();
           }

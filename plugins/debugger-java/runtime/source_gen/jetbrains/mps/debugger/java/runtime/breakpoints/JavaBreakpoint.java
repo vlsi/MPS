@@ -8,7 +8,7 @@ import jetbrains.mps.debugger.java.runtime.engine.requests.LocatableEventRequest
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
 import java.util.List;
 import com.sun.jdi.ReferenceType;
@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
-import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.StackFrame;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.ThreadReference;
@@ -30,7 +29,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
     super(project);
   }
 
-  public void createClassPrepareRequest(DebugVMEventsProcessor debugProcess) {
+  public void createClassPrepareRequest(EventsProcessor debugProcess) {
     // this should be called on every breakpoint when DebugEventsProcessor is attached 
     DebuggerManagerThread.assertIsManagerThread();
     //  check is this breakpoint is enabled, vm reference is valid and there're no requests created yet 
@@ -45,7 +44,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
     //  updateUI(); 
   }
 
-  public void createOrWaitPrepare(final DebugVMEventsProcessor debugProcess) {
+  public void createOrWaitPrepare(final EventsProcessor debugProcess) {
     String className = getClassNameToPrepare();
     // add requests for not prepared classes 
     debugProcess.getRequestManager().callbackOnPrepareClasses(this, className);
@@ -64,7 +63,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
   public abstract JavaBreakpointKind getKind();
 
   @Override
-  public void processClassPrepare(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
+  public void processClassPrepare(EventsProcessor debugProcess, ReferenceType classType) {
     // this is called when a class for this ClassPrepareRequestor is prepared 
     if (!(myIsEnabled) || !(isValid())) {
       return;
@@ -72,7 +71,7 @@ public abstract class JavaBreakpoint extends AbstractBreakpoint implements Class
     createRequestForPreparedClass(debugProcess, classType);
   }
 
-  protected abstract void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, ReferenceType classType);
+  protected abstract void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType);
 
   @Override
   public void removeFromRunningSessions() {

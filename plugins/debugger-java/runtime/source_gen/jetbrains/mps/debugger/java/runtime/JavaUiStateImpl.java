@@ -4,10 +4,9 @@ package jetbrains.mps.debugger.java.runtime;
 
 import jetbrains.mps.debug.runtime.JavaUiState;
 import org.jetbrains.annotations.NotNull;
-import java.util.List;
-import jetbrains.mps.util.CollectionUtil;
-import java.util.Collections;
+import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 import jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 
 public abstract class JavaUiStateImpl extends JavaUiState {
   protected final DebugSession myDebugSession;
@@ -17,12 +16,12 @@ public abstract class JavaUiStateImpl extends JavaUiState {
     myDebugSession = session;
   }
 
-  public abstract SuspendContext getContext();
+  public abstract Context getContext();
 
   public abstract boolean isPausedOnBreakpoint();
 
   @NotNull
-  /*package*/ PausedJavaUiState paused(@NotNull SuspendContext context) {
+  /*package*/ PausedJavaUiState paused(@NotNull Context context) {
     //  changes state on pause/resume 
     //  we select new context even if we are already on some other context 
     //  user probably wants to know about new paused contexts 
@@ -30,32 +29,19 @@ public abstract class JavaUiStateImpl extends JavaUiState {
   }
 
   @NotNull
-  /*package*/ JavaUiStateImpl resumed(SuspendContext context) {
+  /*package*/ JavaUiStateImpl resumed(Context context) {
     if (context != getContext()) {
       return this;
     }
-    SuspendContext newContext = null;
-    List<SuspendContext> allPausedContexts = getAllPausedContexts();
-    if (!(allPausedContexts.isEmpty())) {
-      newContext = allPausedContexts.get(0);
-    }
+    Context newContext = getEventProcessor().getContextManager().firstContext();
     if (newContext == null) {
       return new RunningJavaUiState(myDebugSession);
     }
     return new PausedJavaUiState(newContext, myDebugSession);
   }
 
-  private List<SuspendContext> getAllPausedContexts() {
-    SuspendManager suspendManager = getEventsProcessor().getSuspendManager();
-    SuspendContext context = suspendManager.getPausedByUserContext();
-    if (context != null) {
-      return suspendManager.getPausedContexts();
-    }
-    return CollectionUtil.union(suspendManager.getPausedContexts(), Collections.singletonList(context));
-  }
-
-  protected SuspendContext findContext(@NotNull JavaUiStateImpl previousState) {
-    SuspendContext newContext = previousState.getContext();
+  protected Context findContext(@NotNull JavaUiStateImpl previousState) {
+    Context newContext = previousState.getContext();
     if (newContext == null) {
       return null;
     }
@@ -63,19 +49,20 @@ public abstract class JavaUiStateImpl extends JavaUiState {
     if (thread == null) {
       return null;
     }
-    if (!(newContext.suspends(thread.getThread()))) {
-      newContext = null;
-      for (SuspendContext context : getAllPausedContexts()) {
-        if (context.suspends(thread.getThread())) {
-          newContext = context;
-          break;
-        }
-      }
+    if (!(eq_vkri5_a0a4a4(newContext.getThread(), thread))) {
+      return getEventProcessor().getContextManager().findContextForThread(thread.getThread());
     }
     return newContext;
   }
 
-  protected DebugVMEventsProcessor getEventsProcessor() {
+  protected EventsProcessor getEventProcessor() {
     return myDebugSession.getEventsProcessor();
+  }
+
+  private static boolean eq_vkri5_a0a4a4(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

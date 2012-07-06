@@ -38,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequenceClosure" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.events.Context" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" file="EventsProcessor.java">

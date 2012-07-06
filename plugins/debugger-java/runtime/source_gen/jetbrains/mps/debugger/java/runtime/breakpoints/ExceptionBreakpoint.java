@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.breakpoints;
 
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
 import com.sun.jdi.request.ExceptionRequest;
@@ -31,7 +31,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   }
 
   @Override
-  protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
+  protected void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
     try {
       ExceptionRequest request = requestManager.createExceptionRequest(this, classType);

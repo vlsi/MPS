@@ -9,7 +9,7 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
 import com.sun.jdi.request.MethodEntryRequest;
@@ -58,7 +58,7 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   }
 
   @Override
-  protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
+  protected void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
     if (!(updateMethodNameAndSignature())) {
       return;

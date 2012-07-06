@@ -4,8 +4,8 @@
     <unitInfo nodeId="2891782949125146377" fileName="Requestor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
   </root>
   <root nodeId="2891782949125170507">
-    <nodeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassPrepare#(Ljetbrains/mps/debugger/java/runtime/DebugVMEventsProcessor;Lcom/sun/jdi/ReferenceType;)V" />
-    <scopeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="108">
+    <nodeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processClassPrepare#(Ljetbrains/mps/debugger/java/runtime/engine/events/EventsProcessor;Lcom/sun/jdi/ReferenceType;)V" />
+    <scopeInfo nodeId="2891782949125170510" fileName="ClassPrepareRequestor.java" startLine="8" startPosition="58" endLine="9" endPosition="101">
       <varInfo nodeId="2891782949125170515" varName="classType" />
       <varInfo nodeId="2891782949125170513" varName="debugProcess" />
     </scopeInfo>

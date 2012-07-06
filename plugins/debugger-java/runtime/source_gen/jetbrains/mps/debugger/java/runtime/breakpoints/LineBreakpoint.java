@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
 import jetbrains.mps.debugger.java.runtime.RequestManager;
 import java.util.List;
@@ -35,7 +35,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   }
 
   @Override
-  protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, final ReferenceType classType) {
+  protected void createRequestForPreparedClass(EventsProcessor debugProcess, final ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
     try {
       int lineIndex = myLocation.getLineIndexInFile();
