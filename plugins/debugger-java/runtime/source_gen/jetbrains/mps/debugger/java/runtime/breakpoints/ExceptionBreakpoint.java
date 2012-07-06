@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
-import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
 import com.sun.jdi.request.ExceptionRequest;
 import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;

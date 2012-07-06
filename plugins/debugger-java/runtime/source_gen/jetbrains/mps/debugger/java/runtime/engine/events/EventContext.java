@@ -10,7 +10,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import com.sun.jdi.event.Event;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
 
 public class EventContext implements Context {
   private final EventSet myEventSet;

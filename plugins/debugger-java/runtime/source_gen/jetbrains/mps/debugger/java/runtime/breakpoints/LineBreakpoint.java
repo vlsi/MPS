@@ -11,7 +11,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
-import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
 import java.util.List;
 import com.sun.jdi.Location;
 import com.sun.jdi.request.BreakpointRequest;

@@ -9,10 +9,13 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
+import jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Set;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
+import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
 import jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint;
+import jetbrains.mps.debugger.java.runtime.engine.DebugProcessAdapter;
 
 public class DebugSession extends AbstractDebugSession<JavaUiStateImpl> {
   private final EventsProcessor myEventsProcessor;

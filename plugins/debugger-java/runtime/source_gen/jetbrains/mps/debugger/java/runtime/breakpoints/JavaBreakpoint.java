@@ -13,7 +13,7 @@ import jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread;
 import java.util.List;
 import com.sun.jdi.ReferenceType;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
 import jetbrains.mps.debugger.java.runtime.engine.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.StackFrame;

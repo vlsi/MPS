@@ -1,18 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="jetbrains.mps.debugger.java.runtime.execution.SystemMessagesReporter" file="SystemMessagesReporter.java">
-    <classNode dependClassName="com.intellij.execution.process.ProcessHandler" />
-    <classNode dependClassName="com.intellij.execution.process.ProcessOutputTypes" />
-    <classNode dependClassName="com.intellij.openapi.util.Key" />
-    <classNode dependClassName="com.intellij.openapi.util.Pair" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.DebugProcessMulticaster" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.DebugProcessAdapter" />
-  </dependency>
-</dependenciesRoot>
+<dependenciesRoot />
 

@@ -30,6 +30,8 @@ import jetbrains.mps.debugger.java.runtime.configurations.remote.RemoteProcessHa
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.util.concurrency.Semaphore;
+import jetbrains.mps.debugger.java.runtime.engine.DebugProcessMulticaster;
+import jetbrains.mps.debugger.java.runtime.engine.DebugProcessAdapter;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.sun.jdi.VirtualMachine;
