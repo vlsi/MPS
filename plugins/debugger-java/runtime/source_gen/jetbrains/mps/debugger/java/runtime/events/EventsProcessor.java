@@ -62,7 +62,7 @@ public class EventsProcessor {
   private void processClassPrepareEvent(EventContext context, ClassPrepareEvent event) {
     ManagerThread.assertIsMangerThread();
     myRequestManager.processClassPrepared(event);
-    myContextManager.resume(context);
+    myContextManager.voteResume(context);
   }
 
   private void processStepEvent(EventContext context, StepEvent event) {
@@ -73,13 +73,13 @@ public class EventsProcessor {
       StepRequestor requestor = (StepRequestor) myRequestManager.findRequestor(stepRequest);
       int nextStep = requestor.nextStep(event);
       if (nextStep == StepRequestor.STOP) {
-        myContextManager.pause(context);
+        myContextManager.votePause(context);
         return;
       } else {
         addNewStepRequest(requestor, nextStep, event.thread(), context.getSuspendPolicy());
       }
     }
-    myContextManager.resume(context);
+    myContextManager.voteResume(context);
   }
 
   private void addNewStepRequest(StepRequestor stepRequestor, int stepType, ThreadReference threadReference, int suspendPolicy) {
@@ -105,7 +105,7 @@ public class EventsProcessor {
     // if inside evaluation, resume 
     final ThreadReference thread = event.thread();
     if (myContextManager.isEvaluated(thread)) {
-      myContextManager.resume(context);
+      myContextManager.voteResume(context);
       return;
     }
 
@@ -113,7 +113,7 @@ public class EventsProcessor {
 
     // if no requestor or suspend none resume 
     if (requestor == null || EventRequest.SUSPEND_NONE == requestor.getSuspendPolicy()) {
-      myContextManager.resume(context);
+      myContextManager.voteResume(context);
     }
 
     // requestor may evaluate something inside, like a condition or an expression to print 
@@ -124,7 +124,7 @@ public class EventsProcessor {
           resume = !(requestor.isRequestHitByEvent(context, event));
         } finally {
           if (resume) {
-            myContextManager.resume(context);
+            myContextManager.voteResume(context);
           } else {
             try {
               if (requestor instanceof JavaBreakpoint && ((JavaBreakpoint) requestor).isLogMessage()) {
@@ -133,7 +133,7 @@ public class EventsProcessor {
               }
             } catch (AbsentInformationException ignore) {
             } finally {
-              myContextManager.pause(context);
+              myContextManager.votePause(context);
             }
           }
         }
@@ -197,7 +197,7 @@ public class EventsProcessor {
                 if (event instanceof LocatableEvent) {
                   processLocatableEvent(context, (LocatableEvent) event);
                 } else {
-                  myContextManager.resume(context);
+                  myContextManager.voteResume(context);
                 }
               }
             }

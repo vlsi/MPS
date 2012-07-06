@@ -23,4 +23,16 @@ public class EventContext {
   public RequestManager getRequestManager() {
     return myEventProcessor.getRequestManager();
   }
+
+  /*package*/ void vote() {
+    myVotesToVote--;
+  }
+
+  /*package*/ boolean isProcessed() {
+    return myVotesToVote == 0;
+  }
+
+  /*package*/ void resume() {
+    myEventSet.resume();
+  }
 }

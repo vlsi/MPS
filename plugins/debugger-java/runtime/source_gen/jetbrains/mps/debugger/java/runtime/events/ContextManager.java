@@ -18,14 +18,22 @@ public class ContextManager {
   public ContextManager() {
   }
 
-  /*package*/ void pause(EventContext context) {
-    // todo 
+  /*package*/ synchronized void votePause(EventContext context) {
+    context.vote();
     ListSequence.fromList(mySuspendedContexts).addElement(context);
   }
 
-  /*package*/ void resume(EventContext context) {
-    // todo 
+  /*package*/ synchronized void voteResume(EventContext context) {
+    context.vote();
+    if (context.isProcessed() && !(ListSequence.fromList(mySuspendedContexts).contains(context))) {
+      context.resume();
+    }
+  }
+
+  /*package*/ synchronized void resume(EventContext context) {
+    assert context.isProcessed() && ListSequence.fromList(mySuspendedContexts).contains(context);
     ListSequence.fromList(mySuspendedContexts).removeElement(context);
+    context.resume();
   }
 
   public synchronized void startEvaluation(@NotNull ThreadReference threadReference) {
