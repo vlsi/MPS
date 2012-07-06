@@ -18,7 +18,7 @@ import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.debugger.java.runtime.events.EventContext;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.Method;
 import com.sun.jdi.event.MethodEntryEvent;

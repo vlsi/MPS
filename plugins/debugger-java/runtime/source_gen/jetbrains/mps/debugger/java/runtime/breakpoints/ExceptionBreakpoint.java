@@ -11,7 +11,7 @@ import com.sun.jdi.request.ExceptionRequest;
 import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
-import jetbrains.mps.debugger.java.runtime.events.EventContext;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
 import org.jetbrains.annotations.NotNull;
 

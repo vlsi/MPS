@@ -6,8 +6,8 @@ import jetbrains.mps.logging.Logger;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.debugger.java.runtime.events.Context;
-import jetbrains.mps.debugger.java.runtime.events.EventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.Context;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 
 public class DebugProcessMulticaster {
   private static Logger LOG = Logger.getLogger(DebugProcessMulticaster.class);
