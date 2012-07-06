@@ -87,7 +87,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   }
 
   public boolean isInSet(VirtualFile file) {
-    if (!CacheUtil.checkFile(file, myRootManager)) return false;
+    if (!CacheUtil.isIgnored(file, myRootManager)) return false;
 
     for (VirtualFile vf : getRootFiles()) {
       if (VfsUtil.isAncestor(vf, file, true)) return true;
@@ -101,7 +101,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
   }
 
   private void iterateIndexableFilesIn_internal(VirtualFile file, ContentIterator iterator) {
-    if (!CacheUtil.checkFile(file, myRootManager)) return;
+    if (!CacheUtil.isIgnored(file, myRootManager)) return;
 
     if (file.isDirectory()) {
       for (VirtualFile child : file.getChildren()) {

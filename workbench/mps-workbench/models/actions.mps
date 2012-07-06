@@ -996,7 +996,6 @@
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="2899596005954254197">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.MainMenu" />
       <property name="name" nameId="tpck.1169194664001" value="ToolsInternal" />
-      <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
       <property name="caption" nameId="tp4k.1204991940915" value="Internal" />
       <property name="isInternal" nameId="tp4k.1205160838084" value="true" />
     </node>
@@ -1233,6 +1232,10 @@
       <property name="name" nameId="tpck.1169194664001" value="FindRootableConceptsWithoutIcons" />
       <property name="caption" nameId="tp4k.1205250923097" value="Find Rootable Concepts without Icons" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
+    </node>
+    <node type="tp4k.InterfaceGroup" typeId="tp4k.1204383956737" id="1425263017121620230">
+      <property name="name" nameId="tpck.1169194664001" value="IDEAInternalActions" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Integration" />
     </node>
   </roots>
   <root id="1204991218714">
@@ -1573,10 +1576,6 @@
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1216662587333" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="2191995028863072537">
         <property name="name" nameId="tpck.1169194664001" value="devkitTools" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="1206351971744" />
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1784959407586156229">
-        <property name="name" nameId="tpck.1169194664001" value="internal" />
       </node>
     </node>
   </root>
@@ -20400,10 +20399,10 @@
   </root>
   <root id="2899596005954254197">
     <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="2899596005954254200">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1204991238062" resolveInfo="Tools" />
-      <link role="point" roleId="tp4k.1204992316090" targetNodeId="1784959407586156229" resolveInfo="internal" />
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1425263017121620230" resolveInfo="IDEAInternalActions" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2899596005954254199">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="4192682328059866586" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="4998818250317603960">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="4998818250317603956" resolveInfo="FindRootableConceptsWithoutIcons" />
       </node>
@@ -30498,6 +30497,12 @@
         </node>
       </node>
     </node>
+  </root>
+  <root id="1425263017121620230">
+    <node role="groupID" roleId="tp4k.1206193920040" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1425263017121620232">
+      <property name="value" nameId="tpee.1070475926801" value="Internal" />
+    </node>
+    <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1425263017121620233" />
   </root>
 </model>
 

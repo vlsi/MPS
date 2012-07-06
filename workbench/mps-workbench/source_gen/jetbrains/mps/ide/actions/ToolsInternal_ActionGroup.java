@@ -12,8 +12,9 @@ public class ToolsInternal_ActionGroup extends GeneratedActionGroup {
   public ToolsInternal_ActionGroup() {
     super("Internal", ID);
     this.setIsInternal(true);
-    this.setPopup(true);
+    this.setPopup(false);
     try {
+      ToolsInternal_ActionGroup.this.addSeparator();
       ToolsInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
