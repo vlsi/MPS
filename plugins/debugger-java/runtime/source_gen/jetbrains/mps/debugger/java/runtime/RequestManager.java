@@ -37,14 +37,14 @@ import jetbrains.mps.debugger.java.runtime.requests.StepRequestor;
 import jetbrains.mps.debugger.java.runtime.requests.ClassPrepareRequestor;
 import com.sun.jdi.request.ClassPrepareRequest;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
-import jetbrains.mps.debug.api.BreakpointManagerComponent;
-import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.ClassType;
 import com.sun.jdi.InterfaceType;
+import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.api.BreakpointManagerComponent;
+import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 
-public class RequestManager implements DebugProcessListener, IRequestManager {
+public class RequestManager implements IRequestManager {
   private static final Logger LOG = Logger.getLogger(RequestManager.class);
   private static final Object REQUESTOR = new Object();
   private static final Object CLASS_NAME = new Object();
@@ -52,12 +52,13 @@ public class RequestManager implements DebugProcessListener, IRequestManager {
   private final Map<Requestor, Set<EventRequest>> myRequestorToBelongedRequests = new HashMap<Requestor, Set<EventRequest>>();
   private EventRequestManager myEventRequestManager;
   private DebugVMEventsProcessor myDebugEventsProcessor;
+  private final RequestManager.MyDebugProcessListener myDebugProcessListener = new RequestManager.MyDebugProcessListener();
   private final Map<Requestor, String> myInvalidRequestsAndWarnings = new HashMap<Requestor, String>();
   private final List<_FunctionTypes._void_P0_E0> myWarningsListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
 
   public RequestManager(DebugVMEventsProcessor processor) {
     myDebugEventsProcessor = processor;
-    myDebugEventsProcessor.addDebugProcessListener(this);
+    myDebugEventsProcessor.addDebugProcessListener(myDebugProcessListener);
   }
 
   public EventRequestManager getVMRequestManager() {
@@ -269,42 +270,6 @@ public class RequestManager implements DebugProcessListener, IRequestManager {
     ListSequence.fromList(myWarningsListeners).removeElement(listener);
   }
 
-  @Override
-  public void connectorIsReady() {
-    // todo impl 
-  }
-
-  @Override
-  public void paused(@NotNull SuspendContext suspendContext) {
-  }
-
-  @Override
-  public void resumed(@NotNull SuspendContext suspendContext) {
-  }
-
-  @Override
-  public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
-    myEventRequestManager = null;
-    myRequestorToBelongedRequests.clear();
-  }
-
-  @Override
-  public void processAttached(@NotNull DebugVMEventsProcessor process) {
-    myEventRequestManager = myDebugEventsProcessor.getVirtualMachine().eventRequestManager();
-    //  invoke later, so that requests are for sure created only _after_ 'processAttached()' methods of other listeneres are executed 
-    process.getManagerThread().schedule(new DebuggerCommand() {
-      @Override
-      protected void action() throws Exception {
-        BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
-        for (IBreakpoint breakpoint : breakpointManager.getAllIBreakpoints()) {
-          if (breakpoint instanceof JavaBreakpoint) {
-            ((JavaBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
-          }
-        }
-      }
-    });
-  }
-
   public void processClassPrepared(final ClassPrepareEvent event) {
     if (!(myDebugEventsProcessor.isAttached())) {
       return;
@@ -338,5 +303,44 @@ public class RequestManager implements DebugProcessListener, IRequestManager {
         }
       }
     });
+  }
+
+  public class MyDebugProcessListener implements DebugProcessListener {
+    public MyDebugProcessListener() {
+    }
+
+    public void connectorIsReady() {
+    }
+
+    @Override
+    public void paused(@NotNull SuspendContext suspendContext) {
+    }
+
+    @Override
+    public void resumed(@NotNull SuspendContext suspendContext) {
+    }
+
+    @Override
+    public void processDetached(@NotNull DebugVMEventsProcessor process, boolean closedByUser) {
+      myEventRequestManager = null;
+      myRequestorToBelongedRequests.clear();
+    }
+
+    @Override
+    public void processAttached(@NotNull DebugVMEventsProcessor process) {
+      myEventRequestManager = myDebugEventsProcessor.getVirtualMachine().eventRequestManager();
+      //  invoke later, so that requests are for sure created only _after_ 'processAttached()' methods of other listeneres are executed 
+      process.getManagerThread().schedule(new DebuggerCommand() {
+        @Override
+        protected void action() throws Exception {
+          BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
+          for (IBreakpoint breakpoint : breakpointManager.getAllIBreakpoints()) {
+            if (breakpoint instanceof JavaBreakpoint) {
+              ((JavaBreakpoint) breakpoint).createClassPrepareRequest(myDebugEventsProcessor);
+            }
+          }
+        }
+      });
+    }
   }
 }
