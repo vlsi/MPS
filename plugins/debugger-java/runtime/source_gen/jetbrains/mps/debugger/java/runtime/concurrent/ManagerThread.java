@@ -5,14 +5,17 @@ package jetbrains.mps.debugger.java.runtime.concurrent;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.concurrent.BlockingQueue;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.CountDownLatch;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class ManagerThread {
   protected static Log log = LogFactory.getLog(ManagerThread.class);
 
-  private final BlockingQueue<_FunctionTypes._void_P0_E0> myCommandQueue = new LinkedBlockingQueue<_FunctionTypes._void_P0_E0>();
+  private final BlockingQueue<IManagerCommand> myCommandQueue = new LinkedBlockingQueue<IManagerCommand>();
   private final ManagerThread.WorkerThread myThread = new ManagerThread.WorkerThread();
   private volatile boolean myClosed = false;
 
@@ -20,7 +23,7 @@ public class ManagerThread {
     myThread.start();
   }
 
-  public void invoke(_FunctionTypes._void_P0_E0 command) {
+  public void invoke(IManagerCommand command) {
     if (isManagerThread()) {
       myThread.processCommand(command);
     } else {
@@ -28,12 +31,12 @@ public class ManagerThread {
     }
   }
 
-  public void invokeAndWait(final _FunctionTypes._void_P0_E0 command) {
+  public void invokeAndWait(final IManagerCommand command) {
     if (isManagerThread()) {
       myThread.processCommand(command);
     } else {
       final CountDownLatch countDown = new CountDownLatch(1);
-      schedule(new _FunctionTypes._void_P0_E0() {
+      schedule(Commands.fromClosure(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           try {
             command.invoke();
@@ -41,7 +44,15 @@ public class ManagerThread {
             countDown.countDown();
           }
         }
-      });
+      }, new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
+          try {
+            command.cancel();
+          } finally {
+            countDown.countDown();
+          }
+        }
+      }));
       try {
         countDown.await();
       } catch (InterruptedException ignore) {
@@ -49,8 +60,12 @@ public class ManagerThread {
     }
   }
 
-  public void schedule(_FunctionTypes._void_P0_E0 command) {
-    myCommandQueue.offer(command);
+  public void schedule(IManagerCommand command) {
+    if (myClosed) {
+      command.cancel();
+    } else {
+      myCommandQueue.offer(command);
+    }
   }
 
   public void close() {
@@ -77,6 +92,20 @@ public class ManagerThread {
           }
           processCommand(myCommandQueue.take());
         }
+
+        if (myClosed) {
+          List<IManagerCommand> unprocessed = ListSequence.fromList(new ArrayList<IManagerCommand>());
+          myCommandQueue.drainTo(unprocessed);
+          for (IManagerCommand command : ListSequence.fromList(unprocessed)) {
+            try {
+              command.cancel();
+            } catch (Throwable t) {
+              if (log.isErrorEnabled()) {
+                log.error("Command " + command + " threw an exception.", t);
+              }
+            }
+          }
+        }
       } catch (InterruptedException ignore) {
       }
       if (log.isDebugEnabled()) {
@@ -84,9 +113,13 @@ public class ManagerThread {
       }
     }
 
-    private void processCommand(_FunctionTypes._void_P0_E0 command) {
+    private void processCommand(IManagerCommand command) {
       try {
-        command.invoke();
+        if (myClosed) {
+          command.cancel();
+        } else {
+          command.invoke();
+        }
       } catch (Throwable t) {
         if (log.isErrorEnabled()) {
           log.error("Command " + command + " threw an exception.", t);

@@ -36,6 +36,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.RequestManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.Commands" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.concurrent.ManagerThread" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.ContextManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.events.EventContext" />
