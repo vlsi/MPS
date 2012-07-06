@@ -25,14 +25,17 @@ public class EventContext {
   }
 
   /*package*/ void vote() {
+    // only called from ContextManager 
     myVotesToVote--;
   }
 
   /*package*/ boolean isProcessed() {
+    // only called from ContextManager 
     return myVotesToVote == 0;
   }
 
   /*package*/ void resume() {
+    // only called from ContextManager 
     myEventSet.resume();
   }
 }

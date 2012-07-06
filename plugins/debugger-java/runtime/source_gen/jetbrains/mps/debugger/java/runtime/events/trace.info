@@ -254,31 +254,34 @@
     <nodeInfo nodeId="6460341978864585077" fileName="EventContext.java" startLine="15" startPosition="38" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6460341978864600304" fileName="EventContext.java" startLine="19" startPosition="33" endLine="20" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6676843613964939396" fileName="EventContext.java" startLine="23" startPosition="45" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2847577559724852261" fileName="EventContext.java" startLine="27" startPosition="27" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2847577559724865354" fileName="EventContext.java" startLine="31" startPosition="37" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2847577559724865567" fileName="EventContext.java" startLine="35" startPosition="29" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="613652663728190438" fileName="EventContext.java" startLine="27" startPosition="27" endLine="28" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2847577559724852261" fileName="EventContext.java" startLine="28" startPosition="39" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="613652663728190441" fileName="EventContext.java" startLine="32" startPosition="37" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2847577559724865354" fileName="EventContext.java" startLine="33" startPosition="39" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="613652663728190444" fileName="EventContext.java" startLine="37" startPosition="29" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2847577559724865567" fileName="EventContext.java" startLine="38" startPosition="39" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6460341978864600299" fileName="EventContext.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSuspendPolicy#()I" />
     <nodeInfo nodeId="6676843613964939391" fileName="EventContext.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRequestManager#()Ljetbrains/mps/debugger/java/runtime/RequestManager;" />
-    <nodeInfo nodeId="2847577559724852256" fileName="EventContext.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="vote#()V" />
-    <nodeInfo nodeId="2847577559724865349" fileName="EventContext.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isProcessed#()Z" />
-    <nodeInfo nodeId="2847577559724865563" fileName="EventContext.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#()V" />
     <nodeInfo nodeId="6460341978864584964" fileName="EventContext.java" startLine="12" startPosition="0" endLine="17" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EventContext#(Ljetbrains/mps/debugger/java/runtime/events/EventsProcessor;Lcom/sun/jdi/event/EventSet;)V" />
+    <nodeInfo nodeId="2847577559724852256" fileName="EventContext.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="vote#()V" />
+    <nodeInfo nodeId="2847577559724865349" fileName="EventContext.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isProcessed#()Z" />
+    <nodeInfo nodeId="2847577559724865563" fileName="EventContext.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resume#()V" />
     <scopeInfo nodeId="6460341978864600302" fileName="EventContext.java" startLine="19" startPosition="33" endLine="20" endPosition="38" />
     <scopeInfo nodeId="6676843613964939394" fileName="EventContext.java" startLine="23" startPosition="45" endLine="24" endPosition="48" />
-    <scopeInfo nodeId="2847577559724852259" fileName="EventContext.java" startLine="27" startPosition="27" endLine="28" endPosition="20" />
-    <scopeInfo nodeId="2847577559724865352" fileName="EventContext.java" startLine="31" startPosition="37" endLine="32" endPosition="30" />
-    <scopeInfo nodeId="2847577559724865566" fileName="EventContext.java" startLine="35" startPosition="29" endLine="36" endPosition="24" />
+    <scopeInfo nodeId="2847577559724852259" fileName="EventContext.java" startLine="27" startPosition="27" endLine="29" endPosition="20" />
+    <scopeInfo nodeId="2847577559724865352" fileName="EventContext.java" startLine="32" startPosition="37" endLine="34" endPosition="30" />
+    <scopeInfo nodeId="2847577559724865566" fileName="EventContext.java" startLine="37" startPosition="29" endLine="39" endPosition="24" />
     <scopeInfo nodeId="6460341978864584967" fileName="EventContext.java" startLine="13" startPosition="74" endLine="16" endPosition="36" />
     <scopeInfo nodeId="6460341978864600299" fileName="EventContext.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="6676843613964939391" fileName="EventContext.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="2847577559724852256" fileName="EventContext.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="2847577559724865349" fileName="EventContext.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="2847577559724865563" fileName="EventContext.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="6460341978864584964" fileName="EventContext.java" startLine="12" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="6676843613964939343" varName="eventProcessor" />
       <varInfo nodeId="6460341978864584968" varName="eventSet" />
     </scopeInfo>
-    <unitInfo nodeId="6460341978864584962" fileName="EventContext.java" startLine="8" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.events.EventContext" />
+    <scopeInfo nodeId="2847577559724852256" fileName="EventContext.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="2847577559724865349" fileName="EventContext.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="2847577559724865563" fileName="EventContext.java" startLine="36" startPosition="0" endLine="41" endPosition="0" />
+    <unitInfo nodeId="6460341978864584962" fileName="EventContext.java" startLine="8" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.events.EventContext" />
   </root>
   <root nodeId="7672976942235813584">
     <nodeInfo nodeId="6460341978864599944" fileName="ContextManager.java" startLine="14" startPosition="29" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuspendedContexts" />
