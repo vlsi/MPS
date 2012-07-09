@@ -8,6 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -54,6 +55,12 @@ public class TypesystemGenUtil {
         return false;
       }
     }
+    SNode lastStatement = IMethodLike_Behavior.call_getLastStatement_1239354409446(subtypingRule);
+    if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), new TypesystemGenUtil.QuotationClass_y65bbo_a1a0a0a3a2().createNode()))) {
+        return false;
+      }
+    }
     return true;
   }
 
@@ -95,6 +102,23 @@ public class TypesystemGenUtil {
 
   public static class QuotationClass_y65bbo_a1a0a0a1a2 {
     public QuotationClass_y65bbo_a1a0a0a1a2() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_y65bbo_a1a0a0a3a2 {
+    public QuotationClass_y65bbo_a1a0a0a3a2() {
     }
 
     public SNode createNode() {
