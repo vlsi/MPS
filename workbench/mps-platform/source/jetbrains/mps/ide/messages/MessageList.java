@@ -18,8 +18,10 @@ package jetbrains.mps.ide.messages;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.ide.OccurenceNavigator;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
@@ -64,7 +66,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * User: fyodor
  * Date: 4/21/11
  */
-abstract class MessageList implements IMessageList, SearchHistoryStorage {
+abstract class MessageList implements IMessageList, SearchHistoryStorage, Disposable {
 
   static final int MAX_SIZE = 10000;
 
@@ -105,6 +107,11 @@ abstract class MessageList implements IMessageList, SearchHistoryStorage {
   protected MessageList(Project project) {
     this.myProject = project;
     myUpdateQueue.setRestartTimerOnAdd(true);
+    Disposer.register(this, myUpdateQueue);
+  }
+
+  @Override
+  public void dispose() {
   }
 
   public void show(boolean setActive) {
