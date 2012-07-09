@@ -2,9 +2,9 @@
 <idea-plugin>
   <name>JetBrains MPS Integration</name>
   <description>JetBrains MPS Integration</description>
-  <version>1.0</version>
-  <vendor>JetBrains</vendor>
-  <idea-version since-build="3000"/>
+  <version>2.5.1</version>
+  <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
+  <idea-version min="11.1"/>
 
   <application-components>
     <component>

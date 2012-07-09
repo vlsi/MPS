@@ -18,7 +18,10 @@
   <id>jetbrains.mps.vcs</id>
   <name>MPS Version Control support</name>
   <category>Custom Languages</category>
-  <version>1.0.0</version>
+  <description>MPS Version Control support</description>
+  <version>2.5.1</version>
+  <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
+  <idea-version min="11.1"/>
   <depends>jetbrains.mps.core</depends>
 
   <depends optional="true">Subversion</depends>
