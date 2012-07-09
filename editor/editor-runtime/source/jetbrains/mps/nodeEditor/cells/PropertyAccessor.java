@@ -25,7 +25,7 @@ public class PropertyAccessor implements ModelAccessor {
   private String myPropertyName;
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
-  private SNodePointer myPropertyDeclaration;
+  private final SNodePointer myPropertyDeclaration;
   private IScope myScope;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
@@ -101,8 +101,9 @@ public class PropertyAccessor implements ModelAccessor {
       return (text == null && (propertyValue == null || propertyValue.isEmpty())) || (text != null && text.equals(propertyValue));
     }
 
-    if (isValidPropertyDeclaration()) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration.getNode());
+    SNode node = myPropertyDeclaration.getNode();
+    if (node != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.canSetValue(myNode, myPropertyName, text, myScope);
     }
     return true;
@@ -114,22 +115,20 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private String fromInternal(String value) {
-    if (isValidPropertyDeclaration()) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration.getNode());
+    SNode node = myPropertyDeclaration.getNode();
+    if (node != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.fromInternalValue(value);
     }
     return value;
   }
 
   private String toInternal(String value) {
-    if (isValidPropertyDeclaration()) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration.getNode());
+    SNode node = myPropertyDeclaration.getNode();
+    if (node != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.toInternalValue(value);
     }
     return value;
-  }
-
-  private boolean isValidPropertyDeclaration() {
-    return myPropertyDeclaration != null && myPropertyDeclaration.getNode() != null && !myPropertyDeclaration.getNode().isDisposed();
   }
 }
