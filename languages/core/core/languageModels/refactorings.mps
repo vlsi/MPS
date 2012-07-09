@@ -706,8 +706,8 @@
         <node role="statement" roleId="tpee.1068581517665" type="tp1h.UpdateModelByDefaultOperation" typeId="tp1h.1197382578687" id="7012097027058651108" />
       </node>
     </node>
-    <node role="doWhenDoneBlock" roleId="tp1h.2058726427123891193" type=".jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause" id="7012097027058651117">
-      <node role="body" type="tpee.StatementList" typeId="tpee.1068580123136" id="7012097027058651118">
+    <node role="doWhenDoneBlock" roleId="tp1h.2058726427123891193" type="tp1h.DoWhenDoneClause" typeId="tp1h.2058726427123891188" id="7012097027058651117">
+      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7012097027058651118">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7012097027058828305">
           <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7012097027058828310">
             <property name="text" nameId="tpee.6329021646629104958" value="todo: open target nodes" />
