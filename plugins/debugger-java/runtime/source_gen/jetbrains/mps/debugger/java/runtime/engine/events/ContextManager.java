@@ -29,9 +29,10 @@ public class ContextManager {
   public ContextManager() {
   }
 
-  /*package*/ synchronized void votePause(EventContext context) {
+  /*package*/ synchronized boolean votePause(EventContext context) {
     context.vote();
     ListSequence.fromList(mySuspendedContexts).insertElement(0, context);
+    return context.isProcessed();
   }
 
   /*package*/ synchronized void voteResume(EventContext context) {
@@ -47,7 +48,7 @@ public class ContextManager {
 
   /*package*/ synchronized void resume(Context context) {
     if (context instanceof EventContext) {
-      assert ((EventContext) context).isProcessed() && ListSequence.fromList(mySuspendedContexts).contains((EventContext) context);
+      assert ((EventContext) context).isProcessed();
       ListSequence.fromList(mySuspendedContexts).removeElement((EventContext) context);
       tryResume5Times((EventContext) context, new _FunctionTypes._void_P1_E0<EventContext>() {
         public void invoke(EventContext c) {
