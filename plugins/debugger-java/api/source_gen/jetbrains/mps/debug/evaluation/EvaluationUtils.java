@@ -21,7 +21,6 @@ import jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy;
 import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.evaluation.proxies.IArrayValueProxy;
 import jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy;
-import jetbrains.mps.util.annotation.ToRemove;
 import com.sun.jdi.InvocationException;
 import com.sun.jdi.InvalidTypeException;
 import com.sun.jdi.ClassNotLoadedException;
@@ -96,94 +95,6 @@ public abstract class EvaluationUtils {
     synchronized (LOCK) {
       return INSTANCE;
     }
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static Value getElementAt(ArrayReference array, int index) {
-    return EvaluationUtils.getInstance().getArrayElementAt(array, index);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static boolean isInstanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException {
-    return EvaluationUtils.getInstance().instanceOf(what, jniSignature, machine);
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static IValueProxy getValue(String varName, StackFrame stackFrame, ThreadReference reference) throws EvaluationException {
-    return EvaluationUtils.getInstance().getVariableValue(varName, stackFrame);
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static <T extends IValueProxy> Iterable<T> toIterable(IObjectValueProxy valueProxy) {
-    // well, at least we compile 
-    return EvaluationUtils.getInstance().toIterableProxy(valueProxy, null);
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static <T extends IValueProxy> Iterable<T> toIterableFromArray(IArrayValueProxy valueProxy) {
-    return EvaluationUtils.getInstance().toIterableProxyFromArray(valueProxy);
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static IValueProxy invokeStatic(String className, String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
-    return EvaluationUtils.getInstance().invokeStaticMethod(className, name, jniSignature, threadReference, args);
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static IValueProxy getStaticFieldValue(String className, String fieldName, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
-    return EvaluationUtils.getInstance().getStaticField(className, fieldName, threadReference.virtualMachine());
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static IObjectValueProxy invokeConstructor(String className, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
-    return EvaluationUtils.getInstance().invokeConstructorProxy(className, jniSignature, threadReference, args);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static IArrayValueProxy createArray(String className, ThreadReference threadReference, int size) throws EvaluationException {
-    return EvaluationUtils.getInstance().createArrayProxy(className, threadReference.virtualMachine(), size);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static IArrayValueProxy createArrayFromValues(String className, ThreadReference threadReference, Object... args) throws EvaluationException {
-    return EvaluationUtils.getInstance().createArrayProxyFromValues(className, threadReference.virtualMachine(), args);
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static IValueProxy getClassValue(String className, ThreadReference threadReference) throws InvalidEvaluatedExpressionException {
-    return EvaluationUtils.getInstance().getClass(className, threadReference.virtualMachine());
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static IObjectValueProxy box(PrimitiveValueProxy primitiveValueProxy, ThreadReference threadReference) throws EvaluationException {
-    return EvaluationUtils.getInstance().boxValue(primitiveValueProxy, threadReference);
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public static PrimitiveValueProxy unbox(IObjectValueProxy valueProxy) throws EvaluationException {
-    // all we want from this code is to be compilable 
-    return EvaluationUtils.getInstance().unboxValue(valueProxy, null);
   }
 
   /**

@@ -73,7 +73,7 @@ import com.sun.jdi.IncompatibleThreadStateException;
 
   @Override
   public boolean isInstanceOf(String typename) throws EvaluationException {
-    return EvaluationUtils.isInstanceOf(myReferenceType, typename, myValue.virtualMachine());
+    return EvaluationUtils.getInstance().instanceOf(myReferenceType, typename, myValue.virtualMachine());
   }
 
   protected IValueProxy invoke(String name, String jniSignature, ClassType classType, final int options, final ThreadReference threadReference, Object[] args) throws EvaluationException {

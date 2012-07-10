@@ -21,7 +21,7 @@
     <nodeInfo nodeId="3102837338444216659" fileName="ObjectValueProxy.java" startLine="67" startPosition="29" endLine="68" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3102837338444216669" fileName="ObjectValueProxy.java" startLine="69" startPosition="5" endLine="70" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3102837338444216673" fileName="ObjectValueProxy.java" startLine="70" startPosition="52" endLine="71" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216688" fileName="ObjectValueProxy.java" startLine="75" startPosition="75" endLine="76" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2743718125356832481" fileName="ObjectValueProxy.java" startLine="75" startPosition="75" endLine="76" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444216712" fileName="ObjectValueProxy.java" startLine="79" startPosition="187" endLine="80" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3102837338444216714" fileName="ObjectValueProxy.java" startLine="80" startPosition="52" endLine="81" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3102837338444216727" fileName="ObjectValueProxy.java" startLine="82" startPosition="25" endLine="83" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -46,7 +46,7 @@
     <scopeInfo nodeId="3102837338444216531" fileName="ObjectValueProxy.java" startLine="35" startPosition="44" endLine="36" endPosition="37" />
     <scopeInfo nodeId="3102837338444216590" fileName="ObjectValueProxy.java" startLine="50" startPosition="32" endLine="51" endPosition="96" />
     <scopeInfo nodeId="3102837338444216658" fileName="ObjectValueProxy.java" startLine="67" startPosition="29" endLine="68" endPosition="134" />
-    <scopeInfo nodeId="3102837338444216687" fileName="ObjectValueProxy.java" startLine="75" startPosition="75" endLine="76" endPosition="93" />
+    <scopeInfo nodeId="3102837338444216687" fileName="ObjectValueProxy.java" startLine="75" startPosition="75" endLine="76" endPosition="105" />
     <scopeInfo nodeId="3102837338444216726" fileName="ObjectValueProxy.java" startLine="82" startPosition="25" endLine="83" endPosition="152" />
     <scopeInfo nodeId="3102837338444216790" fileName="ObjectValueProxy.java" startLine="96" startPosition="48" endLine="97" endPosition="47" />
     <scopeInfo nodeId="3102837338444216516" fileName="ObjectValueProxy.java" startLine="29" startPosition="46" endLine="31" endPosition="52" />
@@ -188,7 +188,7 @@
     <nodeInfo nodeId="3102837338444216955" fileName="ArrayValueProxy.java" startLine="31" startPosition="42" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444216966" fileName="ArrayValueProxy.java" startLine="36" startPosition="54" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="3102837338444216969" fileName="ArrayValueProxy.java" startLine="37" startPosition="47" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216978" fileName="ArrayValueProxy.java" startLine="43" startPosition="46" endLine="44" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3102837338444216978" fileName="ArrayValueProxy.java" startLine="43" startPosition="46" endLine="44" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444217020" fileName="ArrayValueProxy.java" startLine="49" startPosition="9" endLine="50" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3102837338444216999" fileName="ArrayValueProxy.java" startLine="51" startPosition="38" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3102837338444217010" fileName="ArrayValueProxy.java" startLine="53" startPosition="41" endLine="54" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -200,7 +200,7 @@
     <nodeInfo nodeId="3102837338444217090" fileName="ArrayValueProxy.java" startLine="71" startPosition="143" endLine="72" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3102837338444217100" fileName="ArrayValueProxy.java" startLine="72" startPosition="91" endLine="73" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444217121" fileName="ArrayValueProxy.java" startLine="79" startPosition="121" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444217132" fileName="ArrayValueProxy.java" startLine="84" startPosition="75" endLine="85" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2743718125356832457" fileName="ArrayValueProxy.java" startLine="84" startPosition="75" endLine="85" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444217158" fileName="ArrayValueProxy.java" startLine="90" startPosition="60" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444217160" fileName="ArrayValueProxy.java" startLine="92" startPosition="5" endLine="93" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3102837338444216940" fileName="ArrayValueProxy.java" startLine="25" startPosition="101" endLine="28" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ArrayValueProxy#(Lcom/sun/jdi/ArrayReference;)V" />
@@ -219,7 +219,7 @@
     <nodeInfo nodeId="3102837338444217037" fileName="ArrayValueProxy.java" startLine="62" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debug/evaluation/proxies/IValueProxy;" />
     <scopeInfo nodeId="3102837338444216947" fileName="ArrayValueProxy.java" startLine="26" startPosition="48" endLine="27" endPosition="17" />
     <scopeInfo nodeId="3102837338444216954" fileName="ArrayValueProxy.java" startLine="31" startPosition="42" endLine="32" endPosition="36" />
-    <scopeInfo nodeId="3102837338444216977" fileName="ArrayValueProxy.java" startLine="43" startPosition="46" endLine="44" endPosition="104" />
+    <scopeInfo nodeId="3102837338444216977" fileName="ArrayValueProxy.java" startLine="43" startPosition="46" endLine="44" endPosition="123" />
     <scopeInfo nodeId="3102837338444217019" fileName="ArrayValueProxy.java" startLine="49" startPosition="9" endLine="50" endPosition="47" />
     <scopeInfo nodeId="3102837338444216997" fileName="ArrayValueProxy.java" startLine="51" startPosition="0" endLine="52" endPosition="82">
       <varInfo nodeId="3102837338444217006" varName="e" />
@@ -231,7 +231,7 @@
     <scopeInfo nodeId="3102837338444217009" fileName="ArrayValueProxy.java" startLine="53" startPosition="41" endLine="54" endPosition="82" />
     <scopeInfo nodeId="3102837338444217031" fileName="ArrayValueProxy.java" startLine="59" startPosition="26" endLine="60" endPosition="36" />
     <scopeInfo nodeId="3102837338444217120" fileName="ArrayValueProxy.java" startLine="79" startPosition="121" endLine="80" endPosition="79" />
-    <scopeInfo nodeId="3102837338444217131" fileName="ArrayValueProxy.java" startLine="84" startPosition="75" endLine="85" endPosition="92" />
+    <scopeInfo nodeId="3102837338444217131" fileName="ArrayValueProxy.java" startLine="84" startPosition="75" endLine="85" endPosition="104" />
     <scopeInfo nodeId="3102837338444217157" fileName="ArrayValueProxy.java" startLine="90" startPosition="60" endLine="91" endPosition="19" />
     <scopeInfo nodeId="3102837338444216965" fileName="ArrayValueProxy.java" startLine="36" startPosition="54" endLine="38" endPosition="16" />
     <scopeInfo nodeId="3102837338444217089" fileName="ArrayValueProxy.java" startLine="71" startPosition="143" endLine="73" endPosition="62">
