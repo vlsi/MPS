@@ -133,9 +133,9 @@
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="8586967776370586377">
       <property name="id" nameId="tp4k.5023285075122009366" value="jebrains.mps.ide.mpsdevkit" />
       <property name="name" nameId="tpck.1169194664001" value="MPS Languages DevKit" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="3000" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Allows to develop new MPS languages" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="2.0" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.1" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />

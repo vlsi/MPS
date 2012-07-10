@@ -9,7 +9,7 @@
   <description>Languages and libraries for implementing execution configurations for MPS</description>
   <version>2.5.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version min="11.1"/>
+  <idea-version since-build="117.105"></idea-version>
   
   <depends>jetbrains.mps.debugger-java</depends>
   <depends>jetbrains.mps.debugger-api</depends>
