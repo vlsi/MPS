@@ -1076,7 +1076,11 @@ __switch__:
       if (internalValue == null) {
         SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
       } else {
-        SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (Integer.parseInt(internalValue)));
+        if (internalValue.startsWith("0x")) {
+          SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (Integer.parseInt(internalValue.substring(2), 16)));
+        } else {
+          SPropertyOperations.set(SNodeOperations.cast(targetInternalValueExpression, "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (Integer.parseInt(internalValue)));
+        }
       }
     }
     if ((targetInternalValueExpression == null)) {
