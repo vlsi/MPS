@@ -18,11 +18,12 @@ public class check_LongLiteral_within_range_NonTypesystemRule extends AbstractNo
   }
 
   public void applyRule(final SNode longLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (longLiteral == null || SPropertyOperations.getString(longLiteral, "value") == null) {
+    String value = SPropertyOperations.getString(longLiteral, "value");
+    if (value == null) {
       return;
     }
     try {
-      Long.parseLong(SPropertyOperations.getString(longLiteral, "value").replaceFirst("(-?\\d+)(l|L)", "$1"));
+      Long.parseLong(value.replaceFirst("(-?\\d+)(l|L)", "$1"));
     } catch (NumberFormatException e) {
       if (!(false)) {
         MessageTarget errorTarget = new NodeMessageTarget();
