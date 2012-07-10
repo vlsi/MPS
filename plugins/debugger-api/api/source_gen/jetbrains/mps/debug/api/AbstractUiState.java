@@ -9,9 +9,6 @@ import java.util.List;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import java.util.Collections;
 import jetbrains.mps.debug.api.programState.IWatchable;
-import jetbrains.mps.util.annotation.ToRemove;
-import java.util.Map;
-import jetbrains.mps.debug.api.programState.IValue;
 
 public abstract class AbstractUiState {
   protected static final int NO_FRAME = -1;
@@ -97,54 +94,5 @@ public abstract class AbstractUiState {
       return stackFrame.getVisibleWatchables();
     }
     return Collections.emptyList();
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.5)
-  protected IThread findThread() {
-    return null;
-  }
-
-  @NotNull
-  @Deprecated
-  @ToRemove(version = 2.5)
-  public Map<IWatchable, IValue> getWatchableValues() {
-    IStackFrame stackFrame = getStackFrame();
-    if (stackFrame != null) {
-      return stackFrame.getWatchableValues();
-    }
-    return Collections.emptyMap();
-  }
-
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 2.5)
-  public IValue getVariableValue(IWatchable variable) {
-    IStackFrame stackFrame = getStackFrame();
-    if (stackFrame != null) {
-      return stackFrame.getValue(variable);
-    }
-    return null;
-  }
-
-  @Nullable
-  @Deprecated
-  @ToRemove(version = 2.5)
-  public String getSourceFileName() {
-    IStackFrame stackFrame = getStackFrame();
-    if (stackFrame == null) {
-      return null;
-    }
-    return stackFrame.getLocation().getFileName();
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.5)
-  public int getPosition() {
-    IStackFrame stackFrame = getStackFrame();
-    if (stackFrame == null) {
-      return 0;
-    }
-    return stackFrame.getLocation().getLineNumber();
   }
 }

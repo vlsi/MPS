@@ -66,8 +66,6 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.UnitPositionInfo" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.Mapper" />
-    <classNode dependClassName="jetbrains.mps.util.Mapper2" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

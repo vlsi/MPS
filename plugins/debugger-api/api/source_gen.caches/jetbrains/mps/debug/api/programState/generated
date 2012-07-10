@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="19ow21zzyk0drkgl9g5yxzxx67b0ylx">
+<dependencies version="2" modelHash="9rrwdhfb7iek9vsphdkcojgbjl7emu">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3pfv61ztw43crdi9n56ftoapjvy39kp" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2jracueon20ixsh4dwbr6tefdboveeh" />
@@ -26,9 +26,8 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="WatchablesCategory.java" />
   </source>
-  <source id="4474271214082914121" name="IStackFrame" hash="gtijkxlmzz8im4cfr4f0hsrib5u1ye">
+  <source id="4474271214082914121" name="IStackFrame" hash="-6c7uie9deqac1aq2xisxe2a6dlci67r">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="IStackFrame.java" />
   </source>
   <source id="4474271214082914148" name="ILocation" hash="47nvl63pgpbzqvicttvg9wqxsegyq1s">
