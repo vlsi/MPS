@@ -8794,13 +8794,6 @@
           </node>
         </node>
       </node>
-      <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="3558796834797252865">
-        <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="7149524275927164266">
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7149524275927164267">
-            <property name="head" nameId="3ior.8618885170173601779" value="entryPoints.xml" />
-          </node>
-        </node>
-      </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1392391688313556041">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="1392391688312941958" resolveInfo="buildStandalone" />

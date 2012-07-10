@@ -43,6 +43,9 @@ import org.jetbrains.annotations.Nullable;
 
     String className = null;
     PsiClass psiClass = JVMNameUtil.getClassAt(sourcePosition);
+    if (psiClass == null) {
+      return null;
+    }
     if (PsiUtil.isLocalOrAnonymousClass(psiClass)) {
       PsiClass parentClass = TopLevelParentClassProvider.getTopLevelParentClass(psiClass);
       if (parentClass == null) {
@@ -52,7 +55,9 @@ import org.jetbrains.annotations.Nullable;
     } else {
       className = JVMNameUtil.getNonAnonymousClassName(psiClass);
     }
-    if (className == null) return null;
+    if (className == null) {
+      return null;
+    }
     return new GeneratedSourcePosition(className, sourcePosition.getFile().getName(), breakpoint.getLineIndex() + 1).getNode();
   }
 }
