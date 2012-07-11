@@ -56,7 +56,6 @@ public class check_FinalFieldWasAssigned_NonTypesystemRule extends AbstractNonTy
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(field, "Variable '" + SPropertyOperations.getString(field, "name") + "' might not have been initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "843236768047887576", null, errorTarget);
     }
-
   }
 
   public String getApplicableConceptFQName() {
