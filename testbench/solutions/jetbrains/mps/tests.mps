@@ -904,6 +904,9 @@
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832458">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.843236768048177679" resolveInfo="FinalFieldWasAssigned" />
     </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4705425356438334298">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.4705425356438246924" resolveInfo="FinalVarRefs" />
+    </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="2712670354707832459">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.7187651930235347758" resolveInfo="TestGenerationMode" />
     </node>
