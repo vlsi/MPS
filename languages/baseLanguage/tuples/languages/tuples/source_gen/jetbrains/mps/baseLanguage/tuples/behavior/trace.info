@@ -111,8 +111,8 @@
     <nodeInfo nodeId="9115683648089612876" fileName="NamedTupleDeclaration_Behavior.java" startLine="87" startPosition="39" endLine="88" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3588951946977140036" fileName="NamedTupleDeclaration_Behavior.java" startLine="91" startPosition="5" endLine="92" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="95" startPosition="76" endLine="96" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="96" startPosition="113" endLine="97" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="100" startPosition="109" endLine="101" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="96" startPosition="113" endLine="97" endPosition="243" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="100" startPosition="109" endLine="101" endPosition="288" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6742265879766300887" fileName="NamedTupleDeclaration_Behavior.java" startLine="108" startPosition="49" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6742265879766300887" fileName="NamedTupleDeclaration_Behavior.java" startLine="109" startPosition="26" endLine="110" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6742265879766300887" fileName="NamedTupleDeclaration_Behavior.java" startLine="110" startPosition="67" endLine="111" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -171,11 +171,11 @@
     <scopeInfo nodeId="6742265879766300882" fileName="NamedTupleDeclaration_Behavior.java" startLine="73" startPosition="39" endLine="74" endPosition="100" />
     <scopeInfo nodeId="9115683648089612876" fileName="NamedTupleDeclaration_Behavior.java" startLine="83" startPosition="41" endLine="84" endPosition="78" />
     <scopeInfo nodeId="9115683648089612876" fileName="NamedTupleDeclaration_Behavior.java" startLine="87" startPosition="39" endLine="88" endPosition="68" />
-    <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="100" startPosition="109" endLine="101" endPosition="272" />
+    <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="100" startPosition="109" endLine="101" endPosition="288" />
     <scopeInfo nodeId="6742265879766300377" fileName="NamedTupleDeclaration_Behavior.java" startLine="137" startPosition="37" endLine="138" endPosition="77" />
     <scopeInfo nodeId="1239546142331" fileName="NamedTupleDeclaration_Behavior.java" startLine="43" startPosition="9" endLine="45" endPosition="17" />
     <scopeInfo nodeId="3142843783245461178" fileName="NamedTupleDeclaration_Behavior.java" startLine="53" startPosition="77" endLine="55" endPosition="109" />
-    <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="95" startPosition="76" endLine="97" endPosition="227">
+    <scopeInfo nodeId="1239537338572" fileName="NamedTupleDeclaration_Behavior.java" startLine="95" startPosition="76" endLine="97" endPosition="243">
       <varInfo nodeId="1239537338572" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="6742265879766300887" fileName="NamedTupleDeclaration_Behavior.java" startLine="104" startPosition="55" endLine="106" endPosition="5" />

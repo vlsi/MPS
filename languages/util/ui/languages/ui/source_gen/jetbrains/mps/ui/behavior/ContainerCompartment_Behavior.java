@@ -26,19 +26,19 @@ public class ContainerCompartment_Behavior {
 
   public static SNode call_getContext_8923564134258348484(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258348484);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258348484, new Object[]{});
   }
 
   public static SNode call_getContainer_8923564134258348492(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492, new Object[]{});
   }
 
   public static SNode callSuper_getContext_8923564134258348484(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), callerConceptFqName, "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258348484);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), callerConceptFqName, "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258348484, new Object[]{});
   }
 
   public static SNode callSuper_getContainer_8923564134258348492(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.ContainerCompartment"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258348492, new Object[]{});
   }
 }

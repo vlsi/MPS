@@ -19,28 +19,28 @@ public class BuildLayout_Container_Behavior {
 
   public static String call_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", PARAMETERS_4701820937132344011, context);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", PARAMETERS_4701820937132344011, new Object[]{context});
   }
 
   public static String call_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", PARAMETERS_4701820937132344041);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getPrepareSubTaskId_4701820937132344041", PARAMETERS_4701820937132344041, new Object[]{});
   }
 
   public static String call_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", PARAMETERS_4701820937132344052);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getAssembleSubTaskId_4701820937132344052", PARAMETERS_4701820937132344052, new Object[]{});
   }
 
   public static String callSuper_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, String callerConceptFqName, Context context) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", PARAMETERS_4701820937132344011, context);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", PARAMETERS_4701820937132344011, new Object[]{context});
   }
 
   public static String callSuper_getPrepareSubTaskId_4701820937132344041(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getPrepareSubTaskId_4701820937132344041", PARAMETERS_4701820937132344041);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getPrepareSubTaskId_4701820937132344041", PARAMETERS_4701820937132344041, new Object[]{});
   }
 
   public static String callSuper_getAssembleSubTaskId_4701820937132344052(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getAssembleSubTaskId_4701820937132344052", PARAMETERS_4701820937132344052);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Container"), callerConceptFqName, "virtual_getAssembleSubTaskId_4701820937132344052", PARAMETERS_4701820937132344052, new Object[]{});
   }
 }

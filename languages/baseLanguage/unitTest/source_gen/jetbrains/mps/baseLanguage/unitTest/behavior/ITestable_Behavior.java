@@ -20,10 +20,10 @@ public class ITestable_Behavior {
 
   public static boolean call_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_isMpsStartRequired_3310779261129403089", PARAMETERS_3310779261129403089);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), "virtual_isMpsStartRequired_3310779261129403089", PARAMETERS_3310779261129403089, new Object[]{});
   }
 
   public static boolean callSuper_isMpsStartRequired_3310779261129403089(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), callerConceptFqName, "virtual_isMpsStartRequired_3310779261129403089", PARAMETERS_3310779261129403089);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestable"), callerConceptFqName, "virtual_isMpsStartRequired_3310779261129403089", PARAMETERS_3310779261129403089, new Object[]{});
   }
 }

@@ -77,15 +77,15 @@
     <nodeInfo nodeId="3196918548952839925" fileName="ExtractStatementListExpression_Behavior.java" startLine="23" startPosition="167" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3196918548952839365" fileName="ExtractStatementListExpression_Behavior.java" startLine="24" startPosition="100" endLine="25" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="28" startPosition="95" endLine="29" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="29" startPosition="113" endLine="30" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="33" startPosition="128" endLine="34" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="29" startPosition="113" endLine="30" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="33" startPosition="128" endLine="34" endPosition="311" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getLocalVariableElements_3196918548952834932#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/List;" />
     <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getLocalVariableElements_3196918548952834932#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <nodeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getLocalVariableElements_1238805763253#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="3196918548952834931" fileName="ExtractStatementListExpression_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="33" startPosition="128" endLine="34" endPosition="295" />
-    <scopeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="28" startPosition="95" endLine="30" endPosition="250">
+    <scopeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="33" startPosition="128" endLine="34" endPosition="311" />
+    <scopeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="28" startPosition="95" endLine="30" endPosition="266">
       <varInfo nodeId="3196918548952834929" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="3196918548952834929" fileName="ExtractStatementListExpression_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
@@ -126,14 +126,14 @@
     <nodeInfo nodeId="3421461530438560352" fileName="InternalAnonymousClass_Behavior.java" startLine="77" startPosition="106" endLine="78" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3421461530438560369" fileName="InternalAnonymousClass_Behavior.java" startLine="79" startPosition="5" endLine="80" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="83" startPosition="77" endLine="84" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="84" startPosition="113" endLine="85" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="84" startPosition="113" endLine="85" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="88" startPosition="79" endLine="89" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="89" startPosition="113" endLine="90" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="89" startPosition="113" endLine="90" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="93" startPosition="75" endLine="94" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="94" startPosition="113" endLine="95" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="98" startPosition="110" endLine="99" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="102" startPosition="112" endLine="103" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="106" startPosition="108" endLine="107" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="94" startPosition="113" endLine="95" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="98" startPosition="110" endLine="99" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="102" startPosition="112" endLine="103" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="106" startPosition="108" endLine="107" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3421461530438560202" fileName="InternalAnonymousClass_Behavior.java" startLine="114" startPosition="31" endLine="115" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3421461530438560202" fileName="InternalAnonymousClass_Behavior.java" startLine="115" startPosition="26" endLine="116" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3421461530438560202" fileName="InternalAnonymousClass_Behavior.java" startLine="116" startPosition="67" endLine="117" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -173,16 +173,16 @@
     <scopeInfo nodeId="3421461530438560511" fileName="InternalAnonymousClass_Behavior.java" startLine="47" startPosition="39" endLine="48" endPosition="124" />
     <scopeInfo nodeId="3421461530438560196" fileName="InternalAnonymousClass_Behavior.java" startLine="54" startPosition="75" endLine="55" endPosition="90" />
     <scopeInfo nodeId="3421461530438560351" fileName="InternalAnonymousClass_Behavior.java" startLine="77" startPosition="106" endLine="78" endPosition="83" />
-    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="98" startPosition="110" endLine="99" endPosition="275" />
-    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="102" startPosition="112" endLine="103" endPosition="277" />
-    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="106" startPosition="108" endLine="107" endPosition="267" />
-    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="83" startPosition="77" endLine="85" endPosition="230">
+    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="98" startPosition="110" endLine="99" endPosition="291" />
+    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="102" startPosition="112" endLine="103" endPosition="293" />
+    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="106" startPosition="108" endLine="107" endPosition="283" />
+    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="83" startPosition="77" endLine="85" endPosition="246">
       <varInfo nodeId="3421461530438560191" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="88" startPosition="79" endLine="90" endPosition="232">
+    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="88" startPosition="79" endLine="90" endPosition="248">
       <varInfo nodeId="3421461530438560191" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="93" startPosition="75" endLine="95" endPosition="222">
+    <scopeInfo nodeId="3421461530438560191" fileName="InternalAnonymousClass_Behavior.java" startLine="93" startPosition="75" endLine="95" endPosition="238">
       <varInfo nodeId="3421461530438560191" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="3421461530438560202" fileName="InternalAnonymousClass_Behavior.java" startLine="110" startPosition="51" endLine="112" endPosition="5" />
@@ -274,8 +274,8 @@
     <nodeInfo nodeId="8881995820265485600" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="34" startPosition="129" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8881995820265485567" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="41" startPosition="120" endLine="42" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="42" startPosition="113" endLine="43" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="46" startPosition="153" endLine="47" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="42" startPosition="113" endLine="43" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="46" startPosition="153" endLine="47" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5857910569715993673" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="50" startPosition="75" endLine="51" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5857910569715993681" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="52" startPosition="144" endLine="53" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5857910569715993695" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="54" startPosition="5" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -293,9 +293,9 @@
     <scopeInfo nodeId="3585982959253821898" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
     <scopeInfo nodeId="3585982959253823856" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="25" startPosition="160" endLine="26" endPosition="140" />
     <scopeInfo nodeId="8881995820265485579" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="34" startPosition="129" endLine="35" endPosition="18" />
-    <scopeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="46" startPosition="153" endLine="47" endPosition="323" />
+    <scopeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="46" startPosition="153" endLine="47" endPosition="337" />
     <scopeInfo nodeId="5857910569715993680" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="52" startPosition="144" endLine="53" endPosition="91" />
-    <scopeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="41" startPosition="120" endLine="43" endPosition="278">
+    <scopeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="41" startPosition="120" endLine="43" endPosition="292">
       <varInfo nodeId="3585982959253821896" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="3585982959253821896" fileName="ExtractStaticMethod_CallExpression_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">

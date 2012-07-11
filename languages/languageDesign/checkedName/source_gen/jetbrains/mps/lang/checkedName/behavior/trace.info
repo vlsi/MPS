@@ -20,17 +20,17 @@
     <nodeInfo nodeId="4844813484172611469" fileName="ICheckedNamePolicy_Behavior.java" startLine="42" startPosition="5" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611477" fileName="ICheckedNamePolicy_Behavior.java" startLine="46" startPosition="98" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="50" startPosition="92" endLine="51" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="51" startPosition="113" endLine="52" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="51" startPosition="113" endLine="52" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="55" startPosition="85" endLine="56" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="56" startPosition="113" endLine="57" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="56" startPosition="113" endLine="57" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="60" startPosition="103" endLine="61" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="61" startPosition="113" endLine="62" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="61" startPosition="113" endLine="62" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="65" startPosition="95" endLine="66" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="66" startPosition="113" endLine="67" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="70" startPosition="125" endLine="71" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="74" startPosition="118" endLine="75" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="78" startPosition="136" endLine="79" endPosition="293" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="82" startPosition="128" endLine="83" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="66" startPosition="113" endLine="67" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="70" startPosition="125" endLine="71" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="74" startPosition="118" endLine="75" endPosition="291" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="78" startPosition="136" endLine="79" endPosition="309" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="82" startPosition="128" endLine="83" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4844813484172611427" fileName="ICheckedNamePolicy_Behavior.java" startLine="26" startPosition="100" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4844813484172611459" fileName="ICheckedNamePolicy_Behavior.java" startLine="39" startPosition="115" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -51,20 +51,20 @@
     <scopeInfo nodeId="4844813484172611442" fileName="ICheckedNamePolicy_Behavior.java" startLine="33" startPosition="88" endLine="34" endPosition="16" />
     <scopeInfo nodeId="4844813484172611460" fileName="ICheckedNamePolicy_Behavior.java" startLine="40" startPosition="27" endLine="41" endPosition="57" />
     <scopeInfo nodeId="4844813484172611476" fileName="ICheckedNamePolicy_Behavior.java" startLine="46" startPosition="98" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="70" startPosition="125" endLine="71" endPosition="282" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="74" startPosition="118" endLine="75" endPosition="275" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="78" startPosition="136" endLine="79" endPosition="293" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="82" startPosition="128" endLine="83" endPosition="285" />
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="50" startPosition="92" endLine="52" endPosition="237">
+    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="70" startPosition="125" endLine="71" endPosition="298" />
+    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="74" startPosition="118" endLine="75" endPosition="291" />
+    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="78" startPosition="136" endLine="79" endPosition="309" />
+    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="82" startPosition="128" endLine="83" endPosition="301" />
+    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="50" startPosition="92" endLine="52" endPosition="253">
       <varInfo nodeId="4844813484172611410" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="55" startPosition="85" endLine="57" endPosition="230">
+    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="55" startPosition="85" endLine="57" endPosition="246">
       <varInfo nodeId="4844813484172611410" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="60" startPosition="103" endLine="62" endPosition="248">
+    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="60" startPosition="103" endLine="62" endPosition="264">
       <varInfo nodeId="4844813484172611410" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="65" startPosition="95" endLine="67" endPosition="240">
+    <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="65" startPosition="95" endLine="67" endPosition="256">
       <varInfo nodeId="4844813484172611410" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="4844813484172611410" fileName="ICheckedNamePolicy_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">

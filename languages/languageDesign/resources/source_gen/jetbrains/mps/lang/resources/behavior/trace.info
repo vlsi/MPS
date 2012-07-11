@@ -31,8 +31,8 @@
     <nodeInfo nodeId="8974276187400030134" fileName="IconResource_Behavior.java" startLine="65" startPosition="77" endLine="66" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8974276187400030140" fileName="IconResource_Behavior.java" startLine="66" startPosition="70" endLine="67" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="70" startPosition="72" endLine="71" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="71" startPosition="113" endLine="72" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="75" startPosition="105" endLine="76" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="71" startPosition="113" endLine="72" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="75" startPosition="105" endLine="76" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="8974276187400030078" fileName="IconResource_Behavior.java" startLine="45" startPosition="89" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8974276187400030095" fileName="IconResource_Behavior.java" startLine="49" startPosition="115" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -53,12 +53,12 @@
       <varInfo nodeId="8974276187400030126" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="8974276187400030128" fileName="IconResource_Behavior.java" startLine="60" startPosition="27" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="75" startPosition="105" endLine="76" endPosition="240" />
+    <scopeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="75" startPosition="105" endLine="76" endPosition="256" />
     <scopeInfo nodeId="8974276187400030118" fileName="IconResource_Behavior.java" startLine="57" startPosition="9" endLine="59" endPosition="18" />
     <scopeInfo nodeId="8974276187400030133" fileName="IconResource_Behavior.java" startLine="65" startPosition="77" endLine="67" endPosition="61">
       <varInfo nodeId="8974276187400030135" varName="fullPath" />
     </scopeInfo>
-    <scopeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="70" startPosition="72" endLine="72" endPosition="195">
+    <scopeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="70" startPosition="72" endLine="72" endPosition="211">
       <varInfo nodeId="8974276187400029987" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8974276187400029987" fileName="IconResource_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
@@ -101,14 +101,14 @@
   <root nodeId="8974276187400030151">
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="11" startPosition="32" endLine="12" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARAMETERS_8974276187400030152" />
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="17" startPosition="72" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="22" startPosition="105" endLine="23" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="22" startPosition="105" endLine="23" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_generate_8974276187400030152#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)V" />
     <nodeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_generate_8974276187400030152#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="8974276187400030157" fileName="Resource_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="22" startPosition="105" endLine="23" endPosition="236" />
-    <scopeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="17" startPosition="72" endLine="19" endPosition="191">
+    <scopeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="22" startPosition="105" endLine="23" endPosition="252" />
+    <scopeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="17" startPosition="72" endLine="19" endPosition="207">
       <varInfo nodeId="8974276187400030151" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="8974276187400030151" fileName="Resource_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">

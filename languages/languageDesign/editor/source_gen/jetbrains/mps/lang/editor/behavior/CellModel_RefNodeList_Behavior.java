@@ -41,10 +41,10 @@ public class CellModel_RefNodeList_Behavior {
 
   public static String call_getRoleForCell_1182113674817411794(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "virtual_getRoleForCell_1216377898846", PARAMETERS_1182113674817411794);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), "virtual_getRoleForCell_1216377898846", PARAMETERS_1182113674817411794, new Object[]{});
   }
 
   public static String callSuper_getRoleForCell_1182113674817411794(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), callerConceptFqName, "virtual_getRoleForCell_1216377898846", PARAMETERS_1182113674817411794);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), callerConceptFqName, "virtual_getRoleForCell_1216377898846", PARAMETERS_1182113674817411794, new Object[]{});
   }
 }

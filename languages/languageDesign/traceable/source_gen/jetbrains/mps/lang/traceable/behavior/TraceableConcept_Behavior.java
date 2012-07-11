@@ -22,10 +22,10 @@ public class TraceableConcept_Behavior {
 
   public static String call_getTraceableProperty_5067982036267369901(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901, new Object[]{});
   }
 
   public static String callSuper_getTraceableProperty_5067982036267369901(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.TraceableConcept"), callerConceptFqName, "virtual_getTraceableProperty_5067982036267369901", PARAMETERS_5067982036267369901, new Object[]{});
   }
 }

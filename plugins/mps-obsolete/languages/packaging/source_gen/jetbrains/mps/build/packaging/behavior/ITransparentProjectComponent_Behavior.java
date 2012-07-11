@@ -17,10 +17,10 @@ public class ITransparentProjectComponent_Behavior {
 
   public static List<SNode> call_getChildrenToDo_1240564451382(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382, new Object[]{});
   }
 
   public static List<SNode> callSuper_getChildrenToDo_1240564451382(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), callerConceptFqName, "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.ITransparentProjectComponent"), callerConceptFqName, "virtual_getChildrenToDo_1240564451382", PARAMETERS_1240564451382, new Object[]{});
   }
 }

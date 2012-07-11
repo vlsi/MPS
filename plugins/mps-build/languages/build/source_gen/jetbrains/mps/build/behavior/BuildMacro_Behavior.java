@@ -20,10 +20,10 @@ public class BuildMacro_Behavior {
 
   public static boolean call_isPublic_6547494638219688113(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildMacro"), "virtual_isPublic_6547494638219688113", PARAMETERS_6547494638219688113);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildMacro"), "virtual_isPublic_6547494638219688113", PARAMETERS_6547494638219688113, new Object[]{});
   }
 
   public static boolean callSuper_isPublic_6547494638219688113(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildMacro"), callerConceptFqName, "virtual_isPublic_6547494638219688113", PARAMETERS_6547494638219688113);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildMacro"), callerConceptFqName, "virtual_isPublic_6547494638219688113", PARAMETERS_6547494638219688113, new Object[]{});
   }
 }

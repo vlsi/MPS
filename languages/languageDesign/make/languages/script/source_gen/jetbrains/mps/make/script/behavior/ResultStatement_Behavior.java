@@ -20,10 +20,10 @@ public class ResultStatement_Behavior {
 
   public static boolean call_isGuardClauseStatement_2974008768272238697(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ResultStatement"), "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_2974008768272238697);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ResultStatement"), "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_2974008768272238697, new Object[]{});
   }
 
   public static boolean callSuper_isGuardClauseStatement_2974008768272238697(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ResultStatement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_2974008768272238697);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ResultStatement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_2974008768272238697, new Object[]{});
   }
 }

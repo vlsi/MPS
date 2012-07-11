@@ -27,11 +27,11 @@ public class ExportScope_Behavior {
 
   public static boolean call_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, sourceNamespace, targetNode);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, new Object[]{sourceNamespace, targetNode});
   }
 
   public static boolean callSuper_checkExport_2565736246230026584(SNode thisNode, String callerConceptFqName, String sourceNamespace, SNode targetNode) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, sourceNamespace, targetNode);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ExportScope"), callerConceptFqName, "virtual_checkExport_2565736246230026584", PARAMETERS_2565736246230026584, new Object[]{sourceNamespace, targetNode});
   }
 
   public static String getNamespace_2565736246230026649(SNode node) {

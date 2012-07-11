@@ -21,10 +21,10 @@ public class BootstrapActionReference_Behavior {
 
   public static String call_getActionId_1101347953350127914(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914, new Object[]{});
   }
 
   public static String callSuper_getActionId_1101347953350127914(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.BootstrapActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350127914, new Object[]{});
   }
 }

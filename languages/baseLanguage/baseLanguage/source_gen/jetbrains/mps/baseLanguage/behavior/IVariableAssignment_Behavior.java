@@ -21,19 +21,19 @@ public class IVariableAssignment_Behavior {
 
   public static boolean call_isCanBeUnused_1223985713603(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), "virtual_isCanBeUnused_1223985713603", PARAMETERS_1223985713603);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), "virtual_isCanBeUnused_1223985713603", PARAMETERS_1223985713603, new Object[]{});
   }
 
   public static SNode call_getValue_1224857430232(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), "virtual_getValue_1224857430232", PARAMETERS_1224857430232);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), "virtual_getValue_1224857430232", PARAMETERS_1224857430232, new Object[]{});
   }
 
   public static boolean callSuper_isCanBeUnused_1223985713603(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_isCanBeUnused_1223985713603", PARAMETERS_1223985713603);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_isCanBeUnused_1223985713603", PARAMETERS_1223985713603, new Object[]{});
   }
 
   public static SNode callSuper_getValue_1224857430232(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_1224857430232);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IVariableAssignment"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_1224857430232, new Object[]{});
   }
 }

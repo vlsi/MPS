@@ -29,20 +29,20 @@ public class AppendUIObjectStatement_Behavior {
 
   public static boolean call_shouldReturnValue_1576918603588705988(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AppendUIObjectStatement"), "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_1576918603588705988);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AppendUIObjectStatement"), "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_1576918603588705988, new Object[]{});
   }
 
   public static SNode call_expectedContextType_5197527271413889643(SNode thisNode, SNode belongsTo) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AppendUIObjectStatement"), "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889643, belongsTo);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AppendUIObjectStatement"), "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889643, new Object[]{belongsTo});
   }
 
   public static boolean callSuper_shouldReturnValue_1576918603588705988(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AppendUIObjectStatement"), callerConceptFqName, "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_1576918603588705988);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AppendUIObjectStatement"), callerConceptFqName, "virtual_shouldReturnValue_7109250785404509292", PARAMETERS_1576918603588705988, new Object[]{});
   }
 
   public static SNode callSuper_expectedContextType_5197527271413889643(SNode thisNode, String callerConceptFqName, SNode belongsTo) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AppendUIObjectStatement"), callerConceptFqName, "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889643, belongsTo);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.AppendUIObjectStatement"), callerConceptFqName, "virtual_expectedContextType_5197527271413889619", PARAMETERS_5197527271413889643, new Object[]{belongsTo});
   }
 
   public static class QuotationClass_br8013_a0a0c {

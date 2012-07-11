@@ -34,11 +34,11 @@ public class StackType_Behavior {
 
   public static List<SNode> call_getAbstractCreators_7602110602933346049(SNode thisNode, SModel targetModel) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.StackType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933346049, targetModel);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.StackType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933346049, new Object[]{targetModel});
   }
 
   public static List<SNode> callSuper_getAbstractCreators_7602110602933346049(SNode thisNode, String callerConceptFqName, SModel targetModel) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.StackType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933346049, targetModel);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.StackType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933346049, new Object[]{targetModel});
   }
 
   public static class QuotationClass_pawenb_a0a0b0b {

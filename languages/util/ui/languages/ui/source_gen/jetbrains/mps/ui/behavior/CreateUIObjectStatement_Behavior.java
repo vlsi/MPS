@@ -25,11 +25,11 @@ public class CreateUIObjectStatement_Behavior {
 
   public static SNode call_getType_6410919744913642010(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010, new Object[]{});
   }
 
   public static SNode callSuper_getType_6410919744913642010(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), callerConceptFqName, "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.CreateUIObjectStatement"), callerConceptFqName, "virtual_getType_6410919744913609596", PARAMETERS_6410919744913642010, new Object[]{});
   }
 
   public static class QuotationClass_qpbyzc_a0a0b {

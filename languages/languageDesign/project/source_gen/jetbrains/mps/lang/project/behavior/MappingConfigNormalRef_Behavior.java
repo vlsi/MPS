@@ -30,11 +30,11 @@ public class MappingConfigNormalRef_Behavior {
 
   public static boolean call_isComplete_2721285250110400383(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383, new Object[]{});
   }
 
   public static boolean callSuper_isComplete_2721285250110400383(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), callerConceptFqName, "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), callerConceptFqName, "virtual_isComplete_2721285250110257005", PARAMETERS_2721285250110400383, new Object[]{});
   }
 
   public static boolean isEmpty_v108kq_a0a0b(String str) {

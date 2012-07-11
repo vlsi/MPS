@@ -27,11 +27,11 @@ public class MainProjectOperation_Behavior {
 
   public static SNode call_createType_8113680833395644315(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MainProjectOperation"), "virtual_createType_7012097027058652452", PARAMETERS_8113680833395644315);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MainProjectOperation"), "virtual_createType_7012097027058652452", PARAMETERS_8113680833395644315, new Object[]{});
   }
 
   public static SNode callSuper_createType_8113680833395644315(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MainProjectOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_8113680833395644315);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MainProjectOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_8113680833395644315, new Object[]{});
   }
 
   public static class QuotationClass_sim1f9_a0a0b {

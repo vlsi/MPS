@@ -22,10 +22,10 @@ public class BaseDocComment_Behavior {
 
   public static boolean call_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795, new Object[]{});
   }
 
   public static boolean callSuper_isTagSectionEmpty_8465538089690623795(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), callerConceptFqName, "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), callerConceptFqName, "virtual_isTagSectionEmpty_8465538089690623795", PARAMETERS_8465538089690623795, new Object[]{});
   }
 }
