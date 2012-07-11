@@ -16,10 +16,10 @@ public class IUIObjectDeclaration_Behavior {
 
   public static SNode call_getType_6410919744913609596(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectDeclaration"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913609596);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectDeclaration"), "virtual_getType_6410919744913609596", PARAMETERS_6410919744913609596, new Object[]{});
   }
 
   public static SNode callSuper_getType_6410919744913609596(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectDeclaration"), callerConceptFqName, "virtual_getType_6410919744913609596", PARAMETERS_6410919744913609596);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectDeclaration"), callerConceptFqName, "virtual_getType_6410919744913609596", PARAMETERS_6410919744913609596, new Object[]{});
   }
 }

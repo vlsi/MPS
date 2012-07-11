@@ -40,10 +40,10 @@ public class OperationParm_LinkQualifier_Behavior {
 
   public static Iterable<SNode> call_getLinkAccessScope_2906110183022538865(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538865);
+    return (Iterable<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538865, new Object[]{});
   }
 
   public static Iterable<SNode> callSuper_getLinkAccessScope_2906110183022538865(SNode thisNode, String callerConceptFqName) {
-    return (Iterable<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538865);
+    return (Iterable<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538865, new Object[]{});
   }
 }

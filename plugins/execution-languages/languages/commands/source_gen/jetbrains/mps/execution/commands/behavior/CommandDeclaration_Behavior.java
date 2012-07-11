@@ -102,20 +102,20 @@ public class CommandDeclaration_Behavior {
 
   public static String call_getSuffix_856705193941282112(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112, new Object[]{});
   }
 
   public static SNode call_createType_856705193941282121(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_createType_1213877527970", PARAMETERS_856705193941282121);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), "virtual_createType_1213877527970", PARAMETERS_856705193941282121, new Object[]{});
   }
 
   public static String callSuper_getSuffix_856705193941282112(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_856705193941282112, new Object[]{});
   }
 
   public static SNode callSuper_createType_856705193941282121(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_856705193941282121);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_856705193941282121, new Object[]{});
   }
 
   public static String getCreateProcessMethodName_856705193941282090() {

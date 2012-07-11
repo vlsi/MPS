@@ -40,11 +40,11 @@ public class ExtractStaticMethod_CallExpression_Behavior {
 
   public static List<SNode> call_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String methodName) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_3585982959253821899, methodName);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_3585982959253821899, new Object[]{methodName});
   }
 
   public static List<SNode> callSuper_getAvailableMethodDeclarations_3585982959253821899(SNode thisNode, String callerConceptFqName, String methodName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_3585982959253821899, methodName);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_3585982959253821899, new Object[]{methodName});
   }
 
   public static List<SNode> getMethods_5857910569715993654(SNode context) {

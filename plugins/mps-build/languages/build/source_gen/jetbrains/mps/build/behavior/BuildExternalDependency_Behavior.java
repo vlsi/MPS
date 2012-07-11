@@ -18,10 +18,10 @@ public class BuildExternalDependency_Behavior {
 
   public static void call_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, artifacts, builder);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, new Object[]{artifacts, builder});
   }
 
   public static void callSuper_fetchDependencies_5908258303322131137(SNode thisNode, String callerConceptFqName, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), callerConceptFqName, "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, artifacts, builder);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildExternalDependency"), callerConceptFqName, "virtual_fetchDependencies_5908258303322131137", PARAMETERS_5908258303322131137, new Object[]{artifacts, builder});
   }
 }

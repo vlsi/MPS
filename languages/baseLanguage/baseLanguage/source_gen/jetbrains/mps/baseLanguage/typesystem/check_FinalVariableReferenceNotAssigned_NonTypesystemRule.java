@@ -23,7 +23,7 @@ public class check_FinalVariableReferenceNotAssigned_NonTypesystemRule extends A
       if (!(VariableReferenceUtil.isUninitializedOrBad(variableReference))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "assignment to a final variable", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3084663847510173642", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Cannot assign a value to final variable '" + SPropertyOperations.getString(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "name") + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4705425356437995912", null, errorTarget);
         }
       }
     }

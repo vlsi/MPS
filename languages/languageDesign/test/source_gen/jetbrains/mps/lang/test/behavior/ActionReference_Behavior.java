@@ -16,10 +16,10 @@ public class ActionReference_Behavior {
 
   public static String call_getActionId_1101347953350122762(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.ActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350122762);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.ActionReference"), "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350122762, new Object[]{});
   }
 
   public static String callSuper_getActionId_1101347953350122762(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.ActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350122762);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.ActionReference"), callerConceptFqName, "virtual_getActionId_1101347953350122762", PARAMETERS_1101347953350122762, new Object[]{});
   }
 }

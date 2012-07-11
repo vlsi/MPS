@@ -28,19 +28,19 @@ public class TemplateDeclaration_Behavior {
 
   public static SNode call_getBaseConcept_8952337903384729127(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384729127);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384729127, new Object[]{});
   }
 
   public static void call_setBaseConcept_390427525177435267(SNode thisNode, SNode baseConcept) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_390427525177435267, baseConcept);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_390427525177435267, new Object[]{baseConcept});
   }
 
   public static SNode callSuper_getBaseConcept_8952337903384729127(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384729127);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384729127, new Object[]{});
   }
 
   public static void callSuper_setBaseConcept_390427525177435267(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_390427525177435267, baseConcept);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_390427525177435267, new Object[]{baseConcept});
   }
 }

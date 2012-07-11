@@ -49,37 +49,37 @@ public class ICheckedNamePolicy_Behavior {
 
   public static List<SNode> call_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), "virtual_getDescendantsToCheck_4844813484172611413", PARAMETERS_4844813484172611413);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), "virtual_getDescendantsToCheck_4844813484172611413", PARAMETERS_4844813484172611413, new Object[]{});
   }
 
   public static SNode call_getDescendantToCheck_4844813484172611439(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), "virtual_getDescendantToCheck_4844813484172611439", PARAMETERS_4844813484172611439);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), "virtual_getDescendantToCheck_4844813484172611439", PARAMETERS_4844813484172611439, new Object[]{});
   }
 
   public static List<PropertyReference> call_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<PropertyReference>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), "virtual_getPropertiesToCheck_4844813484172611445", PARAMETERS_4844813484172611445);
+    return (List<PropertyReference>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), "virtual_getPropertiesToCheck_4844813484172611445", PARAMETERS_4844813484172611445, new Object[]{});
   }
 
   public static PropertyReference call_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (PropertyReference) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), "virtual_getPropertyToCheck_4844813484172611473", PARAMETERS_4844813484172611473);
+    return (PropertyReference) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), "virtual_getPropertyToCheck_4844813484172611473", PARAMETERS_4844813484172611473, new Object[]{});
   }
 
   public static List<SNode> callSuper_getDescendantsToCheck_4844813484172611413(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getDescendantsToCheck_4844813484172611413", PARAMETERS_4844813484172611413);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getDescendantsToCheck_4844813484172611413", PARAMETERS_4844813484172611413, new Object[]{});
   }
 
   public static SNode callSuper_getDescendantToCheck_4844813484172611439(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getDescendantToCheck_4844813484172611439", PARAMETERS_4844813484172611439);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getDescendantToCheck_4844813484172611439", PARAMETERS_4844813484172611439, new Object[]{});
   }
 
   public static List<PropertyReference> callSuper_getPropertiesToCheck_4844813484172611445(SNode thisNode, String callerConceptFqName) {
-    return (List<PropertyReference>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getPropertiesToCheck_4844813484172611445", PARAMETERS_4844813484172611445);
+    return (List<PropertyReference>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getPropertiesToCheck_4844813484172611445", PARAMETERS_4844813484172611445, new Object[]{});
   }
 
   public static PropertyReference callSuper_getPropertyToCheck_4844813484172611473(SNode thisNode, String callerConceptFqName) {
-    return (PropertyReference) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getPropertyToCheck_4844813484172611473", PARAMETERS_4844813484172611473);
+    return (PropertyReference) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy"), callerConceptFqName, "virtual_getPropertyToCheck_4844813484172611473", PARAMETERS_4844813484172611473, new Object[]{});
   }
 }

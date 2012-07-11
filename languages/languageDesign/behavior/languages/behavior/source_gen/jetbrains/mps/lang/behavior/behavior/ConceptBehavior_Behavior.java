@@ -221,11 +221,11 @@ public class ConceptBehavior_Behavior {
 
   public static void call_setBaseConcept_6261424444345978650(SNode thisNode, SNode baseConcept) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978650, baseConcept);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978650, new Object[]{baseConcept});
   }
 
   public static void callSuper_setBaseConcept_6261424444345978650(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978650, baseConcept);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978650, new Object[]{baseConcept});
   }
 
   public static class QuotationClass_xahq23_a0a0b0a0a0e {

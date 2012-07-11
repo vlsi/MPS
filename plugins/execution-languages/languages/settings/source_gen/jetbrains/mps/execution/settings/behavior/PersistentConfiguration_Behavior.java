@@ -78,11 +78,11 @@ public class PersistentConfiguration_Behavior {
 
   public static SNode call_createType_946964771156066501(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), "virtual_createType_1213877527970", PARAMETERS_946964771156066501);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), "virtual_createType_1213877527970", PARAMETERS_946964771156066501, new Object[]{});
   }
 
   public static SNode callSuper_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066501);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066501, new Object[]{});
   }
 
   public static SNode getContextPersistentConfigurationType_946964771156066389(SNode node) {

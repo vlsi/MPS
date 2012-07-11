@@ -16,10 +16,10 @@ public class IEvaluatorConcept_Behavior {
 
   public static String call_getEvaluatorPresentation_9172312269976647295(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), "virtual_getEvaluatorPresentation_9172312269976647295", PARAMETERS_9172312269976647295);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), "virtual_getEvaluatorPresentation_9172312269976647295", PARAMETERS_9172312269976647295, new Object[]{});
   }
 
   public static String callSuper_getEvaluatorPresentation_9172312269976647295(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), callerConceptFqName, "virtual_getEvaluatorPresentation_9172312269976647295", PARAMETERS_9172312269976647295);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept"), callerConceptFqName, "virtual_getEvaluatorPresentation_9172312269976647295", PARAMETERS_9172312269976647295, new Object[]{});
   }
 }

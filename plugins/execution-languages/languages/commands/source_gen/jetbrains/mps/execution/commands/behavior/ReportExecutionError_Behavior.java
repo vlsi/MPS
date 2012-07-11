@@ -27,11 +27,11 @@ public class ReportExecutionError_Behavior {
 
   public static SNode call_getException_856705193941282173(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), "virtual_getException_856705193941282181", PARAMETERS_856705193941282173);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), "virtual_getException_856705193941282181", PARAMETERS_856705193941282173, new Object[]{});
   }
 
   public static SNode callSuper_getException_856705193941282173(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), callerConceptFqName, "virtual_getException_856705193941282181", PARAMETERS_856705193941282173);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ReportExecutionError"), callerConceptFqName, "virtual_getException_856705193941282181", PARAMETERS_856705193941282173, new Object[]{});
   }
 
   public static class QuotationClass_l0tnuu_a0a0b {

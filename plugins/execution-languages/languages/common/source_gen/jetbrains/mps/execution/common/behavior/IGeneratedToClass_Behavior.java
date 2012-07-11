@@ -56,38 +56,38 @@ public class IGeneratedToClass_Behavior {
 
   public static String call_getSuffix_946964771156905483(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getSuffix_946964771156905483", PARAMETERS_946964771156905483);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getSuffix_946964771156905483", PARAMETERS_946964771156905483, new Object[]{});
   }
 
   public static String call_getGeneratedClassName_946964771156905488(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getGeneratedClassName_946964771156905488", PARAMETERS_946964771156905488);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getGeneratedClassName_946964771156905488", PARAMETERS_946964771156905488, new Object[]{});
   }
 
   public static String call_getFullName_946964771156905503(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getFullName_946964771156905503", PARAMETERS_946964771156905503);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getFullName_946964771156905503", PARAMETERS_946964771156905503, new Object[]{});
   }
 
   public static String call_getBaseName_4366236229294148974(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getBaseName_4366236229294148974", PARAMETERS_4366236229294148974);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), "virtual_getBaseName_4366236229294148974", PARAMETERS_4366236229294148974, new Object[]{});
   }
 
   public static String callSuper_getSuffix_946964771156905483(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_946964771156905483);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getSuffix_946964771156905483", PARAMETERS_946964771156905483, new Object[]{});
   }
 
   public static String callSuper_getGeneratedClassName_946964771156905488(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getGeneratedClassName_946964771156905488", PARAMETERS_946964771156905488);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getGeneratedClassName_946964771156905488", PARAMETERS_946964771156905488, new Object[]{});
   }
 
   public static String callSuper_getFullName_946964771156905503(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getFullName_946964771156905503", PARAMETERS_946964771156905503);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getFullName_946964771156905503", PARAMETERS_946964771156905503, new Object[]{});
   }
 
   public static String callSuper_getBaseName_4366236229294148974(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getBaseName_4366236229294148974", PARAMETERS_4366236229294148974);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.common.structure.IGeneratedToClass"), callerConceptFqName, "virtual_getBaseName_4366236229294148974", PARAMETERS_4366236229294148974, new Object[]{});
   }
 
   public static String replaceProhibitedSymbol_946964771156905390(String name, String symbol) {

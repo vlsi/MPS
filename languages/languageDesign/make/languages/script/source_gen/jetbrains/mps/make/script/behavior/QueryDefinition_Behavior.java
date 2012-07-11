@@ -23,10 +23,10 @@ public class QueryDefinition_Behavior {
 
   public static String call_classifierName_8486446835277382819(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), "virtual_classifierName_4609636120081351397", PARAMETERS_8486446835277382819);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), "virtual_classifierName_4609636120081351397", PARAMETERS_8486446835277382819, new Object[]{});
   }
 
   public static String callSuper_classifierName_8486446835277382819(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8486446835277382819);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.QueryDefinition"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8486446835277382819, new Object[]{});
   }
 }

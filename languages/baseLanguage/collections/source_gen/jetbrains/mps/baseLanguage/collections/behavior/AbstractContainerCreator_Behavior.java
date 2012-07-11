@@ -21,19 +21,19 @@ public class AbstractContainerCreator_Behavior {
 
   public static SNode call_createType_1237722437229(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1237722437229);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1237722437229, new Object[]{});
   }
 
   public static boolean call_canHaveParameter_2261417478150191157(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157, new Object[]{});
   }
 
   public static SNode callSuper_createType_1237722437229(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1237722437229);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1237722437229, new Object[]{});
   }
 
   public static boolean callSuper_canHaveParameter_2261417478150191157(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191157, new Object[]{});
   }
 }

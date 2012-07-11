@@ -34,6 +34,10 @@ public class CheckingUtil {
     return false;
   }
 
+  public static boolean isAssignedIllegaly(SNode node) {
+    return CheckingUtil.isAssigned(node) && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceInitializer", false, false) == null;
+  }
+
   public static boolean isFieldDuplicated(final SNode fieldDecl) {
     final String name = SPropertyOperations.getString(fieldDecl, "name");
     if ((name == null || name.length() == 0)) {

@@ -20,10 +20,10 @@ public class BuilderContainer_Behavior {
 
   public static boolean call_isLeaf_932644095877881871(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), "virtual_isLeaf_932644095877881871", PARAMETERS_932644095877881871);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), "virtual_isLeaf_932644095877881871", PARAMETERS_932644095877881871, new Object[]{});
   }
 
   public static boolean callSuper_isLeaf_932644095877881871(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), callerConceptFqName, "virtual_isLeaf_932644095877881871", PARAMETERS_932644095877881871);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer"), callerConceptFqName, "virtual_isLeaf_932644095877881871", PARAMETERS_932644095877881871, new Object[]{});
   }
 }

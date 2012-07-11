@@ -16,10 +16,10 @@ public class PropertyImplementation_Behavior {
 
   public static boolean call_hasSetter_1213877430658(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), "virtual_hasSetter_1213877430658", PARAMETERS_1213877430658);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), "virtual_hasSetter_1213877430658", PARAMETERS_1213877430658, new Object[]{});
   }
 
   public static boolean callSuper_hasSetter_1213877430658(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), callerConceptFqName, "virtual_hasSetter_1213877430658", PARAMETERS_1213877430658);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.PropertyImplementation"), callerConceptFqName, "virtual_hasSetter_1213877430658", PARAMETERS_1213877430658, new Object[]{});
   }
 }

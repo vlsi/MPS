@@ -30,19 +30,19 @@ public class BuildPlugin_Behavior {
 
   public static Scope call_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), "virtual_getProjectStructureScope_3734116213129936182", PARAMETERS_3734116213129936182, kind);
+    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), "virtual_getProjectStructureScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind});
   }
 
   public static Scope call_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), "virtual_getLayoutScope_1224588814561807654", PARAMETERS_1224588814561807654, kind);
+    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), "virtual_getLayoutScope_1224588814561807654", PARAMETERS_1224588814561807654, new Object[]{kind});
   }
 
   public static Scope callSuper_getProjectStructureScope_3734116213129936182(SNode thisNode, String callerConceptFqName, SNode kind) {
-    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getProjectStructureScope_3734116213129936182", PARAMETERS_3734116213129936182, kind);
+    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getProjectStructureScope_3734116213129936182", PARAMETERS_3734116213129936182, new Object[]{kind});
   }
 
   public static Scope callSuper_getLayoutScope_1224588814561807654(SNode thisNode, String callerConceptFqName, SNode kind) {
-    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getLayoutScope_1224588814561807654", PARAMETERS_1224588814561807654, kind);
+    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildPlugin"), callerConceptFqName, "virtual_getLayoutScope_1224588814561807654", PARAMETERS_1224588814561807654, new Object[]{kind});
   }
 }

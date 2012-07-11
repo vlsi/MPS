@@ -21,10 +21,10 @@ public class InequationReplacementRule_Behavior {
 
   public static SNode call_getSecondNodeCondition_4484478261143622410(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143622410);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143622410, new Object[]{});
   }
 
   public static SNode callSuper_getSecondNodeCondition_4484478261143622410(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143622410);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), callerConceptFqName, "virtual_getSecondNodeCondition_4484478261143583672", PARAMETERS_4484478261143622410, new Object[]{});
   }
 }

@@ -34,19 +34,19 @@ public class IMainClass_Behavior {
 
   public static String call_getUnitName_4666195181811081431(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_getUnitName_4666195181811081431", PARAMETERS_4666195181811081431);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_getUnitName_4666195181811081431", PARAMETERS_4666195181811081431, new Object[]{});
   }
 
   public static boolean call_isNodeRunnable_4666195181811081448(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_isNodeRunnable_4666195181811081448", PARAMETERS_4666195181811081448);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_isNodeRunnable_4666195181811081448", PARAMETERS_4666195181811081448, new Object[]{});
   }
 
   public static String callSuper_getUnitName_4666195181811081431(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_getUnitName_4666195181811081431", PARAMETERS_4666195181811081431);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_getUnitName_4666195181811081431", PARAMETERS_4666195181811081431, new Object[]{});
   }
 
   public static boolean callSuper_isNodeRunnable_4666195181811081448(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_isNodeRunnable_4666195181811081448", PARAMETERS_4666195181811081448);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.util.structure.IMainClass"), callerConceptFqName, "virtual_isNodeRunnable_4666195181811081448", PARAMETERS_4666195181811081448, new Object[]{});
   }
 }

@@ -227,11 +227,11 @@
     <nodeInfo nodeId="3091009652595831585" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="38" startPosition="5" endLine="39" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6764660826575793265" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="42" startPosition="83" endLine="43" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="46" startPosition="95" endLine="47" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="47" startPosition="113" endLine="48" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="47" startPosition="113" endLine="48" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="51" startPosition="84" endLine="52" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="52" startPosition="113" endLine="53" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="56" startPosition="128" endLine="57" endPosition="298" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="60" startPosition="117" endLine="61" endPosition="287" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="52" startPosition="113" endLine="53" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="56" startPosition="128" endLine="57" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="60" startPosition="117" endLine="61" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6764660826575793266" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="68" startPosition="31" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6764660826575793266" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="69" startPosition="26" endLine="70" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6764660826575793266" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="70" startPosition="67" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -270,12 +270,12 @@
     <scopeInfo nodeId="6538811202682334480" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="31" startPosition="92" endLine="32" endPosition="141" />
     <scopeInfo nodeId="3091009652595830750" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="36" startPosition="375" endLine="37" endPosition="302" />
     <scopeInfo nodeId="1810236057992684681" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="42" startPosition="83" endLine="43" endPosition="97" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="56" startPosition="128" endLine="57" endPosition="298" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="60" startPosition="117" endLine="61" endPosition="287" />
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="46" startPosition="95" endLine="48" endPosition="253">
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="56" startPosition="128" endLine="57" endPosition="314" />
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="60" startPosition="117" endLine="61" endPosition="303" />
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="46" startPosition="95" endLine="48" endPosition="269">
       <varInfo nodeId="6538811202682334474" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="51" startPosition="84" endLine="53" endPosition="242">
+    <scopeInfo nodeId="6538811202682334474" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="51" startPosition="84" endLine="53" endPosition="258">
       <varInfo nodeId="6538811202682334474" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="6764660826575793266" fileName="ExecuteConfiguration_Function_Behavior.java" startLine="64" startPosition="51" endLine="66" endPosition="5" />

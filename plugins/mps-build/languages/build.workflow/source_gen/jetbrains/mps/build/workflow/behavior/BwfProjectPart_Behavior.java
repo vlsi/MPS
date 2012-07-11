@@ -20,10 +20,10 @@ public class BwfProjectPart_Behavior {
 
   public static int call_getPriority_2059109515400548718(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Integer) descriptor.invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.workflow.structure.BwfProjectPart"), "virtual_getPriority_2059109515400548718", PARAMETERS_2059109515400548718);
+    return (Integer) descriptor.invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.workflow.structure.BwfProjectPart"), "virtual_getPriority_2059109515400548718", PARAMETERS_2059109515400548718, new Object[]{});
   }
 
   public static int callSuper_getPriority_2059109515400548718(SNode thisNode, String callerConceptFqName) {
-    return (Integer) BehaviorManager.getInstance().invokeSuper(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.workflow.structure.BwfProjectPart"), callerConceptFqName, "virtual_getPriority_2059109515400548718", PARAMETERS_2059109515400548718);
+    return (Integer) BehaviorManager.getInstance().invokeSuper(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.workflow.structure.BwfProjectPart"), callerConceptFqName, "virtual_getPriority_2059109515400548718", PARAMETERS_2059109515400548718, new Object[]{});
   }
 }

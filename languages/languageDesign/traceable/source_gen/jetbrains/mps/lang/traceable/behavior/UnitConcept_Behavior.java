@@ -16,10 +16,10 @@ public class UnitConcept_Behavior {
 
   public static String call_getUnitName_5067982036267369911(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", PARAMETERS_5067982036267369911);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.UnitConcept"), "virtual_getUnitName_5067982036267369911", PARAMETERS_5067982036267369911, new Object[]{});
   }
 
   public static String callSuper_getUnitName_5067982036267369911(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.UnitConcept"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_5067982036267369911);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.UnitConcept"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_5067982036267369911, new Object[]{});
   }
 }

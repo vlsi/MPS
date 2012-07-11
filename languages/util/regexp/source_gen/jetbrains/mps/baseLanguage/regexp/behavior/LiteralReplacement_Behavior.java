@@ -88,11 +88,11 @@ public class LiteralReplacement_Behavior {
 
   public static String call_toString_3796137614137538916(SNode thisNode, SNode search) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, new Object[]{search});
   }
 
   public static String callSuper_toString_3796137614137538916(SNode thisNode, String callerConceptFqName, SNode search) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, new Object[]{search});
   }
 
   public static boolean isEmpty_r6ccyf_a0a0c(String str) {

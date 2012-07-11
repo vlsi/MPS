@@ -25,10 +25,10 @@ public class INamedConcept_Behavior {
 
   public static String call_getFqName_1213877404258(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", PARAMETERS_1213877404258);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", PARAMETERS_1213877404258, new Object[]{});
   }
 
   public static String callSuper_getFqName_1213877404258(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_1213877404258);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_1213877404258, new Object[]{});
   }
 }

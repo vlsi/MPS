@@ -114,6 +114,7 @@
       <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaStatements_Action"/>
       <reference ref="jetbrains.mps.ide.java.actions.PasteAsJavaMethods_Action"/>
       <add-to-group group-id="EditorPopup_ActionGrouppaste" anchor="last"/>
+      <add-to-group group-id="EditMenu" anchor="last"/>
     </group>
     <group id="jetbrains.mps.ide.java.actions.GenerateActions_ActionGroup">
       <reference ref="jetbrains.mps.ide.java.actions.GenerateConstructor_Action"/>

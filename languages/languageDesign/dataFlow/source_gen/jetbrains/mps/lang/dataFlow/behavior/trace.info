@@ -70,11 +70,11 @@
     <nodeInfo nodeId="8952337903384725416" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="19" startPosition="82" endLine="20" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6261424444345978720" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="23" startPosition="100" endLine="24" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="27" startPosition="79" endLine="28" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="28" startPosition="113" endLine="29" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="28" startPosition="113" endLine="29" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="32" startPosition="97" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="33" startPosition="113" endLine="34" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="37" startPosition="112" endLine="38" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="41" startPosition="130" endLine="42" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="33" startPosition="113" endLine="34" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="37" startPosition="112" endLine="38" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="41" startPosition="130" endLine="42" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBaseConcept_2621449412040133768#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setBaseConcept_6261424444345963020#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
@@ -85,12 +85,12 @@
     <scopeInfo nodeId="1213877439996" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="8952337903384725406" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="19" startPosition="82" endLine="20" endPosition="76" />
     <scopeInfo nodeId="6261424444345978711" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="23" startPosition="100" endLine="24" endPosition="82" />
-    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="37" startPosition="112" endLine="38" endPosition="274" />
-    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="41" startPosition="130" endLine="42" endPosition="272" />
-    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="27" startPosition="79" endLine="29" endPosition="229">
+    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="37" startPosition="112" endLine="38" endPosition="290" />
+    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="41" startPosition="130" endLine="42" endPosition="286" />
+    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="27" startPosition="79" endLine="29" endPosition="245">
       <varInfo nodeId="1213877439994" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="32" startPosition="97" endLine="34" endPosition="227">
+    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="32" startPosition="97" endLine="34" endPosition="241">
       <varInfo nodeId="1213877439994" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">

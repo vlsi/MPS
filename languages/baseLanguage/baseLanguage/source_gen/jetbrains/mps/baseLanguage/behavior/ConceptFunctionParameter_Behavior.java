@@ -56,28 +56,28 @@ public class ConceptFunctionParameter_Behavior {
 
   public static boolean call_getFromParameterObject_1213877522908(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908, new Object[]{});
   }
 
   public static boolean call_isParameterObjectUsed_1213877522926(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926, new Object[]{});
   }
 
   public static boolean call_needConceptFunction_1236687728308(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308, new Object[]{});
   }
 
   public static boolean callSuper_getFromParameterObject_1213877522908(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_getFromParameterObject_1213877522908", PARAMETERS_1213877522908, new Object[]{});
   }
 
   public static boolean callSuper_isParameterObjectUsed_1213877522926(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_isParameterObjectUsed_1213877522926", PARAMETERS_1213877522926, new Object[]{});
   }
 
   public static boolean callSuper_needConceptFunction_1236687728308(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"), callerConceptFqName, "virtual_needConceptFunction_1236687728308", PARAMETERS_1236687728308, new Object[]{});
   }
 }

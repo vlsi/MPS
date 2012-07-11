@@ -24,10 +24,10 @@ public class ForeachStatement_Behavior {
 
   public static List<SNode> call_getScopeVariables_2496361171403550949(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550949);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550949, new Object[]{});
   }
 
   public static List<SNode> callSuper_getScopeVariables_2496361171403550949(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550949);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ForeachStatement"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550949, new Object[]{});
   }
 }

@@ -74,28 +74,28 @@ public class ParameterDeclaration_Behavior {
 
   public static String call_getSuffix_3012473318495506887(SNode thisNode, Project project) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506887, project);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506887, new Object[]{project});
   }
 
   public static String call_getPrefix_3012473318495506881(SNode thisNode, Project project) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506881, project);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506881, new Object[]{project});
   }
 
   public static SNode call_getValue_4163393263915013839(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "virtual_getValue_1224857430232", PARAMETERS_4163393263915013839);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), "virtual_getValue_1224857430232", PARAMETERS_4163393263915013839, new Object[]{});
   }
 
   public static String callSuper_getSuffix_3012473318495506887(SNode thisNode, String callerConceptFqName, Project project) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506887, project);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506887, new Object[]{project});
   }
 
   public static String callSuper_getPrefix_3012473318495506881(SNode thisNode, String callerConceptFqName, Project project) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506881, project);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506881, new Object[]{project});
   }
 
   public static SNode callSuper_getValue_4163393263915013839(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_4163393263915013839);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_4163393263915013839, new Object[]{});
   }
 }

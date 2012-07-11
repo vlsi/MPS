@@ -82,29 +82,29 @@ public class InternalAnonymousClass_Behavior {
 
   public static String call_getUnitName_3421461530438560389(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389, new Object[]{});
   }
 
   public static String call_getNestedName_3421461530438560275(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getNestedName_8540045600162184125", PARAMETERS_3421461530438560275);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getNestedName_8540045600162184125", PARAMETERS_3421461530438560275, new Object[]{});
   }
 
   public static String call_getFqName_3421461530438560303(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getFqName_1213877404258", PARAMETERS_3421461530438560303);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), "virtual_getFqName_1213877404258", PARAMETERS_3421461530438560303, new Object[]{});
   }
 
   public static String callSuper_getUnitName_3421461530438560389(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_3421461530438560389, new Object[]{});
   }
 
   public static String callSuper_getNestedName_3421461530438560275(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", PARAMETERS_3421461530438560275);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getNestedName_8540045600162184125", PARAMETERS_3421461530438560275, new Object[]{});
   }
 
   public static String callSuper_getFqName_3421461530438560303(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_3421461530438560303);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_3421461530438560303, new Object[]{});
   }
 
   public static class QuotationClass_bwi1fo_a0a0e {

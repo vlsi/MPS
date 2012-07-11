@@ -20,10 +20,10 @@ public class ISuppressErrors_Behavior {
 
   public static boolean call_suppress_3393165121846091591(SNode thisNode, SNode child) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", PARAMETERS_3393165121846091591, child);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors"), "virtual_suppress_3393165121846091591", PARAMETERS_3393165121846091591, new Object[]{child});
   }
 
   public static boolean callSuper_suppress_3393165121846091591(SNode thisNode, String callerConceptFqName, SNode child) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors"), callerConceptFqName, "virtual_suppress_3393165121846091591", PARAMETERS_3393165121846091591, child);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.ISuppressErrors"), callerConceptFqName, "virtual_suppress_3393165121846091591", PARAMETERS_3393165121846091591, new Object[]{child});
   }
 }

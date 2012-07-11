@@ -20,10 +20,10 @@ public class ProcessBuilderExpression_Behavior {
 
   public static boolean call_isLegalAsStatement_856705193941282228(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ProcessBuilderExpression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_856705193941282228);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ProcessBuilderExpression"), "virtual_isLegalAsStatement_1239211900844", PARAMETERS_856705193941282228, new Object[]{});
   }
 
   public static boolean callSuper_isLegalAsStatement_856705193941282228(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ProcessBuilderExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_856705193941282228);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ProcessBuilderExpression"), callerConceptFqName, "virtual_isLegalAsStatement_1239211900844", PARAMETERS_856705193941282228, new Object[]{});
   }
 }
