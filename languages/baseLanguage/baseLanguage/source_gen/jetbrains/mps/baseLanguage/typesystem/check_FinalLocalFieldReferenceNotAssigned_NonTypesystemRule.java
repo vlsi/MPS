@@ -14,23 +14,21 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_FinalVariableReferenceNotAssigned_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_FinalVariableReferenceNotAssigned_NonTypesystemRule() {
+public class check_FinalLocalFieldReferenceNotAssigned_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_FinalLocalFieldReferenceNotAssigned_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "isFinal")) {
-      if (!(VariableReferenceUtil.isUninitializedOrBad(variableReference))) {
-        {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(variableReference, "Cannot assign a value to final variable '" + SPropertyOperations.getString(SLinkOperations.getTarget(variableReference, "variableDeclaration", false), "name") + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4705425356437995912", null, errorTarget);
-        }
+  public void applyRule(final SNode reference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(reference, "variableDeclaration", false), "isFinal") && CheckingUtil.isAssignedIllegaly(reference)) {
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(reference, "Cannot assign a value to final variable '" + SPropertyOperations.getString(SLinkOperations.getTarget(reference, "variableDeclaration", false), "name") + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4705425356438183038", null, errorTarget);
       }
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.VariableReference";
+    return "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference";
   }
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
