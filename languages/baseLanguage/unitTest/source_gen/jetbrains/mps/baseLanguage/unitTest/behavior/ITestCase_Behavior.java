@@ -34,37 +34,37 @@ public class ITestCase_Behavior {
 
   public static List<SNode> call_getTestSet_1216130724401(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getTestSet_1216130724401", PARAMETERS_1216130724401);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getTestSet_1216130724401", PARAMETERS_1216130724401, new Object[]{});
   }
 
   public static String call_getClassName_1216136193905(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getClassName_1216136193905", PARAMETERS_1216136193905);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getClassName_1216136193905", PARAMETERS_1216136193905, new Object[]{});
   }
 
   public static String call_getSimpleClassName_1229278847513(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getSimpleClassName_1229278847513", PARAMETERS_1229278847513);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getSimpleClassName_1229278847513", PARAMETERS_1229278847513, new Object[]{});
   }
 
   public static List<SNode> call_getTestMethods_2148145109766218395(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getTestMethods_2148145109766218395", PARAMETERS_2148145109766218395);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "virtual_getTestMethods_2148145109766218395", PARAMETERS_2148145109766218395, new Object[]{});
   }
 
   public static List<SNode> callSuper_getTestSet_1216130724401(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestSet_1216130724401", PARAMETERS_1216130724401);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestSet_1216130724401", PARAMETERS_1216130724401, new Object[]{});
   }
 
   public static String callSuper_getClassName_1216136193905(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getClassName_1216136193905", PARAMETERS_1216136193905);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getClassName_1216136193905", PARAMETERS_1216136193905, new Object[]{});
   }
 
   public static String callSuper_getSimpleClassName_1229278847513(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getSimpleClassName_1229278847513", PARAMETERS_1229278847513);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getSimpleClassName_1229278847513", PARAMETERS_1229278847513, new Object[]{});
   }
 
   public static List<SNode> callSuper_getTestMethods_2148145109766218395(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestMethods_2148145109766218395", PARAMETERS_2148145109766218395);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), callerConceptFqName, "virtual_getTestMethods_2148145109766218395", PARAMETERS_2148145109766218395, new Object[]{});
   }
 }

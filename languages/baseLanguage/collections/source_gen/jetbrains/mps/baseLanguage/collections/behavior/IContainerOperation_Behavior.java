@@ -33,10 +33,10 @@ public class IContainerOperation_Behavior {
 
   public static SNode call_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, elementType);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, new Object[]{elementType});
   }
 
   public static SNode callSuper_expectedOperandType_2141797557973018589(SNode thisNode, String callerConceptFqName, SNode elementType) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), callerConceptFqName, "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, elementType);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IContainerOperation"), callerConceptFqName, "virtual_expectedOperandType_2141797557973018589", PARAMETERS_2141797557973018589, new Object[]{elementType});
   }
 }

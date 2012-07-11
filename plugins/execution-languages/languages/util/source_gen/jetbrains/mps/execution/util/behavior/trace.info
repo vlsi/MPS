@@ -10,11 +10,11 @@
     <nodeInfo nodeId="4666195181811081446" fileName="IMainClass_Behavior.java" startLine="27" startPosition="7" endLine="28" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4666195181811081451" fileName="IMainClass_Behavior.java" startLine="31" startPosition="84" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="35" startPosition="77" endLine="36" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="36" startPosition="113" endLine="37" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="36" startPosition="113" endLine="37" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="40" startPosition="81" endLine="41" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="41" startPosition="113" endLine="42" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="45" startPosition="110" endLine="46" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="49" startPosition="114" endLine="50" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="41" startPosition="113" endLine="42" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="45" startPosition="110" endLine="46" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="49" startPosition="114" endLine="50" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4666195181811081439" fileName="IMainClass_Behavior.java" startLine="23" startPosition="57" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isNodeRunnable_4666195181811081448#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -27,12 +27,12 @@
     <scopeInfo nodeId="4666195181811081455" fileName="IMainClass_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
     <scopeInfo nodeId="4666195181811081440" fileName="IMainClass_Behavior.java" startLine="24" startPosition="25" endLine="25" endPosition="61" />
     <scopeInfo nodeId="4666195181811081450" fileName="IMainClass_Behavior.java" startLine="31" startPosition="84" endLine="32" endPosition="16" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="45" startPosition="110" endLine="46" endPosition="257" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="49" startPosition="114" endLine="50" endPosition="262" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="35" startPosition="77" endLine="37" endPosition="212">
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="45" startPosition="110" endLine="46" endPosition="273" />
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="49" startPosition="114" endLine="50" endPosition="278" />
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="35" startPosition="77" endLine="37" endPosition="228">
       <varInfo nodeId="4666195181811081430" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="40" startPosition="81" endLine="42" endPosition="217">
+    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="40" startPosition="81" endLine="42" endPosition="233">
       <varInfo nodeId="4666195181811081430" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">

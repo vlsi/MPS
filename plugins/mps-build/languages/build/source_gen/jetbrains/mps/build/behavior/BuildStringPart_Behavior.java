@@ -39,38 +39,38 @@ public class BuildStringPart_Behavior {
 
   public static boolean call_punctuationLeft_5096397858823356723(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), "virtual_punctuationLeft_5096397858823356723", PARAMETERS_5096397858823356723);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), "virtual_punctuationLeft_5096397858823356723", PARAMETERS_5096397858823356723, new Object[]{});
   }
 
   public static boolean call_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), "virtual_isFirstPositionAllowed_624440001685459414", PARAMETERS_624440001685459414);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), "virtual_isFirstPositionAllowed_624440001685459414", PARAMETERS_624440001685459414, new Object[]{});
   }
 
   public static boolean call_isLastPositionAllowed_624440001685490925(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), "virtual_isLastPositionAllowed_624440001685490925", PARAMETERS_624440001685490925);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), "virtual_isLastPositionAllowed_624440001685490925", PARAMETERS_624440001685490925, new Object[]{});
   }
 
   public static String call_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), "virtual_getText_4380385936562037054", PARAMETERS_4380385936562037054, helper);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), "virtual_getText_4380385936562037054", PARAMETERS_4380385936562037054, new Object[]{helper});
   }
 
   public static boolean callSuper_punctuationLeft_5096397858823356723(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_punctuationLeft_5096397858823356723", PARAMETERS_5096397858823356723);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_punctuationLeft_5096397858823356723", PARAMETERS_5096397858823356723, new Object[]{});
   }
 
   public static boolean callSuper_isFirstPositionAllowed_624440001685459414(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_isFirstPositionAllowed_624440001685459414", PARAMETERS_624440001685459414);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_isFirstPositionAllowed_624440001685459414", PARAMETERS_624440001685459414, new Object[]{});
   }
 
   public static boolean callSuper_isLastPositionAllowed_624440001685490925(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_isLastPositionAllowed_624440001685490925", PARAMETERS_624440001685490925);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_isLastPositionAllowed_624440001685490925", PARAMETERS_624440001685490925, new Object[]{});
   }
 
   public static String callSuper_getText_4380385936562037054(SNode thisNode, String callerConceptFqName, MacroHelper helper) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_getText_4380385936562037054", PARAMETERS_4380385936562037054, helper);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildStringPart"), callerConceptFqName, "virtual_getText_4380385936562037054", PARAMETERS_4380385936562037054, new Object[]{helper});
   }
 
   private static boolean eq_cuvs1r_a0b0b(Object a, Object b) {

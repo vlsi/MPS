@@ -29,10 +29,10 @@ public class IVariableHolder_Behavior {
 
   public static List<SNode> call_getAllVariable_1234864693585(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585, new Object[]{});
   }
 
   public static List<SNode> callSuper_getAllVariable_1234864693585(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), callerConceptFqName, "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IVariableHolder"), callerConceptFqName, "virtual_getAllVariable_1234864693585", PARAMETERS_1234864693585, new Object[]{});
   }
 }

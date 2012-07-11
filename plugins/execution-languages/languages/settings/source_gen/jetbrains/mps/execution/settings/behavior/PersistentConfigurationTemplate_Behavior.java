@@ -24,11 +24,11 @@ public class PersistentConfigurationTemplate_Behavior {
 
   public static SNode call_createType_946964771156066826(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), "virtual_createType_1213877527970", PARAMETERS_946964771156066826);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), "virtual_createType_1213877527970", PARAMETERS_946964771156066826, new Object[]{});
   }
 
   public static SNode callSuper_createType_946964771156066826(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066826);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_946964771156066826, new Object[]{});
   }
 
   public static class QuotationClass_3swbqk_a0a0b {

@@ -27,11 +27,11 @@ public class ScopeOperation_Behavior {
 
   public static SNode call_createType_7012097027058652550(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652550);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652550, new Object[]{});
   }
 
   public static SNode callSuper_createType_7012097027058652550(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652550);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.ScopeOperation"), callerConceptFqName, "virtual_createType_7012097027058652452", PARAMETERS_7012097027058652550, new Object[]{});
   }
 
   public static class QuotationClass_p44uz3_a0a0b {

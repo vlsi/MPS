@@ -21,10 +21,10 @@ public class PatternCondition_Behavior {
 
   public static SNode call_getApplicableConcept_4413230749907681660(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), "virtual_getApplicableConcept_4413230749907681652", PARAMETERS_4413230749907681660);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), "virtual_getApplicableConcept_4413230749907681652", PARAMETERS_4413230749907681660, new Object[]{});
   }
 
   public static SNode callSuper_getApplicableConcept_4413230749907681660(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), callerConceptFqName, "virtual_getApplicableConcept_4413230749907681652", PARAMETERS_4413230749907681660);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition"), callerConceptFqName, "virtual_getApplicableConcept_4413230749907681652", PARAMETERS_4413230749907681660, new Object[]{});
   }
 }

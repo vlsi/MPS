@@ -119,29 +119,29 @@ public class EvaluatorConcept_Behavior {
 
   public static List<SNode> call_getThrowableTypes_5211667636169798157(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_5211667636169798157);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_5211667636169798157, new Object[]{});
   }
 
   public static SNode call_getBody_5211667636169798161(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), "virtual_getBody_1239354440022", PARAMETERS_5211667636169798161);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), "virtual_getBody_1239354440022", PARAMETERS_5211667636169798161, new Object[]{});
   }
 
   public static SNode call_getExpectedRetType_5211667636169798165(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_5211667636169798165);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_5211667636169798165, new Object[]{});
   }
 
   public static List<SNode> callSuper_getThrowableTypes_5211667636169798157(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_5211667636169798157);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_5211667636169798157, new Object[]{});
   }
 
   public static SNode callSuper_getBody_5211667636169798161(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_5211667636169798161);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_5211667636169798161, new Object[]{});
   }
 
   public static SNode callSuper_getExpectedRetType_5211667636169798165(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_5211667636169798165);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_5211667636169798165, new Object[]{});
   }
 
   public static boolean isNotEmpty_29c8r0_a0b0g(String str) {

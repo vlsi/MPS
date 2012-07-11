@@ -17,10 +17,10 @@ public class ScopeConcept_Behavior {
 
   public static List<SNode> call_getScopeVariables_5067982036267369894(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_5067982036267369894);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_5067982036267369894, new Object[]{});
   }
 
   public static List<SNode> callSuper_getScopeVariables_5067982036267369894(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_5067982036267369894);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.traceable.structure.ScopeConcept"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_5067982036267369894, new Object[]{});
   }
 }

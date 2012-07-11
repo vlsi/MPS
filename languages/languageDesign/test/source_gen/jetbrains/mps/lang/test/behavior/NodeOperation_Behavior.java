@@ -36,19 +36,19 @@ public class NodeOperation_Behavior {
 
   public static String call_getName_1217435265700(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_getName_1217435265700", PARAMETERS_1217435265700);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_getName_1217435265700", PARAMETERS_1217435265700, new Object[]{});
   }
 
   public static void call_perform_1215601182156(SNode thisNode, SNode node) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_perform_1215601182156", PARAMETERS_1215601182156, new Object[]{node});
   }
 
   public static String callSuper_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700, new Object[]{});
   }
 
   public static void callSuper_perform_1215601182156(SNode thisNode, String callerConceptFqName, SNode node) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, node);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_perform_1215601182156", PARAMETERS_1215601182156, new Object[]{node});
   }
 }

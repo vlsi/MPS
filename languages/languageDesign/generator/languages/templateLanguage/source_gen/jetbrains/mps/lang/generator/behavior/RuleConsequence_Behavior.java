@@ -20,10 +20,10 @@ public class RuleConsequence_Behavior {
 
   public static SNode call_getTemplateType_7933327286924651185(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.RuleConsequence"), "virtual_getTemplateType_7933327286924651185", PARAMETERS_7933327286924651185);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.RuleConsequence"), "virtual_getTemplateType_7933327286924651185", PARAMETERS_7933327286924651185, new Object[]{});
   }
 
   public static SNode callSuper_getTemplateType_7933327286924651185(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.RuleConsequence"), callerConceptFqName, "virtual_getTemplateType_7933327286924651185", PARAMETERS_7933327286924651185);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.RuleConsequence"), callerConceptFqName, "virtual_getTemplateType_7933327286924651185", PARAMETERS_7933327286924651185, new Object[]{});
   }
 }

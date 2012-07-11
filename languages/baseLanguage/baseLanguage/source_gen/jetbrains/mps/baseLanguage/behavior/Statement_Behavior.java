@@ -38,20 +38,20 @@ public class Statement_Behavior {
 
   public static boolean call_isGuardClauseStatement_1237547327995(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995, new Object[]{});
   }
 
   public static void call_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_5412515780383134223, throwables, ignoreMayBeThrowables);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_5412515780383134223, new Object[]{throwables, ignoreMayBeThrowables});
   }
 
   public static boolean callSuper_isGuardClauseStatement_1237547327995(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_isGuardClauseStatement_1237547327995", PARAMETERS_1237547327995, new Object[]{});
   }
 
   public static void callSuper_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, String callerConceptFqName, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_5412515780383134223, throwables, ignoreMayBeThrowables);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Statement"), callerConceptFqName, "virtual_collectUncaughtMethodThrowables_5412515780383134223", PARAMETERS_5412515780383134223, new Object[]{throwables, ignoreMayBeThrowables});
   }
 
   public static void collectUncaughtMethodThrowables_5412515780383112967(Set<SNode> throwables, SNode arg) {

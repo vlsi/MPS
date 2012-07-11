@@ -18,19 +18,19 @@ public class IModuleRef_Behavior {
 
   public static ModuleReference call_moduleReference_1280144168199513544(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (ModuleReference) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), "virtual_moduleReference_1280144168199513544", PARAMETERS_1280144168199513544);
+    return (ModuleReference) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), "virtual_moduleReference_1280144168199513544", PARAMETERS_1280144168199513544, new Object[]{});
   }
 
   public static String call_presentation_1280144168199745474(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), "virtual_presentation_1280144168199745474", PARAMETERS_1280144168199745474);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), "virtual_presentation_1280144168199745474", PARAMETERS_1280144168199745474, new Object[]{});
   }
 
   public static ModuleReference callSuper_moduleReference_1280144168199513544(SNode thisNode, String callerConceptFqName) {
-    return (ModuleReference) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_moduleReference_1280144168199513544", PARAMETERS_1280144168199513544);
+    return (ModuleReference) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_moduleReference_1280144168199513544", PARAMETERS_1280144168199513544, new Object[]{});
   }
 
   public static String callSuper_presentation_1280144168199745474(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_presentation_1280144168199745474", PARAMETERS_1280144168199745474);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.testbench.suite.structure.IModuleRef"), callerConceptFqName, "virtual_presentation_1280144168199745474", PARAMETERS_1280144168199745474, new Object[]{});
   }
 }

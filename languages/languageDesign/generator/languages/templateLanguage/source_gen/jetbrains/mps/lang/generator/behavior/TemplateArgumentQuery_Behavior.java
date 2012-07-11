@@ -33,11 +33,11 @@ public class TemplateArgumentQuery_Behavior {
 
   public static SNode call_getExpectedReturnType_4035562641222622443(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_4035562641222622443);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_4035562641222622443, new Object[]{});
   }
 
   public static SNode callSuper_getExpectedReturnType_4035562641222622443(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_4035562641222622443);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentQuery"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_4035562641222622443, new Object[]{});
   }
 
   public static class QuotationClass_8mmc34_a0e0b {

@@ -25,10 +25,10 @@ public class BuildMps_AbstractModule_Behavior {
 
   public static boolean call_isCompact_8369506495128693730(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730, new Object[]{});
   }
 
   public static boolean callSuper_isCompact_8369506495128693730(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), callerConceptFqName, "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"), callerConceptFqName, "virtual_isCompact_8369506495128693730", PARAMETERS_8369506495128693730, new Object[]{});
   }
 }

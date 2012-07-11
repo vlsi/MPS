@@ -22,10 +22,10 @@ public class TemplateArgumentPropertyPatternRefExpression_Behavior {
 
   public static String call_getVariableName_2902001550282064519(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression"), "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064519);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression"), "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064519, new Object[]{});
   }
 
   public static String callSuper_getVariableName_2902001550282064519(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression"), callerConceptFqName, "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064519);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression"), callerConceptFqName, "virtual_getVariableName_2902001550281937661", PARAMETERS_2902001550282064519, new Object[]{});
   }
 }

@@ -29,10 +29,10 @@ public class ExplicitCommandParameterDeclaration_Behavior {
 
   public static boolean call_isInitializable_856705193941282038(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038, new Object[]{});
   }
 
   public static boolean callSuper_isInitializable_856705193941282038(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_856705193941282038, new Object[]{});
   }
 }

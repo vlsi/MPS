@@ -40,10 +40,10 @@ public class CatchClause_Behavior {
 
   public static List<SNode> call_getScopeVariables_2496361171403550981(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CatchClause"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550981);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CatchClause"), "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550981, new Object[]{});
   }
 
   public static List<SNode> callSuper_getScopeVariables_2496361171403550981(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CatchClause"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550981);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CatchClause"), callerConceptFqName, "virtual_getScopeVariables_5067982036267369894", PARAMETERS_2496361171403550981, new Object[]{});
   }
 }

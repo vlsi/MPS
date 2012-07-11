@@ -46,37 +46,37 @@ public class XmlValuePart_Behavior {
 
   public static boolean call_isFirstPositionAllowed_3080189811177340436(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_isFirstPositionAllowed_3080189811177340436", PARAMETERS_3080189811177340436);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_isFirstPositionAllowed_3080189811177340436", PARAMETERS_3080189811177340436, new Object[]{});
   }
 
   public static boolean call_isLastPositionAllowed_3080189811177340441(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_isLastPositionAllowed_3080189811177340441", PARAMETERS_3080189811177340441);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_isLastPositionAllowed_3080189811177340441", PARAMETERS_3080189811177340441, new Object[]{});
   }
 
   public static boolean call_onNewLine_3080189811177340422(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_onNewLine_3080189811177340422", PARAMETERS_3080189811177340422);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_onNewLine_3080189811177340422", PARAMETERS_3080189811177340422, new Object[]{});
   }
 
   public static boolean call_hasNewLineAfter_3080189811177340429(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_hasNewLineAfter_3080189811177340429", PARAMETERS_3080189811177340429);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), "virtual_hasNewLineAfter_3080189811177340429", PARAMETERS_3080189811177340429, new Object[]{});
   }
 
   public static boolean callSuper_isFirstPositionAllowed_3080189811177340436(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_isFirstPositionAllowed_3080189811177340436", PARAMETERS_3080189811177340436);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_isFirstPositionAllowed_3080189811177340436", PARAMETERS_3080189811177340436, new Object[]{});
   }
 
   public static boolean callSuper_isLastPositionAllowed_3080189811177340441(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_isLastPositionAllowed_3080189811177340441", PARAMETERS_3080189811177340441);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_isLastPositionAllowed_3080189811177340441", PARAMETERS_3080189811177340441, new Object[]{});
   }
 
   public static boolean callSuper_onNewLine_3080189811177340422(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_onNewLine_3080189811177340422", PARAMETERS_3080189811177340422);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_onNewLine_3080189811177340422", PARAMETERS_3080189811177340422, new Object[]{});
   }
 
   public static boolean callSuper_hasNewLineAfter_3080189811177340429(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_hasNewLineAfter_3080189811177340429", PARAMETERS_3080189811177340429);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.core.xml.structure.XmlValuePart"), callerConceptFqName, "virtual_hasNewLineAfter_3080189811177340429", PARAMETERS_3080189811177340429, new Object[]{});
   }
 }

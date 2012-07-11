@@ -72,29 +72,29 @@ public class ExecuteCommandPart_Behavior {
 
   public static List<SNode> call_getThrowableTypes_558680274511380755(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_558680274511380755);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_558680274511380755, new Object[]{});
   }
 
   public static SNode call_getBody_558680274511380765(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), "virtual_getBody_1239354440022", PARAMETERS_558680274511380765);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), "virtual_getBody_1239354440022", PARAMETERS_558680274511380765, new Object[]{});
   }
 
   public static SNode call_getExpectedRetType_558680274511380775(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_558680274511380775);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), "virtual_getExpectedRetType_1239354342632", PARAMETERS_558680274511380775, new Object[]{});
   }
 
   public static List<SNode> callSuper_getThrowableTypes_558680274511380755(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_558680274511380755);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getThrowableTypes_6204026822016975623", PARAMETERS_558680274511380755, new Object[]{});
   }
 
   public static SNode callSuper_getBody_558680274511380765(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_558680274511380765);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getBody_1239354440022", PARAMETERS_558680274511380765, new Object[]{});
   }
 
   public static SNode callSuper_getExpectedRetType_558680274511380775(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_558680274511380775);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.ExecuteCommandPart"), callerConceptFqName, "virtual_getExpectedRetType_1239354342632", PARAMETERS_558680274511380775, new Object[]{});
   }
 
   public static class QuotationClass_qal9w4_a1a0a4 {

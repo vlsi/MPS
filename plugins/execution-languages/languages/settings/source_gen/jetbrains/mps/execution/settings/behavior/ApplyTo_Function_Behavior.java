@@ -25,19 +25,19 @@ public class ApplyTo_Function_Behavior {
 
   public static SNode call_getJavaMethod_946964771156066981(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066981);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066981, new Object[]{});
   }
 
   public static SNode call_getPublicJavaMethod_203908296139519015(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519015);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519015, new Object[]{});
   }
 
   public static SNode callSuper_getJavaMethod_946964771156066981(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066981);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066981, new Object[]{});
   }
 
   public static SNode callSuper_getPublicJavaMethod_203908296139519015(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519015);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.ApplyTo_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519015, new Object[]{});
   }
 }

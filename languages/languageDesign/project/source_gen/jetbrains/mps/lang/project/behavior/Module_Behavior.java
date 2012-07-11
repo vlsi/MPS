@@ -31,28 +31,28 @@ public class Module_Behavior {
 
   public static String call_getFqName_6370754048397730432(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), "virtual_getFqName_1213877404258", PARAMETERS_6370754048397730432);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), "virtual_getFqName_1213877404258", PARAMETERS_6370754048397730432, new Object[]{});
   }
 
   public static String call_getPresentation_6370754048397730452(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), "virtual_getPresentation_1213877396640", PARAMETERS_6370754048397730452);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), "virtual_getPresentation_1213877396640", PARAMETERS_6370754048397730452, new Object[]{});
   }
 
   public static String call_getModuleReference_9020561928507315628(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), "virtual_getModuleReference_9020561928507315628", PARAMETERS_9020561928507315628);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), "virtual_getModuleReference_9020561928507315628", PARAMETERS_9020561928507315628, new Object[]{});
   }
 
   public static String callSuper_getFqName_6370754048397730432(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_6370754048397730432);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getFqName_1213877404258", PARAMETERS_6370754048397730432, new Object[]{});
   }
 
   public static String callSuper_getPresentation_6370754048397730452(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_6370754048397730452);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_6370754048397730452, new Object[]{});
   }
 
   public static String callSuper_getModuleReference_9020561928507315628(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getModuleReference_9020561928507315628", PARAMETERS_9020561928507315628);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.project.structure.Module"), callerConceptFqName, "virtual_getModuleReference_9020561928507315628", PARAMETERS_9020561928507315628, new Object[]{});
   }
 }

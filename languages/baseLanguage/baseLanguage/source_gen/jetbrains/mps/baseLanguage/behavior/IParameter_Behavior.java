@@ -17,19 +17,19 @@ public class IParameter_Behavior {
 
   public static String call_getParameterName_1225280611056(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056, new Object[]{});
   }
 
   public static SNode call_getDeclaration_1225282371351(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351, new Object[]{});
   }
 
   public static String callSuper_getParameterName_1225280611056(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getParameterName_1225280611056", PARAMETERS_1225280611056, new Object[]{});
   }
 
   public static SNode callSuper_getDeclaration_1225282371351(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IParameter"), callerConceptFqName, "virtual_getDeclaration_1225282371351", PARAMETERS_1225282371351, new Object[]{});
   }
 }

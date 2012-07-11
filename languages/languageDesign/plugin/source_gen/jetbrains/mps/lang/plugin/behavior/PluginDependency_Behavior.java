@@ -16,10 +16,10 @@ public class PluginDependency_Behavior {
 
   public static String call_getPluginId_5864553086652219131(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.PluginDependency"), "virtual_getPluginId_5864553086652219131", PARAMETERS_5864553086652219131);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.PluginDependency"), "virtual_getPluginId_5864553086652219131", PARAMETERS_5864553086652219131, new Object[]{});
   }
 
   public static String callSuper_getPluginId_5864553086652219131(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.PluginDependency"), callerConceptFqName, "virtual_getPluginId_5864553086652219131", PARAMETERS_5864553086652219131);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.PluginDependency"), callerConceptFqName, "virtual_getPluginId_5864553086652219131", PARAMETERS_5864553086652219131, new Object[]{});
   }
 }

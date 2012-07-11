@@ -29,19 +29,19 @@ public class LinePart_Behavior {
 
   public static void call_fillConceptStructure_1238593834306(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), "virtual_fillConceptStructure_1238593834306", PARAMETERS_1238593834306, concept, conceptsToTargets, partsToLinks);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), "virtual_fillConceptStructure_1238593834306", PARAMETERS_1238593834306, new Object[]{concept, conceptsToTargets, partsToLinks});
   }
 
   public static SNode call_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), "virtual_createCellModel_1238614099938", PARAMETERS_1238614099938, partsToLinks);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), "virtual_createCellModel_1238614099938", PARAMETERS_1238614099938, new Object[]{partsToLinks});
   }
 
   public static void callSuper_fillConceptStructure_1238593834306(SNode thisNode, String callerConceptFqName, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), callerConceptFqName, "virtual_fillConceptStructure_1238593834306", PARAMETERS_1238593834306, concept, conceptsToTargets, partsToLinks);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), callerConceptFqName, "virtual_fillConceptStructure_1238593834306", PARAMETERS_1238593834306, new Object[]{concept, conceptsToTargets, partsToLinks});
   }
 
   public static SNode callSuper_createCellModel_1238614099938(SNode thisNode, String callerConceptFqName, Map<SNode, SNode> partsToLinks) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), callerConceptFqName, "virtual_createCellModel_1238614099938", PARAMETERS_1238614099938, partsToLinks);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mpslite.structure.LinePart"), callerConceptFqName, "virtual_createCellModel_1238614099938", PARAMETERS_1238614099938, new Object[]{partsToLinks});
   }
 }

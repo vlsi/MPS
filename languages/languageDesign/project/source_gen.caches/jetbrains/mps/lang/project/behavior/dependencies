@@ -53,6 +53,7 @@
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigExternalRef_Behavior" file="MappingConfigExternalRef_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -73,6 +74,7 @@
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigNormalRef_Behavior" file="MappingConfigNormalRef_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
@@ -104,6 +106,7 @@
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_Behavior" file="MappingConfigRefBase_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -122,6 +125,7 @@
   <dependency className="jetbrains.mps.lang.project.behavior.MappingConfigRefSet_Behavior" file="MappingConfigRefSet_Behavior.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.project.behavior.MappingConfigRefBase_Behavior" />
