@@ -58,6 +58,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "try");
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
     editorCell.setDefaultText("");
@@ -70,7 +71,7 @@ public class TryStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.MATCHING_LABEL, "finally");
+      style.set(StyleAttributes.MATCHING_LABEL, "try");
       style.set(StyleAttributes.EDITABLE, true);
     }
     editorCell.setDefaultText("");
