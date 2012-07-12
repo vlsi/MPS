@@ -130,4 +130,33 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   public BreakpointLocation getLocation() {
     return myLocation;
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    return eq_owwtjm_a0d0h(myLocation, ((LineBreakpoint) o).myLocation);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = 0;
+    result = 31 * result + ((myLocation != null ?
+      ((Object) myLocation).hashCode() :
+      0
+    ));
+    return result;
+  }
+
+  private static boolean eq_owwtjm_a0d0h(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }

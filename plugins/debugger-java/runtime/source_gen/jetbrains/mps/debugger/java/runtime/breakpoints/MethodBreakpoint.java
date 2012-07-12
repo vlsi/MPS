@@ -132,4 +132,33 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
   public boolean isValid() {
     return super.isValid() && updateMethodNameAndSignature();
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || this.getClass() != o.getClass()) {
+      return false;
+    }
+
+    return eq_spo82x_a0d0j(myLocation, ((MethodBreakpoint) o).myLocation);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = 0;
+    result = 31 * result + ((myLocation != null ?
+      ((Object) myLocation).hashCode() :
+      0
+    ));
+    return result;
+  }
+
+  private static boolean eq_spo82x_a0d0j(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }
