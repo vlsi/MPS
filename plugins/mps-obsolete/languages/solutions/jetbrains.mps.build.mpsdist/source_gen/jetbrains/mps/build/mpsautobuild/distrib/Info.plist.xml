@@ -21,6 +21,8 @@
     <string>APPL</string>
     <key>CFBundleSignature</key>
     <string>????</string>
+    <key>NSHighResolutionCapable</key>
+    <true />
     <key>CFBundleDocumentTypes</key>
     <array>
       <dict>
