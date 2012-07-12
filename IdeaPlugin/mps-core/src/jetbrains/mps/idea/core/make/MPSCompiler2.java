@@ -53,6 +53,7 @@ import java.util.regex.Pattern;
 public class MPSCompiler2 implements SourceGeneratingCompiler {
 
   public static final Pattern TRANS_MODEL = Pattern.compile("\\[(\\d+)\\].*\\s([a-zA-Z_][a-zA-Z_0-9.]*)@(\\d+_\\d+)");
+  public static final Pattern SOURCE_MODEL = Pattern.compile("\\[(\\d+)\\].*\\sin\\s+([a-zA-Z_][a-zA-Z_0-9.]*)");
   private Project myProject;
 
   public MPSCompiler2(Project project) {
@@ -275,13 +276,17 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
   }
 
   private ModelNodeNavigatable extractNavigatable (String errorMsg, Module module) {
+    if (errorMsg == null) return null;
+
     Matcher matcher = TRANS_MODEL.matcher(errorMsg);
-    if (errorMsg != null && matcher.find()) {
-      String nodeId = matcher.group(1);
-      String modelName = matcher.group(2);
-      return new ModelNodeNavigatable(modelName, nodeId, module);
+    if (!matcher.find()) {
+      matcher = SOURCE_MODEL.matcher(errorMsg);
+      if (!matcher.find()) return null;
     }
-    return null;
+
+    String nodeId = matcher.group(1);
+    String modelName = matcher.group(2);
+    return new ModelNodeNavigatable(modelName, nodeId, module);
   }
   
   @NotNull

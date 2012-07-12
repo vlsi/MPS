@@ -42,6 +42,10 @@ public class ITemplateCall_actualArguments extends AbstractCellProvider {
   private EditorCell createCollection_1xd1xh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1xd1xh_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition_1xd1xh_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_1xd1xh_a0(editorContext, node));
     }

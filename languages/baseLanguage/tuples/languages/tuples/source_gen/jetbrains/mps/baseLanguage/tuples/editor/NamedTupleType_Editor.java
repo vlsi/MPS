@@ -443,6 +443,10 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
     private EditorCell createCollection_2ojjgh_a0c0a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_2ojjgh_a0c0a");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.SELECTABLE, false);
+      }
       if (renderingCondition_2ojjgh_a0a0c0a(node, editorContext, editorContext.getOperationContext().getScope())) {
         editorCell.addEditorCell(this.createComponent_2ojjgh_a0a2a0(editorContext, node));
       }

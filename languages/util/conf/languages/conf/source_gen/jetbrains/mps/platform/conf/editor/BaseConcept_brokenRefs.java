@@ -39,6 +39,10 @@ public class BaseConcept_brokenRefs extends AbstractCellProvider {
   private EditorCell createCollection_bx3ota_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bx3ota_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition_bx3ota_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_bx3ota_a0(editorContext, node));
     }
