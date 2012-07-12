@@ -73,8 +73,8 @@ public abstract class EditorCell_Basic implements EditorCell {
   private EditorCellKeyMap myKeyMap;
   private String myCellId;
   private String myRole;
-  private SNode myLinkDeclaration;
-  private SNode myRefNode;
+  private SNodePointer myLinkDeclarationPointer;
+  private SNodePointer myRefNodePointer;
   private boolean myInTree;
   private boolean myIsReferenceCell = false;
   protected int myGapLeft;
@@ -377,10 +377,11 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void setLinkDeclaration(final SNode link) {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
-        myLinkDeclaration = link;
-        if (myLinkDeclaration != null) {
+        if (link != null) {
+          myLinkDeclarationPointer = new SNodePointer(link);
           myIsReferenceCell = SNodeUtil.getLinkDeclaration_IsReference(link);
         } else {
+          myLinkDeclarationPointer = null;
           myIsReferenceCell = false;
         }
       }
@@ -392,7 +393,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (role != null) {
       return getSNode().getLinkDeclaration(role);
     }
-    return myLinkDeclaration;
+    return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.getNode() : null;
   }
 
   public boolean isReferenceCell() {
@@ -400,11 +401,11 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public SNode getRefNode() {
-    return myRefNode;
+    return myRefNodePointer != null ? myRefNodePointer.getNode() : null;
   }
 
   public void setRefNode(SNode refNode) {
-    myRefNode = refNode;
+    myRefNodePointer = (refNode != null) ? new SNodePointer(refNode) : null;
   }
 
   public void setSelected(boolean selected) {
