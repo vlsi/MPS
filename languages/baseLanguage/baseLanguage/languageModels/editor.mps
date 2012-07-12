@@ -7159,6 +7159,9 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1215012238826">
         <property name="text" nameId="tpc2.1073389577007" value="{" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215091279307" resolveInfo="LeftBrace" />
+        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.MatchingLabelStyleClassItem" typeId="tpc2.1236262245656" id="690367532571324385">
+          <property name="labelName" nameId="tpc2.1238091709220" value="try" />
+        </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="1237798986247">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
@@ -7176,7 +7179,7 @@
         <property name="text" nameId="tpc2.1073389577007" value="}" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215091331565" resolveInfo="RightBrace" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.MatchingLabelStyleClassItem" typeId="tpc2.1236262245656" id="1239115534838">
-          <property name="labelName" nameId="tpc2.1238091709220" value="finally" />
+          <property name="labelName" nameId="tpc2.1238091709220" value="try" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="1239115534839">
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
