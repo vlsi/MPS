@@ -24,6 +24,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
@@ -53,7 +54,7 @@ import java.util.Map;
     )
   }
 )
-public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MessageListState> {
+public class MessagesViewTool implements ProjectComponent, PersistentStateComponent<MessageListState>, Disposable {
   /*package*/ static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final String DEFAULT_LIST = "DEFAULT_LIST";
 
@@ -65,6 +66,12 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   public MessagesViewTool(Project project) {
     myProject = project;
     addList(DEFAULT_LIST, new DefaultMessageList(project));
+  }
+
+  @Override
+  public void dispose() {
+    myContents.clear();
+    myMessageLists.clear();
   }
 
   public Project getProject() {
@@ -115,6 +122,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   }
 
   public void disposeComponent() {
+    Disposer.dispose(this);
     myDisposed = true;
   }
 
@@ -193,6 +201,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
     List<MessageList> lists = myMessageLists.get(name);
     if (lists != null) {
       lists.remove(list);
+      Disposer.dispose(list);
     }
   }
 
@@ -203,6 +212,7 @@ public class MessagesViewTool implements ProjectComponent, PersistentStateCompon
   private abstract class MessageListWithActions extends MessageList {
     protected MessageListWithActions(Project project) {
       super(project);
+      Disposer.register(MessagesViewTool.this, this);
     }
 
     @Override
