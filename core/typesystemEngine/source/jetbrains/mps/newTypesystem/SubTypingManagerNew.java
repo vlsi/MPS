@@ -129,14 +129,14 @@ public class SubTypingManagerNew extends SubtypingManager {
       }
       if (result) {
         return true;
-      }
+      }     /*
       if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
         for (SNode argument : LatticeUtil.getMeetArguments(superType)) {
           if (isSubType(subType, argument, info, state, isWeak)) {
             return true;
           }
         }
-      }
+      }       */
     }
     return false;
   }
