@@ -18,10 +18,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ListIterator;
-import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.util.Computable;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 
@@ -33,6 +35,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private static final BreakpointManagerComponent.DummyIO DUMMY_IO = new BreakpointManagerComponent.DummyIO();
 
   private final Map<SNodePointer, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodePointer, Set<ILocationBreakpoint>>();
+  private boolean myBreakpointsForRootInitialized = false;
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
   private final List<Element> myUnreadBreakpoints = new ArrayList<Element>();
   private BreakpointManagerComponent.IBreakpointsIO myBreakpointsIO = DUMMY_IO;
@@ -67,21 +70,22 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
 
   public void setBreakpointsIO(BreakpointManagerComponent.IBreakpointsIO io) {
     myBreakpointsIO = io;
-    synchronized (myBreakpoints) {
-      //  todo this is a hack 
-      loadState(getState());
-    }
+    reReadState();
   }
 
-  public void addBreakpoint(@NotNull IBreakpoint breakpoint) {
-    synchronized (myBreakpoints) {
-      if (breakpoint instanceof ILocationBreakpoint) {
-        addLocationBreakpoint((ILocationBreakpoint) breakpoint);
+  public void addBreakpoint(@NotNull final IBreakpoint breakpoint) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        synchronized (myBreakpoints) {
+          if (breakpoint instanceof ILocationBreakpoint && myBreakpointsForRootInitialized) {
+            addLocationBreakpoint((ILocationBreakpoint) breakpoint);
+          }
+          breakpoint.setCreationTime(System.currentTimeMillis());
+          myBreakpoints.add(breakpoint);
+          breakpoint.addToRunningSessions();
+        }
       }
-      breakpoint.setCreationTime(System.currentTimeMillis());
-      myBreakpoints.add(breakpoint);
-      breakpoint.addToRunningSessions();
-    }
+    });
     fireBreakpointAdded(breakpoint);
   }
 
@@ -143,11 +147,31 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       myRootsToBreakpointsMap.clear();
       myBreakpoints.clear();
       myUnreadBreakpoints.clear();
+      myBreakpointsForRootInitialized = false;
     }
   }
 
   public void loadState(Element state) {
+    Set<IBreakpoint> newBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
+    Set<IBreakpoint> oldBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
+
+    loadStateInternal(state, oldBreakpoints, newBreakpoints);
+
+    SetSequence.fromSet(oldBreakpoints).subtract(SetSequence.fromSet(newBreakpoints)).visitAll(new IVisitor<IBreakpoint>() {
+      public void visit(IBreakpoint it) {
+        fireBreakpointRemoved(it);
+      }
+    });
+    SetSequence.fromSet(newBreakpoints).subtract(SetSequence.fromSet(oldBreakpoints)).visitAll(new IVisitor<IBreakpoint>() {
+      public void visit(IBreakpoint it) {
+        fireBreakpointAdded(it);
+      }
+    });
+  }
+
+  private void loadStateInternal(Element state, Set<IBreakpoint> oldBreakpoints, Set<IBreakpoint> newBreakpoints) {
     synchronized (myBreakpoints) {
+      SetSequence.fromSet(oldBreakpoints).addSequence(SetSequence.fromSet(myBreakpoints));
       clear();
       List breakpointsElement = state.getChildren();
       for (ListIterator it = breakpointsElement.listIterator(); it.hasNext();) {
@@ -163,26 +187,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
           LOG.error("Error while loading breakpoint from " + breakpointElement, t);
         }
       }
-      // read action should not be taken inside of myBreakpoints lock 
-      ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
-        @Override
-        public void run() {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              synchronized (myBreakpoints) {
-                myRootsToBreakpointsMap.clear();
-                for (IBreakpoint breakpoint : myBreakpoints) {
-                  if (breakpoint instanceof ILocationBreakpoint) {
-                    addLocationBreakpoint((ILocationBreakpoint) breakpoint);
-                  }
-                }
-              }
-            }
-          });
-        }
-      });
-
+      SetSequence.fromSet(newBreakpoints).addSequence(SetSequence.fromSet(myBreakpoints));
     }
   }
 
@@ -207,7 +212,23 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   }
 
   public void reReadState() {
-    loadState(getState());
+    Set<IBreakpoint> newBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
+    Set<IBreakpoint> oldBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
+
+    synchronized (myBreakpoints) {
+      loadStateInternal(getState(), oldBreakpoints, newBreakpoints);
+    }
+
+    SetSequence.fromSet(oldBreakpoints).subtract(SetSequence.fromSet(newBreakpoints)).visitAll(new IVisitor<IBreakpoint>() {
+      public void visit(IBreakpoint it) {
+        fireBreakpointRemoved(it);
+      }
+    });
+    SetSequence.fromSet(newBreakpoints).subtract(SetSequence.fromSet(oldBreakpoints)).visitAll(new IVisitor<IBreakpoint>() {
+      public void visit(IBreakpoint it) {
+        fireBreakpointAdded(it);
+      }
+    });
   }
 
   public void processBreakpointHit(IBreakpoint breakpoint) {
@@ -253,8 +274,22 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
   }
 
-  public Set<ILocationBreakpoint> getBreakpoints(SNodePointer rootPointer) {
-    return myRootsToBreakpointsMap.get(rootPointer);
+  public Set<ILocationBreakpoint> getBreakpoints(final SNodePointer rootPointer) {
+    return ModelAccess.instance().runReadAction(new Computable<Set<ILocationBreakpoint>>() {
+      public Set<ILocationBreakpoint> compute() {
+        synchronized (myBreakpoints) {
+          if (!(myBreakpointsForRootInitialized)) {
+            myBreakpointsForRootInitialized = true;
+            for (IBreakpoint breakpoint : myBreakpoints) {
+              if (breakpoint instanceof ILocationBreakpoint) {
+                addLocationBreakpoint((ILocationBreakpoint) breakpoint);
+              }
+            }
+          }
+          return myRootsToBreakpointsMap.get(rootPointer);
+        }
+      }
+    });
   }
 
   public static BreakpointManagerComponent getInstance(@NotNull Project project) {
