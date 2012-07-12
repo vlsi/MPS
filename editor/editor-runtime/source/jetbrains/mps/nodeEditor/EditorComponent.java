@@ -3015,7 +3015,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     @Override
     public void beforeModelDisposed(SModel sm) {
-      myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
+      if (myNode != null && myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
+        myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
+      }
     }
   }
 

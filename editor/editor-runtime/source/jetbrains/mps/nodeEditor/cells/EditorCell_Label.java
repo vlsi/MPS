@@ -344,7 +344,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   public void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings) {
     if (!isSelectionPaintedOnAncestor(parentSettings).isSelectionPainted() && getEditor().getAdditionalCellFontColor(this) != null) {
       /*
-       * Suppresing selection painting in case this cell is not actually selected and additionalCellFontColor() for it is not null.
+       * Suppressing selection painting in case this cell is not actually selected and additionalCellFontColor() for it is not null.
        * This will hide messages feedback if there is an AdditionalPainter instance (with specified cellFontColor) covering this cell.
        * Probably it's good idea to use separate property (not cellFontColor) to determine if this AdditionalPainter is "hiding" messages feedback
        * or simply let some additional painters paint background below and above editor messages.   
