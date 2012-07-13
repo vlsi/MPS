@@ -632,8 +632,7 @@ public class ClassifierUpdater {
 
     String pack = NodeNameUtil.getNamespace(annotationType.getName());
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
-    String resolve = NameUtil.shortNameFromLongName(annotationType.getName());
-    resolve = resolve.replaceAll("\\$", ".");
+    String resolve = method;
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
     sourceNode.addReference(ref);
   }
