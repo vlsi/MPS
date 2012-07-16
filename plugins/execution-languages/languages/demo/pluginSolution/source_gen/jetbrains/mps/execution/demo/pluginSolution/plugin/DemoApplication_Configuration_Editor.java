@@ -4,19 +4,19 @@ package jetbrains.mps.execution.demo.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import javax.swing.JLabel;
-import jetbrains.mps.execution.lib.Node_Configuration_Editor;
+import jetbrains.mps.execution.lib.NodeByConcept_Configuration_Editor;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
-import jetbrains.mps.execution.lib.ui.MainNodeChooser;
+import jetbrains.mps.execution.lib.ui.NodeByConceptChooser;
 import java.awt.BorderLayout;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class DemoApplication_Configuration_Editor extends SettingsEditorEx<DemoApplication_Configuration> {
   private JLabel myLabel;
-  private Node_Configuration_Editor myNode;
+  private NodeByConcept_Configuration_Editor myNode;
 
-  public DemoApplication_Configuration_Editor(Node_Configuration_Editor node) {
+  public DemoApplication_Configuration_Editor(NodeByConcept_Configuration_Editor node) {
     myNode = node;
   }
 
@@ -27,7 +27,7 @@ public class DemoApplication_Configuration_Editor extends SettingsEditorEx<DemoA
   @NotNull
   public JPanel createEditor() {
     myLabel = new JLabel("Select some node:");
-    MainNodeChooser nodeChooser = myNode.createEditor();
+    NodeByConceptChooser nodeChooser = myNode.createEditor();
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(myLabel, BorderLayout.NORTH);
     panel.add(nodeChooser, BorderLayout.CENTER);

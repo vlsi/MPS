@@ -150,8 +150,8 @@
             <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="5487985028841950910">
               <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="5487985028841950911">
                 <node role="elementType" roleId="tp2q.1237721435807" type="tp25.SConceptType" typeId="tp25.1172420572800" id="5487985028841950912" />
-                <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ReadConceptReferenceExpression" typeId="tp25.448792706993295611" id="5487985028841950913">
-                  <link role="conceptDeclaration" roleId="tp25.448792706993295615" targetNodeId="uhxm.7806358006983614956" resolveInfo="RunConfigurationExecutor" />
+                <node role="initValue" roleId="tp2q.1237721435808" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="5757529295307673999">
+                  <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="uhxm.7806358006983614956" resolveInfo="RunConfigurationExecutor" />
                 </node>
               </node>
             </node>
