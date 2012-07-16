@@ -8,7 +8,10 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class superTypesOfMeet_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -16,7 +19,11 @@ public class superTypesOfMeet_SubtypingRule extends SubtypingRule_Runtime implem
   }
 
   public List<SNode> getSubOrSuperTypes(SNode meet, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return SLinkOperations.getTargets(meet, "argument", true);
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(meet, "argument", true))) {
+      ListSequence.fromList(result).addElement(SNodeOperations.copyNode(arg));
+    }
+    return result;
   }
 
   public String getApplicableConceptFQName() {
