@@ -28,10 +28,16 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.search.MethodResolveUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 public class MethodDeclarationsFixer extends EditorCheckerAdapter {
@@ -156,7 +162,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myMethodCallsToSetDecls.clear();
   }
 
-  public void testAndFixMethodCall(SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
+  public void testAndFixMethodCall(@NotNull SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
     String methodName;
     if (baseMethodDeclaration == null) {
@@ -224,31 +230,42 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     return ((Map<SNode, SNode>) BehaviorManager.getInstance().invoke(Object.class, methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Class[]{SNode.class}));
   }
 
-  public List<SNode> getCandidates(SNode methodCall, String methodName) {
+  public List<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
     List<SNode> availableMethodDeclarations = ((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Class[]{SNode.class, String.class}, methodName));
     assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Class[]{SNode.class}));
     return availableMethodDeclarations;
   }
 
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNodePointer> methodCalls = myMethodDeclsToCheckedMethodCalls.get(new SNodePointer(method));
-    if (methodCalls != null) {
-      for (SNodePointer methodCall : methodCalls) {
-        if (methodCall != null) {
-          testAndFixMethodCall(SNodeOperations.cast(methodCall.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
-        }
-      }
+    Set<SNodePointer> methodCallPointers = myMethodDeclsToCheckedMethodCalls.get(new SNodePointer(method));
+    for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
+      testAndFixMethodCall(methodCall, resolveTargets);
     }
   }
 
-  private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNodePointer> methodCalls = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConceptFqName(), method.getName()));
-    if (methodCalls != null) {
-      for (SNodePointer methodCall : methodCalls) {
-        if (methodCall != null) {
-          testAndFixMethodCall(SNodeOperations.cast(methodCall.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
-        }
+  private Iterable<SNode> getMethodCalls(Set<SNodePointer> methodCallPointers) {
+    if (methodCallPointers == null) {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+    return SetSequence.fromSet(methodCallPointers).where(new IWhereFilter<SNodePointer>() {
+      public boolean accept(SNodePointer it) {
+        return it != null;
       }
+    }).select(new ISelector<SNodePointer, SNode>() {
+      public SNode select(SNodePointer it) {
+        return SNodeOperations.cast(it.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it != null;
+      }
+    });
+  }
+
+  private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
+    Set<SNodePointer> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConceptFqName(), method.getName()));
+    for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
+      testAndFixMethodCall(methodCall, resolveTargets);
     }
   }
 
@@ -261,9 +278,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
-    SNodePointer methodCall = myParametersToCheckedMethodCalls.get(new SNodePointer(expression));
-    if (methodCall != null) {
-      testAndFixMethodCall(SNodeOperations.cast(methodCall.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
+    SNodePointer methodCallPointer = myParametersToCheckedMethodCalls.get(new SNodePointer(expression));
+    if (methodCallPointer != null) {
+      SNode methodCall = SNodeOperations.cast(methodCallPointer.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+      if (methodCall != null) {
+        testAndFixMethodCall(methodCall, resolveTargets);
+      }
     }
   }
 
