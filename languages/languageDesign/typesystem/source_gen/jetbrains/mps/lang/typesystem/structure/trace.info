@@ -1962,53 +1962,112 @@
     <unitInfo nodeId="1178871491133" fileName="CoerceStrongExpression.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.CoerceStrongExpression" />
   </root>
   <root nodeId="1179479408386">
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="13" startPosition="43" endLine="14" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="14" startPosition="90" endLine="15" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARGUMENT" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="17" startPosition="31" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="21" startPosition="34" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="25" startPosition="44" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="29" startPosition="43" endLine="30" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="33" startPosition="45" endLine="34" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="37" startPosition="66" endLine="38" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="41" startPosition="63" endLine="42" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="45" startPosition="49" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="16" startPosition="0" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JoinType#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArgumentsCount#()I" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="arguments#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArguments#()Ljava/util/List;" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addArgument#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertArgument#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/typesystem/structure/JoinType;" />
-    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/typesystem/structure/JoinType;" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="17" startPosition="31" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="21" startPosition="34" endLine="22" endPosition="49" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="25" startPosition="44" endLine="26" endPosition="63" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="29" startPosition="43" endLine="30" endPosition="66" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="33" startPosition="45" endLine="34" endPosition="43" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="37" startPosition="66" endLine="38" endPosition="52" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="41" startPosition="63" endLine="42" endPosition="169" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="45" startPosition="49" endLine="46" endPosition="43" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="16" startPosition="0" endLine="19" endPosition="3">
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="15" startPosition="60" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="16" startPosition="90" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="19" startPosition="64" endLine="20" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARGUMENT" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="20" startPosition="51" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="23" startPosition="31" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="27" startPosition="39" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="31" startPosition="49" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="35" startPosition="28" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="39" startPosition="38" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="43" startPosition="37" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="47" startPosition="47" endLine="48" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="51" startPosition="34" endLine="52" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="55" startPosition="38" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="59" startPosition="37" endLine="60" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="63" startPosition="39" endLine="64" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="67" startPosition="54" endLine="68" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="71" startPosition="41" endLine="72" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="75" startPosition="49" endLine="76" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="79" startPosition="48" endLine="80" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="83" startPosition="50" endLine="84" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="87" startPosition="69" endLine="88" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="91" startPosition="63" endLine="92" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="95" startPosition="49" endLine="96" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JoinType#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArgumentsCount#()I" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="arguments#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArguments#()Ljava/util/List;" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addArgument#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertArgument#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/typesystem/structure/JoinType;" />
+    <nodeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/typesystem/structure/JoinType;" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="23" startPosition="31" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="27" startPosition="39" endLine="28" endPosition="56" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="31" startPosition="49" endLine="32" endPosition="56" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="35" startPosition="28" endLine="36" endPosition="44" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="39" startPosition="38" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="43" startPosition="37" endLine="44" endPosition="54" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="47" startPosition="47" endLine="48" endPosition="54" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="51" startPosition="34" endLine="52" endPosition="49" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="55" startPosition="38" endLine="56" endPosition="57" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="59" startPosition="37" endLine="60" endPosition="60" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="63" startPosition="39" endLine="64" endPosition="43" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="67" startPosition="54" endLine="68" endPosition="52" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="71" startPosition="41" endLine="72" endPosition="57" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="75" startPosition="49" endLine="76" endPosition="69" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="79" startPosition="48" endLine="80" endPosition="72" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="83" startPosition="50" endLine="84" endPosition="51" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="87" startPosition="69" endLine="88" endPosition="60" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="91" startPosition="63" endLine="92" endPosition="169" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="95" startPosition="49" endLine="96" endPosition="43" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="1179479408386" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1179479408386" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1179479408386" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1179479408386" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1179479408386" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1179479408386" varName="node" />
       <varInfo nodeId="1179479408386" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1179479408386" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="1179479408386" varName="node" />
+      <varInfo nodeId="1179479408386" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="1179479408386" varName="init" />
       <varInfo nodeId="1179479408386" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1179479408386" fileName="JoinType.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1179479408386" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="1179479408386" fileName="JoinType.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.JoinType" />
+    <unitInfo nodeId="1179479408386" fileName="JoinType.java" startLine="15" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.JoinType" />
   </root>
   <root nodeId="1179832490862">
     <nodeInfo nodeId="1179832490862" fileName="CreateStrongLessThanInequationStatement.java" startLine="10" startPosition="90" endLine="11" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
@@ -2400,53 +2459,112 @@
     <unitInfo nodeId="1185805035213" fileName="WhenConcreteStatement.java" startLine="17" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement" />
   </root>
   <root nodeId="1188473524530">
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="14" startPosition="36" endLine="15" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="15" startPosition="90" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARGUMENT" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="18" startPosition="31" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="22" startPosition="34" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="26" startPosition="44" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="30" startPosition="43" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="34" startPosition="45" endLine="35" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="38" startPosition="66" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="42" startPosition="63" endLine="43" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="46" startPosition="49" endLine="47" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="17" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MeetType#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArgumentsCount#()I" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="arguments#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArguments#()Ljava/util/List;" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addArgument#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertArgument#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/typesystem/structure/MeetType;" />
-    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/typesystem/structure/MeetType;" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="18" startPosition="31" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="22" startPosition="34" endLine="23" endPosition="49" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="26" startPosition="44" endLine="27" endPosition="63" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="30" startPosition="43" endLine="31" endPosition="66" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="34" startPosition="45" endLine="35" endPosition="43" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="38" startPosition="66" endLine="39" endPosition="52" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="42" startPosition="63" endLine="43" endPosition="169" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="46" startPosition="49" endLine="47" endPosition="43" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="17" startPosition="0" endLine="20" endPosition="3">
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="15" startPosition="60" endLine="16" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="16" startPosition="90" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHORT_DESCRIPTION" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="17" startPosition="68" endLine="18" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ALIAS" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="18" startPosition="45" endLine="19" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VIRTUAL_PACKAGE" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="19" startPosition="64" endLine="20" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ARGUMENT" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="20" startPosition="51" endLine="21" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SMODEL_ATTRIBUTE" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="23" startPosition="31" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="27" startPosition="39" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="31" startPosition="49" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="35" startPosition="28" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="39" startPosition="38" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="43" startPosition="37" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="47" startPosition="47" endLine="48" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="51" startPosition="34" endLine="52" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="55" startPosition="38" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="59" startPosition="37" endLine="60" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="63" startPosition="39" endLine="64" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="67" startPosition="54" endLine="68" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="71" startPosition="41" endLine="72" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="75" startPosition="49" endLine="76" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="79" startPosition="48" endLine="80" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="83" startPosition="50" endLine="84" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="87" startPosition="69" endLine="88" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="91" startPosition="63" endLine="92" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="95" startPosition="49" endLine="96" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MeetType#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShortDescription#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShortDescription#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAlias#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAlias#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVirtualPackage#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setVirtualPackage#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArgumentsCount#()I" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="arguments#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArguments#()Ljava/util/List;" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addArgument#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertArgument#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributesCount#()I" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="smodelAttributes#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSmodelAttributes#()Ljava/util/List;" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="insertSmodelAttribute#(Ljetbrains/mps/smodel/INodeAdapter;Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/typesystem/structure/MeetType;" />
+    <nodeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/typesystem/structure/MeetType;" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="23" startPosition="31" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="27" startPosition="39" endLine="28" endPosition="56" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="31" startPosition="49" endLine="32" endPosition="56" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="35" startPosition="28" endLine="36" endPosition="44" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="39" startPosition="38" endLine="40" endPosition="44" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="43" startPosition="37" endLine="44" endPosition="54" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="47" startPosition="47" endLine="48" endPosition="54" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="51" startPosition="34" endLine="52" endPosition="49" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="55" startPosition="38" endLine="56" endPosition="57" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="59" startPosition="37" endLine="60" endPosition="60" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="63" startPosition="39" endLine="64" endPosition="43" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="67" startPosition="54" endLine="68" endPosition="52" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="71" startPosition="41" endLine="72" endPosition="57" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="75" startPosition="49" endLine="76" endPosition="69" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="79" startPosition="48" endLine="80" endPosition="72" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="83" startPosition="50" endLine="84" endPosition="51" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="87" startPosition="69" endLine="88" endPosition="60" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="91" startPosition="63" endLine="92" endPosition="169" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="95" startPosition="49" endLine="96" endPosition="43" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="1188473524530" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="33" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="1188473524530" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="1188473524530" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="1188473524530" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1188473524530" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="66" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="1188473524530" varName="node" />
       <varInfo nodeId="1188473524530" varName="prev" />
     </scopeInfo>
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
+      <varInfo nodeId="1188473524530" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="1188473524530" varName="node" />
+      <varInfo nodeId="1188473524530" varName="prev" />
+    </scopeInfo>
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="1188473524530" varName="init" />
       <varInfo nodeId="1188473524530" varName="sm" />
     </scopeInfo>
-    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1188473524530" fileName="MeetType.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="1188473524530" varName="sm" />
     </scopeInfo>
-    <unitInfo nodeId="1188473524530" fileName="MeetType.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MeetType" />
+    <unitInfo nodeId="1188473524530" fileName="MeetType.java" startLine="15" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.typesystem.structure.MeetType" />
   </root>
   <root nodeId="1188811367543">
     <nodeInfo nodeId="1188811367543" fileName="ComparisonRule.java" startLine="13" startPosition="88" endLine="14" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
