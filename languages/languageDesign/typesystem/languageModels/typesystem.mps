@@ -3514,6 +3514,13 @@
   </root>
   <root id="8290749460590187666">
     <node role="body" roleId="tpd4.1175147624276" type="tpee.StatementList" typeId="tpee.1068580123136" id="8290749460590187667">
+      <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6234654476299682116">
+        <node role="expression" roleId="tpee.1068580123156" type="tpd4.GetOperationType" typeId="tpd4.1236163200695" id="6234654476299682117">
+          <node role="operation" roleId="tpd4.1236163216864" type="tpee.Expression" typeId="tpee.1068431790191" id="6234654476299682118" />
+          <node role="leftOperandType" roleId="tpd4.1236163223573" type="tpee.Expression" typeId="tpee.1068431790191" id="6234654476299682119" />
+          <node role="rightOperandType" roleId="tpd4.1236163223950" type="tpee.Expression" typeId="tpee.1068431790191" id="6234654476299682120" />
+        </node>
+      </node>
       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8290749460590220275">
         <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8290749460590220277">
           <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="8290749460590220278">
