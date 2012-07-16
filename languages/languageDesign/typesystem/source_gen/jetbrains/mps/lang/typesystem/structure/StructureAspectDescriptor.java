@@ -134,7 +134,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 58:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.JoinContainer", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
       case 59:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.JoinType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IType"}, new String[]{}, new String[]{});
       case 60:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
       case 61:
@@ -148,7 +148,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 65:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MeetContainer", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
       case 66:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MeetType", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.IType"}, new String[]{}, new String[]{});
       case 67:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.MessageStatement", null, true, new String[]{}, new String[]{}, new String[]{});
       case 68:
