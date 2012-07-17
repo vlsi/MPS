@@ -7,46 +7,20 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.AllElementsOperation", "jetbrains.mps.debugger.java.customViewers.structure.CallMethodOperation", "jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.ClassFqNameOperation", "jetbrains.mps.debugger.java.customViewers.structure.ClassNameOperation", "jetbrains.mps.debugger.java.customViewers.structure.ElementOperation", "jetbrains.mps.debugger.java.customViewers.structure.ElementsRangeOperation", "jetbrains.mps.debugger.java.customViewers.structure.FieldOperation", "jetbrains.mps.debugger.java.customViewers.structure.FieldsListOperation", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.IsInstanceOfOperation", "jetbrains.mps.debugger.java.customViewers.structure.JavaValueOperation", "jetbrains.mps.debugger.java.customViewers.structure.SizeOperation", "jetbrains.mps.debugger.java.customViewers.structure.StringValueOperation", "jetbrains.mps.debugger.java.customViewers.structure.WatchableCreator"};
+  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator"};
 
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
-      case 16:
-        return new WatchableCreator_Constraints();
-      case 8:
-        return new FieldsListOperation_Constraints();
-      case 7:
-        return new FieldOperation_Constraints();
-      case 5:
-        return new ElementOperation_Constraints();
-      case 4:
-        return new ClassNameOperation_Constraints();
-      case 3:
-        return new ClassFqNameOperation_Constraints();
-      case 14:
-        return new SizeOperation_Constraints();
-      case 0:
-        return new AllElementsOperation_Constraints();
-      case 6:
-        return new ElementsRangeOperation_Constraints();
       case 1:
-        return new CallMethodOperation_Constraints();
-      case 13:
-        return new JavaValueOperation_Constraints();
-      case 15:
-        return new StringValueOperation_Constraints();
-      case 12:
-        return new IsInstanceOfOperation_Constraints();
-      case 9:
         return new GetHighLevelValuePresentation_ConceptFunction_Constraints();
-      case 2:
+      case 0:
         return new CanWrapHighLevelValue_ConceptFunction_Constraints();
-      case 10:
+      case 2:
         return new GetHighLevelWatchablesBlock_ConceptFunction_Constraints();
-      case 11:
+      case 3:
         return new HighLevelWatchableCreator_Constraints();
       default:
         // todo: illegal in some cases? 

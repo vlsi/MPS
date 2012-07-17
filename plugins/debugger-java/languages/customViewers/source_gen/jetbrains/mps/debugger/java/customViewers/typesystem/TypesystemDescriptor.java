@@ -9,35 +9,11 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_CallMethodOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ElementOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ElementsRangeOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_FieldOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_HighLevelWatchableCreator_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_IsInstanceOfOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_WatchableCreator_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -50,22 +26,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       SubtypingRule_Runtime subtypingRule = new WatchableListIsAListOrWatchables_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new supertypesOfArrayValueType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new supertypesOfObjectValueType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new supertypesOfPrimitiveValueType_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new supertypesOfStringValueType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
   }
