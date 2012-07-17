@@ -27,6 +27,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
+import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +71,7 @@ public class GoToClassMPSContributor implements GotoClassContributor {
 
   @Override
   public String getQualifiedName(NavigationItem item) {
-    return createModel(null).doGetFullName(item);
+    return (item.getPresentation() instanceof NodePresentation) ? createModel(null).doGetFullName(item) : null;
   }
 
   @Override
