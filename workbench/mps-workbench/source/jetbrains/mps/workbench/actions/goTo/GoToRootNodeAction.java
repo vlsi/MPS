@@ -22,57 +22,20 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
-import jetbrains.mps.workbench.choose.base.FakePsiContext;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 public class GoToRootNodeAction extends BaseAction {
-  private static boolean myUseCache = true;
-
-  public static void setUseCache(boolean useCache) {
-    myUseCache = useCache;
-  }
-
   public void doExecute(AnActionEvent e, Map<String, Object> _params) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
 
-    ChooseByNamePopup popup;
-
-    if (!myUseCache) {
-      BaseNodeModel baseNodeModel = new BaseNodeModel(project) {
-        public SNode[] find(IScope scope) {
-          final List<SNode> nodes = new ArrayList<SNode>();
-          Iterable<SModelDescriptor> modelDescriptors = scope.getModelDescriptors();
-          for (SModelDescriptor modelDescriptor : modelDescriptors) {
-            if (!SModelStereotype.isUserModel(modelDescriptor)) continue;
-            for (SNode node : modelDescriptor.getSModel().roots()) {
-              nodes.add(node);
-            }
-          }
-          return nodes.toArray(new SNode[0]);
-        }
-
-        public boolean willOpenEditor() {
-          return true;
-        }
-      };
-      popup = MpsPopupFactory.createNodePopup(project, baseNodeModel);
-    } else {
-      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
-      popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult);
-    }
+    MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
