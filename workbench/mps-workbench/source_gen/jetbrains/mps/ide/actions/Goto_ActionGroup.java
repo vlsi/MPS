@@ -9,7 +9,6 @@ import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.plugins.actions.LabelledAnchor;
 import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
 import com.intellij.ide.actions.GotoFileAction;
-import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModuleAction;
 
@@ -33,7 +32,7 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       }
       Goto_ActionGroup.this.addSeparator();
       Goto_ActionGroup.this.addParameterizedAction(new GoToFile_Action(new GotoFileAction()), PluginId.getId("jetbrains.mps.ide"), new GotoFileAction());
-      Goto_ActionGroup.this.addParameterizedAction(new GoToRootNode_Action(new GoToRootNodeAction()), PluginId.getId("jetbrains.mps.ide"), new GoToRootNodeAction());
+      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRootNode_Action");
       Goto_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(Goto_ActionGroup.LABEL_ID_gotoConceptAspects);

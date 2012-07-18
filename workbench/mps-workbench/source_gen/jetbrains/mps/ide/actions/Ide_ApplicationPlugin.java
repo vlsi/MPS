@@ -55,6 +55,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new Find_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToNode_Action());
+    addAction(new GoToRootNode_Action());
     addAction(new GoToRule_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
