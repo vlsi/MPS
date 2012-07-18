@@ -30,7 +30,6 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="8524227390952646882">
       <property name="name" nameId="tpck.1169194664001" value="check_InstanceOfDeprecated" />
     </node>
-    <node type="tpd4.InequationsGroupsRegistry" typeId="tpd4.1320713984677547791" id="1759628044690732296" />
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4942048232752368510">
       <property name="name" nameId="tpck.1169194664001" value="check_ReferencesScope" />
     </node>
@@ -221,20 +220,6 @@
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="8524227390952646910">
       <property name="name" nameId="tpck.1169194664001" value="nodeToCheck" />
       <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-  </root>
-  <root id="1759628044690732296">
-    <node role="group" roleId="tpd4.1320713984677547797" type="tpd4.InequationsGroup" typeId="tpd4.1320713984677547792" id="1759628044690732298">
-      <property name="name" nameId="tpck.1169194664001" value="priority_1" />
-    </node>
-    <node role="group" roleId="tpd4.1320713984677547797" type="tpd4.InequationsGroup" typeId="tpd4.1320713984677547792" id="1759628044690732299">
-      <property name="name" nameId="tpck.1169194664001" value="priority_2" />
-    </node>
-    <node role="group" roleId="tpd4.1320713984677547797" type="tpd4.InequationsGroup" typeId="tpd4.1320713984677547792" id="1759628044690732300">
-      <property name="name" nameId="tpck.1169194664001" value="priority_3" />
-    </node>
-    <node role="group" roleId="tpd4.1320713984677547797" type="tpd4.InequationsGroup" typeId="tpd4.1320713984677547792" id="1759628044690732301">
-      <property name="name" nameId="tpck.1169194664001" value="priority_4" />
     </node>
   </root>
   <root id="4942048232752368510">

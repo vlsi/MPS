@@ -236,15 +236,6 @@
     <node type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="4778346850551686267">
       <property name="name" nameId="tpck.1169194664001" value="TypesystemStyles" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1320713984677547794">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.1320713984677547792" resolveInfo="InequationsGroup" />
-    </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1320713984677547798">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.1320713984677547791" resolveInfo="InequationsGroupsRegistry" />
-    </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1320713984677670356">
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.1320713984677670354" resolveInfo="InequationsGroupReference" />
-    </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1320713984677695205">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.1320713984677695202" resolveInfo="DefaultGroupReference" />
     </node>
@@ -3947,43 +3938,6 @@
       </node>
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundNullColorStyleClassItem" typeId="tpc2.1187258617779" id="1320713984677672381">
         <property name="color" nameId="tpc2.1186403713874" value="lightGray" />
-      </node>
-    </node>
-  </root>
-  <root id="1320713984677547794">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1320713984677547796">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-      <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1320713984677672377" resolveInfo="InequationsGroupsLabel" />
-    </node>
-  </root>
-  <root id="1320713984677547798">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1320713984677547800">
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1320713984677547811">
-        <property name="text" nameId="tpc2.1073389577007" value="Inequations groups registry" />
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1320713984677547813">
-        <property name="text" nameId="tpc2.1073389577007" value=" " />
-        <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1320713984677548132">
-          <property name="flag" nameId="tpc2.1186414551515" value="false" />
-        </node>
-      </node>
-      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1320713984677547803">
-        <property name="separatorText" nameId="tpc2.1140524450557" value=";" />
-        <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpd4.1320713984677547797" />
-        <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1320713984677547804" />
-      </node>
-      <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Vertical" typeId="tpc2.1106270571710" id="1320713984677547802" />
-    </node>
-  </root>
-  <root id="1320713984677670356">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="1320713984677672373">
-      <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpd4.1320713984677670355" />
-      <node role="editorComponent" roleId="tpc2.1088186146602" type="tpc2.InlineEditorComponent" typeId="tpc2.1088185857835" id="1320713984677672374">
-        <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="1320713984677672376">
-          <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1320713984677672377" resolveInfo="InequationsGroupsLabel" />
-        </node>
       </node>
     </node>
   </root>
