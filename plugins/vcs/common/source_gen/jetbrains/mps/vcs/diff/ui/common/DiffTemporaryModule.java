@@ -179,11 +179,6 @@ public class DiffTemporaryModule extends AbstractModule {
       throw new UnsupportedOperationException();
     }
 
-    @Deprecated
-    public IFile getModelFile() {
-      throw new UnsupportedOperationException();
-    }
-
     public boolean isReadOnly() {
       return !(myEditable);
     }

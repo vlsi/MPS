@@ -55,17 +55,17 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
             for (SModel model : SetSequence.fromSet(models)) {
               SModelDescriptor descriptor = model.getModelDescriptor();
               if (descriptor instanceof EditableSModelDescriptor) {
-                IFile modelFile = ((EditableSModelDescriptor) descriptor).getModelFile();
-                if (modelFile != null) {
-                  IFile fileToRefresh = modelFile;
-                  while (!(fileToRefresh.exists())) {
-                    fileToRefresh = fileToRefresh.getParent();
-                  }
-                  VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(modelFile);
-                  if (virtualFile != null) {
-                    session.addFile(virtualFile);
-                  }
-                }
+//                IFile modelFile = ((EditableSModelDescriptor) descriptor).getModelFile();
+//                if (modelFile != null) {
+//                  IFile fileToRefresh = modelFile;
+//                  while (!(fileToRefresh.exists())) {
+//                    fileToRefresh = fileToRefresh.getParent();
+//                  }
+//                  VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(modelFile);
+//                  if (virtualFile != null) {
+//                    session.addFile(virtualFile);
+//                  }
+//                }
               }
             }
             session.launch();

@@ -5,6 +5,7 @@ package jetbrains.mps.lang.core.plugin;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.GenerationCacheContainer;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
@@ -48,7 +49,7 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
         null
       );
     }
-    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+    DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
 
     IFile modelFile = esm.getModelFile();
     if (modelFile == null) {
