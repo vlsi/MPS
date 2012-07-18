@@ -9,7 +9,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.File;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
@@ -51,30 +50,6 @@ public class ProcessHandlerBuilder {
   public ProcessHandlerBuilder append(@NotNull List<String> command) {
     for (String commandPart : ListSequence.fromList(command)) {
       append(commandPart);
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public ProcessHandlerBuilder appendKey(@Nullable String key, @Nullable String parameter) {
-    return append(new KeyValueCommandPart(key, parameter));
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public ProcessHandlerBuilder appendKey(@Nullable String key, String... parameter) {
-    if ((key != null && key.length() > 0) && parameter.length > 0) {
-      return append("-" + key).append(parameter);
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public ProcessHandlerBuilder appendKey(@Nullable String key, @NotNull List<String> parameters) {
-    if ((key != null && key.length() > 0) && ListSequence.fromList(parameters).isNotEmpty()) {
-      return append("-" + key).append(parameters);
     }
     return this;
   }
