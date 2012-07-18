@@ -69,6 +69,11 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     return false;
   }
 
+  @Deprecated
+  public IFile getModelFile() {
+    return null;
+  }
+
   protected SModel getCurrentModelInternal() {
     return myModel;
   }

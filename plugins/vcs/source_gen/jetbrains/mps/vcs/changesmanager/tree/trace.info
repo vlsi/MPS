@@ -513,391 +513,391 @@
     <unitInfo nodeId="6940763585259488666" fileName="TreeNodeFeatureExtractor.java" startLine="10" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
   </root>
   <root nodeId="9200516641177001205">
-    <nodeInfo nodeId="9200516641177001205" fileName="TreeHighlighter.java" startLine="50" startPosition="58" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="4653713283496888201" fileName="TreeHighlighter.java" startLine="52" startPosition="0" endLine="53" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeMessages" />
-    <nodeInfo nodeId="4653713283496952731" fileName="TreeHighlighter.java" startLine="53" startPosition="116" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
-    <nodeInfo nodeId="4653713283496948082" fileName="TreeHighlighter.java" startLine="54" startPosition="47" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandQueue" />
-    <nodeInfo nodeId="9200516641177060998" fileName="TreeHighlighter.java" startLine="55" startPosition="44" endLine="56" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
-    <nodeInfo nodeId="9200516641177001211" fileName="TreeHighlighter.java" startLine="56" startPosition="46" endLine="57" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="9200516641177001215" fileName="TreeHighlighter.java" startLine="57" startPosition="25" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureExtractor" />
-    <nodeInfo nodeId="9200516641177032538" fileName="TreeHighlighter.java" startLine="58" startPosition="54" endLine="59" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
-    <nodeInfo nodeId="9200516641177032542" fileName="TreeHighlighter.java" startLine="59" startPosition="32" endLine="60" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeNodeListener" />
-    <nodeInfo nodeId="9200516641177032666" fileName="TreeHighlighter.java" startLine="60" startPosition="107" endLine="61" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureListener" />
-    <nodeInfo nodeId="9200516641177061037" fileName="TreeHighlighter.java" startLine="61" startPosition="122" endLine="62" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureToNodes" />
-    <nodeInfo nodeId="583280731372885603" fileName="TreeHighlighter.java" startLine="62" startPosition="103" endLine="63" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusListener" />
-    <nodeInfo nodeId="2105471615617493117" fileName="TreeHighlighter.java" startLine="63" startPosition="113" endLine="64" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalModelListener" />
-    <nodeInfo nodeId="4653713283496952736" fileName="TreeHighlighter.java" startLine="66" startPosition="240" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496948091" fileName="TreeHighlighter.java" startLine="67" startPosition="26" endLine="68" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177061003" fileName="TreeHighlighter.java" startLine="68" startPosition="48" endLine="69" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177001238" fileName="TreeHighlighter.java" startLine="69" startPosition="45" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177001229" fileName="TreeHighlighter.java" startLine="70" startPosition="18" endLine="71" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617493122" fileName="TreeHighlighter.java" startLine="72" startPosition="37" endLine="73" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177032641" fileName="TreeHighlighter.java" startLine="78" startPosition="24" endLine="79" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9200516641177032650" fileName="TreeHighlighter.java" startLine="80" startPosition="5" endLine="81" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617503030" fileName="TreeHighlighter.java" startLine="81" startPosition="25" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9200516641177061010" fileName="TreeHighlighter.java" startLine="82" startPosition="0" endLine="83" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177032674" fileName="TreeHighlighter.java" startLine="83" startPosition="41" endLine="84" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="583280731372887578" fileName="TreeHighlighter.java" startLine="84" startPosition="51" endLine="85" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617502996" fileName="TreeHighlighter.java" startLine="86" startPosition="40" endLine="87" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617503031" fileName="TreeHighlighter.java" startLine="88" startPosition="5" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4653713283496907220" fileName="TreeHighlighter.java" startLine="91" startPosition="25" endLine="92" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177032656" fileName="TreeHighlighter.java" startLine="98" startPosition="27" endLine="99" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9200516641177032659" fileName="TreeHighlighter.java" startLine="100" startPosition="5" endLine="101" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617503029" fileName="TreeHighlighter.java" startLine="101" startPosition="26" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2105471615617503021" fileName="TreeHighlighter.java" startLine="103" startPosition="40" endLine="104" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="583280731372887829" fileName="TreeHighlighter.java" startLine="105" startPosition="5" endLine="106" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177051128" fileName="TreeHighlighter.java" startLine="106" startPosition="106" endLine="107" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9200516641177061023" fileName="TreeHighlighter.java" startLine="107" startPosition="54" endLine="108" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496907182" fileName="TreeHighlighter.java" startLine="111" startPosition="67" endLine="112" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496907191" fileName="TreeHighlighter.java" startLine="113" startPosition="59" endLine="114" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496882516" fileName="TreeHighlighter.java" startLine="118" startPosition="62" endLine="119" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4653713283496882534" fileName="TreeHighlighter.java" startLine="121" startPosition="39" endLine="122" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5008832173035887196" fileName="TreeHighlighter.java" startLine="128" startPosition="47" endLine="129" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4653713283496925942" fileName="TreeHighlighter.java" startLine="130" startPosition="67" endLine="131" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496925953" fileName="TreeHighlighter.java" startLine="141" startPosition="58" endLine="142" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4653713283496925962" fileName="TreeHighlighter.java" startLine="145" startPosition="59" endLine="146" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="148" startPosition="37" endLine="149" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496925968" fileName="TreeHighlighter.java" startLine="152" startPosition="7" endLine="153" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496925928" fileName="TreeHighlighter.java" startLine="157" startPosition="59" endLine="158" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496926007" fileName="TreeHighlighter.java" startLine="161" startPosition="85" endLine="162" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496952784" fileName="TreeHighlighter.java" startLine="162" startPosition="26" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4653713283496952786" fileName="TreeHighlighter.java" startLine="163" startPosition="0" endLine="164" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1162831315436755133" fileName="TreeHighlighter.java" startLine="165" startPosition="52" endLine="166" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4653713283496952768" fileName="TreeHighlighter.java" startLine="166" startPosition="70" endLine="167" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496952785" fileName="TreeHighlighter.java" startLine="167" startPosition="60" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4653713283496948116" fileName="TreeHighlighter.java" startLine="168" startPosition="0" endLine="169" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4653713283496948125" fileName="TreeHighlighter.java" startLine="170" startPosition="27" endLine="171" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496948137" fileName="TreeHighlighter.java" startLine="173" startPosition="27" endLine="174" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496948148" fileName="TreeHighlighter.java" startLine="175" startPosition="59" endLine="176" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6005884031659331464" fileName="TreeHighlighter.java" startLine="177" startPosition="51" endLine="178" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201398707754975288" fileName="TreeHighlighter.java" startLine="179" startPosition="30" endLine="180" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496948037" fileName="TreeHighlighter.java" startLine="187" startPosition="95" endLine="188" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8308671070660563032" fileName="TreeHighlighter.java" startLine="195" startPosition="41" endLine="196" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8308671070660562986" fileName="TreeHighlighter.java" startLine="196" startPosition="38" endLine="197" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308671070660563044" fileName="TreeHighlighter.java" startLine="201" startPosition="50" endLine="202" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308671070660563052" fileName="TreeHighlighter.java" startLine="204" startPosition="19" endLine="205" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496888268" fileName="TreeHighlighter.java" startLine="216" startPosition="73" endLine="217" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496888252" fileName="TreeHighlighter.java" startLine="218" startPosition="5" endLine="219" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4036854704706502310" fileName="TreeHighlighter.java" startLine="226" startPosition="51" endLine="227" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1162831315436727903" fileName="TreeHighlighter.java" startLine="227" startPosition="52" endLine="228" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1162831315436755122" fileName="TreeHighlighter.java" startLine="229" startPosition="63" endLine="230" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4036854704706502327" fileName="TreeHighlighter.java" startLine="231" startPosition="90" endLine="232" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4653713283496900711" fileName="TreeHighlighter.java" startLine="234" startPosition="9" endLine="235" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4653713283496900719" fileName="TreeHighlighter.java" startLine="236" startPosition="18" endLine="237" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4653713283496900727" fileName="TreeHighlighter.java" startLine="238" startPosition="14" endLine="239" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4653713283496900735" fileName="TreeHighlighter.java" startLine="239" startPosition="21" endLine="240" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3201398707754975388" fileName="TreeHighlighter.java" startLine="245" startPosition="70" endLine="246" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3089989024970165050" fileName="TreeHighlighter.java" startLine="247" startPosition="49" endLine="248" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3201398707754975422" fileName="TreeHighlighter.java" startLine="253" startPosition="12" endLine="254" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3201398707754975447" fileName="TreeHighlighter.java" startLine="259" startPosition="113" endLine="260" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4653713283496925988" fileName="TreeHighlighter.java" startLine="271" startPosition="63" endLine="272" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496948064" fileName="TreeHighlighter.java" startLine="275" startPosition="65" endLine="276" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="391123256063806040" fileName="TreeHighlighter.java" startLine="282" startPosition="50" endLine="283" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496953833" fileName="TreeHighlighter.java" startLine="291" startPosition="54" endLine="292" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="17187394613279769" fileName="TreeHighlighter.java" startLine="300" startPosition="62" endLine="301" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="17187394613279782" fileName="TreeHighlighter.java" startLine="301" startPosition="51" endLine="302" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="17187394613279798" fileName="TreeHighlighter.java" startLine="303" startPosition="24" endLine="304" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="17187394613279843" fileName="TreeHighlighter.java" startLine="313" startPosition="46" endLine="314" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617474049" fileName="TreeHighlighter.java" startLine="328" startPosition="51" endLine="329" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2105471615617474114" fileName="TreeHighlighter.java" startLine="329" startPosition="60" endLine="330" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2105471615617493075" fileName="TreeHighlighter.java" startLine="333" startPosition="87" endLine="334" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617493090" fileName="TreeHighlighter.java" startLine="334" startPosition="125" endLine="335" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617493111" fileName="TreeHighlighter.java" startLine="340" startPosition="43" endLine="341" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201398707754975489" fileName="TreeHighlighter.java" startLine="253" startPosition="10" endLine="255" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9200516641177032550" fileName="TreeHighlighter.java" startLine="267" startPosition="67" endLine="269" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeNodeListener#()V" />
-    <nodeInfo nodeId="9200516641177032596" fileName="TreeHighlighter.java" startLine="287" startPosition="80" endLine="289" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFeatureForestMapListener#()V" />
-    <nodeInfo nodeId="17187394613279097" fileName="TreeHighlighter.java" startLine="296" startPosition="68" endLine="298" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFileStatusListener#()V" />
-    <nodeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="323" startPosition="55" endLine="325" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyModelListener#()V" />
-    <nodeInfo nodeId="2105471615617503006" fileName="TreeHighlighter.java" startLine="71" startPosition="42" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9200516641177032637" fileName="TreeHighlighter.java" startLine="77" startPosition="35" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2105471615617493129" fileName="TreeHighlighter.java" startLine="85" startPosition="103" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9200516641177032644" fileName="TreeHighlighter.java" startLine="97" startPosition="38" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2105471615617503019" fileName="TreeHighlighter.java" startLine="102" startPosition="0" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4653713283496907186" fileName="TreeHighlighter.java" startLine="112" startPosition="23" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5008832173035887165" fileName="TreeHighlighter.java" startLine="120" startPosition="26" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="5008832173035887178" fileName="TreeHighlighter.java" startLine="129" startPosition="65" endLine="132" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="147" startPosition="16" endLine="150" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="147" startPosition="16" endLine="150" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4653713283496948123" fileName="TreeHighlighter.java" startLine="169" startPosition="46" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6005884031659336324" fileName="TreeHighlighter.java" startLine="178" startPosition="65" endLine="181" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4653713283496948026" fileName="TreeHighlighter.java" startLine="186" startPosition="61" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4653713283496888239" fileName="TreeHighlighter.java" startLine="215" startPosition="66" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="278" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeUpdated#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
-    <nodeInfo nodeId="9181287675440482543" fileName="TreeHighlighter.java" startLine="302" startPosition="85" endLine="305" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="17187394613279835" fileName="TreeHighlighter.java" startLine="312" startPosition="78" endLine="315" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="90" startPosition="56" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="9170101780449102282" fileName="TreeHighlighter.java" startLine="147" startPosition="14" endLine="151" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4653713283496925979" fileName="TreeHighlighter.java" startLine="156" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unhighlightNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="200" startPosition="124" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
-    <nodeInfo nodeId="3201398707754975500" fileName="TreeHighlighter.java" startLine="248" startPosition="101" endLine="252" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7484618899643756422" fileName="TreeHighlighter.java" startLine="260" startPosition="73" endLine="264" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9200516641177032573" fileName="TreeHighlighter.java" startLine="270" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeAdded#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
-    <nodeInfo nodeId="9200516641177032565" fileName="TreeHighlighter.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeRemoved#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
-    <nodeInfo nodeId="7014360199878017513" fileName="TreeHighlighter.java" startLine="281" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeTreeDisposed#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
-    <nodeInfo nodeId="4653713283496953827" fileName="TreeHighlighter.java" startLine="290" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="featureStateChanged#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="2105471615617474066" fileName="TreeHighlighter.java" startLine="332" startPosition="74" endLine="336" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="339" startPosition="85" endLine="343" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="4653713283496907210" fileName="TreeHighlighter.java" startLine="89" startPosition="0" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1162831315436727889" fileName="TreeHighlighter.java" startLine="228" startPosition="80" endLine="233" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="17187394613279820" fileName="TreeHighlighter.java" startLine="311" startPosition="43" endLine="316" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2105471615617493100" fileName="TreeHighlighter.java" startLine="338" startPosition="7" endLine="343" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5008832173035887173" fileName="TreeHighlighter.java" startLine="127" startPosition="31" endLine="133" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4653713283496948011" fileName="TreeHighlighter.java" startLine="185" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="2105471615617474060" fileName="TreeHighlighter.java" startLine="331" startPosition="39" endLine="337" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="110" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerNodeRecursively#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="9170101780449102244" fileName="TreeHighlighter.java" startLine="144" startPosition="39" endLine="151" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8308671070660563006" fileName="TreeHighlighter.java" startLine="199" startPosition="70" endLine="206" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="17187394613279831" fileName="TreeHighlighter.java" startLine="310" startPosition="27" endLine="317" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4653713283496888231" fileName="TreeHighlighter.java" startLine="213" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Lcom/intellij/openapi/vcs/FileStatus;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
-    <nodeInfo nodeId="17187394613279103" fileName="TreeHighlighter.java" startLine="299" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
-    <nodeInfo nodeId="2105471615617474057" fileName="TreeHighlighter.java" startLine="330" startPosition="96" endLine="338" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="126" startPosition="63" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5008832173035887169" fileName="TreeHighlighter.java" startLine="143" startPosition="26" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="8308671070660562945" fileName="TreeHighlighter.java" startLine="198" startPosition="89" endLine="207" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1162831315436744258" fileName="TreeHighlighter.java" startLine="225" startPosition="15" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3201398707754975399" fileName="TreeHighlighter.java" startLine="246" startPosition="110" endLine="255" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3201398707754975430" fileName="TreeHighlighter.java" startLine="257" startPosition="0" endLine="266" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFileStatus#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Lcom/intellij/openapi/project/Project;)Lcom/intellij/openapi/vcs/FileStatus;" />
-    <nodeInfo nodeId="9200516641177001222" fileName="TreeHighlighter.java" startLine="65" startPosition="0" endLine="75" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TreeHighlighter#(Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapSupport;Ljetbrains/mps/ide/ui/MPSTree;Ljetbrains/mps/vcs/changesmanager/tree/TreeNodeFeatureExtractor;Z)V" />
-    <nodeInfo nodeId="4653713283496948158" fileName="TreeHighlighter.java" startLine="125" startPosition="27" endLine="135" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496948135" fileName="TreeHighlighter.java" startLine="172" startPosition="7" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="309" startPosition="59" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="8308671070660562935" fileName="TreeHighlighter.java" startLine="197" startPosition="65" endLine="208" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="756246431460598812" fileName="TreeHighlighter.java" startLine="308" startPosition="39" endLine="319" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4653713283496925960" fileName="TreeHighlighter.java" startLine="142" startPosition="58" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="124" startPosition="45" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="9200516641177032534" fileName="TreeHighlighter.java" startLine="96" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="4653713283496948107" fileName="TreeHighlighter.java" startLine="123" startPosition="7" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201398707754975305" fileName="TreeHighlighter.java" startLine="243" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Ljetbrains/mps/vcs/changesmanager/tree/features/ModelFeature;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
-    <nodeInfo nodeId="17187394613279110" fileName="TreeHighlighter.java" startLine="307" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusesChanged#()V" />
-    <nodeInfo nodeId="8308671070660562609" fileName="TreeHighlighter.java" startLine="194" startPosition="25" endLine="209" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4653713283496925947" fileName="TreeHighlighter.java" startLine="140" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="193" startPosition="57" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4653713283496900694" fileName="TreeHighlighter.java" startLine="223" startPosition="119" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="4653713283496882525" fileName="TreeHighlighter.java" startLine="119" startPosition="64" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4653713283496952799" fileName="TreeHighlighter.java" startLine="164" startPosition="108" endLine="183" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8308671070660562606" fileName="TreeHighlighter.java" startLine="192" startPosition="81" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2105471615617473970" fileName="TreeHighlighter.java" startLine="326" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelDisposed#(Ljetbrains/mps/smodel/SModel;)V" />
-    <nodeInfo nodeId="9200516641177032530" fileName="TreeHighlighter.java" startLine="76" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="8308671070660562599" fileName="TreeHighlighter.java" startLine="191" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightFeatureAndDescendants#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <nodeInfo nodeId="4653713283496900660" fileName="TreeHighlighter.java" startLine="221" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Ljetbrains/mps/vcs/diff/changes/ModelChange;Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
-    <nodeInfo nodeId="4653713283496878870" fileName="TreeHighlighter.java" startLine="117" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
-    <nodeInfo nodeId="4653713283496925998" fileName="TreeHighlighter.java" startLine="160" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
-    <scopeInfo nodeId="9200516641177032553" fileName="TreeHighlighter.java" startLine="268" startPosition="33" endLine="268" endPosition="33" />
-    <scopeInfo nodeId="9200516641177032564" fileName="TreeHighlighter.java" startLine="279" startPosition="65" endLine="279" endPosition="65" />
-    <scopeInfo nodeId="9200516641177032599" fileName="TreeHighlighter.java" startLine="288" startPosition="41" endLine="288" endPosition="41" />
-    <scopeInfo nodeId="17187394613279100" fileName="TreeHighlighter.java" startLine="297" startPosition="35" endLine="297" endPosition="35" />
-    <scopeInfo nodeId="2105471615617473967" fileName="TreeHighlighter.java" startLine="324" startPosition="30" endLine="324" endPosition="30" />
-    <scopeInfo nodeId="2105471615617503007" fileName="TreeHighlighter.java" startLine="72" startPosition="37" endLine="73" endPosition="68" />
-    <scopeInfo nodeId="9200516641177032639" fileName="TreeHighlighter.java" startLine="78" startPosition="24" endLine="79" endPosition="13" />
-    <scopeInfo nodeId="2105471615617493130" fileName="TreeHighlighter.java" startLine="86" startPosition="40" endLine="87" endPosition="92" />
-    <scopeInfo nodeId="4653713283496907219" fileName="TreeHighlighter.java" startLine="91" startPosition="25" endLine="92" endPosition="54" />
-    <scopeInfo nodeId="9200516641177032646" fileName="TreeHighlighter.java" startLine="98" startPosition="27" endLine="99" endPosition="13" />
-    <scopeInfo nodeId="2105471615617503020" fileName="TreeHighlighter.java" startLine="103" startPosition="40" endLine="104" endPosition="92" />
-    <scopeInfo nodeId="4653713283496907189" fileName="TreeHighlighter.java" startLine="113" startPosition="59" endLine="114" endPosition="37" />
-    <scopeInfo nodeId="5008832173035887167" fileName="TreeHighlighter.java" startLine="121" startPosition="39" endLine="122" endPosition="49" />
-    <scopeInfo nodeId="5008832173035887179" fileName="TreeHighlighter.java" startLine="130" startPosition="67" endLine="131" endPosition="49" />
-    <scopeInfo nodeId="9170101780449102281" fileName="TreeHighlighter.java" startLine="145" startPosition="59" endLine="146" endPosition="54" />
-    <scopeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="148" startPosition="37" endLine="149" endPosition="123" />
-    <scopeInfo nodeId="4653713283496925982" fileName="TreeHighlighter.java" startLine="157" startPosition="59" endLine="158" endPosition="40" />
-    <scopeInfo nodeId="4653713283496948124" fileName="TreeHighlighter.java" startLine="170" startPosition="27" endLine="171" endPosition="54" />
-    <scopeInfo nodeId="4653713283496948136" fileName="TreeHighlighter.java" startLine="173" startPosition="27" endLine="174" endPosition="53" />
-    <scopeInfo nodeId="4653713283496948147" fileName="TreeHighlighter.java" startLine="175" startPosition="59" endLine="176" endPosition="61" />
-    <scopeInfo nodeId="6005884031659336325" fileName="TreeHighlighter.java" startLine="179" startPosition="30" endLine="180" endPosition="39" />
-    <scopeInfo nodeId="4653713283496948029" fileName="TreeHighlighter.java" startLine="187" startPosition="95" endLine="188" endPosition="37" />
-    <scopeInfo nodeId="8308671070660563041" fileName="TreeHighlighter.java" startLine="201" startPosition="50" endLine="202" endPosition="43" />
-    <scopeInfo nodeId="8308671070660563008" fileName="TreeHighlighter.java" startLine="204" startPosition="19" endLine="205" endPosition="51" />
-    <scopeInfo nodeId="4653713283496888241" fileName="TreeHighlighter.java" startLine="216" startPosition="73" endLine="217" endPosition="110" />
-    <scopeInfo nodeId="1162831315436727890" fileName="TreeHighlighter.java" startLine="229" startPosition="63" endLine="230" endPosition="43" />
-    <scopeInfo nodeId="4036854704706502326" fileName="TreeHighlighter.java" startLine="231" startPosition="90" endLine="232" endPosition="64" />
-    <scopeInfo nodeId="4653713283496900718" fileName="TreeHighlighter.java" startLine="236" startPosition="18" endLine="237" endPosition="47" />
-    <scopeInfo nodeId="3201398707754975490" fileName="TreeHighlighter.java" startLine="253" startPosition="12" endLine="254" endPosition="18" />
-    <scopeInfo nodeId="9200516641177032580" fileName="TreeHighlighter.java" startLine="271" startPosition="63" endLine="272" endPosition="25" />
-    <scopeInfo nodeId="9200516641177032572" fileName="TreeHighlighter.java" startLine="275" startPosition="65" endLine="276" endPosition="27" />
-    <scopeInfo nodeId="7014360199878017520" fileName="TreeHighlighter.java" startLine="282" startPosition="50" endLine="283" endPosition="90" />
-    <scopeInfo nodeId="4653713283496953832" fileName="TreeHighlighter.java" startLine="291" startPosition="54" endLine="292" endPosition="48" />
-    <scopeInfo nodeId="9181287675440482544" fileName="TreeHighlighter.java" startLine="303" startPosition="24" endLine="304" endPosition="85" />
-    <scopeInfo nodeId="17187394613279837" fileName="TreeHighlighter.java" startLine="313" startPosition="46" endLine="314" endPosition="52" />
-    <scopeInfo nodeId="2105471615617493108" fileName="TreeHighlighter.java" startLine="340" startPosition="43" endLine="341" endPosition="30" />
-    <scopeInfo nodeId="4653713283496900696" fileName="TreeHighlighter.java" startLine="238" startPosition="14" endLine="240" endPosition="60" />
-    <scopeInfo nodeId="9200516641177032550" fileName="TreeHighlighter.java" startLine="267" startPosition="67" endLine="269" endPosition="5" />
-    <scopeInfo nodeId="9200516641177032596" fileName="TreeHighlighter.java" startLine="287" startPosition="80" endLine="289" endPosition="5" />
-    <scopeInfo nodeId="17187394613279097" fileName="TreeHighlighter.java" startLine="296" startPosition="68" endLine="298" endPosition="5" />
-    <scopeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="323" startPosition="55" endLine="325" endPosition="5" />
-    <scopeInfo nodeId="2105471615617474070" fileName="TreeHighlighter.java" startLine="333" startPosition="87" endLine="335" endPosition="39" />
-    <scopeInfo nodeId="4653713283496907186" fileName="TreeHighlighter.java" startLine="112" startPosition="23" endLine="115" endPosition="5">
+    <nodeInfo nodeId="9200516641177001205" fileName="TreeHighlighter.java" startLine="51" startPosition="58" endLine="52" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="4653713283496888201" fileName="TreeHighlighter.java" startLine="53" startPosition="0" endLine="54" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeMessages" />
+    <nodeInfo nodeId="4653713283496952731" fileName="TreeHighlighter.java" startLine="54" startPosition="116" endLine="55" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistry" />
+    <nodeInfo nodeId="4653713283496948082" fileName="TreeHighlighter.java" startLine="55" startPosition="47" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCommandQueue" />
+    <nodeInfo nodeId="9200516641177060998" fileName="TreeHighlighter.java" startLine="56" startPosition="44" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMap" />
+    <nodeInfo nodeId="9200516641177001211" fileName="TreeHighlighter.java" startLine="57" startPosition="46" endLine="58" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="9200516641177001215" fileName="TreeHighlighter.java" startLine="58" startPosition="25" endLine="59" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureExtractor" />
+    <nodeInfo nodeId="9200516641177032538" fileName="TreeHighlighter.java" startLine="59" startPosition="54" endLine="60" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
+    <nodeInfo nodeId="9200516641177032542" fileName="TreeHighlighter.java" startLine="60" startPosition="32" endLine="61" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTreeNodeListener" />
+    <nodeInfo nodeId="9200516641177032666" fileName="TreeHighlighter.java" startLine="61" startPosition="107" endLine="62" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureListener" />
+    <nodeInfo nodeId="9200516641177061037" fileName="TreeHighlighter.java" startLine="62" startPosition="122" endLine="63" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFeatureToNodes" />
+    <nodeInfo nodeId="583280731372885603" fileName="TreeHighlighter.java" startLine="63" startPosition="103" endLine="64" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileStatusListener" />
+    <nodeInfo nodeId="2105471615617493117" fileName="TreeHighlighter.java" startLine="64" startPosition="113" endLine="65" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGlobalModelListener" />
+    <nodeInfo nodeId="4653713283496952736" fileName="TreeHighlighter.java" startLine="67" startPosition="240" endLine="68" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496948091" fileName="TreeHighlighter.java" startLine="68" startPosition="26" endLine="69" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641177061003" fileName="TreeHighlighter.java" startLine="69" startPosition="48" endLine="70" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641177001238" fileName="TreeHighlighter.java" startLine="70" startPosition="45" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641177001229" fileName="TreeHighlighter.java" startLine="71" startPosition="18" endLine="72" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617493122" fileName="TreeHighlighter.java" startLine="73" startPosition="37" endLine="74" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641177032641" fileName="TreeHighlighter.java" startLine="79" startPosition="24" endLine="80" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9200516641177032650" fileName="TreeHighlighter.java" startLine="81" startPosition="5" endLine="82" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617503030" fileName="TreeHighlighter.java" startLine="82" startPosition="25" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9200516641177061010" fileName="TreeHighlighter.java" startLine="83" startPosition="0" endLine="84" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641177032674" fileName="TreeHighlighter.java" startLine="84" startPosition="41" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="583280731372887578" fileName="TreeHighlighter.java" startLine="85" startPosition="51" endLine="86" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617502996" fileName="TreeHighlighter.java" startLine="87" startPosition="40" endLine="88" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617503031" fileName="TreeHighlighter.java" startLine="89" startPosition="5" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4653713283496907220" fileName="TreeHighlighter.java" startLine="92" startPosition="25" endLine="93" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641177032656" fileName="TreeHighlighter.java" startLine="99" startPosition="27" endLine="100" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9200516641177032659" fileName="TreeHighlighter.java" startLine="101" startPosition="5" endLine="102" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617503029" fileName="TreeHighlighter.java" startLine="102" startPosition="26" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2105471615617503021" fileName="TreeHighlighter.java" startLine="104" startPosition="40" endLine="105" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="583280731372887829" fileName="TreeHighlighter.java" startLine="106" startPosition="5" endLine="107" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641177051128" fileName="TreeHighlighter.java" startLine="107" startPosition="106" endLine="108" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9200516641177061023" fileName="TreeHighlighter.java" startLine="108" startPosition="54" endLine="109" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496907182" fileName="TreeHighlighter.java" startLine="112" startPosition="67" endLine="113" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496907191" fileName="TreeHighlighter.java" startLine="114" startPosition="59" endLine="115" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496882516" fileName="TreeHighlighter.java" startLine="119" startPosition="62" endLine="120" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4653713283496882534" fileName="TreeHighlighter.java" startLine="122" startPosition="39" endLine="123" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5008832173035887196" fileName="TreeHighlighter.java" startLine="129" startPosition="47" endLine="130" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4653713283496925942" fileName="TreeHighlighter.java" startLine="131" startPosition="67" endLine="132" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496925953" fileName="TreeHighlighter.java" startLine="142" startPosition="58" endLine="143" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4653713283496925962" fileName="TreeHighlighter.java" startLine="146" startPosition="59" endLine="147" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="149" startPosition="37" endLine="150" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496925968" fileName="TreeHighlighter.java" startLine="153" startPosition="7" endLine="154" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496925928" fileName="TreeHighlighter.java" startLine="158" startPosition="59" endLine="159" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496926007" fileName="TreeHighlighter.java" startLine="162" startPosition="85" endLine="163" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496952784" fileName="TreeHighlighter.java" startLine="163" startPosition="26" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4653713283496952786" fileName="TreeHighlighter.java" startLine="164" startPosition="0" endLine="165" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1162831315436755133" fileName="TreeHighlighter.java" startLine="166" startPosition="51" endLine="167" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4653713283496952768" fileName="TreeHighlighter.java" startLine="167" startPosition="68" endLine="168" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496952785" fileName="TreeHighlighter.java" startLine="168" startPosition="60" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4653713283496948116" fileName="TreeHighlighter.java" startLine="169" startPosition="0" endLine="170" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4653713283496948125" fileName="TreeHighlighter.java" startLine="171" startPosition="27" endLine="172" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496948137" fileName="TreeHighlighter.java" startLine="174" startPosition="27" endLine="175" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496948148" fileName="TreeHighlighter.java" startLine="176" startPosition="59" endLine="177" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6005884031659331464" fileName="TreeHighlighter.java" startLine="178" startPosition="51" endLine="179" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3201398707754975288" fileName="TreeHighlighter.java" startLine="180" startPosition="30" endLine="181" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496948037" fileName="TreeHighlighter.java" startLine="188" startPosition="95" endLine="189" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8308671070660563032" fileName="TreeHighlighter.java" startLine="196" startPosition="41" endLine="197" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8308671070660562986" fileName="TreeHighlighter.java" startLine="197" startPosition="38" endLine="198" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8308671070660563044" fileName="TreeHighlighter.java" startLine="202" startPosition="50" endLine="203" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8308671070660563052" fileName="TreeHighlighter.java" startLine="205" startPosition="19" endLine="206" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496888268" fileName="TreeHighlighter.java" startLine="217" startPosition="73" endLine="218" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496888252" fileName="TreeHighlighter.java" startLine="219" startPosition="5" endLine="220" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4036854704706502310" fileName="TreeHighlighter.java" startLine="227" startPosition="51" endLine="228" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1162831315436727903" fileName="TreeHighlighter.java" startLine="228" startPosition="52" endLine="229" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1162831315436755122" fileName="TreeHighlighter.java" startLine="230" startPosition="63" endLine="231" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4036854704706502327" fileName="TreeHighlighter.java" startLine="232" startPosition="90" endLine="233" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4653713283496900711" fileName="TreeHighlighter.java" startLine="235" startPosition="9" endLine="236" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4653713283496900719" fileName="TreeHighlighter.java" startLine="237" startPosition="18" endLine="238" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4653713283496900727" fileName="TreeHighlighter.java" startLine="239" startPosition="14" endLine="240" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4653713283496900735" fileName="TreeHighlighter.java" startLine="240" startPosition="21" endLine="241" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3201398707754975388" fileName="TreeHighlighter.java" startLine="246" startPosition="70" endLine="247" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3089989024970165050" fileName="TreeHighlighter.java" startLine="248" startPosition="48" endLine="249" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3201398707754975422" fileName="TreeHighlighter.java" startLine="254" startPosition="12" endLine="255" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3201398707754975447" fileName="TreeHighlighter.java" startLine="260" startPosition="111" endLine="261" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4653713283496925988" fileName="TreeHighlighter.java" startLine="272" startPosition="63" endLine="273" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496948064" fileName="TreeHighlighter.java" startLine="276" startPosition="65" endLine="277" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="391123256063806040" fileName="TreeHighlighter.java" startLine="283" startPosition="50" endLine="284" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496953833" fileName="TreeHighlighter.java" startLine="292" startPosition="54" endLine="293" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="17187394613279769" fileName="TreeHighlighter.java" startLine="301" startPosition="62" endLine="302" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="17187394613279782" fileName="TreeHighlighter.java" startLine="302" startPosition="51" endLine="303" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="17187394613279798" fileName="TreeHighlighter.java" startLine="304" startPosition="24" endLine="305" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="17187394613279843" fileName="TreeHighlighter.java" startLine="314" startPosition="46" endLine="315" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617474049" fileName="TreeHighlighter.java" startLine="329" startPosition="51" endLine="330" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105471615617474114" fileName="TreeHighlighter.java" startLine="330" startPosition="60" endLine="331" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2105471615617493075" fileName="TreeHighlighter.java" startLine="334" startPosition="87" endLine="335" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617493090" fileName="TreeHighlighter.java" startLine="335" startPosition="125" endLine="336" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617493111" fileName="TreeHighlighter.java" startLine="341" startPosition="43" endLine="342" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201398707754975489" fileName="TreeHighlighter.java" startLine="254" startPosition="10" endLine="256" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9200516641177032550" fileName="TreeHighlighter.java" startLine="268" startPosition="67" endLine="270" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTreeNodeListener#()V" />
+    <nodeInfo nodeId="9200516641177032596" fileName="TreeHighlighter.java" startLine="288" startPosition="80" endLine="290" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFeatureForestMapListener#()V" />
+    <nodeInfo nodeId="17187394613279097" fileName="TreeHighlighter.java" startLine="297" startPosition="68" endLine="299" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyFileStatusListener#()V" />
+    <nodeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="324" startPosition="55" endLine="326" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyModelListener#()V" />
+    <nodeInfo nodeId="2105471615617503006" fileName="TreeHighlighter.java" startLine="72" startPosition="42" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9200516641177032637" fileName="TreeHighlighter.java" startLine="78" startPosition="35" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2105471615617493129" fileName="TreeHighlighter.java" startLine="86" startPosition="103" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9200516641177032644" fileName="TreeHighlighter.java" startLine="98" startPosition="38" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2105471615617503019" fileName="TreeHighlighter.java" startLine="103" startPosition="0" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4653713283496907186" fileName="TreeHighlighter.java" startLine="113" startPosition="23" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5008832173035887165" fileName="TreeHighlighter.java" startLine="121" startPosition="26" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="5008832173035887178" fileName="TreeHighlighter.java" startLine="130" startPosition="65" endLine="133" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="148" startPosition="16" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="148" startPosition="16" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4653713283496948123" fileName="TreeHighlighter.java" startLine="170" startPosition="46" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6005884031659336324" fileName="TreeHighlighter.java" startLine="179" startPosition="65" endLine="182" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4653713283496948026" fileName="TreeHighlighter.java" startLine="187" startPosition="61" endLine="190" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4653713283496888239" fileName="TreeHighlighter.java" startLine="216" startPosition="66" endLine="219" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="279" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeUpdated#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="9181287675440482543" fileName="TreeHighlighter.java" startLine="303" startPosition="78" endLine="306" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="17187394613279835" fileName="TreeHighlighter.java" startLine="313" startPosition="78" endLine="316" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="91" startPosition="56" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="9170101780449102282" fileName="TreeHighlighter.java" startLine="148" startPosition="14" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4653713283496925979" fileName="TreeHighlighter.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unhighlightNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="201" startPosition="124" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)Z" />
+    <nodeInfo nodeId="3201398707754975500" fileName="TreeHighlighter.java" startLine="249" startPosition="100" endLine="253" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7484618899643756422" fileName="TreeHighlighter.java" startLine="261" startPosition="72" endLine="265" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9200516641177032573" fileName="TreeHighlighter.java" startLine="271" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeAdded#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="9200516641177032565" fileName="TreeHighlighter.java" startLine="275" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="treeNodeRemoved#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="7014360199878017513" fileName="TreeHighlighter.java" startLine="282" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeTreeDisposed#(Ljetbrains/mps/ide/ui/MPSTree;)V" />
+    <nodeInfo nodeId="4653713283496953827" fileName="TreeHighlighter.java" startLine="291" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="featureStateChanged#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="2105471615617474066" fileName="TreeHighlighter.java" startLine="333" startPosition="74" endLine="337" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="340" startPosition="85" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="4653713283496907210" fileName="TreeHighlighter.java" startLine="90" startPosition="0" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1162831315436727889" fileName="TreeHighlighter.java" startLine="229" startPosition="80" endLine="234" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="17187394613279820" fileName="TreeHighlighter.java" startLine="312" startPosition="43" endLine="317" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2105471615617493100" fileName="TreeHighlighter.java" startLine="339" startPosition="7" endLine="344" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5008832173035887173" fileName="TreeHighlighter.java" startLine="128" startPosition="31" endLine="134" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="4653713283496948011" fileName="TreeHighlighter.java" startLine="186" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightFeature#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="2105471615617474060" fileName="TreeHighlighter.java" startLine="332" startPosition="39" endLine="338" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="111" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerNodeRecursively#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="9170101780449102244" fileName="TreeHighlighter.java" startLine="145" startPosition="39" endLine="152" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8308671070660563006" fileName="TreeHighlighter.java" startLine="200" startPosition="70" endLine="207" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="17187394613279831" fileName="TreeHighlighter.java" startLine="311" startPosition="27" endLine="318" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="4653713283496888231" fileName="TreeHighlighter.java" startLine="214" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Lcom/intellij/openapi/vcs/FileStatus;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
+    <nodeInfo nodeId="17187394613279103" fileName="TreeHighlighter.java" startLine="300" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusChanged#(Lcom/intellij/openapi/vfs/VirtualFile;)V" />
+    <nodeInfo nodeId="2105471615617474057" fileName="TreeHighlighter.java" startLine="331" startPosition="96" endLine="339" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="127" startPosition="63" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5008832173035887169" fileName="TreeHighlighter.java" startLine="144" startPosition="26" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="8308671070660562945" fileName="TreeHighlighter.java" startLine="199" startPosition="89" endLine="208" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1162831315436744258" fileName="TreeHighlighter.java" startLine="226" startPosition="15" endLine="235" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3201398707754975399" fileName="TreeHighlighter.java" startLine="247" startPosition="110" endLine="256" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3201398707754975430" fileName="TreeHighlighter.java" startLine="258" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFileStatus#(Ljetbrains/mps/smodel/DefaultSModelDescriptor;Lcom/intellij/openapi/project/Project;)Lcom/intellij/openapi/vcs/FileStatus;" />
+    <nodeInfo nodeId="9200516641177001222" fileName="TreeHighlighter.java" startLine="66" startPosition="0" endLine="76" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TreeHighlighter#(Ljetbrains/mps/vcs/changesmanager/CurrentDifferenceRegistry;Ljetbrains/mps/vcs/changesmanager/tree/FeatureForestMapSupport;Ljetbrains/mps/ide/ui/MPSTree;Ljetbrains/mps/vcs/changesmanager/tree/TreeNodeFeatureExtractor;Z)V" />
+    <nodeInfo nodeId="4653713283496948158" fileName="TreeHighlighter.java" startLine="126" startPosition="27" endLine="136" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496948135" fileName="TreeHighlighter.java" startLine="173" startPosition="7" endLine="183" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="310" startPosition="59" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8308671070660562935" fileName="TreeHighlighter.java" startLine="198" startPosition="65" endLine="209" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="756246431460598812" fileName="TreeHighlighter.java" startLine="309" startPosition="39" endLine="320" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4653713283496925960" fileName="TreeHighlighter.java" startLine="143" startPosition="58" endLine="155" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="125" startPosition="45" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="9200516641177032534" fileName="TreeHighlighter.java" startLine="97" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="4653713283496948107" fileName="TreeHighlighter.java" startLine="124" startPosition="7" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201398707754975305" fileName="TreeHighlighter.java" startLine="244" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Ljetbrains/mps/vcs/changesmanager/tree/features/ModelFeature;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
+    <nodeInfo nodeId="17187394613279110" fileName="TreeHighlighter.java" startLine="308" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fileStatusesChanged#()V" />
+    <nodeInfo nodeId="8308671070660562609" fileName="TreeHighlighter.java" startLine="195" startPosition="25" endLine="210" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="4653713283496925947" fileName="TreeHighlighter.java" startLine="141" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="194" startPosition="57" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="4653713283496900694" fileName="TreeHighlighter.java" startLine="224" startPosition="118" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="4653713283496882525" fileName="TreeHighlighter.java" startLine="120" startPosition="64" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4653713283496952799" fileName="TreeHighlighter.java" startLine="165" startPosition="108" endLine="184" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8308671070660562606" fileName="TreeHighlighter.java" startLine="193" startPosition="81" endLine="212" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2105471615617473970" fileName="TreeHighlighter.java" startLine="327" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModelDisposed#(Ljetbrains/mps/smodel/SModel;)V" />
+    <nodeInfo nodeId="9200516641177032530" fileName="TreeHighlighter.java" startLine="77" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="8308671070660562599" fileName="TreeHighlighter.java" startLine="192" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightFeatureAndDescendants#(Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <nodeInfo nodeId="4653713283496900660" fileName="TreeHighlighter.java" startLine="222" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMessage#(Ljetbrains/mps/vcs/diff/changes/ModelChange;Ljetbrains/mps/smodel/DefaultSModelDescriptor;)Ljetbrains/mps/ide/ui/treeMessages/TreeMessage;" />
+    <nodeInfo nodeId="4653713283496878870" fileName="TreeHighlighter.java" startLine="118" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;)V" />
+    <nodeInfo nodeId="4653713283496925998" fileName="TreeHighlighter.java" startLine="161" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rehighlightNode#(Ljetbrains/mps/ide/ui/MPSTreeNode;Ljetbrains/mps/vcs/changesmanager/tree/features/Feature;)V" />
+    <scopeInfo nodeId="9200516641177032553" fileName="TreeHighlighter.java" startLine="269" startPosition="33" endLine="269" endPosition="33" />
+    <scopeInfo nodeId="9200516641177032564" fileName="TreeHighlighter.java" startLine="280" startPosition="65" endLine="280" endPosition="65" />
+    <scopeInfo nodeId="9200516641177032599" fileName="TreeHighlighter.java" startLine="289" startPosition="41" endLine="289" endPosition="41" />
+    <scopeInfo nodeId="17187394613279100" fileName="TreeHighlighter.java" startLine="298" startPosition="35" endLine="298" endPosition="35" />
+    <scopeInfo nodeId="2105471615617473967" fileName="TreeHighlighter.java" startLine="325" startPosition="30" endLine="325" endPosition="30" />
+    <scopeInfo nodeId="2105471615617503007" fileName="TreeHighlighter.java" startLine="73" startPosition="37" endLine="74" endPosition="68" />
+    <scopeInfo nodeId="9200516641177032639" fileName="TreeHighlighter.java" startLine="79" startPosition="24" endLine="80" endPosition="13" />
+    <scopeInfo nodeId="2105471615617493130" fileName="TreeHighlighter.java" startLine="87" startPosition="40" endLine="88" endPosition="92" />
+    <scopeInfo nodeId="4653713283496907219" fileName="TreeHighlighter.java" startLine="92" startPosition="25" endLine="93" endPosition="54" />
+    <scopeInfo nodeId="9200516641177032646" fileName="TreeHighlighter.java" startLine="99" startPosition="27" endLine="100" endPosition="13" />
+    <scopeInfo nodeId="2105471615617503020" fileName="TreeHighlighter.java" startLine="104" startPosition="40" endLine="105" endPosition="92" />
+    <scopeInfo nodeId="4653713283496907189" fileName="TreeHighlighter.java" startLine="114" startPosition="59" endLine="115" endPosition="37" />
+    <scopeInfo nodeId="5008832173035887167" fileName="TreeHighlighter.java" startLine="122" startPosition="39" endLine="123" endPosition="49" />
+    <scopeInfo nodeId="5008832173035887179" fileName="TreeHighlighter.java" startLine="131" startPosition="67" endLine="132" endPosition="49" />
+    <scopeInfo nodeId="9170101780449102281" fileName="TreeHighlighter.java" startLine="146" startPosition="59" endLine="147" endPosition="54" />
+    <scopeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="149" startPosition="37" endLine="150" endPosition="123" />
+    <scopeInfo nodeId="4653713283496925982" fileName="TreeHighlighter.java" startLine="158" startPosition="59" endLine="159" endPosition="40" />
+    <scopeInfo nodeId="4653713283496948124" fileName="TreeHighlighter.java" startLine="171" startPosition="27" endLine="172" endPosition="54" />
+    <scopeInfo nodeId="4653713283496948136" fileName="TreeHighlighter.java" startLine="174" startPosition="27" endLine="175" endPosition="53" />
+    <scopeInfo nodeId="4653713283496948147" fileName="TreeHighlighter.java" startLine="176" startPosition="59" endLine="177" endPosition="61" />
+    <scopeInfo nodeId="6005884031659336325" fileName="TreeHighlighter.java" startLine="180" startPosition="30" endLine="181" endPosition="39" />
+    <scopeInfo nodeId="4653713283496948029" fileName="TreeHighlighter.java" startLine="188" startPosition="95" endLine="189" endPosition="37" />
+    <scopeInfo nodeId="8308671070660563041" fileName="TreeHighlighter.java" startLine="202" startPosition="50" endLine="203" endPosition="43" />
+    <scopeInfo nodeId="8308671070660563008" fileName="TreeHighlighter.java" startLine="205" startPosition="19" endLine="206" endPosition="51" />
+    <scopeInfo nodeId="4653713283496888241" fileName="TreeHighlighter.java" startLine="217" startPosition="73" endLine="218" endPosition="110" />
+    <scopeInfo nodeId="1162831315436727890" fileName="TreeHighlighter.java" startLine="230" startPosition="63" endLine="231" endPosition="43" />
+    <scopeInfo nodeId="4036854704706502326" fileName="TreeHighlighter.java" startLine="232" startPosition="90" endLine="233" endPosition="64" />
+    <scopeInfo nodeId="4653713283496900718" fileName="TreeHighlighter.java" startLine="237" startPosition="18" endLine="238" endPosition="47" />
+    <scopeInfo nodeId="3201398707754975490" fileName="TreeHighlighter.java" startLine="254" startPosition="12" endLine="255" endPosition="18" />
+    <scopeInfo nodeId="9200516641177032580" fileName="TreeHighlighter.java" startLine="272" startPosition="63" endLine="273" endPosition="25" />
+    <scopeInfo nodeId="9200516641177032572" fileName="TreeHighlighter.java" startLine="276" startPosition="65" endLine="277" endPosition="27" />
+    <scopeInfo nodeId="7014360199878017520" fileName="TreeHighlighter.java" startLine="283" startPosition="50" endLine="284" endPosition="90" />
+    <scopeInfo nodeId="4653713283496953832" fileName="TreeHighlighter.java" startLine="292" startPosition="54" endLine="293" endPosition="48" />
+    <scopeInfo nodeId="9181287675440482544" fileName="TreeHighlighter.java" startLine="304" startPosition="24" endLine="305" endPosition="85" />
+    <scopeInfo nodeId="17187394613279837" fileName="TreeHighlighter.java" startLine="314" startPosition="46" endLine="315" endPosition="52" />
+    <scopeInfo nodeId="2105471615617493108" fileName="TreeHighlighter.java" startLine="341" startPosition="43" endLine="342" endPosition="30" />
+    <scopeInfo nodeId="4653713283496900696" fileName="TreeHighlighter.java" startLine="239" startPosition="14" endLine="241" endPosition="60" />
+    <scopeInfo nodeId="9200516641177032550" fileName="TreeHighlighter.java" startLine="268" startPosition="67" endLine="270" endPosition="5" />
+    <scopeInfo nodeId="9200516641177032596" fileName="TreeHighlighter.java" startLine="288" startPosition="80" endLine="290" endPosition="5" />
+    <scopeInfo nodeId="17187394613279097" fileName="TreeHighlighter.java" startLine="297" startPosition="68" endLine="299" endPosition="5" />
+    <scopeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="324" startPosition="55" endLine="326" endPosition="5" />
+    <scopeInfo nodeId="2105471615617474070" fileName="TreeHighlighter.java" startLine="334" startPosition="87" endLine="336" endPosition="39" />
+    <scopeInfo nodeId="4653713283496907186" fileName="TreeHighlighter.java" startLine="113" startPosition="23" endLine="116" endPosition="5">
       <varInfo nodeId="4653713283496907186" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="9170101780449102245" fileName="TreeHighlighter.java" startLine="147" startPosition="16" endLine="150" endPosition="11" />
-    <scopeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="147" startPosition="16" endLine="150" endPosition="11" />
-    <scopeInfo nodeId="4653713283496948018" fileName="TreeHighlighter.java" startLine="186" startPosition="61" endLine="189" endPosition="5" />
-    <scopeInfo nodeId="4653713283496948026" fileName="TreeHighlighter.java" startLine="186" startPosition="61" endLine="189" endPosition="5">
+    <scopeInfo nodeId="9170101780449102245" fileName="TreeHighlighter.java" startLine="148" startPosition="16" endLine="151" endPosition="11" />
+    <scopeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="148" startPosition="16" endLine="151" endPosition="11" />
+    <scopeInfo nodeId="4653713283496948018" fileName="TreeHighlighter.java" startLine="187" startPosition="61" endLine="190" endPosition="5" />
+    <scopeInfo nodeId="4653713283496948026" fileName="TreeHighlighter.java" startLine="187" startPosition="61" endLine="190" endPosition="5">
       <varInfo nodeId="4653713283496948026" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="278" startPosition="0" endLine="281" endPosition="0">
+    <scopeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="279" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="9200516641177032560" varName="node" />
       <varInfo nodeId="9200516641177032562" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="17187394613279823" fileName="TreeHighlighter.java" startLine="312" startPosition="78" endLine="315" endPosition="15" />
-    <scopeInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="90" startPosition="56" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="4653713283496907178" fileName="TreeHighlighter.java" startLine="111" startPosition="67" endLine="115" endPosition="5" />
-    <scopeInfo nodeId="5008832173035887175" fileName="TreeHighlighter.java" startLine="128" startPosition="47" endLine="132" endPosition="17" />
-    <scopeInfo nodeId="4653713283496925979" fileName="TreeHighlighter.java" startLine="156" startPosition="0" endLine="160" endPosition="0">
+    <scopeInfo nodeId="17187394613279823" fileName="TreeHighlighter.java" startLine="313" startPosition="78" endLine="316" endPosition="15" />
+    <scopeInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="91" startPosition="56" endLine="95" endPosition="0" />
+    <scopeInfo nodeId="4653713283496907178" fileName="TreeHighlighter.java" startLine="112" startPosition="67" endLine="116" endPosition="5" />
+    <scopeInfo nodeId="5008832173035887175" fileName="TreeHighlighter.java" startLine="129" startPosition="47" endLine="133" endPosition="17" />
+    <scopeInfo nodeId="4653713283496925979" fileName="TreeHighlighter.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
       <varInfo nodeId="4653713283496925985" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3201398707754975282" fileName="TreeHighlighter.java" startLine="177" startPosition="51" endLine="181" endPosition="9">
+    <scopeInfo nodeId="3201398707754975282" fileName="TreeHighlighter.java" startLine="178" startPosition="51" endLine="182" endPosition="9">
       <varInfo nodeId="6005884031659331465" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="200" startPosition="124" endLine="204" endPosition="0">
+    <scopeInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="201" startPosition="124" endLine="205" endPosition="0">
       <varInfo nodeId="8308671070660563040" varName="a" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496888234" fileName="TreeHighlighter.java" startLine="215" startPosition="66" endLine="219" endPosition="63" />
-    <scopeInfo nodeId="9200516641177032573" fileName="TreeHighlighter.java" startLine="270" startPosition="0" endLine="274" endPosition="0">
+    <scopeInfo nodeId="4653713283496888234" fileName="TreeHighlighter.java" startLine="216" startPosition="66" endLine="220" endPosition="63" />
+    <scopeInfo nodeId="9200516641177032573" fileName="TreeHighlighter.java" startLine="271" startPosition="0" endLine="275" endPosition="0">
       <varInfo nodeId="9200516641177032576" varName="node" />
       <varInfo nodeId="9200516641177032578" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641177032565" fileName="TreeHighlighter.java" startLine="274" startPosition="0" endLine="278" endPosition="0">
+    <scopeInfo nodeId="9200516641177032565" fileName="TreeHighlighter.java" startLine="275" startPosition="0" endLine="279" endPosition="0">
       <varInfo nodeId="9200516641177032568" varName="node" />
       <varInfo nodeId="9200516641177032570" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="7014360199878017513" fileName="TreeHighlighter.java" startLine="281" startPosition="0" endLine="285" endPosition="0">
+    <scopeInfo nodeId="7014360199878017513" fileName="TreeHighlighter.java" startLine="282" startPosition="0" endLine="286" endPosition="0">
       <varInfo nodeId="7014360199878017518" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496953827" fileName="TreeHighlighter.java" startLine="290" startPosition="0" endLine="294" endPosition="0">
+    <scopeInfo nodeId="4653713283496953827" fileName="TreeHighlighter.java" startLine="291" startPosition="0" endLine="295" endPosition="0">
       <varInfo nodeId="4653713283496953828" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="2105471615617474065" fileName="TreeHighlighter.java" startLine="332" startPosition="74" endLine="336" endPosition="11" />
-    <scopeInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="339" startPosition="85" endLine="343" endPosition="0">
+    <scopeInfo nodeId="2105471615617474065" fileName="TreeHighlighter.java" startLine="333" startPosition="74" endLine="337" endPosition="11" />
+    <scopeInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="340" startPosition="85" endLine="344" endPosition="0">
       <varInfo nodeId="2105471615617493107" varName="tn" />
     </scopeInfo>
-    <scopeInfo nodeId="3201398707754975400" fileName="TreeHighlighter.java" startLine="247" startPosition="49" endLine="252" endPosition="8">
+    <scopeInfo nodeId="3201398707754975400" fileName="TreeHighlighter.java" startLine="248" startPosition="48" endLine="253" endPosition="8">
       <varInfo nodeId="3089989024970165051" varName="status" />
     </scopeInfo>
-    <scopeInfo nodeId="3201398707754975433" fileName="TreeHighlighter.java" startLine="259" startPosition="113" endLine="264" endPosition="6">
+    <scopeInfo nodeId="3201398707754975433" fileName="TreeHighlighter.java" startLine="260" startPosition="111" endLine="265" endPosition="6">
       <varInfo nodeId="3201398707754975448" varName="vf" />
     </scopeInfo>
-    <scopeInfo nodeId="17187394613279109" fileName="TreeHighlighter.java" startLine="300" startPosition="62" endLine="305" endPosition="7">
+    <scopeInfo nodeId="17187394613279109" fileName="TreeHighlighter.java" startLine="301" startPosition="62" endLine="306" endPosition="7">
       <varInfo nodeId="17187394613279783" varName="emd" />
       <varInfo nodeId="17187394613279770" varName="ifile" />
     </scopeInfo>
-    <scopeInfo nodeId="17187394613279820" fileName="TreeHighlighter.java" startLine="311" startPosition="43" endLine="316" endPosition="13">
+    <scopeInfo nodeId="17187394613279820" fileName="TreeHighlighter.java" startLine="312" startPosition="43" endLine="317" endPosition="13">
       <varInfo nodeId="17187394613279820" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="17187394613279833" fileName="TreeHighlighter.java" startLine="311" startPosition="43" endLine="316" endPosition="13" />
-    <scopeInfo nodeId="4653713283496948160" fileName="TreeHighlighter.java" startLine="127" startPosition="31" endLine="133" endPosition="15" />
-    <scopeInfo nodeId="4653713283496948011" fileName="TreeHighlighter.java" startLine="185" startPosition="0" endLine="191" endPosition="0">
+    <scopeInfo nodeId="17187394613279833" fileName="TreeHighlighter.java" startLine="312" startPosition="43" endLine="317" endPosition="13" />
+    <scopeInfo nodeId="4653713283496948160" fileName="TreeHighlighter.java" startLine="128" startPosition="31" endLine="134" endPosition="15" />
+    <scopeInfo nodeId="4653713283496948011" fileName="TreeHighlighter.java" startLine="186" startPosition="0" endLine="192" endPosition="0">
       <varInfo nodeId="4653713283496948014" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="2105471615617474059" fileName="TreeHighlighter.java" startLine="331" startPosition="39" endLine="337" endPosition="9" />
-    <scopeInfo nodeId="2105471615617474060" fileName="TreeHighlighter.java" startLine="331" startPosition="39" endLine="337" endPosition="9">
+    <scopeInfo nodeId="2105471615617474059" fileName="TreeHighlighter.java" startLine="332" startPosition="39" endLine="338" endPosition="9" />
+    <scopeInfo nodeId="2105471615617474060" fileName="TreeHighlighter.java" startLine="332" startPosition="39" endLine="338" endPosition="9">
       <varInfo nodeId="2105471615617474060" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="110" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="111" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="4653713283496907180" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5008832173035887171" fileName="TreeHighlighter.java" startLine="144" startPosition="39" endLine="151" endPosition="9" />
-    <scopeInfo nodeId="8308671070660562947" fileName="TreeHighlighter.java" startLine="199" startPosition="70" endLine="206" endPosition="15" />
-    <scopeInfo nodeId="1162831315436744260" fileName="TreeHighlighter.java" startLine="226" startPosition="51" endLine="233" endPosition="11">
+    <scopeInfo nodeId="5008832173035887171" fileName="TreeHighlighter.java" startLine="145" startPosition="39" endLine="152" endPosition="9" />
+    <scopeInfo nodeId="8308671070660562947" fileName="TreeHighlighter.java" startLine="200" startPosition="70" endLine="207" endPosition="15" />
+    <scopeInfo nodeId="1162831315436744260" fileName="TreeHighlighter.java" startLine="227" startPosition="51" endLine="234" endPosition="11">
       <varInfo nodeId="1162831315436727904" varName="modelStatus" />
       <varInfo nodeId="4036854704706502311" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="756246431460598814" fileName="TreeHighlighter.java" startLine="310" startPosition="27" endLine="317" endPosition="11" />
-    <scopeInfo nodeId="9200516641177001226" fileName="TreeHighlighter.java" startLine="66" startPosition="240" endLine="74" endPosition="5" />
-    <scopeInfo nodeId="4653713283496888231" fileName="TreeHighlighter.java" startLine="213" startPosition="0" endLine="221" endPosition="0">
+    <scopeInfo nodeId="756246431460598814" fileName="TreeHighlighter.java" startLine="311" startPosition="27" endLine="318" endPosition="11" />
+    <scopeInfo nodeId="9200516641177001226" fileName="TreeHighlighter.java" startLine="67" startPosition="240" endLine="75" endPosition="5" />
+    <scopeInfo nodeId="4653713283496888231" fileName="TreeHighlighter.java" startLine="214" startPosition="0" endLine="222" endPosition="0">
       <varInfo nodeId="4653713283496888237" varName="fileStatus" />
     </scopeInfo>
-    <scopeInfo nodeId="17187394613279103" fileName="TreeHighlighter.java" startLine="299" startPosition="0" endLine="307" endPosition="0">
+    <scopeInfo nodeId="17187394613279103" fileName="TreeHighlighter.java" startLine="300" startPosition="0" endLine="308" endPosition="0">
       <varInfo nodeId="17187394613279106" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="126" startPosition="63" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="8308671070660562938" fileName="TreeHighlighter.java" startLine="198" startPosition="89" endLine="207" endPosition="13" />
-    <scopeInfo nodeId="3201398707754975430" fileName="TreeHighlighter.java" startLine="257" startPosition="0" endLine="266" endPosition="0">
-      <varInfo nodeId="3201398707754975437" varName="emd" />
+    <scopeInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="127" startPosition="63" endLine="136" endPosition="0" />
+    <scopeInfo nodeId="8308671070660562938" fileName="TreeHighlighter.java" startLine="199" startPosition="89" endLine="208" endPosition="13" />
+    <scopeInfo nodeId="3201398707754975430" fileName="TreeHighlighter.java" startLine="258" startPosition="0" endLine="267" endPosition="0">
+      <varInfo nodeId="3201398707754975437" varName="ed" />
       <varInfo nodeId="3201398707754975513" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641177001222" fileName="TreeHighlighter.java" startLine="65" startPosition="0" endLine="75" endPosition="3">
+    <scopeInfo nodeId="9200516641177001222" fileName="TreeHighlighter.java" startLine="66" startPosition="0" endLine="76" endPosition="3">
       <varInfo nodeId="9200516641177001227" varName="featureExtractor" />
       <varInfo nodeId="9200516641177060994" varName="featureForestMapSupport" />
       <varInfo nodeId="4653713283496948086" varName="registry" />
       <varInfo nodeId="2105471615617493114" varName="removeNodesOnModelDisposal" />
       <varInfo nodeId="9200516641177001236" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496948115" fileName="TreeHighlighter.java" startLine="125" startPosition="27" endLine="135" endPosition="13" />
-    <scopeInfo nodeId="4653713283496925961" fileName="TreeHighlighter.java" startLine="143" startPosition="26" endLine="153" endPosition="28" />
-    <scopeInfo nodeId="4653713283496900708" fileName="TreeHighlighter.java" startLine="225" startPosition="15" endLine="235" endPosition="44" />
-    <scopeInfo nodeId="3201398707754975308" fileName="TreeHighlighter.java" startLine="245" startPosition="70" endLine="255" endPosition="5">
+    <scopeInfo nodeId="4653713283496948115" fileName="TreeHighlighter.java" startLine="126" startPosition="27" endLine="136" endPosition="13" />
+    <scopeInfo nodeId="4653713283496925961" fileName="TreeHighlighter.java" startLine="144" startPosition="26" endLine="154" endPosition="28" />
+    <scopeInfo nodeId="4653713283496900708" fileName="TreeHighlighter.java" startLine="226" startPosition="15" endLine="236" endPosition="44" />
+    <scopeInfo nodeId="3201398707754975308" fileName="TreeHighlighter.java" startLine="246" startPosition="70" endLine="256" endPosition="5">
       <varInfo nodeId="3201398707754975389" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="309" startPosition="59" endLine="319" endPosition="0" />
-    <scopeInfo nodeId="9200516641177032537" fileName="TreeHighlighter.java" startLine="97" startPosition="38" endLine="108" endPosition="44" />
-    <scopeInfo nodeId="8308671070660562935" fileName="TreeHighlighter.java" startLine="197" startPosition="65" endLine="208" endPosition="11">
+    <scopeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="310" startPosition="59" endLine="320" endPosition="0" />
+    <scopeInfo nodeId="9200516641177032537" fileName="TreeHighlighter.java" startLine="98" startPosition="38" endLine="109" endPosition="44" />
+    <scopeInfo nodeId="8308671070660562935" fileName="TreeHighlighter.java" startLine="198" startPosition="65" endLine="209" endPosition="11">
       <varInfo nodeId="8308671070660562935" varName="anotherFeature" />
     </scopeInfo>
-    <scopeInfo nodeId="17187394613279113" fileName="TreeHighlighter.java" startLine="308" startPosition="39" endLine="319" endPosition="9" />
-    <scopeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="124" startPosition="45" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="4653713283496925952" fileName="TreeHighlighter.java" startLine="141" startPosition="58" endLine="154" endPosition="5">
+    <scopeInfo nodeId="17187394613279113" fileName="TreeHighlighter.java" startLine="309" startPosition="39" endLine="320" endPosition="9" />
+    <scopeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="125" startPosition="45" endLine="138" endPosition="0" />
+    <scopeInfo nodeId="4653713283496925952" fileName="TreeHighlighter.java" startLine="142" startPosition="58" endLine="155" endPosition="5">
       <varInfo nodeId="4653713283496925954" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="8308671070660562611" fileName="TreeHighlighter.java" startLine="195" startPosition="41" endLine="208" endPosition="11">
+    <scopeInfo nodeId="8308671070660562611" fileName="TreeHighlighter.java" startLine="196" startPosition="41" endLine="209" endPosition="11">
       <varInfo nodeId="8308671070660562987" varName="modelRef" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641177032534" fileName="TreeHighlighter.java" startLine="96" startPosition="0" endLine="110" endPosition="0" />
-    <scopeInfo nodeId="3201398707754975305" fileName="TreeHighlighter.java" startLine="243" startPosition="0" endLine="257" endPosition="0">
+    <scopeInfo nodeId="9200516641177032534" fileName="TreeHighlighter.java" startLine="97" startPosition="0" endLine="111" endPosition="0" />
+    <scopeInfo nodeId="3201398707754975305" fileName="TreeHighlighter.java" startLine="244" startPosition="0" endLine="258" endPosition="0">
       <varInfo nodeId="3201398707754975365" varName="modelFeature" />
     </scopeInfo>
-    <scopeInfo nodeId="17187394613279110" fileName="TreeHighlighter.java" startLine="307" startPosition="0" endLine="321" endPosition="0" />
-    <scopeInfo nodeId="8308671070660562608" fileName="TreeHighlighter.java" startLine="194" startPosition="25" endLine="209" endPosition="9" />
-    <scopeInfo nodeId="2105471615617473975" fileName="TreeHighlighter.java" startLine="328" startPosition="51" endLine="343" endPosition="9">
+    <scopeInfo nodeId="17187394613279110" fileName="TreeHighlighter.java" startLine="308" startPosition="0" endLine="322" endPosition="0" />
+    <scopeInfo nodeId="8308671070660562608" fileName="TreeHighlighter.java" startLine="195" startPosition="25" endLine="210" endPosition="9" />
+    <scopeInfo nodeId="2105471615617473975" fileName="TreeHighlighter.java" startLine="329" startPosition="51" endLine="344" endPosition="9">
       <varInfo nodeId="2105471615617474050" varName="modelRef" />
       <varInfo nodeId="2105471615617474115" varName="obsoleteTreeNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496925947" fileName="TreeHighlighter.java" startLine="140" startPosition="0" endLine="156" endPosition="0">
+    <scopeInfo nodeId="4653713283496925947" fileName="TreeHighlighter.java" startLine="141" startPosition="0" endLine="157" endPosition="0">
       <varInfo nodeId="4653713283496925948" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641177032533" fileName="TreeHighlighter.java" startLine="77" startPosition="35" endLine="94" endPosition="7" />
-    <scopeInfo nodeId="4653713283496882526" fileName="TreeHighlighter.java" startLine="120" startPosition="26" endLine="137" endPosition="9" />
-    <scopeInfo nodeId="4653713283496952800" fileName="TreeHighlighter.java" startLine="165" startPosition="52" endLine="182" endPosition="7">
+    <scopeInfo nodeId="9200516641177032533" fileName="TreeHighlighter.java" startLine="78" startPosition="35" endLine="95" endPosition="7" />
+    <scopeInfo nodeId="4653713283496882526" fileName="TreeHighlighter.java" startLine="121" startPosition="26" endLine="138" endPosition="9" />
+    <scopeInfo nodeId="4653713283496952800" fileName="TreeHighlighter.java" startLine="166" startPosition="51" endLine="183" endPosition="7">
       <varInfo nodeId="4653713283496948117" varName="change" />
       <varInfo nodeId="1162831315436755134" varName="emd" />
     </scopeInfo>
-    <scopeInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="193" startPosition="57" endLine="211" endPosition="0" />
-    <scopeInfo nodeId="4653713283496900663" fileName="TreeHighlighter.java" startLine="223" startPosition="119" endLine="241" endPosition="5" />
-    <scopeInfo nodeId="8308671070660562605" fileName="TreeHighlighter.java" startLine="192" startPosition="81" endLine="211" endPosition="7" />
-    <scopeInfo nodeId="2105471615617473970" fileName="TreeHighlighter.java" startLine="326" startPosition="0" endLine="345" endPosition="0">
+    <scopeInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="194" startPosition="57" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="4653713283496900663" fileName="TreeHighlighter.java" startLine="224" startPosition="118" endLine="242" endPosition="5" />
+    <scopeInfo nodeId="8308671070660562605" fileName="TreeHighlighter.java" startLine="193" startPosition="81" endLine="212" endPosition="7" />
+    <scopeInfo nodeId="2105471615617473970" fileName="TreeHighlighter.java" startLine="327" startPosition="0" endLine="346" endPosition="0">
       <varInfo nodeId="2105471615617473973" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="9200516641177032530" fileName="TreeHighlighter.java" startLine="76" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="4653713283496878873" fileName="TreeHighlighter.java" startLine="118" startPosition="62" endLine="138" endPosition="5">
+    <scopeInfo nodeId="9200516641177032530" fileName="TreeHighlighter.java" startLine="77" startPosition="0" endLine="97" endPosition="0" />
+    <scopeInfo nodeId="4653713283496878873" fileName="TreeHighlighter.java" startLine="119" startPosition="62" endLine="139" endPosition="5">
       <varInfo nodeId="4653713283496882517" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496926001" fileName="TreeHighlighter.java" startLine="161" startPosition="85" endLine="183" endPosition="5">
+    <scopeInfo nodeId="4653713283496926001" fileName="TreeHighlighter.java" startLine="162" startPosition="85" endLine="184" endPosition="5">
       <varInfo nodeId="4653713283496952787" varName="model" />
     </scopeInfo>
-    <scopeInfo nodeId="8308671070660562599" fileName="TreeHighlighter.java" startLine="191" startPosition="0" endLine="213" endPosition="0">
+    <scopeInfo nodeId="8308671070660562599" fileName="TreeHighlighter.java" startLine="192" startPosition="0" endLine="214" endPosition="0">
       <varInfo nodeId="8308671070660562600" varName="feature" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496900660" fileName="TreeHighlighter.java" startLine="221" startPosition="0" endLine="243" endPosition="0">
+    <scopeInfo nodeId="4653713283496900660" fileName="TreeHighlighter.java" startLine="222" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="4653713283496900687" varName="modelChange" />
       <varInfo nodeId="1162831315436744254" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496878870" fileName="TreeHighlighter.java" startLine="117" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="4653713283496878870" fileName="TreeHighlighter.java" startLine="118" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="4653713283496878875" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4653713283496925998" fileName="TreeHighlighter.java" startLine="160" startPosition="0" endLine="185" endPosition="0">
+    <scopeInfo nodeId="4653713283496925998" fileName="TreeHighlighter.java" startLine="161" startPosition="0" endLine="186" endPosition="0">
       <varInfo nodeId="4653713283496926005" varName="feature" />
       <varInfo nodeId="4653713283496926003" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="9200516641177001205" fileName="TreeHighlighter.java" startLine="50" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" />
-    <unitInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="90" startPosition="44" endLine="94" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$1" />
-    <unitInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="339" startPosition="60" endLine="343" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$1" />
-    <unitInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="309" startPosition="47" endLine="319" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$1" />
-    <unitInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="124" startPosition="33" endLine="137" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$2" />
-    <unitInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="126" startPosition="51" endLine="135" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$3" />
-    <unitInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="193" startPosition="45" endLine="211" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$3" />
-    <unitInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="200" startPosition="99" endLine="204" endPosition="15" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$4" />
-    <unitInfo nodeId="9200516641177032594" fileName="TreeHighlighter.java" startLine="287" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyFeatureForestMapListener" />
-    <unitInfo nodeId="17187394613279095" fileName="TreeHighlighter.java" startLine="296" startPosition="0" endLine="322" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyFileStatusListener" />
-    <unitInfo nodeId="2105471615617473962" fileName="TreeHighlighter.java" startLine="323" startPosition="0" endLine="346" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyModelListener" />
-    <unitInfo nodeId="9200516641177032548" fileName="TreeHighlighter.java" startLine="267" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyTreeNodeListener" />
+    <unitInfo nodeId="9200516641177001205" fileName="TreeHighlighter.java" startLine="51" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" />
+    <unitInfo nodeId="4653713283496907218" fileName="TreeHighlighter.java" startLine="91" startPosition="44" endLine="95" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$1" />
+    <unitInfo nodeId="2105471615617493107" fileName="TreeHighlighter.java" startLine="340" startPosition="60" endLine="344" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$1" />
+    <unitInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="310" startPosition="47" endLine="320" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$1" />
+    <unitInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="125" startPosition="33" endLine="138" endPosition="7" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$2" />
+    <unitInfo nodeId="4653713283496948159" fileName="TreeHighlighter.java" startLine="127" startPosition="51" endLine="136" endPosition="11" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$3" />
+    <unitInfo nodeId="8308671070660562607" fileName="TreeHighlighter.java" startLine="194" startPosition="45" endLine="212" endPosition="5" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$3" />
+    <unitInfo nodeId="8308671070660563040" fileName="TreeHighlighter.java" startLine="201" startPosition="99" endLine="205" endPosition="15" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$4" />
+    <unitInfo nodeId="9200516641177032594" fileName="TreeHighlighter.java" startLine="288" startPosition="0" endLine="296" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyFeatureForestMapListener" />
+    <unitInfo nodeId="17187394613279095" fileName="TreeHighlighter.java" startLine="297" startPosition="0" endLine="323" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyFileStatusListener" />
+    <unitInfo nodeId="2105471615617473962" fileName="TreeHighlighter.java" startLine="324" startPosition="0" endLine="347" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyModelListener" />
+    <unitInfo nodeId="9200516641177032548" fileName="TreeHighlighter.java" startLine="268" startPosition="0" endLine="287" endPosition="0" unitName="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyTreeNodeListener" />
   </root>
 </debugInfo>
 

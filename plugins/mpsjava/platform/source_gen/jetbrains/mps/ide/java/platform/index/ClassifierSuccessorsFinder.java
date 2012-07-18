@@ -9,20 +9,19 @@ import jetbrains.mps.project.Project;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
-
-import jetbrains.mps.smodel.*;
-
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IScope;
 import java.util.Set;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
@@ -33,6 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.openapi.module.Module;
@@ -50,7 +50,7 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
     List<SNode> modifiedClasses = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> modifiedInterfaces = ListSequence.fromList(new ArrayList<SNode>());
     for (SModelDescriptor md : scope.getModelDescriptors()) {
-      if (!((md instanceof EditableSModelDescriptor))) {
+      if (!((md instanceof DefaultSModelDescriptor))) {
         continue;
       }
       DefaultSModelDescriptor emd = (DefaultSModelDescriptor) md;
@@ -59,14 +59,9 @@ public class ClassifierSuccessorsFinder implements ClassifierSuccessors.Finder, 
         continue;
       }
       if (emd.isChanged()) {
-        SModel sModel = md.getSModel();
-        for (SNode sNode : ListSequence.fromList(SModelOperations.getNodes(sModel, null))) {
-          if (SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-            ListSequence.fromList(modifiedClasses).addElement(SNodeOperations.cast(sNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
-          } else if (SNodeOperations.isInstanceOf(sNode, "jetbrains.mps.baseLanguage.structure.Interface")) {
-            ListSequence.fromList(modifiedInterfaces).addElement(SNodeOperations.cast(sNode, "jetbrains.mps.baseLanguage.structure.Interface"));
-          }
-        }
+        SModel m = md.getSModel();
+        ListSequence.fromList(modifiedClasses).addSequence(ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+        ListSequence.fromList(modifiedInterfaces).addSequence(ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.baseLanguage.structure.Interface")));
       } else {
         SetSequence.fromSet(unModifiedModelFiles).addElement(VirtualFileUtils.getVirtualFile(modelFile));
       }

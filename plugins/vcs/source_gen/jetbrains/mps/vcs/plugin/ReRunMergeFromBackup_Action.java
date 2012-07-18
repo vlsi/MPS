@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -34,6 +32,7 @@ import com.intellij.openapi.diff.DiffManager;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.generator.ModelDigestUtil;
 
 public class ReRunMergeFromBackup_Action extends BaseAction {

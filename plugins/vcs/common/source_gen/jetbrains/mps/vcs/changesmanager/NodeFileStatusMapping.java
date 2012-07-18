@@ -4,20 +4,24 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
-
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -83,11 +87,11 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       public FileStatus compute() {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(root.getModelReference());
         if (modelDescriptor instanceof DefaultSModelDescriptor) {
-          DefaultSModelDescriptor emd = (DefaultSModelDescriptor) modelDescriptor;
-          if (ConflictsUtil.isModelOrModuleConflicting(emd, myProject)) {
+          DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
+          if (ConflictsUtil.isModelOrModuleConflicting(md, myProject)) {
             return FileStatus.MERGED_WITH_CONFLICTS;
           }
-          CurrentDifference diff = myRegistry.getCurrentDifference(emd);
+          CurrentDifference diff = myRegistry.getCurrentDifference(md);
           List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0f(diff.getChangeSet());
           final SNodeId rootId = root.getNodeId();
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
@@ -97,7 +101,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
             if (ListSequence.fromList(rootChanges).first() instanceof AddRootChange) {
-              VirtualFile vf = VirtualFileUtils.getVirtualFile(emd.getModelFile());
+              VirtualFile vf = VirtualFileUtils.getVirtualFile(md.getModelFile());
               if (vf != null) {
                 FileStatus modelStatus = FileStatusManager.getInstance(myProject).getStatus(vf);
                 if (BaseVersionUtil.isAddedFileStatus(modelStatus)) {
@@ -136,8 +140,8 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
                 if (!(root.isDisposed() || SNodeOperations.getModel(root).isDisposed())) {
                   modelDescriptor = SNodeOperations.getModel(root).getModelDescriptor();
                 }
-                if (modelDescriptor instanceof EditableSModelDescriptor) {
-                  myRegistry.getCurrentDifference((EditableSModelDescriptor) modelDescriptor).setEnabled(true);
+                if (modelDescriptor instanceof DefaultSModelDescriptor) {
+                  myRegistry.getCurrentDifference((DefaultSModelDescriptor) modelDescriptor).setEnabled(true);
                 }
               }
             });

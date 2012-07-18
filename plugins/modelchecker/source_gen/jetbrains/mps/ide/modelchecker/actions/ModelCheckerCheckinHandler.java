@@ -5,8 +5,6 @@ package jetbrains.mps.ide.modelchecker.actions;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.CheckinProjectPanel;
-import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
-import jetbrains.mps.smodel.SModelFileTracker;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vcs.ui.RefreshableOnComponent;
 import javax.swing.JCheckBox;
@@ -19,10 +17,10 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
@@ -72,9 +70,10 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
   }
 
   private static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
+    final SModelFileTracker ft = SModelFileTracker.getInstance();
     return Sequence.fromIterable(files).select(new ISelector<File, BaseSModelDescriptorWithSource>() {
       public BaseSModelDescriptorWithSource select(File file) {
-        return SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
+        return ft.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
       }
     }).where(new IWhereFilter<BaseSModelDescriptorWithSource>() {
       public boolean accept(BaseSModelDescriptorWithSource modelDescriptor) {

@@ -14,7 +14,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 
 public class StandardDialogs {
   public StandardDialogs() {
@@ -349,8 +349,10 @@ public class StandardDialogs {
         final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a0a0a4 = BaseBindedDialog.ConstraintsType.FIELD;
         result_960thj_a0a1a0a0a4.setConstraints(result_960thj_a1a0a1a0a0a4);
         result_960thj_a1a0a0a4.addComponent(result_960thj_a0a1a0a0a4);
-        if (dialog.myModel instanceof EditableSModelDescriptor) {
+        if (dialog.myModel instanceof DefaultSModelDescriptor) {
           final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a1a1a0a0a4 = new BaseTabbedBindedDialog.ComponentDescriptor();
+          final JComponent result_960thj_a0a0a1a1a0a0a4 = StandardComponents.createFilePanel("Model File:", ((DefaultSModelDescriptor) dialog.myModel).getModelFile());
+          result_960thj_a0a1a1a0a0a4.setComponent(result_960thj_a0a0a1a1a0a0a4);
           final BaseBindedDialog.ConstraintsType result_960thj_a1a0a1a1a0a0a4 = BaseBindedDialog.ConstraintsType.FIELD;
           result_960thj_a0a1a1a0a0a4.setConstraints(result_960thj_a1a0a1a1a0a0a4);
           result_960thj_a1a0a0a4.addComponent(result_960thj_a0a1a1a0a0a4);

@@ -24,67 +24,67 @@
     <unitInfo nodeId="6933307669479741720" fileName="PluginUtil.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.vcs.platform.util.PluginUtil" />
   </root>
   <root nodeId="6933307669479741763">
-    <nodeInfo nodeId="6933307669479741808" fileName="ConflictsUtil.java" startLine="31" startPosition="49" endLine="32" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6933307669479741820" fileName="ConflictsUtil.java" startLine="33" startPosition="23" endLine="34" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6933307669479741830" fileName="ConflictsUtil.java" startLine="35" startPosition="108" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6933307669479741845" fileName="ConflictsUtil.java" startLine="39" startPosition="5" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6933307669479741860" fileName="ConflictsUtil.java" startLine="45" startPosition="38" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6933307669479741872" fileName="ConflictsUtil.java" startLine="47" startPosition="5" endLine="48" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6933307669479741881" fileName="ConflictsUtil.java" startLine="49" startPosition="21" endLine="50" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6933307669479741891" fileName="ConflictsUtil.java" startLine="51" startPosition="106" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6933307669479741903" fileName="ConflictsUtil.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="59" startPosition="36" endLine="60" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="61" startPosition="5" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6933307669479741765" fileName="ConflictsUtil.java" startLine="18" startPosition="28" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConflictsUtil#()V" />
-    <nodeInfo nodeId="6933307669479741828" fileName="ConflictsUtil.java" startLine="34" startPosition="81" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6933307669479741858" fileName="ConflictsUtil.java" startLine="44" startPosition="108" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6933307669479741889" fileName="ConflictsUtil.java" startLine="50" startPosition="79" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="58" startPosition="71" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6933307669479741777" fileName="ConflictsUtil.java" startLine="22" startPosition="99" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6933307669479741818" fileName="ConflictsUtil.java" startLine="32" startPosition="103" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6933307669479741879" fileName="ConflictsUtil.java" startLine="48" startPosition="82" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6933307669479741769" fileName="ConflictsUtil.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isModelOrModuleConflicting#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Lcom/intellij/openapi/project/Project;)Z" />
-    <nodeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="57" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_h51169_a0a1a2#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="6933307669479741806" fileName="ConflictsUtil.java" startLine="30" startPosition="112" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6933307669479741796" fileName="ConflictsUtil.java" startLine="28" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFileIfConflicting#(Ljetbrains/mps/smodel/SModelDescriptor;Lcom/intellij/openapi/project/Project;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <nodeInfo nodeId="6933307669479741848" fileName="ConflictsUtil.java" startLine="42" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModuleFileIfConflicting#(Ljetbrains/mps/project/IModule;Lcom/intellij/openapi/project/Project;)Lcom/intellij/openapi/vfs/VirtualFile;" />
-    <scopeInfo nodeId="6933307669479741768" fileName="ConflictsUtil.java" startLine="19" startPosition="26" endLine="19" endPosition="26" />
-    <scopeInfo nodeId="6933307669479741829" fileName="ConflictsUtil.java" startLine="35" startPosition="108" endLine="36" endPosition="20" />
-    <scopeInfo nodeId="6933307669479741859" fileName="ConflictsUtil.java" startLine="45" startPosition="38" endLine="46" endPosition="56" />
-    <scopeInfo nodeId="6933307669479741890" fileName="ConflictsUtil.java" startLine="51" startPosition="106" endLine="52" endPosition="18" />
-    <scopeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="59" startPosition="36" endLine="60" endPosition="51" />
-    <scopeInfo nodeId="6933307669479741765" fileName="ConflictsUtil.java" startLine="18" startPosition="28" endLine="20" endPosition="3" />
-    <scopeInfo nodeId="6933307669479741776" fileName="ConflictsUtil.java" startLine="22" startPosition="99" endLine="26" endPosition="24" />
-    <scopeInfo nodeId="6933307669479741819" fileName="ConflictsUtil.java" startLine="33" startPosition="23" endLine="37" endPosition="9">
+    <nodeInfo nodeId="6933307669479741808" fileName="ConflictsUtil.java" startLine="32" startPosition="48" endLine="33" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6933307669479741820" fileName="ConflictsUtil.java" startLine="34" startPosition="23" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6933307669479741830" fileName="ConflictsUtil.java" startLine="36" startPosition="108" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6933307669479741845" fileName="ConflictsUtil.java" startLine="40" startPosition="5" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6933307669479741860" fileName="ConflictsUtil.java" startLine="46" startPosition="38" endLine="47" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6933307669479741872" fileName="ConflictsUtil.java" startLine="48" startPosition="5" endLine="49" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6933307669479741881" fileName="ConflictsUtil.java" startLine="50" startPosition="21" endLine="51" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6933307669479741891" fileName="ConflictsUtil.java" startLine="52" startPosition="106" endLine="53" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6933307669479741903" fileName="ConflictsUtil.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="60" startPosition="36" endLine="61" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="62" startPosition="5" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6933307669479741765" fileName="ConflictsUtil.java" startLine="19" startPosition="28" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConflictsUtil#()V" />
+    <nodeInfo nodeId="6933307669479741828" fileName="ConflictsUtil.java" startLine="35" startPosition="81" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6933307669479741858" fileName="ConflictsUtil.java" startLine="45" startPosition="108" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6933307669479741889" fileName="ConflictsUtil.java" startLine="51" startPosition="79" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="59" startPosition="71" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6933307669479741777" fileName="ConflictsUtil.java" startLine="23" startPosition="99" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6933307669479741818" fileName="ConflictsUtil.java" startLine="33" startPosition="102" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6933307669479741879" fileName="ConflictsUtil.java" startLine="49" startPosition="82" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6933307669479741769" fileName="ConflictsUtil.java" startLine="22" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isModelOrModuleConflicting#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;Lcom/intellij/openapi/project/Project;)Z" />
+    <nodeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="58" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_h51169_a0a1a2#(Ljetbrains/mps/project/IModule;)Ljetbrains/mps/vfs/IFile;" />
+    <nodeInfo nodeId="6933307669479741806" fileName="ConflictsUtil.java" startLine="31" startPosition="112" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6933307669479741796" fileName="ConflictsUtil.java" startLine="29" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModelFileIfConflicting#(Ljetbrains/mps/smodel/SModelDescriptor;Lcom/intellij/openapi/project/Project;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <nodeInfo nodeId="6933307669479741848" fileName="ConflictsUtil.java" startLine="43" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getModuleFileIfConflicting#(Ljetbrains/mps/project/IModule;Lcom/intellij/openapi/project/Project;)Lcom/intellij/openapi/vfs/VirtualFile;" />
+    <scopeInfo nodeId="6933307669479741768" fileName="ConflictsUtil.java" startLine="20" startPosition="26" endLine="20" endPosition="26" />
+    <scopeInfo nodeId="6933307669479741829" fileName="ConflictsUtil.java" startLine="36" startPosition="108" endLine="37" endPosition="20" />
+    <scopeInfo nodeId="6933307669479741859" fileName="ConflictsUtil.java" startLine="46" startPosition="38" endLine="47" endPosition="56" />
+    <scopeInfo nodeId="6933307669479741890" fileName="ConflictsUtil.java" startLine="52" startPosition="106" endLine="53" endPosition="18" />
+    <scopeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="60" startPosition="36" endLine="61" endPosition="51" />
+    <scopeInfo nodeId="6933307669479741765" fileName="ConflictsUtil.java" startLine="19" startPosition="28" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="6933307669479741776" fileName="ConflictsUtil.java" startLine="23" startPosition="99" endLine="27" endPosition="24" />
+    <scopeInfo nodeId="6933307669479741819" fileName="ConflictsUtil.java" startLine="34" startPosition="23" endLine="38" endPosition="9">
       <varInfo nodeId="6933307669479741821" varName="status" />
     </scopeInfo>
-    <scopeInfo nodeId="6933307669479741880" fileName="ConflictsUtil.java" startLine="49" startPosition="21" endLine="53" endPosition="7">
+    <scopeInfo nodeId="6933307669479741880" fileName="ConflictsUtil.java" startLine="50" startPosition="21" endLine="54" endPosition="7">
       <varInfo nodeId="6933307669479741882" varName="status" />
     </scopeInfo>
-    <scopeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="58" startPosition="71" endLine="62" endPosition="16" />
-    <scopeInfo nodeId="6933307669479741769" fileName="ConflictsUtil.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="59" startPosition="71" endLine="63" endPosition="16" />
+    <scopeInfo nodeId="6933307669479741769" fileName="ConflictsUtil.java" startLine="22" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="6933307669479741770" varName="emd" />
       <varInfo nodeId="6933307669479741772" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6933307669479741807" fileName="ConflictsUtil.java" startLine="31" startPosition="49" endLine="38" endPosition="7">
+    <scopeInfo nodeId="6933307669479741807" fileName="ConflictsUtil.java" startLine="32" startPosition="48" endLine="39" endPosition="7">
       <varInfo nodeId="6933307669479741809" varName="vf" />
     </scopeInfo>
-    <scopeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="57" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6933307669479741876" fileName="ConflictsUtil.java" startLine="58" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="6933307669479741876" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="6933307669479741805" fileName="ConflictsUtil.java" startLine="30" startPosition="112" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="6933307669479741857" fileName="ConflictsUtil.java" startLine="44" startPosition="108" endLine="55" endPosition="16">
+    <scopeInfo nodeId="6933307669479741805" fileName="ConflictsUtil.java" startLine="31" startPosition="112" endLine="41" endPosition="16" />
+    <scopeInfo nodeId="6933307669479741857" fileName="ConflictsUtil.java" startLine="45" startPosition="108" endLine="56" endPosition="16">
       <varInfo nodeId="6933307669479741873" varName="vf" />
     </scopeInfo>
-    <scopeInfo nodeId="6933307669479741796" fileName="ConflictsUtil.java" startLine="28" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="6933307669479741796" fileName="ConflictsUtil.java" startLine="29" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="6933307669479741797" varName="md" />
       <varInfo nodeId="6933307669479741800" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6933307669479741848" fileName="ConflictsUtil.java" startLine="42" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="6933307669479741848" fileName="ConflictsUtil.java" startLine="43" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="6933307669479741849" varName="module" />
       <varInfo nodeId="6933307669479741852" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="6933307669479741763" fileName="ConflictsUtil.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.vcs.platform.util.ConflictsUtil" />
+    <unitInfo nodeId="6933307669479741763" fileName="ConflictsUtil.java" startLine="19" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.vcs.platform.util.ConflictsUtil" />
   </root>
   <root nodeId="6933307669479990701">
     <nodeInfo nodeId="6933307669479990701" fileName="MergeBackupUtil.java" startLine="32" startPosition="30" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
@@ -131,7 +131,7 @@
     <nodeInfo nodeId="429607733396400410" fileName="MergeBackupUtil.java" startLine="119" startPosition="45" endLine="120" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="429607733396400430" fileName="MergeBackupUtil.java" startLine="121" startPosition="5" endLine="122" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="429607733396471972" fileName="MergeBackupUtil.java" startLine="125" startPosition="60" endLine="126" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="429607733396471568" fileName="MergeBackupUtil.java" startLine="126" startPosition="73" endLine="127" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="429607733396471568" fileName="MergeBackupUtil.java" startLine="126" startPosition="73" endLine="127" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="429607733396471824" fileName="MergeBackupUtil.java" startLine="132" startPosition="52" endLine="133" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="429607733396471842" fileName="MergeBackupUtil.java" startLine="137" startPosition="43" endLine="138" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="429607733396471573" fileName="MergeBackupUtil.java" startLine="144" startPosition="36" endLine="145" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -144,7 +144,7 @@
     <nodeInfo nodeId="429607733396400310" fileName="MergeBackupUtil.java" startLine="98" startPosition="47" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="429607733396400390" fileName="MergeBackupUtil.java" startLine="114" startPosition="86" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="429607733396400408" fileName="MergeBackupUtil.java" startLine="118" startPosition="54" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="429607733396471573" fileName="MergeBackupUtil.java" startLine="143" startPosition="88" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="429607733396471573" fileName="MergeBackupUtil.java" startLine="143" startPosition="94" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3531370237489972511" fileName="MergeBackupUtil.java" startLine="58" startPosition="64" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="429607733396471664" fileName="MergeBackupUtil.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMergeBackupDirPath#()Ljava/lang/String;" />
     <nodeInfo nodeId="3531370237489972136" fileName="MergeBackupUtil.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="writeContentsToFile#(Lcom/intellij/openapi/diff/DiffContent;Lcom/intellij/openapi/vfs/VirtualFile;Ljava/io/File;Ljava/lang/String;)V" />
@@ -157,7 +157,7 @@
     <nodeInfo nodeId="429607733396471562" fileName="MergeBackupUtil.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="chooseZipFileForModelFile#(Ljetbrains/mps/vfs/IFile;)Ljava/io/File;" />
     <nodeInfo nodeId="429607733396471809" fileName="MergeBackupUtil.java" startLine="130" startPosition="85" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="429607733396471834" fileName="MergeBackupUtil.java" startLine="135" startPosition="7" endLine="140" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="429607733396471573" fileName="MergeBackupUtil.java" startLine="142" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_fhutfy_b0b0g#(Ljetbrains/mps/smodel/descriptor/EditableSModelDescriptor;)Ljava/lang/String;" />
+    <nodeInfo nodeId="429607733396471573" fileName="MergeBackupUtil.java" startLine="142" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_fhutfy_b0b0g#(Ljetbrains/mps/smodel/BaseSModelDescriptorWithSource;)Ljava/lang/String;" />
     <nodeInfo nodeId="3531370237489972169" fileName="MergeBackupUtil.java" startLine="37" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="zipModel#([Lcom/intellij/openapi/diff/DiffContent;Lcom/intellij/openapi/vfs/VirtualFile;)Ljava/io/File;" />
     <nodeInfo nodeId="429607733396400373" fileName="MergeBackupUtil.java" startLine="111" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadZippedModels#(Ljava/io/File;[Ljetbrains/mps/vcs/util/ModelVersion;)[Ljetbrains/mps/smodel/SModel;" />
     <nodeInfo nodeId="429607733396471802" fileName="MergeBackupUtil.java" startLine="129" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findZipFilesForModelFile#(Ljava/lang/String;)Ljava/lang/Iterable;" />
@@ -179,7 +179,7 @@
     <scopeInfo nodeId="429607733396471841" fileName="MergeBackupUtil.java" startLine="137" startPosition="43" endLine="138" endPosition="27" />
     <scopeInfo nodeId="429607733396471573" fileName="MergeBackupUtil.java" startLine="144" startPosition="36" endLine="145" endPosition="45" />
     <scopeInfo nodeId="6933307669479990703" fileName="MergeBackupUtil.java" startLine="34" startPosition="0" endLine="36" endPosition="3" />
-    <scopeInfo nodeId="429607733396471567" fileName="MergeBackupUtil.java" startLine="125" startPosition="60" endLine="127" endPosition="147" />
+    <scopeInfo nodeId="429607733396471567" fileName="MergeBackupUtil.java" startLine="125" startPosition="60" endLine="127" endPosition="148" />
     <scopeInfo nodeId="3531370237489972543" fileName="MergeBackupUtil.java" startLine="64" startPosition="24" endLine="67" endPosition="7">
       <varInfo nodeId="3531370237489972545" varName="logfile" />
     </scopeInfo>
@@ -215,7 +215,7 @@
     <scopeInfo nodeId="429607733396471840" fileName="MergeBackupUtil.java" startLine="136" startPosition="103" endLine="140" endPosition="0">
       <varInfo nodeId="429607733396471840" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="429607733396471573" fileName="MergeBackupUtil.java" startLine="143" startPosition="88" endLine="147" endPosition="16" />
+    <scopeInfo nodeId="429607733396471573" fileName="MergeBackupUtil.java" startLine="143" startPosition="94" endLine="147" endPosition="16" />
     <scopeInfo nodeId="429607733396471562" fileName="MergeBackupUtil.java" startLine="124" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="429607733396471565" varName="file" />
     </scopeInfo>

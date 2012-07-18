@@ -4,24 +4,28 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
-
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-
+import jetbrains.mps.smodel.SModelRepositoryListener;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.FileStatusManager;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.vcs.FileStatusListener;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   private final Map<SModelReference, CurrentDifference> myCurrentDifferences = MapSequence.fromMap(new HashMap<SModelReference, CurrentDifference>());
@@ -58,7 +62,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     return myProject;
   }
 
-  private void updateModel(@NotNull EditableSModelDescriptor modelDescriptor) {
+  private void updateModel(@NotNull DefaultSModelDescriptor modelDescriptor) {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = modelDescriptor.getSModelReference();
       if (MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef)) {
@@ -78,19 +82,17 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     if (iFile == null) {
       return;
     }
-    BaseSModelDescriptorWithSource modelDescriptor = SModelFileTracker.getInstance().findModel(iFile);
-    if (!(modelDescriptor instanceof DefaultSModelDescriptor)) return;
-    
+    DefaultSModelDescriptor modelDescriptor = ((DefaultSModelDescriptor) SModelFileTracker.getInstance().findModel(iFile));
     if (modelDescriptor == null || modelDescriptor.getLoadingState() == ModelLoadingState.NOT_LOADED) {
       return;
     }
-    updateModel(((DefaultSModelDescriptor) modelDescriptor));
+    updateModel(modelDescriptor);
   }
 
   public void updateLoadedModels() {
     for (SModelDescriptor md : ListSequence.fromList(SModelRepository.getInstance().getModelDescriptors())) {
-      if (md instanceof EditableSModelDescriptor) {
-        updateModel((EditableSModelDescriptor) md);
+      if (md instanceof DefaultSModelDescriptor) {
+        updateModel((DefaultSModelDescriptor) md);
       }
     }
   }
@@ -105,7 +107,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
   }
 
   @NotNull
-  public CurrentDifference getCurrentDifference(@NotNull EditableSModelDescriptor modelDescriptor) {
+  public CurrentDifference getCurrentDifference(@NotNull DefaultSModelDescriptor modelDescriptor) {
     synchronized (myCurrentDifferences) {
       SModelReference modelRef = modelDescriptor.getSModelReference();
       if (!(MapSequence.fromMap(myCurrentDifferences).containsKey(modelRef))) {

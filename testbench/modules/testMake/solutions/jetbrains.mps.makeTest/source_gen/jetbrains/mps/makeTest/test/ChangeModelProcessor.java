@@ -26,7 +26,7 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 
 public class ChangeModelProcessor {
   private static final String TEST_RESOURCES_PATH = "core/kernel/testMake/solutions/jetbrains.mps.testModels/jetbrains/mps/testModels/";

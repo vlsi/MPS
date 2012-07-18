@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.platform.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -75,7 +73,7 @@ public class ShowDiffFromChanges_Action extends BaseAction {
           final SModel model = editedNode.getModel();
           ApplicationManager.getApplication().invokeLater(new Runnable() {
             public void run() {
-              VcsActionsUtil.showRootDifference((DefaultSModelDescriptor) model.getModelDescriptor(), editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
+              VcsActionsUtil.showRootDifference((EditableSModelDescriptor) model.getModelDescriptor(), editedNode, ((Project) MapSequence.fromMap(_params).get("project")), bounds);
             }
           });
         }
