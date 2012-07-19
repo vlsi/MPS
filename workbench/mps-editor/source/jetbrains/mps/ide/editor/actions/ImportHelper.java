@@ -49,7 +49,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImportHelper {
-  public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model) {
+  public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model,
+                                    @Nullable ShortcutSet checkboxShortcut) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new AddModelItem(project, model, modelReference, module);
@@ -78,6 +79,9 @@ public class ImportHelper {
       }
     };
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
+    if (checkboxShortcut != null) {
+      popup.setCheckBoxShortcut(checkboxShortcut);
+    }
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
