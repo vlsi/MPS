@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.platform.mergedriver;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import java.io.File;
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.util.SystemInfo;
 import java.util.List;
 import jetbrains.mps.util.StringsIO;
@@ -22,14 +23,15 @@ import com.intellij.openapi.ui.Messages;
 
   @NotNull
   public static AbstractInstaller.State generateScript(Project project, int vcs, File scriptFile, boolean dryRun) {
+    final String buildstring = "build=" + ApplicationInfo.getInstance().getBuild().asString();
     String[] lines;
     if (GIT == vcs) {
-      lines = new String[]{"#/bin/sh", String.format("%s --git $1 $2 $3 $4", CommandLineGenerator.getCommandLine(GIT))};
+      lines = new String[]{"#/bin/sh", "# " + buildstring, String.format("%s --git $1 $2 $3 $4", CommandLineGenerator.getCommandLine(GIT))};
     } else if (SVN == vcs) {
       if (SystemInfo.isWindows) {
-        lines = new String[]{"@ECHO OFF", "SHIFT", "SHIFT", String.format("%s --svn %%8 %%7 %%9 %%4 %%2 %%6", CommandLineGenerator.getCommandLine(SVN))};
+        lines = new String[]{"@ECHO OFF", "REM " + buildstring, "SHIFT", "SHIFT", String.format("%s --svn %%8 %%7 %%9 %%4 %%2 %%6", CommandLineGenerator.getCommandLine(SVN))};
       } else {
-        lines = new String[]{"#/bin/sh", String.format("%s --svn ${10} $9 ${11} $6 $4 $8", CommandLineGenerator.getCommandLine(SVN))};
+        lines = new String[]{"#/bin/sh", "# " + buildstring, String.format("%s --svn ${10} $9 ${11} $6 $4 $8", CommandLineGenerator.getCommandLine(SVN))};
       }
     } else {
       throw new IllegalArgumentException();
@@ -40,7 +42,7 @@ import com.intellij.openapi.ui.Messages;
           List<String> linesInFile = StringsIO.readLines(scriptFile);
           if ((int) ListSequence.fromList(linesInFile).count() == lines.length) {
             for (int i = 0; i < lines.length; i++) {
-              if (neq_7mp2j8_a0a0a0b0a0a0c0a(ListSequence.fromList(linesInFile).getElement(i), lines[i])) {
+              if (neq_7mp2j8_a0a0a0b0a0a0d0a(ListSequence.fromList(linesInFile).getElement(i), lines[i])) {
                 return AbstractInstaller.State.OUTDATED;
               }
             }
@@ -63,7 +65,7 @@ import com.intellij.openapi.ui.Messages;
     }
   }
 
-  private static boolean neq_7mp2j8_a0a0a0b0a0a0c0a(Object a, Object b) {
+  private static boolean neq_7mp2j8_a0a0a0b0a0a0d0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

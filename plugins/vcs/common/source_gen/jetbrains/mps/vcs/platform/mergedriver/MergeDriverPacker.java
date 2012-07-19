@@ -27,7 +27,6 @@ public abstract class MergeDriverPacker {
   private static final Iterable<String> svnJars = Arrays.asList("svnkit.jar", "sequence-library.jar");
   private static final String MERGEDRIVER_PATH = "mergedriver";
   private static final String MERGER_RT = "merger-rt.jar";
-  private static boolean ourUpToDate = false;
   protected static Log log = LogFactory.getLog(MergeDriverPacker.class);
 
   public MergeDriverPacker() {
@@ -86,24 +85,6 @@ public abstract class MergeDriverPacker {
     // Workaround for rare case when MPS build is invoked with internal flag (MPS-13819) 
     if (isForZip && Sequence.fromIterable(classpathDirs).isEmpty()) {
       FileUtil.write(new File(tmpDir, "dummy.txt"), new byte[0]);
-    }
-  }
-
-  public AbstractInstaller.State packIfNeeded(boolean dryRun) {
-    if (!(ourUpToDate)) {
-      if (dryRun) {
-        if (getFile().exists()) {
-          return AbstractInstaller.State.OUTDATED;
-        } else {
-          return AbstractInstaller.State.NOT_INSTALLED;
-        }
-      } else {
-        pack();
-        ourUpToDate = true;
-        return AbstractInstaller.State.INSTALLED;
-      }
-    } else {
-      return AbstractInstaller.State.INSTALLED;
     }
   }
 
