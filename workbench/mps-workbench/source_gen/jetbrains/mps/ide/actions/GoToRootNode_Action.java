@@ -30,7 +30,7 @@ public class GoToRootNode_Action extends BaseAction {
   public GoToRootNode_Action() {
     super("Go to Root Node", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @Override
