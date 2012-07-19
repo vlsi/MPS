@@ -12076,9 +12076,6 @@
         </node>
       </node>
     </node>
-    <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="1730157600208309528">
-      <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1730157600208309529" />
-    </node>
   </root>
   <root id="3906874221886742347">
     <node role="constructionParameter" roleId="tp4k.1227008813498" type="tp4k.ActionConstructionParameterDeclaration" typeId="tp4k.1227008846812" id="3906874221886742353">

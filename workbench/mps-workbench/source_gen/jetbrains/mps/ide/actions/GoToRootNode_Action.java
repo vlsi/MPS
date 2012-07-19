@@ -40,6 +40,7 @@ public class GoToRootNode_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToRootNode", t);
