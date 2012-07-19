@@ -53,11 +53,11 @@ public class PersistentPropertyDeclaration_Behavior {
 
   public static boolean call_isInitializable_946964771156066897(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897, new Object[]{});
   }
 
   public static boolean callSuper_isInitializable_946964771156066897(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"), callerConceptFqName, "virtual_isInitializable_1213877517488", PARAMETERS_946964771156066897, new Object[]{});
   }
 
   public static String removeMyPrefix_946964771156066836(String name) {

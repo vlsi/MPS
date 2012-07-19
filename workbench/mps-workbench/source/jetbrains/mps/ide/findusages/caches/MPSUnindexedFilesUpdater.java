@@ -69,17 +69,21 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
       indicator.setText("Scanning files to index");
     }
 
-    Set<VirtualFile> visitedRoots = new HashSet<VirtualFile>();
+    Set<VirtualFile> visitedFolders = new HashSet<VirtualFile>();
     for (VirtualFile root : CacheUtil.getIndexableRoots()) {
-      if (visitedRoots.contains(root)) continue;
-      visitedRoots.add(root);
-      iterateRecursively(root, processor, indicator);
+      iterateRecursively(root, processor, indicator,visitedFolders);
     }
   }
 
-  private void iterateRecursively(final VirtualFile root, final ContentIterator processor, ProgressIndicator indicator) {
+  private void iterateRecursively(final VirtualFile root, final ContentIterator processor, ProgressIndicator indicator, Set<VirtualFile> visitedFolders) {
     if (root == null) return;
-    if (!CacheUtil.checkFile(root, myManager)) return;
+
+    if (root.isDirectory()){
+      if (visitedFolders.contains(root)) return;
+      visitedFolders.add(root);
+    }
+
+    if (!CacheUtil.isIgnored(root, myManager)) return;
 
     if (indicator != null) {
       indicator.setText2(root.getPresentableUrl());
@@ -87,7 +91,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
 
     for (VirtualFile file : root.getChildren()) {
       if (file.isDirectory()) {
-        iterateRecursively(file, processor, indicator);
+        iterateRecursively(file, processor, indicator, visitedFolders);
       } else {
         SingleRootFileViewProvider.doNotCheckFileSizeLimit(file);
         processor.processFile(file);

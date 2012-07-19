@@ -101,6 +101,7 @@ import org.eclipse.jdt.internal.compiler.ast.LocalDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ReturnStatement;
 import org.eclipse.jdt.internal.compiler.ast.ForeachStatement;
 import org.eclipse.jdt.internal.compiler.ast.ForStatement;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.IfStatement;
 import org.eclipse.jdt.internal.compiler.ast.LabeledStatement;
 import org.eclipse.jdt.internal.compiler.ast.SwitchStatement;
@@ -119,7 +120,6 @@ import org.eclipse.jdt.internal.compiler.ast.Javadoc;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -1139,7 +1139,15 @@ public class JavaConverterTreeBuilder {
   /*package*/ SNode processStatement(ForStatement x) {
     SNode forStatement = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.ForStatement", null);
     List<SNode> init = processStatements(x.initializations);
-    if (!(init.isEmpty())) {
+    SNode result = forStatement;
+    if (ListSequence.fromList(init).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+      }
+    })) {
+      // we don't support for ( a=5, b=6; ...) {} in baseLanguage, workaround here 
+      result = new JavaConverterTreeBuilder.QuotationClass_m30mvz_a0a1a3a17().createNode(init, forStatement);
+    } else if (!(init.isEmpty())) {
       boolean first = true;
       for (SNode statement : init) {
         if (SNodeOperations.isInstanceOf(statement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
@@ -1176,7 +1184,7 @@ public class JavaConverterTreeBuilder {
     SNode loopBody = processStatementRefl(x.action);
     SNode body = getStatementListFromStatement(loopBody, x.action);
     SLinkOperations.setTarget(forStatement, "body", body, true);
-    return forStatement;
+    return result;
   }
 
   /*package*/ SNode processStatement(IfStatement x) {
@@ -1781,6 +1789,63 @@ public class JavaConverterTreeBuilder {
           }
         }
         result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_m30mvz_a0a1a3a17 {
+    public QuotationClass_m30mvz_a0a1a3a17() {
+    }
+
+    public SNode createNode(Object parameter_12, Object parameter_13) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BlockStatement", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_2;
+          {
+            quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_9 = quotedNode_3;
+            {
+              quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", null, GlobalScope.getInstance(), false);
+              SNode quotedNode1_10 = quotedNode_6;
+              quotedNode1_10.setProperty("text", "converted:  for ( expr; ...) {}  ->  { expr; for ( ; ...) {} }");
+              quotedNode_3.addChild("commentPart", quotedNode1_10);
+            }
+            quotedNode_2.addChild("statement", quotedNode1_9);
+          }
+          {
+            List<SNode> nodes = (List<SNode>) parameter_12;
+            for (SNode child : nodes) {
+              quotedNode_2.addChild("statement", HUtil.copyIfNecessary(child));
+            }
+          }
+          {
+            quotedNode_5 = (SNode) parameter_13;
+            SNode quotedNode1_11;
+            if (_parameterValues_129834374.contains(quotedNode_5)) {
+              quotedNode1_11 = HUtil.copyIfNecessary(quotedNode_5);
+            } else {
+              _parameterValues_129834374.add(quotedNode_5);
+              quotedNode1_11 = quotedNode_5;
+            }
+            if (quotedNode1_11 != null) {
+              quotedNode_2.addChild("statement", HUtil.copyIfNecessary(quotedNode1_11));
+            }
+          }
+          quotedNode_1.addChild("statements", quotedNode1_8);
+        }
+        result = quotedNode1_7;
       }
       return result;
     }

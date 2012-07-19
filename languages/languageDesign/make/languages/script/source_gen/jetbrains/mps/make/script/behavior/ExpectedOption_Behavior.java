@@ -24,10 +24,10 @@ public class ExpectedOption_Behavior {
 
   public static String call_classifierName_8853708281362145858(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858, new Object[]{});
   }
 
   public static String callSuper_classifierName_8853708281362145858(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.script.structure.ExpectedOption"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362145858, new Object[]{});
   }
 }

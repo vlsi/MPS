@@ -33,8 +33,10 @@ class CacheUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (final IModule m : MPSModuleRepository.getInstance().getAllModules()) {
-          VirtualFile file = VirtualFileUtils.getVirtualFile(m.getBundleHome());
-          if (file != null) { //i.e. files doesn't exist
+
+          for (String path : m.getIndexablePaths()) {
+            VirtualFile file = VirtualFileUtils.getVirtualFile(path);
+            if (file==null) continue;
             files.add(file);
           }
         }
@@ -43,9 +45,7 @@ class CacheUtil {
     return files;
   }
 
-  public static boolean checkFile(VirtualFile file, ProjectRootManagerEx manager) {
-    if (FileTypeManager.getInstance().isFileIgnored(file.getName())) return false;
-    if (manager.getFileIndex().isIgnored(file)) return false;
-    return true;
+  public static boolean isIgnored(VirtualFile file, ProjectRootManagerEx manager) {
+    return !FileTypeManager.getInstance().isFileIgnored(file.getName()) && !manager.getFileIndex().isIgnored(file);
   }
 }

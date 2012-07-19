@@ -117,6 +117,7 @@ public abstract class BaseNodeEditor implements Editor {
     }
     myEditorComponent = new NodeEditorComponent(myContext);
     myComponent.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
+    myComponent.validate();
   }
 
   protected void showComponent(JComponent replace) {

@@ -10,10 +10,10 @@ import com.intellij.openapi.application.PathManager;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.platform.util.PluginUtil;
 import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.util.SystemInfo;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.util.StringsIO;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -49,13 +49,9 @@ import java.io.FileNotFoundException;
       }
     }
 
-    List<String> newConfigLines = ListSequence.fromList(new ArrayList<String>());
-    ListSequence.fromList(newConfigLines).addElement("[merge \"mps\"]");
-    ListSequence.fromList(newConfigLines).addElement("\tname = MPS merge driver");
-
-    AbstractInstaller.State packerState = MergeDriverPacker.getInstance().packIfNeeded(dryRun);
-    if (packerState != AbstractInstaller.State.INSTALLED) {
-      return packerState;
+    if (!(dryRun)) {
+      // copy driver files to the proper place 
+      MergeDriverPacker.getInstance().pack();
     }
 
     AbstractInstaller.State createScriptResult = ScriptGenerator.generateScript(myProject, ScriptGenerator.GIT, myScriptFile, dryRun);
@@ -67,6 +63,10 @@ import java.io.FileNotFoundException;
     if (SystemInfo.isWindows) {
       scriptPath = CommandLineGenerator.adaptPathForMsysGit(scriptPath);
     }
+
+    List<String> newConfigLines = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(newConfigLines).addElement("[merge \"mps\"]");
+    ListSequence.fromList(newConfigLines).addElement("\tname = MPS merge driver");
     ListSequence.fromList(newConfigLines).addElement(String.format("\tdriver = \"\\\"%s\\\" %%O %%A %%B %%L\"", scriptPath));
 
     List<String> configLines = StringsIO.readLines(myConfigFile);
@@ -97,7 +97,7 @@ import java.io.FileNotFoundException;
       boolean equal = (int) ListSequence.fromList(section).count() == (int) ListSequence.fromList(newConfigLines).count();
       if (equal) {
         for (int i = 0; i < ListSequence.fromList(section).count(); i++) {
-          if (neq_btx4zt_a0a0a0g0u0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
+          if (neq_btx4zt_a0a0a0g0t0a(ListSequence.fromList(section).getElement(i), ListSequence.fromList(newConfigLines).getElement(i))) {
             equal = false;
             break;
           }
@@ -146,7 +146,7 @@ import java.io.FileNotFoundException;
     return "Git";
   }
 
-  private static boolean neq_btx4zt_a0a0a0g0u0a(Object a, Object b) {
+  private static boolean neq_btx4zt_a0a0a0g0t0a(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

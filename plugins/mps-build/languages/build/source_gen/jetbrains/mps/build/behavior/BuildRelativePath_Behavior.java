@@ -76,11 +76,11 @@ public class BuildRelativePath_Behavior {
 
   public static String call_getBasePath_4959435991187140515(SNode thisNode, Context context) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), "virtual_getBasePath_4959435991187140515", PARAMETERS_4959435991187140515, context);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), "virtual_getBasePath_4959435991187140515", PARAMETERS_4959435991187140515, new Object[]{context});
   }
 
   public static String callSuper_getBasePath_4959435991187140515(SNode thisNode, String callerConceptFqName, Context context) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), callerConceptFqName, "virtual_getBasePath_4959435991187140515", PARAMETERS_4959435991187140515, context);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), callerConceptFqName, "virtual_getBasePath_4959435991187140515", PARAMETERS_4959435991187140515, new Object[]{context});
   }
 
   public static SNode next_8654221991637156927(SNode cp) {

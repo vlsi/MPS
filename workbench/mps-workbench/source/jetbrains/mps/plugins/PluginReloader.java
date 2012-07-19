@@ -18,6 +18,8 @@ package jetbrains.mps.plugins;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.ProjectManagerAdapter;
+import com.intellij.openapi.project.ProjectManagerListener;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
@@ -27,17 +29,20 @@ import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PluginReloader implements ApplicationComponent {
   private ReloadAdapter myReloadListener = new MyReloadAdapter();
+  private ProjectManagerListener myProjectListener = new MyProjectManagerAdapter();
 
   private final List<PluginReloadingListener> myListeners = new ArrayList<PluginReloadingListener>();
 
   private ClassLoaderManager myClassLoaderManager;
   private ProjectManager myProjectManager;
   private ApplicationPluginManager myPluginManager;
+  private List<ProjectPluginManager> myLoadedPluginManagers = new ArrayList<ProjectPluginManager>();
 
   @SuppressWarnings({"UnusedDeclaration"})
   public PluginReloader(MPSCoreComponents coreComponents, ProjectManager projectManager, ApplicationPluginManager pluginManager) {
@@ -49,8 +54,11 @@ public class PluginReloader implements ApplicationComponent {
   private void loadPlugins() {
     checkDisposed();
     myPluginManager.loadPlugins();
+    myLoadedPluginManagers = new ArrayList<ProjectPluginManager>();
     for (Project p : myProjectManager.getOpenProjects()) {
-      p.getComponent(ProjectPluginManager.class).loadPlugins();
+      ProjectPluginManager pm = p.getComponent(ProjectPluginManager.class);
+      myLoadedPluginManagers.add(pm);
+      pm.loadPlugins();
     }
 
     for (PluginReloadingListener l : getListeners()) {
@@ -65,9 +73,11 @@ public class PluginReloader implements ApplicationComponent {
       l.beforePluginsDisposed();
     }
 
-    for (Project p : myProjectManager.getOpenProjects()) {
-      p.getComponent(ProjectPluginManager.class).disposePlugins();
+    for (ProjectPluginManager pm : myLoadedPluginManagers) {
+      pm.disposePlugins();
     }
+    myLoadedPluginManagers.clear();
+
     myPluginManager.disposePlugins();
   }
 
@@ -101,9 +111,11 @@ public class PluginReloader implements ApplicationComponent {
 
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadListener);
+    ProjectManager.getInstance().addProjectManagerListener(myProjectListener);
   }
 
   public void disposeComponent() {
+    ProjectManager.getInstance().removeProjectManagerListener(myProjectListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
 
     myClassLoaderManager = null;
@@ -119,11 +131,22 @@ public class PluginReloader implements ApplicationComponent {
     return myClassLoaderManager == null || myProjectManager == null || myPluginManager == null;
   }
 
+  private class MyProjectManagerAdapter extends ProjectManagerAdapter {
+    public void projectClosing(Project project) {
+      assert SwingUtilities.isEventDispatchThread();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          disposePlugins();
+        }
+      });
+    }
+  }
+
   private class MyReloadAdapter extends ReloadAdapter {
     public void unload() {
+      //write action is needed the because user can acquire write action inside of this [see MPS-9139]
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
-          //write action is needed the because user can acquire write action inside of this [see MPS-9139]
           disposePlugins();
         }
       });

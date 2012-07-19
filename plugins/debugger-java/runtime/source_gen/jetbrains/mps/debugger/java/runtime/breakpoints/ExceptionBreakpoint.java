@@ -70,6 +70,35 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
     return myExceptionName;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+
+    return eq_bv30lc_a0d0g(myExceptionName, ((ExceptionBreakpoint) o).myExceptionName);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = 0;
+    result = 31 * result + ((myExceptionName != null ?
+      String.valueOf(myExceptionName).hashCode() :
+      0
+    ));
+    return result;
+  }
+
+  private static boolean eq_bv30lc_a0d0g(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
   public static class ExceptionBreakpointInfo {
     public String myExceptionName;
     public long myCreationTime;

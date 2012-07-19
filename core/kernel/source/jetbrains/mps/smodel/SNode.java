@@ -20,6 +20,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -905,7 +906,7 @@ public final class SNode {
     }
     SNode oldReferent = null;
     if (!toDelete.isEmpty()) {
-      oldReferent = toDelete.get(0).getTargetNode();
+      oldReferent = toDelete.get(0).getTargetNodeSilently();
     }
     if (toDelete.size() > 1) {
       LOG.errorWithTrace("ERROR! " + toDelete.size() + " references found for role '" + role + "' in " + this.getDebugText());
@@ -1627,7 +1628,10 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
     BaseAdapter adapter = myAdapter;
     if (adapter != null) return adapter;
-    Constructor c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
+    Constructor c = null;
+    if (languageCanGenerateAdapters()) {
+      c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
+    }
     if (c == null) c = QueryMethodGenerated.getAdapterConstructor(SNodeUtil.concept_BaseConcept);
     if (c == null) return new BaseAdapter(this) {
     };
@@ -1658,6 +1662,16 @@ public final class SNode {
     };
   }
 
+  private boolean languageCanGenerateAdapters() {
+    SNode conceptDeclaration = getConceptDeclarationNode();
+    if (conceptDeclaration == null) return true;
+    SModel model = conceptDeclaration.getModel();
+    if (model == null) return true;
+    SModelDescriptor modelDescriptor = model.getModelDescriptor();
+    if (modelDescriptor == null) return true;
+    IModule module = modelDescriptor.getModule();
+    return !(module instanceof Language) || ((Language) module).isGenerateAdapters();
+  }
 
   void clearAdapter() {
     myAdapter = null;

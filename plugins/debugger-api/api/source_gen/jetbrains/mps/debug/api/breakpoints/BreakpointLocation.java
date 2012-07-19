@@ -98,4 +98,33 @@ public class BreakpointLocation {
   public SModelReference getModelReference() {
     return myNodePointer.getModelReference();
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || this.getClass() != o.getClass()) {
+      return false;
+    }
+
+    return eq_ei108j_a0d0j(myNodePointer, ((BreakpointLocation) o).myNodePointer);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = 0;
+    result = 31 * result + ((myNodePointer != null ?
+      ((Object) myNodePointer).hashCode() :
+      0
+    ));
+    return result;
+  }
+
+  private static boolean eq_ei108j_a0d0j(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
 }

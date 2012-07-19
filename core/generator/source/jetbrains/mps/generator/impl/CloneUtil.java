@@ -17,7 +17,9 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel.ImportElement;
 
 /**
  * Created by: Sergey Dmitriev
@@ -30,6 +32,20 @@ public class CloneUtil {
    * Creates cloned model, each node in target model has the same nodeId that corresponding node in source model
    * it allows to resolve internal references much faster
    */
+  public static void cloneModelWithImports(SModel inputModel, SModel outputModel, boolean originalInput) {
+    //copy model with imports, used languages and devkits
+    cloneModel(inputModel, outputModel, originalInput);
+    for (ImportElement model : inputModel.importedModels()) {
+      outputModel.addModelImport(model.getModelReference(), false);
+    }
+    for (ModuleReference lang : inputModel.importedLanguages()) {
+      outputModel.addLanguage(lang);
+    }
+    for (ModuleReference devKit : inputModel.importedDevkits()) {
+      outputModel.addDevKit(devKit);
+    }
+  }
+
   public static void cloneModel(SModel inputModel, SModel outputModel, boolean originalInput) {
     for (SNode node : inputModel.roots()) {
       SNode outputNode = clone(node, outputModel, originalInput);

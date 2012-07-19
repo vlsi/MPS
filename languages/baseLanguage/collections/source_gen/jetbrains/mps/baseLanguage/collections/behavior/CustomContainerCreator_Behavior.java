@@ -36,10 +36,10 @@ public class CustomContainerCreator_Behavior {
 
   public static SNode call_createType_1331913329176106428(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1331913329176106428, new Object[]{});
   }
 
   public static SNode callSuper_createType_1331913329176106428(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1331913329176106428, new Object[]{});
   }
 }

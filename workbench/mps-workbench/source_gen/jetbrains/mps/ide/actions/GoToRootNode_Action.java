@@ -6,21 +6,29 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.featureStatistics.FeatureUsageTracker;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import com.intellij.openapi.actionSystem.Shortcut;
+import com.intellij.openapi.keymap.KeymapManager;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
+import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.application.ModalityState;
 
 public class GoToRootNode_Action extends BaseAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoToRootNode_Action.class);
 
-  private AnAction action;
-
-  public GoToRootNode_Action(AnAction action_par) {
+  public GoToRootNode_Action() {
     super("Go to Root Node", "", ICON);
-    this.action = action_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -32,7 +40,7 @@ public class GoToRootNode_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToRootNode_Action.this.action.update(event);
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToRootNode", t);
@@ -51,25 +59,27 @@ public class GoToRootNode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
-      GoToRootNode_Action.this.action.actionPerformed(event);
+
+      Project project = event.getData(PlatformDataKeys.PROJECT);
+      assert project != null;
+
+      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
+      ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult);
+      Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(GoToRootNode_Action.this.getActionId());
+      popup.setCheckBoxShortcut(new CustomShortcutSet(shortcuts));
+
+      popup.invoke(new ChooseByNamePopupComponent.Callback() {
+        public void onClose() {
+        }
+
+        public void elementChosen(Object element) {
+          ((NavigationItem) element).navigate(true);
+        }
+      }, ModalityState.current(), true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToRootNode", t);
       }
     }
-  }
-
-  @NotNull
-  public String getActionId() {
-    StringBuilder res = new StringBuilder();
-    res.append(super.getActionId());
-    res.append("#");
-    res.append(action_State((AnAction) this.action));
-    res.append("!");
-    return res.toString();
-  }
-
-  public static String action_State(AnAction object) {
-    return "";
   }
 }

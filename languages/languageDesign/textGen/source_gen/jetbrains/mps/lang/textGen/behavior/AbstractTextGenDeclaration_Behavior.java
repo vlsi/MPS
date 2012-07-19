@@ -26,19 +26,19 @@ public class AbstractTextGenDeclaration_Behavior {
 
   public static String call_getTextGenNode_1234784577703(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703, new Object[]{});
   }
 
   public static List<SNode> call_getAvailableOperations_1234781444746(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746, new Object[]{});
   }
 
   public static String callSuper_getTextGenNode_1234784577703(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getTextGenNode_1234784577703", PARAMETERS_1234784577703, new Object[]{});
   }
 
   public static List<SNode> callSuper_getAvailableOperations_1234781444746(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration"), callerConceptFqName, "virtual_getAvailableOperations_1234781444746", PARAMETERS_1234781444746, new Object[]{});
   }
 }

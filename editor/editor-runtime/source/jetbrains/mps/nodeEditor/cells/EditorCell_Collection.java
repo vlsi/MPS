@@ -532,7 +532,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     }
     ParentSettings settings = isSelectionPaintedOnAncestor(parentSettings);
     if (!settings.isSelectionPainted()) {
-      settings = (paintBackground(g, settings));
+      settings = (paintBackground(g, parentSettings));
     }
     paintSelectionIfRequired(g, parentSettings);
     paintContent(g, parentSettings);
@@ -591,8 +591,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     List<? extends EditorCell> selectionCells = myCellLayout instanceof CellLayoutExt ? ((CellLayoutExt) myCellLayout).getSelectionCells(this) : null;
     if (selectionCells != null) {
       gr.translate(1 - x0, 1 - y0);
+      ParentSettings selection = isSelectionPaintedOnAncestor(parentSettings);
       for (EditorCell cell : selectionCells) {
-        cell.paintSelection(gr, c, false, parentSettings);
+        cell.paintSelection(gr, c, false, selection);
       }
     } else {
       List<Rectangle> selection = myCellLayout.getSelectionBounds(this);

@@ -80,10 +80,10 @@ public class FacetDeclaration_Behavior {
 
   public static String call_classifierName_8853708281362019178(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178, new Object[]{});
   }
 
   public static String callSuper_classifierName_8853708281362019178(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.make.facet.structure.FacetDeclaration"), callerConceptFqName, "virtual_classifierName_4609636120081351397", PARAMETERS_8853708281362019178, new Object[]{});
   }
 }

@@ -25,7 +25,7 @@ public class PropertyAccessor implements ModelAccessor {
   private String myPropertyName;
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
-  private SNode myPropertyDeclaration;
+  private final SNodePointer myPropertyDeclaration;
   private IScope myScope;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
@@ -33,7 +33,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable() || editorContext.getNodeEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = node.getPropertyDeclaration(propertyName);
+    myPropertyDeclaration = new SNodePointer(node.getPropertyDeclaration(propertyName));
     myScope = editorContext.getScope();
   }
 
@@ -42,7 +42,7 @@ public class PropertyAccessor implements ModelAccessor {
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable();
     myAllowEmptyText = allowEmptyText;
-    myPropertyDeclaration = node.getPropertyDeclaration(propertyName);
+    myPropertyDeclaration = new SNodePointer(node.getPropertyDeclaration(propertyName));
     myScope = context.getScope();
   }
 
@@ -101,8 +101,9 @@ public class PropertyAccessor implements ModelAccessor {
       return (text == null && (propertyValue == null || propertyValue.isEmpty())) || (text != null && text.equals(propertyValue));
     }
 
-    if (myPropertyDeclaration != null) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration);
+    SNode node = myPropertyDeclaration.getNode();
+    if (node != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.canSetValue(myNode, myPropertyName, text, myScope);
     }
     return true;
@@ -114,16 +115,18 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private String fromInternal(String value) {
-    if (myPropertyDeclaration != null) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration);
+    SNode node = myPropertyDeclaration.getNode();
+    if (node != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.fromInternalValue(value);
     }
     return value;
   }
 
   private String toInternal(String value) {
-    if (myPropertyDeclaration != null) {
-      PropertySupport propertySupport = PropertySupport.getPropertySupport(myPropertyDeclaration);
+    SNode node = myPropertyDeclaration.getNode();
+    if (node != null) {
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.toInternalValue(value);
     }
     return value;

@@ -288,25 +288,34 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
     }
 
     @Override
-    public void breakpointAdded(@NotNull IBreakpoint breakpoint) {
-      if (breakpoint instanceof ILocationBreakpoint) {
-        SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
-        if (node != null) {
-          addLocationBreakpoint((ILocationBreakpoint) breakpoint, node);
+    public void breakpointAdded(@NotNull final IBreakpoint breakpoint) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (breakpoint instanceof ILocationBreakpoint) {
+            SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
+            if (node != null) {
+              addLocationBreakpoint((ILocationBreakpoint) breakpoint, node);
+            }
+          }
+          breakpoint.addBreakpointListener(myBreakpointListener);
         }
-      }
-      breakpoint.addBreakpointListener(myBreakpointListener);
+      });
     }
 
     @Override
-    public void breakpointRemoved(@NotNull IBreakpoint breakpoint) {
-      if (breakpoint instanceof ILocationBreakpoint) {
-        SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
-        if (node != null) {
-          removeLocationBreakpoint((ILocationBreakpoint) breakpoint, node);
+    public void breakpointRemoved(@NotNull final IBreakpoint breakpoint) {
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          if (breakpoint instanceof ILocationBreakpoint) {
+            SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
+            if (node != null) {
+              removeLocationBreakpoint((ILocationBreakpoint) breakpoint, node);
+            }
+          }
+          breakpoint.removeBreakpointListener(myBreakpointListener);
         }
-      }
-      breakpoint.removeBreakpointListener(myBreakpointListener);
+      });
+
     }
   }
 

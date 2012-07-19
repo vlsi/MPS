@@ -31,11 +31,11 @@ public class QueryFunction_ParametersList_Behavior {
 
   public static SNode call_getExpectedReturnType_7806530711846755632(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632, new Object[]{});
   }
 
   public static SNode callSuper_getExpectedReturnType_7806530711846755632(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_7806530711846755632, new Object[]{});
   }
 
   public static class QuotationClass_1gao1h_a0a0c0b {

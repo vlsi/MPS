@@ -25,19 +25,19 @@ public class CreateEditor_Function_Behavior {
 
   public static SNode call_getJavaMethod_946964771156066804(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066804);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066804, new Object[]{});
   }
 
   public static SNode call_getPublicJavaMethod_203908296139519699(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519699);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519699, new Object[]{});
   }
 
   public static SNode callSuper_getJavaMethod_946964771156066804(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066804);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", PARAMETERS_946964771156066804, new Object[]{});
   }
 
   public static SNode callSuper_getPublicJavaMethod_203908296139519699(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519699);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", PARAMETERS_203908296139519699, new Object[]{});
   }
 }

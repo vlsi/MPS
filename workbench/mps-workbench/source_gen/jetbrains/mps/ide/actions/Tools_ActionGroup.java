@@ -14,7 +14,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_migration = ID + "migration";
   public static final String LABEL_ID_customTools = ID + "customTools";
   public static final String LABEL_ID_devkitTools = ID + "devkitTools";
-  public static final String LABEL_ID_internal = ID + "internal";
 
   public Tools_ActionGroup() {
     super("Tools", ID);
@@ -40,13 +39,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
       Tools_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(Tools_ActionGroup.LABEL_ID_devkitTools);
-        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
-        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
-        Tools_ActionGroup.this.addAction(action);
-      }
-      Tools_ActionGroup.this.addSeparator();
-      {
-        LabelledAnchor action = new LabelledAnchor(Tools_ActionGroup.LABEL_ID_internal);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();
         manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
         Tools_ActionGroup.this.addAction(action);

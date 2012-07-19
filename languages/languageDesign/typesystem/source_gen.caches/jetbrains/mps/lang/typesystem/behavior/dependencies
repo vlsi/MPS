@@ -168,9 +168,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.ImmediateSupertypesExpression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.InequationReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.InequationReplacementRule_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.InequationsGroupReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.InequationsGroup_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.InequationsGroupsRegistry_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.InferenceRule_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.InfoStatement_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor" />
@@ -569,36 +566,6 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.InequationsGroupReference_Behavior" file="InequationsGroupReference_Behavior.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.InequationsGroupReference_BehaviorDescriptor" file="InequationsGroupReference_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.DefaultGroupReference_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.InequationsGroupReference_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.InequationsGroup_BehaviorDescriptor" file="InequationsGroup_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="java.lang.Cloneable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.typesystem.behavior.InequationsGroupsRegistry_BehaviorDescriptor" file="InequationsGroupsRegistry_BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.InferenceRule_Behavior" file="InferenceRule_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
@@ -667,8 +634,10 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.JoinType_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.LeftOperandType_parameter_BehaviorDescriptor" file="LeftOperandType_parameter_BehaviorDescriptor.java">
@@ -739,9 +708,11 @@
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MeetType_BehaviorDescriptor" file="MeetType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.behavior.MeetType_Behavior" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.typesystem.behavior.MessageStatement_Behavior" file="MessageStatement_Behavior.java">

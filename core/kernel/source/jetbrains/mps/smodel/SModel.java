@@ -816,7 +816,6 @@ public class SModel {
     } else {
       addAdditionalModelVersion(sModelReference, currentVersion);
     }
-    fireImportAddedEvent(myReference);
   }
 
   //--------- stuff --------

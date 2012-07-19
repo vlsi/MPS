@@ -21,10 +21,10 @@ public class XMLSAXNodeCreator_Behavior {
 
   public static SNode call_getExpectedReturnType_2268737274628969541(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2268737274628969541);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2268737274628969541, new Object[]{});
   }
 
   public static SNode callSuper_getExpectedReturnType_2268737274628969541(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2268737274628969541);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.xmlQuery.structure.XMLSAXNodeCreator"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_2268737274628969541, new Object[]{});
   }
 }

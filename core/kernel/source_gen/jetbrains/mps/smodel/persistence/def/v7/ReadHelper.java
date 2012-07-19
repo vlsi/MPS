@@ -92,6 +92,9 @@ public class ReadHelper {
     int ix = s.indexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     if (ix <= 0) {
       // no model ID - fqName is here 
+      if (log.isErrorEnabled()) {
+        log.error("Broken reference to type=" + s + " in model " + myModelRef);
+      }
       return s.substring(ix + 1);
     }
     SModelReference modelRef = getSModelReference(s.substring(0, ix));

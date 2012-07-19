@@ -23,10 +23,10 @@ public class InferenceRule_Behavior {
 
   public static void call_setBaseConcept_590757823759239749(SNode thisNode, SNode baseConcept) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, baseConcept);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, new Object[]{baseConcept});
   }
 
   public static void callSuper_setBaseConcept_590757823759239749(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, baseConcept);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.InferenceRule"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_590757823759239749, new Object[]{baseConcept});
   }
 }

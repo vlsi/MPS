@@ -38,11 +38,11 @@ public class AttributeQualifier_Behavior {
 
   public static SNode call_getTargetConcept_6407023681583066586(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586, new Object[]{});
   }
 
   public static SNode callSuper_getTargetConcept_6407023681583066586(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeQualifier"), callerConceptFqName, "virtual_getTargetConcept_6407023681583066586", PARAMETERS_6407023681583066586, new Object[]{});
   }
 
   public static Iterable<SNode> getApplicableRoles_959482772563105834(SNode enclosingNode, String attributeType, SModel model, final IScope scope) {

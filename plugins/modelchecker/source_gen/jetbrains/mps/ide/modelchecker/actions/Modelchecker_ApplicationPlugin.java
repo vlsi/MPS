@@ -8,6 +8,7 @@ import jetbrains.mps.ide.actions.Tools_ActionGroup;
 import jetbrains.mps.ide.actions.ProjectActions_ActionGroup;
 import jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup;
 import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
+import jetbrains.mps.ide.actions.NamespaceActions_ActionGroup;
 import jetbrains.mps.ide.actions.ToolsInternal_ActionGroup;
 import java.util.List;
 import jetbrains.mps.plugins.actions.BaseKeymapChanges;
@@ -28,6 +29,7 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     // actions w/o parameters 
     addAction(new CheckModel_Action());
     addAction(new CheckModule_Action());
+    addAction(new CheckNamespace_Action());
     addAction(new CheckProject_Action());
     addAction(new FindAllAdapterUsages_Action());
     addAction(new FindCrossTemplateReferences_Action());
@@ -37,6 +39,7 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     // groups 
     addGroup(new CheckModel_ActionGroup());
     addGroup(new CheckModule_ActionGroup());
+    addGroup(new CheckNamespace_ActionGroup());
     addGroup(new CheckProject_ActionGroup());
     addGroup(new ShowModelCheckerTool_ActionGroup());
     addGroup(new ToolsInternalEx_ActionGroup());
@@ -47,6 +50,7 @@ public class Modelchecker_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(CheckProject_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModule_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(CheckModel_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_check);
+    insertGroupIntoAnother(CheckNamespace_ActionGroup.ID, NamespaceActions_ActionGroup.ID, NamespaceActions_ActionGroup.LABEL_ID_check);
     insertGroupIntoAnother(ToolsInternalEx_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
   }
 

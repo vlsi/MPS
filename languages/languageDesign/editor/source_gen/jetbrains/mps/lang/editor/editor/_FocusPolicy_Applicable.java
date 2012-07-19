@@ -33,6 +33,10 @@ public class _FocusPolicy_Applicable extends AbstractCellProvider {
   private EditorCell createCollection_pmdlax_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pmdlax_a");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition_pmdlax_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_pmdlax_a0(editorContext, node));
     }

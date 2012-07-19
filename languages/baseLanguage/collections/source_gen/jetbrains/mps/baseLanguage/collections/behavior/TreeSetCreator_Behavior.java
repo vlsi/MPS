@@ -30,11 +30,11 @@ public class TreeSetCreator_Behavior {
 
   public static boolean call_canHaveParameter_2261417478150191164(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164, new Object[]{});
   }
 
   public static boolean callSuper_canHaveParameter_2261417478150191164(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator"), callerConceptFqName, "virtual_canHaveParameter_2261417478150191157", PARAMETERS_2261417478150191164, new Object[]{});
   }
 
   public static class QuotationClass_529210_a0a0b {

@@ -23,19 +23,19 @@ public class HasTemplate_Behavior {
 
   public static SNode call_findTemplate_3939571372331676060(SNode thisNode, SModel model, IScope scope) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.HasTemplate"), "virtual_findTemplate_3939571372331676060", PARAMETERS_3939571372331676060, model, scope);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.HasTemplate"), "virtual_findTemplate_3939571372331676060", PARAMETERS_3939571372331676060, new Object[]{model, scope});
   }
 
   public static SNode call_findTemplate_262873202871795827(SNode thisNode, SModel model, IScope scope) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.HasTemplate"), "virtual_findTemplate_262873202871795827", PARAMETERS_262873202871795827, model, scope);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.HasTemplate"), "virtual_findTemplate_262873202871795827", PARAMETERS_262873202871795827, new Object[]{model, scope});
   }
 
   public static SNode callSuper_findTemplate_3939571372331676060(SNode thisNode, String callerConceptFqName, SModel model, IScope scope) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.HasTemplate"), callerConceptFqName, "virtual_findTemplate_3939571372331676060", PARAMETERS_3939571372331676060, model, scope);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.HasTemplate"), callerConceptFqName, "virtual_findTemplate_3939571372331676060", PARAMETERS_3939571372331676060, new Object[]{model, scope});
   }
 
   public static SNode callSuper_findTemplate_262873202871795827(SNode thisNode, String callerConceptFqName, SModel model, IScope scope) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.HasTemplate"), callerConceptFqName, "virtual_findTemplate_262873202871795827", PARAMETERS_262873202871795827, model, scope);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.modeling.structure.HasTemplate"), callerConceptFqName, "virtual_findTemplate_262873202871795827", PARAMETERS_262873202871795827, new Object[]{model, scope});
   }
 }

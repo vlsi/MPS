@@ -108,6 +108,10 @@ public class BuildMps_Language_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_ucemm3_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ucemm3_a_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
     if (renderingCondition_ucemm3_a0a(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_ucemm3_a0(editorContext, node));
     }

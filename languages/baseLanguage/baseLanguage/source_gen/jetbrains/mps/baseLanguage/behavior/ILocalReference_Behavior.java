@@ -16,10 +16,10 @@ public class ILocalReference_Behavior {
 
   public static SNode call_getDeclaration_3262277503800831941(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalReference"), "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800831941);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalReference"), "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800831941, new Object[]{});
   }
 
   public static SNode callSuper_getDeclaration_3262277503800831941(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalReference"), callerConceptFqName, "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800831941);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalReference"), callerConceptFqName, "virtual_getDeclaration_3262277503800831941", PARAMETERS_3262277503800831941, new Object[]{});
   }
 }

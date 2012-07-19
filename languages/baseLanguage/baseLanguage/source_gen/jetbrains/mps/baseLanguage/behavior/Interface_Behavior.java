@@ -115,10 +115,10 @@ public class Interface_Behavior {
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551004);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551004, new Object[]{});
   }
 
   public static String callSuper_getUnitName_2496361171403551004(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551004);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Interface"), callerConceptFqName, "virtual_getUnitName_5067982036267369911", PARAMETERS_2496361171403551004, new Object[]{});
   }
 }

@@ -104,13 +104,14 @@ public class AbstractConceptDeclaration_Behavior {
         for (SNode node : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
           if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration") && SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false) == thisNode || SLinkOperations.getTarget(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))), "applicableConcept", false) == thisNode) {
             ListSequence.fromList(result).addElement(node);
-          }
-          // generator rules 
-          ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+          } else if (ListSequence.fromList(SNodeOperations.getChildren(node)).any(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "applicableConcept", false) == thisNode || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.generator.structure.DropRootRule") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.lang.generator.structure.DropRootRule"), "applicableConcept", false) == thisNode;
             }
-          }));
+          })) {
+            // generator rules 
+            ListSequence.fromList(result).addElement(node);
+          }
         }
       }
     }
@@ -337,11 +338,11 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
+    return (List<SNode>) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282, new Object[]{});
   }
 
   public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282, new Object[]{});
   }
 
   public static class QuotationClass_8dqsla_a0a0a0l {

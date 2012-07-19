@@ -40,11 +40,11 @@ public class CommandParameterDeclaration_Behavior {
 
   public static boolean call_generateField_8478830098674441876(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876, new Object[]{});
   }
 
   public static boolean callSuper_generateField_8478830098674441876(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), callerConceptFqName, "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"), callerConceptFqName, "virtual_generateField_8478830098674441876", PARAMETERS_8478830098674441876, new Object[]{});
   }
 
   public static String getUpperCaseName_7327337331549086070(String name) {

@@ -69,10 +69,10 @@ public class IconResource_Behavior {
 
   public static void call_generate_8974276187400029990(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), "virtual_generate_8974276187400030152", PARAMETERS_8974276187400029990);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), "virtual_generate_8974276187400030152", PARAMETERS_8974276187400029990, new Object[]{});
   }
 
   public static void callSuper_generate_8974276187400029990(SNode thisNode, String callerConceptFqName) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), callerConceptFqName, "virtual_generate_8974276187400030152", PARAMETERS_8974276187400029990);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.resources.structure.IconResource"), callerConceptFqName, "virtual_generate_8974276187400030152", PARAMETERS_8974276187400029990, new Object[]{});
   }
 }

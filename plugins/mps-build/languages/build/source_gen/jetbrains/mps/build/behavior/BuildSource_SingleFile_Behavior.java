@@ -16,10 +16,10 @@ public class BuildSource_SingleFile_Behavior {
 
   public static String call_getApproximateName_5610619299013425878(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSource_SingleFile"), "virtual_getApproximateName_5610619299013425878", PARAMETERS_5610619299013425878);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSource_SingleFile"), "virtual_getApproximateName_5610619299013425878", PARAMETERS_5610619299013425878, new Object[]{});
   }
 
   public static String callSuper_getApproximateName_5610619299013425878(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSource_SingleFile"), callerConceptFqName, "virtual_getApproximateName_5610619299013425878", PARAMETERS_5610619299013425878);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildSource_SingleFile"), callerConceptFqName, "virtual_getApproximateName_5610619299013425878", PARAMETERS_5610619299013425878, new Object[]{});
   }
 }

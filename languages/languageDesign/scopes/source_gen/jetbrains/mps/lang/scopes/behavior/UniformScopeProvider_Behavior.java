@@ -26,10 +26,10 @@ public class UniformScopeProvider_Behavior {
 
   public static Scope call_getScope_2995585510566823862(SNode thisNode, SNode kind, ScopeProviderContext context) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"), "virtual_getScope_2995585510566823862", PARAMETERS_2995585510566823862, kind, context);
+    return (Scope) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"), "virtual_getScope_2995585510566823862", PARAMETERS_2995585510566823862, new Object[]{kind, context});
   }
 
   public static Scope callSuper_getScope_2995585510566823862(SNode thisNode, String callerConceptFqName, SNode kind, ScopeProviderContext context) {
-    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"), callerConceptFqName, "virtual_getScope_2995585510566823862", PARAMETERS_2995585510566823862, kind, context);
+    return (Scope) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.scopes.structure.UniformScopeProvider"), callerConceptFqName, "virtual_getScope_2995585510566823862", PARAMETERS_2995585510566823862, new Object[]{kind, context});
   }
 }

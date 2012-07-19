@@ -25,19 +25,19 @@ public class IStringExpression_Behavior {
 
   public static String call_getValue_1213877173054(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), "virtual_getValue_1213877173054", PARAMETERS_1213877173054);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), "virtual_getValue_1213877173054", PARAMETERS_1213877173054, new Object[]{});
   }
 
   public static String call_getAntValue_8148924375507875982(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), "virtual_getAntValue_8148924375507875982", PARAMETERS_8148924375507875982);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), "virtual_getAntValue_8148924375507875982", PARAMETERS_8148924375507875982, new Object[]{});
   }
 
   public static String callSuper_getValue_1213877173054(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getValue_1213877173054", PARAMETERS_1213877173054);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getValue_1213877173054", PARAMETERS_1213877173054, new Object[]{});
   }
 
   public static String callSuper_getAntValue_8148924375507875982(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getAntValue_8148924375507875982", PARAMETERS_8148924375507875982);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IStringExpression"), callerConceptFqName, "virtual_getAntValue_8148924375507875982", PARAMETERS_8148924375507875982, new Object[]{});
   }
 }

@@ -16,10 +16,10 @@ public class IGeneratorParameter_Behavior {
 
   public static String call_getUniqueId_650531548511609559(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.IGeneratorParameter"), "virtual_getUniqueId_650531548511609559", PARAMETERS_650531548511609559);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.IGeneratorParameter"), "virtual_getUniqueId_650531548511609559", PARAMETERS_650531548511609559, new Object[]{});
   }
 
   public static String callSuper_getUniqueId_650531548511609559(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.IGeneratorParameter"), callerConceptFqName, "virtual_getUniqueId_650531548511609559", PARAMETERS_650531548511609559);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.IGeneratorParameter"), callerConceptFqName, "virtual_getUniqueId_650531548511609559", PARAMETERS_650531548511609559, new Object[]{});
   }
 }

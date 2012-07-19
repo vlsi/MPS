@@ -32,19 +32,19 @@ public class AbstractRule_Behavior {
 
   public static SNode call_getBaseConcept_8952337903384866977(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384866977);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384866977, new Object[]{});
   }
 
   public static void call_setBaseConcept_6261424444345979630(SNode thisNode, SNode baseConcept) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979630, baseConcept);
+    descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979630, new Object[]{baseConcept});
   }
 
   public static SNode callSuper_getBaseConcept_8952337903384866977(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384866977);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384866977, new Object[]{});
   }
 
   public static void callSuper_setBaseConcept_6261424444345979630(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
-    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979630, baseConcept);
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.typesystem.structure.AbstractRule"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979630, new Object[]{baseConcept});
   }
 }

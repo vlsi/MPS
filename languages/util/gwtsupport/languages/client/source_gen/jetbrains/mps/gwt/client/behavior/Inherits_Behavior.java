@@ -20,10 +20,10 @@ public class Inherits_Behavior {
 
   public static String call_getXmlElement_4204903511793527431(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Inherits"), "virtual_getXmlElement_3852159904898386595", PARAMETERS_4204903511793527431);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Inherits"), "virtual_getXmlElement_3852159904898386595", PARAMETERS_4204903511793527431, new Object[]{});
   }
 
   public static String callSuper_getXmlElement_4204903511793527431(SNode thisNode, String callerConceptFqName) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Inherits"), callerConceptFqName, "virtual_getXmlElement_3852159904898386595", PARAMETERS_4204903511793527431);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.gwt.client.structure.Inherits"), callerConceptFqName, "virtual_getXmlElement_3852159904898386595", PARAMETERS_4204903511793527431, new Object[]{});
   }
 }

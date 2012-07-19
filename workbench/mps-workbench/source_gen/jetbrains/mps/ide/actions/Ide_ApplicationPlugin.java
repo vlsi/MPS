@@ -55,6 +55,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new Find_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToNode_Action());
+    addAction(new GoToRootNode_Action());
     addAction(new GoToRule_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
@@ -201,7 +202,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(GoByReference_ActionGroup.ID, "GoToEditorPopupAddition_ActionGrouprefs", null);
     insertGroupIntoAnother(NodeActionsInternal_ActionGroup.ID, NodeActions_ActionGroup.ID, null);
     insertGroupIntoAnother(EditorInternal_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
-    insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, Tools_ActionGroup.ID, Tools_ActionGroup.LABEL_ID_internal);
+    insertGroupIntoAnother(ToolsInternal_ActionGroup.ID, "Internal", null);
     insertGroupIntoAnother(DebugActions_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_debug);
     insertGroupIntoAnother(DebugActions_ActionGroup.ID, "EditorPopup_ActionGroupdebug", null);
     insertGroupIntoAnother(ProjectNewActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_projectNew);

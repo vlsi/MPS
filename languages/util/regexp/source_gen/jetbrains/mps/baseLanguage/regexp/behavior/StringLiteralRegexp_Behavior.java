@@ -85,20 +85,20 @@ public class StringLiteralRegexp_Behavior {
 
   public static String call_getString_1222431822198(SNode thisNode, List<SNode> vars) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222431822198, vars);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222431822198, new Object[]{vars});
   }
 
   public static boolean call_isValid_4759120547781297313(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313, new Object[]{});
   }
 
   public static String callSuper_getString_1222431822198(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222431822198, vars);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222431822198, new Object[]{vars});
   }
 
   public static boolean callSuper_isValid_4759120547781297313(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp"), callerConceptFqName, "virtual_isValid_4759120547781297301", PARAMETERS_4759120547781297313, new Object[]{});
   }
 
   public static boolean isHexChar_8949395081772969908(char c) {

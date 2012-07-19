@@ -80,28 +80,28 @@ public class LocalVariableDeclaration_Behavior {
 
   public static String call_getPrefix_3012473318495506424(SNode thisNode, Project project) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506424, project);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506424, new Object[]{project});
   }
 
   public static String call_getSuffix_3012473318495506430(SNode thisNode, Project project) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506430, project);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506430, new Object[]{project});
   }
 
   public static SNode call_getValue_4163393263914882931(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getValue_1224857430232", PARAMETERS_4163393263914882931);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), "virtual_getValue_1224857430232", PARAMETERS_4163393263914882931, new Object[]{});
   }
 
   public static String callSuper_getPrefix_3012473318495506424(SNode thisNode, String callerConceptFqName, Project project) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506424, project);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getPrefix_3012473318495495520", PARAMETERS_3012473318495506424, new Object[]{project});
   }
 
   public static String callSuper_getSuffix_3012473318495506430(SNode thisNode, String callerConceptFqName, Project project) {
-    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506430, project);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getSuffix_3012473318495499856", PARAMETERS_3012473318495506430, new Object[]{project});
   }
 
   public static SNode callSuper_getValue_4163393263914882931(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_4163393263914882931);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), callerConceptFqName, "virtual_getValue_1224857430232", PARAMETERS_4163393263914882931, new Object[]{});
   }
 }

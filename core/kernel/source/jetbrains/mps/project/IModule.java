@@ -90,6 +90,8 @@ public interface IModule extends ModelOwner {
 
   IFile getBundleHome();
 
+  Collection<String> getIndexablePaths();
+
   @NotNull
   IScope getScope();
 

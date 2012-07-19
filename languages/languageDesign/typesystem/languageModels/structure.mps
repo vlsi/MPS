@@ -185,7 +185,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1188473524530">
       <property name="name" nameId="tpck.1169194664001" value="MeetType" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1188811367543">
       <property name="name" nameId="tpck.1169194664001" value="ComparisonRule" />
@@ -436,19 +436,6 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4778346850551666963">
       <property name="name" nameId="tpck.1169194664001" value="InequationReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1320713984677547791">
-      <property name="name" nameId="tpck.1169194664001" value="InequationsGroupsRegistry" />
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1320713984677547792">
-      <property name="name" nameId="tpck.1169194664001" value="InequationsGroup" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1320713984677670354">
-      <property name="name" nameId="tpck.1169194664001" value="InequationsGroupReference" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1320713984677695202" resolveInfo="DefaultGroupReference" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1320713984677695202">
       <property name="name" nameId="tpck.1169194664001" value="DefaultGroupReference" />
@@ -1029,11 +1016,14 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <property name="role" nameId="tpce.1071599776563" value="argument" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1234971358450" resolveInfo="IType" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1206015362264">
       <property name="value" nameId="tpce.1105725733873" value="join" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6234654476299859502">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1234971358450" resolveInfo="IType" />
     </node>
   </root>
   <root id="1179832490862">
@@ -1132,11 +1122,14 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="argument" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpck.1234971358450" resolveInfo="IType" />
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1227261052980">
       <property name="value" nameId="tpce.1105725733873" value="meet" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6234654476299817406">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1234971358450" resolveInfo="IType" />
     </node>
   </root>
   <root id="1188811367543">
@@ -2012,31 +2005,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="inequation" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1212056081426" resolveInfo="AbstractInequationStatement" />
-    </node>
-  </root>
-  <root id="1320713984677547791">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="4388908255921309813">
-      <property name="value" nameId="tpce.1105725733873" value="Inequations Group Registry" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1320713984677547797">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="group" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1320713984677547792" resolveInfo="InequationsGroup" />
-    </node>
-  </root>
-  <root id="1320713984677547792">
-    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1320713984677547793">
-      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
-    </node>
-  </root>
-  <root id="1320713984677670354">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1320713984677670355">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="group" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="1320713984677547792" resolveInfo="InequationsGroup" />
     </node>
   </root>
   <root id="1320713984677695202">

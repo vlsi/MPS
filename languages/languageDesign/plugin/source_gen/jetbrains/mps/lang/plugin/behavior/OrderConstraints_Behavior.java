@@ -17,19 +17,19 @@ public class OrderConstraints_Behavior {
 
   public static SNode call_getOrder_3038738109029048953(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048953);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048953, new Object[]{});
   }
 
   public static boolean call_presents_1499919975383879508(SNode thisNode, SNode tab) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383879508, tab);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), "virtual_presents_1499919975383879508", PARAMETERS_1499919975383879508, new Object[]{tab});
   }
 
   public static SNode callSuper_getOrder_3038738109029048953(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048953);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_getOrder_3038738109029048953", PARAMETERS_3038738109029048953, new Object[]{});
   }
 
   public static boolean callSuper_presents_1499919975383879508(SNode thisNode, String callerConceptFqName, SNode tab) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_presents_1499919975383879508", PARAMETERS_1499919975383879508, tab);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.OrderConstraints"), callerConceptFqName, "virtual_presents_1499919975383879508", PARAMETERS_1499919975383879508, new Object[]{tab});
   }
 }

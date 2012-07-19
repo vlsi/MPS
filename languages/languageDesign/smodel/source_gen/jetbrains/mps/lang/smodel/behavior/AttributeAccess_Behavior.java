@@ -53,29 +53,29 @@ public class AttributeAccess_Behavior {
 
   public static boolean call_isSingularCardinality_6960953357954063537(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537, new Object[]{});
   }
 
   public static boolean call_isAggregation_6960953357954063547(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547, new Object[]{});
   }
 
   public static SNode call_getTargetConcept_6960953357954063543(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543, new Object[]{});
   }
 
   public static boolean callSuper_isSingularCardinality_6960953357954063537(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isSingularCardinality_4024382256428848847", PARAMETERS_6960953357954063537, new Object[]{});
   }
 
   public static boolean callSuper_isAggregation_6960953357954063547(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_isAggregation_4024382256428848854", PARAMETERS_6960953357954063547, new Object[]{});
   }
 
   public static SNode callSuper_getTargetConcept_6960953357954063543(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.AttributeAccess"), callerConceptFqName, "virtual_getTargetConcept_4024382256428848859", PARAMETERS_6960953357954063543, new Object[]{});
   }
 
   public static class QuotationClass_q663c8_a0a1a5 {

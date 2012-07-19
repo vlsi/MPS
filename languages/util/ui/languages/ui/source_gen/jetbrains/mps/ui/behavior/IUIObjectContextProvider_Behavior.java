@@ -31,37 +31,37 @@ public class IUIObjectContextProvider_Behavior {
 
   public static boolean call_shouldReturnValue_8923564134259848103(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259848103);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259848103, new Object[]{});
   }
 
   public static SNode call_getContainer_8923564134258257521(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258257521);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258257521, new Object[]{});
   }
 
   public static SNode call_getContextExpression_8923564134258345446(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345446);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345446, new Object[]{});
   }
 
   public static SNode call_getContext_8923564134258345451(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258345451);
+    return (SNode) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258345451, new Object[]{});
   }
 
   public static boolean callSuper_shouldReturnValue_8923564134259848103(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), callerConceptFqName, "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259848103);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), callerConceptFqName, "virtual_shouldReturnValue_8923564134259848103", PARAMETERS_8923564134259848103, new Object[]{});
   }
 
   public static SNode callSuper_getContainer_8923564134258257521(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258257521);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), callerConceptFqName, "virtual_getContainer_8923564134258257521", PARAMETERS_8923564134258257521, new Object[]{});
   }
 
   public static SNode callSuper_getContextExpression_8923564134258345446(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), callerConceptFqName, "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345446);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), callerConceptFqName, "virtual_getContextExpression_8923564134258345446", PARAMETERS_8923564134258345446, new Object[]{});
   }
 
   public static SNode callSuper_getContext_8923564134258345451(SNode thisNode, String callerConceptFqName) {
-    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), callerConceptFqName, "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258345451);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ui.structure.IUIObjectContextProvider"), callerConceptFqName, "virtual_getContext_8923564134258345451", PARAMETERS_8923564134258345451, new Object[]{});
   }
 }

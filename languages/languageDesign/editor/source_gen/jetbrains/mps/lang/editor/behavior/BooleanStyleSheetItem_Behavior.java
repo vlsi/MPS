@@ -31,10 +31,10 @@ public class BooleanStyleSheetItem_Behavior {
 
   public static boolean call_useQuery_1223387362946(SNode thisNode) {
     BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
-    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
+    return (Boolean) descriptor.invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "virtual_useQuery_1223387362946", PARAMETERS_1223387362946, new Object[]{});
   }
 
   public static boolean callSuper_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {
-    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946, new Object[]{});
   }
 }
