@@ -20,8 +20,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import com.intellij.openapi.actionSystem.Shortcut;
+import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
@@ -99,7 +102,8 @@ public class AddModelImportByRoot_Action extends BaseAction {
         initialText.value = SPropertyOperations.getString(unresolvedReference, "resolveName");
       }
 
-      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), initialText.value, new ImportHelper.ModelImportByRootCallback() {
+      Shortcut[] checkboxShortcut = KeymapManager.getInstance().getActiveKeymap().getShortcuts(AddModelImportByRoot_Action.this.getActionId());
+      ImportHelper.addModelImportByRoot(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), initialText.value, new CustomShortcutSet(checkboxShortcut), new ImportHelper.ModelImportByRootCallback() {
         public void importForRootAdded(String rootName) {
           String textToMatch = (rootName != null ?
             rootName :

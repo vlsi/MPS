@@ -18,6 +18,7 @@ package jetbrains.mps.ide.editor.actions;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
@@ -146,7 +147,7 @@ public class ImportHelper {
   }
 
   public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,
-                                          String initialText, final ModelImportByRootCallback callback) {
+                                          String initialText, @Nullable ShortcutSet checkboxShortcut, final ModelImportByRootCallback callback) {
     BaseMPSChooseModel goToNodeModel = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex()) {
       public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
         return new RootNodeElement(object) {
@@ -170,6 +171,9 @@ public class ImportHelper {
       }
     };
     ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText);
+    if (checkboxShortcut != null) {
+      popup.setCheckBoxShortcut(checkboxShortcut);
+    }
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
