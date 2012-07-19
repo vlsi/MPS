@@ -90,7 +90,8 @@ public class ImportHelper {
     }, ModalityState.current(), true);
   }
 
-  public static void addLanguageImport(Project project, final IModule contextModule, final SModelDescriptor model) {
+  public static void addLanguageImport(Project project, final IModule contextModule, final SModelDescriptor model,
+                                       @Nullable ShortcutSet checkboxShortcut) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       public NavigationItem doGetNavigationItem(ModuleReference ref) {
         return new AddLanguageItem(ref, contextModule, model);
@@ -110,6 +111,9 @@ public class ImportHelper {
       }
     };
     ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel);
+    if (checkboxShortcut != null) {
+      popup.setCheckBoxShortcut(checkboxShortcut);
+    }
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
