@@ -21,11 +21,12 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
+import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.*;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -37,7 +38,9 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
+import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -48,6 +51,14 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
   public MPSChooseSNodeDescriptor(Project project, BaseSNodeDescriptorIndex index) {
     super(project, "node");
     myIndex = index;
+  }
+
+  @Override
+  public BaseSNodeDescriptor[] find(boolean checkboxState) {
+    // todo: exclude stubs from ctrl+n?
+    if (checkboxState) return find(new FilteredGlobalScope());
+    MPSProject project = getProject().getComponent(MPSProject.class);
+    return find(new FilterStubsScope(new ModulesOnlyScope(project.getModulesWithGenerators())));
   }
 
   public BaseSNodeDescriptor[] find(final IScope scope) {
@@ -150,12 +161,88 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
 
+
+
   protected String doGetCheckBoxName() {
-    return "Include &non-&&project models";
+    return "Include stubs and &non-&&project models";
   }
 
   @Override
   public boolean willOpenEditor() {
     return true;
+  }
+
+  private static class FilterStubsScope implements IScope {
+    private final IScope inner;
+
+    public FilterStubsScope(IScope inner) {
+      this.inner = inner;
+    }
+
+    @Override
+    public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
+      return inner.getModelDescriptor(modelReference);
+    }
+
+    @Override
+    public Language getLanguage(ModuleReference moduleReference) {
+      return inner.getLanguage(moduleReference);
+    }
+
+    @Override
+    public DevKit getDevKit(ModuleReference ref) {
+      return inner.getDevKit(ref);
+    }
+
+    private boolean isExcluded(SModelDescriptor descriptor) {
+      return SModelStereotype.isStubModelStereotype(descriptor.getStereotype());
+    }
+
+    @Override
+    public Iterable<SModelDescriptor> getModelDescriptors() {
+      List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+      for (SModelDescriptor descriptor : inner.getModelDescriptors()) {
+        if (!isExcluded(descriptor)) {
+          result.add(descriptor);
+        }
+      }
+      return result;
+    }
+
+    @Override
+    public Iterable<SModelDescriptor> getOwnModelDescriptors() {
+      List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
+      for (SModelDescriptor descriptor : inner.getOwnModelDescriptors()) {
+        if (!isExcluded(descriptor)) {
+          result.add(descriptor);
+        }
+      }
+      return result;
+    }
+
+    @Override
+    public Iterable<Language> getVisibleLanguages() {
+      return inner.getVisibleLanguages();
+    }
+
+    @Override
+    public Iterable<DevKit> getVisibleDevkits() {
+      return inner.getVisibleDevkits();
+    }
+
+    @Override
+    public Iterable<IModule> getVisibleModules() {
+      return inner.getVisibleModules();
+    }
+
+    @Override
+    public SModelDescriptor getModelDescriptor(SModelFqName fqName) {
+      return inner.getModelDescriptor(fqName);
+    }
+
+    @Override
+    public Language getLanguage(String fqName) {
+      return inner.getLanguage(fqName);
+    }
   }
 }

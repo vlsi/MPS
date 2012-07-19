@@ -1337,15 +1337,25 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.GoToRootNode_Action" file="GoToRootNode_Action.java">
     <classNode dependClassName="com.intellij.featureStatistics.FeatureUsageTracker" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnAction" />
+    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopup" />
+    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
+    <classNode dependClassName="com.intellij.navigation.NavigationItem" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.CustomShortcutSet" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
+    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
+    <classNode dependClassName="com.intellij.openapi.keymap.KeymapManager" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -1382,12 +1392,10 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToFile_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToModule_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToModelAction" />
     <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToModuleAction" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
   <dependency className="jetbrains.mps.ide.actions.HighlightConstants" file="HighlightConstants.java">
@@ -1525,6 +1533,7 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.GoByCurrentReferenceToIDEA_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoByReference_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToNode_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToRule_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Goto_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.HighlightInstances_Action" />
