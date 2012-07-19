@@ -235,7 +235,9 @@
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="74" startPosition="0" endLine="79" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialog.java" startLine="79" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="97" startPosition="25" endLine="102" endPosition="5" />
+    <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="97" startPosition="25" endLine="102" endPosition="5">
+      <varInfo nodeId="1204026592280" varName="binding" />
+    </scopeInfo>
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="111" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="124" startPosition="0" endLine="130" endPosition="0" />
     <scopeInfo nodeId="1204026592280" fileName="NewDevKitDialogContentPane.java" startLine="157" startPosition="0" endLine="163" endPosition="0">

@@ -1848,6 +1848,7 @@
       <varInfo nodeId="4507335185602819677" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="4507335185602819668" fileName="MethodDuplicatesProcessor.java" startLine="17" startPosition="43" endLine="16" endPosition="0" />
+    <unitInfo nodeId="4507335185602819654" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.MethodDuplicatesProcessor" />
   </root>
   <root nodeId="4507335185602819706">
     <nodeInfo nodeId="4507335185602819715" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
