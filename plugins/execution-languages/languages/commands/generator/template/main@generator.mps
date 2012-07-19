@@ -2208,20 +2208,10 @@
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068498886292" resolveInfo="ParameterDeclaration" />
       <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="rzqf.7327337331549086040" resolveInfo="CommandParameterDeclaration" />
     </node>
-    <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="865001690840234037">
-      <property name="name" nameId="tpck.1169194664001" value="ProcessBuilderPartToLocalVariableDeclaration" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
-      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="rzqf.856705193941281797" resolveInfo="AbstractProcessBuilderPart" />
-    </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="8980950851470008851">
       <property name="name" nameId="tpck.1169194664001" value="CommandPartToLocalVariableDeclaration" />
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
       <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="865001690840234038">
-      <property name="name" nameId="tpck.1169194664001" value="ProcessBuilderPartToLocalValueVariableDeclaration" />
-      <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
-      <link role="sourceConcept" roleId="tpf8.1200911342686" targetNodeId="rzqf.856705193941281797" resolveInfo="AbstractProcessBuilderPart" />
     </node>
     <node role="mappingLabel" roleId="tpf8.1200911492601" type="tpf8.MappingLabelDeclaration" typeId="tpf8.1200911316486" id="865001690840234039">
       <property name="name" nameId="tpck.1169194664001" value="CommandParameterAssignmentToLocalVariable" />
@@ -2232,13 +2222,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="command" />
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="865001690840232933" resolveInfo="CommandDeclaration_Template" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.856705193941281768" resolveInfo="CommandDeclaration" />
-    </node>
-    <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="865001690840234041">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="processBuilder" />
-      <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.856705193941281799" resolveInfo="ProcessBuilderExpression" />
-      <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="865001690840234042">
-        <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="865001690840233646" resolveInfo="reduce_ProcessBuilderExpressionNew" />
-      </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="8980950851470012986">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="rzqf.2343546112398330898" resolveInfo="NewProcessBuilderExpression" />
