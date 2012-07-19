@@ -148,7 +148,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, null);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -183,7 +183,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, null);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -229,7 +229,7 @@ public class CommonChoosers {
         return false;
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel, null);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

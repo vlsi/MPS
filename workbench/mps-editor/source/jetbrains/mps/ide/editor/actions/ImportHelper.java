@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
@@ -50,7 +51,7 @@ import java.util.List;
 
 public class ImportHelper {
   public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model,
-                                    @Nullable ShortcutSet checkboxShortcut) {
+                                    @Nullable BaseAction parentAction) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new AddModelItem(project, model, modelReference, module);
@@ -78,10 +79,7 @@ public class ImportHelper {
         return "Import model:";
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
-    if (checkboxShortcut != null) {
-      popup.setCheckBoxShortcut(checkboxShortcut);
-    }
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -95,7 +93,7 @@ public class ImportHelper {
   }
 
   public static void addLanguageImport(Project project, final IModule contextModule, final SModelDescriptor model,
-                                       @Nullable ShortcutSet checkboxShortcut) {
+                                       @Nullable BaseAction parentAction) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       public NavigationItem doGetNavigationItem(ModuleReference ref) {
         return new AddLanguageItem(ref, contextModule, model);
@@ -114,10 +112,7 @@ public class ImportHelper {
         return "Import language:";
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel);
-    if (checkboxShortcut != null) {
-      popup.setCheckBoxShortcut(checkboxShortcut);
-    }
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -155,7 +150,7 @@ public class ImportHelper {
   }
 
   public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,
-                                          String initialText, @Nullable ShortcutSet checkboxShortcut, final ModelImportByRootCallback callback) {
+                                          String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
     BaseMPSChooseModel goToNodeModel = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex()) {
       public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
         return new RootNodeElement(object) {
@@ -178,10 +173,7 @@ public class ImportHelper {
         return "Import model that contains root:";
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText);
-    if (checkboxShortcut != null) {
-      popup.setCheckBoxShortcut(checkboxShortcut);
-    }
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

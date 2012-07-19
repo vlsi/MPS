@@ -14,11 +14,8 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.openapi.actionSystem.Shortcut;
-import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.IModule;
-import com.intellij.openapi.actionSystem.CustomShortcutSet;
 
 public class AddModelImport_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -74,8 +71,7 @@ public class AddModelImport_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Shortcut[] checkboxShortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(AddModelImport_Action.this.getActionId());
-      ImportHelper.addModelImport(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), new CustomShortcutSet(checkboxShortcuts));
+      ImportHelper.addModelImport(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModelImport", t);

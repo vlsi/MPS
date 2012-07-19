@@ -27,9 +27,6 @@ import java.util.List;
 import java.util.ArrayList;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
-import com.intellij.openapi.actionSystem.Shortcut;
-import com.intellij.openapi.keymap.KeymapManager;
-import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import jetbrains.mps.workbench.actions.goTo.NavigateCallback;
 import com.intellij.openapi.application.ModalityState;
 
@@ -99,10 +96,8 @@ public class GoToModel_Action extends BaseAction {
           return result.toArray(new SModelReference[result.size()]);
         }
       };
-      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
+      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, GoToModel_Action.this);
       popup.setShowListForEmptyPattern(true);
-      Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(GoToModel_Action.this.getActionId());
-      popup.setCheckBoxShortcut(new CustomShortcutSet(shortcuts));
 
       popup.invoke(new NavigateCallback(), ModalityState.current(), true);
     } catch (Throwable t) {

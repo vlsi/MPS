@@ -127,7 +127,7 @@ public class NewRuntimeModule_Action extends BaseAction {
           };
         }
       };
-      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel);
+      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(((Project) MapSequence.fromMap(_params).get("project")), baseSolutionModel, NewRuntimeModule_Action.this);
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         public void elementChosen(Object p0) {
           ((NavigationItem) p0).navigate(true);

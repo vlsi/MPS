@@ -19,22 +19,35 @@ import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.CustomShortcutSet;
+import com.intellij.openapi.actionSystem.Shortcut;
+import com.intellij.openapi.actionSystem.ShortcutSet;
+import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class MpsPopupFactory {
   private static final FakePsiContext CONTEXT = new FakePsiContext();
 
-  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, nodeProvider());
+  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m, @Nullable BaseAction parentAction) {
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(p, m, nodeProvider());
+    setCheckboxShortcutFromAction(popup, parentAction);
+    return popup;
   }
 
-  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m, String initialText) {
-    return ChooseByNamePopup.createPopup(p, m, nodeProvider(), initialText);
+  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m, String initialText, @Nullable BaseAction parentAction) {
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(p, m, nodeProvider(), initialText);
+    setCheckboxShortcutFromAction(popup, parentAction);
+    return popup;
   }
 
-  public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
-    return ChooseByNamePopup.createPopup(p, m, packageProvider());
+  public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m, @Nullable BaseAction parentAction) {
+    ChooseByNamePopup popup = ChooseByNamePopup.createPopup(p, m, packageProvider());
+    setCheckboxShortcutFromAction(popup, parentAction);
+    return popup;
   }
 
   public static ChooseByNamePanel createPanelForNode(ChooseByNameModel model, boolean checkboxVisible) {
@@ -51,5 +64,14 @@ public abstract class MpsPopupFactory {
 
   private static ChooseByNameItemProvider packageProvider() {
     return new CompositeItemProvider(new DefaultChooseByNameItemProvider(CONTEXT), new MPSPackageItemProvider(CONTEXT));
+  }
+
+  private static void setCheckboxShortcutFromAction(ChooseByNamePopup popup, @Nullable BaseAction parentAction) {
+    if (parentAction != null) {
+      Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(parentAction.getActionId());
+      if (shortcuts != null && shortcuts.length > 0) {
+        popup.setCheckBoxShortcut(new CustomShortcutSet(shortcuts));
+      }
+    }
   }
 }

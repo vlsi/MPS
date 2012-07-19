@@ -84,7 +84,7 @@ public class GoToModelPlatformAction extends BaseAction implements DumbAware {
         return result.toArray(new SModelReference[result.size()]);
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, null);
     popup.setShowListForEmptyPattern(true);
     popup.setCheckBoxShortcut(getShortcutSet());
     popup.invoke(new NavigateCallback(), ModalityState.current(), true);
