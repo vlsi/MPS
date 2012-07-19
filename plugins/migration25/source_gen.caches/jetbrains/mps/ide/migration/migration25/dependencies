@@ -363,7 +363,6 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.migration.migration25.MigrationScript_UpgradeProcessBuilder_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.MovePluginsOutOfLanguages_Action" />
     <classNode dependClassName="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action" />
@@ -602,30 +601,6 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action" file="MigrationScript_SplitMPSClasspath_Action.java">
-    <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
-    <classNode dependClassName="com.intellij.openapi.command.CommandProcessorEx" />
-    <classNode dependClassName="com.intellij.openapi.progress.EmptyProgressIndicator" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="java.awt.Frame" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.ide.script.plugin.migrationtool.MigrationScriptExecutor" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
-    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.migration.migration25.MigrationScript_UpgradeProcessBuilder_Action" file="MigrationScript_UpgradeProcessBuilder_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.PlatformDataKeys" />
     <classNode dependClassName="com.intellij.openapi.command.CommandProcessorEx" />

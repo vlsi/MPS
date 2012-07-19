@@ -33,7 +33,6 @@ public class Migrations25_ActionGroup extends GeneratedActionGroup {
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action");
-      Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.MigrationScript_UpgradeProcessBuilder_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action");
       Migrations25_ActionGroup.this.addAction("jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action");
