@@ -229,7 +229,7 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1333842892732797387">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1333842892732797389">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.SuperMethodCall" typeId="tpee.1073063089578" id="1333842892732797390">
-            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k128.~BaseProjectTool%ddisposeComponent()%cvoid" resolveInfo="disposeComponent" />
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1466595955268239423" resolveInfo="disposeComponent" />
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="1122870626408957314">
