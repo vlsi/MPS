@@ -34,6 +34,9 @@
     <node type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="485694842828664420">
       <property name="name" nameId="tpck.1169194664001" value="add_parameter_to_closure" />
     </node>
+    <node type="tpdg.NodeFactories" typeId="tpdg.1158700664498" id="315309404903965692">
+      <property name="name" nameId="tpck.1169194664001" value="AddRequiredParameter" />
+    </node>
   </roots>
   <root id="1217414439967">
     <node role="actionsBuilder" roleId="tpdg.1112058057696" type="tpdg.NodeSubstituteActionsBuilder" typeId="tpdg.1112058030570" id="1217414463812">
@@ -578,6 +581,28 @@
                 <node role="value" roleId="tp25.1138662048170" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="485694842828666275">
                   <property name="value" nameId="tpee.1070475926801" value="component" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="315309404903965692">
+    <node role="nodeFactory" roleId="tpdg.1158700779049" type="tpdg.NodeFactory" typeId="tpdg.1158700725281" id="315309404903965693">
+      <link role="applicableConcept" roleId="tpdg.1158700943156" targetNodeId="tp4k.1217413147516" resolveInfo="ActionParameter" />
+      <node role="setupFunction" roleId="tpdg.1158701448518" type="tpdg.NodeSetupFunction" typeId="tpdg.1158701162220" id="315309404903965694">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="315309404903965695">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="315309404903965696">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="315309404903965744">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="315309404903965716">
+                <node role="operand" roleId="tpee.1197027771414" type="tpdg.NodeSetupFunction_NewNode" typeId="tpdg.1158701289411" id="315309404903965697" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="315309404903965724">
+                  <link role="link" roleId="tp25.1138056546658" targetNodeId="tp4k.5538333046911298738" />
+                </node>
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="315309404903965757">
+                <link role="concept" roleId="tp25.1139877738879" targetNodeId="tp4k.5538333046911348654" resolveInfo="RequiredCondition" />
               </node>
             </node>
           </node>
