@@ -16,9 +16,6 @@ import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
-import com.intellij.openapi.actionSystem.Shortcut;
-import com.intellij.openapi.keymap.KeymapManager;
-import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
@@ -30,7 +27,7 @@ public class GoToRootNode_Action extends BaseAction {
   public GoToRootNode_Action() {
     super("Go to Root Node", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @Override
@@ -64,9 +61,7 @@ public class GoToRootNode_Action extends BaseAction {
       assert project != null;
 
       MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
-      ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult);
-      Shortcut[] shortcuts = KeymapManager.getInstance().getActiveKeymap().getShortcuts(GoToRootNode_Action.this.getActionId());
-      popup.setCheckBoxShortcut(new CustomShortcutSet(shortcuts));
+      ChooseByNamePopup popup = MpsPopupFactory.createNodePopupWithParentAction(project, chooseSNodeResult, GoToRootNode_Action.this);
 
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         public void onClose() {
