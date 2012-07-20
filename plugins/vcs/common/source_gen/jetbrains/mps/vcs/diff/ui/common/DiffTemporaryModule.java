@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.vfs.IFile;
 
 public class DiffTemporaryModule extends AbstractModule {
   private SModel myModel;
