@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="ApplyTo_Function_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.ApplyTo_Function_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="CheckProperitesOperation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CheckProperitesOperation_BehaviorDescriptor" />
   <unitInfo fileName="CheckProperties_Function_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CheckProperties_Function_BehaviorDescriptor" />
   <unitInfo fileName="Configuration_Parameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Configuration_Parameter_BehaviorDescriptor" />
   <unitInfo fileName="CreateEditor_Function_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.CreateEditor_Function_BehaviorDescriptor" />
+  <unitInfo fileName="DeprecatedAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.DeprecatedAnnotation_BehaviorDescriptor" />
   <unitInfo fileName="Dispose_Function_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.Dispose_Function_BehaviorDescriptor" />
   <unitInfo fileName="EditorExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorExpression_BehaviorDescriptor" />
   <unitInfo fileName="EditorOperationCall_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.execution.settings.behavior.EditorOperationCall_BehaviorDescriptor" />

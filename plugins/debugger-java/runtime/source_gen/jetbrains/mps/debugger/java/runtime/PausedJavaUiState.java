@@ -8,6 +8,7 @@ import jetbrains.mps.debug.runtime.java.programState.proxies.JavaThread;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.debug.api.programState.IWatchable;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import com.sun.jdi.ThreadReference;
@@ -39,7 +40,11 @@ public class PausedJavaUiState extends JavaUiStateImpl {
 
     myThreadIndex = findThreadIndex();
     assert myThreadIndex >= 0;
-    getThread().initializeFrames();
+    ListSequence.fromList(getThreads()).visitAll(new IVisitor<JavaThread>() {
+      public void visit(JavaThread it) {
+        it.initializeFrames();
+      }
+    });
 
     myStackFrameIndex = findStackFrameIndex();
     check_vzg6vq_a01a0(getStackFrame(), this);
@@ -59,7 +64,11 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     myContext = findContext(previousState);
     assert myContext != null;
 
-    getThread().initializeFrames();
+    ListSequence.fromList(getThreads()).visitAll(new IVisitor<JavaThread>() {
+      public void visit(JavaThread it) {
+        it.initializeFrames();
+      }
+    });
 
     myStackFrameIndex = findStackFrameIndex();
     check_vzg6vq_a21a1(getStackFrame(), this);
@@ -77,7 +86,11 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     myStackFrameIndex = frameIndex;
 
     initializeThreads();
-    getThread().initializeFrames();
+    ListSequence.fromList(getThreads()).visitAll(new IVisitor<JavaThread>() {
+      public void visit(JavaThread it) {
+        it.initializeFrames();
+      }
+    });
     getStackFrame().initializeWatchables();
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
@@ -168,7 +181,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   }
 
   @NotNull
-  public synchronized List<? extends IThread> getThreads() {
+  public synchronized List<JavaThread> getThreads() {
     return myThreads;
   }
 
