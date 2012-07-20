@@ -73,7 +73,13 @@ public class PasteNode_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("editor", event.getData(MPSEditorDataKeys.MPS_EDITOR));
+    if (MapSequence.fromMap(_params).get("editor") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("ideaProject", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("ideaProject") == null) {
       return false;

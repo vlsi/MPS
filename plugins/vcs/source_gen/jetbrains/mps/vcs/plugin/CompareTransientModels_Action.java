@@ -61,7 +61,13 @@ public class CompareTransientModels_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("models", event.getData(MPSCommonDataKeys.MODELS));
+    if (MapSequence.fromMap(_params).get("models") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 

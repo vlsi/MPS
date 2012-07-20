@@ -75,7 +75,13 @@ public class ReportModelMergeProblem_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
+    if (MapSequence.fromMap(_params).get("frame") == null) {
+      return false;
+    }
     return true;
   }
 
