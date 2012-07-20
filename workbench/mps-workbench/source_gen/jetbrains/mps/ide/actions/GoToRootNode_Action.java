@@ -61,7 +61,7 @@ public class GoToRootNode_Action extends BaseAction {
       assert project != null;
 
       MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
-      ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult, GoToRootNode_Action.this);
+      ChooseByNamePopup popup = MpsPopupFactory.createNodePopupWithParentAction(project, chooseSNodeResult, GoToRootNode_Action.this);
 
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         public void onClose() {

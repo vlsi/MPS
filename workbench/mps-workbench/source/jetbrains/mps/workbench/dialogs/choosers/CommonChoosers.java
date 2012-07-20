@@ -125,7 +125,6 @@ public class CommonChoosers {
     return dialog.getResult();
   }
 
-  // todo: unused?
   public static void showSimpleNodeChooser(final List<SNode> nodes, final ChooserCallback<SNode> callback, final boolean willOpenEditor) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);

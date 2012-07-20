@@ -19,10 +19,8 @@ import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.openapi.actionSystem.Shortcut;
-import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -32,7 +30,22 @@ import org.jetbrains.annotations.Nullable;
 public abstract class MpsPopupFactory {
   private static final FakePsiContext CONTEXT = new FakePsiContext();
 
-  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m, @Nullable BaseAction parentAction) {
+  @Deprecated
+  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m) {
+    return createNodePopupWithParentAction(p, m, null);
+  }
+
+  @Deprecated
+  public static ChooseByNamePopup createNodePopup(Project p, ChooseByNameModel m, String initialText) {
+    return createNodePopup(p, m, initialText, null);
+  }
+
+  @Deprecated
+  public static ChooseByNamePopup createPackagePopup(Project p, ChooseByNameModel m) {
+    return createPackagePopup(p, m, null);
+  }
+
+  public static ChooseByNamePopup createNodePopupWithParentAction(Project p, ChooseByNameModel m, @Nullable BaseAction parentAction) {
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(p, m, nodeProvider());
     setCheckboxShortcutFromAction(popup, parentAction);
     return popup;
