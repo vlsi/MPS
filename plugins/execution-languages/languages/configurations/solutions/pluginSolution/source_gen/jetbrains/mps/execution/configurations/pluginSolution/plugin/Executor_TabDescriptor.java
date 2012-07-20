@@ -11,8 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Executor_TabDescriptor extends RelationDescriptor {
@@ -62,11 +60,7 @@ public class Executor_TabDescriptor extends RelationDescriptor {
   }
 
   public List<SNode> getConcepts(final SNode node) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ModelAccess.instance().runReadAction(new Computable<SNode>() {
-      public SNode compute() {
-        return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor");
-      }
-    }));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"));
   }
 
   public SNode createNode(final SNode node, final SNode concept) {

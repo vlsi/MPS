@@ -7,11 +7,7 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.lib.Node_Configuration;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.ant.execution.AntSettings_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
@@ -20,7 +16,9 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -40,11 +38,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
 
   @NotNull
   private BuildLanguageProject_Configuration.MyState myState = new BuildLanguageProject_Configuration.MyState();
-  private Node_Configuration myNode = new Node_Configuration(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project");
-    }
-  }), null);
+  private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.buildlanguage.structure.Project", null);
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
 
   public BuildLanguageProject_Configuration(Project project, BuildLanguageProject_Configuration_Factory factory, String name) {
@@ -97,7 +91,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
     }
   }
 
-  public Node_Configuration getNode() {
+  public NodeByConcept_Configuration getNode() {
     return myNode;
   }
 
@@ -138,7 +132,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
     try {
       clone = createCloneTemplate();
       clone.myState = (BuildLanguageProject_Configuration.MyState) myState.clone();
-      clone.myNode = (Node_Configuration) myNode.clone();
+      clone.myNode = (NodeByConcept_Configuration) myNode.clone();
       clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
