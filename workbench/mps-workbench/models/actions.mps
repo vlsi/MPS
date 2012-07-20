@@ -20118,13 +20118,9 @@
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606373">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="3906874221886742454" resolveInfo="GoToModule" />
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="7000507154716606374">
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_S" />
-        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt+shift" />
-      </node>
-      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="987060807886318835">
-        <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt+shift" />
-        <property name="keycode" nameId="tp4k.1207318242774" value="VK_L" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="9016461738151544143">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
       </node>
     </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7000507154716606443">
