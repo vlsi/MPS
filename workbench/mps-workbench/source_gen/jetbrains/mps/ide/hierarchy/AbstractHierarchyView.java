@@ -36,16 +36,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.openapi.actionSystem.ActionGroup;
-import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import jetbrains.mps.project.ProjectOperationContext;
 import com.intellij.ide.OccurenceNavigator;
 
 public abstract class AbstractHierarchyView extends BaseProjectTool {
@@ -186,33 +176,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       }
     };
     return ActionUtils.groupFromActions(childrenAction, parentAction, thisModelAction, generatorModelsAction, expandAllAction, collapseAllAction, refreshAction, createCloseAction());
-  }
-
-  protected ActionGroup getHierarchyForFoundConceptActionGroup(final String conceptFqName) {
-    BaseAction action = new BaseAction("Show Hierarchy For Concept") {
-      protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
-        List<SNode> nodes = new ArrayList<SNode>();
-        for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
-          if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) {
-            continue;
-          }
-          SNode decl = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-          String name = NameUtil.nodeFQName(decl);
-          for (SNode node : modelDescriptor.getSModel().roots()) {
-            if (node.isInstanceOfConcept(name)) {
-              nodes.add(node);
-            }
-          }
-        }
-        CommonChoosers.showSimpleNodeChooser(nodes, new CommonChoosers.ChooserCallback<SNode>() {
-          public void execute(SNode node) {
-            final IOperationContext operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(getProject()));
-            showItemInHierarchy(node, operationContext);
-          }
-        }, false);
-      }
-    };
-    return ActionUtils.groupFromActions(action);
   }
 
   public void showItemInHierarchy(SNode node, IOperationContext _context) {
