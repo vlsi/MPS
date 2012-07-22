@@ -8457,7 +8457,7 @@
       <node role="initialValue" roleId="3ior.2755237150521975432" type="3ior.BuildVariableMacroInitWithString" typeId="3ior.2755237150521975431" id="7230385212464648576">
         <node role="value" roleId="3ior.2755237150521975437" type="3ior.BuildString" typeId="3ior.4380385936562003279" id="7230385212464648577">
           <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="7230385212464648578">
-            <property name="text" nameId="3ior.4903714810883755350" value="MPS-25.SNAPSHOT" />
+            <property name="text" nameId="3ior.4903714810883755350" value="MPS-117.SNAPSHOT" />
           </node>
         </node>
       </node>
