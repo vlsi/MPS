@@ -141,7 +141,7 @@ public class NewRootAction extends AnAction {
             if (path.startsWith(modelRoot.getPath())) {
                 Solution solution = mpsFacet.getSolution();
                 myOperationContext = new ModuleContext(solution, mpsProject);
-                myModelDescriptor = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
+                myModelDescriptor = (EditableSModelDescriptor) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
                 if (myModelDescriptor != null) {
                   ModelAccess.instance().runReadAction(new Runnable() {
                     @Override

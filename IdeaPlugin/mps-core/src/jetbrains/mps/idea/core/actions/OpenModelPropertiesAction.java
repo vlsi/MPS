@@ -25,6 +25,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
