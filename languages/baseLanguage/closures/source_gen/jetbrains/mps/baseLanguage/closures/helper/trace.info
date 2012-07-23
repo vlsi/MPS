@@ -1756,5 +1756,287 @@
     </scopeInfo>
     <unitInfo nodeId="1240923614599" fileName="Keys.java" startLine="6" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.Keys" />
   </root>
+  <root nodeId="515790726266555281">
+    <nodeInfo nodeId="515790726266555290" fileName="Adaptation.java" startLine="29" startPosition="25" endLine="30" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
+    <nodeInfo nodeId="515790726266555293" fileName="Adaptation.java" startLine="32" startPosition="54" endLine="33" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555330" fileName="Adaptation.java" startLine="36" startPosition="59" endLine="37" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507552372" fileName="Adaptation.java" startLine="37" startPosition="132" endLine="38" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555338" fileName="Adaptation.java" startLine="38" startPosition="48" endLine="39" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555351" fileName="Adaptation.java" startLine="39" startPosition="121" endLine="40" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266555354" fileName="Adaptation.java" startLine="40" startPosition="29" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555361" fileName="Adaptation.java" startLine="41" startPosition="53" endLine="42" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266588494" fileName="Adaptation.java" startLine="45" startPosition="117" endLine="46" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588901" fileName="Adaptation.java" startLine="46" startPosition="62" endLine="47" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588737" fileName="Adaptation.java" startLine="47" startPosition="149" endLine="48" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588944" fileName="Adaptation.java" startLine="48" startPosition="66" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266588745" fileName="Adaptation.java" startLine="50" startPosition="209" endLine="51" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591170" fileName="Adaptation.java" startLine="52" startPosition="149" endLine="53" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266589119" fileName="Adaptation.java" startLine="53" startPosition="36" endLine="54" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591051" fileName="Adaptation.java" startLine="54" startPosition="180" endLine="55" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591058" fileName="Adaptation.java" startLine="55" startPosition="123" endLine="56" endPosition="383" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591082" fileName="Adaptation.java" startLine="58" startPosition="103" endLine="59" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591088" fileName="Adaptation.java" startLine="59" startPosition="123" endLine="60" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591095" fileName="Adaptation.java" startLine="60" startPosition="74" endLine="61" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591102" fileName="Adaptation.java" startLine="61" startPosition="75" endLine="62" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="515790726266591048" fileName="Adaptation.java" startLine="66" startPosition="5" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266589467" fileName="Adaptation.java" startLine="68" startPosition="5" endLine="69" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266589568" fileName="Adaptation.java" startLine="69" startPosition="147" endLine="70" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266589841" fileName="Adaptation.java" startLine="71" startPosition="61" endLine="72" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266589794" fileName="Adaptation.java" startLine="74" startPosition="58" endLine="75" endPosition="350" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266589529" fileName="Adaptation.java" startLine="77" startPosition="5" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266590691" fileName="Adaptation.java" startLine="79" startPosition="5" endLine="80" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266590099" fileName="Adaptation.java" startLine="80" startPosition="55" endLine="81" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266590246" fileName="Adaptation.java" startLine="81" startPosition="148" endLine="82" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266590489" fileName="Adaptation.java" startLine="83" startPosition="57" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266590596" fileName="Adaptation.java" startLine="86" startPosition="54" endLine="87" endPosition="359" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266589156" fileName="Adaptation.java" startLine="89" startPosition="5" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266590739" fileName="Adaptation.java" startLine="90" startPosition="0" endLine="91" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266590806" fileName="Adaptation.java" startLine="91" startPosition="72" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266591443" fileName="Adaptation.java" startLine="92" startPosition="0" endLine="93" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266591352" fileName="Adaptation.java" startLine="93" startPosition="90" endLine="94" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591192" fileName="Adaptation.java" startLine="95" startPosition="22" endLine="96" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591201" fileName="Adaptation.java" startLine="96" startPosition="155" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591207" fileName="Adaptation.java" startLine="98" startPosition="54" endLine="99" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591228" fileName="Adaptation.java" startLine="100" startPosition="59" endLine="101" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591575" fileName="Adaptation.java" startLine="103" startPosition="153" endLine="104" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266591427" fileName="Adaptation.java" startLine="104" startPosition="56" endLine="105" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591278" fileName="Adaptation.java" startLine="108" startPosition="210" endLine="109" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591299" fileName="Adaptation.java" startLine="112" startPosition="9" endLine="113" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555539" fileName="Adaptation.java" startLine="118" startPosition="69" endLine="119" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555580" fileName="Adaptation.java" startLine="121" startPosition="128" endLine="122" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555473" fileName="Adaptation.java" startLine="125" startPosition="52" endLine="126" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555486" fileName="Adaptation.java" startLine="127" startPosition="5" endLine="128" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555926" fileName="Adaptation.java" startLine="131" startPosition="36" endLine="132" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="typeMap" />
+    <nodeInfo nodeId="515790726266555988" fileName="Adaptation.java" startLine="137" startPosition="39" endLine="138" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555746" fileName="Adaptation.java" startLine="141" startPosition="58" endLine="142" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555765" fileName="Adaptation.java" startLine="143" startPosition="103" endLine="144" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555756" fileName="Adaptation.java" startLine="145" startPosition="53" endLine="146" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555782" fileName="Adaptation.java" startLine="149" startPosition="114" endLine="150" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555799" fileName="Adaptation.java" startLine="151" startPosition="16" endLine="152" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555803" fileName="Adaptation.java" startLine="152" startPosition="22" endLine="153" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555811" fileName="Adaptation.java" startLine="153" startPosition="162" endLine="154" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555951" fileName="Adaptation.java" startLine="155" startPosition="122" endLine="156" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556009" fileName="Adaptation.java" startLine="162" startPosition="64" endLine="163" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266556016" fileName="Adaptation.java" startLine="163" startPosition="71" endLine="164" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588338" fileName="Adaptation.java" startLine="164" startPosition="49" endLine="165" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266556030" fileName="Adaptation.java" startLine="167" startPosition="156" endLine="168" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556043" fileName="Adaptation.java" startLine="170" startPosition="14" endLine="171" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556060" fileName="Adaptation.java" startLine="173" startPosition="57" endLine="174" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588368" fileName="Adaptation.java" startLine="176" startPosition="51" endLine="177" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556122" fileName="Adaptation.java" startLine="177" startPosition="42" endLine="178" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266556127" fileName="Adaptation.java" startLine="179" startPosition="11" endLine="180" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266588433" fileName="Adaptation.java" startLine="180" startPosition="118" endLine="181" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266556136" fileName="Adaptation.java" startLine="182" startPosition="121" endLine="183" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555865" fileName="Adaptation.java" startLine="190" startPosition="28" endLine="191" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555875" fileName="Adaptation.java" startLine="192" startPosition="7" endLine="193" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555637" fileName="Adaptation.java" startLine="198" startPosition="42" endLine="199" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555639" fileName="Adaptation.java" startLine="201" startPosition="7" endLine="202" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555651" fileName="Adaptation.java" startLine="206" startPosition="184" endLine="207" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555664" fileName="Adaptation.java" startLine="209" startPosition="210" endLine="210" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555677" fileName="Adaptation.java" startLine="212" startPosition="212" endLine="213" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555704" fileName="Adaptation.java" startLine="216" startPosition="107" endLine="217" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555706" fileName="Adaptation.java" startLine="218" startPosition="9" endLine="219" endPosition="618" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555730" fileName="Adaptation.java" startLine="220" startPosition="7" endLine="221" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555615" fileName="Adaptation.java" startLine="133" startPosition="0" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeMatcher#()V" />
+    <nodeInfo nodeId="515790726266556041" fileName="Adaptation.java" startLine="170" startPosition="12" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266555283" fileName="Adaptation.java" startLine="31" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Adaptation#(Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+    <nodeInfo nodeId="515790726266589595" fileName="Adaptation.java" startLine="70" startPosition="122" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266589691" fileName="Adaptation.java" startLine="73" startPosition="7" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266590274" fileName="Adaptation.java" startLine="82" startPosition="160" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266590395" fileName="Adaptation.java" startLine="85" startPosition="7" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266591276" fileName="Adaptation.java" startLine="107" startPosition="18" endLine="110" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555554" fileName="Adaptation.java" startLine="120" startPosition="127" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555420" fileName="Adaptation.java" startLine="124" startPosition="5" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555819" fileName="Adaptation.java" startLine="154" startPosition="162" endLine="157" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="515790726266556028" fileName="Adaptation.java" startLine="166" startPosition="103" endLine="169" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266556134" fileName="Adaptation.java" startLine="181" startPosition="56" endLine="184" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266555863" fileName="Adaptation.java" startLine="189" startPosition="48" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555632" fileName="Adaptation.java" startLine="197" startPosition="35" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555649" fileName="Adaptation.java" startLine="205" startPosition="61" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555662" fileName="Adaptation.java" startLine="208" startPosition="7" endLine="211" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555675" fileName="Adaptation.java" startLine="211" startPosition="7" endLine="214" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555697" fileName="Adaptation.java" startLine="215" startPosition="104" endLine="218" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266591236" fileName="Adaptation.java" startLine="102" startPosition="110" endLine="106" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266591274" fileName="Adaptation.java" startLine="107" startPosition="16" endLine="111" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266555971" fileName="Adaptation.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="515790726266556113" fileName="Adaptation.java" startLine="175" startPosition="123" endLine="179" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555526" fileName="Adaptation.java" startLine="119" startPosition="71" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266555750" fileName="Adaptation.java" startLine="142" startPosition="27" endLine="147" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555627" fileName="Adaptation.java" startLine="196" startPosition="72" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266591080" fileName="Adaptation.java" startLine="57" startPosition="188" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555688" fileName="Adaptation.java" startLine="214" startPosition="7" endLine="220" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555797" fileName="Adaptation.java" startLine="151" startPosition="14" endLine="158" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266556022" fileName="Adaptation.java" startLine="165" startPosition="49" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555895" fileName="Adaptation.java" startLine="188" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOrCreateMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="515790726266591078" fileName="Adaptation.java" startLine="56" startPosition="383" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266555299" fileName="Adaptation.java" startLine="35" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTarget#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="515790726266555880" fileName="Adaptation.java" startLine="195" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="whichTypeMatching#(Ljava/util/List;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="515790726266590368" fileName="Adaptation.java" startLine="67" startPosition="0" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266591234" fileName="Adaptation.java" startLine="101" startPosition="68" endLine="111" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555776" fileName="Adaptation.java" startLine="148" startPosition="30" endLine="158" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266590383" fileName="Adaptation.java" startLine="78" startPosition="0" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266556066" fileName="Adaptation.java" startLine="174" startPosition="74" endLine="185" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555774" fileName="Adaptation.java" startLine="147" startPosition="7" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266591222" fileName="Adaptation.java" startLine="99" startPosition="213" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266555377" fileName="Adaptation.java" startLine="117" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFunctionMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="515790726266588949" fileName="Adaptation.java" startLine="51" startPosition="158" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266556054" fileName="Adaptation.java" startLine="172" startPosition="7" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266588513" fileName="Adaptation.java" startLine="49" startPosition="0" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266591205" fileName="Adaptation.java" startLine="97" startPosition="18" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266555884" fileName="Adaptation.java" startLine="204" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTypeMatching#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="515790726266591366" fileName="Adaptation.java" startLine="94" startPosition="45" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555890" fileName="Adaptation.java" startLine="140" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="515790726266556163" fileName="Adaptation.java" startLine="161" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchReturnType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="515790726266588458" fileName="Adaptation.java" startLine="44" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchTypeParameters#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <scopeInfo nodeId="515790726266555618" fileName="Adaptation.java" startLine="134" startPosition="26" endLine="134" endPosition="26" />
+    <scopeInfo nodeId="515790726266555286" fileName="Adaptation.java" startLine="32" startPosition="54" endLine="33" endPosition="33" />
+    <scopeInfo nodeId="515790726266589597" fileName="Adaptation.java" startLine="71" startPosition="61" endLine="72" endPosition="106" />
+    <scopeInfo nodeId="515790726266589692" fileName="Adaptation.java" startLine="74" startPosition="58" endLine="75" endPosition="350" />
+    <scopeInfo nodeId="515790726266590276" fileName="Adaptation.java" startLine="83" startPosition="57" endLine="84" endPosition="61" />
+    <scopeInfo nodeId="515790726266590396" fileName="Adaptation.java" startLine="86" startPosition="54" endLine="87" endPosition="359" />
+    <scopeInfo nodeId="515790726266591277" fileName="Adaptation.java" startLine="108" startPosition="210" endLine="109" endPosition="110" />
+    <scopeInfo nodeId="515790726266555556" fileName="Adaptation.java" startLine="121" startPosition="128" endLine="122" endPosition="54" />
+    <scopeInfo nodeId="515790726266555421" fileName="Adaptation.java" startLine="125" startPosition="52" endLine="126" endPosition="105" />
+    <scopeInfo nodeId="515790726266555974" fileName="Adaptation.java" startLine="137" startPosition="39" endLine="138" endPosition="21" />
+    <scopeInfo nodeId="515790726266555764" fileName="Adaptation.java" startLine="143" startPosition="103" endLine="144" endPosition="175" />
+    <scopeInfo nodeId="515790726266555755" fileName="Adaptation.java" startLine="145" startPosition="53" endLine="146" endPosition="27" />
+    <scopeInfo nodeId="515790726266555781" fileName="Adaptation.java" startLine="149" startPosition="114" endLine="150" endPosition="241" />
+    <scopeInfo nodeId="515790726266555820" fileName="Adaptation.java" startLine="155" startPosition="122" endLine="156" endPosition="114" />
+    <scopeInfo nodeId="515790726266556029" fileName="Adaptation.java" startLine="167" startPosition="156" endLine="168" endPosition="122" />
+    <scopeInfo nodeId="515790726266556042" fileName="Adaptation.java" startLine="170" startPosition="14" endLine="171" endPosition="125" />
+    <scopeInfo nodeId="515790726266556135" fileName="Adaptation.java" startLine="182" startPosition="121" endLine="183" endPosition="130" />
+    <scopeInfo nodeId="515790726266555864" fileName="Adaptation.java" startLine="190" startPosition="28" endLine="191" endPosition="67" />
+    <scopeInfo nodeId="515790726266555636" fileName="Adaptation.java" startLine="198" startPosition="42" endLine="199" endPosition="22" />
+    <scopeInfo nodeId="515790726266555650" fileName="Adaptation.java" startLine="206" startPosition="184" endLine="207" endPosition="21" />
+    <scopeInfo nodeId="515790726266555663" fileName="Adaptation.java" startLine="209" startPosition="210" endLine="210" endPosition="20" />
+    <scopeInfo nodeId="515790726266555676" fileName="Adaptation.java" startLine="212" startPosition="212" endLine="213" endPosition="20" />
+    <scopeInfo nodeId="515790726266555703" fileName="Adaptation.java" startLine="216" startPosition="107" endLine="217" endPosition="22" />
+    <scopeInfo nodeId="515790726266591237" fileName="Adaptation.java" startLine="103" startPosition="153" endLine="105" endPosition="131" />
+    <scopeInfo nodeId="515790726266555615" fileName="Adaptation.java" startLine="133" startPosition="0" endLine="135" endPosition="5" />
+    <scopeInfo nodeId="515790726266556114" fileName="Adaptation.java" startLine="176" startPosition="51" endLine="178" endPosition="19" />
+    <scopeInfo nodeId="515790726266555283" fileName="Adaptation.java" startLine="31" startPosition="0" endLine="34" endPosition="3">
+      <varInfo nodeId="515790726266555287" varName="genContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266591275" fileName="Adaptation.java" startLine="107" startPosition="18" endLine="110" endPosition="13" />
+    <scopeInfo nodeId="515790726266555527" fileName="Adaptation.java" startLine="120" startPosition="127" endLine="123" endPosition="7" />
+    <scopeInfo nodeId="515790726266555819" fileName="Adaptation.java" startLine="154" startPosition="162" endLine="157" endPosition="11">
+      <varInfo nodeId="515790726266555832" varName="i" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266556027" fileName="Adaptation.java" startLine="166" startPosition="103" endLine="169" endPosition="9" />
+    <scopeInfo nodeId="515790726266556028" fileName="Adaptation.java" startLine="166" startPosition="103" endLine="169" endPosition="9">
+      <varInfo nodeId="515790726266556035" varName="arg" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266556134" fileName="Adaptation.java" startLine="181" startPosition="56" endLine="184" endPosition="11">
+      <varInfo nodeId="515790726266556143" varName="superType" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555631" fileName="Adaptation.java" startLine="197" startPosition="35" endLine="200" endPosition="9" />
+    <scopeInfo nodeId="515790726266591081" fileName="Adaptation.java" startLine="58" startPosition="103" endLine="62" endPosition="18">
+      <varInfo nodeId="515790726266591083" varName="newRetCT" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266591235" fileName="Adaptation.java" startLine="102" startPosition="110" endLine="106" endPosition="13" />
+    <scopeInfo nodeId="515790726266555971" fileName="Adaptation.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
+    <scopeInfo nodeId="515790726266555862" fileName="Adaptation.java" startLine="189" startPosition="48" endLine="193" endPosition="21" />
+    <scopeInfo nodeId="515790726266555696" fileName="Adaptation.java" startLine="215" startPosition="104" endLine="219" endPosition="618" />
+    <scopeInfo nodeId="515790726266555526" fileName="Adaptation.java" startLine="119" startPosition="71" endLine="124" endPosition="5">
+      <varInfo nodeId="515790726266555528" varName="mth" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555627" fileName="Adaptation.java" startLine="196" startPosition="72" endLine="201" endPosition="7">
+      <varInfo nodeId="515790726266555629" varName="left" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555302" fileName="Adaptation.java" startLine="36" startPosition="59" endLine="42" endPosition="60">
+      <varInfo nodeId="515790726266555331" varName="trgCopy" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266591079" fileName="Adaptation.java" startLine="57" startPosition="188" endLine="63" endPosition="11" />
+    <scopeInfo nodeId="515790726266555798" fileName="Adaptation.java" startLine="151" startPosition="16" endLine="157" endPosition="11">
+      <varInfo nodeId="515790726266555800" varName="idx" />
+      <varInfo nodeId="515790726266555804" varName="mptypes" />
+      <varInfo nodeId="515790726266555812" varName="rptypes" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555626" fileName="Adaptation.java" startLine="196" startPosition="72" endLine="202" endPosition="18" />
+    <scopeInfo nodeId="515790726266555895" fileName="Adaptation.java" startLine="188" startPosition="0" endLine="195" endPosition="0" />
+    <scopeInfo nodeId="515790726266591078" fileName="Adaptation.java" startLine="56" startPosition="383" endLine="64" endPosition="9">
+      <varInfo nodeId="515790726266591117" varName="cls" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266590369" fileName="Adaptation.java" startLine="68" startPosition="5" endLine="76" endPosition="7">
+      <varInfo nodeId="515790726266589468" varName="funParamIt" />
+      <varInfo nodeId="515790726266589569" varName="methParamIt" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555299" fileName="Adaptation.java" startLine="35" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="515790726266555372" varName="literal" />
+      <varInfo nodeId="515790726266555315" varName="targetIface" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266590384" fileName="Adaptation.java" startLine="79" startPosition="5" endLine="88" endPosition="7">
+      <varInfo nodeId="515790726266590100" varName="funThrIt" />
+      <varInfo nodeId="515790726266590247" varName="methThrIt" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266556067" fileName="Adaptation.java" startLine="175" startPosition="123" endLine="184" endPosition="11" />
+    <scopeInfo nodeId="515790726266555880" fileName="Adaptation.java" startLine="195" startPosition="0" endLine="204" endPosition="0">
+      <varInfo nodeId="515790726266555620" varName="leftList" />
+      <varInfo nodeId="515790726266555622" varName="right" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555380" fileName="Adaptation.java" startLine="118" startPosition="69" endLine="128" endPosition="49">
+      <varInfo nodeId="515790726266555540" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555775" fileName="Adaptation.java" startLine="148" startPosition="30" endLine="158" endPosition="9" />
+    <scopeInfo nodeId="515790726266591227" fileName="Adaptation.java" startLine="100" startPosition="59" endLine="111" endPosition="11">
+      <varInfo nodeId="515790726266591229" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266588950" fileName="Adaptation.java" startLine="52" startPosition="149" endLine="64" endPosition="9">
+      <varInfo nodeId="515790726266589120" varName="absRetCT" />
+      <varInfo nodeId="515790726266591059" varName="adapterName" />
+      <varInfo nodeId="515790726266591052" varName="ftResCT" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266556059" fileName="Adaptation.java" startLine="173" startPosition="57" endLine="185" endPosition="9">
+      <varInfo nodeId="515790726266556061" varName="candidate" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555377" fileName="Adaptation.java" startLine="117" startPosition="0" endLine="130" endPosition="0">
+      <varInfo nodeId="515790726266555482" varName="literal" />
+      <varInfo nodeId="515790726266555382" varName="targetIface" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266588514" fileName="Adaptation.java" startLine="50" startPosition="209" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="515790726266591206" fileName="Adaptation.java" startLine="98" startPosition="54" endLine="113" endPosition="14">
+      <varInfo nodeId="515790726266591208" varName="queue" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555648" fileName="Adaptation.java" startLine="205" startPosition="61" endLine="221" endPosition="19" />
+    <scopeInfo nodeId="515790726266591205" fileName="Adaptation.java" startLine="97" startPosition="18" endLine="114" endPosition="7">
+      <varInfo nodeId="515790726266591305" varName="rtp" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555745" fileName="Adaptation.java" startLine="141" startPosition="58" endLine="159" endPosition="7">
+      <varInfo nodeId="515790726266555747" varName="matched" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266591367" fileName="Adaptation.java" startLine="95" startPosition="22" endLine="114" endPosition="7">
+      <varInfo nodeId="515790726266591202" varName="idx" />
+      <varInfo nodeId="515790726266591193" varName="varDecls" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555884" fileName="Adaptation.java" startLine="204" startPosition="0" endLine="223" endPosition="0">
+      <varInfo nodeId="515790726266555642" varName="left" />
+      <varInfo nodeId="515790726266555644" varName="right" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555890" fileName="Adaptation.java" startLine="140" startPosition="0" endLine="161" endPosition="0">
+      <varInfo nodeId="515790726266555733" varName="absType" />
+      <varInfo nodeId="515790726266555735" varName="realType" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266556008" fileName="Adaptation.java" startLine="162" startPosition="64" endLine="186" endPosition="7">
+      <varInfo nodeId="515790726266556017" varName="queue" />
+      <varInfo nodeId="515790726266556010" varName="visited" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266556163" fileName="Adaptation.java" startLine="161" startPosition="0" endLine="188" endPosition="0">
+      <varInfo nodeId="515790726266556154" varName="absType" />
+      <varInfo nodeId="515790726266556156" varName="realType" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266588461" fileName="Adaptation.java" startLine="45" startPosition="117" endLine="115" endPosition="5">
+      <varInfo nodeId="515790726266588902" varName="funType" />
+      <varInfo nodeId="515790726266591353" varName="map" />
+      <varInfo nodeId="515790726266588738" varName="matcher" />
+      <varInfo nodeId="515790726266588495" varName="meth" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266588458" fileName="Adaptation.java" startLine="44" startPosition="0" endLine="117" endPosition="0">
+      <varInfo nodeId="515790726266588484" varName="literal" />
+      <varInfo nodeId="515790726266591544" varName="reifiedTargetIfaceTypeParams" />
+      <varInfo nodeId="515790726266588475" varName="targetIfaceErase" />
+    </scopeInfo>
+    <unitInfo nodeId="515790726266555281" fileName="Adaptation.java" startLine="29" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.Adaptation" />
+    <unitInfo nodeId="515790726266555613" fileName="Adaptation.java" startLine="131" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.Adaptation$TypeMatcher" />
+  </root>
 </debugInfo>
 

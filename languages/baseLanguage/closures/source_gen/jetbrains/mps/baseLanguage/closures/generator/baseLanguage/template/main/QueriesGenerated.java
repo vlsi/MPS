@@ -3977,6 +3977,7 @@ public class QueriesGenerated {
     for (SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
       ListSequence.fromList(res).addElement(FunctionTypeUtil.unbound(pt));
     }
+    System.out.println("*** params: " + res);
     return res;
   }
 
