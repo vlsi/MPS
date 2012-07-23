@@ -165,7 +165,6 @@ public class DefaultEditorBuilder {
         addPunctuation(")");
         setMatchingLabel("paren-" + SPropertyOperations.getString(linkDeclaration, "role"));
       }
-      noSpace();
       first = false;
     }
     addPunctuation(")");
