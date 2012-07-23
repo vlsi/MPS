@@ -297,9 +297,9 @@
     <nodeInfo nodeId="901357770590751352" fileName="StandardDialogs.java" startLine="348" startPosition="74" endLine="349" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="901357770590751352" fileName="StandardDialogs.java" startLine="349" startPosition="115" endLine="350" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="901357770590751352" fileName="StandardDialogs.java" startLine="350" startPosition="76" endLine="351" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="352" startPosition="65" endLine="353" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="353" startPosition="137" endLine="354" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="354" startPosition="168" endLine="355" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="352" startPosition="64" endLine="353" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="353" startPosition="137" endLine="354" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="354" startPosition="167" endLine="355" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="355" startPosition="80" endLine="356" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="356" startPosition="119" endLine="357" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="357" startPosition="82" endLine="358" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -373,7 +373,7 @@
     <scopeInfo nodeId="5249055041137646135" fileName="StandardDialogs.java" startLine="20" startPosition="28" endLine="20" endPosition="28" />
     <scopeInfo nodeId="2896881808974479831" fileName="StandardDialogs.java" startLine="310" startPosition="40" endLine="311" endPosition="49" />
     <scopeInfo nodeId="5249055041137646133" fileName="StandardDialogs.java" startLine="19" startPosition="30" endLine="21" endPosition="3" />
-    <scopeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="352" startPosition="65" endLine="359" endPosition="0">
+    <scopeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="352" startPosition="64" endLine="359" endPosition="0">
       <varInfo nodeId="7793469387662786899" varName="result_960thj_a0a0a1a1a0a0a4" />
       <varInfo nodeId="7793469387662786899" varName="result_960thj_a0a1a1a0a0a4" />
       <varInfo nodeId="7793469387662786899" varName="result_960thj_a1a0a1a1a0a0a4" />
@@ -975,7 +975,9 @@
       <varInfo nodeId="1747818952411874074" varName="list" />
       <varInfo nodeId="1747818952411874070" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="407" startPosition="52" endLine="411" endPosition="13" />
+    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="407" startPosition="52" endLine="411" endPosition="13">
+      <varInfo nodeId="3416087927885130128" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4060390951635974672" fileName="StandardComponents.java" startLine="439" startPosition="0" endLine="443" endPosition="0">
       <varInfo nodeId="4060390951635974677" varName="caption" />
       <varInfo nodeId="4060390951635974679" varName="list" />
