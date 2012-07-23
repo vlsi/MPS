@@ -3043,6 +3043,9 @@
       <property name="value" nameId="tpce.1105725733873" value="concept reference with built-in read action" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
     </node>
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="8278380780105843856">
+      <property name="comment" nameId="tpce.1225118933224" value="never ever use" />
+    </node>
   </root>
   <root id="559557797393017698">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="559557797393017701">

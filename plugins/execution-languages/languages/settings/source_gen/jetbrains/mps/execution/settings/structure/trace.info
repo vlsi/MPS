@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Settings_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.Settings_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor" />
   <root nodeId="2722628536111969416">
     <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="11" startPosition="52" endLine="12" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="2722628536111969416" fileName="GridBagConstraints.java" startLine="12" startPosition="103" endLine="13" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CONSTRAINTS_KIND" />
@@ -146,6 +146,51 @@
       <varInfo nodeId="5365453833390705317" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="5365453833390705317" fileName="GetEditorOperation.java" startLine="15" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.GetEditorOperation" />
+  </root>
+  <root nodeId="9191251033651632153">
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="11" startPosition="57" endLine="12" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="12" startPosition="105" endLine="13" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SINCE" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="13" startPosition="45" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMENT" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="16" startPosition="43" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="20" startPosition="28" endLine="21" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="24" startPosition="38" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="28" startPosition="30" endLine="29" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="32" startPosition="40" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="36" startPosition="75" endLine="37" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="40" startPosition="61" endLine="41" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="15" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeprecatedAnnotation#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSince#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSince#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComment#()Ljava/lang/String;" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setComment#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/execution/settings/structure/DeprecatedAnnotation;" />
+    <nodeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/execution/settings/structure/DeprecatedAnnotation;" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="16" startPosition="43" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="20" startPosition="28" endLine="21" endPosition="56" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="24" startPosition="38" endLine="25" endPosition="56" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="28" startPosition="30" endLine="29" endPosition="58" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="32" startPosition="40" endLine="33" endPosition="58" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="36" startPosition="75" endLine="37" endPosition="196" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="40" startPosition="61" endLine="41" endPosition="55" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
+      <varInfo nodeId="9191251033651632153" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="9191251033651632153" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="9191251033651632153" varName="value" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="9191251033651632153" varName="init" />
+      <varInfo nodeId="9191251033651632153" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
+      <varInfo nodeId="9191251033651632153" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="9191251033651632153" fileName="DeprecatedAnnotation.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.execution.settings.structure.DeprecatedAnnotation" />
   </root>
   <root nodeId="946964771156066331">
     <nodeInfo nodeId="946964771156066331" fileName="PersistentConfigurationMethod.java" startLine="11" startPosition="87" endLine="12" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

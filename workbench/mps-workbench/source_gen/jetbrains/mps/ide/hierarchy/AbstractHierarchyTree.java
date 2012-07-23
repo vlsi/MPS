@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import com.intellij.openapi.actionSystem.ActionGroup;
 
 public abstract class AbstractHierarchyTree extends MPSTree {
   protected IOperationContext myOperationContext;
@@ -206,13 +205,6 @@ public abstract class AbstractHierarchyTree extends MPSTree {
       if (myHierarchyView != null) {
         setIcon(myHierarchyView.getIcon());
       }
-    }
-
-    public ActionGroup getActionGroup() {
-      if (myHierarchyView == null) {
-        return null;
-      }
-      return myHierarchyView.getHierarchyForFoundConceptActionGroup(myConceptFqName);
     }
   }
 }
