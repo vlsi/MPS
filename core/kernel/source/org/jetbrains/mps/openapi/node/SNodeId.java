@@ -15,6 +15,5 @@
  */
 package org.jetbrains.mps.openapi.node;
 
-public interface SNode {
-  SNodeReference getReference();
+public interface SNodeId {
 }

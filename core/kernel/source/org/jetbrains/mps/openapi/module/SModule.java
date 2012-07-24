@@ -15,5 +15,9 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+
 public interface SModule {
+  SModel resolveModel(SModelReference ref);
 }

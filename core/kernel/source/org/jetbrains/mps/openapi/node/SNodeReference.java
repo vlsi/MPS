@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.node;
 
-public interface SNode {
-  SNodeReference getReference();
+import org.jetbrains.mps.openapi.module.SRepository;
+
+public interface SNodeReference {
+  SNode resolve(SRepository repo);
 }

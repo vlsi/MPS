@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.node;
+package org.jetbrains.mps.openapi.module;
 
-public interface SNode {
-  SNodeReference getReference();
+public interface SModuleReference {
+  String getPresentation();
 }

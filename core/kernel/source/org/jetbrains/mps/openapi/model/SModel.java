@@ -15,5 +15,9 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.mps.openapi.node.SNode;
+import org.jetbrains.mps.openapi.node.SNodeReference;
+
 public interface SModel {
+  SNode getNode(SNodeReference reference);
 }

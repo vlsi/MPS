@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.node;
 
-public interface SNode {
-  SNodeReference getReference();
+public interface SRootNode extends SNode {
+  String getName();
+  //getImports();
 }
