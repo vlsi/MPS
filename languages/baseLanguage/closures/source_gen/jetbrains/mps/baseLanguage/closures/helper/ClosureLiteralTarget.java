@@ -17,8 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -26,26 +26,25 @@ import java.util.HashSet;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.HashMap;
 
-public class Adaptation {
+public class ClosureLiteralTarget {
   private TemplateQueryContext genContext;
 
-  public Adaptation(TemplateQueryContext genContext) {
+  public ClosureLiteralTarget(TemplateQueryContext genContext) {
     this.genContext = genContext;
   }
 
   public void setTarget(SNode literal, SNode targetIface) {
-    SNode trgCopy = SConceptOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(targetIface)), null);
-    System.out.println("*** trgCopy" + trgCopy);
-    SLinkOperations.setTarget(trgCopy, "classifier", SLinkOperations.getTarget(targetIface, "classifier", false), false);
-    // matchClassifierParams 
-    Values.LITERAL.set(genContext, trgCopy, literal);
-    Values.LITERAL_TARGET.set(genContext, literal, trgCopy);
+    SNode targetIfaceErase = SConceptOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(targetIface)), null);
+    SLinkOperations.setTarget(targetIfaceErase, "classifier", SLinkOperations.getTarget(targetIface, "classifier", false), false);
+    matchTypeParameters(literal, targetIfaceErase, SLinkOperations.getTargets(targetIface, "parameter", true));
+    Values.LITERAL.set(genContext, targetIfaceErase, literal);
+    Values.LITERAL_TARGET.set(genContext, literal, targetIfaceErase);
   }
 
   private void matchTypeParameters(SNode literal, SNode targetIfaceErase, List<SNode> reifiedTargetIfaceTypeParams) {
     SNode meth = getFunctionMethod(literal, targetIfaceErase);
     SNode funType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(literal), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
-    Adaptation.TypeMatcher matcher = new Adaptation.TypeMatcher();
+    ClosureLiteralTarget.TypeMatcher matcher = new ClosureLiteralTarget.TypeMatcher();
 
     if ((SLinkOperations.getTarget(meth, "returnType", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(meth, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       matcher.matchReturnType(SLinkOperations.getTarget(meth, "returnType", true), FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(funType));
@@ -84,7 +83,7 @@ public class Adaptation {
         matcher.matchType(methThrIt.next(), funThrIt.next());
       }
       if (funThrIt.hasNext() || methThrIt.hasNext()) {
-        genContext.showWarningMessage(null, "Closure generic throws types count doesn't match method '" + SPropertyOperations.getString(meth, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), "name")));
+        genContext.showWarningMessage(literal, "Closure generic throws types count doesn't match method '" + SPropertyOperations.getString(meth, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), "name")));
       }
     }
 
@@ -93,24 +92,39 @@ public class Adaptation {
     // Copy reified target ClassifierType parameters to the erasure target ClassifierType 
     Map<SNode, SNode> map = matcher.getMap();
     if (map != null) {
-      List<SNode> varDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), "typeVariableDeclaration", true);
-      int idx = 0;
-      for (SNode rtp : reifiedTargetIfaceTypeParams) {
-        List<SNode> queue = ListSequence.fromListAndArray(new LinkedList<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(targetIfaceErase, "parameter", true)).addElement(SNodeOperations.copyNode(rtp)));
+      Iterator<SNode> reifiedTypeIt = ListSequence.fromList(reifiedTargetIfaceTypeParams).iterator();
+      Iterator<SNode> targetTypeVarIt = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), "typeVariableDeclaration", true)).iterator();
+      while (reifiedTypeIt.hasNext() && targetTypeVarIt.hasNext()) {
+        SNode typeVar = targetTypeVarIt.next();
+        SNode rtp = reifiedTypeIt.next();
+        SNode substituteType = (MapSequence.fromMap(map).containsKey(typeVar) ?
+          SNodeOperations.copyNode(MapSequence.fromMap(map).get(typeVar)) :
+          SNodeOperations.copyNode(rtp)
+        );
+        List<SNode> queue = ListSequence.fromListAndArray(new LinkedList<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(targetIfaceErase, "parameter", true)).addElement(substituteType));
+with_queue:
         while (!(ListSequence.fromList(queue).isEmpty())) {
           SNode n = ListSequence.fromList(queue).removeElementAt(0);
-          if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-            if (idx < ListSequence.fromList(varDecls).count() && MapSequence.fromMap(map).containsKey(ListSequence.fromList(varDecls).getElement(idx))) {
-              // TODO this is probably not what we want 
-              SNodeOperations.replaceWithAnother(n, MapSequence.fromMap(map).get(ListSequence.fromList(varDecls).getElement(idx)));
+          /*
+            if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") && MapSequence.fromMap(map).containsKey(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false))) {
+              SNodeOperations.replaceWithAnother(n, MapSequence.fromMap(map).get(SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)));
             }
-          } else {
-            if (n != null && (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType") || SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType"))) {
-              ListSequence.fromList(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
+          */
+          if ((n != null)) {
+            if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+              n = SNodeOperations.replaceWithAnother(n, SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true));
+            } else if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+              n = SNodeOperations.replaceWithAnother(n, SLinkOperations.getTarget(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true));
+            } else {
+              continue with_queue;
             }
+            ListSequence.fromList(queue).addElement(n);
+            ListSequence.fromList(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(n)));
           }
         }
-        idx++;
+      }
+      if (reifiedTypeIt.hasNext() || targetTypeVarIt.hasNext()) {
+        genContext.showWarningMessage(literal, "Reified type parameters count doesn't match method declaration '" + SPropertyOperations.getString(meth, "name") + "' in " + JavaNameUtil.fqClassName(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), SPropertyOperations.getString(SLinkOperations.getTarget(targetIfaceErase, "classifier", false), "name")));
       }
     }
   }
@@ -147,7 +161,7 @@ public class Adaptation {
       }
       if ((matched != null)) {
         if (SNodeOperations.isInstanceOf(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-          MapSequence.fromMap(getOrCreateMap()).put(SLinkOperations.getTarget(SNodeOperations.cast(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), SNodeOperations.copyNode(matched));
+          mapTypeVar(SNodeOperations.cast(absType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), matched);
         } else {
           int idx = 0;
           List<SNode> mptypes = SLinkOperations.getTargets(SNodeOperations.as(absType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -162,13 +176,12 @@ public class Adaptation {
     public void matchReturnType(SNode absType, SNode realType) {
       Set<String> visited = SetSequence.fromSet(new HashSet<String>());
       List<SNode> queue = new ArrayList<SNode>();
-      // TODO check if realType is really a Type 
       if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
         for (SNode arg : SLinkOperations.getTargets(SNodeOperations.cast(realType, "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)) {
-          ListSequence.fromList(queue).addElement(SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.Type"));
+          ListSequence.fromList(queue).addElement(arg);
         }
       } else {
-        ListSequence.fromList(queue).addElement(SNodeOperations.cast(realType, "jetbrains.mps.baseLanguage.structure.Type"));
+        ListSequence.fromList(queue).addElement(realType);
       }
       while (!(ListSequence.fromList(queue).isEmpty())) {
         SNode candidate = ListSequence.fromList(queue).removeElementAt(0);
@@ -178,12 +191,15 @@ public class Adaptation {
             return;
           }
           SetSequence.fromSet(visited).addElement(BaseConcept_Behavior.call_getPresentation_1213877396640(candidate));
-          // TODO check that superType is really a Type 
           for (SNode superType : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(candidate)) {
-            ListSequence.fromList(queue).addElement(SNodeOperations.cast(superType, "jetbrains.mps.baseLanguage.structure.Type"));
+            ListSequence.fromList(queue).addElement(superType);
           }
         }
       }
+    }
+
+    private void mapTypeVar(SNode typeVar, SNode tvr) {
+      MapSequence.fromMap(getOrCreateMap()).put(SLinkOperations.getTarget(typeVar, "typeVariableDeclaration", false), FunctionTypeUtil.unbound(SNodeOperations.copyNode(tvr)));
     }
 
     private Map<SNode, SNode> getOrCreateMap() {
