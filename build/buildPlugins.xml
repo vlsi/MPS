@@ -85,9 +85,19 @@
       <fileset dir="${build.tmp}/java/out/modelchecker" />
       <zipfileset file="${mps_home}/plugins/modelchecker/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
+    <mkdir dir="${build.tmp}/default/migration25.jar" />
+    <mkdir dir="${build.tmp}/default/migration25.jar/META-INF" />
+    <copy todir="${build.tmp}/default/migration25.jar/META-INF">
+      <fileset file="${mps_home}/plugins/migration25/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
     <jar destfile="${build.layout}/plugins/migration25.jar">
       <fileset dir="${build.tmp}/java/out/migration25" />
-      <zipfileset file="${mps_home}/plugins/migration25/META-INF/plugin.xml" prefix="META-INF" />
+      <fileset dir="${build.tmp}/default/migration25.jar" />
     </jar>
     <jar destfile="${build.layout}/plugins/samples.jar">
       <fileset dir="${build.tmp}/java/out/samples" />
