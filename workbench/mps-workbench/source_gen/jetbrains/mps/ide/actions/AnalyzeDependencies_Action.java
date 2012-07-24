@@ -56,11 +56,29 @@ public class AnalyzeDependencies_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("myModels", event.getData(MPSCommonDataKeys.MODELS));
+    if (MapSequence.fromMap(_params).get("myModels") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("myModules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("myModules") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("myMPSProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("myMPSProject") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("myEditorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    if (MapSequence.fromMap(_params).get("myEditorComponent") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("myModel", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
+    if (MapSequence.fromMap(_params).get("myModel") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("myProject", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("myProject") == null) {
+      return false;
+    }
     return true;
   }
 

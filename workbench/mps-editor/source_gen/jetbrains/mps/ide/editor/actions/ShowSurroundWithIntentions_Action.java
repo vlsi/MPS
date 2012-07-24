@@ -80,7 +80,13 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
+      return false;
+    }
     return true;
   }
 

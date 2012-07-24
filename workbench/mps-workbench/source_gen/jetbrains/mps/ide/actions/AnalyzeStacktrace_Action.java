@@ -73,6 +73,9 @@ public class AnalyzeStacktrace_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("exception", event.getData(MPSCommonDataKeys.EXCEPTION));
+    if (MapSequence.fromMap(_params).get("exception") == null) {
+      return false;
+    }
     return true;
   }
 

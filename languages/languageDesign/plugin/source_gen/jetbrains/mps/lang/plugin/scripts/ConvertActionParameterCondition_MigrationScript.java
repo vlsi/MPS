@@ -9,6 +9,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -31,7 +33,11 @@ public class ConvertActionParameterCondition_MigrationScript extends BaseMigrati
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return node.hasProperty("isOptional") && SPropertyOperations.getBoolean(node, "isOptional") == false;
+        return SPropertyOperations.getBoolean(node, "isOptional") == false && !(ListSequence.fromList(SLinkOperations.getTargets(node, "condition", true)).any(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.RequiredCondition");
+          }
+        }));
       }
 
       public void doUpdateInstanceNode(SNode node) {

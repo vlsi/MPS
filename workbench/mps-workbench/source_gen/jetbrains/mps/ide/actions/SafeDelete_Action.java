@@ -46,6 +46,9 @@ public class SafeDelete_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
+      return false;
+    }
     {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
       if (node != null) {
