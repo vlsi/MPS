@@ -48,6 +48,10 @@ public class QueriesGenerated {
     SPropertyOperations.set(pd, "name", "component");
   }
 
+  public static void nodeFactory_NodeSetup_ActionParameter_315309404903965694(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SLinkOperations.addNewChild(_context.getNewNode(), "condition", "jetbrains.mps.lang.plugin.structure.RequiredCondition");
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1217414463812(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     return result;
@@ -61,7 +65,7 @@ public class QueriesGenerated {
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Computable computable = new Computable() {
           public Object compute() {
-            return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0d().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0d().createNode(), new QueriesGenerated.QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0d().createNode());
+            return ListSequence.fromListAndArray(new ArrayList<SNode>(), new QueriesGenerated.QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0e().createNode(), new QueriesGenerated.QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0e().createNode(), new QueriesGenerated.QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0e().createNode());
           }
         };
         Iterable<SNode> queryResult = (Iterable) computable.compute();
@@ -96,9 +100,9 @@ public class QueriesGenerated {
         Computable computable = new Computable() {
           public Object compute() {
             List<SNode> dataKeys = new ArrayList<SNode>();
-            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0b0a0a0a0a2a0a2a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
-            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0c0a0a0a0a2a0a2a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
-            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0d0a0a0a0a2a0a2a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0b0a0a0a0a2a0a2a4().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0c0a0a0a0a2a0a2a4().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0d0a0a0a0a2a0a2a4().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
             return dataKeys;
           }
         };
@@ -186,8 +190,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0d {
-    public QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0d() {
+  public static class QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0e {
+    public QuotationClass_x583g4_a1a0a0a0a0a0c0a0b0e() {
     }
 
     public SNode createNode() {
@@ -203,8 +207,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0d {
-    public QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0d() {
+  public static class QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0e {
+    public QuotationClass_x583g4_a2a0a0a0a0a0c0a0b0e() {
     }
 
     public SNode createNode() {
@@ -220,8 +224,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0d {
-    public QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0d() {
+  public static class QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0e {
+    public QuotationClass_x583g4_a3a0a0a0a0a0c0a0b0e() {
     }
 
     public SNode createNode() {
@@ -237,8 +241,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0b0a0a0a0a2a0a2a3 {
-    public QuotationClass_x583g4_a0a0a0a0b0a0a0a0a2a0a2a3() {
+  public static class QuotationClass_x583g4_a0a0a0a0b0a0a0a0a2a0a2a4 {
+    public QuotationClass_x583g4_a0a0a0a0b0a0a0a0a2a0a2a4() {
     }
 
     public SNode createNode() {
@@ -255,8 +259,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0c0a0a0a0a2a0a2a3 {
-    public QuotationClass_x583g4_a0a0a0a0c0a0a0a0a2a0a2a3() {
+  public static class QuotationClass_x583g4_a0a0a0a0c0a0a0a0a2a0a2a4 {
+    public QuotationClass_x583g4_a0a0a0a0c0a0a0a0a2a0a2a4() {
     }
 
     public SNode createNode() {
@@ -273,8 +277,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0d0a0a0a0a2a0a2a3 {
-    public QuotationClass_x583g4_a0a0a0a0d0a0a0a0a2a0a2a3() {
+  public static class QuotationClass_x583g4_a0a0a0a0d0a0a0a0a2a0a2a4 {
+    public QuotationClass_x583g4_a0a0a0a0d0a0a0a0a2a0a2a4() {
     }
 
     public SNode createNode() {

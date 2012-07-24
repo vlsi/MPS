@@ -61,6 +61,9 @@ public class RemoveMPSClasspathDependencies_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("modules", event.getData(MPSDataKeys.MODULES));
+    if (MapSequence.fromMap(_params).get("modules") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
