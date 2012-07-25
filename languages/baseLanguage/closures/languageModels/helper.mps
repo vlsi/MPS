@@ -61,7 +61,7 @@
       <property name="name" nameId="tpck.1169194664001" value="ClosureLiteralTarget" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7178287329507699514">
-      <property name="name" nameId="tpck.1169194664001" value="AdapterClassTypeBuilder" />
+      <property name="name" nameId="tpck.1169194664001" value="ClosureLiteralAdapterBuilder" />
     </node>
   </roots>
   <root id="1200861660719">
@@ -6488,11 +6488,11 @@
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7178287329507724883">
                     <property name="name" nameId="tpck.1169194664001" value="builder" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7178287329507724884">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7178287329507699514" resolveInfo="AdapterClassTypeBuilder" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7178287329507699514" resolveInfo="ClosureLiteralAdapterBuilder" />
                     </node>
                     <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7178287329507724885">
                       <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7178287329507724886">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7178287329507699516" resolveInfo="AdapterClassTypeBuilder" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7178287329507699516" resolveInfo="ClosureLiteralAdapterBuilder" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7178287329507724887">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1215470152447" resolveInfo="genContext" />
                         </node>

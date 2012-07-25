@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.closures.helper.AdapterClassTypeBuilder" file="AdapterClassTypeBuilder.java">
+  <dependency className="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder" file="ClosureLiteralAdapterBuilder.java">
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.Set" />
@@ -97,7 +97,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.AdapterClassTypeBuilder" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Keys" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />

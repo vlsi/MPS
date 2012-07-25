@@ -638,8 +638,8 @@
     <nodeInfo nodeId="1241079119606" fileName="FunctionTypeUtil.java" startLine="238" startPosition="154" endLine="239" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1215470164390" fileName="FunctionTypeUtil.java" startLine="242" startPosition="47" endLine="243" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1241079143730" fileName="FunctionTypeUtil.java" startLine="243" startPosition="152" endLine="244" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507724882" fileName="FunctionTypeUtil.java" startLine="246" startPosition="47" endLine="247" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507724881" fileName="FunctionTypeUtil.java" startLine="247" startPosition="80" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7178287329507724882" fileName="FunctionTypeUtil.java" startLine="246" startPosition="47" endLine="247" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507724881" fileName="FunctionTypeUtil.java" startLine="247" startPosition="90" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7178287329507724916" fileName="FunctionTypeUtil.java" startLine="249" startPosition="232" endLine="250" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7178287329507724925" fileName="FunctionTypeUtil.java" startLine="250" startPosition="164" endLine="251" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="7178287329507724933" fileName="FunctionTypeUtil.java" startLine="251" startPosition="18" endLine="252" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1955,143 +1955,143 @@
     <unitInfo nodeId="515790726266555613" fileName="ClosureLiteralTarget.java" startLine="145" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget$TypeMatcher" />
   </root>
   <root nodeId="7178287329507699514">
-    <nodeInfo nodeId="7178287329507699533" fileName="AdapterClassTypeBuilder.java" startLine="25" startPosition="38" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
-    <nodeInfo nodeId="7178287329507699536" fileName="AdapterClassTypeBuilder.java" startLine="28" startPosition="67" endLine="29" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507699608" fileName="AdapterClassTypeBuilder.java" startLine="32" startPosition="49" endLine="33" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507703985" fileName="AdapterClassTypeBuilder.java" startLine="36" startPosition="74" endLine="37" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507703997" fileName="AdapterClassTypeBuilder.java" startLine="37" startPosition="58" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507719869" fileName="AdapterClassTypeBuilder.java" startLine="38" startPosition="71" endLine="39" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507719879" fileName="AdapterClassTypeBuilder.java" startLine="39" startPosition="79" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7178287329507704005" fileName="AdapterClassTypeBuilder.java" startLine="40" startPosition="0" endLine="41" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507704150" fileName="AdapterClassTypeBuilder.java" startLine="41" startPosition="113" endLine="42" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507719732" fileName="AdapterClassTypeBuilder.java" startLine="43" startPosition="97" endLine="44" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507719724" fileName="AdapterClassTypeBuilder.java" startLine="44" startPosition="119" endLine="45" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507704082" fileName="AdapterClassTypeBuilder.java" startLine="45" startPosition="76" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507721075" fileName="AdapterClassTypeBuilder.java" startLine="46" startPosition="99" endLine="47" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507719885" fileName="AdapterClassTypeBuilder.java" startLine="48" startPosition="5" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507720099" fileName="AdapterClassTypeBuilder.java" startLine="53" startPosition="283" endLine="54" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507720475" fileName="AdapterClassTypeBuilder.java" startLine="55" startPosition="12" endLine="56" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507720598" fileName="AdapterClassTypeBuilder.java" startLine="56" startPosition="139" endLine="57" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507721026" fileName="AdapterClassTypeBuilder.java" startLine="58" startPosition="67" endLine="59" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507720902" fileName="AdapterClassTypeBuilder.java" startLine="60" startPosition="247" endLine="61" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507721070" fileName="AdapterClassTypeBuilder.java" startLine="61" startPosition="140" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7178287329507699552" fileName="AdapterClassTypeBuilder.java" startLine="68" startPosition="61" endLine="69" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507699589" fileName="AdapterClassTypeBuilder.java" startLine="71" startPosition="40" endLine="72" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507699745" fileName="AdapterClassTypeBuilder.java" startLine="79" startPosition="40" endLine="80" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507703963" fileName="AdapterClassTypeBuilder.java" startLine="87" startPosition="39" endLine="88" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="97" startPosition="31" endLine="98" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="98" startPosition="26" endLine="99" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="99" startPosition="67" endLine="100" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="101" startPosition="7" endLine="102" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="102" startPosition="167" endLine="103" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="103" startPosition="43" endLine="104" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="104" startPosition="241" endLine="105" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="106" startPosition="7" endLine="107" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="93" startPosition="53" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_w1gyjg_a0a0a0d#()V" />
-    <nodeInfo nodeId="7178287329507699516" fileName="AdapterClassTypeBuilder.java" startLine="27" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AdapterClassTypeBuilder#(Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="7178287329507699600" fileName="AdapterClassTypeBuilder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAdapterClass#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7178287329507720729" fileName="AdapterClassTypeBuilder.java" startLine="59" startPosition="49" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7178287329507699583" fileName="AdapterClassTypeBuilder.java" startLine="70" startPosition="485" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7178287329507699739" fileName="AdapterClassTypeBuilder.java" startLine="78" startPosition="385" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7178287329507703957" fileName="AdapterClassTypeBuilder.java" startLine="86" startPosition="213" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="7178287329507699559" fileName="AdapterClassTypeBuilder.java" startLine="69" startPosition="150" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507699718" fileName="AdapterClassTypeBuilder.java" startLine="77" startPosition="81" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507703944" fileName="AdapterClassTypeBuilder.java" startLine="85" startPosition="56" endLine="90" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507704050" fileName="AdapterClassTypeBuilder.java" startLine="42" startPosition="73" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="100" startPosition="32" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="100" startPosition="32" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507720630" fileName="AdapterClassTypeBuilder.java" startLine="57" startPosition="137" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7178287329507699763" fileName="AdapterClassTypeBuilder.java" startLine="76" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findAdapterClassDeclaration#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7178287329507703970" fileName="AdapterClassTypeBuilder.java" startLine="84" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdapterClassFunctionType#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7178287329507699596" fileName="AdapterClassTypeBuilder.java" startLine="67" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lookupAdapterClassAnnotation#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7178287329507720209" fileName="AdapterClassTypeBuilder.java" startLine="55" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507719943" fileName="AdapterClassTypeBuilder.java" startLine="52" startPosition="88" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="96" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7178287329507703974" fileName="AdapterClassTypeBuilder.java" startLine="35" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildAdapterClassType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="7178287329507719894" fileName="AdapterClassTypeBuilder.java" startLine="51" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceWithTarget#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="94" startPosition="44" endLine="94" endPosition="44" />
-    <scopeInfo nodeId="7178287329507699519" fileName="AdapterClassTypeBuilder.java" startLine="28" startPosition="67" endLine="29" endPosition="33" />
-    <scopeInfo nodeId="7178287329507699603" fileName="AdapterClassTypeBuilder.java" startLine="32" startPosition="49" endLine="33" endPosition="179" />
-    <scopeInfo nodeId="7178287329507719945" fileName="AdapterClassTypeBuilder.java" startLine="53" startPosition="283" endLine="54" endPosition="185" />
-    <scopeInfo nodeId="7178287329507699588" fileName="AdapterClassTypeBuilder.java" startLine="71" startPosition="40" endLine="72" endPosition="81" />
-    <scopeInfo nodeId="7178287329507699744" fileName="AdapterClassTypeBuilder.java" startLine="79" startPosition="40" endLine="80" endPosition="306" />
-    <scopeInfo nodeId="7178287329507703962" fileName="AdapterClassTypeBuilder.java" startLine="87" startPosition="39" endLine="88" endPosition="123" />
-    <scopeInfo nodeId="7178287329507720731" fileName="AdapterClassTypeBuilder.java" startLine="60" startPosition="247" endLine="62" endPosition="16" />
-    <scopeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="93" startPosition="53" endLine="95" endPosition="5" />
-    <scopeInfo nodeId="7178287329507699516" fileName="AdapterClassTypeBuilder.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
+    <nodeInfo nodeId="7178287329507699533" fileName="ClosureLiteralAdapterBuilder.java" startLine="25" startPosition="43" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
+    <nodeInfo nodeId="7178287329507699536" fileName="ClosureLiteralAdapterBuilder.java" startLine="28" startPosition="72" endLine="29" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507699608" fileName="ClosureLiteralAdapterBuilder.java" startLine="32" startPosition="49" endLine="33" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507703985" fileName="ClosureLiteralAdapterBuilder.java" startLine="36" startPosition="74" endLine="37" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507703997" fileName="ClosureLiteralAdapterBuilder.java" startLine="37" startPosition="58" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507719869" fileName="ClosureLiteralAdapterBuilder.java" startLine="38" startPosition="71" endLine="39" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507719879" fileName="ClosureLiteralAdapterBuilder.java" startLine="39" startPosition="79" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7178287329507704005" fileName="ClosureLiteralAdapterBuilder.java" startLine="40" startPosition="0" endLine="41" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507704150" fileName="ClosureLiteralAdapterBuilder.java" startLine="41" startPosition="113" endLine="42" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507719732" fileName="ClosureLiteralAdapterBuilder.java" startLine="43" startPosition="97" endLine="44" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507719724" fileName="ClosureLiteralAdapterBuilder.java" startLine="44" startPosition="119" endLine="45" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507704082" fileName="ClosureLiteralAdapterBuilder.java" startLine="45" startPosition="76" endLine="46" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507721075" fileName="ClosureLiteralAdapterBuilder.java" startLine="46" startPosition="99" endLine="47" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507719885" fileName="ClosureLiteralAdapterBuilder.java" startLine="48" startPosition="5" endLine="49" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507720099" fileName="ClosureLiteralAdapterBuilder.java" startLine="53" startPosition="283" endLine="54" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507720475" fileName="ClosureLiteralAdapterBuilder.java" startLine="55" startPosition="12" endLine="56" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507720598" fileName="ClosureLiteralAdapterBuilder.java" startLine="56" startPosition="139" endLine="57" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507721026" fileName="ClosureLiteralAdapterBuilder.java" startLine="58" startPosition="67" endLine="59" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507720902" fileName="ClosureLiteralAdapterBuilder.java" startLine="60" startPosition="247" endLine="61" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507721070" fileName="ClosureLiteralAdapterBuilder.java" startLine="61" startPosition="140" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7178287329507699552" fileName="ClosureLiteralAdapterBuilder.java" startLine="68" startPosition="61" endLine="69" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507699589" fileName="ClosureLiteralAdapterBuilder.java" startLine="71" startPosition="40" endLine="72" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507699745" fileName="ClosureLiteralAdapterBuilder.java" startLine="79" startPosition="40" endLine="80" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507703963" fileName="ClosureLiteralAdapterBuilder.java" startLine="87" startPosition="39" endLine="88" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="97" startPosition="31" endLine="98" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="98" startPosition="26" endLine="99" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="99" startPosition="67" endLine="100" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="101" startPosition="7" endLine="102" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="102" startPosition="167" endLine="103" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="103" startPosition="43" endLine="104" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="104" startPosition="241" endLine="105" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="106" startPosition="7" endLine="107" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="93" startPosition="53" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_wzrebk_a0a0a0d#()V" />
+    <nodeInfo nodeId="7178287329507699516" fileName="ClosureLiteralAdapterBuilder.java" startLine="27" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClosureLiteralAdapterBuilder#(Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+    <nodeInfo nodeId="7178287329507699600" fileName="ClosureLiteralAdapterBuilder.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAdapterClass#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7178287329507720729" fileName="ClosureLiteralAdapterBuilder.java" startLine="59" startPosition="49" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7178287329507699583" fileName="ClosureLiteralAdapterBuilder.java" startLine="70" startPosition="485" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7178287329507699739" fileName="ClosureLiteralAdapterBuilder.java" startLine="78" startPosition="385" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7178287329507703957" fileName="ClosureLiteralAdapterBuilder.java" startLine="86" startPosition="213" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7178287329507699559" fileName="ClosureLiteralAdapterBuilder.java" startLine="69" startPosition="155" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507699718" fileName="ClosureLiteralAdapterBuilder.java" startLine="77" startPosition="81" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507703944" fileName="ClosureLiteralAdapterBuilder.java" startLine="85" startPosition="56" endLine="90" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507704050" fileName="ClosureLiteralAdapterBuilder.java" startLine="42" startPosition="73" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="100" startPosition="32" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="100" startPosition="32" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7178287329507720630" fileName="ClosureLiteralAdapterBuilder.java" startLine="57" startPosition="137" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7178287329507699763" fileName="ClosureLiteralAdapterBuilder.java" startLine="76" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findAdapterClassDeclaration#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507703970" fileName="ClosureLiteralAdapterBuilder.java" startLine="84" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdapterClassFunctionType#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507699596" fileName="ClosureLiteralAdapterBuilder.java" startLine="67" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="lookupAdapterClassAnnotation#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507720209" fileName="ClosureLiteralAdapterBuilder.java" startLine="55" startPosition="10" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7178287329507719943" fileName="ClosureLiteralAdapterBuilder.java" startLine="52" startPosition="88" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="96" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507703974" fileName="ClosureLiteralAdapterBuilder.java" startLine="35" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildAdapterClassType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7178287329507719894" fileName="ClosureLiteralAdapterBuilder.java" startLine="51" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceWithTarget#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="94" startPosition="44" endLine="94" endPosition="44" />
+    <scopeInfo nodeId="7178287329507699519" fileName="ClosureLiteralAdapterBuilder.java" startLine="28" startPosition="72" endLine="29" endPosition="33" />
+    <scopeInfo nodeId="7178287329507699603" fileName="ClosureLiteralAdapterBuilder.java" startLine="32" startPosition="49" endLine="33" endPosition="179" />
+    <scopeInfo nodeId="7178287329507719945" fileName="ClosureLiteralAdapterBuilder.java" startLine="53" startPosition="283" endLine="54" endPosition="185" />
+    <scopeInfo nodeId="7178287329507699588" fileName="ClosureLiteralAdapterBuilder.java" startLine="71" startPosition="40" endLine="72" endPosition="81" />
+    <scopeInfo nodeId="7178287329507699744" fileName="ClosureLiteralAdapterBuilder.java" startLine="79" startPosition="40" endLine="80" endPosition="306" />
+    <scopeInfo nodeId="7178287329507703962" fileName="ClosureLiteralAdapterBuilder.java" startLine="87" startPosition="39" endLine="88" endPosition="123" />
+    <scopeInfo nodeId="7178287329507720731" fileName="ClosureLiteralAdapterBuilder.java" startLine="60" startPosition="247" endLine="62" endPosition="16" />
+    <scopeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="93" startPosition="53" endLine="95" endPosition="5" />
+    <scopeInfo nodeId="7178287329507699516" fileName="ClosureLiteralAdapterBuilder.java" startLine="27" startPosition="0" endLine="30" endPosition="3">
       <varInfo nodeId="7178287329507699520" varName="genContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699600" fileName="AdapterClassTypeBuilder.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="7178287329507699600" fileName="ClosureLiteralAdapterBuilder.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="7178287329507699605" varName="literal" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507704051" fileName="AdapterClassTypeBuilder.java" startLine="43" startPosition="97" endLine="47" endPosition="70">
+    <scopeInfo nodeId="7178287329507704051" fileName="ClosureLiteralAdapterBuilder.java" startLine="43" startPosition="97" endLine="47" endPosition="70">
       <varInfo nodeId="7178287329507719733" varName="tvr" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699583" fileName="AdapterClassTypeBuilder.java" startLine="70" startPosition="485" endLine="74" endPosition="0">
+    <scopeInfo nodeId="7178287329507699583" fileName="ClosureLiteralAdapterBuilder.java" startLine="70" startPosition="485" endLine="74" endPosition="0">
       <varInfo nodeId="7178287329507699586" varName="ann" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699739" fileName="AdapterClassTypeBuilder.java" startLine="78" startPosition="385" endLine="82" endPosition="0">
+    <scopeInfo nodeId="7178287329507699739" fileName="ClosureLiteralAdapterBuilder.java" startLine="78" startPosition="385" endLine="82" endPosition="0">
       <varInfo nodeId="7178287329507699742" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507703957" fileName="AdapterClassTypeBuilder.java" startLine="86" startPosition="213" endLine="90" endPosition="0">
+    <scopeInfo nodeId="7178287329507703957" fileName="ClosureLiteralAdapterBuilder.java" startLine="86" startPosition="213" endLine="90" endPosition="0">
       <varInfo nodeId="7178287329507703960" varName="md" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="101" startPosition="7" endLine="105" endPosition="31">
+    <scopeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="101" startPosition="7" endLine="105" endPosition="31">
       <varInfo nodeId="7178287329507699556" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507720632" fileName="AdapterClassTypeBuilder.java" startLine="58" startPosition="67" endLine="63" endPosition="9">
+    <scopeInfo nodeId="7178287329507720632" fileName="ClosureLiteralAdapterBuilder.java" startLine="58" startPosition="67" endLine="63" endPosition="9">
       <varInfo nodeId="7178287329507721027" varName="targetParam" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699717" fileName="AdapterClassTypeBuilder.java" startLine="77" startPosition="81" endLine="82" endPosition="7" />
-    <scopeInfo nodeId="7178287329507703943" fileName="AdapterClassTypeBuilder.java" startLine="85" startPosition="56" endLine="90" endPosition="84" />
-    <scopeInfo nodeId="7178287329507704050" fileName="AdapterClassTypeBuilder.java" startLine="42" startPosition="73" endLine="48" endPosition="5">
+    <scopeInfo nodeId="7178287329507699717" fileName="ClosureLiteralAdapterBuilder.java" startLine="77" startPosition="81" endLine="82" endPosition="7" />
+    <scopeInfo nodeId="7178287329507703943" fileName="ClosureLiteralAdapterBuilder.java" startLine="85" startPosition="56" endLine="90" endPosition="84" />
+    <scopeInfo nodeId="7178287329507704050" fileName="ClosureLiteralAdapterBuilder.java" startLine="42" startPosition="73" endLine="48" endPosition="5">
       <varInfo nodeId="7178287329507704053" varName="tvd" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699551" fileName="AdapterClassTypeBuilder.java" startLine="68" startPosition="61" endLine="74" endPosition="7">
+    <scopeInfo nodeId="7178287329507699551" fileName="ClosureLiteralAdapterBuilder.java" startLine="68" startPosition="61" endLine="74" endPosition="7">
       <varInfo nodeId="7178287329507699553" varName="adapterAnn" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="100" startPosition="32" endLine="106" endPosition="7" />
-    <scopeInfo nodeId="7178287329507699763" fileName="AdapterClassTypeBuilder.java" startLine="76" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="100" startPosition="32" endLine="106" endPosition="7" />
+    <scopeInfo nodeId="7178287329507699763" fileName="ClosureLiteralAdapterBuilder.java" startLine="76" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="7178287329507699715" varName="annInst" />
       <varInfo nodeId="7178287329507699711" varName="literal" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507703970" fileName="AdapterClassTypeBuilder.java" startLine="84" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="7178287329507703970" fileName="ClosureLiteralAdapterBuilder.java" startLine="84" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="7178287329507703941" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507720210" fileName="AdapterClassTypeBuilder.java" startLine="55" startPosition="12" endLine="64" endPosition="7">
+    <scopeInfo nodeId="7178287329507720210" fileName="ClosureLiteralAdapterBuilder.java" startLine="55" startPosition="12" endLine="64" endPosition="7">
       <varInfo nodeId="7178287329507720476" varName="adapterParamIt" />
       <varInfo nodeId="7178287329507720599" varName="targetParamIt" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699596" fileName="AdapterClassTypeBuilder.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="7178287329507699596" fileName="ClosureLiteralAdapterBuilder.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="7178287329507699549" varName="literal" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="97" startPosition="31" endLine="107" endPosition="20">
+    <scopeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="97" startPosition="31" endLine="107" endPosition="20">
       <varInfo nodeId="7178287329507699556" varName="_parameterValues_129834374" />
       <varInfo nodeId="7178287329507699556" varName="quotedNode_1" />
       <varInfo nodeId="7178287329507699556" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507703977" fileName="AdapterClassTypeBuilder.java" startLine="36" startPosition="74" endLine="49" endPosition="18">
+    <scopeInfo nodeId="7178287329507703977" fileName="ClosureLiteralAdapterBuilder.java" startLine="36" startPosition="74" endLine="49" endPosition="18">
       <varInfo nodeId="7178287329507703998" varName="adapterClass" />
       <varInfo nodeId="7178287329507719870" varName="adapterClassFunctionType" />
       <varInfo nodeId="7178287329507703986" varName="annInst" />
       <varInfo nodeId="7178287329507704006" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507719897" fileName="AdapterClassTypeBuilder.java" startLine="52" startPosition="88" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="96" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7178287329507703974" fileName="AdapterClassTypeBuilder.java" startLine="35" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="7178287329507719897" fileName="ClosureLiteralAdapterBuilder.java" startLine="52" startPosition="88" endLine="65" endPosition="5" />
+    <scopeInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="96" startPosition="0" endLine="109" endPosition="0" />
+    <scopeInfo nodeId="7178287329507703974" fileName="ClosureLiteralAdapterBuilder.java" startLine="35" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="7178287329507703979" varName="literal" />
       <varInfo nodeId="7178287329507721106" varName="targetFunType" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507719894" fileName="AdapterClassTypeBuilder.java" startLine="51" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="7178287329507719894" fileName="ClosureLiteralAdapterBuilder.java" startLine="51" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="7178287329507720004" varName="adapterFunType" />
       <varInfo nodeId="7178287329507719936" varName="targetFunType" />
       <varInfo nodeId="7178287329507719931" varName="tvr" />
     </scopeInfo>
-    <unitInfo nodeId="7178287329507699514" fileName="AdapterClassTypeBuilder.java" startLine="25" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.AdapterClassTypeBuilder" />
-    <unitInfo nodeId="7178287329507699581" fileName="AdapterClassTypeBuilder.java" startLine="70" startPosition="462" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.helper.AdapterClassTypeBuilder$1" />
-    <unitInfo nodeId="7178287329507699737" fileName="AdapterClassTypeBuilder.java" startLine="78" startPosition="362" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.helper.AdapterClassTypeBuilder$2" />
-    <unitInfo nodeId="7178287329507703955" fileName="AdapterClassTypeBuilder.java" startLine="86" startPosition="190" endLine="90" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.helper.AdapterClassTypeBuilder$3" />
-    <unitInfo nodeId="7178287329507699556" fileName="AdapterClassTypeBuilder.java" startLine="93" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.AdapterClassTypeBuilder$QuotationClass_w1gyjg_a0a0a0d" />
+    <unitInfo nodeId="7178287329507699514" fileName="ClosureLiteralAdapterBuilder.java" startLine="25" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder" />
+    <unitInfo nodeId="7178287329507699581" fileName="ClosureLiteralAdapterBuilder.java" startLine="70" startPosition="462" endLine="74" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder$1" />
+    <unitInfo nodeId="7178287329507699737" fileName="ClosureLiteralAdapterBuilder.java" startLine="78" startPosition="362" endLine="82" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder$2" />
+    <unitInfo nodeId="7178287329507703955" fileName="ClosureLiteralAdapterBuilder.java" startLine="86" startPosition="190" endLine="90" endPosition="5" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder$3" />
+    <unitInfo nodeId="7178287329507699556" fileName="ClosureLiteralAdapterBuilder.java" startLine="93" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder$QuotationClass_wzrebk_a0a0a0d" />
   </root>
 </debugInfo>
 

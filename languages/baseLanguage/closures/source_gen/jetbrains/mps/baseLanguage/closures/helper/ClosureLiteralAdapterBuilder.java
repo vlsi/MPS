@@ -22,10 +22,10 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
-public class AdapterClassTypeBuilder {
+public class ClosureLiteralAdapterBuilder {
   private TemplateQueryContext genContext;
 
-  public AdapterClassTypeBuilder(TemplateQueryContext genContext) {
+  public ClosureLiteralAdapterBuilder(TemplateQueryContext genContext) {
     this.genContext = genContext;
   }
 
@@ -66,7 +66,7 @@ public class AdapterClassTypeBuilder {
   }
 
   private SNode lookupAdapterClassAnnotation(SNode literal) {
-    final SNode adapterAnn = SLinkOperations.getTarget(new AdapterClassTypeBuilder.QuotationClass_w1gyjg_a0a0a0d().createNode(), "annotation", false);
+    final SNode adapterAnn = SLinkOperations.getTarget(new ClosureLiteralAdapterBuilder.QuotationClass_wzrebk_a0a0a0d().createNode(), "annotation", false);
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(literal), "jetbrains.mps.baseLanguage.structure.IMethodCall"), "baseMethodDeclaration", false), "parameter", true)).getElement(SNodeOperations.getIndexInParent(literal)), "jetbrains.mps.baseLanguage.structure.HasAnnotation"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
         return SLinkOperations.getTarget(ann, "annotation", false) == adapterAnn;
@@ -90,8 +90,8 @@ public class AdapterClassTypeBuilder {
     }), "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration"));
   }
 
-  public static class QuotationClass_w1gyjg_a0a0a0d {
-    public QuotationClass_w1gyjg_a0a0a0d() {
+  public static class QuotationClass_wzrebk_a0a0a0d {
+    public QuotationClass_wzrebk_a0a0a0d() {
     }
 
     public SNode createNode() {
