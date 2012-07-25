@@ -15,5 +15,7 @@
  */
 package org.jetbrains.mps.openapi.dependencies;
 
-public interface SLanguage {
+import org.jetbrains.mps.openapi.module.SModule;
+
+public interface SLanguage extends SModule {
 }

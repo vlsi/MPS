@@ -15,9 +15,16 @@
  */
 package org.jetbrains.mps.openapi.dependencies;
 
+import org.jetbrains.mps.openapi.module.SModule;
+
 import java.util.Collection;
 
-public interface SGenerator {
+public interface SGenerator extends SModule {
   Collection<SLanguage> getSourceLanguages();
   Collection<SLanguage> getTargetLanguages();
+
+  Collection<SSolution> getRuntimeSolutions();
+
+  Collection<SModule> getDependencies();
+  Collection<SLanguage> getUsedLanguages();
 }

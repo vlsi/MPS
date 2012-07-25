@@ -15,6 +15,11 @@
  */
 package org.jetbrains.mps.openapi.dependencies;
 
-public interface SDevkit {
-  //void visitExportedModules(ModuleVisitor visitor);
+import org.jetbrains.mps.openapi.module.SModule;
+
+import java.util.Collection;
+
+public interface SDevkit extends SModule {
+  Collection<SModule> getExportedModules();
+  Collection<SLanguage> getExportedLanguages();
 }

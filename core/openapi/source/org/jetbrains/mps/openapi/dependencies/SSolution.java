@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.Collection;
 
-public interface SSolution {
+public interface SSolution extends SModule {
   Collection<SModule> getUsedModules();
 
   Collection<SLanguage> getUsedLanguages();
