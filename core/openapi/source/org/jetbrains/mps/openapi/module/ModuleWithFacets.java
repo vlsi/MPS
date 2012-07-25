@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.repository.reference;
+package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.module.SModule;
+import java.util.Collection;
 
-public interface SModuleReference<T extends SModule> extends SReference<T> {
-
+public interface ModuleWithFacets {
+  <T extends ModuleFacet> T getFacet(Class<T> facetClass);
+  Collection<Class<? extends ModuleFacet>> getFacetClasses();
 }

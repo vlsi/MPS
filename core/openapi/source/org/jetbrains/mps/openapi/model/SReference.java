@@ -13,15 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.repository.module;
+package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.repository.reference.SModuleReference;
+import org.jetbrains.mps.openapi.language.SLink;
 
-import java.util.Collection;
+/**
+ * evgeny, 7/25/12
+ */
+public interface SReference {
 
-public interface SGeneratorModule extends SModule {
-  Collection<SModuleReference<SLanguageModule>> getSourceLanguages();
-  Collection<SModuleReference<SLanguageModule>> getTargetLanguages();
+  String getRole();
 
-  Collection<SModuleReference<SSolutionModule>> getRuntimeSolutions();
+  SLink getLink();
+
+  SNode getSourceNode();
+
+  SNode getTargetNode();
+
+  SModel getTargetModel();
+
+  String getText();
 }

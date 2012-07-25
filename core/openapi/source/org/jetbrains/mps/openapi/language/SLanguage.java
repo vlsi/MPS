@@ -16,4 +16,8 @@
 package org.jetbrains.mps.openapi.language;
 
 public interface SLanguage {
+
+  String getPresentation();
+
+  Iterable<SConcept> getConcepts();
 }

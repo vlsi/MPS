@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.repository.reference;
 
-import org.jetbrains.mps.openapi.repository.model.SModel;
+import org.jetbrains.mps.openapi.node.SModel;
 
 public interface SModelReference extends SReference<SModel> {
 

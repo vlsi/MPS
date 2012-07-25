@@ -13,20 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.repository.module;
+package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.repository.model.SModel;
-import org.jetbrains.mps.openapi.repository.model.SModelId;
-import org.jetbrains.mps.openapi.repository.reference.SModuleReference;
+public interface SRootNode extends SNode {
 
-import java.util.Collection;
+  Iterable<SModel> getImportedModels();
 
-public interface SModule {
-  String getPresentation();
-
-  Collection<SModuleReference> getDependencies();
-
-  Collection<SModuleReference<SLanguageModule>> getUsedLanguages();
-
-  SModel resolveModel(SModelId ref);
+  Iterable<SRootNode> getImportedRoots();
 }

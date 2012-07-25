@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.facet;
+package org.jetbrains.mps.openapi.model;
 
-import java.util.Collection;
-
-public interface ModuleWithFacets {
-  <T extends ModuleFacet> T getFacet(Class<T> facetClass);
-  Collection<Class<? extends ModuleFacet>> getFacetClasses();
+public interface EditableModel {
 }

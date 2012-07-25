@@ -13,13 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.repository.module;
+package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.mps.openapi.repository.reference.SModuleReference;
+/**
+ * evgeny, 7/25/12
+ */
+public interface SLink {
 
-import java.util.Collection;
+  String getRole();
 
-public interface SDevkit {
-  Collection<SModuleReference> getExportedModules();
-  Collection<SModuleReference<SLanguageModule>> getExportedLanguages();
+  boolean isReference();
+
+  boolean isMultiple();
+
+  boolean isOptional();
+
+  SConcept getTargetConcept();
 }

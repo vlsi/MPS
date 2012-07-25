@@ -13,7 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.repository.model;
+package org.jetbrains.mps.openapi.language;
 
-public interface SModelId {
+/**
+ * evgeny, 7/25/12
+ */
+public interface SInterfaceConcept {
+
+  String getName();
+
+  String getQualifiedName();
+
+  Iterable<SInterfaceConcept> getSuperInterfaces();
 }
