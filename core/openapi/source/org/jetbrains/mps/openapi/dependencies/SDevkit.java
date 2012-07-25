@@ -16,5 +16,5 @@
 package org.jetbrains.mps.openapi.dependencies;
 
 public interface SDevkit {
-  void visitExportedModules(ModuleVisitor visitor);
+  //void visitExportedModules(ModuleVisitor visitor);
 }

@@ -23,6 +23,6 @@ import java.util.Collection;
 public interface RootManager {
   SNode resolve(SNodeReference ref);
   Collection<SNode> getNodes(String pack);
-  create
-  canCreate
+  //create
+  //canCreate
 }
