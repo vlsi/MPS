@@ -21,9 +21,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
 
-import java.util.Collection;
-import java.util.Map;
-
 public interface SNode {
 
   SNodeReference getReference();
@@ -66,8 +63,6 @@ public interface SNode {
 
   SNode getChild(String role);
 
-  void replaceChild(SNode oldChild, SNode newChild);
-
   void setChild(String role, SNode childNode);
 
   // multiple
@@ -76,20 +71,19 @@ public interface SNode {
 
   void removeChild(SNode wasChild);
 
-  void insertChild(SNode anchor, String _role, SNode child);
-
   void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore);
 
-  void replaceChild(SNode oldChild, Collection<SNode> newChildren);
+  void replaceChild(SNode oldChild, Iterable<SNode> newChildren);
 
   int getChildCount(String role);
 
   int getChildCount();
 
-  int getIndexOfChild(SNode child_);
+  int getIndexOfChild(SNode child);
 
   // children
 
+  @NotNull
   Iterable<SNode> getChildren();
 
   @NotNull
@@ -103,38 +97,30 @@ public interface SNode {
 
   String getName();
 
-  SNodeId getSNodeId();
-
-  void setId(@Nullable SNodeId id);
+  SNodeId getId();
 
   // refs
 
-  Iterable<SReference> getReferences();
+  SReference getReference(String role);
 
-  SReference setReferenceTarget(String role, SNode newReferent);
+  SReference setReferenceTarget(String role, SNode target);
 
   SNode getReferenceTarget(String role);
 
-  SReference getReference(String role);
-
   void addReference(SReference reference);
 
-  void removeReference(String role);
+  void replaceReference(SReference reference, @NotNull SReference referenceToAdd);
 
-  void removeReference(SReference referenceToRemove);
-
-  void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd);
+  Iterable<SReference> getReferences();
 
   // user objects
 
   Object getUserObject(Object key);
 
-  void putUserObject(Object key, Object value);
-
-  void removeUserObject(Object key);
+  void putUserObject(Object key, @Nullable Object value);
 
   void removeAllUserObjects();
 
-  Map<Object, Object> getUserObjects();
+  Iterable<Object> getUserObjectsKeys();
 
 }
