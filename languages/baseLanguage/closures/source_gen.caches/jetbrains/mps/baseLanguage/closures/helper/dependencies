@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.baseLanguage.closures.helper.AdaptableClassifierTarget" file="AdaptableClassifierTarget.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Keys" />
@@ -114,9 +115,9 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.AdaptableClassifierTarget" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralAdapterBuilder" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Keys" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.util.Constants" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />

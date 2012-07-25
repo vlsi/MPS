@@ -199,12 +199,12 @@ with_meet:
         // <node> 
         new ClosureLiteralTarget(genContext).setTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), lCType);
       } else {
-        FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(rFType), lCType);
+        new AdaptableClassifierTarget(genContext).setTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(rFType), lCType);
         Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(lCType, "classifier", false)));
       }
     } else
     if ((lFType != null) && (rCType != null)) {
-      FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, rCType, FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType));
+      new AdaptableClassifierTarget(genContext).setTarget(rCType, FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType));
       Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType), "classifier", false)));
     } else
     if ((lFType != null) && (rFType != null)) {
@@ -224,41 +224,10 @@ with_meet:
         new ClosureLiteralTarget(genContext).setTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), FunctionType_Behavior.call_getDeclarationRuntimeType_811905832257074290(lFType, rFType));
 
       } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") || ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(lFType)).count() != ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(rFType)).count()) {
-        FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(rFType), FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType));
+        new AdaptableClassifierTarget(genContext).setTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(rFType), FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType));
         Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(lFType), "classifier", false)));
       }
     }
-  }
-
-  public static void addAdaptableClassifierTypeTarget(TemplateQueryContext genContext, SNode adaptable, SNode target) {
-    List<SNode> allAdaptable = getAllAdaptableClassifiers(genContext);
-    if (allAdaptable == null) {
-      allAdaptable = ListSequence.fromList(new ArrayList<SNode>());
-      genContext.putStepObject(Keys.ALL_NEEDS_ADAPTED, allAdaptable);
-    }
-    if (!(ListSequence.fromList(allAdaptable).contains(SLinkOperations.getTarget(adaptable, "classifier", false)))) {
-      ListSequence.fromList(allAdaptable).addElement(SLinkOperations.getTarget(adaptable, "classifier", false));
-    }
-    List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
-    if (trgList == null) {
-      trgList = ListSequence.fromList(new ArrayList<SNode>());
-      genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))), trgList);
-    }
-    boolean hasOneAlready = false;
-    for (SNode ct : trgList) {
-      if (INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(target, "classifier", false)).equals(INamedConcept_Behavior.call_getFqName_1213877404258(ct))) {
-        hasOneAlready = true;
-        break;
-      }
-    }
-    if (!(hasOneAlready)) {
-      ListSequence.fromList(trgList).addElement(SLinkOperations.getTarget(target, "classifier", false));
-      Values.ADAPTABLE.set(genContext, SLinkOperations.getTarget(target, "classifier", false), SLinkOperations.getTarget(adaptable, "classifier", false));
-    }
-  }
-
-  private static List<SNode> getAllAdaptableClassifiers(TemplateQueryContext genContext) {
-    return (List<SNode>) genContext.getStepObject(Keys.ALL_NEEDS_ADAPTED);
   }
 
   public static Map<SNode, SNode> mapAdaptableTargetTVDs(SNode adaptable, SNode target) {

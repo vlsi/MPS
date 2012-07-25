@@ -4,22 +4,52 @@ package jetbrains.mps.baseLanguage.closures.helper;
 
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import java.util.List;
 
 public class AdaptableClassifierTarget {
   private TemplateQueryContext genContext;
 
   public AdaptableClassifierTarget(TemplateQueryContext genContext) {
     this.genContext = genContext;
+  }
+
+  public void setTarget(SNode adaptable, final SNode target) {
+    List<SNode> allAdaptable = (List<SNode>) genContext.getStepObject(Keys.ALL_NEEDS_ADAPTED);
+    if (allAdaptable == null) {
+      allAdaptable = ListSequence.fromList(new ArrayList<SNode>());
+      genContext.putStepObject(Keys.ALL_NEEDS_ADAPTED, allAdaptable);
+    }
+    if (!(ListSequence.fromList(allAdaptable).contains(SLinkOperations.getTarget(adaptable, "classifier", false)))) {
+      ListSequence.fromList(allAdaptable).addElement(SLinkOperations.getTarget(adaptable, "classifier", false));
+    }
+    List<SNode> trgList = getOrCreateTargets(adaptable);
+    if (!(ListSequence.fromList(trgList).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode cr) {
+        return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(target, "classifier", false)).equals(INamedConcept_Behavior.call_getFqName_1213877404258(cr));
+      }
+    }))) {
+      ListSequence.fromList(trgList).addElement(SLinkOperations.getTarget(target, "classifier", false));
+      Values.ADAPTABLE.set(genContext, SLinkOperations.getTarget(target, "classifier", false), SLinkOperations.getTarget(adaptable, "classifier", false));
+    }
+  }
+
+  private List<SNode> getOrCreateTargets(SNode adaptable) {
+    List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
+    if (trgList == null) {
+      trgList = ListSequence.fromList(new ArrayList<SNode>());
+      genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))), trgList);
+    }
+    return trgList;
   }
 
   public String getTargetName(SNode target) {
