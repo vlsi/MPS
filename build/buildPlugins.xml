@@ -41,6 +41,12 @@
     </copy>
     <jar destfile="${build.layout}/plugins/mps-java/lib/mpsjava.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/workbench/java.msd" prefix="modules/jetbrains.mps.ide.java" />
+      <zipfileset dir="${mps_home}/plugins/mpsjava/workbench" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java" />
+      <zipfileset dir="${mps_home}/plugins/mpsjava/workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java/models" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/platform/platform.msd" prefix="modules/jetbrains.mps.ide.java.platform" />
+      <zipfileset dir="${mps_home}/plugins/mpsjava/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.platform" />
+      <zipfileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java.platform/models" />
       <fileset dir="${build.tmp}/default/mpsjava.jar" />
     </jar>
     <mkdir dir="${build.layout}/plugins/mps-java/languages" />
@@ -79,9 +85,19 @@
       <fileset dir="${build.tmp}/java/out/modelchecker" />
       <zipfileset file="${mps_home}/plugins/modelchecker/META-INF/plugin.xml" prefix="META-INF" />
     </jar>
+    <mkdir dir="${build.tmp}/default/migration25.jar" />
+    <mkdir dir="${build.tmp}/default/migration25.jar/META-INF" />
+    <copy todir="${build.tmp}/default/migration25.jar/META-INF">
+      <fileset file="${mps_home}/plugins/migration25/META-INF/plugin.xml" />
+      <filterchain>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
+      </filterchain>
+    </copy>
     <jar destfile="${build.layout}/plugins/migration25.jar">
       <fileset dir="${build.tmp}/java/out/migration25" />
-      <zipfileset file="${mps_home}/plugins/migration25/META-INF/plugin.xml" prefix="META-INF" />
+      <fileset dir="${build.tmp}/default/migration25.jar" />
     </jar>
     <jar destfile="${build.layout}/plugins/samples.jar">
       <fileset dir="${build.tmp}/java/out/samples" />

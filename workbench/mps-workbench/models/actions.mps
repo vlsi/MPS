@@ -1538,7 +1538,6 @@
       <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="1215012161252" resolveInfo="IDEATools" />
     </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148372239">
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2899596005953599664" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="7738949347381711892">
         <property name="name" nameId="tpck.1169194664001" value="migration" />
       </node>
