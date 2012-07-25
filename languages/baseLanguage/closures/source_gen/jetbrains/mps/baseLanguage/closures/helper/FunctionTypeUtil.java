@@ -13,13 +13,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.baseLanguage.closures.util.Constants;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -102,41 +101,6 @@ with_throws:
     });
   }
 
-  public static String getAdapterName(SNode adaptable, SNode target) {
-    String aname = SPropertyOperations.getString(adaptable, "name");
-    int aldidx = aname.lastIndexOf(".");
-    aname = (aldidx >= 0 ?
-      aname.substring(aldidx + 1) :
-      aname
-    );
-    String tname = SPropertyOperations.getString(target, "name");
-    int tldidx = tname.lastIndexOf(".");
-    tname = (tldidx >= 0 ?
-      tname.substring(tldidx + 1) :
-      tname
-    );
-    return aname + "_to_" + tname + "_adapter";
-  }
-
-  public static SNode getAdaptableTarget(TemplateQueryContext genContext, SNode expr, ITemplateGenerator generator) {
-    SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(expr), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
-    ntype = (ntype == null ?
-      TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) :
-      ntype
-    );
-    assert ntype != null;
-    List<SNode> targets = FunctionTypeUtil.getAdaptableClassifierTargets(SLinkOperations.getTarget(SNodeOperations.as(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), generator);
-    String trgFQname = (String) Values.PREP_DATA.get(genContext, expr);
-    SNode trg = null;
-    for (SNode ct : targets) {
-      if (trgFQname.equals(INamedConcept_Behavior.call_getFqName_1213877404258(ct))) {
-        trg = ct;
-        break;
-      }
-    }
-    return trg;
-  }
-
   public static SNode unmeet(SNode possiblyMeet) {
     SNode tmp = possiblyMeet;
 with_meet:
@@ -147,7 +111,7 @@ with_meet:
           continue with_meet;
         }
       }
-      return new FunctionTypeUtil.QuotationClass_2t0coq_a0b0b0h().createNode();
+      return new FunctionTypeUtil.QuotationClass_2t0coq_a0b0b0f().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -293,12 +257,8 @@ with_meet:
     }
   }
 
-  public static List<SNode> getAllAdaptableClassifiers(TemplateQueryContext genContext) {
+  private static List<SNode> getAllAdaptableClassifiers(TemplateQueryContext genContext) {
     return (List<SNode>) genContext.getStepObject(Keys.ALL_NEEDS_ADAPTED);
-  }
-
-  public static List<SNode> getAdaptableClassifierTargets(SNode adaptable, ITemplateGenerator generator) {
-    return (List<SNode>) generator.getGeneratorSessionContext().getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(adaptable)));
   }
 
   public static Map<SNode, SNode> mapAdaptableTargetTVDs(SNode adaptable, SNode target) {
@@ -352,8 +312,8 @@ with_meet:
     }
   }
 
-  public static class QuotationClass_2t0coq_a0b0b0h {
-    public QuotationClass_2t0coq_a0b0b0h() {
+  public static class QuotationClass_2t0coq_a0b0b0f {
+    public QuotationClass_2t0coq_a0b0b0f() {
     }
 
     public SNode createNode() {

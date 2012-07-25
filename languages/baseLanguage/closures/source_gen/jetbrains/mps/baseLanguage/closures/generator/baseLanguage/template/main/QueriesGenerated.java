@@ -4,11 +4,7 @@ package jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
-import java.util.List;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.helper.Keys;
+import jetbrains.mps.baseLanguage.closures.helper.AdaptableClassifierTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.baseLanguage.closures.helper.Values;
@@ -17,20 +13,23 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.helper.Flags;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.smodel.SNode;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.closures.behavior.RuntimeUtils;
 import jetbrains.mps.baseLanguage.closures.behavior.UnrestrictedFunctionType_Behavior;
+import java.util.Map;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.baseLanguage.closures.helper.StatementListUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -45,6 +44,7 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.closures.helper.PrepStatementUtil;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.baseLanguage.closures.helper.WrappersUtils;
 import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
@@ -58,14 +58,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1216995080029(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifiers(_context);
-    if (adapters != null && ListSequence.fromList(adapters).count() > 0) {
-      /*
-        _context.putStepObject(Keys.NEEDS_WEAVING_CLASS, Boolean.TRUE);
-      */
-      return true;
-    }
-    return false;
+    return new AdaptableClassifierTarget(_context).hasAdaptable();
   }
 
   public static boolean createRootRule_Condition_1216996889747(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -270,8 +263,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1216995176832(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext) _context).getGenerator());
-    return Values.ADAPTABLE.get(_context, trg) != null;
+    return (new AdaptableClassifierTarget(_context).getTarget(_context.getNode()) != null);
   }
 
   public static boolean baseMappingRule_Condition_1216995176904(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -1030,15 +1022,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8424084437048109312(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
-    String adapterName = FunctionTypeUtil.getAdapterName(adaptable, _context.getNode());
-    Map<String, List<SNode>> adaptersMultiMap = (Map<String, List<SNode>>) _context.getStepObject("adapters_map");
-    List<SNode> adaptersList = MapSequence.fromMap(adaptersMultiMap).get(adapterName);
-    int idx = ListSequence.fromList(adaptersList).indexOf(adaptable);
-    return (idx > 0 ?
-      adapterName + "_" + idx :
-      adapterName
-    );
+    return new AdaptableClassifierTarget(_context).getTargetName(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_4314010248456483474(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1059,15 +1043,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8424084437048109689(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
-    String adapterName = FunctionTypeUtil.getAdapterName(adaptable, _context.getNode());
-    Map<String, List<SNode>> adaptersMultiMap = (Map<String, List<SNode>>) _context.getStepObject("adapters_map");
-    List<SNode> adaptersList = MapSequence.fromMap(adaptersMultiMap).get(adapterName);
-    int idx = ListSequence.fromList(adaptersList).indexOf(adaptable);
-    return (idx > 0 ?
-      adapterName + "_" + idx :
-      adapterName
-    );
+    return new AdaptableClassifierTarget(_context).getTargetName(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_8424084437048109930(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1113,7 +1089,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1216995176870(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    SNode trg = new AdaptableClassifierTarget(_context).getTarget(_context.getNode());
     if ((trg != null)) {
       SNode cc = _context.getOutputNodeByInputNodeAndMappingLabel(trg, "classifierType_adapter");
       List<SNode> cds = SLinkOperations.getTargets(cc, "constructor", true);
@@ -2637,7 +2613,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4314010248456881346(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    SNode trg = new AdaptableClassifierTarget(_context).getTarget(_context.getNode());
     SNode ntype = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
     ntype = (ntype == null ?
       TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true) :
@@ -3869,11 +3845,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8424084437048109749(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return FunctionTypeUtil.getAllAdaptableClassifiers(_context);
+    return new AdaptableClassifierTarget(_context).getAllAdaptable();
   }
 
   public static Iterable sourceNodesQuery_8424084437048109773(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return FunctionTypeUtil.getAdaptableClassifierTargets(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return new AdaptableClassifierTarget(_context).getTargets(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_8424084437048115046(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -3977,7 +3953,6 @@ public class QueriesGenerated {
     for (SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
       ListSequence.fromList(res).addElement(FunctionTypeUtil.unbound(pt));
     }
-    System.out.println("*** params: " + res);
     return res;
   }
 
