@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model;
+package org.jetbrains.mps.openapi.reference;
 
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.node.SNode;
-import org.jetbrains.mps.openapi.reference.SNodeReference;
 
-public interface SModel {
-  SNode getNode(SNodeReference reference);
+public interface SNodeReference extends SReference<SNode>{
+
 }

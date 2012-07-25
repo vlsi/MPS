@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.node;
 
 import org.jetbrains.mps.openapi.concept.SConcept;
+import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 public interface SNode {
   SNodeReference getReference();

@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.mps.openapi.reference.SModuleReference;
+
 public interface SRepository {
   SModule getModule(SModuleReference ref);
 }

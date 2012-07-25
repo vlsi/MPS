@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model;
+package org.jetbrains.mps.openapi.reference;
 
-import org.jetbrains.mps.openapi.node.SNode;
-import org.jetbrains.mps.openapi.reference.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-public interface SModel {
-  SNode getNode(SNodeReference reference);
+public interface SReference<T> {
+  String getPresentation();
+  T resolve(SRepository repo);
 }

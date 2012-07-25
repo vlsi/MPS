@@ -15,6 +15,5 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-public interface SModuleReference {
-  String getPresentation();
+public interface SModuleId {
 }

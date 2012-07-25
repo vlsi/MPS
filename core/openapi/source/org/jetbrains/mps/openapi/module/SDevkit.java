@@ -18,6 +18,6 @@ package org.jetbrains.mps.openapi.module;
 import java.util.Collection;
 
 public interface SDevkit {
-  Collection<org.jetbrains.mps.openapi.module.SModule> getExportedModules();
+  Collection<SModule> getExportedModules();
   Collection<SLanguageModule> getExportedLanguages();
 }

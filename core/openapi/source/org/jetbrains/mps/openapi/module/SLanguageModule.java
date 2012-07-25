@@ -17,5 +17,8 @@ package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.Collection;
+
 public interface SLanguageModule extends SModule {
+  Collection<SLanguageModule> getExtendedLanguages();
 }
