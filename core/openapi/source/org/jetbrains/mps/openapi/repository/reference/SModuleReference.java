@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.repository.reference;
 
-import org.jetbrains.mps.openapi.reference.SModuleReference;
+import org.jetbrains.mps.openapi.repository.module.SModule;
 
-public interface SRepository {
-  SModule getModule(SModuleReference ref);
+public interface SModuleReference<T extends SModule> extends SReference<T> {
+
 }

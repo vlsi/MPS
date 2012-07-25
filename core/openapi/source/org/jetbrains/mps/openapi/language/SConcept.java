@@ -13,10 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.reference;
+package org.jetbrains.mps.openapi.language;
 
-import org.jetbrains.mps.openapi.model.SModel;
-
-public interface SModelReference extends SReference<SModel> {
-
+public interface SConcept {
 }

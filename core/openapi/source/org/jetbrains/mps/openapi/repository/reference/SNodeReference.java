@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.concept;
+package org.jetbrains.mps.openapi.repository.reference;
 
-public interface SConcept {
+import org.jetbrains.mps.openapi.repository.node.SNode;
+
+public interface SNodeReference extends SReference<SNode>{
+
 }

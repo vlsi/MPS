@@ -13,13 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.repository.reference;
 
-import java.util.Collection;
+import org.jetbrains.mps.openapi.repository.model.SModel;
 
-public interface SGeneratorModule extends SModule {
-  Collection<SLanguageModule> getSourceLanguages();
-  Collection<SLanguageModule> getTargetLanguages();
+public interface SModelReference extends SReference<SModel> {
 
-  Collection<SSolutionModule> getRuntimeSolutions();
 }

@@ -13,11 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.reference;
+package org.jetbrains.mps.openapi.repository.module;
 
-import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.node.SNode;
+import org.jetbrains.mps.openapi.repository.reference.SModuleReference;
 
-public interface SNodeReference extends SReference<SNode>{
+import java.util.Collection;
 
+public interface SSolutionModule extends SModule {
+  Collection<SModuleReference> getUsedModules();
+
+  Collection<SModuleReference<SLanguageModule>> getUsedLanguages();
 }
