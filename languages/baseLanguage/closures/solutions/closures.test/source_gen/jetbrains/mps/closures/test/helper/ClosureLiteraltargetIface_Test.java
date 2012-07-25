@@ -22,17 +22,17 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 @MPSLaunch
-public class Adaptation_Test extends BaseTransformationTest4 {
+public class ClosureLiteraltargetIface_Test extends BaseTransformationTest4 {
   @Test
   public void test_baz() throws Throwable {
     this.initTest("${mps_home}/languages/baseLanguage/closures/solutions/closures.test/closures.test.mpr", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)");
-    this.runTest("jetbrains.mps.closures.test.helper.Adaptation_Test$TestBody", "test_baz", true);
+    this.runTest("jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody", "test_baz", true);
   }
 
   @Test
   public void test_baz2() throws Throwable {
     this.initTest("${mps_home}/languages/baseLanguage/closures/solutions/closures.test/closures.test.mpr", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper)");
-    this.runTest("jetbrains.mps.closures.test.helper.Adaptation_Test$TestBody", "test_baz2", true);
+    this.runTest("jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody", "test_baz2", true);
   }
 
   @MPSLaunch
@@ -42,8 +42,8 @@ public class Adaptation_Test extends BaseTransformationTest4 {
       this.addNodeById("7178287329507578878");
       TemplateQueryContext genContext = this.getContext();
       SNode literal = SNodeOperations.cast(this.getNodeById("7178287329507578897"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
-      new ClosureLiteralTarget(genContext).setTarget(literal, new Adaptation_Test.TestBody.QuotationClass_aguh3z_a1a0e0a0().createNode());
-      this.assertLiteralTarget(genContext, literal, new Adaptation_Test.TestBody.QuotationClass_aguh3z_a2a0f0a0().createNode());
+      new ClosureLiteralTarget(genContext).setTarget(literal, new ClosureLiteraltargetIface_Test.TestBody.QuotationClass_u745oo_a1a0e0a0().createNode());
+      this.assertLiteralTarget(genContext, literal, new ClosureLiteraltargetIface_Test.TestBody.QuotationClass_u745oo_a2a0f0a0().createNode());
     }
 
     public void test_baz2() throws Exception {
@@ -51,8 +51,8 @@ public class Adaptation_Test extends BaseTransformationTest4 {
       this.addNodeById("7178287329507578878");
       TemplateQueryContext genContext = this.getContext();
       SNode literal = SNodeOperations.cast(this.getNodeById("7178287329507578897"), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");
-      new ClosureLiteralTarget(genContext).setTarget(literal, new Adaptation_Test.TestBody.QuotationClass_aguh3z_a1a0e0b0().createNode());
-      this.assertLiteralTarget(genContext, literal, new Adaptation_Test.TestBody.QuotationClass_aguh3z_a2a0f0b0().createNode());
+      new ClosureLiteralTarget(genContext).setTarget(literal, new ClosureLiteraltargetIface_Test.TestBody.QuotationClass_u745oo_a1a0e0b0().createNode());
+      this.assertLiteralTarget(genContext, literal, new ClosureLiteraltargetIface_Test.TestBody.QuotationClass_u745oo_a2a0f0b0().createNode());
     }
 
     public TemplateQueryContext getContext() {
@@ -65,8 +65,8 @@ public class Adaptation_Test extends BaseTransformationTest4 {
       Assert.assertTrue(MatchingUtil.matchNodes(expected, target));
     }
 
-    public static class QuotationClass_aguh3z_a1a0e0a0 {
-      public QuotationClass_aguh3z_a1a0e0a0() {
+    public static class QuotationClass_u745oo_a1a0e0a0 {
+      public QuotationClass_u745oo_a1a0e0a0() {
       }
 
       public SNode createNode() {
@@ -121,8 +121,8 @@ public class Adaptation_Test extends BaseTransformationTest4 {
       }
     }
 
-    public static class QuotationClass_aguh3z_a2a0f0a0 {
-      public QuotationClass_aguh3z_a2a0f0a0() {
+    public static class QuotationClass_u745oo_a2a0f0a0 {
+      public QuotationClass_u745oo_a2a0f0a0() {
       }
 
       public SNode createNode() {
@@ -153,8 +153,8 @@ public class Adaptation_Test extends BaseTransformationTest4 {
       }
     }
 
-    public static class QuotationClass_aguh3z_a1a0e0b0 {
-      public QuotationClass_aguh3z_a1a0e0b0() {
+    public static class QuotationClass_u745oo_a1a0e0b0 {
+      public QuotationClass_u745oo_a1a0e0b0() {
       }
 
       public SNode createNode() {
@@ -191,8 +191,8 @@ public class Adaptation_Test extends BaseTransformationTest4 {
       }
     }
 
-    public static class QuotationClass_aguh3z_a2a0f0b0 {
-      public QuotationClass_aguh3z_a2a0f0b0() {
+    public static class QuotationClass_u745oo_a2a0f0b0 {
+      public QuotationClass_u745oo_a2a0f0b0() {
       }
 
       public SNode createNode() {

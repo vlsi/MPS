@@ -1562,300 +1562,319 @@
     <unitInfo nodeId="1240923614599" fileName="Keys.java" startLine="6" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.Keys" />
   </root>
   <root nodeId="515790726266555281">
-    <nodeInfo nodeId="515790726266555290" fileName="ClosureLiteralTarget.java" startLine="29" startPosition="35" endLine="30" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
-    <nodeInfo nodeId="515790726266555293" fileName="ClosureLiteralTarget.java" startLine="32" startPosition="64" endLine="33" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555330" fileName="ClosureLiteralTarget.java" startLine="36" startPosition="59" endLine="37" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266555338" fileName="ClosureLiteralTarget.java" startLine="37" startPosition="141" endLine="38" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507566466" fileName="ClosureLiteralTarget.java" startLine="38" startPosition="130" endLine="39" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555354" fileName="ClosureLiteralTarget.java" startLine="39" startPosition="111" endLine="40" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555361" fileName="ClosureLiteralTarget.java" startLine="40" startPosition="62" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266588494" fileName="ClosureLiteralTarget.java" startLine="44" startPosition="117" endLine="45" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266588901" fileName="ClosureLiteralTarget.java" startLine="45" startPosition="62" endLine="46" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266588737" fileName="ClosureLiteralTarget.java" startLine="46" startPosition="149" endLine="47" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266588944" fileName="ClosureLiteralTarget.java" startLine="47" startPosition="86" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="515790726266588745" fileName="ClosureLiteralTarget.java" startLine="49" startPosition="209" endLine="50" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266591170" fileName="ClosureLiteralTarget.java" startLine="51" startPosition="149" endLine="52" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="515790726266589119" fileName="ClosureLiteralTarget.java" startLine="52" startPosition="36" endLine="53" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266591051" fileName="ClosureLiteralTarget.java" startLine="53" startPosition="180" endLine="54" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266591058" fileName="ClosureLiteralTarget.java" startLine="54" startPosition="123" endLine="55" endPosition="383" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266591082" fileName="ClosureLiteralTarget.java" startLine="57" startPosition="103" endLine="58" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266591088" fileName="ClosureLiteralTarget.java" startLine="58" startPosition="123" endLine="59" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266591095" fileName="ClosureLiteralTarget.java" startLine="59" startPosition="74" endLine="60" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266591102" fileName="ClosureLiteralTarget.java" startLine="60" startPosition="75" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="515790726266591048" fileName="ClosureLiteralTarget.java" startLine="65" startPosition="5" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="515790726266589467" fileName="ClosureLiteralTarget.java" startLine="67" startPosition="5" endLine="68" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266589568" fileName="ClosureLiteralTarget.java" startLine="68" startPosition="147" endLine="69" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266589841" fileName="ClosureLiteralTarget.java" startLine="70" startPosition="61" endLine="71" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266589794" fileName="ClosureLiteralTarget.java" startLine="73" startPosition="58" endLine="74" endPosition="350" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266589529" fileName="ClosureLiteralTarget.java" startLine="76" startPosition="5" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="515790726266590691" fileName="ClosureLiteralTarget.java" startLine="78" startPosition="5" endLine="79" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="515790726266590099" fileName="ClosureLiteralTarget.java" startLine="79" startPosition="55" endLine="80" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266590246" fileName="ClosureLiteralTarget.java" startLine="80" startPosition="148" endLine="81" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266590489" fileName="ClosureLiteralTarget.java" startLine="82" startPosition="57" endLine="83" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266590596" fileName="ClosureLiteralTarget.java" startLine="85" startPosition="54" endLine="86" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266589156" fileName="ClosureLiteralTarget.java" startLine="88" startPosition="5" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="515790726266590739" fileName="ClosureLiteralTarget.java" startLine="89" startPosition="0" endLine="90" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266590806" fileName="ClosureLiteralTarget.java" startLine="90" startPosition="72" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="515790726266591443" fileName="ClosureLiteralTarget.java" startLine="91" startPosition="0" endLine="92" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="515790726266591352" fileName="ClosureLiteralTarget.java" startLine="92" startPosition="90" endLine="93" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507667801" fileName="ClosureLiteralTarget.java" startLine="94" startPosition="22" endLine="95" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507667856" fileName="ClosureLiteralTarget.java" startLine="95" startPosition="101" endLine="96" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507668081" fileName="ClosureLiteralTarget.java" startLine="97" startPosition="68" endLine="98" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507668027" fileName="ClosureLiteralTarget.java" startLine="98" startPosition="47" endLine="99" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266591207" fileName="ClosureLiteralTarget.java" startLine="103" startPosition="10" endLine="104" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266591228" fileName="ClosureLiteralTarget.java" startLine="106" startPosition="59" endLine="107" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507584684" fileName="ClosureLiteralTarget.java" startLine="109" startPosition="300" endLine="110" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507668514" fileName="ClosureLiteralTarget.java" startLine="114" startPosition="105" endLine="115" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507668530" fileName="ClosureLiteralTarget.java" startLine="116" startPosition="112" endLine="117" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507668546" fileName="ClosureLiteralTarget.java" startLine="118" startPosition="20" endLine="119" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7178287329507668547" fileName="ClosureLiteralTarget.java" startLine="120" startPosition="13" endLine="121" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507668552" fileName="ClosureLiteralTarget.java" startLine="121" startPosition="55" endLine="122" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507668200" fileName="ClosureLiteralTarget.java" startLine="126" startPosition="65" endLine="127" endPosition="369" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555539" fileName="ClosureLiteralTarget.java" startLine="132" startPosition="69" endLine="133" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266555580" fileName="ClosureLiteralTarget.java" startLine="135" startPosition="128" endLine="136" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555473" fileName="ClosureLiteralTarget.java" startLine="139" startPosition="52" endLine="140" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555486" fileName="ClosureLiteralTarget.java" startLine="141" startPosition="5" endLine="142" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555926" fileName="ClosureLiteralTarget.java" startLine="145" startPosition="36" endLine="146" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="typeMap" />
-    <nodeInfo nodeId="515790726266555988" fileName="ClosureLiteralTarget.java" startLine="151" startPosition="39" endLine="152" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555746" fileName="ClosureLiteralTarget.java" startLine="155" startPosition="58" endLine="156" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266555765" fileName="ClosureLiteralTarget.java" startLine="157" startPosition="103" endLine="158" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555756" fileName="ClosureLiteralTarget.java" startLine="159" startPosition="53" endLine="160" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507583817" fileName="ClosureLiteralTarget.java" startLine="163" startPosition="114" endLine="164" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555799" fileName="ClosureLiteralTarget.java" startLine="165" startPosition="16" endLine="166" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266555803" fileName="ClosureLiteralTarget.java" startLine="166" startPosition="22" endLine="167" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266555811" fileName="ClosureLiteralTarget.java" startLine="167" startPosition="162" endLine="168" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266555951" fileName="ClosureLiteralTarget.java" startLine="169" startPosition="122" endLine="170" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266556009" fileName="ClosureLiteralTarget.java" startLine="176" startPosition="64" endLine="177" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266556016" fileName="ClosureLiteralTarget.java" startLine="177" startPosition="71" endLine="178" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266556030" fileName="ClosureLiteralTarget.java" startLine="180" startPosition="156" endLine="181" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266556043" fileName="ClosureLiteralTarget.java" startLine="183" startPosition="14" endLine="184" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266556060" fileName="ClosureLiteralTarget.java" startLine="186" startPosition="57" endLine="187" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266588368" fileName="ClosureLiteralTarget.java" startLine="189" startPosition="51" endLine="190" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266556122" fileName="ClosureLiteralTarget.java" startLine="190" startPosition="42" endLine="191" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266556127" fileName="ClosureLiteralTarget.java" startLine="192" startPosition="11" endLine="193" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266556136" fileName="ClosureLiteralTarget.java" startLine="194" startPosition="121" endLine="195" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507583805" fileName="ClosureLiteralTarget.java" startLine="201" startPosition="55" endLine="202" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555865" fileName="ClosureLiteralTarget.java" startLine="206" startPosition="28" endLine="207" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="515790726266555875" fileName="ClosureLiteralTarget.java" startLine="208" startPosition="7" endLine="209" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555637" fileName="ClosureLiteralTarget.java" startLine="214" startPosition="42" endLine="215" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555639" fileName="ClosureLiteralTarget.java" startLine="217" startPosition="7" endLine="218" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555651" fileName="ClosureLiteralTarget.java" startLine="222" startPosition="184" endLine="223" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555664" fileName="ClosureLiteralTarget.java" startLine="225" startPosition="210" endLine="226" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555677" fileName="ClosureLiteralTarget.java" startLine="228" startPosition="212" endLine="229" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555704" fileName="ClosureLiteralTarget.java" startLine="232" startPosition="107" endLine="233" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555706" fileName="ClosureLiteralTarget.java" startLine="234" startPosition="9" endLine="235" endPosition="618" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="515790726266555730" fileName="ClosureLiteralTarget.java" startLine="236" startPosition="7" endLine="237" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507668544" fileName="ClosureLiteralTarget.java" startLine="118" startPosition="18" endLine="120" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="515790726266555615" fileName="ClosureLiteralTarget.java" startLine="147" startPosition="0" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeMatcher#()V" />
-    <nodeInfo nodeId="515790726266556041" fileName="ClosureLiteralTarget.java" startLine="183" startPosition="12" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="515790726266555283" fileName="ClosureLiteralTarget.java" startLine="31" startPosition="0" endLine="34" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClosureLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="515790726266589595" fileName="ClosureLiteralTarget.java" startLine="69" startPosition="122" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="515790726266589691" fileName="ClosureLiteralTarget.java" startLine="72" startPosition="7" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266590274" fileName="ClosureLiteralTarget.java" startLine="81" startPosition="160" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="515790726266590395" fileName="ClosureLiteralTarget.java" startLine="84" startPosition="7" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266591234" fileName="ClosureLiteralTarget.java" startLine="108" startPosition="12" endLine="111" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7178287329507668103" fileName="ClosureLiteralTarget.java" startLine="125" startPosition="7" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555554" fileName="ClosureLiteralTarget.java" startLine="134" startPosition="127" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555420" fileName="ClosureLiteralTarget.java" startLine="138" startPosition="5" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555819" fileName="ClosureLiteralTarget.java" startLine="168" startPosition="162" endLine="171" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="515790726266556028" fileName="ClosureLiteralTarget.java" startLine="179" startPosition="103" endLine="182" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="515790726266556134" fileName="ClosureLiteralTarget.java" startLine="193" startPosition="118" endLine="196" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="515790726266555863" fileName="ClosureLiteralTarget.java" startLine="205" startPosition="48" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555632" fileName="ClosureLiteralTarget.java" startLine="213" startPosition="35" endLine="216" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555649" fileName="ClosureLiteralTarget.java" startLine="221" startPosition="61" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555662" fileName="ClosureLiteralTarget.java" startLine="224" startPosition="7" endLine="227" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555675" fileName="ClosureLiteralTarget.java" startLine="227" startPosition="7" endLine="230" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555697" fileName="ClosureLiteralTarget.java" startLine="231" startPosition="104" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7178287329507668278" fileName="ClosureLiteralTarget.java" startLine="99" startPosition="41" endLine="103" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="515790726266555971" fileName="ClosureLiteralTarget.java" startLine="150" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMap#()Ljava/util/Map;" />
-    <nodeInfo nodeId="515790726266556113" fileName="ClosureLiteralTarget.java" startLine="188" startPosition="123" endLine="192" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7178287329507583799" fileName="ClosureLiteralTarget.java" startLine="200" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mapTypeVar#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7178287329507668576" fileName="ClosureLiteralTarget.java" startLine="107" startPosition="68" endLine="112" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
-    <nodeInfo nodeId="515790726266555526" fileName="ClosureLiteralTarget.java" startLine="133" startPosition="71" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="515790726266555750" fileName="ClosureLiteralTarget.java" startLine="156" startPosition="27" endLine="161" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555627" fileName="ClosureLiteralTarget.java" startLine="212" startPosition="72" endLine="217" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="515790726266591080" fileName="ClosureLiteralTarget.java" startLine="56" startPosition="188" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555688" fileName="ClosureLiteralTarget.java" startLine="230" startPosition="7" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7178287329507668512" fileName="ClosureLiteralTarget.java" startLine="113" startPosition="28" endLine="120" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555797" fileName="ClosureLiteralTarget.java" startLine="165" startPosition="14" endLine="172" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="515790726266556022" fileName="ClosureLiteralTarget.java" startLine="178" startPosition="49" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555895" fileName="ClosureLiteralTarget.java" startLine="204" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOrCreateMap#()Ljava/util/Map;" />
-    <nodeInfo nodeId="515790726266555299" fileName="ClosureLiteralTarget.java" startLine="35" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTarget#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="515790726266591078" fileName="ClosureLiteralTarget.java" startLine="55" startPosition="383" endLine="63" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="515790726266555880" fileName="ClosureLiteralTarget.java" startLine="211" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="whichTypeMatching#(Ljava/util/List;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="515790726266590368" fileName="ClosureLiteralTarget.java" startLine="66" startPosition="0" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="515790726266555776" fileName="ClosureLiteralTarget.java" startLine="162" startPosition="30" endLine="172" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266556066" fileName="ClosureLiteralTarget.java" startLine="187" startPosition="74" endLine="197" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266590383" fileName="ClosureLiteralTarget.java" startLine="77" startPosition="0" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507668507" fileName="ClosureLiteralTarget.java" startLine="112" startPosition="12" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555774" fileName="ClosureLiteralTarget.java" startLine="161" startPosition="7" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555377" fileName="ClosureLiteralTarget.java" startLine="131" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFunctionMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="515790726266556054" fileName="ClosureLiteralTarget.java" startLine="185" startPosition="7" endLine="198" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="515790726266588949" fileName="ClosureLiteralTarget.java" startLine="50" startPosition="158" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266588513" fileName="ClosureLiteralTarget.java" startLine="48" startPosition="0" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266555884" fileName="ClosureLiteralTarget.java" startLine="220" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTypeMatching#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="515790726266591222" fileName="ClosureLiteralTarget.java" startLine="104" startPosition="198" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="515790726266555890" fileName="ClosureLiteralTarget.java" startLine="154" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="515790726266556163" fileName="ClosureLiteralTarget.java" startLine="175" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchReturnType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7178287329507667887" fileName="ClosureLiteralTarget.java" startLine="96" startPosition="200" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="515790726266591366" fileName="ClosureLiteralTarget.java" startLine="93" startPosition="45" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="515790726266588458" fileName="ClosureLiteralTarget.java" startLine="43" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchTypeParameters#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <scopeInfo nodeId="515790726266555618" fileName="ClosureLiteralTarget.java" startLine="148" startPosition="26" endLine="148" endPosition="26" />
-    <scopeInfo nodeId="515790726266555286" fileName="ClosureLiteralTarget.java" startLine="32" startPosition="64" endLine="33" endPosition="33" />
-    <scopeInfo nodeId="515790726266589597" fileName="ClosureLiteralTarget.java" startLine="70" startPosition="61" endLine="71" endPosition="106" />
-    <scopeInfo nodeId="515790726266589692" fileName="ClosureLiteralTarget.java" startLine="73" startPosition="58" endLine="74" endPosition="350" />
-    <scopeInfo nodeId="515790726266590276" fileName="ClosureLiteralTarget.java" startLine="82" startPosition="57" endLine="83" endPosition="61" />
-    <scopeInfo nodeId="515790726266590396" fileName="ClosureLiteralTarget.java" startLine="85" startPosition="54" endLine="86" endPosition="362" />
-    <scopeInfo nodeId="515790726266591235" fileName="ClosureLiteralTarget.java" startLine="109" startPosition="300" endLine="110" endPosition="230" />
-    <scopeInfo nodeId="7178287329507668513" fileName="ClosureLiteralTarget.java" startLine="114" startPosition="105" endLine="115" endPosition="178" />
-    <scopeInfo nodeId="7178287329507668529" fileName="ClosureLiteralTarget.java" startLine="116" startPosition="112" endLine="117" endPosition="178" />
-    <scopeInfo nodeId="7178287329507668545" fileName="ClosureLiteralTarget.java" startLine="118" startPosition="20" endLine="119" endPosition="34" />
-    <scopeInfo nodeId="7178287329507668104" fileName="ClosureLiteralTarget.java" startLine="126" startPosition="65" endLine="127" endPosition="369" />
-    <scopeInfo nodeId="515790726266555556" fileName="ClosureLiteralTarget.java" startLine="135" startPosition="128" endLine="136" endPosition="54" />
-    <scopeInfo nodeId="515790726266555421" fileName="ClosureLiteralTarget.java" startLine="139" startPosition="52" endLine="140" endPosition="105" />
-    <scopeInfo nodeId="515790726266555974" fileName="ClosureLiteralTarget.java" startLine="151" startPosition="39" endLine="152" endPosition="21" />
-    <scopeInfo nodeId="515790726266555764" fileName="ClosureLiteralTarget.java" startLine="157" startPosition="103" endLine="158" endPosition="175" />
-    <scopeInfo nodeId="515790726266555755" fileName="ClosureLiteralTarget.java" startLine="159" startPosition="53" endLine="160" endPosition="27" />
-    <scopeInfo nodeId="515790726266555781" fileName="ClosureLiteralTarget.java" startLine="163" startPosition="114" endLine="164" endPosition="123" />
-    <scopeInfo nodeId="515790726266555820" fileName="ClosureLiteralTarget.java" startLine="169" startPosition="122" endLine="170" endPosition="114" />
-    <scopeInfo nodeId="515790726266556029" fileName="ClosureLiteralTarget.java" startLine="180" startPosition="156" endLine="181" endPosition="55" />
-    <scopeInfo nodeId="515790726266556042" fileName="ClosureLiteralTarget.java" startLine="183" startPosition="14" endLine="184" endPosition="58" />
-    <scopeInfo nodeId="515790726266556135" fileName="ClosureLiteralTarget.java" startLine="194" startPosition="121" endLine="195" endPosition="63" />
-    <scopeInfo nodeId="7178287329507583804" fileName="ClosureLiteralTarget.java" startLine="201" startPosition="55" endLine="202" endPosition="175" />
-    <scopeInfo nodeId="515790726266555864" fileName="ClosureLiteralTarget.java" startLine="206" startPosition="28" endLine="207" endPosition="67" />
-    <scopeInfo nodeId="515790726266555636" fileName="ClosureLiteralTarget.java" startLine="214" startPosition="42" endLine="215" endPosition="22" />
-    <scopeInfo nodeId="515790726266555650" fileName="ClosureLiteralTarget.java" startLine="222" startPosition="184" endLine="223" endPosition="21" />
-    <scopeInfo nodeId="515790726266555663" fileName="ClosureLiteralTarget.java" startLine="225" startPosition="210" endLine="226" endPosition="20" />
-    <scopeInfo nodeId="515790726266555676" fileName="ClosureLiteralTarget.java" startLine="228" startPosition="212" endLine="229" endPosition="20" />
-    <scopeInfo nodeId="515790726266555703" fileName="ClosureLiteralTarget.java" startLine="232" startPosition="107" endLine="233" endPosition="22" />
-    <scopeInfo nodeId="515790726266555615" fileName="ClosureLiteralTarget.java" startLine="147" startPosition="0" endLine="149" endPosition="5" />
-    <scopeInfo nodeId="515790726266556114" fileName="ClosureLiteralTarget.java" startLine="189" startPosition="51" endLine="191" endPosition="19" />
-    <scopeInfo nodeId="515790726266555283" fileName="ClosureLiteralTarget.java" startLine="31" startPosition="0" endLine="34" endPosition="3">
+    <nodeInfo nodeId="515790726266555290" fileName="ClosureLiteralTarget.java" startLine="31" startPosition="35" endLine="32" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
+    <nodeInfo nodeId="515790726266555293" fileName="ClosureLiteralTarget.java" startLine="34" startPosition="64" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555330" fileName="ClosureLiteralTarget.java" startLine="38" startPosition="59" endLine="39" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555338" fileName="ClosureLiteralTarget.java" startLine="39" startPosition="141" endLine="40" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507566466" fileName="ClosureLiteralTarget.java" startLine="40" startPosition="130" endLine="41" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555354" fileName="ClosureLiteralTarget.java" startLine="41" startPosition="111" endLine="42" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555361" fileName="ClosureLiteralTarget.java" startLine="42" startPosition="62" endLine="43" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266588494" fileName="ClosureLiteralTarget.java" startLine="46" startPosition="117" endLine="47" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588901" fileName="ClosureLiteralTarget.java" startLine="47" startPosition="62" endLine="48" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588737" fileName="ClosureLiteralTarget.java" startLine="48" startPosition="149" endLine="49" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588944" fileName="ClosureLiteralTarget.java" startLine="49" startPosition="86" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266588745" fileName="ClosureLiteralTarget.java" startLine="51" startPosition="209" endLine="52" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591170" fileName="ClosureLiteralTarget.java" startLine="53" startPosition="149" endLine="54" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266589119" fileName="ClosureLiteralTarget.java" startLine="54" startPosition="36" endLine="55" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591051" fileName="ClosureLiteralTarget.java" startLine="55" startPosition="180" endLine="56" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591058" fileName="ClosureLiteralTarget.java" startLine="56" startPosition="123" endLine="57" endPosition="383" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591082" fileName="ClosureLiteralTarget.java" startLine="59" startPosition="103" endLine="60" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591088" fileName="ClosureLiteralTarget.java" startLine="60" startPosition="123" endLine="61" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591095" fileName="ClosureLiteralTarget.java" startLine="61" startPosition="74" endLine="62" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591102" fileName="ClosureLiteralTarget.java" startLine="62" startPosition="75" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="515790726266591048" fileName="ClosureLiteralTarget.java" startLine="67" startPosition="5" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266589467" fileName="ClosureLiteralTarget.java" startLine="69" startPosition="5" endLine="70" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266589568" fileName="ClosureLiteralTarget.java" startLine="70" startPosition="147" endLine="71" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266589841" fileName="ClosureLiteralTarget.java" startLine="72" startPosition="61" endLine="73" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266589794" fileName="ClosureLiteralTarget.java" startLine="75" startPosition="58" endLine="76" endPosition="350" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266589529" fileName="ClosureLiteralTarget.java" startLine="78" startPosition="5" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266590691" fileName="ClosureLiteralTarget.java" startLine="80" startPosition="5" endLine="81" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2075368031956136427" fileName="ClosureLiteralTarget.java" startLine="81" startPosition="55" endLine="82" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2075368031956136688" fileName="ClosureLiteralTarget.java" startLine="84" startPosition="46" endLine="85" endPosition="208" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266590246" fileName="ClosureLiteralTarget.java" startLine="91" startPosition="26" endLine="92" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2075368031956136405" fileName="ClosureLiteralTarget.java" startLine="92" startPosition="160" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266590489" fileName="ClosureLiteralTarget.java" startLine="94" startPosition="57" endLine="95" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266590596" fileName="ClosureLiteralTarget.java" startLine="97" startPosition="54" endLine="98" endPosition="362" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266589156" fileName="ClosureLiteralTarget.java" startLine="100" startPosition="5" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266590739" fileName="ClosureLiteralTarget.java" startLine="101" startPosition="0" endLine="102" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266590806" fileName="ClosureLiteralTarget.java" startLine="102" startPosition="72" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="515790726266591443" fileName="ClosureLiteralTarget.java" startLine="103" startPosition="0" endLine="104" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="515790726266591352" fileName="ClosureLiteralTarget.java" startLine="104" startPosition="90" endLine="105" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507667801" fileName="ClosureLiteralTarget.java" startLine="106" startPosition="22" endLine="107" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507667856" fileName="ClosureLiteralTarget.java" startLine="107" startPosition="101" endLine="108" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507668081" fileName="ClosureLiteralTarget.java" startLine="109" startPosition="68" endLine="110" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507668027" fileName="ClosureLiteralTarget.java" startLine="110" startPosition="47" endLine="111" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2075368031956224871" fileName="ClosureLiteralTarget.java" startLine="115" startPosition="10" endLine="116" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2075368031956192827" fileName="ClosureLiteralTarget.java" startLine="117" startPosition="123" endLine="118" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266591207" fileName="ClosureLiteralTarget.java" startLine="119" startPosition="9" endLine="120" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266591228" fileName="ClosureLiteralTarget.java" startLine="122" startPosition="59" endLine="123" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7178287329507668514" fileName="ClosureLiteralTarget.java" startLine="125" startPosition="105" endLine="126" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507668530" fileName="ClosureLiteralTarget.java" startLine="127" startPosition="112" endLine="128" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507668546" fileName="ClosureLiteralTarget.java" startLine="129" startPosition="20" endLine="130" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7178287329507668547" fileName="ClosureLiteralTarget.java" startLine="131" startPosition="13" endLine="132" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507668552" fileName="ClosureLiteralTarget.java" startLine="132" startPosition="55" endLine="133" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507668200" fileName="ClosureLiteralTarget.java" startLine="137" startPosition="65" endLine="138" endPosition="369" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2075368031956295125" fileName="ClosureLiteralTarget.java" startLine="143" startPosition="47" endLine="144" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555539" fileName="ClosureLiteralTarget.java" startLine="147" startPosition="69" endLine="148" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555580" fileName="ClosureLiteralTarget.java" startLine="150" startPosition="128" endLine="151" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555473" fileName="ClosureLiteralTarget.java" startLine="154" startPosition="52" endLine="155" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555486" fileName="ClosureLiteralTarget.java" startLine="156" startPosition="5" endLine="157" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555926" fileName="ClosureLiteralTarget.java" startLine="160" startPosition="36" endLine="161" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="typeMap" />
+    <nodeInfo nodeId="515790726266555988" fileName="ClosureLiteralTarget.java" startLine="166" startPosition="39" endLine="167" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555746" fileName="ClosureLiteralTarget.java" startLine="170" startPosition="58" endLine="171" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555765" fileName="ClosureLiteralTarget.java" startLine="172" startPosition="103" endLine="173" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555756" fileName="ClosureLiteralTarget.java" startLine="174" startPosition="53" endLine="175" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507583817" fileName="ClosureLiteralTarget.java" startLine="178" startPosition="114" endLine="179" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555799" fileName="ClosureLiteralTarget.java" startLine="180" startPosition="16" endLine="181" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555803" fileName="ClosureLiteralTarget.java" startLine="181" startPosition="22" endLine="182" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555811" fileName="ClosureLiteralTarget.java" startLine="182" startPosition="162" endLine="183" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555951" fileName="ClosureLiteralTarget.java" startLine="184" startPosition="122" endLine="185" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556009" fileName="ClosureLiteralTarget.java" startLine="191" startPosition="64" endLine="192" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266556016" fileName="ClosureLiteralTarget.java" startLine="192" startPosition="71" endLine="193" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266556030" fileName="ClosureLiteralTarget.java" startLine="195" startPosition="156" endLine="196" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556043" fileName="ClosureLiteralTarget.java" startLine="198" startPosition="14" endLine="199" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556060" fileName="ClosureLiteralTarget.java" startLine="201" startPosition="57" endLine="202" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266588368" fileName="ClosureLiteralTarget.java" startLine="204" startPosition="51" endLine="205" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556122" fileName="ClosureLiteralTarget.java" startLine="205" startPosition="42" endLine="206" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266556127" fileName="ClosureLiteralTarget.java" startLine="207" startPosition="11" endLine="208" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266556136" fileName="ClosureLiteralTarget.java" startLine="209" startPosition="121" endLine="210" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7178287329507583805" fileName="ClosureLiteralTarget.java" startLine="216" startPosition="55" endLine="217" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555865" fileName="ClosureLiteralTarget.java" startLine="221" startPosition="28" endLine="222" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="515790726266555875" fileName="ClosureLiteralTarget.java" startLine="223" startPosition="7" endLine="224" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555637" fileName="ClosureLiteralTarget.java" startLine="229" startPosition="42" endLine="230" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555639" fileName="ClosureLiteralTarget.java" startLine="232" startPosition="7" endLine="233" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555651" fileName="ClosureLiteralTarget.java" startLine="237" startPosition="184" endLine="238" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555664" fileName="ClosureLiteralTarget.java" startLine="240" startPosition="210" endLine="241" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555677" fileName="ClosureLiteralTarget.java" startLine="243" startPosition="212" endLine="244" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555704" fileName="ClosureLiteralTarget.java" startLine="247" startPosition="107" endLine="248" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555706" fileName="ClosureLiteralTarget.java" startLine="249" startPosition="9" endLine="250" endPosition="618" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="515790726266555730" fileName="ClosureLiteralTarget.java" startLine="251" startPosition="7" endLine="252" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507668544" fileName="ClosureLiteralTarget.java" startLine="129" startPosition="18" endLine="131" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266555615" fileName="ClosureLiteralTarget.java" startLine="162" startPosition="0" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeMatcher#()V" />
+    <nodeInfo nodeId="515790726266556041" fileName="ClosureLiteralTarget.java" startLine="198" startPosition="12" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266555283" fileName="ClosureLiteralTarget.java" startLine="33" startPosition="0" endLine="36" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClosureLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+    <nodeInfo nodeId="515790726266589595" fileName="ClosureLiteralTarget.java" startLine="71" startPosition="122" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266589691" fileName="ClosureLiteralTarget.java" startLine="74" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266590274" fileName="ClosureLiteralTarget.java" startLine="93" startPosition="0" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266590395" fileName="ClosureLiteralTarget.java" startLine="96" startPosition="7" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2075368031956192761" fileName="ClosureLiteralTarget.java" startLine="116" startPosition="43" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7178287329507668103" fileName="ClosureLiteralTarget.java" startLine="136" startPosition="7" endLine="139" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555554" fileName="ClosureLiteralTarget.java" startLine="149" startPosition="127" endLine="152" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555420" fileName="ClosureLiteralTarget.java" startLine="153" startPosition="5" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555819" fileName="ClosureLiteralTarget.java" startLine="183" startPosition="162" endLine="186" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="515790726266556028" fileName="ClosureLiteralTarget.java" startLine="194" startPosition="103" endLine="197" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266556134" fileName="ClosureLiteralTarget.java" startLine="208" startPosition="118" endLine="211" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266555863" fileName="ClosureLiteralTarget.java" startLine="220" startPosition="48" endLine="223" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555632" fileName="ClosureLiteralTarget.java" startLine="228" startPosition="35" endLine="231" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555649" fileName="ClosureLiteralTarget.java" startLine="236" startPosition="61" endLine="239" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555662" fileName="ClosureLiteralTarget.java" startLine="239" startPosition="7" endLine="242" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555675" fileName="ClosureLiteralTarget.java" startLine="242" startPosition="7" endLine="245" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555697" fileName="ClosureLiteralTarget.java" startLine="246" startPosition="104" endLine="249" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2075368031956136697" fileName="ClosureLiteralTarget.java" startLine="85" startPosition="208" endLine="89" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7178287329507668278" fileName="ClosureLiteralTarget.java" startLine="111" startPosition="41" endLine="115" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2075368031956258376" fileName="ClosureLiteralTarget.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasTypeVariable#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="515790726266555971" fileName="ClosureLiteralTarget.java" startLine="165" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="515790726266556113" fileName="ClosureLiteralTarget.java" startLine="203" startPosition="123" endLine="207" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7178287329507583799" fileName="ClosureLiteralTarget.java" startLine="215" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mapTypeVar#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="515790726266555526" fileName="ClosureLiteralTarget.java" startLine="148" startPosition="71" endLine="153" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266555750" fileName="ClosureLiteralTarget.java" startLine="171" startPosition="27" endLine="176" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555627" fileName="ClosureLiteralTarget.java" startLine="227" startPosition="72" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="515790726266591080" fileName="ClosureLiteralTarget.java" startLine="58" startPosition="188" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555688" fileName="ClosureLiteralTarget.java" startLine="245" startPosition="7" endLine="251" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7178287329507668512" fileName="ClosureLiteralTarget.java" startLine="124" startPosition="28" endLine="131" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555797" fileName="ClosureLiteralTarget.java" startLine="180" startPosition="14" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266556022" fileName="ClosureLiteralTarget.java" startLine="193" startPosition="49" endLine="200" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555895" fileName="ClosureLiteralTarget.java" startLine="219" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOrCreateMap#()Ljava/util/Map;" />
+    <nodeInfo nodeId="515790726266555299" fileName="ClosureLiteralTarget.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTarget#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="515790726266591078" fileName="ClosureLiteralTarget.java" startLine="57" startPosition="383" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2075368031956136683" fileName="ClosureLiteralTarget.java" startLine="83" startPosition="119" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="515790726266590099" fileName="ClosureLiteralTarget.java" startLine="82" startPosition="120" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="515790726266555880" fileName="ClosureLiteralTarget.java" startLine="226" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="whichTypeMatching#(Ljava/util/List;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="515790726266590368" fileName="ClosureLiteralTarget.java" startLine="68" startPosition="0" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266555776" fileName="ClosureLiteralTarget.java" startLine="177" startPosition="30" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266556066" fileName="ClosureLiteralTarget.java" startLine="202" startPosition="74" endLine="212" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7178287329507668507" fileName="ClosureLiteralTarget.java" startLine="123" startPosition="68" endLine="134" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555774" fileName="ClosureLiteralTarget.java" startLine="176" startPosition="7" endLine="188" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555377" fileName="ClosureLiteralTarget.java" startLine="146" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFunctionMethod#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="515790726266556054" fileName="ClosureLiteralTarget.java" startLine="200" startPosition="7" endLine="213" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266588949" fileName="ClosureLiteralTarget.java" startLine="52" startPosition="158" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266591222" fileName="ClosureLiteralTarget.java" startLine="120" startPosition="198" endLine="135" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266588513" fileName="ClosureLiteralTarget.java" startLine="50" startPosition="0" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266555884" fileName="ClosureLiteralTarget.java" startLine="235" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTypeMatching#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="515790726266590383" fileName="ClosureLiteralTarget.java" startLine="79" startPosition="0" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="515790726266555890" fileName="ClosureLiteralTarget.java" startLine="169" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="515790726266556163" fileName="ClosureLiteralTarget.java" startLine="190" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchReturnType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7178287329507667887" fileName="ClosureLiteralTarget.java" startLine="108" startPosition="200" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="515790726266591366" fileName="ClosureLiteralTarget.java" startLine="105" startPosition="45" endLine="140" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="515790726266588458" fileName="ClosureLiteralTarget.java" startLine="45" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchTypeParameters#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <scopeInfo nodeId="515790726266555618" fileName="ClosureLiteralTarget.java" startLine="163" startPosition="26" endLine="163" endPosition="26" />
+    <scopeInfo nodeId="515790726266555286" fileName="ClosureLiteralTarget.java" startLine="34" startPosition="64" endLine="35" endPosition="33" />
+    <scopeInfo nodeId="515790726266589597" fileName="ClosureLiteralTarget.java" startLine="72" startPosition="61" endLine="73" endPosition="106" />
+    <scopeInfo nodeId="515790726266589692" fileName="ClosureLiteralTarget.java" startLine="75" startPosition="58" endLine="76" endPosition="350" />
+    <scopeInfo nodeId="515790726266590276" fileName="ClosureLiteralTarget.java" startLine="94" startPosition="57" endLine="95" endPosition="61" />
+    <scopeInfo nodeId="515790726266590396" fileName="ClosureLiteralTarget.java" startLine="97" startPosition="54" endLine="98" endPosition="362" />
+    <scopeInfo nodeId="2075368031956192762" fileName="ClosureLiteralTarget.java" startLine="117" startPosition="123" endLine="118" endPosition="57" />
+    <scopeInfo nodeId="7178287329507668513" fileName="ClosureLiteralTarget.java" startLine="125" startPosition="105" endLine="126" endPosition="178" />
+    <scopeInfo nodeId="7178287329507668529" fileName="ClosureLiteralTarget.java" startLine="127" startPosition="112" endLine="128" endPosition="178" />
+    <scopeInfo nodeId="7178287329507668545" fileName="ClosureLiteralTarget.java" startLine="129" startPosition="20" endLine="130" endPosition="34" />
+    <scopeInfo nodeId="7178287329507668104" fileName="ClosureLiteralTarget.java" startLine="137" startPosition="65" endLine="138" endPosition="369" />
+    <scopeInfo nodeId="2075368031956258379" fileName="ClosureLiteralTarget.java" startLine="143" startPosition="47" endLine="144" endPosition="168" />
+    <scopeInfo nodeId="515790726266555556" fileName="ClosureLiteralTarget.java" startLine="150" startPosition="128" endLine="151" endPosition="54" />
+    <scopeInfo nodeId="515790726266555421" fileName="ClosureLiteralTarget.java" startLine="154" startPosition="52" endLine="155" endPosition="105" />
+    <scopeInfo nodeId="515790726266555974" fileName="ClosureLiteralTarget.java" startLine="166" startPosition="39" endLine="167" endPosition="21" />
+    <scopeInfo nodeId="515790726266555764" fileName="ClosureLiteralTarget.java" startLine="172" startPosition="103" endLine="173" endPosition="175" />
+    <scopeInfo nodeId="515790726266555755" fileName="ClosureLiteralTarget.java" startLine="174" startPosition="53" endLine="175" endPosition="27" />
+    <scopeInfo nodeId="515790726266555781" fileName="ClosureLiteralTarget.java" startLine="178" startPosition="114" endLine="179" endPosition="123" />
+    <scopeInfo nodeId="515790726266555820" fileName="ClosureLiteralTarget.java" startLine="184" startPosition="122" endLine="185" endPosition="114" />
+    <scopeInfo nodeId="515790726266556029" fileName="ClosureLiteralTarget.java" startLine="195" startPosition="156" endLine="196" endPosition="55" />
+    <scopeInfo nodeId="515790726266556042" fileName="ClosureLiteralTarget.java" startLine="198" startPosition="14" endLine="199" endPosition="58" />
+    <scopeInfo nodeId="515790726266556135" fileName="ClosureLiteralTarget.java" startLine="209" startPosition="121" endLine="210" endPosition="63" />
+    <scopeInfo nodeId="7178287329507583804" fileName="ClosureLiteralTarget.java" startLine="216" startPosition="55" endLine="217" endPosition="175" />
+    <scopeInfo nodeId="515790726266555864" fileName="ClosureLiteralTarget.java" startLine="221" startPosition="28" endLine="222" endPosition="67" />
+    <scopeInfo nodeId="515790726266555636" fileName="ClosureLiteralTarget.java" startLine="229" startPosition="42" endLine="230" endPosition="22" />
+    <scopeInfo nodeId="515790726266555650" fileName="ClosureLiteralTarget.java" startLine="237" startPosition="184" endLine="238" endPosition="21" />
+    <scopeInfo nodeId="515790726266555663" fileName="ClosureLiteralTarget.java" startLine="240" startPosition="210" endLine="241" endPosition="20" />
+    <scopeInfo nodeId="515790726266555676" fileName="ClosureLiteralTarget.java" startLine="243" startPosition="212" endLine="244" endPosition="20" />
+    <scopeInfo nodeId="515790726266555703" fileName="ClosureLiteralTarget.java" startLine="247" startPosition="107" endLine="248" endPosition="22" />
+    <scopeInfo nodeId="515790726266555615" fileName="ClosureLiteralTarget.java" startLine="162" startPosition="0" endLine="164" endPosition="5" />
+    <scopeInfo nodeId="515790726266556114" fileName="ClosureLiteralTarget.java" startLine="204" startPosition="51" endLine="206" endPosition="19" />
+    <scopeInfo nodeId="515790726266555283" fileName="ClosureLiteralTarget.java" startLine="33" startPosition="0" endLine="36" endPosition="3">
       <varInfo nodeId="515790726266555287" varName="genContext" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555527" fileName="ClosureLiteralTarget.java" startLine="134" startPosition="127" endLine="137" endPosition="7" />
-    <scopeInfo nodeId="515790726266555819" fileName="ClosureLiteralTarget.java" startLine="168" startPosition="162" endLine="171" endPosition="11">
+    <scopeInfo nodeId="515790726266555527" fileName="ClosureLiteralTarget.java" startLine="149" startPosition="127" endLine="152" endPosition="7" />
+    <scopeInfo nodeId="515790726266555819" fileName="ClosureLiteralTarget.java" startLine="183" startPosition="162" endLine="186" endPosition="11">
       <varInfo nodeId="515790726266555832" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266556027" fileName="ClosureLiteralTarget.java" startLine="179" startPosition="103" endLine="182" endPosition="9" />
-    <scopeInfo nodeId="515790726266556028" fileName="ClosureLiteralTarget.java" startLine="179" startPosition="103" endLine="182" endPosition="9">
+    <scopeInfo nodeId="515790726266556027" fileName="ClosureLiteralTarget.java" startLine="194" startPosition="103" endLine="197" endPosition="9" />
+    <scopeInfo nodeId="515790726266556028" fileName="ClosureLiteralTarget.java" startLine="194" startPosition="103" endLine="197" endPosition="9">
       <varInfo nodeId="515790726266556035" varName="arg" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266556134" fileName="ClosureLiteralTarget.java" startLine="193" startPosition="118" endLine="196" endPosition="11">
+    <scopeInfo nodeId="515790726266556134" fileName="ClosureLiteralTarget.java" startLine="208" startPosition="118" endLine="211" endPosition="11">
       <varInfo nodeId="515790726266556143" varName="superType" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555631" fileName="ClosureLiteralTarget.java" startLine="213" startPosition="35" endLine="216" endPosition="9" />
-    <scopeInfo nodeId="515790726266591081" fileName="ClosureLiteralTarget.java" startLine="57" startPosition="103" endLine="61" endPosition="18">
+    <scopeInfo nodeId="515790726266555631" fileName="ClosureLiteralTarget.java" startLine="228" startPosition="35" endLine="231" endPosition="9" />
+    <scopeInfo nodeId="515790726266591081" fileName="ClosureLiteralTarget.java" startLine="59" startPosition="103" endLine="63" endPosition="18">
       <varInfo nodeId="515790726266591083" varName="newRetCT" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555971" fileName="ClosureLiteralTarget.java" startLine="150" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="7178287329507583799" fileName="ClosureLiteralTarget.java" startLine="200" startPosition="0" endLine="204" endPosition="0">
+    <scopeInfo nodeId="2075368031956258376" fileName="ClosureLiteralTarget.java" startLine="142" startPosition="0" endLine="146" endPosition="0">
+      <varInfo nodeId="2075368031956258428" varName="type" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555971" fileName="ClosureLiteralTarget.java" startLine="165" startPosition="0" endLine="169" endPosition="0" />
+    <scopeInfo nodeId="7178287329507583799" fileName="ClosureLiteralTarget.java" startLine="215" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="7178287329507583798" varName="tvr" />
       <varInfo nodeId="7178287329507583797" varName="typeVar" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555862" fileName="ClosureLiteralTarget.java" startLine="205" startPosition="48" endLine="209" endPosition="21" />
-    <scopeInfo nodeId="515790726266555696" fileName="ClosureLiteralTarget.java" startLine="231" startPosition="104" endLine="235" endPosition="618" />
-    <scopeInfo nodeId="515790726266555302" fileName="ClosureLiteralTarget.java" startLine="36" startPosition="59" endLine="41" endPosition="69">
+    <scopeInfo nodeId="515790726266555862" fileName="ClosureLiteralTarget.java" startLine="220" startPosition="48" endLine="224" endPosition="21" />
+    <scopeInfo nodeId="515790726266555696" fileName="ClosureLiteralTarget.java" startLine="246" startPosition="104" endLine="250" endPosition="618" />
+    <scopeInfo nodeId="515790726266555302" fileName="ClosureLiteralTarget.java" startLine="38" startPosition="59" endLine="43" endPosition="69">
       <varInfo nodeId="515790726266555331" varName="targetIfaceErase" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555526" fileName="ClosureLiteralTarget.java" startLine="133" startPosition="71" endLine="138" endPosition="5">
+    <scopeInfo nodeId="2075368031956136687" fileName="ClosureLiteralTarget.java" startLine="84" startPosition="46" endLine="89" endPosition="12">
+      <varInfo nodeId="2075368031956136689" varName="key" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555526" fileName="ClosureLiteralTarget.java" startLine="148" startPosition="71" endLine="153" endPosition="5">
       <varInfo nodeId="515790726266555528" varName="mth" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555627" fileName="ClosureLiteralTarget.java" startLine="212" startPosition="72" endLine="217" endPosition="7">
+    <scopeInfo nodeId="515790726266555627" fileName="ClosureLiteralTarget.java" startLine="227" startPosition="72" endLine="232" endPosition="7">
       <varInfo nodeId="515790726266555629" varName="left" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266591079" fileName="ClosureLiteralTarget.java" startLine="56" startPosition="188" endLine="62" endPosition="11" />
-    <scopeInfo nodeId="515790726266555798" fileName="ClosureLiteralTarget.java" startLine="165" startPosition="16" endLine="171" endPosition="11">
+    <scopeInfo nodeId="515790726266591079" fileName="ClosureLiteralTarget.java" startLine="58" startPosition="188" endLine="64" endPosition="11" />
+    <scopeInfo nodeId="515790726266555798" fileName="ClosureLiteralTarget.java" startLine="180" startPosition="16" endLine="186" endPosition="11">
       <varInfo nodeId="515790726266555800" varName="idx" />
       <varInfo nodeId="515790726266555804" varName="mptypes" />
       <varInfo nodeId="515790726266555812" varName="rptypes" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555626" fileName="ClosureLiteralTarget.java" startLine="212" startPosition="72" endLine="218" endPosition="18" />
-    <scopeInfo nodeId="515790726266555895" fileName="ClosureLiteralTarget.java" startLine="204" startPosition="0" endLine="211" endPosition="0" />
-    <scopeInfo nodeId="515790726266555299" fileName="ClosureLiteralTarget.java" startLine="35" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="515790726266555626" fileName="ClosureLiteralTarget.java" startLine="227" startPosition="72" endLine="233" endPosition="18" />
+    <scopeInfo nodeId="515790726266555895" fileName="ClosureLiteralTarget.java" startLine="219" startPosition="0" endLine="226" endPosition="0" />
+    <scopeInfo nodeId="515790726266555299" fileName="ClosureLiteralTarget.java" startLine="37" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="515790726266555372" varName="literal" />
       <varInfo nodeId="515790726266555315" varName="targetIface" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266591078" fileName="ClosureLiteralTarget.java" startLine="55" startPosition="383" endLine="63" endPosition="9">
+    <scopeInfo nodeId="515790726266591078" fileName="ClosureLiteralTarget.java" startLine="57" startPosition="383" endLine="65" endPosition="9">
       <varInfo nodeId="515790726266591117" varName="cls" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266590369" fileName="ClosureLiteralTarget.java" startLine="67" startPosition="5" endLine="75" endPosition="7">
+    <scopeInfo nodeId="515790726266590369" fileName="ClosureLiteralTarget.java" startLine="69" startPosition="5" endLine="77" endPosition="7">
       <varInfo nodeId="515790726266589468" varName="funParamIt" />
       <varInfo nodeId="515790726266589569" varName="methParamIt" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266556067" fileName="ClosureLiteralTarget.java" startLine="188" startPosition="123" endLine="196" endPosition="11" />
-    <scopeInfo nodeId="515790726266590384" fileName="ClosureLiteralTarget.java" startLine="78" startPosition="5" endLine="87" endPosition="7">
-      <varInfo nodeId="515790726266590100" varName="funThrIt" />
-      <varInfo nodeId="515790726266590247" varName="methThrIt" />
+    <scopeInfo nodeId="2075368031956136683" fileName="ClosureLiteralTarget.java" startLine="83" startPosition="119" endLine="91" endPosition="0">
+      <varInfo nodeId="2075368031956136685" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507668511" fileName="ClosureLiteralTarget.java" startLine="113" startPosition="28" endLine="122" endPosition="108" />
-    <scopeInfo nodeId="515790726266555880" fileName="ClosureLiteralTarget.java" startLine="211" startPosition="0" endLine="220" endPosition="0">
+    <scopeInfo nodeId="515790726266556067" fileName="ClosureLiteralTarget.java" startLine="203" startPosition="123" endLine="211" endPosition="11" />
+    <scopeInfo nodeId="7178287329507668511" fileName="ClosureLiteralTarget.java" startLine="124" startPosition="28" endLine="133" endPosition="108" />
+    <scopeInfo nodeId="515790726266555880" fileName="ClosureLiteralTarget.java" startLine="226" startPosition="0" endLine="235" endPosition="0">
       <varInfo nodeId="515790726266555620" varName="leftList" />
       <varInfo nodeId="515790726266555622" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555380" fileName="ClosureLiteralTarget.java" startLine="132" startPosition="69" endLine="142" endPosition="49">
+    <scopeInfo nodeId="515790726266555380" fileName="ClosureLiteralTarget.java" startLine="147" startPosition="69" endLine="157" endPosition="49">
       <varInfo nodeId="515790726266555540" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555775" fileName="ClosureLiteralTarget.java" startLine="162" startPosition="30" endLine="172" endPosition="9" />
-    <scopeInfo nodeId="515790726266556059" fileName="ClosureLiteralTarget.java" startLine="186" startPosition="57" endLine="197" endPosition="9">
+    <scopeInfo nodeId="515790726266555775" fileName="ClosureLiteralTarget.java" startLine="177" startPosition="30" endLine="187" endPosition="9" />
+    <scopeInfo nodeId="515790726266556059" fileName="ClosureLiteralTarget.java" startLine="201" startPosition="57" endLine="212" endPosition="9">
       <varInfo nodeId="515790726266556061" varName="candidate" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266588950" fileName="ClosureLiteralTarget.java" startLine="51" startPosition="149" endLine="63" endPosition="9">
+    <scopeInfo nodeId="515790726266588950" fileName="ClosureLiteralTarget.java" startLine="53" startPosition="149" endLine="65" endPosition="9">
       <varInfo nodeId="515790726266589120" varName="absRetCT" />
       <varInfo nodeId="515790726266591059" varName="adapterName" />
       <varInfo nodeId="515790726266591052" varName="ftResCT" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555377" fileName="ClosureLiteralTarget.java" startLine="131" startPosition="0" endLine="144" endPosition="0">
+    <scopeInfo nodeId="515790726266591227" fileName="ClosureLiteralTarget.java" startLine="122" startPosition="59" endLine="134" endPosition="11">
+      <varInfo nodeId="515790726266591229" varName="n" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555377" fileName="ClosureLiteralTarget.java" startLine="146" startPosition="0" endLine="159" endPosition="0">
       <varInfo nodeId="515790726266555482" varName="literal" />
       <varInfo nodeId="515790726266555382" varName="targetIface" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266588514" fileName="ClosureLiteralTarget.java" startLine="49" startPosition="209" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="515790726266555648" fileName="ClosureLiteralTarget.java" startLine="221" startPosition="61" endLine="237" endPosition="19" />
-    <scopeInfo nodeId="515790726266591227" fileName="ClosureLiteralTarget.java" startLine="106" startPosition="59" endLine="123" endPosition="11">
-      <varInfo nodeId="515790726266591229" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="515790726266555745" fileName="ClosureLiteralTarget.java" startLine="155" startPosition="58" endLine="173" endPosition="7">
+    <scopeInfo nodeId="515790726266588514" fileName="ClosureLiteralTarget.java" startLine="51" startPosition="209" endLine="66" endPosition="7" />
+    <scopeInfo nodeId="515790726266555648" fileName="ClosureLiteralTarget.java" startLine="236" startPosition="61" endLine="252" endPosition="19" />
+    <scopeInfo nodeId="515790726266555745" fileName="ClosureLiteralTarget.java" startLine="170" startPosition="58" endLine="188" endPosition="7">
       <varInfo nodeId="515790726266555747" varName="matched" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555884" fileName="ClosureLiteralTarget.java" startLine="220" startPosition="0" endLine="239" endPosition="0">
+    <scopeInfo nodeId="515790726266590384" fileName="ClosureLiteralTarget.java" startLine="80" startPosition="5" endLine="99" endPosition="7">
+      <varInfo nodeId="515790726266590100" varName="funThrIt" />
+      <varInfo nodeId="515790726266590247" varName="methThrIt" />
+      <varInfo nodeId="2075368031956136428" varName="normFunThrowsTypes" />
+    </scopeInfo>
+    <scopeInfo nodeId="515790726266555884" fileName="ClosureLiteralTarget.java" startLine="235" startPosition="0" endLine="254" endPosition="0">
       <varInfo nodeId="515790726266555642" varName="left" />
       <varInfo nodeId="515790726266555644" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266555890" fileName="ClosureLiteralTarget.java" startLine="154" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="515790726266555890" fileName="ClosureLiteralTarget.java" startLine="169" startPosition="0" endLine="190" endPosition="0">
       <varInfo nodeId="515790726266555733" varName="absType" />
       <varInfo nodeId="515790726266555735" varName="realType" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266556008" fileName="ClosureLiteralTarget.java" startLine="176" startPosition="64" endLine="198" endPosition="7">
+    <scopeInfo nodeId="515790726266556008" fileName="ClosureLiteralTarget.java" startLine="191" startPosition="64" endLine="213" endPosition="7">
       <varInfo nodeId="515790726266556017" varName="queue" />
       <varInfo nodeId="515790726266556010" varName="visited" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266556163" fileName="ClosureLiteralTarget.java" startLine="175" startPosition="0" endLine="200" endPosition="0">
+    <scopeInfo nodeId="515790726266556163" fileName="ClosureLiteralTarget.java" startLine="190" startPosition="0" endLine="215" endPosition="0">
       <varInfo nodeId="515790726266556154" varName="absType" />
       <varInfo nodeId="515790726266556156" varName="realType" />
     </scopeInfo>
-    <scopeInfo nodeId="7178287329507667889" fileName="ClosureLiteralTarget.java" startLine="97" startPosition="68" endLine="124" endPosition="9">
+    <scopeInfo nodeId="7178287329507667889" fileName="ClosureLiteralTarget.java" startLine="109" startPosition="68" endLine="135" endPosition="9">
       <varInfo nodeId="515790726266591208" varName="queue" />
       <varInfo nodeId="7178287329507668028" varName="rtp" />
       <varInfo nodeId="7178287329507668279" varName="substituteType" />
       <varInfo nodeId="7178287329507668082" varName="typeVar" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266591367" fileName="ClosureLiteralTarget.java" startLine="94" startPosition="22" endLine="128" endPosition="7">
+    <scopeInfo nodeId="515790726266591367" fileName="ClosureLiteralTarget.java" startLine="106" startPosition="22" endLine="139" endPosition="7">
       <varInfo nodeId="7178287329507667802" varName="reifiedTypeIt" />
       <varInfo nodeId="7178287329507667857" varName="targetTypeVarIt" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266588461" fileName="ClosureLiteralTarget.java" startLine="44" startPosition="117" endLine="129" endPosition="5">
+    <scopeInfo nodeId="515790726266588461" fileName="ClosureLiteralTarget.java" startLine="46" startPosition="117" endLine="140" endPosition="5">
       <varInfo nodeId="515790726266588902" varName="funType" />
       <varInfo nodeId="515790726266591353" varName="map" />
       <varInfo nodeId="515790726266588738" varName="matcher" />
       <varInfo nodeId="515790726266588495" varName="meth" />
     </scopeInfo>
-    <scopeInfo nodeId="515790726266588458" fileName="ClosureLiteralTarget.java" startLine="43" startPosition="0" endLine="131" endPosition="0">
+    <scopeInfo nodeId="515790726266588458" fileName="ClosureLiteralTarget.java" startLine="45" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="515790726266588484" varName="literal" />
       <varInfo nodeId="515790726266591544" varName="reifiedTargetIfaceTypeParams" />
       <varInfo nodeId="515790726266588475" varName="targetIfaceErase" />
     </scopeInfo>
-    <unitInfo nodeId="515790726266555281" fileName="ClosureLiteralTarget.java" startLine="29" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget" />
-    <unitInfo nodeId="515790726266555613" fileName="ClosureLiteralTarget.java" startLine="145" startPosition="0" endLine="240" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget$TypeMatcher" />
+    <unitInfo nodeId="515790726266555281" fileName="ClosureLiteralTarget.java" startLine="31" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget" />
+    <unitInfo nodeId="2075368031956136681" fileName="ClosureLiteralTarget.java" startLine="83" startPosition="84" endLine="91" endPosition="7" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget$1" />
+    <unitInfo nodeId="515790726266555613" fileName="ClosureLiteralTarget.java" startLine="160" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralTarget$TypeMatcher" />
   </root>
   <root nodeId="7178287329507699514">
     <nodeInfo nodeId="7178287329507699533" fileName="ClosureLiteralAdapterBuilder.java" startLine="25" startPosition="43" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
