@@ -13,12 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.node;
+package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.concept.SConcept;
+import org.jetbrains.mps.openapi.node.SNode;
+import org.jetbrains.mps.openapi.node.SNodeReference;
 
-public interface SNode {
-  SNodeReference getReference();
+import java.util.Collection;
 
-  SConcept getConcept();
+public interface RootManager {
+  SNode resolve(SNodeReference ref);
+  Collection<SNode> getNodes(String pack);
+  create
+  canCreate
 }

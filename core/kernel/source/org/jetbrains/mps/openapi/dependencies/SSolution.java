@@ -13,12 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.node;
+package org.jetbrains.mps.openapi.dependencies;
 
-import org.jetbrains.mps.openapi.concept.SConcept;
+import org.jetbrains.mps.openapi.module.SModule;
 
-public interface SNode {
-  SNodeReference getReference();
+import java.util.Collection;
 
-  SConcept getConcept();
+public interface SSolution {
+  Collection<SModule> getUsedModules();
+
+  Collection<SLanguage> getUsedLanguages();
 }

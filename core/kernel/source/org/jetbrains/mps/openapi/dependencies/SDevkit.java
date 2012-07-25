@@ -13,12 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.node;
+package org.jetbrains.mps.openapi.dependencies;
 
-import org.jetbrains.mps.openapi.concept.SConcept;
-
-public interface SNode {
-  SNodeReference getReference();
-
-  SConcept getConcept();
+public interface SDevkit {
+  void visitExportedModules(ModuleVisitor visitor);
 }
