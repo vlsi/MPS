@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+
 public interface SConcept {
 
   String getName();
