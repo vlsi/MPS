@@ -13,9 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.dependencies;
+package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.module.SModule;
+import java.util.Collection;
 
-public interface SLanguage extends SModule {
+public interface SGeneratorModule extends SModule {
+  Collection<SLanguageModule> getSourceLanguages();
+  Collection<SLanguageModule> getTargetLanguages();
+
+  Collection<SSolutionModule> getRuntimeSolutions();
 }

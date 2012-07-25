@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.node.SNode;
 import org.jetbrains.mps.openapi.node.SNodeReference;
@@ -23,9 +24,9 @@ import org.jetbrains.mps.openapi.node.SNodeReference;
 import java.util.Collection;
 
 public interface SModule {
-  String getNamespace();
+  String getPresentation();
 
-  Collection<RootManager> getRootManagers();
+  Collection<SModule> getDependencies();
 
-  SModel resolveModel(SModelReference ref);
+  SModel resolveModel(SModelId ref);
 }

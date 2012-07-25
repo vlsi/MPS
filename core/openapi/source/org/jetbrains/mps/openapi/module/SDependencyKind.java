@@ -15,14 +15,6 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.node.SNode;
-import org.jetbrains.mps.openapi.node.SNodeReference;
-
-import java.util.Collection;
-
-public interface RootManager {
-  SNode resolve(SNodeReference ref);
-  Collection<SNode> getNodes(String pack);
-  //create
-  //canCreate
+public enum SDependencyKind {
+  COMPILE_ONLY, ALL
 }
