@@ -15,15 +15,16 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.mps.openapi.repository.reference.SModelReference;
 import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
 
 public interface SModel {
 
   SModelId getModelId();
 
-  SNodeReference getReference();
+  SModelReference getReference();
 
   Iterable<SNode> getRootNodes();
 
-  SNode getNode(SNodeReference reference);
+  SNode getNode(SNodeId id);
 }
