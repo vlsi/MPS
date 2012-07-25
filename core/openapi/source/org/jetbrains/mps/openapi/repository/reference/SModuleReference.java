@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.repository.reference;
 
 import org.jetbrains.mps.openapi.module.SModule;
 
+//class?
 public interface SModuleReference extends SReference<SModule> {
 
 }
