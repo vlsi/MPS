@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.language.SLink;
 /**
  * evgeny, 7/25/12
  */
-//immutable
 public interface SReference {
 
   String getRole();

@@ -22,14 +22,11 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
 
 public interface SNode {
-  SNodeId getId();
 
-  //not orthogonal
   SNodeReference getReference();
 
-  SConcept getConcept();        //why not string?
+  SConcept getConcept();
 
-  //not orthogonal
   SLink getContainingLink();
 
   boolean isRoot();
@@ -38,15 +35,13 @@ public interface SNode {
 
   SNode getParent();
 
-  //not orthogonal
   SNode getContainingRoot();
 
-  //change to getRoleOf(child)
   String getRole();
 
-  SNode getLeftSibling();  //prev
+  SNode getLeftSibling();
 
-  SNode getRightSibling();  //next
+  SNode getRightSibling();
 
   // modifications
 
@@ -72,24 +67,18 @@ public interface SNode {
 
   // multiple
 
-  //not orthogonal
   void addChild(String role, SNode child);
 
   void removeChild(SNode wasChild);
 
-  //why role?
   void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore);
 
-  //not orthogonal, no performance reasoning
   void replaceChild(SNode oldChild, Iterable<SNode> newChildren);
 
-  //performance(not really)? Do we really need it? The bad thing is that it works o(n)
   int getChildCount(String role);
 
-  //performance(not really)? Do we really need it? The bad thing is that it works o(n)
   int getChildCount();
 
-  //index of child in role? why no back operation?
   int getIndexOfChild(SNode child);
 
   // children
@@ -104,30 +93,23 @@ public interface SNode {
 
   String getPresentation();
 
-  //??
   void setName(String name);
 
   String getName();
 
+  SNodeId getId();
+
   // refs
 
-//  //o(n), dup
-//  SReference getReference(String role);
-//
-//  SReference setReferenceTarget(String role, SNode target);
-//
-//  SNode getReferenceTarget(String role);
-//
-//  void addReference(SReference reference);
-//
-//  void replaceReference(SReference reference, @NotNull SReference referenceToAdd);
+  SReference getReference(String role);
 
+  SReference setReferenceTarget(String role, SNode target);
 
-  void setReference(SReference ref);
+  SNode getReferenceTarget(String role);
 
-  SReference removeReference (String role);
+  void addReference(SReference reference);
 
-  //----------------
+  void replaceReference(SReference reference, @NotNull SReference referenceToAdd);
 
   Iterable<SReference> getReferences();
 
