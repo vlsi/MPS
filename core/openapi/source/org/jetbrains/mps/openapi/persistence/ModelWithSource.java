@@ -15,5 +15,5 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
-public interface NavigationSupport {
+public interface ModelWithSource {
 }
