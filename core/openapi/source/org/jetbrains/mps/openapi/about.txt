@@ -3,7 +3,7 @@ references should not be resolvable by name
 all classes are prefixed with "S"
 ids are local and can't be obtained directly
 references are global and can be obtained directly
-?merge models and nodes packages
+
 
 MODULE
     module is a vertex in a graph of dependencies
