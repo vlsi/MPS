@@ -15,10 +15,12 @@
  */
 package org.jetbrains.mps.openapi.reference;
 
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+@Immutable
 public final class SModuleReference extends SEntityReference<SModule> {
   private SModuleId myId;
   private String myPresentation;

@@ -15,8 +15,10 @@
  */
 package org.jetbrains.mps.openapi.reference;
 
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+@Immutable
 public abstract class SEntityReference<T> {
   protected static String DELIM = "#";
 

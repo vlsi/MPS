@@ -15,10 +15,12 @@
  */
 package org.jetbrains.mps.openapi.reference;
 
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+@Immutable
 public final class SModelReference extends SEntityReference<SModel> {
   private SModuleReference myModule;
 
