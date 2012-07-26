@@ -25,6 +25,12 @@ public final class SModelReference implements SReference<SModel> {
   private SModelId myId;
   private String myPresentation;
 
+  public SModelReference(SModel model) {
+    myModule = new SModuleReference(model.getModule());
+    myId = model.getModelId();
+    myPresentation = model.getPresentation();
+  }
+
   public SModuleReference getModule() {
     return myModule;
   }

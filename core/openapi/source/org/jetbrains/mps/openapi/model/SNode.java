@@ -21,11 +21,11 @@ import org.jetbrains.mps.openapi.language.LConcept;
 public interface SNode extends ASTNode{
   SNodeId getId();
 
+  String getPresentation();
+
   LConcept getConcept();
 
   SModel getModel();
-
-  String getPresentation();
 
   String getName();
 

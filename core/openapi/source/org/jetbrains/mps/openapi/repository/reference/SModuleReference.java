@@ -23,6 +23,11 @@ public final class SModuleReference implements SReference<SModule> {
   private SModuleId myId;
   private String myPresentation;
 
+  public SModuleReference(SModule module) {
+    myId = module.getModuleId();
+    myPresentation = module.getPresentation();
+  }
+
   public String getPresentation() {
     return myPresentation;
   }

@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.repository.reference.SModuleReference;
 import java.util.Collection;
 
 public interface SModule {
+  SModuleId getModuleId();
+
   String getPresentation();
 
   SRepository getRepository();

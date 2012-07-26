@@ -20,6 +20,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 public interface SModel {
   SModelId getModelId();
 
+  String getPresentation();
+
   SModule getModule();
 
   Iterable<SNode> getRootNodes();
