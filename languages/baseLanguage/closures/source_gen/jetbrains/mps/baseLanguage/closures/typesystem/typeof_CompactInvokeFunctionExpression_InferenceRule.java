@@ -38,8 +38,8 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
     final SNode ret_typevar_668767903263948995 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, "function", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948996", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_CompactInvokeFunctionExpression_InferenceRule.QuotationClass_ojnxkp_a0a3a0().createNode(ptypes, typeCheckingContext.getRepresentative(ret_typevar_668767903263948995), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948998", true), false, true, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8710643694461127231", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_CompactInvokeFunctionExpression_InferenceRule.QuotationClass_ojnxkp_a0a3a0().createNode(ptypes, typeCheckingContext.getRepresentative(ret_typevar_668767903263948995), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8710643694461127233", true), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = invoke;
@@ -74,7 +74,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           List<SNode> nodes = (List<SNode>) parameter_6;
@@ -107,7 +107,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           List<SNode> nodes = (List<SNode>) parameter_6;

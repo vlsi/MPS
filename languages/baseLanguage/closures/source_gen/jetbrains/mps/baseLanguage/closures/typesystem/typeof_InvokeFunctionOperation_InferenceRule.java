@@ -39,8 +39,8 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
     final SNode ret_typevar_3143009324072631671 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(invoke);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "5612111951671518776", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_InvokeFunctionOperation_InferenceRule.QuotationClass_17nn5b_a0a3a0().createNode(ptypes, typeCheckingContext.getRepresentative(ret_typevar_3143009324072631671), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "5612111951671508219", true), false, true, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8710643694461127256", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_InvokeFunctionOperation_InferenceRule.QuotationClass_17nn5b_a0a3a0().createNode(ptypes, typeCheckingContext.getRepresentative(ret_typevar_3143009324072631671), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8710643694461127258", true), false, true, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = invoke;
@@ -75,7 +75,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           List<SNode> nodes = (List<SNode>) parameter_6;
@@ -108,7 +108,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           List<SNode> nodes = (List<SNode>) parameter_6;
