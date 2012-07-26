@@ -34,7 +34,7 @@ public interface SModule {
 
   Collection<LLanguage> getUsedLanguages();
 
-  SModel resolveModel(SModelId ref);
+  SModel resolveInDependencies(SModelId ref);
 
-  SModel getOwnModel(SModelId id);
+  SModel getModel(SModelId id);
 }

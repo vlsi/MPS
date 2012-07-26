@@ -40,6 +40,6 @@ public final class SModelReference extends SEntityReference<SModel> {
   }
 
   public SModel resolve(SRepository repo) {
-    return myModule.resolve(repo).getOwnModel(myId);
+    return myModule.resolve(repo).getModel(myId);
   }
 }
