@@ -19,5 +19,6 @@ import java.util.Collection;
 
 public interface ModuleWithFacets {
   <T extends ModuleFacet> T getFacet(Class<T> facetClass);
+
   Collection<Class<? extends ModuleFacet>> getFacetClasses();
 }

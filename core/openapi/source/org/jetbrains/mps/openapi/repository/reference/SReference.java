@@ -19,5 +19,6 @@ import org.jetbrains.mps.openapi.repository.SRepository;
 
 public interface SReference<T> {
   String getPresentation();
+
   T resolve(SRepository repo);
 }

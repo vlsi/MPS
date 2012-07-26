@@ -17,5 +17,6 @@ package org.jetbrains.mps.openapi.model;
 
 public interface EditableModel {
   boolean isChanged();
+
   void save();
 }

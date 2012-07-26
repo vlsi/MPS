@@ -16,14 +16,9 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.repository.reference.SModelReference;
-import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
 
 public interface SModel {
-
   SModelId getModelId();
-
-  SModelReference getReference();
 
   SModule getModule();
 
