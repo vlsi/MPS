@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.repository.SRepository;
 
-public final class SModuleReference implements SReference<SModule> {
+public final class SModuleReference extends SEntityReference<SModule> {
   private SModuleId myId;
   private String myPresentation;
 

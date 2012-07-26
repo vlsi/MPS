@@ -17,10 +17,10 @@ package org.jetbrains.mps.openapi.repository.reference;
 
 import org.jetbrains.mps.openapi.repository.SRepository;
 
-public interface SReference<T> {
-  String DELIM = "#";
+public abstract class SEntityReference<T> {
+  protected static String DELIM = "#";
 
-  String getPresentation();
+  public abstract String getPresentation();
 
-  T resolve(SRepository repo);
+  public abstract T resolve(SRepository repo);
 }

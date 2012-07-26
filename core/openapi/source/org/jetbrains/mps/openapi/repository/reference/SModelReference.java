@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.repository.SRepository;
 
-public final class SModelReference implements SReference<SModel> {
+public final class SModelReference extends SEntityReference<SModel> {
   private SModuleReference myModule;
 
   private SModelId myId;
@@ -36,7 +36,7 @@ public final class SModelReference implements SReference<SModel> {
   }
 
   public String getPresentation() {
-    return myModule.getPresentation() + SReference.DELIM + myPresentation;
+    return myModule.getPresentation() + SEntityReference.DELIM + myPresentation;
   }
 
   public SModel resolve(SRepository repo) {
