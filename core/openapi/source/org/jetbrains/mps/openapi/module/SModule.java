@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.mps.openapi.language.LLanguage;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.repository.SRepository;
@@ -32,7 +32,7 @@ public interface SModule {
 
   Collection<SModuleReference> getUsedModules();
 
-  Collection<LLanguage> getUsedLanguages();
+  Collection<SLanguage> getUsedLanguages();
 
   SModel resolveInDependencies(SModelId ref);
 

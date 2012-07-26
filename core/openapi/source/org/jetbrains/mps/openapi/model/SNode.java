@@ -16,8 +16,8 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.LConcept;
-import org.jetbrains.mps.openapi.language.LLink;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
 
 public interface SNode {
@@ -25,13 +25,13 @@ public interface SNode {
 
   SNodeReference getReference();
 
-  LConcept getConcept();
+  SConcept getConcept();
 
   String getPresentation();
 
   String getName();
 
-  LLink getContainingLink();
+  SLink getContainingLink();
 
   boolean isRoot();
 

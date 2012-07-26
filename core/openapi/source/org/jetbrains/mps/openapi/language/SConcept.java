@@ -15,9 +15,22 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface LLanguage {
 
-  String getPresentation();
+public interface SConcept {
 
-  Iterable<LConcept> getConcepts();
+  String getName();
+
+  String getQualifiedName();
+
+  SConcept getSuperConcept();
+
+  Iterable<SInterfaceConcept> getSuperInterfaces();
+
+  Iterable<SLink> getLinks();
+
+  Iterable<SProperty> getProperties();
+
+  boolean isSubConceptOf(SConcept concept);
+
+  SLanguage getLanguage();
 }

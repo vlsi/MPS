@@ -16,13 +16,13 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.language.LLink;
+import org.jetbrains.mps.openapi.language.SLink;
 
 @Immutable
 public interface SReference {
   String getRole();
 
-  LLink getLink();
+  SLink getLink();
 
   SNode getSourceNode();
 
