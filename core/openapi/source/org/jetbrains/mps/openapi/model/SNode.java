@@ -15,19 +15,90 @@
  */
 package org.jetbrains.mps.openapi.model;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.LConcept;
+import org.jetbrains.mps.openapi.language.LLink;
+import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
 
-public interface SNode extends ASTNode{
+public interface SNode {
   SNodeId getId();
 
-  String getPresentation();
+  //not orthogonal
+  SNodeReference getReference();
 
   LConcept getConcept();
 
-  SModel getModel();
+  String getPresentation();
 
   String getName();
+
+  //not orthogonal
+  LLink getContainingLink();
+
+  boolean isRoot();
+
+  SModel getModel();
+
+  //tree traversal
+
+  SNode getParent();
+
+  //not orthogonal
+  SNode getContainingRoot();
+
+  //change to getRoleOf(child)
+  String getRole();
+
+  SNode getPrevSibling();
+
+  SNode getNextSibling();
+
+  void addNextSibling(SNode newSibling);
+
+  void addPrevSibling(SNode newSibling);
+
+  void delete();
+
+  // single
+
+  SNode getChild(String role);
+
+  void setChild(String role, SNode childNode);
+
+  // multiple
+
+  void addChild(String role, SNode child);
+
+  Iterable<SNode> getChildren(String role);
+
+  Iterable<SNode> getChildren();
+
+  boolean isEmpty (String role);
+
+  int getChildCount(String role);
+
+  // refs
+
+//  //o(n), dup
+//  SReference getReference(String role);
+//
+//  SReference setReferenceTarget(String role, SNode target);
+//
+//  SNode getReferenceTarget(String role);
+//
+//  void addReference(SReference reference);
+//
+//  void replaceReference(SReference reference, @NotNull SReference referenceToAdd);
+
+
+  void setReference(SReference ref);
+
+  SReference removeReference(String role);
+
+  //----------------
+
+  Iterable<SReference> getReferences();
 
   // props
 
@@ -37,17 +108,14 @@ public interface SNode extends ASTNode{
 
   void setProperty(String propertyName, String propertyValue);
 
-  // refs
-
-  void setReference(String role, @Nullable SReference ref);
-
-  SReference getReference(String role);
-
-  Iterable<SReference> getReferences();
-
   // user objects
 
   Object getUserObject(Object key);
 
   void putUserObject(Object key, @Nullable Object value);
+
+  void removeAllUserObjects();
+
+  Iterable<Object> getUserObjectsKeys();
+
 }
