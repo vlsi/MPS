@@ -15,16 +15,13 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
+import org.jetbrains.mps.openapi.language.LConcept;
 
 public interface SNode {
   SNodeId getId();
 
-  SConcept getConcept();
+  LConcept getConcept();
 
   SModel getModel();
 

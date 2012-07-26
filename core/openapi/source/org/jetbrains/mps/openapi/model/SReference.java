@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.language.LLink;
 
 /**
  * evgeny, 7/25/12
@@ -25,7 +25,7 @@ public interface SReference {
 
   String getRole();
 
-  SLink getLink();
+  LLink getLink();
 
   SNode getSourceNode();
 

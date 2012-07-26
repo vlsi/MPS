@@ -18,9 +18,11 @@ package org.jetbrains.mps.openapi.language;
 /**
  * evgeny, 7/25/12
  */
-public interface SProperty {
+public interface LInterfaceConcept {
 
   String getName();
 
-  String getType();
+  String getQualifiedName();
+
+  Iterable<LInterfaceConcept> getSuperInterfaces();
 }

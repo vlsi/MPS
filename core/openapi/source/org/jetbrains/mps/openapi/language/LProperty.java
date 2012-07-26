@@ -18,15 +18,9 @@ package org.jetbrains.mps.openapi.language;
 /**
  * evgeny, 7/25/12
  */
-public interface SLink {
+public interface LProperty {
 
-  String getRole();
+  String getName();
 
-  boolean isReference();
-
-  boolean isMultiple();
-
-  boolean isOptional();
-
-  SConcept getTargetConcept();
+  String getType();
 }

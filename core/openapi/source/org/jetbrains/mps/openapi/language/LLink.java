@@ -18,11 +18,15 @@ package org.jetbrains.mps.openapi.language;
 /**
  * evgeny, 7/25/12
  */
-public interface SInterfaceConcept {
+public interface LLink {
 
-  String getName();
+  String getRole();
 
-  String getQualifiedName();
+  boolean isReference();
 
-  Iterable<SInterfaceConcept> getSuperInterfaces();
+  boolean isMultiple();
+
+  boolean isOptional();
+
+  LConcept getTargetConcept();
 }
