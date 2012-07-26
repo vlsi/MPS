@@ -15,7 +15,6 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.LConcept;
 import org.jetbrains.mps.openapi.language.LLink;
@@ -24,7 +23,6 @@ import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
 public interface SNode {
   SNodeId getId();
 
-  //not orthogonal
   SNodeReference getReference();
 
   LConcept getConcept();
@@ -33,7 +31,6 @@ public interface SNode {
 
   String getName();
 
-  //not orthogonal
   LLink getContainingLink();
 
   boolean isRoot();
@@ -44,10 +41,8 @@ public interface SNode {
 
   SNode getParent();
 
-  //not orthogonal
   SNode getContainingRoot();
 
-  //change to getRoleOf(child)
   String getRole();
 
   SNode getPrevSibling();
@@ -70,33 +65,29 @@ public interface SNode {
 
   void addChild(String role, SNode child);
 
+  void removeChild(SNode child);
+
   Iterable<SNode> getChildren(String role);
 
   Iterable<SNode> getChildren();
 
-  boolean isEmpty (String role);
+  boolean isEmpty(String role);
 
   int getChildCount(String role);
 
   // refs
 
-//  //o(n), dup
-//  SReference getReference(String role);
-//
-//  SReference setReferenceTarget(String role, SNode target);
-//
-//  SNode getReferenceTarget(String role);
-//
-//  void addReference(SReference reference);
-//
-//  void replaceReference(SReference reference, @NotNull SReference referenceToAdd);
+  void setReferenceTarget(String role, SNode target);
 
+  SNode getReferenceTarget(String role);
 
-  void setReference(SReference ref);
+  //to work with invalid code
 
-  SReference removeReference(String role);
+  SReference getReference(String role);
 
-  //----------------
+  void setReference(SReference reference);
+
+  void removeReference(SReference ref);
 
   Iterable<SReference> getReferences();
 
@@ -114,8 +105,5 @@ public interface SNode {
 
   void putUserObject(Object key, @Nullable Object value);
 
-  void removeAllUserObjects();
-
   Iterable<Object> getUserObjectsKeys();
-
 }
