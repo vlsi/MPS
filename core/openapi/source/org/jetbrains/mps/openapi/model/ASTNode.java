@@ -16,38 +16,25 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.LConcept;
 
-public interface SNode extends ASTNode{
-  SNodeId getId();
+public interface ASTNode {
+  SNode getParent();
 
-  LConcept getConcept();
+  void delete();
 
-  SModel getModel();
+  SNode getPrevSibling();
 
-  String getPresentation();
+  SNode getNextSibling();
 
-  String getName();
+  void setNextSibling(SNode newSibling);
 
-  // props
+  void setPrevSibling(SNode newSibling);
 
-  boolean hasProperty(String propertyName);
+  Iterable<SNode> getChildren(@Nullable String role);
 
-  String getProperty(String propertyName);
+  void setChild(String role, SNode childNode);
 
-  void setProperty(String propertyName, String propertyValue);
+  void insertAfter(String role, SNode child, @Nullable SNode anchorChild);
 
-  // refs
-
-  void setReference(String role, @Nullable SReference ref);
-
-  SReference getReference(String role);
-
-  Iterable<SReference> getReferences();
-
-  // user objects
-
-  Object getUserObject(Object key);
-
-  void putUserObject(Object key, @Nullable Object value);
+  String getRoleOf(SNode child);
 }
