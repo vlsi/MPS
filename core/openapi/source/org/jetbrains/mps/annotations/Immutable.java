@@ -13,22 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model;
+package org.jetbrains.mps.annotations;
 
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.language.LLink;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
-@Immutable
-public interface SReference {
-  String getRole();
-
-  LLink getLink();
-
-  SNode getSourceNode();
-
-  SNode getTargetNode();
-
-  SModel getTargetModel();
-
-  String getText();
+@Retention(RetentionPolicy.SOURCE)
+@Target(ElementType.TYPE)
+public @interface Immutable {
 }
