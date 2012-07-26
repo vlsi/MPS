@@ -1,0 +1,1708 @@
+### baseLanguage
+structure of jetbrains.mps.baseLanguage 
+ 
+concept AssignmentExpression extends BaseAssignmentExpression implements TypeDerivable { 
+  # concept properties 
+  query s_alias() = "="; 
+} 
+ 
+concept BaseMethodCall extends Expression implements IMethodCall { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept Expression extends BaseConcept { 
+  # concept properties 
+  query s_abstract() = true; 
+   
+  # concept properties and links declarations 
+  query lvalue() = "not implemented"; 
+  query constant() = "not implemented"; 
+  query legalAsStatement() = "not implemented"; 
+} 
+ 
+concept FieldDeclaration extends VariableDeclaration implements ClassifierMember, IResolveInfo, IBLDeprecatable, TraceableConcept { 
+  bool isVolatile; 
+  bool isTransient; 
+} 
+ 
+concept ClassConcept extends Classifier implements IBLDeprecatable, UnitConcept, ScopeProvider { 
+  bool abstractClass; 
+  bool isFinal; 
+  bool isStatic; 
+   
+  FieldDeclaration field[0..n]; 
+  ConstructorDeclaration constructor[0..n]; 
+  StaticMethodDeclaration staticMethod[0..n]; 
+  ClassifierType superclass[0..1]; 
+  ClassifierType implementedInterface[0..n]; 
+  InstanceInitializer instanceInitializer[0..1]; 
+  StaticInitializer classInitializer[0..1]; 
+  StatementList staticInitializer[0..1]; 
+  Property property[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "Class"; 
+  query s_shortDescription() = "Class declaration"; 
+} 
+ 
+concept ParameterDeclaration extends VariableDeclaration implements IResolveInfo, IVariableAssignment { 
+  # concept properties 
+  query s_shortDescription() = "parameter"; 
+} 
+ 
+concept Type extends BaseConcept implements IType { 
+  # concept properties 
+  query s_abstract() = true; 
+  query s_shortDescription() = "a type"; 
+} 
+ 
+concept VariableDeclaration extends BaseVariableDeclaration implements HasAnnotation, TypeDerivable, TypeAnnotable, IVariableDeclaration { 
+  bool isFinal; 
+   
+  Expression initializer[0..1]; 
+} 
+ 
+concept VariableReference extends Expression implements TypeAnnotable, IVariableReference { 
+  ref VariableDeclaration variableDeclaration[1]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+  query s_alias() = "<VariableReference>"; 
+} 
+ 
+concept BaseMethodDeclaration extends GenericDeclaration implements IValidIdentifier, HasAnnotation, IBLDeprecatable, IStatementListContainer, IContainer, IMethodLike, TypeAnnotable, TraceableConcept, ScopeConcept, ScopeProvider { 
+  bool isFinal; 
+  bool isSynchronized; 
+   
+  Type returnType[1]; 
+  ParameterDeclaration parameter[0..n]; 
+  StatementList body[1]; 
+  Type throwsItem[0..n]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept StatementList extends BaseConcept implements IContainer, ILocalVariableElementList, ScopeConcept, ScopeProvider { 
+  Statement statement[0..n]; 
+} 
+ 
+concept BooleanConstant extends Expression { 
+  bool value; 
+   
+  # concept properties 
+  query s_alias() = "boolean constant"; 
+  query s_shortDescription() = "boolean constant"; 
+  query s_dontSubstituteByDefault() = true; 
+  query s_constant() = true; 
+} 
+ 
+concept ConstructorDeclaration extends BaseMethodDeclaration implements ClassifierMember, IResolveInfo { 
+  string nestedName; 
+} 
+ 
+concept EqualsExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "=="; 
+  query s_shortDescription() = "equals operation"; 
+  query s_priority() = 0; 
+} 
+ 
+concept ExpressionStatement extends Statement implements IWrapper { 
+  Expression expression[1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "expression statement"; 
+} 
+ 
+concept Statement extends BaseConcept implements ILocalVariableElement, TraceableConcept, ICanSuppressErrors { 
+  # concept properties 
+  query s_alias() = "<statement>"; 
+} 
+ 
+concept IfStatement extends Statement implements IContainsStatementList { 
+  bool forceOneLine; 
+  bool forceMultiLine; 
+   
+  Expression condition[1]; 
+  Statement ifFalseStatement[0..1]; 
+  StatementList ifTrue[1]; 
+  ElsifClause elsifClauses[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "if"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept InstanceMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember, IResolveInfo { 
+  bool isAbstract; 
+} 
+ 
+concept IntegerConstant extends IntegerLiteral { 
+  int value; 
+   
+  # concept properties 
+  query s_alias() = "integer constant"; 
+  query s_shortDescription() = "integer constant"; 
+  query s_dontSubstituteByDefault() = true; 
+  query s_constant() = true; 
+} 
+ 
+concept LocalVariableDeclaration extends VariableDeclaration implements IResolveInfo, IVariableAssignment, IVariableDeclaration, ILocalDeclaration { 
+  # concept properties 
+  query s_alias() = "<type> <var>"; 
+  query s_shortDescription() = "local variable declaration"; 
+} 
+ 
+concept LocalVariableDeclarationStatement extends Statement implements IWrapper { 
+  LocalVariableDeclaration localVariableDeclaration[1]; 
+   
+  # concept properties 
+  query s_alias() = "<type> <var>;"; 
+  query s_shortDescription() = "local variable declaration statement"; 
+} 
+ 
+concept LocalVariableReference extends VariableReference implements ILocalReference { 
+  ref LocalVariableDeclaration localVariableDeclaration[0..1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "reference to local variable declaration"; 
+  query s_lvalue() = true; 
+} 
+ 
+concept LongType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "long"; 
+} 
+ 
+concept MinusExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "-"; 
+  query s_shortDescription() = "minus operation"; 
+  query s_priority() = 2; 
+} 
+ 
+concept ParameterReference extends VariableReference { 
+  ref ParameterDeclaration parameterDeclaration[0..1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "reference to method parameter"; 
+  query s_lvalue() = true; 
+} 
+ 
+concept PlusExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "+"; 
+  query s_shortDescription() = "plus operation"; 
+  query s_priority() = 2; 
+} 
+ 
+concept ReturnStatement extends Statement implements TypeDerivable { 
+  Expression expression[0..1]; 
+   
+  # concept properties 
+  query s_alias() = "return"; 
+} 
+ 
+concept VoidType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "void"; 
+} 
+ 
+concept StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember, StaticKind, IResolveInfo, IBLDeprecatable, TraceableConcept { 
+  # concept properties 
+  query s_shortDescription() = "static field declaration"; 
+} 
+ 
+concept SuperConstructorInvocation extends ConstructorInvocationStatement { 
+  # concept properties 
+  query s_alias() = "super"; 
+  query s_shortDescription() = "super constructor invocation"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept StringLiteral extends Expression { 
+  string value; 
+   
+  # concept properties 
+  query s_alias() = """; 
+  query s_shortDescription() = "string literal"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept StaticFieldReference extends VariableReference { 
+  ref Classifier classifier[1]; 
+  ref StaticFieldDeclaration staticFieldDeclaration[0..1]; 
+   
+  # concept properties 
+  query s_alias() = ".<static field>"; 
+  query s_shortDescription() = "reference to static field declaration"; 
+  query s_lvalue() = true; 
+} 
+ 
+concept ShortType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "short"; 
+} 
+ 
+concept NullLiteral extends Expression { 
+  # concept properties 
+  query s_alias() = "null"; 
+  query s_constant() = true; 
+} 
+ 
+concept IntegerType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "int"; 
+} 
+ 
+concept FloatType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "float"; 
+} 
+ 
+concept DoubleType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "double"; 
+} 
+ 
+concept CharType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "char"; 
+} 
+ 
+concept ByteType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "byte"; 
+} 
+ 
+concept BooleanType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "boolean"; 
+} 
+ 
+concept ArrayType extends Type { 
+  Type componentType[1]; 
+   
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept CastExpression extends Expression { 
+  Type type[1]; 
+  Expression expression[1]; 
+   
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+  query s_alias() = "(type)exp"; 
+  query s_shortDescription() = "type cast expression"; 
+} 
+ 
+concept SuperMethodCall extends BaseMethodCall { 
+  ref InstanceMethodDeclaration instanceMethodDeclaration[1]; 
+   
+  # concept properties 
+  query s_alias() = "super"; 
+  query s_shortDescription() = "super method invocation"; 
+} 
+ 
+concept NotEqualsExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "!="; 
+  query s_shortDescription() = "not equals operation"; 
+  query s_priority() = 0; 
+} 
+ 
+concept WhileStatement extends AbstractLoopStatement { 
+  Expression condition[1]; 
+   
+  # concept properties 
+  query s_alias() = "while"; 
+} 
+ 
+concept ParenthesizedExpression extends Expression { 
+  Expression expression[1]; 
+   
+  # concept properties 
+  query s_alias() = "(expr)"; 
+  query s_shortDescription() = "parenthesis"; 
+} 
+ 
+concept AndExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "&&"; 
+  query s_shortDescription() = "conditional-and operation"; 
+  query s_priority() = -1; 
+} 
+ 
+concept OrExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "||"; 
+  query s_shortDescription() = "conditional-or operation"; 
+  query s_priority() = -2; 
+} 
+ 
+concept StaticMethodCall extends BaseMethodCall { 
+  ref ClassConcept classConcept[1]; 
+  ref StaticMethodDeclaration staticMethodDeclaration[1]; 
+   
+  # concept properties 
+  query s_alias() = ".<static method>"; 
+  query s_shortDescription() = "static method invocation"; 
+} 
+ 
+concept StaticMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember, StaticKind, IResolveInfo { 
+} 
+ 
+concept InstanceOfExpression extends Expression { 
+  Expression leftExpression[1]; 
+  Type classType[1]; 
+   
+  # concept properties 
+  query s_alias() = "instanceof"; 
+} 
+ 
+concept GreaterThanExpression extends BinaryCompareOperation { 
+  # concept properties 
+  query s_alias() = ">"; 
+  query s_shortDescription() = "greater than operation"; 
+  query s_priority() = 1; 
+} 
+ 
+concept LessThanExpression extends BinaryCompareOperation { 
+  # concept properties 
+  query s_alias() = "<"; 
+  query s_shortDescription() = "less then operation"; 
+  query s_priority() = 1; 
+} 
+ 
+concept NotExpression extends Expression { 
+  Expression expression[1]; 
+   
+  # concept properties 
+  query s_alias() = "!(expr)"; 
+  query s_shortDescription() = "not-expression"; 
+} 
+ 
+concept BreakStatement extends Statement { 
+  string label; 
+   
+  LoopLabelReference loopLabelReference[0..1]; 
+   
+  # concept properties 
+  query s_alias() = "break"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept BinaryOperation extends Expression { 
+  Expression rightExpression[1]; 
+  Expression leftExpression[1]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+  query s_alias() = "<?>"; 
+  query s_shortDescription() = "abstract binary operation"; 
+   
+  # concept properties and links declarations 
+  query priority() = "not implemented"; 
+} 
+ 
+concept ContinueStatement extends Statement { 
+  string label; 
+   
+  LoopLabelReference loopLabelReference[0..1]; 
+   
+  # concept properties 
+  query s_alias() = "continue"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept BlockStatement extends Statement { 
+  StatementList statements[1]; 
+   
+  # concept properties 
+  query s_alias() = "{"; 
+  query s_shortDescription() = "block statement"; 
+} 
+ 
+concept EnumClass extends ClassConcept { 
+  EnumConstantDeclaration enumConstant[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "Enum"; 
+  query s_shortDescription() = "Enumeration class declaration"; 
+} 
+ 
+concept EnumConstantDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo, HasAnnotation, ClassifierMember, IMethodCall { 
+  InstanceMethodDeclaration method[0..n]; 
+  ref ConstructorDeclaration constructor[1]; 
+} 
+ 
+concept EnumConstantReference extends Expression implements ScopeProvider { 
+  ref EnumClass enumClass[1]; 
+  ref EnumConstantDeclaration enumConstantDeclaration[1]; 
+   
+  # concept properties 
+  query s_alias() = ".<enum>"; 
+  query s_shortDescription() = "enumeration constant reference"; 
+} 
+ 
+concept MulExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "*"; 
+  query s_shortDescription() = "multiplication operation"; 
+  query s_priority() = 3; 
+} 
+ 
+concept DivExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "/"; 
+  query s_shortDescription() = "divide operation"; 
+  query s_priority() = 3; 
+} 
+ 
+concept ConceptFunctionParameter extends Expression implements IParameter { 
+  # concept properties 
+  query s_abstract() = true; 
+  query s_dontSubstituteByDefault() = true; 
+   
+  # concept properties and links declarations 
+  query dontUseParameterObject() = "not implemented"; 
+  query conceptFunctionParameterType() = "not implemented"; 
+} 
+ 
+concept Classifier extends GenericDeclaration implements HasAnnotation, IMemberContainer, IResolveInfo, IValidIdentifier, IVisible, IContainer, ScopeProvider { 
+  string nestedName; 
+  bool isDeprecated; 
+  bool nonStatic; 
+   
+  StaticFieldDeclaration staticField[0..n]; 
+  InstanceMethodDeclaration method[0..n]; 
+  Classifier staticInnerClassifiers[0..n]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept ClassifierType extends Type { 
+  ref Classifier classifier[1]; 
+  Type parameter[0..n]; 
+   
+  # concept properties 
+  query s_shortDescription() = "reference to classifier"; 
+} 
+ 
+concept Interface extends Classifier implements IBLDeprecatable, UnitConcept { 
+  ClassifierType extendedInterface[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "Interface"; 
+  query s_shortDescription() = "Interface declaration"; 
+} 
+ 
+concept TypeVariableDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo { 
+  bool extends; 
+   
+  Type bound[0..1]; 
+  ClassifierType auxBounds[0..n]; 
+} 
+ 
+concept GenericDeclaration extends BaseConcept implements INamedConcept, ScopeProvider { 
+  TypeVariableDeclaration typeVariableDeclaration[0..n]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept TypeVariableReference extends Type { 
+  ref TypeVariableDeclaration typeVariableDeclaration[1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "reference to type variable"; 
+} 
+ 
+concept FloatingPointConstant extends Expression { 
+  string value; 
+   
+  # concept properties 
+  query s_alias() = "floating point constant (double)"; 
+  query s_shortDescription() = "floating point constant (double)"; 
+  query s_dontSubstituteByDefault() = true; 
+  query s_constant() = true; 
+} 
+ 
+concept ClassifierClassExpression extends Expression { 
+  ref Classifier classifier[1]; 
+   
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+  query s_shortDescription() = "class of node operation"; 
+} 
+ 
+concept ConceptFunction extends BaseConcept implements IMethodLike, IStatementListContainer, ScopeProvider { 
+  StatementList body[1]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+  query s_shortDescription() = "embedded block of code"; 
+   
+  # concept properties and links declarations 
+  query usesParameterObject() = "not implemented"; 
+  query showName() = "not implemented"; 
+  query conceptFunctionReturnType() = "not implemented"; 
+  query conceptFunctionThrowsType() = "not implemented"; 
+  query conceptFunctionParameter() = "not implemented"; 
+  query applicableConceptFunctionParameter() = "not implemented"; 
+} 
+ 
+concept ForeachStatement extends AbstractForStatement implements ScopeConcept { 
+  Expression iterable[1]; 
+   
+  # concept properties 
+  query s_alias() = "for"; 
+  query s_shortDescription() = "for (type name : iterable)"; 
+} 
+ 
+concept AbstractForStatement extends AbstractLoopStatement { 
+  LocalVariableDeclaration variable[0..1]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept ForStatement extends AbstractForStatement implements ScopeConcept { 
+  Expression condition[0..1]; 
+  Expression iteration[0..n]; 
+  AdditionalForLoopVariable additionalVar[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "for"; 
+  query s_shortDescription() = "for(type name = init; condition; update)"; 
+} 
+ 
+concept AbstractCreator extends BaseConcept { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept GenericNewExpression extends Expression { 
+  AbstractCreator creator[1]; 
+   
+  # concept properties 
+  query s_alias() = "new"; 
+  query s_shortDescription() = "instance creation expression"; 
+} 
+ 
+concept Visibility extends BaseConcept { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept PublicVisibility extends Visibility { 
+  # concept properties 
+  query s_alias() = "public"; 
+} 
+ 
+concept PrivateVisibility extends Visibility { 
+  # concept properties 
+  query s_alias() = "private"; 
+} 
+ 
+concept ProtectedVisibility extends Visibility { 
+  # concept properties 
+  query s_alias() = "protected"; 
+} 
+ 
+concept Closure extends ConceptFunction implements Closureoid, ScopeProvider { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept ClosureParameter extends BaseConcept implements INamedConcept, IResolveInfo { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept ClosureParameterReference extends Expression { 
+  ref ClosureParameter closureParameter[1]; 
+} 
+ 
+concept GreaterThanOrEqualsExpression extends BinaryCompareOperation { 
+  # concept properties 
+  query s_alias() = ">="; 
+  query s_shortDescription() = "greater than or equals operation"; 
+  query s_priority() = 1; 
+} 
+ 
+concept RemExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = "%"; 
+  query s_shortDescription() = "remainder operation"; 
+  query s_priority() = 3; 
+} 
+ 
+concept LessThanOrEqualsExpression extends BinaryCompareOperation { 
+  # concept properties 
+  query s_alias() = "<="; 
+  query s_shortDescription() = "less then or equals operation"; 
+  query s_priority() = 1; 
+} 
+ 
+concept TryStatement extends Statement implements IContainsStatementList, ITryCatchStatement { 
+  StatementList body[1]; 
+  StatementList finallyBody[1]; 
+  CatchClause catchClause[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "try {...} finally"; 
+} 
+ 
+concept AbstractLoopStatement extends Statement implements IContainer, IContainsStatementList, ScopeProvider { 
+  string label; 
+   
+  StatementList body[1]; 
+  LoopLabel loopLabel[0..1]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept ArrayCreatorWithInitializer extends AbstractCreator { 
+  Type componentType[1]; 
+  Expression initValue[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "array with initializer"; 
+} 
+ 
+concept Number extends BaseConcept { 
+} 
+ 
+concept AssertStatement extends Statement { 
+  Expression condition[1]; 
+  Expression message[0..1]; 
+   
+  # concept properties 
+  query s_alias() = "assert"; 
+} 
+ 
+concept ThisExpression extends Expression implements IThisExpression { 
+  ref Classifier classConcept[0..1]; 
+   
+  # concept properties 
+  query s_alias() = "this"; 
+} 
+ 
+concept TernaryOperatorExpression extends Expression { 
+  Expression condition[1]; 
+  Expression ifTrue[1]; 
+  Expression ifFalse[1]; 
+   
+  # concept properties 
+  query s_alias() = "(expr) ? (expr) : expr"; 
+  query s_shortDescription() = "ternary operator"; 
+} 
+ 
+concept SwitchStatement extends Statement implements ScopeProvider { 
+  string label; 
+   
+  Expression expression[1]; 
+  SwitchCase case[0..n]; 
+  StatementList defaultBlock[1]; 
+  LoopLabel switchLabel[0..1]; 
+   
+  # concept properties 
+  query s_alias() = "switch"; 
+} 
+ 
+concept SwitchCase extends BaseConcept { 
+  Expression expression[1]; 
+  StatementList body[1]; 
+   
+  # concept properties 
+  query s_alias() = "case"; 
+} 
+ 
+concept PrimitiveType extends Type { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept TryCatchStatement extends Statement implements IContainsStatementList, ITryCatchStatement { 
+  StatementList body[1]; 
+  CatchClause catchClause[1..n]; 
+   
+  # concept properties 
+  query s_alias() = "try {...} catch"; 
+} 
+ 
+concept CatchClause extends BaseConcept implements ScopeConcept, ScopeProvider { 
+  LocalVariableDeclaration throwable[1]; 
+  StatementList catchBody[1]; 
+} 
+ 
+concept ThrowStatement extends Statement { 
+  Expression throwable[1]; 
+   
+  # concept properties 
+  query s_alias() = "throw"; 
+} 
+ 
+concept RemarkStatement extends Statement { 
+  string value; 
+   
+  # concept properties 
+  query s_alias() = "//"; 
+  query s_shortDescription() = "remark"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept SynchronizedStatement extends Statement { 
+  Expression expression[1]; 
+  StatementList block[1]; 
+   
+  # concept properties 
+  query s_alias() = "synchronized"; 
+} 
+ 
+concept AnonymousClass extends ClassConcept implements IMethodCall, IAnonymousClass, IControlFlowInterrupter, UnitConcept, ScopeProvider { 
+  ref Classifier classifier[1]; 
+  ref ConstructorDeclaration constructorDeclaration[1]; 
+  Expression parameter[0..n]; 
+  Expression constructorArgument[0..n]; 
+  Type typeParameter[0..n]; 
+   
+  # concept properties 
+  query s_shortDescription() = "anonymous class"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept WildCardType extends Type { 
+  # concept properties 
+  query s_alias() = "?"; 
+  query s_shortDescription() = "wildcard type"; 
+} 
+ 
+concept LowerBoundType extends Type { 
+  Type bound[1]; 
+   
+  # concept properties 
+  query s_alias() = "? super"; 
+} 
+ 
+concept UpperBoundType extends Type { 
+  Type bound[1]; 
+   
+  # concept properties 
+  query s_alias() = "? extends"; 
+} 
+ 
+concept LocalStaticFieldReference extends VariableReference { 
+  ref StaticFieldDeclaration staticFieldDeclaration[0..1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "reference to local static field declaration"; 
+  query s_lvalue() = true; 
+} 
+ 
+concept LocalStaticMethodCall extends BaseMethodCall { 
+  ref StaticMethodDeclaration staticMethodDeclaration[1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "local static method invocation"; 
+  query s_substituteInAmbigousPosition() = true; 
+} 
+ 
+concept ArrayAccessExpression extends Expression { 
+  Expression array[1]; 
+  Expression index[1]; 
+   
+  # concept properties 
+  query s_alias() = "["; 
+  query s_shortDescription() = "array access expression"; 
+  query s_lvalue() = true; 
+} 
+ 
+concept CommentedStatementsBlock extends Statement implements ILocalVariableElementList, ISuppressErrors { 
+  Statement statement[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "/*"; 
+} 
+ 
+concept DoWhileStatement extends AbstractLoopStatement { 
+  Expression condition[1]; 
+   
+  # concept properties 
+  query s_alias() = "do"; 
+  query s_shortDescription() = "do... while loop"; 
+} 
+ 
+concept VarType extends Type { 
+  # concept properties 
+  query s_alias() = "var"; 
+} 
+ 
+interface concept ClassifierMember extends IVisible { 
+} 
+ 
+interface concept IVisible { 
+  Visibility visibility[0..1]; 
+} 
+ 
+concept ThisConstructorInvocation extends ConstructorInvocationStatement { 
+  # concept properties 
+  query s_alias() = "this"; 
+  query s_shortDescription() = "this constructor invocation"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept HexIntegerLiteral extends IntegerLiteral { 
+  string value; 
+   
+  # concept properties 
+  query s_alias() = "0x"; 
+} 
+ 
+concept IntegerLiteral extends Expression { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept AnonymousClassCreator extends AbstractCreator { 
+  AnonymousClass cls[1]; 
+   
+  # concept properties 
+  query s_alias() = "anonymous class"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept ArrayCreator extends AbstractCreator { 
+  Type componentType[1]; 
+  DimensionExpression dimensionExpression[1..n]; 
+   
+  # concept properties 
+  query s_alias() = "array"; 
+} 
+ 
+concept DimensionExpression extends BaseConcept { 
+  Expression expression[1]; 
+} 
+ 
+concept Annotation extends Interface { 
+  AnnotationMethodDeclaration annotationMethod[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "Annotation"; 
+  query s_shortDescription() = "Annotation declaration"; 
+} 
+ 
+concept AnnotationMethodDeclaration extends InstanceMethodDeclaration { 
+  Expression defaultValue[0..1]; 
+} 
+ 
+concept AnnotationInstance extends Expression implements ScopeProvider { 
+  AnnotationInstanceValue value[0..n]; 
+  ref Annotation annotation[1]; 
+} 
+ 
+interface concept HasAnnotation { 
+  AnnotationInstance annotation[0..n]; 
+} 
+ 
+concept AnnotationInstanceExpression extends Expression { 
+  AnnotationInstance annotationInstance[1]; 
+   
+  # concept properties 
+  query s_alias() = "annotation instance"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept AnnotationInstanceValue extends BaseConcept { 
+  Expression value[1]; 
+  ref AnnotationMethodDeclaration key[1]; 
+} 
+ 
+concept ArrayLiteral extends Expression { 
+  Expression item[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "{"; 
+  query s_shortDescription() = "array literal"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+interface concept IMemberContainer { 
+} 
+ 
+concept DotExpression extends Expression { 
+  Expression operand[1]; 
+  IOperation operation[1]; 
+   
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+  query s_lvalue() = true; 
+} 
+ 
+interface concept IOperation { 
+  # concept properties and links declarations 
+  query lvalue() = "not implemented"; 
+  query returnType() = "not implemented"; 
+} 
+ 
+concept FieldReferenceOperation extends BaseConcept implements IOperation { 
+  ref FieldDeclaration fieldDeclaration[1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "instance field reference"; 
+  query s_lvalue() = true; 
+} 
+ 
+interface concept IStatementListContainer { 
+} 
+ 
+concept CharConstant extends Expression { 
+  string charConstant; 
+   
+  # concept properties 
+  query s_alias() = "'"; 
+  query s_shortDescription() = "char constant"; 
+  query s_constant() = true; 
+} 
+ 
+interface concept TypeDerivable { 
+} 
+ 
+concept Property extends BaseConcept implements ClassifierMember, INamedConcept { 
+  string propertyName; 
+   
+  Type type[1]; 
+  PropertyImplementation propertyImplementation[1]; 
+} 
+ 
+concept PropertyImplementation extends BaseConcept { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept DefaultPropertyImplementation extends PropertyImplementation { 
+  DefaultGetAccessor defaultGetAccessor[1]; 
+  DefaultSetAccessor defaultSetAccessor[1]; 
+   
+  # concept properties 
+  query s_alias() = "default"; 
+} 
+ 
+concept PropertyReference extends BaseConcept implements IOperation { 
+  ref Property property[1]; 
+} 
+ 
+concept CustomPropertyImplementation extends PropertyImplementation { 
+  GetAccessor getAccessor[1]; 
+  SetAccessor setAccessor[0..1]; 
+   
+  # concept properties 
+  query s_alias() = "custom"; 
+} 
+ 
+concept GetAccessor extends BaseConcept { 
+  StatementList statementList[1]; 
+} 
+ 
+concept SetAccessor extends BaseConcept { 
+  StatementList statementList[1]; 
+   
+  # concept properties 
+  query s_alias() = "setter"; 
+} 
+ 
+concept ValueParameter extends Expression { 
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+  query s_alias() = "value"; 
+} 
+ 
+concept DefaultGetAccessor extends BaseConcept { 
+} 
+ 
+concept DefaultSetAccessor extends BaseConcept { 
+  Visibility visibility[0..1]; 
+} 
+ 
+concept InstanceMethodCallOperation extends BaseConcept implements IOperation, IMethodCall { 
+  ref InstanceMethodDeclaration instanceMethodDeclaration[1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "instance method call"; 
+  query s_substituteInAmbigousPosition() = true; 
+} 
+ 
+interface concept IMethodCall extends TypeDerivable, TypeAnnotable { 
+  Expression actualArgument[0..n]; 
+  Type typeArgument[0..n]; 
+  ref BaseMethodDeclaration baseMethodDeclaration[1]; 
+} 
+ 
+concept NullType extends PrimitiveType { 
+  # concept properties 
+  query s_alias() = "nulltype"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+interface concept IInternalType { 
+} 
+ 
+concept ElsifClause extends BaseConcept { 
+  Expression condition[1]; 
+  StatementList statementList[1]; 
+} 
+ 
+concept InstanceInitializer extends BaseConcept implements ClassifierMember, IStatementListContainer { 
+  StatementList statementList[1]; 
+} 
+ 
+interface concept Closureoid { 
+} 
+ 
+concept AbstractOperation extends BaseConcept implements IOperation { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept ArrayLengthOperation extends BaseConcept implements IOperation { 
+  # concept properties 
+  query s_alias() = "length"; 
+  query s_shortDescription() = "array length readonly property"; 
+} 
+ 
+interface concept IValidIdentifier extends INamedConcept { 
+} 
+ 
+concept ClassCreator extends AbstractCreator implements IMethodCall { 
+  ref ConstructorDeclaration constructorDeclaration[0..1]; 
+  Type typeParameter[0..n]; 
+} 
+ 
+concept PostfixIncrementExpression extends AbstractUnaryNumberOperation { 
+  # concept properties 
+  query s_alias() = "postfix increment"; 
+} 
+ 
+concept PostfixDecrementExpression extends AbstractUnaryNumberOperation { 
+  # concept properties 
+  query s_alias() = "postfix decrement"; 
+} 
+ 
+concept BaseAssignmentExpression extends Expression { 
+  Expression lValue[1]; 
+  Expression rValue[1]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept PlusAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "+="; 
+} 
+ 
+concept MinusAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "-="; 
+} 
+ 
+concept VariableArityType extends Type { 
+  Type componentType[1]; 
+} 
+ 
+interface concept IExtractMethodAvailable { 
+} 
+ 
+concept StaticInitializer extends BaseConcept { 
+  StatementList statementList[1]; 
+} 
+ 
+interface concept IStaticContainerForMethods { 
+} 
+ 
+interface concept IVariableAssignment { 
+} 
+ 
+concept AsExpression extends Expression { 
+  Expression expression[1]; 
+  ClassifierType classifierType[1]; 
+   
+  # concept properties 
+  query s_alias() = "as"; 
+  query s_shortDescription() = "type case expression or return null"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept UsingStatement extends Statement { 
+  Expression resource[1..n]; 
+  StatementList body[1]; 
+   
+  # concept properties 
+  query s_alias() = "using(...)"; 
+} 
+ 
+concept EnumValuesExpression extends Expression { 
+  ref EnumClass enumClass[1]; 
+   
+  # concept properties 
+  query s_alias() = "values"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept BitwiseXorExpression extends BinaryBitwiseOperation { 
+  # concept properties 
+  query s_alias() = "^"; 
+  query s_priority() = 9; 
+} 
+ 
+concept EnumValueOfExpression extends Expression { 
+  Expression value[1]; 
+  ref EnumClass enumClass[1]; 
+   
+  # concept properties 
+  query s_alias() = "valueOf"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept BinaryBitwiseOperation extends BinaryOperation { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept BitwiseOrExpression extends BinaryBitwiseOperation { 
+  # concept properties 
+  query s_alias() = "|"; 
+  query s_priority() = 10; 
+} 
+ 
+concept BitwiseAndExpression extends BinaryBitwiseOperation { 
+  # concept properties 
+  query s_alias() = "&"; 
+  query s_priority() = 8; 
+} 
+ 
+interface concept IThisExpression { 
+} 
+ 
+interface concept IBLDeprecatable extends IDeprecatable { 
+  bool isDeprecated; 
+} 
+ 
+concept StringType extends Type { 
+  # concept properties 
+  query s_alias() = "string"; 
+} 
+ 
+concept NPENotEqualsExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = ":ne:"; 
+  query s_shortDescription() = "NPE-safe not equals operation"; 
+  query s_priority() = 4; 
+} 
+ 
+concept NPEEqualsExpression extends BinaryOperation { 
+  # concept properties 
+  query s_alias() = ":eq:"; 
+  query s_shortDescription() = "NPE-safe equals operation"; 
+  query s_priority() = 4; 
+} 
+ 
+concept BaseStringOperation extends BaseConcept implements IOperation { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept IsEmptyOperation extends StringBooleanOperation { 
+  # concept properties 
+  query s_alias() = "isEmpty"; 
+  query s_shortDescription() = "string is null or empty"; 
+} 
+ 
+concept IsNotEmptyOperation extends StringBooleanOperation { 
+  # concept properties 
+  query s_alias() = "isNotEmpty"; 
+  query s_shortDescription() = "string is not null and not empty"; 
+} 
+ 
+concept StringBooleanOperation extends BaseStringOperation { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept SubstringExpression extends Expression { 
+  Expression operand[1]; 
+  Expression startIndex[0..1]; 
+  Expression endIndex[0..1]; 
+   
+  # concept properties 
+  query s_alias() = "["; 
+  query s_shortDescription() = "substing"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+enum TrimKind { 
+  both, 
+  leading, 
+  trailing 
+} 
+ 
+concept TrimOperation extends BaseStringOperation { 
+  TrimKind trimKind; 
+   
+  # concept properties 
+  query s_alias() = "trim"; 
+  query s_shortDescription() = "trim white spaces, line breaks, tabs, etc."; 
+} 
+ 
+interface concept IParameter { 
+} 
+ 
+concept ShiftLeftExpression extends BinaryBitwiseOperation { 
+  # concept properties 
+  query s_alias() = "<<"; 
+  query s_priority() = 5; 
+} 
+ 
+concept ShiftRightExpression extends BinaryBitwiseOperation { 
+  # concept properties 
+  query s_alias() = ">>"; 
+  query s_priority() = 5; 
+} 
+ 
+concept BitwiseNotExpression extends Expression { 
+  Expression expression[1]; 
+   
+  # concept properties 
+  query s_alias() = "~(expr)"; 
+  query s_shortDescription() = "bitwise not-expression"; 
+} 
+ 
+concept CommentedStatement extends Statement { 
+  Statement statement[0..1]; 
+   
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+interface concept TypeAnnotable { 
+} 
+ 
+interface concept IContainsStatementList { 
+} 
+ 
+interface concept ILocalVariableElement { 
+} 
+ 
+interface concept ILocalVariableElementList { 
+} 
+ 
+interface concept IMethodLike { 
+} 
+ 
+concept BinaryCompareOperation extends BinaryOperation { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept PrefixIncrementExpression extends AbstractUnaryNumberOperation { 
+  # concept properties 
+  query s_alias() = "++"; 
+} 
+ 
+concept PrefixDecrementExpression extends AbstractUnaryNumberOperation { 
+  # concept properties 
+  query s_alias() = "--"; 
+} 
+ 
+concept AbstractUnaryNumberOperation extends Expression { 
+  Expression expression[1]; 
+} 
+ 
+concept BLBottomType extends Type { 
+  # concept properties 
+  query s_alias() = "BLBottom"; 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept ConstructorInvocationStatement extends Statement implements IMethodCall { 
+  ref ConstructorDeclaration constructorDeclaration[1]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept LongLiteral extends Expression { 
+  string value; 
+   
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept FloatingPointFloatConstant extends Expression { 
+  string value; 
+   
+  # concept properties 
+  query s_alias() = "floating point constant (float)"; 
+  query s_shortDescription() = "floating point constant (float)"; 
+  query s_dontSubstituteByDefault() = true; 
+  query s_constant() = true; 
+} 
+ 
+concept UnaryMinus extends AbstractUnaryNumberOperation { 
+  # concept properties 
+  query s_alias() = "-"; 
+  query s_shortDescription() = "unary minus"; 
+} 
+ 
+concept PlaceholderMethodDeclaration extends InstanceMethodDeclaration { 
+  # concept properties 
+  query s_alias() = "empty line"; 
+} 
+ 
+concept BaseVariableDeclaration extends BaseConcept implements IValidIdentifier { 
+  Type type[1]; 
+} 
+ 
+concept BaseVariableReference extends Expression { 
+  ref BaseVariableDeclaration baseVariableDeclaration[1]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept LoopLabel extends BaseConcept implements LocalToMethodKind, INamedConcept { 
+} 
+ 
+concept LoopLabelReference extends BaseConcept { 
+  ref LoopLabel loopLabel[1]; 
+} 
+ 
+concept SingleLineComment extends Statement implements ScopeProvider { 
+  CommentPart commentPart[0..n]; 
+   
+  # concept properties 
+  query s_alias() = "//"; 
+  query s_shortDescription() = "single-line comment"; 
+} 
+ 
+concept CommentPart extends BaseConcept implements ISuppressErrors { 
+  # concept properties 
+  query s_abstract() = true; 
+} 
+ 
+concept TextCommentPart extends CommentPart { 
+  string text; 
+} 
+ 
+concept StatementCommentPart extends CommentPart { 
+  Statement commentedStatement[1]; 
+} 
+ 
+concept MulAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "*="; 
+} 
+ 
+concept DivAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "/="; 
+} 
+ 
+concept RemAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "%="; 
+} 
+ 
+concept OrAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "|="; 
+} 
+ 
+concept AndAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "&="; 
+} 
+ 
+concept XorAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "^="; 
+} 
+ 
+concept LeftShiftAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = "<<="; 
+} 
+ 
+concept RightShiftAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = ">>="; 
+} 
+ 
+concept AdditionalForLoopVariable extends LocalVariableDeclaration { 
+} 
+ 
+concept AbstractClassifierReference extends Expression { 
+  ref Classifier classifier[1]; 
+} 
+ 
+concept ImplicitAnnotationInstanceValue extends AnnotationInstanceValue { 
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept PrimitiveClassExpression extends Expression { 
+  PrimitiveType primitiveType[1]; 
+   
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+interface concept IVariableDeclaration extends INamedConcept { 
+} 
+ 
+interface concept ITryCatchStatement { 
+} 
+ 
+concept LocalInstanceMethodCall extends BaseMethodCall { 
+  ref InstanceMethodDeclaration instanceMethodDeclaration[1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "local instance method call"; 
+} 
+ 
+concept LocalInstanceFieldReference extends VariableReference { 
+  ref FieldDeclaration fieldDeclaration[1]; 
+   
+  # concept properties 
+  query s_shortDescription() = "local instance field reference"; 
+  query s_lvalue() = true; 
+} 
+ 
+interface concept ILocalDeclaration { 
+} 
+ 
+interface concept ILocalReference { 
+} 
+ 
+concept ArrayCloneOperation extends BaseConcept implements IOperation { 
+  # concept properties 
+  query s_alias() = "clone()"; 
+  query s_shortDescription() = "special public method of array"; 
+} 
+ 
+concept UnresolvedNameReference extends Expression { 
+  string resolveName; 
+   
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept StubStatementList extends StatementList { 
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+} 
+ 
+concept OperationAssignmentExpression extends BaseAssignmentExpression { 
+} 
+ 
+interface concept IControlFlowInterrupter { 
+} 
+ 
+interface concept IWillBeClassifier { 
+} 
+ 
+concept EscapeOperation extends BaseStringOperation { 
+  # concept properties 
+  query s_alias() = "escape"; 
+  query s_shortDescription() = "escape quotation marks, back slashes, etc."; 
+} 
+ 
+concept UndefinedType extends Type { 
+  # concept properties 
+  query s_dontSubstituteByDefault() = true; 
+  query s_alias() = "undefined"; 
+  query s_shortDescription() = "undefined type"; 
+} 
+ 
+interface concept IFinalWrapper { 
+} 
+ 
+interface concept IAnonymousClass { 
+} 
+ 
+concept ShiftRightUnsignedExpression extends BinaryBitwiseOperation { 
+  # concept properties 
+  query s_alias() = ">>>"; 
+  query s_priority() = 5; 
+} 
+ 
+concept UnsignedRightShiftAssignmentExpression extends OperationAssignmentExpression { 
+  # concept properties 
+  query s_alias() = ">>>="; 
+} 
+ 
+interface concept IVariableReference { 
+} 
+ 
+interface concept ISkipsReturn { 
+} 
+ 
+concept LocalPropertyReference extends Expression { 
+  ref Property property[1]; 
+} 
+ 
+interface concept ContextClassifierKind { 
+} 
+ 
+interface concept ImplicitAnnotationMethodKind { 
+} 
+ 
+interface concept SuperMethodKind { 
+} 
+ 
+interface concept StaticKind { 
+} 
+ 
+interface concept ThisConstructorKind { 
+} 
+ 
+interface concept LocalToMethodKind { 
+} 
+ 
+interface concept SuperConstructorKind { 
+} 
+ 
+concept ArrayClassExpression extends Expression { 
+  ArrayType arrayType[1]; 
+}
+
+### traceable
+structure of jetbrains.mps.lang.traceable 
+ 
+interface concept ScopeConcept { 
+} 
+ 
+interface concept TraceableConcept { 
+} 
+ 
+interface concept UnitConcept { 
+}
+
+### core
+structure of jetbrains.mps.lang.core 
+ 
+concept BaseConcept extends BaseConcept { 
+  string shortDescription; 
+  string alias; 
+  string virtualPackage; 
+   
+  Attribute smodelAttribute[0..n]; 
+   
+  # concept properties 
+  query s_abstract() = true; 
+   
+  # concept properties and links declarations 
+  query abstract() = "not implemented"; 
+  query final() = "not implemented"; 
+  query alias() = "not implemented"; 
+  query shortDescription() = "not implemented"; 
+  query dontSubstituteByDefault() = "not implemented"; 
+  query deprecated104() = "not implemented"; 
+  query substituteInAmbigousPosition() = "not implemented"; 
+} 
+ 
+interface concept INamedConcept { 
+  string name; 
+} 
+ 
+interface concept IResolveInfo { 
+  string resolveInfo; 
+} 
+ 
+interface concept IWrapper { 
+} 
+ 
+interface concept IDeprecatable { 
+} 
+ 
+interface concept IContainer { 
+} 
+ 
+interface concept IType { 
+} 
+ 
+interface concept IMetaLevelChanger { 
+} 
+ 
+concept ExportScope extends NodeAttribute { 
+  # concept properties 
+  query s_abstract() = true; 
+  query s_role() = "export"; 
+   
+  # concept links 
+  query s_attributed() = "todo, need quotation to query lang"; 
+} 
+ 
+concept ExportScopePublic extends ExportScope { 
+  # concept properties 
+  query s_alias() = "@export(public)"; 
+} 
+ 
+concept ExportScopeNamespace extends ExportScope { 
+  string namespace; 
+   
+  # concept properties 
+  query s_alias() = "@export(namespace)"; 
+} 
+ 
+concept ExportScopeModule extends ExportScope { 
+  # concept properties 
+  query s_alias() = "@export(module)"; 
+} 
+ 
+concept Attribute extends BaseConcept { 
+  # concept properties 
+  query s_abstract() = true; 
+   
+  # concept properties and links declarations 
+  query role() = "not implemented"; 
+  query multiple() = "not implemented"; 
+  query attributed() = "not implemented"; 
+} 
+ 
+concept LinkAttribute extends Attribute { 
+  string linkRole; 
+} 
+ 
+concept NodeAttribute extends Attribute { 
+} 
+ 
+concept PropertyAttribute extends Attribute { 
+  string propertyName; 
+} 
+ 
+interface concept ScopeProvider { 
+} 
+ 
+interface concept IAntisuppressErrors { 
+} 
+ 
+interface concept ICanSuppressErrors { 
+} 
+ 
+interface concept ISuppressErrors { 
+} 
+ 
+concept SuppressErrorsAnnotation extends NodeAttribute implements ISuppressErrors { 
+  # concept properties 
+  query s_role() = "suppress"; 
+   
+  # concept links 
+  query s_attributed() = "todo, need quotation to query lang"; 
+}
