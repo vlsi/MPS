@@ -47,6 +47,8 @@
   <extensions defaultExtensionNs="com.intellij">
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <mps.LanguageLibrary dir="/languages"/>
+    <mps.LanguageLibrary dir="/platform"/>
+    <mps.LanguageLibrary dir="/workbench"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <mps.VisibleModuleMask mask="Ant"/>
     <mps.VisibleModuleMask mask="closures.*"/>
