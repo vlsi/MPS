@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.repository.reference;
+package org.jetbrains.mps.openapi.reference;
 
-import org.jetbrains.mps.openapi.repository.SRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public abstract class SEntityReference<T> {
   protected static String DELIM = "#";

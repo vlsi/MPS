@@ -18,7 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
+import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 public interface SNode {
   SNodeId getId();

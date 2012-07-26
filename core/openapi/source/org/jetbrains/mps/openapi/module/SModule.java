@@ -18,8 +18,7 @@ package org.jetbrains.mps.openapi.module;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.repository.SRepository;
-import org.jetbrains.mps.openapi.repository.reference.SModuleReference;
+import org.jetbrains.mps.openapi.reference.SModuleReference;
 
 import java.util.Collection;
 
