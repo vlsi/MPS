@@ -24,37 +24,37 @@ import org.jetbrains.mps.openapi.repository.reference.SNodeReference;
 public interface SNode {
   SNodeId getId();
 
-  //not orthogonal
-  SNodeReference getReference();
-
-  SConcept getConcept();        //why not string?
-
-  //not orthogonal
-  SLink getContainingLink();
-
-  boolean isRoot();
+  SConcept getConcept();
 
   SModel getModel();
 
+  String getPresentation();
+
+  String getName();
+
+  // node tree manipulations
+
   SNode getParent();
 
-  //not orthogonal
-  SNode getContainingRoot();
+  SNode getPrevSibling();
 
-  //change to getRoleOf(child)
-  String getRole();
+  SNode getNextSibling();
 
-  SNode getLeftSibling();  //prev
+  void setNextSibling(SNode newSibling);
 
-  SNode getRightSibling();  //next
-
-  // modifications
-
-  void addNextSibling(SNode newSibling);
-
-  void addPrevSibling(SNode newSibling);
+  void setPrevSibling(SNode newSibling);
 
   void delete();
+
+  // children
+
+  String getRoleOf(SNode child);
+
+  Iterable<SNode> getChildren(@Nullable String role);
+
+  void setChild(String role, SNode childNode);
+
+  void insertAfter(String role, SNode child, @Nullable SNode anchorChild);
 
   // props
 
@@ -64,70 +64,11 @@ public interface SNode {
 
   void setProperty(String propertyName, String propertyValue);
 
-  // single
-
-  SNode getChild(String role);
-
-  void setChild(String role, SNode childNode);
-
-  // multiple
-
-  //not orthogonal
-  void addChild(String role, SNode child);
-
-  void removeChild(SNode wasChild);
-
-  //why role?
-  void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore);
-
-  //not orthogonal, no performance reasoning
-  void replaceChild(SNode oldChild, Iterable<SNode> newChildren);
-
-  //performance(not really)? Do we really need it? The bad thing is that it works o(n)
-  int getChildCount(String role);
-
-  //performance(not really)? Do we really need it? The bad thing is that it works o(n)
-  int getChildCount();
-
-  //index of child in role? why no back operation?
-  int getIndexOfChild(SNode child);
-
-  // children
-
-  @NotNull
-  Iterable<SNode> getChildren();
-
-  @NotNull
-  Iterable<SNode> getChildren(String role);
-
-  // name
-
-  String getPresentation();
-
-  //??
-  void setName(String name);
-
-  String getName();
-
   // refs
 
-//  //o(n), dup
-//  SReference getReference(String role);
-//
-//  SReference setReferenceTarget(String role, SNode target);
-//
-//  SNode getReferenceTarget(String role);
-//
-//  void addReference(SReference reference);
-//
-//  void replaceReference(SReference reference, @NotNull SReference referenceToAdd);
+  void setReference(String role, @Nullable SReference ref);
 
-
-  void setReference(SReference ref);
-
-  SReference removeReference (String role);
-
-  //----------------
+  SReference getReference(String role);
 
   Iterable<SReference> getReferences();
 
@@ -136,9 +77,4 @@ public interface SNode {
   Object getUserObject(Object key);
 
   void putUserObject(Object key, @Nullable Object value);
-
-  void removeAllUserObjects();
-
-  Iterable<Object> getUserObjectsKeys();
-
 }
