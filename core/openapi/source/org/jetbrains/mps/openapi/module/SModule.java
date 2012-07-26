@@ -33,4 +33,6 @@ public interface SModule {
   Collection<LLanguage> getUsedLanguages();
 
   SModel resolveModel(SModelId ref);
+
+  SModel getOwnModel(SModelId id);
 }

@@ -16,8 +16,24 @@
 package org.jetbrains.mps.openapi.repository.reference;
 
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.repository.SRepository;
 
-//class?
-public interface SModelReference extends SReference<SModel> {
+public final class SModelReference implements SReference<SModel> {
+  private SModuleReference myModule;
 
+  private SModelId myId;
+  private String myPresentation;
+
+  public SModuleReference getModule() {
+    return myModule;
+  }
+
+  public String getPresentation() {
+    return myModule.getPresentation() + SReference.DELIM + myPresentation;
+  }
+
+  public SModel resolve(SRepository repo) {
+    return myModule.resolve(repo).getOwnModel(myId);
+  }
 }

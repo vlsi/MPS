@@ -16,8 +16,18 @@
 package org.jetbrains.mps.openapi.repository.reference;
 
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.repository.SRepository;
 
-//class?
-public interface SModuleReference extends SReference<SModule> {
+public final class SModuleReference implements SReference<SModule> {
+  private SModuleId myId;
+  private String myPresentation;
 
+  public String getPresentation() {
+    return myPresentation;
+  }
+
+  public SModule resolve(SRepository repo) {
+    return repo.getModule(myId);
+  }
 }

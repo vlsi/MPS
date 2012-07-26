@@ -18,6 +18,8 @@ package org.jetbrains.mps.openapi.repository.reference;
 import org.jetbrains.mps.openapi.repository.SRepository;
 
 public interface SReference<T> {
+  String DELIM = "#";
+
   String getPresentation();
 
   T resolve(SRepository repo);
