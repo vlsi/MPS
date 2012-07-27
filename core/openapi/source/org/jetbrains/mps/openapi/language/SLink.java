@@ -28,7 +28,7 @@ public interface SLink {
 
   boolean isOptional();
 
-  SConcept getTargetConcept();
+  SAbstractConcept getTargetConcept();
 
   SScope getScope();
 }
