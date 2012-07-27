@@ -455,7 +455,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       if ("node".equals(tagName)) {
         SNode child = (SNode) value;
-        result.addChild(child.getRole_(), child);
+        result.addChild(child.getRole(), child);
         return;
       }
       super.handleChild(resultObject, tagName, value);
