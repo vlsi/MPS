@@ -31,8 +31,6 @@ public interface SNode {
 
   String getName();
 
-  SLink getContainingLink();
-
   boolean isRoot();
 
   SModel getModel();
