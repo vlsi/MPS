@@ -22,6 +22,7 @@ import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLink;
 
 import java.util.Set;
 
@@ -29,7 +30,7 @@ import java.util.Set;
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
  */
-public abstract class SReference {
+public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
 
   private String myRole;
@@ -186,5 +187,23 @@ public abstract class SReference {
     public String getMessage() {
       return myMessage;
     }
+  }
+
+  @Override
+  public SLink getLink() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SModel getTargetModel() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public String getText() {
+    // TODO API (implement)
+    return null;
   }
 }

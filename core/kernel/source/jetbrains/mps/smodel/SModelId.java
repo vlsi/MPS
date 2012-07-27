@@ -19,7 +19,7 @@ import jetbrains.mps.util.InternUtil;
 
 import java.util.UUID;
 
-public abstract class SModelId {
+public abstract class SModelId implements org.jetbrains.mps.openapi.model.SModelId {
   private static final String REGULAR_PREFIX = "r:";
   private static final String FOREIGN_PREFIX = "f:";
 

@@ -32,12 +32,15 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
-public final class SNode {
+public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   @Deprecated
@@ -57,15 +60,6 @@ public final class SNode {
   }
 
   private String myRoleInParent;
-  private SNode myParent;
-
-  /**
-   * access only in getFirstChild()
-   */
-  private SNode myFirstChild;
-
-  private SNode myNextSibling;  // == null only for the last child in the list
-  private SNode myPrevSibling;  // notNull, myFirstChild.myPrevSibling = the last child
   private SReference[] myReferences = SReference.EMPTY_ARRAY;
 
   private String[] myProperties = null;
@@ -101,21 +95,23 @@ public final class SNode {
 
     SModel wasModel = myModel;
     myModel = newModel;
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.changeModel(newModel);
     }
   }
 
   public boolean isRoot() {
-    return myRegisteredInModelFlag && myParent == null && myModel.isRoot(this);
+    return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
   }
 
-  public void addNextSibling(SNode newSibling) {
-    myParent.insertChild(this, myRoleInParent, newSibling);
+  @Override
+  public void addNextSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
+    getParent().insertChild(this, myRoleInParent, (SNode) newSibling);
   }
 
-  public void addPrevSibling(SNode newSibling) {
-    myParent.insertChild(this, myRoleInParent, newSibling, true);
+  @Override
+  public void addPrevSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
+    getParent().insertChild(this, myRoleInParent, (SNode) newSibling, true);
   }
 
   public SModel getModel() {
@@ -168,7 +164,7 @@ public final class SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       String roleOf = child.getRole_();
       assert roleOf != null;
       if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
@@ -212,12 +208,12 @@ public final class SNode {
 
   @NotNull
   public final SNode getTopmostAncestor() {
-    SNode current = this;
-    while (current.myParent != null) {
-      assert current != current.myParent;
-      current = current.myParent;
+    SNodeBase current = this;
+    while (current.treeParent() != null) {
+      assert current != current.treeParent();
+      current = current.treeParent();
     }
-    return current;
+    return (SNode) current;
   }
 
   public SNode getContainingRoot() {
@@ -227,14 +223,14 @@ public final class SNode {
 
     while (true) {
       current.fireNodeReadAccess();
-      if (current.myParent == null) {
+      if (current.treeParent() == null) {
         if (getModel().isRoot(current)) {
           return current;
         } else {
           return null;
         }
       } else {
-        current = current.myParent;
+        current = (SNode) current.treeParent();
       }
     }
   }
@@ -244,14 +240,15 @@ public final class SNode {
     if (includeThis) {
       result.add(this);
     }
-    if (myParent != null) {
-      result.addAll(myParent.getAncestors(true));
+    SNode parent = getParent();
+    if (parent != null) {
+      result.addAll(parent.getAncestors(true));
     }
     return result;
   }
 
   public void replaceChild(SNode oldChild, SNode newChild) {
-    SNode anchor = oldChild == getFirstChild() ? null : oldChild.myPrevSibling;
+    SNodeBase anchor = oldChild == firstChild() ? null : oldChild.treePrevious();
     String role = oldChild.getRole_();
     assert role != null;
     // old and new child can have the same node Id
@@ -261,7 +258,7 @@ public final class SNode {
   }
 
   public void replaceChild(SNode oldChild, List<SNode> newChildren) {
-    assert oldChild.myParent == this;
+    assert oldChild.treeParent() == this;
     String oldChildRole = oldChild.getRole_();
     assert oldChildRole != null;
     SNode prevChild = oldChild;
@@ -290,6 +287,11 @@ public final class SNode {
   }
 
   public String getRole_() {
+    return myRoleInParent;
+  }
+
+  @Override
+  public String getRole() {
     return myRoleInParent;
   }
 
@@ -497,7 +499,7 @@ public final class SNode {
   }
 
   final public SNode getParent() {
-    return myParent;
+    return (SNode) treeParent();
   }
 
   private void enforceModelLoad() {
@@ -506,12 +508,13 @@ public final class SNode {
   }
 
   //all access to myFirstChild should be via this method
-  private SNode getFirstChild() {
+  protected SNode firstChild() {
     enforceModelLoad();
-    return myFirstChild;
+    return (SNode) super.firstChild();
   }
 
-  public void setChild(String role, SNode childNode) {
+  @Override
+  public void setChild(String role, org.jetbrains.mps.openapi.model.SNode childNode) {
     SNode oldChild = getChild(role);
     if (oldChild != null) {
       removeChild(oldChild);
@@ -530,7 +533,7 @@ public final class SNode {
     int count = 0;
     SNode foundChild = null;
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (role.equals(child.getRole_())) {
         foundChild = child;
         count++;
@@ -549,7 +552,7 @@ public final class SNode {
   }
 
   public SNode getChildAt(int index) {
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (index-- == 0) {
         return child;
       }
@@ -557,14 +560,15 @@ public final class SNode {
     return null;
   }
 
-  public void addChild(String role, SNode child) {
-    SNode firstChild = getFirstChild();
-    insertChild(firstChild == null ? null : firstChild.myPrevSibling, role, child);
+  @Override
+  public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
+    SNode firstChild = firstChild();
+    insertChild(firstChild == null ? null : firstChild.treePrevious(), role, (SNode) child);
   }
 
-  public void insertChild(SNode anchorChild, String role, SNode child, boolean insertBefore) {
+  public void insertChild(SNodeBase anchorChild, String role, SNode child, boolean insertBefore) {
     if (insertBefore) {
-      insertChild(getFirstChild() == anchorChild ? null : anchorChild.myPrevSibling, role, child);
+      insertChild(firstChild() == anchorChild ? null : anchorChild.treePrevious(), role, child);
     } else {
       insertChild(anchorChild, role, child);
     }
@@ -577,7 +581,7 @@ public final class SNode {
     int count = 0;
 
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (role.equals(child.getRole_())) {
         count++;
       } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
@@ -596,7 +600,7 @@ public final class SNode {
     if (role_ == null) return -1;
     int count = 0;
 
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (child == child_) return count;
       if (role_.equals(child.getRole_())) {
         count++;
@@ -617,7 +621,7 @@ public final class SNode {
     return new Iterable<SNode>() {
       public Iterator<SNode> iterator() {
         return new Iterator<SNode>() {
-          private SNode current = getFirstChild();
+          private SNode current = firstChild();
 
           public boolean hasNext() {
             return current != null;
@@ -625,7 +629,7 @@ public final class SNode {
 
           public SNode next() {
             SNode result = current;
-            current = current.myNextSibling;
+            current = current.nextSibling();
             return result;
           }
 
@@ -642,7 +646,7 @@ public final class SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
-    SNode firstChild = getFirstChild();
+    SNode firstChild = firstChild();
     if (includeAttributes) {
       return new ChildrenList(firstChild);
     } else {
@@ -663,7 +667,7 @@ public final class SNode {
 
     int count = 0;
 
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       count++;
     }
     return count;
@@ -682,12 +686,12 @@ public final class SNode {
     }
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    SNode firstChild = getFirstChild();
+    SNode firstChild = firstChild();
     if (firstChild == null) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
 
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = firstChild; child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild; child != null; child = child.nextSibling()) {
       if (role.equals(child.getRole_())) {
         result.add(child);
         child.fireNodeReadAccess();
@@ -725,13 +729,15 @@ public final class SNode {
    * <p/>
    * Differs from {@link SNode#delete()}.
    *
-   * @param wasChild
+   * @param child
    */
-  public void removeChild(SNode wasChild) {
-    if (wasChild.myParent != this) return;
+  @Override
+  public void removeChild(org.jetbrains.mps.openapi.model.SNode child) {
+    if (child.getParent() != this) return;
     ModelChange.assertLegalNodeChange(this);
-    final String wasRole = wasChild.getRole_();
-    SNode anchor = getFirstChild() == wasChild ? null : wasChild.myPrevSibling;
+    final SNode wasChild = (SNode) child;
+    final String wasRole = wasChild.getRole();
+    SNodeBase anchor = firstChild() == wasChild ? null : wasChild.treePrevious();
 
     assert wasRole != null;
     SModel model = getModel();
@@ -740,7 +746,7 @@ public final class SNode {
     }
 
     children_remove(wasChild);
-    wasChild.myRoleInParent = null;
+    wasChild.setRoleInParent(null);
     wasChild.unRegisterFromModel();
 
     if (model == null) return;
@@ -752,7 +758,7 @@ public final class SNode {
     }
   }
 
-  public void insertChild(final SNode anchor, String _role, final SNode child) {
+  public void insertChild(final SNodeBase anchor, String _role, final SNode child) {
     enforceModelLoad();
 
     if (ourMemberAccessModifier != null) {
@@ -776,7 +782,7 @@ public final class SNode {
     ModelChange.assertLegalNodeChange(this);
 
     children_insertAfter(anchor, child);
-    child.myRoleInParent = InternUtil.intern(role);
+    child.setRoleInParent(role);
 
     SModel model = getModel();
     if (isRegistered()) {
@@ -805,7 +811,7 @@ public final class SNode {
 
     myModel.unregisterNode(this);
 
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.unRegisterFromModel();
     }
   }
@@ -829,7 +835,7 @@ public final class SNode {
       UnregisteredNodesWithAdapters.getInstance().remove(this);
     }
 
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.registerInModel(model);
     }
   }
@@ -889,6 +895,11 @@ public final class SNode {
 
   public SReference setReferent(String role, SNode newReferent) {
     return setReferent(role, newReferent, true);
+  }
+
+  @Override
+  public void setReferenceTarget(String role, org.jetbrains.mps.openapi.model.SNode target) {
+    setReferent(role, (SNode) target);
   }
 
   public SReference setReferent(String role, SNode newReferent, boolean useHandler) {
@@ -978,6 +989,11 @@ public final class SNode {
     return result;
   }
 
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getReferenceTarget(String role) {
+    return getReferent(role);
+  }
+
   public SReference getReference(String role) {
     ModelAccess.assertLegalRead(this);
     if (ourMemberAccessModifier != null) {
@@ -1008,6 +1024,11 @@ public final class SNode {
     insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
   }
 
+  @Override
+  public void setReference(org.jetbrains.mps.openapi.model.SReference reference) {
+    addReference((SReference) reference);
+  }
+
   public void removeReferent(String role) {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
@@ -1023,7 +1044,7 @@ public final class SNode {
     }
   }
 
-  public void removeReference(SReference referenceToRemove) {
+  public void removeReference(org.jetbrains.mps.openapi.model.SReference referenceToRemove) {
     if (myReferences != null) {
       for (SReference reference : myReferences) {
         if (reference.equals(referenceToRemove)) {
@@ -1104,7 +1125,7 @@ public final class SNode {
   }
 
   /**
-   * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(SNode)}.
+   * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
    */
   public void delete() {
     delete_internal();
@@ -1141,7 +1162,7 @@ public final class SNode {
 
 
   public boolean isDeleted() {
-    return (_reference().size() == 0) && myParent == null && !getModel().isRoot(this);
+    return (_reference().size() == 0) && getParent() == null && !getModel().isRoot(this);
   }
 
   public String getDebugText() {
@@ -1177,6 +1198,11 @@ public final class SNode {
 
   public String getId() {
     return getSNodeId().toString();
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNodeId getNodeId() {
+    return getSNodeId();
   }
 
   public SNodeId getSNodeId() {
@@ -1255,7 +1281,7 @@ public final class SNode {
   }
 
   public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
-    return new DescendantsIterable(this, includeFirst ? this : getFirstChild(), condition);
+    return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
   }
 
   public List<SNode> getDescendants(Condition<SNode> condition) {
@@ -1270,7 +1296,7 @@ public final class SNode {
 
   private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
     // depth-first traversal
-    for (SNode child = getFirstChild(); child != null; child = child.myNextSibling) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
         list.add(child);
       }
@@ -1430,12 +1456,23 @@ public final class SNode {
   }
 
   public SNode prevSibling() {
-    if (myParent == null) return null;
-    return myParent.getFirstChild() == this ? null : myPrevSibling;
+    if (getParent() == null) return null;
+    return getParent().firstChild() == this ? null : (SNode) treePrevious();
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getPrevSibling() {
+    if (getParent() == null) return null;
+    return getParent().firstChild() == this ? null : treePrevious();
   }
 
   public SNode nextSibling() {
-    return myNextSibling;
+    return (SNode) treeNext();
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getNextSibling() {
+    return treeNext();
   }
 
   private class MyReferencesWrapper extends ArrayWrapper<SReference> {
@@ -1452,51 +1489,6 @@ public final class SNode {
     }
   }
 
-  private void children_insertAfter(SNode anchor, @NotNull SNode node) {
-    //be sure that getFirstChild is called before any access to myFirstChild
-    SNode firstChild = getFirstChild();
-    if (anchor == null) {
-      if (firstChild != null) {
-        node.myPrevSibling = firstChild.myPrevSibling;
-        firstChild.myPrevSibling = node;
-      } else {
-        node.myPrevSibling = node;
-      }
-      node.myNextSibling = firstChild;
-      myFirstChild = node;
-    } else {
-      node.myPrevSibling = anchor;
-      node.myNextSibling = anchor.myNextSibling;
-      if (anchor.myNextSibling == null) {
-        firstChild.myPrevSibling = node;
-      } else {
-        anchor.myNextSibling.myPrevSibling = node;
-      }
-      anchor.myNextSibling = node;
-    }
-    node.myParent = this;
-  }
-
-  private void children_remove(@NotNull SNode node) {
-    //be sure that getFirstChild is called before any access to myFirstChild
-    SNode firstChild = getFirstChild();
-    if (firstChild == node) {
-      myFirstChild = node.myNextSibling;
-      if (myFirstChild != null) {
-        myFirstChild.myPrevSibling = node.myPrevSibling;
-      }
-    } else {
-      node.myPrevSibling.myNextSibling = node.myNextSibling;
-      if (node.myNextSibling != null) {
-        node.myNextSibling.myPrevSibling = node.myPrevSibling;
-      } else {
-        firstChild.myPrevSibling = node.myPrevSibling;
-      }
-    }
-    node.myPrevSibling = node.myNextSibling = null;
-    node.myParent = null;
-  }
-
   private static class ChildrenList extends AbstractImmutableList<SNode> {
     public ChildrenList(SNode first) {
       super(first);
@@ -1508,12 +1500,12 @@ public final class SNode {
 
     @Override
     protected SNode next(SNode node) {
-      return node.myNextSibling;
+      return node.nextSibling();
     }
 
     @Override
     protected SNode prev(SNode node) {
-      return node.myPrevSibling;
+      return node.prevSibling();
     }
 
     @Override
@@ -1533,19 +1525,19 @@ public final class SNode {
 
     private static SNode skipAttributes(SNode node) {
       while (node != null && AttributeOperations.isAttribute(node)) {
-        node = node.myNextSibling;
+        node = node.nextSibling();
       }
       return node;
     }
 
     protected SNode next(SNode node) {
-      return skipAttributes(node.myNextSibling);
+      return skipAttributes(node.nextSibling());
     }
 
     protected SNode prev(SNode node) {
-      SNode result = myFirst == node ? null : node.myPrevSibling;
+      SNode result = myFirst == node ? null : node.prevSibling();
       while (result != null && AttributeOperations.isAttribute(result)) {
-        result = myFirst == result ? null : result.myPrevSibling;
+        result = myFirst == result ? null : result.prevSibling();
       }
       return result;
     }
@@ -1600,15 +1592,15 @@ public final class SNode {
     private SNode nextInternal(SNode curr, boolean skipChildren) {
       if (curr == null) return null;
       if (!skipChildren) {
-        SNode firstChild = curr.getFirstChild();
+        SNode firstChild = curr.firstChild();
         if (firstChild != null) return firstChild;
       }
       if (curr == original) return null;
       do {
-        if (curr.myNextSibling != null) {
-          return curr.myNextSibling;
+        if (curr.nextSibling() != null) {
+          return curr.nextSibling();
         }
-        curr = curr.myParent;
+        curr = curr.getParent();
       } while (curr != original);
       return null;
     }
@@ -1795,4 +1787,35 @@ public final class SNode {
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
+  // new API
+
+  @Override
+  public SNodeReference getReference() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public SConcept getConcept() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public SLink getContainingLink() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public boolean isEmpty(String role) {
+    // TODO API (implement)
+    return false;
+  }
+
+  @Override
+  public Iterable<Object> getUserObjectsKeys() {
+    // TODO API (implement)
+    return null;
+  }
 }

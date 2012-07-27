@@ -244,7 +244,7 @@ public class SModelOperations {
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : sModel.nodes()) {
-      List<SReference> references = node.getReferences();
+      Iterable<SReference> references = node.getReferences();
       for (SReference reference : references) {
         if (!reference.isExternal()) continue;
         SModelReference targetModelReference = reference.getTargetSModelReference();

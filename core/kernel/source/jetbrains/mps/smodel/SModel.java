@@ -30,12 +30,13 @@ import jetbrains.mps.smodel.persistence.RoleIdsComponent;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.security.SecureRandom;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicLong;
 
-public class SModel {
+public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
   private Set<SNode> myRoots = new LinkedHashSet<SNode>();
@@ -87,6 +88,11 @@ public class SModel {
     return getSModelReference().getSModelId();
   }
 
+  @Override
+  public org.jetbrains.mps.openapi.model.SModelId getModelId() {
+    return getSModelId();
+  }
+
   @NotNull
   public String getStereotype() {
     return myReference.getStereotype();
@@ -95,6 +101,29 @@ public class SModel {
   @NotNull
   public String getLongName() {
     return myReference.getLongName();
+  }
+
+  @Override
+  public String getPresentation() {
+    return getLongName();
+  }
+
+  @Override
+  public SModule getModule() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public Iterable<org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
+    // TODO API (implement)
+    return null;
   }
 
   public boolean isTransient() {
@@ -336,7 +365,7 @@ public class SModel {
     }
   }
 
-  void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
+  void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -348,7 +377,7 @@ public class SModel {
     }
   }
 
-  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
+  void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
@@ -360,7 +389,7 @@ public class SModel {
     }
   }
 
-  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
+  void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNodeBase anchor) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {

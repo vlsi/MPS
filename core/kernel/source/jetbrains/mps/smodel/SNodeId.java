@@ -23,7 +23,7 @@ import jetbrains.mps.util.annotation.ImmutableObject;
  * Date: Apr 4, 2007
  */
 @ImmutableObject
-public abstract class SNodeId implements Comparable<SNodeId> {
+public abstract class SNodeId implements Comparable<SNodeId>, org.jetbrains.mps.openapi.model.SNodeId {
 
   public static SNodeId fromString(String idString) {
     if (idString.startsWith(Foreign.ID_PREFIX)) {

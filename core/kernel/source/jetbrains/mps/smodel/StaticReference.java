@@ -114,7 +114,7 @@ public final class StaticReference extends SReferenceBase {
     return targetNode;
   }
 
-  private SModel getTargetModel() {
+  public SModel getTargetModel() {
     if (!isExternal()) {
       return getSourceNode().getModel();
     }

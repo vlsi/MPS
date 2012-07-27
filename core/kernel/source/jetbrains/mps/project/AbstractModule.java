@@ -36,6 +36,11 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.reference.SModuleReference;
 
 import java.io.File;
 import java.io.IOException;
@@ -103,6 +108,48 @@ public abstract class AbstractModule implements IModule {
   }
 
   //----reference
+
+
+  @Override
+  public SModuleId getModuleId() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public String getPresentation() {
+    return getModuleFqName();
+  }
+
+  @Override
+  public SRepository getRepository() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public Collection<SModuleReference> getUsedModules() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public Collection<SLanguage> getUsedLanguages() {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public SModel resolveInDependencies(org.jetbrains.mps.openapi.model.SModelId ref) {
+    // TODO API (implement)
+    return null;
+  }
+
+  @Override
+  public SModel getModel(org.jetbrains.mps.openapi.model.SModelId id) {
+    // TODO API (implement)
+    return null;
+  }
 
   protected void setModuleReference(@NotNull ModuleReference reference) {
     LOG.assertLog(myModuleReference == null || ObjectUtils.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());

@@ -692,11 +692,11 @@ public class SNodeOperations {
     return childNode.getRoleLink();
   }
 
-  public static String getContainingLinkRole(SNode childNode) {
+  public static String getContainingLinkRole(org.jetbrains.mps.openapi.model.SNode childNode) {
     if (childNode == null) {
       return null;
     }
-    return childNode.getRole_();
+    return childNode.getRole();
   }
 
   public static List<SReference> getReferences(SNode node) {

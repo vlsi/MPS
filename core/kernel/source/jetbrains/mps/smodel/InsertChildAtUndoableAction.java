@@ -16,11 +16,11 @@
 package jetbrains.mps.smodel;
 
 class InsertChildAtUndoableAction extends SNodeUndoableAction {
-  private SNode myAnchor;
+  private SNodeBase myAnchor;
   private String myRole;
   private SNode myChild;
 
-  public InsertChildAtUndoableAction(SNode node, SNode anchor, String role, SNode child) {
+  public InsertChildAtUndoableAction(SNode node, SNodeBase anchor, String role, SNode child) {
     super(node);
     myAnchor = anchor;
     myRole = role;

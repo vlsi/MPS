@@ -126,7 +126,7 @@ public class AttributeOperations {
   public static void $$$$$$$$$$$$$$$$$$$$() {
   }
 
-  public static boolean isAttribute(SNode node) {
+  public static boolean isAttribute(org.jetbrains.mps.openapi.model.SNode node) {
     String role = SNodeOperations.getContainingLinkRole(node);
     if (role == null) {
       return false;
