@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
@@ -1797,8 +1798,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public SConcept getConcept() {
-    // TODO API (implement)
-    return null;
+    return new SConceptNodeAdapter(getConceptDeclarationNode());
   }
 
   @Override
