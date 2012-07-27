@@ -21,7 +21,7 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 public interface SNode {
-  SNodeId getId();
+  SNodeId getNodeId();
 
   SNodeReference getReference();
 
@@ -67,9 +67,9 @@ public interface SNode {
 
   void removeChild(SNode child);
 
-  Iterable<SNode> getChildren(String role);
+  Iterable<? extends SNode> getChildren(String role);
 
-  Iterable<SNode> getChildren();
+  Iterable<? extends SNode> getChildren();
 
   boolean isEmpty(String role);
 
@@ -89,7 +89,7 @@ public interface SNode {
 
   void removeReference(SReference ref);
 
-  Iterable<SReference> getReferences();
+  Iterable<? extends SReference> getReferences();
 
   // props
 
