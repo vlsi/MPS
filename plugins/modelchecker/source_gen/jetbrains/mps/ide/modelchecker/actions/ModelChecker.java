@@ -12,8 +12,12 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.project.ModuleContext;
+import org.jetbrains.annotations.NotNull;
 
 public class ModelChecker {
   public static final String SEVERITY_ERROR = "Errors";
@@ -44,19 +48,36 @@ public class ModelChecker {
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModel model = modelDescriptor.getSModel();
+          IModule module = modelDescriptor.getModule();
+          Project project = myOperationContext.getProject();
 
-          for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
-            try {
-              List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1), myOperationContext);
-              myResults.getSearchResults().addAll(specificCheckerResults);
-            } catch (Throwable t) {
-              if (log.isErrorEnabled()) {
-                log.error("Error while " + model.getModelDescriptor().getLongName() + " model checking", t);
-              }
+          if (module == null) {
+            if (log.isWarnEnabled()) {
+              log.warn("Module is null for " + modelDescriptor.getLongName() + " model");
             }
-            if (monitor.isCanceled()) {
-              break;
+          }
+          if (project == null) {
+            if (log.isWarnEnabled()) {
+              log.warn("Project is null for IOperationContext in " + modelDescriptor.getLongName() + " model");
+            }
+          }
+
+          if (module != null && project != null) {
+            IOperationContext operationContext = new ModelChecker.ModelCheckerOperationContext(project, module);
+            SModel model = modelDescriptor.getSModel();
+
+            for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers.value)) {
+              try {
+                List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1), operationContext);
+                myResults.getSearchResults().addAll(specificCheckerResults);
+              } catch (Throwable t) {
+                if (log.isErrorEnabled()) {
+                  log.error("Error while " + model.getModelDescriptor().getLongName() + " model checking", t);
+                }
+              }
+              if (monitor.isCanceled()) {
+                break;
+              }
             }
           }
         }
@@ -76,5 +97,19 @@ public class ModelChecker {
 
   public void setSpecificCheckers(List<SpecificChecker> specificCheckers) {
     mySpecificCheckers = specificCheckers;
+  }
+
+  public class ModelCheckerOperationContext extends ModuleContext {
+    public ModelCheckerOperationContext(@NotNull Project project, @NotNull IModule module) {
+      super(module, project);
+    }
+
+    @Override
+    public Project getProject() {
+      if (log.isWarnEnabled()) {
+        log.warn("Using getProject() from IOperationContext strictly prohibited");
+      }
+      return super.getProject();
+    }
   }
 }
