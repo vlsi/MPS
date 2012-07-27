@@ -1802,12 +1802,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   @Override
-  public SLink getContainingLink() {
-    // TODO API (implement)
-    return null;
-  }
-
-  @Override
   public boolean isEmpty(String role) {
     // TODO API (implement)
     return false;
