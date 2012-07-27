@@ -5,12 +5,11 @@ package jetbrains.mps.smodel.apiadapter;
 import org.jetbrains.mps.openapi.language.SLink;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.scope.SLinkScopeProvider;
-import org.jetbrains.mps.openapi.language.scope.SScopePlace;
 
 public class SLinkNodeAdapter implements SLink {
   private SNode myNode;
@@ -28,11 +27,13 @@ public class SLinkNodeAdapter implements SLink {
   }
 
   public boolean isMultiple() {
-    return !(LinkDeclaration_Behavior.call_isSingular_1213877254557(myNode));
+    SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myNode);
+    return SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1..n", "0..1");
   }
 
   public boolean isOptional() {
-    return !(LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(myNode));
+    SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myNode);
+    return SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..n", "0..1");
   }
 
   public SAbstractConcept getTargetConcept() {
@@ -43,7 +44,7 @@ public class SLinkNodeAdapter implements SLink {
     );
   }
 
-  public SLinkScopeProvider getScopeProvider(SScopePlace place) {
+  public SLinkScopeProvider getScopeProvider() {
     // todo 
     return null;
   }

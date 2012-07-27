@@ -15,8 +15,6 @@
  */
 package org.jetbrains.mps.openapi.language.scope;
 
-import org.jetbrains.mps.openapi.model.SNode;
-
 public interface SLinkScopeProvider {
   SScope getScope(SScopePlace place);
 }

@@ -7,6 +7,9 @@ import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -25,7 +28,8 @@ public class SLanguageLanguageAdapter implements SLanguage {
 
   public Iterable<SAbstractConcept> getConcepts() {
     Iterable<SNode> roots = LanguageAspect.STRUCTURE.get(myLanguage).getSModel().roots();
-    Iterable<SConceptNodeAdapter> c = Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
+    List<SAbstractConcept> c = ListSequence.fromList(new ArrayList<SAbstractConcept>());
+    ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       }
@@ -33,8 +37,8 @@ public class SLanguageLanguageAdapter implements SLanguage {
       public SConceptNodeAdapter select(SNode it) {
         return new SConceptNodeAdapter(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
       }
-    });
-    Iterable<SInterfaceConceptNodeAdapter> ci = Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
+    }));
+    ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
       }
@@ -42,7 +46,7 @@ public class SLanguageLanguageAdapter implements SLanguage {
       public SInterfaceConceptNodeAdapter select(SNode it) {
         return new SInterfaceConceptNodeAdapter(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
       }
-    });
-    return Sequence.fromIterable(c).union(Sequence.fromIterable(ci));
+    }));
+    return c;
   }
 }

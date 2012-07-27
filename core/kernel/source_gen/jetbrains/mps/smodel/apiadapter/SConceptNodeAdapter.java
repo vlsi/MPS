@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SLink;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -49,7 +49,7 @@ public class SConceptNodeAdapter implements SConcept {
   public SLink getLink(final String role) {
     return new SLinkNodeAdapter(ListSequence.fromList(SLinkOperations.getTargets(myConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_12aglo_a0a0a0a0a0a0a0e(SPropertyOperations.getString(LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(it), "role"), role);
+        return eq_12aglo_a0a0a0a0a0a0a0e(SPropertyOperations.getString(SModelUtil.getGenuineLinkDeclaration(it), "role"), role);
       }
     }));
   }
