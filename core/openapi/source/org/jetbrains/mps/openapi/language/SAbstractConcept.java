@@ -15,9 +15,24 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SProperty {
+/**
+ * evgeny, 7/27/12
+ */
+public interface SAbstractConcept {
 
   String getName();
 
-  SDataType getType();
+  String getQualifiedName();
+
+  SLink getLink(String role);
+
+  Iterable<SLink> getLinks();
+
+  SProperty getProperty(String name);
+
+  Iterable<SProperty> getProperties();
+
+  boolean isSubConceptOf(SConcept concept);
+
+  SLanguage getLanguage();
 }

@@ -15,9 +15,12 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SProperty {
+/**
+ * evgeny, 7/27/12
+ */
+public interface SDataType {
 
-  String getName();
+  Object fromString(String value);
 
-  SDataType getType();
+  String toString(Object value);
 }

@@ -16,21 +16,9 @@
 package org.jetbrains.mps.openapi.language;
 
 
-public interface SConcept {
-
-  String getName();
-
-  String getQualifiedName();
+public interface SConcept extends SAbstractConcept {
 
   SConcept getSuperConcept();
 
   Iterable<SInterfaceConcept> getSuperInterfaces();
-
-  Iterable<SLink> getLinks();
-
-  Iterable<SProperty> getProperties();
-
-  boolean isSubConceptOf(SConcept concept);
-
-  SLanguage getLanguage();
 }

@@ -15,9 +15,14 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SProperty {
+/**
+ * evgeny, 7/27/12
+ */
+public interface SPrimitiveDataType extends SDataType {
 
-  String getName();
+  public static final int STRING = 0;
+  public static final int BOOL = 0;
+  public static final int INT = 0;
 
-  SDataType getType();
+  int getType();
 }

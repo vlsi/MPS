@@ -18,11 +18,7 @@ package org.jetbrains.mps.openapi.language;
 /**
  * evgeny, 7/25/12
  */
-public interface SInterfaceConcept {
-
-  String getName();
-
-  String getQualifiedName();
+public interface SInterfaceConcept extends SAbstractConcept {
 
   Iterable<SInterfaceConcept> getSuperInterfaces();
 }

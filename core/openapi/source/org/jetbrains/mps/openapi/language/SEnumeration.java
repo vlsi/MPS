@@ -15,9 +15,12 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SProperty {
+/**
+ * evgeny, 7/27/12
+ */
+public interface SEnumeration extends SDataType {
 
-  String getName();
+  SEnumerationLiteral getLiteral(String value);
 
-  SDataType getType();
+  Iterable<SEnumerationLiteral> getLiterals();
 }

@@ -19,5 +19,5 @@ public interface SLanguage {
 
   String getPresentation();
 
-  Iterable<SConcept> getConcepts();
+  Iterable<SAbstractConcept> getConcepts();
 }
