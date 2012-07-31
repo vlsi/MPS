@@ -19,7 +19,6 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.samples.SamplesManager;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -36,18 +35,6 @@ public class MacrosFactory {
   public static final String PACKAGED_MODULE_DESCRIPTOR = "${module_descriptor}";
   public static final String PROJECT = "${project}";
   public static final String MPS_HOME = "${mps_home}";
-
-  public static boolean containsNonMPSMacros(String path) {
-    return path.contains("${") && !MacrosFactory.containsMPSMacros(path);
-  }
-
-  public static boolean containsMPSMacros(String path) {
-    return path.contains(SOLUTION_DESCRIPTOR) ||
-      path.contains(DEVKIT_DESCRIPTOR) ||
-      path.contains(LANGUAGE_DESCRIPTOR) ||
-      path.contains(PROJECT) ||
-      path.contains(MPS_HOME);
-  }
 
   public static MacroHelper forModuleFile(IFile moduleFile) {
     String name = moduleFile.getPath().toLowerCase();
