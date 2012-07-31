@@ -107,7 +107,7 @@ public class PluginMoveHelper {
 
             String iconPath = MacrosFactory.forModuleFile(lang.getDescriptorFile()).expandPath(SPropertyOperations.getString(it, "path"));
 
-            String newIconMacro = SPropertyOperations.getString(it, "path").replace(MacrosFactory.LANGUAGE_DESCRIPTOR, MacrosFactory.SOLUTION_DESCRIPTOR);
+            String newIconMacro = SPropertyOperations.getString(it, "path").replace("${language_descriptor}", "${solution_descriptor}");
             String newIconPath = MacrosFactory.forModuleFile(solution.getDescriptorFile()).expandPath(newIconMacro);
 
             SPropertyOperations.set(it, "path", newIconMacro);

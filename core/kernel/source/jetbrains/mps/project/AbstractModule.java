@@ -79,7 +79,6 @@ public abstract class AbstractModule implements IModule {
 
   public static boolean containsMPSMacros(String path) {
     return path.contains(MacrosFactory.SOLUTION_DESCRIPTOR) ||
-      path.contains(MacrosFactory.DEVKIT_DESCRIPTOR) ||
       path.contains(MacrosFactory.LANGUAGE_DESCRIPTOR) ||
       path.contains(MacrosFactory.PROJECT) ||
       path.contains(MacrosFactory.MPS_HOME);
