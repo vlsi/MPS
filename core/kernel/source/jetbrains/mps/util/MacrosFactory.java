@@ -71,15 +71,6 @@ public class MacrosFactory {
     });
   }
 
-  /**
-   * @deprecated use getGlobal
-   */
-  @Deprecated
-  public static Macros mpsHomeMacros() {
-    return new Macros() {
-    };
-  }
-
   public static String getMacroString(IModule module) {
     if (module instanceof Language) {
       return LANGUAGE_DESCRIPTOR;
@@ -185,7 +176,6 @@ public class MacrosFactory {
   }
 
   private static class MacroHelperImpl implements MacroHelper {
-
     final IFile anchorFile;
     final Macros macros;
 

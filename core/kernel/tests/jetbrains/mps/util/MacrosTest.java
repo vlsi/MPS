@@ -35,7 +35,7 @@ public class MacrosTest extends BaseMPSTest {
   public void testExpand() {
     List<String> tests = generateExpandTests();
     for (String test : tests) {
-      String result = MacrosFactory.mpsHomeMacros().expandPath(test, new File(PathManager.getHomePath()));
+      String result = MacrosFactory.getGlobal().expandPath(test);
       if (!checkExpandSeperatorsCorrectness(result)) {
         fail(getFailMessgae("Expand separators:", test, result));
       }
@@ -48,7 +48,7 @@ public class MacrosTest extends BaseMPSTest {
   public void testShrink() {
     List<String> tests = generateShrinkTests();
     for (String test : tests) {
-      String result = MacrosFactory.mpsHomeMacros().shrinkPath(test, new File(PathManager.getHomePath()));
+      String result = MacrosFactory.getGlobal().shrinkPath(test);
       if (!checkShrinkSeperatorsCorrectness(result)) {
         fail(getFailMessgae("Shrink separators:", test, result));
       }
