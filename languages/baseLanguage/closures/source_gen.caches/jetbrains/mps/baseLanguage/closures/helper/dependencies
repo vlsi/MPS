@@ -51,6 +51,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.FunctionTypeUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.helper.Values" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />

@@ -129,8 +129,8 @@ with_meet:
     for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
       ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
     }
-    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, String>() {
-      public String select(SNode t) {
+    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode t) {
         String key = Classifier_Behavior.call_getNestedName_8540045600162184125(SLinkOperations.getTarget(SNodeOperations.as(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
         return (key != null ?
           key :
@@ -159,8 +159,8 @@ with_meet:
     for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
       ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt)));
     }
-    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, String>() {
-      public String select(SNode t) {
+    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode t) {
         String key = Classifier_Behavior.call_getNestedName_8540045600162184125(SLinkOperations.getTarget(SNodeOperations.as(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
         return (key != null ?
           key :
@@ -197,8 +197,8 @@ with_meet:
     for (SNode pt : SLinkOperations.getTargets(sample, "parameterType", true)) {
       ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(ClassifierTypeUtil.copyTypeRecursively(ClassifierTypeUtil.getTypeCoercedToClassifierType(pt), false));
     }
-    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(sample)).sort(new ISelector<SNode, String>() {
-      public String select(SNode t) {
+    for (SNode tt : ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(sample)).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode t) {
         String key = Classifier_Behavior.call_getNestedName_8540045600162184125(SLinkOperations.getTarget(SNodeOperations.as(t, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
         return (key != null ?
           key :

@@ -2831,7 +2831,7 @@ public class QueriesGenerated {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-      SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unmeet(ft)), true);
+      SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unbound(FunctionTypeUtil.unmeet(ft))), true);
       SPropertyOperations.set(pd, "name", SPropertyOperations.getString(ListSequence.fromList(paramDecls).getElement(idx), "name"));
       SPropertyOperations.set(pd, "isFinal", "" + (true));
       ListSequence.fromList(res).addElement(pd);

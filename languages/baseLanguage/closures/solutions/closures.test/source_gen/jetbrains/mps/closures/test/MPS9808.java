@@ -16,16 +16,16 @@ public class MPS9808 {
   }
 
   protected void fireBefore(final String command, final Object[] params) {
-    ListSequence.fromList(beforeListeners).visitAll(new IVisitor<<!TextGen not found for 'jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType'!>>() {
-      public void visit(<!TextGen not found for 'jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType'!> it) {
+    ListSequence.fromList(beforeListeners).visitAll(new IVisitor<_FunctionTypes._void_P2_E0<? super String, ? super Object[]>>() {
+      public void visit(_FunctionTypes._void_P2_E0<? super String, ? super Object[]> it) {
         it.invoke(command, params);
       }
     });
   }
 
   protected void fireAfter(final String command, final Object[] params) {
-    ListSequence.fromList(afterListeners).visitAll(new IVisitor<<!TextGen not found for 'jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType'!>>() {
-      public void visit(<!TextGen not found for 'jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType'!> it) {
+    ListSequence.fromList(afterListeners).visitAll(new IVisitor<_FunctionTypes._void_P2_E0<? super String, ? super Object[]>>() {
+      public void visit(_FunctionTypes._void_P2_E0<? super String, ? super Object[]> it) {
         it.invoke(command, params);
       }
     });

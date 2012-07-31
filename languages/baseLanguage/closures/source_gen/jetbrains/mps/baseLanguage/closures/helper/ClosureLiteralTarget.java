@@ -21,6 +21,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import java.util.ArrayList;
 import java.util.Set;
@@ -113,9 +114,11 @@ public class ClosureLiteralTarget {
           SNodeOperations.copyNode(MapSequence.fromMap(map).get(typeVar)) :
           SNodeOperations.copyNode(rtp)
         );
-        // nulltype is subtype of any type 
+        // TODO: we need a better way to handle wildcards in the substitutes 
+        // Any (completely) reified type has precedence over calculated function type's parameter 
+        // Example: String s = { => null; } must use String, not Object as the return value 
         if (!(hasTypeVariable(rtp)) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(substituteType, rtp))) {
-          substituteType = SNodeOperations.copyNode(rtp);
+          substituteType = ClassifierTypeUtil.getTypeCoercedToClassifierType(SNodeOperations.copyNode(rtp));
         }
         List<SNode> queue = ListSequence.fromListAndArray(new LinkedList<SNode>(), ListSequence.fromList(SLinkOperations.getTargets(targetIfaceErase, "parameter", true)).addElement(substituteType));
 with_queue:
