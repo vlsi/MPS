@@ -74,7 +74,7 @@ public class BuiltInLibrariesIO {
     } catch (IOException e) {
       LOG.error(e);
     } finally {
-       if (in != null) {
+      if (in != null) {
         try {
           in.close();
         } catch (IOException e) {

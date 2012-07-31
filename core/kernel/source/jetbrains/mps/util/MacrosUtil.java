@@ -21,19 +21,19 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nls;
 
 public class MacrosUtil {
-
   @Nls
   public static String expandPath(String path, String nodeModuleUID) {
     IFile moduleDescriptorFile = null;
     IModule module;
 
-    if (nodeModuleUID != null) {
-      module = MPSModuleRepository.getInstance().getModuleByFqName(nodeModuleUID);
-      if (module != null) {
-        moduleDescriptorFile = module.getDescriptorFile();
-      }
-    }
+    if (nodeModuleUID == null) return null;
+
+    module = MPSModuleRepository.getInstance().getModuleByFqName(nodeModuleUID);
+    if (module == null) return null;
+
+    moduleDescriptorFile = module.getDescriptorFile();
     if (moduleDescriptorFile == null) return null;
+
     return MacrosFactory.forModuleFile(moduleDescriptorFile).expandPath(path);
   }
 }

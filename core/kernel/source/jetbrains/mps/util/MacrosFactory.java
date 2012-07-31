@@ -72,41 +72,12 @@ public class MacrosFactory {
   }
 
   /**
-   * @deprecated use forModuleFile
-   */
-  @Deprecated
-  public static Macros solutionDescriptor() {
-    return new DescriptorMacros(SOLUTION_DESCRIPTOR);
-  }
-
-  /**
-   * @deprecated use forProjectFile
-   */
-  @Deprecated
-  public static Macros projectDescriptor() {
-    return new ProjectDescriptorMacros();
-  }
-
-  /**
    * @deprecated use getGlobal
    */
   @Deprecated
   public static Macros mpsHomeMacros() {
     return new Macros() {
     };
-  }
-
-  /**
-   * @deprecated use forModuleFile
-   */
-  @Deprecated
-  public static Macros moduleDescriptor(IModule module) {
-    if (module instanceof Language) {
-      return languageDescriptor();
-    } else if (module instanceof Solution) {
-      return solutionDescriptor();
-    }
-    return mpsHomeMacros();
   }
 
   public static String getMacroString(IModule module) {

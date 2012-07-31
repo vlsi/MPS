@@ -46,7 +46,7 @@ public class Module_Behavior {
   }
 
   public static SNode call_getModuleBaseDirectory_6863060912307757632(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_7235580512916878209(MacrosFactory.moduleDescriptor(Module_Behavior.call_getModule_1213877515148(thisNode)).expandPath(MacrosFactory.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile()), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(MacrosFactory.forModuleFile(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile()).expandPath(MacrosFactory.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode))), thisNode);
   }
 
   public static SNode call_getModuleDescriptorFile_6863060912307764362(SNode thisNode) {

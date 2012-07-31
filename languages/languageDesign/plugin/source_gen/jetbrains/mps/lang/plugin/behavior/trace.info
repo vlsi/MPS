@@ -1010,7 +1010,7 @@
     <nodeInfo nodeId="6547237850567463487" fileName="BaseToolDeclaration_Behavior.java" startLine="40" startPosition="77" endLine="41" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1161951617348743399" fileName="BaseToolDeclaration_Behavior.java" startLine="44" startPosition="85" endLine="45" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6547237850567463505" fileName="BaseToolDeclaration_Behavior.java" startLine="46" startPosition="25" endLine="47" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6547237850567463507" fileName="BaseToolDeclaration_Behavior.java" startLine="48" startPosition="5" endLine="49" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6547237850567463507" fileName="BaseToolDeclaration_Behavior.java" startLine="48" startPosition="5" endLine="49" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6547237850567463521" fileName="BaseToolDeclaration_Behavior.java" startLine="52" startPosition="98" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="862470364181513536" fileName="BaseToolDeclaration_Behavior.java" startLine="60" startPosition="49" endLine="61" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="862470364181513536" fileName="BaseToolDeclaration_Behavior.java" startLine="61" startPosition="26" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1084,7 +1084,7 @@
     <scopeInfo nodeId="6547237850567463488" fileName="BaseToolDeclaration_Behavior.java" startLine="82" startPosition="7" endLine="86" endPosition="31">
       <varInfo nodeId="6547237850567463488" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="6547237850567463494" fileName="BaseToolDeclaration_Behavior.java" startLine="44" startPosition="85" endLine="49" endPosition="138">
+    <scopeInfo nodeId="6547237850567463494" fileName="BaseToolDeclaration_Behavior.java" startLine="44" startPosition="85" endLine="49" endPosition="127">
       <varInfo nodeId="1161951617348743400" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="862470364181513536" fileName="BaseToolDeclaration_Behavior.java" startLine="63" startPosition="32" endLine="69" endPosition="7" />

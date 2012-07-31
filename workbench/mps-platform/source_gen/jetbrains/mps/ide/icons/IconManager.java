@@ -150,7 +150,7 @@ public class IconManager {
   private static Icon getIconForConcept(SNode conceptDeclaration, String path) {
     Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration);
     if (language != null) {
-      String iconPath = MacrosFactory.languageDescriptor().expandPath(path, language.getDescriptorFile());
+      String iconPath = MacrosFactory.forModuleFile(language.getDescriptorFile()).expandPath(path);
       if (iconPath != null) {
         Icon icon = loadIcon(iconPath, true);
         if (icon != null) {
