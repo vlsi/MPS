@@ -131,7 +131,7 @@ public class BuiltInLibrariesIO {
       String[] strings = param.split("=");
 
       String name = strings[0];
-      String path = Macros.MPS_HOME + File.separator + strings[1];
+      String path = MacrosFactory.MPS_HOME + File.separator + strings[1];
 
       BuiltInLibrariesIO.addLibraryToConfigurationFile(name, path, mpsHome);
     }
