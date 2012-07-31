@@ -17,7 +17,7 @@ import java.io.File;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.util.Macros;
+import jetbrains.mps.util.MacrosFactory;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -131,7 +131,7 @@ public class Layout_Behavior {
   }
 
   public static String getMPSHomeName_1226508944077() {
-    return Macros.MPS_HOME.substring("${".length(), Macros.MPS_HOME.lastIndexOf("}"));
+    return MacrosFactory.MPS_HOME.substring("${".length(), MacrosFactory.MPS_HOME.lastIndexOf("}"));
   }
 
   public static String getBasedirName_1226509010730() {
