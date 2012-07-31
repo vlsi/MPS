@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.util.MacrosUtil;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.project.IModule;
@@ -33,7 +33,7 @@ public class IconResource_Behavior {
         IFile output = FileGenerationUtil.getDefaultOutputDir(model, outputRootFile);
 
         // copy 
-        String source = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), model.getModule().getModuleFqName());
+        String source = MacrosFactory.forModuleFile(model.getModule().getDescriptorFile()).expandPath(SPropertyOperations.getString(thisNode, "path"));
         IFile sourceFile = FileSystem.getInstance().getFileByPath(source);
 
         IFileUtils.copyFileContent(sourceFile, output.getDescendant(sourceFile.getName()));
@@ -46,7 +46,7 @@ public class IconResource_Behavior {
     if (module == null) {
       return false;
     }
-    String path = MacrosUtil.expandPath(SPropertyOperations.getString(thisNode, "path"), module.getModuleFqName());
+    String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(thisNode, "path"));
     if (path == null) {
       return false;
     }

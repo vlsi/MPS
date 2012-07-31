@@ -6,7 +6,6 @@ import javax.swing.Icon;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.util.MacrosUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.ide.icons.IconManager;
 
@@ -24,7 +23,7 @@ public enum TestState {
 
   TestState(String iconName) {
     Language language = Language.getLanguageFor(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).getModelDescriptor());
-    String pathToIcon = MacrosUtil.expandPath(MacrosFactory.LANGUAGE_DESCRIPTOR + "/icons/states/" + iconName, language.getModuleFqName());
+    String pathToIcon = MacrosFactory.forModuleFile(language.getDescriptorFile()).expandPath(MacrosFactory.LANGUAGE_DESCRIPTOR + "/icons/states/" + iconName);
     myIcon = IconManager.loadIcon(pathToIcon, true);
   }
 

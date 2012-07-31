@@ -26,7 +26,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.MacrosUtil;
 import javax.swing.ImageIcon;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -132,7 +131,7 @@ public class PluginMoveHelper {
     if (module == null) {
       return false;
     }
-    String path = MacrosUtil.expandPath(SPropertyOperations.getString(icon, "path"), module.getModuleFqName());
+    String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(icon, "path"));
     if (path == null) {
       return false;
     }
