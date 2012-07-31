@@ -28,8 +28,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class MacrosFactory {
   public static final String SOLUTION_DESCRIPTOR = "${solution_descriptor}";
-  @Deprecated
-  public static final String LIBRARY_DESCRIPTOR = "${library_descriptor}";
   public static final String DEVKIT_DESCRIPTOR = "${devkit_descriptor}";
   public static final String LANGUAGE_DESCRIPTOR = "${language_descriptor}";
   public static final String PACKAGED_MODULE_DESCRIPTOR = "${module_descriptor}";
@@ -41,7 +39,6 @@ public class MacrosFactory {
 
   public static boolean containsMPSMacros(String path) {
     return path.contains(SOLUTION_DESCRIPTOR) ||
-      path.contains(LIBRARY_DESCRIPTOR) ||
       path.contains(DEVKIT_DESCRIPTOR) ||
       path.contains(LANGUAGE_DESCRIPTOR) ||
       path.contains(PROJECT) ||
@@ -78,32 +75,8 @@ public class MacrosFactory {
    * @deprecated use forModuleFile
    */
   @Deprecated
-  public static Macros languageDescriptor() {
-    return new DescriptorMacros(LANGUAGE_DESCRIPTOR);
-  }
-
-  /**
-   * @deprecated use forModuleFile
-   */
-  @Deprecated
   public static Macros solutionDescriptor() {
     return new DescriptorMacros(SOLUTION_DESCRIPTOR);
-  }
-
-  /**
-   * @deprecated do not use
-   */
-  @Deprecated
-  public static Macros libraryDescriptor() {
-    return new DescriptorMacros(LIBRARY_DESCRIPTOR);
-  }
-
-  /**
-   * @deprecated use forModuleFile
-   */
-  @Deprecated
-  public static Macros devkitMacros() {
-    return new DescriptorMacros(DEVKIT_DESCRIPTOR);
   }
 
   /**
@@ -132,8 +105,6 @@ public class MacrosFactory {
       return languageDescriptor();
     } else if (module instanceof Solution) {
       return solutionDescriptor();
-    } else if (module instanceof DevKit) {
-      return devkitMacros();
     }
     return mpsHomeMacros();
   }
