@@ -293,17 +293,5 @@ public class MacrosFactory {
       String pathReplaced = FileUtil.getCanonicalPath(with + path.substring(with.length()));
       return path.equals(pathReplaced);
     }
-
-    //----------deprecated-------------
-
-    @Deprecated
-    public final String expandPath(String path, File anchorFile) {
-      return expandPath(path, FileSystem.getInstance().getFileByPath(anchorFile.getAbsolutePath()));
-    }
-
-    @Deprecated
-    public final String shrinkPath(String path, File anchorFile) {
-      return shrinkPath(path, FileSystem.getInstance().getFileByPath(anchorFile.getAbsolutePath()));
-    }
   }
 }
