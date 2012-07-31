@@ -10,11 +10,11 @@ import java.util.NoSuchElementException;
 import java.util.ArrayList;
 
 public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
-  private final ISequence<U> left;
-  private final ISequence<U> right;
+  private final ISequence<? extends U> left;
+  private final ISequence<? extends U> right;
   private final ComparingSequence.Kind kind;
 
-  public ComparingSequence(ISequence<U> left, ISequence<U> right, ComparingSequence.Kind kind) {
+  public ComparingSequence(ISequence<? extends U> left, ISequence<? extends U> right, ComparingSequence.Kind kind) {
     if (left == null || right == null) {
       throw new NullPointerException();
     }
@@ -40,8 +40,8 @@ public class ComparingSequence<U> extends Sequence<U> implements Iterable<U> {
   private class ComparingIterator implements Iterator<U> {
     private CardinalityMap<U> cardMap = new CardinalityMap<U>();
     private List<U> cache;
-    private Iterator<U> leftIt;
-    private Iterator<U> rightIt;
+    private Iterator<? extends U> leftIt;
+    private Iterator<? extends U> rightIt;
     private U next;
     private HasNextState hasNext = HasNextState.UNKNOWN;
 

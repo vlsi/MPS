@@ -15,17 +15,18 @@ import java.util.ListIterator;
 
 public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
   private final Sequence<U> input;
-  private final Comparator<U> comparator;
+  private final Comparator<? super U> comparator;
 
-  public SortingSequence(Sequence<U> input, Comparator<U> comparator, boolean ascending) {
+  public SortingSequence(Sequence<U> input, Comparator<? super U> comparator, boolean ascending) {
     if (input == null || comparator == null) {
       throw new NullPointerException();
     }
     this.input = input;
-    this.comparator = (ascending ?
-      comparator :
-      new SortingSequence.InversedComparator<U>(comparator)
-    );
+    if (ascending) {
+      this.comparator = comparator;
+    } else {
+      this.comparator = new SortingSequence.InversedComparator<U>(comparator);
+    }
   }
 
   public SortingSequence(Sequence<U> input, Comparator<U> comparator) {
@@ -82,9 +83,9 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
   }
 
   private static class InversedComparator<T> implements Comparator<T> {
-    private final Comparator<T> primary;
+    private final Comparator<? super T> primary;
 
-    public InversedComparator(Comparator<T> primary) {
+    public InversedComparator(Comparator<? super T> primary) {
       this.primary = primary;
     }
 
@@ -94,10 +95,10 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
   }
 
   private static class CompoundComparator<T> implements Comparator<T> {
-    private final Comparator<T> secondary;
-    private final Comparator<T> primary;
+    private final Comparator<? super T> secondary;
+    private final Comparator<? super T> primary;
 
-    public CompoundComparator(Comparator<T> primary, Comparator<T> secondary) {
+    public CompoundComparator(Comparator<? super T> primary, Comparator<? super T> secondary) {
       this.primary = primary;
       this.secondary = secondary;
     }
