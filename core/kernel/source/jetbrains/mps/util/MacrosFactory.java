@@ -56,7 +56,7 @@ public class MacrosFactory {
   }
 
   private static class ModuleMacros extends Macros {
-    protected String expandPath_internal(String path, IFile anchorFile) {
+    protected String expand(String path, IFile anchorFile) {
       for (String d : descriptors) {
         if (path.startsWith(d)) {
           IFile anchorFolder = anchorFile.getParent();
@@ -68,10 +68,10 @@ public class MacrosFactory {
         }
       }
 
-      return super.expandPath_internal(path, anchorFile);
+      return super.expand(path, anchorFile);
     }
 
-    protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
+    protected String shrink(String absolutePath, IFile anchorFile) {
       IFile anchorFolder = anchorFile.getParent();
       if (anchorFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
         anchorFolder = anchorFolder.getParent();
@@ -81,22 +81,22 @@ public class MacrosFactory {
         String relationalPath = shrink(absolutePath, prefix);
         return MODULE + relationalPath;
       }
-      return super.shrinkPath_internal(absolutePath, anchorFile);
+      return super.shrink(absolutePath, anchorFile);
     }
   }
 
   private static class ProjectMacros extends ModuleMacros {
-    protected String expandPath_internal(String path, IFile anchorFile) {
+    protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(PROJECT)) {
         IFile anchorFolder = anchorFile.getParent();
         String modelRelativePath = removePrefix(path, PROJECT);
         return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
       }
 
-      return super.expandPath_internal(path, anchorFile);
+      return super.expand(path, anchorFile);
     }
 
-    protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
+    protected String shrink(String absolutePath, IFile anchorFile) {
       //project dir (for any project persistence)
       String prefix = IFileUtils.getCanonicalPath(anchorFile.isDirectory() ? anchorFile : anchorFile.getParent());
 
@@ -114,66 +114,36 @@ public class MacrosFactory {
         return PROJECT + relationalPath;
       }
 
-      return super.shrinkPath_internal(absolutePath, anchorFile);
+      return super.shrink(absolutePath, anchorFile);
     }
   }
 
   private static class HomeMacros extends Macros {
-    protected String expandPath_internal(String path, IFile anchorFile) {
+    protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(MPS_HOME)) {
         String relativePath = removePrefix(path, MPS_HOME);
         IFile file = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).getDescendant(relativePath);
         return IFileUtils.getCanonicalPath(file);
       }
 
-      return super.expandPath_internal(path, anchorFile);
+      return super.expand(path, anchorFile);
     }
 
-    protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
+    protected String shrink(String absolutePath, IFile anchorFile) {
       if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
         String relationalPath = shrink(absolutePath, PathManager.getHomePath());
         return MPS_HOME + relationalPath;
       }
 
-      return super.shrinkPath_internal(absolutePath, anchorFile);
+      return super.shrink(absolutePath, anchorFile);
     }
   }
 
   private static class Macros {
     private static final Logger LOG = Logger.getLogger(Macros.class);
-    static final char SEPARATOR_CHAR = '/';
+    private static final char SEPARATOR_CHAR = '/';
 
-    public final String expandPath(@Nullable String path, @Nullable IFile anchorFile) {
-      if (path == null || !path.startsWith("${")) return path; // No macros to expand
-
-      // This is a support for paths with macros which were saved in Windows before MPS beta.
-      // Path with macros should always be stored with slashes.
-      if (path.indexOf('\\') != -1) {
-        LOG.warning("Using backslashes in macros: " + path);
-        path = path.replace('\\', SEPARATOR_CHAR);
-      }
-
-      if (!FileSystem.getInstance().isPackaged(anchorFile)) {
-        path = path.replace(SEPARATOR_CHAR, File.separatorChar);
-      }
-
-      return expandPath_internal(path, anchorFile);
-    }
-
-    public final String shrinkPath(@Nullable String absolutePath, @Nullable IFile anchorFile) {
-      if (absolutePath == null) return null;
-
-      String shrinkedPath = absolutePath;
-
-      //this is to support undefined path vars
-      if (!absolutePath.startsWith("${")) {
-        shrinkedPath = shrinkPath_internal(absolutePath, anchorFile);
-      }
-
-      return shrinkedPath.replace(File.separatorChar, SEPARATOR_CHAR);
-    }
-
-    protected String expandPath_internal(String path, IFile anchorFile) {
+    protected String expand(String path, IFile anchorFile) {
       IFile result = null;
 
       Set<String> macroNames = PathMacros.getInstance().getNames();
@@ -202,7 +172,7 @@ public class MacrosFactory {
       return path;
     }
 
-    protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
+    protected String shrink(String absolutePath, IFile anchorFile) {
       String fileName;
       Set<String> macroNames = PathMacros.getInstance().getNames();
       for (String macro : macroNames) {
@@ -258,14 +228,32 @@ public class MacrosFactory {
       this.macros = macros;
     }
 
-    @Override
     public String expandPath(@Nullable String path) {
-      return macros.expandPath(path, anchorFile);
+      if (path == null || !path.startsWith("${")) return path; // No macros to expand
+
+      // This is a support for paths with macros which were saved in Windows before MPS beta.
+      // Path with macros should always be stored with slashes.
+      if (path.indexOf('\\') != -1) {
+        Macros.LOG.warning("Using backslashes in macros: " + path);
+        path = path.replace('\\', Macros.SEPARATOR_CHAR);
+      }
+
+      if (!FileSystem.getInstance().isPackaged(anchorFile)) {
+        path = path.replace(Macros.SEPARATOR_CHAR, File.separatorChar);
+      }
+
+      return macros.expand(path, anchorFile);
     }
 
-    @Override
     public String shrinkPath(@Nullable String absolutePath) {
-      return macros.shrinkPath(absolutePath, anchorFile);
+      if (absolutePath == null) return null;
+
+      //this is to support undefined path vars
+      if (!absolutePath.startsWith("${")) {
+        absolutePath = macros.shrink(absolutePath, anchorFile);
+      }
+
+      return absolutePath.replace(File.separatorChar, Macros.SEPARATOR_CHAR);
     }
   }
 }
