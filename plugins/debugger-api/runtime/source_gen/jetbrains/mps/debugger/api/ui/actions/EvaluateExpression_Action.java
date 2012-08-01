@@ -69,9 +69,6 @@ public class EvaluateExpression_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("component", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
-    if (MapSequence.fromMap(_params).get("component") == null) {
-      return false;
-    }
     return true;
   }
 
