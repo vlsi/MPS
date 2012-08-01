@@ -828,6 +828,10 @@ public class QueriesGenerated {
     return "[" + SModelOperations.getModelName(SNodeOperations.getModel(actionMap)) + "]" + SPropertyOperations.getString(actionMap, "name");
   }
 
+  public static Object referenceMacro_GetReferent_5851052477775837151(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return "setCellActions";
+  }
+
   public static Object referenceMacro_GetReferent_1197572493147(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass");
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(generatedClass, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first();
@@ -969,7 +973,7 @@ public class QueriesGenerated {
     final String methodName = SConceptPropertyOperations.getString(_context.getNode(), "methodToGenerate");
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)", "8394433674396727873"), "method", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0b0fh(SPropertyOperations.getString(it, "name"), methodName);
+        return eq_x583g4_a0a0a0a0a0b0gh(SPropertyOperations.getString(it, "name"), methodName);
       }
     });
   }
@@ -1891,7 +1895,7 @@ public class QueriesGenerated {
     return QueriesUtil.getGeneratedClassByCellContainer(_context.getNode(), _context);
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0b0fh(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0b0gh(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
