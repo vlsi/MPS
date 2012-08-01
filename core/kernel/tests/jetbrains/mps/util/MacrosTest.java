@@ -88,7 +88,7 @@ public class MacrosTest extends BaseMPSTest {
   }
 
   private boolean checkShrinkSeperatorsCorrectness(String s) {
-    return s.indexOf(negateSeparator(Macros.SEPARATOR_CHAR)) == -1;
+    return s.indexOf(negateSeparator(MacrosFactory.SEPARATOR_CHAR)) == -1;
   }
 
   private boolean checkExpandSeperatorsCorrectness(String s) {

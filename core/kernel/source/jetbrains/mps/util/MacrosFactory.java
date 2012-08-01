@@ -34,6 +34,8 @@ public class MacrosFactory {
   public static final String PROJECT = "${project}";
   public static final String MPS_HOME = "${mps_home}";
 
+  static final char SEPARATOR_CHAR = '/';
+
   public static MacroHelper forModuleFile(IFile moduleFile) {
     String[] extensions = new String[]{MPSExtentions.DOT_SOLUTION, MPSExtentions.DOT_LANGUAGE, MPSExtentions.DOT_IDEMODULE, MPSExtentions.PACKAGED_MODULE};
     String name = moduleFile.getPath().toLowerCase();
@@ -138,7 +140,6 @@ public class MacrosFactory {
 
   private static class Macros {
     private static final Logger LOG = Logger.getLogger(Macros.class);
-    private static final char SEPARATOR_CHAR = '/';
 
     protected String expand(String path, IFile anchorFile) {
       IFile result = null;
@@ -232,11 +233,11 @@ public class MacrosFactory {
       // Path with macros should always be stored with slashes.
       if (path.indexOf('\\') != -1) {
         Macros.LOG.warning("Using backslashes in macros: " + path);
-        path = path.replace('\\', Macros.SEPARATOR_CHAR);
+        path = path.replace('\\', SEPARATOR_CHAR);
       }
 
       if (!FileSystem.getInstance().isPackaged(anchorFile)) {
-        path = path.replace(Macros.SEPARATOR_CHAR, File.separatorChar);
+        path = path.replace(SEPARATOR_CHAR, File.separatorChar);
       }
 
       return macros.expand(path, anchorFile);
@@ -250,7 +251,7 @@ public class MacrosFactory {
         absolutePath = macros.shrink(absolutePath, anchorFile);
       }
 
-      return absolutePath.replace(File.separatorChar, Macros.SEPARATOR_CHAR);
+      return absolutePath.replace(File.separatorChar, SEPARATOR_CHAR);
     }
   }
 
