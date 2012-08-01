@@ -3161,8 +3161,8 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="85" endLine="271" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="86" endLine="271" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="86" endLine="271" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="86" endLine="271" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="86" endLine="271" endPosition="88" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="86" endLine="271" endPosition="86" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="88" endLine="271" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="88" endLine="271" endPosition="97" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="97" endLine="271" endPosition="98" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -3221,6 +3221,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="16" startPosition="74" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="17" startPosition="13" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="18" startPosition="129" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
@@ -3240,10 +3241,12 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="27" startPosition="69" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="28" startPosition="13" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="29" startPosition="127" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3257,6 +3260,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="35" startPosition="13" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="36" startPosition="119" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3274,6 +3278,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="44" startPosition="13" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="45" startPosition="119" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3296,6 +3301,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="57" startPosition="73" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="58" startPosition="13" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="59" startPosition="133" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
@@ -3303,10 +3309,12 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="60" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="60" startPosition="74" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="61" startPosition="13" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="62" startPosition="147" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3333,6 +3341,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="76" startPosition="69" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="77" startPosition="13" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="78" startPosition="123" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
@@ -3352,10 +3361,12 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="87" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="87" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="87" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="87" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="87" startPosition="68" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="88" startPosition="13" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="89" startPosition="139" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3366,10 +3377,12 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="93" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="93" startPosition="69" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="94" startPosition="13" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="95" startPosition="123" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3380,10 +3393,12 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="99" startPosition="69" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="100" startPosition="13" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="101" startPosition="119" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3394,10 +3409,12 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="105" startPosition="71" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="106" startPosition="13" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="107" startPosition="123" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="108" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="108" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="108" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="108" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="108" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3415,6 +3432,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="115" startPosition="13" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="116" startPosition="127" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3449,6 +3467,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="136" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="136" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="136" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="136" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="136" startPosition="74" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="137" startPosition="13" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="138" startPosition="123" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
@@ -3472,10 +3491,12 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="149" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="149" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="149" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="149" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="149" startPosition="74" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="150" startPosition="13" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="151" startPosition="159" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="152" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="152" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="152" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="152" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="152" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3686,6 +3707,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="261" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="261" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="261" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="261" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="261" startPosition="84" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="262" startPosition="12" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="263" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3711,52 +3733,69 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="4" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="4" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="4" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="4" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="53" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="53" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="53" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="53" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="83" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="120" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="120" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="120" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="120" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="124" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="124" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="124" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="124" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="128" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="128" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="128" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="128" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="132" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="132" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="132" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="132" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="145" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="145" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="145" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="145" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="257" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="257" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="257" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="257" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="271" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3766,6 +3805,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3773,7 +3813,9 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3793,6 +3835,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="265" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="265" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="265" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="265" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="3" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="7" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3806,6 +3849,7 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="111" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3813,8 +3857,10 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="251" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="251" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="251" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="251" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="256" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -3829,23 +3875,29 @@
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="241" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="241" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="241" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="241" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="240" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="204" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="204" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="204" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="204" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="203" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="217" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="217" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="217" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="217" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="216" startPosition="0" endLine="239" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="172" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="172" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="172" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="172" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="171" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="3" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="3" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="3" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="3" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="2" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="2" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="2" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="2" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3205778618063801970" fileName="MPSEditorActions.xml" startLine="2" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />

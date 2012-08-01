@@ -30,6 +30,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.AddExpression" file="AddExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -80,6 +81,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.AppendingOutputRedirection" file="AppendingOutputRedirection.java">
     <classNode dependClassName="java.lang.String" />
@@ -103,6 +105,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.ArgumentList" file="ArgumentList.java">
     <classNode dependClassName="java.lang.String" />
@@ -150,6 +153,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.ArithmeticExpansion" file="ArithmeticExpansion.java">
     <classNode dependClassName="java.lang.String" />
@@ -165,6 +169,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.ArithmeticExpression" file="ArithmeticExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -223,6 +228,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.BaseVariableAssingment" file="BaseVariableAssingment.java">
     <classNode dependClassName="java.lang.String" />
@@ -263,6 +269,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.BinaryArithmeticExpression" file="BinaryArithmeticExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -276,6 +283,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.BinaryConditionalExpression" file="BinaryConditionalExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -404,6 +412,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.CaseTerminator" file="CaseTerminator.java">
     <classNode dependClassName="java.lang.String" />
@@ -481,6 +490,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.CommentedFollowingCommandList" file="CommentedFollowingCommandList.java">
     <classNode dependClassName="java.lang.String" />
@@ -495,6 +505,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.CommentedText" file="CommentedText.java">
     <classNode dependClassName="java.lang.String" />
@@ -507,6 +518,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.ConditionalCommand" file="ConditionalCommand.java">
     <classNode dependClassName="java.lang.String" />
@@ -521,6 +533,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.ConditionalExpression" file="ConditionalExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -736,6 +749,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.ExternalOptionDeclaration" file="ExternalOptionDeclaration.java">
     <classNode dependClassName="java.lang.String" />
@@ -832,6 +846,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.GeneralizedWord" file="GeneralizedWord.java">
     <classNode dependClassName="java.lang.String" />
@@ -911,6 +926,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.HeadCommandList" file="HeadCommandList.java">
     <classNode dependClassName="java.lang.String" />
@@ -956,6 +972,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.HexIntegerLiteral" file="HexIntegerLiteral.java">
     <classNode dependClassName="java.lang.String" />
@@ -1007,6 +1024,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.IPriorityExpression" file="IPriorityExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -1035,6 +1053,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.InequalityExpression" file="InequalityExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -1300,6 +1319,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.OptionReference" file="OptionReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -1348,6 +1368,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.OptionWithParamReference" file="OptionWithParamReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -1427,6 +1448,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.OutputRedirection" file="OutputRedirection.java">
     <classNode dependClassName="java.lang.String" />
@@ -1540,6 +1562,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.QuotesCommandSubstitution" file="QuotesCommandSubstitution.java">
     <classNode dependClassName="java.lang.String" />
@@ -1553,6 +1576,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.ReadTestConditionalExpression" file="ReadTestConditionalExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -1643,6 +1667,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.SemicolonEt" file="SemicolonEt.java">
     <classNode dependClassName="java.lang.String" />
@@ -1684,6 +1709,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.SimpleCommand" file="SimpleCommand.java">
     <classNode dependClassName="java.lang.String" />
@@ -1698,6 +1724,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.SimpleWord" file="SimpleWord.java">
     <classNode dependClassName="java.lang.String" />
@@ -1710,6 +1737,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.SingleQuote" file="SingleQuote.java">
     <classNode dependClassName="java.lang.String" />
@@ -1804,6 +1832,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.UnaryArithmeticExpression" file="UnaryArithmeticExpression.java">
     <classNode dependClassName="java.lang.String" />
@@ -1891,6 +1920,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.VariableReference" file="VariableReference.java">
     <classNode dependClassName="java.lang.String" />
@@ -1905,6 +1935,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.bash.structure.WhileLoopCommand" file="WhileLoopCommand.java">
     <classNode dependClassName="java.lang.String" />

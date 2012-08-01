@@ -1344,14 +1344,18 @@
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -1360,7 +1364,9 @@
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="3" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="3" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="3" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="3" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
