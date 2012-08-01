@@ -73,17 +73,6 @@ public abstract class AbstractModule implements IModule {
     ourModelCreationListeners.remove(creationListener);
   }
 
-  public static boolean containsNonMPSMacros(String path) {
-    return path.contains("${") && !containsMPSMacros(path);
-  }
-
-  public static boolean containsMPSMacros(String path) {
-    return path.contains(MacrosFactory.SOLUTION_DESCRIPTOR) ||
-      path.contains(MacrosFactory.LANGUAGE_DESCRIPTOR) ||
-      path.contains(MacrosFactory.PROJECT) ||
-      path.contains(MacrosFactory.MPS_HOME);
-  }
-
   public final EditableSModelDescriptor createModel(SModelFqName name, SModelRoot root, ModelAdjuster adj) {
     IModelRootManager manager = root.getManager();
 
@@ -297,7 +286,7 @@ public abstract class AbstractModule implements IModule {
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
         String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
-        if (containsNonMPSMacros(shrinked)) continue;
+        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {
         continue;
@@ -327,7 +316,7 @@ public abstract class AbstractModule implements IModule {
 
       if (packagedSourcesPath == null || !canonicalPath.startsWith(packagedSourcesPath)) {
         String shrinked = MacrosFactory.forModuleFile(getDescriptorFile()).shrinkPath(path);
-        if (containsNonMPSMacros(shrinked)) continue;
+        if (MacrosFactory.containsNonMPSMacros(shrinked)) continue;
       }
       if (dd == null && canonicalPath.startsWith(libPath)) {
         continue;

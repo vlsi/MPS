@@ -27,7 +27,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * evgeny, 10/19/11
  */
 public class PathMacros implements PathMacrosProvider, CoreComponent {
-
   private static PathMacros INSTANCE;
 
   private List<PathMacrosProvider> myMacrosProviders = new CopyOnWriteArrayList<PathMacrosProvider>();
@@ -37,6 +36,7 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
   }
 
   public PathMacros() {
+
   }
 
   @Override

@@ -34,9 +34,6 @@ public class MacrosFactory {
   public static final String PROJECT = "${project}";
   public static final String MPS_HOME = "${mps_home}";
 
-  //remove after 3.0
-  private static final String[] descriptors = new String[]{"${solution_descriptor}", "${language_descriptor}", "${module_descriptor}", MODULE};
-
   public static MacroHelper forModuleFile(IFile moduleFile) {
     String[] extensions = new String[]{MPSExtentions.DOT_SOLUTION, MPSExtentions.DOT_LANGUAGE, MPSExtentions.DOT_IDEMODULE, MPSExtentions.PACKAGED_MODULE};
     String name = moduleFile.getPath().toLowerCase();
@@ -255,5 +252,19 @@ public class MacrosFactory {
 
       return absolutePath.replace(File.separatorChar, Macros.SEPARATOR_CHAR);
     }
+  }
+
+  //---------stuff to remove
+
+  //remove after 3.0, only MODULE matters
+  private static final String[] descriptors = new String[]{"${solution_descriptor}", "${language_descriptor}", "${module_descriptor}", MODULE};
+
+  @Deprecated //remove when language descriptor is fully in xml file
+  public static boolean containsNonMPSMacros(String path) {
+    return path.contains("${") && !(path.contains("${solution_descriptor}") ||
+      path.contains("${language_descriptor}") ||
+      path.contains("${module}") ||
+      path.contains(MacrosFactory.PROJECT) ||
+      path.contains(MacrosFactory.MPS_HOME));
   }
 }
