@@ -106,11 +106,11 @@ public class ClassifierTypeUtil {
     return type;
   }
 
-  public static boolean isFunctionTypeClassifier(SNode classifier) {
+  private static boolean isFunctionTypeClassifier(SNode classifier) {
     return SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") && eq_zgotlq_a0a0a3(SNodeOperations.getModel(classifier).getSModelFqName(), SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0a0d().createNode(), "classifier", false)).getSModelFqName());
   }
 
-  public static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
+  private static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
     if (isFunctionTypeClassifier(classifier)) {
       String cname = SPropertyOperations.getString(classifier, "name");
       int ldi = cname.lastIndexOf(".");
