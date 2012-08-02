@@ -10,11 +10,17 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_SmartClosureParameterDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SmartClosureParameterDeclaration_InferenceRule() {
@@ -23,16 +29,37 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
   public void applyRule(final SNode scpd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(scpd), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getParent(scpd)), "jetbrains.mps.baseLanguage.structure.IOperation")) {
       final SNode paramType_typevar_1230315924141 = typeCheckingContext.createNewRuntimeTypesVariable();
+      final SNode seqType_typevar_2684739085678948053 = typeCheckingContext.createNewRuntimeTypesVariable();
       {
         SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(scpd)), "jetbrains.mps.baseLanguage.structure.IOperation"));
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2233481601211199538", 0, null);
-        typeCheckingContext.createGreaterThanInequality((SNode) new typeof_SmartClosureParameterDeclaration_InferenceRule.QuotationClass_5rdbtv_a0a1a0a0().createNode(typeCheckingContext.getRepresentative(paramType_typevar_1230315924141), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1230315907236", true), false, true, _info_12389875345);
+        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948077", 0, null);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.getRepresentative(seqType_typevar_2684739085678948053), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948083", true), _info_12389875345);
       }
       {
-        SNode _nodeToCheck_1029348928467 = scpd;
-        EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1230315977451", 0, null);
-        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1230315969555", true), (SNode) typeCheckingContext.getRepresentative(paramType_typevar_1230315924141), _info_12389875345);
+        final SNode sequenceTypeConcrete = typeCheckingContext.getRepresentative(seqType_typevar_2684739085678948053);
+        typeCheckingContext.whenConcrete(sequenceTypeConcrete, new Runnable() {
+          public void run() {
+            {
+              IMatchingPattern pattern_sg6z08_a0d0a0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+              SNode coercedNode_sg6z08_a0d0a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getExpandedNode(sequenceTypeConcrete), pattern_sg6z08_a0d0a0);
+              if (coercedNode_sg6z08_a0d0a0 != null) {
+                {
+                  SNode _nodeToCheck_1029348928467 = scpd;
+                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948105", 0, null);
+                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948109", true), (SNode) SLinkOperations.getTarget(coercedNode_sg6z08_a0d0a0, "elementType", true), _info_12389875345);
+                }
+              } else {
+                {
+                  MessageTarget errorTarget = new NodeMessageTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(scpd, "Unable to compute type", "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948143", null, errorTarget);
+                }
+              }
+            }
+          }
+        }, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "2684739085678948093", false, false);
       }
+      // <node> 
+      // <node> 
     }
   }
 
@@ -51,8 +78,8 @@ public class typeof_SmartClosureParameterDeclaration_InferenceRule extends Abstr
     return true;
   }
 
-  public static class QuotationClass_5rdbtv_a0a1a0a0 {
-    public QuotationClass_5rdbtv_a0a1a0a0() {
+  public static class QuotationClass_5rdbtv_a0a0a4a0a0 {
+    public QuotationClass_5rdbtv_a0a0a4a0a0() {
     }
 
     public SNode createNode(Object parameter_5, final TypeCheckingContext typeCheckingContext) {
