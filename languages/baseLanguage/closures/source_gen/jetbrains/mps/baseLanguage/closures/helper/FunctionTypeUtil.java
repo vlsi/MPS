@@ -196,7 +196,6 @@ with_meet:
           return (SLinkOperations.getTarget(rs, "expression", true) == null);
         }
       }))) {
-        // <node> 
         new ClosureLiteralTarget(genContext).setTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), lCType);
       } else {
         new AdaptableClassifierTarget(genContext).setTarget(FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(rFType), lCType);
@@ -212,7 +211,6 @@ with_meet:
 
       if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && builder.hasAdapterClass(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"))) {
         SNode adapterClassType = builder.buildAdapterClassType(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), lFType);
-        // <node> 
         new ClosureLiteralTarget(genContext).setTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), adapterClassType);
 
       } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
@@ -220,7 +218,6 @@ with_meet:
           return (SLinkOperations.getTarget(rs, "expression", true) == null);
         }
       }))) {
-        // <node> 
         new ClosureLiteralTarget(genContext).setTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), FunctionType_Behavior.call_getDeclarationRuntimeType_811905832257074290(lFType, rFType));
 
       } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") || ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(lFType)).count() != ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(rFType)).count()) {
