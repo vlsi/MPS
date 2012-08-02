@@ -8,6 +8,7 @@
     <action id="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action" class="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action" class="jetbrains.mps.ide.migration.migration25.FixMissingImportsInProject_Action"/>
+    <action id="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action" class="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action" class="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigrationStandalone_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_APIMigration_Action"/>
@@ -49,6 +50,10 @@
       <reference ref="jetbrains.mps.ide.migration.migration25.ImportModelsWithUsedClassifiers_Action"/>
       <reference ref="Migrations25_ActionGroupoptional"/>
       <add-to-group group-id="ToolsMenu" anchor="last"/>
+    </group>
+    <group id="jetbrains.mps.ide.migration.migration25.FixAfterMigration_ActionGroup" text="Fixes" popup="true">
+      <reference ref="jetbrains.mps.ide.migration.migration25.FixModelLanguages_Action"/>
+      <add-to-group group-id="jetbrains.mps.ide.migration.migration25.Migrations25_ActionGroup" anchor="last"/>
     </group>
   </actions>
 </components>
