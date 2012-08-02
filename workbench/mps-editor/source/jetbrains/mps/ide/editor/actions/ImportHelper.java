@@ -18,7 +18,6 @@ package jetbrains.mps.ide.editor.actions;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
-import com.intellij.openapi.actionSystem.ShortcutSet;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
@@ -47,7 +46,9 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ImportHelper {
   public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model,
@@ -92,11 +93,11 @@ public class ImportHelper {
     }, ModalityState.current(), true);
   }
 
-  public static void addLanguageImport(Project project, final IModule contextModule, final SModelDescriptor model,
+  public static void addLanguageImport(final Project project, final IModule contextModule, final SModelDescriptor model,
                                        @Nullable BaseAction parentAction) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       public NavigationItem doGetNavigationItem(ModuleReference ref) {
-        return new AddLanguageItem(ref, contextModule, model);
+        return new AddLanguageItem(project, ref, contextModule, model);
       }
 
       public ModuleReference[] find(IScope scope) {
@@ -126,27 +127,72 @@ public class ImportHelper {
   }
 
   private static class AddLanguageItem extends BaseModuleItem {
+    private Project myProject;
     private IModule myContextModule;
     private SModelDescriptor myModel;
 
-    public AddLanguageItem(ModuleReference language, IModule contextModule, SModelDescriptor model) {
+    public AddLanguageItem(Project project, ModuleReference language, IModule contextModule, SModelDescriptor model) {
       super(language);
+      myProject = project;
       myContextModule = contextModule;
       myModel = model;
     }
 
     public void navigate(boolean requestFocus) {
+      assert !ModelAccess.instance().canRead();
+
+      final Set<ModuleReference> importCandidates = new HashSet<ModuleReference>();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          Language lang = ModuleRepositoryFacade.getInstance().getModule(getModuleReference(), Language.class);
+
+          HashSet<Language> langs = new HashSet<Language>();
+          lang.getDependenciesManager().collectAllExtendedLanguages(langs);
+
+          langs.remove(lang);
+          //this is added in language implicitly, so we don't show this import
+          langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE,Language.class));
+
+          for (Language l : langs) {
+            if (myModel.getSModel().importedLanguages().contains(l.getModuleReference())) continue;
+            importCandidates.add(l.getModuleReference());
+          }
+        }
+      });
+
+      final Set<ModuleReference> toImport = new HashSet<ModuleReference>();
+
+      if (!importCandidates.isEmpty()) {
+        Set<ModuleReference> modules = chooseModulesToImport(myProject, importCandidates);
+        if (modules == null) return;
+        toImport.addAll(modules);
+      }
+
+      toImport.add(getModuleReference());
+
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          ModuleReference ref = getModuleReference();
-          if (myContextModule.getScope().getLanguage(ref) == null) {
-            myContextModule.addUsedLanguage(ref);
+          boolean reload = false;
+          for (ModuleReference ref : toImport) {
+            if (myContextModule.getScope().getLanguage(ref) == null) {
+              myContextModule.addUsedLanguage(ref);
+              reload = true;
+            }
+            myModel.getSModel().addLanguage(ref);
+          }
+          if (reload) {
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
           }
-          myModel.getSModel().addLanguage(ref);
         }
       });
     }
+  }
+
+  private static Set<ModuleReference> chooseModulesToImport(Project project, Set<ModuleReference> candidates) {
+    SelectLanguagesDialog dialog = new SelectLanguagesDialog(project, candidates);
+    dialog.show();
+    if (!dialog.isOK()) return null;
+    return dialog.getSelectedModules();
   }
 
   public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,

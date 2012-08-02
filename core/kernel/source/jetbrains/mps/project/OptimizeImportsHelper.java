@@ -181,7 +181,7 @@ public class OptimizeImportsHelper {
     if (dep.getModuleRef().equals(current)) return dep;
 
     IModule module = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
-    if (module == null) return dep;
+    if (module == null) return null;
 
     boolean used = false;
 
@@ -198,7 +198,7 @@ public class OptimizeImportsHelper {
 
   private ModuleReference getUnusedDevkitRef(Result result, ModuleReference devkitRef) {
     DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
-    if (dk == null) return devkitRef;
+    if (dk == null) return null;
 
     for (Language lang : dk.getAllExportedLanguages()) {
       if (getUnusedLanguageRef(result, lang.getModuleReference()) == null) return null;
@@ -214,7 +214,7 @@ public class OptimizeImportsHelper {
 
   private ModuleReference getUnusedLanguageRef(Result result, ModuleReference languageRef) {
     Language language = GlobalScope.getInstance().getLanguage(languageRef);
-    if (language == null) return languageRef;
+    if (language == null) return null;
     if (result.myUsedLanguages.contains(language)) return null;
 
     for (SModelDescriptor md : language.getAccessoryModels()) {
