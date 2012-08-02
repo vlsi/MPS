@@ -3928,7 +3928,7 @@ public class QueriesGenerated {
         break;
       }
       SNode newpd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-      SLinkOperations.setTarget(newpd, "type", SNodeOperations.cast(FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), ct)), "jetbrains.mps.baseLanguage.structure.Type"), true);
+      SLinkOperations.setTarget(newpd, "type", SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(pd, "type", true), ct))), "jetbrains.mps.baseLanguage.structure.Type"), true);
       SPropertyOperations.set(newpd, "name", SPropertyOperations.getString(ListSequence.fromList(paramDecls).getElement(idx), "name"));
       SPropertyOperations.set(newpd, "isFinal", "" + (SPropertyOperations.getBoolean(ListSequence.fromList(paramDecls).getElement(idx), "isFinal")));
       idx++;
@@ -3951,7 +3951,7 @@ public class QueriesGenerated {
     SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, _context.getNode());
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
-      ListSequence.fromList(res).addElement(FunctionTypeUtil.unbound(pt));
+      ListSequence.fromList(res).addElement(FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(pt)));
     }
     return res;
   }
