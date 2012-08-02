@@ -197,8 +197,8 @@ public class TreeHighlighter implements TreeMessageOwner {
           SModelReference modelRef = feature.getModelReference();
           for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
             if (modelRef.equals(anotherFeature.getModelReference())) {
-              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Object>() {
-                public boolean accept(Object a) {
+              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
+                public boolean accept(Feature a) {
                   return feature.equals(a);
                 }
               })) {

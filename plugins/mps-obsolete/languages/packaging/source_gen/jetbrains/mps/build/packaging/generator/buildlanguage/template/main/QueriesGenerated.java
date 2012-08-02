@@ -1555,16 +1555,16 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_2454311172623490713(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(Sequence.fromArray(PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode()).split(Util.SEPARATOR))).select(new ISelector<Object, SNode>() {
-      public SNode select(Object it) {
+    return Sequence.fromIterable(Sequence.fromArray(PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode()).split(Util.SEPARATOR))).select(new ISelector<String, SNode>() {
+      public SNode select(String it) {
         return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a372().createNode(it);
       }
     });
   }
 
   public static Iterable sourceNodesQuery_2454311172623490641(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(Sequence.fromArray(PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode()).split(Util.SEPARATOR))).select(new ISelector<Object, SNode>() {
-      public SNode select(Object it) {
+    return Sequence.fromIterable(Sequence.fromArray(PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode()).split(Util.SEPARATOR))).select(new ISelector<String, SNode>() {
+      public SNode select(String it) {
         return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a472().createNode(it);
       }
     });
@@ -1595,8 +1595,8 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_3765863190881154771(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(Sequence.fromArray(PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode()).split(Util.SEPARATOR))).select(new ISelector<Object, SNode>() {
-      public SNode select(Object it) {
+    return Sequence.fromIterable(Sequence.fromArray(PathHolder_Behavior.call_getPathWithoutMacro_1219770843283(_context.getNode()).split(Util.SEPARATOR))).select(new ISelector<String, SNode>() {
+      public SNode select(String it) {
         return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a872().createNode(it);
       }
     });

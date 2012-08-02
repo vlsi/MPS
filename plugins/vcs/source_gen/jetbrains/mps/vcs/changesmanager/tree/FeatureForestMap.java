@@ -92,8 +92,8 @@ public class FeatureForestMap<V> {
   @Nullable
   public Feature getAddedAncestor(@NotNull Feature feature) {
     ModelAccess.assertLegalRead();
-    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Object>() {
-      public boolean accept(Object a) {
+    return Sequence.fromIterable(Sequence.fromArray(feature.getAncestors())).findFirst(new IWhereFilter<Feature>() {
+      public boolean accept(Feature a) {
         return MapSequence.fromMap(myFeatureToValue).containsKey(a);
       }
     });

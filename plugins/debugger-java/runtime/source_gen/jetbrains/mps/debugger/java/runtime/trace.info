@@ -2707,6 +2707,11 @@
     <scopeInfo nodeId="2891782949125171385" fileName="SuspendManager.java" startLine="227" startPosition="0" endLine="249" endPosition="0" />
     <scopeInfo nodeId="2891782949125171362" fileName="SuspendManager.java" startLine="191" startPosition="0" endLine="214" endPosition="0" />
     <unitInfo nodeId="2891782949125171479" fileName="SuspendManager.java" startLine="62" startPosition="27" endLine="17" endPosition="0" />
+    <unitInfo nodeId="2891782949125171430" fileName="SuspendManager.java" startLine="37" startPosition="47" endLine="43" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$1" />
+    <unitInfo nodeId="2891782949125171488" fileName="SuspendManager.java" startLine="56" startPosition="27" endLine="60" endPosition="7" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$3" />
+    <unitInfo nodeId="2891782949125145718" fileName="SuspendManager.java" startLine="187" startPosition="0" endLine="220" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextByItSelf" />
+    <unitInfo nodeId="2891782949125145719" fileName="SuspendManager.java" startLine="161" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextFromSet" />
+    <unitInfo nodeId="2891782949125171368" fileName="SuspendManager.java" startLine="221" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.SuspendManager$SuspendContextImpl" />
   </root>
   <root nodeId="2891782949125171958">
     <nodeInfo nodeId="2891782949125171967" fileName="RunFailedException.java" startLine="7" startPosition="45" endLine="8" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
