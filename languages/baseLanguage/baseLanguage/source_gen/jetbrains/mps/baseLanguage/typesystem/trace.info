@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="34" startPosition="0" endLine="1542" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="969" startPosition="49" endLine="980" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$1" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1009" startPosition="60" endLine="1020" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$2" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1024" startPosition="51" endLine="1039" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$3" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1043" startPosition="51" endLine="1076" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$4" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1081" startPosition="0" endLine="1136" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1266" startPosition="0" endLine="1321" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_b" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1322" startPosition="0" endLine="1371" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_c" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1372" startPosition="0" endLine="1422" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_d" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1423" startPosition="0" endLine="1489" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_e" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1137" startPosition="0" endLine="1205" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_g" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="1206" startPosition="0" endLine="1265" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_h" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="34" startPosition="0" endLine="1546" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="973" startPosition="49" endLine="984" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$1" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1013" startPosition="60" endLine="1024" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$2" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1028" startPosition="51" endLine="1043" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$3" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1047" startPosition="51" endLine="1080" endPosition="7" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$4" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1085" startPosition="0" endLine="1140" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1270" startPosition="0" endLine="1325" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_b" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1326" startPosition="0" endLine="1375" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_c" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1376" startPosition="0" endLine="1426" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_d" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1427" startPosition="0" endLine="1493" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_e" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1141" startPosition="0" endLine="1209" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_g" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="1210" startPosition="0" endLine="1269" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_h" />
   <root nodeId="1032178265900242657">
     <nodeInfo nodeId="1032178265900242657" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="29" startPosition="136" endLine="30" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_aftnu9_a0a0a0a0b0c0a0a0a0a0c0a" />
     <nodeInfo nodeId="1032178265900242673" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="35" startPosition="129" endLine="36" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -16862,6 +16862,94 @@
       <varInfo nodeId="2792650810919436247" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="2792650810919436247" fileName="typevar_comparable_with_classifier_type_ComparisonRule.java" startLine="11" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.typevar_comparable_with_classifier_type_ComparisonRule" />
+  </root>
+  <root nodeId="2796241438627654698">
+    <nodeInfo nodeId="2796241438627654706" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="23" startPosition="97" endLine="24" endPosition="315" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2796241438627654730" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="27" startPosition="253" endLine="28" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2796241438627654733" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="28" startPosition="50" endLine="29" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2796241438627654736" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="31" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2796241438627654736" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="31" startPosition="58" endLine="32" endPosition="234" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2796241438627654736" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="32" startPosition="234" endLine="33" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="37" startPosition="207" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2796241438627654730" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="38" startPosition="35" endLine="39" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2796241438627654733" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="39" startPosition="50" endLine="40" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2796241438627654736" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="40" startPosition="54" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="41" startPosition="40" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="45" startPosition="27" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="50" startPosition="5" endLine="51" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="51" startPosition="120" endLine="52" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="57" startPosition="5" endLine="58" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="58" startPosition="122" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="63" startPosition="53" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="67" startPosition="55" endLine="68" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="19" startPosition="142" endLine="21" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule#()V" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="38" startPosition="35" endLine="41" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableCustom#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;)Z" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="49" startPosition="71" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="56" startPosition="73" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSubtypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="66" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableSupertypeConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2796241438627654736" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="29" startPosition="54" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="48" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSubtypeAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableSupertypeAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkInequation#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)Z" />
+    <nodeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="26" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processInequation#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/EquationInfo;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicable2Status;ZZ)V" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="20" startPosition="90" endLine="20" endPosition="90" />
+    <scopeInfo nodeId="2796241438627654705" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="23" startPosition="97" endLine="24" endPosition="315" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="45" startPosition="27" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="63" startPosition="53" endLine="64" endPosition="65" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="67" startPosition="55" endLine="68" endPosition="65" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="19" startPosition="142" endLine="21" endPosition="3" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="50" startPosition="5" endLine="52" endPosition="45">
+      <varInfo nodeId="2796241438627654698" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="57" startPosition="5" endLine="59" endPosition="45">
+      <varInfo nodeId="2796241438627654698" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="2796241438627654736" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="30" startPosition="5" endLine="33" endPosition="77">
+      <varInfo nodeId="2796241438627654736" varName="_reporter_2309309498" />
+      <varInfo nodeId="2796241438627654736" varName="errorTarget" />
+    </scopeInfo>
+    <scopeInfo nodeId="2796241438627654700" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="38" startPosition="35" endLine="41" endPosition="40" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="2796241438627654698" varName="status" />
+      <varInfo nodeId="2796241438627654698" varName="subtype" />
+      <varInfo nodeId="2796241438627654698" varName="supertype" />
+    </scopeInfo>
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="49" startPosition="71" endLine="53" endPosition="5" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="56" startPosition="73" endLine="60" endPosition="5" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="66" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="37" startPosition="207" endLine="42" endPosition="27">
+      <varInfo nodeId="2796241438627654698" varName="result_14532009" />
+    </scopeInfo>
+    <scopeInfo nodeId="2796241438627654700" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="27" startPosition="253" endLine="34" endPosition="5" />
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="2796241438627654698" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="2796241438627654698" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="36" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="2796241438627654698" varName="equationInfo" />
+      <varInfo nodeId="2796241438627654698" varName="inequalityIsLessThan" />
+      <varInfo nodeId="2796241438627654698" varName="inequalityIsWeak" />
+      <varInfo nodeId="2796241438627654698" varName="status" />
+      <varInfo nodeId="2796241438627654698" varName="subtype" />
+      <varInfo nodeId="2796241438627654698" varName="supertype" />
+    </scopeInfo>
+    <scopeInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="26" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="2796241438627654698" varName="equationInfo" />
+      <varInfo nodeId="2796241438627654698" varName="inequalityIsLessThan" />
+      <varInfo nodeId="2796241438627654698" varName="inequalityIsWeak" />
+      <varInfo nodeId="2796241438627654698" varName="status" />
+      <varInfo nodeId="2796241438627654698" varName="subtype" />
+      <varInfo nodeId="2796241438627654698" varName="supertype" />
+      <varInfo nodeId="2796241438627654698" varName="typeCheckingContext" />
+    </scopeInfo>
+    <unitInfo nodeId="2796241438627654698" fileName="raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.java" startLine="19" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule" />
   </root>
   <root nodeId="2925336694746290132">
     <nodeInfo nodeId="2925336694746295064" fileName="check_AnonymousClassHasConstructorDeclaration_NonTypesystemRule.java" startLine="21" startPosition="127" endLine="22" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
