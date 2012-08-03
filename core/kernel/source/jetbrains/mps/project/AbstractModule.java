@@ -77,7 +77,7 @@ public abstract class AbstractModule implements IModule {
     IModelRootManager manager = root.getManager();
 
     if (!manager.canCreateModel(this, root.getModelRoot(), name)) {
-      LOG.error("Can't create a model with this name under " + root.getPath() + "[" + root.getManager().getClass().getSimpleName() + "]");
+      LOG.error("Can't create a model " + name + " under model root " + root.getPath() + "[" + root.getManager().getClass().getSimpleName() + "]");
       return null;
     }
 
