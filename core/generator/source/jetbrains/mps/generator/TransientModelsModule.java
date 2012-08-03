@@ -78,10 +78,6 @@ public class TransientModelsModule extends ClassLoadingModule   {
     return null;
   }
 
-  public void save() {
-    // nothing
-  }
-
   public boolean hasPublished() {
     return !myPublished.isEmpty();
   }

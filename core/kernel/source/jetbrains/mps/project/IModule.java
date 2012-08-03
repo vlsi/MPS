@@ -107,6 +107,8 @@ public interface IModule extends ModelOwner {
 
   void invalidateCaches();
 
+  boolean isChanged();
+
   void save();
 
   void onModuleLoad();

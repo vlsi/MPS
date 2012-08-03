@@ -45,9 +45,6 @@ public class TemporaryModelOwner extends AbstractModule {
     });
   }
 
-  public void save() {
-  }
-
   public String getTestsGeneratorOutputPath() {
     return null;
   }

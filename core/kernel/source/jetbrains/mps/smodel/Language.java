@@ -360,6 +360,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public void save() {
+    super.save();
     if (isPackaged()) {
       LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
       return;

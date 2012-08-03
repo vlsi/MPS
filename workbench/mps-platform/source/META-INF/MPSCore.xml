@@ -41,7 +41,7 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.save.ModelsSaver</implementation-class>
+      <implementation-class>jetbrains.mps.ide.save.MPSFilesSaver</implementation-class>
     </component>
 
     <component>

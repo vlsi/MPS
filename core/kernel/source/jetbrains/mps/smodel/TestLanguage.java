@@ -42,9 +42,4 @@ public class TestLanguage extends Language {
   public String getTestsGeneratorOutputPath() {
     return null;
   }
-
-  @Override
-  public void save() {
-    //do nothing
-  }
 }

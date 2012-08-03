@@ -293,6 +293,13 @@ public class MPSModuleRepository implements CoreComponent {
 
   //-----------------some strange stuff
 
+  public void saveAll() {
+    for (IModule module:getAllModules()){
+      if (!module.isChanged()) continue;
+      module.save();
+    }
+  }
+
   public void moduleFqNameChanged(IModule module, String oldName) {
     ModelAccess.assertLegalWrite();
 

@@ -49,10 +49,6 @@ public class DiffTemporaryModule extends AbstractModule {
     throw new UnsupportedOperationException();
   }
 
-  public void save() {
-    throw new UnsupportedOperationException();
-  }
-
   public String toString() {
     return getModuleFqName();
   }

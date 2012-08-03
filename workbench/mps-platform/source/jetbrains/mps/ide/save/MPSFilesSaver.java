@@ -24,14 +24,15 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
-public class ModelsSaver implements ApplicationComponent {
+public class MPSFilesSaver implements ApplicationComponent {
   private MessageBusConnection myMessageBusConnection;
 
-  public ModelsSaver(MPSCoreComponents coreComponents) {
+  public MPSFilesSaver(MPSCoreComponents coreComponents) {
   }
 
   @NotNull
@@ -45,9 +46,11 @@ public class ModelsSaver implements ApplicationComponent {
       public void beforeAllDocumentsSaving() {
         if (MPSCore.getInstance().isTestMode()) return;
         ThreadUtils.assertEDT();
+
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             SModelRepository.getInstance().saveAll();
+            MPSModuleRepository.getInstance().saveAll();
           }
         });
       }

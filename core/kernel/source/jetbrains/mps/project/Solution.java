@@ -104,6 +104,7 @@ public class Solution extends ClassLoadingModule {
   }
 
   public void save() {
+    super.save();
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 

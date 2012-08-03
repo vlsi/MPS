@@ -67,9 +67,6 @@ public class EvaluationAuxModule extends AbstractModule {
     return null;
   }
 
-  public void save() {
-  }
-
   @Override
   public void addUsedLanguage(ModuleReference reference) {
     SetSequence.fromSet(myUsedLanguages).addElement(reference);

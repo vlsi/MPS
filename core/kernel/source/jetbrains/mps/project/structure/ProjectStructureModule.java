@@ -200,10 +200,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     return null;
   }
 
-  public void save() {
-    // nothing
-  }
-
   @Override
   public Collection<ModuleReference> getUsedLanguagesReferences() {
     return Collections.singleton(BootstrapLanguages.PROJECT);

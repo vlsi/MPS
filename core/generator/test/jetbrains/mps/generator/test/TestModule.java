@@ -86,10 +86,6 @@ public class TestModule extends ClassLoadingModule {
     return null;
   }
 
-  public void save() {
-    // nothing
-  }
-
   @Override
   public DependenciesManager getDependenciesManager() {
     if (myPeer == null) throw new IllegalStateException();
