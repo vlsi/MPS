@@ -188,14 +188,6 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<String> getLanguageNamespaces() {
-    List<String> result = new ArrayList<String>();
-    for (Language l : getExportedLanguages()) {
-      result.add(l.getModuleFqName());
-    }
-    return result;
-  }
-
   public void save() {
     DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
