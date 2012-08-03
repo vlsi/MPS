@@ -7,8 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 import junit.framework.Assert;
 import java.util.NoSuchElementException;
 
@@ -23,6 +23,19 @@ public class SubtractTest_Test extends Util_Test {
     Iterable<Integer> input = Arrays.asList(1, 2, 2, 3, 3, 3, 4, 4);
     Iterable<Integer> test = Sequence.fromIterable(input).subtract(ListSequence.fromList(Arrays.asList(2, 3, 4, 4, 5)));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 3, 3), test);
+  }
+
+  public void test_subtractOpCovariant() throws Exception {
+    Foo foo1 = new Foo();
+    Bar bar1 = new Bar();
+    Bar bar2 = new Bar();
+    Bar bar3 = new Bar();
+    Foo foo2 = bar2;
+    Foo foo3 = bar1;
+    Iterable<Foo> first = ListSequence.fromListAndArray(new ArrayList<Foo>(), foo1, foo3, foo2);
+    Iterable<Bar> second = Sequence.fromArray(new Bar[]{bar1, bar3, bar2});
+    Iterable<Foo> res = Sequence.fromIterable(first).subtract(Sequence.fromIterable(second));
+    assertIterableEquals(Sequence.fromArray(new Foo[]{foo1}), res);
   }
 
   public void test_nextWithoutHasNext() throws Exception {

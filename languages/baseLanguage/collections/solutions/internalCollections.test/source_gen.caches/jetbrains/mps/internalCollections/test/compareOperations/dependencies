@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Bar" file="Bar.java">
+    <classNode extendsClassName="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
+  </dependency>
   <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Concat_Test" file="Concat_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
@@ -11,6 +14,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Bar" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
@@ -26,9 +31,12 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Bar" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
+  <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Foo" file="Foo.java" />
   <dependency className="jetbrains.mps.internalCollections.test.compareOperations.Intersect_Test" file="Intersect_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
@@ -40,6 +48,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Bar" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
@@ -54,6 +64,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Bar" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>
@@ -68,6 +80,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Bar" />
+    <classNode dependClassName="jetbrains.mps.internalCollections.test.compareOperations.Foo" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode extendsClassName="jetbrains.mps.internalCollections.test.closures.Util_Test" />
   </dependency>

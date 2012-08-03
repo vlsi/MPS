@@ -7,8 +7,8 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 import junit.framework.Assert;
 import java.util.NoSuchElementException;
 
@@ -23,6 +23,16 @@ public class Concat_Test extends Util_Test {
     Iterable<Integer> input = this.input5();
     Iterable<Integer> test = Sequence.fromIterable(input).concat(ListSequence.fromList(Arrays.asList(6, 7, 8, 9, 10)));
     this.assertIterableEquals(this.expect10(), test);
+  }
+
+  public void test_concatOpCovariant() throws Exception {
+    Foo foo1 = new Foo();
+    Foo foo2 = new Foo();
+    Bar bar1 = new Bar();
+    Iterable<Foo> head = ListSequence.fromListAndArray(new ArrayList<Foo>(), foo1, foo2);
+    Iterable<Bar> tail = Sequence.<Bar>singleton(bar1);
+    Iterable<Foo> res = Sequence.fromIterable(head).concat(Sequence.fromIterable(tail));
+    assertIterableEquals(Sequence.fromArray(new Foo[]{foo1, foo2, bar1}), res);
   }
 
   public void test_nextWithoutHasNext() throws Exception {

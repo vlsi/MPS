@@ -469,6 +469,10 @@ __switch__:
     Iterable<Integer> seq2 = ArrayUtils.fromIntegerArray(new int[]{5, 3, 5, 1, 1, 4, 2, 1});
     Assert.assertTrue(Sequence.fromIterable(seq2).containsSequence(Sequence.fromIterable(seq)));
     Assert.assertFalse(Sequence.fromIterable(seq).containsSequence(Sequence.fromIterable(seq2)));
+    Bar bar = new Bar();
+    Foo foo = bar;
+    Iterable<Foo> seq3 = Sequence.<Foo>singleton(foo);
+    Assert.assertTrue(Sequence.fromIterable(seq3).containsSequence(Sequence.fromIterable(Sequence.<Bar>singleton(bar))));
   }
 
   public void test_join() throws Exception {
