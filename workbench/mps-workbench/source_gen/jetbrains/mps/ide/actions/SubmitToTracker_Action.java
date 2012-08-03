@@ -20,7 +20,6 @@ import jetbrains.mps.ide.blame.dialog.BlameDialog;
 import jetbrains.mps.ide.blame.dialog.BlameDialogComponent;
 import com.intellij.openapi.project.Project;
 import java.awt.Frame;
-import jetbrains.mps.messages.Message;
 import jetbrains.mps.ide.blame.perform.Response;
 import javax.swing.JOptionPane;
 
@@ -91,14 +90,13 @@ public class SubmitToTracker_Action extends BaseAction {
       StringBuilder description = new StringBuilder();
       boolean first = true;
       for (IMessage msg : ((List<IMessage>) MapSequence.fromMap(_params).get("messages"))) {
-        IMessage message = (Message) msg;
         if (first) {
-          dialog.setIssueTitle(message.getText());
+          dialog.setIssueTitle(msg.getText());
           first = false;
         } else {
-          description.append(message.getText()).append('\n');
+          description.append(msg.getText()).append('\n');
         }
-        dialog.addEx(message.getException());
+        dialog.addEx(msg.getException());
       }
       dialog.setDescription(description.toString());
       dialog.show();
