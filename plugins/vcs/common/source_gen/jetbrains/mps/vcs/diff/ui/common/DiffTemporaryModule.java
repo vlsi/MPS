@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.Arrays;
@@ -39,14 +38,6 @@ public class DiffTemporaryModule extends AbstractModule {
     setModuleReference(ModuleReference.fromString(SModelOperations.getModelName(model) + "@" + version));
     myModel = model;
     myProject = project;
-  }
-
-  public ModuleDescriptor getModuleDescriptor() {
-    return null;
-  }
-
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    throw new UnsupportedOperationException();
   }
 
   public String toString() {

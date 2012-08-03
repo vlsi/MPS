@@ -128,6 +128,17 @@ public abstract class AbstractModule implements IModule {
 
   //----save
 
+  //todo move to EditableModule class
+  public ModuleDescriptor getModuleDescriptor() {
+    return null;
+  }
+
+  //todo should be replaced with events
+  @Override
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+    setChanged();
+  }
+
   public void setChanged() {
     myChanged = true;
   }

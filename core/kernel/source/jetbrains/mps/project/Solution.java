@@ -79,6 +79,8 @@ public class Solution extends ClassLoadingModule {
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
+    super.setModuleDescriptor(newDescriptor,reloadClasses);
+
     mySolutionDescriptor = newDescriptor;
 
     ModuleReference mp;

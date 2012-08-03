@@ -17,7 +17,6 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.SModelRepository;
@@ -49,14 +48,6 @@ public class EvaluationAuxModule extends AbstractModule {
   @NotNull
   public IScope getScope() {
     return GlobalScope.getInstance();
-  }
-
-  public ModuleDescriptor getModuleDescriptor() {
-    return null;
-  }
-
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    throw new UnsupportedOperationException();
   }
 
   public String getGeneratorOutputPath() {

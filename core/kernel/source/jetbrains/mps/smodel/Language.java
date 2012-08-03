@@ -194,6 +194,8 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
+    super.setModuleDescriptor(newDescriptor,reloadClasses);
+
     myLanguageDescriptor = newDescriptor;
 
     ModuleReference reference = new ModuleReference(myLanguageDescriptor.getNamespace(), myLanguageDescriptor.getId());

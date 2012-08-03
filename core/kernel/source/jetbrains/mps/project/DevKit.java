@@ -56,6 +56,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   }
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
+    super.setModuleDescriptor(descriptor,reloadClasses);
+
     MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
