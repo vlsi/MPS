@@ -106,11 +106,11 @@ public class ClassifierTypeUtil {
     return type;
   }
 
-  public static boolean isFunctionTypeClassifier(SNode classifier) {
+  private static boolean isFunctionTypeClassifier(SNode classifier) {
     return SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") && eq_zgotlq_a0a0a3(SNodeOperations.getModel(classifier).getSModelFqName(), SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_zgotlq_a0a0a0a0a0d().createNode(), "classifier", false)).getSModelFqName());
   }
 
-  public static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
+  private static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
     if (isFunctionTypeClassifier(classifier)) {
       String cname = SPropertyOperations.getString(classifier, "name");
       int ldi = cname.lastIndexOf(".");
@@ -123,7 +123,8 @@ public class ClassifierTypeUtil {
     return false;
   }
 
-  public static SNode resolveTypeUsingSupertypes(SNode type, SNode concrete) {
+  @Deprecated
+  private static SNode resolveTypeUsingSupertypes(SNode type, SNode concrete) {
     List<SNode> visitedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> concretes = ListSequence.fromList(new LinkedList<SNode>());
     ListSequence.fromList(concretes).addElement(concrete);
@@ -161,7 +162,7 @@ public class ClassifierTypeUtil {
     return resolveType(SNodeOperations.copyNode(type), ptypes, vars);
   }
 
-  public static SNode resolveType(SNode type, List<SNode> actTypes, List<SNode> vars) {
+  private static SNode resolveType(SNode type, List<SNode> actTypes, List<SNode> vars) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") && ListSequence.fromList(actTypes).count() > 0) {
       int idx = 0;
       for (SNode tvd : vars) {

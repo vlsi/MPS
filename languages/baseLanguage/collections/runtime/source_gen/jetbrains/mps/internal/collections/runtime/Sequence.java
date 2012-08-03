@@ -73,7 +73,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return sort(selector, ascending);
   }
 
-  public ISequence<T> sort(Comparator<T> comparator, boolean ascending) {
+  public ISequence<T> sort(Comparator<? super T> comparator, boolean ascending) {
     return new SortingSequence<T>(this, comparator, ascending);
   }
 
@@ -106,7 +106,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return skip(skip).take(take);
   }
 
-  public ISequence<T> concat(ISequence<T> that) {
+  public ISequence<T> concat(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
         return this;
@@ -115,7 +115,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ConcatingSequence<T>(this, that);
   }
 
-  public ISequence<T> intersect(ISequence<T> that) {
+  public ISequence<T> intersect(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
         return NullSequence.instance();
@@ -124,7 +124,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ComparingSequence<T>(this, that, ComparingSequence.Kind.INTERSECTION);
   }
 
-  public ISequence<T> subtract(ISequence<T> that) {
+  public ISequence<T> subtract(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
         return this;
@@ -133,7 +133,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ComparingSequence<T>(this, that, ComparingSequence.Kind.SUBSTRACTION);
   }
 
-  public ISequence<T> union(ISequence<T> that) {
+  public ISequence<T> union(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
         return this;
@@ -142,7 +142,7 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return new ComparingSequence<T>(this, that, ComparingSequence.Kind.UNION);
   }
 
-  public ISequence<T> disjunction(ISequence<T> that) {
+  public ISequence<T> disjunction(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
         return this;
@@ -159,13 +159,13 @@ public abstract class Sequence<T> implements ISequence<T>, Iterable<T> {
     return IterableUtils.contains(toIterable(), t);
   }
 
-  public boolean containsSequence(ISequence<T> that) {
+  public boolean containsSequence(ISequence<? extends T> that) {
     if (USE_NULL_SEQUENCE) {
       if (that == null) {
         return false;
       }
     }
-    return that.subtract(this).isEmpty();
+    return this.intersect(that).disjunction(that).isEmpty();
   }
 
   public int indexOf(T t) {

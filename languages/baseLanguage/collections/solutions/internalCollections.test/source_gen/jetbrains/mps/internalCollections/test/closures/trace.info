@@ -1583,8 +1583,8 @@
     <nodeInfo nodeId="599357942184268321" fileName="Sort_Test.java" startLine="114" startPosition="13" endLine="115" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="599357942184268691" fileName="Sort_Test.java" startLine="115" startPosition="103" endLine="116" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1205687027624" fileName="Sort_Test.java" startLine="18" startPosition="80" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
-    <nodeInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="86" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
-    <nodeInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="86" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="96" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="96" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
     <nodeInfo nodeId="1205737614820" fileName="Sort_Test.java" startLine="47" startPosition="102" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
     <nodeInfo nodeId="1205738230334" fileName="Sort_Test.java" startLine="53" startPosition="110" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
     <nodeInfo nodeId="3343985444902960344" fileName="Sort_Test.java" startLine="58" startPosition="126" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;)Ljava/lang/Integer;" />
@@ -1630,10 +1630,10 @@
     <scopeInfo nodeId="1205687027624" fileName="Sort_Test.java" startLine="18" startPosition="80" endLine="22" endPosition="0">
       <varInfo nodeId="1205687027624" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="86" endLine="32" endPosition="0">
+    <scopeInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="96" endLine="32" endPosition="0">
       <varInfo nodeId="1205694004155" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="86" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="96" endLine="38" endPosition="0">
       <varInfo nodeId="1205751769125" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1205737614820" fileName="Sort_Test.java" startLine="47" startPosition="102" endLine="51" endPosition="0">
@@ -1712,8 +1712,8 @@
     <unitInfo nodeId="599357942184268676" fileName="Sort_Test.java" startLine="101" startPosition="63" endLine="105" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$11" />
     <unitInfo nodeId="599357942184353388" fileName="Sort_Test.java" startLine="106" startPosition="63" endLine="110" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$12" />
     <unitInfo nodeId="599357942184353398" fileName="Sort_Test.java" startLine="110" startPosition="27" endLine="114" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$13" />
-    <unitInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="50" endLine="32" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$2" />
-    <unitInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="50" endLine="38" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$3" />
+    <unitInfo nodeId="1205694004155" fileName="Sort_Test.java" startLine="28" startPosition="60" endLine="32" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$2" />
+    <unitInfo nodeId="1205751769125" fileName="Sort_Test.java" startLine="34" startPosition="60" endLine="38" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$3" />
     <unitInfo nodeId="1205737614820" fileName="Sort_Test.java" startLine="47" startPosition="66" endLine="51" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$4" />
     <unitInfo nodeId="1205738230334" fileName="Sort_Test.java" startLine="53" startPosition="74" endLine="57" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$5" />
     <unitInfo nodeId="3343985444902960344" fileName="Sort_Test.java" startLine="58" startPosition="77" endLine="62" endPosition="5" unitName="jetbrains.mps.internalCollections.test.closures.Sort_Test$6" />

@@ -83,7 +83,7 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
   }
 
   @Override
-  public ISequence<T> disjunction(ISequence<T> that) {
+  public ISequence<T> disjunction(ISequence<? extends T> that) {
     return super.disjunction(that);
   }
 
@@ -93,7 +93,7 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
   }
 
   @Override
-  public ISequence<T> intersect(ISequence<T> that) {
+  public ISequence<T> intersect(ISequence<? extends T> that) {
     return super.intersect(that);
   }
 
@@ -103,12 +103,12 @@ public class SetSequence<T> extends CollectionSequence<T> implements ISetSequenc
   }
 
   @Override
-  public ISequence<T> subtract(ISequence<T> that) {
+  public ISequence<T> subtract(ISequence<? extends T> that) {
     return super.subtract(that);
   }
 
   @Override
-  public ISequence<T> union(ISequence<T> that) {
+  public ISequence<T> union(ISequence<? extends T> that) {
     return super.union(that);
   }
 

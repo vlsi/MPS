@@ -481,16 +481,16 @@
     <unitInfo nodeId="6543581031674024631" fileName="NullCollectionSequence.java" startLine="10" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.NullCollectionSequence" />
   </root>
   <root nodeId="6543581031674024998">
-    <nodeInfo nodeId="6543581031674025044" fileName="ConcatingSequence.java" startLine="10" startPosition="55" endLine="11" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="left" />
-    <nodeInfo nodeId="6543581031674025048" fileName="ConcatingSequence.java" startLine="11" startPosition="34" endLine="12" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="right" />
+    <nodeInfo nodeId="6543581031674025044" fileName="ConcatingSequence.java" startLine="10" startPosition="55" endLine="11" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="left" />
+    <nodeInfo nodeId="6543581031674025048" fileName="ConcatingSequence.java" startLine="11" startPosition="44" endLine="12" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="right" />
     <nodeInfo nodeId="6543581031674025071" fileName="ConcatingSequence.java" startLine="15" startPosition="40" endLine="16" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="6543581031674025074" fileName="ConcatingSequence.java" startLine="17" startPosition="5" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674025080" fileName="ConcatingSequence.java" startLine="18" startPosition="21" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674025091" fileName="ConcatingSequence.java" startLine="22" startPosition="33" endLine="23" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674025007" fileName="ConcatingSequence.java" startLine="26" startPosition="58" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="next" />
     <nodeInfo nodeId="6543581031674025010" fileName="ConcatingSequence.java" startLine="27" startPosition="19" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNext" />
-    <nodeInfo nodeId="6543581031674025013" fileName="ConcatingSequence.java" startLine="28" startPosition="56" endLine="29" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="leftIt" />
-    <nodeInfo nodeId="6543581031674025017" fileName="ConcatingSequence.java" startLine="29" startPosition="31" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rightIt" />
+    <nodeInfo nodeId="6543581031674025013" fileName="ConcatingSequence.java" startLine="28" startPosition="56" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="leftIt" />
+    <nodeInfo nodeId="6543581031674025017" fileName="ConcatingSequence.java" startLine="29" startPosition="41" endLine="30" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rightIt" />
     <nodeInfo nodeId="6401275180973216610" fileName="ConcatingSequence.java" startLine="36" startPosition="46" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674025104" fileName="ConcatingSequence.java" startLine="39" startPosition="30" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674025106" fileName="ConcatingSequence.java" startLine="41" startPosition="7" endLine="42" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -512,7 +512,7 @@
     <nodeInfo nodeId="6543581031674025197" fileName="ConcatingSequence.java" startLine="85" startPosition="34" endLine="86" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674025203" fileName="ConcatingSequence.java" startLine="86" startPosition="23" endLine="87" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674025021" fileName="ConcatingSequence.java" startLine="31" startPosition="0" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConcatingIterator#()V" />
-    <nodeInfo nodeId="6543581031674025062" fileName="ConcatingSequence.java" startLine="14" startPosition="67" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674025062" fileName="ConcatingSequence.java" startLine="14" startPosition="87" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6401275180973216590" fileName="ConcatingSequence.java" startLine="35" startPosition="30" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6543581031674025097" fileName="ConcatingSequence.java" startLine="38" startPosition="7" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6401275180973216612" fileName="ConcatingSequence.java" startLine="45" startPosition="21" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -548,7 +548,7 @@
     <scopeInfo nodeId="6401275180973221682" fileName="ConcatingSequence.java" startLine="78" startPosition="27" endLine="82" endPosition="17">
       <varInfo nodeId="6401275180973221678" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674025061" fileName="ConcatingSequence.java" startLine="14" startPosition="67" endLine="19" endPosition="23" />
+    <scopeInfo nodeId="6543581031674025061" fileName="ConcatingSequence.java" startLine="14" startPosition="87" endLine="19" endPosition="23" />
     <scopeInfo nodeId="6543581031674025033" fileName="ConcatingSequence.java" startLine="61" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="6543581031674025039" fileName="ConcatingSequence.java" startLine="84" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="6543581031674025042" varName="next" />
@@ -684,120 +684,125 @@
   </root>
   <root nodeId="6543581031674026581">
     <nodeInfo nodeId="6543581031674026663" fileName="SortingSequence.java" startLine="16" startPosition="76" endLine="17" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="input" />
-    <nodeInfo nodeId="6543581031674026667" fileName="SortingSequence.java" startLine="17" startPosition="34" endLine="18" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="comparator" />
+    <nodeInfo nodeId="6543581031674026667" fileName="SortingSequence.java" startLine="17" startPosition="34" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="comparator" />
     <nodeInfo nodeId="6543581031674026692" fileName="SortingSequence.java" startLine="21" startPosition="46" endLine="22" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="6543581031674026695" fileName="SortingSequence.java" startLine="23" startPosition="5" endLine="24" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026732" fileName="SortingSequence.java" startLine="32" startPosition="46" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674026735" fileName="SortingSequence.java" startLine="34" startPosition="5" endLine="35" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026741" fileName="SortingSequence.java" startLine="35" startPosition="23" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026752" fileName="SortingSequence.java" startLine="39" startPosition="33" endLine="40" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674026757" fileName="SortingSequence.java" startLine="40" startPosition="52" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026776" fileName="SortingSequence.java" startLine="45" startPosition="126" endLine="46" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674026806" fileName="SortingSequence.java" startLine="54" startPosition="45" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674026818" fileName="SortingSequence.java" startLine="56" startPosition="23" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026823" fileName="SortingSequence.java" startLine="58" startPosition="5" endLine="59" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674026833" fileName="SortingSequence.java" startLine="59" startPosition="38" endLine="60" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026837" fileName="SortingSequence.java" startLine="60" startPosition="35" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026593" fileName="SortingSequence.java" startLine="64" startPosition="71" endLine="65" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="source" />
-    <nodeInfo nodeId="6543581031674026844" fileName="SortingSequence.java" startLine="67" startPosition="57" endLine="68" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026851" fileName="SortingSequence.java" startLine="71" startPosition="30" endLine="72" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026856" fileName="SortingSequence.java" startLine="75" startPosition="21" endLine="76" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026861" fileName="SortingSequence.java" startLine="79" startPosition="26" endLine="80" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6543581031674026617" fileName="SortingSequence.java" startLine="84" startPosition="71" endLine="85" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="primary" />
-    <nodeInfo nodeId="6543581031674026865" fileName="SortingSequence.java" startLine="87" startPosition="54" endLine="88" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026872" fileName="SortingSequence.java" startLine="91" startPosition="34" endLine="92" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026639" fileName="SortingSequence.java" startLine="96" startPosition="71" endLine="97" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="secondary" />
-    <nodeInfo nodeId="6543581031674026643" fileName="SortingSequence.java" startLine="97" startPosition="42" endLine="98" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="primary" />
-    <nodeInfo nodeId="6543581031674026880" fileName="SortingSequence.java" startLine="100" startPosition="79" endLine="101" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026886" fileName="SortingSequence.java" startLine="101" startPosition="29" endLine="102" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026893" fileName="SortingSequence.java" startLine="105" startPosition="34" endLine="106" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6543581031674026683" fileName="SortingSequence.java" startLine="20" startPosition="90" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674026723" fileName="SortingSequence.java" startLine="31" startPosition="71" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6543581031674026813" fileName="SortingSequence.java" startLine="55" startPosition="44" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6543581031674026597" fileName="SortingSequence.java" startLine="66" startPosition="0" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmodifiableIterator#(Ljava/util/ListIterator;)V" />
-    <nodeInfo nodeId="6543581031674026621" fileName="SortingSequence.java" startLine="86" startPosition="0" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InversedComparator#(Ljava/util/Comparator;)V" />
-    <nodeInfo nodeId="6543581031674026701" fileName="SortingSequence.java" startLine="24" startPosition="23" endLine="28" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6543581031674026784" fileName="SortingSequence.java" startLine="46" startPosition="77" endLine="50" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026603" fileName="SortingSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
-    <nodeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
-    <nodeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(nullnull)I" />
-    <nodeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="99" startPosition="0" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompoundComparator#(Ljava/util/Comparator;Ljava/util/Comparator;)V" />
-    <nodeInfo nodeId="6543581031674026901" fileName="SortingSequence.java" startLine="106" startPosition="36" endLine="110" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6543581031674026747" fileName="SortingSequence.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="6543581031674026713" fileName="SortingSequence.java" startLine="30" startPosition="0" endLine="37" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortingSequence#(Ljetbrains/mps/internal/collections/runtime/Sequence;Ljava/util/Comparator;)V" />
-    <nodeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="104" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(nullnull)I" />
-    <nodeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="43" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="alsoSort#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Z)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
-    <nodeInfo nodeId="6543581031674026671" fileName="SortingSequence.java" startLine="19" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortingSequence#(Ljetbrains/mps/internal/collections/runtime/Sequence;Ljava/util/Comparator;Z)V" />
-    <nodeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="52" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inputSortedWithSelector#()Ljava/util/List;" />
+    <nodeInfo nodeId="487682311870142133" fileName="SortingSequence.java" startLine="25" startPosition="20" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="487682311870142145" fileName="SortingSequence.java" startLine="27" startPosition="12" endLine="28" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026732" fileName="SortingSequence.java" startLine="33" startPosition="46" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674026735" fileName="SortingSequence.java" startLine="35" startPosition="5" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026741" fileName="SortingSequence.java" startLine="36" startPosition="23" endLine="37" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026752" fileName="SortingSequence.java" startLine="40" startPosition="33" endLine="41" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674026757" fileName="SortingSequence.java" startLine="41" startPosition="52" endLine="42" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026776" fileName="SortingSequence.java" startLine="46" startPosition="126" endLine="47" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674026806" fileName="SortingSequence.java" startLine="55" startPosition="45" endLine="56" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674026818" fileName="SortingSequence.java" startLine="57" startPosition="23" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026823" fileName="SortingSequence.java" startLine="59" startPosition="5" endLine="60" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6543581031674026833" fileName="SortingSequence.java" startLine="60" startPosition="38" endLine="61" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026837" fileName="SortingSequence.java" startLine="61" startPosition="35" endLine="62" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026593" fileName="SortingSequence.java" startLine="65" startPosition="71" endLine="66" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="source" />
+    <nodeInfo nodeId="6543581031674026844" fileName="SortingSequence.java" startLine="68" startPosition="57" endLine="69" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026851" fileName="SortingSequence.java" startLine="72" startPosition="30" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026856" fileName="SortingSequence.java" startLine="76" startPosition="21" endLine="77" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026861" fileName="SortingSequence.java" startLine="80" startPosition="26" endLine="81" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6543581031674026617" fileName="SortingSequence.java" startLine="85" startPosition="71" endLine="86" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="primary" />
+    <nodeInfo nodeId="6543581031674026865" fileName="SortingSequence.java" startLine="88" startPosition="62" endLine="89" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026872" fileName="SortingSequence.java" startLine="92" startPosition="34" endLine="93" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026639" fileName="SortingSequence.java" startLine="97" startPosition="71" endLine="98" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="secondary" />
+    <nodeInfo nodeId="6543581031674026643" fileName="SortingSequence.java" startLine="98" startPosition="50" endLine="99" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="primary" />
+    <nodeInfo nodeId="6543581031674026880" fileName="SortingSequence.java" startLine="101" startPosition="95" endLine="102" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026886" fileName="SortingSequence.java" startLine="102" startPosition="29" endLine="103" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6543581031674026893" fileName="SortingSequence.java" startLine="106" startPosition="34" endLine="107" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="487682311870142129" fileName="SortingSequence.java" startLine="27" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6543581031674026683" fileName="SortingSequence.java" startLine="20" startPosition="98" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674026723" fileName="SortingSequence.java" startLine="32" startPosition="71" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674026813" fileName="SortingSequence.java" startLine="56" startPosition="44" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6543581031674026597" fileName="SortingSequence.java" startLine="67" startPosition="0" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnmodifiableIterator#(Ljava/util/ListIterator;)V" />
+    <nodeInfo nodeId="6543581031674026621" fileName="SortingSequence.java" startLine="87" startPosition="0" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InversedComparator#(Ljava/util/Comparator;)V" />
+    <nodeInfo nodeId="6543581031674026784" fileName="SortingSequence.java" startLine="47" startPosition="77" endLine="51" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6543581031674026603" fileName="SortingSequence.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNext#()Z" />
+    <nodeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()null" />
+    <nodeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
+    <nodeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(nullnull)I" />
+    <nodeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="100" startPosition="0" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompoundComparator#(Ljava/util/Comparator;Ljava/util/Comparator;)V" />
+    <nodeInfo nodeId="6543581031674026901" fileName="SortingSequence.java" startLine="107" startPosition="36" endLine="111" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="487682311870142125" fileName="SortingSequence.java" startLine="24" startPosition="23" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674026747" fileName="SortingSequence.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="6543581031674026713" fileName="SortingSequence.java" startLine="31" startPosition="0" endLine="38" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortingSequence#(Ljetbrains/mps/internal/collections/runtime/Sequence;Ljava/util/Comparator;)V" />
+    <nodeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="105" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(nullnull)I" />
+    <nodeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="44" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="alsoSort#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Z)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
+    <nodeInfo nodeId="6543581031674026671" fileName="SortingSequence.java" startLine="19" startPosition="0" endLine="30" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortingSequence#(Ljetbrains/mps/internal/collections/runtime/Sequence;Ljava/util/Comparator;Z)V" />
+    <nodeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="53" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="inputSortedWithSelector#()Ljava/util/List;" />
     <scopeInfo nodeId="6543581031674026691" fileName="SortingSequence.java" startLine="21" startPosition="46" endLine="22" endPosition="39" />
-    <scopeInfo nodeId="6543581031674026731" fileName="SortingSequence.java" startLine="32" startPosition="46" endLine="33" endPosition="39" />
-    <scopeInfo nodeId="6543581031674026817" fileName="SortingSequence.java" startLine="56" startPosition="23" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="6543581031674026843" fileName="SortingSequence.java" startLine="67" startPosition="57" endLine="68" endPosition="27" />
-    <scopeInfo nodeId="6543581031674026850" fileName="SortingSequence.java" startLine="71" startPosition="30" endLine="72" endPosition="30" />
-    <scopeInfo nodeId="6543581031674026855" fileName="SortingSequence.java" startLine="75" startPosition="21" endLine="76" endPosition="27" />
-    <scopeInfo nodeId="6543581031674026860" fileName="SortingSequence.java" startLine="79" startPosition="26" endLine="80" endPosition="48" />
-    <scopeInfo nodeId="6543581031674026864" fileName="SortingSequence.java" startLine="87" startPosition="54" endLine="88" endPosition="29" />
-    <scopeInfo nodeId="6543581031674026871" fileName="SortingSequence.java" startLine="91" startPosition="34" endLine="92" endPosition="36" />
-    <scopeInfo nodeId="6543581031674026751" fileName="SortingSequence.java" startLine="39" startPosition="33" endLine="41" endPosition="83">
+    <scopeInfo nodeId="487682311870142128" fileName="SortingSequence.java" startLine="25" startPosition="20" endLine="26" endPosition="35" />
+    <scopeInfo nodeId="487682311870142131" fileName="SortingSequence.java" startLine="27" startPosition="12" endLine="28" endPosition="78" />
+    <scopeInfo nodeId="6543581031674026731" fileName="SortingSequence.java" startLine="33" startPosition="46" endLine="34" endPosition="39" />
+    <scopeInfo nodeId="6543581031674026817" fileName="SortingSequence.java" startLine="57" startPosition="23" endLine="58" endPosition="19" />
+    <scopeInfo nodeId="6543581031674026843" fileName="SortingSequence.java" startLine="68" startPosition="57" endLine="69" endPosition="27" />
+    <scopeInfo nodeId="6543581031674026850" fileName="SortingSequence.java" startLine="72" startPosition="30" endLine="73" endPosition="30" />
+    <scopeInfo nodeId="6543581031674026855" fileName="SortingSequence.java" startLine="76" startPosition="21" endLine="77" endPosition="27" />
+    <scopeInfo nodeId="6543581031674026860" fileName="SortingSequence.java" startLine="80" startPosition="26" endLine="81" endPosition="48" />
+    <scopeInfo nodeId="6543581031674026864" fileName="SortingSequence.java" startLine="88" startPosition="62" endLine="89" endPosition="29" />
+    <scopeInfo nodeId="6543581031674026871" fileName="SortingSequence.java" startLine="92" startPosition="34" endLine="93" endPosition="36" />
+    <scopeInfo nodeId="6543581031674026751" fileName="SortingSequence.java" startLine="40" startPosition="33" endLine="42" endPosition="83">
       <varInfo nodeId="6543581031674026753" varName="sortedInput" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026879" fileName="SortingSequence.java" startLine="100" startPosition="79" endLine="102" endPosition="33" />
-    <scopeInfo nodeId="6543581031674026813" fileName="SortingSequence.java" startLine="55" startPosition="44" endLine="58" endPosition="5">
+    <scopeInfo nodeId="6543581031674026879" fileName="SortingSequence.java" startLine="101" startPosition="95" endLine="103" endPosition="33" />
+    <scopeInfo nodeId="6543581031674026813" fileName="SortingSequence.java" startLine="56" startPosition="44" endLine="59" endPosition="5">
       <varInfo nodeId="6543581031674026815" varName="u" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026597" fileName="SortingSequence.java" startLine="66" startPosition="0" endLine="69" endPosition="5">
+    <scopeInfo nodeId="6543581031674026597" fileName="SortingSequence.java" startLine="67" startPosition="0" endLine="70" endPosition="5">
       <varInfo nodeId="6543581031674026600" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026621" fileName="SortingSequence.java" startLine="86" startPosition="0" endLine="89" endPosition="5">
+    <scopeInfo nodeId="6543581031674026621" fileName="SortingSequence.java" startLine="87" startPosition="0" endLine="90" endPosition="5">
       <varInfo nodeId="6543581031674026624" varName="primary" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026603" fileName="SortingSequence.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="6543581031674026603" fileName="SortingSequence.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="6543581031674026606" fileName="SortingSequence.java" startLine="75" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="6543581031674026609" fileName="SortingSequence.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="6543581031674026627" fileName="SortingSequence.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="6543581031674026630" varName="a" />
       <varInfo nodeId="6543581031674026632" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="99" startPosition="0" endLine="103" endPosition="5">
+    <scopeInfo nodeId="6543581031674026647" fileName="SortingSequence.java" startLine="100" startPosition="0" endLine="104" endPosition="5">
       <varInfo nodeId="6543581031674026650" varName="primary" />
       <varInfo nodeId="6543581031674026653" varName="secondary" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026722" fileName="SortingSequence.java" startLine="31" startPosition="71" endLine="36" endPosition="33" />
-    <scopeInfo nodeId="6543581031674026747" fileName="SortingSequence.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6543581031674026775" fileName="SortingSequence.java" startLine="45" startPosition="126" endLine="50" endPosition="8">
+    <scopeInfo nodeId="6543581031674026722" fileName="SortingSequence.java" startLine="32" startPosition="71" endLine="37" endPosition="33" />
+    <scopeInfo nodeId="6543581031674026747" fileName="SortingSequence.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="6543581031674026775" fileName="SortingSequence.java" startLine="46" startPosition="126" endLine="51" endPosition="8">
       <varInfo nodeId="6543581031674026777" varName="selectComparator" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026892" fileName="SortingSequence.java" startLine="105" startPosition="34" endLine="110" endPosition="8">
+    <scopeInfo nodeId="6543581031674026892" fileName="SortingSequence.java" startLine="106" startPosition="34" endLine="111" endPosition="8">
       <varInfo nodeId="6543581031674026894" varName="c" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026713" fileName="SortingSequence.java" startLine="30" startPosition="0" endLine="37" endPosition="3">
+    <scopeInfo nodeId="6543581031674026713" fileName="SortingSequence.java" startLine="31" startPosition="0" endLine="38" endPosition="3">
       <varInfo nodeId="6543581031674026719" varName="comparator" />
       <varInfo nodeId="6543581031674026716" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026805" fileName="SortingSequence.java" startLine="54" startPosition="45" endLine="61" endPosition="32">
+    <scopeInfo nodeId="6543581031674026805" fileName="SortingSequence.java" startLine="55" startPosition="45" endLine="62" endPosition="32">
       <varInfo nodeId="6543581031674026824" varName="array" />
       <varInfo nodeId="6543581031674026807" varName="cache" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026682" fileName="SortingSequence.java" startLine="20" startPosition="90" endLine="28" endPosition="6" />
-    <scopeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="104" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="6543581031674026656" fileName="SortingSequence.java" startLine="105" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="6543581031674026659" varName="a" />
       <varInfo nodeId="6543581031674026661" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="43" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="6543581031674026682" fileName="SortingSequence.java" startLine="20" startPosition="98" endLine="29" endPosition="5" />
+    <scopeInfo nodeId="6543581031674026764" fileName="SortingSequence.java" startLine="44" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="6543581031674026773" varName="ascending" />
       <varInfo nodeId="3473971317150288159" varName="selector" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026671" fileName="SortingSequence.java" startLine="19" startPosition="0" endLine="29" endPosition="3">
+    <scopeInfo nodeId="6543581031674026671" fileName="SortingSequence.java" startLine="19" startPosition="0" endLine="30" endPosition="3">
       <varInfo nodeId="6543581031674026680" varName="ascending" />
       <varInfo nodeId="6543581031674026677" varName="comparator" />
       <varInfo nodeId="6543581031674026674" varName="input" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="52" startPosition="0" endLine="63" endPosition="0" />
-    <unitInfo nodeId="6543581031674026581" fileName="SortingSequence.java" startLine="16" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence" />
-    <unitInfo nodeId="6543581031674026634" fileName="SortingSequence.java" startLine="96" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$CompoundComparator" />
-    <unitInfo nodeId="6543581031674026612" fileName="SortingSequence.java" startLine="84" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$InversedComparator" />
-    <unitInfo nodeId="6543581031674026588" fileName="SortingSequence.java" startLine="64" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$UnmodifiableIterator" />
+    <scopeInfo nodeId="6543581031674026801" fileName="SortingSequence.java" startLine="53" startPosition="0" endLine="64" endPosition="0" />
+    <unitInfo nodeId="6543581031674026581" fileName="SortingSequence.java" startLine="16" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence" />
+    <unitInfo nodeId="6543581031674026634" fileName="SortingSequence.java" startLine="97" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$CompoundComparator" />
+    <unitInfo nodeId="6543581031674026612" fileName="SortingSequence.java" startLine="85" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$InversedComparator" />
+    <unitInfo nodeId="6543581031674026588" fileName="SortingSequence.java" startLine="65" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.SortingSequence$UnmodifiableIterator" />
   </root>
   <root nodeId="6543581031674026912">
     <nodeInfo nodeId="6543581031674026960" fileName="NullListSequence.java" startLine="13" startPosition="105" endLine="14" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
@@ -1224,9 +1229,9 @@
     <unitInfo nodeId="6543581031674028259" fileName="CardinalityMap.java" startLine="7" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.internal.collections.runtime.impl.CardinalityMap" />
   </root>
   <root nodeId="6543581031674028391">
-    <nodeInfo nodeId="6543581031674028459" fileName="ComparingSequence.java" startLine="12" startPosition="78" endLine="13" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="left" />
-    <nodeInfo nodeId="6543581031674028463" fileName="ComparingSequence.java" startLine="13" startPosition="34" endLine="14" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="right" />
-    <nodeInfo nodeId="6543581031674028467" fileName="ComparingSequence.java" startLine="14" startPosition="35" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kind" />
+    <nodeInfo nodeId="6543581031674028459" fileName="ComparingSequence.java" startLine="12" startPosition="78" endLine="13" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="left" />
+    <nodeInfo nodeId="6543581031674028463" fileName="ComparingSequence.java" startLine="13" startPosition="44" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="right" />
+    <nodeInfo nodeId="6543581031674028467" fileName="ComparingSequence.java" startLine="14" startPosition="45" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="kind" />
     <nodeInfo nodeId="6543581031674028491" fileName="ComparingSequence.java" startLine="18" startPosition="40" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="6543581031674028494" fileName="ComparingSequence.java" startLine="20" startPosition="5" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674028500" fileName="ComparingSequence.java" startLine="21" startPosition="21" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1234,9 +1239,9 @@
     <nodeInfo nodeId="6543581031674028517" fileName="ComparingSequence.java" startLine="26" startPosition="33" endLine="27" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6543581031674028411" fileName="ComparingSequence.java" startLine="40" startPosition="58" endLine="41" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cardMap" />
     <nodeInfo nodeId="6543581031674028415" fileName="ComparingSequence.java" startLine="41" startPosition="64" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cache" />
-    <nodeInfo nodeId="6543581031674028419" fileName="ComparingSequence.java" startLine="42" startPosition="26" endLine="43" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="leftIt" />
-    <nodeInfo nodeId="6543581031674028423" fileName="ComparingSequence.java" startLine="43" startPosition="31" endLine="44" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rightIt" />
-    <nodeInfo nodeId="6543581031674028427" fileName="ComparingSequence.java" startLine="44" startPosition="32" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="next" />
+    <nodeInfo nodeId="6543581031674028419" fileName="ComparingSequence.java" startLine="42" startPosition="26" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="leftIt" />
+    <nodeInfo nodeId="6543581031674028423" fileName="ComparingSequence.java" startLine="43" startPosition="41" endLine="44" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rightIt" />
+    <nodeInfo nodeId="6543581031674028427" fileName="ComparingSequence.java" startLine="44" startPosition="42" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="next" />
     <nodeInfo nodeId="6543581031674028430" fileName="ComparingSequence.java" startLine="45" startPosition="19" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="hasNext" />
     <nodeInfo nodeId="6543581031674028532" fileName="ComparingSequence.java" startLine="52" startPosition="46" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6543581031674028534" fileName="ComparingSequence.java" startLine="55" startPosition="30" endLine="56" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1304,7 +1309,7 @@
     <nodeInfo nodeId="6543581031674028755" fileName="ComparingSequence.java" startLine="136" startPosition="18" endLine="138" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6543581031674028805" fileName="ComparingSequence.java" startLine="153" startPosition="18" endLine="155" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6543581031674028839" fileName="ComparingSequence.java" startLine="171" startPosition="18" endLine="173" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6543581031674028482" fileName="ComparingSequence.java" startLine="17" startPosition="96" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6543581031674028482" fileName="ComparingSequence.java" startLine="17" startPosition="116" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6401275180973221705" fileName="ComparingSequence.java" startLine="51" startPosition="30" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6543581031674028527" fileName="ComparingSequence.java" startLine="54" startPosition="7" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6401275180973221723" fileName="ComparingSequence.java" startLine="61" startPosition="21" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1402,7 +1407,7 @@
     <scopeInfo nodeId="6543581031674028454" fileName="ComparingSequence.java" startLine="190" startPosition="0" endLine="195" endPosition="0">
       <varInfo nodeId="6543581031674028457" varName="tmp" />
     </scopeInfo>
-    <scopeInfo nodeId="6543581031674028481" fileName="ComparingSequence.java" startLine="17" startPosition="96" endLine="23" endPosition="21" />
+    <scopeInfo nodeId="6543581031674028481" fileName="ComparingSequence.java" startLine="17" startPosition="116" endLine="23" endPosition="21" />
     <scopeInfo nodeId="6543581031674028526" fileName="ComparingSequence.java" startLine="51" startPosition="30" endLine="58" endPosition="31" />
     <scopeInfo nodeId="6543581031674028448" fileName="ComparingSequence.java" startLine="104" startPosition="0" endLine="111" endPosition="0" />
     <scopeInfo nodeId="6401275180973221770" fileName="ComparingSequence.java" startLine="183" startPosition="0" endLine="190" endPosition="0" />

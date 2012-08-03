@@ -166,7 +166,7 @@ public abstract class CollectionSequence<T> extends Sequence<T> implements IColl
   }
 
   @Override
-  public boolean containsSequence(ISequence<T> that) {
+  public boolean containsSequence(ISequence<? extends T> that) {
     if (that instanceof CollectionSequence<?>) {
       return getCollection().containsAll(((CollectionSequence<?>) that).getCollection());
     }
