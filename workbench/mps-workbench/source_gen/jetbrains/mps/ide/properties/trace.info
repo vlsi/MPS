@@ -1331,43 +1331,42 @@
     <unitInfo nodeId="4060390951635972881" fileName="StandardComponents.java" startLine="515" startPosition="0" endLine="548" endPosition="0" unitName="jetbrains.mps.ide.properties.StandardComponents$CheckboxDescriptor" />
   </root>
   <root nodeId="5923576889075039038">
-    <nodeInfo nodeId="5923576889075039041" fileName="DevKitPropertiesDialog.java" startLine="12" startPosition="66" endLine="13" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDevKit" />
-    <nodeInfo nodeId="5923576889075039044" fileName="DevKitPropertiesDialog.java" startLine="13" startPosition="25" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
-    <nodeInfo nodeId="5923576889075039053" fileName="DevKitPropertiesDialog.java" startLine="16" startPosition="89" endLine="17" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5923576889075039056" fileName="DevKitPropertiesDialog.java" startLine="17" startPosition="49" endLine="18" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039062" fileName="DevKitPropertiesDialog.java" startLine="18" startPosition="22" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039106" fileName="DevKitPropertiesDialog.java" startLine="22" startPosition="42" endLine="23" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039113" fileName="DevKitPropertiesDialog.java" startLine="23" startPosition="42" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039128" fileName="DevKitPropertiesDialog.java" startLine="27" startPosition="37" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075039147" fileName="DevKitPropertiesDialog.java" startLine="32" startPosition="29" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075039160" fileName="DevKitPropertiesDialog.java" startLine="36" startPosition="25" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039171" fileName="DevKitPropertiesDialog.java" startLine="37" startPosition="60" endLine="38" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039182" fileName="DevKitPropertiesDialog.java" startLine="38" startPosition="75" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039188" fileName="DevKitPropertiesDialog.java" startLine="39" startPosition="24" endLine="40" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039194" fileName="DevKitPropertiesDialog.java" startLine="42" startPosition="43" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5923576889075039141" fileName="DevKitPropertiesDialog.java" startLine="31" startPosition="37" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5923576889075039124" fileName="DevKitPropertiesDialog.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5923576889075039047" fileName="DevKitPropertiesDialog.java" startLine="15" startPosition="0" endLine="20" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DevKitPropertiesDialog#(Ljetbrains/mps/project/DevKit;Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="5923576889075039102" fileName="DevKitPropertiesDialog.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDevkitProperties#()V" />
-    <nodeInfo nodeId="5923576889075039156" fileName="DevKitPropertiesDialog.java" startLine="35" startPosition="67" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5923576889075039149" fileName="DevKitPropertiesDialog.java" startLine="34" startPosition="5" endLine="42" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5923576889075039137" fileName="DevKitPropertiesDialog.java" startLine="30" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSaveChanges#()Z" />
-    <scopeInfo nodeId="5923576889075039127" fileName="DevKitPropertiesDialog.java" startLine="27" startPosition="37" endLine="28" endPosition="57" />
-    <scopeInfo nodeId="5923576889075039146" fileName="DevKitPropertiesDialog.java" startLine="32" startPosition="29" endLine="33" endPosition="19" />
-    <scopeInfo nodeId="5923576889075039105" fileName="DevKitPropertiesDialog.java" startLine="22" startPosition="42" endLine="24" endPosition="58" />
-    <scopeInfo nodeId="5923576889075039052" fileName="DevKitPropertiesDialog.java" startLine="16" startPosition="89" endLine="19" endPosition="30" />
-    <scopeInfo nodeId="5923576889075039124" fileName="DevKitPropertiesDialog.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="5923576889075039159" fileName="DevKitPropertiesDialog.java" startLine="36" startPosition="25" endLine="40" endPosition="79" />
-    <scopeInfo nodeId="5923576889075039047" fileName="DevKitPropertiesDialog.java" startLine="15" startPosition="0" endLine="20" endPosition="3">
+    <nodeInfo nodeId="5923576889075039041" fileName="DevKitPropertiesDialog.java" startLine="10" startPosition="66" endLine="11" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDevKit" />
+    <nodeInfo nodeId="5923576889075039044" fileName="DevKitPropertiesDialog.java" startLine="11" startPosition="25" endLine="12" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
+    <nodeInfo nodeId="5923576889075039053" fileName="DevKitPropertiesDialog.java" startLine="14" startPosition="89" endLine="15" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5923576889075039056" fileName="DevKitPropertiesDialog.java" startLine="15" startPosition="49" endLine="16" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039062" fileName="DevKitPropertiesDialog.java" startLine="16" startPosition="22" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039106" fileName="DevKitPropertiesDialog.java" startLine="20" startPosition="42" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039113" fileName="DevKitPropertiesDialog.java" startLine="21" startPosition="42" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039128" fileName="DevKitPropertiesDialog.java" startLine="25" startPosition="37" endLine="26" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075039147" fileName="DevKitPropertiesDialog.java" startLine="30" startPosition="29" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075039160" fileName="DevKitPropertiesDialog.java" startLine="34" startPosition="25" endLine="35" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039171" fileName="DevKitPropertiesDialog.java" startLine="35" startPosition="60" endLine="36" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039182" fileName="DevKitPropertiesDialog.java" startLine="36" startPosition="75" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039194" fileName="DevKitPropertiesDialog.java" startLine="39" startPosition="43" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5923576889075039141" fileName="DevKitPropertiesDialog.java" startLine="29" startPosition="37" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5923576889075039124" fileName="DevKitPropertiesDialog.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getErrorString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5923576889075039047" fileName="DevKitPropertiesDialog.java" startLine="13" startPosition="0" endLine="18" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DevKitPropertiesDialog#(Ljetbrains/mps/project/DevKit;Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <nodeInfo nodeId="5923576889075039102" fileName="DevKitPropertiesDialog.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDevkitProperties#()V" />
+    <nodeInfo nodeId="5923576889075039156" fileName="DevKitPropertiesDialog.java" startLine="33" startPosition="67" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5923576889075039149" fileName="DevKitPropertiesDialog.java" startLine="32" startPosition="5" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5923576889075039137" fileName="DevKitPropertiesDialog.java" startLine="28" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSaveChanges#()Z" />
+    <scopeInfo nodeId="5923576889075039127" fileName="DevKitPropertiesDialog.java" startLine="25" startPosition="37" endLine="26" endPosition="57" />
+    <scopeInfo nodeId="5923576889075039146" fileName="DevKitPropertiesDialog.java" startLine="30" startPosition="29" endLine="31" endPosition="19" />
+    <scopeInfo nodeId="5923576889075039105" fileName="DevKitPropertiesDialog.java" startLine="20" startPosition="42" endLine="22" endPosition="58" />
+    <scopeInfo nodeId="5923576889075039052" fileName="DevKitPropertiesDialog.java" startLine="14" startPosition="89" endLine="17" endPosition="30" />
+    <scopeInfo nodeId="5923576889075039159" fileName="DevKitPropertiesDialog.java" startLine="34" startPosition="25" endLine="37" endPosition="24" />
+    <scopeInfo nodeId="5923576889075039124" fileName="DevKitPropertiesDialog.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5923576889075039047" fileName="DevKitPropertiesDialog.java" startLine="13" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="5923576889075039048" varName="devKit" />
       <varInfo nodeId="5923576889075039050" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075039102" fileName="DevKitPropertiesDialog.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="5923576889075039156" fileName="DevKitPropertiesDialog.java" startLine="35" startPosition="67" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="5923576889075039140" fileName="DevKitPropertiesDialog.java" startLine="31" startPosition="37" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="5923576889075039137" fileName="DevKitPropertiesDialog.java" startLine="30" startPosition="0" endLine="45" endPosition="0" />
-    <unitInfo nodeId="5923576889075039038" fileName="DevKitPropertiesDialog.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.ide.properties.DevKitPropertiesDialog" />
-    <unitInfo nodeId="5923576889075039155" fileName="DevKitPropertiesDialog.java" startLine="35" startPosition="55" endLine="42" endPosition="5" unitName="jetbrains.mps.ide.properties.DevKitPropertiesDialog$1" />
+    <scopeInfo nodeId="5923576889075039102" fileName="DevKitPropertiesDialog.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="5923576889075039156" fileName="DevKitPropertiesDialog.java" startLine="33" startPosition="67" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="5923576889075039140" fileName="DevKitPropertiesDialog.java" startLine="29" startPosition="37" endLine="40" endPosition="16" />
+    <scopeInfo nodeId="5923576889075039137" fileName="DevKitPropertiesDialog.java" startLine="28" startPosition="0" endLine="42" endPosition="0" />
+    <unitInfo nodeId="5923576889075039038" fileName="DevKitPropertiesDialog.java" startLine="10" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.ide.properties.DevKitPropertiesDialog" />
+    <unitInfo nodeId="5923576889075039155" fileName="DevKitPropertiesDialog.java" startLine="33" startPosition="55" endLine="39" endPosition="5" unitName="jetbrains.mps.ide.properties.DevKitPropertiesDialog$1" />
   </root>
   <root nodeId="5923576889075041653">
     <nodeInfo nodeId="5923576889075041656" fileName="GeneratorPropertiesDialog.java" startLine="16" startPosition="69" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />

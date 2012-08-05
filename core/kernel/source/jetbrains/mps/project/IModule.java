@@ -109,6 +109,8 @@ public interface IModule extends ModelOwner {
 
   boolean isChanged();
 
+  void setChanged();
+
   void save();
 
   void onModuleLoad();

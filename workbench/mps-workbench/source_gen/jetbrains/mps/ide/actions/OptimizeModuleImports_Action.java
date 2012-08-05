@@ -21,6 +21,7 @@ import java.util.List;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.ui.Messages;
@@ -83,9 +84,11 @@ public class OptimizeModuleImports_Action extends BaseAction {
             } else if (module instanceof Language) {
               report.value += helper.optimizeLanguageImports(((Language) module));
             }
-            SModelRepository.getInstance().saveAll();
-            module.save();
           }
+
+          SModelRepository.getInstance().saveAll();
+          MPSModuleRepository.getInstance().saveAll();
+
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
       });

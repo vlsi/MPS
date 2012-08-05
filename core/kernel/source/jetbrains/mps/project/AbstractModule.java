@@ -630,14 +630,18 @@ public abstract class AbstractModule implements IModule {
     e.printStackTrace();
   }
 
-  public boolean updateSModelReferences() {
-    if (getModuleDescriptor() == null) return false;
-    return getModuleDescriptor().updateModelRefs();
+  public void updateSModelReferences() {
+    if (getModuleDescriptor() == null) return;
+    if (getModuleDescriptor().updateModelRefs()){
+      setChanged();
+    }
   }
 
-  public boolean updateModuleReferences() {
-    if (getModuleDescriptor() == null) return false;
-    return getModuleDescriptor().updateModuleRefs();
+  public void updateModuleReferences() {
+    if (getModuleDescriptor() == null) return;
+    if (getModuleDescriptor().updateModuleRefs()){
+      setChanged();
+    }
   }
 
   public void invalidateDependencies() {

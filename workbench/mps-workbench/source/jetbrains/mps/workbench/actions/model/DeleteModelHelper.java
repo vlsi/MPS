@@ -92,8 +92,6 @@ public class DeleteModelHelper {
       deleteGeneratedFiles(modelDescriptor);
       SModelRepository.getInstance().deleteModel(modelDescriptor);
     }
-
-    contextModule.save();
   }
 
   public static void safeDelete(final Project project, final SModelDescriptor modelDescriptor, boolean deleteFiles) {
@@ -178,10 +176,6 @@ public class DeleteModelHelper {
       return true;
     }
 
-    public boolean askForInfo(RefactoringContext refactoringContext) {
-      return true;
-    }
-
     public void doRefactor(RefactoringContext refactoringContext) {
       SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
       Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
@@ -191,13 +185,13 @@ public class DeleteModelHelper {
           continue;
         }
         if ((IModule) modelOwner instanceof Language) {
-          deleteModelFromLanguage((Language) (IModule) modelOwner, modelDescriptor);
+          deleteModelFromLanguage((Language) modelOwner, modelDescriptor);
         } else if ((IModule) modelOwner instanceof Solution) {
-          deleteModelFromSolution((Solution) (IModule) modelOwner, modelDescriptor);
+          deleteModelFromSolution((Solution) modelOwner, modelDescriptor);
         } else if ((IModule) modelOwner instanceof Generator) {
-          deleteModelFromGenerator((Generator) (IModule) modelOwner, modelDescriptor);
+          deleteModelFromGenerator((Generator) modelOwner, modelDescriptor);
         } else {
-          LOG.warning("Module type " + ((IModule) modelOwner).getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+          LOG.warning("Module type " + (modelOwner).getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
         }
       }
 
@@ -210,13 +204,6 @@ public class DeleteModelHelper {
 
       if (myDeleteFiles) {
         SModelRepository.getInstance().deleteModel(modelDescriptor);
-      }
-
-      //todo: check correctness - they are not ALL model owners
-      for (ModelOwner modelOwner : owners) {
-        if (modelOwner instanceof IModule) {
-          ((IModule) modelOwner).save();
-        }
       }
     }
 

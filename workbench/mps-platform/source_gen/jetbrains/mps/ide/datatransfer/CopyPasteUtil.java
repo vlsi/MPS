@@ -396,8 +396,6 @@ public class CopyPasteUtil {
 
           targetModule.addDependency(module.getModuleReference(), false);
         }
-
-        targetModule.save();
       }
     };
   }

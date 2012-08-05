@@ -102,7 +102,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     LanguageDescriptor moduleDescriptor = getModuleDescriptor();
     moduleDescriptor.getExtendedLanguages().add(langRef);
     setModuleDescriptor(moduleDescriptor, true);
-    save();
   }
 
   public Set<ModuleReference> getExtendedLanguageRefs() {
@@ -144,18 +143,16 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public void validateExtends() {
-    boolean changed = false;
     List<ModuleReference> remove = new ArrayList<ModuleReference>();
     for (ModuleReference ref : myLanguageDescriptor.getExtendedLanguages()) {
       if (getModuleFqName().equals(ref.getModuleFqName())) {
         remove.add(ref);
-        changed = true;
       }
     }
-    myLanguageDescriptor.getExtendedLanguages().removeAll(remove);
 
-    if (changed && !getDescriptorFile().isReadOnly()) {
-      save();
+    if (!remove.isEmpty()){
+      myLanguageDescriptor.getExtendedLanguages().removeAll(remove);
+      setChanged();
     }
   }
 
@@ -215,6 +212,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     }
 
     invalidateDependencies();
+    setChanged();
   }
 
   public boolean isBootstrap() {
@@ -397,7 +395,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
       }
     }
     setLanguageDescriptor(myLanguageDescriptor, true);
-    save();
   }
 
   public String toString() {
