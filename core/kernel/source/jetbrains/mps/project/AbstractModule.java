@@ -159,7 +159,7 @@ public abstract class AbstractModule implements IModule {
         dep.setReexport(true);
         invalidateCaches();
         invalidateDependencies();
-        myChanged = true;
+        setChanged();
       }
       return;
     }
@@ -171,7 +171,7 @@ public abstract class AbstractModule implements IModule {
 
     invalidateCaches();
     invalidateDependencies();
-    myChanged = true;
+    setChanged();
   }
 
   public void addUsedLanguage(ModuleReference langRef) {
@@ -183,7 +183,7 @@ public abstract class AbstractModule implements IModule {
 
     invalidateCaches();
     invalidateDependencies();
-    myChanged = true;
+    setChanged();
   }
 
   public void addUsedDevkit(ModuleReference devkitRef) {
@@ -195,7 +195,7 @@ public abstract class AbstractModule implements IModule {
 
     invalidateCaches();
     invalidateDependencies();
-    myChanged = true;
+    setChanged();
   }
 
   //----get deps
