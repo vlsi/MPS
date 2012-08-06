@@ -67,7 +67,7 @@ public class DataFlowManager implements CoreComponent {
     myLoaded = false;
   }
 
-  private void checkLoaded() {
+  private synchronized void checkLoaded() {
     if (myLoaded) {
       return;
     }
