@@ -12,7 +12,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
@@ -70,10 +70,10 @@ public class ModelStep extends TwoOptionsStep<SModelDescriptor> {
         public List<SModelDescriptor> compute() {
           return CollectionUtil.filter(modelDescriptors, new Condition<SModelDescriptor>() {
             public boolean met(SModelDescriptor modelDescriptor) {
-              if (!(modelDescriptor instanceof EditableSModelDescriptor)) {
+              if (!(modelDescriptor instanceof DefaultSModelDescriptor)) {
                 return false;
               }
-              IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
+              IFile modelFile = ((DefaultSModelDescriptor) modelDescriptor).getModelFile();
               if (modelFile == null) {
                 return false;
               }

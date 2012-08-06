@@ -69,8 +69,8 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     if (modelDescriptor == null) return new DefaultSModelDescriptor(module, source, modelReference, d);
 
     //todo rewrite
-    IFile newFile = source.getFile();
     DefaultSModelDescriptor dsm = (DefaultSModelDescriptor) modelDescriptor;
+    IFile newFile = dsm.getModelFile();
     if (!newFile.equals(dsm.getModelFile())) {
       // file might be not the same if user, for example, moved model file using external file manager
       ((DefaultSModelDescriptor) modelDescriptor).changeModelFile(newFile);

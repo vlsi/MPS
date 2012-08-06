@@ -20,8 +20,9 @@ import jetbrains.mps.ide.editor.MPSEditorUtil;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -53,18 +54,15 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
 
             RefreshSession session = RefreshQueue.getInstance().createSession(true, true, null);
             for (SModel model : SetSequence.fromSet(models)) {
-              SModelDescriptor descriptor = model.getModelDescriptor();
-              if (descriptor instanceof EditableSModelDescriptor) {
-                IFile modelFile = ((EditableSModelDescriptor) descriptor).getModelFile();
-                if (modelFile != null) {
-                  IFile fileToRefresh = modelFile;
-                  while (!(fileToRefresh.exists())) {
-                    fileToRefresh = fileToRefresh.getParent();
-                  }
-                  VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(modelFile);
-                  if (virtualFile != null) {
-                    session.addFile(virtualFile);
-                  }
+              SModelDescriptor md = model.getModelDescriptor();
+              for (IFile file : CollectionSequence.fromCollection(ModelUtil.getFilesByModelDescriptor(md))) {
+                IFile fileToRefresh = file;
+                while (!(fileToRefresh.exists())) {
+                  fileToRefresh = fileToRefresh.getParent();
+                }
+                VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(fileToRefresh);
+                if (virtualFile != null) {
+                  session.addFile(virtualFile);
                 }
               }
             }

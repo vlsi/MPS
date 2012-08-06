@@ -33,11 +33,12 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.BaseMPSModuleOwner;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.descriptor.source.RegularModelDataSource;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.build.ant.util.PathManager;
 import java.io.StringWriter;
@@ -280,7 +281,7 @@ public abstract class MpsWorker {
   private void processModelFile(Set<SModelDescriptor> modelDescriptors, File f) {
     final IFile ifile = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
     //  try to find if model is loaded 
-    SModelDescriptor model = SModelRepository.getInstance().findModel(ifile);
+    SModelDescriptor model = SModelFileTracker.getInstance().findModel(ifile);
     if (model != null) {
       modelDescriptors.add(model);
       info("Found model " + model);

@@ -379,8 +379,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     List<SModelDescriptor> descriptors = getSelectedModels();
     if (descriptors != null) {
       for (SModelDescriptor descriptor : descriptors) {
-        if (!(descriptor instanceof EditableSModelDescriptor)) continue;
-        EditableSModelDescriptor emd = (EditableSModelDescriptor) descriptor;
+        if (!(descriptor instanceof DefaultSModelDescriptor)) continue;
+        DefaultSModelDescriptor emd = (DefaultSModelDescriptor) descriptor;
         IFile ifile = emd.getModelFile();
         if (ifile == null) continue;
         VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);

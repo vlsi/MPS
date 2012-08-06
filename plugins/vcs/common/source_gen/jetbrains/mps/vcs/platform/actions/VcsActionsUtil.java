@@ -10,7 +10,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.workbench.ModelUtil;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
@@ -34,13 +34,14 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.IFile;
 import java.util.Collections;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 import java.util.ArrayList;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
@@ -55,7 +56,7 @@ public class VcsActionsUtil {
 
   public static void showRootDifference(EditableSModelDescriptor modelDescriptor, final SNode node, final Project project, @Nullable Bounds bounds) {
     try {
-      VirtualFile file = VirtualFileUtils.getVirtualFile((modelDescriptor).getModelFile());
+      VirtualFile file = ModelUtil.getVFilesByModelDescriptor(modelDescriptor).iterator().next();
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
       final VcsRevisionNumber revisionNumber = vcs.getDiffProvider().getCurrentRevision(file);
       ContentRevision content = vcs.getDiffProvider().createFileContent(revisionNumber, file);
@@ -185,7 +186,7 @@ __switch__:
         }
       }).select(new ISelector<VirtualFile, SModelDescriptor>() {
         public SModelDescriptor select(VirtualFile vf) {
-          return ((SModelDescriptor) SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
+          return ((SModelDescriptor) SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(vf)));
         }
       }).where(new IWhereFilter<SModelDescriptor>() {
         public boolean accept(SModelDescriptor m) {

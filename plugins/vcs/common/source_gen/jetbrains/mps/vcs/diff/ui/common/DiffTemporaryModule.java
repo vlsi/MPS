@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.vfs.IFile;
 
 public class DiffTemporaryModule extends AbstractModule {
   private SModel myModel;
@@ -166,11 +165,6 @@ public class DiffTemporaryModule extends AbstractModule {
       throw new UnsupportedOperationException();
     }
 
-    @Deprecated
-    public IFile getModelFile() {
-      throw new UnsupportedOperationException();
-    }
-
     public boolean isReadOnly() {
       return !(myEditable);
     }
@@ -180,10 +174,6 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     public boolean isChanged() {
-      throw new UnsupportedOperationException();
-    }
-
-    public long lastChangeTime() {
       throw new UnsupportedOperationException();
     }
 

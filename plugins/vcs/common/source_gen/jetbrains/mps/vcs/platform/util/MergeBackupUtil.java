@@ -24,10 +24,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 
 public class MergeBackupUtil {
   protected static Log log = LogFactory.getLog(MergeBackupUtil.class);
@@ -124,7 +124,7 @@ public class MergeBackupUtil {
 
   public static File chooseZipFileForModelFile(IFile file) {
     MergeDriverBackupUtil.setMergeBackupDirPath(getMergeBackupDirPath());
-    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), check_fhutfy_b0b0g(SModelRepository.getInstance().findModel(file)));
+    return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), check_fhutfy_b0b0g(SModelFileTracker.getInstance().findModel(file)));
   }
 
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
@@ -140,7 +140,7 @@ public class MergeBackupUtil {
     }, false);
   }
 
-  private static String check_fhutfy_b0b0g(EditableSModelDescriptor checkedDotOperand) {
+  private static String check_fhutfy_b0b0g(BaseSModelDescriptorWithSource checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLongName();
     }

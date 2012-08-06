@@ -70,22 +70,10 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  private long myLastChange;
-
   private boolean myChanged = false;
 
   private IModule myModule;
 
-
-  {
-    this.addModelCommandListener(new SModelCommandListener() {
-      public void eventsHappenedInCommand(List<SModelEvent> events) {
-        if (EventUtil.isChange(events)) {
-          myLastChange = System.currentTimeMillis();
-        }
-      }
-    });
-  }
 
   @Deprecated //todo remove
   public DefaultSModelDescriptor(IModule module, IFile modelFile, SModelReference modelReference) {
@@ -228,10 +216,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     ModelAccess.assertLegalWrite();
 
     getSModelHeader().setDoNotGenerate(value);
-  }
-
-  public long lastChangeTime() {
-    return Math.max(myLastChange, getSourceTimestamp());
   }
 
   public boolean isDoNotGenerate() {

@@ -80,7 +80,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
           Module module = context.getModuleByFile(modelFile);
           modulesWithModels.add(module);
 
-          EditableSModelDescriptor model = SModelRepository.getInstance().findModel(FileSystem.getInstance().getFileByPath(modelFile.getPath()));
+          SModelDescriptor model = SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(modelFile.getPath()));
           if (model == null || !model.isGeneratable()) continue;
 
           generationItems.add(createGenerationItem(modelFile, module, model.getSModelReference()));
@@ -140,7 +140,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
           List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
           for (VirtualFile file : e.getValue()) {
             final IFile modelFile = FileSystem.getInstance().getFileByPath(file.getPath());
-            SModelDescriptor descr = SModelRepository.getInstance().findModel(modelFile);
+            SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
             if (descr == null || !GenerationFacade.canGenerate(descr)) return;
 
             models.add(descr);
@@ -196,7 +196,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
       MPSFacet facet = chunk.getKey();
       final Set<File> modelsToMake = new HashSet<File>();
       for (final SModelDescriptor model : chunk.getValue()) {
-        modelsToMake.add(new File(((EditableSModelDescriptor) model).getModelFile().getPath()));
+        modelsToMake.add(new File(((DefaultSModelDescriptor) model).getModelFile().getPath()));
       }
 
       // TODO: report actually generated models only

@@ -11,7 +11,7 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileEvent;
 import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.merge.MergeProvider;
 import com.intellij.openapi.vcs.FileStatus;
@@ -44,10 +44,11 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
   private void resolveIfNeeded(VirtualFileEvent e) {
     if (e.getRequestor() == IdeaFileSystemProvider.class) {
       VirtualFile file = e.getFile();
-      if (SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(file)) != null) {
+      if (SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(file)) != null) {
         return;
       }
-      MergeProvider mergeProvider = check_tqtyvq_a0c0a0c(myVcsManager.getVcsFor(file));
+
+      MergeProvider mergeProvider = check_tqtyvq_a0d0a0c(myVcsManager.getVcsFor(file));
       if (mergeProvider != null) {
         FileStatus status = myFileStatusManager.getStatus(file);
         if (status == FileStatus.MERGED_WITH_CONFLICTS || status == FileStatus.MERGED_WITH_BOTH_CONFLICTS || status == FileStatus.MERGED_WITH_PROPERTY_CONFLICTS) {
@@ -58,7 +59,7 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
     }
   }
 
-  private static MergeProvider check_tqtyvq_a0c0a0c(AbstractVcs checkedDotOperand) {
+  private static MergeProvider check_tqtyvq_a0d0a0c(AbstractVcs checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getMergeProvider();
     }

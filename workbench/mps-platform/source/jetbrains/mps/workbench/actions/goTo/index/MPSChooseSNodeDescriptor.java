@@ -78,8 +78,8 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
         continue;
       }
 
-      if (!(sm instanceof EditableSModelDescriptor)) continue;
-      EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+      if (!(sm instanceof DefaultSModelDescriptor)) continue;
+      DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
       IFile modelFile = esm.getModelFile();
       if (modelFile == null) continue;
       VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);

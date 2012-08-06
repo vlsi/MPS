@@ -58,7 +58,7 @@ public class ProjectPaneSelectInTarget extends AbstractProjectViewSelectInTarget
     if (!MPSFileTypesManager.instance().isModelFile(virtualFile)) return null;
 
     IFile modelFile = FileSystem.getInstance().getFileByPath(virtualFile.getPath());
-    return SModelRepository.getInstance().findModel(modelFile);
+    return SModelFileTracker.getInstance().findModel(modelFile);
   }
 
   private IModule getModule(SelectInContext context) {

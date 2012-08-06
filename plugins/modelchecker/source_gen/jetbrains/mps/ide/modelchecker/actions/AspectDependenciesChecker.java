@@ -24,7 +24,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.resolve.Resolver;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
@@ -89,8 +89,8 @@ public class AspectDependenciesChecker extends SpecificChecker {
   }
 
   public int getModelKind(SModel model, @Nullable SReference reference) {
-    IFile modelFile = ((model.getModelDescriptor() instanceof EditableSModelDescriptor ?
-      ((EditableSModelDescriptor) model.getModelDescriptor()).getModelFile() :
+    IFile modelFile = ((model.getModelDescriptor() instanceof DefaultSModelDescriptor ?
+      ((DefaultSModelDescriptor) model.getModelDescriptor()).getModelFile() :
       null
     ));
     if (modelFile != null) {

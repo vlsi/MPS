@@ -11,7 +11,7 @@ import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModuleFileTracker;
@@ -32,7 +32,7 @@ public class ShowInLogicalView extends AbstractVcsAction {
     if (MPSFileTypesManager.instance().isModelFile(selectedFile)) {
       SModelDescriptor model = ModelAccess.instance().runReadAction(new Computable<SModelDescriptor>() {
         public SModelDescriptor compute() {
-          return SModelRepository.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
+          return SModelFileTracker.getInstance().findModel(VirtualFileUtils.toIFile(selectedFile));
         }
       });
       if (model != null) {
