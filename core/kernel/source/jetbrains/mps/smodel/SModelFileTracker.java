@@ -65,8 +65,7 @@ public class SModelFileTracker implements CoreComponent {
   }
 
   public BaseSModelDescriptorWithSource findModel(IFile modelFile) {
-    String canonicalPath = IFileUtils.getCanonicalPath(modelFile);
-    return myCanonicalPathsToModelDescriptorMap.get(canonicalPath);
+    return myCanonicalPathsToModelDescriptorMap.get(modelFile.getPath());
   }
 
   private void addModelToFileCache(SModelDescriptor md) {
@@ -92,7 +91,7 @@ public class SModelFileTracker implements CoreComponent {
     Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
     if (files.size() != 1) return;
 
-    SModelDescriptor sd = myCanonicalPathsToModelDescriptorMap.remove(files.iterator().next());
+    myCanonicalPathsToModelDescriptorMap.remove(files.iterator().next());
   }
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
