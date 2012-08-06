@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class DevkitDescriptor extends ModuleDescriptor {
   private Set<ModuleReference> myExportedLanguages;
@@ -27,9 +24,9 @@ public class DevkitDescriptor extends ModuleDescriptor {
 
   public DevkitDescriptor() {
     super();
-    myExportedLanguages = new HashSet<ModuleReference>();
-    myExportedSolutions = new HashSet<ModuleReference>();
-    myExtendedDevkits = new HashSet<ModuleReference>();
+    myExportedLanguages = new LinkedHashSet<ModuleReference>();
+    myExportedSolutions = new LinkedHashSet<ModuleReference>();
+    myExtendedDevkits = new LinkedHashSet<ModuleReference>();
   }
 
   public Set<ModuleReference> getExportedLanguages() {
