@@ -1,45 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="MPS.Editor" uuid="1ed103c3-3aa6-49b7-9c21-6765ee11f224" compileInMPS="false">
-  <models>
-    <modelRoot path="${mps_home}/editor/editor-api/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/editor/editor-runtime/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/editor/actions-runtime/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/editor/intentions-runtime/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/editor/typesystemIntegration/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/workbench/mps-editor/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-  </models>
-  <stubModelEntries>
-    <stubModelEntry path="${mps_home}/editor/editor-api/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/editor/editor-runtime/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/editor/actions-runtime/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/editor/intentions-runtime/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/editor/typesystemIntegration/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-    <stubModelEntry path="${mps_home}/workbench/mps-editor/classes">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </stubModelEntry>
-  </stubModelEntries>
+  <models />
   <sourcePath />
   <dependencies>
     <dependency reexport="true">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
