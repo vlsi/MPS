@@ -53,7 +53,6 @@ public class GWTStubsSource extends StubModelDataSource implements FastFindSuppo
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("954c4d77-e24b-4e49-a5a5-5476c966c092")).getModuleReference();
     model.addLanguage(lang);
-    module.addUsedLanguage(lang);
 
     String pkg = model.getSModelFqName().getLongName();
     PathItem pi = GWTModulePathItem.getPathItem(root.getPath());
