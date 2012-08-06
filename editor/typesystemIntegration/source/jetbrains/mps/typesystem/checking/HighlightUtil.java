@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem.checking;
 
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.nodeEditor.*;
@@ -40,6 +41,9 @@ public class HighlightUtil {
       message,
       checker);
     error.setErrorReporter(errorReporter);
+    for (QuickFixProvider quickFixProvider : errorReporter.getIntentionProviders()) {
+      error.addIntentionProvider(quickFixProvider);
+    }
     return error;
   }
 
