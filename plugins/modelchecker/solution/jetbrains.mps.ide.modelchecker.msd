@@ -7,7 +7,7 @@
     <modelRoot path="${mps_home}/plugins/modelchecker/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/" />
   </models>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/modelchecker">

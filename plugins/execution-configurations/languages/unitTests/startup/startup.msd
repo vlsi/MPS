@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.unitTest.execution.startup" uuid="8b958198-128f-4136-80e5-ca9777caa869" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
+    <modelRoot path="${module}/models" />
   </models>
   <sourcePath />
   <dependencies>

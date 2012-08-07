@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.traceInfo.testWeaving" uuid="dc080be0-da6e-4885-aed0-7d999c120619" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
-    <modelRoot path="${solution_descriptor}/models" />
+    <modelRoot path="${module}/" />
+    <modelRoot path="${module}/models" />
   </models>
   <sourcePath />
   <dependencies>

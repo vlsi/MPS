@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="org.jetbrains.mps.samples.ParallelFor" uuid="cb7388e8-f182-4cda-bd83-9796e8634856" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${module}/languageModels" />
   </models>
   <accessoryModels />
   <generators>
     <generator name="" generatorUID="org.jetbrains.mps.samples.ParallelFor#8923957828369584137" uuid="dbbf0a76-172f-4191-a1bd-9b6beb1d70ea">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" />
+        <modelRoot path="${module}/generator/template" />
       </models>
       <external-templates>
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.jdk7.sandbox" uuid="977fcaf6-34ad-463c-a23e-ba362c3bf4aa" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/models" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.lang.editor.table.runtime" uuid="258bd2f6-0d02-411d-86b2-5a5ea083e6d2" pluginKind="PLUGIN_EDITOR" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

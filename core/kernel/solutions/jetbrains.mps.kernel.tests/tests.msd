@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.kernel.tests" uuid="4076bab3-4981-4035-94aa-19b6b4c51a84" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
+    <modelRoot path="${module}/models" />
   </models>
   <sourcePath>
-    <source path="${solution_descriptor}/resources" />
+    <source path="${module}/resources" />
   </sourcePath>
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>

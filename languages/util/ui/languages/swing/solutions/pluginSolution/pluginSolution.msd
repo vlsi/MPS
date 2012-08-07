@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ui.swing.pluginSolution" uuid="a7a3b853-3358-4577-b5bc-c4987865cc0f" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/models" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="collections_trove.test" uuid="fb186431-2788-490b-9e84-c2b84ef0ca77" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

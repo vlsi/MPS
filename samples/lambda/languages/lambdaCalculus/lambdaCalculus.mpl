@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.samples.lambdaCalculus" uuid="7c9e2807-94ad-4afc-adf0-aaee45eb2895" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${module}/languageModels" />
   </models>
   <accessoryModels />
   <generators>
     <generator name="" generatorUID="jetbrains.mps.samples.lambdaCalculus#391739495267435110" uuid="c390df68-d947-4830-b90c-05e33eb03b94">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" />
+        <modelRoot path="${module}/generator/template" />
       </models>
       <external-templates />
       <dependencies>

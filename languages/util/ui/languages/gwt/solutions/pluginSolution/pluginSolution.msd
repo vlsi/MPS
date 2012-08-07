@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ui.gwt.pluginSolution" uuid="f56a1166-ee91-497f-a91b-501c7ae5dbc7" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/models" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

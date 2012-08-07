@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.math.pluginSolution" uuid="77a6e046-32d5-4d60-823e-d1c337b22c4d" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/models" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.lang.generator.pluginSolution" uuid="aebdae01-106e-4921-bb93-d42129091551" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
+    <modelRoot path="${module}/models" />
   </models>
   <sourcePath />
   <dependencies>

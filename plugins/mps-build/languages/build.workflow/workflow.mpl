@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.build.workflow" uuid="698a8d22-a104-47a0-ba8d-10e3ec237f13" doNotGenerateAdapters="true">
   <models>
-    <modelRoot path="${language_descriptor}/accessoryModels" />
-    <modelRoot path="${language_descriptor}/languageModels" />
-    <modelRoot path="${language_descriptor}/util" />
+    <modelRoot path="${module}/accessoryModels" />
+    <modelRoot path="${module}/languageModels" />
+    <modelRoot path="${module}/util" />
   </models>
   <accessoryModels>
     <model modelUID="r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)" />
@@ -11,7 +11,7 @@
   <generators>
     <generator name="main" generatorUID="jetbrains.mps.build.workflow#2769948622284786808" uuid="39d44af6-f60e-499c-a201-583451e7fad0">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" />
+        <modelRoot path="${module}/generator/template" />
       </models>
       <external-templates />
       <usedLanguages>

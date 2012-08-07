@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="org.jetbrains.mps.samples.ParallelForUtils" uuid="bc474121-298a-4a06-9066-cd79e543e9d5" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

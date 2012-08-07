@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.java" uuid="8a2e464f-d2c2-485e-a2ed-8b50c6327795" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}/models" />
+    <modelRoot path="${module}/models" />
   </models>
   <sourcePath />
   <dependencies>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.debugger.core" uuid="2a8426d7-9821-433c-b388-dc3b0cd9e395" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
-    <modelRoot path="${solution_descriptor}/models" />
+    <modelRoot path="${module}/" />
+    <modelRoot path="${module}/models" />
   </models>
   <sourcePath />
   <dependencies>

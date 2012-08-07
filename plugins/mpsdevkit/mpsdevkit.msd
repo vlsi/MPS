@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.mpsdevkit" uuid="cac2fef0-41a6-4fcd-923f-f893d536b2ab" compileInMPS="false" generatorOutputPath="${solution_descriptor}/source_gen">
+<solution name="jetbrains.mps.ide.mpsdevkit" uuid="cac2fef0-41a6-4fcd-923f-f893d536b2ab" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/classes">
+    <modelRoot path="${module}/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${solution_descriptor}/solution" />
+    <modelRoot path="${module}/solution" />
   </models>
   <sourcePath />
   <dependencies>

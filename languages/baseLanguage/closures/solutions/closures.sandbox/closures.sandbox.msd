@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="closures.sandbox" uuid="5e0a5bb4-5765-4a7f-b9ee-615f63ada8a1" compileInMPS="true">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>
