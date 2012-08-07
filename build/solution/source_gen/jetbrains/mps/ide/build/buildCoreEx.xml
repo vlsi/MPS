@@ -127,7 +127,9 @@
     <mkdir dir="${build.tmp}/default/jetbrains.mps.xmlUnitTest.runtime.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.xmlUnitTest.runtime.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.xmlUnitTest.runtime" type="solution" uuid="dce9f8b9-bf49-4dd4-b00e-fe98fdfa7f2c">
-        <dependencies />
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+        </dependencies>
         <library jar="xmlunit-1.3.jar" />
         <sources jar="jetbrains.mps.xmlUnitTest.runtime-src.jar" descriptor="runtime.msd" />
       </module>
