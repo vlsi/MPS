@@ -86,7 +86,7 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
                 String dest = pa.forResource(tres).properties(Target_copyPluginXml.this.getName(), CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class).pluginRoot();
 
                 if (dest != null) {
-                  final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.moduleDescriptor(tres.module()).expandPath(dest, tres.module().getDescriptorFile()));
+                  final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModuleFile(tres.module().getDescriptorFile()).expandPath(dest));
                   if (destDir.exists() && destDir.isDirectory()) {
                     final IFile metaInf = destDir.getDescendant("META-INF");
                     if (!(metaInf.exists()) || metaInf.isDirectory()) {

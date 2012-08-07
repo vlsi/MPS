@@ -28,7 +28,6 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.MacrosUtil;
 import javax.swing.ImageIcon;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
@@ -107,10 +106,10 @@ public class PluginMoveHelper {
               return;
             }
 
-            String iconPath = MacrosFactory.moduleDescriptor(lang).expandPath(SPropertyOperations.getString(it, "path"), lang.getDescriptorFile());
+            String iconPath = MacrosFactory.forModuleFile(lang.getDescriptorFile()).expandPath(SPropertyOperations.getString(it, "path"));
 
-            String newIconMacro = SPropertyOperations.getString(it, "path").replace(MacrosFactory.LANGUAGE_DESCRIPTOR, MacrosFactory.SOLUTION_DESCRIPTOR);
-            String newIconPath = MacrosFactory.moduleDescriptor(solution).expandPath(newIconMacro, solution.getDescriptorFile());
+            String newIconMacro = SPropertyOperations.getString(it, "path").replace("${language_descriptor}", "${solution_descriptor}");
+            String newIconPath = MacrosFactory.forModuleFile(solution.getDescriptorFile()).expandPath(newIconMacro);
 
             SPropertyOperations.set(it, "path", newIconMacro);
 
@@ -133,7 +132,7 @@ public class PluginMoveHelper {
     if (module == null) {
       return false;
     }
-    String path = MacrosUtil.expandPath(SPropertyOperations.getString(icon, "path"), module.getModuleFqName());
+    String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(icon, "path"));
     if (path == null) {
       return false;
     }

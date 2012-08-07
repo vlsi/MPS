@@ -105,11 +105,11 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   }
 
   protected String addMacros(String path) {
-    return MacrosFactory.mpsHomeMacros().shrinkPath(path, (IFile) null);
+    return MacrosFactory.getGlobal().shrinkPath(path);
   }
 
   protected String removeMacros(String path) {
-    return MacrosFactory.mpsHomeMacros().expandPath(path, (IFile) null);
+    return MacrosFactory.getGlobal().expandPath(path);
   }
 
   //-------configurable stuff

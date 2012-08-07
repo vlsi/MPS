@@ -16,10 +16,7 @@
 package jetbrains.mps.library;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.Macros;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -58,7 +55,7 @@ public class BuiltInLibrariesIO {
         Element child = (Element) childObj;
         String name = child.getAttribute(LIBRARY_NAME_TAG).getValue();
         String path = child.getAttribute(LIBRARY_PATH_TAG).getValue();
-        final String realPath = MacrosFactory.mpsHomeMacros().expandPath(path, new File(PathManager.getHomePath()));
+        final String realPath = MacrosFactory.getGlobal().expandPath(path);
 
         Library predefinedLibrary = new Library(name) {
           @NotNull
@@ -74,7 +71,7 @@ public class BuiltInLibrariesIO {
     } catch (IOException e) {
       LOG.error(e);
     } finally {
-       if (in != null) {
+      if (in != null) {
         try {
           in.close();
         } catch (IOException e) {
@@ -134,7 +131,7 @@ public class BuiltInLibrariesIO {
       String[] strings = param.split("=");
 
       String name = strings[0];
-      String path = Macros.MPS_HOME + File.separator + strings[1];
+      String path = MacrosFactory.MPS_HOME + File.separator + strings[1];
 
       BuiltInLibrariesIO.addLibraryToConfigurationFile(name, path, mpsHome);
     }

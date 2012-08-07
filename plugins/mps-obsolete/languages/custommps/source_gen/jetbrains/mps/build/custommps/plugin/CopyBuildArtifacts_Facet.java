@@ -86,7 +86,7 @@ public class CopyBuildArtifacts_Facet extends IFacet.Stub {
                 TResource tres = (TResource) resource;
                 String dest = pa.forResource(tres).properties(Target_copyFiles.this.getName(), CopyBuildArtifacts_Facet.Target_copyFiles.Parameters.class).destination();
                 if (dest != null) {
-                  final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.moduleDescriptor(tres.module()).expandPath(dest, tres.module().getDescriptorFile()));
+                  final IFile destDir = FileSystem.getInstance().getFileByPath(MacrosFactory.forModuleFile(tres.module().getDescriptorFile()).expandPath(dest));
                   if (destDir.exists() && destDir.isDirectory()) {
                     new DeltaReconciler(tres.delta()).visitAll(new FilesDelta.Visitor() {
                       @Override

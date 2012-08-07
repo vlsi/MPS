@@ -201,10 +201,6 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8230098746512808964">
-      <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt+shift" />
-      <property name="keycode" nameId="tp4k.1207318242774" value="VK_UP" />
-    </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="8230098746512808965">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8230098746512808966">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8230098746512808967">
@@ -259,7 +255,7 @@
         </node>
       </node>
     </node>
-    <node role="keystroke" roleId="tp4k.1207318392425" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8230098746512808988">
+    <node role="keystroke" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="8230098746512808988">
       <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl+alt+shift" />
       <property name="keycode" nameId="tp4k.1207318242774" value="VK_DOWN" />
     </node>

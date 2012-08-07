@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.nodeEditor.BlockCells;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.MacrosUtil;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.editor.util.EditorUtil;
@@ -472,7 +472,7 @@ public class PreferencePage_Editor extends DefaultNodeEditor {
     String path = null;
     IModule module = SNodeOperations.getModel(node).getModelDescriptor().getModule();
     if (module != null) {
-      path = MacrosUtil.expandPath(SPropertyOperations.getString(node, "icon"), module.getModuleFqName());
+      path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(node, "icon"));
     }
     return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }

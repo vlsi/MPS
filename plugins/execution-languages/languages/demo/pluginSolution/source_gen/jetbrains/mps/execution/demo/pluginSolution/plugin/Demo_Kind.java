@@ -8,7 +8,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.util.MacrosUtil;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -32,7 +32,7 @@ public class Demo_Kind implements ConfigurationType {
         return null;
       }
       String shortPath = "${language_descriptor}/icons/runApp.png";
-      String path = MacrosUtil.expandPath(shortPath, module.getModuleFqName());
+      String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(shortPath);
       if ((path == null || path.length() == 0)) {
         if (log.isErrorEnabled()) {
           log.error("Can't expand path " + shortPath + " with module " + module + ".");

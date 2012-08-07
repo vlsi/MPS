@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
@@ -24,7 +23,7 @@ public class TestsUtil {
     }
     String url = check_6yh4up_a0c0a(check_6yh4up_a0a2a0(operationContext.getProject()));
     if (url != null) {
-      return MacrosFactory.mpsHomeMacros().shrinkPath(url, (IFile) null);
+      return MacrosFactory.getGlobal().shrinkPath(url);
     }
     return "";
   }

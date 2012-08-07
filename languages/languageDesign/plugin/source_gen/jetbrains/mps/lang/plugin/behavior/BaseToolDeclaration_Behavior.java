@@ -46,7 +46,7 @@ public class BaseToolDeclaration_Behavior {
     if (module == null) {
       return null;
     }
-    return MacrosFactory.moduleDescriptor(module).expandPath(SPropertyOperations.getString(thisNode, "icon"), module.getDescriptorFile());
+    return MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(thisNode, "icon"));
   }
 
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
