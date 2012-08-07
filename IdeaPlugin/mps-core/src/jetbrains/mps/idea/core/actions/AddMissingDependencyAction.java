@@ -35,9 +35,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AddMissingDependencyAction extends BaseAction {
 
@@ -75,7 +73,7 @@ public class AddMissingDependencyAction extends BaseAction {
       }
       final Module ideaDependentModule = ((SolutionIdea) dependentModule).getIdeaModule();
 
-      final List<Module> modulesToDependOn = new ArrayList<Module>();
+      final List<Module> ideaModulesToDependOn = new ArrayList<Module>();
       for (SReference ref : curNode.getReferences()) {
         SModelReference uid = ref.getTargetSModelReference();
         if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
@@ -83,61 +81,74 @@ public class AddMissingDependencyAction extends BaseAction {
 
           IModule moduleToDependOn = sm.getModule();
           if (!(moduleToDependOn instanceof SolutionIdea)) {
-            return;
+            continue;
           }
 
           final Module ideaModuleToDependOn = ((SolutionIdea) moduleToDependOn).getIdeaModule();
 
-          modulesToDependOn.add(ideaModuleToDependOn);
+          ideaModulesToDependOn.add(ideaModuleToDependOn);
         }
       }
-      final ModifiableRootModel model = ModuleRootManager.getInstance(ideaDependentModule).getModifiableModel();
 
-      for (final Module ideaModuleToDependOn : modulesToDependOn) {
+      if (ideaModulesToDependOn.isEmpty()){
+        return;
+      }
+
+      Set<Module> circularDependentModulesSet = new LinkedHashSet<Module>();
+      for (final Module ideaModuleToDependOn : ideaModulesToDependOn) {
         final Pair<Module, Module> circularModules = ModuleCompilerUtil.addingDependencyFormsCircularity(ideaDependentModule, ideaModuleToDependOn);
-        final Runnable addDependency = new Runnable() {
-          @Override
-          public void run() {
-            ApplicationManager.getApplication().runWriteAction(new Runnable() {
-              @Override
-              public void run() {
-                model.addModuleOrderEntry(ideaModuleToDependOn);
-              }
-            });
-          }
-        };
-        if (circularModules == null) {
-          addDependency.run();
-        } else {
-          final String message = QuickFixBundle.message("orderEntry.fix.circular.dependency.warning", ideaModuleToDependOn.getName(),
-            circularModules.getFirst().getName(), circularModules.getSecond().getName());
-          if (ApplicationManager.getApplication().isUnitTestMode()) throw new RuntimeException(message);
-
-
-          ApplicationManager.getApplication().invokeLater(new Runnable() {
-            public void run() {
-              Project project = ideaDependentModule.getProject();
-              if (!(project.isOpen())) return;
-              int ret = Messages.showOkCancelDialog(project, message,
-                QuickFixBundle.message("orderEntry.fix.title.circular.dependency.warning"),
-                Messages.getWarningIcon());
-              if (ret == 0) {
-                addDependency.run();
-              }
-            }
-          });
+        if (circularModules != null) {
+          circularDependentModulesSet.add(ideaDependentModule);
+          circularDependentModulesSet.add(ideaModuleToDependOn);
         }
       }
-      ApplicationManager.getApplication().invokeLater(new Runnable() {
-        public void run() {
-          ApplicationManager.getApplication().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-              model.commit();
-            }
-          });
+      if (!circularDependentModulesSet.isEmpty()) {
+        StringBuilder message = new StringBuilder();
+        message.append("Adding dependency on ");
+        if (ideaModulesToDependOn.size() == 1) {
+          message.append("module ");
+        } else {
+          message.append("modules ");
         }
-      });
+        for (int i = 0; i != ideaModulesToDependOn.size() - 1; ++i) {
+          message.append("'");
+          message.append(ideaModulesToDependOn.get(i).getName());
+          message.append("', ");
+        }
+        message.append("'");
+        message.append(ideaModulesToDependOn.get(ideaModulesToDependOn.size() - 1).getName());
+        message.append("'");
+        message.append(" will introduce circular dependency between modules ");
+        Module[] modules = circularDependentModulesSet.toArray(new Module[circularDependentModulesSet.size()]);
+        for (int i = 0; i != modules.length - 1; ++i) {
+          message.append("'");
+          message.append(modules[i].getName());
+          message.append("', ");
+        }
+        message.append("'");
+        message.append(modules[modules.length - 1].getName());
+        message.append("'");
+        message.append(".\nAdd dependency anyway?");
+        final String finalMessage = message.toString();
+        if (ApplicationManager.getApplication().isUnitTestMode()) throw new RuntimeException(finalMessage);
+
+
+
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            Project project = ideaDependentModule.getProject();
+            if (!(project.isOpen())) return;
+            int ret = Messages.showOkCancelDialog(project, finalMessage,
+              QuickFixBundle.message("orderEntry.fix.title.circular.dependency.warning"),
+              Messages.getWarningIcon());
+            if (ret == 0) {
+              addDependency(ideaDependentModule, ideaModulesToDependOn);
+            }
+          }
+        });
+      } else {
+         addDependency(ideaDependentModule, ideaModulesToDependOn);
+      }
 
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -145,6 +156,19 @@ public class AddMissingDependencyAction extends BaseAction {
       }
     }
 
+  }
+
+  private void addDependency(final Module dependentModule, final List<Module> modulesToDependOn) {
+    ApplicationManager.getApplication().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        final ModifiableRootModel model = ModuleRootManager.getInstance(dependentModule).getModifiableModel();
+        for (final Module moduleToDependOn : modulesToDependOn) {
+          model.addModuleOrderEntry(moduleToDependOn);
+        }
+        model.commit();
+      }
+    });
   }
 
   @Override
