@@ -61,7 +61,6 @@ public class JavaStubModelDataSource extends StubModelDataSource implements Fast
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
       model.addLanguage(l.getModuleReference());
-      module.addUsedLanguage(l.getModuleReference());
     }
     CompositeClassPathItem cp = this.createClassPath(descriptor);
     new ASMModelLoader(module, cp, model, skipPrivate).updateModel();

@@ -58,7 +58,6 @@ public class ConfStubSource extends StubModelDataSource implements MultiRootMode
     SModel model = new SModel(descriptor.getSModelReference(), new ForeignNodeIdMap());
     ModuleReference lang = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("32d0a39c-772f-4490-8142-e50f9a9f19d4")).getModuleReference();
     model.addLanguage(lang);
-    module.addUsedLanguage(lang);
 
     String pkg = model.getSModelFqName().getLongName();
     List<Tuples._4<String, String, SNode, PathItem>> doclst = ListSequence.fromList(new ArrayList<Tuples._4<String, String, SNode, PathItem>>());

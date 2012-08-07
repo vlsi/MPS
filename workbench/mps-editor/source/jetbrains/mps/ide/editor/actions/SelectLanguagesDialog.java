@@ -20,9 +20,6 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.fileTypes.FileIcons;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.icons.IdeIcons;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -46,7 +43,7 @@ public class SelectLanguagesDialog extends DialogWrapper {
   }
 
   public String getDimensionServiceKey() {
-    return getClass().getName()+"2";
+    return getClass().getName() + "2";
   }
 
   protected Action[] createActions() {
@@ -67,19 +64,19 @@ public class SelectLanguagesDialog extends DialogWrapper {
     panel.add(area, BorderLayout.NORTH);
 
     JPanel center = new JPanel(new GridBagLayout());
-      JTextArea label = new JTextArea("Select additional languages to import:");
-      label.setEditable(false);
-      label.setBackground(this.getContentPane().getBackground());
-      label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-      center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
+    JTextArea label = new JTextArea("Select additional languages to import:");
+    label.setEditable(false);
+    label.setBackground(this.getContentPane().getBackground());
+    label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+    center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
 
     myList = new JBList(myCandidates.toArray());
 
     myList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-    myList.setSelectionInterval(0,myList.getModel().getSize());
+    myList.setSelectionInterval(0, myList.getModel().getSize() - 1);
     myList.setCellRenderer(new MyDefaultListCellRenderer());
     myList.setBorder(BorderFactory.createEtchedBorder());
-      center.add(ScrollPaneFactory.createScrollPane(myList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
+    center.add(ScrollPaneFactory.createScrollPane(myList), new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
 
     panel.add(center, BorderLayout.CENTER);
     panel.setPreferredSize(new Dimension(400, 250));
