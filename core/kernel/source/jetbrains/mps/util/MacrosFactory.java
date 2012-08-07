@@ -54,7 +54,7 @@ public class MacrosFactory {
     return new MacroHelperImpl(null, new HomeMacros());
   }
 
-  private static class ModuleMacros extends Macros {
+  private static class ModuleMacros extends HomeMacros {
     protected String expand(String path, IFile anchorFile) {
       for (String d : descriptors) {
         if (path.startsWith(d)) {
@@ -84,7 +84,7 @@ public class MacrosFactory {
     }
   }
 
-  private static class ProjectMacros extends ModuleMacros {
+  private static class ProjectMacros extends HomeMacros {
     protected String expand(String path, IFile anchorFile) {
       if (path.startsWith(PROJECT)) {
         IFile anchorFolder = anchorFile.getParent();
