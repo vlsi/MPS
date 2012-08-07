@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 
 import java.util.Collection;
 import java.util.Map;
@@ -33,7 +32,7 @@ public class SModelFileTracker implements CoreComponent {
 
   private SModelRepository myRepo;
   private GlobalSModelEventsManager myGem;
-  private final Map<String, BaseSModelDescriptorWithSource> myCanonicalPathsToModelDescriptorMap = new ConcurrentHashMap<String, BaseSModelDescriptorWithSource>();
+  private final Map<String, BaseSModelDescriptorWithSource> myPathsToModelDescriptorMap = new ConcurrentHashMap<String, BaseSModelDescriptorWithSource>();
   private final SModelRepositoryAdapter myRepoListener = new MySModelRepositoryAdapter();
   private final SModelFileTracker.ModelChangeListener myModelChangeListener = new ModelChangeListener();
 
@@ -65,7 +64,7 @@ public class SModelFileTracker implements CoreComponent {
   }
 
   public BaseSModelDescriptorWithSource findModel(IFile modelFile) {
-    return myCanonicalPathsToModelDescriptorMap.get(modelFile.getPath());
+    return myPathsToModelDescriptorMap.get(modelFile.getPath());
   }
 
   private void addModelToFileCache(SModelDescriptor md) {
@@ -78,7 +77,7 @@ public class SModelFileTracker implements CoreComponent {
     Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
     if (files.size() != 1) return;
 
-    myCanonicalPathsToModelDescriptorMap.put(files.iterator().next(), bmd);
+    myPathsToModelDescriptorMap.put(files.iterator().next(), bmd);
   }
 
   private void removeModelFromFileCache(SModelDescriptor md) {
@@ -91,7 +90,7 @@ public class SModelFileTracker implements CoreComponent {
     Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
     if (files.size() != 1) return;
 
-    myCanonicalPathsToModelDescriptorMap.remove(files.iterator().next());
+    myPathsToModelDescriptorMap.remove(files.iterator().next());
   }
 
   private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
