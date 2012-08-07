@@ -258,12 +258,13 @@ public class MacrosFactory {
   //---------stuff to remove
 
   //remove after 3.0, only MODULE matters
-  private static final String[] descriptors = new String[]{"${solution_descriptor}", "${language_descriptor}", "${module_descriptor}", MODULE};
+  public static final String[] descriptors = new String[]{"${solution_descriptor}", "${language_descriptor}", "${module_descriptor}", MODULE};
 
   @Deprecated //remove when language descriptor is fully in xml file
   public static boolean containsNonMPSMacros(String path) {
     return path.contains("${") && !(path.contains("${solution_descriptor}") ||
       path.contains("${language_descriptor}") ||
+      path.contains("${module_descriptor}") ||
       path.contains("${module}") ||
       path.contains(MacrosFactory.PROJECT) ||
       path.contains(MacrosFactory.MPS_HOME));
