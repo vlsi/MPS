@@ -23,7 +23,6 @@ public class EditorTabActions_ActionGroup extends GeneratedActionGroup {
     this.setPopup(false);
     try {
       EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteNode_Action");
-      EditorTabActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SafeDelete_Action");
       EditorTabActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(EditorTabActions_ActionGroup.LABEL_ID_gotoConceptAspects);

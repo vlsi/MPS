@@ -120,6 +120,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new DebugActions_ActionGroup());
     addGroup(new DevkitActions_ActionGroup());
     addGroup(new Edit_ActionGroup());
+    addGroup(new EditorActionsAddition_ActionGroup());
     addGroup(new EditorInternal_ActionGroup());
     addGroup(new EditorPopupEx_ActionGroup());
     addGroup(new EditorPopupEx_Goto_ActionGroup());
@@ -242,6 +243,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Favorites_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(View_ActionGroup.ID, "ViewMenu", null);
+    insertGroupIntoAnother(EditorActionsAddition_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

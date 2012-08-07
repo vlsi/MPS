@@ -1230,6 +1230,10 @@
       <property name="name" nameId="tpck.1169194664001" value="IDEAInternalActions" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Integration" />
     </node>
+    <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="971821636814863479">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.ProjectPane.Node" />
+      <property name="name" nameId="tpck.1169194664001" value="EditorActionsAddition" />
+    </node>
   </roots>
   <root id="1204991218714">
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1207148419636">
@@ -11403,6 +11407,13 @@
         <property name="modifiers" nameId="tp4k.1207318242773" value="ctrl" />
       </node>
     </node>
+    <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="2414546619877443675">
+      <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="8784230320738944314" resolveInfo="SafeDelete" />
+      <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2414546619877443676">
+        <property name="modifiers" nameId="tp4k.1207318242773" value="meta" />
+        <property name="keycode" nameId="tp4k.1207318242774" value="VK_DELETE" />
+      </node>
+    </node>
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="2166560190157548058">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="1216119398364" resolveInfo="ShowClassInHierarchy" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="2166560190157548059">
@@ -14229,9 +14240,6 @@
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="2921528350547793594">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="2921528350547793595">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="1229266351427" resolveInfo="DeleteNode" />
-      </node>
-      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6892971598956571097">
-        <link role="action" roleId="tp4k.1203088061055" targetNodeId="8784230320738944314" resolveInfo="SafeDelete" />
       </node>
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.Separator" typeId="tp4k.1204908117386" id="2921528350547793596" />
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.GroupAnchor" typeId="tp4k.1203680534665" id="1744445256079579217">
@@ -31228,6 +31236,16 @@
       <property name="value" nameId="tpee.1070475926801" value="Internal" />
     </node>
     <node role="contents" roleId="tp4k.1207148993063" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="1425263017121620233" />
+  </root>
+  <root id="971821636814863479">
+    <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="971821636814863805">
+      <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="971821636814863806">
+        <link role="action" roleId="tp4k.1203088061055" targetNodeId="8784230320738944314" resolveInfo="SafeDelete" />
+      </node>
+    </node>
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="971821636814863807">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="ekwn.7791284463049069745" resolveInfo="EditorActions" />
+    </node>
   </root>
 </model>
 
