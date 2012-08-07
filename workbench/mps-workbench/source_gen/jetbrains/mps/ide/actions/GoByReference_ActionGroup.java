@@ -30,7 +30,6 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
 
   public GoByReference_ActionGroup() {
     super("Go by Reference", ID);
-    this.setIsAlwaysVisible(false);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
@@ -52,21 +51,19 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
 
       List<SReference> refs = node.getReferences();
       if (ListSequence.fromList(refs).isEmpty()) {
-        GoByReference_ActionGroup.this.add(new StringAction("No References"));
+        GoByReference_ActionGroup.this.disable(event.getPresentation());
         return;
       }
 
-      boolean onlyBad = true;
       for (SReference ref : ListSequence.fromList(refs)) {
         SNode targetNode = ref.getTargetNode();
         if (targetNode != null) {
-          String text = "[" + ref.getRole() + "]" + targetNode.getDebugText();
+          String text = "[" + ref.getRole() + "] -> " + ref.getResolveInfo();
           GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(targetNode), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(targetNode), text);
-          onlyBad = false;
           continue;
         }
 
-        String text = "Bad reference: [" + ref.getRole() + "]" + ref.getResolveInfo();
+        String text = "Bad reference: [" + ref.getRole() + "] -> " + ref.getResolveInfo();
 
         Resolver.resolve1(ref, context);
         String role = ref.getRole();
@@ -75,14 +72,10 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
         assert newRef != null;
         targetNode = ref.getTargetNode();
         if (targetNode == null) {
-          return;
+          continue;
         }
 
         GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(targetNode), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(targetNode), text);
-      }
-
-      if (onlyBad) {
-        GoByReference_ActionGroup.this.add(new StringAction("(Only Bad References)"));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);
