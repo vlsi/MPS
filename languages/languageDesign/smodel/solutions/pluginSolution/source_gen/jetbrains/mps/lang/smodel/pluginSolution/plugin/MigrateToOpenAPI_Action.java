@@ -18,13 +18,14 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
+import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import com.intellij.openapi.project.Project;
@@ -83,7 +84,11 @@ public class MigrateToOpenAPI_Action extends BaseAction {
       SNode oldSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a1a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
       SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a2a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
 
-      Set<SReference> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(oldSnodeNode), SearchType.USAGES, ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope(), new EmptyProgressMonitor());
+      Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(nodes).addElement(oldSnodeNode);
+      SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldSnodeNode, "method", true)));
+
+      Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope(), new EmptyProgressMonitor());
 
       for (SReference ref : SetSequence.fromSet(usages)) {
         SNode rNode = ref.getTargetNode();
