@@ -146,11 +146,6 @@ public class DiffTemporaryModule extends AbstractModule {
 
   }
 
-  public static void unregisterAndFixId(SModel model, MPSModuleOwner owner) {
-    unregisterModel(model, owner);
-    resetSModelId(model);
-  }
-
   public static IOperationContext getOperationContext(com.intellij.openapi.project.Project project, SModel model) {
     SModelDescriptor md = model.getModelDescriptor();
     assert md != null;
