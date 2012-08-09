@@ -93,10 +93,9 @@ public class AddMissingDependency_Action extends BaseAction {
         if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
           SModelDescriptor sm = GlobalScope.getInstance().getModelDescriptor(uid);
           ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getModule().addDependency(sm.getModule().getModuleReference(), false);
-          // TODO better update than reload 
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
       }
+      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddMissingDependency", t);
