@@ -24,12 +24,13 @@ import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.refactoring.RefactoringView;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
+import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelReference;
@@ -91,7 +92,7 @@ public class MigrateToOpenAPI_Action extends BaseAction {
         }
 
         SetSequence.fromSet(changed).addElement(rNode);
-        rNode.replaceReference(ref, new StaticReference(ref.getRole(), rNode, newSnodeNode));
+        // <node> 
       }
 
       SearchResults res = new SearchResults(Collections.singleton(oldSnodeNode), SetSequence.fromSet(changed).select(new ISelector<SNode, SearchResult<SNode>>() {
@@ -100,7 +101,10 @@ public class MigrateToOpenAPI_Action extends BaseAction {
         }
       }).toListSequence());
 
-      ((Project) MapSequence.fromMap(_params).get("iproject")).getComponent(RefactoringView.class).showRefactoringView(((Project) MapSequence.fromMap(_params).get("iproject")), null, res, false, "usages");
+      ((Project) MapSequence.fromMap(_params).get("iproject")).getComponent(RefactoringView.class).showRefactoringView(((Project) MapSequence.fromMap(_params).get("iproject")), new RefactoringViewAction() {
+        public void performAction(RefactoringViewItem refactoringViewItem) {
+        }
+      }, res, false, "usages");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MigrateToOpenAPI", t);

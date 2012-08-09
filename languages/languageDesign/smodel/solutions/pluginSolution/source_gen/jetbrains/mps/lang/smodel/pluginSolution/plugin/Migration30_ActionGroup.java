@@ -10,9 +10,9 @@ public class Migration30_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.lang.smodel.pluginSolution.plugin.Migration30_ActionGroup";
 
   public Migration30_ActionGroup() {
-    super("Migration30", ID);
+    super("Migration 3.0", ID);
     this.setIsInternal(false);
-    this.setPopup(false);
+    this.setPopup(true);
     try {
       Migration30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToOpenAPI_Action");
     } catch (Throwable t) {
