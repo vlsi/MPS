@@ -94,6 +94,10 @@ public final class CopyUtil {
     return copy;
   }
 
+  public static void changeModelReference(SModel model, SModelReference modelReference) {
+    model.changeModelReference(modelReference);
+  }
+
   public static List<SNode> copy(List<SNode> nodes) {
     return copy(nodes, new HashMap<SNode, SNode>());
   }

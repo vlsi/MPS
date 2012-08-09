@@ -21,9 +21,8 @@ import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeVersion;
 import jetbrains.mps.vcs.diff.ui.merge.MergeModelsDialog;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -93,13 +92,9 @@ public class TestMergeAction_Action extends BaseAction {
           final String resFile = resString;
           final SModel[] models = zipped;
 
-          MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
-            public MergeModelsDialog compute() {
-              return new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
-            }
-          });
+          MergeModelsDialog dialog = new MergeModelsDialog(models[0], models[1], models[2], new SimpleDiffRequest(((Project) MapSequence.fromMap(_params).get("project")), null, new String[]{"Local Version", "Merge Result", "Remote Version"}));
           dialog.show();
-          final SModel result = dialog.getResultModel();
+          final SModel result = dialog.getResultModelWithFixedId();
           if (result != null) {
             ModelAccess.instance().runWriteAction(new Runnable() {
               public void run() {
@@ -111,6 +106,7 @@ public class TestMergeAction_Action extends BaseAction {
               }
             });
           }
+          dialog.unregisterResultModel();
         }
       });
     } catch (Throwable t) {
