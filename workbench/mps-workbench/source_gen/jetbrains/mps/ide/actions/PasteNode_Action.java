@@ -82,6 +82,7 @@ public class PasteNode_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("pack", event.getData(MPSDataKeys.VIRTUAL_PACKAGE));
+    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
     if (MapSequence.fromMap(_params).get("context") == null) {
       return false;
@@ -129,14 +130,16 @@ public class PasteNode_Action extends BaseAction {
           }
           Resolver.resolveReferences(refsToResolve, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           // make sure editor will be open 
-          final SNode root = pasteNodes.get(0).getContainingRoot();
-          assert root != null;
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            public void run() {
-              NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, true, true);
-              NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, false);
-            }
-          });
+          if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null) {
+            final SNode root = pasteNodes.get(0).getContainingRoot();
+            assert root != null;
+            ModelAccess.instance().runWriteInEDT(new Runnable() {
+              public void run() {
+                NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, true, true);
+                NavigationSupport.getInstance().selectInTree(((IOperationContext) MapSequence.fromMap(_params).get("context")), root, false);
+              }
+            });
+          }
         }
       }, ((MPSProject) MapSequence.fromMap(_params).get("project")));
     } catch (Throwable t) {
