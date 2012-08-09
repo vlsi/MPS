@@ -74,6 +74,8 @@ public class AddMissingDependencyAction extends BaseAction {
       final Module ideaDependentModule = ((SolutionIdea) dependentModule).getIdeaModule();
 
       final List<Module> ideaModulesToDependOn = new ArrayList<Module>();
+      Set<Module> circularDependentModulesSet = new LinkedHashSet<Module>();
+
       for (SReference ref : curNode.getReferences()) {
         SModelReference uid = ref.getTargetSModelReference();
         if (scope.getModelDescriptor(uid) == null && GlobalScope.getInstance().getModelDescriptor(uid) != null) {
@@ -84,24 +86,22 @@ public class AddMissingDependencyAction extends BaseAction {
             continue;
           }
 
-          final Module ideaModuleToDependOn = ((SolutionIdea) moduleToDependOn).getIdeaModule();
+          Module ideaModuleToDependOn = ((SolutionIdea) moduleToDependOn).getIdeaModule();
 
           ideaModulesToDependOn.add(ideaModuleToDependOn);
+
+          Pair<Module, Module> circularModules = ModuleCompilerUtil.addingDependencyFormsCircularity(ideaDependentModule, ideaModuleToDependOn);
+          if (circularModules != null) {
+            circularDependentModulesSet.add(circularModules.getFirst());
+            circularDependentModulesSet.add(circularModules.getSecond());
+          }
         }
       }
 
-      if (ideaModulesToDependOn.isEmpty()){
+      if (ideaModulesToDependOn.isEmpty()) {
         return;
       }
 
-      Set<Module> circularDependentModulesSet = new LinkedHashSet<Module>();
-      for (final Module ideaModuleToDependOn : ideaModulesToDependOn) {
-        final Pair<Module, Module> circularModules = ModuleCompilerUtil.addingDependencyFormsCircularity(ideaDependentModule, ideaModuleToDependOn);
-        if (circularModules != null) {
-          circularDependentModulesSet.add(ideaDependentModule);
-          circularDependentModulesSet.add(ideaModuleToDependOn);
-        }
-      }
       if (!circularDependentModulesSet.isEmpty()) {
         StringBuilder message = new StringBuilder();
         message.append("Adding dependency on ");
@@ -133,7 +133,6 @@ public class AddMissingDependencyAction extends BaseAction {
         if (ApplicationManager.getApplication().isUnitTestMode()) throw new RuntimeException(finalMessage);
 
 
-
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             Project project = ideaDependentModule.getProject();
@@ -147,7 +146,7 @@ public class AddMissingDependencyAction extends BaseAction {
           }
         });
       } else {
-         addDependency(ideaDependentModule, ideaModulesToDependOn);
+        addDependency(ideaDependentModule, ideaModulesToDependOn);
       }
 
     } catch (Throwable t) {
@@ -163,7 +162,7 @@ public class AddMissingDependencyAction extends BaseAction {
       @Override
       public void run() {
         final ModifiableRootModel model = ModuleRootManager.getInstance(dependentModule).getModifiableModel();
-        for (final Module moduleToDependOn : modulesToDependOn) {
+        for (Module moduleToDependOn : modulesToDependOn) {
           model.addModuleOrderEntry(moduleToDependOn);
         }
         model.commit();
