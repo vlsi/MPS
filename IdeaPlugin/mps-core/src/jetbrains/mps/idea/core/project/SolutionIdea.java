@@ -170,7 +170,7 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
-    throw new UnsupportedOperationException("addDependency method is not supported by SolutionIdea implementation");
+
   }
 
   @Override
@@ -258,5 +258,9 @@ public class SolutionIdea extends Solution {
 
       AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
     }
+  }
+
+  public Module getIdeaModule(){
+    return myModule;
   }
 }

@@ -33,15 +33,12 @@ public abstract class RefactoringAccess {
   public abstract boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate);
 
   public boolean showRefactoringDialogBase(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
-    boolean result;
-    RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(project, refactoringContext, refactoring, hasModelsToGenerate);
-    if (dialog.needToBeShown()) {
-      dialog.show();
-      result = dialog.isCancelled();
-    } else {
-      result = false;
+    if (!(RefactoringOptionsDialog.needToBeShown(refactoring, hasModelsToGenerate))) {
+      return false;
     }
-    return result;
+    RefactoringOptionsDialog dialog = new RefactoringOptionsDialog(project, refactoringContext, refactoring, hasModelsToGenerate);
+    dialog.show();
+    return dialog.isCancelled();
   }
 
   public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);

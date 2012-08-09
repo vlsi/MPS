@@ -110,7 +110,10 @@
                     anchor="after"/>
       <keyboard-shortcut first-keystroke="alt ENTER" keymap="$default"/>
     </action>
-
+    <action id="jetbrains.mps.idea.core.actions.AddMissingDependencyAction"
+            class="jetbrains.mps.idea.core.actions.AddMissingDependencyAction">
+      <add-to-group group-id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup"/>
+    </action>
     <!--This action should be moved to MPSCore.xml as soon as we use Idea Project Tree in IDE-->
     <action id="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction"
             class="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction"

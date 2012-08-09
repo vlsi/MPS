@@ -12,7 +12,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
-    add(new AddMissingDependency_Intention(), "1209384963618");
     add(new AddMissingLanguageImport_Intention(), "1209383918929");
     add(new SetExportAnnotation_Intention(), "4075196924244322258");
     add(new SuppressErrors_Intention(), "4222318806802430725");
