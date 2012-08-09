@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention" file="AddMissingDependency_Intention.java">
-    <classNode dependClassName="java.lang.RuntimeException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
-    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
-    <classNode extendsClassName="jetbrains.mps.intentions.BaseIntention" />
-    <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.core.intentions.AddMissingLanguageImport_Intention" file="AddMissingLanguageImport_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
@@ -24,7 +9,6 @@
     <classNode extendsClassName="jetbrains.mps.intentions.Intention" />
   </dependency>
   <dependency className="jetbrains.mps.lang.core.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.lang.core.intentions.AddMissingDependency_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.AddMissingLanguageImport_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SetExportAnnotation_Intention" />
     <classNode dependClassName="jetbrains.mps.lang.core.intentions.SuppressErrors_Intention" />

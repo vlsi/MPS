@@ -180,7 +180,6 @@ public class PluginMoveHelper {
     final RefactoringContext context = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel), Sequence.fromIterable(nodes2Refactor).toListSequence(), myProject);
     RefactoringContext rc = (RefactoringContext) context;
     rc.setLocal(true);
-    rc.setDoesGenerateModels(false);
 
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
