@@ -12,29 +12,33 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import java.util.Set;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.refactoring.RefactoringView;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MigrateToOpenAPI_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -79,36 +83,82 @@ public class MigrateToOpenAPI_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Set<SNode> changed = SetSequence.fromSet(new HashSet<SNode>());
-      SNode oldSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a1a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-      SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a2a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
+      SNode oldSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a0a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+      SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a1a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
 
+      // replace old SNode with a new interface 
       Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(nodes).addElement(oldSnodeNode);
-      SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldSnodeNode, "method", true)));
 
       Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope(), new EmptyProgressMonitor());
 
+      Set<SNode> changedClassUsages = SetSequence.fromSet(new HashSet<SNode>());
       for (SReference ref : SetSequence.fromSet(usages)) {
         SNode rNode = ref.getSourceNode();
         if (rNode.getModel().isNotEditable()) {
           continue;
         }
 
-        SetSequence.fromSet(changed).addElement(rNode);
-        // <node> 
+        SetSequence.fromSet(changedClassUsages).addElement(rNode);
+        rNode.replaceReference(ref, new StaticReference(ref.getRole(), rNode, newSnodeNode));
       }
 
-      SearchResults res = new SearchResults(nodes, SetSequence.fromSet(changed).select(new ISelector<SNode, SearchResult<SNode>>() {
-        public SearchResult<SNode> select(SNode it) {
-          return new SearchResult<SNode>(it, "usage");
+      // replace method calls 
+      Set<SNode> methods = SetSequence.fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldSnodeNode, "method", true)));
+
+      Set<SReference> musages = FindUsagesManager.getInstance().findUsages(methods, SearchType.USAGES, ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope(), new EmptyProgressMonitor());
+
+      Set<SNode> changedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
+      Set<SNode> castedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
+      Set<SNode> unknownMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
+
+      for (SReference ref : SetSequence.fromSet(musages)) {
+        SNode rNode = ref.getSourceNode();
+        if (rNode.getModel().isNotEditable()) {
+          continue;
         }
-      }).toListSequence());
+
+        SNode newMethod = MigrateToOpenAPI_Action.this.getNewMethod(((SNode) ref.getTargetNode()), _params);
+        if (newMethod != null) {
+          rNode.replaceReference(ref, new StaticReference(ref.getRole(), rNode, newMethod));
+          SetSequence.fromSet(changedMethodCalls).addElement(rNode);
+          continue;
+        }
+
+        SNode n = (SNode) rNode;
+        if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", "operation")) {
+          SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(n), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+          SNodeOperations.replaceWithAnother(operand, new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0b0h0w0a0d().createNode(operand));
+          SetSequence.fromSet(castedMethodCalls).addElement(rNode);
+          continue;
+        }
+
+        SetSequence.fromSet(unknownMethodCalls).addElement(rNode);
+      }
+
+      Iterable<SearchResult<SNode>> results = SetSequence.fromSet(changedClassUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
+        public SearchResult<SNode> select(SNode it) {
+          return new SearchResult<SNode>(it, "replaced SNode occurences");
+        }
+      }).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<SNode, SearchResult<SNode>>() {
+        public SearchResult<SNode> select(SNode it) {
+          return new SearchResult<SNode>(it, "replaced method call");
+        }
+      })).union(SetSequence.fromSet(castedMethodCalls).select(new ISelector<SNode, SearchResult<SNode>>() {
+        public SearchResult<SNode> select(SNode it) {
+          return new SearchResult<SNode>(it, "casted method call");
+        }
+      })).union(SetSequence.fromSet(unknownMethodCalls).select(new ISelector<SNode, SearchResult<SNode>>() {
+        public SearchResult<SNode> select(SNode it) {
+          return new SearchResult<SNode>(it, "not migrated method call");
+        }
+      }));
 
       ((Project) MapSequence.fromMap(_params).get("iproject")).getComponent(RefactoringView.class).showRefactoringView(((Project) MapSequence.fromMap(_params).get("iproject")), new RefactoringViewAction() {
         public void performAction(RefactoringViewItem refactoringViewItem) {
         }
-      }, res, false, "usages");
+      }, new SearchResults(nodes, Sequence.fromIterable(results).toListSequence()), false, "usages");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MigrateToOpenAPI", t);
@@ -116,8 +166,18 @@ public class MigrateToOpenAPI_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_mo9yth_a0a0a1a0a3 {
-    public QuotationClass_mo9yth_a0a0a1a0a3() {
+  /*package*/ SNode getNewMethod(SNode old, final Map<String, Object> _params) {
+    SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a0a4().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
+    for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(newSnodeNode, "method", true))) {
+      if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, old)) {
+        return method;
+      }
+    }
+    return null;
+  }
+
+  public static class QuotationClass_mo9yth_a0a0a0a0a3 {
+    public QuotationClass_mo9yth_a0a0a0a0a3() {
     }
 
     public SNode createNode() {
@@ -134,8 +194,64 @@ public class MigrateToOpenAPI_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_mo9yth_a0a0a2a0a3 {
-    public QuotationClass_mo9yth_a0a0a2a0a3() {
+  public static class QuotationClass_mo9yth_a0a0a1a0a3 {
+    public QuotationClass_mo9yth_a0a0a1a0a3() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_1;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_mo9yth_a0a0b0h0w0a0d {
+    public QuotationClass_mo9yth_a0a0b0h0w0a0d() {
+    }
+
+    public SNode createNode(Object parameter_7) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_2;
+          quotedNode1_5.addReference(SReference.create("classifier", quotedNode1_5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+          quotedNode_1.addChild("type", quotedNode1_5);
+        }
+        {
+          quotedNode_3 = (SNode) parameter_7;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_6 = HUtil.copyIfNecessary(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_6 = quotedNode_3;
+          }
+          if (quotedNode1_6 != null) {
+            quotedNode_1.addChild("expression", HUtil.copyIfNecessary(quotedNode1_6));
+          }
+        }
+        result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_mo9yth_a0a0a0a4 {
+    public QuotationClass_mo9yth_a0a0a0a4() {
     }
 
     public SNode createNode() {
