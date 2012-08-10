@@ -25,7 +25,6 @@ import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import com.intellij.openapi.project.Project;
@@ -91,8 +90,8 @@ public class MigrateToOpenAPI_Action extends BaseAction {
       Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope(), new EmptyProgressMonitor());
 
       for (SReference ref : SetSequence.fromSet(usages)) {
-        SNode rNode = ref.getTargetNode();
-        if (ref.getSourceNode().getModel().isNotEditable()) {
+        SNode rNode = ref.getSourceNode();
+        if (rNode.getModel().isNotEditable()) {
           continue;
         }
 
@@ -100,7 +99,7 @@ public class MigrateToOpenAPI_Action extends BaseAction {
         // <node> 
       }
 
-      SearchResults res = new SearchResults(Collections.singleton(oldSnodeNode), SetSequence.fromSet(changed).select(new ISelector<SNode, SearchResult<SNode>>() {
+      SearchResults res = new SearchResults(nodes, SetSequence.fromSet(changed).select(new ISelector<SNode, SearchResult<SNode>>() {
         public SearchResult<SNode> select(SNode it) {
           return new SearchResult<SNode>(it, "usage");
         }
