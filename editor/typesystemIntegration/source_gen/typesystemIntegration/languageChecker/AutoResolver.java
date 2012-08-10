@@ -9,18 +9,21 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import jetbrains.mps.smodel.SReference;
-import java.util.ArrayList;
-import jetbrains.mps.resolve.ResolveResult;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.resolve.Resolver;
-import java.util.Iterator;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelReference;
-import java.util.HashSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 
@@ -29,97 +32,80 @@ public class AutoResolver extends EditorCheckerAdapter {
   }
 
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
-    Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-    if (rootNode.getModel() == null || rootNode.getModel().getModelDescriptor() == null) {
+    Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
+    if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode).getModelDescriptor() == null) {
       return messages;
     }
-    if (rootNode.getModel().isTransient()) {
+    if (SNodeOperations.getModel(rootNode).isTransient()) {
       return messages;
     }
-    List<SReference> yetBadReferences = new ArrayList<SReference>();
-    SReference.disableLogging();
-    final ArrayList<ResolveResult> resolveResultArrayList = new ArrayList<ResolveResult>();
-    try {
-      Set<SReference> badReferences = collectBadReferences(rootNode);
-      if (!(badReferences.isEmpty())) {
-        TypeContextManager.getInstance().setComputeInNormalMode(true);
-        yetBadReferences = Resolver.resolveReferences(badReferences, editorContext.getOperationContext(), resolveResultArrayList, false);
-        TypeContextManager.getInstance().setComputeInNormalMode(false);
-        for (Iterator<ResolveResult> it = resolveResultArrayList.iterator(); it.hasNext();) {
-          ResolveResult resolveResult = it.next();
-          if (isNewTargetFromAnotherModel(resolveResult)) {
-            yetBadReferences.add(getResolvedReference(resolveResult));
-            it.remove();
-          }
-        }
-      }
-    } finally {
-      SReference.enableLogging();
+    boolean autoresolve = !(hasUnresolvedImportedModels(SNodeOperations.getModel(rootNode), editorContext));
+    if (!(autoresolve)) {
+      SetSequence.fromSet(messages).addElement(HighlightUtil.createWarningMessage(rootNode, "Containing model has unresolved model imports. Automatic refrence resolving is switched off to avoid incorrect reference target resolving.", this));
     }
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      public void run() {
-        if (resolveResultArrayList.isEmpty()) {
-          return;
-        }
-        Project p = (editorContext != null && editorContext.getOperationContext() != null ?
-          editorContext.getOperationContext().getProject() :
-          null
-        );
-        if (p == null) {
-          return;
-        }
-
-        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-          public void run() {
-            for (ResolveResult resolveResult : resolveResultArrayList) {
-              resolveResult.setTarget();
-            }
-          }
-        }, p);
-      }
-    });
-    for (SReference ref : yetBadReferences) {
+    for (SReference ref : SetSequence.fromSet(collectBadReferences(rootNode))) {
       EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this, editorContext);
-      messages.add(message);
+      SetSequence.fromSet(messages).addElement(message);
+      if (autoresolve) {
+        autoresolveReference(ref, editorContext);
+      }
     }
     return messages;
   }
 
-  private boolean isNewTargetFromAnotherModel(ResolveResult resolveResult) {
-    SNode newTargetNode = resolveResult.getTargetNode();
-    if (newTargetNode == null || newTargetNode.getModel() == null) {
-      return false;
+  private boolean hasUnresolvedImportedModels(SModel model, EditorContext editorContext) {
+    if (editorContext == null) {
+      return true;
     }
-    SReference reference = getResolvedReference(resolveResult);
-    if (reference == null) {
-      return false;
+    IScope scope = editorContext.getScope();
+    for (SModelReference modelReference : ListSequence.fromList(SModelOperations.getImportedModelUIDs(model))) {
+      if (scope.getModelDescriptor(modelReference) == null) {
+        return true;
+      }
     }
-    SModelReference sModelRef = reference.getTargetSModelReference();
-    return sModelRef != null && !(sModelRef.getSModelFqName().equals(newTargetNode.getModel().getSModelFqName()));
-  }
-
-  private SReference getResolvedReference(ResolveResult resolveResult) {
-    SNode sourceNode = resolveResult.getSourceNode();
-    if (sourceNode == null) {
-      return null;
-    }
-    String referenceRole = resolveResult.getRole();
-    return (referenceRole == null ?
-      null :
-      sourceNode.getReference(referenceRole)
-    );
+    return false;
   }
 
   private Set<SReference> collectBadReferences(SNode cellNode) {
-    Set<SReference> result = new HashSet<SReference>();
-    for (SNode node : cellNode.getDescendantsIterable(null, true)) {
-      for (SReference ref : node.getReferencesIterable()) {
-        if (ref.getTargetNodeSilently() == null) {
-          result.add(ref);
+    SReference.disableLogging();
+    try {
+      Set<SReference> result = SetSequence.fromSet(new LinkedHashSet<SReference>());
+      for (SNode node : cellNode.getDescendantsIterable(null, true)) {
+        for (SReference ref : SNodeOperations.getReferences(node)) {
+          if (ref.getTargetNodeSilently() == null) {
+            SetSequence.fromSet(result).addElement(ref);
+          }
         }
       }
+      return result;
+    } finally {
+      SReference.enableLogging();
     }
-    return result;
+  }
+
+  private void autoresolveReference(final SReference reference, EditorContext editorContext) {
+    if (editorContext == null) {
+      return;
+    }
+    final IOperationContext operationContext = editorContext.getOperationContext();
+    if (operationContext == null) {
+      return;
+    }
+    final Project project = editorContext.getOperationContext().getProject();
+    if (project == null) {
+      return;
+    }
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+          public void run() {
+            TypeContextManager.getInstance().setComputeInNormalMode(true);
+            ResolverComponent.getInstance().resolve(reference, operationContext);
+            TypeContextManager.getInstance().setComputeInNormalMode(false);
+          }
+        }, project);
+      }
+    });
   }
 
   public boolean isLaterThan(BaseEditorChecker editorChecker) {

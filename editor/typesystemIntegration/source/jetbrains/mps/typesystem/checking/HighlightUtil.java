@@ -20,7 +20,8 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.smodel.SNode;
@@ -29,10 +30,13 @@ import java.awt.Color;
 
 public class HighlightUtil {
   public static HighlighterMessage createHighlighterMessage(SNode node, String message, IErrorReporter errorReporter, BaseEditorChecker checker, EditorContext editorContext) {
+    return createHighlighterMessage(node, message, errorReporter != null ? errorReporter.getMessageStatus() : MessageStatus.ERROR, errorReporter, checker);
+  }
+
+  private static HighlighterMessage createHighlighterMessage(SNode node, String message, MessageStatus status, IErrorReporter errorReporter, BaseEditorChecker checker) {
     if (errorReporter == null) {
-      errorReporter = new SimpleErrorReporter(node, message, null, null, MessageStatus.ERROR, new NodeMessageTarget());
+      errorReporter = new SimpleErrorReporter(node, message, null, null, status, new NodeMessageTarget());
     }
-    final MessageStatus status = errorReporter.getMessageStatus();
     HighlighterMessage error = new HighlighterMessage(
       node,
       status,
@@ -49,6 +53,10 @@ public class HighlightUtil {
 
   public static HighlighterMessage createHighlighterMessage(SNode node, String message, EditorCheckerAdapter checker, EditorContext editorContext) {
     return createHighlighterMessage(node, message, (IErrorReporter) null, checker, editorContext);
+  }
+
+  public static HighlighterMessage createWarningMessage(SNode node, String message, EditorCheckerAdapter checker) {
+    return createHighlighterMessage(node, message, MessageStatus.WARNING, null, checker);
   }
 
   public static Color getMessageColor(MessageStatus messageStatus) {

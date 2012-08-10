@@ -28,7 +28,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.datatransfer.PasteEnv;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -127,7 +127,7 @@ public class PasteNode_Action extends BaseAction {
             }
             paster.paste(((SNode) MapSequence.fromMap(_params).get("node")), PasteEnv.PROJECT_TREE);
           }
-          Resolver.resolveReferences(refsToResolve, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
+          ResolverComponent.getInstance().resolveScopesOnly(refsToResolve, ((IOperationContext) MapSequence.fromMap(_params).get("context")));
           // make sure editor will be open 
           final SNode root = pasteNodes.get(0).getContainingRoot();
           assert root != null;
