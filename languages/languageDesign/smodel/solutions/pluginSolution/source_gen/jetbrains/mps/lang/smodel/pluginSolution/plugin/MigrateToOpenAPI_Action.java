@@ -34,6 +34,7 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -88,6 +89,8 @@ public class MigrateToOpenAPI_Action extends BaseAction {
       SNode oldSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a0a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
       SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0a1a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
 
+      Set<SNode> unknownUsages = SetSequence.fromSet(new HashSet<SNode>());
+
       // replace old SNode with a new interface 
       Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(nodes).addElement(oldSnodeNode);
@@ -104,8 +107,14 @@ public class MigrateToOpenAPI_Action extends BaseAction {
           continue;
         }
 
-        SetSequence.fromSet(changedClassUsages).addElement(rNode);
-        rNode.replaceReference(ref, new StaticReference(ref.getRole(), rNode, newSnodeNode));
+        SNode n = (SNode) rNode;
+        if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")) {
+          SetSequence.fromSet(changedClassUsages).addElement(rNode);
+          rNode.replaceReference(ref, new StaticReference(ref.getRole(), rNode, newSnodeNode));
+          continue;
+        }
+
+        SetSequence.fromSet(unknownUsages).addElement(rNode);
       }
 
       // replace method calls 
@@ -116,7 +125,6 @@ public class MigrateToOpenAPI_Action extends BaseAction {
 
       Set<SNode> changedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
       Set<SNode> castedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
-      Set<SNode> unknownMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
 
       for (SReference ref : SetSequence.fromSet(musages)) {
         SNode rNode = ref.getSourceNode();
@@ -134,13 +142,28 @@ public class MigrateToOpenAPI_Action extends BaseAction {
         SNode n = (SNode) rNode;
         if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", "operation")) {
           SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(n), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-          SNodeOperations.replaceWithAnother(operand, new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0b0h0w0a0d().createNode(operand));
+          SNodeOperations.replaceWithAnother(operand, new MigrateToOpenAPI_Action.QuotationClass_mo9yth_a0a0b0h0x0a0d().createNode(operand));
           SetSequence.fromSet(castedMethodCalls).addElement(rNode);
           continue;
         }
 
-        SetSequence.fromSet(unknownMethodCalls).addElement(rNode);
+        SetSequence.fromSet(unknownUsages).addElement(rNode);
       }
+
+      // replace method calls 
+      Set<SNode> smethods = SetSequence.fromSet(new HashSet<SNode>());
+      SetSequence.fromSet(smethods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldSnodeNode, "staticMethod", true)));
+
+      Set<SReference> smusages = FindUsagesManager.getInstance().findUsages(smethods, SearchType.USAGES, ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope(), new EmptyProgressMonitor());
+
+      for (SReference ref : SetSequence.fromSet(musages)) {
+        SNode rNode = ref.getSourceNode();
+        if (rNode.getModel().isNotEditable()) {
+          continue;
+        }
+        SetSequence.fromSet(unknownUsages).addElement(rNode);
+      }
+
 
       Iterable<SearchResult<SNode>> results = SetSequence.fromSet(changedClassUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
         public SearchResult<SNode> select(SNode it) {
@@ -154,7 +177,7 @@ public class MigrateToOpenAPI_Action extends BaseAction {
         public SearchResult<SNode> select(SNode it) {
           return new SearchResult<SNode>(it, "casted method call");
         }
-      })).union(SetSequence.fromSet(unknownMethodCalls).select(new ISelector<SNode, SearchResult<SNode>>() {
+      })).union(SetSequence.fromSet(unknownUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
         public SearchResult<SNode> select(SNode it) {
           return new SearchResult<SNode>(it, "not migrated method call");
         }
@@ -163,7 +186,11 @@ public class MigrateToOpenAPI_Action extends BaseAction {
       ((Project) MapSequence.fromMap(_params).get("iproject")).getComponent(RefactoringView.class).showRefactoringView(((Project) MapSequence.fromMap(_params).get("iproject")), new RefactoringViewAction() {
         public void performAction(RefactoringViewItem refactoringViewItem) {
         }
-      }, new SearchResults(nodes, Sequence.fromIterable(results).toListSequence()), false, "usages");
+      }, new SearchResults(nodes, Sequence.fromIterable(results).where(new IWhereFilter<SearchResult<SNode>>() {
+        public boolean accept(SearchResult<SNode> it) {
+          return !(it.getObject().isDetached());
+        }
+      }).toListSequence()), false, "usages");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MigrateToOpenAPI", t);
@@ -217,8 +244,8 @@ public class MigrateToOpenAPI_Action extends BaseAction {
     }
   }
 
-  public static class QuotationClass_mo9yth_a0a0b0h0w0a0d {
-    public QuotationClass_mo9yth_a0a0b0h0w0a0d() {
+  public static class QuotationClass_mo9yth_a0a0b0h0x0a0d {
+    public QuotationClass_mo9yth_a0a0b0h0x0a0d() {
     }
 
     public SNode createNode(Object parameter_7) {
