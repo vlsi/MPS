@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.ModelAccess;
         myLog.error("refactoring can't be initialized");
       }
       // generation switched off temporary 
-      refactoringContext.setDoesGenerateModels(false);
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
           executeSimple(refactoringContext);
