@@ -21,6 +21,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.StaticReference;
@@ -78,6 +79,7 @@ public class MigrateToOpenAPI_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("iproject") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("module", event.getData(MPSCommonDataKeys.MODULE));
     return true;
   }
 
@@ -90,7 +92,10 @@ public class MigrateToOpenAPI_Action extends BaseAction {
       Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(nodes).addElement(oldSnodeNode);
 
-      Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope(), new EmptyProgressMonitor());
+      Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, (((IModule) MapSequence.fromMap(_params).get("module")) == null ?
+        ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope() :
+        ((IModule) MapSequence.fromMap(_params).get("module")).getScope()
+      ), new EmptyProgressMonitor());
 
       Set<SNode> changedClassUsages = SetSequence.fromSet(new HashSet<SNode>());
       for (SReference ref : SetSequence.fromSet(usages)) {
