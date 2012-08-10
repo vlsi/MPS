@@ -81,7 +81,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   }
 
   public static boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
   }
 
   public static class QuotationClass_baxqxe_a0a0a2a1 {
