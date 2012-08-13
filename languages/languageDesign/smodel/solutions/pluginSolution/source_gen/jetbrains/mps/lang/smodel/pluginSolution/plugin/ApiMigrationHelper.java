@@ -61,7 +61,7 @@ public class ApiMigrationHelper {
       }
 
       SNode n = (SNode) rNode;
-      if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")) {
+      if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
         SetSequence.fromSet(changedClassUsages).addElement(rNode);
         continue;
       }
