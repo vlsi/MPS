@@ -1821,7 +1821,7 @@
     <nodeInfo nodeId="677166607849361616" fileName="TextCommentLinePart_KeyMap.java" startLine="250" startPosition="155" endLine="251" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="677166607849361624" fileName="TextCommentLinePart_KeyMap.java" startLine="251" startPosition="117" endLine="252" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="677166607849367303" fileName="TextCommentLinePart_KeyMap.java" startLine="252" startPosition="67" endLine="253" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361643" fileName="TextCommentLinePart_KeyMap.java" startLine="254" startPosition="330" endLine="255" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361643" fileName="TextCommentLinePart_KeyMap.java" startLine="254" startPosition="333" endLine="255" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="677166607849361665" fileName="TextCommentLinePart_KeyMap.java" startLine="256" startPosition="24" endLine="257" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="677166607849361669" fileName="TextCommentLinePart_KeyMap.java" startLine="258" startPosition="17" endLine="259" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="677166607849361674" fileName="TextCommentLinePart_KeyMap.java" startLine="259" startPosition="93" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -1844,7 +1844,7 @@
     <nodeInfo nodeId="677166607849361846" fileName="TextCommentLinePart_KeyMap.java" startLine="288" startPosition="230" endLine="289" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="293" startPosition="34" endLine="294" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="677166607849364241" fileName="TextCommentLinePart_KeyMap.java" startLine="297" startPosition="63" endLine="298" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849361657" fileName="TextCommentLinePart_KeyMap.java" startLine="301" startPosition="78" endLine="302" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849361657" fileName="TextCommentLinePart_KeyMap.java" startLine="301" startPosition="81" endLine="302" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="677166607849369963" fileName="TextCommentLinePart_KeyMap.java" startLine="305" startPosition="69" endLine="306" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="677166607849361801" fileName="TextCommentLinePart_KeyMap.java" startLine="309" startPosition="64" endLine="310" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="34" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1880,7 +1880,7 @@
     <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="196" startPosition="7" endLine="200" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="292" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
     <nodeInfo nodeId="677166607849364241" fileName="TextCommentLinePart_KeyMap.java" startLine="296" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yh032p_a0b0d0d2#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="677166607849361657" fileName="TextCommentLinePart_KeyMap.java" startLine="300" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0a5a0a0b0a0a4a0d0d2#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="677166607849361657" fileName="TextCommentLinePart_KeyMap.java" startLine="300" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a3c#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="677166607849369963" fileName="TextCommentLinePart_KeyMap.java" startLine="304" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yh032p_a0b0b0a4a0d0d2#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="677166607849361801" fileName="TextCommentLinePart_KeyMap.java" startLine="308" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0d0d2#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
@@ -1940,12 +1940,12 @@
     <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="197" startPosition="112" endLine="198" endPosition="20" />
     <scopeInfo nodeId="677166607849364203" fileName="TextCommentLinePart_KeyMap.java" startLine="215" startPosition="63" endLine="216" endPosition="228" />
     <scopeInfo nodeId="677166607849366936" fileName="TextCommentLinePart_KeyMap.java" startLine="237" startPosition="170" endLine="238" endPosition="57" />
-    <scopeInfo nodeId="677166607849361642" fileName="TextCommentLinePart_KeyMap.java" startLine="254" startPosition="330" endLine="255" endPosition="189" />
+    <scopeInfo nodeId="677166607849361642" fileName="TextCommentLinePart_KeyMap.java" startLine="254" startPosition="333" endLine="255" endPosition="189" />
     <scopeInfo nodeId="677166607849361664" fileName="TextCommentLinePart_KeyMap.java" startLine="256" startPosition="24" endLine="257" endPosition="34" />
     <scopeInfo nodeId="677166607849369970" fileName="TextCommentLinePart_KeyMap.java" startLine="275" startPosition="20" endLine="276" endPosition="318" />
     <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="293" startPosition="34" endLine="294" endPosition="23" />
     <scopeInfo nodeId="677166607849364241" fileName="TextCommentLinePart_KeyMap.java" startLine="297" startPosition="63" endLine="298" endPosition="46" />
-    <scopeInfo nodeId="677166607849361657" fileName="TextCommentLinePart_KeyMap.java" startLine="301" startPosition="78" endLine="302" endPosition="45" />
+    <scopeInfo nodeId="677166607849361657" fileName="TextCommentLinePart_KeyMap.java" startLine="301" startPosition="81" endLine="302" endPosition="45" />
     <scopeInfo nodeId="677166607849369963" fileName="TextCommentLinePart_KeyMap.java" startLine="305" startPosition="69" endLine="306" endPosition="46" />
     <scopeInfo nodeId="677166607849361801" fileName="TextCommentLinePart_KeyMap.java" startLine="309" startPosition="64" endLine="310" endPosition="45" />
     <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="34" endLine="27" endPosition="46" />
