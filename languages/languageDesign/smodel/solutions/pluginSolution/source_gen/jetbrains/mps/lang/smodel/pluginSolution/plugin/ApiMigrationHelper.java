@@ -115,7 +115,7 @@ public class ApiMigrationHelper {
 
     Set<SReference> smusages = FindUsagesManager.getInstance().findUsages(smethods, SearchType.USAGES, p.getScope(), new EmptyProgressMonitor());
 
-    for (SReference ref : SetSequence.fromSet(musages)) {
+    for (SReference ref : SetSequence.fromSet(smusages)) {
       SNode rNode = ref.getSourceNode();
       if (rNode.getModel().isNotEditable()) {
         continue;

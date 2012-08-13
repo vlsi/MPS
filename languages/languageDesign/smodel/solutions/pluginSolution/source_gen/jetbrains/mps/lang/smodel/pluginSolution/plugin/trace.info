@@ -237,7 +237,7 @@
     <nodeInfo nodeId="7949796796600715517" fileName="ApiMigrationHelper.java" startLine="114" startPosition="133" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7949796796600715518" fileName="ApiMigrationHelper.java" startLine="115" startPosition="0" endLine="116" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7949796796600715534" fileName="ApiMigrationHelper.java" startLine="116" startPosition="145" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7949796796600715538" fileName="ApiMigrationHelper.java" startLine="118" startPosition="57" endLine="119" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7949796796600715538" fileName="ApiMigrationHelper.java" startLine="118" startPosition="58" endLine="119" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7949796796600715551" fileName="ApiMigrationHelper.java" startLine="120" startPosition="45" endLine="121" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="7949796796600715552" fileName="ApiMigrationHelper.java" startLine="122" startPosition="7" endLine="123" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7949796796600715558" fileName="ApiMigrationHelper.java" startLine="124" startPosition="5" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -445,7 +445,7 @@
     <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="277" startPosition="7" endLine="281" endPosition="31">
       <varInfo nodeId="7949796796600715770" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="7949796796600715537" fileName="ApiMigrationHelper.java" startLine="118" startPosition="57" endLine="123" endPosition="59">
+    <scopeInfo nodeId="7949796796600715537" fileName="ApiMigrationHelper.java" startLine="118" startPosition="58" endLine="123" endPosition="59">
       <varInfo nodeId="7949796796600715539" varName="rNode" />
     </scopeInfo>
     <scopeInfo nodeId="7949796796600715773" fileName="ApiMigrationHelper.java" startLine="186" startPosition="214" endLine="191" endPosition="5">
