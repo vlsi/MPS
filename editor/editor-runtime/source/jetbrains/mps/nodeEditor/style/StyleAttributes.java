@@ -132,4 +132,6 @@ public class StyleAttributes {
   public static final StyleAttribute<TableComponent> TABLE_COMPONENT = new SimpleStyleAttribute<TableComponent>("table-component", TableComponent.HORIZONTAL_COLLECTION);
 
   public static final StyleAttribute<SNode> NAVIGATABLE_NODE = new SimpleStyleAttribute<SNode>("navigatable-node");
+
+  public static final StyleAttribute<Integer> MAX_WIDTH = new SimpleStyleAttribute("max.width");
 }

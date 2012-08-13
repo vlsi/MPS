@@ -1833,6 +1833,40 @@
     <unitInfo nodeId="7483705179651268848" fileName="EventReference_Editor.java" startLine="17" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EventReference_Editor" />
     <unitInfo nodeId="7483705179651268851" fileName="EventReference_Editor.java" startLine="47" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EventReference_Editor$_Inline_ofn6x9_a0a" />
   </root>
+  <root nodeId="7651593722933678120">
+    <nodeInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7651593722933678125" fileName="LightWeightDecisionTable_Editor.java" startLine="23" startPosition="87" endLine="24" endPosition="415" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="26" startPosition="6" endLine="27" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="27" startPosition="146" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="27" startPosition="146" endLine="28" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="28" startPosition="45" endLine="29" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="16" startPosition="72" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="22" startPosition="57" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/lang/editor/table/runtime/TableModel;" />
+    <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="21" startPosition="84" endLine="26" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTable_qbxdb8_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="58" />
+    <scopeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="23" startPosition="87" endLine="24" endPosition="415" />
+    <scopeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="27" startPosition="146" endLine="28" endPosition="45" />
+    <scopeInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="16" startPosition="72" endLine="20" endPosition="0">
+      <varInfo nodeId="7651593722933678120" varName="editorContext" />
+      <varInfo nodeId="7651593722933678120" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="22" startPosition="57" endLine="26" endPosition="0">
+      <varInfo nodeId="7651593722933678122" varName="editorContext" />
+      <varInfo nodeId="7651593722933678122" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="21" startPosition="84" endLine="29" endPosition="22">
+      <varInfo nodeId="7651593722933678122" varName="creator" />
+      <varInfo nodeId="7651593722933678122" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="7651593722933678122" varName="editorContext" />
+      <varInfo nodeId="7651593722933678122" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4550201027691224956" fileName="LightWeightDecisionTable_Editor.java" startLine="24" startPosition="19" endLine="16" endPosition="0" />
+    <unitInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="16" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor" />
+    <unitInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="22" startPosition="36" endLine="26" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor$1" />
+  </root>
   <root nodeId="8506335436194846494">
     <nodeInfo nodeId="8506335436194846494" fileName="HierarchycalTable_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8506335436194846502" fileName="HierarchycalTable_Editor.java" startLine="30" startPosition="89" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

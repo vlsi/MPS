@@ -117,7 +117,14 @@ public class CellLayout_Indent extends AbstractCellLayout {
       return;
     }
 
-    new CellLayouter(editorCells).layout();
+    new CellLayouter(editorCells, getMaxWidth(editorCells)).layout();
+  }
+
+  private int getMaxWidth(EditorCell_Collection editorCells) {
+    if (editorCells.getStyle().getCurrent(StyleAttributes.MAX_WIDTH) != null) {
+      return editorCells.getX() + editorCells.getStyle().getCurrent(StyleAttributes.MAX_WIDTH);
+    }
+    return editorCells.getRootParent().getX() + EditorSettings.getInstance().getVerticalBoundWidth();
   }
 
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
@@ -225,7 +232,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     private boolean myOverflow;
     private List<EditorCell> myLineContent = new ArrayList<EditorCell>();
 
-    private CellLayouter(EditorCell_Collection cell) {
+    private CellLayouter(EditorCell_Collection cell, int maxWidth) {
       myCell = cell;
 
       myX = myCell.getX();
@@ -239,8 +246,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myTopInset = 0;
       myBottomInset = 0;
 
-      EditorSettings settings = EditorSettings.getInstance();
-      myMaxWidth = cell.getRootParent().getX() + settings.getVerticalBoundWidth();
+      myMaxWidth = cell.getRootParent().getX() + maxWidth;
     }
 
     public void layout() {

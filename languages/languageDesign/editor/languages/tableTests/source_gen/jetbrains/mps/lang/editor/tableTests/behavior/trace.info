@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="AbstractStateMachineElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ContentElement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.ContentElement_BehaviorDescriptor" />
   <unitInfo fileName="DataCell_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.DataCell_BehaviorDescriptor" />
   <unitInfo fileName="EventReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.EventReference_BehaviorDescriptor" />
   <unitInfo fileName="Event_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Event_BehaviorDescriptor" />
   <unitInfo fileName="HierarchycalTable_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_BehaviorDescriptor" />
+  <unitInfo fileName="LightWeightDecisionTable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_BehaviorDescriptor" />
   <unitInfo fileName="Matrix_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Matrix_BehaviorDescriptor" />
   <unitInfo fileName="Row_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.Row_BehaviorDescriptor" />
   <unitInfo fileName="StateMachine_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_BehaviorDescriptor" />
@@ -97,6 +98,22 @@
       <varInfo nodeId="7483705179651302808" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="7483705179651302808" fileName="StateMachine_Behavior.java" startLine="11" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_Behavior" />
+  </root>
+  <root nodeId="7651593722933724230">
+    <nodeInfo nodeId="7651593722933724234" fileName="LightWeightDecisionTable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933755850" fileName="LightWeightDecisionTable_Behavior.java" startLine="10" startPosition="103" endLine="11" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933755858" fileName="LightWeightDecisionTable_Behavior.java" startLine="11" startPosition="103" endLine="12" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933755866" fileName="LightWeightDecisionTable_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933755879" fileName="LightWeightDecisionTable_Behavior.java" startLine="13" startPosition="100" endLine="14" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933755886" fileName="LightWeightDecisionTable_Behavior.java" startLine="14" startPosition="100" endLine="15" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933755893" fileName="LightWeightDecisionTable_Behavior.java" startLine="15" startPosition="100" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933755900" fileName="LightWeightDecisionTable_Behavior.java" startLine="16" startPosition="100" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7651593722933724230" fileName="LightWeightDecisionTable_Behavior.java" startLine="8" startPosition="48" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="7651593722933724232" fileName="LightWeightDecisionTable_Behavior.java" startLine="9" startPosition="43" endLine="17" endPosition="100" />
+    <scopeInfo nodeId="7651593722933724230" fileName="LightWeightDecisionTable_Behavior.java" startLine="8" startPosition="48" endLine="19" endPosition="0">
+      <varInfo nodeId="7651593722933724230" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="7651593722933724230" fileName="LightWeightDecisionTable_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_Behavior" />
   </root>
   <root nodeId="7943979732673457913">
     <nodeInfo nodeId="7943979732673457921" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
