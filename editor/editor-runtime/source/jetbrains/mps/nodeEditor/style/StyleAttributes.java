@@ -120,6 +120,8 @@ public class StyleAttributes {
   public static final StyleAttribute<String> MATCHING_LABEL = new SimpleStyleAttribute<String>("matching-label", null);  
 
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_INDENT = new SimpleStyleAttribute<Boolean>("indent-layout-indented", false);
+  public static final StyleAttribute<Boolean> INDENT_LAYOUT_INDENT_ANCHOR = new SimpleStyleAttribute<Boolean>("indent-layout-indent-anchor", false);
+  public static final StyleAttribute<Boolean> INDENT_LAYOUT_WRAP_ANCHOR = new SimpleStyleAttribute<Boolean>("indent-layout-wrap-anchor", false);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_NEW_LINE = new SimpleStyleAttribute<Boolean>("indent-layout-new-line", false);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_ON_NEW_LINE = new SimpleStyleAttribute<Boolean>("indent-layout-on-new-line", false);
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_CHILDREN_NEWLINE = new SimpleStyleAttribute<Boolean>("indent-layout-children-new-line", false);
