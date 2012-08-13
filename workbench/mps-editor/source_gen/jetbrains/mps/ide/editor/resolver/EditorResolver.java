@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.resolver;
 
 import jetbrains.mps.resolve.IResolver;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.resolve.AbstractResolveResult;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNode;
@@ -13,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -30,33 +28,24 @@ public class EditorResolver implements IResolver {
   }
 
   @Nullable
-  public AbstractResolveResult resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull IOperationContext operationContext) {
+  public boolean resolve(@NotNull SReference reference, @NotNull SNode sourceNode, @NotNull IOperationContext operationContext) {
     final String resolveInfo = getResolveInfo(reference, sourceNode);
     if (resolveInfo == null) {
-      return null;
+      return false;
     }
     final EditorResolver.FakeEditorComponent fakeEditor = new EditorResolver.FakeEditorComponent(SNodeOperations.getContainingRoot(sourceNode), operationContext);
     EditorCell cellWithRole = fakeEditor.findNodeCellWithRole(sourceNode, reference.getRole());
     if (cellWithRole == null) {
-      return null;
+      return false;
     }
     NodeSubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
     final INodeSubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
-    if (applicableSubstituteAction != null) {
-      // TODO: use special ResolveResult here 
-      return new AbstractResolveResult(sourceNode, reference.getRole()) {
-        @Override
-        public void setTarget() {
-          applicableSubstituteAction.substitute(fakeEditor.getEditorContext(), resolveInfo);
-          fakeEditor.dispose();
-        }
-
-        public boolean isNewTargetFromSameModel(@NotNull SModelReference reference) {
-          return true;
-        }
-      };
+    if (applicableSubstituteAction == null) {
+      return false;
     }
-    return null;
+    applicableSubstituteAction.substitute(fakeEditor.getEditorContext(), resolveInfo);
+    fakeEditor.dispose();
+    return true;
   }
 
   private String getResolveInfo(SReference reference, SNode sourceNode) {

@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;
-import org.jetbrains.annotations.NotNull;
 
 public class ResolverComponent implements CoreComponent {
   private static ResolverComponent INSTANCE;
@@ -60,15 +59,15 @@ public class ResolverComponent implements CoreComponent {
     ListSequence.fromList(myResolvers).removeElement(resolver);
   }
 
-  /*package*/ List<IResolver> getResolvers() {
-    return myResolvers;
-  }
-
   public boolean resolve(SReference reference, IOperationContext operationContext) {
-    AbstractResolveResult resolveResult = doResolve(reference, operationContext);
-    if (resolveResult != null) {
-      resolveResult.setTarget();
-      return true;
+    SNode sourceNode = reference.getSourceNode();
+    if (sourceNode == null) {
+      return false;
+    }
+    for (IResolver nextResolver : ListSequence.fromList(myResolvers)) {
+      if (nextResolver.resolve(reference, sourceNode, operationContext)) {
+        return true;
+      }
     }
     return false;
   }
@@ -84,29 +83,13 @@ public class ResolverComponent implements CoreComponent {
         if (sourceNode == null) {
           continue;
         }
-        ResolveResult resolveResult = myScopeResolver.resolve(reference, sourceNode, operationContext);
-        if (resolveResult != null) {
-          resolveResult.setTarget();
+        if (myScopeResolver.resolve(reference, sourceNode, operationContext)) {
           iterator.remove();
           performResolve = true;
         }
       }
     }
 
-  }
-
-  private AbstractResolveResult doResolve(@NotNull SReference reference, @NotNull IOperationContext operationContext) {
-    SNode sourceNode = reference.getSourceNode();
-    if (sourceNode == null) {
-      return null;
-    }
-    for (IResolver nextResolver : ListSequence.fromList(myResolvers)) {
-      AbstractResolveResult resolveResult = nextResolver.resolve(reference, sourceNode, operationContext);
-      if (resolveResult != null) {
-        return resolveResult;
-      }
-    }
-    return null;
   }
 
   public static ResolverComponent getInstance() {
