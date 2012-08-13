@@ -22,7 +22,7 @@
   <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" hash="-cccj0l9ytvrrfolewafekpo05otu2be" />
   <dep model="r:2d0fbdb5-e73c-4db3-b9e8-fb2e93925820(graphTest)" hash="38nvjsxho8l8cbe69r3qan44vjwlsqx" />
   <dep model="r:3526f944-06ad-48b3-a2a1-fffa752849ed(jetbrains.mps.smodel.test.smodelOperations)" hash="-6b8serd33v6y3225lgq5zn0wap3mcpn" />
-  <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" hash="-4n7bgmxbihcf04oc6l6a5syq40kyf0s" />
+  <dep model="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" hash="-dfw4lurhqhric9dexk8lvhqpt4ilhte" />
   <dep model="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test)" hash="-b2qwvwfalq3jpbnq0sns8zynip6kjjt" />
   <dep model="r:3deabf90-227b-4dd7-a1b3-e4735e4a0270(jetbrains.mps.lang.smodel.test)" hash="-3ke2hdgf0esxmh4twn2e9yiyx7a1zs8" />
   <dep model="r:453eba07-be06-4d79-be27-e839de91fcf2(sax)" hash="-670mox6y3z78g68y9cx4ybz0wzfxcfs" />
