@@ -53,6 +53,7 @@ public class ApiMigrationHelper {
 
     final Set<SNode> changedClassUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<Tuples._3<SNode, SReference, SReference>> changedClassUsagesInTemplates = SetSequence.fromSet(new HashSet<Tuples._3<SNode, SReference, SReference>>());
+    final Set<Tuples._3<SNode, SReference, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._3<SNode, SReference, SReference>>());
     for (SReference ref : SetSequence.fromSet(usages)) {
       SNode rNode = ref.getSourceNode();
       if (rNode.getModel().isNotEditable()) {
@@ -67,6 +68,11 @@ public class ApiMigrationHelper {
 
       if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "typeParameter")) {
         SetSequence.fromSet(changedClassUsagesInTemplates).addElement(MultiTuple.<SNode,SReference,SReference>from(rNode, ref, ((SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
+        continue;
+      }
+
+      if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "parameter")) {
+        SetSequence.fromSet(changedClassUsagesInTypes).addElement(MultiTuple.<SNode,SReference,SReference>from(rNode, ref, ((SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
         continue;
       }
 
@@ -125,6 +131,10 @@ public class ApiMigrationHelper {
       public SearchResult<SNode> select(Tuples._3<SNode, SReference, SReference> it) {
         return new SearchResult<SNode>(it._0(), "replaced SNode in new XYZ<SNode,...>");
       }
+    })).union(SetSequence.fromSet(changedClassUsagesInTypes).select(new ISelector<Tuples._3<SNode, SReference, SReference>, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(Tuples._3<SNode, SReference, SReference> it) {
+        return new SearchResult<SNode>(it._0(), "replaced SNode in Type<SNode,...>");
+      }
     })).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<Tuples._3<SNode, SReference, SReference>, SearchResult<SNode>>() {
       public SearchResult<SNode> select(Tuples._3<SNode, SReference, SReference> it) {
         return new SearchResult<SNode>(it._0(), "replaced method call");
@@ -148,6 +158,9 @@ public class ApiMigrationHelper {
             for (SNode cls : SetSequence.fromSet(changedClassUsages)) {
               SLinkOperations.setTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", newSnodeNode, false);
             }
+            for (Tuples._3<SNode, SReference, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTypes)) {
+              tmplCls._0().replaceReference(tmplCls._1(), tmplCls._2());
+            }
             for (Tuples._3<SNode, SReference, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTemplates)) {
               tmplCls._0().replaceReference(tmplCls._1(), tmplCls._2());
             }
@@ -156,7 +169,7 @@ public class ApiMigrationHelper {
             }
             for (SNode occ : SetSequence.fromSet(castedMethodCalls)) {
               SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(occ), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-              SNodeOperations.replaceWithAnother(operand, new ApiMigrationHelper.QuotationClass_yke5lt_a0a0b0d0a0a2a0a0b0a63a0().createNode(operand));
+              SNodeOperations.replaceWithAnother(operand, new ApiMigrationHelper.QuotationClass_yke5lt_a0a0b0e0a0a2a0a0b0a73a0().createNode(operand));
             }
           }
         });
@@ -215,8 +228,8 @@ public class ApiMigrationHelper {
     }
   }
 
-  public static class QuotationClass_yke5lt_a0a0b0d0a0a2a0a0b0a63a0 {
-    public QuotationClass_yke5lt_a0a0b0d0a0a2a0a0b0a63a0() {
+  public static class QuotationClass_yke5lt_a0a0b0e0a0a2a0a0b0a73a0 {
+    public QuotationClass_yke5lt_a0a0b0e0a0a2a0a0b0a73a0() {
     }
 
     public SNode createNode(Object parameter_7) {
