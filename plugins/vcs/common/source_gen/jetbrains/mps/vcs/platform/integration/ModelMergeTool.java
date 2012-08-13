@@ -69,10 +69,11 @@ public class ModelMergeTool extends MergeTool {
       });
       dialog.show();
       if (dialog.getResultModel() != null) {
-        String asString = ModelPersistence.modelToString(dialog.getResultModel());
+        String asString = ModelPersistence.modelToString(dialog.getResultModelWithFixedId());
         resolved(mrequest, asString);
         MergeBackupUtil.packMergeResult(backupFile, file.getName(), asString);
       }
+      dialog.unregisterResultModel();
     } catch (IOException e) {
       LOG.error(e);
     }

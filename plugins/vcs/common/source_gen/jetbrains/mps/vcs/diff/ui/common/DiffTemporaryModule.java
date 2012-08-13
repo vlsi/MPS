@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -18,6 +19,10 @@ import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SModelId;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -36,7 +41,7 @@ public class DiffTemporaryModule extends AbstractModule {
   private Project myProject;
 
   private DiffTemporaryModule(SModel model, String version, Project project) {
-    setModuleReference(ModuleReference.fromString(SModelOperations.getModelName(model) + "@" + version));
+    setModuleReference(new ModuleReference(SModelOperations.getModelName(model) + "@" + version, ModuleId.regular()));
     myModel = model;
     myProject = project;
   }
@@ -50,7 +55,6 @@ public class DiffTemporaryModule extends AbstractModule {
   }
 
   public void save() {
-    throw new UnsupportedOperationException();
   }
 
   public String toString() {
@@ -118,6 +122,30 @@ public class DiffTemporaryModule extends AbstractModule {
     model.setModelDescriptor(new DiffTemporaryModule.DiffSModelDescriptor(module, model, mergeResultModel));
   }
 
+  public static void setSModelId(SModel model, String version) {
+    SModelReference modelRef = model.getSModelReference();
+    CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), genMergeSModelId(modelRef.getSModelId(), version)));
+  }
+
+  public static void resetSModelId(SModel model) {
+    SModelReference modelRef = model.getSModelReference();
+    assert modelRef.getSModelId() instanceof SModelId.ForeignSModelId;
+    CopyUtil.changeModelReference(model, new SModelReference(modelRef.getSModelFqName(), getOriginalSModelId((SModelId.ForeignSModelId) modelRef.getSModelId())));
+  }
+
+  public static void registerModel(SModel model, MPSModuleOwner owner) {
+    IModule module = model.getModelDescriptor().getModule();
+    MPSModuleRepository.getInstance().registerModule(module, owner);
+    SModelRepository.getInstance().registerModelDescriptor(model.getModelDescriptor(), module);
+  }
+
+  public static void unregisterModel(SModel model, MPSModuleOwner owner) {
+    IModule module = model.getModelDescriptor().getModule();
+    MPSModuleRepository.getInstance().registerModule(module, owner);
+    SModelRepository.getInstance().unRegisterModelDescriptor(model.getModelDescriptor(), module);
+
+  }
+
   public static IOperationContext getOperationContext(com.intellij.openapi.project.Project project, SModel model) {
     SModelDescriptor md = model.getModelDescriptor();
     assert md != null;
@@ -127,6 +155,15 @@ public class DiffTemporaryModule extends AbstractModule {
     } else {
       return new ModuleContext(module, ProjectHelper.toMPSProject(project));
     }
+  }
+
+  public static SModelId genMergeSModelId(SModelId modelId, String version) {
+    return SModelId.foreign("merge_" + version + "#" + modelId.toString());
+  }
+
+  public static SModelId getOriginalSModelId(SModelId.ForeignSModelId modelId) {
+    String id = modelId.getId();
+    return SModelId.fromString(id.substring(id.indexOf("#") + 1));
   }
 
   private class DiffModuleScope extends AbstractModule.ModuleScope {
@@ -181,7 +218,7 @@ public class DiffTemporaryModule extends AbstractModule {
 
     @Deprecated
     public IFile getModelFile() {
-      throw new UnsupportedOperationException();
+      return null;
     }
 
     public boolean isReadOnly() {
@@ -189,19 +226,17 @@ public class DiffTemporaryModule extends AbstractModule {
     }
 
     public void setChanged(boolean b) {
-      throw new UnsupportedOperationException();
     }
 
     public boolean isChanged() {
-      throw new UnsupportedOperationException();
+      return false;
     }
 
     public long lastChangeTime() {
-      throw new UnsupportedOperationException();
+      return 0;
     }
 
     public void save() {
-      throw new UnsupportedOperationException();
     }
 
     protected SModel createModel() {

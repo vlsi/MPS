@@ -114,7 +114,7 @@ public class TestMergeDialog {
           e.printStackTrace();
         }
         dialog.show();
-        final SModel result = dialog.getResultModel();
+        final SModel result = dialog.getResultModelWithFixedId();
         if (result == null) {
           dialog.close(0);
           System.exit(0);
@@ -128,6 +128,7 @@ public class TestMergeDialog {
             ModelPersistence.saveModel(result, iFile);
           }
         });
+        dialog.unregisterResultModel();
         dialog.close(0);
         Disposer.dispose(TestMergeDialog.myParentDisposable);
         System.exit(0);
