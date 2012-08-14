@@ -3226,11 +3226,11 @@
     <unitInfo nodeId="7055725856388840245" fileName="InlineEditorComponent_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.InlineEditorComponent_Behavior" />
   </root>
   <root nodeId="7667708318090934613">
-    <nodeInfo nodeId="7667708318090936622" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="13" startPosition="95" endLine="14" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6245941980854787918" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="13" startPosition="95" endLine="14" endPosition="676" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7667708318090934613" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="9" startPosition="62" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7667708318090934613" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="7667708318090934615" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="7667708318090934618" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="13" startPosition="95" endLine="14" endPosition="340" />
+    <scopeInfo nodeId="7667708318090934618" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="13" startPosition="95" endLine="14" endPosition="676" />
     <scopeInfo nodeId="7667708318090934613" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="9" startPosition="62" endLine="12" endPosition="0">
       <varInfo nodeId="7667708318090934613" varName="thisNode" />
     </scopeInfo>
@@ -3241,11 +3241,11 @@
     <unitInfo nodeId="7667708318090934613" fileName="IndentLayoutIndentAnchorStyleClassItem_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentAnchorStyleClassItem_Behavior" />
   </root>
   <root nodeId="7667708318090936716">
-    <nodeInfo nodeId="7667708318090936722" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="13" startPosition="95" endLine="14" endPosition="340" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7667708318090936722" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="13" startPosition="95" endLine="14" endPosition="676" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7667708318090936716" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="9" startPosition="60" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7667708318090936716" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isApplicableTo_1214304723440#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
     <scopeInfo nodeId="7667708318090936718" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="7667708318090936721" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="13" startPosition="95" endLine="14" endPosition="340" />
+    <scopeInfo nodeId="7667708318090936721" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="13" startPosition="95" endLine="14" endPosition="676" />
     <scopeInfo nodeId="7667708318090936716" fileName="IndentLayoutWrapAnchorStyleClassItem_Behavior.java" startLine="9" startPosition="60" endLine="12" endPosition="0">
       <varInfo nodeId="7667708318090936716" varName="thisNode" />
     </scopeInfo>
