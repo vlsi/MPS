@@ -39,11 +39,10 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     int descent = 0;
     int topInset = 0;
     int bottomInset = 0;
-    EditorCell[] cells = editorCells.getCells();
 
 
-    for (EditorCell editorCell : cells) {
-      PunctuationUtil.addGaps(editorCells, editorCell);
+    for (EditorCell editorCell : editorCells) {
+      PunctuationUtil.addGaps(editorCell, false, false);
 
       editorCell.moveTo(x + width, editorCell.getY());
       editorCell.relayout();
@@ -61,7 +60,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
     editorCells.setWidth(width);
     editorCells.setHeight(ascent + descent + topInset + bottomInset);
 
-    for (EditorCell editorCell : cells) {
+    for (EditorCell editorCell : editorCells) {
       editorCell.setBaseline(baseline);
     }
   }
