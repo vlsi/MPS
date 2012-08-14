@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Editor_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.Editor_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="411" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="415" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.StructureAspectDescriptor" />
   <root nodeId="1071666914219">
     <nodeInfo nodeId="1071666914219" fileName="ConceptEditorDeclaration.java" startLine="15" startPosition="108" endLine="16" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1071666914219" fileName="ConceptEditorDeclaration.java" startLine="16" startPosition="102" endLine="17" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
@@ -9655,6 +9655,52 @@
       <varInfo nodeId="7667276221847612943" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="7667276221847612943" fileName="QueryFunction_ParametersList.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList" />
+  </root>
+  <root nodeId="7667708318090725848">
+    <nodeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="10" startPosition="83" endLine="11" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="13" startPosition="61" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="17" startPosition="93" endLine="18" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="21" startPosition="79" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IndentLayoutIndentAnchorStyleClassItem#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/editor/structure/IndentLayoutIndentAnchorStyleClassItem;" />
+    <nodeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/editor/structure/IndentLayoutIndentAnchorStyleClassItem;" />
+    <scopeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="13" startPosition="61" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="17" startPosition="93" endLine="18" endPosition="225" />
+    <scopeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="21" startPosition="79" endLine="22" endPosition="73" />
+    <scopeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="7667708318090725848" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="7667708318090725848" varName="init" />
+      <varInfo nodeId="7667708318090725848" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7667708318090725848" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="7667708318090725848" fileName="IndentLayoutIndentAnchorStyleClassItem.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem" />
+  </root>
+  <root nodeId="7667708318090877006">
+    <nodeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="10" startPosition="81" endLine="11" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="13" startPosition="59" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="17" startPosition="91" endLine="18" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="21" startPosition="77" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IndentLayoutWrapAnchorStyleClassItem#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/editor/structure/IndentLayoutWrapAnchorStyleClassItem;" />
+    <nodeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/editor/structure/IndentLayoutWrapAnchorStyleClassItem;" />
+    <scopeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="13" startPosition="59" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="17" startPosition="91" endLine="18" endPosition="221" />
+    <scopeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="21" startPosition="77" endLine="22" endPosition="71" />
+    <scopeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="7667708318090877006" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="7667708318090877006" varName="init" />
+      <varInfo nodeId="7667708318090877006" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7667708318090877006" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="7667708318090877006" fileName="IndentLayoutWrapAnchorStyleClassItem.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem" />
   </root>
   <root nodeId="8255250703325730686">
     <nodeInfo nodeId="8255250703325730686" fileName="ScriptSwitchEnum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
