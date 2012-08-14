@@ -245,16 +245,18 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myTopInset = 0;
       myBottomInset = 0;
       myCurrentIndent = 0;
-      myCurrentIndentAfterWrap = 0;
 
       EditorSettings settings = EditorSettings.getInstance();
       myMaxWidth = cell.getRootParent().getX() + settings.getVerticalBoundWidth();
       myIndentSize = settings.getSpacesWidth(settings.getIndentSize());
+
+      myCurrentIndentAfterWrap = myIndentSize * 2;
     }
 
     public void layout() {
       layoutCollection(myCell);
       newLine(false);
+      updatePositions(myCell);
     }
 
 
@@ -297,11 +299,6 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private void layoutCollection(final EditorCell_Collection collection) {
-      int x0 = Integer.MAX_VALUE;
-      int y0 = Integer.MAX_VALUE;
-      int x1 = Integer.MIN_VALUE;
-      int y1 = Integer.MIN_VALUE;
-
       boolean hasIndent = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT);
       boolean hasAnchor = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR);
       boolean hasWrapAnchor = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR);
@@ -325,6 +322,19 @@ public class CellLayout_Indent extends AbstractCellLayout {
           }
         }
       });
+    }
+
+    private void updatePositions(EditorCell_Collection collection) {
+      for (EditorCell child : collection) {
+        if (child instanceof EditorCell_Collection && isIndentCollection((EditorCell_Collection) child)) {
+          updatePositions((EditorCell_Collection) child);
+        }
+      }
+
+      int x0 = Integer.MAX_VALUE;
+      int y0 = Integer.MAX_VALUE;
+      int x1 = Integer.MIN_VALUE;
+      int y1 = Integer.MIN_VALUE;
 
       for (EditorCell child : collection) {
         x0 = Math.min(x0, child.getX());
