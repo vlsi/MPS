@@ -40,11 +40,13 @@ public class SNodeOperations {
   }
 
   @Deprecated //todo KILL IT! should be node.getModel!=null
+  //todo after killing it, correct migration script to return model!=null instead
   public static boolean isRegistered(org.jetbrains.mps.openapi.model.SNode node){
     return ((SNode) node).isRegistered();
   }
 
   @Deprecated //todo KILL IT! should not be used since nodes are not passed between read actions
+  //todo after killing it, correct migration script to return false instead
   public static boolean isDisposed(org.jetbrains.mps.openapi.model.SNode node){
     return ((SNode) node).isDisposed();
   }
