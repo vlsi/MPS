@@ -662,9 +662,7 @@
     <scopeInfo nodeId="1202816402995" fileName="Panel.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="1202816402995" fileName="Panel.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1202816402995" fileName="Panel.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1202816402995" fileName="Panel.java" startLine="47" startPosition="25" endLine="52" endPosition="5">
-      <varInfo nodeId="1202816402995" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1202816402995" fileName="Panel.java" startLine="47" startPosition="25" endLine="52" endPosition="5" />
     <scopeInfo nodeId="1202816402995" fileName="Panel.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="1202816402995" varName="newValue" />
     </scopeInfo>

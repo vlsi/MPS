@@ -55,7 +55,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           SLinkOperations.setTarget(SLinkOperations.getTarget(ExtractMethodWithOutputVariable.this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
         } else {
           SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-          SLinkOperations.setTarget(newStatement, "expression", new ExtractMethodWithOutputVariable.QuotationClass_n3576q_a0a1a0c0a0a0a2().createNode(ExtractMethodWithOutputVariable.this.myOutputVariable, methodCall), true);
+          SLinkOperations.setTarget(newStatement, "expression", new ExtractMethodWithOutputVariable.QuotationClass_n3576q_a0a1a0c0a0a0a0a0c().createNode(ExtractMethodWithOutputVariable.this.myOutputVariable, methodCall), true);
           SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
         }
         for (SNode statement : ListSequence.fromList(statements)) {
@@ -67,8 +67,8 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     });
   }
 
-  public static class QuotationClass_n3576q_a0a1a0c0a0a0a2 {
-    public QuotationClass_n3576q_a0a1a0c0a0a0a2() {
+  public static class QuotationClass_n3576q_a0a1a0c0a0a0a0a0c {
+    public QuotationClass_n3576q_a0a1a0c0a0a0a0a0c() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
