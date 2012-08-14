@@ -88,6 +88,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="matrixTable" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2qyu.4379396156287763856" resolveInfo="Matrix" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7651593722933678120">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="decTable" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="2qyu.7651593722933662687" resolveInfo="LightWeightDecisionTable" />
+    </node>
   </roots>
   <root id="2882388703616228143">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2422839104779461391">
@@ -2152,6 +2156,40 @@
                     <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="2qyu.4379396156287813939" />
                   </node>
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="4379396156287831872" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7651593722933678120">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="ohyq.CellModel_Table" typeId="ohyq.4677325677876400523" id="7651593722933678122">
+      <node role="tableModel" roleId="ohyq.4490468428501048483" type="ohyq.QueryFunction_TableModel" typeId="ohyq.4490468428501056077" id="7651593722933678123">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7651593722933678124">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7651593722933678125">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7651593722933678126">
+              <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="4550201027691224955">
+                <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="4550201027691224956">
+                  <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+                  <link role="classifier" roleId="tpee.1170346070688" targetNodeId="squ6.941853673534992537" resolveInfo="XYCTableModel" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="squ6.941853673534992554" resolveInfo="XYCTableModel" />
+                  <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4550201027691224957" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="7651593722933678130" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="7651593722933678136">
+                    <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="2qyu.7651593722933662687" resolveInfo="LightWeightDecisionTable" />
+                    <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="2qyu.7651593722933678081" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="7651593722933678141">
+                    <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="2qyu.7651593722933662687" resolveInfo="LightWeightDecisionTable" />
+                    <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="2qyu.7651593722933678118" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.LinkRefExpression" typeId="tp25.1226359078165" id="7651593722933678143">
+                    <link role="conceptDeclaration" roleId="tp25.1226359078166" targetNodeId="2qyu.7651593722933662687" resolveInfo="LightWeightDecisionTable" />
+                    <link role="linkDeclaration" roleId="tp25.1226359192215" targetNodeId="2qyu.7651593722933678119" />
+                  </node>
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_editorContext" typeId="tpc2.1161622981231" id="7651593722933678279" />
                 </node>
               </node>
             </node>

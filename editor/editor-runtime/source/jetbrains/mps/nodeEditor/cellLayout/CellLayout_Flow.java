@@ -142,12 +142,18 @@ public class CellLayout_Flow extends AbstractCellLayout {
     private EditorCell_Collection myEditorCells;
     private boolean myNextIsPunctuation;
     private boolean myToSkip;
+    private int myMaxX;
 
     public FlowLayouter(EditorCell_Collection editorCells) {
       this.myEditorCells = editorCells;
       myX = editorCells.getX() + myWStart;
       myY = editorCells.getY();
       myMaxRightX = myX;
+      if (editorCells.getStyle().getCurrent(StyleAttributes.MAX_WIDTH) !=null ) {
+        myMaxX = editorCells.getX() + editorCells.getStyle().getCurrent(StyleAttributes.MAX_WIDTH);
+      } else {
+        myMaxX = getMaxX();
+      }
     }
 
     public void doLayout() {
@@ -232,7 +238,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
               allocatedWidth += nextCell.getWidth();
             }
             //if end-of-line
-            if (allocatedWidth + myX >= getMaxX()) {
+            if (allocatedWidth + myX >= myMaxX) {
               alignLine();
               nextLine();
               addCell(cell);

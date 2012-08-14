@@ -34,6 +34,10 @@
     <component>
       <implementation-class>jetbrains.mps.intentions.IntentionsManager</implementation-class>
     </component>
+
+    <component>
+      <implementation-class>jetbrains.mps.ide.editor.resolver.EditorResolverComponent</implementation-class>
+    </component>
   </application-components>
 
   <project-components>

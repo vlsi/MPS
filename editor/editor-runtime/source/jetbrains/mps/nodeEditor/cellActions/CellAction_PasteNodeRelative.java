@@ -17,13 +17,13 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -78,7 +78,7 @@ public class CellAction_PasteNodeRelative extends EditorCellAction {
     Set<SReference> requireResolveReferences = pasteNodeData.getRequireResolveReferences();
 
     new NodePaster(pasteNodes).pasteRelative(anchorNode, myPastePlaceHint);
-    Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
+    ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getOperationContext());
 
     // set selection
     editorComponent.flushEvents();

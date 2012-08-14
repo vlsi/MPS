@@ -22,7 +22,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -103,7 +103,7 @@ public class PasteProvider implements com.intellij.ide.PasteProvider, Runnable {
           return;
         }
         pasteProcessor.pasteAsRoots(myModel, "");
-        Resolver.resolveReferences(referencesToResolve, operationContext);
+        ResolverComponent.getInstance().resolveScopesOnly(referencesToResolve, operationContext);
         myModelDescriptor.save();
       }
     };

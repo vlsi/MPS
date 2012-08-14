@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.smodel.SNodeId;
@@ -1138,7 +1138,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
           if (ref.getTargetNode() != null) {
             continue;
           }
-          Resolver.resolve1(ref, new ModuleOperationContext(module));
+          ResolverComponent.getInstance().resolveScopesOnly(Sequence.<SReference>singleton(ref), new ModuleOperationContext(module));
         }
       }
 

@@ -15,4 +15,5 @@ public interface TableModel {
   public void insertRow(int rowNumber);
   public void deleteColumn(int columnNumber);
   public void insertColumn(int columnNumber);
+  public int getMaxColumnWidth(int columnNumber);
 }
