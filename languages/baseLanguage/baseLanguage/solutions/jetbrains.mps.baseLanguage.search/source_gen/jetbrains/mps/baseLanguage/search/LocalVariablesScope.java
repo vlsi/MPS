@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.scope.Scope;
 
 @Deprecated
@@ -186,7 +187,7 @@ public class LocalVariablesScope extends AbstractSearchScope {
   private static SNode findThisOrParent(SNode sourceNode, SNode concept) {
     SNode testNode = sourceNode;
     while (testNode != null) {
-      if (testNode.isInstanceOfConcept(concept)) {
+      if (SNodeOperations.isInstanceOf(testNode, NameUtil.nodeFQName(concept))) {
         return testNode;
       }
       if (SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction") && !(SNodeOperations.isInstanceOf(testNode, "jetbrains.mps.baseLanguage.structure.Closure"))) {

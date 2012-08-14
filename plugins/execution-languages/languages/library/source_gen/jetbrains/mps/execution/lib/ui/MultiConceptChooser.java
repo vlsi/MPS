@@ -32,6 +32,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.util.NameUtil;
 
 
 /**
@@ -114,7 +115,7 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
           public boolean accept(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
             SNode targetConcept = it._0();
             _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-            if (!(node.isInstanceOfConcept(targetConcept))) {
+            if (!(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(targetConcept)))) {
               return false;
             }
             if (function == null) {

@@ -10051,16 +10051,15 @@
                   </node>
                 </node>
               </node>
-              <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="48433104818962637">
-                <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="48433104818962635">
-                  <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="48433104818962634">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161373106581140480" resolveInfo="testNode" />
-                  </node>
+              <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2418896918641987995">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="48433104818962634">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161373106581140480" resolveInfo="testNode" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="48433104818962641">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%disInstanceOfConcept(jetbrains%dmps%dsmodel%dSNode)%cboolean" resolveInfo="isInstanceOfConcept" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="48433104818962642">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161373106581140475" resolveInfo="concept" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="2418896918641988000">
+                  <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.PoundExpression" typeId="tp25.1204834851141" id="2418896918641988002">
+                    <node role="expression" roleId="tp25.1204834868751" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="2418896918641988004">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3161373106581140475" resolveInfo="concept" />
+                    </node>
                   </node>
                 </node>
               </node>

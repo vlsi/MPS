@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 
 public class MultiConceptNode_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   protected static Log log = LogFactory.getLog(MultiConceptNode_Configuration.class);
@@ -122,7 +124,7 @@ public class MultiConceptNode_Configuration implements IPersistentConfiguration,
       public boolean accept(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode concept = it._0();
         _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        if (node.isInstanceOfConcept(concept)) {
+        if (SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(concept))) {
           if (function != null) {
             return function.invoke(node);
           } else {

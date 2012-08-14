@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);
@@ -16,7 +17,7 @@ public interface IAttributeDescriptor {
     }
 
     public boolean match(@NotNull SNode attribute) {
-      return myAttributeDeclaration == null || attribute.isInstanceOfConcept(myAttributeDeclaration);
+      return myAttributeDeclaration == null || SNodeOperations.isInstanceOf(attribute, NameUtil.nodeFQName(myAttributeDeclaration));
     }
 
     public void update(@NotNull SNode attribute) {

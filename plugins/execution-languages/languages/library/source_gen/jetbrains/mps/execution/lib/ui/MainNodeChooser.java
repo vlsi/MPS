@@ -26,6 +26,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.util.NameUtil;
 
 
 /**
@@ -103,7 +104,7 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        if (!(it.isInstanceOfConcept(MainNodeChooser.this.myTargetConcept))) {
+        if (!(SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(myTargetConcept)))) {
           return false;
         }
         if (myAcceptor == null) {
