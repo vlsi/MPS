@@ -11,10 +11,10 @@ public class Widgets_noCtx_Test extends UITestBase_Test {
   public void test_panel1() throws Exception {
     XMLAssert.assertXMLEqual("<panel type=\"panel\"><child comp=\"*default*\"><widget /></child></panel>", this.toString(new _FunctionTypes._return_P0_E0<MockPanel>() {
       public MockPanel invoke() {
-        final MockPanel widget_a32819_a0a0a0a1a0a0a = new MockPanel("panel");
-        final MockWidget widget_a32819_a0a0a0a0a0b0a0a0 = new MockWidget();
-        widget_a32819_a0a0a0a1a0a0a.addChild(widget_a32819_a0a0a0a0a0b0a0a0);
-        return widget_a32819_a0a0a0a1a0a0a;
+        final MockPanel widget_a32819_a0a0a0a0a0a0 = new MockPanel("panel");
+        final MockWidget widget_a32819_a0a0a0a0a0a0a0a = new MockWidget();
+        widget_a32819_a0a0a0a0a0a0.addChild(widget_a32819_a0a0a0a0a0a0a0a);
+        return widget_a32819_a0a0a0a0a0a0;
       }
     }.invoke()));
   }
@@ -22,17 +22,17 @@ public class Widgets_noCtx_Test extends UITestBase_Test {
   public void test_panel2() throws Exception {
     XMLAssert.assertXMLEqual("<panel type=\"dock\"><child comp=\"north\"><widget id=\"north1\" /></child><child comp=\"south\"><widget id=\"south1\" /></child><child comp=\"south\"><widget id=\"south2\" /></child></panel>", this.toString(new _FunctionTypes._return_P0_E0<MockPanel>() {
       public MockPanel invoke() {
-        final MockPanel widget_a32819_a0a0a0a1a0a1a = new MockPanel("dock");
-        final MockWidget widget_a32819_a0a0a0a0a0b0a0b0 = new MockWidget();
-        widget_a32819_a0a0a0a0a0b0a0b0.setProp("id", "north1");
-        widget_a32819_a0a0a0a1a0a1a.addChild(widget_a32819_a0a0a0a0a0b0a0b0, "north");
-        final MockWidget widget_a32819_a0b0a0a0a0b0a0b0 = new MockWidget();
-        widget_a32819_a0b0a0a0a0b0a0b0.setProp("id", "south1");
-        widget_a32819_a0a0a0a1a0a1a.addChild(widget_a32819_a0b0a0a0a0b0a0b0, "south");
-        final MockWidget widget_a32819_b0b0a0a0a0b0a0b0 = new MockWidget();
-        widget_a32819_b0b0a0a0a0b0a0b0.setProp("id", "south2");
-        widget_a32819_a0a0a0a1a0a1a.addChild(widget_a32819_b0b0a0a0a0b0a0b0, "south");
-        return widget_a32819_a0a0a0a1a0a1a;
+        final MockPanel widget_a32819_a0a0a0a0a0b0 = new MockPanel("dock");
+        final MockWidget widget_a32819_a0a0a0a0a0a0a1a = new MockWidget();
+        widget_a32819_a0a0a0a0a0a0a1a.setProp("id", "north1");
+        widget_a32819_a0a0a0a0a0b0.addChild(widget_a32819_a0a0a0a0a0a0a1a, "north");
+        final MockWidget widget_a32819_a0b0a0a0a0a0a1a = new MockWidget();
+        widget_a32819_a0b0a0a0a0a0a1a.setProp("id", "south1");
+        widget_a32819_a0a0a0a0a0b0.addChild(widget_a32819_a0b0a0a0a0a0a1a, "south");
+        final MockWidget widget_a32819_b0b0a0a0a0a0a1a = new MockWidget();
+        widget_a32819_b0b0a0a0a0a0a1a.setProp("id", "south2");
+        widget_a32819_a0a0a0a0a0b0.addChild(widget_a32819_b0b0a0a0a0a0a1a, "south");
+        return widget_a32819_a0a0a0a0a0b0;
       }
     }.invoke()));
   }
@@ -40,17 +40,17 @@ public class Widgets_noCtx_Test extends UITestBase_Test {
   public void test_panel3() throws Exception {
     XMLAssert.assertXMLEqual("<panel type=\"horiz\"><child comp=\"children\"><widget id=\"widg1\" /></child><child comp=\"children\"><widget id=\"widg2\" /></child><child comp=\"children\"><widget id=\"widg3\" /></child></panel>", this.toString(new _FunctionTypes._return_P0_E0<MockPanel>() {
       public MockPanel invoke() {
-        final MockPanel widget_a32819_a0a0a0a1a0a2a = new MockPanel("horiz");
-        final MockWidget widget_a32819_a0a0a0a0a0b0a0c0 = new MockWidget();
-        widget_a32819_a0a0a0a0a0b0a0c0.setProp("id", "widg1");
-        widget_a32819_a0a0a0a1a0a2a.addChild(widget_a32819_a0a0a0a0a0b0a0c0, "children");
-        final MockWidget widget_a32819_b0a0a0a0a0b0a0c0 = new MockWidget();
-        widget_a32819_b0a0a0a0a0b0a0c0.setProp("id", "widg2");
-        widget_a32819_a0a0a0a1a0a2a.addChild(widget_a32819_b0a0a0a0a0b0a0c0, "children");
-        final MockWidget widget_a32819_c0a0a0a0a0b0a0c0 = new MockWidget();
-        widget_a32819_c0a0a0a0a0b0a0c0.setProp("id", "widg3");
-        widget_a32819_a0a0a0a1a0a2a.addChild(widget_a32819_c0a0a0a0a0b0a0c0, "children");
-        return widget_a32819_a0a0a0a1a0a2a;
+        final MockPanel widget_a32819_a0a0a0a0a0c0 = new MockPanel("horiz");
+        final MockWidget widget_a32819_a0a0a0a0a0a0a2a = new MockWidget();
+        widget_a32819_a0a0a0a0a0a0a2a.setProp("id", "widg1");
+        widget_a32819_a0a0a0a0a0c0.addChild(widget_a32819_a0a0a0a0a0a0a2a, "children");
+        final MockWidget widget_a32819_b0a0a0a0a0a0a2a = new MockWidget();
+        widget_a32819_b0a0a0a0a0a0a2a.setProp("id", "widg2");
+        widget_a32819_a0a0a0a0a0c0.addChild(widget_a32819_b0a0a0a0a0a0a2a, "children");
+        final MockWidget widget_a32819_c0a0a0a0a0a0a2a = new MockWidget();
+        widget_a32819_c0a0a0a0a0a0a2a.setProp("id", "widg3");
+        widget_a32819_a0a0a0a0a0c0.addChild(widget_a32819_c0a0a0a0a0a0a2a, "children");
+        return widget_a32819_a0a0a0a0a0c0;
       }
     }.invoke()));
   }
@@ -58,20 +58,20 @@ public class Widgets_noCtx_Test extends UITestBase_Test {
   public void test_panel4() throws Exception {
     XMLAssert.assertXMLEqual("<panel type=\"tabbed\"><child comp=\"tabs\"><widget id=\"tab1\" tab=\"first\" /></child><child comp=\"tabs\"><widget id=\"tab2\" tab=\"second\" /></child><child comp=\"tabs\"><widget id=\"tab3\" tab=\"third\" /></child></panel>", this.toString(new _FunctionTypes._return_P0_E0<MockPanel>() {
       public MockPanel invoke() {
-        final MockPanel widget_a32819_a0a0a0a1a0a3a = new MockPanel("tabbed");
-        final MockWidget widget_a32819_a0a0a0a0a0b0a0d0 = new MockWidget();
-        widget_a32819_a0a0a0a0a0b0a0d0.setProp("id", "tab1");
-        widget_a32819_a0a0a0a1a0a3a.addChild(widget_a32819_a0a0a0a0a0b0a0d0, "tabs");
-        widget_a32819_a0a0a0a0a0b0a0d0.setProp("tab", "first");
-        final MockWidget widget_a32819_b0a0a0a0a0b0a0d0 = new MockWidget();
-        widget_a32819_b0a0a0a0a0b0a0d0.setProp("id", "tab2");
-        widget_a32819_a0a0a0a1a0a3a.addChild(widget_a32819_b0a0a0a0a0b0a0d0, "tabs");
-        widget_a32819_b0a0a0a0a0b0a0d0.setProp("tab", "second");
-        final MockWidget widget_a32819_c0a0a0a0a0b0a0d0 = new MockWidget();
-        widget_a32819_c0a0a0a0a0b0a0d0.setProp("id", "tab3");
-        widget_a32819_a0a0a0a1a0a3a.addChild(widget_a32819_c0a0a0a0a0b0a0d0, "tabs");
-        widget_a32819_c0a0a0a0a0b0a0d0.setProp("tab", "third");
-        return widget_a32819_a0a0a0a1a0a3a;
+        final MockPanel widget_a32819_a0a0a0a0a0d0 = new MockPanel("tabbed");
+        final MockWidget widget_a32819_a0a0a0a0a0a0a3a = new MockWidget();
+        widget_a32819_a0a0a0a0a0a0a3a.setProp("id", "tab1");
+        widget_a32819_a0a0a0a0a0d0.addChild(widget_a32819_a0a0a0a0a0a0a3a, "tabs");
+        widget_a32819_a0a0a0a0a0a0a3a.setProp("tab", "first");
+        final MockWidget widget_a32819_b0a0a0a0a0a0a3a = new MockWidget();
+        widget_a32819_b0a0a0a0a0a0a3a.setProp("id", "tab2");
+        widget_a32819_a0a0a0a0a0d0.addChild(widget_a32819_b0a0a0a0a0a0a3a, "tabs");
+        widget_a32819_b0a0a0a0a0a0a3a.setProp("tab", "second");
+        final MockWidget widget_a32819_c0a0a0a0a0a0a3a = new MockWidget();
+        widget_a32819_c0a0a0a0a0a0a3a.setProp("id", "tab3");
+        widget_a32819_a0a0a0a0a0d0.addChild(widget_a32819_c0a0a0a0a0a0a3a, "tabs");
+        widget_a32819_c0a0a0a0a0a0a3a.setProp("tab", "third");
+        return widget_a32819_a0a0a0a0a0d0;
       }
     }.invoke()));
   }

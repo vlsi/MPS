@@ -146,7 +146,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3210848622155981218(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a62().createNode(it);
+        return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0ab().createNode(it);
       }
     });
   }
@@ -178,7 +178,7 @@ public class QueriesGenerated {
     if (Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).count() > 1) {
       List<SNode> vals = Sequence.fromIterable(VariantsUtil.generateVariants(_context.getNode())).skip(1).select(new ISelector<String, SNode>() {
         public SNode select(String it) {
-          return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a3a03().createNode(it);
+          return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0d0eb().createNode(it);
         }
       }).toListSequence();
       ListSequence.fromList(SLinkOperations.getTargets(copy, "annotation", true)).addElement(new QueriesGenerated.QuotationClass_x583g4_a0a0b0d0eb().createNode(vals));
@@ -192,8 +192,8 @@ public class QueriesGenerated {
     return copy;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a62 {
-    public QuotationClass_x583g4_a0a0a0a0a62() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0ab {
+    public QuotationClass_x583g4_a0a0a0a0a0a0ab() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -242,8 +242,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a3a03 {
-    public QuotationClass_x583g4_a0a0a0a0a0a3a03() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0d0eb {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0d0eb() {
     }
 
     public SNode createNode(Object parameter_3) {

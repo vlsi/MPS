@@ -96,7 +96,7 @@ public class QueriesGenerated {
             final IScope mscope = ModuleSuite_Behavior.call_scope_1280144168199518341(msuite);
             return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(msuite)).translate(new ITranslator2<SModelDescriptor, SNode>() {
               public Iterable<SNode> translate(SModelDescriptor smd) {
-                return new AllSubclassifiersScope(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0c0a0a0a0a2a0a1a1().createNode(), "classifier", false), smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
+                return new AllSubclassifiersScope(SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a2a0a0a0a0c0a0b0b().createNode(), "classifier", false), smd.getSModel(), IClassifiersSearchScope.CLASS, (mscope != null ?
                   mscope :
                   operationContext.getScope()
                 )).getNodes(new Condition<SNode>() {
@@ -239,8 +239,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0c0a0a0a0a2a0a1a1 {
-    public QuotationClass_x583g4_a0a0a0a0a0a0c0a0a0a0a2a0a1a1() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a2a0a0a0a0c0a0b0b {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0a2a0a0a0a0c0a0b0b() {
     }
 
     public SNode createNode() {

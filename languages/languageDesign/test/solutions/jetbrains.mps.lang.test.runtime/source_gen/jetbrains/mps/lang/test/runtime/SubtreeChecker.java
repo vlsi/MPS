@@ -4,6 +4,7 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import junit.framework.Assert;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -40,59 +41,64 @@ public class SubtreeChecker {
 
   public static void checkNodeForErrors(SNode node, boolean allowErrors, boolean allowWarnings) {
     Assert.assertFalse("should be false (never used anyway)", allowErrors || allowWarnings);
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
-    typeCheckingContext.checkIfNotChecked(node, true);
-    for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-      boolean isError = false;
-      if (AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer"))) != null) {
-        SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer")));
-        for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
-          if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
-            SNode type1 = typeCheckingContext.getTypeDontCheck(child);
-            if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty")) {
-              type1 = TypeChecker.getInstance().getInequalitiesForHole(child, false).getExpectedType();
-              Assert.assertNotNull(type1);
-            }
-            SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
-            Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.fromListAndArray(new ArrayList<SNode>(), type2)));
-          }
-          if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty")) {
-            SNode type1 = typeCheckingContext.getTypeDontCheck(child);
-            boolean hasType = false;
-            for (SNode type2 : SLinkOperations.getTargets(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty"), "type", true)) {
-              if (MatchingUtil.matchNodes(type1, type2)) {
-                hasType = true;
-                break;
+    ITypeContextOwner owner = new ITypeContextOwner() {};
+    SNode containingRoot = node.getContainingRoot();
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().getOrCreateContext(containingRoot, owner, true);
+    try {
+      typeCheckingContext.checkIfNotChecked(node, true);
+      for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
+        boolean isError = false;
+        if (AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer"))) != null) {
+          SNode container = AttributeOperations.getAttribute(child, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodePropertiesContainer")));
+          for (SNode property : SLinkOperations.getTargets(container, "properties", true)) {
+            if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty")) {
+              SNode type1 = typeCheckingContext.getTypeDontCheck(child);
+              if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeExpectedTypeProperty")) {
+                type1 = TypeChecker.getInstance().getInequalitiesForHole(child, false).getExpectedType();
+                Assert.assertNotNull(type1);
               }
+              SNode type2 = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeProperty"), "type", true);
+              Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), type1), ListSequence.fromListAndArray(new ArrayList<SNode>(), type2)));
             }
-            Assert.assertTrue("node type <" + type1 + "> is not in <" + SLinkOperations.getTargets(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty"), "type", true) + ">", hasType);
+            if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty")) {
+              SNode type1 = typeCheckingContext.getTypeDontCheck(child);
+              boolean hasType = false;
+              for (SNode type2 : SLinkOperations.getTargets(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty"), "type", true)) {
+                if (MatchingUtil.matchNodes(type1, type2)) {
+                  hasType = true;
+                  break;
+                }
+              }
+              Assert.assertTrue("node type <" + type1 + "> is not in <" + SLinkOperations.getTargets(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.NodeTypeSetProperty"), "type", true) + ">", hasType);
+            }
+            if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
+              Assert.assertTrue("node <" + child + "> does not have expected error message", typeCheckingContext.getTypeMessageDontCheck(child) != null);
+              Assert.assertFalse("node <" + child + "> has warning", typeCheckingContext.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
+              isError = true;
+            }
+            if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeWarningProperty")) {
+              Assert.assertTrue("node <" + child + "> does not have expected warning", typeCheckingContext.getTypeMessageDontCheck(child) != null);
+              Assert.assertTrue("node <" + child + "> does not have expected warning", typeCheckingContext.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
+              isError = true;
+            }
           }
-          if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeErrorPropety")) {
-            Assert.assertTrue("node <" + child + "> does not have expected error message", typeCheckingContext.getTypeMessageDontCheck(child) != null);
-            Assert.assertFalse("node <" + child + "> has warning", typeCheckingContext.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
-            isError = true;
-          }
-          if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.NodeWarningProperty")) {
-            Assert.assertTrue("node <" + child + "> does not have expected warning", typeCheckingContext.getTypeMessageDontCheck(child) != null);
-            Assert.assertTrue("node <" + child + "> does not have expected warning", typeCheckingContext.getTypeMessageDontCheck(child).getMessageStatus() == MessageStatus.WARNING);
-            isError = true;
+        }
+        if (!(isError)) {
+          IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
+          if (reporter != null) {
+            String reportError = reporter.reportError();
+            if (!(allowErrors)) {
+              Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
+            }
+            if (!(allowWarnings)) {
+              Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.WARNING);
+            }
           }
         }
       }
-      if (!(isError)) {
-        IErrorReporter reporter = typeCheckingContext.getTypeMessageDontCheck(child);
-        if (reporter != null) {
-          String reportError = reporter.reportError();
-          if (!(allowErrors)) {
-            Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.ERROR);
-          }
-          if (!(allowWarnings)) {
-            Assert.assertTrue(reportError, reporter.getMessageStatus() != MessageStatus.WARNING);
-          }
-        }
-      }
+    } finally {
+      TypeContextManager.getInstance().removeOwnerForRootNodeContext(containingRoot, owner);
     }
-    typeCheckingContext.dispose();
   }
 
   public static void checkDataFlow(SNode node) {

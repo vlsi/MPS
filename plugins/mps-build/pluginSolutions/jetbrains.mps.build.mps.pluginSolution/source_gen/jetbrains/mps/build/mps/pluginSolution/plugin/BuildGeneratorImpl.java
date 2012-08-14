@@ -341,7 +341,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ListSequence.fromList(SLinkOperations.getTargets(buildStandalone, "macros", true)).addElement(version);
     SNode buildNumber = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(buildProject, "macros", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildVariableMacro") && eq_un708i_a0a0a0a0a0a0a11a01(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0a0a0a0a11a01().createNode(), "macro", false), "name"));
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildVariableMacro") && eq_un708i_a0a0a0a0a0a0a11a01(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(SLinkOperations.getTarget(new BuildGeneratorImpl.QuotationClass_un708i_a0a0a0a0a0a0a0a0l0k().createNode(), "macro", false), "name"));
       }
     }), "jetbrains.mps.build.structure.BuildVariableMacro");
 
@@ -1612,8 +1612,8 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     }
   }
 
-  public static class QuotationClass_un708i_a0a0a0a0a0a0a11a01 {
-    public QuotationClass_un708i_a0a0a0a0a0a0a11a01() {
+  public static class QuotationClass_un708i_a0a0a0a0a0a0a0a0l0k {
+    public QuotationClass_un708i_a0a0a0a0a0a0a0a0l0k() {
     }
 
     public SNode createNode() {

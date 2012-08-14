@@ -102,9 +102,7 @@
     <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="23" startPosition="0" endLine="28" endPosition="3" />
     <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5">
-      <varInfo nodeId="6062668769034852876" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="47" startPosition="25" endLine="52" endPosition="5" />
     <scopeInfo nodeId="6062668769034852876" fileName="ModelChooserComponent.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="6062668769034852876" varName="newValue" />
     </scopeInfo>

@@ -31,7 +31,7 @@ public class ActionDataParameterDeclaration_Behavior {
   public static String getDescription_47694270442103157(SNode parameterObject) {
     SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(parameterObject, "annotation", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Behavior.QuotationClass_6xp2og_a0a0a0a0a0a0a0a0d().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
+        return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionDataParameterDeclaration_Behavior.QuotationClass_6xp2og_a0a0a0a0a0a0a0a0a0a3().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
       }
     }).first();
     if (annotation == null) {
@@ -48,8 +48,8 @@ public class ActionDataParameterDeclaration_Behavior {
     return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(value, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
   }
 
-  public static class QuotationClass_6xp2og_a0a0a0a0a0a0a0a0d {
-    public QuotationClass_6xp2og_a0a0a0a0a0a0a0a0d() {
+  public static class QuotationClass_6xp2og_a0a0a0a0a0a0a0a0a0a3 {
+    public QuotationClass_6xp2og_a0a0a0a0a0a0a0a0a0a3() {
     }
 
     public SNode createNode() {

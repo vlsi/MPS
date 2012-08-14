@@ -48,7 +48,7 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.TestCaseCollector.QuotationClass_rpw6il_a0a0a0a0a2a0a().createNode(), "annotation", false);
+          final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.TestCaseCollector.QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a0().createNode(), "annotation", false);
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode itc) {
@@ -76,8 +76,8 @@ public class TestCollector {
       return any.value;
     }
 
-    public static class QuotationClass_rpw6il_a0a0a0a0a2a0a {
-      public QuotationClass_rpw6il_a0a0a0a0a2a0a() {
+    public static class QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a0 {
+      public QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a0() {
       }
 
       public SNode createNode() {
@@ -105,8 +105,8 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode testAnn = SLinkOperations.getTarget(new TestCollector.JUnit4TestCollector.QuotationClass_rpw6il_a0a0a0a0a2a0b().createNode(), "annotation", false);
-          final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.JUnit4TestCollector.QuotationClass_rpw6il_a0a0b0a0a2a0b().createNode(), "annotation", false);
+          final SNode testAnn = SLinkOperations.getTarget(new TestCollector.JUnit4TestCollector.QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a1().createNode(), "annotation", false);
+          final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.JUnit4TestCollector.QuotationClass_rpw6il_a0a0b0a0a0a0a0c0a1().createNode(), "annotation", false);
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
@@ -142,8 +142,8 @@ public class TestCollector {
       return any.value;
     }
 
-    public static class QuotationClass_rpw6il_a0a0a0a0a2a0b {
-      public QuotationClass_rpw6il_a0a0a0a0a2a0b() {
+    public static class QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a1 {
+      public QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a1() {
       }
 
       public SNode createNode() {
@@ -160,8 +160,8 @@ public class TestCollector {
       }
     }
 
-    public static class QuotationClass_rpw6il_a0a0b0a0a2a0b {
-      public QuotationClass_rpw6il_a0a0b0a0a2a0b() {
+    public static class QuotationClass_rpw6il_a0a0b0a0a0a0a0c0a1 {
+      public QuotationClass_rpw6il_a0a0b0a0a0a0a0c0a1() {
       }
 
       public SNode createNode() {
@@ -189,7 +189,7 @@ public class TestCollector {
       final Wrappers._T<List<SNode>> nodes = new Wrappers._T<List<SNode>>();
       ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<SNode>>() {
         public List<SNode> invoke() {
-          final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0a0a0a0a2a0c().createNode(), "annotation", false);
+          final SNode ignoreAnn = SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a2().createNode(), "annotation", false);
 
           return nodes.value = ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode cls) {
@@ -197,7 +197,7 @@ public class TestCollector {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
-              })) && Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0b0a0a0a0a0c0a0a2a0c().createNode(), "classifier", false));
+              })) && Classifier_Behavior.call_isDescendant_7165541881557222913(cls, SLinkOperations.getTarget(new TestCollector.JUnit3TestCollector.QuotationClass_rpw6il_a0b0a0a0a0a0a0a2a0a0a0a0a2a0c().createNode(), "classifier", false));
             }
           }).toListSequence();
         }
@@ -217,8 +217,8 @@ public class TestCollector {
       return any.value;
     }
 
-    public static class QuotationClass_rpw6il_a0a0a0a0a2a0c {
-      public QuotationClass_rpw6il_a0a0a0a0a2a0c() {
+    public static class QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a2 {
+      public QuotationClass_rpw6il_a0a0a0a0a0a0a0c0a2() {
       }
 
       public SNode createNode() {
@@ -235,8 +235,8 @@ public class TestCollector {
       }
     }
 
-    public static class QuotationClass_rpw6il_a0b0a0a0a0a0c0a0a2a0c {
-      public QuotationClass_rpw6il_a0b0a0a0a0a0c0a0a2a0c() {
+    public static class QuotationClass_rpw6il_a0b0a0a0a0a0a0a2a0a0a0a0a2a0c {
+      public QuotationClass_rpw6il_a0b0a0a0a0a0a0a2a0a0a0a0a2a0c() {
       }
 
       public SNode createNode() {

@@ -11,9 +11,9 @@ public class Widgets_ctx_Test extends UITestBase_Test {
   public void test_panelCtx1() throws Exception {
     XMLAssert.assertXMLEqual("<panel type=\"cpanel\"><child comp=\"*default*\"><widget /></child></panel>", this.toString(new _FunctionTypes._return_P1_E0<MockPanel, MockPanel>() {
       public MockPanel invoke(MockPanel ctx) {
-        final MockPanel widget_x3k6nx_a0a0a0a1a0a0a = new MockPanel(ctx, "cpanel");
-        final MockWidget widget_x3k6nx_a0a0a0a0a0b0a0a0 = new MockWidget(widget_x3k6nx_a0a0a0a1a0a0a);
-        return widget_x3k6nx_a0a0a0a1a0a0a;
+        final MockPanel widget_x3k6nx_a0a0a0a0a0a0 = new MockPanel(ctx, "cpanel");
+        final MockWidget widget_x3k6nx_a0a0a0a0a0a0a0a = new MockWidget(widget_x3k6nx_a0a0a0a0a0a0);
+        return widget_x3k6nx_a0a0a0a0a0a0;
       }
     }.invoke(this.ctx())));
   }
