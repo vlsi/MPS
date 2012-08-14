@@ -5,7 +5,9 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -15,60 +17,75 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule() {
   }
 
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
-    return SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false) && ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).isNotEmpty();
+    {
+      GeneratedMatchingPattern pattern_e5spwb_a0a = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a0(SLinkOperations.getTarget(supertype, "classifier", false));
+      SNode coercedNode_e5spwb_a0a = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0a);
+      if (coercedNode_e5spwb_a0a != null) {
+        return ListSequence.fromList(SLinkOperations.getTargets(coercedNode_e5spwb_a0a, "parameter", true)).isNotEmpty() && ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).isNotEmpty();
+      } else {
+      }
+    }
+    return false;
   }
 
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
-    Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).iterator();
-    Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
-    while (leftParamIt.hasNext() && rightParamIt.hasNext()) {
-      SNode leftParam = leftParamIt.next();
-      SNode rightParam = rightParamIt.next();
-      if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-        {
-          SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159241", 0, null);
-          _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-          typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), false, true, _info_12389875345);
+    {
+      GeneratedMatchingPattern pattern_e5spwb_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1(SLinkOperations.getTarget(supertype, "classifier", false));
+      SNode coercedNode_e5spwb_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_e5spwb_a0);
+      if (coercedNode_e5spwb_a0 != null) {
+        Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_e5spwb_a0, "parameter", true)).iterator();
+        Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+        while (leftParamIt.hasNext() && rightParamIt.hasNext()) {
+          SNode leftParam = leftParamIt.next();
+          SNode rightParam = rightParamIt.next();
+          if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159241", 0, null);
+              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+              typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), false, true, _info_12389875345);
+            }
+          } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159351", 0, null);
+              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+              typeCheckingContext.createGreaterThanInequality((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), false, true, _info_12389875345);
+            }
+          } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159482", 0, null);
+              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+              typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) rightParam, false, true, _info_12389875345);
+            }
+          } else {
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159546", 0, null);
+              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+              typeCheckingContext.createEquation((SNode) leftParam, (SNode) rightParam, _info_12389875345);
+            }
+          }
         }
-      } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-        {
-          SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159351", 0, null);
-          _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-          typeCheckingContext.createGreaterThanInequality((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), false, true, _info_12389875345);
-        }
-      } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
-        {
-          SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159482", 0, null);
-          _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-          typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) rightParam, false, true, _info_12389875345);
+        if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
+          {
+            MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(subtype, "Parameters counts don't match", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635126223", null, errorTarget);
+            HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
+          }
         }
       } else {
-        {
-          SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-          EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159546", 0, null);
-          _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-          typeCheckingContext.createEquation((SNode) leftParam, (SNode) rightParam, _info_12389875345);
-        }
-      }
-    }
-    if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
-      {
-        MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(subtype, "Parameters counts don't match", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635126223", null, errorTarget);
-        HUtil.addAdditionalRuleIdsFromInfo(_reporter_2309309498, equationInfo);
       }
     }
   }
@@ -76,23 +93,28 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     {
-      Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).iterator();
-      Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
-      while (leftParamIt.hasNext() && rightParamIt.hasNext()) {
-        SNode leftParam = leftParamIt.next();
-        SNode rightParam = rightParamIt.next();
-        if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-          result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), true);
-        } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
-          result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), (SNode) leftParam, true);
-        } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
-          result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) rightParam, true);
-        } else {
-          result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) leftParam, (SNode) rightParam);
+      GeneratedMatchingPattern pattern_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1a2(SLinkOperations.getTarget(supertype, "classifier", false));
+      SNode coercedNode_a0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(subtype, pattern_a0);
+      if (coercedNode_a0 != null) {
+        Iterator<SNode> leftParamIt = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_a0, "parameter", true)).iterator();
+        Iterator<SNode> rightParamIt = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
+        while (leftParamIt.hasNext() && rightParamIt.hasNext()) {
+          SNode leftParam = leftParamIt.next();
+          SNode rightParam = rightParamIt.next();
+          if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
+            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), true);
+          } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
+            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(rightParam, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true), (SNode) leftParam, true);
+          } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
+            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) rightParam, true);
+          } else {
+            result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) leftParam, (SNode) rightParam);
+          }
         }
-      }
-      if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
-        result_14532009 = false;
+        if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
+          result_14532009 = false;
+        }
+      } else {
       }
     }
     return result_14532009;
@@ -117,10 +139,130 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
   }
 
   public String getApplicableSubtypeConceptFQName() {
-    return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+    return "jetbrains.mps.baseLanguage.structure.Type";
   }
 
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+  }
+
+  public static class Pattern_nn7be_a0a0a0a0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ Object AntiquotationField_e5spwb_a0a0a0a0;
+
+    public Pattern_nn7be_a0a0a0a0(Object parameter_e5spwb_a0a0a0a0) {
+      this.AntiquotationField_e5spwb_a0a0a0a0 = parameter_e5spwb_a0a0a0a0;
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0;
+        nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a0;
+          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a0.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return true;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+
+    public Object getFieldValue(String fieldName) {
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
+  public static class Pattern_nn7be_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ Object AntiquotationField_e5spwb_a0a0a0a;
+
+    public Pattern_nn7be_a0a0a0a1(Object parameter_e5spwb_a0a0a0a) {
+      this.AntiquotationField_e5spwb_a0a0a0a = parameter_e5spwb_a0a0a0a;
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a;
+        nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a;
+          if (nodeToMatch_generic_ClassfierType_subtypeOf_generic_ClassifierType_e5spwb_a0a0a.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return true;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+
+    public Object getFieldValue(String fieldName) {
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
+  public static class Pattern_nn7be_a0a0a0a1a2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ Object AntiquotationField_e5spwb_a0a0a0a_0;
+
+    public Pattern_nn7be_a0a0a0a1a2(Object parameter_e5spwb_a0a0a0a_0) {
+      this.AntiquotationField_e5spwb_a0a0a0a_0 = parameter_e5spwb_a0a0a0a_0;
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_null_a0a0a;
+        nodeToMatch_null_a0a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_null_a0a0a.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = (SNode) this.AntiquotationField_e5spwb_a0a0a0a_0;
+          if (nodeToMatch_null_a0a0a.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return true;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+
+    public Object getFieldValue(String fieldName) {
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
   }
 }
