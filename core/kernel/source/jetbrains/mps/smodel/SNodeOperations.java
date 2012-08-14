@@ -33,4 +33,10 @@ public class SNodeOperations {
     Language language = GlobalScope.getInstance().getLanguage(sNode.getLanguageNamespace());
     return language == null || language.findConceptDeclaration(sNode.getConceptShortName()) == null;
   }
+
+  public static boolean isAncestor(SNode ancestor, SNode node){
+    return ancestor.isAncestorOf(node);
+  }
+
+
 }
