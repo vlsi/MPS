@@ -10,9 +10,7 @@
     <nodeInfo nodeId="2133624044437737242" fileName="XmlProlog_TextGen.java" startLine="11" startPosition="53" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="2133624044437742192" fileName="XmlProlog_TextGen.java" startLine="14" startPosition="77" endLine="15" endPosition="109" />
     <scopeInfo nodeId="2133624044437880398" fileName="XmlProlog_TextGen.java" startLine="17" startPosition="5" endLine="18" endPosition="25" />
-    <scopeInfo nodeId="2133624044437742192" fileName="XmlProlog_TextGen.java" startLine="13" startPosition="97" endLine="16" endPosition="7">
-      <varInfo nodeId="2133624044437742192" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="2133624044437742192" fileName="XmlProlog_TextGen.java" startLine="13" startPosition="97" endLine="16" endPosition="7" />
     <scopeInfo nodeId="2133624044437742192" fileName="XmlProlog_TextGen.java" startLine="12" startPosition="42" endLine="17" endPosition="5" />
     <scopeInfo nodeId="2133624044437737242" fileName="XmlProlog_TextGen.java" startLine="12" startPosition="42" endLine="18" endPosition="25" />
     <scopeInfo nodeId="2133624044437737242" fileName="XmlProlog_TextGen.java" startLine="11" startPosition="53" endLine="20" endPosition="0">
