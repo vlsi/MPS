@@ -34,9 +34,19 @@ public class SNodeOperations {
     return language == null || language.findConceptDeclaration(sNode.getConceptShortName()) == null;
   }
 
-  public static boolean isAncestor(SNode ancestor, SNode node){
-    return ancestor.isAncestorOf(node);
+  //todo rewrite via ISNode methods
+  public static boolean isAncestor(org.jetbrains.mps.openapi.model.SNode ancestor, org.jetbrains.mps.openapi.model.SNode node){
+    return ((SNode) ancestor).isAncestorOf(((SNode) node));
   }
 
+  @Deprecated //todo KILL IT! should be node.getModel!=null
+  public static boolean isRegistered(org.jetbrains.mps.openapi.model.SNode node){
+    return ((SNode) node).isRegistered();
+  }
+
+  @Deprecated //todo KILL IT! should not be used since nodes are not passed between read actions
+  public static boolean isDisposed(org.jetbrains.mps.openapi.model.SNode node){
+    return ((SNode) node).isDisposed();
+  }
 
 }
