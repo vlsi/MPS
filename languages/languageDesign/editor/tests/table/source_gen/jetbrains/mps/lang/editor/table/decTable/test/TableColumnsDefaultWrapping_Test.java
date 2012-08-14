@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class TableWrappingTest_Test extends BaseTransformationTest4 {
-  public TableWrappingTest_Test() {
+public class TableColumnsDefaultWrapping_Test extends BaseTransformationTest4 {
+  public TableColumnsDefaultWrapping_Test() {
   }
 
   @Test
-  public void test_TableWrappingTest() throws Throwable {
+  public void test_TableColumnsDefaultWrapping() throws Throwable {
     this.initTest("${mps_home}/MPS.mpr", "r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test)");
-    this.runTest("jetbrains.mps.lang.editor.table.decTable.test.TableWrappingTest_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,7 +27,7 @@ public class TableWrappingTest_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("7651593722933722506", "7651593722933766424");
+      final Editor editor = TestBody.this.initEditor("7651593722933722506", "8377126844275870351");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
     }
   }
