@@ -73,7 +73,7 @@ public class OverrideConceptMethodsHelper {
       }
       Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a0a0a0c0a4a1().createNode(it);
+          return new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a0a0a0a0a2a0e0b().createNode(it);
         }
       });
       defaultExpr = new OverrideConceptMethodsHelper.QuotationClass_7wts1u_a0a3a0e0b().createNode(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), ((SNode) BehaviorManager.getInstance().invoke(Object.class, baseMethod, "call_getOverridenMethod_1225196403956", new Class[]{SNode.class})));
@@ -110,8 +110,8 @@ public class OverrideConceptMethodsHelper {
     }
   }
 
-  public static class QuotationClass_7wts1u_a0a0a0a0c0a4a1 {
-    public QuotationClass_7wts1u_a0a0a0a0c0a4a1() {
+  public static class QuotationClass_7wts1u_a0a0a0a0a0a2a0e0b {
+    public QuotationClass_7wts1u_a0a0a0a0a0a2a0e0b() {
     }
 
     public SNode createNode(Object parameter_3) {

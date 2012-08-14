@@ -27,7 +27,7 @@ public class VariantsUtil {
   public static boolean hasGenerateVariants(final SNode _this) {
     SNode ann = ListSequence.fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
-        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0a().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0a0a0().createNode(), "classifier", false);
       }
     });
     return ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).isNotEmpty();
@@ -36,7 +36,7 @@ public class VariantsUtil {
   public static boolean hasGenerateVariant(final SNode _this, final String variant) {
     SNode ann = ListSequence.fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
-        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0b().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0a0a1().createNode(), "classifier", false);
       }
     });
     SNode val = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
@@ -54,7 +54,7 @@ public class VariantsUtil {
   public static Iterable<String> generateVariants(final SNode _this) {
     SNode ann = ListSequence.fromList(SLinkOperations.getTargets(_this, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
-        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0c().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0a0a2().createNode(), "classifier", false);
       }
     });
     SNode val = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
@@ -80,7 +80,7 @@ public class VariantsUtil {
   public static boolean isWithinVariant(final SNode _this, String variant) {
     SNode ann = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getContainingRoot(_this), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
-        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0f().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0a0a5().createNode(), "classifier", false);
       }
     });
     SNode val = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
@@ -94,7 +94,7 @@ public class VariantsUtil {
   public static String withinVariant(final SNode _this) {
     SNode ann = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SNodeOperations.getContainingRoot(_this), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ai) {
-        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0g().createNode(), "classifier", false);
+        return SLinkOperations.getTarget(ai, "annotation", false) == SLinkOperations.getTarget(new VariantsUtil.QuotationClass_hb8iy0_a0a0a0a0a0a0a0a6().createNode(), "classifier", false);
       }
     });
     SNode val = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ann, "value", true)).findFirst(new IWhereFilter<SNode>() {
@@ -110,8 +110,8 @@ public class VariantsUtil {
     return NameUtil.shortNameFromLongName(module.getModuleFqName());
   }
 
-  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0a {
-    public QuotationClass_hb8iy0_a0a0a0a0a0a0a() {
+  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0a0a0 {
+    public QuotationClass_hb8iy0_a0a0a0a0a0a0a0a0() {
     }
 
     public SNode createNode() {
@@ -128,8 +128,8 @@ public class VariantsUtil {
     }
   }
 
-  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0b {
-    public QuotationClass_hb8iy0_a0a0a0a0a0a0b() {
+  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0a0a1 {
+    public QuotationClass_hb8iy0_a0a0a0a0a0a0a0a1() {
     }
 
     public SNode createNode() {
@@ -146,8 +146,8 @@ public class VariantsUtil {
     }
   }
 
-  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0c {
-    public QuotationClass_hb8iy0_a0a0a0a0a0a0c() {
+  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0a0a2 {
+    public QuotationClass_hb8iy0_a0a0a0a0a0a0a0a2() {
     }
 
     public SNode createNode() {
@@ -200,8 +200,8 @@ public class VariantsUtil {
     }
   }
 
-  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0f {
-    public QuotationClass_hb8iy0_a0a0a0a0a0a0f() {
+  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0a0a5 {
+    public QuotationClass_hb8iy0_a0a0a0a0a0a0a0a5() {
     }
 
     public SNode createNode() {
@@ -218,8 +218,8 @@ public class VariantsUtil {
     }
   }
 
-  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0g {
-    public QuotationClass_hb8iy0_a0a0a0a0a0a0g() {
+  public static class QuotationClass_hb8iy0_a0a0a0a0a0a0a0a6 {
+    public QuotationClass_hb8iy0_a0a0a0a0a0a0a0a6() {
     }
 
     public SNode createNode() {

@@ -67,7 +67,7 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListSequence.fromList(PersistentConfiguration_Behavior.getContextPersistentProperties_946964771156066434(_context.getEnclosingNode())).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(it, "type", true), new EditorExpression_Constraints.QuotationClass_lq9qwe_a1a0a0a0a0a0a0a0a1a0b0a1a2().createNode());
+                return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(it, "type", true), new EditorExpression_Constraints.QuotationClass_lq9qwe_a1a0a0a0a0a0a0a0a0a0b0a1a0b0c().createNode());
               }
             });
           }
@@ -86,8 +86,8 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", true, false) != null);
   }
 
-  public static class QuotationClass_lq9qwe_a1a0a0a0a0a0a0a0a1a0b0a1a2 {
-    public QuotationClass_lq9qwe_a1a0a0a0a0a0a0a0a1a0b0a1a2() {
+  public static class QuotationClass_lq9qwe_a1a0a0a0a0a0a0a0a0a0b0a1a0b0c {
+    public QuotationClass_lq9qwe_a1a0a0a0a0a0a0a0a0a0b0a1a0b0c() {
     }
 
     public SNode createNode() {

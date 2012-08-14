@@ -195,7 +195,7 @@ public class Junit_Command {
         }), " ");
       }
     });
-    if ((skipped.value != null && skipped.value.length() > 0)) {
+    if (isNotEmpty_yo2c7x_a0h0c(skipped.value)) {
       if (log.isWarnEnabled()) {
         log.warn("All tests could not be executed together. Skipped " + skipped.value);
       }
@@ -270,5 +270,9 @@ public class Junit_Command {
       a.equals(b) :
       a == b
     ));
+  }
+
+  public static boolean isNotEmpty_yo2c7x_a0h0c(String str) {
+    return str != null && str.length() > 0;
   }
 }

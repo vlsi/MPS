@@ -139,7 +139,7 @@ public class ConvertAnonymousRefactoring {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty()) {
       List<SNode> parameterReferences = ListSequence.fromList(this.mySuperConstructorParameters).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
-          return new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0a0a8().createNode(it);
+          return new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0a0a0a0i().createNode(it);
         }
       }).toListSequence();
       SNode invocation = new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a1a0a8().createNode(parameterReferences);
@@ -210,8 +210,8 @@ public class ConvertAnonymousRefactoring {
     ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "actualArgument", true)).addSequence(SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration") ?
-          new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0b0p().createNode(it) :
-          new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0b0p_0().createNode(it)
+          new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0a0a1a51().createNode(it) :
+          new ConvertAnonymousRefactoring.QuotationClass_qy1soj_a0a0a0a0a0a0a1a51_0().createNode(it)
         );
       }
     }));
@@ -321,8 +321,8 @@ public class ConvertAnonymousRefactoring {
     }
   }
 
-  public static class QuotationClass_qy1soj_a0a0a0a0a0a0a8 {
-    public QuotationClass_qy1soj_a0a0a0a0a0a0a8() {
+  public static class QuotationClass_qy1soj_a0a0a0a0a0a0a0a0i {
+    public QuotationClass_qy1soj_a0a0a0a0a0a0a0a0i() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -489,8 +489,8 @@ public class ConvertAnonymousRefactoring {
     }
   }
 
-  public static class QuotationClass_qy1soj_a0a0a0a0a0b0p {
-    public QuotationClass_qy1soj_a0a0a0a0a0b0p() {
+  public static class QuotationClass_qy1soj_a0a0a0a0a0a0a1a51 {
+    public QuotationClass_qy1soj_a0a0a0a0a0a0a1a51() {
     }
 
     public SNode createNode(Object parameter_3) {
@@ -507,8 +507,8 @@ public class ConvertAnonymousRefactoring {
     }
   }
 
-  public static class QuotationClass_qy1soj_a0a0a0a0a0b0p_0 {
-    public QuotationClass_qy1soj_a0a0a0a0a0b0p_0() {
+  public static class QuotationClass_qy1soj_a0a0a0a0a0a0a1a51_0 {
+    public QuotationClass_qy1soj_a0a0a0a0a0a0a1a51_0() {
     }
 
     public SNode createNode(Object parameter_3) {

@@ -91,7 +91,7 @@ public abstract class ExtractMethodRefactoring {
     }
     ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0a2a5().createNode(it);
+        return new ExtractMethodRefactoring.QuotationClass_jq3ovj_a0a0a0a0a0a0c0f().createNode(it);
       }
     }));
   }
@@ -252,8 +252,8 @@ public abstract class ExtractMethodRefactoring {
     return this.myAnalyzer.shouldBeStatic();
   }
 
-  public static class QuotationClass_jq3ovj_a0a0a0a0a2a5 {
-    public QuotationClass_jq3ovj_a0a0a0a0a2a5() {
+  public static class QuotationClass_jq3ovj_a0a0a0a0a0a0c0f {
+    public QuotationClass_jq3ovj_a0a0a0a0a0a0c0f() {
     }
 
     public SNode createNode(Object parameter_3) {

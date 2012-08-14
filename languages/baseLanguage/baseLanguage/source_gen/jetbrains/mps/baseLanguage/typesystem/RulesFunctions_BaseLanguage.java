@@ -510,7 +510,7 @@ __switch__:
     List<SNode> throwTypes = ListSequence.fromListWithValues(new ArrayList<SNode>(), throwables);
     ListSequence.fromList(throwTypes).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode tt) {
-        return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0r_0().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0b0r().createNode(typeCheckingContext));
+        return TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0a0a1a71_0().createNode(typeCheckingContext)) || TypeChecker.getInstance().getSubtypingManager().isSubtype(tt, new RulesFunctions_BaseLanguage.QuotationClass_5ahx9e_a1a0a0a0a0a0a1a71().createNode(typeCheckingContext));
       }
     });
     if (ListSequence.fromList(throwTypes).isEmpty()) {
@@ -863,8 +863,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_5ahx9e_a1a0a0a0a0b0r {
-    public QuotationClass_5ahx9e_a1a0a0a0a0b0r() {
+  public static class QuotationClass_5ahx9e_a1a0a0a0a0a0a1a71 {
+    public QuotationClass_5ahx9e_a1a0a0a0a0a0a1a71() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
@@ -894,8 +894,8 @@ __switch__:
     }
   }
 
-  public static class QuotationClass_5ahx9e_a1a0a0a0a0b0r_0 {
-    public QuotationClass_5ahx9e_a1a0a0a0a0b0r_0() {
+  public static class QuotationClass_5ahx9e_a1a0a0a0a0a0a1a71_0 {
+    public QuotationClass_5ahx9e_a1a0a0a0a0a0a1a71_0() {
     }
 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
