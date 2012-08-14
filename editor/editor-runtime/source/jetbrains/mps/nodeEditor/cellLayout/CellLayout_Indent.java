@@ -271,11 +271,11 @@ public class CellLayout_Indent extends AbstractCellLayout {
         withIndent(myCurrentIndent + myIndentSize, myCurrentIndent + 3 * myIndentSize, new Runnable() {
           @Override
           public void run() {
-            appendCell(cell);
+            appendCell(cell, false);
           }
         });
       } else {
-        appendCell(cell);
+        appendCell(cell, false);
       }
 
       if (haveToSplit()) {
@@ -306,9 +306,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
       boolean hasWrapAnchor = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR);
 
       int indent = hasIndent ? myCurrentIndent + myIndentSize :
-        hasAnchor ? myLineWidth
+        hasAnchor ? myLineWidth + getFirstChildLeftGap(collection)
           : myCurrentIndent;
-      int wrapIndent = hasWrapAnchor ? myLineWidth :
+      int wrapIndent = hasWrapAnchor ? myLineWidth + getFirstChildLeftGap(collection) :
         (hasAnchor || hasIndent) ? indent + 2 * myIndentSize
           : myCurrentIndentAfterWrap;
 
@@ -324,6 +324,14 @@ public class CellLayout_Indent extends AbstractCellLayout {
           }
         }
       });
+    }
+
+    private int getFirstChildLeftGap(EditorCell_Collection collection) {
+      EditorCell firstLeaf = collection.getFirstLeaf();
+      if (firstLeaf != null) {
+        return PunctuationUtil.getLeftGap(firstLeaf);
+      }
+      return 0;
     }
 
     private void updatePositions(EditorCell_Collection collection) {
@@ -361,13 +369,13 @@ public class CellLayout_Indent extends AbstractCellLayout {
       }
     }
 
-    private void appendCell(EditorCell cell) {
+    private void appendCell(EditorCell cell, boolean last) {
       if (myLineContent.isEmpty()) {
         myLineIndent = myCurrentIndent;
         indent();
       }
 
-      PunctuationUtil.addGaps(cell.getParent(), cell);
+      PunctuationUtil.addGaps(cell, myLineContent.isEmpty(), last);
 
       cell.moveTo(myX + myLineWidth, cell.getY());
       cell.relayout();
@@ -513,7 +521,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
           resetLine();
 
           for (EditorCell cell : oldLine) {
-            appendCell(cell);
+            appendCell(cell, cell == oldLine.get(oldLine.size() - 1));
           }
 
           if (!oldLine.isEmpty()) {
@@ -521,7 +529,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
           }
 
           for (EditorCell cell : newLine) {
-            appendCell(cell);
+            appendCell(cell, false);
           }
         }
       });

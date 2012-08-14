@@ -73,7 +73,7 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_1uorir_d0a");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR, true);
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createRefNodeList_1uorir_a3a0(editorContext, node));
@@ -168,10 +168,6 @@ public class XmlAttribute_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new XmlAttribute_Editor.valueListHandler_1uorir_a3a0(node, "value", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_value_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
