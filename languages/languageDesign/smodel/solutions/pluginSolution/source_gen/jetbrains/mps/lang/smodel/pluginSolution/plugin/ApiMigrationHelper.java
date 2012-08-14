@@ -226,7 +226,7 @@ public class ApiMigrationHelper {
     };
     _FunctionTypes._void_P1_E0<? super SNode> transformer2 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
-        return SNodeOperations.replaceWithAnother(usage, new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0a0q0b().createNode(usage));
+        return SNodeOperations.replaceWithAnother(usage, SLinkOperations.getTarget(SNodeOperations.cast(new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0a0a0q0b().createNode(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true));
       }
     });
 
@@ -243,7 +243,7 @@ public class ApiMigrationHelper {
     };
     _FunctionTypes._void_P1_E0<? super SNode> transformer3 = new _Adapters._return_P1_E0_to__void_P1_E0_adapter<SNode>(new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode usage) {
-        return SNodeOperations.replaceWithAnother(usage, new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0a0z0b().createNode(usage, SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)));
+        return SNodeOperations.replaceWithAnother(usage, SLinkOperations.getTarget(SNodeOperations.cast(new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0a0a0z0b().createNode(usage, SLinkOperations.getTargets(SNodeOperations.cast(usage, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true));
       }
     });
 
@@ -545,8 +545,8 @@ public class ApiMigrationHelper {
     }
   }
 
-  public static class QuotationClass_yke5lt_a0a0a0a0q0b {
-    public QuotationClass_yke5lt_a0a0a0a0q0b() {
+  public static class QuotationClass_yke5lt_a0a0a0a0a0q0b {
+    public QuotationClass_yke5lt_a0a0a0a0a0q0b() {
     }
 
     public SNode createNode(Object parameter_8) {
@@ -641,8 +641,8 @@ public class ApiMigrationHelper {
     }
   }
 
-  public static class QuotationClass_yke5lt_a0a0a0a0z0b {
-    public QuotationClass_yke5lt_a0a0a0a0z0b() {
+  public static class QuotationClass_yke5lt_a0a0a0a0a0z0b {
+    public QuotationClass_yke5lt_a0a0a0a0a0z0b() {
     }
 
     public SNode createNode(Object parameter_9, Object parameter_10) {
