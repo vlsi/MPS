@@ -112,7 +112,7 @@ public class TestCollector {
   private SNode getTestCaseClass(final SModel context) {
     return SNodeOperations.cast(getNode(context, TEST_CASE, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        final String testCase = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(new TestCollector.QuotationClass_rpw6il_a0a0a0a2a0a0g().createNode(), "classifier", false));
+        final String testCase = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(new TestCollector.QuotationClass_rpw6il_a0a0a0a0a0c0a0a6().createNode(), "classifier", false));
         return SNodeOperations.cast(ListSequence.fromList(TestCollector.this.allClassifiers(context)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode cls) {
             return INamedConcept_Behavior.call_getFqName_1213877404258(cls).equals(testCase);
@@ -125,7 +125,7 @@ public class TestCollector {
   private SNode getTestAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, TEST_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        final String testAnn = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(new TestCollector.QuotationClass_rpw6il_a0a0a0a2a0a0h().createNode(), "classifier", false));
+        final String testAnn = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(new TestCollector.QuotationClass_rpw6il_a0a0a0a0a0c0a0a7().createNode(), "classifier", false));
         return ListSequence.fromList(TestCollector.this.allAnnotations(context)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode ann) {
             return INamedConcept_Behavior.call_getFqName_1213877404258(ann).equals(testAnn);
@@ -138,7 +138,7 @@ public class TestCollector {
   private SNode getIgnoreAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, IGNORE_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        final String ignoreAnn = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(new TestCollector.QuotationClass_rpw6il_a0a0a0a2a0a0i().createNode(), "classifier", false));
+        final String ignoreAnn = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(new TestCollector.QuotationClass_rpw6il_a0a0a0a0a0c0a0a8().createNode(), "classifier", false));
         return ListSequence.fromList(TestCollector.this.allAnnotations(context)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode ann) {
             return INamedConcept_Behavior.call_getFqName_1213877404258(ann).equals(ignoreAnn);
@@ -151,7 +151,7 @@ public class TestCollector {
   private SNode getMPSLaunchAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, MPS_LAUNCH_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        final String mpslaunchAnn = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(new TestCollector.QuotationClass_rpw6il_a0a0a0a2a0a0j().createNode(), "classifier", false));
+        final String mpslaunchAnn = INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(new TestCollector.QuotationClass_rpw6il_a0a0a0a0a0c0a0a9().createNode(), "classifier", false));
         return ListSequence.fromList(TestCollector.this.allAnnotations(context)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode ann) {
             return INamedConcept_Behavior.call_getFqName_1213877404258(ann).equals(mpslaunchAnn);
@@ -178,8 +178,8 @@ public class TestCollector {
     return (List<SNode>) new ReachableClassifiersScope(context, IClassifiersSearchScope.ANNOTATION, GlobalScope.getInstance()).getClassifiers();
   }
 
-  public static class QuotationClass_rpw6il_a0a0a0a2a0a0g {
-    public QuotationClass_rpw6il_a0a0a0a2a0a0g() {
+  public static class QuotationClass_rpw6il_a0a0a0a0a0c0a0a6 {
+    public QuotationClass_rpw6il_a0a0a0a0a0c0a0a6() {
     }
 
     public SNode createNode() {
@@ -196,8 +196,8 @@ public class TestCollector {
     }
   }
 
-  public static class QuotationClass_rpw6il_a0a0a0a2a0a0h {
-    public QuotationClass_rpw6il_a0a0a0a2a0a0h() {
+  public static class QuotationClass_rpw6il_a0a0a0a0a0c0a0a7 {
+    public QuotationClass_rpw6il_a0a0a0a0a0c0a0a7() {
     }
 
     public SNode createNode() {
@@ -214,8 +214,8 @@ public class TestCollector {
     }
   }
 
-  public static class QuotationClass_rpw6il_a0a0a0a2a0a0i {
-    public QuotationClass_rpw6il_a0a0a0a2a0a0i() {
+  public static class QuotationClass_rpw6il_a0a0a0a0a0c0a0a8 {
+    public QuotationClass_rpw6il_a0a0a0a0a0c0a0a8() {
     }
 
     public SNode createNode() {
@@ -232,8 +232,8 @@ public class TestCollector {
     }
   }
 
-  public static class QuotationClass_rpw6il_a0a0a0a2a0a0j {
-    public QuotationClass_rpw6il_a0a0a0a2a0a0j() {
+  public static class QuotationClass_rpw6il_a0a0a0a0a0c0a0a9 {
+    public QuotationClass_rpw6il_a0a0a0a0a0c0a0a9() {
     }
 
     public SNode createNode() {

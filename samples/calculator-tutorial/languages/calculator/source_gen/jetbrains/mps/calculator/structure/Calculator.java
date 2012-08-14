@@ -5,6 +5,7 @@ package jetbrains.mps.calculator.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.execution.util.structure.IMainClass;
+import jetbrains.mps.lang.core.structure.ScopeProvider;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -13,7 +14,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Calculator extends BaseConcept implements INamedConcept, IMainClass {
+public class Calculator extends BaseConcept implements INamedConcept, IMainClass, ScopeProvider {
   public static final String concept = "jetbrains.mps.calculator.structure.Calculator";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

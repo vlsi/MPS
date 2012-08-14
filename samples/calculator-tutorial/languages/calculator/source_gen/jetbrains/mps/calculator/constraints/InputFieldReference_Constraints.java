@@ -10,15 +10,16 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
-import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.scope.EmptyScope;
 
 public class InputFieldReference_Constraints extends BaseConstraintsDescriptor {
-  private static SNodePointer breakingNode_43tbk9_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)", "1241364816355");
+  private static SNodePointer breakingNode_43tbk9_a0a0a0a0a1a0b0a1a0 = new SNodePointer("r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)", "4159153485696906648");
 
   public InputFieldReference_Constraints() {
     super("jetbrains.mps.calculator.structure.InputFieldReference");
@@ -36,16 +37,21 @@ public class InputFieldReference_Constraints extends BaseConstraintsDescriptor {
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
-        return new BaseReferenceScopeProvider() {
+        return new BaseScopeProvider() {
           @Override
-          public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            SNode calc = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.calculator.structure.Calculator", false, false);
-            return SLinkOperations.getTargets(calc, "inputField", true);
+          public SNodePointer getSearchScopeValidatorNode() {
+            return breakingNode_43tbk9_a0a0a0a0a1a0b0a1a0;
           }
 
           @Override
-          public SNodePointer getSearchScopeValidatorNode() {
-            return breakingNode_43tbk9_a0a1a0a0a1a0b0a1a0;
+          public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
+            {
+              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.calculator.structure.InputField"));
+              return (scope == null ?
+                new EmptyScope() :
+                scope
+              );
+            }
           }
         };
       }

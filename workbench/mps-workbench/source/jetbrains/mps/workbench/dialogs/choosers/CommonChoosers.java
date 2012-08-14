@@ -82,7 +82,7 @@ public class CommonChoosers {
     Component uparent = UIUtil.findUltimateParent(parent);
     Project project = null;
     if (uparent instanceof IdeFrame) {
-      project = ((IdeFrame) parent).getProject();
+      project = ((IdeFrame) uparent).getProject();
     }
     if (project == null) {
       project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(uparent));

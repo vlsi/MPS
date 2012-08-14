@@ -81,7 +81,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "annotation", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionParameter_Hint.QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0f().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
+            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionParameter_Hint.QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a0a0b0a0a5().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
           }
         }).first();
         if (annotation == null) {
@@ -120,7 +120,7 @@ public class ActionParameter_Hint extends AbstractCellProvider {
       public String getText() {
         SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node), "annotation", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionParameter_Hint.QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0g().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
+            return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(new ActionParameter_Hint.QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a0a0b0a0a6().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
           }
         }).first();
         if (annotation == null) {
@@ -158,8 +158,8 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     return ActionParameter_Behavior.call_getFieldDeclaration_1171743928471867409(node) != null;
   }
 
-  public static class QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0f {
-    public QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0f() {
+  public static class QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a0a0b0a0a5 {
+    public QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a0a0b0a0a5() {
     }
 
     public SNode createNode() {
@@ -176,8 +176,8 @@ public class ActionParameter_Hint extends AbstractCellProvider {
     }
   }
 
-  public static class QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0g {
-    public QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a1a0a0g() {
+  public static class QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a0a0b0a0a6 {
+    public QuotationClass_xpsq7t_a0a0a0a0a0a0a0a0a0a0a0b0a0a6() {
     }
 
     public SNode createNode() {

@@ -287,13 +287,15 @@ public class ModuleDescriptorPersistence {
       r = new InputStreamReader(file.openInputStream(), FileUtil.DEFAULT_CHARSET);
       char[] buf = new char[1024];
       int readChars = r.read(buf);
-      String s = new String(buf, 0, readChars);
-      Pattern pattern = Pattern.compile(HEADER_PATTERN);
-      for (String line : s.split("\n")) {
-        Matcher m = pattern.matcher(line);
-        if (m.matches()) {
-          md.setNamespace(m.group(3));
-          md.setUUID(m.group(4));
+      if (readChars >= 0) {
+        String s = new String(buf, 0, readChars);
+        Pattern pattern = Pattern.compile(HEADER_PATTERN);
+        for (String line : s.split("\n")) {
+          Matcher m = pattern.matcher(line);
+          if (m.matches()) {
+            md.setNamespace(m.group(3));
+            md.setUUID(m.group(4));
+          }
         }
       }
     } catch (IOException e) {

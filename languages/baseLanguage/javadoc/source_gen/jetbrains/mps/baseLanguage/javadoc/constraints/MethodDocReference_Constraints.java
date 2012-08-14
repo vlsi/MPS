@@ -48,7 +48,7 @@ public class MethodDocReference_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")).removeWhere(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVisible") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) == new MethodDocReference_Constraints.QuotationClass_8et2et_a0a0a0a0a0a0a0a0a1a0b0a1a0().createNode();
+                return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVisible") && SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", true) == new MethodDocReference_Constraints.QuotationClass_8et2et_a0a0a0a0a0a0a0a0a0a0b0a1a0b0a().createNode();
               }
             });
           }
@@ -63,8 +63,8 @@ public class MethodDocReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
 
-  public static class QuotationClass_8et2et_a0a0a0a0a0a0a0a0a1a0b0a1a0 {
-    public QuotationClass_8et2et_a0a0a0a0a0a0a0a0a1a0b0a1a0() {
+  public static class QuotationClass_8et2et_a0a0a0a0a0a0a0a0a0a0b0a1a0b0a {
+    public QuotationClass_8et2et_a0a0a0a0a0a0a0a0a0a0b0a1a0b0a() {
     }
 
     public SNode createNode() {
