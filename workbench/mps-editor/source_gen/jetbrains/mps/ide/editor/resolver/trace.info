@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1802459475176570754">
-    <nodeInfo nodeId="1802459475176571506" fileName="EditorResolverComponent.java" startLine="10" startPosition="70" endLine="11" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResolver" />
-    <nodeInfo nodeId="1802459475176571511" fileName="EditorResolverComponent.java" startLine="16" startPosition="31" endLine="17" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1802459475176570783" fileName="EditorResolverComponent.java" startLine="17" startPosition="38" endLine="18" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1802459475176570801" fileName="EditorResolverComponent.java" startLine="21" startPosition="34" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1802459475176571528" fileName="EditorResolverComponent.java" startLine="22" startPosition="63" endLine="23" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1802459475176570779" fileName="EditorResolverComponent.java" startLine="28" startPosition="36" endLine="29" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1802459475176570756" fileName="EditorResolverComponent.java" startLine="12" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorResolverComponent#()V" />
-    <nodeInfo nodeId="1802459475176570765" fileName="EditorResolverComponent.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="1802459475176570769" fileName="EditorResolverComponent.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="1802459475176570773" fileName="EditorResolverComponent.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="1802459475176570759" fileName="EditorResolverComponent.java" startLine="13" startPosition="36" endLine="13" endPosition="36" />
-    <scopeInfo nodeId="1802459475176570778" fileName="EditorResolverComponent.java" startLine="28" startPosition="36" endLine="29" endPosition="49" />
-    <scopeInfo nodeId="1802459475176570756" fileName="EditorResolverComponent.java" startLine="12" startPosition="0" endLine="14" endPosition="3" />
-    <scopeInfo nodeId="1802459475176570768" fileName="EditorResolverComponent.java" startLine="16" startPosition="31" endLine="18" endPosition="60" />
-    <scopeInfo nodeId="1802459475176570772" fileName="EditorResolverComponent.java" startLine="21" startPosition="34" endLine="23" endPosition="22" />
-    <scopeInfo nodeId="1802459475176570765" fileName="EditorResolverComponent.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1802459475176570769" fileName="EditorResolverComponent.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1802459475176570773" fileName="EditorResolverComponent.java" startLine="25" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="1802459475176570754" fileName="EditorResolverComponent.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.ide.editor.resolver.EditorResolverComponent" />
+    <nodeInfo nodeId="1802459475176571506" fileName="EditorResolverComponent.java" startLine="11" startPosition="70" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResolver" />
+    <nodeInfo nodeId="1802459475176571511" fileName="EditorResolverComponent.java" startLine="17" startPosition="31" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1802459475176570783" fileName="EditorResolverComponent.java" startLine="18" startPosition="38" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1802459475176570801" fileName="EditorResolverComponent.java" startLine="22" startPosition="34" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1802459475176571528" fileName="EditorResolverComponent.java" startLine="23" startPosition="63" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1802459475176570779" fileName="EditorResolverComponent.java" startLine="29" startPosition="36" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1802459475176570756" fileName="EditorResolverComponent.java" startLine="13" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorResolverComponent#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+    <nodeInfo nodeId="1802459475176570765" fileName="EditorResolverComponent.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
+    <nodeInfo nodeId="1802459475176570769" fileName="EditorResolverComponent.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
+    <nodeInfo nodeId="1802459475176570773" fileName="EditorResolverComponent.java" startLine="26" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
+    <scopeInfo nodeId="1802459475176570759" fileName="EditorResolverComponent.java" startLine="14" startPosition="68" endLine="14" endPosition="68" />
+    <scopeInfo nodeId="1802459475176570778" fileName="EditorResolverComponent.java" startLine="29" startPosition="36" endLine="30" endPosition="49" />
+    <scopeInfo nodeId="1802459475176570756" fileName="EditorResolverComponent.java" startLine="13" startPosition="0" endLine="15" endPosition="3">
+      <varInfo nodeId="4365681323802964092" varName="coreComponents" />
+    </scopeInfo>
+    <scopeInfo nodeId="1802459475176570768" fileName="EditorResolverComponent.java" startLine="17" startPosition="31" endLine="19" endPosition="60" />
+    <scopeInfo nodeId="1802459475176570772" fileName="EditorResolverComponent.java" startLine="22" startPosition="34" endLine="24" endPosition="22" />
+    <scopeInfo nodeId="1802459475176570765" fileName="EditorResolverComponent.java" startLine="16" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="1802459475176570769" fileName="EditorResolverComponent.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="1802459475176570773" fileName="EditorResolverComponent.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
+    <unitInfo nodeId="1802459475176570754" fileName="EditorResolverComponent.java" startLine="11" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.ide.editor.resolver.EditorResolverComponent" />
   </root>
   <root nodeId="1802459475176571473">
     <nodeInfo nodeId="1802459475176585196" fileName="EditorResolver.java" startLine="31" startPosition="129" endLine="32" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

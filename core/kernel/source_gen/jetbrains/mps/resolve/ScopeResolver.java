@@ -39,16 +39,20 @@ public class ScopeResolver implements IResolver {
         }
         SNode result = null;
         String resolveInfo = reference.getResolveInfo();
-        for (SNode node : refScope.getAvailableElements(null)) {
-          if (!(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(referentConcept)))) {
-            continue;
-          }
-          if (resolveInfo != null && (resolveInfo.equals(node.getName()) || resolveInfo.equals(node.getProperty("nestedName")))) {
-            if (result == null) {
-              result = node;
-            } else {
-              // ambiguity 
-              return false;
+        result = refScope.resolve(sourceNode, resolveInfo);
+        if (result == null) {
+          // for compatibility reasons, was copied from old Resolver implementation 
+          for (SNode node : refScope.getAvailableElements(null)) {
+            if (!(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(referentConcept)))) {
+              continue;
+            }
+            if (resolveInfo != null && (resolveInfo.equals(node.getName()) || resolveInfo.equals(node.getProperty("nestedName")))) {
+              if (result == null) {
+                result = node;
+              } else {
+                // ambiguity 
+                return false;
+              }
             }
           }
         }
