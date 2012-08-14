@@ -542,7 +542,7 @@
     <nodeInfo nodeId="7471912399447726334" fileName="FilesDelta.java" startLine="112" startPosition="34" endLine="113" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6067326609049463893" fileName="FilesDelta.java" startLine="115" startPosition="7" endLine="116" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7471912399447720984" fileName="FilesDelta.java" startLine="121" startPosition="67" endLine="122" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7471912399447721017" fileName="FilesDelta.java" startLine="132" startPosition="45" endLine="133" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7471912399447721017" fileName="FilesDelta.java" startLine="132" startPosition="38" endLine="133" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8100389612131734950" fileName="FilesDelta.java" startLine="135" startPosition="59" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7471912399447721026" fileName="FilesDelta.java" startLine="136" startPosition="0" endLine="137" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8100389612131734948" fileName="FilesDelta.java" startLine="137" startPosition="78" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -552,7 +552,7 @@
     <nodeInfo nodeId="7471912399447721057" fileName="FilesDelta.java" startLine="142" startPosition="61" endLine="143" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8100389612131734951" fileName="FilesDelta.java" startLine="143" startPosition="61" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7471912399447721196" fileName="FilesDelta.java" startLine="146" startPosition="57" endLine="147" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7471912399447721208" fileName="FilesDelta.java" startLine="150" startPosition="65" endLine="151" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7471912399447721208" fileName="FilesDelta.java" startLine="150" startPosition="58" endLine="151" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7471912399447721077" fileName="FilesDelta.java" startLine="154" startPosition="45" endLine="155" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2209424598368913948" fileName="FilesDelta.java" startLine="160" startPosition="105" endLine="161" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2209424598368913957" fileName="FilesDelta.java" startLine="162" startPosition="45" endLine="163" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
@@ -595,9 +595,9 @@
     <nodeInfo nodeId="7471912399447726327" fileName="FilesDelta.java" startLine="111" startPosition="87" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/vfs/IFile;)V" />
     <nodeInfo nodeId="7471912399447720982" fileName="FilesDelta.java" startLine="120" startPosition="116" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/internal/collections/runtime/IMapping;)Z" />
     <nodeInfo nodeId="7471912399447721003" fileName="FilesDelta.java" startLine="125" startPosition="66" endLine="129" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7471912399447721015" fileName="FilesDelta.java" startLine="131" startPosition="52" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="7471912399447721015" fileName="FilesDelta.java" startLine="131" startPosition="45" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="7471912399447721194" fileName="FilesDelta.java" startLine="145" startPosition="147" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="7471912399447721206" fileName="FilesDelta.java" startLine="149" startPosition="72" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="7471912399447721206" fileName="FilesDelta.java" startLine="149" startPosition="65" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/lang/String;" />
     <nodeInfo nodeId="7471912399447721085" fileName="FilesDelta.java" startLine="155" startPosition="96" endLine="159" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2206718243407884176" fileName="FilesDelta.java" startLine="188" startPosition="70" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8491193474825060633" fileName="FilesDelta.java" startLine="222" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptRoot#(Ljetbrains/mps/vfs/IFile;)Z" />
@@ -647,9 +647,9 @@
     <scopeInfo nodeId="7471912399447726308" fileName="FilesDelta.java" startLine="106" startPosition="60" endLine="107" endPosition="41" />
     <scopeInfo nodeId="7471912399447726328" fileName="FilesDelta.java" startLine="112" startPosition="34" endLine="113" endPosition="33" />
     <scopeInfo nodeId="7471912399447720983" fileName="FilesDelta.java" startLine="121" startPosition="67" endLine="122" endPosition="54" />
-    <scopeInfo nodeId="7471912399447721016" fileName="FilesDelta.java" startLine="132" startPosition="45" endLine="133" endPosition="17" />
+    <scopeInfo nodeId="7471912399447721016" fileName="FilesDelta.java" startLine="132" startPosition="38" endLine="133" endPosition="17" />
     <scopeInfo nodeId="7471912399447721195" fileName="FilesDelta.java" startLine="146" startPosition="57" endLine="147" endPosition="82" />
-    <scopeInfo nodeId="7471912399447721207" fileName="FilesDelta.java" startLine="150" startPosition="65" endLine="151" endPosition="24" />
+    <scopeInfo nodeId="7471912399447721207" fileName="FilesDelta.java" startLine="150" startPosition="58" endLine="151" endPosition="24" />
     <scopeInfo nodeId="2209424598368913956" fileName="FilesDelta.java" startLine="162" startPosition="45" endLine="163" endPosition="20" />
     <scopeInfo nodeId="2209424598368913959" fileName="FilesDelta.java" startLine="165" startPosition="49" endLine="166" endPosition="79" />
     <scopeInfo nodeId="7471912399447721156" fileName="FilesDelta.java" startLine="170" startPosition="39" endLine="171" endPosition="78" />
@@ -684,13 +684,13 @@
       <varInfo nodeId="7471912399447720982" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="7471912399447720993" fileName="FilesDelta.java" startLine="125" startPosition="66" endLine="129" endPosition="10" />
-    <scopeInfo nodeId="7471912399447721015" fileName="FilesDelta.java" startLine="131" startPosition="52" endLine="135" endPosition="0">
+    <scopeInfo nodeId="7471912399447721015" fileName="FilesDelta.java" startLine="131" startPosition="45" endLine="135" endPosition="0">
       <varInfo nodeId="7471912399447721015" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="7471912399447721194" fileName="FilesDelta.java" startLine="145" startPosition="147" endLine="149" endPosition="0">
       <varInfo nodeId="7471912399447721194" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="7471912399447721206" fileName="FilesDelta.java" startLine="149" startPosition="72" endLine="153" endPosition="0">
+    <scopeInfo nodeId="7471912399447721206" fileName="FilesDelta.java" startLine="149" startPosition="65" endLine="153" endPosition="0">
       <varInfo nodeId="7471912399447721206" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="2209424598368913947" fileName="FilesDelta.java" startLine="160" startPosition="105" endLine="164" endPosition="13" />
@@ -869,7 +869,7 @@
     <nodeInfo nodeId="6106640680373200952" fileName="DirUtil.java" startLine="15" startPosition="66" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH_CHAR" />
     <nodeInfo nodeId="6106640680373200956" fileName="DirUtil.java" startLine="16" startPosition="45" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SLASH" />
     <nodeInfo nodeId="6106640680373201324" fileName="DirUtil.java" startLine="21" startPosition="38" endLine="22" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6106640680373201334" fileName="DirUtil.java" startLine="25" startPosition="45" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6106640680373201334" fileName="DirUtil.java" startLine="25" startPosition="38" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6106640680373201122" fileName="DirUtil.java" startLine="31" startPosition="75" endLine="32" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6106640680373201135" fileName="DirUtil.java" startLine="32" startPosition="55" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6106640680373201216" fileName="DirUtil.java" startLine="38" startPosition="93" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -897,7 +897,7 @@
     <nodeInfo nodeId="6106640680373200892" fileName="DirUtil.java" startLine="89" startPosition="58" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6106640680373200900" fileName="DirUtil.java" startLine="92" startPosition="5" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6106640680373201322" fileName="DirUtil.java" startLine="20" startPosition="83" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6106640680373201332" fileName="DirUtil.java" startLine="24" startPosition="52" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="6106640680373201332" fileName="DirUtil.java" startLine="24" startPosition="45" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="8100389612131742278" fileName="DirUtil.java" startLine="33" startPosition="52" endLine="37" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8100389612131734847" fileName="DirUtil.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="normalize#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="6106640680373213968" fileName="DirUtil.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="normalizeAsDir#(Ljava/lang/String;)Ljava/lang/String;" />
@@ -915,7 +915,7 @@
     <nodeInfo nodeId="6106640680373214560" fileName="DirUtil.java" startLine="74" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="withoutPrefix#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="6106640680373200880" fileName="DirUtil.java" startLine="88" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="same#(Ljava/lang/String;Ljava/lang/String;)Z" />
     <scopeInfo nodeId="6106640680373201323" fileName="DirUtil.java" startLine="21" startPosition="38" endLine="22" endPosition="47" />
-    <scopeInfo nodeId="6106640680373201333" fileName="DirUtil.java" startLine="25" startPosition="45" endLine="26" endPosition="17" />
+    <scopeInfo nodeId="6106640680373201333" fileName="DirUtil.java" startLine="25" startPosition="38" endLine="26" endPosition="17" />
     <scopeInfo nodeId="6106640680373201178" fileName="DirUtil.java" startLine="38" startPosition="93" endLine="39" endPosition="20" />
     <scopeInfo nodeId="8100389612131734849" fileName="DirUtil.java" startLine="44" startPosition="47" endLine="45" endPosition="39" />
     <scopeInfo nodeId="6106640680373213971" fileName="DirUtil.java" startLine="48" startPosition="55" endLine="49" endPosition="49" />
@@ -932,7 +932,7 @@
     <scopeInfo nodeId="6106640680373201322" fileName="DirUtil.java" startLine="20" startPosition="83" endLine="24" endPosition="0">
       <varInfo nodeId="6106640680373201322" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="6106640680373201332" fileName="DirUtil.java" startLine="24" startPosition="52" endLine="28" endPosition="0">
+    <scopeInfo nodeId="6106640680373201332" fileName="DirUtil.java" startLine="24" startPosition="45" endLine="28" endPosition="0">
       <varInfo nodeId="6106640680373201332" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="8100389612131734847" fileName="DirUtil.java" startLine="43" startPosition="0" endLine="47" endPosition="0">

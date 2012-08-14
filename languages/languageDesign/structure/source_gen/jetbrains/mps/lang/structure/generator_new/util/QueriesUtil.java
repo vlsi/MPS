@@ -178,16 +178,16 @@ public class QueriesUtil {
   }
 
   public static Iterable<SNode> sortedProperties(Iterable<SNode> r) {
-    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode it) {
         return getPropertyIndex(it);
       }
     }, true);
   }
 
   public static Iterable<SNode> sortedPropertiesForInterface(Iterable<SNode> r) {
-    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode it) {
         return getPropertyIndex(it);
       }
     }, true);
@@ -238,16 +238,16 @@ public class QueriesUtil {
   }
 
   public static Iterable<SNode> sortedLinks(Iterable<SNode> r) {
-    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode it) {
         return getLinkIndex(it);
       }
     }, true);
   }
 
   public static Iterable<SNode> sortedLinksForInterface(Iterable<SNode> r) {
-    return Sequence.fromIterable(r).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return Sequence.fromIterable(r).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode it) {
         return getInterfaceLinkIndex(it);
       }
     }, true);

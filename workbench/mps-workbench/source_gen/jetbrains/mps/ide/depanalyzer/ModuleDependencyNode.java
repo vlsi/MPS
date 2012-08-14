@@ -102,8 +102,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
       SetSequence.fromSet(usedLanguages).removeSequence(ListSequence.fromList(tree.getModules()));
     }
 
-    for (IModule m : SetSequence.fromSet(allModules).sort(new ISelector<IModule, Comparable<?>>() {
-      public Comparable<?> select(IModule it) {
+    for (IModule m : SetSequence.fromSet(allModules).sort(new ISelector<IModule, String>() {
+      public String select(IModule it) {
         return it.getModuleFqName();
       }
     }, true)) {
@@ -112,8 +112,8 @@ public class ModuleDependencyNode extends MPSTreeNode {
 
     if (tree.isShowUsedLanguage()) {
       MPSTreeNode usedlanguages = new TextMPSTreeNode("Used Languages", getOperationContext());
-      for (IModule l : SetSequence.fromSet(usedLanguages).sort(new ISelector<IModule, Comparable<?>>() {
-        public Comparable<?> select(IModule it) {
+      for (IModule l : SetSequence.fromSet(usedLanguages).sort(new ISelector<IModule, String>() {
+        public String select(IModule it) {
           return it.getModuleFqName();
         }
       }, true)) {

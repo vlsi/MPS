@@ -448,8 +448,8 @@ public class ChangesManagerTest {
       public String select(ModelChange c) {
         return c.toString();
       }
-    }).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String s) {
+    }).sort(new ISelector<String, String>() {
+      public String select(String s) {
         return s;
       }
     }, true).toListSequence(), "|");

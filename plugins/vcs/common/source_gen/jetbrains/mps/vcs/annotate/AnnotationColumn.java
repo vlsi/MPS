@@ -424,8 +424,8 @@ __switch__:
         return cell.getY();
       }
     }));
-    myPseudoLinesY = SetSequence.fromSet(yCoordinatesSet).sort(new ISelector<Integer, Comparable<?>>() {
-      public Comparable<?> select(Integer y) {
+    myPseudoLinesY = SetSequence.fromSet(yCoordinatesSet).sort(new ISelector<Integer, Integer>() {
+      public Integer select(Integer y) {
         return y;
       }
     }, true).toListSequence();
@@ -708,8 +708,8 @@ __switch__:
                 VcsBalloonProblemNotifier.showOverChangesView(project, "Cannot load data for showing diff", MessageType.ERROR);
                 return;
               }
-              List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, Comparable<?>>() {
-                public Comparable<?> select(Change c) {
+              List<Change> changes = Sequence.fromIterable(((Iterable<Change>) cl.getChanges())).sort(new ISelector<Change, String>() {
+                public String select(Change c) {
                   return ChangesUtil.getFilePath(c).getName().toLowerCase();
                 }
               }, true).toListSequence();

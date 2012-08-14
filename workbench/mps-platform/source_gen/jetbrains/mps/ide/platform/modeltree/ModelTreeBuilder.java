@@ -66,8 +66,8 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
   }
 
   public static Iterable<SNode> sortChildNodes(Iterable<SNode> nodes) {
-    return Sequence.fromIterable(nodes).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode node) {
+    return Sequence.fromIterable(nodes).sort(new ISelector<SNode, String>() {
+      public String select(SNode node) {
         return SPropertyOperations.getString(node, "virtualPackage") + "|" + ((String) BehaviorManager.getInstance().invoke(Object.class, node, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
       }
     }, true);

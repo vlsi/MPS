@@ -1489,7 +1489,7 @@
     <nodeInfo nodeId="842994667883032223" fileName="ProjectDescriptorPersistence.java" startLine="36" startPosition="104" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842994667883032228" fileName="ProjectDescriptorPersistence.java" startLine="39" startPosition="31" endLine="40" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842994667883032228" fileName="ProjectDescriptorPersistence.java" startLine="40" startPosition="68" endLine="41" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6822736979074581033" fileName="ProjectDescriptorPersistence.java" startLine="43" startPosition="47" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6822736979074581033" fileName="ProjectDescriptorPersistence.java" startLine="43" startPosition="40" endLine="44" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="842994667883032238" fileName="ProjectDescriptorPersistence.java" startLine="46" startPosition="19" endLine="47" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842994667883032247" fileName="ProjectDescriptorPersistence.java" startLine="48" startPosition="39" endLine="49" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="842994667883032247" fileName="ProjectDescriptorPersistence.java" startLine="49" startPosition="97" endLine="50" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1571,7 +1571,7 @@
     <nodeInfo nodeId="7500439221912782477" fileName="ProjectDescriptorPersistence.java" startLine="107" startPosition="27" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="842994667883032523" fileName="ProjectDescriptorPersistence.java" startLine="119" startPosition="0" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="842994667883032699" fileName="ProjectDescriptorPersistence.java" startLine="141" startPosition="46" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6822736979074581028" fileName="ProjectDescriptorPersistence.java" startLine="42" startPosition="134" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/structure/project/Path;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="6822736979074581028" fileName="ProjectDescriptorPersistence.java" startLine="42" startPosition="127" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/project/structure/project/Path;)Ljava/lang/String;" />
     <nodeInfo nodeId="842994667883032241" fileName="ProjectDescriptorPersistence.java" startLine="47" startPosition="79" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="842994667883032258" fileName="ProjectDescriptorPersistence.java" startLine="51" startPosition="11" endLine="55" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="842994667883032381" fileName="ProjectDescriptorPersistence.java" startLine="64" startPosition="86" endLine="68" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1599,7 +1599,7 @@
     <nodeInfo nodeId="842994667883032227" fileName="ProjectDescriptorPersistence.java" startLine="37" startPosition="71" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="842994667883032219" fileName="ProjectDescriptorPersistence.java" startLine="35" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="saveProjectDescriptorToElement#(Ljetbrains/mps/project/structure/project/ProjectDescriptor;Ljetbrains/mps/vfs/IFile;)Lorg/jdom/Element;" />
     <scopeInfo nodeId="5386339623102269792" fileName="ProjectDescriptorPersistence.java" startLine="33" startPosition="42" endLine="33" endPosition="42" />
-    <scopeInfo nodeId="6822736979074581029" fileName="ProjectDescriptorPersistence.java" startLine="43" startPosition="47" endLine="44" endPosition="55" />
+    <scopeInfo nodeId="6822736979074581029" fileName="ProjectDescriptorPersistence.java" startLine="43" startPosition="40" endLine="44" endPosition="55" />
     <scopeInfo nodeId="7500439221912782477" fileName="ProjectDescriptorPersistence.java" startLine="108" startPosition="33" endLine="109" endPosition="25" />
     <scopeInfo nodeId="842994667883032524" fileName="ProjectDescriptorPersistence.java" startLine="120" startPosition="23" endLine="121" endPosition="13" />
     <scopeInfo nodeId="842994667883032708" fileName="ProjectDescriptorPersistence.java" startLine="142" startPosition="165" endLine="143" endPosition="82" />
@@ -1639,7 +1639,7 @@
     <scopeInfo nodeId="842994667883032699" fileName="ProjectDescriptorPersistence.java" startLine="141" startPosition="46" endLine="144" endPosition="7">
       <varInfo nodeId="842994667883032699" varName="me" />
     </scopeInfo>
-    <scopeInfo nodeId="6822736979074581028" fileName="ProjectDescriptorPersistence.java" startLine="42" startPosition="134" endLine="46" endPosition="0">
+    <scopeInfo nodeId="6822736979074581028" fileName="ProjectDescriptorPersistence.java" startLine="42" startPosition="127" endLine="46" endPosition="0">
       <varInfo nodeId="6822736979074581028" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="842994667883032401" fileName="ProjectDescriptorPersistence.java" startLine="70" startPosition="78" endLine="74" endPosition="92">

@@ -27,8 +27,8 @@ public class SwitchGenUtil {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "expression", true);
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
       }
     }, true);

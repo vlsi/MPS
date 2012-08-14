@@ -79,8 +79,8 @@ __switch__:
       public boolean accept(SNode ct) {
         return ListSequence.fromList(asc).contains(SLinkOperations.getTarget(ct, "container", false));
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode ct) {
+    }).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode ct) {
         return ListSequence.fromList(asc).indexOf(SLinkOperations.getTarget(ct, "container", false));
       }
     }, true).first();

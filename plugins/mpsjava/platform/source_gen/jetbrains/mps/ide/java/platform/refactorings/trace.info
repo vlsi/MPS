@@ -1621,7 +1621,7 @@
     <nodeInfo nodeId="4507335185602817443" fileName="BaseChooseNodeDialog.java" startLine="68" startPosition="44" endLine="69" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602817454" fileName="BaseChooseNodeDialog.java" startLine="74" startPosition="51" endLine="75" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4507335185602817475" fileName="BaseChooseNodeDialog.java" startLine="77" startPosition="50" endLine="78" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4507335185602817486" fileName="BaseChooseNodeDialog.java" startLine="81" startPosition="56" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4507335185602817486" fileName="BaseChooseNodeDialog.java" startLine="81" startPosition="49" endLine="82" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4507335185602817463" fileName="BaseChooseNodeDialog.java" startLine="84" startPosition="15" endLine="85" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4507335185602817495" fileName="BaseChooseNodeDialog.java" startLine="86" startPosition="5" endLine="87" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4507335185602817501" fileName="BaseChooseNodeDialog.java" startLine="90" startPosition="35" endLine="91" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1655,7 +1655,7 @@
     <nodeInfo nodeId="4507335185602817403" fileName="BaseChooseNodeDialog.java" startLine="61" startPosition="69" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4507335185602817438" fileName="BaseChooseNodeDialog.java" startLine="67" startPosition="93" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4507335185602817473" fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="120" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SModelDescriptor;)Z" />
-    <nodeInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="62" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="55" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SModelDescriptor;)Ljava/lang/String;" />
     <nodeInfo nodeId="4507335185602817497" fileName="BaseChooseNodeDialog.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/smodel/SNodePointer;" />
     <nodeInfo nodeId="4507335185602817569" fileName="BaseChooseNodeDialog.java" startLine="105" startPosition="62" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4507335185602817618" fileName="BaseChooseNodeDialog.java" startLine="115" startPosition="273" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
@@ -1679,7 +1679,7 @@
     <scopeInfo nodeId="4507335185602817405" fileName="BaseChooseNodeDialog.java" startLine="62" startPosition="148" endLine="63" endPosition="78" />
     <scopeInfo nodeId="4507335185602817442" fileName="BaseChooseNodeDialog.java" startLine="68" startPosition="44" endLine="69" endPosition="81" />
     <scopeInfo nodeId="4507335185602817474" fileName="BaseChooseNodeDialog.java" startLine="77" startPosition="50" endLine="78" endPosition="77" />
-    <scopeInfo nodeId="4507335185602817485" fileName="BaseChooseNodeDialog.java" startLine="81" startPosition="56" endLine="82" endPosition="50" />
+    <scopeInfo nodeId="4507335185602817485" fileName="BaseChooseNodeDialog.java" startLine="81" startPosition="49" endLine="82" endPosition="50" />
     <scopeInfo nodeId="4507335185602817462" fileName="BaseChooseNodeDialog.java" startLine="84" startPosition="15" endLine="85" endPosition="70" />
     <scopeInfo nodeId="4507335185602817500" fileName="BaseChooseNodeDialog.java" startLine="90" startPosition="35" endLine="91" endPosition="26" />
     <scopeInfo nodeId="4507335185602817572" fileName="BaseChooseNodeDialog.java" startLine="106" startPosition="31" endLine="107" endPosition="85" />
@@ -1701,7 +1701,7 @@
     <scopeInfo nodeId="4507335185602817473" fileName="BaseChooseNodeDialog.java" startLine="76" startPosition="120" endLine="80" endPosition="0">
       <varInfo nodeId="4507335185602817473" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="62" endLine="84" endPosition="0">
+    <scopeInfo nodeId="4507335185602817484" fileName="BaseChooseNodeDialog.java" startLine="80" startPosition="55" endLine="84" endPosition="0">
       <varInfo nodeId="4507335185602817484" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602817497" fileName="BaseChooseNodeDialog.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
@@ -1855,6 +1855,7 @@
       <varInfo nodeId="4507335185602819677" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="4507335185602819668" fileName="MethodDuplicatesProcessor.java" startLine="17" startPosition="43" endLine="16" endPosition="0" />
+    <unitInfo nodeId="4507335185602819654" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.MethodDuplicatesProcessor" />
   </root>
   <root nodeId="4507335185602819706">
     <nodeInfo nodeId="4507335185602819715" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />

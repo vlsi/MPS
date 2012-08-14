@@ -39,8 +39,8 @@ public class ProjectDescriptorPersistence {
       public Element invoke() {
         final Element result_jnk9az_a0a1a0 = new Element("project");
         final Element result_jnk9az_a0a0a1a0 = new Element("projectModules");
-        for (Path path : Sequence.fromIterable(((Iterable<Path>) descriptor.getModules())).sort(new ISelector<Path, Comparable<?>>() {
-          public Comparable<?> select(Path p) {
+        for (Path path : Sequence.fromIterable(((Iterable<Path>) descriptor.getModules())).sort(new ISelector<Path, String>() {
+          public String select(Path p) {
             return macroHelper.shrinkPath(p.getPath());
           }
         }, true)) {

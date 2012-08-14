@@ -1336,8 +1336,8 @@ public class QueriesGenerated {
       propertyNode.setProperty(MREF, m.getModuleReference().toString());
       ListSequence.fromList(res).addElement(propertyNode);
     }
-    return ListSequence.fromList(res).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(res).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return it.getProperty(MREF);
       }
     }, true);
@@ -1396,8 +1396,8 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067859641(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(ModuleCycle_Behavior.call_getClassPath_1218646038565(_context.getNode())).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(ModuleCycle_Behavior.call_getClassPath_1218646038565(_context.getNode())).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
     }, true);
@@ -1408,24 +1408,24 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067859683(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(SLinkOperations.getTarget(_context.getNode(), "module", false), false)).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(Module_Behavior.call_getClassPathDirectories_1213877515083(SLinkOperations.getTarget(_context.getNode(), "module", false), false)).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
     }, true);
   }
 
   public static Iterable sourceNodesQuery_4470173663067859661(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(Module_Behavior.call_getSourcesDirectories_1775602641704992067(SLinkOperations.getTarget(_context.getNode(), "module", false))).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(Module_Behavior.call_getSourcesDirectories_1775602641704992067(SLinkOperations.getTarget(_context.getNode(), "module", false))).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
     }, true);
   }
 
   public static Iterable sourceNodesQuery_1217518508070(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "moduleReference", true)).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "moduleReference", true)).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(SLinkOperations.getTarget(it, "module", false), "name");
       }
     }, true);
@@ -1440,8 +1440,8 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4470173663067771918(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(ModuleCycle_Behavior.getMPSClassPath_1218716245482(IMacroHolder_Behavior.call_getPath_1234976932856(_context.getNode()), SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true))).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(ModuleCycle_Behavior.getMPSClassPath_1218716245482(IMacroHolder_Behavior.call_getPath_1234976932856(_context.getNode()), SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.packaging.structure.Layout", true, true), "macro", true))).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
     }, true);
@@ -1666,8 +1666,8 @@ __switch__:
       // calculate module cycles 
       Set<IModule> modulesToProcess = MapSequence.fromMap(map).keySet();
       Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet());
-      SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<IModule, Comparable<?>>() {
-        public Comparable<?> select(IModule it) {
+      SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<IModule, String>() {
+        public String select(IModule it) {
           return it.getModuleFqName();
         }
       }, true));
@@ -1685,8 +1685,8 @@ __switch__:
           ListSequence.fromList(SLinkOperations.getTargets(cycle, "dependency", true)).addElement(ref);
         }
         lastCycle = cycle;
-        Iterable<IModule> sortedModuleSet = SetSequence.fromSet(moduleSet).sort(new ISelector<IModule, Comparable<?>>() {
-          public Comparable<?> select(IModule it) {
+        Iterable<IModule> sortedModuleSet = SetSequence.fromSet(moduleSet).sort(new ISelector<IModule, String>() {
+          public String select(IModule it) {
             return it.getModuleFqName();
           }
         }, true);
@@ -1700,8 +1700,8 @@ __switch__:
           }
         }
       }
-      ListSequence.fromList(SLinkOperations.getTargets(layout, "cycle", true)).addSequence(ListSequence.fromList(result).sort(new ISelector<SNode, Comparable<?>>() {
-        public Comparable<?> select(SNode it) {
+      ListSequence.fromList(SLinkOperations.getTargets(layout, "cycle", true)).addSequence(ListSequence.fromList(result).sort(new ISelector<SNode, String>() {
+        public String select(SNode it) {
           return SPropertyOperations.getString(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "moduleReference", true)).first(), "module", false), "name");
         }
       }, true));

@@ -88,8 +88,8 @@ public class TraceInfoUtil {
 
         SModel model = modelDescriptor.getSModel();
 
-        Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, Comparable<?>>() {
-          public Comparable<?> select(TraceablePositionInfo it) {
+        Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, TraceablePositionInfo>() {
+          public TraceablePositionInfo select(TraceablePositionInfo it) {
             return it;
           }
         }, true);

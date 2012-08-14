@@ -39,13 +39,13 @@ public class TupleIntefaceUtils {
       }
     }
     List<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> result = null;
-    IEnumerator<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> ait = ListSequence.fromList(accessors).sort(new ISelector<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property, Comparable<?>>() {
-      public Comparable<?> select(jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property p) {
+    IEnumerator<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> ait = ListSequence.fromList(accessors).sort(new ISelector<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property, String>() {
+      public String select(jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property p) {
         return p.name();
       }
     }, true).enumerator();
-    IEnumerator<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> mit = ListSequence.fromList(mutators).sort(new ISelector<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property, Comparable<?>>() {
-      public Comparable<?> select(jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property p) {
+    IEnumerator<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property> mit = ListSequence.fromList(mutators).sort(new ISelector<jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property, String>() {
+      public String select(jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property p) {
         return p.name();
       }
     }, true).enumerator();

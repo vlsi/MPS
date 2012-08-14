@@ -30,12 +30,12 @@ public class SortKeymapMembers extends BaseRefactoring {
     SNode node = refactoringContext.getSelectedNode();
     List<SNode> copy = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(node, "shortcutChange", true));
     ListSequence.fromList(SLinkOperations.getTargets(node, "shortcutChange", true)).clear();
-    ListSequence.fromList(SLinkOperations.getTargets(node, "shortcutChange", true)).addSequence(ListSequence.fromList(copy).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    ListSequence.fromList(SLinkOperations.getTargets(node, "shortcutChange", true)).addSequence(ListSequence.fromList(copy).sort(new ISelector<SNode, Boolean>() {
+      public Boolean select(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange");
       }
-    }, true).alsoSort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }, true).alsoSort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(SLinkOperations.getTarget(it, "action", false), "name");
       }
     }, true));

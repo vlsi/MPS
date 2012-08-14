@@ -77,8 +77,8 @@ public abstract class BaseChooseNodeDialog extends DialogWrapper {
       public boolean accept(SModelDescriptor it) {
         return !(SModelStereotype.isStubModelStereotype(it.getStereotype()));
       }
-    }).sort(new ISelector<SModelDescriptor, Comparable<?>>() {
-      public Comparable<?> select(SModelDescriptor it) {
+    }).sort(new ISelector<SModelDescriptor, String>() {
+      public String select(SModelDescriptor it) {
         return it.getSModelReference().toString();
       }
     }, true)) {

@@ -128,8 +128,8 @@ public class FilesDelta implements IDelta {
           DirUtil.normalize(f.key().getPath())
         );
       }
-    }).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String p) {
+    }).sort(new ISelector<String, String>() {
+      public String select(String p) {
         return p;
       }
     }, true).toListSequence().toGenericArray(String.class);
@@ -146,8 +146,8 @@ public class FilesDelta implements IDelta {
         public Tuples._2<IFile, String> select(IFile f) {
           return MultiTuple.<IFile,String>from(f, DirUtil.normalize(f.getPath()));
         }
-      }).sort(new ISelector<Tuples._2<IFile, String>, Comparable<?>>() {
-        public Comparable<?> select(Tuples._2<IFile, String> t) {
+      }).sort(new ISelector<Tuples._2<IFile, String>, String>() {
+        public String select(Tuples._2<IFile, String> t) {
           return t._1();
         }
       }, true)) {

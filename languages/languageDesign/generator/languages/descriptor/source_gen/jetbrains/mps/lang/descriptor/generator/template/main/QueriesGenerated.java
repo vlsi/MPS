@@ -306,8 +306,8 @@ public class QueriesGenerated {
         }
         return ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.generator.structure.TemplateSwitch")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.generator.structure.MappingConfiguration")).isNotEmpty();
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "qualifiedName");
       }
     }, true);
@@ -326,8 +326,8 @@ public class QueriesGenerated {
           ModelContentUtil.getUsedLanguageNamespaces(m.getSModel(), true)
         );
       }
-    }).distinct().sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
+    }).distinct().sort(new ISelector<String, String>() {
+      public String select(String it) {
         return it;
       }
     }, true).select(new ISelector<String, SNode>() {

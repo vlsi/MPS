@@ -116,8 +116,8 @@ public class ReportModelMergeProblem_Action extends BaseAction {
         ReportModelMergeProblem_Action.this.showNoBackupsAvailable(_params);
       } else {
         List<File> zipFiles = Arrays.asList(listFiles);
-        String[] zipNames = ListSequence.fromList(zipFiles).sort(new ISelector<File, Comparable<?>>() {
-          public Comparable<?> select(File f) {
+        String[] zipNames = ListSequence.fromList(zipFiles).sort(new ISelector<File, Long>() {
+          public Long select(File f) {
             return f.lastModified();
           }
         }, false).select(new ISelector<File, String>() {

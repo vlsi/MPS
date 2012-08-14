@@ -143,8 +143,8 @@ public class Module_Behavior {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
     }).distinct().toListSequence(), true);
-    return ListSequence.fromList(pathHolders).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(pathHolders).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
     }, true).toListSequence();

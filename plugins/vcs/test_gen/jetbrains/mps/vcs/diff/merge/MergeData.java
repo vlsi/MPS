@@ -154,14 +154,14 @@ public class MergeData {
 
   private static String dumpChangeSet(ChangeSet changeSet, MergeSession session) {
     StringBuffer buf = new StringBuffer();
-    for (ModelChange change : ListSequence.fromList(changeSet.getModelChanges()).sort(new ISelector<ModelChange, Comparable<?>>() {
-      public Comparable<?> select(ModelChange c) {
+    for (ModelChange change : ListSequence.fromList(changeSet.getModelChanges()).sort(new ISelector<ModelChange, String>() {
+      public String select(ModelChange c) {
         return c.toString();
       }
     }, true)) {
       buf.append(change).append("\n");
-      for (ModelChange conflicting : Sequence.fromIterable(session.getConflictedWith(change)).sort(new ISelector<ModelChange, Comparable<?>>() {
-        public Comparable<?> select(ModelChange c) {
+      for (ModelChange conflicting : Sequence.fromIterable(session.getConflictedWith(change)).sort(new ISelector<ModelChange, String>() {
+        public String select(ModelChange c) {
           return c.toString();
         }
       }, true)) {

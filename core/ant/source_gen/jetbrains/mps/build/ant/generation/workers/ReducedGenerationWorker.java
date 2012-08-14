@@ -371,8 +371,8 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         public String select(String dir) {
           return DirUtil.normalizeAsDir(dir);
         }
-      }).sort(new ISelector<String, Comparable<?>>() {
-        public Comparable<?> select(String dir) {
+      }).sort(new ISelector<String, String>() {
+        public String select(String dir) {
           return dir;
         }
       }, true).toGenericArray(String.class);

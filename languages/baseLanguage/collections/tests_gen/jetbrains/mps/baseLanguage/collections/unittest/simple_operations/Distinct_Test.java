@@ -29,8 +29,8 @@ public class Distinct_Test extends TestCase {
       }
     }).count(), 1);
     Assert.assertEquals(Sequence.fromIterable(source).count(), 5);
-    source = Sequence.fromIterable(source).sort(new ISelector<Integer, Comparable<?>>() {
-      public Comparable<?> select(Integer it) {
+    source = Sequence.fromIterable(source).sort(new ISelector<Integer, Integer>() {
+      public Integer select(Integer it) {
         return it;
       }
     }, true);
@@ -112,8 +112,8 @@ __switch__:
       }
     }).count(), 1);
     Assert.assertEquals(Sequence.fromIterable(source).count(), 5);
-    source = Sequence.fromIterable(source).sort(new ISelector<Integer, Comparable<?>>() {
-      public Comparable<?> select(Integer it) {
+    source = Sequence.fromIterable(source).sort(new ISelector<Integer, Integer>() {
+      public Integer select(Integer it) {
         return it;
       }
     }, true);

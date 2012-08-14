@@ -109,7 +109,6 @@
   <dependency className="jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker" file="ReducedGenerationWorker.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />

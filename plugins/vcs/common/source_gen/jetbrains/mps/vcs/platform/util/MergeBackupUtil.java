@@ -133,8 +133,8 @@ public class MergeBackupUtil {
         return name.contains(modelFileName) && name.endsWith(".zip");
       }
     });
-    return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, Comparable<?>>() {
-      public Comparable<?> select(File f) {
+    return Sequence.fromIterable(Sequence.fromArray(files)).sort(new ISelector<File, String>() {
+      public String select(File f) {
         return f.getName();
       }
     }, false);

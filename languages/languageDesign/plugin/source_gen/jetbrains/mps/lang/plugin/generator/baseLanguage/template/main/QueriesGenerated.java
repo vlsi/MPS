@@ -1398,8 +1398,8 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange");
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(it, "action", false));
       }
     }, true);
@@ -1414,8 +1414,8 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "action", false), "constructionParameter", true)).isEmpty();
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(it, "action", false));
       }
     }, true);
@@ -1430,8 +1430,8 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.SimpleShortcutChange") && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(it, "action", false), "constructionParameter", true)).isNotEmpty();
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(it, "action", false));
       }
     }, true);
@@ -1442,8 +1442,8 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange");
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(it, "action", false));
       }
     }, true);
@@ -1553,8 +1553,8 @@ public class QueriesGenerated {
         }
         return actions;
       }
-    }).distinct().sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).distinct().sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return ActionDeclaration_Behavior.call_getGeneratedName_1213877371942(it);
       }
     }, true);
@@ -1569,8 +1569,8 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SLinkOperations.getTarget(it, "group", false);
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(it);
       }
     }, true).translate(new ITranslator2<SNode, SNode>() {
@@ -1643,8 +1643,8 @@ public class QueriesGenerated {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.lang.plugin.structure.InterfaceGroup");
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(it);
       }
     }, true);

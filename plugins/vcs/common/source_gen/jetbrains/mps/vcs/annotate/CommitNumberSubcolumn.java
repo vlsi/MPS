@@ -14,8 +14,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.awt.FontMetrics;
 import java.util.Date;
+import java.awt.FontMetrics;
 
 public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
   private FileAnnotation myFileAnnotation;
@@ -42,13 +42,13 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
       public VcsRevisionNumber select(Integer fl) {
         return myFileAnnotation.getLineRevisionNumber(fl);
       }
-    }))).sort(new ISelector<VcsRevisionNumber, Comparable<?>>() {
-      public Comparable<?> select(VcsRevisionNumber rn) {
+    }))).sort(new ISelector<VcsRevisionNumber, Date>() {
+      public Date select(VcsRevisionNumber rn) {
         return MapSequence.fromMap(revisionNumberToRevision).get(rn).getRevisionDate();
       }
     }, true).toListSequence();
-    revisionNumbers = ListSequence.fromList(revisionNumbers).sort(new ISelector<VcsRevisionNumber, Comparable<?>>() {
-      public Comparable<?> select(VcsRevisionNumber rn) {
+    revisionNumbers = ListSequence.fromList(revisionNumbers).sort(new ISelector<VcsRevisionNumber, Date>() {
+      public Date select(VcsRevisionNumber rn) {
         return check_efout7_a0a0a0a0f0b(MapSequence.fromMap(revisionNumberToRevision).get(rn));
       }
     }, true).toListSequence();

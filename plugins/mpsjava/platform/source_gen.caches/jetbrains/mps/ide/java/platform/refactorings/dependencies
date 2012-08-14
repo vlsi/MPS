@@ -20,7 +20,6 @@
     <classNode dependClassName="com.intellij.ui.treeStructure.SimpleTree" />
     <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.HeadlessException" />
-    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

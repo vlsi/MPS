@@ -100,8 +100,8 @@ public class DebugInfo {
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, Comparable<?>>() {
-      public Comparable<?> select(TraceablePositionInfo it) {
+    Iterable<TraceablePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<TraceablePositionInfo, TraceablePositionInfo>() {
+      public TraceablePositionInfo select(TraceablePositionInfo it) {
         return it;
       }
     }, true);
@@ -118,8 +118,8 @@ public class DebugInfo {
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<ScopePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<ScopePositionInfo, Comparable<?>>() {
-      public Comparable<?> select(ScopePositionInfo it) {
+    Iterable<ScopePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<ScopePositionInfo, ScopePositionInfo>() {
+      public ScopePositionInfo select(ScopePositionInfo it) {
         return it;
       }
     }, true);
@@ -157,8 +157,8 @@ public class DebugInfo {
   public List<UnitPositionInfo> getUnitsForNode(final String nodeId) {
     return Sequence.fromIterable(MapSequence.fromMap(myRoots).values()).translate(new ITranslator2<DebugInfoRoot, UnitPositionInfo>() {
       public Iterable<UnitPositionInfo> translate(DebugInfoRoot it) {
-        return SetSequence.fromSet(it.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
-          public Comparable<?> select(UnitPositionInfo position) {
+        return SetSequence.fromSet(it.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Integer>() {
+          public Integer select(UnitPositionInfo position) {
             return position.getStartLine();
           }
         }, false);
@@ -181,8 +181,8 @@ public class DebugInfo {
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
-      public Comparable<?> select(UnitPositionInfo it) {
+    Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Integer>() {
+      public Integer select(UnitPositionInfo it) {
         return it.getStartLine();
       }
     }, false);
@@ -201,8 +201,8 @@ public class DebugInfo {
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Comparable<?>>() {
-      public Comparable<?> select(UnitPositionInfo it) {
+    Iterable<UnitPositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Integer>() {
+      public Integer select(UnitPositionInfo it) {
         return it.getStartLine();
       }
     }, false);
@@ -230,8 +230,8 @@ public class DebugInfo {
         ListSequence.fromList(resultList).addElement(element);
       }
     }
-    return ListSequence.fromList(resultList).sort(new ISelector<T, Comparable<?>>() {
-      public Comparable<?> select(T it) {
+    return ListSequence.fromList(resultList).sort(new ISelector<T, Integer>() {
+      public Integer select(T it) {
         return it.getStartLine();
       }
     }, false).toListSequence();

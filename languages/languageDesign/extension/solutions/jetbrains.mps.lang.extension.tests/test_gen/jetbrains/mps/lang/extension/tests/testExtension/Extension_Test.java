@@ -50,8 +50,8 @@ public class Extension_Test extends TestCase {
 
   @MPSLaunch
   public void test_extensionPointExpression() throws Exception {
-    String string = IterableUtils.join(Sequence.fromIterable(ExtensionPoint.<String>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.multiExtensionPoint", String.class)).getObjects()).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
+    String string = IterableUtils.join(Sequence.fromIterable(ExtensionPoint.<String>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.multiExtensionPoint", String.class)).getObjects()).sort(new ISelector<String, String>() {
+      public String select(String it) {
         return it;
       }
     }, false), ", ");
