@@ -37,10 +37,17 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ApiMigrationHelper {
-  public ApiMigrationHelper() {
+  private MPSProject p;
+  private Project ip;
+  private IScope scope;
+
+  public ApiMigrationHelper(MPSProject p, Project ip, IScope scope) {
+    this.p = p;
+    this.ip = ip;
+    this.scope = scope;
   }
 
-  public void migrate(MPSProject p, Project ip, IScope scope) {
+  public void migrate() {
     SNode oldSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0a0().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     final SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a1a0().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
 
@@ -84,7 +91,7 @@ public class ApiMigrationHelper {
     Set<SNode> methods = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(methods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldSnodeNode, "method", true)));
 
-    Set<SReference> musages = FindUsagesManager.getInstance().findUsages(methods, SearchType.USAGES, p.getScope(), new EmptyProgressMonitor());
+    Set<SReference> musages = FindUsagesManager.getInstance().findUsages(methods, SearchType.USAGES, scope, new EmptyProgressMonitor());
 
     final Set<Tuples._3<SNode, SReference, SReference>> changedMethodCalls = SetSequence.fromSet(new HashSet<Tuples._3<SNode, SReference, SReference>>());
     final Set<SNode> castedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
@@ -114,7 +121,7 @@ public class ApiMigrationHelper {
     Set<SNode> smethods = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(smethods).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldSnodeNode, "staticMethod", true)));
 
-    Set<SReference> smusages = FindUsagesManager.getInstance().findUsages(smethods, SearchType.USAGES, p.getScope(), new EmptyProgressMonitor());
+    Set<SReference> smusages = FindUsagesManager.getInstance().findUsages(smethods, SearchType.USAGES, scope, new EmptyProgressMonitor());
 
     for (SReference ref : SetSequence.fromSet(smusages)) {
       SNode rNode = ref.getSourceNode();
@@ -183,11 +190,63 @@ public class ApiMigrationHelper {
         return !(it.getObject().isDetached());
       }
     }).toListSequence()), false, "usages");
+  }
+
+  public void replaceSNodeMethods() {
+    Set<SNode> method = SetSequence.fromSetAndArray(new HashSet<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiMigrationHelper.QuotationClass_yke5lt_a0a0b0a0a1().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false));
+
+    Set<SReference> musages = FindUsagesManager.getInstance().findUsages(method, SearchType.USAGES, scope, new EmptyProgressMonitor());
+
+    Set<SNode> unknown = SetSequence.fromSet(new HashSet<SNode>());
+    final Set<SNode> known = SetSequence.fromSet(new HashSet<SNode>());
+
+    for (SReference usage : SetSequence.fromSet(musages)) {
+      SNode n = usage.getSourceNode();
+      if (!(SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"))) {
+        SetSequence.fromSet(unknown).addElement(n);
+        continue;
+      }
+
+      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(n), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
+        SetSequence.fromSet(unknown).addElement(n);
+        continue;
+      }
+
+      SetSequence.fromSet(known).addElement(n);
+    }
+
+    Iterable<SearchResult<SNode>> results = SetSequence.fromSet(unknown).select(new ISelector<SNode, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(SNode it) {
+        return new SearchResult<SNode>(it, "unknown usages");
+      }
+    }).union(SetSequence.fromSet(known).select(new ISelector<SNode, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(SNode it) {
+        return new SearchResult<SNode>(it, "getConceptFqName->getConcept().getQualifiedName()");
+      }
+    }));
+
+    ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
+      public void performAction(RefactoringViewItem refactoringViewItem) {
+        refactoringViewItem.close();
+
+        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+          public void run() {
+            for (SNode usage : SetSequence.fromSet(known)) {
+              SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0a0a0a2a0a0b0a11a1().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)));
+            }
+          }
+        });
+      }
+    }, new SearchResults(method, Sequence.fromIterable(results).where(new IWhereFilter<SearchResult<SNode>>() {
+      public boolean accept(SearchResult<SNode> it) {
+        return !(it.getObject().isDetached());
+      }
+    }).toListSequence()), false, "usages");
 
   }
 
   public SNode getNewMethod(SNode old) {
-    SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0a1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
+    SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0a2().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(newSnodeNode, "method", true))) {
       if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, old)) {
         return method;
@@ -288,8 +347,97 @@ public class ApiMigrationHelper {
     }
   }
 
-  public static class QuotationClass_yke5lt_a0a0a0a1 {
-    public QuotationClass_yke5lt_a0a0a0a1() {
+  public static class QuotationClass_yke5lt_a0a0b0a0a1 {
+    public QuotationClass_yke5lt_a0a0b0a0a1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_2;
+          {
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_7 = quotedNode_4;
+            quotedNode1_7.addReference(SReference.create("baseMethodDeclaration", quotedNode1_7, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.<init>(jetbrains.mps.smodel.SModel,java.lang.String)")));
+            quotedNode_2.addChild("creator", quotedNode1_7);
+          }
+          quotedNode_1.addChild("operand", quotedNode1_6);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_3;
+          quotedNode1_8.addReference(SReference.create("baseMethodDeclaration", quotedNode1_8, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getConceptFqName():java.lang.String")));
+          quotedNode_1.addChild("operation", quotedNode1_8);
+        }
+        result = quotedNode1_5;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_yke5lt_a0a0a0a0a0a2a0a0b0a11a1 {
+    public QuotationClass_yke5lt_a0a0a0a0a0a2a0a0b0a11a1() {
+    }
+
+    public SNode createNode(Object parameter_12) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_2;
+          {
+            quotedNode_4 = (SNode) parameter_12;
+            SNode quotedNode1_9;
+            if (_parameterValues_129834374.contains(quotedNode_4)) {
+              quotedNode1_9 = HUtil.copyIfNecessary(quotedNode_4);
+            } else {
+              _parameterValues_129834374.add(quotedNode_4);
+              quotedNode1_9 = quotedNode_4;
+            }
+            if (quotedNode1_9 != null) {
+              quotedNode_2.addChild("operand", HUtil.copyIfNecessary(quotedNode1_9));
+            }
+          }
+          {
+            quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
+            SNode quotedNode1_10 = quotedNode_5;
+            quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getConcept():org.jetbrains.mps.openapi.language.SConcept")));
+            quotedNode_2.addChild("operation", quotedNode1_10);
+          }
+          quotedNode_1.addChild("operand", quotedNode1_8);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
+          SNode quotedNode1_11 = quotedNode_3;
+          quotedNode1_11.addReference(SReference.create("baseMethodDeclaration", quotedNode1_11, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.language(MPS.Core/org.jetbrains.mps.openapi.language@java_stub)"), SNodeId.fromString("~SAbstractConcept.getQualifiedName():java.lang.String")));
+          quotedNode_1.addChild("operation", quotedNode1_11);
+        }
+        result = quotedNode1_7;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_yke5lt_a0a0a0a2 {
+    public QuotationClass_yke5lt_a0a0a0a2() {
     }
 
     public SNode createNode() {

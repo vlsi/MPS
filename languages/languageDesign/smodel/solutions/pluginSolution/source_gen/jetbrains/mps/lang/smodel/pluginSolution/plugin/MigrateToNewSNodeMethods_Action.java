@@ -15,12 +15,12 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 
-public class MigrateToOpenAPI_Action extends BaseAction {
+public class MigrateToNewSNodeMethods_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MigrateToOpenAPI_Action.class);
+  protected static Log log = LogFactory.getLog(MigrateToNewSNodeMethods_Action.class);
 
-  public MigrateToOpenAPI_Action() {
-    super("Migrate to node/model/module OpenAPI", "", ICON);
+  public MigrateToNewSNodeMethods_Action() {
+    super("Migrate to new SNode methods", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -35,7 +35,7 @@ public class MigrateToOpenAPI_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MigrateToOpenAPI", t);
+        log.error("User's action doUpdate method failed. Action:" + "MigrateToNewSNodeMethods", t);
       }
       this.disable(event.getPresentation());
     }
@@ -58,10 +58,10 @@ public class MigrateToOpenAPI_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).migrate();
+      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).replaceSNodeMethods();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MigrateToOpenAPI", t);
+        log.error("User's action execute method failed. Action:" + "MigrateToNewSNodeMethods", t);
       }
     }
   }

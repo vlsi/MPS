@@ -14,6 +14,7 @@ public class Migration30_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(true);
     try {
+      Migration30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToNewSNodeMethods_Action");
       Migration30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToOpenAPI_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
