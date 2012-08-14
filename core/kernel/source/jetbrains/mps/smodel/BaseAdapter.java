@@ -97,14 +97,6 @@ public abstract class BaseAdapter implements INodeAdapter {
     return null;
   }
 
-  public INodeAdapter findParent(final Condition<INodeAdapter> ba) {
-    return BaseAdapter.fromNode(myNode.findParent(new Condition<SNode>() {
-      public boolean met(SNode object) {
-        return ba.met(BaseAdapter.fromNode(object));
-      }
-    }));
-  }
-
   public INodeAdapter findFirstParent(Class[] classes) {
     INodeAdapter node = this;
     INodeAdapter parent = node.getParent();

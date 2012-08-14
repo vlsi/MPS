@@ -63,9 +63,6 @@ public interface INodeAdapter {
   <BA extends  INodeAdapter> BA getParent(Class<BA> cls, boolean checkThis);
 
   @Deprecated
-  INodeAdapter findParent(Condition<INodeAdapter> ba);
-
-  @Deprecated
   INodeAdapter findFirstParent(Class[] classes);
 
   @Deprecated
