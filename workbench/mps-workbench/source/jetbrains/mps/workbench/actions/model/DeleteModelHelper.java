@@ -15,10 +15,6 @@
  */
 package jetbrains.mps.workbench.actions.model;
 
-import com.intellij.ide.DataManager;
-import com.intellij.openapi.actionSystem.ActionPlaces;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ModelUsagesFinder;
@@ -26,6 +22,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.messages.Message;
@@ -36,14 +33,9 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.framework.*;
-import jetbrains.mps.refactoring.framework.RefactoringUtil.Applicability;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.ActionUtils;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
@@ -95,33 +87,22 @@ public class DeleteModelHelper {
   }
 
   public static void safeDelete(final Project project, final SModelDescriptor modelDescriptor, boolean deleteFiles) {
-    IRefactoring ref = OldRefactoringAdapter.createAdapterFor(new SafeDeleteModelRefactoring(deleteFiles));
-    GenericRefactoringAction safeDeleteAction = new GenericRefactoringAction(ref) {
-      protected Applicability getMinApplicabilityLevel() {
-        return Applicability.OVERRIDDEN;
-      }
-    };
-
-    DataContext dc = new DataContext() {
-      private DataContext myRealContext = DataManager.getInstance().getDataContext();
-
-      @Nullable
-      public Object getData(@NonNls String dataId) {
-        if (dataId.equals(MPSDataKeys.PROJECT.getName())) return project;
-        else if (dataId.equals(MPSDataKeys.CONTEXT_MODEL.getName())) return modelDescriptor;
-        else if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) {
-          Object operationContext = myRealContext.getData(dataId);
-          if (operationContext == null) {
-            operationContext = new ProjectOperationContext(ProjectHelper.toMPSProject(project));
-          }
-          return operationContext;
+    IRefactoring ref = new SafeDeleteModelRefactoring(deleteFiles);
+    final RefactoringContext context = new RefactoringContext(ref);
+    context.setSelectedModel(modelDescriptor);
+    context.setSelectedModule(modelDescriptor.getModule());
+    context.setSelectedProject(ProjectHelper.toMPSProject(project));
+    context.setCurrentOperationContext(new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (!(modelDescriptor.isRegistered())){
+          return;
         }
-        else return myRealContext.getData(dataId);
+        RefactoringAccess.getInstance().getRefactoringFacade().execute(context);
       }
-    };
+    });
 
-    AnActionEvent event = ActionUtils.createEvent(ActionPlaces.UNKNOWN, dc);
-    ActionUtils.updateAndPerformAction(safeDeleteAction, event);
   }
 
   private static boolean deleteModelFromLanguage(Language language, SModelDescriptor modelDescriptor) {
@@ -141,42 +122,39 @@ public class DeleteModelHelper {
     generator.deleteReferenceFromPriorities(modelDescriptor.getSModelReference());
   }
 
-  private static class SafeDeleteModelRefactoring extends AbstractLoggableRefactoring {
+  private static class SafeDeleteModel_Target implements IRefactoringTarget {
+    public IRefactoringTarget.TargetType getTarget() {
+      return TargetType.MODEL;
+    }
+
+    public boolean allowMultipleTargets() {
+      return false;
+    }
+
+    public boolean isApplicable(final Object entity) {
+      return true;
+    }
+  }
+
+  private static class SafeDeleteModelRefactoring extends BaseRefactoring {
     private boolean myDeleteFiles;
 
     public SafeDeleteModelRefactoring(boolean deleteFiles) {
       myDeleteFiles = deleteFiles;
     }
 
+    @Override
     public String getUserFriendlyName() {
       return "Delete model";
     }
 
-    public RefactoringTarget getRefactoringTarget() {
-      return RefactoringTarget.MODEL;
+    @Override
+    public IRefactoringTarget getRefactoringTarget() {
+      return new SafeDeleteModel_Target();
     }
 
-    public boolean isApplicableToModel() {
-      return true;
-    }
-
-    public boolean isApplicableToModel(SModelDescriptor model) {
-      return true;
-    }
-
-    public boolean refactorImmediatelyIfNoUsages() {
-      return true;
-    }
-
-    public boolean doesUpdateModel() {
-      return false;
-    }
-
-    public boolean showsAffectedNodes() {
-      return true;
-    }
-
-    public void doRefactor(RefactoringContext refactoringContext) {
+    @Override
+    public void refactor(RefactoringContext refactoringContext) {
       SModelDescriptor modelDescriptor = refactoringContext.getSelectedModel();
       Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
       for (ModelOwner modelOwner : owners) {
@@ -185,13 +163,13 @@ public class DeleteModelHelper {
           continue;
         }
         if ((IModule) modelOwner instanceof Language) {
-          deleteModelFromLanguage((Language) modelOwner, modelDescriptor);
+          deleteModelFromLanguage((Language) (IModule) modelOwner, modelDescriptor);
         } else if ((IModule) modelOwner instanceof Solution) {
-          deleteModelFromSolution((Solution) modelOwner, modelDescriptor);
+          deleteModelFromSolution((Solution) (IModule) modelOwner, modelDescriptor);
         } else if ((IModule) modelOwner instanceof Generator) {
-          deleteModelFromGenerator((Generator) modelOwner, modelDescriptor);
+          deleteModelFromGenerator((Generator) (IModule) modelOwner, modelDescriptor);
         } else {
-          LOG.warning("Module type " + (modelOwner).getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+          LOG.warning("Module type " + ((IModule) modelOwner).getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
         }
       }
 
@@ -205,8 +183,17 @@ public class DeleteModelHelper {
       if (myDeleteFiles) {
         SModelRepository.getInstance().deleteModel(modelDescriptor);
       }
+
+      //todo: check correctness - they are not ALL model owners
+      for (ModelOwner modelOwner : owners) {
+        if (modelOwner instanceof IModule) {
+          ((IModule) modelOwner).save();
+        }
+      }
     }
 
+
+    @Override
     public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
       SearchQuery searchQuery = new SearchQuery(refactoringContext.getSelectedModel().getSModel(), GlobalScope.getInstance());
       return FindUtils.getSearchResults(new EmptyProgressMonitor(), searchQuery, new ModelUsagesFinder());
