@@ -224,7 +224,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
     private int myTopInset;
     private int myBottomInset;
     private boolean myOverflow;
+    private int myLineIndent = 0;
     private List<EditorCell> myLineContent = new ArrayList<EditorCell>();
+    private List<Integer> myLineWrapIndent = new ArrayList<Integer>();
     private int myIndentSize;
 
     private Stack<Integer> myIndentStack = new Stack<Integer>();
@@ -299,8 +301,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private void layoutCollection(final EditorCell_Collection collection) {
-      boolean hasIndent = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT);
-      boolean hasAnchor = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR);
+      boolean hasIndent = collection != myCell && collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT);
+      boolean hasAnchor = collection != myCell && collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR);
       boolean hasWrapAnchor = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR);
 
       int indent = hasIndent ? myCurrentIndent + myIndentSize :
@@ -361,6 +363,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private void appendCell(EditorCell cell) {
       if (myLineContent.isEmpty()) {
+        myLineIndent = myCurrentIndent;
         indent();
       }
 
@@ -377,6 +380,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myLineWidth += cell.getWidth();
 
       myLineContent.add(cell);
+      myLineWrapIndent.add(myCurrentIndentAfterWrap);
     }
 
     private void indent() {
@@ -405,6 +409,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
       myTopInset = 0;
       myBottomInset = 0;
       myLineContent.clear();
+      myLineWrapIndent.clear();
     }
 
     private boolean haveToSplit() {
@@ -499,22 +504,27 @@ public class CellLayout_Indent extends AbstractCellLayout {
       int index = myLineContent.indexOf(splitAt);
       if (index == -1) throw new IllegalStateException();
 
-      List<EditorCell> oldLine = new ArrayList<EditorCell>(myLineContent.subList(0, index));
-      List<EditorCell> newLine = new ArrayList<EditorCell>(myLineContent.subList(index, myLineContent.size()));
+      final List<EditorCell> oldLine = new ArrayList<EditorCell>(myLineContent.subList(0, index));
+      final List<EditorCell> newLine = new ArrayList<EditorCell>(myLineContent.subList(index, myLineContent.size()));
 
-      resetLine();
+      withIndent(myLineIndent, myLineWrapIndent.get(index), new Runnable() {
+        @Override
+        public void run() {
+          resetLine();
 
-      for (EditorCell cell : oldLine) {
-        appendCell(cell);
-      }
+          for (EditorCell cell : oldLine) {
+            appendCell(cell);
+          }
 
-      if (!oldLine.isEmpty()) {
-        newLine(true);
-      }
+          if (!oldLine.isEmpty()) {
+            newLine(true);
+          }
 
-      for (EditorCell cell : newLine) {
-        appendCell(cell);
-      }
+          for (EditorCell cell : newLine) {
+            appendCell(cell);
+          }
+        }
+      });
     }
   }
 

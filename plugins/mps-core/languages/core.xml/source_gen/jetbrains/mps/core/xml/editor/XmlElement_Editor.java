@@ -84,6 +84,8 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR, true);
     }
     editorCell.addEditorCell(this.createRefNodeList_vc3gub_a2a(editorContext, node));
     return editorCell;
