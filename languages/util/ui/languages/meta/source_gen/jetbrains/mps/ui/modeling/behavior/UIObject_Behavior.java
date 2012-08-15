@@ -101,8 +101,8 @@ __switch__:
       public boolean accept(SNode tpl) {
         return ListSequence.fromList(ael).contains(SLinkOperations.getTarget(tpl, "uiObject", false));
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode tpl) {
+    }).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode tpl) {
         return ListSequence.fromList(ael).indexOf(SLinkOperations.getTarget(tpl, "uiObject", false));
       }
     }, true).first();

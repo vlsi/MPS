@@ -141,8 +141,8 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1206456525472(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration")).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(it, "conceptDeclaration", false));
       }
     }, true);

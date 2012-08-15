@@ -47,6 +47,9 @@ public class DoNotSuppressErrors_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("node", event.getData(MPSCommonDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("node") == null) {
+      return false;
+    }
     return true;
   }
 

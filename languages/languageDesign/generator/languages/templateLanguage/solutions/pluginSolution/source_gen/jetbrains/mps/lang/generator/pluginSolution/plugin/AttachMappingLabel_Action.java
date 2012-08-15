@@ -109,7 +109,13 @@ public class AttachMappingLabel_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("nodeSelected", event.getData(MPSCommonDataKeys.NODE));
+    if (MapSequence.fromMap(_params).get("nodeSelected") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
+    if (MapSequence.fromMap(_params).get("editorContext") == null) {
+      return false;
+    }
     return true;
   }
 

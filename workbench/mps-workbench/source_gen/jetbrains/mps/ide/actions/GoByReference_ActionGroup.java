@@ -19,7 +19,8 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.annotations.Nullable;
 
 public class GoByReference_ActionGroup extends GeneratedActionGroup {
@@ -30,7 +31,6 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
 
   public GoByReference_ActionGroup() {
     super("Go by Reference", ID);
-    this.setIsAlwaysVisible(false);
     this.setIsInternal(false);
     this.setPopup(true);
     try {
@@ -52,37 +52,44 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
 
       List<SReference> refs = node.getReferences();
       if (ListSequence.fromList(refs).isEmpty()) {
-        GoByReference_ActionGroup.this.add(new StringAction("No References"));
+        GoByReference_ActionGroup.this.disable(event.getPresentation());
         return;
       }
 
-      boolean onlyBad = true;
       for (SReference ref : ListSequence.fromList(refs)) {
         SNode targetNode = ref.getTargetNode();
         if (targetNode != null) {
-          String text = "[" + ref.getRole() + "]" + targetNode.getDebugText();
+          String text = "[" + ref.getRole() + "] -> " + ref.getResolveInfo();
           GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(targetNode), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(targetNode), text);
-          onlyBad = false;
           continue;
         }
 
-        String text = "Bad reference: [" + ref.getRole() + "]" + ref.getResolveInfo();
+        final SReference finalRef = ref;
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          public void run() {
+            String text = "Bad reference: [" + finalRef.getRole() + "] -> " + finalRef.getResolveInfo();
 
-        Resolver.resolve1(ref, context);
-        String role = ref.getRole();
-        SNode sourceNode = ref.getSourceNode();
-        SReference newRef = sourceNode.getReference(role);
-        assert newRef != null;
-        targetNode = ref.getTargetNode();
-        if (targetNode == null) {
-          return;
-        }
+            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+              public void run() {
+                ResolverComponent.getInstance().resolve(finalRef, context);
+              }
+            }, context.getProject());
+            String role = finalRef.getRole();
+            SNode sourceNode = finalRef.getSourceNode();
+            SReference newRef = sourceNode.getReference(role);
+            if (newRef == null) {
+              return;
+            }
+            // <node> 
+            SNode newTarget = finalRef.getTargetNode();
+            if (newTarget == null) {
+              return;
+            }
 
-        GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(targetNode), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(targetNode), text);
-      }
+            GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(newTarget), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(newTarget), text);
+          }
+        });
 
-      if (onlyBad) {
-        GoByReference_ActionGroup.this.add(new StringAction("(Only Bad References)"));
       }
     } catch (Throwable t) {
       LOG.error("User group error", t);

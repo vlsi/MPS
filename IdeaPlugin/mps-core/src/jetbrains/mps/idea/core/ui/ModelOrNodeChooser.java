@@ -37,6 +37,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.idea.core.projectView.MPSProjectViewNode;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.IFile;
 
@@ -128,7 +129,7 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
     } else {
       Set<IFile> models = MPSDataKeys.MODEL_FILES.getData(this);
       if (models != null && models.size() == 1) {
-        return SModelRepository.getInstance().findModel(models.iterator().next());
+        return SModelFileTracker.getInstance().findModel(models.iterator().next());
       }
     }
     return null;

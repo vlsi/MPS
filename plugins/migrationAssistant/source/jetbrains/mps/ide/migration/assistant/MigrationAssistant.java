@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.migration.assistant;
 
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.impl.LaterInvocator;
 import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
@@ -23,6 +25,8 @@ import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.AsyncResult;
 import com.intellij.openapi.util.AsyncResult.Handler;
+import com.intellij.openapi.wm.IdeFrame;
+import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.project.MPSProjectMigrationState;
 
 /**
@@ -62,20 +66,25 @@ public class MigrationAssistant extends AbstractProjectComponent {
   private void initiateMigration(final MPSProjectMigrationState migrationState) {
     StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
       public void run() {
-        MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject);
-        AsyncResult<Boolean> result = wizard.showAndGetOk();
-        result.doWhenDone(new Handler<Boolean>() {
+        LaterInvocator.invokeLater(new Runnable() {
           @Override
-          public void run(Boolean ok) {
-            if (ok) {
-              myMigrationState.migrationFinished();
-            }
-            else {
-              myMigrationState.migrationAborted();
-              forceCloseProject();
-            }
+          public void run() {
+            MigrationAssistantWizard wizard = new MigrationAssistantWizard(myProject);
+            AsyncResult<Boolean> result = wizard.showAndGetOk();
+            result.doWhenDone(new Handler<Boolean>() {
+              @Override
+              public void run(Boolean ok) {
+                if (ok) {
+                  myMigrationState.migrationFinished();
+                }
+                else {
+                  myMigrationState.migrationAborted();
+                  forceCloseProject();
+                }
+              }
+            });
           }
-        });
+        }, ModalityState.NON_MODAL);
       }
     });
   }

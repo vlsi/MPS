@@ -16,9 +16,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.ui.Messages;
@@ -79,10 +78,8 @@ public class OptimizeProjectImports_Action extends BaseAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           report.value = new OptimizeImportsHelper(((IOperationContext) MapSequence.fromMap(_params).get("context"))).optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
-          for (IModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules())) {
-            module.save();
-          }
           SModelRepository.getInstance().saveAll();
+          MPSModuleRepository.getInstance().saveAll();
           ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
       });

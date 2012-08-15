@@ -315,8 +315,8 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1959471031855450829(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parts", true)).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode it) {
         return BwfProjectPart_Behavior.call_getPriority_2059109515400548718(it);
       }
     }, true);

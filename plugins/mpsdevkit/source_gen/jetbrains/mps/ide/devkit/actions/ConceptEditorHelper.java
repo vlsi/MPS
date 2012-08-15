@@ -67,8 +67,8 @@ public class ConceptEditorHelper {
   }
 
   public static List<SNode> sortRootsByConcept(List<SNode> roots, final SNode[] conceptOrder) {
-    return ListSequence.fromList(roots).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode root) {
+    return ListSequence.fromList(roots).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode root) {
         int conceptIndex = Sequence.fromIterable(Sequence.fromArray(conceptOrder)).indexOf(SNodeOperations.getConceptDeclaration(root));
         return (conceptIndex == -1 ?
           conceptOrder.length :

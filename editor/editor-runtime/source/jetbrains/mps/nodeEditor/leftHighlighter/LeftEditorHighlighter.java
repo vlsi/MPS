@@ -26,6 +26,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.TooltipComponent;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.EditorMessage;
@@ -54,6 +55,7 @@ import java.util.List;
  * This class should be called in UI (EventDispatch) thread only
  */
 public class LeftEditorHighlighter extends JComponent implements TooltipComponent {
+  private static final Logger LOG = Logger.getLogger(LeftEditorHighlighter.class);
   public static final String ICON_AREA = "LeftEditorHighlighterIconArea";
   private static final Color BACKGROUND_COLOR = Color.WHITE; // new Color(0xF0F0F0);
 
@@ -535,6 +537,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     EditorCell anchorCell = getAnchorCell(renderer);
     if (anchorCell == null || anchorCell.isUnderFolded()) {
       // no anchorCell 
+      return -1;
+    }
+    if (renderer.getIcon() == null) {
+      LOG.error("null icon was returned by renderer: " + renderer);
       return -1;
     }
     return anchorCell.getY() + anchorCell.getHeight() / 2 - renderer.getIcon().getIconHeight() / 2;

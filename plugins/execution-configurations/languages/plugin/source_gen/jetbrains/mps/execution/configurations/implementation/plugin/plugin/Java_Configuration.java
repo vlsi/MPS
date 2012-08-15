@@ -7,15 +7,12 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.lib.MultiConceptNode_Configuration;
+import jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
@@ -23,6 +20,7 @@ import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -46,19 +44,11 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
 
   @NotNull
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
-  private MultiConceptNode_Configuration myNode = new MultiConceptNode_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept");
-    }
-  }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.baseLanguage.structure.ClassConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_isRunnable_7941158526576616752", new Class[]{SNode.class}));
     }
-  }), MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.util.structure.IMainClass");
-    }
-  }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  }), MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.execution.util.structure.IMainClass", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_isNodeRunnable_4666195181811081448", new Class[]{SNode.class})) && Java_Command.isUnitNode(node);
     }
@@ -127,7 +117,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   }
 
-  public MultiConceptNode_Configuration getNode() {
+  public NodeBySeveralConcepts_Configuration getNode() {
     return myNode;
   }
 
@@ -141,7 +131,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     try {
       clone = createCloneTemplate();
       clone.myState = (Java_Configuration.MyState) myState.clone();
-      clone.myNode = (MultiConceptNode_Configuration) myNode.clone();
+      clone.myNode = (NodeBySeveralConcepts_Configuration) myNode.clone();
       clone.myRunParameters = (JavaRunParameters_Configuration) myRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {

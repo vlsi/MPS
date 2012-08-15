@@ -1,0 +1,21 @@
+SModel should contain current SModel, SModelDescriptor, SModelHeader
+references should not be resolvable by name
+all classes are prefixed with "S"
+ids are local and can't be obtained directly
+references are global and can be obtained directly
+L-parts are not reloadable, but hold reloadable entities inside of them
+
+MODULE
+    module is a vertex in a graph of dependencies
+
+MODEL
+    model is responsible for node ids inside of it
+    model has a name
+
+ROOT
+    a thing that can be opened in editor
+    a minimal thing that has own imports (models/lanqguages)
+    a miniamal thing to be persisted
+    a maximal thing to be generated as a whole (not absolute truth)
+
+

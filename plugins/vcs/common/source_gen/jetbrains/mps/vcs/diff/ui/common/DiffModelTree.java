@@ -79,8 +79,8 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       public DiffModelTree.RootTreeNode select(SNodeId r) {
         return new DiffModelTree.RootTreeNode(r);
       }
-    }).sort(new ISelector<DiffModelTree.RootTreeNode, Comparable<?>>() {
-      public Comparable<?> select(DiffModelTree.RootTreeNode rtn) {
+    }).sort(new ISelector<DiffModelTree.RootTreeNode, String>() {
+      public String select(DiffModelTree.RootTreeNode rtn) {
         return rtn.myVirtualPackage + "|" + rtn.myPresentation;
       }
     }, true).toListSequence();

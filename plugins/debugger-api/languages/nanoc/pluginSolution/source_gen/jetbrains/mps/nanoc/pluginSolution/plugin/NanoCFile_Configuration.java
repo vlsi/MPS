@@ -7,12 +7,9 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.lib.Node_Configuration;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
@@ -39,11 +36,7 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
 
   @NotNull
   private NanoCFile_Configuration.MyState myState = new NanoCFile_Configuration.MyState();
-  private Node_Configuration myNode = new Node_Configuration(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoc.structure.File");
-    }
-  }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.nanoc.structure.File", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode file) {
       return true;
     }
@@ -85,7 +78,7 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
     }
   }
 
-  public Node_Configuration getNode() {
+  public NodeByConcept_Configuration getNode() {
     return myNode;
   }
 
@@ -95,7 +88,7 @@ public class NanoCFile_Configuration extends BaseMpsRunConfiguration implements 
     try {
       clone = createCloneTemplate();
       clone.myState = (NanoCFile_Configuration.MyState) myState.clone();
-      clone.myNode = (Node_Configuration) myNode.clone();
+      clone.myNode = (NodeByConcept_Configuration) myNode.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       if (log.isErrorEnabled()) {

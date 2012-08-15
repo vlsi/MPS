@@ -10,7 +10,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.vfs.IFile;
 
 public class TextModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
   private SModel myModel = null;
@@ -45,10 +44,6 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     });
   }
 
-  public long lastChangeTime() {
-    return getSourceTimestamp();
-  }
-
   public boolean isChanged() {
     return isChanged;
   }
@@ -71,11 +66,6 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   @Deprecated
   public boolean isReadOnly() {
     return false;
-  }
-
-  @Deprecated
-  public IFile getModelFile() {
-    return null;
   }
 
   protected SModel getCurrentModelInternal() {

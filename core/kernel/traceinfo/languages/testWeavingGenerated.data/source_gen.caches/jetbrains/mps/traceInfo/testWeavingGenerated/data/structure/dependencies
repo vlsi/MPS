@@ -11,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEach" file="ChildConceptWeaveEach.java">
     <classNode dependClassName="java.lang.String" />
@@ -23,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEachMany" file="ChildConceptWeaveEachMany.java">
     <classNode dependClassName="java.lang.String" />
@@ -35,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany" file="ChildConceptWeaveMany.java">
     <classNode dependClassName="java.lang.String" />
@@ -47,6 +50,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.Data_Language" file="Data_Language.java">
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
@@ -68,6 +72,7 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveEachMany" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.ChildConceptWeaveMany" />
     <classNode extendsClassName="jetbrains.mps.lang.core.structure.BaseConcept" />
+    <classNode extendsClassName="jetbrains.mps.smodel.INodeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.structure.StructureAspectDescriptor" file="StructureAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />

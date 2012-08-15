@@ -11,7 +11,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
 import junit.framework.Assert;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.vfs.IFile;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -57,7 +56,7 @@ public class TransformationTestRunner {
         Assert.fail("MPS Project was not specfied in test class, no currently open project was not found");
       }
     } else {
-      test.setProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.mpsHomeMacros().expandPath(projectName, ((IFile) null))));
+      test.setProject(TestMain.PROJECT_CONTAINER.getProject(MacrosFactory.getGlobal().expandPath(projectName)));
     }
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {

@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
@@ -43,9 +42,6 @@ public class TemporaryModelOwner extends AbstractModule {
         MPSModuleRepository.getInstance().unregisterModule(TemporaryModelOwner.this, myOwner);
       }
     });
-  }
-
-  public void save() {
   }
 
   public String getTestsGeneratorOutputPath() {
@@ -93,14 +89,6 @@ public class TemporaryModelOwner extends AbstractModule {
       }
     }
     return result;
-  }
-
-  public void setModuleDescriptor(ModuleDescriptor descriptor, boolean b) {
-    throw new UnsupportedOperationException();
-  }
-
-  public ModuleDescriptor getModuleDescriptor() {
-    return null;
   }
 
   @NotNull

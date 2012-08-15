@@ -79,6 +79,8 @@ public class Solution extends ClassLoadingModule {
   }
 
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
+    super.setModuleDescriptor(newDescriptor,reloadClasses);
+
     mySolutionDescriptor = newDescriptor;
 
     ModuleReference mp;
@@ -104,6 +106,9 @@ public class Solution extends ClassLoadingModule {
   }
 
   public void save() {
+    super.save();
+    //do not save stub solutions (otherwise build model generation fails)
+    if (bootstrapCP.keySet().contains(this.getModuleReference())) return;
     SolutionDescriptorPersistence.saveSolutionDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 

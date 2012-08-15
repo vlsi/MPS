@@ -28,7 +28,6 @@
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Distinct_Test" file="Distinct_Test.java">
-    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -100,7 +99,6 @@
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.collections.unittest.simple_operations.Sort_Test1" file="Sort_Test1.java">
-    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />

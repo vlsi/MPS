@@ -273,6 +273,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     if (node == null) return null;
     TypeCheckingContext typeCheckingContext =
       TypeContextManager.getInstance().createTypeCheckingContext(node);
+    typeCheckingContext.setSingleTypeComputation(true);
     SNode type = typeCheckingContext.computeTypeInferenceMode(node);
     typeCheckingContext.dispose();
     return type;

@@ -17,10 +17,7 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GeneratorDescriptor extends ModuleDescriptor {
   private String myGeneratorUID;
@@ -32,7 +29,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   public GeneratorDescriptor() {
     super();
-    myDepGenerators = new HashSet<ModuleReference>();
+    myDepGenerators = new LinkedHashSet<ModuleReference>();
     myPriorityRules = new ArrayList<MappingPriorityRule>();
   }
 

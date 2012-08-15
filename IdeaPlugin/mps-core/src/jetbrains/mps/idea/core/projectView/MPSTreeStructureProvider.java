@@ -53,7 +53,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     final List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>(children);
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SModelDescriptor descr = SModelRepository.getInstance().findModel(modelFile);
+        SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
         if (descr == null) return;
 
         SModel model = descr.getSModel();
@@ -177,7 +177,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     if (modelFile == null) {
       return null;
     }
-    return SModelRepository.getInstance().findModel(modelFile);
+    return (EditableSModelDescriptor) SModelFileTracker.getInstance().findModel(modelFile);
   }
 
   private PasteProvider getPasteProvider(AbstractTreeNode selectedNode) {

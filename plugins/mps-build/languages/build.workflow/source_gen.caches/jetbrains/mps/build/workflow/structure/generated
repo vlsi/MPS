@@ -1,3 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ct28ply7vbiwguujdbc1vwgzyfm54vz" />
+<dependencies version="2" modelHash="-ct28ply7vbiwguujdbc1vwgzyfm54vz">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="40fki20iggmeflg09rdprq4uh7c14dz" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="3pfv61ztw43crdi9n56ftoapjvy39kp" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="blxmu8rmgzx7gubwmsko97hpym76qy9" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-7q0e0ta41zqyn24qiw0xxo8joahnwpc" />
+  <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="-bolxcoaal79lq471sfxfkvgg56i2qwu" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-85r5i70i4u8x1adugrvwd5h7xh90fy6" />
+  <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" hash="-ojqb8i1rga20yg4cb2pt0llgd3xsoh" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="cmd60507xhkoe4c48chqmcyr68ebp62" />
+  <common hash="784zwoltf7gh7btrmwjw1zh9hj04ipl" dependsOnNodes="true">
+    <dep root="144710003695346438" />
+    <dep root="144710003695507915" />
+    <dep root="2059109515400477499" />
+    <dep root="244868996532667532" />
+    <dep root="2769948622284546673" />
+    <dep root="2769948622284546675" />
+    <dep root="2769948622284546677" />
+    <dep root="2769948622284546695" />
+    <dep root="2769948622284574294" />
+    <dep root="2769948622284605880" />
+    <dep root="2769948622284605979" />
+    <dep root="2769948622284768359" />
+    <dep root="3961775458390032824" />
+    <dep root="4755209551904389307" />
+    <dep root="4755209551904389316" />
+    <dep root="6520682027040940623" />
+    <dep root="6647099934206976110" />
+    <dep root="6647099934206976119" />
+    <dep root="6647099934207069200" />
+    <dep root="6647099934207069215" />
+    <dep root="6896005762093571400" />
+    <dep root="7306485738221315929" />
+    <dep root="7306485738221391506" />
+    <dep root="7306485738221471031" />
+    <dep root="7926701909975416091" />
+    <dep root="8292198017262926588" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+    <file name="Workflow_Language.java" />
+  </common>
+  <source id="2769948622284546673" name="BwfProject" hash="-eoe355q1qenzw2ojgn2d0bn1tfgdk59">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2769948622284546675" name="BwfTask" hash="-cqiokbj34za3pht1shdn6bor25vslxe">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2769948622284546677" name="BwfSubTask" hash="dl3csco7m6nb3agusgaey1qtznr68vm">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2769948622284546695" name="BwfProjectPart" hash="-a7i6blnmzitbiuthv44hhrmca3fnzi6">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2769948622284574294" name="BwfTaskDependency" hash="d7z1tvbzyyymq9jhtqnbtwc9gbhdw4">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2769948622284605880" name="BwfSubTaskDependency" hash="-94bn34583zkloylc1hd8d76b5iyi306">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2769948622284605979" name="BwfStatement" hash="bktlbp6ps8oeapwmofehxdm4p0j4ivb">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2769948622284768359" name="BwfAntStatement" hash="4627dsaj1mw980w18bcja3o4fu8pe77">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4755209551904389307" name="BwfJavaModule" hash="58jblgg4xmt9192pevsvb9mdrt83t9h">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4755209551904389316" name="BwfJavaModuleReference" hash="-8rdqw884k9bo5nry653k4nx7niecps4">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3961775458390032824" name="BwfTaskPart" hash="aguxezzbtc9ri32lywg09uld91l5vsq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6896005762093571400" name="BwfMacro" hash="-2nkzs2j2u29pwzh8x8z7s3psa3yjjvb">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7306485738221315929" name="BwfJavaDescriptor" hash="nqexpikb5fsi03ro1zmvqdec2nczt0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7306485738221391506" name="BwfTaskLibrary" hash="noo2174shpqzekzxj1xcvc41423s4x">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7306485738221471031" name="BwfTaskLibraryDependency" hash="7j69asg17s60pyjeksy3g648vmkmr92">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6647099934206976110" name="BwfJavaDependency" hash="eaub7l42gl2qeep15gnz6crwon8cxbm">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6647099934206976119" name="BwfJavaClassPath" hash="-av98js7z6kfyftaq1mtcj3b5vpjsalw">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6647099934207069200" name="BwfPathDeclaration" hash="3wu32p4qcahgzil82fctgdhozna6jaf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6647099934207069215" name="BwfPathReference" hash="7v6zy18r4k99f86huwq7kkiv60ov6zz">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7926701909975416091" name="BwfFileSet" hash="a85dtlavsa9ia3rxui7n74i5upeqi7t">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8292198017262926588" name="BwfDependency" hash="-2f4ic9ex5pkvc4qlhmeogb2jumgefal">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6520682027040940623" name="BwfMacroListImport" hash="bv32rw4e3li356ffrh7brwy5muantbg">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2059109515400477499" name="BwfAntTaskDeclaration" hash="-g2hyx6kmsyia9ov0arq85igwnvdlmz">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="144710003695346438" name="BwfJavaLibrary" hash="-2j2d3eu9byla73ic3ftj9ei0puptxll">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="144710003695507915" name="BwfJavaLibraryReference" hash="-dy3zh8emarozuzy5dqglsbx9a1867yi">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="244868996532667532" name="BwfCustomMacro" hash="8u08p6qb3l8fgrhyzdt3n7j6pgpzaj8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+</dependencies>
 

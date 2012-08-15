@@ -172,14 +172,14 @@ public class Set_Test extends Util_Test {
   public void test_collection() throws Exception {
     Set<String> hss = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b");
     Collection<String> cs = hss;
-    Assert.assertEquals("a b", IterableUtils.join(CollectionSequence.fromCollection(cs).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
+    Assert.assertEquals("a b", IterableUtils.join(CollectionSequence.fromCollection(cs).sort(new ISelector<String, String>() {
+      public String select(String it) {
         return it;
       }
     }, true), " "));
     SetSequence.fromSet(hss).addElement("c");
-    Assert.assertEquals("a b c", IterableUtils.join(CollectionSequence.fromCollection(cs).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
+    Assert.assertEquals("a b c", IterableUtils.join(CollectionSequence.fromCollection(cs).sort(new ISelector<String, String>() {
+      public String select(String it) {
         return it;
       }
     }, true), " "));
@@ -189,8 +189,8 @@ public class Set_Test extends Util_Test {
     Set<String> hss = SetSequence.fromSetAndArray(new HashSet<String>(), "a", "b", "c");
     SetSequence.fromSet(hss).addElement("d");
     SetSequence.fromSet(hss).removeElement("b");
-    Assert.assertEquals("a c d", IterableUtils.join(SetSequence.fromSet(hss).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
+    Assert.assertEquals("a c d", IterableUtils.join(SetSequence.fromSet(hss).sort(new ISelector<String, String>() {
+      public String select(String it) {
         return it;
       }
     }, true), " "));
@@ -202,8 +202,8 @@ public class Set_Test extends Util_Test {
       // expected exception 
     }
     SetSequence.fromSet(hss).removeElement("a");
-    Assert.assertEquals("c d", IterableUtils.join(SetSequence.fromSet(uhss).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
+    Assert.assertEquals("c d", IterableUtils.join(SetSequence.fromSet(uhss).sort(new ISelector<String, String>() {
+      public String select(String it) {
         return it;
       }
     }, true), " "));

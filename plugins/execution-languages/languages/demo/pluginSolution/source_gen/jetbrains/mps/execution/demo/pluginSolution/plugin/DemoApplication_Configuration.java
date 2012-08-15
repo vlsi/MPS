@@ -9,12 +9,9 @@ import jetbrains.mps.util.IconUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.execution.lib.Node_Configuration;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.execution.lib.NodeByConcept_Configuration;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.project.Project;
@@ -43,11 +40,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
 
   @NotNull
   private DemoApplication_Configuration.MyState myState = new DemoApplication_Configuration.MyState();
-  private Node_Configuration myNode = new Node_Configuration(ModelAccess.instance().runReadAction(new Computable<SNode>() {
-    public SNode compute() {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.demo.structure.SomeConcept");
-    }
-  }), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  private NodeByConcept_Configuration myNode = new NodeByConcept_Configuration("jetbrains.mps.execution.demo.structure.SomeConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.execution.demo.structure.SomeConcept"), "valid");
     }
@@ -89,7 +82,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     }
   }
 
-  public Node_Configuration getNode() {
+  public NodeByConcept_Configuration getNode() {
     return myNode;
   }
 
@@ -99,7 +92,7 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     try {
       clone = createCloneTemplate();
       clone.myState = (DemoApplication_Configuration.MyState) myState.clone();
-      clone.myNode = (Node_Configuration) myNode.clone();
+      clone.myNode = (NodeByConcept_Configuration) myNode.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
       if (log.isErrorEnabled()) {

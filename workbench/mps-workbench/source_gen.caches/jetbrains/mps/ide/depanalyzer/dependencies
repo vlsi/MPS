@@ -163,7 +163,6 @@
   <dependency className="jetbrains.mps.ide.depanalyzer.ModuleDependencyNode" file="ModuleDependencyNode.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashSet" />

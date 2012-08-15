@@ -251,7 +251,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
                 nodeToSelect.value = ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
                 int index = SNodeOperations.getIndexInParent(node);
                 ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)));
-                if (SNodeOperations.isInstanceOf(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmpty_yh032p_a0a5a0a0b0a0a4a0d0d2(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+                if (SNodeOperations.isInstanceOf(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a3c(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
                   caret.value = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
                 } else {
                   caret.value = 0;
@@ -298,7 +298,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
       return str == null || str.length() == 0;
     }
 
-    public static boolean isNotEmpty_yh032p_a0a5a0a0b0a0a4a0d0d2(String str) {
+    public static boolean isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a3c(String str) {
       return str != null && str.length() > 0;
     }
 

@@ -88,7 +88,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-                SModelDescriptor descr = SModelRepository.getInstance().findModel(modelFile);
+                SModelDescriptor descr = SModelFileTracker.getInstance().findModel(modelFile);
                 if (descr == null) {
                     thrown[0] = new IllegalStateException("model not found");
                     return;

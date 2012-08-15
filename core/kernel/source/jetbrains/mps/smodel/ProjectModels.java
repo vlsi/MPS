@@ -50,10 +50,6 @@ public class ProjectModels {
       };
     }
 
-    public long lastChangeTime() {
-      return 0;
-    }
-
     public boolean isChanged() {
       return false;
     }

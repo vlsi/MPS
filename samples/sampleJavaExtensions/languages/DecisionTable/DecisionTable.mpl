@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="org.jetbrains.mps.samples.DecisionTable" uuid="65c13e67-09b6-4695-af88-52024b7d2027" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot path="${module}/languageModels" />
   </models>
   <accessoryModels />
   <generators>
     <generator name="main" generatorUID="org.jetbrains.mps.samples.DecisionTable#3863300516938090568" uuid="38daf5f6-3ea9-4539-9ff0-4dfa8b2ff692">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" />
+        <modelRoot path="${module}/generator/template" />
       </models>
       <external-templates />
       <dependencies>

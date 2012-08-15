@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils;
 import java.awt.Insets;
+import org.jetbrains.annotations.Nullable;
+import javax.swing.JComponent;
 
 public abstract class IntroduceVariableDialog extends RefactoringDialog {
   protected EditorContext myEditorContext;
@@ -140,5 +142,15 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     }
     super.doRefactoringAction();
     this.doRefactoring();
+  }
+
+  @Nullable
+  @Override
+  public JComponent getPreferredFocusedComponent() {
+    JComponent candidate = super.getPreferredFocusedComponent();
+    return (candidate == null ?
+      this.myName :
+      candidate
+    );
   }
 }

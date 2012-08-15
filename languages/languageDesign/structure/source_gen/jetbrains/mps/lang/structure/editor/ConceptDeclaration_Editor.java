@@ -684,7 +684,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     if (l == null) {
       return false;
     }
-    String s = MacrosFactory.languageDescriptor().expandPath(SPropertyOperations.getString(node, "iconPath"), l.getDescriptorFile());
+    String s = MacrosFactory.forModuleFile(l.getDescriptorFile()).expandPath(SPropertyOperations.getString(node, "iconPath"));
     if (s == null) {
       return false;
     }

@@ -60,8 +60,8 @@ public class BuildCompositePath_Behavior {
       public String select(File it) {
         return it.getName();
       }
-    }).union(Sequence.fromIterable(Sequence.<String>singleton(".."))).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String it) {
+    }).union(Sequence.fromIterable(Sequence.<String>singleton(".."))).sort(new ISelector<String, String>() {
+      public String select(String it) {
         return it;
       }
     }, true).toListSequence();

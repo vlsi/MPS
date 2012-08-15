@@ -33,7 +33,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.util.MacrosUtil;
+import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.resources.DResource;
@@ -110,11 +110,11 @@ public class Binaries_Facet extends IFacet.Stub {
                         ListSequence.fromList(deltaList).addElement(fd);
                         return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.resources.structure.Resource")).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
-                            return isNotEmpty_rhbawb_a0a0a0a0a0a4a0c0a0a1a0a0a1a0b0a0a0a0a0(SPropertyOperations.getString(it, "path"));
+                            return isNotEmpty_rhbawb_a0a0a0a0a0a0a0e0a2a0a0a0a1a0a0a0a0b0a1a0a0a0a0a(SPropertyOperations.getString(it, "path"));
                           }
                         }).select(new ISelector<SNode, String>() {
                           public String select(SNode bin) {
-                            return MacrosUtil.expandPath(SPropertyOperations.getString(bin, "path"), module.getModuleFqName());
+                            return MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(bin, "path"));
                           }
                         }).where(new IWhereFilter<String>() {
                           public boolean accept(String p) {
@@ -220,7 +220,7 @@ public class Binaries_Facet extends IFacet.Stub {
       return t;
     }
 
-    public static boolean isNotEmpty_rhbawb_a0a0a0a0a0a4a0c0a0a1a0a0a1a0b0a0a0a0a0(String str) {
+    public static boolean isNotEmpty_rhbawb_a0a0a0a0a0a0a0e0a2a0a0a0a1a0a0a0a0b0a1a0a0a0a0a(String str) {
       return str != null && str.length() > 0;
     }
   }

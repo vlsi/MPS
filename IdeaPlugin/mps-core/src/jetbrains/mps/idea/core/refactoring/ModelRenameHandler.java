@@ -38,10 +38,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.project.ReferenceUpdater;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
@@ -52,13 +49,6 @@ import javax.lang.model.SourceVersion;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**
- * Created with IntelliJ IDEA.
- * User: fyodor
- * Date: 7/3/12
- * Time: 2:06 PM
- * To change this template use File | Settings | File Templates.
- */
 public class ModelRenameHandler implements RenameHandler {
   private static final Logger LOG = Logger.getInstance("#jetbrains.mps.idea.core.refactoring.ModelRenameHandler");
 
@@ -66,7 +56,7 @@ public class ModelRenameHandler implements RenameHandler {
   public boolean isAvailableOnDataContext(DataContext dataContext) {
     IFile modelFile = getModelFile(dataContext);
     if (modelFile == null) return false;
-    SModelDescriptor descriptor = SModelRepository.getInstance().findModel(modelFile);
+    SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(modelFile);
     return (descriptor instanceof EditableSModelDescriptor);
   }
 
@@ -85,13 +75,13 @@ public class ModelRenameHandler implements RenameHandler {
     IFile modelFile = getModelFile(dataContext);
     if (modelFile == null) return;
 
-    SModelDescriptor descriptor = SModelRepository.getInstance().findModel(modelFile);
+    SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(modelFile);
     if (!(descriptor instanceof EditableSModelDescriptor)) return;
 
     final EditableSModelDescriptor modelDescriptor = (EditableSModelDescriptor) descriptor;
     final AtomicReference<SModelFqName> targetFqName = new AtomicReference<SModelFqName>(null);
 
-    Pair<String,Boolean> result = Messages.showInputDialogWithCheckBox(
+    Pair<String, Boolean> result = Messages.showInputDialogWithCheckBox(
       MPSBundle.message("rename.model.to", modelDescriptor.getLongName()),
       MPSBundle.message("rename.model"),
       MPSBundle.message("update.all.references"), true, true, null, modelDescriptor.getLongName(),
@@ -106,7 +96,7 @@ public class ModelRenameHandler implements RenameHandler {
       ApplicationManager.getApplication().runWriteAction(new Runnable() {
         @Override
         public void run() {
-         deleteGeneratedFiles(modelDescriptor);
+          deleteGeneratedFiles(modelDescriptor);
         }
       });
       final ModelRenamer renamer = new ModelRenamer(modelDescriptor, targetFqName.get(), !(result.getSecond()));
@@ -116,7 +106,7 @@ public class ModelRenameHandler implements RenameHandler {
           renamer.rename();
         }
       },
-      ProjectHelper.toMPSProject(project));
+        ProjectHelper.toMPSProject(project));
       ProgressManager.getInstance().run(new Task.Modal(project, "Updating model usages...", false) {
         @Override
         public void run(@NotNull ProgressIndicator indicator) {
@@ -184,7 +174,7 @@ public class ModelRenameHandler implements RenameHandler {
       return null;
     }
 
-    protected abstract void doRename (SModelFqName fqName);
+    protected abstract void doRename(SModelFqName fqName);
 
     private boolean isModelNameValid(SModelFqName modelFqName) {
       return isModelNameValid(modelFqName, new String[1]);

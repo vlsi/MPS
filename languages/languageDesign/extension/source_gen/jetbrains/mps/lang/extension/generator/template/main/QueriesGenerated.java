@@ -136,16 +136,16 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_63012922130955093(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionPointDeclaration")).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
     }, true);
   }
 
   public static Iterable sourceNodesQuery_63012922130977659(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.extension.structure.ExtensionDeclaration")).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(SLinkOperations.getTarget(it, "extensionPoint", false), "name");
       }
     }, true);

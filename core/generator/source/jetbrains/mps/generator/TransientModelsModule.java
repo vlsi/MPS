@@ -62,24 +62,12 @@ public class TransientModelsModule extends ClassLoadingModule   {
     return myOriginalModule.getClass(fqName);
   }
 
-  public ModuleDescriptor getModuleDescriptor() {
-    return null;
-  }
-
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    throw new UnsupportedOperationException();
-  }
-
   public String getGeneratorOutputPath() {
     return null;
   }
 
   public String getTestsGeneratorOutputPath() {
     return null;
-  }
-
-  public void save() {
-    // nothing
   }
 
   public boolean hasPublished() {

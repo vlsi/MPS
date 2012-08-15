@@ -95,7 +95,7 @@ public class Equations {
         }
       }
     }
-    assert getNameRepresentative(current) == current;
+    assert getNameRepresentative(current) == current : "Wrong name representative in equations '" + current + "'";
     return current;
   }
 

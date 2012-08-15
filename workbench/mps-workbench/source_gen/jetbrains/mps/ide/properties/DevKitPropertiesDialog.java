@@ -6,8 +6,6 @@ import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class DevKitPropertiesDialog extends BasePropertiesDialog {
   public DevKit myDevKit;
@@ -37,7 +35,6 @@ public class DevKitPropertiesDialog extends BasePropertiesDialog {
         myProperties.saveTo(myDevKit.getModuleDescriptor());
         myDevKit.setDevKitDescriptor(myDevKit.getModuleDescriptor(), true);
         myDevKit.save();
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
     }, getOperationContext().getProject());
     return true;

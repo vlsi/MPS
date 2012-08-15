@@ -31,6 +31,8 @@ import jetbrains.mps.project.MPSProjectMigrationState;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nls;
 
 import java.io.File;
@@ -123,11 +125,15 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   }
 
   protected String addMacros(String path) {
-    return MacrosFactory.projectDescriptor().shrinkPath(path, getAnchorFile());
+    return MacrosFactory.forProjectFile(getAnchorIFile()).shrinkPath(path);
   }
 
   protected String removeMacros(String path) {
-    return MacrosFactory.projectDescriptor().expandPath(path, getAnchorFile());
+    return MacrosFactory.forProjectFile(getAnchorIFile()).expandPath(path);
+  }
+
+  private IFile getAnchorIFile() {
+    return FileSystem.getInstance().getFileByPath(getAnchorFile().getPath());
   }
 
   private File getAnchorFile() {

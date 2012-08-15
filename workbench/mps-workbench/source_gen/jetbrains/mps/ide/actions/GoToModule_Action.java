@@ -6,22 +6,38 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import com.intellij.featureStatistics.FeatureUsageTracker;
+import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
+import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.IScope;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.DevKit;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
+import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.actions.goTo.NavigateCallback;
+import com.intellij.openapi.application.ModalityState;
 
 public class GoToModule_Action extends BaseAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(GoToModule_Action.class);
 
-  private AnAction action;
-
-  public GoToModule_Action(AnAction action_par) {
+  public GoToModule_Action() {
     super("Go to Module", "", ICON);
-    this.action = action_par;
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @Override
@@ -31,7 +47,7 @@ public class GoToModule_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToModule_Action.this.action.update(event);
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GoToModule", t);
@@ -49,25 +65,39 @@ public class GoToModule_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      GoToModule_Action.this.action.actionPerformed(event);
+      final Project project = event.getData(PlatformDataKeys.PROJECT);
+      assert project != null;
+      FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.module");
+      // PsiDocumentManager.getInstance(project).commitAllDocuments(); 
+      BaseModuleModel goToModuleModel = new BaseModuleModel(project, "module") {
+        public NavigationItem doGetNavigationItem(final ModuleReference ref) {
+          return new BaseModuleItem(ref) {
+            public void navigate(boolean requestFocus) {
+              ProjectPane projectPane = ProjectPane.getInstance(project);
+              IModule module = MPSModuleRepository.getInstance().getModule(ref);
+              projectPane.selectModule(module, true);
+            }
+          };
+        }
+
+        public ModuleReference[] find(IScope scope) {
+          List<ModuleReference> modules = new ArrayList<ModuleReference>();
+          for (IModule module : scope.getVisibleModules()) {
+            if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
+              continue;
+            }
+            modules.add(module.getModuleReference());
+          }
+          return modules.toArray(new ModuleReference[modules.size()]);
+        }
+      };
+      ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel, GoToModule_Action.this);
+
+      popup.invoke(new NavigateCallback(), ModalityState.current(), true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToModule", t);
       }
     }
-  }
-
-  @NotNull
-  public String getActionId() {
-    StringBuilder res = new StringBuilder();
-    res.append(super.getActionId());
-    res.append("#");
-    res.append(action_State((AnAction) this.action));
-    res.append("!");
-    return res.toString();
-  }
-
-  public static String action_State(AnAction object) {
-    return "";
   }
 }

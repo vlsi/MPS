@@ -288,7 +288,7 @@ public class Java_Command {
             DebugInfoRoot infoRoot = debugInfo.getRootInfo(SNodeOperations.getContainingRoot(node).getId());
             for (final TraceablePositionInfo position : SetSequence.fromSet(infoRoot.getPositions())) {
               if (eq_kk96hj_a0a0b0a1a0c0a0a0a0b0c(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-                if (eq_kk96hj_a0a0a0b0a1a0c0a0a0a0b0c(position.getPropertyString(), ((String) BehaviorManager.getInstance().invoke(Object.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0b0c().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class})))) {
+                if (eq_kk96hj_a0a0a0b0a1a0c0a0a0a0b0c(position.getPropertyString(), ((String) BehaviorManager.getInstance().invoke(Object.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class})))) {
                   UnitPositionInfo unit = ListSequence.fromList(unitForNode).findFirst(new IWhereFilter<UnitPositionInfo>() {
                     public boolean accept(UnitPositionInfo it) {
                       return it.isPositionInside(position.getFileName(), position.getStartLine());
@@ -520,8 +520,8 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  public static class QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0b0c {
-    public QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0b0c() {
+  public static class QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2 {
+    public QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2() {
     }
 
     public SNode createNode() {

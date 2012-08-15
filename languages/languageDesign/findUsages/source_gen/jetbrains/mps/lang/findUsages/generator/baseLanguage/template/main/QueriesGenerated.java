@@ -190,8 +190,8 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_7991477654791670241(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.findUsages.structure.FinderDeclaration")).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
     }, true);

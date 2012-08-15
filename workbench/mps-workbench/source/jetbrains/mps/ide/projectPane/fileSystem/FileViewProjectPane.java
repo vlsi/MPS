@@ -53,6 +53,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -418,9 +419,9 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
           }
         });
         SModelDescriptor d = smodel.getModelDescriptor();
-        if (!(d instanceof EditableSModelDescriptor)) return false;
+        if (!(d instanceof DefaultSModelDescriptor)) return false;
 
-        IFile modelFile = ((EditableSModelDescriptor) d).getModelFile();
+        IFile modelFile = ((DefaultSModelDescriptor) d).getModelFile();
         VirtualFile realFile = null;
         if (modelFile != null) {
           realFile = VirtualFileUtils.getVirtualFile(modelFile);

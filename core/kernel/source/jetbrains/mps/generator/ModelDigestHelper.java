@@ -15,12 +15,16 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.descriptor.source.FileBasedModelDataSource;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -54,14 +58,19 @@ public class ModelDigestHelper {
   }
 
   public String getModelHashFast(@NotNull SModelDescriptor descriptor, IOperationContext operationContext) {
-    if(descriptor instanceof EditableSModelDescriptor) {
-      IFile modelFile = ((EditableSModelDescriptor) descriptor).getModelFile();
-      if (modelFile != null) {
-        for (DigestProvider p : myProviders) {
-          Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
-          if (result != null) return result.get(FILE);
-        }
-      }
+    if (!(descriptor instanceof BaseSModelDescriptorWithSource)) return descriptor.getModelHash();
+
+    ModelDataSource source = ((BaseSModelDescriptorWithSource) descriptor).getSource();
+    if (!(source instanceof FileBasedModelDataSource)) return descriptor.getModelHash();
+
+    Collection<String> files = ((FileBasedModelDataSource) source).getFilesToListen();
+    if (files.size() != 1) return descriptor.getModelHash();
+    IFile modelFile = FileSystem.getInstance().getFileByPath(files.iterator().next());
+    if (modelFile == null) return descriptor.getModelHash();
+
+    for (DigestProvider p : myProviders) {
+      Map<String, String> result = p.getGenerationHashes(operationContext, modelFile);
+      if (result != null) return result.get(FILE);
     }
 
     return descriptor.getModelHash();

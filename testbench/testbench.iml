@@ -26,7 +26,6 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="vcs" />
     <orderEntry type="module" module-name="miscTests" />
-    <orderEntry type="module" module-name="migration" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />

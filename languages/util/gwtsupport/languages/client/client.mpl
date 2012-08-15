@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.gwt.client" uuid="954c4d77-e24b-4e49-a5a5-5476c966c092" doNotGenerateAdapters="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" />
-    <modelRoot path="${language_descriptor}/redist/gwt-dev.jar">
+    <modelRoot path="${module}/languageModels" />
+    <modelRoot path="${module}/redist/gwt-dev.jar">
       <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </modelRoot>
-    <modelRoot path="${language_descriptor}/redist/gwt-servlet.jar">
+    <modelRoot path="${module}/redist/gwt-servlet.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${language_descriptor}/redist/gwt-user.jar">
+    <modelRoot path="${module}/redist/gwt-user.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
-    <modelRoot path="${language_descriptor}/redist/gwt-user.jar">
+    <modelRoot path="${module}/redist/gwt-user.jar">
       <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </modelRoot>
   </models>
@@ -19,7 +19,7 @@
   <generators>
     <generator name="xml" generatorUID="jetbrains.mps.gwt.client#1572321421814275034" uuid="486577d1-3c2e-499e-91d3-9bab36e681a9">
       <models>
-        <modelRoot path="${language_descriptor}/generator/template" />
+        <modelRoot path="${module}/generator/template" />
       </models>
       <external-templates>
         <generator generatorUID="94951427-301e-4a1c-a1cd-d2c6bc9f3cfa(jetbrains.mps.xml#1163716442262)" />
@@ -88,16 +88,16 @@
     </generator>
   </generators>
   <stubModelEntries>
-    <stubModelEntry path="${language_descriptor}/redist/gwt-dev.jar">
+    <stubModelEntry path="${module}/redist/gwt-dev.jar">
       <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${language_descriptor}/redist/gwt-servlet.jar">
+    <stubModelEntry path="${module}/redist/gwt-servlet.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${language_descriptor}/redist/gwt-user.jar">
+    <stubModelEntry path="${module}/redist/gwt-user.jar">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </stubModelEntry>
-    <stubModelEntry path="${language_descriptor}/redist/gwt-user.jar">
+    <stubModelEntry path="${module}/redist/gwt-user.jar">
       <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </stubModelEntry>
   </stubModelEntries>

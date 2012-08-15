@@ -398,8 +398,8 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return !(CommandParameterDeclaration_Behavior.call_generateField_8478830098674441876(SLinkOperations.getTarget(it, "parameterDeclaration", false)));
       }
-    }).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    }).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode it) {
         return SNodeOperations.getIndexInParent(SLinkOperations.getTarget(it, "parameterDeclaration", false));
       }
     }, true).select(new ISelector<SNode, SNode>() {

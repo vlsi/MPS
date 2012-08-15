@@ -27,8 +27,8 @@ public class ModelsToResources {
 
   public Iterable<IResource> resources(boolean dirtyOnly) {
     Iterable<SModelDescriptor> smds = models;
-    smds = Sequence.fromIterable(smds).sort(new ISelector<SModelDescriptor, Comparable<?>>() {
-      public Comparable<?> select(SModelDescriptor desc) {
+    smds = Sequence.fromIterable(smds).sort(new ISelector<SModelDescriptor, String>() {
+      public String select(SModelDescriptor desc) {
         return desc.getModule().getModuleFqName();
       }
     }, true);

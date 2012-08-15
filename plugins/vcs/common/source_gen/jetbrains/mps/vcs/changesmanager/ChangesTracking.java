@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.changesmanager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
@@ -72,7 +72,7 @@ public class ChangesTracking {
   private Project myProject;
   private CurrentDifference myDifference;
   private SimpleCommandQueue myQueue;
-  private EditableSModelDescriptor myModelDescriptor;
+  private DefaultSModelDescriptor myModelDescriptor;
   private ChangesTracking.MyModelListener myModelListener = new ChangesTracking.MyModelListener();
   private boolean myDisposed = false;
   private BidirectionalMultiMap<SNodeId, ModelChange> myNodesToChanges = new BidirectionalMultiMap<SNodeId, ModelChange>();

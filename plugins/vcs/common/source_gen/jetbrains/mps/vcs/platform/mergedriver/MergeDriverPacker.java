@@ -10,7 +10,6 @@ import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.InternalFlag;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
@@ -28,6 +27,8 @@ public abstract class MergeDriverPacker {
   private static final String MERGEDRIVER_PATH = "mergedriver";
   private static final String MERGER_RT = "merger-rt.jar";
   protected static Log log = LogFactory.getLog(MergeDriverPacker.class);
+
+  private Boolean myFromSources = null;
 
   public MergeDriverPacker() {
   }
@@ -52,7 +53,7 @@ public abstract class MergeDriverPacker {
     });
     internalPack(classPathJars, tmpDir, false);
 
-    if (InternalFlag.isInternalMode()) {
+    if (isFromSources()) {
       Iterable<String> classpathInternal = Sequence.fromIterable(classpathDirs).where(new IWhereFilter<String>() {
         public boolean accept(String cpd) {
           return !(cpd.endsWith(".jar"));
@@ -114,7 +115,7 @@ public abstract class MergeDriverPacker {
 
   public Set<String> getClasspath(boolean withSvnkit) {
     Set<String> classpathItems = SetSequence.fromSet(new LinkedHashSet<String>());
-    if (InternalFlag.isInternalMode()) {
+    if (isFromSources()) {
       SetSequence.fromSet(classpathItems).addSequence(SetSequence.fromSet(getClasspathInternal()));
     } else {
       final String mpsCorePath = getMPSCorePath();
@@ -138,6 +139,13 @@ public abstract class MergeDriverPacker {
     }));
     SetSequence.fromSet(classpathItems).addSequence(Sequence.fromIterable(getSvnJars()));
     return classpathItems;
+  }
+
+  private boolean isFromSources() {
+    if (myFromSources == null) {
+      myFromSources = !(new File(getMPSCorePath() + File.separator + Sequence.fromIterable(mpsLibJars).first()).exists());
+    }
+    return myFromSources;
   }
 
   public static MergeDriverPacker getInstance() {

@@ -35,7 +35,7 @@ public class TransformationTests {
   @Test
   public void equalNodeTest() throws Throwable {
     TestMain.configureMPS();
-    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.getGlobal().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile) null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -50,7 +50,7 @@ public class TransformationTests {
   @Test
   public void conceptDiffernse() {
     TestMain.configureMPS();
-    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.getGlobal().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile) null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -66,7 +66,7 @@ public class TransformationTests {
   @Test
   public void propertyDiffernce() {
     TestMain.configureMPS();
-    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.getGlobal().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile) null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -85,7 +85,7 @@ public class TransformationTests {
 
   @Test
   public void childrenDiffernce() {
-    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.getGlobal().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile) null))));
 
     runCommand(new Runnable() {
       public void run() {
@@ -105,7 +105,7 @@ public class TransformationTests {
   @Test
   public void referenceDiffernce() {
     TestMain.configureMPS();
-    Project project = TestMain.loadProject(new File(MacrosFactory.mpsHomeMacros().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile)null))));
+    Project project = TestMain.loadProject(new File(MacrosFactory.getGlobal().expandPath("${mps_home}languages/util/transformationTest/transformationTest.mpr", ((IFile) null))));
 
     runCommand(new Runnable() {
       public void run() {

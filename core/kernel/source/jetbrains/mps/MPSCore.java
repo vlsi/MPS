@@ -33,6 +33,7 @@ import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.OldBehaviorManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -75,6 +76,7 @@ public class MPSCore extends ComponentPlugin {
     myModuleRepository = init(new MPSModuleRepository(classLoaderManager));
     myGlobalSModelEventsManager = init(new GlobalSModelEventsManager(myModelRepository));
 
+    init(new SModelFileTracker(myModelRepository, myGlobalSModelEventsManager));
     init(new ModuleRepositoryFacade(myModuleRepository));
     init(new ModuleFileTracker(myModuleRepository));
     init(new CleanupManager(classLoaderManager));
@@ -105,6 +107,7 @@ public class MPSCore extends ComponentPlugin {
     init(new FastFindSupportRegistry());
     init(new DataFlowManager(classLoaderManager, myModuleRepository));
 
+    init(new ResolverComponent());
     init(new CheckersComponent());
     init(new ValidationSettings());
   }

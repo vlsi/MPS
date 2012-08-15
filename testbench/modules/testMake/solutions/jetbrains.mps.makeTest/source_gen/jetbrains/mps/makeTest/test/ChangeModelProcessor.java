@@ -26,7 +26,7 @@ import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 
 public class ChangeModelProcessor {
   private static final String TEST_RESOURCES_PATH = "core/kernel/testMake/solutions/jetbrains.mps.testModels/jetbrains/mps/testModels/";
@@ -113,7 +113,7 @@ public class ChangeModelProcessor {
   public SModelDescriptor getModelDescriptorByName(String name) {
     String path = TEST_RESOURCES_PATH + name + ".mps";
     IFile file = FileSystem.getInstance().getFileByPath(path);
-    return SModelRepository.getInstance().findModel(file);
+    return SModelFileTracker.getInstance().findModel(file);
   }
 
   public SModel getTestModel() {

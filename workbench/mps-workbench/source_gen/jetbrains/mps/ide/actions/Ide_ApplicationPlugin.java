@@ -29,6 +29,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AnalyzeDependencies_Action());
     addAction(new AnalyzeModuleDependencies_Action());
     addAction(new AnalyzeStacktrace_Action());
+    addAction(new CalcSNodeStatistic_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
     addAction(new CopyModelName_Action());
@@ -54,6 +55,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new Find_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
+    addAction(new GoToModel_Action());
+    addAction(new GoToModule_Action());
     addAction(new GoToNode_Action());
     addAction(new GoToRootNode_Action());
     addAction(new GoToRule_Action());
@@ -118,6 +121,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new DebugActions_ActionGroup());
     addGroup(new DevkitActions_ActionGroup());
     addGroup(new Edit_ActionGroup());
+    addGroup(new EditorActionsAddition_ActionGroup());
     addGroup(new EditorInternal_ActionGroup());
     addGroup(new EditorPopupEx_ActionGroup());
     addGroup(new EditorPopupEx_Goto_ActionGroup());
@@ -240,6 +244,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(Favorites_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(Favorites_ActionGroup.ID, NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_favorites);
     insertGroupIntoAnother(View_ActionGroup.ID, "ViewMenu", null);
+    insertGroupIntoAnother(EditorActionsAddition_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup", null);
   }
 
   public List<BaseKeymapChanges> initKeymaps() {

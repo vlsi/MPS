@@ -184,24 +184,12 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
     }
   }
 
-  public ModuleDescriptor getModuleDescriptor() {
-    return null;
-  }
-
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    throw new UnsupportedOperationException();
-  }
-
   public String getGeneratorOutputPath() {
     return null;
   }
 
   public String getTestsGeneratorOutputPath() {
     return null;
-  }
-
-  public void save() {
-    // nothing
   }
 
   @Override

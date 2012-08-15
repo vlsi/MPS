@@ -50,8 +50,8 @@ public class MergeCoreTest {
       public boolean accept(String n) {
         return n.endsWith(".mps.zip");
       }
-    }).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String n) {
+    }).sort(new ISelector<String, String>() {
+      public String select(String n) {
         return n;
       }
     }, true).select(new ISelector<String, Object[]>() {

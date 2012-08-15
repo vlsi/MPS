@@ -20,7 +20,6 @@ public class Tools_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Tools_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(Tools_ActionGroup.LABEL_ID_migration);
         ActionManagerEx manager = ActionManagerEx.getInstanceEx();

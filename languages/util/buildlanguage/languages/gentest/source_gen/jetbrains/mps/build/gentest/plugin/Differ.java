@@ -34,8 +34,8 @@ public class Differ {
       public String select(String it) {
         return straighten(it);
       }
-    }).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String p) {
+    }).sort(new ISelector<String, String>() {
+      public String select(String p) {
         return p;
       }
     }, true).toListSequence().toGenericArray(String.class);

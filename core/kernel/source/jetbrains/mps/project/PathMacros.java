@@ -26,8 +26,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * evgeny, 10/19/11
  */
-public class PathMacros implements PathMacrosProvider, CoreComponent {
-
+public class PathMacros implements CoreComponent {
   private static PathMacros INSTANCE;
 
   private List<PathMacrosProvider> myMacrosProviders = new CopyOnWriteArrayList<PathMacrosProvider>();
@@ -37,9 +36,9 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
   }
 
   public PathMacros() {
+
   }
 
-  @Override
   public void init() {
     if (INSTANCE != null) {
       throw new IllegalStateException("double initialization");
@@ -48,12 +47,10 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
     INSTANCE = this;
   }
 
-  @Override
   public void dispose() {
     INSTANCE = null;
   }
 
-  @Override
   public Set<String> getNames() {
     Set<String> result = null;
     boolean modifiable = false;
@@ -73,7 +70,6 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
     return result != null ? result : Collections.<String>emptySet();
   }
 
-  @Override
   public Set<String> getUserNames() {
     Set<String> result = null;
     boolean modifiable = false;
@@ -93,7 +89,6 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
     return result != null ? result : Collections.<String>emptySet();
   }
 
-  @Override
   public String getValue(String name) {
     for (PathMacrosProvider p : myMacrosProviders) {
       final String value = p.getValue(name);

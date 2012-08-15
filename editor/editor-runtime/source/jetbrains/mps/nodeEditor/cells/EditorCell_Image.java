@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -131,8 +130,7 @@ public class EditorCell_Image extends EditorCell_Basic {
 
   private static String expandIconPath(String path, SNode sourceNode) {
     IModule module = findAnchorModule(sourceNode.getModel());
-    final Macros macros = MacrosFactory.moduleDescriptor(module);
-    return module == null ? null : macros.expandPath(path, module.getDescriptorFile());
+    return module == null ? null : MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(path);
   }
 
   private static IModule findAnchorModule(SModel sourceModel) {

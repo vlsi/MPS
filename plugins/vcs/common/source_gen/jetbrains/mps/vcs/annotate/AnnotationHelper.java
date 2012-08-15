@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -58,10 +58,10 @@ public class AnnotationHelper {
     final SNode root = editorComponent.getEditedNode();
     SModel model = check_19hp0u_a0d0b(root);
     SModelDescriptor modelDescriptor = check_19hp0u_a0e0b(model);
-    if (!((modelDescriptor instanceof EditableSModelDescriptor))) {
+    if (!((modelDescriptor instanceof DefaultSModelDescriptor))) {
       return false;
     }
-    IFile modelFile = ((EditableSModelDescriptor) modelDescriptor).getModelFile();
+    IFile modelFile = ((DefaultSModelDescriptor) modelDescriptor).getModelFile();
     if (modelFile == null) {
       return false;
     }

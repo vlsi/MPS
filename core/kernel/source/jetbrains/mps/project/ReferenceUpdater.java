@@ -50,19 +50,8 @@ public class ReferenceUpdater {
     for (IModule m : MPSModuleRepository.getInstance().getAllModules()) {
       AbstractModule module = (AbstractModule) m;
 
-      boolean needSaving = false;
-
-      if (module.updateSModelReferences()) {
-        needSaving = true;
-      }
-
-      if (module.updateModuleReferences()) {
-        needSaving = true;
-      }
-
-      if (needSaving && !module.isPackaged()) {
-        module.save();
-      }
+      module.updateSModelReferences();
+      module.updateModuleReferences();
     }
   }
 }

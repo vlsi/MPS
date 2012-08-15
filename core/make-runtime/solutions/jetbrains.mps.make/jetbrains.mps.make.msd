@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.make" uuid="20351dc3-a2df-46f5-b667-fc9adab1f1c9" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

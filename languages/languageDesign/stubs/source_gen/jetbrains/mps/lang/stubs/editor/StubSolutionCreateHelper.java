@@ -49,7 +49,6 @@ public class StubSolutionCreateHelper {
         LanguageDescriptor descriptor = language.getModuleDescriptor();
         descriptor.getStubSolutions().add(stubSolution);
         language.setLanguageDescriptor(descriptor, true);
-        language.save();
       }
     });
   }

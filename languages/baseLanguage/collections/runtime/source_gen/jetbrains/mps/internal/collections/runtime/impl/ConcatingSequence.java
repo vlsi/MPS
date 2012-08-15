@@ -8,10 +8,10 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class ConcatingSequence<U> extends Sequence<U> {
-  private final ISequence<U> left;
-  private final ISequence<U> right;
+  private final ISequence<? extends U> left;
+  private final ISequence<? extends U> right;
 
-  public ConcatingSequence(ISequence<U> left, ISequence<U> right) {
+  public ConcatingSequence(ISequence<? extends U> left, ISequence<? extends U> right) {
     if (left == null || right == null) {
       throw new NullPointerException();
     }
@@ -26,8 +26,8 @@ public class ConcatingSequence<U> extends Sequence<U> {
   private class ConcatingIterator implements Iterator<U> {
     private U next;
     private HasNextState hasNext = HasNextState.UNKNOWN;
-    private Iterator<U> leftIt;
-    private Iterator<U> rightIt;
+    private Iterator<? extends U> leftIt;
+    private Iterator<? extends U> rightIt;
 
     private ConcatingIterator() {
     }

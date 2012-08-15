@@ -46,11 +46,6 @@ public class StubSolution extends Solution {
     return null;
   }
 
-  @Override
-  public void save() {
-    //do nothing
-  }
-
   protected SolutionDescriptor loadDescriptor() {
     return getModuleDescriptor();
   }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.baseLanguage.sandbox" uuid="4f57e080-33c7-449c-96f9-dd8dfead6ae4" compileInMPS="true" generatorOutputPath="${solution_descriptor}/source_gen">
+<solution name="jetbrains.mps.baseLanguage.sandbox" uuid="4f57e080-33c7-449c-96f9-dd8dfead6ae4" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>

@@ -4,7 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.vfs.FileSystem;
 import java.util.List;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -46,7 +46,7 @@ public class Module_Behavior {
   }
 
   public static SNode call_getModuleBaseDirectory_6863060912307757632(SNode thisNode) {
-    return PathHolder_Behavior.createPathHolder_7235580512916878209(MacrosFactory.moduleDescriptor(Module_Behavior.call_getModule_1213877515148(thisNode)).expandPath(MacrosFactory.getMacroString(Module_Behavior.call_getModule_1213877515148(thisNode)), Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile()), thisNode);
+    return PathHolder_Behavior.createPathHolder_7235580512916878209(FileSystem.getInstance().getBundleHome(Module_Behavior.call_getModule_1213877515148(thisNode).getDescriptorFile()).getPath(), thisNode);
   }
 
   public static SNode call_getModuleDescriptorFile_6863060912307764362(SNode thisNode) {
@@ -143,8 +143,8 @@ public class Module_Behavior {
         return it.getPath().replace(File.separator, Util.SEPARATOR);
       }
     }).distinct().toListSequence(), true);
-    return ListSequence.fromList(pathHolders).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return ListSequence.fromList(pathHolders).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "fullPath");
       }
     }, true).toListSequence();

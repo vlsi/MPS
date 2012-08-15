@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import java.util.Map;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import java.util.Collections;
 import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.vfs.IFile;
@@ -41,14 +41,14 @@ public class MakeGenerationStrategy implements IncrementalGenerationStrategy {
     if (!(sm.isGeneratable())) {
       return null;
     }
-    if (!((sm instanceof EditableSModelDescriptor))) {
+    if (!(sm instanceof DefaultSModelDescriptor)) {
       String hash = sm.getModelHash();
       return (hash != null ?
         Collections.singletonMap(ModelDigestHelper.FILE, hash) :
         null
       );
     }
-    EditableSModelDescriptor esm = (EditableSModelDescriptor) sm;
+    DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
 
     IFile modelFile = esm.getModelFile();
     if (modelFile == null) {

@@ -17,10 +17,10 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.io.File;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
@@ -70,17 +70,17 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
   }
 
   private static List<SModelDescriptor> getModelDescriptorsByFiles(Iterable<File> files) {
-    final SModelRepository repository = SModelRepository.getInstance();
-    return Sequence.fromIterable(files).select(new ISelector<File, EditableSModelDescriptor>() {
-      public EditableSModelDescriptor select(File file) {
-        return repository.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
+    final SModelFileTracker ft = SModelFileTracker.getInstance();
+    return Sequence.fromIterable(files).select(new ISelector<File, BaseSModelDescriptorWithSource>() {
+      public BaseSModelDescriptorWithSource select(File file) {
+        return ft.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
       }
-    }).where(new IWhereFilter<EditableSModelDescriptor>() {
-      public boolean accept(EditableSModelDescriptor modelDescriptor) {
+    }).where(new IWhereFilter<BaseSModelDescriptorWithSource>() {
+      public boolean accept(BaseSModelDescriptorWithSource modelDescriptor) {
         return modelDescriptor != null;
       }
-    }).select(new ISelector<EditableSModelDescriptor, SModelDescriptor>() {
-      public SModelDescriptor select(EditableSModelDescriptor it) {
+    }).select(new ISelector<BaseSModelDescriptorWithSource, SModelDescriptor>() {
+      public SModelDescriptor select(BaseSModelDescriptorWithSource it) {
         return (SModelDescriptor) it;
       }
     }).toListSequence();

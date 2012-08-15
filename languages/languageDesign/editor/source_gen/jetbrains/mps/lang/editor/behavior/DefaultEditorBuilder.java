@@ -144,8 +144,8 @@ public class DefaultEditorBuilder {
       addProperty(property);
       first = false;
     }
-    for (SNode linkDeclaration : ListSequence.fromList(children).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    for (SNode linkDeclaration : ListSequence.fromList(children).sort(new ISelector<SNode, Boolean>() {
+      public Boolean select(SNode it) {
         return LinkDeclaration_Behavior.call_isSingular_1213877254557(it);
       }
     }, false)) {
@@ -165,7 +165,6 @@ public class DefaultEditorBuilder {
         addPunctuation(")");
         setMatchingLabel("paren-" + SPropertyOperations.getString(linkDeclaration, "role"));
       }
-      noSpace();
       first = false;
     }
     addPunctuation(")");
@@ -370,8 +369,8 @@ public class DefaultEditorBuilder {
       );
       MapSequence.fromMap(idProperties).put(property, prio);
     }
-    return SetSequence.fromSet(MapSequence.fromMap(idProperties).keySet()).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    return SetSequence.fromSet(MapSequence.fromMap(idProperties).keySet()).sort(new ISelector<SNode, Integer>() {
+      public Integer select(SNode it) {
         return MapSequence.fromMap(idProperties).get(it);
       }
     }, false).first();

@@ -36,6 +36,10 @@ public class XYCTableModel implements TableModel {
     return SNodeOperations.getChildren(node, ylink);
   }
 
+  public int getMaxColumnWidth(int columnNumber) {
+    return -1;
+  }
+
   public List<SNode> c() {
     return SNodeOperations.getChildren(node, clink);
   }

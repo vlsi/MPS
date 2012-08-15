@@ -21,8 +21,8 @@ public class DirUtil {
       public String select(String p) {
         return asDir(straighten(urlToPath(p)));
       }
-    }).sort(new ISelector<String, Comparable<?>>() {
-      public Comparable<?> select(String p) {
+    }).sort(new ISelector<String, String>() {
+      public String select(String p) {
         return p;
       }
     }, true).toGenericArray(String.class);

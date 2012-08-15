@@ -84,7 +84,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
               return results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
                 public boolean accept(SearchResult<SNode> it) {
                   SNode node = (SNode) it.getObject();
-                  return SPropertyOperations.getBoolean(node, "rootable") && isEmpty_567cn5_a0a1a0a0a0b0a0a3a0a0a0a0a0a3(SPropertyOperations.getString(node, "iconPath"));
+                  return SPropertyOperations.getBoolean(node, "rootable") && isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a0a3a0a0a0a0a0a3(SPropertyOperations.getString(node, "iconPath"));
                 }
               }).toListSequence();
             }
@@ -112,7 +112,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
     }
   }
 
-  public static boolean isEmpty_567cn5_a0a1a0a0a0b0a0a3a0a0a0a0a0a3(String str) {
+  public static boolean isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a0a3a0a0a0a0a0a3(String str) {
     return str == null || str.length() == 0;
   }
 }

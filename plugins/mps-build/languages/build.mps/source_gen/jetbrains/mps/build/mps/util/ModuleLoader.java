@@ -881,9 +881,13 @@ public class ModuleLoader {
         return null;
       }
 
-      if (moduleFile != null && (path.startsWith(MacrosFactory.LANGUAGE_DESCRIPTOR) || path.startsWith(MacrosFactory.DEVKIT_DESCRIPTOR) || path.startsWith(MacrosFactory.SOLUTION_DESCRIPTOR))) {
-        String relPath = path.substring(path.indexOf('}') + 1);
-        return IFileUtils.getCanonicalPath(moduleFile.getParent().getDescendant(relPath));
+      if (moduleFile != null) {
+        for (String macro : MacrosFactory.descriptors) {
+          if (path.startsWith(macro)) {
+            String relPath = path.substring(path.indexOf('}') + 1);
+            return IFileUtils.getCanonicalPath(moduleFile.getParent().getDescendant(relPath));
+          }
+        }
       }
       if (path.startsWith("${")) {
         int index = path.indexOf("}");

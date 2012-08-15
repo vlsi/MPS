@@ -54,189 +54,183 @@
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="10" startPosition="64" endLine="11" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="14" startPosition="72" endLine="15" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909450" fileName="Java_Configuration_Editor.java" startLine="17" startPosition="85" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLabel" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="18" startPosition="25" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="18" startPosition="25" endLine="19" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="19" startPosition="55" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunParameters" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="22" startPosition="134" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="19" startPosition="60" endLine="20" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunParameters" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="22" startPosition="139" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="23" startPosition="18" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="27" startPosition="31" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6062668769033909548" fileName="Java_Configuration_Editor.java" startLine="27" startPosition="31" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="28" startPosition="30" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="29" startPosition="29" endLine="30" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909454" fileName="Java_Configuration_Editor.java" startLine="34" startPosition="32" endLine="35" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909460" fileName="Java_Configuration_Editor.java" startLine="35" startPosition="42" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909466" fileName="Java_Configuration_Editor.java" startLine="36" startPosition="60" endLine="37" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909460" fileName="Java_Configuration_Editor.java" startLine="35" startPosition="42" endLine="36" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909466" fileName="Java_Configuration_Editor.java" startLine="36" startPosition="68" endLine="37" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769033909473" fileName="Java_Configuration_Editor.java" startLine="37" startPosition="50" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909479" fileName="Java_Configuration_Editor.java" startLine="38" startPosition="43" endLine="39" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909485" fileName="Java_Configuration_Editor.java" startLine="39" startPosition="48" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6062668769033909486" fileName="Java_Configuration_Editor.java" startLine="40" startPosition="0" endLine="41" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769033909492" fileName="Java_Configuration_Editor.java" startLine="41" startPosition="79" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6062668769033909493" fileName="Java_Configuration_Editor.java" startLine="42" startPosition="0" endLine="43" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="42" startPosition="101" endLine="43" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6062668769033909500" fileName="Java_Configuration_Editor.java" startLine="43" startPosition="54" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909506" fileName="Java_Configuration_Editor.java" startLine="44" startPosition="45" endLine="45" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="44" startPosition="101" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="6062668769033909512" fileName="Java_Configuration_Editor.java" startLine="45" startPosition="64" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909565" fileName="Java_Configuration.java" startLine="48" startPosition="39" endLine="49" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909532" fileName="Java_Configuration_Editor.java" startLine="49" startPosition="99" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909562" fileName="Java_Configuration.java" startLine="50" startPosition="28" endLine="51" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909539" fileName="Java_Configuration_Editor.java" startLine="50" startPosition="50" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909565" fileName="Java_Configuration.java" startLine="54" startPosition="39" endLine="55" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909576" fileName="Java_Configuration.java" startLine="52" startPosition="39" endLine="53" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909516" fileName="Java_Configuration_Editor.java" startLine="54" startPosition="71" endLine="55" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909595" fileName="Java_Configuration.java" startLine="55" startPosition="26" endLine="56" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunParameters" />
     <nodeInfo nodeId="6062668769033909523" fileName="Java_Configuration_Editor.java" startLine="55" startPosition="52" endLine="56" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909573" fileName="Java_Configuration.java" startLine="58" startPosition="28" endLine="59" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909576" fileName="Java_Configuration.java" startLine="62" startPosition="39" endLine="63" endPosition="263" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909595" fileName="Java_Configuration.java" startLine="65" startPosition="26" endLine="66" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRunParameters" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="68" startPosition="95" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6062668769033909601" fileName="Java_Configuration.java" startLine="72" startPosition="73" endLine="73" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909609" fileName="Java_Configuration.java" startLine="74" startPosition="118" endLine="75" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909615" fileName="Java_Configuration.java" startLine="77" startPosition="27" endLine="78" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909630" fileName="Java_Configuration.java" startLine="81" startPosition="32" endLine="82" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="88" startPosition="76" endLine="89" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="90" startPosition="5" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="91" startPosition="51" endLine="92" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="92" startPosition="41" endLine="93" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="95" startPosition="5" endLine="96" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="96" startPosition="60" endLine="97" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="97" startPosition="50" endLine="98" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="104" startPosition="26" endLine="105" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="106" startPosition="5" endLine="107" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="108" startPosition="5" endLine="109" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="110" startPosition="33" endLine="111" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="113" startPosition="35" endLine="114" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="118" startPosition="5" endLine="119" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="120" startPosition="33" endLine="121" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="123" startPosition="35" endLine="124" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="130" startPosition="51" endLine="131" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="134" startPosition="61" endLine="135" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="139" startPosition="37" endLine="140" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="141" startPosition="9" endLine="142" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="142" startPosition="36" endLine="143" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="143" startPosition="67" endLine="144" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="144" startPosition="69" endLine="145" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="145" startPosition="88" endLine="146" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="148" startPosition="33" endLine="149" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="151" startPosition="5" endLine="152" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="156" startPosition="132" endLine="157" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="161" startPosition="91" endLine="162" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="165" startPosition="86" endLine="166" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="169" startPosition="72" endLine="170" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="173" startPosition="51" endLine="174" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="177" startPosition="75" endLine="178" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="182" startPosition="48" endLine="183" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="186" startPosition="48" endLine="187" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="195" startPosition="61" endLine="196" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="196" startPosition="74" endLine="197" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="46" startPosition="0" endLine="48" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="58" startPosition="95" endLine="59" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="6062668769033909601" fileName="Java_Configuration.java" startLine="62" startPosition="73" endLine="63" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909609" fileName="Java_Configuration.java" startLine="64" startPosition="118" endLine="65" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909615" fileName="Java_Configuration.java" startLine="67" startPosition="27" endLine="68" endPosition="285" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909630" fileName="Java_Configuration.java" startLine="71" startPosition="32" endLine="72" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="78" startPosition="76" endLine="79" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="80" startPosition="5" endLine="81" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="81" startPosition="51" endLine="82" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="82" startPosition="41" endLine="83" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="85" startPosition="5" endLine="86" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="86" startPosition="60" endLine="87" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="87" startPosition="50" endLine="88" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="94" startPosition="26" endLine="95" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="96" startPosition="5" endLine="97" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="98" startPosition="5" endLine="99" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="100" startPosition="33" endLine="101" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="103" startPosition="35" endLine="104" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="108" startPosition="5" endLine="109" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="110" startPosition="33" endLine="111" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="113" startPosition="35" endLine="114" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="120" startPosition="56" endLine="121" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="124" startPosition="61" endLine="125" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="129" startPosition="37" endLine="130" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="131" startPosition="9" endLine="132" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="132" startPosition="36" endLine="133" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="133" startPosition="67" endLine="134" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="134" startPosition="74" endLine="135" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="135" startPosition="88" endLine="136" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="138" startPosition="33" endLine="139" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="141" startPosition="5" endLine="142" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="146" startPosition="132" endLine="147" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="151" startPosition="91" endLine="152" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="155" startPosition="86" endLine="156" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="159" startPosition="72" endLine="160" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="163" startPosition="51" endLine="164" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="167" startPosition="75" endLine="168" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="172" startPosition="48" endLine="173" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="176" startPosition="48" endLine="177" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="185" startPosition="61" endLine="186" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="186" startPosition="74" endLine="187" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="44" startPosition="0" endLine="46" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myState" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="49" startPosition="99" endLine="51" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="54" startPosition="71" endLine="56" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="190" startPosition="24" endLine="192" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyState#()V" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="180" startPosition="24" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyState#()V" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="9" startPosition="70" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Java_Configuration_Factory#(Lcom/intellij/execution/configurations/ConfigurationType;)V" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="67" startPosition="0" endLine="70" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Java_Configuration#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration_Factory;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6062668769033909628" fileName="Java_Configuration.java" startLine="80" startPosition="9" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="103" startPosition="73" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="57" startPosition="0" endLine="60" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Java_Configuration#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration_Factory;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="6062668769033909628" fileName="Java_Configuration.java" startLine="70" startPosition="9" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="93" startPosition="73" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="102" startPosition="14" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="102" startPosition="14" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="112" startPosition="14" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="112" startPosition="14" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="122" startPosition="14" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="122" startPosition="14" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="147" startPosition="45" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="147" startPosition="45" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="45" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="45" endLine="140" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createTemplateConfiguration#(Lcom/intellij/openapi/project/Project;)Lcom/intellij/execution/configurations/RunConfiguration;" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="21" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Java_Configuration_Editor#(Lcom/intellij/openapi/options/SettingsEditor;Lcom/intellij/openapi/options/SettingsEditor;)V" />
-    <nodeInfo nodeId="6062668769033909562" fileName="Java_Configuration.java" startLine="49" startPosition="293" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6062668769033909563" fileName="Java_Configuration.java" startLine="53" startPosition="58" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="6062668769033909573" fileName="Java_Configuration.java" startLine="57" startPosition="154" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6062668769033909574" fileName="Java_Configuration.java" startLine="61" startPosition="58" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="6062668769033909613" fileName="Java_Configuration.java" startLine="76" startPosition="59" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769033909563" fileName="Java_Configuration.java" startLine="47" startPosition="347" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="6062668769033909574" fileName="Java_Configuration.java" startLine="51" startPosition="198" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="6062668769033909613" fileName="Java_Configuration.java" startLine="66" startPosition="59" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="102" startPosition="12" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="112" startPosition="12" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="122" startPosition="12" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="129" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="133" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunParameters#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="164" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRunnerSettings#(Lcom/intellij/execution/configurations/ConfigurationInfoProvider;)Lcom/intellij/openapi/util/JDOMExternalizable;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="168" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationEditor#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="172" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCloneTemplate#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="176" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditor#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="185" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMakeNodePointersTask#()[Ljava/lang/Object;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="119" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="123" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunParameters#()Ljetbrains/mps/execution/api/settings/ITemplatePersistentConfiguration;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRunnerSettings#(Lcom/intellij/execution/configurations/ConfigurationInfoProvider;)Lcom/intellij/openapi/util/JDOMExternalizable;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationEditor#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="162" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCloneTemplate#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="166" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getEditor#()Ljetbrains/mps/execution/api/settings/SettingsEditorEx;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="175" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createMakeNodePointersTask#()[Ljava/lang/Object;" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyEditorTo#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;)V" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="53" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resetEditorFrom#(Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;)V" />
-    <nodeInfo nodeId="6062668769033909612" fileName="Java_Configuration.java" startLine="75" startPosition="70" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="89" startPosition="57" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="94" startPosition="5" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="154" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)Lcom/intellij/execution/configurations/RunProfileState;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="159" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunnerSettingsEditor#(Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/openapi/options/SettingsEditor;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="180" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="6062668769033909612" fileName="Java_Configuration.java" startLine="65" startPosition="70" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="79" startPosition="57" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="84" startPosition="5" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="144" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getState#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)Lcom/intellij/execution/configurations/RunProfileState;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="149" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunnerSettingsEditor#(Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/openapi/options/SettingsEditor;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="170" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="26" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeEditor#()V" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="193" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="109" startPosition="56" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="119" startPosition="65" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="107" startPosition="83" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="117" startPosition="5" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909607" fileName="Java_Configuration.java" startLine="73" startPosition="40" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="140" startPosition="36" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="72" startPosition="73" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="71" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConfiguration#()V" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="86" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeExternal#(Lorg/jdom/Element;)V" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="183" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="99" startPosition="56" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="109" startPosition="65" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909553" fileName="Java_Configuration.java" startLine="46" startPosition="80" endLine="55" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="97" startPosition="83" endLine="107" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="107" startPosition="5" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909607" fileName="Java_Configuration.java" startLine="63" startPosition="40" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="130" startPosition="36" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="62" startPosition="73" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="61" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkConfiguration#()V" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="76" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeExternal#(Lorg/jdom/Element;)V" />
     <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="32" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditor#()Ljavax/swing/JPanel;" />
-    <nodeInfo nodeId="6062668769033909553" fileName="Java_Configuration.java" startLine="48" startPosition="80" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;" />
-    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="101" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExternal#(Lorg/jdom/Element;)V" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="191" startPosition="22" endLine="191" endPosition="22" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="127" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clone#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/Java_Configuration;" />
+    <nodeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="91" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readExternal#(Lorg/jdom/Element;)V" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="181" startPosition="22" endLine="181" endPosition="22" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="10" startPosition="64" endLine="11" endPosition="16" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="14" startPosition="72" endLine="15" endPosition="75" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="18" />
     <scopeInfo nodeId="6062668769033909547" fileName="Java_Configuration_Editor.java" startLine="27" startPosition="31" endLine="28" endPosition="30" />
-    <scopeInfo nodeId="6062668769033909562" fileName="Java_Configuration.java" startLine="50" startPosition="28" endLine="51" endPosition="108" />
-    <scopeInfo nodeId="6062668769033909564" fileName="Java_Configuration.java" startLine="54" startPosition="39" endLine="55" endPosition="222" />
-    <scopeInfo nodeId="6062668769033909573" fileName="Java_Configuration.java" startLine="58" startPosition="28" endLine="59" endPosition="108" />
-    <scopeInfo nodeId="6062668769033909575" fileName="Java_Configuration.java" startLine="62" startPosition="39" endLine="63" endPosition="263" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="68" startPosition="95" endLine="69" endPosition="34" />
-    <scopeInfo nodeId="6062668769033909614" fileName="Java_Configuration.java" startLine="77" startPosition="27" endLine="78" endPosition="285" />
-    <scopeInfo nodeId="6062668769033909629" fileName="Java_Configuration.java" startLine="81" startPosition="32" endLine="82" endPosition="93" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="104" startPosition="26" endLine="105" endPosition="81" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="110" startPosition="33" endLine="111" endPosition="42" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="113" startPosition="35" endLine="114" endPosition="95" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="120" startPosition="33" endLine="121" endPosition="51" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="123" startPosition="35" endLine="124" endPosition="104" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="130" startPosition="51" endLine="131" endPosition="18" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="134" startPosition="61" endLine="135" endPosition="27" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="148" startPosition="33" endLine="149" endPosition="26" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="156" startPosition="132" endLine="157" endPosition="79" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="161" startPosition="91" endLine="162" endPosition="16" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="165" startPosition="86" endLine="166" endPosition="16" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="169" startPosition="72" endLine="170" endPosition="62" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="173" startPosition="51" endLine="174" endPosition="46" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="177" startPosition="75" endLine="178" endPosition="90" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="182" startPosition="48" endLine="183" endPosition="69" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="186" startPosition="48" endLine="187" endPosition="119" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="22" startPosition="134" endLine="24" endPosition="36" />
+    <scopeInfo nodeId="6062668769033909564" fileName="Java_Configuration.java" startLine="48" startPosition="39" endLine="49" endPosition="222" />
+    <scopeInfo nodeId="6062668769033909575" fileName="Java_Configuration.java" startLine="52" startPosition="39" endLine="53" endPosition="263" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="58" startPosition="95" endLine="59" endPosition="34" />
+    <scopeInfo nodeId="6062668769033909614" fileName="Java_Configuration.java" startLine="67" startPosition="27" endLine="68" endPosition="285" />
+    <scopeInfo nodeId="6062668769033909629" fileName="Java_Configuration.java" startLine="71" startPosition="32" endLine="72" endPosition="93" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="94" startPosition="26" endLine="95" endPosition="81" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="100" startPosition="33" endLine="101" endPosition="42" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="103" startPosition="35" endLine="104" endPosition="95" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="110" startPosition="33" endLine="111" endPosition="51" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="113" startPosition="35" endLine="114" endPosition="104" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="120" startPosition="56" endLine="121" endPosition="18" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="124" startPosition="61" endLine="125" endPosition="27" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="138" startPosition="33" endLine="139" endPosition="26" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="146" startPosition="132" endLine="147" endPosition="79" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="151" startPosition="91" endLine="152" endPosition="16" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="155" startPosition="86" endLine="156" endPosition="16" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="159" startPosition="72" endLine="160" endPosition="62" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="163" startPosition="51" endLine="164" endPosition="46" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="167" startPosition="75" endLine="168" endPosition="90" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="172" startPosition="48" endLine="173" endPosition="69" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="176" startPosition="48" endLine="177" endPosition="119" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="22" startPosition="139" endLine="24" endPosition="36" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="49" startPosition="99" endLine="51" endPosition="68" />
     <scopeInfo nodeId="6062668769033909531" fileName="Java_Configuration_Editor.java" startLine="49" startPosition="99" endLine="51" endPosition="68" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="54" startPosition="71" endLine="56" endPosition="70" />
     <scopeInfo nodeId="6062668769033909515" fileName="Java_Configuration_Editor.java" startLine="54" startPosition="71" endLine="56" endPosition="70" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="190" startPosition="24" endLine="192" endPosition="5" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="195" startPosition="61" endLine="197" endPosition="19">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="180" startPosition="24" endLine="182" endPosition="5" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="185" startPosition="61" endLine="187" endPosition="19">
       <varInfo nodeId="6062668769033909448" varName="state" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="9" startPosition="70" endLine="12" endPosition="3">
       <varInfo nodeId="6062668769033909448" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="27" startPosition="31" endLine="30" endPosition="38" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="67" startPosition="0" endLine="70" endPosition="3">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="57" startPosition="0" endLine="60" endPosition="3">
       <varInfo nodeId="6062668769033909448" varName="factory" />
       <varInfo nodeId="6062668769033909448" varName="name" />
       <varInfo nodeId="6062668769033909448" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="90" startPosition="5" endLine="93" endPosition="39">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="80" startPosition="5" endLine="83" endPosition="39">
       <varInfo nodeId="6062668769033909448" varName="fieldElement" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="95" startPosition="5" endLine="98" endPosition="39">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="85" startPosition="5" endLine="88" endPosition="39">
       <varInfo nodeId="6062668769033909448" varName="fieldElement" />
     </scopeInfo>
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="102" startPosition="14" endLine="105" endPosition="9" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="112" startPosition="14" endLine="115" endPosition="9" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="122" startPosition="14" endLine="125" endPosition="9" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="147" startPosition="0" endLine="150" endPosition="7">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="0" endLine="140" endPosition="7">
       <varInfo nodeId="6062668769033909448" varName="ex" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="147" startPosition="45" endLine="150" endPosition="7" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="45" endLine="140" endPosition="7" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="project" />
     </scopeInfo>
@@ -244,24 +238,22 @@
       <varInfo nodeId="6062668769033909448" varName="node" />
       <varInfo nodeId="6062668769033909448" varName="runParameters" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909562" fileName="Java_Configuration.java" startLine="49" startPosition="293" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909563" fileName="Java_Configuration.java" startLine="53" startPosition="58" endLine="57" endPosition="0">
+    <scopeInfo nodeId="6062668769033909563" fileName="Java_Configuration.java" startLine="47" startPosition="347" endLine="51" endPosition="0">
       <varInfo nodeId="6062668769033909563" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909573" fileName="Java_Configuration.java" startLine="57" startPosition="154" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909574" fileName="Java_Configuration.java" startLine="61" startPosition="58" endLine="65" endPosition="0">
+    <scopeInfo nodeId="6062668769033909574" fileName="Java_Configuration.java" startLine="51" startPosition="198" endLine="55" endPosition="0">
       <varInfo nodeId="6062668769033909574" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909613" fileName="Java_Configuration.java" startLine="76" startPosition="59" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="129" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="133" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="164" startPosition="0" endLine="168" endPosition="0">
+    <scopeInfo nodeId="6062668769033909613" fileName="Java_Configuration.java" startLine="66" startPosition="59" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="119" startPosition="0" endLine="123" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="123" startPosition="0" endLine="127" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="168" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="172" startPosition="0" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="176" startPosition="0" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="185" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="162" startPosition="0" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="166" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="175" startPosition="0" endLine="179" endPosition="0" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="48" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="configuration" />
@@ -269,57 +261,55 @@
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="53" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="configuration" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="141" startPosition="9" endLine="146" endPosition="19" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="154" startPosition="0" endLine="159" endPosition="0">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="131" startPosition="9" endLine="136" endPosition="19" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="144" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="environment" />
       <varInfo nodeId="6062668769033909448" varName="executor" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="159" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="149" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="runner" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="180" startPosition="0" endLine="185" endPosition="0">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="170" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="executorId" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="26" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="193" startPosition="0" endLine="199" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="183" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="98" startPosition="5" endLine="106" endPosition="7">
+      <varInfo nodeId="6062668769033909448" varName="fieldElement" />
+    </scopeInfo>
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="108" startPosition="5" endLine="116" endPosition="7">
       <varInfo nodeId="6062668769033909448" varName="fieldElement" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="118" startPosition="5" endLine="126" endPosition="7">
-      <varInfo nodeId="6062668769033909448" varName="fieldElement" />
-    </scopeInfo>
-    <scopeInfo nodeId="6062668769033909608" fileName="Java_Configuration.java" startLine="74" startPosition="118" endLine="83" endPosition="7">
+    <scopeInfo nodeId="6062668769033909608" fileName="Java_Configuration.java" startLine="64" startPosition="118" endLine="73" endPosition="7">
       <varInfo nodeId="6062668769033909610" varName="hasMainMethod" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="88" startPosition="76" endLine="99" endPosition="5" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="78" startPosition="76" endLine="89" endPosition="5" />
     <scopeInfo nodeId="6062668769033909453" fileName="Java_Configuration_Editor.java" startLine="34" startPosition="32" endLine="46" endPosition="21">
       <varInfo nodeId="6062668769033909487" varName="javaRunParametersEditor" />
       <varInfo nodeId="6062668769033909494" varName="mainPanel" />
       <varInfo nodeId="6062668769033909461" varName="nodeChooser" />
       <varInfo nodeId="6062668769033909467" varName="panel" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="72" startPosition="73" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="6062668769033909600" fileName="Java_Configuration.java" startLine="72" startPosition="73" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="139" startPosition="37" endLine="152" endPosition="17">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="62" startPosition="73" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="6062668769033909600" fileName="Java_Configuration.java" startLine="62" startPosition="73" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="129" startPosition="37" endLine="142" endPosition="17">
       <varInfo nodeId="6062668769033909448" varName="clone" />
     </scopeInfo>
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="71" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="86" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="61" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="76" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="32" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="137" startPosition="0" endLine="154" endPosition="0" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="103" startPosition="73" endLine="127" endPosition="5" />
-    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="101" startPosition="0" endLine="129" endPosition="0">
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="127" startPosition="0" endLine="144" endPosition="0" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="93" startPosition="73" endLine="117" endPosition="5" />
+    <scopeInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="91" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="6062668769033909448" varName="element" />
     </scopeInfo>
-    <unitInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="44" startPosition="0" endLine="201" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration" />
-    <unitInfo nodeId="6062668769033909613" fileName="Java_Configuration.java" startLine="76" startPosition="47" endLine="80" endPosition="7" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$1" />
-    <unitInfo nodeId="6062668769033909562" fileName="Java_Configuration.java" startLine="49" startPosition="272" endLine="53" endPosition="3" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$2" />
-    <unitInfo nodeId="6062668769033909563" fileName="Java_Configuration.java" startLine="53" startPosition="10" endLine="57" endPosition="3" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$3" />
-    <unitInfo nodeId="6062668769033909573" fileName="Java_Configuration.java" startLine="57" startPosition="133" endLine="61" endPosition="3" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$4" />
-    <unitInfo nodeId="6062668769033909574" fileName="Java_Configuration.java" startLine="61" startPosition="10" endLine="65" endPosition="3" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$5" />
-    <unitInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="190" startPosition="0" endLine="200" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$MyState" />
+    <unitInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="42" startPosition="0" endLine="191" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration" />
+    <unitInfo nodeId="6062668769033909613" fileName="Java_Configuration.java" startLine="66" startPosition="47" endLine="70" endPosition="7" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$1" />
+    <unitInfo nodeId="6062668769033909563" fileName="Java_Configuration.java" startLine="47" startPosition="299" endLine="51" endPosition="3" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$2" />
+    <unitInfo nodeId="6062668769033909574" fileName="Java_Configuration.java" startLine="51" startPosition="150" endLine="55" endPosition="3" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$3" />
+    <unitInfo nodeId="6062668769033909448" fileName="Java_Configuration.java" startLine="180" startPosition="0" endLine="190" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration$MyState" />
     <unitInfo nodeId="6062668769033909448" fileName="Java_Configuration_Editor.java" startLine="17" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Editor" />
     <unitInfo nodeId="6062668769033909448" fileName="Java_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Factory" />
   </root>
@@ -328,7 +318,7 @@
     <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="29" startPosition="35" endLine="30" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="31" startPosition="9" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="33" startPosition="7" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="34" startPosition="67" endLine="35" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="34" startPosition="67" endLine="35" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="37" startPosition="35" endLine="38" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="39" startPosition="9" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="41" startPosition="7" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -355,7 +345,7 @@
     <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addForeignFactory#(Lcom/intellij/execution/configurations/ConfigurationFactory;)V" />
     <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/execution/configurations/implementation/plugin/plugin/JavaApplication_Kind;" />
     <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="27" startPosition="132" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="35" startPosition="79" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="35" startPosition="98" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Ljava/lang/String;" />
     <nodeInfo nodeId="6062668769033909641" fileName="JavaApplication_Kind.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConfigurationFactories#()[Lcom/intellij/execution/configurations/ConfigurationFactory;" />
     <nodeInfo nodeId="6062668769033909642" fileName="JavaApplication_Kind.java" startLine="25" startPosition="77" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljavax/swing/Icon;" />
@@ -2497,8 +2487,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -2598,8 +2588,8 @@
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="32" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="33" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="35" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="35" endLine="25" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="6893245555985399815" fileName="plugin.xml" startLine="25" startPosition="54" endLine="25" endPosition="55" conceptFqName="jetbrains.mps.gtext.structure.GText" />

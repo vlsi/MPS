@@ -60,6 +60,7 @@ public abstract class AbstractModule implements IModule {
     }
   };
   private CompositeClassPathItem myCachedClassPathItem;
+  protected boolean myChanged = false;
 
   //----model creation
 
@@ -77,7 +78,7 @@ public abstract class AbstractModule implements IModule {
     IModelRootManager manager = root.getManager();
 
     if (!manager.canCreateModel(this, root.getModelRoot(), name)) {
-      LOG.error("Can't create a model with this name under " + root.getPath() + "[" + root.getManager().getClass().getSimpleName() + "]");
+      LOG.error("Can't create a model " + name + " under model root " + root.getPath() + "[" + root.getManager().getClass().getSimpleName() + "]");
       return null;
     }
 
@@ -125,6 +126,27 @@ public abstract class AbstractModule implements IModule {
     return myModuleReference.getModuleFqName();
   }
 
+  //----save
+
+  //todo move to EditableModule class
+  public ModuleDescriptor getModuleDescriptor() {
+    return null;
+  }
+
+  //todo should be replaced with events
+  @Override
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+    setChanged();
+  }
+
+  public void setChanged() {
+    myChanged = true;
+  }
+
+  public void save() {
+    myChanged = false;
+  }
+
   //----adding different deps
 
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
@@ -136,7 +158,8 @@ public abstract class AbstractModule implements IModule {
       if (reexport && !dep.isReexport()) {
         dep.setReexport(true);
         invalidateCaches();
-        save();
+        invalidateDependencies();
+        setChanged();
       }
       return;
     }
@@ -145,9 +168,10 @@ public abstract class AbstractModule implements IModule {
     dep.setModuleRef(moduleRef);
     dep.setReexport(reexport);
     descriptor.getDependencies().add(dep);
-    //setModuleDescriptor(descriptor, true);
+
     invalidateCaches();
-    save();
+    invalidateDependencies();
+    setChanged();
   }
 
   public void addUsedLanguage(ModuleReference langRef) {
@@ -156,9 +180,10 @@ public abstract class AbstractModule implements IModule {
     if (descriptor.getUsedLanguages().contains(langRef)) return;
 
     descriptor.getUsedLanguages().add(langRef);
+
     invalidateCaches();
-//    setModuleDescriptor(descriptor, true);// removed as it follows to models disposing even after addChild()
-    //save();
+    invalidateDependencies();
+    setChanged();
   }
 
   public void addUsedDevkit(ModuleReference devkitRef) {
@@ -167,9 +192,10 @@ public abstract class AbstractModule implements IModule {
     if (descriptor.getUsedDevkits().contains(devkitRef)) return;
 
     descriptor.getUsedDevkits().add(devkitRef);
+
     invalidateCaches();
-//    setModuleDescriptor(descriptor, true);
-    save();
+    invalidateDependencies();
+    setChanged();
   }
 
   //----get deps
@@ -536,7 +562,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     ModuleDescriptor d = getModuleDescriptor();
-    if (d==null) return result;
+    if (d == null) return result;
 
     for (ModelRoot root : d.getModelRoots()) {
       result.add(root.getPath());
@@ -604,14 +630,18 @@ public abstract class AbstractModule implements IModule {
     e.printStackTrace();
   }
 
-  public boolean updateSModelReferences() {
-    if (getModuleDescriptor() == null) return false;
-    return getModuleDescriptor().updateModelRefs();
+  public void updateSModelReferences() {
+    if (getModuleDescriptor() == null) return;
+    if (getModuleDescriptor().updateModelRefs()){
+      setChanged();
+    }
   }
 
-  public boolean updateModuleReferences() {
-    if (getModuleDescriptor() == null) return false;
-    return getModuleDescriptor().updateModuleRefs();
+  public void updateModuleReferences() {
+    if (getModuleDescriptor() == null) return;
+    if (getModuleDescriptor().updateModuleRefs()){
+      setChanged();
+    }
   }
 
   public void invalidateDependencies() {
@@ -632,6 +662,10 @@ public abstract class AbstractModule implements IModule {
 
   public String getTestsGeneratorOutputPath() {
     return null;
+  }
+
+  public boolean isChanged() {
+    return myChanged;
   }
 
   public class ModuleScope extends DefaultScope {

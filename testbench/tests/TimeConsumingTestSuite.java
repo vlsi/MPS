@@ -29,7 +29,7 @@ import org.junit.runner.RunWith;
   "jetbrains.mps.generator.test.IncrementalGenerationTest",
   "jetbrains.mps.generator.test.ParallelGenerationMeasuringTest",
   "jetbrains.mps.generator.test.ParallelPoolTest",
-  "jetbrains.mps.ide.migration.persistence.PersistenceTest",
+  "jetbrains.mps.PersistenceTest",
   "jetbrains.mps.runtime.InternerTest"})
 @RunWith(WatchingSuite.class)
 public class TimeConsumingTestSuite {

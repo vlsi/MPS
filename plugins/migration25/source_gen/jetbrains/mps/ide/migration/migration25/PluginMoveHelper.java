@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -26,21 +28,17 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.MacrosUtil;
 import javax.swing.ImageIcon;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 
 public class PluginMoveHelper {
@@ -86,6 +84,8 @@ public class PluginMoveHelper {
     }
 
     myProject.getProject().save();
+    MPSModuleRepository.getInstance().saveAll();
+    SModelRepository.getInstance().saveAll();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
@@ -96,7 +96,7 @@ public class PluginMoveHelper {
         SModel m = ListSequence.fromList(models).first().getSModel();
         ListSequence.fromList(SModelOperations.getNodes(m, "jetbrains.mps.lang.resources.structure.IconResource")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return (it != null) && isNotEmpty_qerz9l_a0a0a0a0a0c0a0a0b(SPropertyOperations.getString(it, "path")) && !(isValid(it));
+            return (it != null) && isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a1(SPropertyOperations.getString(it, "path")) && !(isValid(it));
           }
         }).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
@@ -106,10 +106,10 @@ public class PluginMoveHelper {
               return;
             }
 
-            String iconPath = MacrosFactory.moduleDescriptor(lang).expandPath(SPropertyOperations.getString(it, "path"), lang.getDescriptorFile());
+            String iconPath = MacrosFactory.forModuleFile(lang.getDescriptorFile()).expandPath(SPropertyOperations.getString(it, "path"));
 
-            String newIconMacro = SPropertyOperations.getString(it, "path").replace(MacrosFactory.LANGUAGE_DESCRIPTOR, MacrosFactory.SOLUTION_DESCRIPTOR);
-            String newIconPath = MacrosFactory.moduleDescriptor(solution).expandPath(newIconMacro, solution.getDescriptorFile());
+            String newIconMacro = SPropertyOperations.getString(it, "path").replace("${language_descriptor}", "${solution_descriptor}");
+            String newIconPath = MacrosFactory.forModuleFile(solution.getDescriptorFile()).expandPath(newIconMacro);
 
             SPropertyOperations.set(it, "path", newIconMacro);
 
@@ -132,7 +132,7 @@ public class PluginMoveHelper {
     if (module == null) {
       return false;
     }
-    String path = MacrosUtil.expandPath(SPropertyOperations.getString(icon, "path"), module.getModuleFqName());
+    String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(SPropertyOperations.getString(icon, "path"));
     if (path == null) {
       return false;
     }
@@ -161,13 +161,13 @@ public class PluginMoveHelper {
 
     final String modelName = s.getModuleFqName() + ".plugin";
     List<SModelDescriptor> solModels = s.getOwnModelDescriptors();
-    final Wrappers._T<SModelDescriptor> pluginModel = new Wrappers._T<SModelDescriptor>(ListSequence.fromList(solModels).where(new IWhereFilter<SModelDescriptor>() {
+    SModelDescriptor pluginModel = ListSequence.fromList(solModels).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
         return it.getLongName().equals(modelName);
       }
-    }).first());
-    if (pluginModel.value == null) {
-      pluginModel.value = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().iterator().next(), null);
+    }).first();
+    if (pluginModel == null) {
+      pluginModel = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().iterator().next(), null);
     }
 
     List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().roots());
@@ -177,10 +177,9 @@ public class PluginMoveHelper {
         return !(isFromFacetLang(it));
       }
     });
-    final RefactoringContext context = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel.value), Sequence.fromIterable(nodes2Refactor).toListSequence(), myProject);
+    final RefactoringContext context = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel), Sequence.fromIterable(nodes2Refactor).toListSequence(), myProject);
     RefactoringContext rc = (RefactoringContext) context;
     rc.setLocal(true);
-    rc.setDoesGenerateModels(false);
 
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
@@ -188,9 +187,8 @@ public class PluginMoveHelper {
       }
     });
 
-    // <node> 
 
-    jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
+    jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.getSModel(), false, true);
 
     s.save();
     SModelRepository.getInstance().saveAll();
@@ -206,7 +204,7 @@ public class PluginMoveHelper {
     return l.getModuleFqName() + "." + name;
   }
 
-  public static boolean isNotEmpty_qerz9l_a0a0a0a0a0c0a0a0b(String str) {
+  public static boolean isNotEmpty_qerz9l_a0a0a0a0a0a0a2a0a0a1(String str) {
     return str != null && str.length() > 0;
   }
 }

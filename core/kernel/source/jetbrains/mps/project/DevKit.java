@@ -56,6 +56,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
   }
 
   public void setDevKitDescriptor(DevkitDescriptor descriptor, boolean reloadClasses) {
+    super.setModuleDescriptor(descriptor,reloadClasses);
+
     MPSModuleRepository moduleRepo = MPSModuleRepository.getInstance();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
     ModuleRepositoryFacade.getInstance().unregisterModules(myGenerationOnlyModelsModelOwner);
@@ -188,15 +190,8 @@ public class DevKit extends AbstractModule implements MPSModuleOwner {
     return result;
   }
 
-  public List<String> getLanguageNamespaces() {
-    List<String> result = new ArrayList<String>();
-    for (Language l : getExportedLanguages()) {
-      result.add(l.getModuleFqName());
-    }
-    return result;
-  }
-
   public void save() {
+    super.save();
     DevkitDescriptorPersistence.saveDevKitDescriptor(myDescriptorFile, getModuleDescriptor());
   }
 

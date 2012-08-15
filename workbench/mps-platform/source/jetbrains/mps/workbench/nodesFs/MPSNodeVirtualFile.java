@@ -19,10 +19,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.ModelUtil;
@@ -47,8 +44,8 @@ public class MPSNodeVirtualFile extends VirtualFile {
   MPSNodeVirtualFile(@NotNull SNodePointer nodePointer) {
     myNode = nodePointer;
     SModelDescriptor modelDescriptor = nodePointer.getModel();
-    if (modelDescriptor instanceof EditableSModelDescriptor) {
-      myTimeStamp = ((EditableSModelDescriptor) modelDescriptor).lastChangeTime();
+    if (modelDescriptor instanceof BaseSModelDescriptorWithSource) {
+      myTimeStamp = ((BaseSModelDescriptorWithSource) modelDescriptor).getSourceTimestamp();
     }
     updateFields();
   }
@@ -121,6 +118,8 @@ public class MPSNodeVirtualFile extends VirtualFile {
         if (myNode == null) return null;
         SNode node = getNode();
         if (node == null) return null;
+        SModelDescriptor md = node.getModel().getModelDescriptor();
+        if (!(md instanceof DefaultSModelDescriptor)) return null;
         return ModelUtil.getFileByModel(node.getModel());
       }
     });

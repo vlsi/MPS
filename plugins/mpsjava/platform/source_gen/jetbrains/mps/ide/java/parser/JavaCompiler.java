@@ -28,6 +28,10 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.MPSExtentions;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
@@ -208,16 +212,31 @@ public class JavaCompiler {
     }
   }
 
-  private void createModels() {
-    for (String packageFqName : myModelsToCreate) {
-      SModel model = createModel(SModelFqName.fromString(packageFqName));
-      myPackageFQNamesToModels.put(packageFqName, model);
+  private boolean createModels() {
+    // first check if it is possible 
+    for (String packageFqName : SetSequence.fromSet(myModelsToCreate)) {
+      if (getRootToCreateModel(SModelFqName.fromString(packageFqName)) == null) {
+        LOG.error("Cannot create model " + packageFqName + " in module " + myModule.getModuleFqName());
+        return false;
+      }
     }
+    for (String packageFqName : myModelsToCreate) {
+      SModelFqName modelFqName = SModelFqName.fromString(packageFqName);
+      SModelDescriptor modelDescr = myModule.createModel(modelFqName, getRootToCreateModel(modelFqName), null);
+      assert modelDescr != null;
+      myPackageFQNamesToModels.put(packageFqName, modelDescr.getSModel());
+    }
+    return true;
   }
 
-  private SModel createModel(SModelFqName modelFqName) {
-    SModelDescriptor modelDescriptor = myModule.createModel(modelFqName, myModule.getSModelRoots().iterator().next(), null);
-    return modelDescriptor.getSModel();
+  @Nullable
+  private SModelRoot getRootToCreateModel(SModelFqName modelFqName) {
+    for (SModelRoot root : CollectionSequence.fromCollection(myModule.getSModelRoots())) {
+      if (root.getManager().canCreateModel(myModule, root.getModelRoot(), modelFqName)) {
+        return root;
+      }
+    }
+    return null;
   }
 
   public void addSource(String classFqName, String text) {
@@ -345,11 +364,6 @@ public class JavaCompiler {
             }
             if (cpe != null) {
               myModule.getModuleDescriptor().getStubModelEntries().add(ModelRootUtil.fromClassPathEntry(cpe));
-              ModelAccess.instance().runWriteInEDT(new Runnable() {
-                public void run() {
-                  myModule.save();
-                }
-              });
             }
           }
           return true;
@@ -378,8 +392,9 @@ public class JavaCompiler {
   }
 
   private void createModelsAndBuildAST() {
-    createModels();
-    buildAST(false);
+    if (createModels()) {
+      buildAST(false);
+    }
   }
 
   private List<SNode> buildAST(boolean isolated) {

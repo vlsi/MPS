@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
@@ -38,13 +39,38 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
     final SNode ret_typevar_668767903263948995 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(invoke, "function", true);
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948996", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_CompactInvokeFunctionExpression_InferenceRule.QuotationClass_ojnxkp_a0a3a0().createNode(ptypes, typeCheckingContext.getRepresentative(ret_typevar_668767903263948995), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263948998", true), false, true, _info_12389875345);
+      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8710643694461127231", 0, null);
+      typeCheckingContext.createGreaterThanInequality((SNode) new typeof_CompactInvokeFunctionExpression_InferenceRule.QuotationClass_ojnxkp_a0a3a0().createNode(ptypes, typeCheckingContext.getRepresentative(ret_typevar_668767903263948995), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "8710643694461127233", true), false, true, _info_12389875345);
     }
     {
-      SNode _nodeToCheck_1029348928467 = invoke;
-      EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263949012", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "668767903263949016", true), (SNode) typeCheckingContext.getRepresentative(ret_typevar_668767903263948995), _info_12389875345);
+      final SNode reifiedRet = typeCheckingContext.getRepresentative(ret_typevar_668767903263948995);
+      typeCheckingContext.whenConcrete(reifiedRet, new Runnable() {
+        public void run() {
+          {
+            SNode matchedNode_1b5x3i_a0e0 = typeCheckingContext.getExpandedNode(reifiedRet);
+            {
+              boolean matches_1b5x3i_a0a4a = false;
+              {
+                SNode matchingNode_1b5x3i_a0a4a = typeCheckingContext.getExpandedNode(reifiedRet);
+                if (matchingNode_1b5x3i_a0a4a != null) {
+                  matches_1b5x3i_a0a4a = SModelUtil_new.isAssignableConcept(matchingNode_1b5x3i_a0a4a.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.MeetType");
+                }
+              }
+              if (matches_1b5x3i_a0a4a) {
+                {
+                  SNode _nodeToCheck_1029348928467 = invoke;
+                  EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720529", 0, null);
+                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720538", true), (SNode) ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(typeCheckingContext.getExpandedNode(reifiedRet), "jetbrains.mps.lang.typesystem.structure.MeetType"), "argument", true)).first(), _info_12389875345);
+                }
+              } else {
+                SNode _nodeToCheck_1029348928467 = invoke;
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720540", 0, null);
+                typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720542", true), (SNode) typeCheckingContext.getExpandedNode(reifiedRet), _info_12389875345);
+              }
+            }
+          }
+        }
+      }, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "4359876593789720522", false, false);
     }
   }
 
@@ -74,7 +100,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           List<SNode> nodes = (List<SNode>) parameter_6;
@@ -107,7 +133,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
       SNode quotedNode_2 = null;
       SNode quotedNode_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType", null, GlobalScope.getInstance(), false);
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_4 = quotedNode_1;
         {
           List<SNode> nodes = (List<SNode>) parameter_6;

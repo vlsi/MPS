@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.tuples.runtime" uuid="d44dab97-aaac-44cb-9745-8a14db674c03" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
-    <modelRoot path="${solution_descriptor}/" />
-    <modelRoot path="${solution_descriptor}/classes">
+    <modelRoot path="${module}/" />
+    <modelRoot path="${module}/classes">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     </modelRoot>
   </models>

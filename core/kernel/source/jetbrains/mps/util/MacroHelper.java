@@ -17,11 +17,7 @@ package jetbrains.mps.util;
 
 import org.jetbrains.annotations.Nullable;
 
-/**
- * evgeny, 3/26/12
- */
 public interface MacroHelper {
-
   String expandPath(@Nullable String path);
 
   String shrinkPath(@Nullable String absolutePath);
