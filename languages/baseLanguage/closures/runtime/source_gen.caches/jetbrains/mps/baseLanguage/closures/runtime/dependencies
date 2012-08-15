@@ -8,12 +8,6 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode extendsClassName="java.lang.RuntimeException" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.FunctionTypes" file="FunctionTypes.java">
-    <classNode dependClassName="java.lang.Throwable" />
-  </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.closures.runtime.FunctionTypes2" file="FunctionTypes2.java">
-    <classNode dependClassName="java.lang.Throwable" />
-  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Nothing" file="Nothing.java" />
   <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Outcome" file="Outcome.java" />
   <dependency className="jetbrains.mps.baseLanguage.closures.runtime.Result" file="Result.java">
