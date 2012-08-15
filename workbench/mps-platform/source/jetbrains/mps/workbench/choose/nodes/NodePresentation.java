@@ -46,7 +46,8 @@ public class NodePresentation extends BasePresentation {
 
   @NotNull
   public String doGetPresentableText() {
-    return NodePresentationUtil.matchingText(myNode);
+    String text = NodePresentationUtil.matchingText(myNode);
+    return text != null ? text : "";
   }
 
   public String doGetLocationString() {
