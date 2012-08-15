@@ -568,9 +568,10 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
               }
             }));
 
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0h0a().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, t, r, basecls, tvds, name));
+            SNode cls = ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0a62a1a1a4a0a0a7a0().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, t, r, basecls, tvds, name));
+            SPropertyOperations.set(cls, "nonStatic", "" + false);
 
-            ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0cb0b0b0e0a0a0h0a().createNode("E" + (exceps + 1)));
+            ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0db0b0b0e0a0a0h0a().createNode("E" + (exceps + 1)));
           }
           ListSequence.fromList(paramTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0c0b0e0a0a0h0a().createNode("P" + (params + 1)));
         }
@@ -667,9 +668,10 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
               }
             }));
 
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0i0a().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, t, basecls, tvds, name));
+            SNode cls = ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0a42a1a1a4a0a0a8a0().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, t, basecls, tvds, name));
+            SPropertyOperations.set(cls, "nonStatic", "" + false);
 
-            ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0i0a().createNode("E" + (exceps + 1)));
+            ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0bb0b0b0e0a0a0i0a().createNode("E" + (exceps + 1)));
           }
           ListSequence.fromList(paramTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0c0b0e0a0a0i0a().createNode("P" + (params + 1)));
         }
@@ -766,9 +768,10 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
               }
             }));
 
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0j0a().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, r, basecls, tvds, name));
+            SNode cls = ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0a42a1a1a4a0a0a9a0().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, r, basecls, tvds, name));
+            SPropertyOperations.set(cls, "nonStatic", "" + false);
 
-            ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0j0a().createNode("E" + (exceps + 1)));
+            ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0bb0b0b0e0a0a0j0a().createNode("E" + (exceps + 1)));
           }
           ListSequence.fromList(paramTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0c0b0e0a0a0j0a().createNode("P" + (params + 1)));
         }
@@ -863,9 +866,10 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
               }
             }));
 
-            ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0w0b0b0e0a0a0k0a().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, basecls, tvds, name));
+            SNode cls = ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0a22a1a1a4a0a0a01a0().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, basecls, tvds, name));
+            SPropertyOperations.set(cls, "nonStatic", "" + false);
 
-            ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0k0a().createNode("E" + (exceps + 1)));
+            ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0z0b0b0e0a0a0k0a().createNode("E" + (exceps + 1)));
           }
           ListSequence.fromList(paramTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0c0b0e0a0a0k0a().createNode("P" + (params + 1)));
         }
@@ -2731,8 +2735,8 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0h0a {
-    public QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0h0a() {
+  public static class QuotationClass_7zsbjc_a0a0a62a1a1a4a0a0a7a0 {
+    public QuotationClass_7zsbjc_a0a0a62a1a1a4a0a0a7a0() {
     }
 
     public SNode createNode(Object parameter_85, Object parameter_86, Object parameter_87, Object parameter_88, Object parameter_89, Object parameter_90, Object parameter_91, Object parameter_92, Object parameter_93, Object parameter_94, Object parameter_95, Object parameter_96, Object parameter_97, Object parameter_98, Object parameter_99, Object parameter_100, Object parameter_101) {
@@ -3075,8 +3079,8 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_7zsbjc_a0a0cb0b0b0e0a0a0h0a {
-    public QuotationClass_7zsbjc_a0a0cb0b0b0e0a0a0h0a() {
+  public static class QuotationClass_7zsbjc_a0a0db0b0b0e0a0a0h0a {
+    public QuotationClass_7zsbjc_a0a0db0b0b0e0a0a0h0a() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -3297,8 +3301,8 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0i0a {
-    public QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0i0a() {
+  public static class QuotationClass_7zsbjc_a0a0a42a1a1a4a0a0a8a0 {
+    public QuotationClass_7zsbjc_a0a0a42a1a1a4a0a0a8a0() {
     }
 
     public SNode createNode(Object parameter_85, Object parameter_86, Object parameter_87, Object parameter_88, Object parameter_89, Object parameter_90, Object parameter_91, Object parameter_92, Object parameter_93, Object parameter_94, Object parameter_95, Object parameter_96, Object parameter_97, Object parameter_98, Object parameter_99, Object parameter_100) {
@@ -3634,8 +3638,8 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0i0a {
-    public QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0i0a() {
+  public static class QuotationClass_7zsbjc_a0a0bb0b0b0e0a0a0i0a {
+    public QuotationClass_7zsbjc_a0a0bb0b0b0e0a0a0i0a() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -3856,8 +3860,8 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0j0a {
-    public QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0j0a() {
+  public static class QuotationClass_7zsbjc_a0a0a42a1a1a4a0a0a9a0 {
+    public QuotationClass_7zsbjc_a0a0a42a1a1a4a0a0a9a0() {
     }
 
     public SNode createNode(Object parameter_85, Object parameter_86, Object parameter_87, Object parameter_88, Object parameter_89, Object parameter_90, Object parameter_91, Object parameter_92, Object parameter_93, Object parameter_94, Object parameter_95, Object parameter_96, Object parameter_97, Object parameter_98, Object parameter_99, Object parameter_100) {
@@ -4193,8 +4197,8 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0j0a {
-    public QuotationClass_7zsbjc_a0a0ab0b0b0e0a0a0j0a() {
+  public static class QuotationClass_7zsbjc_a0a0bb0b0b0e0a0a0j0a {
+    public QuotationClass_7zsbjc_a0a0bb0b0b0e0a0a0j0a() {
     }
 
     public SNode createNode(Object parameter_5) {
@@ -4372,8 +4376,8 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_7zsbjc_a0a0w0b0b0e0a0a0k0a {
-    public QuotationClass_7zsbjc_a0a0w0b0b0e0a0a0k0a() {
+  public static class QuotationClass_7zsbjc_a0a0a22a1a1a4a0a0a01a0 {
+    public QuotationClass_7zsbjc_a0a0a22a1a1a4a0a0a01a0() {
     }
 
     public SNode createNode(Object parameter_85, Object parameter_86, Object parameter_87, Object parameter_88, Object parameter_89, Object parameter_90, Object parameter_91, Object parameter_92, Object parameter_93, Object parameter_94, Object parameter_95, Object parameter_96, Object parameter_97, Object parameter_98, Object parameter_99) {
@@ -4702,8 +4706,8 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
     }
   }
 
-  public static class QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0k0a {
-    public QuotationClass_7zsbjc_a0a0y0b0b0e0a0a0k0a() {
+  public static class QuotationClass_7zsbjc_a0a0z0b0b0e0a0a0k0a {
+    public QuotationClass_7zsbjc_a0a0z0b0b0e0a0a0k0a() {
     }
 
     public SNode createNode(Object parameter_5) {

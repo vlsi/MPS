@@ -33,7 +33,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_terminate_P0_E0<T, R> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E0<T, R> {
+  public static class _return_terminate_P0_E0<T, R> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E0<T, R> {
     private _UnrestrictedFunctionTypes._return_terminate_P0_E0<T, R> adapted;
 
     public _return_terminate_P0_E0(_UnrestrictedFunctionTypes._return_terminate_P0_E0<T, R> adapted) {
@@ -46,7 +46,1567 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E0<T> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E0<T> {
+  public static class _return_terminate_P0_E1<T, R, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E1<T, R, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E1<T, R, E1> adapted;
+
+    public _return_terminate_P0_E1(_UnrestrictedFunctionTypes._return_terminate_P0_E1<T, R, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E2<T, R, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E2<T, R, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E2<T, R, E1, E2> adapted;
+
+    public _return_terminate_P0_E2(_UnrestrictedFunctionTypes._return_terminate_P0_E2<T, R, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E3<T, R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E3<T, R, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E3<T, R, E1, E2, E3> adapted;
+
+    public _return_terminate_P0_E3(_UnrestrictedFunctionTypes._return_terminate_P0_E3<T, R, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E4<T, R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E4<T, R, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E4<T, R, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P0_E4(_UnrestrictedFunctionTypes._return_terminate_P0_E4<T, R, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E5<T, R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E5<T, R, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E5<T, R, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P0_E5(_UnrestrictedFunctionTypes._return_terminate_P0_E5<T, R, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E6<T, R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E6<T, R, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E6<T, R, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P0_E6(_UnrestrictedFunctionTypes._return_terminate_P0_E6<T, R, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E7<T, R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E7<T, R, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E7<T, R, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P0_E7(_UnrestrictedFunctionTypes._return_terminate_P0_E7<T, R, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E8<T, R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E8<T, R, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E8<T, R, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P0_E8(_UnrestrictedFunctionTypes._return_terminate_P0_E8<T, R, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E9<T, R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E9<T, R, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E9<T, R, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P0_E9(_UnrestrictedFunctionTypes._return_terminate_P0_E9<T, R, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P0_E10<T, R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P0_E10<T, R, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P0_E10<T, R, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P0_E10(_UnrestrictedFunctionTypes._return_terminate_P0_E10<T, R, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted() throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted());
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E0<T, R, P1> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E0<T, R, P1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E0<T, R, P1> adapted;
+
+    public _return_terminate_P1_E0(_UnrestrictedFunctionTypes._return_terminate_P1_E0<T, R, P1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E1<T, R, P1, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E1<T, R, P1, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E1<T, R, P1, E1> adapted;
+
+    public _return_terminate_P1_E1(_UnrestrictedFunctionTypes._return_terminate_P1_E1<T, R, P1, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E2<T, R, P1, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E2<T, R, P1, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E2<T, R, P1, E1, E2> adapted;
+
+    public _return_terminate_P1_E2(_UnrestrictedFunctionTypes._return_terminate_P1_E2<T, R, P1, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E3<T, R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E3<T, R, P1, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E3<T, R, P1, E1, E2, E3> adapted;
+
+    public _return_terminate_P1_E3(_UnrestrictedFunctionTypes._return_terminate_P1_E3<T, R, P1, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E4<T, R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E4<T, R, P1, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E4<T, R, P1, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P1_E4(_UnrestrictedFunctionTypes._return_terminate_P1_E4<T, R, P1, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E5<T, R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E5<T, R, P1, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E5<T, R, P1, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P1_E5(_UnrestrictedFunctionTypes._return_terminate_P1_E5<T, R, P1, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E6<T, R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E6<T, R, P1, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E6<T, R, P1, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P1_E6(_UnrestrictedFunctionTypes._return_terminate_P1_E6<T, R, P1, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E7<T, R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E7<T, R, P1, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E7<T, R, P1, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P1_E7(_UnrestrictedFunctionTypes._return_terminate_P1_E7<T, R, P1, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E8<T, R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E8<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E8<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P1_E8(_UnrestrictedFunctionTypes._return_terminate_P1_E8<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E9<T, R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E9<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E9<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P1_E9(_UnrestrictedFunctionTypes._return_terminate_P1_E9<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P1_E10<T, R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P1_E10<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P1_E10<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P1_E10(_UnrestrictedFunctionTypes._return_terminate_P1_E10<T, R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E0<T, R, P1, P2> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E0<T, R, P1, P2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E0<T, R, P1, P2> adapted;
+
+    public _return_terminate_P2_E0(_UnrestrictedFunctionTypes._return_terminate_P2_E0<T, R, P1, P2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E1<T, R, P1, P2, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E1<T, R, P1, P2, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E1<T, R, P1, P2, E1> adapted;
+
+    public _return_terminate_P2_E1(_UnrestrictedFunctionTypes._return_terminate_P2_E1<T, R, P1, P2, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E2<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E2<T, R, P1, P2, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E2<T, R, P1, P2, E1, E2> adapted;
+
+    public _return_terminate_P2_E2(_UnrestrictedFunctionTypes._return_terminate_P2_E2<T, R, P1, P2, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E3<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E3<T, R, P1, P2, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E3<T, R, P1, P2, E1, E2, E3> adapted;
+
+    public _return_terminate_P2_E3(_UnrestrictedFunctionTypes._return_terminate_P2_E3<T, R, P1, P2, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E4<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E4<T, R, P1, P2, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E4<T, R, P1, P2, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P2_E4(_UnrestrictedFunctionTypes._return_terminate_P2_E4<T, R, P1, P2, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E5<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E5<T, R, P1, P2, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E5<T, R, P1, P2, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P2_E5(_UnrestrictedFunctionTypes._return_terminate_P2_E5<T, R, P1, P2, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E6<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E6<T, R, P1, P2, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E6<T, R, P1, P2, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P2_E6(_UnrestrictedFunctionTypes._return_terminate_P2_E6<T, R, P1, P2, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E7<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E7<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E7<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P2_E7(_UnrestrictedFunctionTypes._return_terminate_P2_E7<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E8<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E8<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E8<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P2_E8(_UnrestrictedFunctionTypes._return_terminate_P2_E8<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E9<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E9<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E9<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P2_E9(_UnrestrictedFunctionTypes._return_terminate_P2_E9<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P2_E10<T, R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P2_E10<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P2_E10<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P2_E10(_UnrestrictedFunctionTypes._return_terminate_P2_E10<T, R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E0<T, R, P1, P2, P3> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E0<T, R, P1, P2, P3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E0<T, R, P1, P2, P3> adapted;
+
+    public _return_terminate_P3_E0(_UnrestrictedFunctionTypes._return_terminate_P3_E0<T, R, P1, P2, P3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E1<T, R, P1, P2, P3, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E1<T, R, P1, P2, P3, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E1<T, R, P1, P2, P3, E1> adapted;
+
+    public _return_terminate_P3_E1(_UnrestrictedFunctionTypes._return_terminate_P3_E1<T, R, P1, P2, P3, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E2<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E2<T, R, P1, P2, P3, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E2<T, R, P1, P2, P3, E1, E2> adapted;
+
+    public _return_terminate_P3_E2(_UnrestrictedFunctionTypes._return_terminate_P3_E2<T, R, P1, P2, P3, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E3<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E3<T, R, P1, P2, P3, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E3<T, R, P1, P2, P3, E1, E2, E3> adapted;
+
+    public _return_terminate_P3_E3(_UnrestrictedFunctionTypes._return_terminate_P3_E3<T, R, P1, P2, P3, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E4<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E4<T, R, P1, P2, P3, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E4<T, R, P1, P2, P3, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P3_E4(_UnrestrictedFunctionTypes._return_terminate_P3_E4<T, R, P1, P2, P3, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E5<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E5<T, R, P1, P2, P3, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E5<T, R, P1, P2, P3, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P3_E5(_UnrestrictedFunctionTypes._return_terminate_P3_E5<T, R, P1, P2, P3, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E6<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E6<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E6<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P3_E6(_UnrestrictedFunctionTypes._return_terminate_P3_E6<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E7<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E7<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E7<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P3_E7(_UnrestrictedFunctionTypes._return_terminate_P3_E7<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E8<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E8<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E8<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P3_E8(_UnrestrictedFunctionTypes._return_terminate_P3_E8<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E9<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E9<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E9<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P3_E9(_UnrestrictedFunctionTypes._return_terminate_P3_E9<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P3_E10<T, R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P3_E10<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P3_E10<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P3_E10(_UnrestrictedFunctionTypes._return_terminate_P3_E10<T, R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E0<T, R, P1, P2, P3, P4> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E0<T, R, P1, P2, P3, P4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E0<T, R, P1, P2, P3, P4> adapted;
+
+    public _return_terminate_P4_E0(_UnrestrictedFunctionTypes._return_terminate_P4_E0<T, R, P1, P2, P3, P4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E1<T, R, P1, P2, P3, P4, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E1<T, R, P1, P2, P3, P4, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E1<T, R, P1, P2, P3, P4, E1> adapted;
+
+    public _return_terminate_P4_E1(_UnrestrictedFunctionTypes._return_terminate_P4_E1<T, R, P1, P2, P3, P4, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E2<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E2<T, R, P1, P2, P3, P4, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E2<T, R, P1, P2, P3, P4, E1, E2> adapted;
+
+    public _return_terminate_P4_E2(_UnrestrictedFunctionTypes._return_terminate_P4_E2<T, R, P1, P2, P3, P4, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E3<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E3<T, R, P1, P2, P3, P4, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E3<T, R, P1, P2, P3, P4, E1, E2, E3> adapted;
+
+    public _return_terminate_P4_E3(_UnrestrictedFunctionTypes._return_terminate_P4_E3<T, R, P1, P2, P3, P4, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E4<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E4<T, R, P1, P2, P3, P4, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E4<T, R, P1, P2, P3, P4, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P4_E4(_UnrestrictedFunctionTypes._return_terminate_P4_E4<T, R, P1, P2, P3, P4, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E5<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E5<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E5<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P4_E5(_UnrestrictedFunctionTypes._return_terminate_P4_E5<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E6<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E6<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E6<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P4_E6(_UnrestrictedFunctionTypes._return_terminate_P4_E6<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E7<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E7<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E7<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P4_E7(_UnrestrictedFunctionTypes._return_terminate_P4_E7<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E8<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E8<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E8<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P4_E8(_UnrestrictedFunctionTypes._return_terminate_P4_E8<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E9<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E9<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E9<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P4_E9(_UnrestrictedFunctionTypes._return_terminate_P4_E9<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P4_E10<T, R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P4_E10<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P4_E10<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P4_E10(_UnrestrictedFunctionTypes._return_terminate_P4_E10<T, R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E0<T, R, P1, P2, P3, P4, P5> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E0<T, R, P1, P2, P3, P4, P5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E0<T, R, P1, P2, P3, P4, P5> adapted;
+
+    public _return_terminate_P5_E0(_UnrestrictedFunctionTypes._return_terminate_P5_E0<T, R, P1, P2, P3, P4, P5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E1<T, R, P1, P2, P3, P4, P5, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E1<T, R, P1, P2, P3, P4, P5, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E1<T, R, P1, P2, P3, P4, P5, E1> adapted;
+
+    public _return_terminate_P5_E1(_UnrestrictedFunctionTypes._return_terminate_P5_E1<T, R, P1, P2, P3, P4, P5, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E2<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E2<T, R, P1, P2, P3, P4, P5, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E2<T, R, P1, P2, P3, P4, P5, E1, E2> adapted;
+
+    public _return_terminate_P5_E2(_UnrestrictedFunctionTypes._return_terminate_P5_E2<T, R, P1, P2, P3, P4, P5, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E3<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E3<T, R, P1, P2, P3, P4, P5, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E3<T, R, P1, P2, P3, P4, P5, E1, E2, E3> adapted;
+
+    public _return_terminate_P5_E3(_UnrestrictedFunctionTypes._return_terminate_P5_E3<T, R, P1, P2, P3, P4, P5, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E4<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E4<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E4<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P5_E4(_UnrestrictedFunctionTypes._return_terminate_P5_E4<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E5<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E5<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E5<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P5_E5(_UnrestrictedFunctionTypes._return_terminate_P5_E5<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E6<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E6<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E6<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P5_E6(_UnrestrictedFunctionTypes._return_terminate_P5_E6<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E7<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E7<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E7<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P5_E7(_UnrestrictedFunctionTypes._return_terminate_P5_E7<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E8<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E8<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E8<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P5_E8(_UnrestrictedFunctionTypes._return_terminate_P5_E8<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E9<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E9<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E9<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P5_E9(_UnrestrictedFunctionTypes._return_terminate_P5_E9<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P5_E10<T, R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P5_E10<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P5_E10<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P5_E10(_UnrestrictedFunctionTypes._return_terminate_P5_E10<T, R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E0<T, R, P1, P2, P3, P4, P5, P6> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E0<T, R, P1, P2, P3, P4, P5, P6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E0<T, R, P1, P2, P3, P4, P5, P6> adapted;
+
+    public _return_terminate_P6_E0(_UnrestrictedFunctionTypes._return_terminate_P6_E0<T, R, P1, P2, P3, P4, P5, P6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E1<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E1<T, R, P1, P2, P3, P4, P5, P6, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E1<T, R, P1, P2, P3, P4, P5, P6, E1> adapted;
+
+    public _return_terminate_P6_E1(_UnrestrictedFunctionTypes._return_terminate_P6_E1<T, R, P1, P2, P3, P4, P5, P6, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E2<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E2<T, R, P1, P2, P3, P4, P5, P6, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E2<T, R, P1, P2, P3, P4, P5, P6, E1, E2> adapted;
+
+    public _return_terminate_P6_E2(_UnrestrictedFunctionTypes._return_terminate_P6_E2<T, R, P1, P2, P3, P4, P5, P6, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E3<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E3<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E3<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3> adapted;
+
+    public _return_terminate_P6_E3(_UnrestrictedFunctionTypes._return_terminate_P6_E3<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E4<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E4<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E4<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P6_E4(_UnrestrictedFunctionTypes._return_terminate_P6_E4<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E5<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E5<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E5<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P6_E5(_UnrestrictedFunctionTypes._return_terminate_P6_E5<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E6<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E6<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E6<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P6_E6(_UnrestrictedFunctionTypes._return_terminate_P6_E6<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E7<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E7<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E7<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P6_E7(_UnrestrictedFunctionTypes._return_terminate_P6_E7<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E8<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E8<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E8<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P6_E8(_UnrestrictedFunctionTypes._return_terminate_P6_E8<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E9<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E9<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E9<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P6_E9(_UnrestrictedFunctionTypes._return_terminate_P6_E9<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P6_E10<T, R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P6_E10<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P6_E10<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P6_E10(_UnrestrictedFunctionTypes._return_terminate_P6_E10<T, R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E0<T, R, P1, P2, P3, P4, P5, P6, P7> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E0<T, R, P1, P2, P3, P4, P5, P6, P7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E0<T, R, P1, P2, P3, P4, P5, P6, P7> adapted;
+
+    public _return_terminate_P7_E0(_UnrestrictedFunctionTypes._return_terminate_P7_E0<T, R, P1, P2, P3, P4, P5, P6, P7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E1<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E1<T, R, P1, P2, P3, P4, P5, P6, P7, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E1<T, R, P1, P2, P3, P4, P5, P6, P7, E1> adapted;
+
+    public _return_terminate_P7_E1(_UnrestrictedFunctionTypes._return_terminate_P7_E1<T, R, P1, P2, P3, P4, P5, P6, P7, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E2<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E2<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E2<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2> adapted;
+
+    public _return_terminate_P7_E2(_UnrestrictedFunctionTypes._return_terminate_P7_E2<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E3<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E3<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E3<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> adapted;
+
+    public _return_terminate_P7_E3(_UnrestrictedFunctionTypes._return_terminate_P7_E3<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E4<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E4<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E4<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P7_E4(_UnrestrictedFunctionTypes._return_terminate_P7_E4<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E5<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E5<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E5<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P7_E5(_UnrestrictedFunctionTypes._return_terminate_P7_E5<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E6<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E6<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E6<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P7_E6(_UnrestrictedFunctionTypes._return_terminate_P7_E6<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E7<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E7<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E7<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P7_E7(_UnrestrictedFunctionTypes._return_terminate_P7_E7<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E8<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E8<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E8<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P7_E8(_UnrestrictedFunctionTypes._return_terminate_P7_E8<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E9<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E9<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E9<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P7_E9(_UnrestrictedFunctionTypes._return_terminate_P7_E9<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P7_E10<T, R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P7_E10<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P7_E10<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P7_E10(_UnrestrictedFunctionTypes._return_terminate_P7_E10<T, R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8> adapted;
+
+    public _return_terminate_P8_E0(_UnrestrictedFunctionTypes._return_terminate_P8_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1> adapted;
+
+    public _return_terminate_P8_E1(_UnrestrictedFunctionTypes._return_terminate_P8_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> adapted;
+
+    public _return_terminate_P8_E2(_UnrestrictedFunctionTypes._return_terminate_P8_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> adapted;
+
+    public _return_terminate_P8_E3(_UnrestrictedFunctionTypes._return_terminate_P8_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P8_E4(_UnrestrictedFunctionTypes._return_terminate_P8_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P8_E5(_UnrestrictedFunctionTypes._return_terminate_P8_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P8_E6(_UnrestrictedFunctionTypes._return_terminate_P8_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P8_E7(_UnrestrictedFunctionTypes._return_terminate_P8_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P8_E8(_UnrestrictedFunctionTypes._return_terminate_P8_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P8_E9(_UnrestrictedFunctionTypes._return_terminate_P8_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P8_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P8_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P8_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P8_E10(_UnrestrictedFunctionTypes._return_terminate_P8_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9> adapted;
+
+    public _return_terminate_P9_E0(_UnrestrictedFunctionTypes._return_terminate_P9_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> adapted;
+
+    public _return_terminate_P9_E1(_UnrestrictedFunctionTypes._return_terminate_P9_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> adapted;
+
+    public _return_terminate_P9_E2(_UnrestrictedFunctionTypes._return_terminate_P9_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> adapted;
+
+    public _return_terminate_P9_E3(_UnrestrictedFunctionTypes._return_terminate_P9_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P9_E4(_UnrestrictedFunctionTypes._return_terminate_P9_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P9_E5(_UnrestrictedFunctionTypes._return_terminate_P9_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P9_E6(_UnrestrictedFunctionTypes._return_terminate_P9_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P9_E7(_UnrestrictedFunctionTypes._return_terminate_P9_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P9_E8(_UnrestrictedFunctionTypes._return_terminate_P9_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P9_E9(_UnrestrictedFunctionTypes._return_terminate_P9_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P9_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P9_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P9_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P9_E10(_UnrestrictedFunctionTypes._return_terminate_P9_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> adapted;
+
+    public _return_terminate_P10_E0(_UnrestrictedFunctionTypes._return_terminate_P10_E0<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> adapted;
+
+    public _return_terminate_P10_E1(_UnrestrictedFunctionTypes._return_terminate_P10_E1<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> adapted;
+
+    public _return_terminate_P10_E2(_UnrestrictedFunctionTypes._return_terminate_P10_E2<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> adapted;
+
+    public _return_terminate_P10_E3(_UnrestrictedFunctionTypes._return_terminate_P10_E3<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> adapted;
+
+    public _return_terminate_P10_E4(_UnrestrictedFunctionTypes._return_terminate_P10_E4<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> adapted;
+
+    public _return_terminate_P10_E5(_UnrestrictedFunctionTypes._return_terminate_P10_E5<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> adapted;
+
+    public _return_terminate_P10_E6(_UnrestrictedFunctionTypes._return_terminate_P10_E6<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> adapted;
+
+    public _return_terminate_P10_E7(_UnrestrictedFunctionTypes._return_terminate_P10_E7<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
+
+    public _return_terminate_P10_E8(_UnrestrictedFunctionTypes._return_terminate_P10_E8<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
+
+    public _return_terminate_P10_E9(_UnrestrictedFunctionTypes._return_terminate_P10_E9<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _return_terminate_P10_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, R> implements _UnrestrictedFunctionTypes._return_terminate_P10_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+    private _UnrestrictedFunctionTypes._return_terminate_P10_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
+
+    public _return_terminate_P10_E10(_UnrestrictedFunctionTypes._return_terminate_P10_E10<T, R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
+      this.adapted = adapted;
+    }
+
+    public Result<T, R> invokeUnrestricted(P1 p1, P2 p2, P3 p3, P4 p4, P5 p5, P6 p6, P7 p7, P8 p8, P9 p9, P10 p10) throws E1, E2, E3, E4, E5, E6, E7, E8, E9, E10 {
+      this.setLastResult(this.adapted.invokeUnrestricted(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10));
+      return this.getLastResult();
+    }
+  }
+
+  public static class _void_terminate_P0_E0<T> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E0<T> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E0<T> adapted;
 
     public _void_terminate_P0_E0(_UnrestrictedFunctionTypes._void_terminate_P0_E0<T> adapted) {
@@ -59,7 +1619,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E1<T, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E1<T, E1> {
+  public static class _void_terminate_P0_E1<T, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E1<T, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E1<T, E1> adapted;
 
     public _void_terminate_P0_E1(_UnrestrictedFunctionTypes._void_terminate_P0_E1<T, E1> adapted) {
@@ -72,7 +1632,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E2<T, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E2<T, E1, E2> {
+  public static class _void_terminate_P0_E2<T, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E2<T, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E2<T, E1, E2> adapted;
 
     public _void_terminate_P0_E2(_UnrestrictedFunctionTypes._void_terminate_P0_E2<T, E1, E2> adapted) {
@@ -85,7 +1645,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E3<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E3<T, E1, E2, E3> {
+  public static class _void_terminate_P0_E3<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E3<T, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E3<T, E1, E2, E3> adapted;
 
     public _void_terminate_P0_E3(_UnrestrictedFunctionTypes._void_terminate_P0_E3<T, E1, E2, E3> adapted) {
@@ -98,7 +1658,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E4<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E4<T, E1, E2, E3, E4> {
+  public static class _void_terminate_P0_E4<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E4<T, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E4<T, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P0_E4(_UnrestrictedFunctionTypes._void_terminate_P0_E4<T, E1, E2, E3, E4> adapted) {
@@ -111,7 +1671,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E5<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E5<T, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P0_E5<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E5<T, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E5<T, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P0_E5(_UnrestrictedFunctionTypes._void_terminate_P0_E5<T, E1, E2, E3, E4, E5> adapted) {
@@ -124,7 +1684,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E6<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E6<T, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P0_E6<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E6<T, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E6<T, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P0_E6(_UnrestrictedFunctionTypes._void_terminate_P0_E6<T, E1, E2, E3, E4, E5, E6> adapted) {
@@ -137,7 +1697,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E7<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E7<T, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P0_E7<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E7<T, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E7<T, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P0_E7(_UnrestrictedFunctionTypes._void_terminate_P0_E7<T, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -150,7 +1710,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E8<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E8<T, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P0_E8<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E8<T, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E8<T, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P0_E8(_UnrestrictedFunctionTypes._void_terminate_P0_E8<T, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -163,7 +1723,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E9<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E9<T, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P0_E9<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E9<T, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E9<T, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P0_E9(_UnrestrictedFunctionTypes._void_terminate_P0_E9<T, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -176,7 +1736,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P0_E10<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E10<T, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P0_E10<T, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P0_E10<T, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P0_E10<T, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P0_E10(_UnrestrictedFunctionTypes._void_terminate_P0_E10<T, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -189,7 +1749,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E0<T, P1> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E0<T, P1> {
+  public static class _void_terminate_P1_E0<T, P1> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E0<T, P1> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E0<T, P1> adapted;
 
     public _void_terminate_P1_E0(_UnrestrictedFunctionTypes._void_terminate_P1_E0<T, P1> adapted) {
@@ -202,7 +1762,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E1<T, P1, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E1<T, P1, E1> {
+  public static class _void_terminate_P1_E1<T, P1, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E1<T, P1, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E1<T, P1, E1> adapted;
 
     public _void_terminate_P1_E1(_UnrestrictedFunctionTypes._void_terminate_P1_E1<T, P1, E1> adapted) {
@@ -215,7 +1775,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E2<T, P1, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E2<T, P1, E1, E2> {
+  public static class _void_terminate_P1_E2<T, P1, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E2<T, P1, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E2<T, P1, E1, E2> adapted;
 
     public _void_terminate_P1_E2(_UnrestrictedFunctionTypes._void_terminate_P1_E2<T, P1, E1, E2> adapted) {
@@ -228,7 +1788,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E3<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E3<T, P1, E1, E2, E3> {
+  public static class _void_terminate_P1_E3<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E3<T, P1, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E3<T, P1, E1, E2, E3> adapted;
 
     public _void_terminate_P1_E3(_UnrestrictedFunctionTypes._void_terminate_P1_E3<T, P1, E1, E2, E3> adapted) {
@@ -241,7 +1801,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E4<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E4<T, P1, E1, E2, E3, E4> {
+  public static class _void_terminate_P1_E4<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E4<T, P1, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E4<T, P1, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P1_E4(_UnrestrictedFunctionTypes._void_terminate_P1_E4<T, P1, E1, E2, E3, E4> adapted) {
@@ -254,7 +1814,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E5<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E5<T, P1, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P1_E5<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E5<T, P1, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E5<T, P1, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P1_E5(_UnrestrictedFunctionTypes._void_terminate_P1_E5<T, P1, E1, E2, E3, E4, E5> adapted) {
@@ -267,7 +1827,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E6<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E6<T, P1, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P1_E6<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E6<T, P1, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E6<T, P1, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P1_E6(_UnrestrictedFunctionTypes._void_terminate_P1_E6<T, P1, E1, E2, E3, E4, E5, E6> adapted) {
@@ -280,7 +1840,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E7<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E7<T, P1, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P1_E7<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E7<T, P1, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E7<T, P1, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P1_E7(_UnrestrictedFunctionTypes._void_terminate_P1_E7<T, P1, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -293,7 +1853,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E8<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E8<T, P1, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P1_E8<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E8<T, P1, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E8<T, P1, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P1_E8(_UnrestrictedFunctionTypes._void_terminate_P1_E8<T, P1, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -306,7 +1866,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E9<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E9<T, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P1_E9<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E9<T, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E9<T, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P1_E9(_UnrestrictedFunctionTypes._void_terminate_P1_E9<T, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -319,7 +1879,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P1_E10<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E10<T, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P1_E10<T, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P1_E10<T, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P1_E10<T, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P1_E10(_UnrestrictedFunctionTypes._void_terminate_P1_E10<T, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -332,7 +1892,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E0<T, P1, P2> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E0<T, P1, P2> {
+  public static class _void_terminate_P2_E0<T, P1, P2> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E0<T, P1, P2> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E0<T, P1, P2> adapted;
 
     public _void_terminate_P2_E0(_UnrestrictedFunctionTypes._void_terminate_P2_E0<T, P1, P2> adapted) {
@@ -345,7 +1905,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E1<T, P1, P2, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E1<T, P1, P2, E1> {
+  public static class _void_terminate_P2_E1<T, P1, P2, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E1<T, P1, P2, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E1<T, P1, P2, E1> adapted;
 
     public _void_terminate_P2_E1(_UnrestrictedFunctionTypes._void_terminate_P2_E1<T, P1, P2, E1> adapted) {
@@ -358,7 +1918,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E2<T, P1, P2, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E2<T, P1, P2, E1, E2> {
+  public static class _void_terminate_P2_E2<T, P1, P2, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E2<T, P1, P2, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E2<T, P1, P2, E1, E2> adapted;
 
     public _void_terminate_P2_E2(_UnrestrictedFunctionTypes._void_terminate_P2_E2<T, P1, P2, E1, E2> adapted) {
@@ -371,7 +1931,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E3<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E3<T, P1, P2, E1, E2, E3> {
+  public static class _void_terminate_P2_E3<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E3<T, P1, P2, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E3<T, P1, P2, E1, E2, E3> adapted;
 
     public _void_terminate_P2_E3(_UnrestrictedFunctionTypes._void_terminate_P2_E3<T, P1, P2, E1, E2, E3> adapted) {
@@ -384,7 +1944,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E4<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E4<T, P1, P2, E1, E2, E3, E4> {
+  public static class _void_terminate_P2_E4<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E4<T, P1, P2, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E4<T, P1, P2, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P2_E4(_UnrestrictedFunctionTypes._void_terminate_P2_E4<T, P1, P2, E1, E2, E3, E4> adapted) {
@@ -397,7 +1957,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E5<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E5<T, P1, P2, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P2_E5<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E5<T, P1, P2, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E5<T, P1, P2, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P2_E5(_UnrestrictedFunctionTypes._void_terminate_P2_E5<T, P1, P2, E1, E2, E3, E4, E5> adapted) {
@@ -410,7 +1970,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E6<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E6<T, P1, P2, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P2_E6<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E6<T, P1, P2, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E6<T, P1, P2, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P2_E6(_UnrestrictedFunctionTypes._void_terminate_P2_E6<T, P1, P2, E1, E2, E3, E4, E5, E6> adapted) {
@@ -423,7 +1983,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E7<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E7<T, P1, P2, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P2_E7<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E7<T, P1, P2, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E7<T, P1, P2, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P2_E7(_UnrestrictedFunctionTypes._void_terminate_P2_E7<T, P1, P2, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -436,7 +1996,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E8<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E8<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P2_E8<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E8<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E8<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P2_E8(_UnrestrictedFunctionTypes._void_terminate_P2_E8<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -449,7 +2009,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E9<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E9<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P2_E9<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E9<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E9<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P2_E9(_UnrestrictedFunctionTypes._void_terminate_P2_E9<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -462,7 +2022,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P2_E10<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E10<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P2_E10<T, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P2_E10<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P2_E10<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P2_E10(_UnrestrictedFunctionTypes._void_terminate_P2_E10<T, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -475,7 +2035,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E0<T, P1, P2, P3> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E0<T, P1, P2, P3> {
+  public static class _void_terminate_P3_E0<T, P1, P2, P3> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E0<T, P1, P2, P3> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E0<T, P1, P2, P3> adapted;
 
     public _void_terminate_P3_E0(_UnrestrictedFunctionTypes._void_terminate_P3_E0<T, P1, P2, P3> adapted) {
@@ -488,7 +2048,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E1<T, P1, P2, P3, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E1<T, P1, P2, P3, E1> {
+  public static class _void_terminate_P3_E1<T, P1, P2, P3, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E1<T, P1, P2, P3, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E1<T, P1, P2, P3, E1> adapted;
 
     public _void_terminate_P3_E1(_UnrestrictedFunctionTypes._void_terminate_P3_E1<T, P1, P2, P3, E1> adapted) {
@@ -501,7 +2061,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E2<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E2<T, P1, P2, P3, E1, E2> {
+  public static class _void_terminate_P3_E2<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E2<T, P1, P2, P3, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E2<T, P1, P2, P3, E1, E2> adapted;
 
     public _void_terminate_P3_E2(_UnrestrictedFunctionTypes._void_terminate_P3_E2<T, P1, P2, P3, E1, E2> adapted) {
@@ -514,7 +2074,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E3<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E3<T, P1, P2, P3, E1, E2, E3> {
+  public static class _void_terminate_P3_E3<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E3<T, P1, P2, P3, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E3<T, P1, P2, P3, E1, E2, E3> adapted;
 
     public _void_terminate_P3_E3(_UnrestrictedFunctionTypes._void_terminate_P3_E3<T, P1, P2, P3, E1, E2, E3> adapted) {
@@ -527,7 +2087,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E4<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E4<T, P1, P2, P3, E1, E2, E3, E4> {
+  public static class _void_terminate_P3_E4<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E4<T, P1, P2, P3, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E4<T, P1, P2, P3, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P3_E4(_UnrestrictedFunctionTypes._void_terminate_P3_E4<T, P1, P2, P3, E1, E2, E3, E4> adapted) {
@@ -540,7 +2100,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E5<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E5<T, P1, P2, P3, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P3_E5<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E5<T, P1, P2, P3, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E5<T, P1, P2, P3, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P3_E5(_UnrestrictedFunctionTypes._void_terminate_P3_E5<T, P1, P2, P3, E1, E2, E3, E4, E5> adapted) {
@@ -553,7 +2113,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E6<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E6<T, P1, P2, P3, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P3_E6<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E6<T, P1, P2, P3, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E6<T, P1, P2, P3, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P3_E6(_UnrestrictedFunctionTypes._void_terminate_P3_E6<T, P1, P2, P3, E1, E2, E3, E4, E5, E6> adapted) {
@@ -566,7 +2126,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E7<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E7<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P3_E7<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E7<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E7<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P3_E7(_UnrestrictedFunctionTypes._void_terminate_P3_E7<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -579,7 +2139,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E8<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E8<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P3_E8<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E8<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E8<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P3_E8(_UnrestrictedFunctionTypes._void_terminate_P3_E8<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -592,7 +2152,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E9<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E9<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P3_E9<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E9<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E9<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P3_E9(_UnrestrictedFunctionTypes._void_terminate_P3_E9<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -605,7 +2165,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P3_E10<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E10<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P3_E10<T, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P3_E10<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P3_E10<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P3_E10(_UnrestrictedFunctionTypes._void_terminate_P3_E10<T, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -618,7 +2178,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E0<T, P1, P2, P3, P4> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E0<T, P1, P2, P3, P4> {
+  public static class _void_terminate_P4_E0<T, P1, P2, P3, P4> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E0<T, P1, P2, P3, P4> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E0<T, P1, P2, P3, P4> adapted;
 
     public _void_terminate_P4_E0(_UnrestrictedFunctionTypes._void_terminate_P4_E0<T, P1, P2, P3, P4> adapted) {
@@ -631,7 +2191,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E1<T, P1, P2, P3, P4, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E1<T, P1, P2, P3, P4, E1> {
+  public static class _void_terminate_P4_E1<T, P1, P2, P3, P4, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E1<T, P1, P2, P3, P4, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E1<T, P1, P2, P3, P4, E1> adapted;
 
     public _void_terminate_P4_E1(_UnrestrictedFunctionTypes._void_terminate_P4_E1<T, P1, P2, P3, P4, E1> adapted) {
@@ -644,7 +2204,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E2<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E2<T, P1, P2, P3, P4, E1, E2> {
+  public static class _void_terminate_P4_E2<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E2<T, P1, P2, P3, P4, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E2<T, P1, P2, P3, P4, E1, E2> adapted;
 
     public _void_terminate_P4_E2(_UnrestrictedFunctionTypes._void_terminate_P4_E2<T, P1, P2, P3, P4, E1, E2> adapted) {
@@ -657,7 +2217,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E3<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E3<T, P1, P2, P3, P4, E1, E2, E3> {
+  public static class _void_terminate_P4_E3<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E3<T, P1, P2, P3, P4, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E3<T, P1, P2, P3, P4, E1, E2, E3> adapted;
 
     public _void_terminate_P4_E3(_UnrestrictedFunctionTypes._void_terminate_P4_E3<T, P1, P2, P3, P4, E1, E2, E3> adapted) {
@@ -670,7 +2230,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E4<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E4<T, P1, P2, P3, P4, E1, E2, E3, E4> {
+  public static class _void_terminate_P4_E4<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E4<T, P1, P2, P3, P4, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E4<T, P1, P2, P3, P4, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P4_E4(_UnrestrictedFunctionTypes._void_terminate_P4_E4<T, P1, P2, P3, P4, E1, E2, E3, E4> adapted) {
@@ -683,7 +2243,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E5<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E5<T, P1, P2, P3, P4, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P4_E5<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E5<T, P1, P2, P3, P4, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E5<T, P1, P2, P3, P4, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P4_E5(_UnrestrictedFunctionTypes._void_terminate_P4_E5<T, P1, P2, P3, P4, E1, E2, E3, E4, E5> adapted) {
@@ -696,7 +2256,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E6<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E6<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P4_E6<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E6<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E6<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P4_E6(_UnrestrictedFunctionTypes._void_terminate_P4_E6<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> adapted) {
@@ -709,7 +2269,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E7<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E7<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P4_E7<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E7<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E7<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P4_E7(_UnrestrictedFunctionTypes._void_terminate_P4_E7<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -722,7 +2282,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E8<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E8<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P4_E8<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E8<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E8<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P4_E8(_UnrestrictedFunctionTypes._void_terminate_P4_E8<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -735,7 +2295,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E9<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E9<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P4_E9<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E9<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E9<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P4_E9(_UnrestrictedFunctionTypes._void_terminate_P4_E9<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -748,7 +2308,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P4_E10<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E10<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P4_E10<T, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P4_E10<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P4_E10<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P4_E10(_UnrestrictedFunctionTypes._void_terminate_P4_E10<T, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -761,7 +2321,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E0<T, P1, P2, P3, P4, P5> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E0<T, P1, P2, P3, P4, P5> {
+  public static class _void_terminate_P5_E0<T, P1, P2, P3, P4, P5> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E0<T, P1, P2, P3, P4, P5> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E0<T, P1, P2, P3, P4, P5> adapted;
 
     public _void_terminate_P5_E0(_UnrestrictedFunctionTypes._void_terminate_P5_E0<T, P1, P2, P3, P4, P5> adapted) {
@@ -774,7 +2334,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E1<T, P1, P2, P3, P4, P5, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E1<T, P1, P2, P3, P4, P5, E1> {
+  public static class _void_terminate_P5_E1<T, P1, P2, P3, P4, P5, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E1<T, P1, P2, P3, P4, P5, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E1<T, P1, P2, P3, P4, P5, E1> adapted;
 
     public _void_terminate_P5_E1(_UnrestrictedFunctionTypes._void_terminate_P5_E1<T, P1, P2, P3, P4, P5, E1> adapted) {
@@ -787,7 +2347,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E2<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E2<T, P1, P2, P3, P4, P5, E1, E2> {
+  public static class _void_terminate_P5_E2<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E2<T, P1, P2, P3, P4, P5, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E2<T, P1, P2, P3, P4, P5, E1, E2> adapted;
 
     public _void_terminate_P5_E2(_UnrestrictedFunctionTypes._void_terminate_P5_E2<T, P1, P2, P3, P4, P5, E1, E2> adapted) {
@@ -800,7 +2360,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E3<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E3<T, P1, P2, P3, P4, P5, E1, E2, E3> {
+  public static class _void_terminate_P5_E3<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E3<T, P1, P2, P3, P4, P5, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E3<T, P1, P2, P3, P4, P5, E1, E2, E3> adapted;
 
     public _void_terminate_P5_E3(_UnrestrictedFunctionTypes._void_terminate_P5_E3<T, P1, P2, P3, P4, P5, E1, E2, E3> adapted) {
@@ -813,7 +2373,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E4<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E4<T, P1, P2, P3, P4, P5, E1, E2, E3, E4> {
+  public static class _void_terminate_P5_E4<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E4<T, P1, P2, P3, P4, P5, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E4<T, P1, P2, P3, P4, P5, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P5_E4(_UnrestrictedFunctionTypes._void_terminate_P5_E4<T, P1, P2, P3, P4, P5, E1, E2, E3, E4> adapted) {
@@ -826,7 +2386,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E5<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E5<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P5_E5<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E5<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E5<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P5_E5(_UnrestrictedFunctionTypes._void_terminate_P5_E5<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> adapted) {
@@ -839,7 +2399,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E6<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E6<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P5_E6<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E6<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E6<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P5_E6(_UnrestrictedFunctionTypes._void_terminate_P5_E6<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> adapted) {
@@ -852,7 +2412,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E7<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E7<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P5_E7<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E7<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E7<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P5_E7(_UnrestrictedFunctionTypes._void_terminate_P5_E7<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -865,7 +2425,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E8<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E8<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P5_E8<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E8<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E8<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P5_E8(_UnrestrictedFunctionTypes._void_terminate_P5_E8<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -878,7 +2438,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E9<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E9<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P5_E9<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E9<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E9<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P5_E9(_UnrestrictedFunctionTypes._void_terminate_P5_E9<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -891,7 +2451,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P5_E10<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E10<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P5_E10<T, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P5_E10<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P5_E10<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P5_E10(_UnrestrictedFunctionTypes._void_terminate_P5_E10<T, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -904,7 +2464,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E0<T, P1, P2, P3, P4, P5, P6> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E0<T, P1, P2, P3, P4, P5, P6> {
+  public static class _void_terminate_P6_E0<T, P1, P2, P3, P4, P5, P6> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E0<T, P1, P2, P3, P4, P5, P6> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E0<T, P1, P2, P3, P4, P5, P6> adapted;
 
     public _void_terminate_P6_E0(_UnrestrictedFunctionTypes._void_terminate_P6_E0<T, P1, P2, P3, P4, P5, P6> adapted) {
@@ -917,7 +2477,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E1<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E1<T, P1, P2, P3, P4, P5, P6, E1> {
+  public static class _void_terminate_P6_E1<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E1<T, P1, P2, P3, P4, P5, P6, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E1<T, P1, P2, P3, P4, P5, P6, E1> adapted;
 
     public _void_terminate_P6_E1(_UnrestrictedFunctionTypes._void_terminate_P6_E1<T, P1, P2, P3, P4, P5, P6, E1> adapted) {
@@ -930,7 +2490,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E2<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E2<T, P1, P2, P3, P4, P5, P6, E1, E2> {
+  public static class _void_terminate_P6_E2<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E2<T, P1, P2, P3, P4, P5, P6, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E2<T, P1, P2, P3, P4, P5, P6, E1, E2> adapted;
 
     public _void_terminate_P6_E2(_UnrestrictedFunctionTypes._void_terminate_P6_E2<T, P1, P2, P3, P4, P5, P6, E1, E2> adapted) {
@@ -943,7 +2503,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E3<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E3<T, P1, P2, P3, P4, P5, P6, E1, E2, E3> {
+  public static class _void_terminate_P6_E3<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E3<T, P1, P2, P3, P4, P5, P6, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E3<T, P1, P2, P3, P4, P5, P6, E1, E2, E3> adapted;
 
     public _void_terminate_P6_E3(_UnrestrictedFunctionTypes._void_terminate_P6_E3<T, P1, P2, P3, P4, P5, P6, E1, E2, E3> adapted) {
@@ -956,7 +2516,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E4<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E4<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> {
+  public static class _void_terminate_P6_E4<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E4<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E4<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P6_E4(_UnrestrictedFunctionTypes._void_terminate_P6_E4<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> adapted) {
@@ -969,7 +2529,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E5<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E5<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P6_E5<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E5<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E5<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P6_E5(_UnrestrictedFunctionTypes._void_terminate_P6_E5<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> adapted) {
@@ -982,7 +2542,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E6<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E6<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P6_E6<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E6<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E6<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P6_E6(_UnrestrictedFunctionTypes._void_terminate_P6_E6<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> adapted) {
@@ -995,7 +2555,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E7<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E7<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P6_E7<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E7<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E7<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P6_E7(_UnrestrictedFunctionTypes._void_terminate_P6_E7<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -1008,7 +2568,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E8<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E8<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P6_E8<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E8<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E8<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P6_E8(_UnrestrictedFunctionTypes._void_terminate_P6_E8<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -1021,7 +2581,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E9<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E9<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P6_E9<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E9<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E9<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P6_E9(_UnrestrictedFunctionTypes._void_terminate_P6_E9<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -1034,7 +2594,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P6_E10<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E10<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P6_E10<T, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P6_E10<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P6_E10<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P6_E10(_UnrestrictedFunctionTypes._void_terminate_P6_E10<T, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -1047,7 +2607,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E0<T, P1, P2, P3, P4, P5, P6, P7> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E0<T, P1, P2, P3, P4, P5, P6, P7> {
+  public static class _void_terminate_P7_E0<T, P1, P2, P3, P4, P5, P6, P7> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E0<T, P1, P2, P3, P4, P5, P6, P7> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E0<T, P1, P2, P3, P4, P5, P6, P7> adapted;
 
     public _void_terminate_P7_E0(_UnrestrictedFunctionTypes._void_terminate_P7_E0<T, P1, P2, P3, P4, P5, P6, P7> adapted) {
@@ -1060,7 +2620,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E1<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E1<T, P1, P2, P3, P4, P5, P6, P7, E1> {
+  public static class _void_terminate_P7_E1<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E1<T, P1, P2, P3, P4, P5, P6, P7, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E1<T, P1, P2, P3, P4, P5, P6, P7, E1> adapted;
 
     public _void_terminate_P7_E1(_UnrestrictedFunctionTypes._void_terminate_P7_E1<T, P1, P2, P3, P4, P5, P6, P7, E1> adapted) {
@@ -1073,7 +2633,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E2<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E2<T, P1, P2, P3, P4, P5, P6, P7, E1, E2> {
+  public static class _void_terminate_P7_E2<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E2<T, P1, P2, P3, P4, P5, P6, P7, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E2<T, P1, P2, P3, P4, P5, P6, P7, E1, E2> adapted;
 
     public _void_terminate_P7_E2(_UnrestrictedFunctionTypes._void_terminate_P7_E2<T, P1, P2, P3, P4, P5, P6, P7, E1, E2> adapted) {
@@ -1086,7 +2646,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E3<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E3<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> {
+  public static class _void_terminate_P7_E3<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E3<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E3<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> adapted;
 
     public _void_terminate_P7_E3(_UnrestrictedFunctionTypes._void_terminate_P7_E3<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> adapted) {
@@ -1099,7 +2659,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E4<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E4<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> {
+  public static class _void_terminate_P7_E4<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E4<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E4<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P7_E4(_UnrestrictedFunctionTypes._void_terminate_P7_E4<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> adapted) {
@@ -1112,7 +2672,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E5<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E5<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P7_E5<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E5<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E5<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P7_E5(_UnrestrictedFunctionTypes._void_terminate_P7_E5<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> adapted) {
@@ -1125,7 +2685,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E6<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E6<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P7_E6<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E6<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E6<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P7_E6(_UnrestrictedFunctionTypes._void_terminate_P7_E6<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> adapted) {
@@ -1138,7 +2698,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E7<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E7<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P7_E7<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E7<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E7<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P7_E7(_UnrestrictedFunctionTypes._void_terminate_P7_E7<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -1151,7 +2711,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E8<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E8<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P7_E8<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E8<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E8<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P7_E8(_UnrestrictedFunctionTypes._void_terminate_P7_E8<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -1164,7 +2724,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E9<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E9<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P7_E9<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E9<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E9<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P7_E9(_UnrestrictedFunctionTypes._void_terminate_P7_E9<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -1177,7 +2737,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P7_E10<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E10<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P7_E10<T, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P7_E10<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P7_E10<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P7_E10(_UnrestrictedFunctionTypes._void_terminate_P7_E10<T, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -1190,7 +2750,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E0<T, P1, P2, P3, P4, P5, P6, P7, P8> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E0<T, P1, P2, P3, P4, P5, P6, P7, P8> {
+  public static class _void_terminate_P8_E0<T, P1, P2, P3, P4, P5, P6, P7, P8> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E0<T, P1, P2, P3, P4, P5, P6, P7, P8> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E0<T, P1, P2, P3, P4, P5, P6, P7, P8> adapted;
 
     public _void_terminate_P8_E0(_UnrestrictedFunctionTypes._void_terminate_P8_E0<T, P1, P2, P3, P4, P5, P6, P7, P8> adapted) {
@@ -1203,7 +2763,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, E1> {
+  public static class _void_terminate_P8_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, E1> adapted;
 
     public _void_terminate_P8_E1(_UnrestrictedFunctionTypes._void_terminate_P8_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, E1> adapted) {
@@ -1216,7 +2776,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> {
+  public static class _void_terminate_P8_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> adapted;
 
     public _void_terminate_P8_E2(_UnrestrictedFunctionTypes._void_terminate_P8_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> adapted) {
@@ -1229,7 +2789,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> {
+  public static class _void_terminate_P8_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> adapted;
 
     public _void_terminate_P8_E3(_UnrestrictedFunctionTypes._void_terminate_P8_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> adapted) {
@@ -1242,7 +2802,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> {
+  public static class _void_terminate_P8_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P8_E4(_UnrestrictedFunctionTypes._void_terminate_P8_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> adapted) {
@@ -1255,7 +2815,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P8_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P8_E5(_UnrestrictedFunctionTypes._void_terminate_P8_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> adapted) {
@@ -1268,7 +2828,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P8_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P8_E6(_UnrestrictedFunctionTypes._void_terminate_P8_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> adapted) {
@@ -1281,7 +2841,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P8_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P8_E7(_UnrestrictedFunctionTypes._void_terminate_P8_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -1294,7 +2854,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P8_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P8_E8(_UnrestrictedFunctionTypes._void_terminate_P8_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -1307,7 +2867,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P8_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P8_E9(_UnrestrictedFunctionTypes._void_terminate_P8_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -1320,7 +2880,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P8_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P8_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P8_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P8_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P8_E10(_UnrestrictedFunctionTypes._void_terminate_P8_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -1333,7 +2893,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9> {
+  public static class _void_terminate_P9_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9> adapted;
 
     public _void_terminate_P9_E0(_UnrestrictedFunctionTypes._void_terminate_P9_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9> adapted) {
@@ -1346,7 +2906,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> {
+  public static class _void_terminate_P9_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> adapted;
 
     public _void_terminate_P9_E1(_UnrestrictedFunctionTypes._void_terminate_P9_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> adapted) {
@@ -1359,7 +2919,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> {
+  public static class _void_terminate_P9_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> adapted;
 
     public _void_terminate_P9_E2(_UnrestrictedFunctionTypes._void_terminate_P9_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> adapted) {
@@ -1372,7 +2932,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> {
+  public static class _void_terminate_P9_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> adapted;
 
     public _void_terminate_P9_E3(_UnrestrictedFunctionTypes._void_terminate_P9_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> adapted) {
@@ -1385,7 +2945,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> {
+  public static class _void_terminate_P9_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P9_E4(_UnrestrictedFunctionTypes._void_terminate_P9_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> adapted) {
@@ -1398,7 +2958,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P9_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P9_E5(_UnrestrictedFunctionTypes._void_terminate_P9_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> adapted) {
@@ -1411,7 +2971,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P9_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P9_E6(_UnrestrictedFunctionTypes._void_terminate_P9_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> adapted) {
@@ -1424,7 +2984,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P9_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P9_E7(_UnrestrictedFunctionTypes._void_terminate_P9_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -1437,7 +2997,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P9_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P9_E8(_UnrestrictedFunctionTypes._void_terminate_P9_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -1450,7 +3010,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P9_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P9_E9(_UnrestrictedFunctionTypes._void_terminate_P9_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -1463,7 +3023,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P9_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P9_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P9_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P9_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P9_E10(_UnrestrictedFunctionTypes._void_terminate_P9_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -1476,7 +3036,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
+  public static class _void_terminate_P10_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> adapted;
 
     public _void_terminate_P10_E0(_UnrestrictedFunctionTypes._void_terminate_P10_E0<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> adapted) {
@@ -1489,7 +3049,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> {
+  public static class _void_terminate_P10_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> adapted;
 
     public _void_terminate_P10_E1(_UnrestrictedFunctionTypes._void_terminate_P10_E1<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> adapted) {
@@ -1502,7 +3062,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> {
+  public static class _void_terminate_P10_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> adapted;
 
     public _void_terminate_P10_E2(_UnrestrictedFunctionTypes._void_terminate_P10_E2<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> adapted) {
@@ -1515,7 +3075,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> {
+  public static class _void_terminate_P10_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> adapted;
 
     public _void_terminate_P10_E3(_UnrestrictedFunctionTypes._void_terminate_P10_E3<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> adapted) {
@@ -1528,7 +3088,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> {
+  public static class _void_terminate_P10_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> adapted;
 
     public _void_terminate_P10_E4(_UnrestrictedFunctionTypes._void_terminate_P10_E4<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> adapted) {
@@ -1541,7 +3101,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> {
+  public static class _void_terminate_P10_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> adapted;
 
     public _void_terminate_P10_E5(_UnrestrictedFunctionTypes._void_terminate_P10_E5<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> adapted) {
@@ -1554,7 +3114,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> {
+  public static class _void_terminate_P10_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_terminate_P10_E6(_UnrestrictedFunctionTypes._void_terminate_P10_E6<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> adapted) {
@@ -1567,7 +3127,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_terminate_P10_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_terminate_P10_E7(_UnrestrictedFunctionTypes._void_terminate_P10_E7<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -1580,7 +3140,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_terminate_P10_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_terminate_P10_E8(_UnrestrictedFunctionTypes._void_terminate_P10_E8<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -1593,7 +3153,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_terminate_P10_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_terminate_P10_E9(_UnrestrictedFunctionTypes._void_terminate_P10_E9<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -1606,7 +3166,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_terminate_P10_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_terminate_P10_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<T, Object> implements _UnrestrictedFunctionTypes._void_terminate_P10_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_terminate_P10_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_terminate_P10_E10(_UnrestrictedFunctionTypes._void_terminate_P10_E10<T, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -1619,7 +3179,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E0<R> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E0<R> {
+  public static class _return_void_P0_E0<R> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E0<R> {
     private _UnrestrictedFunctionTypes._return_void_P0_E0<R> adapted;
 
     public _return_void_P0_E0(_UnrestrictedFunctionTypes._return_void_P0_E0<R> adapted) {
@@ -1632,7 +3192,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E1<R, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E1<R, E1> {
+  public static class _return_void_P0_E1<R, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E1<R, E1> {
     private _UnrestrictedFunctionTypes._return_void_P0_E1<R, E1> adapted;
 
     public _return_void_P0_E1(_UnrestrictedFunctionTypes._return_void_P0_E1<R, E1> adapted) {
@@ -1645,7 +3205,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E2<R, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E2<R, E1, E2> {
+  public static class _return_void_P0_E2<R, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E2<R, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P0_E2<R, E1, E2> adapted;
 
     public _return_void_P0_E2(_UnrestrictedFunctionTypes._return_void_P0_E2<R, E1, E2> adapted) {
@@ -1658,7 +3218,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E3<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E3<R, E1, E2, E3> {
+  public static class _return_void_P0_E3<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E3<R, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P0_E3<R, E1, E2, E3> adapted;
 
     public _return_void_P0_E3(_UnrestrictedFunctionTypes._return_void_P0_E3<R, E1, E2, E3> adapted) {
@@ -1671,7 +3231,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E4<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E4<R, E1, E2, E3, E4> {
+  public static class _return_void_P0_E4<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E4<R, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P0_E4<R, E1, E2, E3, E4> adapted;
 
     public _return_void_P0_E4(_UnrestrictedFunctionTypes._return_void_P0_E4<R, E1, E2, E3, E4> adapted) {
@@ -1684,7 +3244,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E5<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E5<R, E1, E2, E3, E4, E5> {
+  public static class _return_void_P0_E5<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E5<R, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P0_E5<R, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P0_E5(_UnrestrictedFunctionTypes._return_void_P0_E5<R, E1, E2, E3, E4, E5> adapted) {
@@ -1697,7 +3257,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E6<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E6<R, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P0_E6<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E6<R, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P0_E6<R, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P0_E6(_UnrestrictedFunctionTypes._return_void_P0_E6<R, E1, E2, E3, E4, E5, E6> adapted) {
@@ -1710,7 +3270,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E7<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E7<R, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P0_E7<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E7<R, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P0_E7<R, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P0_E7(_UnrestrictedFunctionTypes._return_void_P0_E7<R, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -1723,7 +3283,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E8<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E8<R, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P0_E8<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E8<R, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P0_E8<R, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P0_E8(_UnrestrictedFunctionTypes._return_void_P0_E8<R, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -1736,7 +3296,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E9<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E9<R, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P0_E9<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E9<R, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P0_E9<R, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P0_E9(_UnrestrictedFunctionTypes._return_void_P0_E9<R, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -1749,7 +3309,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P0_E10<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E10<R, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P0_E10<R, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P0_E10<R, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P0_E10<R, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P0_E10(_UnrestrictedFunctionTypes._return_void_P0_E10<R, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -1762,7 +3322,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E0<R, P1> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E0<R, P1> {
+  public static class _return_void_P1_E0<R, P1> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E0<R, P1> {
     private _UnrestrictedFunctionTypes._return_void_P1_E0<R, P1> adapted;
 
     public _return_void_P1_E0(_UnrestrictedFunctionTypes._return_void_P1_E0<R, P1> adapted) {
@@ -1775,7 +3335,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E1<R, P1, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E1<R, P1, E1> {
+  public static class _return_void_P1_E1<R, P1, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E1<R, P1, E1> {
     private _UnrestrictedFunctionTypes._return_void_P1_E1<R, P1, E1> adapted;
 
     public _return_void_P1_E1(_UnrestrictedFunctionTypes._return_void_P1_E1<R, P1, E1> adapted) {
@@ -1788,7 +3348,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E2<R, P1, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E2<R, P1, E1, E2> {
+  public static class _return_void_P1_E2<R, P1, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E2<R, P1, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P1_E2<R, P1, E1, E2> adapted;
 
     public _return_void_P1_E2(_UnrestrictedFunctionTypes._return_void_P1_E2<R, P1, E1, E2> adapted) {
@@ -1801,7 +3361,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E3<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E3<R, P1, E1, E2, E3> {
+  public static class _return_void_P1_E3<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E3<R, P1, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P1_E3<R, P1, E1, E2, E3> adapted;
 
     public _return_void_P1_E3(_UnrestrictedFunctionTypes._return_void_P1_E3<R, P1, E1, E2, E3> adapted) {
@@ -1814,7 +3374,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E4<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E4<R, P1, E1, E2, E3, E4> {
+  public static class _return_void_P1_E4<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E4<R, P1, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P1_E4<R, P1, E1, E2, E3, E4> adapted;
 
     public _return_void_P1_E4(_UnrestrictedFunctionTypes._return_void_P1_E4<R, P1, E1, E2, E3, E4> adapted) {
@@ -1827,7 +3387,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E5<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E5<R, P1, E1, E2, E3, E4, E5> {
+  public static class _return_void_P1_E5<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E5<R, P1, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P1_E5<R, P1, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P1_E5(_UnrestrictedFunctionTypes._return_void_P1_E5<R, P1, E1, E2, E3, E4, E5> adapted) {
@@ -1840,7 +3400,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E6<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E6<R, P1, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P1_E6<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E6<R, P1, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P1_E6<R, P1, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P1_E6(_UnrestrictedFunctionTypes._return_void_P1_E6<R, P1, E1, E2, E3, E4, E5, E6> adapted) {
@@ -1853,7 +3413,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E7<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E7<R, P1, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P1_E7<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E7<R, P1, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P1_E7<R, P1, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P1_E7(_UnrestrictedFunctionTypes._return_void_P1_E7<R, P1, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -1866,7 +3426,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E8<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E8<R, P1, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P1_E8<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E8<R, P1, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P1_E8<R, P1, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P1_E8(_UnrestrictedFunctionTypes._return_void_P1_E8<R, P1, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -1879,7 +3439,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E9<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E9<R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P1_E9<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E9<R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P1_E9<R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P1_E9(_UnrestrictedFunctionTypes._return_void_P1_E9<R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -1892,7 +3452,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P1_E10<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E10<R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P1_E10<R, P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P1_E10<R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P1_E10<R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P1_E10(_UnrestrictedFunctionTypes._return_void_P1_E10<R, P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -1905,7 +3465,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E0<R, P1, P2> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E0<R, P1, P2> {
+  public static class _return_void_P2_E0<R, P1, P2> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E0<R, P1, P2> {
     private _UnrestrictedFunctionTypes._return_void_P2_E0<R, P1, P2> adapted;
 
     public _return_void_P2_E0(_UnrestrictedFunctionTypes._return_void_P2_E0<R, P1, P2> adapted) {
@@ -1918,7 +3478,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E1<R, P1, P2, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E1<R, P1, P2, E1> {
+  public static class _return_void_P2_E1<R, P1, P2, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E1<R, P1, P2, E1> {
     private _UnrestrictedFunctionTypes._return_void_P2_E1<R, P1, P2, E1> adapted;
 
     public _return_void_P2_E1(_UnrestrictedFunctionTypes._return_void_P2_E1<R, P1, P2, E1> adapted) {
@@ -1931,7 +3491,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E2<R, P1, P2, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E2<R, P1, P2, E1, E2> {
+  public static class _return_void_P2_E2<R, P1, P2, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E2<R, P1, P2, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P2_E2<R, P1, P2, E1, E2> adapted;
 
     public _return_void_P2_E2(_UnrestrictedFunctionTypes._return_void_P2_E2<R, P1, P2, E1, E2> adapted) {
@@ -1944,7 +3504,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E3<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E3<R, P1, P2, E1, E2, E3> {
+  public static class _return_void_P2_E3<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E3<R, P1, P2, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P2_E3<R, P1, P2, E1, E2, E3> adapted;
 
     public _return_void_P2_E3(_UnrestrictedFunctionTypes._return_void_P2_E3<R, P1, P2, E1, E2, E3> adapted) {
@@ -1957,7 +3517,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E4<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E4<R, P1, P2, E1, E2, E3, E4> {
+  public static class _return_void_P2_E4<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E4<R, P1, P2, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P2_E4<R, P1, P2, E1, E2, E3, E4> adapted;
 
     public _return_void_P2_E4(_UnrestrictedFunctionTypes._return_void_P2_E4<R, P1, P2, E1, E2, E3, E4> adapted) {
@@ -1970,7 +3530,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E5<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E5<R, P1, P2, E1, E2, E3, E4, E5> {
+  public static class _return_void_P2_E5<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E5<R, P1, P2, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P2_E5<R, P1, P2, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P2_E5(_UnrestrictedFunctionTypes._return_void_P2_E5<R, P1, P2, E1, E2, E3, E4, E5> adapted) {
@@ -1983,7 +3543,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E6<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E6<R, P1, P2, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P2_E6<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E6<R, P1, P2, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P2_E6<R, P1, P2, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P2_E6(_UnrestrictedFunctionTypes._return_void_P2_E6<R, P1, P2, E1, E2, E3, E4, E5, E6> adapted) {
@@ -1996,7 +3556,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E7<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E7<R, P1, P2, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P2_E7<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E7<R, P1, P2, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P2_E7<R, P1, P2, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P2_E7(_UnrestrictedFunctionTypes._return_void_P2_E7<R, P1, P2, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -2009,7 +3569,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E8<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E8<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P2_E8<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E8<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P2_E8<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P2_E8(_UnrestrictedFunctionTypes._return_void_P2_E8<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -2022,7 +3582,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E9<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E9<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P2_E9<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E9<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P2_E9<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P2_E9(_UnrestrictedFunctionTypes._return_void_P2_E9<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -2035,7 +3595,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P2_E10<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E10<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P2_E10<R, P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P2_E10<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P2_E10<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P2_E10(_UnrestrictedFunctionTypes._return_void_P2_E10<R, P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -2048,7 +3608,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E0<R, P1, P2, P3> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E0<R, P1, P2, P3> {
+  public static class _return_void_P3_E0<R, P1, P2, P3> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E0<R, P1, P2, P3> {
     private _UnrestrictedFunctionTypes._return_void_P3_E0<R, P1, P2, P3> adapted;
 
     public _return_void_P3_E0(_UnrestrictedFunctionTypes._return_void_P3_E0<R, P1, P2, P3> adapted) {
@@ -2061,7 +3621,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E1<R, P1, P2, P3, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E1<R, P1, P2, P3, E1> {
+  public static class _return_void_P3_E1<R, P1, P2, P3, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E1<R, P1, P2, P3, E1> {
     private _UnrestrictedFunctionTypes._return_void_P3_E1<R, P1, P2, P3, E1> adapted;
 
     public _return_void_P3_E1(_UnrestrictedFunctionTypes._return_void_P3_E1<R, P1, P2, P3, E1> adapted) {
@@ -2074,7 +3634,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E2<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E2<R, P1, P2, P3, E1, E2> {
+  public static class _return_void_P3_E2<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E2<R, P1, P2, P3, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P3_E2<R, P1, P2, P3, E1, E2> adapted;
 
     public _return_void_P3_E2(_UnrestrictedFunctionTypes._return_void_P3_E2<R, P1, P2, P3, E1, E2> adapted) {
@@ -2087,7 +3647,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E3<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E3<R, P1, P2, P3, E1, E2, E3> {
+  public static class _return_void_P3_E3<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E3<R, P1, P2, P3, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P3_E3<R, P1, P2, P3, E1, E2, E3> adapted;
 
     public _return_void_P3_E3(_UnrestrictedFunctionTypes._return_void_P3_E3<R, P1, P2, P3, E1, E2, E3> adapted) {
@@ -2100,7 +3660,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E4<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E4<R, P1, P2, P3, E1, E2, E3, E4> {
+  public static class _return_void_P3_E4<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E4<R, P1, P2, P3, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P3_E4<R, P1, P2, P3, E1, E2, E3, E4> adapted;
 
     public _return_void_P3_E4(_UnrestrictedFunctionTypes._return_void_P3_E4<R, P1, P2, P3, E1, E2, E3, E4> adapted) {
@@ -2113,7 +3673,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E5<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E5<R, P1, P2, P3, E1, E2, E3, E4, E5> {
+  public static class _return_void_P3_E5<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E5<R, P1, P2, P3, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P3_E5<R, P1, P2, P3, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P3_E5(_UnrestrictedFunctionTypes._return_void_P3_E5<R, P1, P2, P3, E1, E2, E3, E4, E5> adapted) {
@@ -2126,7 +3686,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E6<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E6<R, P1, P2, P3, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P3_E6<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E6<R, P1, P2, P3, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P3_E6<R, P1, P2, P3, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P3_E6(_UnrestrictedFunctionTypes._return_void_P3_E6<R, P1, P2, P3, E1, E2, E3, E4, E5, E6> adapted) {
@@ -2139,7 +3699,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E7<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E7<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P3_E7<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E7<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P3_E7<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P3_E7(_UnrestrictedFunctionTypes._return_void_P3_E7<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -2152,7 +3712,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E8<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E8<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P3_E8<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E8<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P3_E8<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P3_E8(_UnrestrictedFunctionTypes._return_void_P3_E8<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -2165,7 +3725,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E9<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E9<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P3_E9<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E9<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P3_E9<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P3_E9(_UnrestrictedFunctionTypes._return_void_P3_E9<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -2178,7 +3738,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P3_E10<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E10<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P3_E10<R, P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P3_E10<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P3_E10<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P3_E10(_UnrestrictedFunctionTypes._return_void_P3_E10<R, P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -2191,7 +3751,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E0<R, P1, P2, P3, P4> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E0<R, P1, P2, P3, P4> {
+  public static class _return_void_P4_E0<R, P1, P2, P3, P4> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E0<R, P1, P2, P3, P4> {
     private _UnrestrictedFunctionTypes._return_void_P4_E0<R, P1, P2, P3, P4> adapted;
 
     public _return_void_P4_E0(_UnrestrictedFunctionTypes._return_void_P4_E0<R, P1, P2, P3, P4> adapted) {
@@ -2204,7 +3764,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E1<R, P1, P2, P3, P4, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E1<R, P1, P2, P3, P4, E1> {
+  public static class _return_void_P4_E1<R, P1, P2, P3, P4, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E1<R, P1, P2, P3, P4, E1> {
     private _UnrestrictedFunctionTypes._return_void_P4_E1<R, P1, P2, P3, P4, E1> adapted;
 
     public _return_void_P4_E1(_UnrestrictedFunctionTypes._return_void_P4_E1<R, P1, P2, P3, P4, E1> adapted) {
@@ -2217,7 +3777,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E2<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E2<R, P1, P2, P3, P4, E1, E2> {
+  public static class _return_void_P4_E2<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E2<R, P1, P2, P3, P4, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P4_E2<R, P1, P2, P3, P4, E1, E2> adapted;
 
     public _return_void_P4_E2(_UnrestrictedFunctionTypes._return_void_P4_E2<R, P1, P2, P3, P4, E1, E2> adapted) {
@@ -2230,7 +3790,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E3<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E3<R, P1, P2, P3, P4, E1, E2, E3> {
+  public static class _return_void_P4_E3<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E3<R, P1, P2, P3, P4, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P4_E3<R, P1, P2, P3, P4, E1, E2, E3> adapted;
 
     public _return_void_P4_E3(_UnrestrictedFunctionTypes._return_void_P4_E3<R, P1, P2, P3, P4, E1, E2, E3> adapted) {
@@ -2243,7 +3803,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E4<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E4<R, P1, P2, P3, P4, E1, E2, E3, E4> {
+  public static class _return_void_P4_E4<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E4<R, P1, P2, P3, P4, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P4_E4<R, P1, P2, P3, P4, E1, E2, E3, E4> adapted;
 
     public _return_void_P4_E4(_UnrestrictedFunctionTypes._return_void_P4_E4<R, P1, P2, P3, P4, E1, E2, E3, E4> adapted) {
@@ -2256,7 +3816,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E5<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E5<R, P1, P2, P3, P4, E1, E2, E3, E4, E5> {
+  public static class _return_void_P4_E5<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E5<R, P1, P2, P3, P4, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P4_E5<R, P1, P2, P3, P4, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P4_E5(_UnrestrictedFunctionTypes._return_void_P4_E5<R, P1, P2, P3, P4, E1, E2, E3, E4, E5> adapted) {
@@ -2269,7 +3829,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E6<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E6<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P4_E6<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E6<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P4_E6<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P4_E6(_UnrestrictedFunctionTypes._return_void_P4_E6<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> adapted) {
@@ -2282,7 +3842,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E7<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E7<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P4_E7<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E7<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P4_E7<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P4_E7(_UnrestrictedFunctionTypes._return_void_P4_E7<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -2295,7 +3855,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E8<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E8<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P4_E8<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E8<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P4_E8<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P4_E8(_UnrestrictedFunctionTypes._return_void_P4_E8<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -2308,7 +3868,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E9<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E9<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P4_E9<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E9<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P4_E9<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P4_E9(_UnrestrictedFunctionTypes._return_void_P4_E9<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -2321,7 +3881,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P4_E10<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E10<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P4_E10<R, P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P4_E10<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P4_E10<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P4_E10(_UnrestrictedFunctionTypes._return_void_P4_E10<R, P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -2334,7 +3894,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E0<R, P1, P2, P3, P4, P5> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E0<R, P1, P2, P3, P4, P5> {
+  public static class _return_void_P5_E0<R, P1, P2, P3, P4, P5> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E0<R, P1, P2, P3, P4, P5> {
     private _UnrestrictedFunctionTypes._return_void_P5_E0<R, P1, P2, P3, P4, P5> adapted;
 
     public _return_void_P5_E0(_UnrestrictedFunctionTypes._return_void_P5_E0<R, P1, P2, P3, P4, P5> adapted) {
@@ -2347,7 +3907,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E1<R, P1, P2, P3, P4, P5, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E1<R, P1, P2, P3, P4, P5, E1> {
+  public static class _return_void_P5_E1<R, P1, P2, P3, P4, P5, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E1<R, P1, P2, P3, P4, P5, E1> {
     private _UnrestrictedFunctionTypes._return_void_P5_E1<R, P1, P2, P3, P4, P5, E1> adapted;
 
     public _return_void_P5_E1(_UnrestrictedFunctionTypes._return_void_P5_E1<R, P1, P2, P3, P4, P5, E1> adapted) {
@@ -2360,7 +3920,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E2<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E2<R, P1, P2, P3, P4, P5, E1, E2> {
+  public static class _return_void_P5_E2<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E2<R, P1, P2, P3, P4, P5, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P5_E2<R, P1, P2, P3, P4, P5, E1, E2> adapted;
 
     public _return_void_P5_E2(_UnrestrictedFunctionTypes._return_void_P5_E2<R, P1, P2, P3, P4, P5, E1, E2> adapted) {
@@ -2373,7 +3933,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E3<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E3<R, P1, P2, P3, P4, P5, E1, E2, E3> {
+  public static class _return_void_P5_E3<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E3<R, P1, P2, P3, P4, P5, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P5_E3<R, P1, P2, P3, P4, P5, E1, E2, E3> adapted;
 
     public _return_void_P5_E3(_UnrestrictedFunctionTypes._return_void_P5_E3<R, P1, P2, P3, P4, P5, E1, E2, E3> adapted) {
@@ -2386,7 +3946,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E4<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E4<R, P1, P2, P3, P4, P5, E1, E2, E3, E4> {
+  public static class _return_void_P5_E4<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E4<R, P1, P2, P3, P4, P5, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P5_E4<R, P1, P2, P3, P4, P5, E1, E2, E3, E4> adapted;
 
     public _return_void_P5_E4(_UnrestrictedFunctionTypes._return_void_P5_E4<R, P1, P2, P3, P4, P5, E1, E2, E3, E4> adapted) {
@@ -2399,7 +3959,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E5<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E5<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> {
+  public static class _return_void_P5_E5<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E5<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P5_E5<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P5_E5(_UnrestrictedFunctionTypes._return_void_P5_E5<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> adapted) {
@@ -2412,7 +3972,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E6<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E6<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P5_E6<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E6<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P5_E6<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P5_E6(_UnrestrictedFunctionTypes._return_void_P5_E6<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> adapted) {
@@ -2425,7 +3985,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E7<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E7<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P5_E7<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E7<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P5_E7<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P5_E7(_UnrestrictedFunctionTypes._return_void_P5_E7<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -2438,7 +3998,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E8<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E8<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P5_E8<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E8<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P5_E8<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P5_E8(_UnrestrictedFunctionTypes._return_void_P5_E8<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -2451,7 +4011,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E9<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E9<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P5_E9<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E9<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P5_E9<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P5_E9(_UnrestrictedFunctionTypes._return_void_P5_E9<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -2464,7 +4024,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P5_E10<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E10<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P5_E10<R, P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P5_E10<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P5_E10<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P5_E10(_UnrestrictedFunctionTypes._return_void_P5_E10<R, P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -2477,7 +4037,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E0<R, P1, P2, P3, P4, P5, P6> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E0<R, P1, P2, P3, P4, P5, P6> {
+  public static class _return_void_P6_E0<R, P1, P2, P3, P4, P5, P6> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E0<R, P1, P2, P3, P4, P5, P6> {
     private _UnrestrictedFunctionTypes._return_void_P6_E0<R, P1, P2, P3, P4, P5, P6> adapted;
 
     public _return_void_P6_E0(_UnrestrictedFunctionTypes._return_void_P6_E0<R, P1, P2, P3, P4, P5, P6> adapted) {
@@ -2490,7 +4050,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E1<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E1<R, P1, P2, P3, P4, P5, P6, E1> {
+  public static class _return_void_P6_E1<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E1<R, P1, P2, P3, P4, P5, P6, E1> {
     private _UnrestrictedFunctionTypes._return_void_P6_E1<R, P1, P2, P3, P4, P5, P6, E1> adapted;
 
     public _return_void_P6_E1(_UnrestrictedFunctionTypes._return_void_P6_E1<R, P1, P2, P3, P4, P5, P6, E1> adapted) {
@@ -2503,7 +4063,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E2<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E2<R, P1, P2, P3, P4, P5, P6, E1, E2> {
+  public static class _return_void_P6_E2<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E2<R, P1, P2, P3, P4, P5, P6, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P6_E2<R, P1, P2, P3, P4, P5, P6, E1, E2> adapted;
 
     public _return_void_P6_E2(_UnrestrictedFunctionTypes._return_void_P6_E2<R, P1, P2, P3, P4, P5, P6, E1, E2> adapted) {
@@ -2516,7 +4076,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E3<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E3<R, P1, P2, P3, P4, P5, P6, E1, E2, E3> {
+  public static class _return_void_P6_E3<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E3<R, P1, P2, P3, P4, P5, P6, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P6_E3<R, P1, P2, P3, P4, P5, P6, E1, E2, E3> adapted;
 
     public _return_void_P6_E3(_UnrestrictedFunctionTypes._return_void_P6_E3<R, P1, P2, P3, P4, P5, P6, E1, E2, E3> adapted) {
@@ -2529,7 +4089,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E4<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E4<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> {
+  public static class _return_void_P6_E4<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E4<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P6_E4<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> adapted;
 
     public _return_void_P6_E4(_UnrestrictedFunctionTypes._return_void_P6_E4<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> adapted) {
@@ -2542,7 +4102,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E5<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E5<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> {
+  public static class _return_void_P6_E5<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E5<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P6_E5<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P6_E5(_UnrestrictedFunctionTypes._return_void_P6_E5<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> adapted) {
@@ -2555,7 +4115,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E6<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E6<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P6_E6<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E6<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P6_E6<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P6_E6(_UnrestrictedFunctionTypes._return_void_P6_E6<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> adapted) {
@@ -2568,7 +4128,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E7<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E7<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P6_E7<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E7<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P6_E7<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P6_E7(_UnrestrictedFunctionTypes._return_void_P6_E7<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -2581,7 +4141,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E8<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E8<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P6_E8<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E8<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P6_E8<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P6_E8(_UnrestrictedFunctionTypes._return_void_P6_E8<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -2594,7 +4154,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E9<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E9<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P6_E9<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E9<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P6_E9<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P6_E9(_UnrestrictedFunctionTypes._return_void_P6_E9<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -2607,7 +4167,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P6_E10<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E10<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P6_E10<R, P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P6_E10<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P6_E10<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P6_E10(_UnrestrictedFunctionTypes._return_void_P6_E10<R, P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -2620,7 +4180,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E0<R, P1, P2, P3, P4, P5, P6, P7> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E0<R, P1, P2, P3, P4, P5, P6, P7> {
+  public static class _return_void_P7_E0<R, P1, P2, P3, P4, P5, P6, P7> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E0<R, P1, P2, P3, P4, P5, P6, P7> {
     private _UnrestrictedFunctionTypes._return_void_P7_E0<R, P1, P2, P3, P4, P5, P6, P7> adapted;
 
     public _return_void_P7_E0(_UnrestrictedFunctionTypes._return_void_P7_E0<R, P1, P2, P3, P4, P5, P6, P7> adapted) {
@@ -2633,7 +4193,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E1<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E1<R, P1, P2, P3, P4, P5, P6, P7, E1> {
+  public static class _return_void_P7_E1<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E1<R, P1, P2, P3, P4, P5, P6, P7, E1> {
     private _UnrestrictedFunctionTypes._return_void_P7_E1<R, P1, P2, P3, P4, P5, P6, P7, E1> adapted;
 
     public _return_void_P7_E1(_UnrestrictedFunctionTypes._return_void_P7_E1<R, P1, P2, P3, P4, P5, P6, P7, E1> adapted) {
@@ -2646,7 +4206,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E2<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E2<R, P1, P2, P3, P4, P5, P6, P7, E1, E2> {
+  public static class _return_void_P7_E2<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E2<R, P1, P2, P3, P4, P5, P6, P7, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P7_E2<R, P1, P2, P3, P4, P5, P6, P7, E1, E2> adapted;
 
     public _return_void_P7_E2(_UnrestrictedFunctionTypes._return_void_P7_E2<R, P1, P2, P3, P4, P5, P6, P7, E1, E2> adapted) {
@@ -2659,7 +4219,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E3<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E3<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> {
+  public static class _return_void_P7_E3<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E3<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P7_E3<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> adapted;
 
     public _return_void_P7_E3(_UnrestrictedFunctionTypes._return_void_P7_E3<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> adapted) {
@@ -2672,7 +4232,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E4<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E4<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> {
+  public static class _return_void_P7_E4<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E4<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P7_E4<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> adapted;
 
     public _return_void_P7_E4(_UnrestrictedFunctionTypes._return_void_P7_E4<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> adapted) {
@@ -2685,7 +4245,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E5<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E5<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> {
+  public static class _return_void_P7_E5<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E5<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P7_E5<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P7_E5(_UnrestrictedFunctionTypes._return_void_P7_E5<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> adapted) {
@@ -2698,7 +4258,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E6<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E6<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P7_E6<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E6<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P7_E6<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P7_E6(_UnrestrictedFunctionTypes._return_void_P7_E6<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> adapted) {
@@ -2711,7 +4271,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E7<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E7<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P7_E7<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E7<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P7_E7<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P7_E7(_UnrestrictedFunctionTypes._return_void_P7_E7<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -2724,7 +4284,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E8<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E8<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P7_E8<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E8<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P7_E8<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P7_E8(_UnrestrictedFunctionTypes._return_void_P7_E8<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -2737,7 +4297,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E9<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E9<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P7_E9<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E9<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P7_E9<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P7_E9(_UnrestrictedFunctionTypes._return_void_P7_E9<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -2750,7 +4310,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P7_E10<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E10<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P7_E10<R, P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P7_E10<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P7_E10<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P7_E10(_UnrestrictedFunctionTypes._return_void_P7_E10<R, P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -2763,7 +4323,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E0<R, P1, P2, P3, P4, P5, P6, P7, P8> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E0<R, P1, P2, P3, P4, P5, P6, P7, P8> {
+  public static class _return_void_P8_E0<R, P1, P2, P3, P4, P5, P6, P7, P8> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E0<R, P1, P2, P3, P4, P5, P6, P7, P8> {
     private _UnrestrictedFunctionTypes._return_void_P8_E0<R, P1, P2, P3, P4, P5, P6, P7, P8> adapted;
 
     public _return_void_P8_E0(_UnrestrictedFunctionTypes._return_void_P8_E0<R, P1, P2, P3, P4, P5, P6, P7, P8> adapted) {
@@ -2776,7 +4336,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, E1> {
+  public static class _return_void_P8_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, E1> {
     private _UnrestrictedFunctionTypes._return_void_P8_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, E1> adapted;
 
     public _return_void_P8_E1(_UnrestrictedFunctionTypes._return_void_P8_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, E1> adapted) {
@@ -2789,7 +4349,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> {
+  public static class _return_void_P8_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P8_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> adapted;
 
     public _return_void_P8_E2(_UnrestrictedFunctionTypes._return_void_P8_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> adapted) {
@@ -2802,7 +4362,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> {
+  public static class _return_void_P8_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P8_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> adapted;
 
     public _return_void_P8_E3(_UnrestrictedFunctionTypes._return_void_P8_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> adapted) {
@@ -2815,7 +4375,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> {
+  public static class _return_void_P8_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P8_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> adapted;
 
     public _return_void_P8_E4(_UnrestrictedFunctionTypes._return_void_P8_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> adapted) {
@@ -2828,7 +4388,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> {
+  public static class _return_void_P8_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P8_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P8_E5(_UnrestrictedFunctionTypes._return_void_P8_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> adapted) {
@@ -2841,7 +4401,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P8_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P8_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P8_E6(_UnrestrictedFunctionTypes._return_void_P8_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> adapted) {
@@ -2854,7 +4414,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P8_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P8_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P8_E7(_UnrestrictedFunctionTypes._return_void_P8_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -2867,7 +4427,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P8_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P8_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P8_E8(_UnrestrictedFunctionTypes._return_void_P8_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -2880,7 +4440,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P8_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P8_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P8_E9(_UnrestrictedFunctionTypes._return_void_P8_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -2893,7 +4453,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P8_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P8_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P8_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P8_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P8_E10(_UnrestrictedFunctionTypes._return_void_P8_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -2906,7 +4466,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9> {
+  public static class _return_void_P9_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9> {
     private _UnrestrictedFunctionTypes._return_void_P9_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9> adapted;
 
     public _return_void_P9_E0(_UnrestrictedFunctionTypes._return_void_P9_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9> adapted) {
@@ -2919,7 +4479,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> {
+  public static class _return_void_P9_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> {
     private _UnrestrictedFunctionTypes._return_void_P9_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> adapted;
 
     public _return_void_P9_E1(_UnrestrictedFunctionTypes._return_void_P9_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> adapted) {
@@ -2932,7 +4492,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> {
+  public static class _return_void_P9_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P9_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> adapted;
 
     public _return_void_P9_E2(_UnrestrictedFunctionTypes._return_void_P9_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> adapted) {
@@ -2945,7 +4505,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> {
+  public static class _return_void_P9_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P9_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> adapted;
 
     public _return_void_P9_E3(_UnrestrictedFunctionTypes._return_void_P9_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> adapted) {
@@ -2958,7 +4518,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> {
+  public static class _return_void_P9_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P9_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> adapted;
 
     public _return_void_P9_E4(_UnrestrictedFunctionTypes._return_void_P9_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> adapted) {
@@ -2971,7 +4531,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> {
+  public static class _return_void_P9_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P9_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P9_E5(_UnrestrictedFunctionTypes._return_void_P9_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> adapted) {
@@ -2984,7 +4544,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P9_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P9_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P9_E6(_UnrestrictedFunctionTypes._return_void_P9_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> adapted) {
@@ -2997,7 +4557,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P9_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P9_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P9_E7(_UnrestrictedFunctionTypes._return_void_P9_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -3010,7 +4570,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P9_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P9_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P9_E8(_UnrestrictedFunctionTypes._return_void_P9_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -3023,7 +4583,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P9_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P9_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P9_E9(_UnrestrictedFunctionTypes._return_void_P9_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -3036,7 +4596,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P9_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P9_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P9_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P9_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P9_E10(_UnrestrictedFunctionTypes._return_void_P9_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -3049,7 +4609,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
+  public static class _return_void_P10_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
     private _UnrestrictedFunctionTypes._return_void_P10_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> adapted;
 
     public _return_void_P10_E0(_UnrestrictedFunctionTypes._return_void_P10_E0<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> adapted) {
@@ -3062,7 +4622,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> {
+  public static class _return_void_P10_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> {
     private _UnrestrictedFunctionTypes._return_void_P10_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> adapted;
 
     public _return_void_P10_E1(_UnrestrictedFunctionTypes._return_void_P10_E1<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> adapted) {
@@ -3075,7 +4635,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> {
+  public static class _return_void_P10_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> {
     private _UnrestrictedFunctionTypes._return_void_P10_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> adapted;
 
     public _return_void_P10_E2(_UnrestrictedFunctionTypes._return_void_P10_E2<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> adapted) {
@@ -3088,7 +4648,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> {
+  public static class _return_void_P10_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._return_void_P10_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> adapted;
 
     public _return_void_P10_E3(_UnrestrictedFunctionTypes._return_void_P10_E3<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> adapted) {
@@ -3101,7 +4661,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> {
+  public static class _return_void_P10_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._return_void_P10_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> adapted;
 
     public _return_void_P10_E4(_UnrestrictedFunctionTypes._return_void_P10_E4<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> adapted) {
@@ -3114,7 +4674,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> {
+  public static class _return_void_P10_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._return_void_P10_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> adapted;
 
     public _return_void_P10_E5(_UnrestrictedFunctionTypes._return_void_P10_E5<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> adapted) {
@@ -3127,7 +4687,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> {
+  public static class _return_void_P10_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._return_void_P10_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> adapted;
 
     public _return_void_P10_E6(_UnrestrictedFunctionTypes._return_void_P10_E6<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> adapted) {
@@ -3140,7 +4700,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _return_void_P10_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._return_void_P10_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _return_void_P10_E7(_UnrestrictedFunctionTypes._return_void_P10_E7<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -3153,7 +4713,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _return_void_P10_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._return_void_P10_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _return_void_P10_E8(_UnrestrictedFunctionTypes._return_void_P10_E8<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -3166,7 +4726,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _return_void_P10_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._return_void_P10_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _return_void_P10_E9(_UnrestrictedFunctionTypes._return_void_P10_E9<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -3179,7 +4739,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _return_void_P10_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _return_void_P10_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, R> implements _UnrestrictedFunctionTypes._return_void_P10_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._return_void_P10_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _return_void_P10_E10(_UnrestrictedFunctionTypes._return_void_P10_E10<R, P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -3192,7 +4752,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E0 extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E0 {
+  public static class _void_void_P0_E0 extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E0 {
     private _UnrestrictedFunctionTypes._void_void_P0_E0 adapted;
 
     public _void_void_P0_E0(_UnrestrictedFunctionTypes._void_void_P0_E0 adapted) {
@@ -3205,7 +4765,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E1<E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E1<E1> {
+  public static class _void_void_P0_E1<E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E1<E1> {
     private _UnrestrictedFunctionTypes._void_void_P0_E1<E1> adapted;
 
     public _void_void_P0_E1(_UnrestrictedFunctionTypes._void_void_P0_E1<E1> adapted) {
@@ -3218,7 +4778,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E2<E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E2<E1, E2> {
+  public static class _void_void_P0_E2<E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E2<E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P0_E2<E1, E2> adapted;
 
     public _void_void_P0_E2(_UnrestrictedFunctionTypes._void_void_P0_E2<E1, E2> adapted) {
@@ -3231,7 +4791,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E3<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E3<E1, E2, E3> {
+  public static class _void_void_P0_E3<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E3<E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P0_E3<E1, E2, E3> adapted;
 
     public _void_void_P0_E3(_UnrestrictedFunctionTypes._void_void_P0_E3<E1, E2, E3> adapted) {
@@ -3244,7 +4804,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E4<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E4<E1, E2, E3, E4> {
+  public static class _void_void_P0_E4<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E4<E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P0_E4<E1, E2, E3, E4> adapted;
 
     public _void_void_P0_E4(_UnrestrictedFunctionTypes._void_void_P0_E4<E1, E2, E3, E4> adapted) {
@@ -3257,7 +4817,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E5<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E5<E1, E2, E3, E4, E5> {
+  public static class _void_void_P0_E5<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E5<E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P0_E5<E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P0_E5(_UnrestrictedFunctionTypes._void_void_P0_E5<E1, E2, E3, E4, E5> adapted) {
@@ -3270,7 +4830,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E6<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E6<E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P0_E6<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E6<E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P0_E6<E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P0_E6(_UnrestrictedFunctionTypes._void_void_P0_E6<E1, E2, E3, E4, E5, E6> adapted) {
@@ -3283,7 +4843,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E7<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E7<E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P0_E7<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E7<E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P0_E7<E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P0_E7(_UnrestrictedFunctionTypes._void_void_P0_E7<E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -3296,7 +4856,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E8<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E8<E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P0_E8<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E8<E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P0_E8<E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P0_E8(_UnrestrictedFunctionTypes._void_void_P0_E8<E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -3309,7 +4869,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E9<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E9<E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P0_E9<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E9<E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P0_E9<E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P0_E9(_UnrestrictedFunctionTypes._void_void_P0_E9<E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -3322,7 +4882,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P0_E10<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E10<E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P0_E10<E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P0_E10<E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P0_E10<E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P0_E10(_UnrestrictedFunctionTypes._void_void_P0_E10<E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -3335,7 +4895,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E0<P1> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E0<P1> {
+  public static class _void_void_P1_E0<P1> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E0<P1> {
     private _UnrestrictedFunctionTypes._void_void_P1_E0<P1> adapted;
 
     public _void_void_P1_E0(_UnrestrictedFunctionTypes._void_void_P1_E0<P1> adapted) {
@@ -3348,7 +4908,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E1<P1, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E1<P1, E1> {
+  public static class _void_void_P1_E1<P1, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E1<P1, E1> {
     private _UnrestrictedFunctionTypes._void_void_P1_E1<P1, E1> adapted;
 
     public _void_void_P1_E1(_UnrestrictedFunctionTypes._void_void_P1_E1<P1, E1> adapted) {
@@ -3361,7 +4921,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E2<P1, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E2<P1, E1, E2> {
+  public static class _void_void_P1_E2<P1, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E2<P1, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P1_E2<P1, E1, E2> adapted;
 
     public _void_void_P1_E2(_UnrestrictedFunctionTypes._void_void_P1_E2<P1, E1, E2> adapted) {
@@ -3374,7 +4934,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E3<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E3<P1, E1, E2, E3> {
+  public static class _void_void_P1_E3<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E3<P1, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P1_E3<P1, E1, E2, E3> adapted;
 
     public _void_void_P1_E3(_UnrestrictedFunctionTypes._void_void_P1_E3<P1, E1, E2, E3> adapted) {
@@ -3387,7 +4947,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E4<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E4<P1, E1, E2, E3, E4> {
+  public static class _void_void_P1_E4<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E4<P1, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P1_E4<P1, E1, E2, E3, E4> adapted;
 
     public _void_void_P1_E4(_UnrestrictedFunctionTypes._void_void_P1_E4<P1, E1, E2, E3, E4> adapted) {
@@ -3400,7 +4960,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E5<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E5<P1, E1, E2, E3, E4, E5> {
+  public static class _void_void_P1_E5<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E5<P1, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P1_E5<P1, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P1_E5(_UnrestrictedFunctionTypes._void_void_P1_E5<P1, E1, E2, E3, E4, E5> adapted) {
@@ -3413,7 +4973,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E6<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E6<P1, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P1_E6<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E6<P1, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P1_E6<P1, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P1_E6(_UnrestrictedFunctionTypes._void_void_P1_E6<P1, E1, E2, E3, E4, E5, E6> adapted) {
@@ -3426,7 +4986,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E7<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E7<P1, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P1_E7<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E7<P1, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P1_E7<P1, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P1_E7(_UnrestrictedFunctionTypes._void_void_P1_E7<P1, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -3439,7 +4999,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E8<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E8<P1, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P1_E8<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E8<P1, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P1_E8<P1, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P1_E8(_UnrestrictedFunctionTypes._void_void_P1_E8<P1, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -3452,7 +5012,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E9<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E9<P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P1_E9<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E9<P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P1_E9<P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P1_E9(_UnrestrictedFunctionTypes._void_void_P1_E9<P1, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -3465,7 +5025,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P1_E10<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E10<P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P1_E10<P1, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P1_E10<P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P1_E10<P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P1_E10(_UnrestrictedFunctionTypes._void_void_P1_E10<P1, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -3478,7 +5038,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E0<P1, P2> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E0<P1, P2> {
+  public static class _void_void_P2_E0<P1, P2> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E0<P1, P2> {
     private _UnrestrictedFunctionTypes._void_void_P2_E0<P1, P2> adapted;
 
     public _void_void_P2_E0(_UnrestrictedFunctionTypes._void_void_P2_E0<P1, P2> adapted) {
@@ -3491,7 +5051,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E1<P1, P2, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E1<P1, P2, E1> {
+  public static class _void_void_P2_E1<P1, P2, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E1<P1, P2, E1> {
     private _UnrestrictedFunctionTypes._void_void_P2_E1<P1, P2, E1> adapted;
 
     public _void_void_P2_E1(_UnrestrictedFunctionTypes._void_void_P2_E1<P1, P2, E1> adapted) {
@@ -3504,7 +5064,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E2<P1, P2, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E2<P1, P2, E1, E2> {
+  public static class _void_void_P2_E2<P1, P2, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E2<P1, P2, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P2_E2<P1, P2, E1, E2> adapted;
 
     public _void_void_P2_E2(_UnrestrictedFunctionTypes._void_void_P2_E2<P1, P2, E1, E2> adapted) {
@@ -3517,7 +5077,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E3<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E3<P1, P2, E1, E2, E3> {
+  public static class _void_void_P2_E3<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E3<P1, P2, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P2_E3<P1, P2, E1, E2, E3> adapted;
 
     public _void_void_P2_E3(_UnrestrictedFunctionTypes._void_void_P2_E3<P1, P2, E1, E2, E3> adapted) {
@@ -3530,7 +5090,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E4<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E4<P1, P2, E1, E2, E3, E4> {
+  public static class _void_void_P2_E4<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E4<P1, P2, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P2_E4<P1, P2, E1, E2, E3, E4> adapted;
 
     public _void_void_P2_E4(_UnrestrictedFunctionTypes._void_void_P2_E4<P1, P2, E1, E2, E3, E4> adapted) {
@@ -3543,7 +5103,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E5<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E5<P1, P2, E1, E2, E3, E4, E5> {
+  public static class _void_void_P2_E5<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E5<P1, P2, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P2_E5<P1, P2, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P2_E5(_UnrestrictedFunctionTypes._void_void_P2_E5<P1, P2, E1, E2, E3, E4, E5> adapted) {
@@ -3556,7 +5116,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E6<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E6<P1, P2, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P2_E6<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E6<P1, P2, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P2_E6<P1, P2, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P2_E6(_UnrestrictedFunctionTypes._void_void_P2_E6<P1, P2, E1, E2, E3, E4, E5, E6> adapted) {
@@ -3569,7 +5129,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E7<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E7<P1, P2, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P2_E7<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E7<P1, P2, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P2_E7<P1, P2, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P2_E7(_UnrestrictedFunctionTypes._void_void_P2_E7<P1, P2, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -3582,7 +5142,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E8<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E8<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P2_E8<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E8<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P2_E8<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P2_E8(_UnrestrictedFunctionTypes._void_void_P2_E8<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -3595,7 +5155,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E9<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E9<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P2_E9<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E9<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P2_E9<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P2_E9(_UnrestrictedFunctionTypes._void_void_P2_E9<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -3608,7 +5168,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P2_E10<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E10<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P2_E10<P1, P2, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P2_E10<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P2_E10<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P2_E10(_UnrestrictedFunctionTypes._void_void_P2_E10<P1, P2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -3621,7 +5181,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E0<P1, P2, P3> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E0<P1, P2, P3> {
+  public static class _void_void_P3_E0<P1, P2, P3> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E0<P1, P2, P3> {
     private _UnrestrictedFunctionTypes._void_void_P3_E0<P1, P2, P3> adapted;
 
     public _void_void_P3_E0(_UnrestrictedFunctionTypes._void_void_P3_E0<P1, P2, P3> adapted) {
@@ -3634,7 +5194,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E1<P1, P2, P3, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E1<P1, P2, P3, E1> {
+  public static class _void_void_P3_E1<P1, P2, P3, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E1<P1, P2, P3, E1> {
     private _UnrestrictedFunctionTypes._void_void_P3_E1<P1, P2, P3, E1> adapted;
 
     public _void_void_P3_E1(_UnrestrictedFunctionTypes._void_void_P3_E1<P1, P2, P3, E1> adapted) {
@@ -3647,7 +5207,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E2<P1, P2, P3, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E2<P1, P2, P3, E1, E2> {
+  public static class _void_void_P3_E2<P1, P2, P3, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E2<P1, P2, P3, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P3_E2<P1, P2, P3, E1, E2> adapted;
 
     public _void_void_P3_E2(_UnrestrictedFunctionTypes._void_void_P3_E2<P1, P2, P3, E1, E2> adapted) {
@@ -3660,7 +5220,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E3<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E3<P1, P2, P3, E1, E2, E3> {
+  public static class _void_void_P3_E3<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E3<P1, P2, P3, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P3_E3<P1, P2, P3, E1, E2, E3> adapted;
 
     public _void_void_P3_E3(_UnrestrictedFunctionTypes._void_void_P3_E3<P1, P2, P3, E1, E2, E3> adapted) {
@@ -3673,7 +5233,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E4<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E4<P1, P2, P3, E1, E2, E3, E4> {
+  public static class _void_void_P3_E4<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E4<P1, P2, P3, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P3_E4<P1, P2, P3, E1, E2, E3, E4> adapted;
 
     public _void_void_P3_E4(_UnrestrictedFunctionTypes._void_void_P3_E4<P1, P2, P3, E1, E2, E3, E4> adapted) {
@@ -3686,7 +5246,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E5<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E5<P1, P2, P3, E1, E2, E3, E4, E5> {
+  public static class _void_void_P3_E5<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E5<P1, P2, P3, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P3_E5<P1, P2, P3, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P3_E5(_UnrestrictedFunctionTypes._void_void_P3_E5<P1, P2, P3, E1, E2, E3, E4, E5> adapted) {
@@ -3699,7 +5259,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E6<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E6<P1, P2, P3, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P3_E6<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E6<P1, P2, P3, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P3_E6<P1, P2, P3, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P3_E6(_UnrestrictedFunctionTypes._void_void_P3_E6<P1, P2, P3, E1, E2, E3, E4, E5, E6> adapted) {
@@ -3712,7 +5272,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E7<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E7<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P3_E7<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E7<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P3_E7<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P3_E7(_UnrestrictedFunctionTypes._void_void_P3_E7<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -3725,7 +5285,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E8<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E8<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P3_E8<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E8<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P3_E8<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P3_E8(_UnrestrictedFunctionTypes._void_void_P3_E8<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -3738,7 +5298,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E9<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E9<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P3_E9<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E9<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P3_E9<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P3_E9(_UnrestrictedFunctionTypes._void_void_P3_E9<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -3751,7 +5311,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P3_E10<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E10<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P3_E10<P1, P2, P3, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P3_E10<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P3_E10<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P3_E10(_UnrestrictedFunctionTypes._void_void_P3_E10<P1, P2, P3, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -3764,7 +5324,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E0<P1, P2, P3, P4> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E0<P1, P2, P3, P4> {
+  public static class _void_void_P4_E0<P1, P2, P3, P4> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E0<P1, P2, P3, P4> {
     private _UnrestrictedFunctionTypes._void_void_P4_E0<P1, P2, P3, P4> adapted;
 
     public _void_void_P4_E0(_UnrestrictedFunctionTypes._void_void_P4_E0<P1, P2, P3, P4> adapted) {
@@ -3777,7 +5337,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E1<P1, P2, P3, P4, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E1<P1, P2, P3, P4, E1> {
+  public static class _void_void_P4_E1<P1, P2, P3, P4, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E1<P1, P2, P3, P4, E1> {
     private _UnrestrictedFunctionTypes._void_void_P4_E1<P1, P2, P3, P4, E1> adapted;
 
     public _void_void_P4_E1(_UnrestrictedFunctionTypes._void_void_P4_E1<P1, P2, P3, P4, E1> adapted) {
@@ -3790,7 +5350,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E2<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E2<P1, P2, P3, P4, E1, E2> {
+  public static class _void_void_P4_E2<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E2<P1, P2, P3, P4, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P4_E2<P1, P2, P3, P4, E1, E2> adapted;
 
     public _void_void_P4_E2(_UnrestrictedFunctionTypes._void_void_P4_E2<P1, P2, P3, P4, E1, E2> adapted) {
@@ -3803,7 +5363,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E3<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E3<P1, P2, P3, P4, E1, E2, E3> {
+  public static class _void_void_P4_E3<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E3<P1, P2, P3, P4, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P4_E3<P1, P2, P3, P4, E1, E2, E3> adapted;
 
     public _void_void_P4_E3(_UnrestrictedFunctionTypes._void_void_P4_E3<P1, P2, P3, P4, E1, E2, E3> adapted) {
@@ -3816,7 +5376,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E4<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E4<P1, P2, P3, P4, E1, E2, E3, E4> {
+  public static class _void_void_P4_E4<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E4<P1, P2, P3, P4, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P4_E4<P1, P2, P3, P4, E1, E2, E3, E4> adapted;
 
     public _void_void_P4_E4(_UnrestrictedFunctionTypes._void_void_P4_E4<P1, P2, P3, P4, E1, E2, E3, E4> adapted) {
@@ -3829,7 +5389,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E5<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E5<P1, P2, P3, P4, E1, E2, E3, E4, E5> {
+  public static class _void_void_P4_E5<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E5<P1, P2, P3, P4, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P4_E5<P1, P2, P3, P4, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P4_E5(_UnrestrictedFunctionTypes._void_void_P4_E5<P1, P2, P3, P4, E1, E2, E3, E4, E5> adapted) {
@@ -3842,7 +5402,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E6<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E6<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P4_E6<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E6<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P4_E6<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P4_E6(_UnrestrictedFunctionTypes._void_void_P4_E6<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6> adapted) {
@@ -3855,7 +5415,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E7<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E7<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P4_E7<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E7<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P4_E7<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P4_E7(_UnrestrictedFunctionTypes._void_void_P4_E7<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -3868,7 +5428,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E8<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E8<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P4_E8<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E8<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P4_E8<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P4_E8(_UnrestrictedFunctionTypes._void_void_P4_E8<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -3881,7 +5441,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E9<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E9<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P4_E9<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E9<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P4_E9<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P4_E9(_UnrestrictedFunctionTypes._void_void_P4_E9<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -3894,7 +5454,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P4_E10<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E10<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P4_E10<P1, P2, P3, P4, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P4_E10<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P4_E10<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P4_E10(_UnrestrictedFunctionTypes._void_void_P4_E10<P1, P2, P3, P4, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -3907,7 +5467,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E0<P1, P2, P3, P4, P5> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E0<P1, P2, P3, P4, P5> {
+  public static class _void_void_P5_E0<P1, P2, P3, P4, P5> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E0<P1, P2, P3, P4, P5> {
     private _UnrestrictedFunctionTypes._void_void_P5_E0<P1, P2, P3, P4, P5> adapted;
 
     public _void_void_P5_E0(_UnrestrictedFunctionTypes._void_void_P5_E0<P1, P2, P3, P4, P5> adapted) {
@@ -3920,7 +5480,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E1<P1, P2, P3, P4, P5, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E1<P1, P2, P3, P4, P5, E1> {
+  public static class _void_void_P5_E1<P1, P2, P3, P4, P5, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E1<P1, P2, P3, P4, P5, E1> {
     private _UnrestrictedFunctionTypes._void_void_P5_E1<P1, P2, P3, P4, P5, E1> adapted;
 
     public _void_void_P5_E1(_UnrestrictedFunctionTypes._void_void_P5_E1<P1, P2, P3, P4, P5, E1> adapted) {
@@ -3933,7 +5493,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E2<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E2<P1, P2, P3, P4, P5, E1, E2> {
+  public static class _void_void_P5_E2<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E2<P1, P2, P3, P4, P5, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P5_E2<P1, P2, P3, P4, P5, E1, E2> adapted;
 
     public _void_void_P5_E2(_UnrestrictedFunctionTypes._void_void_P5_E2<P1, P2, P3, P4, P5, E1, E2> adapted) {
@@ -3946,7 +5506,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E3<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E3<P1, P2, P3, P4, P5, E1, E2, E3> {
+  public static class _void_void_P5_E3<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E3<P1, P2, P3, P4, P5, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P5_E3<P1, P2, P3, P4, P5, E1, E2, E3> adapted;
 
     public _void_void_P5_E3(_UnrestrictedFunctionTypes._void_void_P5_E3<P1, P2, P3, P4, P5, E1, E2, E3> adapted) {
@@ -3959,7 +5519,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E4<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E4<P1, P2, P3, P4, P5, E1, E2, E3, E4> {
+  public static class _void_void_P5_E4<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E4<P1, P2, P3, P4, P5, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P5_E4<P1, P2, P3, P4, P5, E1, E2, E3, E4> adapted;
 
     public _void_void_P5_E4(_UnrestrictedFunctionTypes._void_void_P5_E4<P1, P2, P3, P4, P5, E1, E2, E3, E4> adapted) {
@@ -3972,7 +5532,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E5<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E5<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> {
+  public static class _void_void_P5_E5<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E5<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P5_E5<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P5_E5(_UnrestrictedFunctionTypes._void_void_P5_E5<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5> adapted) {
@@ -3985,7 +5545,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E6<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E6<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P5_E6<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E6<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P5_E6<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P5_E6(_UnrestrictedFunctionTypes._void_void_P5_E6<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6> adapted) {
@@ -3998,7 +5558,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E7<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E7<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P5_E7<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E7<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P5_E7<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P5_E7(_UnrestrictedFunctionTypes._void_void_P5_E7<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -4011,7 +5571,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E8<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E8<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P5_E8<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E8<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P5_E8<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P5_E8(_UnrestrictedFunctionTypes._void_void_P5_E8<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -4024,7 +5584,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E9<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E9<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P5_E9<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E9<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P5_E9<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P5_E9(_UnrestrictedFunctionTypes._void_void_P5_E9<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -4037,7 +5597,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P5_E10<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E10<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P5_E10<P1, P2, P3, P4, P5, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P5_E10<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P5_E10<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P5_E10(_UnrestrictedFunctionTypes._void_void_P5_E10<P1, P2, P3, P4, P5, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -4050,7 +5610,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E0<P1, P2, P3, P4, P5, P6> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E0<P1, P2, P3, P4, P5, P6> {
+  public static class _void_void_P6_E0<P1, P2, P3, P4, P5, P6> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E0<P1, P2, P3, P4, P5, P6> {
     private _UnrestrictedFunctionTypes._void_void_P6_E0<P1, P2, P3, P4, P5, P6> adapted;
 
     public _void_void_P6_E0(_UnrestrictedFunctionTypes._void_void_P6_E0<P1, P2, P3, P4, P5, P6> adapted) {
@@ -4063,7 +5623,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E1<P1, P2, P3, P4, P5, P6, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E1<P1, P2, P3, P4, P5, P6, E1> {
+  public static class _void_void_P6_E1<P1, P2, P3, P4, P5, P6, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E1<P1, P2, P3, P4, P5, P6, E1> {
     private _UnrestrictedFunctionTypes._void_void_P6_E1<P1, P2, P3, P4, P5, P6, E1> adapted;
 
     public _void_void_P6_E1(_UnrestrictedFunctionTypes._void_void_P6_E1<P1, P2, P3, P4, P5, P6, E1> adapted) {
@@ -4076,7 +5636,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E2<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E2<P1, P2, P3, P4, P5, P6, E1, E2> {
+  public static class _void_void_P6_E2<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E2<P1, P2, P3, P4, P5, P6, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P6_E2<P1, P2, P3, P4, P5, P6, E1, E2> adapted;
 
     public _void_void_P6_E2(_UnrestrictedFunctionTypes._void_void_P6_E2<P1, P2, P3, P4, P5, P6, E1, E2> adapted) {
@@ -4089,7 +5649,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E3<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E3<P1, P2, P3, P4, P5, P6, E1, E2, E3> {
+  public static class _void_void_P6_E3<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E3<P1, P2, P3, P4, P5, P6, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P6_E3<P1, P2, P3, P4, P5, P6, E1, E2, E3> adapted;
 
     public _void_void_P6_E3(_UnrestrictedFunctionTypes._void_void_P6_E3<P1, P2, P3, P4, P5, P6, E1, E2, E3> adapted) {
@@ -4102,7 +5662,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E4<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E4<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> {
+  public static class _void_void_P6_E4<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E4<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P6_E4<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> adapted;
 
     public _void_void_P6_E4(_UnrestrictedFunctionTypes._void_void_P6_E4<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4> adapted) {
@@ -4115,7 +5675,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E5<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E5<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> {
+  public static class _void_void_P6_E5<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E5<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P6_E5<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P6_E5(_UnrestrictedFunctionTypes._void_void_P6_E5<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5> adapted) {
@@ -4128,7 +5688,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E6<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E6<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P6_E6<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E6<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P6_E6<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P6_E6(_UnrestrictedFunctionTypes._void_void_P6_E6<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6> adapted) {
@@ -4141,7 +5701,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E7<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E7<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P6_E7<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E7<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P6_E7<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P6_E7(_UnrestrictedFunctionTypes._void_void_P6_E7<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -4154,7 +5714,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E8<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E8<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P6_E8<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E8<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P6_E8<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P6_E8(_UnrestrictedFunctionTypes._void_void_P6_E8<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -4167,7 +5727,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E9<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E9<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P6_E9<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E9<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P6_E9<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P6_E9(_UnrestrictedFunctionTypes._void_void_P6_E9<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -4180,7 +5740,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P6_E10<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E10<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P6_E10<P1, P2, P3, P4, P5, P6, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P6_E10<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P6_E10<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P6_E10(_UnrestrictedFunctionTypes._void_void_P6_E10<P1, P2, P3, P4, P5, P6, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -4193,7 +5753,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E0<P1, P2, P3, P4, P5, P6, P7> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E0<P1, P2, P3, P4, P5, P6, P7> {
+  public static class _void_void_P7_E0<P1, P2, P3, P4, P5, P6, P7> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E0<P1, P2, P3, P4, P5, P6, P7> {
     private _UnrestrictedFunctionTypes._void_void_P7_E0<P1, P2, P3, P4, P5, P6, P7> adapted;
 
     public _void_void_P7_E0(_UnrestrictedFunctionTypes._void_void_P7_E0<P1, P2, P3, P4, P5, P6, P7> adapted) {
@@ -4206,7 +5766,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E1<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E1<P1, P2, P3, P4, P5, P6, P7, E1> {
+  public static class _void_void_P7_E1<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E1<P1, P2, P3, P4, P5, P6, P7, E1> {
     private _UnrestrictedFunctionTypes._void_void_P7_E1<P1, P2, P3, P4, P5, P6, P7, E1> adapted;
 
     public _void_void_P7_E1(_UnrestrictedFunctionTypes._void_void_P7_E1<P1, P2, P3, P4, P5, P6, P7, E1> adapted) {
@@ -4219,7 +5779,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E2<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E2<P1, P2, P3, P4, P5, P6, P7, E1, E2> {
+  public static class _void_void_P7_E2<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E2<P1, P2, P3, P4, P5, P6, P7, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P7_E2<P1, P2, P3, P4, P5, P6, P7, E1, E2> adapted;
 
     public _void_void_P7_E2(_UnrestrictedFunctionTypes._void_void_P7_E2<P1, P2, P3, P4, P5, P6, P7, E1, E2> adapted) {
@@ -4232,7 +5792,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E3<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E3<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> {
+  public static class _void_void_P7_E3<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E3<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P7_E3<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> adapted;
 
     public _void_void_P7_E3(_UnrestrictedFunctionTypes._void_void_P7_E3<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3> adapted) {
@@ -4245,7 +5805,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E4<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E4<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> {
+  public static class _void_void_P7_E4<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E4<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P7_E4<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> adapted;
 
     public _void_void_P7_E4(_UnrestrictedFunctionTypes._void_void_P7_E4<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4> adapted) {
@@ -4258,7 +5818,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E5<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E5<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> {
+  public static class _void_void_P7_E5<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E5<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P7_E5<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P7_E5(_UnrestrictedFunctionTypes._void_void_P7_E5<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5> adapted) {
@@ -4271,7 +5831,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E6<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E6<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P7_E6<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E6<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P7_E6<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P7_E6(_UnrestrictedFunctionTypes._void_void_P7_E6<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6> adapted) {
@@ -4284,7 +5844,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E7<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E7<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P7_E7<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E7<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P7_E7<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P7_E7(_UnrestrictedFunctionTypes._void_void_P7_E7<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -4297,7 +5857,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E8<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E8<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P7_E8<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E8<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P7_E8<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P7_E8(_UnrestrictedFunctionTypes._void_void_P7_E8<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -4310,7 +5870,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E9<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E9<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P7_E9<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E9<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P7_E9<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P7_E9(_UnrestrictedFunctionTypes._void_void_P7_E9<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -4323,7 +5883,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P7_E10<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E10<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P7_E10<P1, P2, P3, P4, P5, P6, P7, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P7_E10<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P7_E10<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P7_E10(_UnrestrictedFunctionTypes._void_void_P7_E10<P1, P2, P3, P4, P5, P6, P7, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -4336,7 +5896,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E0<P1, P2, P3, P4, P5, P6, P7, P8> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E0<P1, P2, P3, P4, P5, P6, P7, P8> {
+  public static class _void_void_P8_E0<P1, P2, P3, P4, P5, P6, P7, P8> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E0<P1, P2, P3, P4, P5, P6, P7, P8> {
     private _UnrestrictedFunctionTypes._void_void_P8_E0<P1, P2, P3, P4, P5, P6, P7, P8> adapted;
 
     public _void_void_P8_E0(_UnrestrictedFunctionTypes._void_void_P8_E0<P1, P2, P3, P4, P5, P6, P7, P8> adapted) {
@@ -4349,7 +5909,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E1<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E1<P1, P2, P3, P4, P5, P6, P7, P8, E1> {
+  public static class _void_void_P8_E1<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E1<P1, P2, P3, P4, P5, P6, P7, P8, E1> {
     private _UnrestrictedFunctionTypes._void_void_P8_E1<P1, P2, P3, P4, P5, P6, P7, P8, E1> adapted;
 
     public _void_void_P8_E1(_UnrestrictedFunctionTypes._void_void_P8_E1<P1, P2, P3, P4, P5, P6, P7, P8, E1> adapted) {
@@ -4362,7 +5922,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E2<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E2<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> {
+  public static class _void_void_P8_E2<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E2<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P8_E2<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> adapted;
 
     public _void_void_P8_E2(_UnrestrictedFunctionTypes._void_void_P8_E2<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2> adapted) {
@@ -4375,7 +5935,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E3<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E3<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> {
+  public static class _void_void_P8_E3<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E3<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P8_E3<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> adapted;
 
     public _void_void_P8_E3(_UnrestrictedFunctionTypes._void_void_P8_E3<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3> adapted) {
@@ -4388,7 +5948,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E4<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E4<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> {
+  public static class _void_void_P8_E4<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E4<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P8_E4<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> adapted;
 
     public _void_void_P8_E4(_UnrestrictedFunctionTypes._void_void_P8_E4<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4> adapted) {
@@ -4401,7 +5961,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E5<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E5<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> {
+  public static class _void_void_P8_E5<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E5<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P8_E5<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P8_E5(_UnrestrictedFunctionTypes._void_void_P8_E5<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5> adapted) {
@@ -4414,7 +5974,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E6<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E6<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P8_E6<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E6<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P8_E6<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P8_E6(_UnrestrictedFunctionTypes._void_void_P8_E6<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6> adapted) {
@@ -4427,7 +5987,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E7<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E7<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P8_E7<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E7<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P8_E7<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P8_E7(_UnrestrictedFunctionTypes._void_void_P8_E7<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -4440,7 +6000,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E8<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E8<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P8_E8<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E8<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P8_E8<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P8_E8(_UnrestrictedFunctionTypes._void_void_P8_E8<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -4453,7 +6013,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E9<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E9<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P8_E9<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E9<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P8_E9<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P8_E9(_UnrestrictedFunctionTypes._void_void_P8_E9<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -4466,7 +6026,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P8_E10<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E10<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P8_E10<P1, P2, P3, P4, P5, P6, P7, P8, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P8_E10<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P8_E10<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P8_E10(_UnrestrictedFunctionTypes._void_void_P8_E10<P1, P2, P3, P4, P5, P6, P7, P8, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -4479,7 +6039,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9> {
+  public static class _void_void_P9_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9> {
     private _UnrestrictedFunctionTypes._void_void_P9_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9> adapted;
 
     public _void_void_P9_E0(_UnrestrictedFunctionTypes._void_void_P9_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9> adapted) {
@@ -4492,7 +6052,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> {
+  public static class _void_void_P9_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> {
     private _UnrestrictedFunctionTypes._void_void_P9_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> adapted;
 
     public _void_void_P9_E1(_UnrestrictedFunctionTypes._void_void_P9_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1> adapted) {
@@ -4505,7 +6065,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> {
+  public static class _void_void_P9_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P9_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> adapted;
 
     public _void_void_P9_E2(_UnrestrictedFunctionTypes._void_void_P9_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2> adapted) {
@@ -4518,7 +6078,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> {
+  public static class _void_void_P9_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P9_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> adapted;
 
     public _void_void_P9_E3(_UnrestrictedFunctionTypes._void_void_P9_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3> adapted) {
@@ -4531,7 +6091,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> {
+  public static class _void_void_P9_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P9_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> adapted;
 
     public _void_void_P9_E4(_UnrestrictedFunctionTypes._void_void_P9_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4> adapted) {
@@ -4544,7 +6104,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> {
+  public static class _void_void_P9_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P9_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P9_E5(_UnrestrictedFunctionTypes._void_void_P9_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5> adapted) {
@@ -4557,7 +6117,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P9_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P9_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P9_E6(_UnrestrictedFunctionTypes._void_void_P9_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6> adapted) {
@@ -4570,7 +6130,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P9_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P9_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P9_E7(_UnrestrictedFunctionTypes._void_void_P9_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -4583,7 +6143,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P9_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P9_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P9_E8(_UnrestrictedFunctionTypes._void_void_P9_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -4596,7 +6156,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P9_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P9_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P9_E9(_UnrestrictedFunctionTypes._void_void_P9_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -4609,7 +6169,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P9_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P9_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P9_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P9_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P9_E10(_UnrestrictedFunctionTypes._void_void_P9_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
@@ -4622,7 +6182,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
+  public static class _void_void_P10_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> {
     private _UnrestrictedFunctionTypes._void_void_P10_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> adapted;
 
     public _void_void_P10_E0(_UnrestrictedFunctionTypes._void_void_P10_E0<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10> adapted) {
@@ -4635,7 +6195,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> {
+  public static class _void_void_P10_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> {
     private _UnrestrictedFunctionTypes._void_void_P10_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> adapted;
 
     public _void_void_P10_E1(_UnrestrictedFunctionTypes._void_void_P10_E1<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1> adapted) {
@@ -4648,7 +6208,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> {
+  public static class _void_void_P10_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> {
     private _UnrestrictedFunctionTypes._void_void_P10_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> adapted;
 
     public _void_void_P10_E2(_UnrestrictedFunctionTypes._void_void_P10_E2<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2> adapted) {
@@ -4661,7 +6221,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> {
+  public static class _void_void_P10_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> {
     private _UnrestrictedFunctionTypes._void_void_P10_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> adapted;
 
     public _void_void_P10_E3(_UnrestrictedFunctionTypes._void_void_P10_E3<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3> adapted) {
@@ -4674,7 +6234,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> {
+  public static class _void_void_P10_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> {
     private _UnrestrictedFunctionTypes._void_void_P10_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> adapted;
 
     public _void_void_P10_E4(_UnrestrictedFunctionTypes._void_void_P10_E4<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4> adapted) {
@@ -4687,7 +6247,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> {
+  public static class _void_void_P10_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> {
     private _UnrestrictedFunctionTypes._void_void_P10_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> adapted;
 
     public _void_void_P10_E5(_UnrestrictedFunctionTypes._void_void_P10_E5<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5> adapted) {
@@ -4700,7 +6260,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> {
+  public static class _void_void_P10_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> {
     private _UnrestrictedFunctionTypes._void_void_P10_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> adapted;
 
     public _void_void_P10_E6(_UnrestrictedFunctionTypes._void_void_P10_E6<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6> adapted) {
@@ -4713,7 +6273,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> {
+  public static class _void_void_P10_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> {
     private _UnrestrictedFunctionTypes._void_void_P10_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> adapted;
 
     public _void_void_P10_E7(_UnrestrictedFunctionTypes._void_void_P10_E7<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7> adapted) {
@@ -4726,7 +6286,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> {
+  public static class _void_void_P10_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> {
     private _UnrestrictedFunctionTypes._void_void_P10_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> adapted;
 
     public _void_void_P10_E8(_UnrestrictedFunctionTypes._void_void_P10_E8<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8> adapted) {
@@ -4739,7 +6299,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
+  public static class _void_void_P10_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> {
     private _UnrestrictedFunctionTypes._void_void_P10_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted;
 
     public _void_void_P10_E9(_UnrestrictedFunctionTypes._void_void_P10_E9<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9> adapted) {
@@ -4752,7 +6312,7 @@ public class _UnrestrictedClosures {
     }
   }
 
-  public class _void_void_P10_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
+  public static class _void_void_P10_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1 extends Throwable, E2 extends Throwable, E3 extends Throwable, E4 extends Throwable, E5 extends Throwable, E6 extends Throwable, E7 extends Throwable, E8 extends Throwable, E9 extends Throwable, E10 extends Throwable> extends _UnrestrictedClosures._base<Object, Object> implements _UnrestrictedFunctionTypes._void_void_P10_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> {
     private _UnrestrictedFunctionTypes._void_void_P10_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted;
 
     public _void_void_P10_E10(_UnrestrictedFunctionTypes._void_void_P10_E10<P1, P2, P3, P4, P5, P6, P7, P8, P9, P10, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10> adapted) {
