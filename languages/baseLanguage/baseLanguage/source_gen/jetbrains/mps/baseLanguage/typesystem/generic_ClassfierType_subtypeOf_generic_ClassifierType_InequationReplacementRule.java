@@ -76,6 +76,9 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
               typeCheckingContext.createEquation((SNode) leftParam, (SNode) rightParam, _info_12389875345);
             }
+            // TODO this is actually an equivalence relation 
+            // <node> 
+            // <node> 
           }
         }
         if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
@@ -109,6 +112,9 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
             result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) rightParam, true);
           } else {
             result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) leftParam, (SNode) rightParam);
+            // TODO this is actually an equivalence relation 
+            // <node> 
+            // <node> 
           }
         }
         if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
