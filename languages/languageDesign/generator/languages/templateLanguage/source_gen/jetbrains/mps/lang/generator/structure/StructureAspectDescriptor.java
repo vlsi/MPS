@@ -102,7 +102,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 42:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, new String[]{"jetbrains.mps.lang.generator.structure.BaseMappingRule", "jetbrains.mps.lang.generator.structure.ReductionRule"}, new String[]{}, new String[]{});
       case 43:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.core.structure.LinkAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.core.structure.LinkAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.LinkAttribute", "jetbrains.mps.lang.generator.structure.AbstractMacro", "jetbrains.mps.lang.core.structure.ISuppressErrors"}, new String[]{}, new String[]{});
       case 44:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", "jetbrains.mps.lang.generator.structure.TemplateQueryBase", false, new String[]{"jetbrains.mps.lang.generator.structure.TemplateQueryBase"}, new String[]{}, new String[]{});
       case 45:
