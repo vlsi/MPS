@@ -18,8 +18,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.debug.runtime.JavaUiState;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog;
 import jetbrains.mps.debugger.java.runtime.ui.evaluation.EditWatchDialog;
@@ -90,9 +90,9 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   @Override
   public void showEvaluationDialog(final IOperationContext context, final List<SNodePointer> selectedNodes) {
-    myDebugSession.getEventsProcessor().invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
+    final JavaUiState state = myDebugSession.getUiState();
+    myDebugSession.getEventsProcessor().scheduleEvaluation(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        JavaUiState state = myDebugSession.getUiState();
         if (state.isPausedOnBreakpoint()) {
           final AbstractEvaluationModel model = createLowLevelEvaluationModel(AbstractEvaluationModel.IS_DEVELOPER_MODE, selectedNodes);
           if (model == null) {
@@ -107,7 +107,7 @@ public class EvaluationProvider implements IEvaluationProvider {
           });
         }
       }
-    });
+    }, state.getThread().getThread());
   }
 
   public void showEditWatchDialog(IOperationContext context, final AbstractEvaluationModel model) {
@@ -128,7 +128,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void addWatch(final AbstractEvaluationModel evaluationModel) {
-    myDebugSession.getEventsProcessor().invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
+    myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         AbstractEvaluationModel copy = evaluationModel.copy(true);
         synchronized (myWatches) {
@@ -140,7 +140,7 @@ public class EvaluationProvider implements IEvaluationProvider {
   }
 
   public void createWatch() {
-    myDebugSession.getEventsProcessor().invokeInManagerThread(new _FunctionTypes._void_P0_E0() {
+    myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         final AbstractEvaluationModel model = createLowLevelEvaluationModel(true);
         if (model == null) {

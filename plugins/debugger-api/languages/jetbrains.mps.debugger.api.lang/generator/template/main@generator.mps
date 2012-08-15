@@ -50,10 +50,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="settings" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="86gq.6720907903633266421" resolveInfo="DebuggerConfiguration" />
     </node>
-    <node type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="989489456094261871">
-      <property name="name" nameId="tpck.1169194664001" value="TraceInfo" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
-    </node>
   </roots>
   <root id="1270798772176052789">
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="4853044606869374801">
@@ -1089,12 +1085,6 @@
         </node>
       </node>
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="4675583320452247481" />
-    </node>
-  </root>
-  <root id="989489456094261871">
-    <node role="dropRootRule" roleId="tpf8.1219952894531" type="tpf8.DropRootRule" typeId="tpf8.1219952072943" id="989489456094261872">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="DEPRECATED" />
-      <link role="applicableConcept" roleId="tpf8.1219952338328" targetNodeId="86gq.989489456093733936" resolveInfo="DebugInfoInitializer" />
     </node>
   </root>
 </model>

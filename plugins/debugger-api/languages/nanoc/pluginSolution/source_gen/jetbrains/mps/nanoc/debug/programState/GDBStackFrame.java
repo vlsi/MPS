@@ -9,10 +9,8 @@ import java.util.ArrayList;
 import jetbrains.mps.nanoc.debug.answer.RecordValue;
 import jetbrains.mps.debug.api.programState.NullLocation;
 import jetbrains.mps.debug.api.programState.IThread;
-import java.util.Map;
-import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.IValue;
-import java.util.HashMap;
+import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.nanoc.debug.answer.ResultAnswer;
 import jetbrains.mps.nanoc.debug.answer.ListValue;
 import jetbrains.mps.nanoc.debug.answer.GDBValue;
@@ -60,14 +58,6 @@ public class GDBStackFrame implements IStackFrame {
 
   public IThread getThread() {
     return myThread;
-  }
-
-  public Map<IWatchable, IValue> getWatchableValues() {
-    HashMap<IWatchable, IValue> result = new HashMap<IWatchable, IValue>();
-    for (SimpleVarWatchable variable : myVariables) {
-      result.put(variable, variable.getValue());
-    }
-    return result;
   }
 
   public IValue getValue(IWatchable watchable) {

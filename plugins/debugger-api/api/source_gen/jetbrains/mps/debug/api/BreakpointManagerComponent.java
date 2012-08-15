@@ -231,11 +231,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     });
   }
 
-  public void processBreakpointHit(IBreakpoint breakpoint) {
-    // this is called when a breakpoint is hit 
-    // todo do something later if necessary (like highlihgting a line, etc) 
-  }
-
   public Set<IBreakpoint> getAllIBreakpoints() {
     synchronized (myBreakpoints) {
       return new HashSet<IBreakpoint>(myBreakpoints);

@@ -240,37 +240,38 @@
     <nodeInfo nodeId="6957207478384133031" fileName="JavaArrayValue.java" startLine="44" startPosition="37" endLine="45" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384133038" fileName="JavaArrayValue.java" startLine="49" startPosition="32" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384133045" fileName="JavaArrayValue.java" startLine="54" startPosition="40" endLine="55" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384133068" fileName="JavaArrayValue.java" startLine="58" startPosition="47" endLine="59" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384133083" fileName="JavaArrayValue.java" startLine="62" startPosition="24" endLine="63" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384133095" fileName="JavaArrayValue.java" startLine="66" startPosition="43" endLine="67" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6957207478384133101" fileName="JavaArrayValue.java" startLine="67" startPosition="61" endLine="68" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6957207478384133108" fileName="JavaArrayValue.java" startLine="68" startPosition="55" endLine="69" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6957207478384133120" fileName="JavaArrayValue.java" startLine="70" startPosition="31" endLine="71" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6957207478384133130" fileName="JavaArrayValue.java" startLine="72" startPosition="5" endLine="73" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384133146" fileName="JavaArrayValue.java" startLine="77" startPosition="32" endLine="78" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384133148" fileName="JavaArrayValue.java" startLine="79" startPosition="5" endLine="80" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6957207478384133150" fileName="JavaArrayValue.java" startLine="80" startPosition="44" endLine="81" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6957207478384133167" fileName="JavaArrayValue.java" startLine="82" startPosition="64" endLine="83" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6957207478384133169" fileName="JavaArrayValue.java" startLine="84" startPosition="5" endLine="85" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6957207478384133178" fileName="JavaArrayValue.java" startLine="85" startPosition="75" endLine="86" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6957207478384133190" fileName="JavaArrayValue.java" startLine="87" startPosition="31" endLine="88" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6957207478384133200" fileName="JavaArrayValue.java" startLine="89" startPosition="5" endLine="90" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2743718125356832501" fileName="JavaArrayValue.java" startLine="58" startPosition="47" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6957207478384133068" fileName="JavaArrayValue.java" startLine="59" startPosition="0" endLine="60" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384133083" fileName="JavaArrayValue.java" startLine="63" startPosition="24" endLine="64" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384133095" fileName="JavaArrayValue.java" startLine="67" startPosition="43" endLine="68" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384133101" fileName="JavaArrayValue.java" startLine="68" startPosition="61" endLine="69" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384133108" fileName="JavaArrayValue.java" startLine="69" startPosition="55" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384133120" fileName="JavaArrayValue.java" startLine="71" startPosition="31" endLine="72" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6957207478384133130" fileName="JavaArrayValue.java" startLine="73" startPosition="5" endLine="74" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384133146" fileName="JavaArrayValue.java" startLine="78" startPosition="32" endLine="79" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384133148" fileName="JavaArrayValue.java" startLine="80" startPosition="5" endLine="81" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6957207478384133150" fileName="JavaArrayValue.java" startLine="81" startPosition="44" endLine="82" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384133167" fileName="JavaArrayValue.java" startLine="83" startPosition="64" endLine="84" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6957207478384133169" fileName="JavaArrayValue.java" startLine="85" startPosition="5" endLine="86" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384133178" fileName="JavaArrayValue.java" startLine="86" startPosition="75" endLine="87" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6957207478384133190" fileName="JavaArrayValue.java" startLine="88" startPosition="31" endLine="89" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6957207478384133200" fileName="JavaArrayValue.java" startLine="90" startPosition="5" endLine="91" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6957207478384132945" fileName="JavaArrayValue.java" startLine="20" startPosition="0" endLine="23" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaArrayValue#(Lcom/sun/jdi/Value;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;)V" />
     <nodeInfo nodeId="6957207478384132995" fileName="JavaArrayValue.java" startLine="31" startPosition="36" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6957207478384133004" fileName="JavaArrayValue.java" startLine="34" startPosition="9" endLine="37" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6957207478384133115" fileName="JavaArrayValue.java" startLine="69" startPosition="56" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6957207478384133141" fileName="JavaArrayValue.java" startLine="76" startPosition="68" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6957207478384133156" fileName="JavaArrayValue.java" startLine="81" startPosition="61" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6957207478384133185" fileName="JavaArrayValue.java" startLine="86" startPosition="56" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6957207478384133062" fileName="JavaArrayValue.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementValue#(I)Ljetbrains/mps/debug/runtime/java/programState/proxies/JavaValue;" />
-    <nodeInfo nodeId="6957207478384133079" fileName="JavaArrayValue.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSize#()I" />
+    <nodeInfo nodeId="6957207478384133115" fileName="JavaArrayValue.java" startLine="70" startPosition="56" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6957207478384133141" fileName="JavaArrayValue.java" startLine="77" startPosition="68" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6957207478384133156" fileName="JavaArrayValue.java" startLine="82" startPosition="61" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6957207478384133185" fileName="JavaArrayValue.java" startLine="87" startPosition="56" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6957207478384133079" fileName="JavaArrayValue.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSize#()I" />
     <nodeInfo nodeId="6957207478384133027" fileName="JavaArrayValue.java" startLine="42" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentationIcon#()Ljavax/swing/Icon;" />
     <nodeInfo nodeId="6957207478384133034" fileName="JavaArrayValue.java" startLine="47" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isStructure#()Z" />
     <nodeInfo nodeId="6957207478384133041" fileName="JavaArrayValue.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValuePresentation#()Ljava/lang/String;" />
+    <nodeInfo nodeId="6957207478384133062" fileName="JavaArrayValue.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementValue#(I)Ljetbrains/mps/debug/runtime/java/programState/proxies/JavaValue;" />
     <nodeInfo nodeId="6957207478384132982" fileName="JavaArrayValue.java" startLine="29" startPosition="27" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6957207478384133090" fileName="JavaArrayValue.java" startLine="65" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllElements#()Ljava/util/List;" />
+    <nodeInfo nodeId="6957207478384133090" fileName="JavaArrayValue.java" startLine="66" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAllElements#()Ljava/util/List;" />
     <nodeInfo nodeId="6957207478384132977" fileName="JavaArrayValue.java" startLine="28" startPosition="55" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6957207478384133132" fileName="JavaArrayValue.java" startLine="75" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElements#(II)Ljava/util/List;" />
+    <nodeInfo nodeId="6957207478384133132" fileName="JavaArrayValue.java" startLine="76" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElements#(II)Ljava/util/List;" />
     <nodeInfo nodeId="6957207478384132959" fileName="JavaArrayValue.java" startLine="24" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubvalues#()Ljava/util/List;" />
     <scopeInfo nodeId="6957207478384132954" fileName="JavaArrayValue.java" startLine="21" startPosition="91" endLine="22" endPosition="47" />
     <scopeInfo nodeId="6957207478384132999" fileName="JavaArrayValue.java" startLine="32" startPosition="37" endLine="33" endPosition="33" />
@@ -278,12 +279,12 @@
     <scopeInfo nodeId="6957207478384133030" fileName="JavaArrayValue.java" startLine="44" startPosition="37" endLine="45" endPosition="33" />
     <scopeInfo nodeId="6957207478384133037" fileName="JavaArrayValue.java" startLine="49" startPosition="32" endLine="50" endPosition="16" />
     <scopeInfo nodeId="6957207478384133044" fileName="JavaArrayValue.java" startLine="54" startPosition="40" endLine="55" endPosition="71" />
-    <scopeInfo nodeId="6957207478384133067" fileName="JavaArrayValue.java" startLine="58" startPosition="47" endLine="59" endPosition="143" />
-    <scopeInfo nodeId="6957207478384133082" fileName="JavaArrayValue.java" startLine="62" startPosition="24" endLine="63" endPosition="47" />
-    <scopeInfo nodeId="6957207478384133119" fileName="JavaArrayValue.java" startLine="70" startPosition="31" endLine="71" endPosition="90" />
-    <scopeInfo nodeId="6957207478384133145" fileName="JavaArrayValue.java" startLine="77" startPosition="32" endLine="78" endPosition="18" />
-    <scopeInfo nodeId="6957207478384133166" fileName="JavaArrayValue.java" startLine="82" startPosition="64" endLine="83" endPosition="18" />
-    <scopeInfo nodeId="6957207478384133189" fileName="JavaArrayValue.java" startLine="87" startPosition="31" endLine="88" endPosition="90" />
+    <scopeInfo nodeId="6957207478384133082" fileName="JavaArrayValue.java" startLine="63" startPosition="24" endLine="64" endPosition="47" />
+    <scopeInfo nodeId="6957207478384133119" fileName="JavaArrayValue.java" startLine="71" startPosition="31" endLine="72" endPosition="90" />
+    <scopeInfo nodeId="6957207478384133145" fileName="JavaArrayValue.java" startLine="78" startPosition="32" endLine="79" endPosition="18" />
+    <scopeInfo nodeId="6957207478384133166" fileName="JavaArrayValue.java" startLine="83" startPosition="64" endLine="84" endPosition="18" />
+    <scopeInfo nodeId="6957207478384133189" fileName="JavaArrayValue.java" startLine="88" startPosition="31" endLine="89" endPosition="90" />
+    <scopeInfo nodeId="6957207478384133067" fileName="JavaArrayValue.java" startLine="58" startPosition="47" endLine="60" endPosition="162" />
     <scopeInfo nodeId="6957207478384132945" fileName="JavaArrayValue.java" startLine="20" startPosition="0" endLine="23" endPosition="3">
       <varInfo nodeId="6957207478384132950" varName="classFQname" />
       <varInfo nodeId="6957207478384132952" varName="threadReference" />
@@ -292,44 +293,44 @@
     <scopeInfo nodeId="6957207478384133004" fileName="JavaArrayValue.java" startLine="34" startPosition="9" endLine="37" endPosition="9">
       <varInfo nodeId="6957207478384133005" varName="i" />
     </scopeInfo>
-    <scopeInfo nodeId="6957207478384133115" fileName="JavaArrayValue.java" startLine="69" startPosition="56" endLine="72" endPosition="5">
+    <scopeInfo nodeId="6957207478384133115" fileName="JavaArrayValue.java" startLine="70" startPosition="56" endLine="73" endPosition="5">
       <varInfo nodeId="6957207478384133117" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="6957207478384133185" fileName="JavaArrayValue.java" startLine="86" startPosition="56" endLine="89" endPosition="5">
+    <scopeInfo nodeId="6957207478384133185" fileName="JavaArrayValue.java" startLine="87" startPosition="56" endLine="90" endPosition="5">
       <varInfo nodeId="6957207478384133187" varName="v" />
     </scopeInfo>
-    <scopeInfo nodeId="6957207478384133062" fileName="JavaArrayValue.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="6957207478384133065" varName="index" />
-    </scopeInfo>
-    <scopeInfo nodeId="6957207478384133079" fileName="JavaArrayValue.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="6957207478384133079" fileName="JavaArrayValue.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
     <scopeInfo nodeId="6957207478384133027" fileName="JavaArrayValue.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="6957207478384133034" fileName="JavaArrayValue.java" startLine="47" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="6957207478384133041" fileName="JavaArrayValue.java" startLine="52" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="6957207478384133062" fileName="JavaArrayValue.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
+      <varInfo nodeId="6957207478384133065" varName="index" />
+    </scopeInfo>
     <scopeInfo nodeId="6957207478384132988" fileName="JavaArrayValue.java" startLine="30" startPosition="34" endLine="37" endPosition="9">
       <varInfo nodeId="6957207478384132990" varName="len" />
     </scopeInfo>
-    <scopeInfo nodeId="6957207478384133094" fileName="JavaArrayValue.java" startLine="66" startPosition="43" endLine="73" endPosition="18">
+    <scopeInfo nodeId="6957207478384133094" fileName="JavaArrayValue.java" startLine="67" startPosition="43" endLine="74" endPosition="18">
       <varInfo nodeId="6957207478384133096" varName="arrayReference" />
       <varInfo nodeId="6957207478384133109" varName="result" />
       <varInfo nodeId="6957207478384133102" varName="valueList" />
     </scopeInfo>
     <scopeInfo nodeId="6957207478384132981" fileName="JavaArrayValue.java" startLine="29" startPosition="27" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="6957207478384133090" fileName="JavaArrayValue.java" startLine="65" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="6957207478384133090" fileName="JavaArrayValue.java" startLine="66" startPosition="0" endLine="76" endPosition="0" />
     <scopeInfo nodeId="6957207478384132963" fileName="JavaArrayValue.java" startLine="26" startPosition="42" endLine="40" endPosition="22">
       <varInfo nodeId="6957207478384132972" varName="arrayRef" />
       <varInfo nodeId="6957207478384132965" varName="watchables" />
     </scopeInfo>
-    <scopeInfo nodeId="6957207478384133140" fileName="JavaArrayValue.java" startLine="76" startPosition="68" endLine="90" endPosition="18">
+    <scopeInfo nodeId="6957207478384133140" fileName="JavaArrayValue.java" startLine="77" startPosition="68" endLine="91" endPosition="18">
       <varInfo nodeId="6957207478384133151" varName="arrayReference" />
       <varInfo nodeId="6957207478384133179" varName="result" />
       <varInfo nodeId="6957207478384133170" varName="valueList" />
     </scopeInfo>
-    <scopeInfo nodeId="6957207478384133132" fileName="JavaArrayValue.java" startLine="75" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="6957207478384133132" fileName="JavaArrayValue.java" startLine="76" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="6957207478384133138" varName="endIndex" />
       <varInfo nodeId="6957207478384133136" varName="startIndex" />
     </scopeInfo>
     <scopeInfo nodeId="6957207478384132959" fileName="JavaArrayValue.java" startLine="24" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="6957207478384132938" fileName="JavaArrayValue.java" startLine="18" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.proxies.JavaArrayValue" />
+    <unitInfo nodeId="6957207478384132938" fileName="JavaArrayValue.java" startLine="18" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.proxies.JavaArrayValue" />
   </root>
   <root nodeId="6957207478384133213">
     <nodeInfo nodeId="3106132936047010041" fileName="ValueUtilImpl.java" startLine="22" startPosition="25" endLine="23" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.AllElementsOperation", "jetbrains.mps.debugger.java.customViewers.structure.ArrayValueType", "jetbrains.mps.debugger.java.customViewers.structure.CallMethodOperation", "jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.CanWrapValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.ClassFqNameOperation", "jetbrains.mps.debugger.java.customViewers.structure.ClassNameOperation", "jetbrains.mps.debugger.java.customViewers.structure.CustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debugger.java.customViewers.structure.ElementOperation", "jetbrains.mps.debugger.java.customViewers.structure.ElementsRangeOperation", "jetbrains.mps.debugger.java.customViewers.structure.FieldOperation", "jetbrains.mps.debugger.java.customViewers.structure.FieldsListOperation", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.IsInstanceOfOperation", "jetbrains.mps.debugger.java.customViewers.structure.JavaValueOperation", "jetbrains.mps.debugger.java.customViewers.structure.ObjectValueType", "jetbrains.mps.debugger.java.customViewers.structure.OriginalValue_ConceptFunctionParameter", "jetbrains.mps.debugger.java.customViewers.structure.PrimitiveValueType", "jetbrains.mps.debugger.java.customViewers.structure.SizeOperation", "jetbrains.mps.debugger.java.customViewers.structure.StringValueOperation", "jetbrains.mps.debugger.java.customViewers.structure.StringValueType", "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.debugger.java.customViewers.structure.ValueType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"};
+  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"};
 
   public StructureAspectDescriptor() {
   }
@@ -16,74 +16,28 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.AllElementsOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 1:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ArrayValueType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.CallMethodOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 4:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.CanWrapValue_ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 5:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ClassFqNameOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 6:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ClassNameOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 7:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.CustomViewer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 8:
+      case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{"iconPath"}, new String[]{});
-      case 9:
+      case 2:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 10:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ElementOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 11:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ElementsRangeOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 12:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.FieldOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 13:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.FieldsListOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 14:
+      case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 15:
+      case 4:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 16:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.GetValuePresentation_ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 17:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.GetWatchablesBlock_ConceptFunction", "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunction"}, new String[]{}, new String[]{});
-      case 18:
+      case 5:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
-      case 19:
+      case 6:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 20:
+      case 7:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{"watchable"});
-      case 21:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.IsInstanceOfOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 22:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.JavaValueOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 23:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ObjectValueType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 24:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.OriginalValue_ConceptFunctionParameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter"}, new String[]{}, new String[]{});
-      case 25:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.PrimitiveValueType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 26:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.SizeOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 27:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.StringValueOperation", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.IOperation"}, new String[]{}, new String[]{});
-      case 28:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.StringValueType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 29:
+      case 8:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.lang.core.structure.NodeAttribute", false, new String[]{"jetbrains.mps.lang.core.structure.NodeAttribute"}, new String[]{}, new String[]{});
-      case 30:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.ValueType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 31:
-        return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.WatchableCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{"watchable"});
-      case 32:
+      case 9:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 33:
+      case 10:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.baseLanguage.structure.Type", false, new String[]{"jetbrains.mps.baseLanguage.structure.Type"}, new String[]{}, new String[]{});
-      case 34:
+      case 11:
         return new CompiledConceptDescriptor("jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator", "jetbrains.mps.baseLanguage.structure.AbstractCreator", false, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractCreator"}, new String[]{}, new String[]{});
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
