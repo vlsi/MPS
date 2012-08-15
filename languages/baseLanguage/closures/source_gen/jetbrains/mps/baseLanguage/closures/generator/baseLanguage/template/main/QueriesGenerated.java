@@ -2513,7 +2513,7 @@ public class QueriesGenerated {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode ft : FunctionType_Behavior.call_getNormalizedParameterTypes_1213877405276(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))) {
       SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-      SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(FunctionTypeUtil.unbound(FunctionTypeUtil.unmeet(ft))), true);
+      SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionTypeUtil.unbound(FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ft))))), true);
       SPropertyOperations.set(pd, "name", SPropertyOperations.getString(ListSequence.fromList(paramDecls).getElement(idx), "name"));
       SPropertyOperations.set(pd, "isFinal", "" + (true));
       ListSequence.fromList(res).addElement(pd);
@@ -2542,7 +2542,7 @@ public class QueriesGenerated {
     SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
-      ListSequence.fromList(res).addElement(FunctionTypeUtil.unbound(pt));
+      ListSequence.fromList(res).addElement(ClassifierTypeUtil.getTypeCoercedToClassifierType(FunctionTypeUtil.unbound(FunctionTypeUtil.unmeet(pt))));
     }
     return res;
   }
