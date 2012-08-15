@@ -31,15 +31,13 @@ public interface SNode {
 
   String getName();
 
-  boolean isRoot();
-
   SModel getModel();
 
   //tree traversal
 
   SNode getParent();
 
-  SNode getContainingRoot();
+  SNode getTopmostAncestor();
 
   String getRole();
 
