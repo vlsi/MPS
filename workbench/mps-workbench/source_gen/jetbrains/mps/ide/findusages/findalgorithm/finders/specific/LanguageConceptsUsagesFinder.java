@@ -58,7 +58,7 @@ public class LanguageConceptsUsagesFinder implements IFinder {
         models.add(sModelSearchResult.getObject().getModelDescriptor());
       }
       IScope scope = new ModelsOnlyScope(models.toArray(new SModelDescriptor[models.size()]));
-      SearchResults results = new SearchResults();
+      SearchResults<SNode> results = new SearchResults();
       for (SNode node : roots) {
         if (monitor != null && monitor.isCanceled()) {
           break;
