@@ -9,17 +9,17 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import javax.swing.tree.TreeNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.project.IModule;
-import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
@@ -40,12 +40,14 @@ public class CheckNamespace_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    List<IModule> modules = ListSequence.fromList(new ArrayList<IModule>());
     for (TreeNode node : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")))) {
       if (!(node instanceof NamespaceTextNode)) {
         return false;
       }
+      ListSequence.fromList(modules).addSequence(ListSequence.fromList(((NamespaceTextNode) node).getModulesUnder()));
     }
-    return true;
+    return ListSequence.fromList(modules).isNotEmpty();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
