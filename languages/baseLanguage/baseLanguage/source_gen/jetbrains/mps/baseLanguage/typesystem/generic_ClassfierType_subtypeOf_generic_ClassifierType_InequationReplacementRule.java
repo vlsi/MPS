@@ -17,7 +17,6 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
@@ -70,15 +69,20 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
               typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) rightParam, false, true, _info_12389875345);
             }
           } else {
+            // <node> 
+            // TODO this is actually an equivalence relation 
             {
               SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
-              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2731213890635159546", 0, null);
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3216938209399927487", 0, null);
               _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-              typeCheckingContext.createEquation((SNode) leftParam, (SNode) rightParam, _info_12389875345);
+              typeCheckingContext.createLessThanInequality((SNode) leftParam, (SNode) rightParam, false, true, inequalityIsLessThan, _info_12389875345);
             }
-            // TODO this is actually an equivalence relation 
-            // <node> 
-            // <node> 
+            {
+              SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
+              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3216938209399927516", 0, null);
+              _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
+              typeCheckingContext.createLessThanInequality((SNode) rightParam, (SNode) leftParam, false, true, !(inequalityIsLessThan), _info_12389875345);
+            }
           }
         }
         if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
@@ -111,10 +115,10 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
           } else if (SNodeOperations.isInstanceOf(rightParam, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
             result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) rightParam, true);
           } else {
-            result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) leftParam, (SNode) rightParam);
+            // <node> 
             // TODO this is actually an equivalence relation 
-            // <node> 
-            // <node> 
+            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) leftParam, (SNode) rightParam, true);
+            result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) rightParam, (SNode) leftParam, true);
           }
         }
         if (leftParamIt.hasNext() || rightParamIt.hasNext()) {
