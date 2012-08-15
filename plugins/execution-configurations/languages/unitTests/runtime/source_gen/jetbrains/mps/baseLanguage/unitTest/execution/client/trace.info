@@ -501,260 +501,260 @@
     <unitInfo nodeId="6572468330877292516" fileName="LanguageTestWrapper.java" startLine="83" startPosition="348" endLine="87" endPosition="7" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.LanguageTestWrapper$2" />
   </root>
   <root nodeId="2024340988248532422">
-    <nodeInfo nodeId="2024340988248532574" fileName="TestNodeWrapperFactory.java" startLine="24" startPosition="244" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532585" fileName="TestNodeWrapperFactory.java" startLine="26" startPosition="7" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532593" fileName="TestNodeWrapperFactory.java" startLine="30" startPosition="38" endLine="31" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532600" fileName="TestNodeWrapperFactory.java" startLine="34" startPosition="29" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532611" fileName="TestNodeWrapperFactory.java" startLine="42" startPosition="62" endLine="43" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532619" fileName="TestNodeWrapperFactory.java" startLine="46" startPosition="38" endLine="47" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532626" fileName="TestNodeWrapperFactory.java" startLine="50" startPosition="29" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532637" fileName="TestNodeWrapperFactory.java" startLine="58" startPosition="62" endLine="59" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532653" fileName="TestNodeWrapperFactory.java" startLine="64" startPosition="143" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532659" fileName="TestNodeWrapperFactory.java" startLine="66" startPosition="9" endLine="67" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2024340988248532666" fileName="TestNodeWrapperFactory.java" startLine="68" startPosition="159" endLine="69" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532692" fileName="TestNodeWrapperFactory.java" startLine="71" startPosition="310" endLine="72" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2024340988248532701" fileName="TestNodeWrapperFactory.java" startLine="73" startPosition="9" endLine="74" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532710" fileName="TestNodeWrapperFactory.java" startLine="75" startPosition="7" endLine="76" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532715" fileName="TestNodeWrapperFactory.java" startLine="79" startPosition="38" endLine="80" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532722" fileName="TestNodeWrapperFactory.java" startLine="83" startPosition="29" endLine="84" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532733" fileName="TestNodeWrapperFactory.java" startLine="91" startPosition="62" endLine="92" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532745" fileName="TestNodeWrapperFactory.java" startLine="95" startPosition="49" endLine="96" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532757" fileName="TestNodeWrapperFactory.java" startLine="99" startPosition="38" endLine="100" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532764" fileName="TestNodeWrapperFactory.java" startLine="103" startPosition="29" endLine="104" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532775" fileName="TestNodeWrapperFactory.java" startLine="111" startPosition="62" endLine="112" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532789" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="170" endLine="117" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532797" fileName="TestNodeWrapperFactory.java" startLine="118" startPosition="7" endLine="119" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532802" fileName="TestNodeWrapperFactory.java" startLine="122" startPosition="38" endLine="123" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532809" fileName="TestNodeWrapperFactory.java" startLine="126" startPosition="29" endLine="127" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532820" fileName="TestNodeWrapperFactory.java" startLine="134" startPosition="62" endLine="135" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532832" fileName="TestNodeWrapperFactory.java" startLine="138" startPosition="49" endLine="139" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532844" fileName="TestNodeWrapperFactory.java" startLine="142" startPosition="38" endLine="143" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532851" fileName="TestNodeWrapperFactory.java" startLine="146" startPosition="29" endLine="147" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532866" fileName="TestNodeWrapperFactory.java" startLine="158" startPosition="47" endLine="159" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532442" fileName="TestNodeWrapperFactory.java" startLine="169" startPosition="34" endLine="170" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532447" fileName="TestNodeWrapperFactory.java" startLine="172" startPosition="5" endLine="173" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532463" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="56" endLine="179" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532473" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="54" endLine="183" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532493" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="61" endLine="191" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532508" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="61" endLine="199" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532523" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="61" endLine="207" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532555" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="38" endLine="219" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="225" startPosition="36" endLine="226" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="227" startPosition="5" endLine="228" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532884" fileName="TestNodeWrapperFactory.java" startLine="151" startPosition="0" endLine="153" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestNodeWrapperFactory#()V" />
-    <nodeInfo nodeId="2024340988248532875" fileName="TestNodeWrapperFactory.java" startLine="161" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532879" fileName="TestNodeWrapperFactory.java" startLine="163" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2024340988248532572" fileName="TestNodeWrapperFactory.java" startLine="23" startPosition="62" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2024340988248532651" fileName="TestNodeWrapperFactory.java" startLine="63" startPosition="170" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2024340988248532664" fileName="TestNodeWrapperFactory.java" startLine="67" startPosition="103" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2024340988248532672" fileName="TestNodeWrapperFactory.java" startLine="70" startPosition="9" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2024340988248532787" fileName="TestNodeWrapperFactory.java" startLine="115" startPosition="49" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2024340988248532854" fileName="TestNodeWrapperFactory.java" startLine="154" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2024340988248532436" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="119" endLine="171" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="224" startPosition="73" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2024340988248532591" fileName="TestNodeWrapperFactory.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532597" fileName="TestNodeWrapperFactory.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2024340988248532617" fileName="TestNodeWrapperFactory.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532623" fileName="TestNodeWrapperFactory.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2024340988248532713" fileName="TestNodeWrapperFactory.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532719" fileName="TestNodeWrapperFactory.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2024340988248532739" fileName="TestNodeWrapperFactory.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2024340988248532755" fileName="TestNodeWrapperFactory.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532761" fileName="TestNodeWrapperFactory.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2024340988248532800" fileName="TestNodeWrapperFactory.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532806" fileName="TestNodeWrapperFactory.java" startLine="125" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2024340988248532826" fileName="TestNodeWrapperFactory.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2024340988248532842" fileName="TestNodeWrapperFactory.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532848" fileName="TestNodeWrapperFactory.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
-    <nodeInfo nodeId="2024340988248532862" fileName="TestNodeWrapperFactory.java" startLine="157" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2024340988248532461" fileName="TestNodeWrapperFactory.java" startLine="177" startPosition="136" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Z" />
-    <nodeInfo nodeId="2024340988248532471" fileName="TestNodeWrapperFactory.java" startLine="181" startPosition="62" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532491" fileName="TestNodeWrapperFactory.java" startLine="189" startPosition="99" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="2024340988248532506" fileName="TestNodeWrapperFactory.java" startLine="197" startPosition="99" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="2024340988248532521" fileName="TestNodeWrapperFactory.java" startLine="205" startPosition="99" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="2024340988248532538" fileName="TestNodeWrapperFactory.java" startLine="212" startPosition="75" endLine="216" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="217" startPosition="136" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2024340988248532705" fileName="TestNodeWrapperFactory.java" startLine="231" startPosition="63" endLine="235" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532792" fileName="TestNodeWrapperFactory.java" startLine="238" startPosition="63" endLine="242" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532604" fileName="TestNodeWrapperFactory.java" startLine="40" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2024340988248532630" fileName="TestNodeWrapperFactory.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2024340988248532726" fileName="TestNodeWrapperFactory.java" startLine="89" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2024340988248532768" fileName="TestNodeWrapperFactory.java" startLine="109" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2024340988248532813" fileName="TestNodeWrapperFactory.java" startLine="132" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2024340988248532430" fileName="TestNodeWrapperFactory.java" startLine="167" startPosition="65" endLine="172" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2024340988248532489" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="54" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532504" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="58" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532519" fileName="TestNodeWrapperFactory.java" startLine="204" startPosition="61" endLine="209" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532546" fileName="TestNodeWrapperFactory.java" startLine="216" startPosition="6" endLine="221" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532781" fileName="TestNodeWrapperFactory.java" startLine="114" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="223" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kl7j79_a0a0d0a0b2#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532705" fileName="TestNodeWrapperFactory.java" startLine="230" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_kl7j79_a0a0b2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="2024340988248532792" fileName="TestNodeWrapperFactory.java" startLine="237" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_kl7j79_a0a0b4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="2024340988248532565" fileName="TestNodeWrapperFactory.java" startLine="21" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2024340988248532486" fileName="TestNodeWrapperFactory.java" startLine="187" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedConcepts#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2024340988248532499" fileName="TestNodeWrapperFactory.java" startLine="195" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedRootConcepts#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2024340988248532514" fileName="TestNodeWrapperFactory.java" startLine="203" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedNonRootConcepts#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2024340988248532453" fileName="TestNodeWrapperFactory.java" startLine="176" startPosition="150" endLine="185" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2024340988248532423" fileName="TestNodeWrapperFactory.java" startLine="165" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryToWrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-    <nodeInfo nodeId="2024340988248532450" fileName="TestNodeWrapperFactory.java" startLine="175" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedConcepts#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2024340988248532530" fileName="TestNodeWrapperFactory.java" startLine="211" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findWrappableAncestor#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2024340988248532649" fileName="TestNodeWrapperFactory.java" startLine="62" startPosition="49" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2024340988248532643" fileName="TestNodeWrapperFactory.java" startLine="61" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="2024340988248532887" fileName="TestNodeWrapperFactory.java" startLine="152" startPosition="28" endLine="152" endPosition="28" />
-    <scopeInfo nodeId="2024340988248532573" fileName="TestNodeWrapperFactory.java" startLine="24" startPosition="244" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="2024340988248532592" fileName="TestNodeWrapperFactory.java" startLine="30" startPosition="38" endLine="31" endPosition="114" />
-    <scopeInfo nodeId="2024340988248532599" fileName="TestNodeWrapperFactory.java" startLine="34" startPosition="29" endLine="35" endPosition="18" />
-    <scopeInfo nodeId="2024340988248532610" fileName="TestNodeWrapperFactory.java" startLine="42" startPosition="62" endLine="43" endPosition="43" />
-    <scopeInfo nodeId="2024340988248532618" fileName="TestNodeWrapperFactory.java" startLine="46" startPosition="38" endLine="47" endPosition="116" />
-    <scopeInfo nodeId="2024340988248532625" fileName="TestNodeWrapperFactory.java" startLine="50" startPosition="29" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="2024340988248532636" fileName="TestNodeWrapperFactory.java" startLine="58" startPosition="62" endLine="59" endPosition="41" />
-    <scopeInfo nodeId="2024340988248532652" fileName="TestNodeWrapperFactory.java" startLine="64" startPosition="143" endLine="65" endPosition="23" />
-    <scopeInfo nodeId="2024340988248532665" fileName="TestNodeWrapperFactory.java" startLine="68" startPosition="159" endLine="69" endPosition="23" />
-    <scopeInfo nodeId="2024340988248532691" fileName="TestNodeWrapperFactory.java" startLine="71" startPosition="310" endLine="72" endPosition="177" />
-    <scopeInfo nodeId="2024340988248532714" fileName="TestNodeWrapperFactory.java" startLine="79" startPosition="38" endLine="80" endPosition="108" />
-    <scopeInfo nodeId="2024340988248532721" fileName="TestNodeWrapperFactory.java" startLine="83" startPosition="29" endLine="84" endPosition="18" />
-    <scopeInfo nodeId="2024340988248532732" fileName="TestNodeWrapperFactory.java" startLine="91" startPosition="62" endLine="92" endPosition="43" />
-    <scopeInfo nodeId="2024340988248532744" fileName="TestNodeWrapperFactory.java" startLine="95" startPosition="49" endLine="96" endPosition="244" />
-    <scopeInfo nodeId="2024340988248532756" fileName="TestNodeWrapperFactory.java" startLine="99" startPosition="38" endLine="100" endPosition="121" />
-    <scopeInfo nodeId="2024340988248532763" fileName="TestNodeWrapperFactory.java" startLine="103" startPosition="29" endLine="104" endPosition="19" />
-    <scopeInfo nodeId="2024340988248532774" fileName="TestNodeWrapperFactory.java" startLine="111" startPosition="62" endLine="112" endPosition="41" />
-    <scopeInfo nodeId="2024340988248532788" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="170" endLine="117" endPosition="131" />
-    <scopeInfo nodeId="2024340988248532801" fileName="TestNodeWrapperFactory.java" startLine="122" startPosition="38" endLine="123" endPosition="108" />
-    <scopeInfo nodeId="2024340988248532808" fileName="TestNodeWrapperFactory.java" startLine="126" startPosition="29" endLine="127" endPosition="18" />
-    <scopeInfo nodeId="2024340988248532819" fileName="TestNodeWrapperFactory.java" startLine="134" startPosition="62" endLine="135" endPosition="43" />
-    <scopeInfo nodeId="2024340988248532831" fileName="TestNodeWrapperFactory.java" startLine="138" startPosition="49" endLine="139" endPosition="250" />
-    <scopeInfo nodeId="2024340988248532843" fileName="TestNodeWrapperFactory.java" startLine="142" startPosition="38" endLine="143" endPosition="121" />
-    <scopeInfo nodeId="2024340988248532850" fileName="TestNodeWrapperFactory.java" startLine="146" startPosition="29" endLine="147" endPosition="19" />
-    <scopeInfo nodeId="2024340988248532865" fileName="TestNodeWrapperFactory.java" startLine="158" startPosition="47" endLine="159" endPosition="57" />
-    <scopeInfo nodeId="2024340988248532441" fileName="TestNodeWrapperFactory.java" startLine="169" startPosition="34" endLine="170" endPosition="34" />
-    <scopeInfo nodeId="2024340988248532462" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="56" endLine="179" endPosition="36" />
-    <scopeInfo nodeId="2024340988248532472" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="54" endLine="183" endPosition="38" />
-    <scopeInfo nodeId="2024340988248532492" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="61" endLine="191" endPosition="20" />
-    <scopeInfo nodeId="2024340988248532507" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="61" endLine="199" endPosition="32" />
-    <scopeInfo nodeId="2024340988248532522" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="61" endLine="207" endPosition="35" />
-    <scopeInfo nodeId="2024340988248532554" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="38" endLine="219" endPosition="142" />
-    <scopeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="225" startPosition="36" endLine="226" endPosition="79" />
-    <scopeInfo nodeId="2024340988248532884" fileName="TestNodeWrapperFactory.java" startLine="151" startPosition="0" endLine="153" endPosition="3" />
-    <scopeInfo nodeId="2024340988248532875" fileName="TestNodeWrapperFactory.java" startLine="161" startPosition="0" endLine="163" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532879" fileName="TestNodeWrapperFactory.java" startLine="163" startPosition="0" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532854" fileName="TestNodeWrapperFactory.java" startLine="154" startPosition="0" endLine="157" endPosition="0">
+    <nodeInfo nodeId="2024340988248532574" fileName="TestNodeWrapperFactory.java" startLine="25" startPosition="244" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532585" fileName="TestNodeWrapperFactory.java" startLine="27" startPosition="7" endLine="28" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532593" fileName="TestNodeWrapperFactory.java" startLine="31" startPosition="38" endLine="32" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532600" fileName="TestNodeWrapperFactory.java" startLine="35" startPosition="29" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532611" fileName="TestNodeWrapperFactory.java" startLine="43" startPosition="62" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532619" fileName="TestNodeWrapperFactory.java" startLine="47" startPosition="38" endLine="48" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532626" fileName="TestNodeWrapperFactory.java" startLine="51" startPosition="29" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532637" fileName="TestNodeWrapperFactory.java" startLine="59" startPosition="62" endLine="60" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532653" fileName="TestNodeWrapperFactory.java" startLine="65" startPosition="143" endLine="66" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532659" fileName="TestNodeWrapperFactory.java" startLine="67" startPosition="9" endLine="68" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2024340988248532666" fileName="TestNodeWrapperFactory.java" startLine="69" startPosition="159" endLine="70" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532692" fileName="TestNodeWrapperFactory.java" startLine="72" startPosition="310" endLine="73" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2024340988248532701" fileName="TestNodeWrapperFactory.java" startLine="74" startPosition="9" endLine="75" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532710" fileName="TestNodeWrapperFactory.java" startLine="76" startPosition="7" endLine="77" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532715" fileName="TestNodeWrapperFactory.java" startLine="80" startPosition="38" endLine="81" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532722" fileName="TestNodeWrapperFactory.java" startLine="84" startPosition="29" endLine="85" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532733" fileName="TestNodeWrapperFactory.java" startLine="92" startPosition="62" endLine="93" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532745" fileName="TestNodeWrapperFactory.java" startLine="96" startPosition="49" endLine="97" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532757" fileName="TestNodeWrapperFactory.java" startLine="100" startPosition="38" endLine="101" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532764" fileName="TestNodeWrapperFactory.java" startLine="104" startPosition="29" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532775" fileName="TestNodeWrapperFactory.java" startLine="112" startPosition="62" endLine="113" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532789" fileName="TestNodeWrapperFactory.java" startLine="117" startPosition="170" endLine="118" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532797" fileName="TestNodeWrapperFactory.java" startLine="119" startPosition="7" endLine="120" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532802" fileName="TestNodeWrapperFactory.java" startLine="123" startPosition="38" endLine="124" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532809" fileName="TestNodeWrapperFactory.java" startLine="127" startPosition="29" endLine="128" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532820" fileName="TestNodeWrapperFactory.java" startLine="135" startPosition="62" endLine="136" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532832" fileName="TestNodeWrapperFactory.java" startLine="139" startPosition="49" endLine="140" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532844" fileName="TestNodeWrapperFactory.java" startLine="143" startPosition="38" endLine="144" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532851" fileName="TestNodeWrapperFactory.java" startLine="147" startPosition="29" endLine="148" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532866" fileName="TestNodeWrapperFactory.java" startLine="159" startPosition="47" endLine="160" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532442" fileName="TestNodeWrapperFactory.java" startLine="170" startPosition="34" endLine="171" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532447" fileName="TestNodeWrapperFactory.java" startLine="173" startPosition="5" endLine="174" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532463" fileName="TestNodeWrapperFactory.java" startLine="179" startPosition="56" endLine="180" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532473" fileName="TestNodeWrapperFactory.java" startLine="183" startPosition="54" endLine="184" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532493" fileName="TestNodeWrapperFactory.java" startLine="191" startPosition="61" endLine="192" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532508" fileName="TestNodeWrapperFactory.java" startLine="199" startPosition="61" endLine="200" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532523" fileName="TestNodeWrapperFactory.java" startLine="207" startPosition="61" endLine="208" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532555" fileName="TestNodeWrapperFactory.java" startLine="219" startPosition="38" endLine="220" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="226" startPosition="36" endLine="227" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="228" startPosition="5" endLine="229" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532884" fileName="TestNodeWrapperFactory.java" startLine="152" startPosition="0" endLine="154" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestNodeWrapperFactory#()V" />
+    <nodeInfo nodeId="2024340988248532875" fileName="TestNodeWrapperFactory.java" startLine="162" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532879" fileName="TestNodeWrapperFactory.java" startLine="164" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2024340988248532572" fileName="TestNodeWrapperFactory.java" startLine="24" startPosition="62" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2024340988248532651" fileName="TestNodeWrapperFactory.java" startLine="64" startPosition="170" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2024340988248532664" fileName="TestNodeWrapperFactory.java" startLine="68" startPosition="103" endLine="71" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2024340988248532672" fileName="TestNodeWrapperFactory.java" startLine="71" startPosition="9" endLine="74" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2024340988248532787" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="49" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2024340988248532854" fileName="TestNodeWrapperFactory.java" startLine="155" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2024340988248532436" fileName="TestNodeWrapperFactory.java" startLine="169" startPosition="119" endLine="172" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="225" startPosition="73" endLine="228" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2024340988248532591" fileName="TestNodeWrapperFactory.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532597" fileName="TestNodeWrapperFactory.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2024340988248532617" fileName="TestNodeWrapperFactory.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532623" fileName="TestNodeWrapperFactory.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2024340988248532713" fileName="TestNodeWrapperFactory.java" startLine="79" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532719" fileName="TestNodeWrapperFactory.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2024340988248532739" fileName="TestNodeWrapperFactory.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2024340988248532755" fileName="TestNodeWrapperFactory.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532761" fileName="TestNodeWrapperFactory.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2024340988248532800" fileName="TestNodeWrapperFactory.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532806" fileName="TestNodeWrapperFactory.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2024340988248532826" fileName="TestNodeWrapperFactory.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2024340988248532842" fileName="TestNodeWrapperFactory.java" startLine="142" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWrappedConcept#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532848" fileName="TestNodeWrapperFactory.java" startLine="146" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRoot#()Z" />
+    <nodeInfo nodeId="2024340988248532862" fileName="TestNodeWrapperFactory.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2024340988248532461" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="136" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Z" />
+    <nodeInfo nodeId="2024340988248532471" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="62" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532491" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="99" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="2024340988248532506" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="99" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="2024340988248532521" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="99" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/TestNodeWrapperFactory;)Ljava/lang/Boolean;" />
+    <nodeInfo nodeId="2024340988248532538" fileName="TestNodeWrapperFactory.java" startLine="213" startPosition="75" endLine="217" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="136" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2024340988248532705" fileName="TestNodeWrapperFactory.java" startLine="232" startPosition="63" endLine="236" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532792" fileName="TestNodeWrapperFactory.java" startLine="239" startPosition="63" endLine="243" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532604" fileName="TestNodeWrapperFactory.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2024340988248532630" fileName="TestNodeWrapperFactory.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2024340988248532726" fileName="TestNodeWrapperFactory.java" startLine="90" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2024340988248532768" fileName="TestNodeWrapperFactory.java" startLine="110" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2024340988248532813" fileName="TestNodeWrapperFactory.java" startLine="133" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2024340988248532430" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="65" endLine="173" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="2024340988248532489" fileName="TestNodeWrapperFactory.java" startLine="189" startPosition="54" endLine="194" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532504" fileName="TestNodeWrapperFactory.java" startLine="197" startPosition="58" endLine="202" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532519" fileName="TestNodeWrapperFactory.java" startLine="205" startPosition="61" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532546" fileName="TestNodeWrapperFactory.java" startLine="217" startPosition="6" endLine="222" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532781" fileName="TestNodeWrapperFactory.java" startLine="115" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="224" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_kl7j79_a0a0d0a0b2#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532705" fileName="TestNodeWrapperFactory.java" startLine="231" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_kl7j79_a0a0b2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="2024340988248532792" fileName="TestNodeWrapperFactory.java" startLine="238" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_kl7j79_a0a0b4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="2024340988248532565" fileName="TestNodeWrapperFactory.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="wrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2024340988248532486" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedConcepts#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2024340988248532499" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedRootConcepts#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2024340988248532514" fileName="TestNodeWrapperFactory.java" startLine="204" startPosition="0" endLine="212" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedNonRootConcepts#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2024340988248532453" fileName="TestNodeWrapperFactory.java" startLine="177" startPosition="150" endLine="186" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2024340988248532423" fileName="TestNodeWrapperFactory.java" startLine="166" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tryToWrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+    <nodeInfo nodeId="2024340988248532450" fileName="TestNodeWrapperFactory.java" startLine="176" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getWrappedConcepts#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="2024340988248532530" fileName="TestNodeWrapperFactory.java" startLine="212" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findWrappableAncestor#(Ljetbrains/mps/smodel/SNode;Z)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2024340988248532649" fileName="TestNodeWrapperFactory.java" startLine="63" startPosition="49" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2024340988248532643" fileName="TestNodeWrapperFactory.java" startLine="62" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canWrap#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="2024340988248532887" fileName="TestNodeWrapperFactory.java" startLine="153" startPosition="28" endLine="153" endPosition="28" />
+    <scopeInfo nodeId="2024340988248532573" fileName="TestNodeWrapperFactory.java" startLine="25" startPosition="244" endLine="26" endPosition="20" />
+    <scopeInfo nodeId="2024340988248532592" fileName="TestNodeWrapperFactory.java" startLine="31" startPosition="38" endLine="32" endPosition="114" />
+    <scopeInfo nodeId="2024340988248532599" fileName="TestNodeWrapperFactory.java" startLine="35" startPosition="29" endLine="36" endPosition="18" />
+    <scopeInfo nodeId="2024340988248532610" fileName="TestNodeWrapperFactory.java" startLine="43" startPosition="62" endLine="44" endPosition="43" />
+    <scopeInfo nodeId="2024340988248532618" fileName="TestNodeWrapperFactory.java" startLine="47" startPosition="38" endLine="48" endPosition="116" />
+    <scopeInfo nodeId="2024340988248532625" fileName="TestNodeWrapperFactory.java" startLine="51" startPosition="29" endLine="52" endPosition="19" />
+    <scopeInfo nodeId="2024340988248532636" fileName="TestNodeWrapperFactory.java" startLine="59" startPosition="62" endLine="60" endPosition="41" />
+    <scopeInfo nodeId="2024340988248532652" fileName="TestNodeWrapperFactory.java" startLine="65" startPosition="143" endLine="66" endPosition="23" />
+    <scopeInfo nodeId="2024340988248532665" fileName="TestNodeWrapperFactory.java" startLine="69" startPosition="159" endLine="70" endPosition="23" />
+    <scopeInfo nodeId="2024340988248532691" fileName="TestNodeWrapperFactory.java" startLine="72" startPosition="310" endLine="73" endPosition="177" />
+    <scopeInfo nodeId="2024340988248532714" fileName="TestNodeWrapperFactory.java" startLine="80" startPosition="38" endLine="81" endPosition="108" />
+    <scopeInfo nodeId="2024340988248532721" fileName="TestNodeWrapperFactory.java" startLine="84" startPosition="29" endLine="85" endPosition="18" />
+    <scopeInfo nodeId="2024340988248532732" fileName="TestNodeWrapperFactory.java" startLine="92" startPosition="62" endLine="93" endPosition="43" />
+    <scopeInfo nodeId="2024340988248532744" fileName="TestNodeWrapperFactory.java" startLine="96" startPosition="49" endLine="97" endPosition="244" />
+    <scopeInfo nodeId="2024340988248532756" fileName="TestNodeWrapperFactory.java" startLine="100" startPosition="38" endLine="101" endPosition="121" />
+    <scopeInfo nodeId="2024340988248532763" fileName="TestNodeWrapperFactory.java" startLine="104" startPosition="29" endLine="105" endPosition="19" />
+    <scopeInfo nodeId="2024340988248532774" fileName="TestNodeWrapperFactory.java" startLine="112" startPosition="62" endLine="113" endPosition="41" />
+    <scopeInfo nodeId="2024340988248532788" fileName="TestNodeWrapperFactory.java" startLine="117" startPosition="170" endLine="118" endPosition="131" />
+    <scopeInfo nodeId="2024340988248532801" fileName="TestNodeWrapperFactory.java" startLine="123" startPosition="38" endLine="124" endPosition="108" />
+    <scopeInfo nodeId="2024340988248532808" fileName="TestNodeWrapperFactory.java" startLine="127" startPosition="29" endLine="128" endPosition="18" />
+    <scopeInfo nodeId="2024340988248532819" fileName="TestNodeWrapperFactory.java" startLine="135" startPosition="62" endLine="136" endPosition="43" />
+    <scopeInfo nodeId="2024340988248532831" fileName="TestNodeWrapperFactory.java" startLine="139" startPosition="49" endLine="140" endPosition="250" />
+    <scopeInfo nodeId="2024340988248532843" fileName="TestNodeWrapperFactory.java" startLine="143" startPosition="38" endLine="144" endPosition="121" />
+    <scopeInfo nodeId="2024340988248532850" fileName="TestNodeWrapperFactory.java" startLine="147" startPosition="29" endLine="148" endPosition="19" />
+    <scopeInfo nodeId="2024340988248532865" fileName="TestNodeWrapperFactory.java" startLine="159" startPosition="47" endLine="160" endPosition="88" />
+    <scopeInfo nodeId="2024340988248532441" fileName="TestNodeWrapperFactory.java" startLine="170" startPosition="34" endLine="171" endPosition="34" />
+    <scopeInfo nodeId="2024340988248532462" fileName="TestNodeWrapperFactory.java" startLine="179" startPosition="56" endLine="180" endPosition="36" />
+    <scopeInfo nodeId="2024340988248532472" fileName="TestNodeWrapperFactory.java" startLine="183" startPosition="54" endLine="184" endPosition="38" />
+    <scopeInfo nodeId="2024340988248532492" fileName="TestNodeWrapperFactory.java" startLine="191" startPosition="61" endLine="192" endPosition="20" />
+    <scopeInfo nodeId="2024340988248532507" fileName="TestNodeWrapperFactory.java" startLine="199" startPosition="61" endLine="200" endPosition="32" />
+    <scopeInfo nodeId="2024340988248532522" fileName="TestNodeWrapperFactory.java" startLine="207" startPosition="61" endLine="208" endPosition="35" />
+    <scopeInfo nodeId="2024340988248532554" fileName="TestNodeWrapperFactory.java" startLine="219" startPosition="38" endLine="220" endPosition="142" />
+    <scopeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="226" startPosition="36" endLine="227" endPosition="79" />
+    <scopeInfo nodeId="2024340988248532884" fileName="TestNodeWrapperFactory.java" startLine="152" startPosition="0" endLine="154" endPosition="3" />
+    <scopeInfo nodeId="2024340988248532875" fileName="TestNodeWrapperFactory.java" startLine="162" startPosition="0" endLine="164" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532879" fileName="TestNodeWrapperFactory.java" startLine="164" startPosition="0" endLine="166" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532854" fileName="TestNodeWrapperFactory.java" startLine="155" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="2024340988248532857" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532435" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="119" endLine="171" endPosition="7" />
-    <scopeInfo nodeId="2024340988248532571" fileName="TestNodeWrapperFactory.java" startLine="23" startPosition="62" endLine="27" endPosition="43" />
-    <scopeInfo nodeId="2024340988248532591" fileName="TestNodeWrapperFactory.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532597" fileName="TestNodeWrapperFactory.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532617" fileName="TestNodeWrapperFactory.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532623" fileName="TestNodeWrapperFactory.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532713" fileName="TestNodeWrapperFactory.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532719" fileName="TestNodeWrapperFactory.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532739" fileName="TestNodeWrapperFactory.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
+    <scopeInfo nodeId="2024340988248532435" fileName="TestNodeWrapperFactory.java" startLine="169" startPosition="119" endLine="172" endPosition="7" />
+    <scopeInfo nodeId="2024340988248532571" fileName="TestNodeWrapperFactory.java" startLine="24" startPosition="62" endLine="28" endPosition="43" />
+    <scopeInfo nodeId="2024340988248532591" fileName="TestNodeWrapperFactory.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532597" fileName="TestNodeWrapperFactory.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532617" fileName="TestNodeWrapperFactory.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532623" fileName="TestNodeWrapperFactory.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532713" fileName="TestNodeWrapperFactory.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532719" fileName="TestNodeWrapperFactory.java" startLine="83" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532739" fileName="TestNodeWrapperFactory.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
       <varInfo nodeId="2024340988248532740" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532755" fileName="TestNodeWrapperFactory.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532761" fileName="TestNodeWrapperFactory.java" startLine="102" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532786" fileName="TestNodeWrapperFactory.java" startLine="115" startPosition="49" endLine="119" endPosition="19" />
-    <scopeInfo nodeId="2024340988248532800" fileName="TestNodeWrapperFactory.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532806" fileName="TestNodeWrapperFactory.java" startLine="125" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532826" fileName="TestNodeWrapperFactory.java" startLine="137" startPosition="0" endLine="141" endPosition="0">
+    <scopeInfo nodeId="2024340988248532755" fileName="TestNodeWrapperFactory.java" startLine="99" startPosition="0" endLine="103" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532761" fileName="TestNodeWrapperFactory.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532786" fileName="TestNodeWrapperFactory.java" startLine="116" startPosition="49" endLine="120" endPosition="19" />
+    <scopeInfo nodeId="2024340988248532800" fileName="TestNodeWrapperFactory.java" startLine="122" startPosition="0" endLine="126" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532806" fileName="TestNodeWrapperFactory.java" startLine="126" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532826" fileName="TestNodeWrapperFactory.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
       <varInfo nodeId="2024340988248532827" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532842" fileName="TestNodeWrapperFactory.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532848" fileName="TestNodeWrapperFactory.java" startLine="145" startPosition="0" endLine="149" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532862" fileName="TestNodeWrapperFactory.java" startLine="157" startPosition="0" endLine="161" endPosition="0">
+    <scopeInfo nodeId="2024340988248532842" fileName="TestNodeWrapperFactory.java" startLine="142" startPosition="0" endLine="146" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532848" fileName="TestNodeWrapperFactory.java" startLine="146" startPosition="0" endLine="150" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532862" fileName="TestNodeWrapperFactory.java" startLine="158" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="2024340988248532872" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532461" fileName="TestNodeWrapperFactory.java" startLine="177" startPosition="136" endLine="181" endPosition="0">
+    <scopeInfo nodeId="2024340988248532461" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="136" endLine="182" endPosition="0">
       <varInfo nodeId="2024340988248532461" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532471" fileName="TestNodeWrapperFactory.java" startLine="181" startPosition="62" endLine="185" endPosition="0">
+    <scopeInfo nodeId="2024340988248532471" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="62" endLine="186" endPosition="0">
       <varInfo nodeId="2024340988248532471" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532491" fileName="TestNodeWrapperFactory.java" startLine="189" startPosition="99" endLine="193" endPosition="0">
+    <scopeInfo nodeId="2024340988248532491" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="99" endLine="194" endPosition="0">
       <varInfo nodeId="2024340988248532491" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532506" fileName="TestNodeWrapperFactory.java" startLine="197" startPosition="99" endLine="201" endPosition="0">
+    <scopeInfo nodeId="2024340988248532506" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="99" endLine="202" endPosition="0">
       <varInfo nodeId="2024340988248532506" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532521" fileName="TestNodeWrapperFactory.java" startLine="205" startPosition="99" endLine="209" endPosition="0">
+    <scopeInfo nodeId="2024340988248532521" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="99" endLine="210" endPosition="0">
       <varInfo nodeId="2024340988248532521" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="217" startPosition="136" endLine="221" endPosition="0">
+    <scopeInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="136" endLine="222" endPosition="0">
       <varInfo nodeId="2024340988248532553" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="224" startPosition="73" endLine="228" endPosition="16" />
-    <scopeInfo nodeId="2024340988248532705" fileName="TestNodeWrapperFactory.java" startLine="231" startPosition="63" endLine="235" endPosition="6" />
-    <scopeInfo nodeId="2024340988248532792" fileName="TestNodeWrapperFactory.java" startLine="238" startPosition="63" endLine="242" endPosition="6" />
-    <scopeInfo nodeId="2024340988248532604" fileName="TestNodeWrapperFactory.java" startLine="40" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="225" startPosition="73" endLine="229" endPosition="16" />
+    <scopeInfo nodeId="2024340988248532705" fileName="TestNodeWrapperFactory.java" startLine="232" startPosition="63" endLine="236" endPosition="6" />
+    <scopeInfo nodeId="2024340988248532792" fileName="TestNodeWrapperFactory.java" startLine="239" startPosition="63" endLine="243" endPosition="6" />
+    <scopeInfo nodeId="2024340988248532604" fileName="TestNodeWrapperFactory.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="2024340988248532605" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532630" fileName="TestNodeWrapperFactory.java" startLine="56" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="2024340988248532630" fileName="TestNodeWrapperFactory.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="2024340988248532631" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532726" fileName="TestNodeWrapperFactory.java" startLine="89" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="2024340988248532726" fileName="TestNodeWrapperFactory.java" startLine="90" startPosition="0" endLine="95" endPosition="0">
       <varInfo nodeId="2024340988248532727" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532768" fileName="TestNodeWrapperFactory.java" startLine="109" startPosition="0" endLine="114" endPosition="0">
+    <scopeInfo nodeId="2024340988248532768" fileName="TestNodeWrapperFactory.java" startLine="110" startPosition="0" endLine="115" endPosition="0">
       <varInfo nodeId="2024340988248532769" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532813" fileName="TestNodeWrapperFactory.java" startLine="132" startPosition="0" endLine="137" endPosition="0">
+    <scopeInfo nodeId="2024340988248532813" fileName="TestNodeWrapperFactory.java" startLine="133" startPosition="0" endLine="138" endPosition="0">
       <varInfo nodeId="2024340988248532814" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532430" fileName="TestNodeWrapperFactory.java" startLine="167" startPosition="65" endLine="172" endPosition="5">
+    <scopeInfo nodeId="2024340988248532430" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="65" endLine="173" endPosition="5">
       <varInfo nodeId="2024340988248532430" varName="factory" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532488" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="54" endLine="193" endPosition="7" />
-    <scopeInfo nodeId="2024340988248532503" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="58" endLine="201" endPosition="7" />
-    <scopeInfo nodeId="2024340988248532518" fileName="TestNodeWrapperFactory.java" startLine="204" startPosition="61" endLine="209" endPosition="7" />
-    <scopeInfo nodeId="2024340988248532429" fileName="TestNodeWrapperFactory.java" startLine="167" startPosition="65" endLine="173" endPosition="16" />
-    <scopeInfo nodeId="2024340988248532781" fileName="TestNodeWrapperFactory.java" startLine="114" startPosition="0" endLine="121" endPosition="0">
+    <scopeInfo nodeId="2024340988248532488" fileName="TestNodeWrapperFactory.java" startLine="189" startPosition="54" endLine="194" endPosition="7" />
+    <scopeInfo nodeId="2024340988248532503" fileName="TestNodeWrapperFactory.java" startLine="197" startPosition="58" endLine="202" endPosition="7" />
+    <scopeInfo nodeId="2024340988248532518" fileName="TestNodeWrapperFactory.java" startLine="205" startPosition="61" endLine="210" endPosition="7" />
+    <scopeInfo nodeId="2024340988248532429" fileName="TestNodeWrapperFactory.java" startLine="168" startPosition="65" endLine="174" endPosition="16" />
+    <scopeInfo nodeId="2024340988248532781" fileName="TestNodeWrapperFactory.java" startLine="115" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="2024340988248532782" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="223" startPosition="0" endLine="230" endPosition="0">
+    <scopeInfo nodeId="2024340988248532694" fileName="TestNodeWrapperFactory.java" startLine="224" startPosition="0" endLine="231" endPosition="0">
       <varInfo nodeId="2024340988248532694" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532705" fileName="TestNodeWrapperFactory.java" startLine="230" startPosition="0" endLine="237" endPosition="0">
+    <scopeInfo nodeId="2024340988248532705" fileName="TestNodeWrapperFactory.java" startLine="231" startPosition="0" endLine="238" endPosition="0">
       <varInfo nodeId="2024340988248532705" varName="a" />
       <varInfo nodeId="2024340988248532705" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532792" fileName="TestNodeWrapperFactory.java" startLine="237" startPosition="0" endLine="244" endPosition="0">
+    <scopeInfo nodeId="2024340988248532792" fileName="TestNodeWrapperFactory.java" startLine="238" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="2024340988248532792" varName="a" />
       <varInfo nodeId="2024340988248532792" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532565" fileName="TestNodeWrapperFactory.java" startLine="21" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="2024340988248532565" fileName="TestNodeWrapperFactory.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="2024340988248532566" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532486" fileName="TestNodeWrapperFactory.java" startLine="187" startPosition="0" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532499" fileName="TestNodeWrapperFactory.java" startLine="195" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532514" fileName="TestNodeWrapperFactory.java" startLine="203" startPosition="0" endLine="211" endPosition="0" />
-    <scopeInfo nodeId="2024340988248532452" fileName="TestNodeWrapperFactory.java" startLine="176" startPosition="150" endLine="185" endPosition="18" />
-    <scopeInfo nodeId="2024340988248532537" fileName="TestNodeWrapperFactory.java" startLine="212" startPosition="75" endLine="221" endPosition="51">
+    <scopeInfo nodeId="2024340988248532486" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="0" endLine="196" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532499" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="0" endLine="204" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532514" fileName="TestNodeWrapperFactory.java" startLine="204" startPosition="0" endLine="212" endPosition="0" />
+    <scopeInfo nodeId="2024340988248532452" fileName="TestNodeWrapperFactory.java" startLine="177" startPosition="150" endLine="186" endPosition="18" />
+    <scopeInfo nodeId="2024340988248532537" fileName="TestNodeWrapperFactory.java" startLine="213" startPosition="75" endLine="222" endPosition="51">
       <varInfo nodeId="2024340988248532539" varName="concepts" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532423" fileName="TestNodeWrapperFactory.java" startLine="165" startPosition="0" endLine="175" endPosition="0">
+    <scopeInfo nodeId="2024340988248532423" fileName="TestNodeWrapperFactory.java" startLine="166" startPosition="0" endLine="176" endPosition="0">
       <varInfo nodeId="2024340988248532424" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532650" fileName="TestNodeWrapperFactory.java" startLine="63" startPosition="170" endLine="74" endPosition="32">
+    <scopeInfo nodeId="2024340988248532650" fileName="TestNodeWrapperFactory.java" startLine="64" startPosition="170" endLine="75" endPosition="32">
       <varInfo nodeId="2024340988248532660" varName="ancestor" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532450" fileName="TestNodeWrapperFactory.java" startLine="175" startPosition="0" endLine="187" endPosition="0">
+    <scopeInfo nodeId="2024340988248532450" fileName="TestNodeWrapperFactory.java" startLine="176" startPosition="0" endLine="188" endPosition="0">
       <varInfo nodeId="2024340988248532482" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532530" fileName="TestNodeWrapperFactory.java" startLine="211" startPosition="0" endLine="223" endPosition="0">
+    <scopeInfo nodeId="2024340988248532530" fileName="TestNodeWrapperFactory.java" startLine="212" startPosition="0" endLine="224" endPosition="0">
       <varInfo nodeId="2024340988248532533" varName="isRoot" />
       <varInfo nodeId="2024340988248532531" varName="source" />
     </scopeInfo>
-    <scopeInfo nodeId="2024340988248532648" fileName="TestNodeWrapperFactory.java" startLine="62" startPosition="49" endLine="76" endPosition="19" />
-    <scopeInfo nodeId="2024340988248532643" fileName="TestNodeWrapperFactory.java" startLine="61" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="2024340988248532648" fileName="TestNodeWrapperFactory.java" startLine="63" startPosition="49" endLine="77" endPosition="19" />
+    <scopeInfo nodeId="2024340988248532643" fileName="TestNodeWrapperFactory.java" startLine="62" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="2024340988248532644" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="19" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" />
-    <unitInfo nodeId="2024340988248532461" fileName="TestNodeWrapperFactory.java" startLine="177" startPosition="96" endLine="181" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$1" />
-    <unitInfo nodeId="2024340988248532471" fileName="TestNodeWrapperFactory.java" startLine="181" startPosition="18" endLine="185" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$2" />
-    <unitInfo nodeId="2024340988248532491" fileName="TestNodeWrapperFactory.java" startLine="189" startPosition="34" endLine="193" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$3" />
-    <unitInfo nodeId="2024340988248532506" fileName="TestNodeWrapperFactory.java" startLine="197" startPosition="34" endLine="201" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$4" />
-    <unitInfo nodeId="2024340988248532521" fileName="TestNodeWrapperFactory.java" startLine="205" startPosition="34" endLine="209" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$5" />
-    <unitInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="217" startPosition="108" endLine="221" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$6" />
+    <unitInfo nodeId="2024340988248532422" fileName="TestNodeWrapperFactory.java" startLine="20" startPosition="0" endLine="246" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" />
+    <unitInfo nodeId="2024340988248532461" fileName="TestNodeWrapperFactory.java" startLine="178" startPosition="96" endLine="182" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$1" />
+    <unitInfo nodeId="2024340988248532471" fileName="TestNodeWrapperFactory.java" startLine="182" startPosition="18" endLine="186" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$2" />
+    <unitInfo nodeId="2024340988248532491" fileName="TestNodeWrapperFactory.java" startLine="190" startPosition="34" endLine="194" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$3" />
+    <unitInfo nodeId="2024340988248532506" fileName="TestNodeWrapperFactory.java" startLine="198" startPosition="34" endLine="202" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$4" />
+    <unitInfo nodeId="2024340988248532521" fileName="TestNodeWrapperFactory.java" startLine="206" startPosition="34" endLine="210" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$5" />
+    <unitInfo nodeId="2024340988248532553" fileName="TestNodeWrapperFactory.java" startLine="218" startPosition="108" endLine="222" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory$6" />
   </root>
   <root nodeId="5881102044690178561">
     <nodeInfo nodeId="5881102044690178706" fileName="TestRunParameters.java" startLine="20" startPosition="32" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestRunner" />

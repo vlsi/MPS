@@ -8,6 +8,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.util.Factory;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByConcept_Configuration> {
@@ -31,7 +33,7 @@ public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByC
   @NotNull
   public NodeByConceptChooser createEditor() {
     myChooser = new NodeByConceptChooser();
-    myChooser.setTargetConcept(myConcept);
+    myChooser.setTargetConcept((SNode) SModelUtil.findConceptDeclaration(myConcept, GlobalScope.getInstance()));
     myChooser.setAcceptor(myIsValid);
     return myChooser;
   }

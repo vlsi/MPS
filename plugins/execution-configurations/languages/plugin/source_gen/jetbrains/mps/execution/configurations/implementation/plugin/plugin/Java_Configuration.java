@@ -11,10 +11,10 @@ import jetbrains.mps.execution.lib.NodeBySeveralConcepts_Configuration;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import com.intellij.openapi.project.Project;
@@ -44,11 +44,11 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
 
   @NotNull
   private Java_Configuration.MyState myState = new Java_Configuration.MyState();
-  private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.baseLanguage.structure.ClassConcept", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  private NodeBySeveralConcepts_Configuration myNode = new NodeBySeveralConcepts_Configuration(Sequence.fromIterable(Sequence.fromArray(ArrayUtils.asArray(MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068390468198"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "virtual_isRunnable_7941158526576616752", new Class[]{SNode.class}));
     }
-  }), MultiTuple.<String,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from("jetbrains.mps.execution.util.structure.IMainClass", new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
+  }), MultiTuple.<SNode,_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>from(SNodeOperations.getNode("r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)", "4666195181811081429"), new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
     public Boolean invoke(SNode node) {
       return ((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(node, "jetbrains.mps.execution.util.structure.IMainClass"), "virtual_isNodeRunnable_4666195181811081448", new Class[]{SNode.class})) && Java_Command.isUnitNode(node);
     }

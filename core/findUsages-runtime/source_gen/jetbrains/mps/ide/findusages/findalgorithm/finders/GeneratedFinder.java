@@ -13,11 +13,14 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
-import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import java.util.Comparator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -69,8 +72,8 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     IHolder holder = query.getObjectHolder();
     assert holder instanceof NodeHolder;
     SNode node = ((NodeHolder) holder).getObject();
-    if (node.isInstanceOfConcept(getConcept()) && isApplicable(node)) {
-      List<SNode> resSN = new ArrayList<SNode>();
+    if (SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName((SNode) SModelUtil.findConceptDeclaration(getConcept(), GlobalScope.getInstance()))) && isApplicable(node)) {
+      List<SNode> resSN = ListSequence.fromList(new ArrayList<SNode>());
       getSearchedNodes(node, query.getScope(), resSN);
       for (SNode resnode : resSN) {
         results.getSearchedNodes().add(resnode);

@@ -186,7 +186,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         String role = event.getChildRole();
         if (!(("typeVariableDeclaration".equals(role) || "superclass".equals(role) || "implementedInterface".equals(role) || "extendedInterface".equals(role) || "typeParameter".equals(role)))) {
           return;
@@ -196,7 +196,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         String role = event.getChildRole();
         if (!(("typeVariableDeclaration".equals(role) || "superclass".equals(role) || "implementedInterface".equals(role) || "extendedInterface".equals(role) || "typeParameter".equals(role)))) {
           return;
@@ -400,12 +400,12 @@ forEachInAllMethods:
     }
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
-        if (!(event.getChild().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        if (!(SNodeOperations.isInstanceOf(((SNode) event.getChild()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
           return;
         }
       }
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         String role = event.getChildRole();
 
         if (!("parameter".equals(role))) {
@@ -416,12 +416,12 @@ forEachInAllMethods:
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
-        if (!(event.getChild().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        if (!(SNodeOperations.isInstanceOf(((SNode) event.getChild()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
           return;
         }
       }
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         String role = event.getChildRole();
         if (!("parameter".equals(role))) {
           return;
@@ -431,7 +431,7 @@ forEachInAllMethods:
     }
 
     public void propertyChanged(SModelPropertyEvent event) {
-      if ("name".equals(event.getPropertyName()) && event.getNode().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+      if ("name".equals(event.getPropertyName()) && SNodeOperations.isInstanceOf(((SNode) event.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         super.propertyChanged(event);
       }
     }
@@ -510,26 +510,26 @@ forEachInAllMethods:
     }
 
     public void childAdded(SModelChildEvent event) {
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         SNode child = event.getChild();
         if (!((SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))) {
           return;
         }
       }
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
         return;
       }
       super.childAdded(event);
     }
 
     public void childRemoved(SModelChildEvent event) {
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
         SNode child = event.getChild();
         if (!((SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))) {
           return;
         }
       }
-      if (event.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
         return;
       }
       super.childRemoved(event);

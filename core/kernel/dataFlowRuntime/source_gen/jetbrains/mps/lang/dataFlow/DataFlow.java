@@ -31,11 +31,11 @@ public class DataFlow {
     for (Instruction i : unreachable) {
       if (!(DataFlow.mayBeUnreachable(i)) && i.getSource() != null) {
         SNode unreachableNode = (SNode) i.getSource();
-        if (unreachableNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Statement")) {
+        if (SNodeOperations.isInstanceOf(unreachableNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
           unreachableNodes.add((SNode) i.getSource());
         } else {
-          if (unreachableNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.StatementList")) {
-            if (!(SNodeOperations.getParent(unreachableNode).isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Statement"))) {
+          if (SNodeOperations.isInstanceOf(unreachableNode, "jetbrains.mps.baseLanguage.structure.StatementList")) {
+            if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(unreachableNode), "jetbrains.mps.baseLanguage.structure.Statement"))) {
               unreachableNodes.add((SNode) i.getSource());
             }
           } else {

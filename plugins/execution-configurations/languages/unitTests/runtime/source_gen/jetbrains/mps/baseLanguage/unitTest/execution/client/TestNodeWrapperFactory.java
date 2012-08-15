@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import junit.framework.TestCase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -156,7 +157,7 @@ public enum TestNodeWrapperFactory {
   public abstract ITestNodeWrapper wrap(@NotNull SNode node);
 
   public boolean canWrap(@NotNull SNode node) {
-    return node.isInstanceOfConcept(getWrappedConcept());
+    return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(getWrappedConcept()));
   }
 
   public abstract SNode getWrappedConcept();
