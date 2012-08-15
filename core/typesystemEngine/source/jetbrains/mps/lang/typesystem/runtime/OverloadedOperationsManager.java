@@ -69,7 +69,7 @@ public class OverloadedOperationsManager {
       }
     });
     if (severalRules[0]) {
-      LOG.warning("several overloaded rules found for operation", operation);
+      LOG.warning("several overloaded rules found for operation '" + operation+"'\n", operation);
     }
     for (IOverloadedOpsTypesProvider provider : filteredProviders) {
       SNode result = provider.getOperationType(operation, leftOperandType, rightOperandType);
