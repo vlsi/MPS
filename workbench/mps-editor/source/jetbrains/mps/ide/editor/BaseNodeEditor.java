@@ -89,6 +89,8 @@ public abstract class BaseNodeEditor implements Editor {
     return false;
   }
 
+  protected abstract Object getData(@NonNls String dataId);
+
   private class EditorPanel extends JPanel implements DataProvider {
     private EditorPanel() {
       setLayout(new BorderLayout());
@@ -101,10 +103,8 @@ public abstract class BaseNodeEditor implements Editor {
     @Nullable
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(MPSEditorDataKeys.MPS_EDITOR.getName())) return BaseNodeEditor.this;
-      if (BaseNodeEditor.this instanceof DataProvider) {
-        Object data = ((DataProvider) BaseNodeEditor.this).getData(dataId);
-        if (data != null) return data;
-      }
+      Object data = BaseNodeEditor.this.getData(dataId);
+      if (data != null) return data;
       EditorComponent ec = getCurrentEditorComponent();
       return ec == null ? null : ec.getData(dataId);
     }
@@ -175,20 +175,20 @@ public abstract class BaseNodeEditor implements Editor {
       if (editorComponent != null) {
         if (editorComponent.getInspector() != null) {
           editorComponent.getInspector().getEditorContext().setMemento(s.myInspectorMemento);
-        }
-        else {
+        } else {
           SwingUtilities.invokeLater(new Runnable() {
             int tries = 0;
+
             @Override
             public void run() {
               EditorComponent inspector = editorComponent.getInspector();
               if (inspector != null) {
                 inspector.getEditorContext().setMemento(s.myInspectorMemento);
-              }
-              else if ((tries++) < 3) {
+              } else if ((tries++) < 3) {
                 try {
-                  Thread.sleep(tries*500);
-                } catch (InterruptedException ignore) {}
+                  Thread.sleep(tries * 500);
+                } catch (InterruptedException ignore) {
+                }
                 SwingUtilities.invokeLater(this);
               } else {
                 LOG.error("couln't restore inspector state: no inspector tool");
