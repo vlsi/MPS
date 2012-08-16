@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -209,7 +209,7 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNodeList_xc5f9o_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new OverloadedOperatorTypeRule_Editor.operationConceptListHandler_xc5f9o_b0a(node, "operationConcept", editorContext);
-    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
+    EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_operationConcept");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
