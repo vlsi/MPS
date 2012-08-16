@@ -20,7 +20,6 @@
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action"/>
-    <action id="jetbrains.mps.ide.migration.migration25.MigrationScript_UpgradeProcessBuilder_Action" class="jetbrains.mps.ide.migration.migration25.MigrationScript_UpgradeProcessBuilder_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action" class="jetbrains.mps.ide.migration.migration25.OptimizeImportsInProject_Action"/>
     <action id="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action" class="jetbrains.mps.ide.migration.migration25.UpgradePersistence_Action"/>
     <group id="Migrations25_ActionGroupoptional"/>
@@ -41,7 +40,6 @@
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_FixReferencesToMpsLaunch_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_SplitMPSClasspath_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_RemoveKeystrokes_Action"/>
-      <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_UpgradeProcessBuilder_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.MigrationScript_ResolveBrokenRefs_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.ExecuteModelCheckerFixes_Action"/>
       <reference ref="jetbrains.mps.ide.migration.migration25.ExecuteJavaModelCheckerFixes_Action"/>

@@ -41,7 +41,7 @@ import jetbrains.mps.debug.evaluation.proxies.INullValueProxy;
   @NotNull
   @Override
   public IValueProxy getElementAt(int index) {
-    return MirrorUtil.getInstance().getValueProxy(EvaluationUtils.getElementAt(getArrayValue(), index));
+    return MirrorUtil.getInstance().getValueProxy(EvaluationUtils.getInstance().getArrayElementAt(getArrayValue(), index));
   }
 
   @Override
@@ -82,7 +82,7 @@ import jetbrains.mps.debug.evaluation.proxies.INullValueProxy;
 
   @Override
   public boolean isInstanceOf(String typename) throws EvaluationException {
-    return EvaluationUtils.isInstanceOf(myValue.type(), typename, myValue.virtualMachine());
+    return EvaluationUtils.getInstance().instanceOf(myValue.type(), typename, myValue.virtualMachine());
   }
 
   @Override

@@ -7,82 +7,36 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.AllElementsOperation", "jetbrains.mps.debugger.java.customViewers.structure.ArrayValueType", "jetbrains.mps.debugger.java.customViewers.structure.CallMethodOperation", "jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.CanWrapValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.ClassFqNameOperation", "jetbrains.mps.debugger.java.customViewers.structure.ClassNameOperation", "jetbrains.mps.debugger.java.customViewers.structure.CustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debugger.java.customViewers.structure.ElementOperation", "jetbrains.mps.debugger.java.customViewers.structure.ElementsRangeOperation", "jetbrains.mps.debugger.java.customViewers.structure.FieldOperation", "jetbrains.mps.debugger.java.customViewers.structure.FieldsListOperation", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.IsInstanceOfOperation", "jetbrains.mps.debugger.java.customViewers.structure.JavaValueOperation", "jetbrains.mps.debugger.java.customViewers.structure.ObjectValueType", "jetbrains.mps.debugger.java.customViewers.structure.OriginalValue_ConceptFunctionParameter", "jetbrains.mps.debugger.java.customViewers.structure.PrimitiveValueType", "jetbrains.mps.debugger.java.customViewers.structure.SizeOperation", "jetbrains.mps.debugger.java.customViewers.structure.StringValueOperation", "jetbrains.mps.debugger.java.customViewers.structure.StringValueType", "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.debugger.java.customViewers.structure.ValueType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"};
+  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchable", "jetbrains.mps.debugger.java.customViewers.structure.CustomWatchablesContainer", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelWatchablesBlock_ConceptFunction", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter", "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator", "jetbrains.mps.debugger.java.customViewers.structure.ToProcessMethod", "jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", "jetbrains.mps.debugger.java.customViewers.structure.WatchableType", "jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator"};
 
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
-      case 30:
-        return new ValueType_BehaviorDescriptor();
       case 1:
-        return new ArrayValueType_BehaviorDescriptor();
-      case 23:
-        return new ObjectValueType_BehaviorDescriptor();
-      case 25:
-        return new PrimitiveValueType_BehaviorDescriptor();
-      case 8:
         return new CustomWatchable_BehaviorDescriptor();
-      case 9:
-        return new CustomWatchablesContainer_BehaviorDescriptor();
-      case 7:
-        return new CustomViewer_BehaviorDescriptor();
-      case 33:
-        return new WatchableType_BehaviorDescriptor();
-      case 31:
-        return new WatchableCreator_BehaviorDescriptor();
-      case 17:
-        return new GetWatchablesBlock_ConceptFunction_BehaviorDescriptor();
-      case 24:
-        return new OriginalValue_ConceptFunctionParameter_BehaviorDescriptor();
-      case 13:
-        return new FieldsListOperation_BehaviorDescriptor();
-      case 12:
-        return new FieldOperation_BehaviorDescriptor();
-      case 10:
-        return new ElementOperation_BehaviorDescriptor();
-      case 16:
-        return new GetValuePresentation_ConceptFunction_BehaviorDescriptor();
-      case 4:
-        return new CanWrapValue_ConceptFunction_BehaviorDescriptor();
-      case 6:
-        return new ClassNameOperation_BehaviorDescriptor();
-      case 5:
-        return new ClassFqNameOperation_BehaviorDescriptor();
-      case 26:
-        return new SizeOperation_BehaviorDescriptor();
-      case 0:
-        return new AllElementsOperation_BehaviorDescriptor();
-      case 11:
-        return new ElementsRangeOperation_BehaviorDescriptor();
       case 2:
-        return new CallMethodOperation_BehaviorDescriptor();
-      case 22:
-        return new JavaValueOperation_BehaviorDescriptor();
-      case 28:
-        return new StringValueType_BehaviorDescriptor();
-      case 27:
-        return new StringValueOperation_BehaviorDescriptor();
-      case 21:
-        return new IsInstanceOfOperation_BehaviorDescriptor();
-      case 18:
+        return new CustomWatchablesContainer_BehaviorDescriptor();
+      case 10:
+        return new WatchableType_BehaviorDescriptor();
+      case 5:
         return new HighLevelCustomViewer_BehaviorDescriptor();
-      case 14:
-        return new GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor();
-      case 15:
-        return new GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor();
       case 3:
+        return new GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor();
+      case 4:
+        return new GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor();
+      case 0:
         return new CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor();
-      case 19:
+      case 6:
         return new HighLevelValue_ConceptFunctionParameter_BehaviorDescriptor();
-      case 20:
+      case 7:
         return new HighLevelWatchableCreator_BehaviorDescriptor();
-      case 34:
+      case 11:
         return new WatchablesListCreator_BehaviorDescriptor();
-      case 32:
+      case 9:
         return new WatchableListType_BehaviorDescriptor();
-      case 29:
+      case 8:
         return new ToProcessMethod_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);

@@ -4,14 +4,14 @@ package jetbrains.mps.debugger.java.runtime.breakpoints;
 
 import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
-import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
 import com.sun.jdi.request.ExceptionRequest;
 import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InternalException;
-import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventContext;
 import com.sun.jdi.event.LocatableEvent;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,7 +31,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   }
 
   @Override
-  protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
+  protected void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
     try {
       ExceptionRequest request = requestManager.createExceptionRequest(this, classType);
@@ -50,7 +50,7 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
   }
 
   @Override
-  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
+  public boolean isRequestHitByEvent(EventContext context, LocatableEvent event) {
     return true;
   }
 

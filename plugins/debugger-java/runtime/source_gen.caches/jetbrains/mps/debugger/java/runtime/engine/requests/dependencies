@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.ClassPrepareRequestor" file="ClassPrepareRequestor.java">
+    <classNode dependClassName="com.sun.jdi.ReferenceType" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.IRequestManager" file="IRequestManager.java" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.LocatableEventRequestor" file="LocatableEventRequestor.java">
+    <classNode dependClassName="com.sun.jdi.event.LocatableEvent" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventContext" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" file="Requestor.java" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.requests.StepRequestor" file="StepRequestor.java">
+    <classNode dependClassName="com.sun.jdi.AbsentInformationException" />
+    <classNode dependClassName="com.sun.jdi.IncompatibleThreadStateException" />
+    <classNode dependClassName="com.sun.jdi.Location" />
+    <classNode dependClassName="com.sun.jdi.StackFrame" />
+    <classNode dependClassName="com.sun.jdi.ThreadReference" />
+    <classNode dependClassName="com.sun.jdi.event.StepEvent" />
+    <classNode dependClassName="com.sun.jdi.request.StepRequest" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.debug.api.IDebuggableFramesSelector" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.requests.Requestor" />
+  </dependency>
+</dependenciesRoot>
+

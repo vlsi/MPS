@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands" file="Commands.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.engine.concurrent.IManagerCommand" />
+  </dependency>
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.IManagerCommand" file="IManagerCommand.java" />
+  <dependency className="jetbrains.mps.debugger.java.runtime.engine.concurrent.ManagerThread" file="ManagerThread.java">
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.concurrent.BlockingQueue" />
+    <classNode dependClassName="java.util.concurrent.CountDownLatch" />
+    <classNode dependClassName="java.util.concurrent.LinkedBlockingQueue" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.concurrent.IManagerCommand" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode extendsClassName="java.lang.Thread" />
+  </dependency>
+</dependenciesRoot>
+

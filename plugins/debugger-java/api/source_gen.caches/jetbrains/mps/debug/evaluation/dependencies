@@ -25,7 +25,6 @@
     <classNode dependClassName="com.sun.jdi.Type" />
     <classNode dependClassName="com.sun.jdi.Value" />
     <classNode dependClassName="com.sun.jdi.VirtualMachine" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -43,7 +42,6 @@
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IObjectValueProxy" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.PrimitiveValueProxy" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.apache.commons.logging.Log" />
     <classNode dependClassName="org.apache.commons.logging.LogFactory" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

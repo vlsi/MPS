@@ -9,9 +9,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.debugger.java.runtime.DebugVMEventsProcessor;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import com.sun.jdi.ReferenceType;
-import jetbrains.mps.debugger.java.runtime.RequestManager;
+import jetbrains.mps.debugger.java.runtime.engine.RequestManager;
 import java.util.List;
 import com.sun.jdi.Location;
 import com.sun.jdi.request.BreakpointRequest;
@@ -19,8 +19,6 @@ import com.sun.jdi.ClassNotPreparedException;
 import com.sun.jdi.ObjectCollectedException;
 import com.sun.jdi.InvalidLineNumberException;
 import com.sun.jdi.InternalException;
-import jetbrains.mps.debugger.java.runtime.SuspendContextCommand;
-import com.sun.jdi.event.LocatableEvent;
 
 public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(LineBreakpoint.class);
@@ -37,7 +35,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
   }
 
   @Override
-  protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, final ReferenceType classType) {
+  protected void createRequestForPreparedClass(EventsProcessor debugProcess, final ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
     try {
       int lineIndex = myLocation.getLineIndexInFile();
@@ -67,33 +65,6 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
     } catch (Exception ex) {
       LOG.error(ex);
     }
-  }
-
-  @Override
-  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
-    // called when breakpoint is hit 
-    boolean result = super.processLocatableEvent(action, event);
-    if (!(result)) {
-      return false;
-    }
-    //     try { 
-    // todo conditions - later 
-    //   final EvaluationContextImpl evaluationContext = new EvaluationContextImpl( 
-    //   action.getSuspendContext(), 
-    //   frameProxy, 
-    //   getThisObject(context, event) 
-    // ); 
-    //  
-    // if(!evaluateCondition(evaluationContext, event)) { 
-    //   return false; 
-    // } 
-    // todo here some expressions may be evaluated; later 
-    //  runAction(evaluationContext, event); 
-    //     } catch (IncompatibleThreadStateException ex) { 
-    //       LOG.error(ex); 
-    //       return false; 
-    //     } 
-    return true;
   }
 
   protected String getClassNameToPrepare() {
@@ -140,7 +111,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
       return false;
     }
 
-    return eq_owwtjm_a0d0h(myLocation, ((LineBreakpoint) o).myLocation);
+    return eq_owwtjm_a0d0g(myLocation, ((LineBreakpoint) o).myLocation);
   }
 
   @Override
@@ -153,7 +124,7 @@ public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoin
     return result;
   }
 
-  private static boolean eq_owwtjm_a0d0h(Object a, Object b) {
+  private static boolean eq_owwtjm_a0d0g(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

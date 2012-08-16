@@ -56,7 +56,8 @@ import jetbrains.mps.debug.evaluation.EvaluationUtils;
   }
 
   public JavaValue getElementValue(int index) {
-    return ValueUtil.getInstance().fromJDIRaw(EvaluationUtils.getElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
+
+    return ValueUtil.getInstance().fromJDIRaw(EvaluationUtils.getInstance().getArrayElementAt((ArrayReference) myValue, index), myClassFQName, myThreadReference);
   }
 
   public int getSize() {

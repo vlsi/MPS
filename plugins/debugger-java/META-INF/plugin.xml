@@ -32,7 +32,7 @@
     </component>
     <!--runtime-->
     <component>
-      <implementation-class>jetbrains.mps.debugger.java.runtime.VMEventsProcessorManagerComponent</implementation-class>
+      <implementation-class>jetbrains.mps.debugger.java.runtime.engine.VMEventsProcessorManagerComponent</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache</implementation-class>

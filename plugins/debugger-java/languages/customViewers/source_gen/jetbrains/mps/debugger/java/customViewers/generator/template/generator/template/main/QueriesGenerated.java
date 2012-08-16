@@ -34,7 +34,7 @@ import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_722903304966670752(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.CustomViewer")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer")).isNotEmpty();
   }
 
   public static Object propertyMacro_GetPropertyValue_4089989733346843322(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -142,7 +142,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5726067590290743628(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer")).union(ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.CustomViewer")));
+    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer");
   }
 
   public static void mapSrcMacro_post_mapper_721063219978405017(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {

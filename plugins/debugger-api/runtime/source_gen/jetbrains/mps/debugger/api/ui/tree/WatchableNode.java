@@ -35,9 +35,6 @@ public class WatchableNode extends AbstractWatchableNode {
   }
 
   protected Icon getNodeIcon() {
-    //   if (myNode != null) { 
-    //     return jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON; 
-    //   } 
     return myWatchable.getPresentationIcon();
   }
 

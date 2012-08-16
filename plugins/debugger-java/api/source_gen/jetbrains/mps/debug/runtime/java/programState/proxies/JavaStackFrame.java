@@ -14,14 +14,12 @@ import jetbrains.mps.util.Pair;
 import com.sun.jdi.StackFrame;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
-import java.util.Map;
-import jetbrains.mps.debug.api.programState.IValue;
-import java.util.Collections;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.LocalVariable;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaThisObject;
 import jetbrains.mps.debug.runtime.java.programState.watchables.JavaStaticContext;
+import jetbrains.mps.debug.api.programState.IValue;
 
 public class JavaStackFrame extends ProxyForJava implements IStackFrame {
   private static final Logger LOG = Logger.getLogger(JavaStackFrame.class);
@@ -72,12 +70,6 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
       LOG.error(t);
       return null;
     }
-  }
-
-  @Override
-  public Map<IWatchable, IValue> getWatchableValues() {
-    assert false : "Deprecated method getWatchableValues is used.";
-    return Collections.emptyMap();
   }
 
   @Override

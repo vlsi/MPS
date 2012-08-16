@@ -21,7 +21,6 @@ import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debugger.api.ui.icons.Icons;
 import org.jetbrains.annotations.NonNls;
 
@@ -138,8 +137,8 @@ public class BreakpointsIconCache implements ProjectComponent {
       }
     };
     if (session != null) {
-      session.getEventsProcessor().getManagerThread().invoke(new DebuggerCommand() {
-        protected void action() throws Exception {
+      session.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
+        public void invoke() {
           update.invoke();
         }
       });

@@ -11,6 +11,7 @@ import jetbrains.mps.debug.api.programState.IThread;
 import java.util.Collections;
 import jetbrains.mps.debug.api.AbstractUiState;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.debugger.java.runtime.engine.events.Context;
 
 
 /**
@@ -55,7 +56,7 @@ public class RunningJavaUiState extends JavaUiStateImpl {
     return NO_FRAME;
   }
 
-  public SuspendContext getContext() {
+  public Context getContext() {
     return null;
   }
 }

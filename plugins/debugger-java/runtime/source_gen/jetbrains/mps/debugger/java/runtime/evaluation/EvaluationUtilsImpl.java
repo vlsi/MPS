@@ -183,7 +183,7 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
           if (!((what instanceof ArrayType))) {
             return false;
           }
-          return EvaluationUtils.isInstanceOf(((ArrayType) what).componentType(), jniSignature.substring(1), machine);
+          return EvaluationUtilsImpl.this.instanceOf(((ArrayType) what).componentType(), jniSignature.substring(1), machine);
         } else
         if (jniSignature.startsWith("L")) {
           if (!((what instanceof ClassType))) {
@@ -290,28 +290,28 @@ public class EvaluationUtilsImpl extends EvaluationUtils {
   public IObjectValueProxy boxValue(PrimitiveValueProxy primitiveValueProxy, ThreadReference threadReference) throws EvaluationException {
     PrimitiveValue primitiveValue = primitiveValueProxy.getPrimitiveValue();
     if (primitiveValue instanceof BooleanValue) {
-      return (IObjectValueProxy) EvaluationUtils.invokeStatic(Boolean.class.getName(), "valueOf", "(Z)Ljava/lang/Boolean;", threadReference, primitiveValue.booleanValue());
+      return (IObjectValueProxy) invokeStaticMethod(Boolean.class.getName(), "valueOf", "(Z)Ljava/lang/Boolean;", threadReference, primitiveValue.booleanValue());
     }
     if (primitiveValue instanceof ShortValue) {
-      return (IObjectValueProxy) EvaluationUtils.invokeStatic(Short.class.getName(), "valueOf", "(S)Ljava/lang/Short;", threadReference, primitiveValue.shortValue());
+      return (IObjectValueProxy) invokeStaticMethod(Short.class.getName(), "valueOf", "(S)Ljava/lang/Short;", threadReference, primitiveValue.shortValue());
     }
     if (primitiveValue instanceof ByteValue) {
-      return (IObjectValueProxy) EvaluationUtils.invokeStatic(Byte.class.getName(), "valueOf", "(B)Ljava/lang/Byte;", threadReference, primitiveValue.byteValue());
+      return (IObjectValueProxy) invokeStaticMethod(Byte.class.getName(), "valueOf", "(B)Ljava/lang/Byte;", threadReference, primitiveValue.byteValue());
     }
     if (primitiveValue instanceof CharValue) {
-      return (IObjectValueProxy) EvaluationUtils.invokeStatic(Character.class.getName(), "valueOf", "(C)Ljava/lang/Character;", threadReference, primitiveValue.charValue());
+      return (IObjectValueProxy) invokeStaticMethod(Character.class.getName(), "valueOf", "(C)Ljava/lang/Character;", threadReference, primitiveValue.charValue());
     }
     if (primitiveValue instanceof DoubleValue) {
-      return (IObjectValueProxy) EvaluationUtils.invokeStatic(Double.class.getName(), "valueOf", "(D)Ljava/lang/Double;", threadReference, primitiveValue.doubleValue());
+      return (IObjectValueProxy) invokeStaticMethod(Double.class.getName(), "valueOf", "(D)Ljava/lang/Double;", threadReference, primitiveValue.doubleValue());
     }
     if (primitiveValue instanceof FloatValue) {
-      return (IObjectValueProxy) EvaluationUtils.invokeStatic(Float.class.getName(), "valueOf", "(F)Ljava/lang/Float;", threadReference, primitiveValue.floatValue());
+      return (IObjectValueProxy) invokeStaticMethod(Float.class.getName(), "valueOf", "(F)Ljava/lang/Float;", threadReference, primitiveValue.floatValue());
     }
     if (primitiveValue instanceof IntegerValue) {
-      return (IObjectValueProxy) EvaluationUtils.invokeStatic(Integer.class.getName(), "valueOf", "(I)Ljava/lang/Integer;", threadReference, primitiveValue.intValue());
+      return (IObjectValueProxy) invokeStaticMethod(Integer.class.getName(), "valueOf", "(I)Ljava/lang/Integer;", threadReference, primitiveValue.intValue());
     }
     if (primitiveValue instanceof LongValue) {
-      return (IObjectValueProxy) EvaluationUtils.invokeStatic(Long.class.getName(), "valueOf", "(J)Ljava/lang/Long;", threadReference, primitiveValue.longValue());
+      return (IObjectValueProxy) invokeStaticMethod(Long.class.getName(), "valueOf", "(J)Ljava/lang/Long;", threadReference, primitiveValue.longValue());
     }
     throw new UnsupportedOperationException("Cant box " + primitiveValue);
   }

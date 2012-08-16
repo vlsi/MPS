@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import java.util.Map;
 import com.sun.jdi.connect.Connector;
 import jetbrains.mps.debug.runtime.settings.DebugConnectionSettings;
-import jetbrains.mps.debugger.java.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 import java.util.List;
 import com.intellij.execution.process.ProcessListener;
 import java.util.ArrayList;
@@ -30,7 +30,10 @@ import jetbrains.mps.debugger.java.runtime.configurations.remote.RemoteProcessHa
 import com.intellij.execution.process.ProcessAdapter;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.util.concurrency.Semaphore;
-import jetbrains.mps.debugger.java.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debugger.java.runtime.engine.DebugProcessMulticaster;
+import jetbrains.mps.debugger.java.runtime.engine.DebugProcessAdapter;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.sun.jdi.VirtualMachine;
 import java.io.IOException;
 import com.sun.jdi.connect.ListeningConnector;
@@ -39,7 +42,6 @@ import com.sun.jdi.connect.AttachingConnector;
 import com.sun.jdi.VirtualMachineManager;
 import com.sun.jdi.Bootstrap;
 import java.util.Iterator;
-import jetbrains.mps.debugger.java.runtime.execution.IDebuggerManagerThread;
 
 public class VmCreator extends AbstractDebugSessionCreator {
   private static Logger LOG = Logger.getLogger(VmCreator.class);
@@ -51,8 +53,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
 
   private Map<String, Connector.Argument> myArguments;
   private DebugConnectionSettings myConnectionSettings;
-  private final DebugVMEventsProcessor myDebugVMEventsProcessor;
-  private final DebuggerManagerThread myDebuggerManagerThread;
+  private final EventsProcessor myEventsProcessor;
   private boolean myIsFailed = false;
   /**
    * holds listeners before process is executed; then adds them to process handler.
@@ -62,10 +63,8 @@ public class VmCreator extends AbstractDebugSessionCreator {
   private final DebugSession myDebuggerSession;
 
   public VmCreator(Project project) {
-    myDebuggerManagerThread = new DebuggerManagerThread();
-    // thread started! 
-    myDebugVMEventsProcessor = new DebugVMEventsProcessor(BreakpointManagerComponent.getInstance(project), myDebuggerManagerThread);
-    myDebuggerSession = new DebugSession(myDebugVMEventsProcessor, project);
+    myEventsProcessor = new EventsProcessor(BreakpointManagerComponent.getInstance(project));
+    myDebuggerSession = new DebugSession(myEventsProcessor, project);
     myDebuggerSession.setEvaluationProvider(new EvaluationProvider(myDebuggerSession));
   }
 
@@ -85,9 +84,8 @@ public class VmCreator extends AbstractDebugSessionCreator {
   @ToDebugAPI
   public ExecutionResult startSession(final Executor executor, final ProgramRunner runner, final RunProfileState state, Project project) throws ExecutionException {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
-    //  LOG.assertTrue(isInInitialState()); 
     myConnectionSettings = createLocalConnectionSettings(state);
-    myDebugVMEventsProcessor.getSystemMessagesReporter().setProcessName(getConnectionSettings().getPresentation());
+    myEventsProcessor.getSystemMessagesReporter().setProcessName(getConnectionSettings().getPresentation());
     createVirtualMachine();
     try {
       synchronized (myProcessListeners) {
@@ -102,7 +100,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
         myProcessListeners.clear();
         @NotNull ProcessHandler processHandler = myExecutionResult.getProcessHandler();
         myDebuggerSession.setProcessHandler(processHandler);
-        myDebugVMEventsProcessor.getSystemMessagesReporter().setProcessHandler(processHandler);
+        myEventsProcessor.getSystemMessagesReporter().setProcessHandler(processHandler);
         fixStopBugUnderLinux(processHandler, myDebuggerSession);
       }
     } catch (ExecutionException e) {
@@ -118,7 +116,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
   }
 
   private void createVmFailed(String message) {
-    myDebugVMEventsProcessor.getSystemMessagesReporter().reportError(message);
+    myEventsProcessor.getSystemMessagesReporter().reportError(message);
     fail();
   }
 
@@ -154,7 +152,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
       }
       myIsFailed = true;
     }
-    myDebugVMEventsProcessor.stop(false);
+    myEventsProcessor.stop(false);
   }
 
   private void createVirtualMachine() {
@@ -162,7 +160,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
     // semaphore - maybe not to call this method multiple times when a VM is not ready 
     semaphore.down();
     final boolean[] connectorIsReady = {false};
-    final DebugProcessMulticaster processMulticaster = myDebugVMEventsProcessor.getMulticaster();
+    final DebugProcessMulticaster processMulticaster = myEventsProcessor.getMulticaster();
     processMulticaster.addListener(new DebugProcessAdapter() {
       public void connectorIsReady() {
         VmCreator.LOG.debug("Connector is ready.");
@@ -171,15 +169,15 @@ public class VmCreator extends AbstractDebugSessionCreator {
         processMulticaster.removeListener(this);
       }
     });
-    myDebuggerManagerThread.schedule(new DebuggerCommand() {
-      protected void action() {
-        VirtualMachine vm = null;
+    myEventsProcessor.schedule(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        final Wrappers._T<VirtualMachine> vm = new Wrappers._T<VirtualMachine>(null);
         try {
           final long time = System.currentTimeMillis();
-          while (System.currentTimeMillis() - time < VmCreator.LOCAL_START_TIMEOUT) {
+          while (System.currentTimeMillis() - time < LOCAL_START_TIMEOUT) {
             try {
-              vm = doCreateVirtualMachine();
-              VmCreator.LOG.debug("Created VM " + vm);
+              vm.value = doCreateVirtualMachine();
+              LOG.debug("Created VM " + vm.value);
               break;
             } catch (Throwable t) {
               createVmFailed(t);
@@ -189,30 +187,24 @@ public class VmCreator extends AbstractDebugSessionCreator {
         } finally {
           semaphore.up();
         }
-        if (vm != null) {
-          final VirtualMachine vm1 = vm;
+        if (vm.value != null) {
           executeAfterProcessStarted(new Runnable() {
             public void run() {
               VmCreator.LOG.debug("Schedule commit command.");
-              myDebuggerManagerThread.schedule(new DebuggerCommand() {
-                protected void action() throws Exception {
-                  myDebugVMEventsProcessor.commitVM(vm1);
+              myEventsProcessor.schedule(new _FunctionTypes._void_P0_E0() {
+                public void invoke() {
+                  myEventsProcessor.commitVm(vm.value);
                 }
               });
             }
           });
         } else {
-          VmCreator.LOG.debug("VM is null.");
+          LOG.debug("VM is null.");
         }
       }
-
-      protected void commandCancelled() {
-        try {
-          super.commandCancelled();
-          VmCreator.LOG.debug("Command cancelled.");
-        } finally {
-          semaphore.up();
-        }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        semaphore.up();
       }
     });
     semaphore.waitFor();
@@ -232,7 +224,7 @@ public class VmCreator extends AbstractDebugSessionCreator {
         fillConnectorArguments(connector);
         LOG.debug("Start listening");
         connector.startListening(myArguments);
-        myDebugVMEventsProcessor.getMulticaster().connectorIsReady();
+        myEventsProcessor.getMulticaster().connectorIsReady();
         try {
           LOG.debug("Start accepting.");
           return connector.accept(myArguments);
@@ -353,10 +345,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
         processListener.run();
       }
     }
-  }
-
-  public IDebuggerManagerThread getManagerThread() {
-    return myDebuggerManagerThread;
   }
 
   public DebugSession getDebugSession() {
