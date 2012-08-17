@@ -54,6 +54,7 @@ public class FSChangesWatcher implements ApplicationComponent {
   private final Set<FSChangesWatcher.IReloadListener> myReloadListeners = new HashSet<FSChangesWatcher.IReloadListener>();
   private int myBans = 0;
   private MergingUpdateQueue myQueue = new MergingUpdateQueue("Model Changes Watcher Queue", 500, true, null, null, null, true);
+  private Object myUpdateId = new Object();
   private final VirtualFileManagerListener myVirtualFileManagerListener = new VirtualFileManagerListener() {
     public void beforeRefreshStart(boolean async) {
       suspendTasksProcessing();
@@ -151,7 +152,7 @@ public class FSChangesWatcher implements ApplicationComponent {
         return;
       }
 
-      myQueue.queue(new Update(null) {
+      myQueue.queue(new Update(myUpdateId) {
         public void run() {
           for (Project project : myProjectManager.getOpenProjects()) {
             if (project.getComponent(ProjectLevelVcsManager.class).isBackgroundVcsOperationRunning()) {
