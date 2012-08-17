@@ -91,6 +91,10 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         public void execute(SNode node) {
           ResolverComponent.getInstance().resolve(myReference, myOperationContext);
         }
+
+        public String getDescription(SNode node) {
+          return "Resolve \"" + myReference.getRole() + "\" reference";
+        }
       };
     }
 
