@@ -9,7 +9,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.build.ant.FileMPSProject;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.ide.java.topLevelSource.stubs.JavaParser;
+import jetbrains.mps.ide.java.javaSources.stubs.JavaParser;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
-import jetbrains.mps.ide.java.topLevelSource.stubs.ParseDepth;
+import jetbrains.mps.ide.java.javaSources.stubs.ParseDepth;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -31,9 +31,9 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.ide.java.topLevelSource.stubs.JavaSourceStubModelDS;
+import jetbrains.mps.ide.java.javaSources.stubs.JavaSourceStubModelDS;
 import java.util.ArrayList;
-import jetbrains.mps.ide.java.topLevelSource.stubs.JavaSourceStubs;
+import jetbrains.mps.ide.java.javaSources.stubs.JavaSourceStubs;
 import java.util.Collection;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -217,13 +217,13 @@ public class Utils {
       List<SNode> binRoots = SModelOperations.getRoots(binModel, null);
       List<SNode> srcRoots = SModelOperations.getRoots(srcModel, null);
 
-      binRoots = ListSequence.fromList(binRoots).sort(new ISelector<SNode, Comparable<?>>() {
-        public Comparable<?> select(SNode it) {
+      binRoots = ListSequence.fromList(binRoots).sort(new ISelector<SNode, String>() {
+        public String select(SNode it) {
           return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
         }
       }, true).toListSequence();
-      srcRoots = ListSequence.fromList(srcRoots).sort(new ISelector<SNode, Comparable<?>>() {
-        public Comparable<?> select(SNode it) {
+      srcRoots = ListSequence.fromList(srcRoots).sort(new ISelector<SNode, String>() {
+        public String select(SNode it) {
           return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
         }
       }, true).toListSequence();

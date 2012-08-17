@@ -97,8 +97,8 @@ public class NodePatcher {
 
   public static void sortNestedClass(SNode node) {
     List<SNode> nested = new ArrayList<SNode>();
-    ListSequence.fromList(nested).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).sort(new ISelector<SNode, Comparable<?>>() {
-      public Comparable<?> select(SNode it) {
+    ListSequence.fromList(nested).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
     }, true));

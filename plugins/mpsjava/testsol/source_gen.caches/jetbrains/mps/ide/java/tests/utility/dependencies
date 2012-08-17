@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.java.tests.utility.NodePatcher" file="NodePatcher.java">
-    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
@@ -20,7 +19,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.java.tests.utility.Utils" file="Utils.java">
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Comparable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -30,11 +28,11 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
     <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
+    <classNode dependClassName="jetbrains.mps.ide.java.javaSources.stubs.JavaParser" />
+    <classNode dependClassName="jetbrains.mps.ide.java.javaSources.stubs.JavaSourceStubModelDS" />
+    <classNode dependClassName="jetbrains.mps.ide.java.javaSources.stubs.JavaSourceStubs" />
+    <classNode dependClassName="jetbrains.mps.ide.java.javaSources.stubs.ParseDepth" />
     <classNode dependClassName="jetbrains.mps.ide.java.tests.utility.NodePatcher" />
-    <classNode dependClassName="jetbrains.mps.ide.java.topLevelSource.stubs.JavaParser" />
-    <classNode dependClassName="jetbrains.mps.ide.java.topLevelSource.stubs.JavaSourceStubModelDS" />
-    <classNode dependClassName="jetbrains.mps.ide.java.topLevelSource.stubs.JavaSourceStubs" />
-    <classNode dependClassName="jetbrains.mps.ide.java.topLevelSource.stubs.ParseDepth" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
