@@ -19,6 +19,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -107,7 +108,7 @@ public class ApiMigrationHelper {
       }
 
       SNode n = (SNode) rNode;
-      if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getNode("r:8af041be-2258-487d-8078-519137261151(jetbrains.mps.lang.smodel.pluginSolution.plugin@9_0)", "7949796796600715200")) {
+      if (eq_yke5lt_a0e0z0a(NameUtil.nodeFQName(SNodeOperations.getContainingRoot(n)), ApiMigrationHelper.class.getName())) {
         continue;
       }
 
@@ -485,7 +486,7 @@ public class ApiMigrationHelper {
 
       for (SReference usage : SetSequence.fromSet(musages)) {
         SNode n = usage.getSourceNode();
-        if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getNode("r:8af041be-2258-487d-8078-519137261151(jetbrains.mps.lang.smodel.pluginSolution.plugin@9_0)", "7949796796600715200")) {
+        if (eq_yke5lt_a0b0h0c0c(NameUtil.nodeFQName(SNodeOperations.getContainingRoot(n)), ApiMigrationHelper.class.getName())) {
           continue;
         }
         if (!(transformation._2().invoke(n))) {
@@ -546,6 +547,20 @@ public class ApiMigrationHelper {
       }
     }
     return null;
+  }
+
+  private static boolean eq_yke5lt_a0e0z0a(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_yke5lt_a0b0h0c0c(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 
   public static class QuotationClass_yke5lt_a0a0a0a0 {

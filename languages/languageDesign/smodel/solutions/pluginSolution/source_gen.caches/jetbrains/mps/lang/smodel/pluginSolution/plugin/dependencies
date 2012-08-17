@@ -44,6 +44,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.pluginSolution.plugin.CheckLangForJavaStubModels_Action" file="CheckLangForJavaStubModels_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
