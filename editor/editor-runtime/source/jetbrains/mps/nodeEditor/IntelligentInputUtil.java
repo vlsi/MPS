@@ -298,7 +298,7 @@ public class IntelligentInputUtil {
     EditorCell cellForNewNode;
     SNode newNode;
 
-    if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
+    if (cell.isValidText(smallPattern) && (!"".equals(smallPattern) || cell instanceof EditorCell_Constant)
       && info.hasExactlyNActions(head + smallPattern, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;

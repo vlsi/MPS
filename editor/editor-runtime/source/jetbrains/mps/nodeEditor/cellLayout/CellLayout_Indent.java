@@ -316,10 +316,11 @@ public class CellLayout_Indent extends AbstractCellLayout {
       boolean hasAnchor = collection != myCell && collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR);
       boolean hasWrapAnchor = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR);
 
-      int indent = hasIndent ? myCurrentIndent + myIndentSize :
-        hasAnchor ? myLineWidth + getFirstChildLeftGap(collection)
-          : myCurrentIndent;
-      int wrapIndent = hasWrapAnchor ? myLineWidth + getFirstChildLeftGap(collection) :
+      int indent = hasIndent && hasAnchor ? currentIndent() + myIndentSize :
+        hasIndent ? myCurrentIndent + myIndentSize :
+          hasAnchor ? currentIndent() + getFirstChildLeftGap(collection)
+            : myCurrentIndent;
+      int wrapIndent = hasWrapAnchor ? currentIndent() + getFirstChildLeftGap(collection) :
         (hasAnchor || hasIndent) ? indent + 2 * myIndentSize
           : myCurrentIndentAfterWrap;
 
@@ -335,6 +336,14 @@ public class CellLayout_Indent extends AbstractCellLayout {
           }
         }
       });
+    }
+
+    private int currentIndent() {
+      int indent = myLineWidth;
+      if (myLineContent.isEmpty()) {
+        indent += myOverflow ? myCurrentIndentAfterWrap : myCurrentIndent;
+      }
+      return indent;
     }
 
     private int getFirstChildLeftGap(EditorCell_Collection collection) {
