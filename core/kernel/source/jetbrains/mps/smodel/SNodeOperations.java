@@ -48,8 +48,14 @@ public class SNodeOperations {
   }
 
   //todo rewrite via ISNode methods
-  //todo in our code, rewrite using ancestors.where(condition) or add a cunstom condition to smodel language ancestor query
+  //todo in our code, rewrite using ancestors.where(condition) or add a custom condition to smodel language ancestor query
   public static org.jetbrains.mps.openapi.model.SNode findParent(org.jetbrains.mps.openapi.model.SNode node, Condition<SNode> condition) {
+    return ((SNode) node).findParent(condition);
+  }
+
+  //todo rewrite via ISNode methods
+  //todo in our code, rewrite using ancestors.where(condition) or add a custom condition to smodel language ancestor query
+  public static org.jetbrains.mps.openapi.model.SNode getDescendants(org.jetbrains.mps.openapi.model.SNode node, Condition<SNode> condition) {
     return ((SNode) node).findParent(condition);
   }
 
