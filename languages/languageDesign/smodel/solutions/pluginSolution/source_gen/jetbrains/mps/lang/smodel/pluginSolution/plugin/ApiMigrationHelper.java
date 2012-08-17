@@ -106,13 +106,17 @@ public class ApiMigrationHelper {
         continue;
       }
 
+      SNode n = (SNode) rNode;
+      if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getNode("r:8af041be-2258-487d-8078-519137261151(jetbrains.mps.lang.smodel.pluginSolution.plugin@9_0)", "7949796796600715200")) {
+        continue;
+      }
+
       SNode newMethod = getNewMethod((SNode) ref.getTargetNode());
       if (newMethod != null) {
         SetSequence.fromSet(changedMethodCalls).addElement(MultiTuple.<SNode,SReference,SReference>from(rNode, ref, ((SReference) new StaticReference(ref.getRole(), rNode, newMethod))));
         continue;
       }
 
-      SNode n = (SNode) rNode;
       if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", "operation")) {
         SetSequence.fromSet(castedMethodCalls).addElement(rNode);
         continue;
@@ -481,7 +485,7 @@ public class ApiMigrationHelper {
 
       for (SReference usage : SetSequence.fromSet(musages)) {
         SNode n = usage.getSourceNode();
-        if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getNode("r:fb4c0e02-f34d-430a-af59-cb2541529e1a(jetbrains.mps.lang.smodel.pluginSolution.plugin@9_0)", "7949796796600715200")) {
+        if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getNode("r:8af041be-2258-487d-8078-519137261151(jetbrains.mps.lang.smodel.pluginSolution.plugin@9_0)", "7949796796600715200")) {
           continue;
         }
         if (!(transformation._2().invoke(n))) {
