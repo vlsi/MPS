@@ -18,6 +18,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.Condition;
 
+import java.util.List;
+
 public class SNodeOperations {
   public static int depth(SNode sNode) {
     int childDepth = 0;
@@ -38,6 +40,11 @@ public class SNodeOperations {
   //todo rewrite via ISNode methods
   public static boolean isAncestor(org.jetbrains.mps.openapi.model.SNode ancestor, org.jetbrains.mps.openapi.model.SNode node){
     return ((SNode) ancestor).isAncestorOf(((SNode) node));
+  }
+
+  //todo rewrite via ISNode methods
+  public static List<SNode> getChildren(org.jetbrains.mps.openapi.model.SNode node, boolean includeAttributes){
+    return ((SNode) node).getChildren(includeAttributes);
   }
 
   @Deprecated //todo KILL IT! should be node.getModel!=null
