@@ -481,6 +481,9 @@ public class ApiMigrationHelper {
 
       for (SReference usage : SetSequence.fromSet(musages)) {
         SNode n = usage.getSourceNode();
+        if (SNodeOperations.getContainingRoot(n) == SNodeOperations.getNode("r:fb4c0e02-f34d-430a-af59-cb2541529e1a(jetbrains.mps.lang.smodel.pluginSolution.plugin@9_0)", "7949796796600715200")) {
+          continue;
+        }
         if (!(transformation._2().invoke(n))) {
           SetSequence.fromSet(unknown).addElement(n);
           continue;
