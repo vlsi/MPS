@@ -271,6 +271,7 @@ public class TypeContextManager implements CoreComponent {
       resolveNodes.add(node);
       if (resolveNodes.size() > 10) {
         LOG.warning("There are too many nodes in resolve");
+        return TypesUtil.createRuntimeErrorType();
       }
     }
     try {
