@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.refactoring.RefactoringView;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
@@ -152,7 +153,7 @@ public class ApiMigrationHelper {
       }
     })).union(SetSequence.fromSet(castedMethodCalls).select(new ISelector<SNode, SearchResult<SNode>>() {
       public SearchResult<SNode> select(SNode it) {
-        return new SearchResult<SNode>(it, "casted method call");
+        return new SearchResult<SNode>(it, "casted method call " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false), "name"));
       }
     })).union(SetSequence.fromSet(unknownUsages).select(new ISelector<SNode, SearchResult<SNode>>() {
       public SearchResult<SNode> select(SNode it) {
@@ -420,6 +421,7 @@ public class ApiMigrationHelper {
           rep = new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0b0a0a0a0a511a1().createNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(usage), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
         }
         return SNodeOperations.replaceWithAnother(SNodeOperations.getParent(usage), rep);
+
       }
     });
 
