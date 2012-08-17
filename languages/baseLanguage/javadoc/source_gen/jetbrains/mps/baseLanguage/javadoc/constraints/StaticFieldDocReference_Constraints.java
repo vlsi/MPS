@@ -47,7 +47,7 @@ public class StaticFieldDocReference_Constraints extends BaseConstraintsDescript
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SLinkOperations.getTarget(it, "visibility", true) == new StaticFieldDocReference_Constraints.QuotationClass_9aygvv_a0a0a0a0a0a0a0a0b0a1a0b0a().createNode();
+                return SLinkOperations.getTarget(it, "visibility", true) == new StaticFieldDocReference_Constraints.QuotationClass_9aygvv_a0a0a0a0a0a0a0a0a0a1a0b0a1a0().createNode();
               }
             });
           }
@@ -62,8 +62,8 @@ public class StaticFieldDocReference_Constraints extends BaseConstraintsDescript
     return references;
   }
 
-  public static class QuotationClass_9aygvv_a0a0a0a0a0a0a0a0b0a1a0b0a {
-    public QuotationClass_9aygvv_a0a0a0a0a0a0a0a0b0a1a0b0a() {
+  public static class QuotationClass_9aygvv_a0a0a0a0a0a0a0a0a0a1a0b0a1a0 {
+    public QuotationClass_9aygvv_a0a0a0a0a0a0a0a0a0a1a0b0a1a0() {
     }
 
     public SNode createNode() {

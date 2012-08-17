@@ -201,16 +201,19 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ForegroundNullColorStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.HorizontalAlign_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.HorizontalGapStyleClassItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutNewLineChildrenStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutNewLineStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutNoWrapClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutOnNewLineStyleClassItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.InlineEditorComponent_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.InlineStyleDeclaration_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.LastPositionAllowedStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.LayoutConstraintStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.MatchingLabelStyleClassItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.MaxWidthStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ModelAccessor_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.NavigatableNodeStyleClassItem_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.NavigatableReferenceStyleClassItem_BehaviorDescriptor" />
@@ -1482,6 +1485,19 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.IStyleContainer_BehaviorDescriptor" file="IStyleContainer_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentAnchorStyleClassItem_Behavior" file="IndentLayoutIndentAnchorStyleClassItem_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor" file="IndentLayoutIndentAnchorStyleClassItem_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentAnchorStyleClassItem_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutIndentStyleClassItem_BehaviorDescriptor" file="IndentLayoutIndentStyleClassItem_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1510,6 +1526,19 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutWrapAnchorStyleClassItem_Behavior" file="IndentLayoutWrapAnchorStyleClassItem_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor" file="IndentLayoutWrapAnchorStyleClassItem_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IndentLayoutWrapAnchorStyleClassItem_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.InlineEditorComponent_Behavior" file="InlineEditorComponent_Behavior.java">
@@ -1554,6 +1583,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.MatchingLabelStyleClassItem_BehaviorDescriptor" file="MatchingLabelStyleClassItem_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassItem_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.MaxWidthStyleClassItem_BehaviorDescriptor" file="MaxWidthStyleClassItem_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClassItem_BehaviorDescriptor" />

@@ -269,8 +269,6 @@ public class StandardComponents {
 
         final ColumnDescriptor result_wf5hwp_a2a0a0a01 = new StringPathDescriptor(ClassPathEntry.PATH, "Path", -1);
         result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a2a0a0a01);
-        final ColumnDescriptor result_wf5hwp_a3a0a0a01 = new ManagerDescriptor(owner, ModelRoot.MANAGER, "Manager", 200);
-        result_wf5hwp_a0a0a01.addColumn(result_wf5hwp_a3a0a0a01);
         result_wf5hwp_a0a0a01.init();
         return result_wf5hwp_a0a0a01;
       }

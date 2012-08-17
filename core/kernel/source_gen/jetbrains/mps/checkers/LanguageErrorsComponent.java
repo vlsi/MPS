@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
+import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.smodel.IOperationContext;
@@ -94,6 +95,10 @@ public class LanguageErrorsComponent {
   }
 
   public void addError(SNode errorNode, String errorString, SNode ruleNode, MessageTarget messageTarget) {
+    addError(errorNode, errorString, ruleNode, messageTarget, null);
+  }
+
+  public void addError(SNode errorNode, String errorString, SNode ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {
     if (!(ErrorReportUtil.shouldReportError(errorNode))) {
       return;
     }
@@ -106,6 +111,9 @@ public class LanguageErrorsComponent {
       ruleNode.getModel() + ""
     );
     SimpleErrorReporter reporter = new SimpleErrorReporter(errorNode, errorString, modelId, id, MessageStatus.ERROR, messageTarget);
+    if (intentionProvider != null) {
+      reporter.setIntentionProvider(intentionProvider);
+    }
     Set<IErrorReporter> reporters = MapSequence.fromMap(myNodesToErrors).get(errorNode);
     if (reporters == null) {
       reporters = new HashSet<IErrorReporter>(1);
@@ -154,7 +162,7 @@ public class LanguageErrorsComponent {
     Set<SNode> frontier = new HashSet<SNode>(1);
     SetSequence.fromSet(frontier).addElement(root);
     Set<SNode> newFrontier = new HashSet<SNode>(1);
-    IScope scope = check_29uvfh_a0h0i(check_29uvfh_a0a7a8(check_29uvfh_a0a0h0i(SNodeOperations.getModel(root))));
+    IScope scope = check_29uvfh_a0h0j(check_29uvfh_a0a7a9(check_29uvfh_a0a0h0j(SNodeOperations.getModel(root))));
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
@@ -284,21 +292,21 @@ public class LanguageErrorsComponent {
     return (Result) result[0];
   }
 
-  private static IScope check_29uvfh_a0h0i(IModule checkedDotOperand) {
+  private static IScope check_29uvfh_a0h0j(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_29uvfh_a0a7a8(SModelDescriptor checkedDotOperand) {
+  private static IModule check_29uvfh_a0a7a9(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_29uvfh_a0a0h0i(SModel checkedDotOperand) {
+  private static SModelDescriptor check_29uvfh_a0a0h0j(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

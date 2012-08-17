@@ -71,7 +71,7 @@ public class AddModelImport_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ImportHelper.addModelImport(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
+      ImportHelper.addModelImport(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), AddModelImport_Action.this);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModelImport", t);

@@ -47,7 +47,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
   public void execute(final SNode node, final EditorContext editorContext) {
     final List<SNode> mfps = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode lv) {
-        return new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.QuotationClass_5rn0la_a0a0a0a0a0a5().createNode(SPropertyOperations.getString(SLinkOperations.getTarget(lv, "variable", true), "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(lv, "iterable", true)));
+        return new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.QuotationClass_5rn0la_a0a0a0a0a0a0a0f().createNode(SPropertyOperations.getString(SLinkOperations.getTarget(lv, "variable", true), "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(lv, "iterable", true)));
       }
     }).toListSequence();
     SNode mfs = SNodeOperations.replaceWithAnother(node, new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.QuotationClass_5rn0la_a1a0b0f().createNode(mfps, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true))));
@@ -62,7 +62,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
       }
     }).toListSequence().visitAll(new IVisitor<SNode>() {
       public void visit(SNode lvr) {
-        SNodeOperations.replaceWithAnother(lvr, new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.QuotationClass_5rn0la_a1a0a0a0d0f().createNode(SLinkOperations.getTarget(ListSequence.fromList(mfps).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(SLinkOperations.getTarget(lvr, "variableDeclaration", false)))), "variable", true)));
+        SNodeOperations.replaceWithAnother(lvr, new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.QuotationClass_5rn0la_a1a0a0a0a0a3a5().createNode(SLinkOperations.getTarget(ListSequence.fromList(mfps).getElement(SNodeOperations.getIndexInParent(SNodeOperations.getParent(SLinkOperations.getTarget(lvr, "variableDeclaration", false)))), "variable", true)));
       }
     });
   }
@@ -71,8 +71,8 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
     return "jetbrains.mps.lang.typesystem.intentions";
   }
 
-  public static class QuotationClass_5rn0la_a0a0a0a0a0a5 {
-    public QuotationClass_5rn0la_a0a0a0a0a0a5() {
+  public static class QuotationClass_5rn0la_a0a0a0a0a0a0a0f {
+    public QuotationClass_5rn0la_a0a0a0a0a0a0a0f() {
     }
 
     public SNode createNode(Object parameter_7, Object parameter_8) {
@@ -149,8 +149,8 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention extend
     }
   }
 
-  public static class QuotationClass_5rn0la_a1a0a0a0d0f {
-    public QuotationClass_5rn0la_a1a0a0a0d0f() {
+  public static class QuotationClass_5rn0la_a1a0a0a0a0a3a5 {
+    public QuotationClass_5rn0la_a1a0a0a0a0a3a5() {
     }
 
     public SNode createNode(Object parameter_3) {

@@ -1493,7 +1493,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_3038738109029038605(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "tab", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a513().createNode(SPropertyOperations.getString(SLinkOperations.getTarget(it, "editorTab", false), "name"));
+        return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0dm().createNode(SPropertyOperations.getString(SLinkOperations.getTarget(it, "editorTab", false), "name"));
 
       }
     });
@@ -1906,8 +1906,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a513 {
-    public QuotationClass_x583g4_a0a0a0a0a513() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0dm {
+    public QuotationClass_x583g4_a0a0a0a0a0a0dm() {
     }
 
     public SNode createNode(Object parameter_3) {

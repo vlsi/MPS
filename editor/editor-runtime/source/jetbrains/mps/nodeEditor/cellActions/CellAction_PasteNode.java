@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
-import jetbrains.mps.resolve.Resolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.ChildrenCollectionFinder;
 import jetbrains.mps.nodeEditor.EditorCellAction;
@@ -28,6 +27,7 @@ import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
+import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.SwingUtilities;
@@ -128,7 +128,7 @@ public class CellAction_PasteNode extends EditorCellAction {
               new NodePaster(pasteNodes).paste(selectedCell);
             }
 
-            Resolver.resolveReferences(requireResolveReferences, context.getOperationContext());
+            ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getOperationContext());
 
             // set selection
             editorComponent.flushEvents();

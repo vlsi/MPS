@@ -47,7 +47,7 @@
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.resolve.Resolver" />
+    <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
@@ -390,8 +390,10 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.IModelCheckerFix" file="IModelCheckerFix.java" />
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelChecker" file="ModelChecker.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
@@ -401,10 +403,16 @@
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.SpecificChecker" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode extendsClassName="jetbrains.mps.project.ModuleContext" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModelCheckerCheckinHandler" file="ModelCheckerCheckinHandler.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -749,6 +757,7 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ModuleChecker" file="ModuleChecker.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
     <classNode dependClassName="jetbrains.mps.ide.modelchecker.actions.ModelChecker" />
@@ -758,6 +767,8 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.validation.ModuleValidatorFactory" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.apache.commons.logging.Log" />
+    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
   </dependency>
   <dependency className="jetbrains.mps.ide.modelchecker.actions.ShowModelCheckerTool_ActionGroup" file="ShowModelCheckerTool_ActionGroup.java">
     <classNode dependClassName="java.lang.String" />
@@ -874,7 +885,7 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
-    <classNode dependClassName="jetbrains.mps.resolve.Resolver" />
+    <classNode dependClassName="jetbrains.mps.resolve.ResolverComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />

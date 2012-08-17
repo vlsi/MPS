@@ -21,9 +21,6 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.impl.FakePsiElement;
-import jetbrains.mps.VisibleModuleRegistry;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -33,7 +30,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
 import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
@@ -44,23 +41,18 @@ import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeItem;
-import jetbrains.mps.workbench.choose.nodes.BaseNodeModel;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ImportHelper {
-  private static boolean myUseCache = true;
-
-  public static void setUseCache(boolean useCache) {
-    myUseCache = useCache;
-  }
-
-  public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model) {
+  public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model,
+                                    @Nullable BaseAction parentAction) {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new AddModelItem(project, model, modelReference, module);
@@ -88,7 +80,7 @@ public class ImportHelper {
         return "Import model:";
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -101,16 +93,11 @@ public class ImportHelper {
     }, ModalityState.current(), true);
   }
 
-  public static void addLanguageImport(Project project, final IModule contextModule, final SModelDescriptor model) {
-    FakePsiElement fakePsiContext = new FakePsiElement() {
-      public PsiElement getParent() {
-        return null;
-      }
-    };
-
+  public static void addLanguageImport(final Project project, final IModule contextModule, final SModelDescriptor model,
+                                       @Nullable BaseAction parentAction) {
     BaseLanguageModel goToLanguageModel = new BaseLanguageModel(project) {
       public NavigationItem doGetNavigationItem(ModuleReference ref) {
-        return new AddLanguageItem(ref, contextModule, model);
+        return new AddLanguageItem(project, ref, contextModule, model);
       }
 
       public ModuleReference[] find(IScope scope) {
@@ -126,7 +113,7 @@ public class ImportHelper {
         return "Import language:";
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToLanguageModel, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -140,101 +127,99 @@ public class ImportHelper {
   }
 
   private static class AddLanguageItem extends BaseModuleItem {
+    private Project myProject;
     private IModule myContextModule;
     private SModelDescriptor myModel;
 
-    public AddLanguageItem(ModuleReference language, IModule contextModule, SModelDescriptor model) {
+    public AddLanguageItem(Project project, ModuleReference language, IModule contextModule, SModelDescriptor model) {
       super(language);
+      myProject = project;
       myContextModule = contextModule;
       myModel = model;
     }
 
     public void navigate(boolean requestFocus) {
+      assert !ModelAccess.instance().canRead();
+
+      final Set<ModuleReference> importCandidates = new HashSet<ModuleReference>();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          Language lang = ModuleRepositoryFacade.getInstance().getModule(getModuleReference(), Language.class);
+
+          HashSet<Language> langs = new HashSet<Language>();
+          lang.getDependenciesManager().collectAllExtendedLanguages(langs);
+
+          langs.remove(lang);
+          //this is added in language implicitly, so we don't show this import
+          langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE,Language.class));
+
+          for (Language l : langs) {
+            if (myModel.getSModel().importedLanguages().contains(l.getModuleReference())) continue;
+            importCandidates.add(l.getModuleReference());
+          }
+        }
+      });
+
+      final Set<ModuleReference> toImport = new HashSet<ModuleReference>();
+
+      if (!importCandidates.isEmpty()) {
+        Set<ModuleReference> modules = chooseModulesToImport(myProject, importCandidates);
+        if (modules == null) return;
+        toImport.addAll(modules);
+      }
+
+      toImport.add(getModuleReference());
+
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          ModuleReference ref = getModuleReference();
-          if (myContextModule.getScope().getLanguage(ref) == null) {
-            myContextModule.addUsedLanguage(ref);
+          boolean reload = false;
+          for (ModuleReference ref : toImport) {
+            if (myContextModule.getScope().getLanguage(ref) == null) {
+              myContextModule.addUsedLanguage(ref);
+              reload = true;
+            }
+            myModel.getSModel().addLanguage(ref);
+          }
+          if (reload) {
             ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
           }
-          myModel.getSModel().addLanguage(ref);
         }
       });
     }
   }
 
+  private static Set<ModuleReference> chooseModulesToImport(Project project, Set<ModuleReference> candidates) {
+    SelectLanguagesDialog dialog = new SelectLanguagesDialog(project, candidates);
+    dialog.show();
+    if (!dialog.isOK()) return null;
+    return dialog.getSelectedModules();
+  }
+
   public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,
-                                          String initialText, final ModelImportByRootCallback callback) {
-    FakePsiElement fakePsiContext = new FakePsiElement() {
-      public PsiElement getParent() {
-        return null;
+                                          String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
+    BaseMPSChooseModel goToNodeModel = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex()) {
+      public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
+        return new RootNodeElement(object) {
+          public void navigate(boolean requestFocus) {
+            ModelAccess.assertLegalRead();
+            SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
+            LOG.assertLog(descriptor != null, "Caches seems to be corrupted or the model was removed: model " + object.getModelReference().getLongName() + " does not exist. Please check model existence manually and specify it in bug report");
+            SModel modelToImport = descriptor.getSModel();
+            SNodeId id = object.getId();
+            String idString = id == null ? "" : " (id:" + id.toString() + ")";
+            String nameString = object.getNodeName() == null ? "<no name>" : object.getNodeName();
+            LOG.assertLog(object.getNode(modelToImport) != null, "Caches seems to be corrupted or the node was removed: model " + modelToImport.getLongName() + " does not seem to contain node " + nameString + idString + ". Please check node existence manually and specify it in bug report");
+            new AddModelItem(project, model, modelToImport.getSModelReference(), contextModule).navigate(requestFocus);
+          }
+        };
+      }
+
+      @Nullable
+      public String getPromptText() {
+        return "Import model that contains root:";
       }
     };
-
-    BaseMPSChooseModel goToNodeModel;
-    if (!myUseCache) {
-      goToNodeModel = new BaseNodeModel(project) {
-        public NavigationItem doGetNavigationItem(SNode node) {
-          return new BaseNodeItem(node) {
-            public void navigate(boolean requestFocus) {
-              new AddModelItem(project, model, getNode().getModel().getSModelReference(), contextModule).navigate(requestFocus);
-            }
-          };
-        }
-
-        public SNode[] find(IScope scope) {
-          Condition<SModelDescriptor> cond = new Condition<SModelDescriptor>() {
-            public boolean met(SModelDescriptor modelDescriptor) {
-              boolean rightStereotype = SModelStereotype.isUserModel(modelDescriptor);
-              boolean hasModule = modelDescriptor.getModule() != null;
-              return rightStereotype && hasModule;
-            }
-          };
-          ConditionalIterable<SModelDescriptor> iter = new ConditionalIterable<SModelDescriptor>(scope.getModelDescriptors(), cond);
-
-          final List<SNode> nodes = new ArrayList<SNode>();
-          for (SModelDescriptor modelDescriptor : iter) {
-            SModel model = modelDescriptor.getSModel();
-            if (model == null) continue;
-            nodes.addAll(IterableUtil.asCollection(model.roots()));
-          }
-          return nodes.toArray(new SNode[nodes.size()]);
-        }
-
-        @Nullable
-        public String getPromptText() {
-          return "Import model that contains root:";
-        }
-
-        public boolean willOpenEditor() {
-          return false;
-        }
-      };
-    } else {
-      goToNodeModel = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex()) {
-        public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
-          return new RootNodeElement(object) {
-            public void navigate(boolean requestFocus) {
-              ModelAccess.assertLegalRead();
-              SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
-              LOG.assertLog(descriptor != null, "Caches seems to be corrupted or the model was removed: model " + object.getModelReference().getLongName() + " does not exist. Please check model existence manually and specify it in bug report");
-              SModel modelToImport = descriptor.getSModel();
-              SNodeId id = object.getId();
-              String idString = id == null ? "" : " (id:" + id.toString() + ")";
-              String nameString = object.getNodeName() == null ? "<no name>" : object.getNodeName();
-              LOG.assertLog(object.getNode(modelToImport) != null, "Caches seems to be corrupted or the node was removed: model " + modelToImport.getLongName() + " does not seem to contain node " + nameString + idString + ". Please check node existence manually and specify it in bug report");
-              new AddModelItem(project, model, modelToImport.getSModelReference(), contextModule).navigate(requestFocus);
-            }
-          };
-        }
-
-        @Nullable
-        public String getPromptText() {
-          return "Import model that contains root:";
-        }
-      };
-    }
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText);
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, initialText, parentAction);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

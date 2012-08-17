@@ -57,6 +57,9 @@ public class GenerateBuildForProjectAction_Action extends BaseAction {
       return false;
     }
     MapSequence.fromMap(_params).put("operationContext", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("operationContext") == null) {
+      return false;
+    }
     return true;
   }
 

@@ -57,7 +57,7 @@ public class RefactoringContext {
   private UsagesList myUsages;
   private Set<String> myTransientParameters = new HashSet<String>();
   private boolean myIsLocal = false;
-  private boolean myDoesGenerateModels = true;
+  private boolean myDoesGenerateModels = false;
   private SModelDescriptor mySelectedModel;
   private SNode mySelectedNode;
   private List<SNode> mySelectedNodes = new ArrayList<SNode>();

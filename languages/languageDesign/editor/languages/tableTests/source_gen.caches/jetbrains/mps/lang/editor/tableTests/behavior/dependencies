@@ -18,6 +18,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.EventReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.Event_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.Matrix_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.Row_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_BehaviorDescriptor" />
@@ -76,6 +77,16 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.editor.tableTests.behavior.Table_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_Behavior" file="LightWeightDecisionTable_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_BehaviorDescriptor" file="LightWeightDecisionTable_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.tableTests.behavior.Matrix_BehaviorDescriptor" file="Matrix_BehaviorDescriptor.java">

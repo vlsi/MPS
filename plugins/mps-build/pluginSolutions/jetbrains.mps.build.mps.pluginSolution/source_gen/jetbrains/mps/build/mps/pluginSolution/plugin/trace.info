@@ -107,41 +107,42 @@
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="77" startPosition="70" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="81" startPosition="62" endLine="82" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="83" startPosition="5" endLine="84" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="83" startPosition="5" endLine="84" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="84" startPosition="86" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572311180462136170" fileName="ImportAllModulesFromFolder_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8172593683334119752" fileName="ImportAllModulesFromFolder_Action.java" startLine="90" startPosition="54" endLine="91" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572311180462136175" fileName="ImportAllModulesFromFolder_Action.java" startLine="91" startPosition="56" endLine="92" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8503529127541528492" fileName="ImportAllModulesFromFolder_Action.java" startLine="92" startPosition="92" endLine="93" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2617896750899030033" fileName="ImportAllModulesFromFolder_Action.java" startLine="93" startPosition="76" endLine="94" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2617896750899030039" fileName="ImportAllModulesFromFolder_Action.java" startLine="96" startPosition="27" endLine="97" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8503529127541541687" fileName="ImportAllModulesFromFolder_Action.java" startLine="98" startPosition="98" endLine="99" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="104" startPosition="35" endLine="105" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899030077" fileName="ImportAllModulesFromFolder_Action.java" startLine="106" startPosition="9" endLine="107" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572311180462136191" fileName="ImportAllModulesFromFolder_Action.java" startLine="109" startPosition="40" endLine="110" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572311180462136201" fileName="ImportAllModulesFromFolder_Action.java" startLine="111" startPosition="7" endLine="112" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572311180462136213" fileName="ImportAllModulesFromFolder_Action.java" startLine="113" startPosition="48" endLine="114" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8503529127541534925" fileName="ImportAllModulesFromFolder_Action.java" startLine="115" startPosition="7" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8503529127541535507" fileName="ImportAllModulesFromFolder_Action.java" startLine="118" startPosition="27" endLine="119" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8503529127541535522" fileName="ImportAllModulesFromFolder_Action.java" startLine="119" startPosition="106" endLine="120" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2617896750899029942" fileName="ImportAllModulesFromFolder_Action.java" startLine="120" startPosition="112" endLine="121" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899030022" fileName="ImportAllModulesFromFolder_Action.java" startLine="121" startPosition="28" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2617896750899030026" fileName="ImportAllModulesFromFolder_Action.java" startLine="122" startPosition="0" endLine="123" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2617896750899029970" fileName="ImportAllModulesFromFolder_Action.java" startLine="123" startPosition="106" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8503529127541542295" fileName="ImportAllModulesFromFolder_Action.java" startLine="124" startPosition="0" endLine="125" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8503529127541537320" fileName="ImportAllModulesFromFolder_Action.java" startLine="126" startPosition="60" endLine="127" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8503529127541537448" fileName="ImportAllModulesFromFolder_Action.java" startLine="128" startPosition="101" endLine="129" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8503529127541537449" fileName="ImportAllModulesFromFolder_Action.java" startLine="130" startPosition="13" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8503529127541542145" fileName="ImportAllModulesFromFolder_Action.java" startLine="131" startPosition="0" endLine="132" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8503529127541542234" fileName="ImportAllModulesFromFolder_Action.java" startLine="132" startPosition="168" endLine="133" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8503529127541542307" fileName="ImportAllModulesFromFolder_Action.java" startLine="133" startPosition="28" endLine="134" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899029976" fileName="ImportAllModulesFromFolder_Action.java" startLine="135" startPosition="11" endLine="136" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899029992" fileName="ImportAllModulesFromFolder_Action.java" startLine="136" startPosition="97" endLine="137" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2617896750899029972" fileName="ImportAllModulesFromFolder_Action.java" startLine="137" startPosition="28" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8503529127541546168" fileName="ImportAllModulesFromFolder_Action.java" startLine="139" startPosition="53" endLine="140" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8503529127541535519" fileName="ImportAllModulesFromFolder_Action.java" startLine="141" startPosition="11" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="146" startPosition="33" endLine="147" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="85" startPosition="60" endLine="86" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="87" startPosition="5" endLine="88" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572311180462136170" fileName="ImportAllModulesFromFolder_Action.java" startLine="92" startPosition="9" endLine="93" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8172593683334119752" fileName="ImportAllModulesFromFolder_Action.java" startLine="93" startPosition="54" endLine="94" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572311180462136175" fileName="ImportAllModulesFromFolder_Action.java" startLine="94" startPosition="56" endLine="95" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8503529127541528492" fileName="ImportAllModulesFromFolder_Action.java" startLine="95" startPosition="92" endLine="96" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2617896750899030033" fileName="ImportAllModulesFromFolder_Action.java" startLine="96" startPosition="76" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2617896750899030039" fileName="ImportAllModulesFromFolder_Action.java" startLine="99" startPosition="27" endLine="100" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8503529127541541687" fileName="ImportAllModulesFromFolder_Action.java" startLine="101" startPosition="93" endLine="102" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="107" startPosition="35" endLine="108" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617896750899030077" fileName="ImportAllModulesFromFolder_Action.java" startLine="109" startPosition="9" endLine="110" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1572311180462136191" fileName="ImportAllModulesFromFolder_Action.java" startLine="112" startPosition="40" endLine="113" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1572311180462136201" fileName="ImportAllModulesFromFolder_Action.java" startLine="114" startPosition="7" endLine="115" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1572311180462136213" fileName="ImportAllModulesFromFolder_Action.java" startLine="116" startPosition="48" endLine="117" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8503529127541534925" fileName="ImportAllModulesFromFolder_Action.java" startLine="118" startPosition="7" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8503529127541535507" fileName="ImportAllModulesFromFolder_Action.java" startLine="121" startPosition="27" endLine="122" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8503529127541535522" fileName="ImportAllModulesFromFolder_Action.java" startLine="122" startPosition="106" endLine="123" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2617896750899029942" fileName="ImportAllModulesFromFolder_Action.java" startLine="123" startPosition="112" endLine="124" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617896750899030022" fileName="ImportAllModulesFromFolder_Action.java" startLine="124" startPosition="28" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2617896750899030026" fileName="ImportAllModulesFromFolder_Action.java" startLine="125" startPosition="0" endLine="126" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2617896750899029970" fileName="ImportAllModulesFromFolder_Action.java" startLine="126" startPosition="106" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8503529127541542295" fileName="ImportAllModulesFromFolder_Action.java" startLine="127" startPosition="0" endLine="128" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8503529127541537320" fileName="ImportAllModulesFromFolder_Action.java" startLine="129" startPosition="60" endLine="130" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8503529127541537448" fileName="ImportAllModulesFromFolder_Action.java" startLine="131" startPosition="101" endLine="132" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8503529127541537449" fileName="ImportAllModulesFromFolder_Action.java" startLine="133" startPosition="13" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8503529127541542145" fileName="ImportAllModulesFromFolder_Action.java" startLine="134" startPosition="0" endLine="135" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8503529127541542234" fileName="ImportAllModulesFromFolder_Action.java" startLine="135" startPosition="168" endLine="136" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8503529127541542307" fileName="ImportAllModulesFromFolder_Action.java" startLine="136" startPosition="28" endLine="137" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617896750899029976" fileName="ImportAllModulesFromFolder_Action.java" startLine="138" startPosition="11" endLine="139" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617896750899029992" fileName="ImportAllModulesFromFolder_Action.java" startLine="139" startPosition="97" endLine="140" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2617896750899029972" fileName="ImportAllModulesFromFolder_Action.java" startLine="140" startPosition="28" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8503529127541546168" fileName="ImportAllModulesFromFolder_Action.java" startLine="142" startPosition="53" endLine="143" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8503529127541535519" fileName="ImportAllModulesFromFolder_Action.java" startLine="144" startPosition="11" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="149" startPosition="33" endLine="150" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8503529127541541000" fileName="ImportAllModulesFromFolder_Action.java" startLine="155" startPosition="72" endLine="156" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="60" startPosition="95" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -149,33 +150,36 @@
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="72" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="76" startPosition="107" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="80" startPosition="100" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8503529127541540924" fileName="ImportAllModulesFromFolder_Action.java" startLine="97" startPosition="164" endLine="100" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="103" startPosition="35" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="103" startPosition="35" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8503529127541528509" fileName="ImportAllModulesFromFolder_Action.java" startLine="108" startPosition="7" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1572311180462136208" fileName="ImportAllModulesFromFolder_Action.java" startLine="112" startPosition="96" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8503529127541537231" fileName="ImportAllModulesFromFolder_Action.java" startLine="127" startPosition="81" endLine="130" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8503529127541542341" fileName="ImportAllModulesFromFolder_Action.java" startLine="138" startPosition="0" endLine="141" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="145" startPosition="27" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="145" startPosition="27" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="84" startPosition="86" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8503529127541540924" fileName="ImportAllModulesFromFolder_Action.java" startLine="100" startPosition="164" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="106" startPosition="35" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="106" startPosition="35" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8503529127541528509" fileName="ImportAllModulesFromFolder_Action.java" startLine="111" startPosition="7" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1572311180462136208" fileName="ImportAllModulesFromFolder_Action.java" startLine="115" startPosition="96" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8503529127541537231" fileName="ImportAllModulesFromFolder_Action.java" startLine="130" startPosition="81" endLine="133" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8503529127541542341" fileName="ImportAllModulesFromFolder_Action.java" startLine="141" startPosition="0" endLine="144" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="148" startPosition="27" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="148" startPosition="27" endLine="151" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="83" startPosition="5" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8503529127541541000" fileName="ImportAllModulesFromFolder_Action.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_mmt9i1_a0a1a0a0a0a5a0a3#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ImportAllModulesFromFolder_Action#()V" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="43" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="65" startPosition="57" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2617896750899030048" fileName="ImportAllModulesFromFolder_Action.java" startLine="102" startPosition="9" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8503529127541534307" fileName="ImportAllModulesFromFolder_Action.java" startLine="95" startPosition="59" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2617896750899030048" fileName="ImportAllModulesFromFolder_Action.java" startLine="105" startPosition="9" endLine="111" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8503529127541534307" fileName="ImportAllModulesFromFolder_Action.java" startLine="98" startPosition="59" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="49" startPosition="89" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8503529127541534306" fileName="ImportAllModulesFromFolder_Action.java" startLine="94" startPosition="73" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8503529127541534306" fileName="ImportAllModulesFromFolder_Action.java" startLine="97" startPosition="73" endLine="105" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="63" startPosition="5" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8503529127541536940" fileName="ImportAllModulesFromFolder_Action.java" startLine="125" startPosition="81" endLine="135" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8503529127541536940" fileName="ImportAllModulesFromFolder_Action.java" startLine="128" startPosition="81" endLine="138" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="63" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8503529127541534957" fileName="ImportAllModulesFromFolder_Action.java" startLine="117" startPosition="61" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="59" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="8503529127541534927" fileName="ImportAllModulesFromFolder_Action.java" startLine="116" startPosition="0" endLine="144" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="88" startPosition="96" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="87" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8503529127541534957" fileName="ImportAllModulesFromFolder_Action.java" startLine="120" startPosition="61" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8503529127541534927" fileName="ImportAllModulesFromFolder_Action.java" startLine="119" startPosition="0" endLine="147" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="59" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="91" startPosition="96" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="90" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="45" startPosition="32" endLine="46" endPosition="16" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="50" startPosition="9" endLine="51" endPosition="43" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="53" startPosition="33" endLine="54" endPosition="101" />
@@ -184,45 +188,50 @@
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="73" startPosition="59" endLine="74" endPosition="19" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="77" startPosition="70" endLine="78" endPosition="19" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="81" startPosition="62" endLine="82" endPosition="19" />
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="83" startPosition="5" endLine="84" endPosition="86" />
-    <scopeInfo nodeId="8503529127541540925" fileName="ImportAllModulesFromFolder_Action.java" startLine="98" startPosition="98" endLine="99" endPosition="89" />
-    <scopeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="104" startPosition="35" endLine="105" endPosition="58" />
-    <scopeInfo nodeId="8503529127541528510" fileName="ImportAllModulesFromFolder_Action.java" startLine="109" startPosition="40" endLine="110" endPosition="52" />
-    <scopeInfo nodeId="1572311180462136212" fileName="ImportAllModulesFromFolder_Action.java" startLine="113" startPosition="48" endLine="114" endPosition="15" />
-    <scopeInfo nodeId="8503529127541537233" fileName="ImportAllModulesFromFolder_Action.java" startLine="128" startPosition="101" endLine="129" endPosition="23" />
-    <scopeInfo nodeId="8503529127541542342" fileName="ImportAllModulesFromFolder_Action.java" startLine="139" startPosition="53" endLine="140" endPosition="35" />
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="146" startPosition="33" endLine="147" endPosition="100" />
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="85" startPosition="60" endLine="86" endPosition="19" />
+    <scopeInfo nodeId="8503529127541540925" fileName="ImportAllModulesFromFolder_Action.java" startLine="101" startPosition="93" endLine="102" endPosition="89" />
+    <scopeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="107" startPosition="35" endLine="108" endPosition="58" />
+    <scopeInfo nodeId="8503529127541528510" fileName="ImportAllModulesFromFolder_Action.java" startLine="112" startPosition="40" endLine="113" endPosition="52" />
+    <scopeInfo nodeId="1572311180462136212" fileName="ImportAllModulesFromFolder_Action.java" startLine="116" startPosition="48" endLine="117" endPosition="15" />
+    <scopeInfo nodeId="8503529127541537233" fileName="ImportAllModulesFromFolder_Action.java" startLine="131" startPosition="101" endLine="132" endPosition="23" />
+    <scopeInfo nodeId="8503529127541542342" fileName="ImportAllModulesFromFolder_Action.java" startLine="142" startPosition="53" endLine="143" endPosition="35" />
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="149" startPosition="33" endLine="150" endPosition="100" />
+    <scopeInfo nodeId="8503529127541541000" fileName="ImportAllModulesFromFolder_Action.java" startLine="155" startPosition="72" endLine="156" endPosition="43" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="38" startPosition="46" endLine="41" endPosition="40" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="52" startPosition="27" endLine="55" endPosition="7" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="66" startPosition="25" endLine="69" endPosition="9" />
-    <scopeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="103" startPosition="35" endLine="106" endPosition="9" />
-    <scopeInfo nodeId="8503529127541542341" fileName="ImportAllModulesFromFolder_Action.java" startLine="138" startPosition="0" endLine="141" endPosition="11">
+    <scopeInfo nodeId="2617896750899030079" fileName="ImportAllModulesFromFolder_Action.java" startLine="106" startPosition="35" endLine="109" endPosition="9" />
+    <scopeInfo nodeId="8503529127541542341" fileName="ImportAllModulesFromFolder_Action.java" startLine="141" startPosition="0" endLine="144" endPosition="11">
       <varInfo nodeId="8503529127541542343" varName="helper" />
     </scopeInfo>
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="145" startPosition="0" endLine="148" endPosition="7">
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="148" startPosition="0" endLine="151" endPosition="7">
       <varInfo nodeId="6937807405124198153" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="145" startPosition="27" endLine="148" endPosition="7" />
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="148" startPosition="27" endLine="151" endPosition="7" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="52" startPosition="0" endLine="56" endPosition="44">
       <varInfo nodeId="6937807405124198153" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="52" startPosition="27" endLine="56" endPosition="44" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" />
-    <scopeInfo nodeId="8503529127541534308" fileName="ImportAllModulesFromFolder_Action.java" startLine="96" startPosition="27" endLine="100" endPosition="11" />
-    <scopeInfo nodeId="2617896750899030049" fileName="ImportAllModulesFromFolder_Action.java" startLine="103" startPosition="35" endLine="107" endPosition="15" />
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="83" startPosition="5" endLine="87" endPosition="5" />
+    <scopeInfo nodeId="8503529127541534308" fileName="ImportAllModulesFromFolder_Action.java" startLine="99" startPosition="27" endLine="103" endPosition="11" />
+    <scopeInfo nodeId="2617896750899030049" fileName="ImportAllModulesFromFolder_Action.java" startLine="106" startPosition="35" endLine="110" endPosition="15" />
+    <scopeInfo nodeId="8503529127541541000" fileName="ImportAllModulesFromFolder_Action.java" startLine="154" startPosition="0" endLine="158" endPosition="0">
+      <varInfo nodeId="8503529127541541000" varName="str" />
+    </scopeInfo>
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="37" startPosition="0" endLine="42" endPosition="3" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="43" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="64" startPosition="5" endLine="71" endPosition="53">
       <varInfo nodeId="6937807405124198153" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8503529127541534307" fileName="ImportAllModulesFromFolder_Action.java" startLine="95" startPosition="59" endLine="102" endPosition="0" />
+    <scopeInfo nodeId="8503529127541534307" fileName="ImportAllModulesFromFolder_Action.java" startLine="98" startPosition="59" endLine="105" endPosition="0" />
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="49" startPosition="89" endLine="57" endPosition="5" />
-    <scopeInfo nodeId="8503529127541536941" fileName="ImportAllModulesFromFolder_Action.java" startLine="126" startPosition="60" endLine="134" endPosition="32">
+    <scopeInfo nodeId="8503529127541536941" fileName="ImportAllModulesFromFolder_Action.java" startLine="129" startPosition="60" endLine="137" endPosition="32">
       <varInfo nodeId="8503529127541542146" varName="helper" />
       <varInfo nodeId="8503529127541537321" varName="modRef" />
     </scopeInfo>
-    <scopeInfo nodeId="8503529127541536940" fileName="ImportAllModulesFromFolder_Action.java" startLine="125" startPosition="81" endLine="135" endPosition="11">
+    <scopeInfo nodeId="8503529127541536940" fileName="ImportAllModulesFromFolder_Action.java" startLine="128" startPosition="81" endLine="138" endPosition="11">
       <varInfo nodeId="8503529127541536942" varName="handle" />
     </scopeInfo>
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
@@ -230,32 +239,32 @@
       <varInfo nodeId="6937807405124198153" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="63" startPosition="5" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="8503529127541534958" fileName="ImportAllModulesFromFolder_Action.java" startLine="118" startPosition="27" endLine="142" endPosition="0">
+    <scopeInfo nodeId="8503529127541534958" fileName="ImportAllModulesFromFolder_Action.java" startLine="121" startPosition="27" endLine="145" endPosition="0">
       <varInfo nodeId="2617896750899030027" varName="converter" />
       <varInfo nodeId="8503529127541542296" varName="helpers" />
       <varInfo nodeId="8503529127541535508" varName="modules" />
       <varInfo nodeId="8503529127541535523" varName="visible" />
     </scopeInfo>
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="60" startPosition="95" endLine="85" endPosition="16" />
-    <scopeInfo nodeId="8503529127541534957" fileName="ImportAllModulesFromFolder_Action.java" startLine="117" startPosition="61" endLine="144" endPosition="0" />
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="59" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="8503529127541534957" fileName="ImportAllModulesFromFolder_Action.java" startLine="120" startPosition="61" endLine="147" endPosition="0" />
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="60" startPosition="95" endLine="88" endPosition="16" />
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="59" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="6937807405124198153" varName="_params" />
       <varInfo nodeId="6937807405124198153" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="89" startPosition="9" endLine="144" endPosition="89">
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="92" startPosition="9" endLine="147" endPosition="89">
       <varInfo nodeId="2617896750899030034" varName="basePath" />
       <varInfo nodeId="1572311180462136171" varName="chooser" />
       <varInfo nodeId="1572311180462136202" varName="dir" />
       <varInfo nodeId="8503529127541528493" varName="projectFolder" />
     </scopeInfo>
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="88" startPosition="96" endLine="149" endPosition="5" />
-    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="87" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="91" startPosition="96" endLine="152" endPosition="5" />
+    <scopeInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="90" startPosition="0" endLine="154" endPosition="0">
       <varInfo nodeId="6937807405124198153" varName="_params" />
       <varInfo nodeId="6937807405124198153" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="34" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action" />
-    <unitInfo nodeId="8503529127541534307" fileName="ImportAllModulesFromFolder_Action.java" startLine="95" startPosition="47" endLine="102" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action$1" />
-    <unitInfo nodeId="8503529127541534957" fileName="ImportAllModulesFromFolder_Action.java" startLine="117" startPosition="49" endLine="144" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action$2" />
+    <unitInfo nodeId="6937807405124198153" fileName="ImportAllModulesFromFolder_Action.java" startLine="34" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action" />
+    <unitInfo nodeId="8503529127541534307" fileName="ImportAllModulesFromFolder_Action.java" startLine="98" startPosition="47" endLine="105" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action$1" />
+    <unitInfo nodeId="8503529127541534957" fileName="ImportAllModulesFromFolder_Action.java" startLine="120" startPosition="49" endLine="147" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.ImportAllModulesFromFolder_Action$2" />
   </root>
   <root nodeId="6937807405124297516">
     <nodeInfo nodeId="6937807405124297516" fileName="IntentionsEx_ActionGroup.java" startLine="8" startPosition="68" endLine="9" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -1984,7 +1993,7 @@
     <nodeInfo nodeId="3730845620956965175" fileName="BuildGeneratorImpl.java" startLine="338" startPosition="93" endLine="339" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3730845620956955140" fileName="BuildGeneratorImpl.java" startLine="339" startPosition="88" endLine="340" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3730845620956983383" fileName="BuildGeneratorImpl.java" startLine="340" startPosition="112" endLine="341" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3730845620956964964" fileName="BuildGeneratorImpl.java" startLine="343" startPosition="39" endLine="344" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3730845620956964964" fileName="BuildGeneratorImpl.java" startLine="343" startPosition="39" endLine="344" endPosition="338" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3730845620956965205" fileName="BuildGeneratorImpl.java" startLine="346" startPosition="60" endLine="347" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3730845620957031489" fileName="BuildGeneratorImpl.java" startLine="347" startPosition="0" endLine="348" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3730845620957031493" fileName="BuildGeneratorImpl.java" startLine="348" startPosition="41" endLine="349" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -4402,7 +4411,7 @@
     <nodeInfo nodeId="3730845620956910433" fileName="BuildGeneratorImpl.java" startLine="1542" startPosition="53" endLine="1544" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0a0d0k#()V" />
     <nodeInfo nodeId="3730845620956955137" fileName="BuildGeneratorImpl.java" startLine="1560" startPosition="53" endLine="1562" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0a7a01#()V" />
     <nodeInfo nodeId="3730845620956983376" fileName="BuildGeneratorImpl.java" startLine="1578" startPosition="53" endLine="1580" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0a8a01#()V" />
-    <nodeInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1615" startPosition="64" endLine="1617" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0a0a0a0a0a0a11a01#()V" />
+    <nodeInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1615" startPosition="65" endLine="1617" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0a0a0a0a0a0a0a0l0k#()V" />
     <nodeInfo nodeId="3730845620956943870" fileName="BuildGeneratorImpl.java" startLine="1633" startPosition="54" endLine="1635" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0a71a01#()V" />
     <nodeInfo nodeId="3730845620956943881" fileName="BuildGeneratorImpl.java" startLine="1856" startPosition="58" endLine="1858" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0b0a0a71a01#()V" />
     <nodeInfo nodeId="3730845620956943891" fileName="BuildGeneratorImpl.java" startLine="1894" startPosition="58" endLine="1896" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_un708i_a0c0a0a71a01#()V" />
@@ -5623,7 +5632,7 @@
     <scopeInfo nodeId="3730845620956910433" fileName="BuildGeneratorImpl.java" startLine="1543" startPosition="44" endLine="1543" endPosition="44" />
     <scopeInfo nodeId="3730845620956955137" fileName="BuildGeneratorImpl.java" startLine="1561" startPosition="44" endLine="1561" endPosition="44" />
     <scopeInfo nodeId="3730845620956983376" fileName="BuildGeneratorImpl.java" startLine="1579" startPosition="44" endLine="1579" endPosition="44" />
-    <scopeInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1616" startPosition="55" endLine="1616" endPosition="55" />
+    <scopeInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1616" startPosition="56" endLine="1616" endPosition="56" />
     <scopeInfo nodeId="3730845620956943870" fileName="BuildGeneratorImpl.java" startLine="1634" startPosition="45" endLine="1634" endPosition="45" />
     <scopeInfo nodeId="3730845620956943881" fileName="BuildGeneratorImpl.java" startLine="1857" startPosition="49" endLine="1857" endPosition="49" />
     <scopeInfo nodeId="3730845620956943891" fileName="BuildGeneratorImpl.java" startLine="1895" startPosition="49" endLine="1895" endPosition="49" />
@@ -5688,7 +5697,7 @@
     <scopeInfo nodeId="3256085672520562305" fileName="BuildGeneratorImpl.java" startLine="302" startPosition="12" endLine="303" endPosition="236" />
     <scopeInfo nodeId="8722937377469659177" fileName="BuildGeneratorImpl.java" startLine="313" startPosition="11" endLine="314" endPosition="80" />
     <scopeInfo nodeId="8722937377469659189" fileName="BuildGeneratorImpl.java" startLine="316" startPosition="35" endLine="317" endPosition="37" />
-    <scopeInfo nodeId="3730845620956964961" fileName="BuildGeneratorImpl.java" startLine="343" startPosition="39" endLine="344" endPosition="337" />
+    <scopeInfo nodeId="3730845620956964961" fileName="BuildGeneratorImpl.java" startLine="343" startPosition="39" endLine="344" endPosition="338" />
     <scopeInfo nodeId="8633283924066318660" fileName="BuildGeneratorImpl.java" startLine="377" startPosition="31" endLine="378" endPosition="20" />
     <scopeInfo nodeId="8633283924066318461" fileName="BuildGeneratorImpl.java" startLine="394" startPosition="9" endLine="395" endPosition="74" />
     <scopeInfo nodeId="8633283924066318475" fileName="BuildGeneratorImpl.java" startLine="397" startPosition="32" endLine="398" endPosition="100" />
@@ -5815,7 +5824,7 @@
     <scopeInfo nodeId="3730845620956910433" fileName="BuildGeneratorImpl.java" startLine="1542" startPosition="53" endLine="1544" endPosition="5" />
     <scopeInfo nodeId="3730845620956955137" fileName="BuildGeneratorImpl.java" startLine="1560" startPosition="53" endLine="1562" endPosition="5" />
     <scopeInfo nodeId="3730845620956983376" fileName="BuildGeneratorImpl.java" startLine="1578" startPosition="53" endLine="1580" endPosition="5" />
-    <scopeInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1615" startPosition="64" endLine="1617" endPosition="5" />
+    <scopeInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1615" startPosition="65" endLine="1617" endPosition="5" />
     <scopeInfo nodeId="3730845620956943870" fileName="BuildGeneratorImpl.java" startLine="1633" startPosition="54" endLine="1635" endPosition="5" />
     <scopeInfo nodeId="3730845620956943870" fileName="BuildGeneratorImpl.java" startLine="1691" startPosition="24" endLine="1693" endPosition="49" />
     <scopeInfo nodeId="3730845620956943870" fileName="BuildGeneratorImpl.java" startLine="1710" startPosition="24" endLine="1712" endPosition="49" />
@@ -8804,7 +8813,7 @@
     <unitInfo nodeId="3256085672520562226" fileName="BuildGeneratorImpl.java" startLine="286" startPosition="127" endLine="290" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$3" />
     <unitInfo nodeId="440909057400845601" fileName="BuildGeneratorImpl.java" startLine="297" startPosition="442" endLine="301" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$4" />
     <unitInfo nodeId="3730845620956964960" fileName="BuildGeneratorImpl.java" startLine="342" startPosition="139" endLine="346" endPosition="5" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$5" />
-    <unitInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1615" startPosition="0" endLine="1632" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a0a0a0a11a01" />
+    <unitInfo nodeId="3730845620956965094" fileName="BuildGeneratorImpl.java" startLine="1615" startPosition="0" endLine="1632" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a0a0a0a0a0l0k" />
     <unitInfo nodeId="3256085672520562274" fileName="BuildGeneratorImpl.java" startLine="1142" startPosition="0" endLine="1473" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a0gb0j" />
     <unitInfo nodeId="3256085672520562319" fileName="BuildGeneratorImpl.java" startLine="1505" startPosition="0" endLine="1541" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0a23a9" />
     <unitInfo nodeId="1021458544535498076" fileName="BuildGeneratorImpl.java" startLine="539" startPosition="0" endLine="556" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.BuildGeneratorImpl$QuotationClass_un708i_a0a0a0s0j" />
@@ -8990,55 +8999,58 @@
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="52" startPosition="65" endLine="53" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="56" startPosition="62" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="59" startPosition="109" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8722937377469659505" fileName="GenerateBuildForProjectAction_Action.java" startLine="64" startPosition="9" endLine="65" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8722937377469659538" fileName="GenerateBuildForProjectAction_Action.java" startLine="67" startPosition="27" endLine="68" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="60" startPosition="71" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8722937377469659505" fileName="GenerateBuildForProjectAction_Action.java" startLine="67" startPosition="9" endLine="68" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8722937377469659538" fileName="GenerateBuildForProjectAction_Action.java" startLine="70" startPosition="27" endLine="71" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="75" startPosition="33" endLine="76" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="47" startPosition="95" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="51" startPosition="97" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="55" startPosition="89" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="71" startPosition="27" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="71" startPosition="27" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="59" startPosition="109" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="50" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="54" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8722937377469659534" fileName="GenerateBuildForProjectAction_Action.java" startLine="66" startPosition="70" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8722937377469659534" fileName="GenerateBuildForProjectAction_Action.java" startLine="69" startPosition="70" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateBuildForProjectAction_Action#()V" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="8722937377469659526" fileName="GenerateBuildForProjectAction_Action.java" startLine="65" startPosition="301" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8722937377469659526" fileName="GenerateBuildForProjectAction_Action.java" startLine="68" startPosition="301" endLine="73" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="36" startPosition="89" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="35" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="63" startPosition="96" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="62" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="46" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="66" startPosition="96" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="65" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="46" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="32" startPosition="32" endLine="33" endPosition="16" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="43" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="40" startPosition="33" endLine="41" endPosition="104" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="52" startPosition="65" endLine="53" endPosition="19" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="56" startPosition="62" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="109" />
-    <scopeInfo nodeId="8722937377469659537" fileName="GenerateBuildForProjectAction_Action.java" startLine="67" startPosition="27" endLine="68" endPosition="24" />
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="72" startPosition="33" endLine="73" endPosition="103" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="60" startPosition="71" endLine="61" endPosition="19" />
+    <scopeInfo nodeId="8722937377469659537" fileName="GenerateBuildForProjectAction_Action.java" startLine="70" startPosition="27" endLine="71" endPosition="24" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="75" startPosition="33" endLine="76" endPosition="103" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="25" startPosition="49" endLine="28" endPosition="41" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="71" startPosition="0" endLine="74" endPosition="7">
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="74" startPosition="0" endLine="77" endPosition="7">
       <varInfo nodeId="8722937377469659497" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="71" startPosition="27" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="44">
       <varInfo nodeId="8722937377469659497" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="39" startPosition="27" endLine="43" endPosition="44" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="50" startPosition="5" endLine="54" endPosition="5" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="54" startPosition="5" endLine="58" endPosition="5" />
-    <scopeInfo nodeId="8722937377469659534" fileName="GenerateBuildForProjectAction_Action.java" startLine="66" startPosition="70" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
+    <scopeInfo nodeId="8722937377469659534" fileName="GenerateBuildForProjectAction_Action.java" startLine="69" startPosition="70" endLine="73" endPosition="0" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="64" startPosition="9" endLine="70" endPosition="34">
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="67" startPosition="9" endLine="73" endPosition="34">
       <varInfo nodeId="8722937377469659506" varName="wizard" />
     </scopeInfo>
     <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="36" startPosition="89" endLine="44" endPosition="5" />
@@ -9046,18 +9058,18 @@
       <varInfo nodeId="8722937377469659497" varName="_params" />
       <varInfo nodeId="8722937377469659497" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="63" startPosition="96" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="47" startPosition="95" endLine="60" endPosition="16" />
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="62" startPosition="0" endLine="77" endPosition="0">
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="66" startPosition="96" endLine="78" endPosition="5" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="65" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="8722937377469659497" varName="_params" />
       <varInfo nodeId="8722937377469659497" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="46" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="47" startPosition="95" endLine="63" endPosition="16" />
+    <scopeInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="46" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="8722937377469659497" varName="_params" />
       <varInfo nodeId="8722937377469659497" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="21" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action" />
-    <unitInfo nodeId="8722937377469659532" fileName="GenerateBuildForProjectAction_Action.java" startLine="66" startPosition="58" endLine="70" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action$1" />
+    <unitInfo nodeId="8722937377469659497" fileName="GenerateBuildForProjectAction_Action.java" startLine="21" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action" />
+    <unitInfo nodeId="8722937377469659532" fileName="GenerateBuildForProjectAction_Action.java" startLine="69" startPosition="58" endLine="73" endPosition="7" unitName="jetbrains.mps.build.mps.pluginSolution.plugin.GenerateBuildForProjectAction_Action$1" />
   </root>
   <root nodeId="8722937377469659543">
     <nodeInfo nodeId="8722937377469659543" fileName="ProjectPaneProjectAddition_ActionGroup.java" startLine="8" startPosition="82" endLine="9" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />

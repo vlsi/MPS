@@ -116,7 +116,7 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> toRef = new _FunctionTypes._return_P1_E0<SNode, Object>() {
                   public SNode invoke(Object cmp) {
-                    return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0f().createNode(cmp);
+                    return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0a0a2a2a0a1a5().createNode(cmp);
                   }
                 };
                 return new QueriesGenerated.QuotationClass_x583g4_a0b0a0a0a0a0a0c0c0a0b0f().createNode(ListSequence.fromList(SLinkOperations.getTargets((item), "component", true)).select(toRef).toListSequence(), (item));
@@ -242,8 +242,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0f {
-    public QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0c0c0a0b0f() {
+  public static class QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0a0a2a2a0a1a5 {
+    public QuotationClass_x583g4_a0a0a0a0a0a0a0a0a0a0a2a2a0a1a5() {
     }
 
     public SNode createNode(Object parameter_5) {

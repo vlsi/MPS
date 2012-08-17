@@ -36,12 +36,16 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
 
     for (SReference reference : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
       SNode link = SLinkOperations.findLinkDeclaration(reference);
-      if (link != null && SPropertyOperations.hasValue(link, "metaClass", "reference", "reference")) {
-        SNode target = SLinkOperations.getTargetNode(reference);
-        component.addDependency(link);
-        if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(target))))) {
-          component.addError(node, "incompatible target concept in role \"" + SLinkOperations.getRole(reference) + "\"", null);
-        }
+      if (link == null || !(SPropertyOperations.hasValue(link, "metaClass", "reference", "reference"))) {
+        continue;
+      }
+      SNode target = SLinkOperations.getTargetNode(reference);
+      if (target == null) {
+        continue;
+      }
+      component.addDependency(link);
+      if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(target))))) {
+        component.addError(node, "incompatible target concept in role \"" + SLinkOperations.getRole(reference) + "\"", null);
       }
     }
   }

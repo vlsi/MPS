@@ -64,7 +64,7 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return (List<SNode>) new VisibleClassifiersScope(_context.getEnclosingNode(), AbstractClassifiersScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
               public boolean met(SNode cls) {
-                return Classifier_Behavior.call_isDescendant_7165541881557222913((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Classifier")), SLinkOperations.getTarget(new ResourceClassifierType_Constraints.QuotationClass_ymgo28_a0b0a0a0a0a0c0a0a0b0a1a0b0a().createNode(), "classifier", false));
+                return Classifier_Behavior.call_isDescendant_7165541881557222913((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Classifier")), SLinkOperations.getTarget(new ResourceClassifierType_Constraints.QuotationClass_ymgo28_a0b0a0a0a0a0a0a2a0a0a1a0b0a1a0().createNode(), "classifier", false));
               }
             });
           }
@@ -79,8 +79,8 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     return references;
   }
 
-  public static class QuotationClass_ymgo28_a0b0a0a0a0a0c0a0a0b0a1a0b0a {
-    public QuotationClass_ymgo28_a0b0a0a0a0a0c0a0a0b0a1a0b0a() {
+  public static class QuotationClass_ymgo28_a0b0a0a0a0a0a0a2a0a0a1a0b0a1a0 {
+    public QuotationClass_ymgo28_a0b0a0a0a0a0a0a2a0a0a1a0b0a1a0() {
     }
 
     public SNode createNode() {

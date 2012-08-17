@@ -23,13 +23,13 @@ public class Variant_CustomApplicationPlugin extends BaseCustomApplicationPlugin
   public void doInit() {
     Variants.register(new _FunctionTypes._void_P1_E0<Variants>() {
       public void invoke(Variants vars) {
-        vars.addVariant("GWT", SNodeOperations.getModel(SLinkOperations.getTarget(new Variant_CustomApplicationPlugin.QuotationClass_ks96zg_a0a0a0b0a0a0a0a0().createNode(), "plugin", false)).getModelDescriptor().getModule());
+        vars.addVariant("GWT", SNodeOperations.getModel(SLinkOperations.getTarget(new Variant_CustomApplicationPlugin.QuotationClass_ks96zg_a0a0a0b0a0a0a0a0a0a().createNode(), "plugin", false)).getModelDescriptor().getModule());
       }
     });
   }
 
-  public static class QuotationClass_ks96zg_a0a0a0b0a0a0a0a0 {
-    public QuotationClass_ks96zg_a0a0a0b0a0a0a0a0() {
+  public static class QuotationClass_ks96zg_a0a0a0b0a0a0a0a0a0a {
+    public QuotationClass_ks96zg_a0a0a0b0a0a0a0a0a0a() {
     }
 
     public SNode createNode() {

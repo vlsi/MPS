@@ -1853,7 +1853,7 @@ public class QueriesGenerated {
     if (options == null) {
       options = ListSequence.fromList(SNodeOperations.getAllSiblings(_context.getNode(), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && isEmpty_x583g4_a0a0a0a0a0a0a1a333(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
+          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions") && isEmpty_x583g4_a0a0a0a0a0a0a0a0b0vm(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildSource_JavaOptions"), "optionsName"));
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
@@ -2055,7 +2055,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_x583g4_a0a0a0a0a0a0a1a333(String str) {
+  public static boolean isEmpty_x583g4_a0a0a0a0a0a0a0a0b0vm(String str) {
     return str == null || str.length() == 0;
   }
 }

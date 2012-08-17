@@ -8,100 +8,104 @@
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="41" startPosition="35" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="46" startPosition="32" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3531370237490077680" fileName="ReportModelMergeProblem_Action.java" startLine="50" startPosition="87" endLine="51" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3531370237490077696" fileName="ReportModelMergeProblem_Action.java" startLine="53" startPosition="52" endLine="54" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077696" fileName="ReportModelMergeProblem_Action.java" startLine="53" startPosition="52" endLine="54" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="61" startPosition="7" endLine="62" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="62" startPosition="60" endLine="63" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="66" startPosition="33" endLine="67" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="68" startPosition="7" endLine="69" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="74" startPosition="53" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="76" startPosition="5" endLine="77" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="76" startPosition="5" endLine="77" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="77" startPosition="89" endLine="78" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="77" startPosition="89" endLine="78" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="78" startPosition="86" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3531370237490077473" fileName="ReportModelMergeProblem_Action.java" startLine="83" startPosition="9" endLine="84" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3531370237490077485" fileName="ReportModelMergeProblem_Action.java" startLine="84" startPosition="196" endLine="85" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077490" fileName="ReportModelMergeProblem_Action.java" startLine="85" startPosition="39" endLine="86" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077495" fileName="ReportModelMergeProblem_Action.java" startLine="86" startPosition="50" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077500" fileName="ReportModelMergeProblem_Action.java" startLine="87" startPosition="55" endLine="88" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3531370237490077507" fileName="ReportModelMergeProblem_Action.java" startLine="88" startPosition="78" endLine="89" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077519" fileName="ReportModelMergeProblem_Action.java" startLine="89" startPosition="129" endLine="90" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077546" fileName="ReportModelMergeProblem_Action.java" startLine="92" startPosition="54" endLine="93" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3531370237490077558" fileName="ReportModelMergeProblem_Action.java" startLine="97" startPosition="35" endLine="98" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077565" fileName="ReportModelMergeProblem_Action.java" startLine="100" startPosition="9" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3531370237490077566" fileName="ReportModelMergeProblem_Action.java" startLine="101" startPosition="0" endLine="102" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3531370237490077568" fileName="ReportModelMergeProblem_Action.java" startLine="102" startPosition="39" endLine="103" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3531370237490077587" fileName="ReportModelMergeProblem_Action.java" startLine="105" startPosition="54" endLine="106" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3531370237490077594" fileName="ReportModelMergeProblem_Action.java" startLine="109" startPosition="30" endLine="110" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077603" fileName="ReportModelMergeProblem_Action.java" startLine="111" startPosition="14" endLine="112" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3531370237490077620" fileName="ReportModelMergeProblem_Action.java" startLine="114" startPosition="47" endLine="115" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3531370237490077630" fileName="ReportModelMergeProblem_Action.java" startLine="118" startPosition="40" endLine="119" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3531370237490077639" fileName="ReportModelMergeProblem_Action.java" startLine="122" startPosition="35" endLine="123" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077650" fileName="ReportModelMergeProblem_Action.java" startLine="124" startPosition="16" endLine="125" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="342366573607015356" fileName="ReportModelMergeProblem_Action.java" startLine="126" startPosition="34" endLine="127" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3531370237490077664" fileName="ReportModelMergeProblem_Action.java" startLine="128" startPosition="11" endLine="129" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077674" fileName="ReportModelMergeProblem_Action.java" startLine="129" startPosition="76" endLine="130" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="134" startPosition="33" endLine="135" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077461" fileName="ReportModelMergeProblem_Action.java" startLine="140" startPosition="74" endLine="141" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077697" fileName="ReportModelMergeProblem_Action.java" startLine="144" startPosition="66" endLine="145" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="78" startPosition="62" endLine="79" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="80" startPosition="5" endLine="81" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="82" startPosition="60" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077473" fileName="ReportModelMergeProblem_Action.java" startLine="89" startPosition="9" endLine="90" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3531370237490077485" fileName="ReportModelMergeProblem_Action.java" startLine="90" startPosition="196" endLine="91" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077490" fileName="ReportModelMergeProblem_Action.java" startLine="91" startPosition="39" endLine="92" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077495" fileName="ReportModelMergeProblem_Action.java" startLine="92" startPosition="50" endLine="93" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077500" fileName="ReportModelMergeProblem_Action.java" startLine="93" startPosition="55" endLine="94" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3531370237490077507" fileName="ReportModelMergeProblem_Action.java" startLine="94" startPosition="78" endLine="95" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077519" fileName="ReportModelMergeProblem_Action.java" startLine="95" startPosition="129" endLine="96" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077546" fileName="ReportModelMergeProblem_Action.java" startLine="98" startPosition="54" endLine="99" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077558" fileName="ReportModelMergeProblem_Action.java" startLine="103" startPosition="35" endLine="104" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077565" fileName="ReportModelMergeProblem_Action.java" startLine="106" startPosition="9" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3531370237490077566" fileName="ReportModelMergeProblem_Action.java" startLine="107" startPosition="0" endLine="108" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3531370237490077568" fileName="ReportModelMergeProblem_Action.java" startLine="108" startPosition="39" endLine="109" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3531370237490077587" fileName="ReportModelMergeProblem_Action.java" startLine="111" startPosition="54" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077594" fileName="ReportModelMergeProblem_Action.java" startLine="115" startPosition="30" endLine="116" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077603" fileName="ReportModelMergeProblem_Action.java" startLine="117" startPosition="14" endLine="118" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3531370237490077620" fileName="ReportModelMergeProblem_Action.java" startLine="120" startPosition="47" endLine="121" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077630" fileName="ReportModelMergeProblem_Action.java" startLine="124" startPosition="40" endLine="125" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077639" fileName="ReportModelMergeProblem_Action.java" startLine="128" startPosition="35" endLine="129" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077650" fileName="ReportModelMergeProblem_Action.java" startLine="130" startPosition="16" endLine="131" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="342366573607015356" fileName="ReportModelMergeProblem_Action.java" startLine="132" startPosition="34" endLine="133" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3531370237490077664" fileName="ReportModelMergeProblem_Action.java" startLine="134" startPosition="11" endLine="135" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077674" fileName="ReportModelMergeProblem_Action.java" startLine="135" startPosition="76" endLine="136" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="140" startPosition="33" endLine="141" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077461" fileName="ReportModelMergeProblem_Action.java" startLine="146" startPosition="74" endLine="147" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077697" fileName="ReportModelMergeProblem_Action.java" startLine="150" startPosition="69" endLine="151" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="73" startPosition="95" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="342366573606932794" fileName="ReportModelMergeProblem_Action.java" startLine="125" startPosition="225" endLine="128" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="133" startPosition="27" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="133" startPosition="27" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="77" startPosition="89" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="81" startPosition="86" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="342366573606932794" fileName="ReportModelMergeProblem_Action.java" startLine="131" startPosition="225" endLine="134" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="139" startPosition="27" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="139" startPosition="27" endLine="142" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3531370237490077694" fileName="ReportModelMergeProblem_Action.java" startLine="52" startPosition="88" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lcom/intellij/openapi/vcs/VcsDirectoryMapping;)Z" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="60" startPosition="9" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3531370237490077540" fileName="ReportModelMergeProblem_Action.java" startLine="91" startPosition="163" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3531370237490077556" fileName="ReportModelMergeProblem_Action.java" startLine="96" startPosition="74" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/io/File;)V" />
-    <nodeInfo nodeId="3531370237490077581" fileName="ReportModelMergeProblem_Action.java" startLine="104" startPosition="67" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3531370237490077618" fileName="ReportModelMergeProblem_Action.java" startLine="113" startPosition="103" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/Comparable;" />
-    <nodeInfo nodeId="3531370237490077628" fileName="ReportModelMergeProblem_Action.java" startLine="117" startPosition="56" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3531370237490077458" fileName="ReportModelMergeProblem_Action.java" startLine="139" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showNoBackupsAvailable#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="3531370237490077697" fileName="ReportModelMergeProblem_Action.java" startLine="143" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_6wdzvw_a0a0a0a1a1#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="76" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="80" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3531370237490077540" fileName="ReportModelMergeProblem_Action.java" startLine="97" startPosition="163" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3531370237490077556" fileName="ReportModelMergeProblem_Action.java" startLine="102" startPosition="74" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="3531370237490077581" fileName="ReportModelMergeProblem_Action.java" startLine="110" startPosition="67" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3531370237490077618" fileName="ReportModelMergeProblem_Action.java" startLine="119" startPosition="103" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/Comparable;" />
+    <nodeInfo nodeId="3531370237490077628" fileName="ReportModelMergeProblem_Action.java" startLine="123" startPosition="56" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/io/File;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3531370237490077458" fileName="ReportModelMergeProblem_Action.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showNoBackupsAvailable#(Ljava/util/Map;)V" />
+    <nodeInfo nodeId="3531370237490077697" fileName="ReportModelMergeProblem_Action.java" startLine="149" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_6wdzvw_a0a0a0a0a0b0b#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="38" startPosition="0" endLine="43" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReportModelMergeProblem_Action#()V" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="3531370237490077690" fileName="ReportModelMergeProblem_Action.java" startLine="51" startPosition="156" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3531370237490077530" fileName="ReportModelMergeProblem_Action.java" startLine="90" startPosition="128" endLine="95" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077552" fileName="ReportModelMergeProblem_Action.java" startLine="95" startPosition="12" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3531370237490077574" fileName="ReportModelMergeProblem_Action.java" startLine="103" startPosition="73" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3531370237490077648" fileName="ReportModelMergeProblem_Action.java" startLine="124" startPosition="14" endLine="131" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3531370237490077530" fileName="ReportModelMergeProblem_Action.java" startLine="96" startPosition="128" endLine="101" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077552" fileName="ReportModelMergeProblem_Action.java" startLine="101" startPosition="12" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3531370237490077574" fileName="ReportModelMergeProblem_Action.java" startLine="109" startPosition="73" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3531370237490077648" fileName="ReportModelMergeProblem_Action.java" startLine="130" startPosition="14" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="72" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="3531370237490077609" fileName="ReportModelMergeProblem_Action.java" startLine="112" startPosition="55" endLine="121" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3531370237490077637" fileName="ReportModelMergeProblem_Action.java" startLine="121" startPosition="40" endLine="131" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3531370237490077609" fileName="ReportModelMergeProblem_Action.java" startLine="118" startPosition="55" endLine="127" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3531370237490077637" fileName="ReportModelMergeProblem_Action.java" startLine="127" startPosition="40" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="59" startPosition="89" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="58" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="3531370237490077601" fileName="ReportModelMergeProblem_Action.java" startLine="111" startPosition="12" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3531370237490077592" fileName="ReportModelMergeProblem_Action.java" startLine="108" startPosition="9" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="82" startPosition="96" endLine="137" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="81" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="72" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+    <nodeInfo nodeId="3531370237490077601" fileName="ReportModelMergeProblem_Action.java" startLine="117" startPosition="12" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3531370237490077592" fileName="ReportModelMergeProblem_Action.java" startLine="114" startPosition="9" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="88" startPosition="96" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="87" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="46" startPosition="32" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="3531370237490077695" fileName="ReportModelMergeProblem_Action.java" startLine="53" startPosition="52" endLine="54" endPosition="56" />
+    <scopeInfo nodeId="3531370237490077695" fileName="ReportModelMergeProblem_Action.java" startLine="53" startPosition="52" endLine="54" endPosition="59" />
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="66" startPosition="33" endLine="67" endPosition="98" />
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="74" startPosition="53" endLine="75" endPosition="19" />
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="76" startPosition="5" endLine="77" endPosition="89" />
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="77" startPosition="89" endLine="78" endPosition="86" />
-    <scopeInfo nodeId="3531370237490077545" fileName="ReportModelMergeProblem_Action.java" startLine="92" startPosition="54" endLine="93" endPosition="52" />
-    <scopeInfo nodeId="3531370237490077557" fileName="ReportModelMergeProblem_Action.java" startLine="97" startPosition="35" endLine="98" endPosition="33" />
-    <scopeInfo nodeId="3531370237490077586" fileName="ReportModelMergeProblem_Action.java" startLine="105" startPosition="54" endLine="106" endPosition="39" />
-    <scopeInfo nodeId="3531370237490077593" fileName="ReportModelMergeProblem_Action.java" startLine="109" startPosition="30" endLine="110" endPosition="76" />
-    <scopeInfo nodeId="3531370237490077619" fileName="ReportModelMergeProblem_Action.java" startLine="114" startPosition="47" endLine="115" endPosition="36" />
-    <scopeInfo nodeId="3531370237490077629" fileName="ReportModelMergeProblem_Action.java" startLine="118" startPosition="40" endLine="119" endPosition="31" />
-    <scopeInfo nodeId="3531370237490077638" fileName="ReportModelMergeProblem_Action.java" startLine="122" startPosition="35" endLine="123" endPosition="78" />
-    <scopeInfo nodeId="342366573606932795" fileName="ReportModelMergeProblem_Action.java" startLine="126" startPosition="34" endLine="127" endPosition="19" />
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="134" startPosition="33" endLine="135" endPosition="97" />
-    <scopeInfo nodeId="3531370237490077460" fileName="ReportModelMergeProblem_Action.java" startLine="140" startPosition="74" endLine="141" endPosition="175" />
-    <scopeInfo nodeId="3531370237490077697" fileName="ReportModelMergeProblem_Action.java" startLine="144" startPosition="66" endLine="145" endPosition="43" />
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="78" startPosition="62" endLine="79" endPosition="19" />
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="82" startPosition="60" endLine="83" endPosition="19" />
+    <scopeInfo nodeId="3531370237490077545" fileName="ReportModelMergeProblem_Action.java" startLine="98" startPosition="54" endLine="99" endPosition="52" />
+    <scopeInfo nodeId="3531370237490077557" fileName="ReportModelMergeProblem_Action.java" startLine="103" startPosition="35" endLine="104" endPosition="33" />
+    <scopeInfo nodeId="3531370237490077586" fileName="ReportModelMergeProblem_Action.java" startLine="111" startPosition="54" endLine="112" endPosition="39" />
+    <scopeInfo nodeId="3531370237490077593" fileName="ReportModelMergeProblem_Action.java" startLine="115" startPosition="30" endLine="116" endPosition="76" />
+    <scopeInfo nodeId="3531370237490077619" fileName="ReportModelMergeProblem_Action.java" startLine="120" startPosition="47" endLine="121" endPosition="36" />
+    <scopeInfo nodeId="3531370237490077629" fileName="ReportModelMergeProblem_Action.java" startLine="124" startPosition="40" endLine="125" endPosition="31" />
+    <scopeInfo nodeId="3531370237490077638" fileName="ReportModelMergeProblem_Action.java" startLine="128" startPosition="35" endLine="129" endPosition="78" />
+    <scopeInfo nodeId="342366573606932795" fileName="ReportModelMergeProblem_Action.java" startLine="132" startPosition="34" endLine="133" endPosition="19" />
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="140" startPosition="33" endLine="141" endPosition="97" />
+    <scopeInfo nodeId="3531370237490077460" fileName="ReportModelMergeProblem_Action.java" startLine="146" startPosition="74" endLine="147" endPosition="175" />
+    <scopeInfo nodeId="3531370237490077697" fileName="ReportModelMergeProblem_Action.java" startLine="150" startPosition="69" endLine="151" endPosition="43" />
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="61" startPosition="7" endLine="63" endPosition="63">
       <varInfo nodeId="3531370237490077457" varName="enabled" />
     </scopeInfo>
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="39" startPosition="43" endLine="42" endPosition="40" />
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="65" startPosition="27" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="133" startPosition="0" endLine="136" endPosition="7">
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="139" startPosition="0" endLine="142" endPosition="7">
       <varInfo nodeId="3531370237490077457" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="133" startPosition="27" endLine="136" endPosition="7" />
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="139" startPosition="27" endLine="142" endPosition="7" />
     <scopeInfo nodeId="3531370237490077694" fileName="ReportModelMergeProblem_Action.java" startLine="52" startPosition="88" endLine="56" endPosition="0">
       <varInfo nodeId="3531370237490077694" varName="m" />
     </scopeInfo>
@@ -110,27 +114,29 @@
       <varInfo nodeId="3531370237490077457" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="65" startPosition="27" endLine="69" endPosition="44" />
-    <scopeInfo nodeId="3531370237490077540" fileName="ReportModelMergeProblem_Action.java" startLine="91" startPosition="163" endLine="95" endPosition="0">
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="76" startPosition="5" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="80" startPosition="5" endLine="84" endPosition="5" />
+    <scopeInfo nodeId="3531370237490077540" fileName="ReportModelMergeProblem_Action.java" startLine="97" startPosition="163" endLine="101" endPosition="0">
       <varInfo nodeId="3531370237490077540" varName="dir" />
       <varInfo nodeId="3531370237490077540" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077556" fileName="ReportModelMergeProblem_Action.java" startLine="96" startPosition="74" endLine="100" endPosition="0">
+    <scopeInfo nodeId="3531370237490077556" fileName="ReportModelMergeProblem_Action.java" startLine="102" startPosition="74" endLine="106" endPosition="0">
       <varInfo nodeId="3531370237490077556" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077581" fileName="ReportModelMergeProblem_Action.java" startLine="104" startPosition="67" endLine="108" endPosition="0">
+    <scopeInfo nodeId="3531370237490077581" fileName="ReportModelMergeProblem_Action.java" startLine="110" startPosition="67" endLine="114" endPosition="0">
       <varInfo nodeId="3531370237490077581" varName="dir" />
       <varInfo nodeId="3531370237490077581" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077618" fileName="ReportModelMergeProblem_Action.java" startLine="113" startPosition="103" endLine="117" endPosition="0">
+    <scopeInfo nodeId="3531370237490077618" fileName="ReportModelMergeProblem_Action.java" startLine="119" startPosition="103" endLine="123" endPosition="0">
       <varInfo nodeId="3531370237490077618" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077628" fileName="ReportModelMergeProblem_Action.java" startLine="117" startPosition="56" endLine="121" endPosition="0">
+    <scopeInfo nodeId="3531370237490077628" fileName="ReportModelMergeProblem_Action.java" startLine="123" startPosition="56" endLine="127" endPosition="0">
       <varInfo nodeId="3531370237490077628" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077458" fileName="ReportModelMergeProblem_Action.java" startLine="139" startPosition="0" endLine="143" endPosition="0">
+    <scopeInfo nodeId="3531370237490077458" fileName="ReportModelMergeProblem_Action.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="3531370237490077458" varName="_params" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077697" fileName="ReportModelMergeProblem_Action.java" startLine="143" startPosition="0" endLine="147" endPosition="0">
+    <scopeInfo nodeId="3531370237490077697" fileName="ReportModelMergeProblem_Action.java" startLine="149" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="3531370237490077697" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="38" startPosition="0" endLine="43" endPosition="3" />
@@ -138,45 +144,45 @@
     <scopeInfo nodeId="3531370237490077679" fileName="ReportModelMergeProblem_Action.java" startLine="50" startPosition="87" endLine="56" endPosition="7">
       <varInfo nodeId="3531370237490077681" varName="mappings" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="73" startPosition="95" endLine="79" endPosition="16" />
-    <scopeInfo nodeId="3531370237490077649" fileName="ReportModelMergeProblem_Action.java" startLine="124" startPosition="16" endLine="130" endPosition="29">
+    <scopeInfo nodeId="3531370237490077649" fileName="ReportModelMergeProblem_Action.java" startLine="130" startPosition="16" endLine="136" endPosition="29">
       <varInfo nodeId="3531370237490077651" varName="selectedIndex" />
     </scopeInfo>
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="49" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="3531370237490077457" varName="_params" />
       <varInfo nodeId="3531370237490077457" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="72" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="3531370237490077457" varName="_params" />
-      <varInfo nodeId="3531370237490077457" varName="event" />
-    </scopeInfo>
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="59" startPosition="89" endLine="70" endPosition="5" />
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="73" startPosition="95" endLine="85" endPosition="16" />
     <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="58" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="3531370237490077457" varName="_params" />
       <varInfo nodeId="3531370237490077457" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077602" fileName="ReportModelMergeProblem_Action.java" startLine="111" startPosition="14" endLine="131" endPosition="9">
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="72" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="3531370237490077457" varName="_params" />
+      <varInfo nodeId="3531370237490077457" varName="event" />
+    </scopeInfo>
+    <scopeInfo nodeId="3531370237490077602" fileName="ReportModelMergeProblem_Action.java" startLine="117" startPosition="14" endLine="137" endPosition="9">
       <varInfo nodeId="3531370237490077604" varName="zipFiles" />
       <varInfo nodeId="3531370237490077610" varName="zipNames" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="83" startPosition="9" endLine="132" endPosition="7">
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="89" startPosition="9" endLine="138" endPosition="7">
       <varInfo nodeId="3531370237490077569" varName="backupDir" />
       <varInfo nodeId="3531370237490077474" varName="blameDialog" />
       <varInfo nodeId="3531370237490077501" varName="filesToAttach" />
       <varInfo nodeId="3531370237490077575" varName="listFiles" />
     </scopeInfo>
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="82" startPosition="96" endLine="137" endPosition="5" />
-    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="81" startPosition="0" endLine="139" endPosition="0">
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="88" startPosition="96" endLine="143" endPosition="5" />
+    <scopeInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="87" startPosition="0" endLine="145" endPosition="0">
       <varInfo nodeId="3531370237490077457" varName="_params" />
       <varInfo nodeId="3531370237490077457" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="35" startPosition="0" endLine="148" endPosition="0" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action" />
+    <unitInfo nodeId="3531370237490077457" fileName="ReportModelMergeProblem_Action.java" startLine="35" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action" />
     <unitInfo nodeId="3531370237490077694" fileName="ReportModelMergeProblem_Action.java" startLine="52" startPosition="51" endLine="56" endPosition="5" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$1" />
-    <unitInfo nodeId="3531370237490077540" fileName="ReportModelMergeProblem_Action.java" startLine="91" startPosition="145" endLine="95" endPosition="7" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$2" />
-    <unitInfo nodeId="3531370237490077556" fileName="ReportModelMergeProblem_Action.java" startLine="96" startPosition="56" endLine="100" endPosition="7" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$3" />
-    <unitInfo nodeId="3531370237490077581" fileName="ReportModelMergeProblem_Action.java" startLine="104" startPosition="49" endLine="108" endPosition="7" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$4" />
-    <unitInfo nodeId="3531370237490077618" fileName="ReportModelMergeProblem_Action.java" startLine="113" startPosition="69" endLine="117" endPosition="9" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$5" />
-    <unitInfo nodeId="3531370237490077628" fileName="ReportModelMergeProblem_Action.java" startLine="117" startPosition="29" endLine="121" endPosition="9" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$6" />
+    <unitInfo nodeId="3531370237490077540" fileName="ReportModelMergeProblem_Action.java" startLine="97" startPosition="145" endLine="101" endPosition="7" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$2" />
+    <unitInfo nodeId="3531370237490077556" fileName="ReportModelMergeProblem_Action.java" startLine="102" startPosition="56" endLine="106" endPosition="7" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$3" />
+    <unitInfo nodeId="3531370237490077581" fileName="ReportModelMergeProblem_Action.java" startLine="110" startPosition="49" endLine="114" endPosition="7" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$4" />
+    <unitInfo nodeId="3531370237490077618" fileName="ReportModelMergeProblem_Action.java" startLine="119" startPosition="69" endLine="123" endPosition="9" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$5" />
+    <unitInfo nodeId="3531370237490077628" fileName="ReportModelMergeProblem_Action.java" startLine="123" startPosition="29" endLine="127" endPosition="9" unitName="jetbrains.mps.vcs.platform.actions.ReportModelMergeProblem_Action$6" />
   </root>
   <root nodeId="3531370237490077704">
     <nodeInfo nodeId="3531370237490077704" fileName="InstalVcsAddons_Action.java" startLine="17" startPosition="56" endLine="18" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -1344,14 +1350,18 @@
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="30" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -1360,7 +1370,9 @@
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="3" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="3" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="3" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="3" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndentBlock" />
+    <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8230098746512809427" fileName="MPSVcs.xml" startLine="2" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />

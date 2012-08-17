@@ -26,4 +26,8 @@ public abstract class AbstractTableModel implements TableModel {
 
   public void insertColumn(int columnNumber) {
   }
+
+  public int getMaxColumnWidth(int columnNumber) {
+    return -1;
+  }
 }

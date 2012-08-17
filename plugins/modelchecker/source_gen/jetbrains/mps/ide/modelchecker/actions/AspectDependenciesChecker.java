@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.resolve.Resolver;
+import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -71,7 +71,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         if (targetNode == null) {
           addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.SEVERITY_ERROR, "unresolved reference", new IModelCheckerFix() {
             public boolean doFix() {
-              return Resolver.resolve1(ref, operationContext);
+              return ResolverComponent.getInstance().resolve(ref, operationContext);
             }
           });
           continue;

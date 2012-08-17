@@ -6,9 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.smodel.ModuleOperationContext;
@@ -17,13 +17,20 @@ import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.errors.QuickFixProvider;
+import jetbrains.mps.errors.QuickFix_Runtime;
+import jetbrains.mps.resolve.ResolverComponent;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
   }
 
   public void checkNode(SNode node, LanguageErrorsComponent component, IOperationContext operationContext, IScope scope) {
-    if (operationContext == null) {
+    if (operationContext == null || node == null || SNodeOperations.getModel(node) == null) {
+      return;
+    }
+    IModule module = check_bt3k2y_a0b0a(SNodeOperations.getModel(node).getModelDescriptor());
+    if (module == null) {
       return;
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node);
@@ -41,16 +48,9 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);
       }
-      if (node == null || SNodeOperations.getModel(node) == null) {
-        return;
-      }
-      IModule module = check_bt3k2y_a0k0c0a(SNodeOperations.getModel(node).getModelDescriptor());
-      if (module == null) {
-        return;
-      }
       Scope refScope = ModelConstraintsUtil.getScope(ref, new ModuleOperationContext(module));
       if (refScope instanceof ErrorScope) {
-        component.addError(node, ((ErrorScope) refScope).getMessage(), (SNode) null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
+        component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
       } else if (!(refScope.contains(target))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, ref.getRole());
@@ -64,15 +64,46 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         component.addError(node, "reference" + ((name == null ?
           "" :
           " " + name
-        )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
+        )) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), new RefScopeChecker.ResolveReferenceQuickFix(ref, operationContext));
       }
     }
   }
 
-  private static IModule check_bt3k2y_a0k0c0a(SModelDescriptor checkedDotOperand) {
+  private static IModule check_bt3k2y_a0b0a(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
+  }
+
+  public class ResolveReferenceQuickFix implements QuickFixProvider {
+    private boolean myIsError;
+    private SReference myReference;
+    private IOperationContext myOperationContext;
+
+    public ResolveReferenceQuickFix(SReference reference, IOperationContext operationContext) {
+      myReference = reference;
+      myOperationContext = operationContext;
+    }
+
+    public QuickFix_Runtime getQuickFix() {
+      return new QuickFix_Runtime() {
+        public void execute(SNode node) {
+          ResolverComponent.getInstance().resolve(myReference, myOperationContext);
+        }
+      };
+    }
+
+    public boolean isExecutedImmediately() {
+      return false;
+    }
+
+    public void setIsError(boolean isError) {
+      myIsError = isError;
+    }
+
+    public boolean isError() {
+      return myIsError;
+    }
   }
 }

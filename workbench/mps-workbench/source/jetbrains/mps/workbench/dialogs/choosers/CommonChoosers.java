@@ -82,7 +82,7 @@ public class CommonChoosers {
     Component uparent = UIUtil.findUltimateParent(parent);
     Project project = null;
     if (uparent instanceof IdeFrame) {
-      project = ((IdeFrame) parent).getProject();
+      project = ((IdeFrame) uparent).getProject();
     }
     if (project == null) {
       project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(uparent));
@@ -148,7 +148,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, goToNodeModel, null);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -164,7 +164,6 @@ public class CommonChoosers {
     }, ModalityState.current(), true);
   }
 
-  // todo: unused?
   public static void showSimpleModelChooser(final List<SModelReference> models, final ChooserCallback<SModelReference> callback) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
     final Project project = MPSDataKeys.PROJECT.getData(dataContext);
@@ -183,7 +182,7 @@ public class CommonChoosers {
       }
     };
 
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModelModel, null);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
@@ -229,7 +228,7 @@ public class CommonChoosers {
         return false;
       }
     };
-    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel);
+    ChooseByNamePopup popup = MpsPopupFactory.createPackagePopup(project, goToModuleModel, null);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {

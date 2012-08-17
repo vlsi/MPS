@@ -89,7 +89,7 @@ public class OverrideImplementMethodsHelper {
 
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0a0f0b().createNode(it);
+        return new OverrideImplementMethodsHelper.QuotationClass_tfz3o4_a0a0a0a0a0a5a1().createNode(it);
       }
     });
     SNode defaultExpr;
@@ -176,8 +176,8 @@ public class OverrideImplementMethodsHelper {
     }
   }
 
-  public static class QuotationClass_tfz3o4_a0a0a0a0f0b {
-    public QuotationClass_tfz3o4_a0a0a0a0f0b() {
+  public static class QuotationClass_tfz3o4_a0a0a0a0a0a5a1 {
+    public QuotationClass_tfz3o4_a0a0a0a0a0a5a1() {
     }
 
     public SNode createNode(Object parameter_3) {

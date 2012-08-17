@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.editor.runtime.EditorCell_Empty;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
 
 public class EditorCell_Table extends EditorCell_Collection {
@@ -69,7 +70,8 @@ public class EditorCell_Table extends EditorCell_Collection {
 
       rowCell.addEditorCell(createRowOutermostCell(row, rowId, true));
       final int finalRow = row;
-      if (myModel.getColumnCount() == 0) {
+      int columnCount = myModel.getColumnCount();
+      if (columnCount == 0) {
         EditorCell emptyCell = createEmptyRowCell();
         installEmptyRowCellActions(emptyCell, row);
         emptyCell.setLeftGap(4);
@@ -78,7 +80,8 @@ public class EditorCell_Table extends EditorCell_Collection {
 
         rowCell.addEditorCell(emptyCell);
       } else {
-        for (int column = 0; column < myModel.getColumnCount(); column++) {
+        int averageColumnWidth = getAverageColumnWidth(columnCount);
+        for (int column = 0; column < columnCount; column++) {
           final int finalColumn = column;
           SNode value = myModel.getValueAt(row, column);
           EditorCell editorCell;
@@ -115,6 +118,13 @@ public class EditorCell_Table extends EditorCell_Collection {
           }
           editorCell.setLeftGap(4);
           editorCell.setRightGap(4);
+          if (editorCell.getStyle().getCurrent(StyleAttributes.MAX_WIDTH) == null) {
+            int maxColumnWidth = myModel.getMaxColumnWidth(column);
+            editorCell.getStyle().set(StyleAttributes.MAX_WIDTH, (maxColumnWidth < 0 ?
+              averageColumnWidth :
+              maxColumnWidth
+            ));
+          }
 
           rowCell.addEditorCell(editorCell);
         }
@@ -261,6 +271,10 @@ public class EditorCell_Table extends EditorCell_Collection {
     };
     emptyCell.setAction(CellActionType.INSERT, createFirstRowAction);
     emptyCell.setAction(CellActionType.INSERT_BEFORE, createFirstRowAction);
+  }
+
+  private int getAverageColumnWidth(int columnCount) {
+    return EditorSettings.getInstance().getVerticalBoundWidth() / columnCount;
   }
 
   public static EditorCell_Collection createTable(EditorContext editorContext, SNode node, final TableModel model, String uniquePrefix) {

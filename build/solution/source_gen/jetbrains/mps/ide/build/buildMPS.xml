@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildMPS" />
   <property name="build.layout" location="${build.dir}/artifacts/buildMPS" />
-  <property name="build.number" value="MPS-25.SNAPSHOT" />
+  <property name="build.number" value="MPS-117.SNAPSHOT" />
   <tstamp>
     <format property="date" pattern="yyyyMMdd" />
   </tstamp>

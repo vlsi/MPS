@@ -3401,7 +3401,7 @@
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="5031556731835763031">
           <property name="separatorText" nameId="tpc2.1140524450557" value="|" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpd4.8124453027370845341" />
-          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Horizontal" typeId="tpc2.1106270549637" id="5031556731835763032" />
+          <node role="cellLayout" roleId="tpc2.1140524464360" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1349303899677073494" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SelectableStyleSheetItem" typeId="tpc2.1186414928363" id="1236083700368">
           <property name="flag" nameId="tpc2.1186414551515" value="false" />

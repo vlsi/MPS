@@ -24,7 +24,6 @@ public class RefactoringOptionsDialog extends DialogWrapper {
   private JCheckBox myIsLocalCheckBox;
   private JCheckBox myGenerateModelsCheckBox;
   private JPanel myInnerPanel;
-  private boolean myNeedToBeShown = false;
   private boolean myHasModelsToGenerate;
   private boolean myIsCancelled = true;
 
@@ -44,16 +43,14 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     myInnerPanel.add(new JLabel("Set refactoring options"), c);
     c.insets = new Insets(0, 3, 0, 0);
     if (myRefactoring instanceof ILoggableRefactoring) {
-      myIsLocalCheckBox = new JCheckBox("is local (write refactoring history into log)");
+      myIsLocalCheckBox = new JCheckBox("is local (don't write refactoring history into log)");
       myIsLocalCheckBox.setSelected(myRefactoringContext.isLocal());
       myInnerPanel.add(myIsLocalCheckBox, c);
-      myNeedToBeShown = true;
     }
     if (myHasModelsToGenerate) {
       myGenerateModelsCheckBox = new JCheckBox("rebuild affected models after refactoring");
       myInnerPanel.add(myGenerateModelsCheckBox, c);
       myGenerateModelsCheckBox.setSelected(true);
-      myNeedToBeShown = true;
     }
     c.weighty = 1;
     myInnerPanel.setPreferredSize(new Dimension(300, 250));
@@ -77,10 +74,6 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     close(OK_EXIT_CODE);
   }
 
-  public boolean needToBeShown() {
-    return myNeedToBeShown;
-  }
-
   @Nullable
   @NonNls
   @Override
@@ -94,5 +87,9 @@ public class RefactoringOptionsDialog extends DialogWrapper {
     myRefactoring = refactoring;
     myHasModelsToGenerate = hasModelsToGenerate;
     init();
+  }
+
+  public static boolean needToBeShown(IRefactoring refactoring, boolean hasModelsToGenerate) {
+    return refactoring instanceof ILoggableRefactoring || hasModelsToGenerate;
   }
 }

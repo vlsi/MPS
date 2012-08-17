@@ -41,7 +41,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     if (!(((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, method, "virtual_isAbstract_1232982539764", new Class[]{SNode.class}))) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null)) {
       SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_lclll2_a0a0a0a0a0a0a0a0(check_lclll2_a0a0a0a0a0a0a(it), SLinkOperations.getTarget(new JUnit4MethodWrapper.QuotationClass_lclll2_a0a0a0a0a0a0a0a().createNode(), "annotation", false));
+          return eq_lclll2_a0a0a0a0a0a0a0a0(check_lclll2_a0a0a0a0a0a0a(it), SLinkOperations.getTarget(new JUnit4MethodWrapper.QuotationClass_lclll2_a0a0a0a0a0a0a0a0a0().createNode(), "annotation", false));
         }
       });
       if (annotation != null) {
@@ -72,8 +72,8 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     );
   }
 
-  public static class QuotationClass_lclll2_a0a0a0a0a0a0a0a {
-    public QuotationClass_lclll2_a0a0a0a0a0a0a0a() {
+  public static class QuotationClass_lclll2_a0a0a0a0a0a0a0a0a0 {
+    public QuotationClass_lclll2_a0a0a0a0a0a0a0a0a0() {
     }
 
     public SNode createNode() {
