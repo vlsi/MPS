@@ -38,24 +38,30 @@ public class SNodeOperations {
   }
 
   //todo rewrite via ISNode methods
-  public static boolean isAncestor(org.jetbrains.mps.openapi.model.SNode ancestor, org.jetbrains.mps.openapi.model.SNode node){
+  public static boolean isAncestor(org.jetbrains.mps.openapi.model.SNode ancestor, org.jetbrains.mps.openapi.model.SNode node) {
     return ((SNode) ancestor).isAncestorOf(((SNode) node));
   }
 
   //todo rewrite via ISNode methods
-  public static List<SNode> getChildren(org.jetbrains.mps.openapi.model.SNode node, boolean includeAttributes){
-    return ((SNode) node).getChildren(includeAttributes);
+  public static List<org.jetbrains.mps.openapi.model.SNode> getChildren(org.jetbrains.mps.openapi.model.SNode node, boolean includeAttributes) {
+    return (List) ((SNode) node).getChildren(includeAttributes);
+  }
+
+  //todo rewrite via ISNode methods
+  //todo in our code, rewrite using ancestors.where(condition) or add a cunstom condition to smodel language ancestor query
+  public static org.jetbrains.mps.openapi.model.SNode findParent(org.jetbrains.mps.openapi.model.SNode node, Condition<SNode> condition) {
+    return ((SNode) node).findParent(condition);
   }
 
   @Deprecated //todo KILL IT! should be node.getModel!=null
   //todo after killing it, correct migration script to return model!=null instead
-  public static boolean isRegistered(org.jetbrains.mps.openapi.model.SNode node){
+  public static boolean isRegistered(org.jetbrains.mps.openapi.model.SNode node) {
     return ((SNode) node).isRegistered();
   }
 
   @Deprecated //todo KILL IT! should not be used since nodes are not passed between read actions
   //todo after killing it, correct migration script to return false instead
-  public static boolean isDisposed(org.jetbrains.mps.openapi.model.SNode node){
+  public static boolean isDisposed(org.jetbrains.mps.openapi.model.SNode node) {
     return ((SNode) node).isDisposed();
   }
 }
