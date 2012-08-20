@@ -19,6 +19,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.util.Condition;
 
 import java.util.List;
+import java.util.Map;
 
 public class SNodeOperations {
   public static int depth(SNode sNode) {
@@ -51,6 +52,11 @@ public class SNodeOperations {
   //todo in our code, rewrite using ancestors.where(condition) or add a custom condition to smodel language ancestor query
   public static org.jetbrains.mps.openapi.model.SNode findParent(org.jetbrains.mps.openapi.model.SNode node, Condition<SNode> condition) {
     return ((SNode) node).findParent(condition);
+  }
+
+  //todo rewrite via ISNode methods (concept+getProperty)
+  public static Map<String,String> getProperties(org.jetbrains.mps.openapi.model.SNode node) {
+    return ((SNode) node).getProperties();
   }
 
   //todo rewrite via ISNode methods
