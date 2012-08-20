@@ -6713,7 +6713,7 @@
             <property name="name" nameId="tpck.1169194664001" value="cat24" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8451791629113434167" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8451791629113434168">
-              <property name="value" nameId="tpee.1070475926801" value="toString()-&gt;toString()" />
+              <property name="value" nameId="tpee.1070475926801" value="toString()-&gt;getPresentation()" />
             </node>
           </node>
         </node>
@@ -6860,7 +6860,7 @@
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8451791629113434238">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dtoString()%cjava%dlang%dString" resolveInfo="toString" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="hmg3.~SNode%dgetPresentation()%cjava%dlang%dString" resolveInfo="getPresentation" />
                           </node>
                         </node>
                       </node>

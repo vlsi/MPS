@@ -595,7 +595,7 @@ public class ApiMigrationHelper {
 
     // ----------------- 
 
-    String cat24 = "toString()->toString()";
+    String cat24 = "toString()->getPresentation()";
     SNode md24 = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new ApiMigrationHelper.QuotationClass_yke5lt_a0a0a0wh0b().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false);
     _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> transVerifier24 = new _FunctionTypes._return_P1_E0<Boolean, SNode>() {
       public Boolean invoke(SNode n) {
@@ -3139,7 +3139,7 @@ public class ApiMigrationHelper {
         {
           quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, GlobalScope.getInstance(), false);
           SNode quotedNode1_10 = quotedNode_3;
-          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.toString():java.lang.String")));
+          quotedNode1_10.addReference(SReference.create("baseMethodDeclaration", quotedNode1_10, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.mps.openapi.model(MPS.Core/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.getPresentation():java.lang.String")));
           quotedNode_1.addChild("operation", quotedNode1_10);
         }
         result = quotedNode1_8;
