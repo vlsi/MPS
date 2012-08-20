@@ -95,7 +95,7 @@ public class CalcSNodeStatistic_Action extends BaseAction {
             1
           ));
 
-          int refsCount = node.getReferencesArray().length;
+          int refsCount = node.getReferences().size();
           MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ?
             MapSequence.fromMap(refsStatistic).get(refsCount) + 1 :
             1
