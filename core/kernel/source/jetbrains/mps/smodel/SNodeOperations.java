@@ -15,8 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.List;
 import java.util.Map;
@@ -55,7 +60,7 @@ public class SNodeOperations {
   }
 
   //todo rewrite via ISNode methods (concept+getProperty)
-  public static Map<String,String> getProperties(org.jetbrains.mps.openapi.model.SNode node) {
+  public static Map<String, String> getProperties(org.jetbrains.mps.openapi.model.SNode node) {
     return ((SNode) node).getProperties();
   }
 
@@ -63,6 +68,11 @@ public class SNodeOperations {
   //todo in our code, rewrite using ancestors.where(condition) or add a custom condition to smodel language ancestor query
   public static org.jetbrains.mps.openapi.model.SNode getDescendants(org.jetbrains.mps.openapi.model.SNode node, Condition<SNode> condition) {
     return ((SNode) node).findParent(condition);
+  }
+
+  //todo rewrite the code using this
+  public static SConcept getConcept(String name) {
+    return new SConceptNodeAdapter(SModelUtil.findConceptDeclaration(name, GlobalScope.getInstance()));
   }
 
   @Deprecated //todo KILL IT! should be node.getModel!=null
@@ -76,4 +86,6 @@ public class SNodeOperations {
   public static boolean isDisposed(org.jetbrains.mps.openapi.model.SNode node) {
     return ((SNode) node).isDisposed();
   }
+
+
 }
