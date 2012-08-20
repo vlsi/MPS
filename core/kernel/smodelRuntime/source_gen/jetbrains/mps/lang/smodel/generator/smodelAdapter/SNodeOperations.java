@@ -593,7 +593,7 @@ public class SNodeOperations {
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ?
       null :
-      SNodeOperations.getConceptDeclaration(((SNode) node))
+      SModelUtil.findConceptDeclaration(node.getConcept().getQualifiedName(), GlobalScope.getInstance())
     );
   }
 
