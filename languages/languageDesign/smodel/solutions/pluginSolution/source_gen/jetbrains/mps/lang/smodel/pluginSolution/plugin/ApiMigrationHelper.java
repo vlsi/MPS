@@ -65,8 +65,8 @@ public class ApiMigrationHelper {
     Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, scope, new EmptyProgressMonitor());
 
     final Set<SNode> changedClassUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<Tuples._3<SNode, SReference, SReference>> changedClassUsagesInTemplates = SetSequence.fromSet(new HashSet<Tuples._3<SNode, SReference, SReference>>());
-    final Set<Tuples._3<SNode, SReference, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._3<SNode, SReference, SReference>>());
+    final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTemplates = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
+    final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
     for (SReference ref : SetSequence.fromSet(usages)) {
       SNode rNode = ref.getSourceNode();
       if (rNode.getModel().isNotEditable()) {
@@ -80,12 +80,12 @@ public class ApiMigrationHelper {
       }
 
       if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "typeParameter")) {
-        SetSequence.fromSet(changedClassUsagesInTemplates).addElement(MultiTuple.<SNode,SReference,SReference>from(rNode, ref, ((SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
+        SetSequence.fromSet(changedClassUsagesInTemplates).addElement(MultiTuple.<SNode,SReference>from(rNode, ((SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
         continue;
       }
 
       if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "parameter")) {
-        SetSequence.fromSet(changedClassUsagesInTypes).addElement(MultiTuple.<SNode,SReference,SReference>from(rNode, ref, ((SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
+        SetSequence.fromSet(changedClassUsagesInTypes).addElement(MultiTuple.<SNode,SReference>from(rNode, ((SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
         continue;
       }
 
@@ -98,7 +98,7 @@ public class ApiMigrationHelper {
 
     Set<SReference> musages = FindUsagesManager.getInstance().findUsages(methods, SearchType.USAGES, scope, new EmptyProgressMonitor());
 
-    final Set<Tuples._3<SNode, SReference, SReference>> changedMethodCalls = SetSequence.fromSet(new HashSet<Tuples._3<SNode, SReference, SReference>>());
+    final Set<Tuples._2<SNode, SReference>> changedMethodCalls = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
     final Set<SNode> castedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
 
     for (SReference ref : SetSequence.fromSet(musages)) {
@@ -114,7 +114,7 @@ public class ApiMigrationHelper {
 
       SNode newMethod = getNewMethod((SNode) ref.getTargetNode());
       if (newMethod != null) {
-        SetSequence.fromSet(changedMethodCalls).addElement(MultiTuple.<SNode,SReference,SReference>from(rNode, ref, ((SReference) new StaticReference(ref.getRole(), rNode, newMethod))));
+        SetSequence.fromSet(changedMethodCalls).addElement(MultiTuple.<SNode,SReference>from(rNode, ((SReference) new StaticReference(ref.getRole(), rNode, newMethod))));
         continue;
       }
 
@@ -144,16 +144,16 @@ public class ApiMigrationHelper {
       public SearchResult<SNode> select(SNode it) {
         return new SearchResult<SNode>(it, "replaced SNode occurences");
       }
-    }).union(SetSequence.fromSet(changedClassUsagesInTemplates).select(new ISelector<Tuples._3<SNode, SReference, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._3<SNode, SReference, SReference> it) {
+    }).union(SetSequence.fromSet(changedClassUsagesInTemplates).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
         return new SearchResult<SNode>(it._0(), "replaced SNode in new XYZ<SNode,...>");
       }
-    })).union(SetSequence.fromSet(changedClassUsagesInTypes).select(new ISelector<Tuples._3<SNode, SReference, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._3<SNode, SReference, SReference> it) {
+    })).union(SetSequence.fromSet(changedClassUsagesInTypes).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
         return new SearchResult<SNode>(it._0(), "replaced SNode in Type<SNode,...>");
       }
-    })).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<Tuples._3<SNode, SReference, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._3<SNode, SReference, SReference> it) {
+    })).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
         return new SearchResult<SNode>(it._0(), "replaced method call");
       }
     })).union(SetSequence.fromSet(castedMethodCalls).select(new ISelector<SNode, SearchResult<SNode>>() {
@@ -175,14 +175,14 @@ public class ApiMigrationHelper {
             for (SNode cls : SetSequence.fromSet(changedClassUsages)) {
               SLinkOperations.setTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", newSnodeNode, false);
             }
-            for (Tuples._3<SNode, SReference, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTypes)) {
-              tmplCls._0().replaceReference(tmplCls._1(), tmplCls._2());
+            for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTypes)) {
+              tmplCls._0().setReference(tmplCls._1());
             }
-            for (Tuples._3<SNode, SReference, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTemplates)) {
-              tmplCls._0().replaceReference(tmplCls._1(), tmplCls._2());
+            for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTemplates)) {
+              tmplCls._0().setReference(tmplCls._1());
             }
-            for (Tuples._3<SNode, SReference, SReference> change : SetSequence.fromSet(changedMethodCalls)) {
-              change._0().replaceReference(change._1(), change._2());
+            for (Tuples._2<SNode, SReference> change : SetSequence.fromSet(changedMethodCalls)) {
+              change._0().setReference(change._1());
             }
             for (SNode occ : SetSequence.fromSet(castedMethodCalls)) {
               SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(occ), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
