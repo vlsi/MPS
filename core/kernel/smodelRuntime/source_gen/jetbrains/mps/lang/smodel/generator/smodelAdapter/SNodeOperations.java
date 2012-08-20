@@ -583,7 +583,7 @@ public class SNodeOperations {
     }
     SNode nodeParent = node.getParent();
     assert nodeParent != null;
-    SNode conceptOfParent = (SNode) nodeParent.getConceptDeclarationNode();
+    SNode conceptOfParent = SNodeOperations.getConceptDeclaration(nodeParent);
     if (!(SModelUtil.isAssignableConcept(conceptOfParent, expectedConcept))) {
       return false;
     }
@@ -593,7 +593,7 @@ public class SNodeOperations {
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ?
       null :
-      node.getConceptDeclarationNode()
+      SNodeOperations.getConceptDeclaration(((SNode) node))
     );
   }
 
