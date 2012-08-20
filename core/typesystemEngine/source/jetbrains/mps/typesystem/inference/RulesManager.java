@@ -124,7 +124,7 @@ public class RulesManager {
         Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystem.getComparisonRules();
         myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
         myReplacementRules.addRuleSetItem(typesystem.getEliminationRules());
-        myDependenciesContainer.addDependencies(typesystem.getDependencies());
+//        myDependenciesContainer.addDependencies(typesystem.getDependencies());
         myVariableConverters.addAll(typesystem.getVariableConverters());
         myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystem.getOverloadedOperationsTypesProviders());
         Set<AbstractDependentComputation_Runtime> dependentComputations = typesystem.getDependentComputations();
@@ -141,7 +141,7 @@ public class RulesManager {
     try {
       myComparisonRules.makeConsistent();
       myReplacementRules.makeConsistent();
-      myDependenciesContainer.makeConsistent();
+//      myDependenciesContainer.makeConsistent();
       myOverloadedOperationsManager.makeConsistent();
     } catch (RuntimeException ex) {
       LOG.error("internal error: " + ex.getMessage(), ex);

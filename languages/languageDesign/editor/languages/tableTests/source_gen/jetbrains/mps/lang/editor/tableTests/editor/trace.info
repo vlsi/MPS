@@ -1864,7 +1864,6 @@
       <varInfo nodeId="7651593722933678122" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="4550201027691224956" fileName="LightWeightDecisionTable_Editor.java" startLine="24" startPosition="19" endLine="16" endPosition="0" />
-    <unitInfo nodeId="7651593722933678120" fileName="LightWeightDecisionTable_Editor.java" startLine="16" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor" />
     <unitInfo nodeId="7651593722933678122" fileName="LightWeightDecisionTable_Editor.java" startLine="22" startPosition="36" endLine="26" endPosition="5" unitName="jetbrains.mps.lang.editor.tableTests.editor.LightWeightDecisionTable_Editor$1" />
   </root>
   <root nodeId="8506335436194846494">

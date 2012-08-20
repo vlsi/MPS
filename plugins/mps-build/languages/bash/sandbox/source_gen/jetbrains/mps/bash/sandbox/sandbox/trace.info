@@ -47,8 +47,8 @@
     <nodeInfo nodeId="3835416431562293727" fileName="example2.sh" startLine="6" startPosition="7" endLine="6" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293727" fileName="example2.sh" startLine="6" startPosition="7" endLine="6" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293731" fileName="example2.sh" startLine="6" startPosition="7" endLine="6" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3835416431562293732" fileName="example2.sh" startLine="6" startPosition="7" endLine="6" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293732" fileName="example2.sh" startLine="6" startPosition="7" endLine="6" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3835416431562293732" fileName="example2.sh" startLine="6" startPosition="7" endLine="6" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293732" fileName="example2.sh" startLine="6" startPosition="7" endLine="6" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431562293732" fileName="example2.sh" startLine="6" startPosition="11" endLine="6" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293732" fileName="example2.sh" startLine="6" startPosition="11" endLine="6" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -125,8 +125,8 @@
     <nodeInfo nodeId="3835416431562293825" fileName="example2.sh" startLine="14" startPosition="0" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431562293825" fileName="example2.sh" startLine="14" startPosition="3" endLine="14" endPosition="41" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293825" fileName="example2.sh" startLine="14" startPosition="3" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3835416431562293825" fileName="example2.sh" startLine="14" startPosition="5" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293825" fileName="example2.sh" startLine="14" startPosition="5" endLine="14" endPosition="39" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3835416431562293825" fileName="example2.sh" startLine="14" startPosition="5" endLine="14" endPosition="20" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293845" fileName="example2.sh" startLine="14" startPosition="5" endLine="14" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431562293845" fileName="example2.sh" startLine="14" startPosition="5" endLine="14" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431562293845" fileName="example2.sh" startLine="14" startPosition="7" endLine="14" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -624,8 +624,8 @@
     <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="9" endLine="8" endPosition="10" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="10" endLine="8" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="11" endLine="8" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="13" endLine="8" endPosition="24" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="13" endLine="8" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="13" endLine="8" endPosition="24" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="13" endLine="8" endPosition="15" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="15" endLine="8" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950940" fileName="example4.sh" startLine="8" startPosition="16" endLine="8" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -645,9 +645,9 @@
     <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="4" endLine="9" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="7" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="7" endLine="9" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="9" endLine="9" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="9" endLine="9" endPosition="20" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="9" endLine="9" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="9" endLine="9" endPosition="25" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="9" endLine="9" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="11" endLine="9" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950947" fileName="example4.sh" startLine="9" startPosition="12" endLine="9" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -682,8 +682,8 @@
     <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="4" endLine="13" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="7" endLine="13" endPosition="20" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="7" endLine="13" endPosition="9" conceptFqName="jetbrains.mps.gtext.structure.GText" />
-    <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="9" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="9" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="9" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="9" endLine="13" endPosition="11" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="11" endLine="13" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="3835416431564950995" fileName="example4.sh" startLine="13" startPosition="12" endLine="13" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -919,9 +919,9 @@
     <nodeInfo nodeId="9034131902192094602" fileName="mps_shellscript.sh" startLine="19" startPosition="10" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902192094602" fileName="mps_shellscript.sh" startLine="19" startPosition="10" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902192847973" fileName="mps_shellscript.sh" startLine="19" startPosition="10" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="9034131902192847974" fileName="mps_shellscript.sh" startLine="19" startPosition="10" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902192847974" fileName="mps_shellscript.sh" startLine="19" startPosition="10" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902192847974" fileName="mps_shellscript.sh" startLine="19" startPosition="10" endLine="19" endPosition="54" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="9034131902192847974" fileName="mps_shellscript.sh" startLine="19" startPosition="10" endLine="19" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902192847974" fileName="mps_shellscript.sh" startLine="19" startPosition="10" endLine="19" endPosition="12" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="9034131902192847974" fileName="mps_shellscript.sh" startLine="19" startPosition="12" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902192847974" fileName="mps_shellscript.sh" startLine="19" startPosition="12" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -1074,8 +1074,8 @@
     <nodeInfo nodeId="6382090206696966895" fileName="mps_shellscript.sh" startLine="33" startPosition="0" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="6382090206696966895" fileName="mps_shellscript.sh" startLine="33" startPosition="0" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902193762896" fileName="mps_shellscript.sh" startLine="33" startPosition="0" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="9034131902193762897" fileName="mps_shellscript.sh" startLine="33" startPosition="0" endLine="33" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902193762897" fileName="mps_shellscript.sh" startLine="33" startPosition="0" endLine="33" endPosition="58" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="9034131902193762897" fileName="mps_shellscript.sh" startLine="33" startPosition="0" endLine="33" endPosition="8" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902193762900" fileName="mps_shellscript.sh" startLine="33" startPosition="0" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="9034131902193762900" fileName="mps_shellscript.sh" startLine="33" startPosition="0" endLine="33" endPosition="2" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="9034131902193762900" fileName="mps_shellscript.sh" startLine="33" startPosition="2" endLine="33" endPosition="6" conceptFqName="jetbrains.mps.gtext.structure.GText" />
