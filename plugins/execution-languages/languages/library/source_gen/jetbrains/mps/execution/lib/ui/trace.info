@@ -147,7 +147,7 @@
       <varInfo nodeId="1240470842553498902" varName="function" />
     </scopeInfo>
     <scopeInfo nodeId="1240470842553499137" fileName="AbstractMainNodeChooser.java" startLine="73" startPosition="35" endLine="81" endPosition="13">
-      <varInfo nodeId="1240470842553499137" varName="descriptor" />
+      <varInfo nodeId="1240470842553499138" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1240470842553498967" fileName="AbstractMainNodeChooser.java" startLine="151" startPosition="0" endLine="159" endPosition="0" />
     <scopeInfo nodeId="1240470842553498848" fileName="AbstractMainNodeChooser.java" startLine="121" startPosition="39" endLine="130" endPosition="5" />
@@ -393,7 +393,7 @@
       <varInfo nodeId="1240470842553499509" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1240470842553499638" fileName="GlobalFilteredScope.java" startLine="88" startPosition="5" endLine="93" endPosition="5">
-      <varInfo nodeId="1240470842553499638" varName="module" />
+      <varInfo nodeId="1240470842553499639" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="1240470842553499658" fileName="GlobalFilteredScope.java" startLine="96" startPosition="0" endLine="101" endPosition="0" />
     <scopeInfo nodeId="1240470842553499586" fileName="GlobalFilteredScope.java" startLine="73" startPosition="0" endLine="80" endPosition="0">
@@ -742,9 +742,7 @@
     <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="25" startPosition="0" endLine="30" endPosition="3" />
     <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="40" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="49" startPosition="25" endLine="54" endPosition="5">
-      <varInfo nodeId="1240470842553500231" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="49" startPosition="25" endLine="54" endPosition="5" />
     <scopeInfo nodeId="1240470842553500231" fileName="FieldWithBrowseButton.java" startLine="68" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="1240470842553500231" varName="newValue" />
     </scopeInfo>
@@ -882,9 +880,7 @@
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="24" startPosition="0" endLine="29" endPosition="3" />
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="34" startPosition="0" endLine="39" endPosition="0" />
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="48" startPosition="25" endLine="53" endPosition="5">
-      <varInfo nodeId="1240470842553500411" varName="binding" />
-    </scopeInfo>
+    <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="48" startPosition="25" endLine="53" endPosition="5" />
     <scopeInfo nodeId="1240470842553500411" fileName="ParameterBrowser.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1240470842553500411" varName="newValue" />
     </scopeInfo>

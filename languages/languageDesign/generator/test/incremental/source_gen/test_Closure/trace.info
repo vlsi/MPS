@@ -50,7 +50,7 @@
     <scopeInfo nodeId="8250748122682270049" fileName="Library.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8250748122682168218" fileName="Library.java" startLine="17" startPosition="24" endLine="21" endPosition="5" />
     <scopeInfo nodeId="8250748122682168219" fileName="Library.java" startLine="17" startPosition="24" endLine="21" endPosition="5">
-      <varInfo nodeId="8250748122682168219" varName="a" />
+      <varInfo nodeId="8250748122682168220" varName="a" />
     </scopeInfo>
     <scopeInfo nodeId="8250748122682269302" fileName="Library.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="8250748122682168215" fileName="Library.java" startLine="16" startPosition="0" endLine="23" endPosition="0" />

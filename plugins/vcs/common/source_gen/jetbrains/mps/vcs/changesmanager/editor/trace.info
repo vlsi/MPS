@@ -277,7 +277,7 @@
       <varInfo nodeId="1108966977729619010" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="959738663751511317" fileName="ChangesStripActionsHelper.java" startLine="94" startPosition="11" endLine="99" endPosition="9">
-      <varInfo nodeId="959738663751511317" varName="ch" />
+      <varInfo nodeId="959738663751511318" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="1108966977729618949" fileName="ChangesStripActionsHelper.java" startLine="116" startPosition="0" endLine="121" endPosition="0">
       <varInfo nodeId="1108966977729618953" varName="editorContext" />
@@ -347,7 +347,7 @@
       <varInfo nodeId="2052504288806111814" varName="next" />
     </scopeInfo>
     <scopeInfo nodeId="1108966977729622061" fileName="ChangesStripActionsHelper.java" startLine="150" startPosition="121" endLine="161" endPosition="5">
-      <varInfo nodeId="1108966977729622061" varName="pathToRoot" />
+      <varInfo nodeId="1108966977729622062" varName="pathToRoot" />
     </scopeInfo>
     <scopeInfo nodeId="4953964883742112945" fileName="ChangesStripActionsHelper.java" startLine="130" startPosition="130" endLine="142" endPosition="0">
       <varInfo nodeId="4953964883742112945" varName="ch" />
@@ -769,10 +769,10 @@
       <varInfo nodeId="560587099276885896" varName="messages" />
     </scopeInfo>
     <scopeInfo nodeId="967454776205093008" fileName="EditorHighlighter.java" startLine="251" startPosition="74" endLine="254" endPosition="9">
-      <varInfo nodeId="967454776205093008" varName="removedMessage" />
+      <varInfo nodeId="967454776205093009" varName="removedMessage" />
     </scopeInfo>
     <scopeInfo nodeId="967454776205093019" fileName="EditorHighlighter.java" startLine="254" startPosition="9" endLine="257" endPosition="9">
-      <varInfo nodeId="967454776205093019" varName="addedMessage" />
+      <varInfo nodeId="967454776205093020" varName="addedMessage" />
     </scopeInfo>
     <scopeInfo nodeId="2835122602744614997" fileName="EditorHighlighter.java" startLine="76" startPosition="108" endLine="80" endPosition="0">
       <varInfo nodeId="2835122602744614997" varName="c" />
@@ -1249,7 +1249,7 @@
       <varInfo nodeId="867367425399189511" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="867367425399189506" fileName="ChangeStripsPainter.java" startLine="68" startPosition="5" endLine="99" endPosition="5">
-      <varInfo nodeId="867367425399189506" varName="changeGroup" />
+      <varInfo nodeId="867367425399189507" varName="changeGroup" />
     </scopeInfo>
     <scopeInfo nodeId="867367425399189471" fileName="ChangeStripsPainter.java" startLine="64" startPosition="54" endLine="99" endPosition="5">
       <varInfo nodeId="867367425399189480" varName="clipBounds" />

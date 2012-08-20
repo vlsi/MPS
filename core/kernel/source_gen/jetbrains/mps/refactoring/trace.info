@@ -107,7 +107,7 @@
       <varInfo nodeId="2742566862758593682" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758593252" fileName="HistoryWriter.java" startLine="53" startPosition="34" endLine="61" endPosition="5">
-      <varInfo nodeId="2742566862758593252" varName="dependency" />
+      <varInfo nodeId="2742566862758593253" varName="dependency" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758593389" fileName="HistoryWriter.java" startLine="76" startPosition="61" endLine="84" endPosition="16" />
     <scopeInfo nodeId="2742566862758593570" fileName="HistoryWriter.java" startLine="97" startPosition="72" endLine="105" endPosition="16">
@@ -756,7 +756,7 @@
     <scopeInfo nodeId="1216099837721316537" fileName="StructureModification.java" startLine="186" startPosition="0" endLine="196" endPosition="0" />
     <scopeInfo nodeId="6035828529853896043" fileName="StructureModification.java" startLine="68" startPosition="85" endLine="79" endPosition="8" />
     <scopeInfo nodeId="6035828529853896038" fileName="StructureModification.java" startLine="67" startPosition="96" endLine="80" endPosition="5">
-      <varInfo nodeId="6035828529853896038" varName="k" />
+      <varInfo nodeId="6035828529853896039" varName="k" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758589903" fileName="StructureModification.java" startLine="130" startPosition="0" endLine="143" endPosition="0">
       <varInfo nodeId="2742566862758589906" varName="linkMap" />
@@ -1024,7 +1024,7 @@
       <varInfo nodeId="3729328437991306867" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="4525791269560356932" fileName="ModelLinkMap.java" startLine="47" startPosition="78" endLine="50" endPosition="7">
-      <varInfo nodeId="4525791269560356932" varName="prop" />
+      <varInfo nodeId="4525791269560356933" varName="prop" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758589394" fileName="ModelLinkMap.java" startLine="96" startPosition="38" endLine="99" endPosition="106">
       <varInfo nodeId="2742566862758589399" varName="modelName" />
@@ -1035,7 +1035,7 @@
       <varInfo nodeId="6383770312891636799" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="5911625124420811147" fileName="ModelLinkMap.java" startLine="239" startPosition="39" endLine="242" endPosition="7">
-      <varInfo nodeId="5911625124420811147" varName="i" />
+      <varInfo nodeId="5911625124420811148" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="5817662974489429600" fileName="ModelLinkMap.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="5817662974489429610" varName="ptr" />
@@ -1121,7 +1121,7 @@
       <varInfo nodeId="6383770312891638945" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891638957" fileName="ModelLinkMap.java" startLine="330" startPosition="24" endLine="334" endPosition="5">
-      <varInfo nodeId="6383770312891638957" varName="ptr" />
+      <varInfo nodeId="6383770312891638958" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="4525791269560364839" fileName="ModelLinkMap.java" startLine="337" startPosition="47" endLine="341" endPosition="6" />
     <scopeInfo nodeId="2742566862758589349" fileName="ModelLinkMap.java" startLine="89" startPosition="96" endLine="94" endPosition="0">
@@ -1134,7 +1134,7 @@
       <varInfo nodeId="2742566862758589714" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891639023" fileName="ModelLinkMap.java" startLine="189" startPosition="5" endLine="194" endPosition="5">
-      <varInfo nodeId="6383770312891639023" varName="element" />
+      <varInfo nodeId="6383770312891639024" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="980809437931347365" fileName="ModelLinkMap.java" startLine="243" startPosition="103" endLine="248" endPosition="11" />
     <scopeInfo nodeId="980809437931347431" fileName="ModelLinkMap.java" startLine="250" startPosition="103" endLine="255" endPosition="11" />
@@ -1145,7 +1145,7 @@
       <varInfo nodeId="2742566862758589393" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5252604008186657635" fileName="ModelLinkMap.java" startLine="183" startPosition="22" endLine="189" endPosition="5">
-      <varInfo nodeId="5252604008186657635" varName="element" />
+      <varInfo nodeId="5252604008186657636" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891636639" fileName="ModelLinkMap.java" startLine="207" startPosition="50" endLine="213" endPosition="11" />
     <scopeInfo nodeId="6383770312891636762" fileName="ModelLinkMap.java" startLine="220" startPosition="107" endLine="226" endPosition="0">
@@ -1153,22 +1153,22 @@
     </scopeInfo>
     <scopeInfo nodeId="6383770312891638759" fileName="ModelLinkMap.java" startLine="197" startPosition="23" endLine="204" endPosition="59" />
     <scopeInfo nodeId="980809437931347362" fileName="ModelLinkMap.java" startLine="242" startPosition="7" endLine="249" endPosition="7">
-      <varInfo nodeId="980809437931347362" varName="ptr" />
+      <varInfo nodeId="980809437931347363" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="980809437931347426" fileName="ModelLinkMap.java" startLine="249" startPosition="7" endLine="256" endPosition="7">
-      <varInfo nodeId="980809437931347426" varName="ptr" />
+      <varInfo nodeId="980809437931347427" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="980809437931347462" fileName="ModelLinkMap.java" startLine="256" startPosition="7" endLine="263" endPosition="7">
-      <varInfo nodeId="980809437931347462" varName="ptr" />
+      <varInfo nodeId="980809437931347463" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="980809437931347499" fileName="ModelLinkMap.java" startLine="263" startPosition="7" endLine="270" endPosition="7">
-      <varInfo nodeId="980809437931347499" varName="ptr" />
+      <varInfo nodeId="980809437931347500" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="4525791269560364836" fileName="ModelLinkMap.java" startLine="336" startPosition="0" endLine="343" endPosition="0">
       <varInfo nodeId="4525791269560364844" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4525791269560364533" fileName="ModelLinkMap.java" startLine="50" startPosition="7" endLine="58" endPosition="7">
-      <varInfo nodeId="4525791269560364533" varName="ref" />
+      <varInfo nodeId="4525791269560364534" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="2742566862758589704" fileName="ModelLinkMap.java" startLine="153" startPosition="94" endLine="161" endPosition="0">
       <varInfo nodeId="2742566862758589704" varName="prop" />
@@ -1182,7 +1182,7 @@
       <varInfo nodeId="6383770312891638936" varName="ptrList" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891636627" fileName="ModelLinkMap.java" startLine="205" startPosition="5" endLine="215" endPosition="5">
-      <varInfo nodeId="6383770312891636627" varName="ptr" />
+      <varInfo nodeId="6383770312891636628" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891636729" fileName="ModelLinkMap.java" startLine="217" startPosition="95" endLine="227" endPosition="7" />
     <scopeInfo nodeId="2742566862758581624" fileName="ModelLinkMap.java" startLine="299" startPosition="134" endLine="309" endPosition="16">
@@ -1200,7 +1200,7 @@
       <varInfo nodeId="2742566862758577818" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891636726" fileName="ModelLinkMap.java" startLine="216" startPosition="57" endLine="228" endPosition="5">
-      <varInfo nodeId="6383770312891636726" varName="ptr" />
+      <varInfo nodeId="6383770312891636727" varName="ptr" />
     </scopeInfo>
     <scopeInfo nodeId="6383770312891638917" fileName="ModelLinkMap.java" startLine="324" startPosition="0" endLine="336" endPosition="0">
       <varInfo nodeId="6383770312891638924" varName="map" />
@@ -1431,7 +1431,7 @@
     <scopeInfo nodeId="9051163691968353676" fileName="StructureModificationProcessor.java" startLine="34" startPosition="78" endLine="36" endPosition="20" />
     <scopeInfo nodeId="9051163691968378215" fileName="StructureModificationProcessor.java" startLine="41" startPosition="98" endLine="43" endPosition="77" />
     <scopeInfo nodeId="1216099837721873599" fileName="StructureModificationProcessor.java" startLine="53" startPosition="27" endLine="56" endPosition="5">
-      <varInfo nodeId="1216099837721873599" varName="data" />
+      <varInfo nodeId="1216099837721873600" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="6798259919457177119" fileName="StructureModificationProcessor.java" startLine="67" startPosition="118" endLine="70" endPosition="9" />
     <scopeInfo nodeId="1158649578080894930" fileName="StructureModificationProcessor.java" startLine="118" startPosition="53" endLine="121" endPosition="7" />
@@ -1440,7 +1440,7 @@
       <varInfo nodeId="9051163691968378157" varName="modelMap" />
     </scopeInfo>
     <scopeInfo nodeId="9051163691968378212" fileName="StructureModificationProcessor.java" startLine="40" startPosition="44" endLine="44" endPosition="5">
-      <varInfo nodeId="9051163691968378212" varName="entry" />
+      <varInfo nodeId="9051163691968378213" varName="entry" />
     </scopeInfo>
     <scopeInfo nodeId="9083712904745488490" fileName="StructureModificationProcessor.java" startLine="96" startPosition="69" endLine="100" endPosition="0">
       <varInfo nodeId="9083712904745488490" varName="j" />
@@ -1458,7 +1458,7 @@
     <scopeInfo nodeId="3898791162642413937" fileName="StructureModificationProcessor.java" startLine="163" startPosition="70" endLine="167" endPosition="6" />
     <scopeInfo nodeId="6798259919457177103" fileName="StructureModificationProcessor.java" startLine="170" startPosition="68" endLine="174" endPosition="6" />
     <scopeInfo nodeId="6798259919457177117" fileName="StructureModificationProcessor.java" startLine="66" startPosition="7" endLine="71" endPosition="7">
-      <varInfo nodeId="6798259919457177117" varName="data" />
+      <varInfo nodeId="6798259919457177118" varName="data" />
     </scopeInfo>
     <scopeInfo nodeId="1190334391238652054" fileName="StructureModificationProcessor.java" startLine="129" startPosition="85" endLine="134" endPosition="9" />
     <scopeInfo nodeId="9051163691968354036" fileName="StructureModificationProcessor.java" startLine="39" startPosition="72" endLine="45" endPosition="18">
@@ -1470,10 +1470,10 @@
     </scopeInfo>
     <scopeInfo nodeId="489412339685402747" fileName="StructureModificationProcessor.java" startLine="148" startPosition="79" endLine="154" endPosition="7" />
     <scopeInfo nodeId="489412339685421479" fileName="StructureModificationProcessor.java" startLine="148" startPosition="79" endLine="154" endPosition="7">
-      <varInfo nodeId="489412339685421479" varName="importElement" />
+      <varInfo nodeId="489412339685421480" varName="importElement" />
     </scopeInfo>
     <scopeInfo nodeId="1190334391238652051" fileName="StructureModificationProcessor.java" startLine="128" startPosition="56" endLine="135" endPosition="5">
-      <varInfo nodeId="1190334391238652051" varName="entry" />
+      <varInfo nodeId="1190334391238652052" varName="entry" />
     </scopeInfo>
     <scopeInfo nodeId="3898791162642413937" fileName="StructureModificationProcessor.java" startLine="162" startPosition="0" endLine="169" endPosition="0">
       <varInfo nodeId="3898791162642413937" varName="o" />
@@ -1485,7 +1485,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1158649578080894624" fileName="StructureModificationProcessor.java" startLine="107" startPosition="79" endLine="115" endPosition="25" />
     <scopeInfo nodeId="3294668569473094846" fileName="StructureModificationProcessor.java" startLine="136" startPosition="48" endLine="144" endPosition="5">
-      <varInfo nodeId="3294668569473094846" varName="dependency" />
+      <varInfo nodeId="3294668569473094847" varName="dependency" />
     </scopeInfo>
     <scopeInfo nodeId="9051163691968378166" fileName="StructureModificationProcessor.java" startLine="38" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="9051163691968354033" varName="data" />
@@ -1502,14 +1502,14 @@
     </scopeInfo>
     <scopeInfo nodeId="1158649578080894594" fileName="StructureModificationProcessor.java" startLine="106" startPosition="84" endLine="116" endPosition="9" />
     <scopeInfo nodeId="6798259919457177095" fileName="StructureModificationProcessor.java" startLine="61" startPosition="103" endLine="72" endPosition="5">
-      <varInfo nodeId="6798259919457177095" varName="importElement" />
+      <varInfo nodeId="6798259919457177096" varName="importElement" />
     </scopeInfo>
     <scopeInfo nodeId="9051163691968380095" fileName="StructureModificationProcessor.java" startLine="47" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="2370252442139111618" fileName="StructureModificationProcessor.java" startLine="82" startPosition="76" endLine="94" endPosition="7">
       <varInfo nodeId="2370252442139111621" varName="j" />
     </scopeInfo>
     <scopeInfo nodeId="1158649578080894591" fileName="StructureModificationProcessor.java" startLine="105" startPosition="53" endLine="117" endPosition="7">
-      <varInfo nodeId="1158649578080894591" varName="k" />
+      <varInfo nodeId="1158649578080894592" varName="k" />
     </scopeInfo>
     <scopeInfo nodeId="9051163691968353847" fileName="StructureModificationProcessor.java" startLine="146" startPosition="0" endLine="158" endPosition="0">
       <varInfo nodeId="9051163691968353850" varName="model" />

@@ -302,7 +302,7 @@
     <scopeInfo nodeId="3796137614137327284" fileName="ReplaceRegexpOperation_DataFlow.java" startLine="18" startPosition="112" endLine="19" endPosition="45" />
     <scopeInfo nodeId="3796137614137203415" fileName="ReplaceRegexpOperation_DataFlow.java" startLine="12" startPosition="70" endLine="14" endPosition="3" />
     <scopeInfo nodeId="3796137614137327281" fileName="ReplaceRegexpOperation_DataFlow.java" startLine="17" startPosition="103" endLine="20" endPosition="5">
-      <varInfo nodeId="3796137614137327281" varName="r" />
+      <varInfo nodeId="3796137614137327282" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="3796137614137203417" fileName="ReplaceRegexpOperation_DataFlow.java" startLine="16" startPosition="102" endLine="20" endPosition="5" />
     <scopeInfo nodeId="3796137614137203415" fileName="ReplaceRegexpOperation_DataFlow.java" startLine="15" startPosition="0" endLine="22" endPosition="0">

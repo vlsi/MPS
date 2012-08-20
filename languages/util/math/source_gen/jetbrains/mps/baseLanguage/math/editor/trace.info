@@ -6703,7 +6703,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7896204543965411427" fileName="ExponentOperation_Component.java" startLine="97" startPosition="76" endLine="102" endPosition="5" />
     <scopeInfo nodeId="7388416617631865944" fileName="ExponentOperation_Component.java" startLine="111" startPosition="73" endLine="116" endPosition="7">
-      <varInfo nodeId="7388416617631865944" varName="a" />
+      <varInfo nodeId="7388416617631865945" varName="a" />
     </scopeInfo>
     <scopeInfo nodeId="7255837154369796259" fileName="ExponentOperation_Component.java" startLine="47" startPosition="89" endLine="53" endPosition="22">
       <varInfo nodeId="7255837154369796259" varName="editorCell" />

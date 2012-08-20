@@ -171,7 +171,7 @@
       <varInfo nodeId="6389121991274660197" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7388416617631603370" fileName="QueriesGenerated.java" startLine="196" startPosition="77" endLine="201" endPosition="11">
-      <varInfo nodeId="7388416617631603370" varName="a" />
+      <varInfo nodeId="7388416617631603371" varName="a" />
     </scopeInfo>
     <scopeInfo nodeId="6389121991274660127" fileName="QueriesGenerated.java" startLine="241" startPosition="43" endLine="246" endPosition="9" />
     <scopeInfo nodeId="963844843316090106" fileName="QueriesGenerated.java" startLine="278" startPosition="9" endLine="283" endPosition="9" />

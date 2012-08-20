@@ -310,7 +310,7 @@
     <scopeInfo nodeId="4755209551904411801" fileName="CycleHelper.java" startLine="36" startPosition="70" endLine="38" endPosition="33" />
     <scopeInfo nodeId="1692280246134755776" fileName="CycleHelper.java" startLine="191" startPosition="39" endLine="193" endPosition="167" />
     <scopeInfo nodeId="2219920121494342430" fileName="CycleHelper.java" startLine="70" startPosition="8" endLine="73" endPosition="5">
-      <varInfo nodeId="2219920121494342430" varName="m" />
+      <varInfo nodeId="2219920121494342431" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="7385586609667648749" fileName="CycleHelper.java" startLine="82" startPosition="5" endLine="85" endPosition="5">
       <varInfo nodeId="7385586609667648752" varName="module" />
@@ -397,7 +397,7 @@
       <varInfo nodeId="2219920121494329739" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="7926701909975524778" fileName="CycleHelper.java" startLine="150" startPosition="0" endLine="160" endPosition="9">
-      <varInfo nodeId="7926701909975524778" varName="n" />
+      <varInfo nodeId="7926701909975524779" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="7385586609667636873" fileName="CycleHelper.java" startLine="214" startPosition="54" endLine="226" endPosition="11">
       <varInfo nodeId="7385586609667636876" varName="ref" />

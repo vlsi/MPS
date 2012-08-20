@@ -164,7 +164,7 @@
       <varInfo nodeId="7012097027058651032" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="7012097027058650952" fileName="MoveNodes.java" startLine="116" startPosition="54" endLine="119" endPosition="5">
-      <varInfo nodeId="7012097027058650952" varName="selNode" />
+      <varInfo nodeId="7012097027058650953" varName="selNode" />
     </scopeInfo>
     <scopeInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="10" startPosition="0" endLine="14" endPosition="0" />
     <scopeInfo nodeId="7012097027058633806" fileName="MoveNodes_Target.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />

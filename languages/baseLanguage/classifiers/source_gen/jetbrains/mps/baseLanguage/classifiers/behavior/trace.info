@@ -295,7 +295,7 @@
       <varInfo nodeId="1213877512818" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1219068414652" fileName="ThisClassifierExpression_Behavior.java" startLine="24" startPosition="48" endLine="27" endPosition="5">
-      <varInfo nodeId="1219068414652" varName="current" />
+      <varInfo nodeId="1219068414653" varName="current" />
     </scopeInfo>
     <scopeInfo nodeId="1213877512821" fileName="ThisClassifierExpression_Behavior.java" startLine="16" startPosition="72" endLine="20" endPosition="77" />
     <scopeInfo nodeId="1219068414645" fileName="ThisClassifierExpression_Behavior.java" startLine="23" startPosition="87" endLine="28" endPosition="18">

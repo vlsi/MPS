@@ -537,7 +537,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7984891866937844934" fileName="BuildLayout_Folder_Behavior.java" startLine="53" startPosition="92" endLine="64" endPosition="145" />
     <scopeInfo nodeId="2219920121494203670" fileName="BuildLayout_Folder_Behavior.java" startLine="30" startPosition="60" endLine="42" endPosition="5">
-      <varInfo nodeId="2219920121494203670" varName="ic" />
+      <varInfo nodeId="2219920121494203671" varName="ic" />
     </scopeInfo>
     <scopeInfo nodeId="280273048052522028" fileName="BuildLayout_Folder_Behavior.java" startLine="52" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7984891866937844935" varName="object" />
@@ -703,7 +703,7 @@
       <varInfo nodeId="4380385936562003287" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="4380385936562037011" fileName="BuildString_Behavior.java" startLine="15" startPosition="43" endLine="18" endPosition="5">
-      <varInfo nodeId="4380385936562037011" varName="n" />
+      <varInfo nodeId="4380385936562037012" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="4380385936562005553" fileName="BuildString_Behavior.java" startLine="14" startPosition="93" endLine="19" endPosition="25">
       <varInfo nodeId="4380385936562037004" varName="sb" />
@@ -2621,14 +2621,14 @@
       <varInfo nodeId="8258189873530257995" varName="_this" />
     </scopeInfo>
     <scopeInfo nodeId="1224588814561808536" fileName="BuildProject_Behavior.java" startLine="106" startPosition="7" endLine="112" endPosition="7">
-      <varInfo nodeId="1224588814561808536" varName="plugin" />
+      <varInfo nodeId="1224588814561808537" varName="plugin" />
     </scopeInfo>
     <scopeInfo nodeId="1224588814561811049" fileName="BuildProject_Behavior.java" startLine="113" startPosition="38" endLine="119" endPosition="7" />
     <scopeInfo nodeId="1224588814561811123" fileName="BuildProject_Behavior.java" startLine="113" startPosition="38" endLine="119" endPosition="7">
-      <varInfo nodeId="1224588814561811123" varName="plugin" />
+      <varInfo nodeId="1224588814561811124" varName="plugin" />
     </scopeInfo>
     <scopeInfo nodeId="1224588814561808312" fileName="BuildProject_Behavior.java" startLine="161" startPosition="5" endLine="167" endPosition="5">
-      <varInfo nodeId="1224588814561808312" varName="dep" />
+      <varInfo nodeId="1224588814561808313" varName="dep" />
     </scopeInfo>
     <scopeInfo nodeId="3767587139141109768" fileName="BuildProject_Behavior.java" startLine="173" startPosition="56" endLine="179" endPosition="9" />
     <scopeInfo nodeId="3767587139141108538" fileName="BuildProject_Behavior.java" startLine="192" startPosition="41" endLine="198" endPosition="11" />

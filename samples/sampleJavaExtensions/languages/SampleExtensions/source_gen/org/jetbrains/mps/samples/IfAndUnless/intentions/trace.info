@@ -33,7 +33,7 @@
     <scopeInfo nodeId="393299394024647596" fileName="SurroundWithUnless_Intention.java" startLine="50" startPosition="37" endLine="51" endPosition="62" />
     <scopeInfo nodeId="393299394024647596" fileName="SurroundWithUnless_Intention.java" startLine="15" startPosition="94" endLine="17" endPosition="3" />
     <scopeInfo nodeId="8750188059154310865" fileName="SurroundWithUnless_Intention.java" startLine="42" startPosition="105" endLine="45" endPosition="5">
-      <varInfo nodeId="8750188059154310865" varName="selectedNode" />
+      <varInfo nodeId="8750188059154310866" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="393299394024647596" fileName="SurroundWithUnless_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="393299394024647596" fileName="SurroundWithUnless_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -120,7 +120,7 @@
     <scopeInfo nodeId="393299394024667052" fileName="UnwrapUnlessBlock_Intention.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="5341655688653703423" fileName="UnwrapUnlessBlock_Intention.java" startLine="79" startPosition="66" endLine="83" endPosition="6" />
     <scopeInfo nodeId="5341655688653703412" fileName="UnwrapUnlessBlock_Intention.java" startLine="48" startPosition="57" endLine="53" endPosition="5">
-      <varInfo nodeId="5341655688653703412" varName="ancestor" />
+      <varInfo nodeId="5341655688653703413" varName="ancestor" />
     </scopeInfo>
     <scopeInfo nodeId="917166302016112143" fileName="UnwrapUnlessBlock_Intention.java" startLine="62" startPosition="154" endLine="67" endPosition="0">
       <varInfo nodeId="917166302016112143" varName="it" />

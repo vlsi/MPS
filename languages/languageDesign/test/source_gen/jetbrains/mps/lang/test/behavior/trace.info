@@ -290,10 +290,10 @@
       <varInfo nodeId="1217250493536" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1217250593499" fileName="NodesTestCase_Behavior.java" startLine="17" startPosition="48" endLine="20" endPosition="5">
-      <varInfo nodeId="1217250593499" varName="method" />
+      <varInfo nodeId="1217250593500" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="1217512074090" fileName="NodesTestCase_Behavior.java" startLine="20" startPosition="5" endLine="23" endPosition="5">
-      <varInfo nodeId="1217512074090" varName="operation" />
+      <varInfo nodeId="1217512074091" varName="operation" />
     </scopeInfo>
     <scopeInfo nodeId="1217250493536" fileName="NodesTestCase_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1217250493536" varName="thisNode" />

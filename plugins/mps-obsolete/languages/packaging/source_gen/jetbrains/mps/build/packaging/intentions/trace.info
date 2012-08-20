@@ -62,7 +62,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
     <scopeInfo nodeId="1228401917617" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="55" startPosition="129" endLine="61" endPosition="5">
-      <varInfo nodeId="1228401917617" varName="prop" />
+      <varInfo nodeId="1228401917618" varName="prop" />
     </scopeInfo>
     <scopeInfo nodeId="1228398444440" fileName="CreateNewBuildLanguageProject_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1228398444440" varName="editorContext" />

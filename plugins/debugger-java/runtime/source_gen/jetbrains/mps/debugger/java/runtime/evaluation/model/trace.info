@@ -95,7 +95,7 @@
     <scopeInfo nodeId="1247371618987947265" fileName="EvaluationAuxModule.java" startLine="65" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="1247371618987947273" fileName="EvaluationAuxModule.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="1247371618987947379" fileName="EvaluationAuxModule.java" startLine="97" startPosition="87" endLine="102" endPosition="9">
-      <varInfo nodeId="1247371618987947379" varName="descriptor" />
+      <varInfo nodeId="1247371618987947380" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1247371618987947430" fileName="EvaluationAuxModule.java" startLine="112" startPosition="0" endLine="117" endPosition="0" />
     <scopeInfo nodeId="1373675465830797013" fileName="EvaluationAuxModule.java" startLine="117" startPosition="0" endLine="122" endPosition="0" />
@@ -111,7 +111,7 @@
       <varInfo nodeId="1247371618987947342" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="1247371618987947337" fileName="EvaluationAuxModule.java" startLine="90" startPosition="59" endLine="109" endPosition="5">
-      <varInfo nodeId="1247371618987947337" varName="stub" />
+      <varInfo nodeId="1247371618987947338" varName="stub" />
     </scopeInfo>
     <scopeInfo nodeId="1247371618987947331" fileName="EvaluationAuxModule.java" startLine="88" startPosition="46" endLine="110" endPosition="18">
       <varInfo nodeId="2273513587774663313" varName="repo" />
@@ -254,7 +254,7 @@
     <scopeInfo nodeId="7179902291390769264" fileName="MyInMemoryJavaGenerationHandler.java" startLine="51" startPosition="29" endLine="54" endPosition="7" />
     <scopeInfo nodeId="726740647142989890" fileName="MyInMemoryJavaGenerationHandler.java" startLine="69" startPosition="58" endLine="72" endPosition="13" />
     <scopeInfo nodeId="726740647142989891" fileName="MyInMemoryJavaGenerationHandler.java" startLine="69" startPosition="58" endLine="72" endPosition="13">
-      <varInfo nodeId="726740647142989891" varName="listener" />
+      <varInfo nodeId="726740647142989892" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="726740647142989780" fileName="MyInMemoryJavaGenerationHandler.java" startLine="33" startPosition="0" endLine="37" endPosition="3">
       <varInfo nodeId="726740647142989798" varName="keepSources" />
@@ -543,7 +543,7 @@
     <scopeInfo nodeId="7757449281563189591" fileName="AbstractEvaluationModel.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="9172312269976661818" fileName="AbstractEvaluationModel.java" startLine="191" startPosition="74" endLine="195" endPosition="0" />
     <scopeInfo nodeId="2119552402221522412" fileName="AbstractEvaluationModel.java" startLine="208" startPosition="27" endLine="212" endPosition="9">
-      <varInfo nodeId="2119552402221522412" varName="error" />
+      <varInfo nodeId="2119552402221522413" varName="error" />
     </scopeInfo>
     <scopeInfo nodeId="2119552402221528140" fileName="AbstractEvaluationModel.java" startLine="215" startPosition="0" endLine="219" endPosition="0" />
     <scopeInfo nodeId="2119552402221528164" fileName="AbstractEvaluationModel.java" startLine="219" startPosition="0" endLine="223" endPosition="0" />
@@ -901,14 +901,14 @@
       <varInfo nodeId="7239101982553533653" varName="clone" />
     </scopeInfo>
     <scopeInfo nodeId="6086406241699243820" fileName="LowLevelEvaluationModel.java" startLine="185" startPosition="46" endLine="188" endPosition="5">
-      <varInfo nodeId="6086406241699243820" varName="d" />
+      <varInfo nodeId="6086406241699243821" varName="d" />
     </scopeInfo>
     <scopeInfo nodeId="6086406241699314507" fileName="LowLevelEvaluationModel.java" startLine="223" startPosition="34" endLine="226" endPosition="73">
       <varInfo nodeId="7239101982553577250" varName="newVariableReference" />
     </scopeInfo>
     <scopeInfo nodeId="8736635924683069477" fileName="LowLevelEvaluationModel.java" startLine="262" startPosition="32" endLine="265" endPosition="7" />
     <scopeInfo nodeId="8738666552765516361" fileName="LowLevelEvaluationModel.java" startLine="297" startPosition="124" endLine="300" endPosition="7">
-      <varInfo nodeId="8738666552765516361" varName="var" />
+      <varInfo nodeId="8738666552765516362" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="8527137208266038636" fileName="LowLevelEvaluationModel.java" startLine="310" startPosition="40" endLine="313" endPosition="78" />
     <scopeInfo nodeId="7757449281563190692" fileName="LowLevelEvaluationModel.java" startLine="335" startPosition="0" endLine="338" endPosition="7">
@@ -1042,11 +1042,11 @@
       <varInfo nodeId="4165663560535951167" varName="smodel" />
     </scopeInfo>
     <scopeInfo nodeId="7239101982553533457" fileName="LowLevelEvaluationModel.java" startLine="158" startPosition="25" endLine="171" endPosition="5">
-      <varInfo nodeId="7239101982553533457" varName="node" />
+      <varInfo nodeId="7239101982553533458" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7239101982553577378" fileName="LowLevelEvaluationModel.java" startLine="191" startPosition="50" endLine="204" endPosition="5" />
     <scopeInfo nodeId="7239101982553577387" fileName="LowLevelEvaluationModel.java" startLine="191" startPosition="50" endLine="204" endPosition="5">
-      <varInfo nodeId="7239101982553577387" varName="reference" />
+      <varInfo nodeId="7239101982553577388" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190333" fileName="LowLevelEvaluationModel.java" startLine="271" startPosition="29" endLine="284" endPosition="7" />
     <scopeInfo nodeId="7239101982553533655" fileName="LowLevelEvaluationModel.java" startLine="429" startPosition="43" endLine="442" endPosition="9" />
@@ -1077,7 +1077,7 @@
       <varInfo nodeId="7239101982553561479" varName="matchingVar" />
     </scopeInfo>
     <scopeInfo nodeId="7757449281563190558" fileName="LowLevelEvaluationModel.java" startLine="302" startPosition="77" endLine="319" endPosition="7">
-      <varInfo nodeId="7757449281563190558" varName="variable" />
+      <varInfo nodeId="7757449281563190559" varName="variable" />
     </scopeInfo>
     <scopeInfo nodeId="7239101982553533655" fileName="LowLevelEvaluationModel.java" startLine="426" startPosition="32" endLine="444" endPosition="7" />
     <scopeInfo nodeId="7239101982553561386" fileName="LowLevelEvaluationModel.java" startLine="208" startPosition="88" endLine="228" endPosition="7">
@@ -1562,7 +1562,7 @@
     <scopeInfo nodeId="2416198621220213807" fileName="StackFrameContext.java" startLine="324" startPosition="74" endLine="328" endPosition="6" />
     <scopeInfo nodeId="2416198621220213877" fileName="StackFrameContext.java" startLine="331" startPosition="62" endLine="335" endPosition="6" />
     <scopeInfo nodeId="9093774239583840903" fileName="StackFrameContext.java" startLine="165" startPosition="86" endLine="170" endPosition="7">
-      <varInfo nodeId="9093774239583840903" varName="variable" />
+      <varInfo nodeId="9093774239583840904" varName="variable" />
     </scopeInfo>
     <scopeInfo nodeId="2416198621220213784" fileName="StackFrameContext.java" startLine="266" startPosition="15" endLine="271" endPosition="13">
       <varInfo nodeId="2416198621220213791" varName="variableTypeSignature" />

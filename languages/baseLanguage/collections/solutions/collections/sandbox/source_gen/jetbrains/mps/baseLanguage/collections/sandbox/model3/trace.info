@@ -35,7 +35,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1224754248054" fileName="C1.java" startLine="37" startPosition="37" endLine="40" endPosition="19" />
     <scopeInfo nodeId="1199410034689" fileName="C1.java" startLine="42" startPosition="7" endLine="45" endPosition="5">
-      <varInfo nodeId="1199410034689" varName="s" />
+      <varInfo nodeId="1199410034690" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1172275562561" fileName="C1.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="1179271687154" fileName="C1.java" startLine="28" startPosition="20" endLine="32" endPosition="14">

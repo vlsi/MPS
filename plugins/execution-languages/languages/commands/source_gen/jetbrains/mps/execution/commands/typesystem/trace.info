@@ -1023,7 +1023,7 @@
     <scopeInfo nodeId="889694274152095745" fileName="typeof_NewProcessBuilderExperssion_InferenceRule.java" startLine="138" startPosition="9" endLine="144" endPosition="9" />
     <scopeInfo nodeId="889694274152095745" fileName="typeof_NewProcessBuilderExperssion_InferenceRule.java" startLine="169" startPosition="9" endLine="175" endPosition="9" />
     <scopeInfo nodeId="889694274152061896" fileName="typeof_NewProcessBuilderExperssion_InferenceRule.java" startLine="35" startPosition="5" endLine="42" endPosition="5">
-      <varInfo nodeId="889694274152061896" varName="part" />
+      <varInfo nodeId="889694274152061897" varName="part" />
     </scopeInfo>
     <scopeInfo nodeId="889694274152052323" fileName="typeof_NewProcessBuilderExperssion_InferenceRule.java" startLine="48" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="889694274152052323" varName="argument" />

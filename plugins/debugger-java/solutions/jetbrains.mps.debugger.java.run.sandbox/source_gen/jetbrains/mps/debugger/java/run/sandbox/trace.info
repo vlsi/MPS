@@ -227,7 +227,7 @@
     <scopeInfo nodeId="4370401284816027253" fileName="DebugCollections.java" startLine="86" startPosition="30" endLine="87" endPosition="28" />
     <scopeInfo nodeId="4370401284816024231" fileName="DebugCollections.java" startLine="20" startPosition="31" endLine="22" endPosition="3" />
     <scopeInfo nodeId="4370401284816024263" fileName="DebugCollections.java" startLine="82" startPosition="53" endLine="85" endPosition="5">
-      <varInfo nodeId="4370401284816024263" varName="i" />
+      <varInfo nodeId="4370401284816024264" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="4370401284816027251" fileName="DebugCollections.java" startLine="85" startPosition="5" endLine="88" endPosition="5">
       <varInfo nodeId="4370401284816027252" varName="j" />

@@ -106,7 +106,7 @@
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="34" startPosition="32" endLine="37" endPosition="41" />
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="55" startPosition="27" endLine="58" endPosition="7" />
     <scopeInfo nodeId="5487985028841906213" fileName="RunTestInMPS_Action.java" startLine="96" startPosition="260" endLine="99" endPosition="7">
-      <varInfo nodeId="5487985028841906213" varName="test" />
+      <varInfo nodeId="5487985028841906214" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="5487985028841906061" fileName="RunTestInMPS_Action.java" startLine="100" startPosition="0" endLine="103" endPosition="7">
       <varInfo nodeId="5487985028841906061" varName="t" />

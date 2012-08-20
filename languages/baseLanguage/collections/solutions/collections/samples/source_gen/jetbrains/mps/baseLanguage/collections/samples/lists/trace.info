@@ -15,7 +15,7 @@
     <scopeInfo nodeId="1160611278761" fileName="Main_lists.java" startLine="17" startPosition="50" endLine="18" endPosition="28" />
     <scopeInfo nodeId="1162935392618" fileName="Main_lists.java" startLine="20" startPosition="67" endLine="21" endPosition="68" />
     <scopeInfo nodeId="1160611278758" fileName="Main_lists.java" startLine="16" startPosition="139" endLine="19" endPosition="5">
-      <varInfo nodeId="1160611278758" varName="s" />
+      <varInfo nodeId="1160611278759" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1162935392615" fileName="Main_lists.java" startLine="19" startPosition="5" endLine="22" endPosition="5">
       <varInfo nodeId="1162935411370" varName="i" />

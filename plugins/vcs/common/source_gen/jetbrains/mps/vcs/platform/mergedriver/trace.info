@@ -223,7 +223,7 @@
       <varInfo nodeId="1903565688283060348" varName="mpsCorePath" />
     </scopeInfo>
     <scopeInfo nodeId="1564108971409412531" fileName="MergeDriverPacker.java" startLine="71" startPosition="92" endLine="85" endPosition="5">
-      <varInfo nodeId="1564108971409412531" varName="classpathDir" />
+      <varInfo nodeId="1564108971409412532" varName="classpathDir" />
     </scopeInfo>
     <scopeInfo nodeId="1564108971409412526" fileName="MergeDriverPacker.java" startLine="71" startPosition="92" endLine="89" endPosition="5" />
     <scopeInfo nodeId="8298649587588677772" fileName="MergeDriverPacker.java" startLine="70" startPosition="0" endLine="91" endPosition="0">
@@ -809,7 +809,7 @@
       <varInfo nodeId="1400826623542832087" varName="allRoots" />
     </scopeInfo>
     <scopeInfo nodeId="1376744028423472698" fileName="GitRepositoriesInstaller.java" startLine="91" startPosition="19" endLine="98" endPosition="5">
-      <varInfo nodeId="1376744028423472698" varName="root" />
+      <varInfo nodeId="1376744028423472699" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="1376744028423395836" fileName="GitRepositoriesInstaller.java" startLine="132" startPosition="74" endLine="140" endPosition="0">
       <varInfo nodeId="1376744028423395836" varName="pat" />
@@ -830,7 +830,7 @@
       <varInfo nodeId="1376744028423472728" varName="updated" />
     </scopeInfo>
     <scopeInfo nodeId="428846146748920530" fileName="GitRepositoriesInstaller.java" startLine="143" startPosition="0" endLine="161" endPosition="7">
-      <varInfo nodeId="428846146748920530" varName="pat" />
+      <varInfo nodeId="428846146748920531" varName="pat" />
     </scopeInfo>
     <scopeInfo nodeId="1376744028423395697" fileName="GitRepositoriesInstaller.java" startLine="88" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="7179404661240011014" varName="roots" />

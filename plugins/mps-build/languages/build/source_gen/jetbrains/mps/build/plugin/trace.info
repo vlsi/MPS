@@ -378,7 +378,7 @@
       <varInfo nodeId="1670948443106485497" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="3186742424691105325" fileName="CopyGeneratedScripts_Facet.java" startLine="218" startPosition="76" endLine="232" endPosition="21">
-      <varInfo nodeId="3186742424691105325" varName="descendant" />
+      <varInfo nodeId="3186742424691105326" varName="descendant" />
     </scopeInfo>
     <scopeInfo nodeId="809559803149985732" fileName="CopyGeneratedScripts_Facet.java" startLine="207" startPosition="37" endLine="232" endPosition="21">
       <varInfo nodeId="3186742424691094740" varName="buildScriptDescendants" />
@@ -399,7 +399,7 @@
       <varInfo nodeId="4243675727097117254" varName="_output_ixa0pj_a0a" />
     </scopeInfo>
     <scopeInfo nodeId="809559803149895943" fileName="CopyGeneratedScripts_Facet.java" startLine="203" startPosition="258" endLine="245" endPosition="15">
-      <varInfo nodeId="809559803149895943" varName="resource" />
+      <varInfo nodeId="809559803149895944" varName="resource" />
     </scopeInfo>
     <scopeInfo nodeId="4243675727097117247" fileName="CopyGeneratedScripts_Facet.java" startLine="202" startPosition="19" endLine="245" endPosition="15" />
     <scopeInfo nodeId="4243675727097117254" fileName="CopyGeneratedScripts_Facet.java" startLine="87" startPosition="30" endLine="131" endPosition="0">

@@ -703,14 +703,14 @@
     <scopeInfo nodeId="6648795410103967602" fileName="JavaCompile_Facet.java" startLine="473" startPosition="67" endLine="482" endPosition="0" />
     <scopeInfo nodeId="6648795410103967207" fileName="JavaCompile_Facet.java" startLine="142" startPosition="59" endLine="152" endPosition="63" />
     <scopeInfo nodeId="6648795410103967123" fileName="JavaCompile_Facet.java" startLine="154" startPosition="0" endLine="164" endPosition="15">
-      <varInfo nodeId="6648795410103967123" varName="resource" />
+      <varInfo nodeId="6648795410103967124" varName="resource" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103967425" fileName="JavaCompile_Facet.java" startLine="329" startPosition="49" endLine="339" endPosition="65" />
     <scopeInfo nodeId="6648795410103967553" fileName="JavaCompile_Facet.java" startLine="461" startPosition="78" endLine="471" endPosition="0">
       <varInfo nodeId="6648795410103967556" varName="cr" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103967493" fileName="JavaCompile_Facet.java" startLine="448" startPosition="87" endLine="459" endPosition="15">
-      <varInfo nodeId="6648795410103967493" varName="r" />
+      <varInfo nodeId="6648795410103967494" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103967073" fileName="JavaCompile_Facet.java" startLine="592" startPosition="84" endLine="615" endPosition="7" />
     <scopeInfo nodeId="6648795410103967073" fileName="JavaCompile_Facet.java" startLine="591" startPosition="0" endLine="617" endPosition="0">
@@ -728,7 +728,7 @@
       <varInfo nodeId="6648795410103967347" varName="tres" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103967342" fileName="JavaCompile_Facet.java" startLine="304" startPosition="40" endLine="343" endPosition="15">
-      <varInfo nodeId="6648795410103967342" varName="resource" />
+      <varInfo nodeId="6648795410103967343" varName="resource" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103967479" fileName="JavaCompile_Facet.java" startLine="446" startPosition="19" endLine="492" endPosition="163">
       <varInfo nodeId="6648795410103967599" varName="ccp" />

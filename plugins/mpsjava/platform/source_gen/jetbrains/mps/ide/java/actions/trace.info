@@ -2343,7 +2343,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2808756344206306288" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="31" endLine="156" endPosition="15" />
     <scopeInfo nodeId="2808756344206306289" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="31" endLine="156" endPosition="15">
-      <varInfo nodeId="2808756344206306289" varName="finderClass" />
+      <varInfo nodeId="2808756344206306290" varName="finderClass" />
     </scopeInfo>
     <scopeInfo nodeId="2808756344206306287" fileName="GoToInheritedClassifier_Action.java" startLine="134" startPosition="63" endLine="158" endPosition="0" />
     <scopeInfo nodeId="2808756344206306285" fileName="GoToInheritedClassifier_Action.java" startLine="133" startPosition="61" endLine="158" endPosition="13" />
@@ -4969,7 +4969,7 @@
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="32" startPosition="39" endLine="35" endPosition="41" />
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="54" startPosition="27" endLine="57" endPosition="7" />
     <scopeInfo nodeId="8250409733214735696" fileName="MigrateSourcesToMPS_Action.java" startLine="88" startPosition="76" endLine="91" endPosition="7">
-      <varInfo nodeId="8250409733214735696" varName="path" />
+      <varInfo nodeId="8250409733214735697" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="100" startPosition="0" endLine="103" endPosition="7">
       <varInfo nodeId="4326588611400156604" varName="t" />
@@ -5288,7 +5288,7 @@
     <scopeInfo nodeId="6354194863340390762" fileName="UncommentStatements_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" />
     <scopeInfo nodeId="6354194863340390762" fileName="UncommentStatements_Action.java" startLine="60" startPosition="25" endLine="63" endPosition="9" />
     <scopeInfo nodeId="6354194863340390775" fileName="UncommentStatements_Action.java" startLine="79" startPosition="198" endLine="82" endPosition="7">
-      <varInfo nodeId="6354194863340390775" varName="statement" />
+      <varInfo nodeId="6354194863340390776" varName="statement" />
     </scopeInfo>
     <scopeInfo nodeId="6354194863340390762" fileName="UncommentStatements_Action.java" startLine="84" startPosition="0" endLine="87" endPosition="7">
       <varInfo nodeId="6354194863340390762" varName="t" />
@@ -5415,9 +5415,7 @@
     <scopeInfo nodeId="6354194863340390815" fileName="CommentStatements_Action.java" startLine="79" startPosition="5" endLine="83" endPosition="5" />
     <scopeInfo nodeId="6354194863340390815" fileName="CommentStatements_Action.java" startLine="26" startPosition="0" endLine="31" endPosition="3" />
     <scopeInfo nodeId="6354194863340390815" fileName="CommentStatements_Action.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="6354194863340390815" fileName="CommentStatements_Action.java" startLine="63" startPosition="26" endLine="69" endPosition="9">
-      <varInfo nodeId="6354194863340390815" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="6354194863340390815" fileName="CommentStatements_Action.java" startLine="63" startPosition="26" endLine="69" endPosition="9" />
     <scopeInfo nodeId="6354194863340390815" fileName="CommentStatements_Action.java" startLine="87" startPosition="96" endLine="95" endPosition="5" />
     <scopeInfo nodeId="6354194863340390815" fileName="CommentStatements_Action.java" startLine="42" startPosition="89" endLine="53" endPosition="5" />
     <scopeInfo nodeId="6354194863340390815" fileName="CommentStatements_Action.java" startLine="86" startPosition="0" endLine="97" endPosition="0">

@@ -15,7 +15,7 @@
       <varInfo nodeId="1153936530266" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1154026567207" fileName="Main_javaIterable_as_sequence.java" startLine="16" startPosition="46" endLine="19" endPosition="5">
-      <varInfo nodeId="1154026567207" varName="n" />
+      <varInfo nodeId="1154026567208" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1153934557092" fileName="Main_javaIterable_as_sequence.java" startLine="10" startPosition="47" endLine="19" endPosition="5">
       <varInfo nodeId="1153934720447" varName="javaIterable" />
@@ -46,10 +46,10 @@
       <varInfo nodeId="1153938616910" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1154026701002" fileName="Main_javaList_as_sequence.java" startLine="17" startPosition="42" endLine="20" endPosition="5">
-      <varInfo nodeId="1154026701002" varName="n" />
+      <varInfo nodeId="1154026701003" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1154026745894" fileName="Main_javaList_as_sequence.java" startLine="22" startPosition="34" endLine="25" endPosition="5">
-      <varInfo nodeId="1154026745894" varName="n" />
+      <varInfo nodeId="1154026745895" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1153938616902" fileName="Main_javaList_as_sequence.java" startLine="11" startPosition="47" endLine="25" endPosition="5">
       <varInfo nodeId="1153938616904" varName="javaList" />

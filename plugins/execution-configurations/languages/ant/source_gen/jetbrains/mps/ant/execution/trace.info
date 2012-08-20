@@ -441,7 +441,7 @@
     </scopeInfo>
     <scopeInfo nodeId="352677614185351917" fileName="Ant_Command.java" startLine="168" startPosition="57" endLine="173" endPosition="0" />
     <scopeInfo nodeId="352677614185351834" fileName="Ant_Command.java" startLine="139" startPosition="72" endLine="145" endPosition="5">
-      <varInfo nodeId="352677614185351834" varName="jarFile" />
+      <varInfo nodeId="352677614185351835" varName="jarFile" />
     </scopeInfo>
     <scopeInfo nodeId="352677614185351672" fileName="Ant_Command.java" startLine="81" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="352677614185351672" varName="target" />

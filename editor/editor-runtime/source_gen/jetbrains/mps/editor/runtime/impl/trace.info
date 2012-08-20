@@ -192,7 +192,7 @@
       <varInfo nodeId="1182113674817469829" varName="declaration" />
     </scopeInfo>
     <scopeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="86" startPosition="73" endLine="99" endPosition="7">
-      <varInfo nodeId="1182113674817540157" varName="keyMapDeclaration" />
+      <varInfo nodeId="1182113674817540158" varName="keyMapDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1182113674817469766" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="30" endLine="99" endPosition="7" />
     <scopeInfo nodeId="1182113674817469734" fileName="LanguagesKeymapManager.java" startLine="78" startPosition="59" endLine="103" endPosition="69">

@@ -254,11 +254,11 @@
       <varInfo nodeId="8432634623182692287" varName="container" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182692023" fileName="OverridingMethodsFinder.java" startLine="104" startPosition="111" endLine="107" endPosition="5">
-      <varInfo nodeId="8432634623182692023" varName="methodName" />
+      <varInfo nodeId="8432634623182692024" varName="methodName" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182692152" fileName="OverridingMethodsFinder.java" startLine="142" startPosition="111" endLine="145" endPosition="7" />
     <scopeInfo nodeId="8432634623182692153" fileName="OverridingMethodsFinder.java" startLine="142" startPosition="111" endLine="145" endPosition="7">
-      <varInfo nodeId="8432634623182692153" varName="enumConstant" />
+      <varInfo nodeId="8432634623182692154" varName="enumConstant" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182692314" fileName="OverridingMethodsFinder.java" startLine="37" startPosition="95" endLine="41" endPosition="0">
       <varInfo nodeId="8432634623182692314" varName="it" />
@@ -310,14 +310,14 @@
     </scopeInfo>
     <scopeInfo nodeId="8432634623182692241" fileName="OverridingMethodsFinder.java" startLine="165" startPosition="87" endLine="170" endPosition="17" />
     <scopeInfo nodeId="8432634623182692309" fileName="OverridingMethodsFinder.java" startLine="36" startPosition="102" endLine="43" endPosition="5">
-      <varInfo nodeId="8432634623182692309" varName="methodToCheck" />
+      <varInfo nodeId="8432634623182692310" varName="methodToCheck" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182692205" fileName="OverridingMethodsFinder.java" startLine="157" startPosition="0" endLine="164" endPosition="0">
       <varInfo nodeId="8432634623182692211" varName="key" />
       <varInfo nodeId="8432634623182692206" varName="map" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182692062" fileName="OverridingMethodsFinder.java" startLine="117" startPosition="61" endLine="125" endPosition="7">
-      <varInfo nodeId="8432634623182692062" varName="overridingMethod" />
+      <varInfo nodeId="8432634623182692063" varName="overridingMethod" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182692238" fileName="OverridingMethodsFinder.java" startLine="164" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="8432634623182692261" varName="classifier" />
@@ -342,7 +342,7 @@
       <varInfo nodeId="8432634623182692042" varName="similarMethods" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182692038" fileName="OverridingMethodsFinder.java" startLine="107" startPosition="5" endLine="130" endPosition="5">
-      <varInfo nodeId="8432634623182692038" varName="classifierMethod" />
+      <varInfo nodeId="8432634623182692039" varName="classifierMethod" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182691867" fileName="OverridingMethodsFinder.java" startLine="58" startPosition="104" endLine="85" endPosition="7">
       <varInfo nodeId="8432634623182691869" varName="clazz" />

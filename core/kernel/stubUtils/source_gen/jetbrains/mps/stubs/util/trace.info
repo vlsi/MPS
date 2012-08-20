@@ -717,7 +717,7 @@
       <varInfo nodeId="8382013213872086326" varName="mr" />
     </scopeInfo>
     <scopeInfo nodeId="740251325273418971" fileName="StubModelDescriptors.java" startLine="50" startPosition="52" endLine="71" endPosition="5">
-      <varInfo nodeId="740251325273418971" varName="subpkg" />
+      <varInfo nodeId="740251325273418972" varName="subpkg" />
     </scopeInfo>
     <scopeInfo nodeId="740251325273418853" fileName="StubModelDescriptors.java" startLine="86" startPosition="50" endLine="107" endPosition="48">
       <varInfo nodeId="740251325273418868" varName="fqname" />

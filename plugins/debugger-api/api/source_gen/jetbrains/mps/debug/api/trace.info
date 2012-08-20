@@ -1002,7 +1002,7 @@
       <varInfo nodeId="4474271214082914987" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8149197049716796247" fileName="DebugInfoManager.java" startLine="84" startPosition="92" endLine="96" endPosition="5">
-      <varInfo nodeId="8149197049716796247" varName="creator" />
+      <varInfo nodeId="8149197049716796248" varName="creator" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214082915023" fileName="DebugInfoManager.java" startLine="84" startPosition="92" endLine="97" endPosition="16" />
     <scopeInfo nodeId="4474271214082914956" fileName="DebugInfoManager.java" startLine="45" startPosition="0" endLine="59" endPosition="0">

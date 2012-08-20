@@ -658,7 +658,7 @@
     <scopeInfo nodeId="5426775851424578122" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="5426775851424578122" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="5426775851424580878" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="29" startPosition="59" endLine="34" endPosition="9">
-      <varInfo nodeId="5426775851424580878" varName="property" />
+      <varInfo nodeId="5426775851424580879" varName="property" />
     </scopeInfo>
     <scopeInfo nodeId="5426775851424580250" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="29" startPosition="59" endLine="35" endPosition="21" />
     <scopeInfo nodeId="5426775851424580940" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="39" startPosition="93" endLine="46" endPosition="11">
@@ -669,7 +669,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5426775851424580248" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="38" startPosition="52" endLine="47" endPosition="9" />
     <scopeInfo nodeId="5426775851424580938" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="38" startPosition="52" endLine="47" endPosition="9">
-      <varInfo nodeId="5426775851424580938" varName="property" />
+      <varInfo nodeId="5426775851424580939" varName="property" />
     </scopeInfo>
     <scopeInfo nodeId="5426775851424578122" fileName="EscapeSpecialCharactersInProperties_MigrationScript.java" startLine="37" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="5426775851424578122" varName="node" />

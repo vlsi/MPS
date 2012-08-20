@@ -196,7 +196,7 @@
       <varInfo nodeId="4372437818008124599" varName="patt" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008124683" fileName="GWTModuleReader.java" startLine="101" startPosition="5" endLine="104" endPosition="5">
-      <varInfo nodeId="4372437818008124683" varName="elm" />
+      <varInfo nodeId="4372437818008124684" varName="elm" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008124867" fileName="GWTModuleReader.java" startLine="141" startPosition="25" endLine="144" endPosition="7" />
     <scopeInfo nodeId="4372437818008124868" fileName="GWTModuleReader.java" startLine="141" startPosition="25" endLine="144" endPosition="7">
@@ -256,7 +256,7 @@
       <varInfo nodeId="4372437818008124366" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008124433" fileName="GWTModuleReader.java" startLine="52" startPosition="5" endLine="61" endPosition="5">
-      <varInfo nodeId="4372437818008124433" varName="elm" />
+      <varInfo nodeId="4372437818008124434" varName="elm" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008124850" fileName="GWTModuleReader.java" startLine="138" startPosition="0" endLine="148" endPosition="0">
       <varInfo nodeId="4372437818008124853" varName="name" />
@@ -414,13 +414,13 @@
       <varInfo nodeId="4372437818008125243" varName="id" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008125235" fileName="GWTStubsSource.java" startLine="60" startPosition="106" endLine="71" endPosition="5">
-      <varInfo nodeId="4372437818008125235" varName="modres" />
+      <varInfo nodeId="4372437818008125236" varName="modres" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008125339" fileName="GWTStubsSource.java" startLine="86" startPosition="84" endLine="104" endPosition="7">
       <varInfo nodeId="4372437818008125341" varName="is" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008125336" fileName="GWTStubsSource.java" startLine="85" startPosition="7" endLine="105" endPosition="5">
-      <varInfo nodeId="4372437818008125336" varName="modpair" />
+      <varInfo nodeId="4372437818008125337" varName="modpair" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008125173" fileName="GWTStubsSource.java" startLine="52" startPosition="107" endLine="108" endPosition="70">
       <varInfo nodeId="4372437818008125304" varName="descs" />

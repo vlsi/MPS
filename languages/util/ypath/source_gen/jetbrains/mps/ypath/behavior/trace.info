@@ -1085,7 +1085,7 @@
       <varInfo nodeId="1213877499607" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1213877499710" fileName="IFeature_Behavior.java" startLine="48" startPosition="39" endLine="55" endPosition="5">
-      <varInfo nodeId="1213877499710" varName="foo" />
+      <varInfo nodeId="1213877499711" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1213877499705" fileName="IFeature_Behavior.java" startLine="47" startPosition="80" endLine="55" endPosition="5">
       <varInfo nodeId="1213877499707" varName="thisNodeLoc" />

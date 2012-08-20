@@ -6422,7 +6422,7 @@
     </scopeInfo>
     <scopeInfo nodeId="757772128652074244" fileName="DimensionUtil.java" startLine="32" startPosition="55" endLine="165" endPosition="9" />
     <scopeInfo nodeId="757772128652074241" fileName="DimensionUtil.java" startLine="31" startPosition="25" endLine="166" endPosition="7">
-      <varInfo nodeId="757772128652074241" varName="type" />
+      <varInfo nodeId="757772128652074242" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="757772128651891044" fileName="DimensionUtil.java" startLine="26" startPosition="63" endLine="195" endPosition="7">
       <varInfo nodeId="757772128652074250" varName="T_typevar_757772128652074250" />

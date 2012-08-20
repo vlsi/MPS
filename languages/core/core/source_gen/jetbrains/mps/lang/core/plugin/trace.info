@@ -1272,7 +1272,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6648795410103966909" fileName="TextGen_Facet.java" startLine="293" startPosition="19" endLine="329" endPosition="15" />
     <scopeInfo nodeId="6648795410103966911" fileName="TextGen_Facet.java" startLine="293" startPosition="19" endLine="329" endPosition="15">
-      <varInfo nodeId="6648795410103966911" varName="resource" />
+      <varInfo nodeId="6648795410103966912" varName="resource" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103966909" fileName="TextGen_Facet.java" startLine="290" startPosition="122" endLine="332" endPosition="11">
       <varInfo nodeId="6648795410103966909" varName="_output_21gswx_a0b" />
@@ -1296,7 +1296,7 @@
       <varInfo nodeId="6648795410103966742" varName="textgen" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103966577" fileName="TextGen_Facet.java" startLine="101" startPosition="143" endLine="182" endPosition="15">
-      <varInfo nodeId="6648795410103966577" varName="resource" />
+      <varInfo nodeId="6648795410103966578" varName="resource" />
     </scopeInfo>
     <scopeInfo nodeId="6648795410103966568" fileName="TextGen_Facet.java" startLine="100" startPosition="19" endLine="183" endPosition="62" />
     <scopeInfo nodeId="6648795410103966568" fileName="TextGen_Facet.java" startLine="97" startPosition="122" endLine="186" endPosition="11">

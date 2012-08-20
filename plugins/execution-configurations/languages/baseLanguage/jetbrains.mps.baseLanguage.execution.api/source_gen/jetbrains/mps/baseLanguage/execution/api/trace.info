@@ -387,7 +387,7 @@
     <scopeInfo nodeId="8475766493858788116" fileName="Java_Command.java" startLine="280" startPosition="61" endLine="283" endPosition="13" />
     <scopeInfo nodeId="1240470842553275761" fileName="Java_Command.java" startLine="405" startPosition="58" endLine="408" endPosition="7" />
     <scopeInfo nodeId="1240470842553275815" fileName="Java_Command.java" startLine="423" startPosition="50" endLine="426" endPosition="5">
-      <varInfo nodeId="1240470842553275815" varName="line" />
+      <varInfo nodeId="1240470842553275816" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="8475766493858861794" fileName="Java_Command.java" startLine="541" startPosition="9" endLine="544" endPosition="61">
       <varInfo nodeId="8475766493858861794" varName="quotedNode1_9" />
@@ -462,7 +462,7 @@
     <scopeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="138" startPosition="87" endLine="143" endPosition="16" />
     <scopeInfo nodeId="1240470842553275541" fileName="Java_Command.java" startLine="341" startPosition="27" endLine="346" endPosition="9" />
     <scopeInfo nodeId="1240470842553275759" fileName="Java_Command.java" startLine="404" startPosition="53" endLine="409" endPosition="5">
-      <varInfo nodeId="1240470842553275759" varName="javaHome" />
+      <varInfo nodeId="1240470842553275760" varName="javaHome" />
     </scopeInfo>
     <scopeInfo nodeId="1240470842553275414" fileName="Java_Command.java" startLine="433" startPosition="41" endLine="438" endPosition="0" />
     <scopeInfo nodeId="8475766493858861794" fileName="Java_Command.java" startLine="540" startPosition="50" endLine="545" endPosition="9" />
@@ -632,7 +632,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1240470842553275009" fileName="Java_Command.java" startLine="388" startPosition="0" endLine="402" endPosition="0" />
     <scopeInfo nodeId="8475766493858861670" fileName="Java_Command.java" startLine="288" startPosition="108" endLine="303" endPosition="13">
-      <varInfo nodeId="8475766493858861670" varName="position" />
+      <varInfo nodeId="8475766493858861671" varName="position" />
     </scopeInfo>
     <scopeInfo nodeId="8475766493858861794" fileName="Java_Command.java" startLine="556" startPosition="9" endLine="571" endPosition="61">
       <varInfo nodeId="8475766493858861794" varName="quotedNode1_12" />

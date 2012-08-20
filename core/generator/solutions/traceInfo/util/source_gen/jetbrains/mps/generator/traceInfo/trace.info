@@ -162,7 +162,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1053276000964825400" fileName="TraceInfoUtilComponent.java" startLine="84" startPosition="77" endLine="93" endPosition="11" />
     <scopeInfo nodeId="1053276000964831741" fileName="TraceInfoUtilComponent.java" startLine="117" startPosition="170" endLine="127" endPosition="5">
-      <varInfo nodeId="1053276000964831741" varName="descriptor" />
+      <varInfo nodeId="1053276000964831742" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1053276000964825482" fileName="TraceInfoUtilComponent.java" startLine="102" startPosition="90" endLine="113" endPosition="132">
       <varInfo nodeId="1053276000964825705" varName="mapper" />
@@ -644,7 +644,7 @@
       <varInfo nodeId="24227610116320087" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712589" fileName="TraceInfoUtil.java" startLine="113" startPosition="30" endLine="121" endPosition="15">
-      <varInfo nodeId="2897370900776712589" varName="otherPos" />
+      <varInfo nodeId="2897370900776712590" varName="otherPos" />
     </scopeInfo>
     <scopeInfo nodeId="24227610116313469" fileName="TraceInfoUtil.java" startLine="134" startPosition="80" endLine="142" endPosition="0" />
     <scopeInfo nodeId="7521671656020565475" fileName="TraceInfoUtil.java" startLine="32" startPosition="0" endLine="41" endPosition="0">

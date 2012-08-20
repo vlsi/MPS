@@ -223,10 +223,10 @@
     <scopeInfo nodeId="1211982429083" fileName="typeof_AssertMatch_InferenceRule.java" startLine="112" startPosition="32" endLine="117" endPosition="7" />
     <scopeInfo nodeId="1211982429083" fileName="typeof_AssertMatch_InferenceRule.java" startLine="124" startPosition="32" endLine="129" endPosition="7" />
     <scopeInfo nodeId="1211980450434" fileName="typeof_AssertMatch_InferenceRule.java" startLine="23" startPosition="124" endLine="30" endPosition="5">
-      <varInfo nodeId="1211980450434" varName="node" />
+      <varInfo nodeId="1211980450435" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1211981351109" fileName="typeof_AssertMatch_InferenceRule.java" startLine="30" startPosition="5" endLine="37" endPosition="5">
-      <varInfo nodeId="1211981351109" varName="node" />
+      <varInfo nodeId="1211981351110" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1211980347427" fileName="typeof_AssertMatch_InferenceRule.java" startLine="64" startPosition="0" endLine="71" endPosition="0">
       <varInfo nodeId="1211980347427" varName="argument" />

@@ -82,10 +82,10 @@
       <varInfo nodeId="1392391688313364655" varName="sb" />
     </scopeInfo>
     <scopeInfo nodeId="1392391688313364600" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="45" startPosition="5" endLine="62" endPosition="5">
-      <varInfo nodeId="1392391688313364600" varName="group" />
+      <varInfo nodeId="1392391688313364601" varName="group" />
     </scopeInfo>
     <scopeInfo nodeId="1392391688313364564" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="26" startPosition="83" endLine="45" endPosition="5">
-      <varInfo nodeId="1392391688313364564" varName="module" />
+      <varInfo nodeId="1392391688313364565" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="1392391688313307202" fileName="check_IdeaPlugin_Dependencies_NonTypesystemRule.java" startLine="25" startPosition="119" endLine="62" endPosition="5">
       <varInfo nodeId="1392391688313307241" varName="helper" />
@@ -160,7 +160,7 @@
       <varInfo nodeId="1392391688313364146" varName="seenPlugins" />
     </scopeInfo>
     <scopeInfo nodeId="1392391688313364492" fileName="IdeaPluginDependenciesHelper.java" startLine="55" startPosition="25" endLine="58" endPosition="5">
-      <varInfo nodeId="1392391688313364492" varName="dep" />
+      <varInfo nodeId="1392391688313364493" varName="dep" />
     </scopeInfo>
     <scopeInfo nodeId="1392391688313364215" fileName="IdeaPluginDependenciesHelper.java" startLine="38" startPosition="127" endLine="42" endPosition="0">
       <varInfo nodeId="1392391688313364215" varName="it" />

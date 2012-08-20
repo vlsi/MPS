@@ -238,7 +238,7 @@
       <varInfo nodeId="681855071694743139" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1985010624611081154" fileName="TextModelDataSource.java" startLine="39" startPosition="17" endLine="45" endPosition="5">
-      <varInfo nodeId="1985010624611081154" varName="child" />
+      <varInfo nodeId="1985010624611081155" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="9157262317016834409" fileName="TextModelDataSource.java" startLine="61" startPosition="11" endLine="67" endPosition="0">
       <varInfo nodeId="9157262317016834468" varName="buf" />
@@ -250,7 +250,7 @@
       <varInfo nodeId="1985010624611081231" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="6528405377109562786" fileName="TextModelDataSource.java" startLine="77" startPosition="42" endLine="86" endPosition="5">
-      <varInfo nodeId="6528405377109562786" varName="tf" />
+      <varInfo nodeId="6528405377109562787" varName="tf" />
     </scopeInfo>
     <scopeInfo nodeId="681855071694743101" fileName="TextModelDataSource.java" startLine="37" startPosition="0" endLine="48" endPosition="0" />
     <scopeInfo nodeId="681855071694743133" fileName="TextModelDataSource.java" startLine="76" startPosition="57" endLine="87" endPosition="17">
@@ -263,7 +263,7 @@
       <varInfo nodeId="681855071694744944" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="6528405377109531174" fileName="TextModelDataSource.java" startLine="54" startPosition="59" endLine="71" endPosition="5">
-      <varInfo nodeId="6528405377109531174" varName="child" />
+      <varInfo nodeId="6528405377109531175" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="681855071694743125" fileName="TextModelDataSource.java" startLine="53" startPosition="107" endLine="73" endPosition="66">
       <varInfo nodeId="681855071694744842" varName="m" />

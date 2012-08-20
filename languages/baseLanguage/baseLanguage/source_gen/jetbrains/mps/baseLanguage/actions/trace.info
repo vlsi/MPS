@@ -468,7 +468,7 @@
       <varInfo nodeId="1183626596358" varName="castType" />
     </scopeInfo>
     <scopeInfo nodeId="1183629994539" fileName="ExpectedType_FactoryUtil.java" startLine="29" startPosition="36" endLine="34" endPosition="5">
-      <varInfo nodeId="1183629994539" varName="child" />
+      <varInfo nodeId="1183629994540" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="6270036985820462750" fileName="ExpectedType_FactoryUtil.java" startLine="46" startPosition="216" endLine="52" endPosition="7">
       <varInfo nodeId="6270036985820462752" varName="list" />
@@ -950,11 +950,11 @@
     <scopeInfo nodeId="1212605402158" fileName="QueriesGenerated.java" startLine="4294" startPosition="70" endLine="4296" endPosition="5" />
     <scopeInfo nodeId="1181216848516" fileName="QueriesGenerated.java" startLine="1037" startPosition="150" endLine="1040" endPosition="19" />
     <scopeInfo nodeId="1181219582318" fileName="QueriesGenerated.java" startLine="1037" startPosition="150" endLine="1040" endPosition="19">
-      <varInfo nodeId="1181219582318" varName="argument" />
+      <varInfo nodeId="1181219582319" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1181216536232" fileName="QueriesGenerated.java" startLine="1082" startPosition="151" endLine="1085" endPosition="19" />
     <scopeInfo nodeId="1181219632457" fileName="QueriesGenerated.java" startLine="1082" startPosition="151" endLine="1085" endPosition="19">
-      <varInfo nodeId="1181219632457" varName="argument" />
+      <varInfo nodeId="1181219632458" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1212605402158" fileName="QueriesGenerated.java" startLine="4302" startPosition="7" endLine="4306" endPosition="31">
       <varInfo nodeId="1212605402158" varName="quotedNode1_2" />
@@ -1582,7 +1582,7 @@
       <varInfo nodeId="5418393554803903580" varName="baseMethodDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1212777244692" fileName="QueriesGenerated.java" startLine="1304" startPosition="207" endLine="1307" endPosition="17">
-      <varInfo nodeId="1212777244692" varName="typeVar" />
+      <varInfo nodeId="1212777244693" varName="typeVar" />
     </scopeInfo>
     <scopeInfo nodeId="1238763537236" fileName="QueriesGenerated.java" startLine="1332" startPosition="66" endLine="1335" endPosition="60">
       <varInfo nodeId="1238763551846" varName="type" />
@@ -1608,14 +1608,14 @@
     </scopeInfo>
     <scopeInfo nodeId="1823859043567242962" fileName="QueriesGenerated.java" startLine="1290" startPosition="116" endLine="1295" endPosition="38" />
     <scopeInfo nodeId="1238763537233" fileName="QueriesGenerated.java" startLine="1331" startPosition="55" endLine="1336" endPosition="13">
-      <varInfo nodeId="1238763537233" varName="classifier" />
+      <varInfo nodeId="1238763537234" varName="classifier" />
     </scopeInfo>
     <scopeInfo nodeId="1238766017241" fileName="QueriesGenerated.java" startLine="1336" startPosition="13" endLine="1341" endPosition="13">
-      <varInfo nodeId="1238766017241" varName="typeConcept" />
+      <varInfo nodeId="1238766017242" varName="typeConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1238763644806" fileName="QueriesGenerated.java" startLine="1355" startPosition="61" endLine="1360" endPosition="17" />
     <scopeInfo nodeId="1212713045719" fileName="QueriesGenerated.java" startLine="1296" startPosition="17" endLine="1302" endPosition="17">
-      <varInfo nodeId="1212713045719" varName="method" />
+      <varInfo nodeId="1212713045720" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="1212777494464" fileName="QueriesGenerated.java" startLine="4452" startPosition="32" endLine="4458" endPosition="7" />
     <scopeInfo nodeId="1212711024149" fileName="QueriesGenerated.java" startLine="1262" startPosition="35" endLine="1269" endPosition="32">
@@ -3037,7 +3037,7 @@
       <varInfo nodeId="600115726757809898" varName="visibleStaticFields" />
     </scopeInfo>
     <scopeInfo nodeId="8029744757020496276" fileName="BL_CopyPasteHandlers_PastePostProcessor_1.java" startLine="57" startPosition="0" endLine="77" endPosition="9">
-      <varInfo nodeId="8029744757020496276" varName="nextClassConcept" />
+      <varInfo nodeId="8029744757020496277" varName="nextClassConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1260466273709986259" fileName="BL_CopyPasteHandlers_PastePostProcessor_0.java" startLine="22" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="1260466273709986259" varName="pastedNode" />

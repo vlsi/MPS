@@ -570,7 +570,7 @@
       <varInfo nodeId="2617896750899006779" varName="relPath" />
     </scopeInfo>
     <scopeInfo nodeId="5551764612445857059" fileName="PathConverter.java" startLine="61" startPosition="48" endLine="82" endPosition="5">
-      <varInfo nodeId="5551764612445857059" varName="m" />
+      <varInfo nodeId="5551764612445857060" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="2617896750899006657" fileName="PathConverter.java" startLine="30" startPosition="39" endLine="55" endPosition="14">
       <varInfo nodeId="5551764612445856236" varName="result" />
@@ -1431,7 +1431,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5780287594867857544" fileName="ModuleLoader.java" startLine="814" startPosition="62" endLine="820" endPosition="5" />
     <scopeInfo nodeId="4503196329129498799" fileName="ModuleLoader.java" startLine="884" startPosition="31" endLine="890" endPosition="9">
-      <varInfo nodeId="4503196329129498799" varName="macro" />
+      <varInfo nodeId="4503196329129498800" varName="macro" />
     </scopeInfo>
     <scopeInfo nodeId="8757919848289100184" fileName="ModuleLoader.java" startLine="884" startPosition="31" endLine="890" endPosition="9" />
     <scopeInfo nodeId="4278635856200768283" fileName="ModuleLoader.java" startLine="176" startPosition="104" endLine="183" endPosition="30" />
@@ -2025,7 +2025,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4012382313839811178" fileName="ArtifactsRelativePathHelper.java" startLine="32" startPosition="107" endLine="43" endPosition="9" />
     <scopeInfo nodeId="4012382313839842739" fileName="ArtifactsRelativePathHelper.java" startLine="32" startPosition="107" endLine="43" endPosition="9">
-      <varInfo nodeId="4012382313839842739" varName="sfolder" />
+      <varInfo nodeId="4012382313839842740" varName="sfolder" />
     </scopeInfo>
     <scopeInfo nodeId="4321656770473396748" fileName="ArtifactsRelativePathHelper.java" startLine="95" startPosition="99" endLine="107" endPosition="13" />
     <scopeInfo nodeId="4321656770473396621" fileName="ArtifactsRelativePathHelper.java" startLine="79" startPosition="115" endLine="92" endPosition="128" />

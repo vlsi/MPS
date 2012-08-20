@@ -151,7 +151,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3541188775018139413" fileName="FileSwapOwnerTests_Test.java" startLine="210" startPosition="31" endLine="212" endPosition="46" />
     <scopeInfo nodeId="3541188775018139367" fileName="FileSwapOwnerTests_Test.java" startLine="194" startPosition="0" endLine="197" endPosition="9">
-      <varInfo nodeId="3541188775018139367" varName="object" />
+      <varInfo nodeId="3541188775018139352" varName="object" />
     </scopeInfo>
     <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="215" startPosition="0" endLine="219" endPosition="0">
       <varInfo nodeId="759291420779681286" varName="userObjects" />
@@ -194,7 +194,7 @@
       <varInfo nodeId="3541188775018139672" varName="userObjects" />
     </scopeInfo>
     <scopeInfo nodeId="3541188775018139390" fileName="FileSwapOwnerTests_Test.java" startLine="201" startPosition="0" endLine="208" endPosition="9">
-      <varInfo nodeId="3541188775018139390" varName="object" />
+      <varInfo nodeId="3541188775018139354" varName="object" />
     </scopeInfo>
     <scopeInfo nodeId="3677173588536186248" fileName="FileSwapOwnerTests_Test.java" startLine="102" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="3541188775018139440" fileName="FileSwapOwnerTests_Test.java" startLine="129" startPosition="59" endLine="137" endPosition="46">

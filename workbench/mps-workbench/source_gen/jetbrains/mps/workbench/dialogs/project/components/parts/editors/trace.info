@@ -177,7 +177,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4256903895781786765" fileName="ManagerTableCellEditor.java" startLine="50" startPosition="25" endLine="55" endPosition="9" />
     <scopeInfo nodeId="4256903895781786771" fileName="ManagerTableCellEditor.java" startLine="50" startPosition="25" endLine="55" endPosition="9">
-      <varInfo nodeId="4256903895781786771" varName="node" />
+      <varInfo nodeId="4256903895781786772" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4256903895781784722" fileName="ManagerTableCellEditor.java" startLine="36" startPosition="123" endLine="42" endPosition="93">
       <varInfo nodeId="4256903895781784773" varName="manager" />

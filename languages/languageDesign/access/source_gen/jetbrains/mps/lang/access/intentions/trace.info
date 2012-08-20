@@ -31,7 +31,7 @@
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="50" />
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="15" startPosition="122" endLine="17" endPosition="3" />
     <scopeInfo nodeId="8821725594354779365" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="42" startPosition="70" endLine="45" endPosition="5">
-      <varInfo nodeId="8821725594354779365" varName="selectedNode" />
+      <varInfo nodeId="8821725594354779366" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="1616052750811363739" fileName="SurroundWithExecuteLightweightCommandStatement_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />

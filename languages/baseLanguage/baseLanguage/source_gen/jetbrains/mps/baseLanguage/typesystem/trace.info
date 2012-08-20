@@ -2669,8 +2669,8 @@
     <nodeInfo nodeId="1203512292514" fileName="RulesFunctions_BaseLanguage.java" startLine="70" startPosition="47" endLine="71" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1203512292514" fileName="RulesFunctions_BaseLanguage.java" startLine="71" startPosition="197" endLine="72" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227876792379" fileName="RulesFunctions_BaseLanguage.java" startLine="81" startPosition="50" endLine="82" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1227876792379" fileName="RulesFunctions_BaseLanguage.java" startLine="82" startPosition="37" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_11_returnStmt" />
-    <nodeInfo nodeId="1227876792379" fileName="RulesFunctions_BaseLanguage.java" startLine="83" startPosition="43" endLine="84" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_11_returnStmt_it" />
+    <nodeInfo nodeId="1227876792421" fileName="RulesFunctions_BaseLanguage.java" startLine="82" startPosition="37" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_11_returnStmt" />
+    <nodeInfo nodeId="1227876792421" fileName="RulesFunctions_BaseLanguage.java" startLine="83" startPosition="43" endLine="84" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_11_returnStmt_it" />
     <nodeInfo nodeId="1227876792379" fileName="RulesFunctions_BaseLanguage.java" startLine="91" startPosition="28" endLine="92" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1227876792379" fileName="RulesFunctions_BaseLanguage.java" startLine="92" startPosition="54" endLine="93" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876792420" fileName="RulesFunctions_BaseLanguage.java" startLine="94" startPosition="28" endLine="95" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -4255,7 +4255,7 @@
       <varInfo nodeId="1176897963478" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1178765152919" fileName="typeOf_BaseMethodDeclaration_InferenceRule.java" startLine="55" startPosition="37" endLine="63" endPosition="7">
-      <varInfo nodeId="1178765152919" varName="returnStatement" />
+      <varInfo nodeId="1178765152920" varName="returnStatement" />
     </scopeInfo>
     <scopeInfo nodeId="1178765109184" fileName="typeOf_BaseMethodDeclaration_InferenceRule.java" startLine="54" startPosition="34" endLine="63" endPosition="7" />
     <scopeInfo nodeId="1178765536866" fileName="typeOf_BaseMethodDeclaration_InferenceRule.java" startLine="83" startPosition="34" endLine="93" endPosition="7">
@@ -4277,7 +4277,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1215105338794" fileName="typeOf_BaseMethodDeclaration_InferenceRule.java" startLine="128" startPosition="0" endLine="141" endPosition="0" />
     <scopeInfo nodeId="1178765314794" fileName="typeOf_BaseMethodDeclaration_InferenceRule.java" startLine="65" startPosition="55" endLine="80" endPosition="7">
-      <varInfo nodeId="1178765314794" varName="returnStatement" />
+      <varInfo nodeId="1178765314795" varName="returnStatement" />
     </scopeInfo>
     <scopeInfo nodeId="1178765252041" fileName="typeOf_BaseMethodDeclaration_InferenceRule.java" startLine="64" startPosition="12" endLine="80" endPosition="7" />
     <scopeInfo nodeId="1176897963479" fileName="typeOf_BaseMethodDeclaration_InferenceRule.java" startLine="32" startPosition="116" endLine="94" endPosition="5">
@@ -8139,7 +8139,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1186053304498" fileName="typeOf_ConceptFunction_InferenceRule.java" startLine="42" startPosition="77" endLine="63" endPosition="9" />
     <scopeInfo nodeId="1186053304495" fileName="typeOf_ConceptFunction_InferenceRule.java" startLine="41" startPosition="83" endLine="64" endPosition="7">
-      <varInfo nodeId="1186053304495" varName="returnStatement" />
+      <varInfo nodeId="1186053304496" varName="returnStatement" />
     </scopeInfo>
     <scopeInfo nodeId="1179436920316" fileName="typeOf_ConceptFunction_InferenceRule.java" startLine="37" startPosition="30" endLine="95" endPosition="7">
       <varInfo nodeId="1186052624152" varName="LCS_typevar_1186052624152" />
@@ -12224,7 +12224,7 @@
       <varInfo nodeId="1221637809819" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1221637809861" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="30" startPosition="5" endLine="38" endPosition="5">
-      <varInfo nodeId="1221637809861" varName="impl" />
+      <varInfo nodeId="1221637809862" varName="impl" />
     </scopeInfo>
     <scopeInfo nodeId="1221637809822" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="24" startPosition="116" endLine="47" endPosition="5" />
     <scopeInfo nodeId="1221637809819" fileName="typeof_ClassConcept_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="49" endPosition="0">
@@ -15606,7 +15606,7 @@
       <varInfo nodeId="1596333951698899870" varName="overridenMethods" />
     </scopeInfo>
     <scopeInfo nodeId="1596333951698899863" fileName="check_ClassifierOverridingFinalMethods_NonTypesystemRule.java" startLine="26" startPosition="77" endLine="39" endPosition="5">
-      <varInfo nodeId="1596333951698899863" varName="overridingMethod" />
+      <varInfo nodeId="1596333951698899864" varName="overridingMethod" />
     </scopeInfo>
     <scopeInfo nodeId="1596333951698899850" fileName="check_ClassifierOverridingFinalMethods_NonTypesystemRule.java" startLine="25" startPosition="123" endLine="39" endPosition="5">
       <varInfo nodeId="1596333951698899858" varName="finder" />
@@ -17072,7 +17072,7 @@
       <varInfo nodeId="2792291462223192853" varName="overridenMethods" />
     </scopeInfo>
     <scopeInfo nodeId="2792291462223192837" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="29" startPosition="77" endLine="46" endPosition="5">
-      <varInfo nodeId="2792291462223192837" varName="overridingMethod" />
+      <varInfo nodeId="2792291462223192838" varName="overridingMethod" />
     </scopeInfo>
     <scopeInfo nodeId="2792291462223192820" fileName="check_ClassifierOverridingMethods_NonTypesystemRule.java" startLine="28" startPosition="123" endLine="46" endPosition="5">
       <varInfo nodeId="2792291462223192832" varName="finder" />
@@ -22168,7 +22168,7 @@
     <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="48" startPosition="68" endLine="52" endPosition="5" />
     <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="58" endPosition="0" />
     <scopeInfo nodeId="7450078596028078982" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="29" startPosition="31" endLine="34" endPosition="11">
-      <varInfo nodeId="7450078596028078982" varName="throwable" />
+      <varInfo nodeId="7450078596028078983" varName="throwable" />
     </scopeInfo>
     <scopeInfo nodeId="7152041109751465917" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="7152041109751465917" varName="argument" />
@@ -22177,7 +22177,7 @@
       <varInfo nodeId="7450078596028079001" varName="toAdd" />
     </scopeInfo>
     <scopeInfo nodeId="7450078596028078970" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="27" startPosition="74" endLine="38" endPosition="9">
-      <varInfo nodeId="7450078596028078970" varName="superThrowable" />
+      <varInfo nodeId="7450078596028078971" varName="superThrowable" />
     </scopeInfo>
     <scopeInfo nodeId="7152041109751780565" fileName="check_DefaultSuperConstructorThrowables_NonTypesystemRule.java" startLine="26" startPosition="37" endLine="39" endPosition="186">
       <varInfo nodeId="7152041109751780586" varName="throwables" />
@@ -22283,7 +22283,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7243599812675828721" fileName="check_ConceptFunctionReturns_NonTypesystemRule.java" startLine="34" startPosition="27" endLine="42" endPosition="7" />
     <scopeInfo nodeId="7243599812675828722" fileName="check_ConceptFunctionReturns_NonTypesystemRule.java" startLine="34" startPosition="27" endLine="42" endPosition="7">
-      <varInfo nodeId="7243599812675828722" varName="returnStatement" />
+      <varInfo nodeId="7243599812675828723" varName="returnStatement" />
     </scopeInfo>
     <scopeInfo nodeId="7243599812675828608" fileName="check_ConceptFunctionReturns_NonTypesystemRule.java" startLine="52" startPosition="56" endLine="60" endPosition="11">
       <varInfo nodeId="7243599812675828610" varName="whatExpected" />

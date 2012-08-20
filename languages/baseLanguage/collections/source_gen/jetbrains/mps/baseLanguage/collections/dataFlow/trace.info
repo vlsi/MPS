@@ -650,7 +650,7 @@
     <scopeInfo nodeId="8293956702610517978" fileName="MultiForEachStatement_DataFlow.java" startLine="12" startPosition="69" endLine="14" endPosition="3" />
     <scopeInfo nodeId="8293956702610518022" fileName="MultiForEachStatement_DataFlow.java" startLine="17" startPosition="109" endLine="19" endPosition="91" />
     <scopeInfo nodeId="8293956702610518017" fileName="MultiForEachStatement_DataFlow.java" startLine="16" startPosition="102" endLine="20" endPosition="5">
-      <varInfo nodeId="8293956702610518017" varName="it" />
+      <varInfo nodeId="8293956702610518018" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="8293956702610518011" fileName="MultiForEachStatement_DataFlow.java" startLine="24" startPosition="63" endLine="28" endPosition="0" />
     <scopeInfo nodeId="8293956702610517980" fileName="MultiForEachStatement_DataFlow.java" startLine="16" startPosition="102" endLine="28" endPosition="7" />

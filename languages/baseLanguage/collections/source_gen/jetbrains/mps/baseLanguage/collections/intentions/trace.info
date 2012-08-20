@@ -69,7 +69,7 @@
       <varInfo nodeId="1193396656620" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1193397276523" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="61" startPosition="71" endLine="68" endPosition="5">
-      <varInfo nodeId="1193397276523" varName="oldRef" />
+      <varInfo nodeId="1193397276524" varName="oldRef" />
     </scopeInfo>
     <scopeInfo nodeId="1193396656626" fileName="ConvertForEachStatementToForeachStatement_Intention.java" startLine="52" startPosition="76" endLine="68" endPosition="5">
       <varInfo nodeId="1193396802065" varName="foreachStatement" />

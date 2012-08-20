@@ -252,10 +252,10 @@
       <varInfo nodeId="1397613075471492798" varName="availableMethodDeclarations" />
     </scopeInfo>
     <scopeInfo nodeId="683976173696109097" fileName="MethodDeclarationsFixer.java" startLine="240" startPosition="107" endLine="243" endPosition="5">
-      <varInfo nodeId="683976173696109097" varName="methodCall" />
+      <varInfo nodeId="683976173696109098" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="683976173696109137" fileName="MethodDeclarationsFixer.java" startLine="266" startPosition="163" endLine="269" endPosition="5">
-      <varInfo nodeId="683976173696109137" varName="methodCall" />
+      <varInfo nodeId="683976173696109138" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2235828751986251540" fileName="MethodDeclarationsFixer.java" startLine="290" startPosition="73" endLine="293" endPosition="5">
       <varInfo nodeId="2235828751986251541" varName="methodCall" />
@@ -750,7 +750,7 @@
     <scopeInfo nodeId="8432634623182579135" fileName="OverrideMethodsChecker.java" startLine="112" startPosition="81" endLine="116" endPosition="9" />
     <scopeInfo nodeId="8432634623182579175" fileName="OverrideMethodsChecker.java" startLine="125" startPosition="108" endLine="129" endPosition="11" />
     <scopeInfo nodeId="8432634623182579176" fileName="OverrideMethodsChecker.java" startLine="125" startPosition="108" endLine="129" endPosition="11">
-      <varInfo nodeId="8432634623182579176" varName="enumConstant" />
+      <varInfo nodeId="8432634623182579177" varName="enumConstant" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579229" fileName="OverrideMethodsChecker.java" startLine="136" startPosition="134" endLine="140" endPosition="0">
       <varInfo nodeId="8432634623182579229" varName="it" />
@@ -774,7 +774,7 @@
       <varInfo nodeId="8432634623182579727" varName="propertyEvent" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579222" fileName="OverrideMethodsChecker.java" startLine="135" startPosition="102" endLine="142" endPosition="5">
-      <varInfo nodeId="8432634623182579222" varName="method" />
+      <varInfo nodeId="8432634623182579223" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579446" fileName="OverrideMethodsChecker.java" startLine="193" startPosition="84" endLine="200" endPosition="13" />
     <scopeInfo nodeId="8432634623182579755" fileName="OverrideMethodsChecker.java" startLine="267" startPosition="46" endLine="274" endPosition="146" />
@@ -787,7 +787,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8432634623182578928" fileName="OverrideMethodsChecker.java" startLine="59" startPosition="74" endLine="68" endPosition="60" />
     <scopeInfo nodeId="8432634623182579159" fileName="OverrideMethodsChecker.java" startLine="121" startPosition="9" endLine="131" endPosition="7">
-      <varInfo nodeId="8432634623182579159" varName="subClassifier" />
+      <varInfo nodeId="8432634623182579160" varName="subClassifier" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579303" fileName="OverrideMethodsChecker.java" startLine="158" startPosition="29" endLine="168" endPosition="7">
       <varInfo nodeId="8432634623182579345" varName="it" />
@@ -796,7 +796,7 @@
       <varInfo nodeId="8432634623182579780" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182578925" fileName="OverrideMethodsChecker.java" startLine="58" startPosition="82" endLine="69" endPosition="5">
-      <varInfo nodeId="8432634623182578925" varName="containedClassifier" />
+      <varInfo nodeId="8432634623182578926" varName="containedClassifier" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579432" fileName="OverrideMethodsChecker.java" startLine="190" startPosition="38" endLine="201" endPosition="11">
       <varInfo nodeId="8432634623182579434" varName="overridingMethods" />
@@ -836,7 +836,7 @@
       <varInfo nodeId="8432634623182579536" varName="childRole" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579261" fileName="OverrideMethodsChecker.java" startLine="146" startPosition="137" endLine="170" endPosition="5">
-      <varInfo nodeId="8432634623182579261" varName="overridenMethod" />
+      <varInfo nodeId="8432634623182579262" varName="overridenMethod" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182578854" fileName="OverrideMethodsChecker.java" startLine="47" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="8432634623182578863" varName="editorContext" />
@@ -851,17 +851,17 @@
       <varInfo nodeId="8432634623182578979" varName="tooltip" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182578972" fileName="OverrideMethodsChecker.java" startLine="74" startPosition="76" endLine="102" endPosition="5">
-      <varInfo nodeId="8432634623182578972" varName="overridingMethod" />
+      <varInfo nodeId="8432634623182578973" varName="overridingMethod" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579397" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="79" endLine="203" endPosition="7" />
     <scopeInfo nodeId="8432634623182579398" fileName="OverrideMethodsChecker.java" startLine="175" startPosition="79" endLine="203" endPosition="7">
-      <varInfo nodeId="8432634623182579398" varName="derivedClassifierMethod" />
+      <varInfo nodeId="8432634623182579399" varName="derivedClassifierMethod" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182578965" fileName="OverrideMethodsChecker.java" startLine="73" startPosition="87" endLine="102" endPosition="5">
       <varInfo nodeId="8432634623182578967" varName="finder" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579394" fileName="OverrideMethodsChecker.java" startLine="174" startPosition="90" endLine="204" endPosition="5">
-      <varInfo nodeId="8432634623182579394" varName="derivedClassifier" />
+      <varInfo nodeId="8432634623182579395" varName="derivedClassifier" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182578957" fileName="OverrideMethodsChecker.java" startLine="72" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="8432634623182578958" varName="container" />
@@ -876,7 +876,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579509" fileName="OverrideMethodsChecker.java" startLine="213" startPosition="61" endLine="262" endPosition="7" />
     <scopeInfo nodeId="8432634623182579506" fileName="OverrideMethodsChecker.java" startLine="212" startPosition="5" endLine="263" endPosition="5">
-      <varInfo nodeId="8432634623182579506" varName="event" />
+      <varInfo nodeId="8432634623182579507" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="8432634623182579498" fileName="OverrideMethodsChecker.java" startLine="209" startPosition="63" endLine="264" endPosition="17" />
     <scopeInfo nodeId="8432634623182579492" fileName="OverrideMethodsChecker.java" startLine="207" startPosition="0" endLine="266" endPosition="0">

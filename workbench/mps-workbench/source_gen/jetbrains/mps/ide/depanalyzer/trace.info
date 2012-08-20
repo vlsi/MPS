@@ -378,14 +378,14 @@
     <scopeInfo nodeId="9102965682596470518" fileName="ModuleDependencyNode.java" startLine="171" startPosition="0" endLine="175" endPosition="0" />
     <scopeInfo nodeId="7653827905501462588" fileName="ModuleDependencyNode.java" startLine="41" startPosition="53" endLine="46" endPosition="40" />
     <scopeInfo nodeId="2334420805846557959" fileName="ModuleDependencyNode.java" startLine="84" startPosition="0" endLine="90" endPosition="5">
-      <varInfo nodeId="2334420805846557959" varName="module" />
+      <varInfo nodeId="2334420805846557960" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="3937129192385011395" fileName="ModuleDependencyNode.java" startLine="130" startPosition="0" endLine="136" endPosition="0" />
     <scopeInfo nodeId="5729621269484864466" fileName="ModuleDependencyNode.java" startLine="104" startPosition="0" endLine="111" endPosition="5">
-      <varInfo nodeId="5729621269484864466" varName="m" />
+      <varInfo nodeId="5729621269484864467" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="5729621269484869074" fileName="ModuleDependencyNode.java" startLine="114" startPosition="95" endLine="121" endPosition="7">
-      <varInfo nodeId="5729621269484869074" varName="l" />
+      <varInfo nodeId="5729621269484869075" varName="l" />
     </scopeInfo>
     <scopeInfo nodeId="978271742633931687" fileName="ModuleDependencyNode.java" startLine="136" startPosition="0" endLine="143" endPosition="0" />
     <scopeInfo nodeId="3937129192385011404" fileName="ModuleDependencyNode.java" startLine="143" startPosition="0" endLine="150" endPosition="0">
@@ -550,7 +550,7 @@
     <scopeInfo nodeId="7537828092111966505" fileName="ModuleDependenciesView.java" startLine="135" startPosition="47" endLine="137" endPosition="15" />
     <scopeInfo nodeId="6059554334738559705" fileName="ModuleDependenciesView.java" startLine="140" startPosition="26" endLine="142" endPosition="26" />
     <scopeInfo nodeId="7574561536407727978" fileName="ModuleDependenciesView.java" startLine="109" startPosition="7" endLine="112" endPosition="7">
-      <varInfo nodeId="7574561536407727978" varName="key" />
+      <varInfo nodeId="7574561536407727979" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="2442969026332317292" fileName="ModuleDependenciesView.java" startLine="118" startPosition="42" endLine="121" endPosition="15" />
     <scopeInfo nodeId="4661162987546350191" fileName="ModuleDependenciesView.java" startLine="129" startPosition="43" endLine="132" endPosition="28" />
@@ -615,7 +615,7 @@
       <varInfo nodeId="6015823014695284543" varName="collection" />
     </scopeInfo>
     <scopeInfo nodeId="5710768378796635552" fileName="ModuleDependenciesView.java" startLine="156" startPosition="54" endLine="165" endPosition="9">
-      <varInfo nodeId="5710768378796635552" varName="child" />
+      <varInfo nodeId="5710768378796635553" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="5710768378796635505" fileName="ModuleDependenciesView.java" startLine="155" startPosition="25" endLine="165" endPosition="9" />
     <scopeInfo nodeId="7574561536407727927" fileName="ModuleDependenciesView.java" startLine="95" startPosition="48" endLine="107" endPosition="11">
@@ -627,7 +627,7 @@
       <varInfo nodeId="7574561536407727919" varName="o" />
     </scopeInfo>
     <scopeInfo nodeId="7574561536407727914" fileName="ModuleDependenciesView.java" startLine="92" startPosition="121" endLine="109" endPosition="7">
-      <varInfo nodeId="7574561536407727914" varName="path" />
+      <varInfo nodeId="7574561536407727915" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="7574561536407727913" fileName="ModuleDependenciesView.java" startLine="90" startPosition="24" endLine="112" endPosition="7">
       <varInfo nodeId="7574561536407727891" varName="dependencies" />
@@ -831,7 +831,7 @@
       <varInfo nodeId="691189692235661122" varName="usedLanguage" />
     </scopeInfo>
     <scopeInfo nodeId="8300867715641541279" fileName="DependencyPathTree.java" startLine="102" startPosition="87" endLine="106" endPosition="9">
-      <varInfo nodeId="8300867715641541279" varName="link" />
+      <varInfo nodeId="8300867715641541280" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="1599873085866639479" fileName="DependencyPathTree.java" startLine="131" startPosition="55" endLine="135" endPosition="9">
       <varInfo nodeId="8427130069758290958" varName="node" />
@@ -856,7 +856,7 @@
     <scopeInfo nodeId="7380325050105958464" fileName="DependencyPathTree.java" startLine="220" startPosition="0" endLine="225" endPosition="0" />
     <scopeInfo nodeId="8300867715641540068" fileName="DependencyPathTree.java" startLine="100" startPosition="14" endLine="106" endPosition="9" />
     <scopeInfo nodeId="1599873085866639476" fileName="DependencyPathTree.java" startLine="130" startPosition="110" endLine="136" endPosition="7">
-      <varInfo nodeId="1599873085866639476" varName="m" />
+      <varInfo nodeId="1599873085866639477" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="691189692235678847" fileName="DependencyPathTree.java" startLine="130" startPosition="110" endLine="136" endPosition="7" />
     <scopeInfo nodeId="4270869135739102444" fileName="DependencyPathTree.java" startLine="142" startPosition="0" endLine="148" endPosition="0">
@@ -873,7 +873,7 @@
       <varInfo nodeId="4270869135739189530" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="691189692235678844" fileName="DependencyPathTree.java" startLine="129" startPosition="13" endLine="137" endPosition="5">
-      <varInfo nodeId="691189692235678844" varName="dep" />
+      <varInfo nodeId="691189692235678845" varName="dep" />
     </scopeInfo>
     <scopeInfo nodeId="8300867715641540056" fileName="DependencyPathTree.java" startLine="90" startPosition="140" endLine="99" endPosition="9">
       <varInfo nodeId="1964814216499834901" varName="n" />
@@ -1143,10 +1143,10 @@
       <varInfo nodeId="7693590883518970082" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="3926887065466347618" fileName="DependencyUtil.java" startLine="165" startPosition="51" endLine="168" endPosition="7">
-      <varInfo nodeId="3926887065466347618" varName="link" />
+      <varInfo nodeId="3926887065466347619" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="1461848529218599049" fileName="DependencyUtil.java" startLine="190" startPosition="48" endLine="193" endPosition="5">
-      <varInfo nodeId="1461848529218599049" varName="link" />
+      <varInfo nodeId="1461848529218599050" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="7693590883518970017" fileName="DependencyUtil.java" startLine="283" startPosition="0" endLine="286" endPosition="5">
       <varInfo nodeId="3926887065466326923" varName="text" />

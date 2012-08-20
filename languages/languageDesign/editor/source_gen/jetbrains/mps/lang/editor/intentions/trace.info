@@ -702,10 +702,10 @@
       <varInfo nodeId="1235496126725" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="1235493907065" fileName="ChangeProperty_Intention.java" startLine="49" startPosition="5" endLine="52" endPosition="5">
-      <varInfo nodeId="1235493907065" varName="propertyEntry" />
+      <varInfo nodeId="1235493907066" varName="propertyEntry" />
     </scopeInfo>
     <scopeInfo nodeId="1235494489274" fileName="ChangeProperty_Intention.java" startLine="52" startPosition="5" endLine="55" endPosition="5">
-      <varInfo nodeId="1235494489274" varName="reference" />
+      <varInfo nodeId="1235494489275" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
@@ -717,7 +717,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1235489867936" fileName="ChangeProperty_Intention.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="1235493645189" fileName="ChangeProperty_Intention.java" startLine="44" startPosition="72" endLine="49" endPosition="5">
-      <varInfo nodeId="1235493645189" varName="child" />
+      <varInfo nodeId="1235493645190" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1235489867940" fileName="ChangeProperty_Intention.java" startLine="41" startPosition="76" endLine="56" endPosition="60">
       <varInfo nodeId="1235490274982" varName="transactional" />
@@ -770,10 +770,10 @@
       <varInfo nodeId="1235497836444" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="1235497836462" fileName="ChangeTransactionalProperty_Intention.java" startLine="50" startPosition="5" endLine="53" endPosition="5">
-      <varInfo nodeId="1235497836462" varName="propertyEntry" />
+      <varInfo nodeId="1235497836463" varName="propertyEntry" />
     </scopeInfo>
     <scopeInfo nodeId="1235497836482" fileName="ChangeTransactionalProperty_Intention.java" startLine="53" startPosition="5" endLine="56" endPosition="5">
-      <varInfo nodeId="1235497836482" varName="reference" />
+      <varInfo nodeId="1235497836483" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
@@ -785,7 +785,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1235490923121" fileName="ChangeTransactionalProperty_Intention.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
     <scopeInfo nodeId="1235497836436" fileName="ChangeTransactionalProperty_Intention.java" startLine="45" startPosition="86" endLine="50" endPosition="5">
-      <varInfo nodeId="1235497836436" varName="child" />
+      <varInfo nodeId="1235497836437" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1235490923125" fileName="ChangeTransactionalProperty_Intention.java" startLine="41" startPosition="76" endLine="57" endPosition="60">
       <varInfo nodeId="1235490990294" varName="transactional" />
@@ -1359,7 +1359,7 @@
       <varInfo nodeId="1237566663245" varName="classItem" />
     </scopeInfo>
     <scopeInfo nodeId="1237563331727" fileName="IndentLayoutUtil.java" startLine="61" startPosition="52" endLine="64" endPosition="7">
-      <varInfo nodeId="1237563331727" varName="cellModel" />
+      <varInfo nodeId="1237563331728" varName="cellModel" />
     </scopeInfo>
     <scopeInfo nodeId="1237651470427" fileName="IndentLayoutUtil.java" startLine="71" startPosition="51" endLine="74" endPosition="106">
       <varInfo nodeId="1237651470429" varName="classItem" />
@@ -1607,10 +1607,10 @@
       <varInfo nodeId="5137527105084909383" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105084909400" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="61" startPosition="5" endLine="64" endPosition="5">
-      <varInfo nodeId="5137527105084909400" varName="propertyEntry" />
+      <varInfo nodeId="5137527105084909401" varName="propertyEntry" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105084909420" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="64" startPosition="5" endLine="67" endPosition="5">
-      <varInfo nodeId="5137527105084909420" varName="reference" />
+      <varInfo nodeId="5137527105084909421" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
     <scopeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
@@ -1627,7 +1627,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="70" startPosition="0" endLine="74" endPosition="0" />
     <scopeInfo nodeId="5137527105084909375" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="56" startPosition="72" endLine="61" endPosition="5">
-      <varInfo nodeId="5137527105084909375" varName="child" />
+      <varInfo nodeId="5137527105084909376" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105084909325" fileName="ChangePropertyWithNonEmpty_Intention.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="5137527105084909325" varName="editorContext" />
@@ -1683,10 +1683,10 @@
       <varInfo nodeId="5137527105085214183" varName="role" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105085214200" fileName="ChangeNonEmptyProperty_Intention.java" startLine="49" startPosition="5" endLine="52" endPosition="5">
-      <varInfo nodeId="5137527105085214200" varName="propertyEntry" />
+      <varInfo nodeId="5137527105085214201" varName="propertyEntry" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105085214220" fileName="ChangeNonEmptyProperty_Intention.java" startLine="52" startPosition="5" endLine="55" endPosition="5">
-      <varInfo nodeId="5137527105085214220" varName="reference" />
+      <varInfo nodeId="5137527105085214221" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
@@ -1698,7 +1698,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5137527105085214125" fileName="ChangeNonEmptyProperty_Intention.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="5137527105085214175" fileName="ChangeNonEmptyProperty_Intention.java" startLine="44" startPosition="72" endLine="49" endPosition="5">
-      <varInfo nodeId="5137527105085214175" varName="child" />
+      <varInfo nodeId="5137527105085214176" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="5137527105085214129" fileName="ChangeNonEmptyProperty_Intention.java" startLine="41" startPosition="76" endLine="56" endPosition="55">
       <varInfo nodeId="5137527105085214150" varName="property" />

@@ -17,7 +17,7 @@
     <scopeInfo nodeId="1199469405206" fileName="TestLabel.java" startLine="11" startPosition="90" endLine="21" endPosition="21" />
     <scopeInfo nodeId="1199467217252" fileName="TestLabel.java" startLine="9" startPosition="42" endLine="22" endPosition="5" />
     <scopeInfo nodeId="1199469405203" fileName="TestLabel.java" startLine="9" startPosition="42" endLine="22" endPosition="5">
-      <varInfo nodeId="1199469405203" varName="foo" />
+      <varInfo nodeId="1199469405204" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1199467217249" fileName="TestLabel.java" startLine="8" startPosition="24" endLine="24" endPosition="0">
       <varInfo nodeId="1199467221343" varName="args" />

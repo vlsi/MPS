@@ -68,10 +68,10 @@
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="37" startPosition="51" endLine="40" endPosition="41" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="51" startPosition="27" endLine="54" endPosition="7" />
     <scopeInfo nodeId="175734484443910305" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="93" startPosition="48" endLine="96" endPosition="11">
-      <varInfo nodeId="175734484443910305" varName="importedElement" />
+      <varInfo nodeId="175734484443910306" varName="importedElement" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443924897" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="97" startPosition="43" endLine="100" endPosition="11">
-      <varInfo nodeId="175734484443924897" varName="modelToImport" />
+      <varInfo nodeId="175734484443924898" varName="modelToImport" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="103" startPosition="0" endLine="106" endPosition="7">
       <varInfo nodeId="175734484443895487" varName="t" />
@@ -88,7 +88,7 @@
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="59" startPosition="95" endLine="64" endPosition="16" />
     <scopeInfo nodeId="175734484443909909" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="86" startPosition="65" endLine="92" endPosition="11">
-      <varInfo nodeId="175734484443909909" varName="classifierType" />
+      <varInfo nodeId="175734484443909910" varName="classifierType" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="48" startPosition="89" endLine="56" endPosition="5" />
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="58" startPosition="0" endLine="66" endPosition="0">
@@ -104,13 +104,13 @@
       <varInfo nodeId="175734484443909872" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443909840" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="76" startPosition="0" endLine="101" endPosition="9">
-      <varInfo nodeId="175734484443909840" varName="modelDescriptor" />
+      <varInfo nodeId="175734484443909841" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443909635" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="71" startPosition="64" endLine="101" endPosition="9">
       <varInfo nodeId="175734484443909637" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443909632" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="70" startPosition="116" endLine="102" endPosition="7">
-      <varInfo nodeId="175734484443909632" varName="module" />
+      <varInfo nodeId="175734484443909634" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="175734484443895487" fileName="ImportModelsWithUsedClassifiers_Action.java" startLine="68" startPosition="9" endLine="102" endPosition="7">
       <varInfo nodeId="175734484443909623" varName="allModules" />
@@ -642,7 +642,7 @@
       <varInfo nodeId="3805125895591756112" varName="modelRoots" />
     </scopeInfo>
     <scopeInfo nodeId="2268008756145949375" fileName="AddStubsToModelRoots_Action.java" startLine="64" startPosition="116" endLine="97" endPosition="7">
-      <varInfo nodeId="2268008756145949375" varName="module" />
+      <varInfo nodeId="2268008756145949376" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="2268008756145947405" fileName="AddStubsToModelRoots_Action.java" startLine="62" startPosition="9" endLine="99" endPosition="77">
       <varInfo nodeId="8629207563095829446" varName="allModules" />
@@ -1281,7 +1281,7 @@
       <varInfo nodeId="3805125895591804120" varName="sp" />
     </scopeInfo>
     <scopeInfo nodeId="3805125895591795074" fileName="AddSourcesToModelRoots_Action.java" startLine="66" startPosition="116" endLine="89" endPosition="7">
-      <varInfo nodeId="3805125895591795074" varName="module" />
+      <varInfo nodeId="3805125895591795075" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="3805125895591795071" fileName="AddSourcesToModelRoots_Action.java" startLine="64" startPosition="9" endLine="91" endPosition="77">
       <varInfo nodeId="8629207563095929145" varName="allModules" />
@@ -1429,11 +1429,11 @@
       <varInfo nodeId="495581478240917457" varName="uid" />
     </scopeInfo>
     <scopeInfo nodeId="495581478240917387" fileName="MethodCallChecker.java" startLine="51" startPosition="7" endLine="94" endPosition="7">
-      <varInfo nodeId="495581478240917387" varName="ref" />
+      <varInfo nodeId="495581478240917388" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="495581478240917380" fileName="MethodCallChecker.java" startLine="48" startPosition="138" endLine="94" endPosition="7" />
     <scopeInfo nodeId="495581478240917375" fileName="MethodCallChecker.java" startLine="47" startPosition="0" endLine="95" endPosition="5">
-      <varInfo nodeId="495581478240917375" varName="node" />
+      <varInfo nodeId="495581478240917376" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="495581478240917314" fileName="MethodCallChecker.java" startLine="39" startPosition="140" endLine="97" endPosition="19">
       <varInfo nodeId="495581478240917316" varName="results" />
@@ -2612,11 +2612,11 @@
       <varInfo nodeId="6104662726363130638" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="6104662726363129700" fileName="FixModelLanguages_Action.java" startLine="68" startPosition="9" endLine="85" endPosition="9">
-      <varInfo nodeId="6104662726363129700" varName="md" />
+      <varInfo nodeId="6104662726363129701" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="6104662726363047654" fileName="FixModelLanguages_Action.java" startLine="65" startPosition="139" endLine="85" endPosition="9" />
     <scopeInfo nodeId="6104662726363047651" fileName="FixModelLanguages_Action.java" startLine="64" startPosition="9" endLine="86" endPosition="7">
-      <varInfo nodeId="6104662726363047651" varName="module" />
+      <varInfo nodeId="6104662726363047652" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="64" startPosition="9" endLine="87" endPosition="47" />
     <scopeInfo nodeId="6104662726362995667" fileName="FixModelLanguages_Action.java" startLine="63" startPosition="96" endLine="92" endPosition="5" />
@@ -3035,7 +3035,7 @@
       <varInfo nodeId="7450649563959262367" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="7450649563959262417" fileName="OptimizeImportsInProject_Action.java" startLine="92" startPosition="53" endLine="103" endPosition="15">
-      <varInfo nodeId="7450649563959262417" varName="model" />
+      <varInfo nodeId="7450649563959262418" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="7450649563959262367" fileName="OptimizeImportsInProject_Action.java" startLine="63" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="7450649563959262367" varName="_params" />
@@ -3208,7 +3208,7 @@
       <varInfo nodeId="8004978336433012765" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="1855937925843864856" fileName="PluginMoveHelper.java" startLine="81" startPosition="0" endLine="84" endPosition="5">
-      <varInfo nodeId="1855937925843864856" varName="lang" />
+      <varInfo nodeId="1855937925843864857" varName="lang" />
     </scopeInfo>
     <scopeInfo nodeId="8004978336432944898" fileName="PluginMoveHelper.java" startLine="197" startPosition="47" endLine="200" endPosition="30">
       <varInfo nodeId="8004978336433012707" varName="plugin" />
@@ -3277,7 +3277,7 @@
     <scopeInfo nodeId="5318937080028094971" fileName="PluginMoveHelper.java" startLine="93" startPosition="104" endLine="126" endPosition="7" />
     <scopeInfo nodeId="5318937080028094936" fileName="PluginMoveHelper.java" startLine="92" startPosition="35" endLine="127" endPosition="5" />
     <scopeInfo nodeId="5318937080028094968" fileName="PluginMoveHelper.java" startLine="92" startPosition="35" endLine="127" endPosition="5">
-      <varInfo nodeId="5318937080028094968" varName="solution" />
+      <varInfo nodeId="5318937080028094969" varName="solution" />
     </scopeInfo>
     <scopeInfo nodeId="8004978336433031549" fileName="PluginMoveHelper.java" startLine="53" startPosition="22" endLine="89" endPosition="75">
       <varInfo nodeId="8004978336433033153" varName="langs" />
@@ -3458,7 +3458,7 @@
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="50" startPosition="95" endLine="55" endPosition="16" />
     <scopeInfo nodeId="902710015953321235" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="64" startPosition="78" endLine="70" endPosition="11">
-      <varInfo nodeId="902710015953321235" varName="extLang" />
+      <varInfo nodeId="902710015953321236" varName="extLang" />
     </scopeInfo>
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="39" startPosition="89" endLine="47" endPosition="5" />
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="49" startPosition="0" endLine="57" endPosition="0">
@@ -3469,7 +3469,7 @@
       <varInfo nodeId="902710015953328044" varName="extLangs" />
     </scopeInfo>
     <scopeInfo nodeId="902710015953247120" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="61" startPosition="102" endLine="71" endPosition="9">
-      <varInfo nodeId="902710015953247120" varName="lang" />
+      <varInfo nodeId="902710015953247121" varName="lang" />
     </scopeInfo>
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="902710015953231731" varName="_params" />
@@ -3480,7 +3480,7 @@
     </scopeInfo>
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="59" startPosition="9" endLine="73" endPosition="7" />
     <scopeInfo nodeId="902710015953247110" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="59" startPosition="9" endLine="73" endPosition="7">
-      <varInfo nodeId="902710015953247110" varName="module" />
+      <varInfo nodeId="902710015953247111" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="58" startPosition="96" endLine="78" endPosition="5" />
     <scopeInfo nodeId="902710015953231731" fileName="AddExtendedLanguagesAsUsed_Action.java" startLine="57" startPosition="0" endLine="80" endPosition="0">
@@ -3609,10 +3609,10 @@
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="38" startPosition="89" endLine="46" endPosition="5" />
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="49" startPosition="95" endLine="57" endPosition="16" />
     <scopeInfo nodeId="9065176582222574748" fileName="UpdateRefactoringVersions_Action.java" startLine="61" startPosition="9" endLine="70" endPosition="7">
-      <varInfo nodeId="9065176582222574748" varName="model" />
+      <varInfo nodeId="9065176582222574749" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="9065176582222574777" fileName="UpdateRefactoringVersions_Action.java" startLine="70" startPosition="7" endLine="79" endPosition="7">
-      <varInfo nodeId="9065176582222574777" varName="model" />
+      <varInfo nodeId="9065176582222574778" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="37" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="9065176582222574567" varName="_params" />
@@ -3635,7 +3635,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9065176582222574567" fileName="UpdateRefactoringVersions_Action.java" startLine="61" startPosition="9" endLine="80" endPosition="47" />
     <scopeInfo nodeId="9065176582222574645" fileName="UpdateRefactoringVersions_Action.java" startLine="105" startPosition="33" endLine="124" endPosition="5">
-      <varInfo nodeId="9065176582222574645" varName="importElement" />
+      <varInfo nodeId="9065176582222574646" varName="importElement" />
     </scopeInfo>
     <scopeInfo nodeId="9065176582222574638" fileName="UpdateRefactoringVersions_Action.java" startLine="104" startPosition="107" endLine="124" endPosition="5">
       <varInfo nodeId="9065176582222574640" varName="m" />
@@ -3726,7 +3726,7 @@
     <scopeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="42" startPosition="46" endLine="45" endPosition="40" />
     <scopeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="56" startPosition="27" endLine="59" endPosition="7" />
     <scopeInfo nodeId="2960702144698100051" fileName="FixMissingImportsInProject_Action.java" startLine="91" startPosition="105" endLine="94" endPosition="9">
-      <varInfo nodeId="2960702144698100051" varName="modelDescriptor" />
+      <varInfo nodeId="2960702144698100052" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="9164503229271455483" fileName="FixMissingImportsInProject_Action.java" startLine="117" startPosition="0" endLine="120" endPosition="7">
       <varInfo nodeId="9164503229271455483" varName="t" />
@@ -3759,7 +3759,7 @@
       <varInfo nodeId="2960702144698100166" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="9164503229271486526" fileName="FixMissingImportsInProject_Action.java" startLine="95" startPosition="0" endLine="109" endPosition="9">
-      <varInfo nodeId="9164503229271486526" varName="modelReference" />
+      <varInfo nodeId="9164503229271486527" varName="modelReference" />
     </scopeInfo>
     <scopeInfo nodeId="7002188680044641065" fileName="FixMissingImportsInProject_Action.java" startLine="76" startPosition="61" endLine="110" endPosition="34">
       <varInfo nodeId="2960702144698099333" varName="modelReferences" />
@@ -3851,7 +3851,7 @@
       <varInfo nodeId="975723688157231916" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="975723688157231921" fileName="AddPluginDependencies_Action.java" startLine="64" startPosition="168" endLine="75" endPosition="7">
-      <varInfo nodeId="975723688157231921" varName="lang" />
+      <varInfo nodeId="975723688157231922" varName="lang" />
     </scopeInfo>
     <scopeInfo nodeId="975723688157231916" fileName="AddPluginDependencies_Action.java" startLine="63" startPosition="9" endLine="77" endPosition="77">
       <varInfo nodeId="975723688157233004" varName="standaloneRef" />

@@ -1911,13 +1911,13 @@
     <scopeInfo nodeId="2476748692227887145" fileName="TransformatorImpl.java" startLine="2215" startPosition="58" endLine="2217" endPosition="5" />
     <scopeInfo nodeId="2476748692227884597" fileName="TransformatorImpl.java" startLine="117" startPosition="125" endLine="120" endPosition="7" />
     <scopeInfo nodeId="2476748692227884682" fileName="TransformatorImpl.java" startLine="136" startPosition="29" endLine="139" endPosition="5">
-      <varInfo nodeId="2476748692227884682" varName="var" />
+      <varInfo nodeId="2476748692227884683" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884702" fileName="TransformatorImpl.java" startLine="143" startPosition="24" endLine="146" endPosition="5">
-      <varInfo nodeId="2476748692227884702" varName="downcast" />
+      <varInfo nodeId="2476748692227884703" varName="downcast" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884728" fileName="TransformatorImpl.java" startLine="152" startPosition="49" endLine="155" endPosition="5">
-      <varInfo nodeId="2476748692227884728" varName="node" />
+      <varInfo nodeId="2476748692227884729" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884877" fileName="TransformatorImpl.java" startLine="183" startPosition="196" endLine="186" endPosition="223" />
     <scopeInfo nodeId="2476748692227886152" fileName="TransformatorImpl.java" startLine="492" startPosition="841" endLine="495" endPosition="0" />
@@ -1968,13 +1968,13 @@
       <varInfo nodeId="2476748692227884763" varName="rtype" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884793" fileName="TransformatorImpl.java" startLine="166" startPosition="63" endLine="170" endPosition="5">
-      <varInfo nodeId="2476748692227884793" varName="arrayAccess" />
+      <varInfo nodeId="2476748692227884794" varName="arrayAccess" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884828" fileName="TransformatorImpl.java" startLine="173" startPosition="225" endLine="177" endPosition="0">
       <varInfo nodeId="2476748692227884828" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884935" fileName="TransformatorImpl.java" startLine="193" startPosition="30" endLine="197" endPosition="5">
-      <varInfo nodeId="2476748692227884935" varName="returnStatement" />
+      <varInfo nodeId="2476748692227884936" varName="returnStatement" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884985" fileName="TransformatorImpl.java" startLine="208" startPosition="220" endLine="212" endPosition="0">
       <varInfo nodeId="2476748692227884985" varName="it" />
@@ -2057,7 +2057,7 @@
       <varInfo nodeId="2476748692227886269" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886387" fileName="TransformatorImpl.java" startLine="528" startPosition="28" endLine="532" endPosition="5">
-      <varInfo nodeId="2476748692227886387" varName="staticFieldReference" />
+      <varInfo nodeId="2476748692227886388" varName="staticFieldReference" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886429" fileName="TransformatorImpl.java" startLine="538" startPosition="227" endLine="542" endPosition="0">
       <varInfo nodeId="2476748692227886429" varName="it" />
@@ -2253,10 +2253,10 @@
     <scopeInfo nodeId="2476748692227884363" fileName="TransformatorImpl.java" startLine="54" startPosition="54" endLine="59" endPosition="13" />
     <scopeInfo nodeId="2476748692227884195" fileName="TransformatorImpl.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
     <scopeInfo nodeId="2476748692227884592" fileName="TransformatorImpl.java" startLine="116" startPosition="25" endLine="121" endPosition="5">
-      <varInfo nodeId="2476748692227884592" varName="node" />
+      <varInfo nodeId="2476748692227884593" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884870" fileName="TransformatorImpl.java" startLine="182" startPosition="37" endLine="187" endPosition="5">
-      <varInfo nodeId="2476748692227884870" varName="ternaryOperator" />
+      <varInfo nodeId="2476748692227884871" varName="ternaryOperator" />
     </scopeInfo>
     <scopeInfo nodeId="1826745135660980442" fileName="TransformatorImpl.java" startLine="251" startPosition="141" endLine="256" endPosition="154" />
     <scopeInfo nodeId="2476748692227885588" fileName="TransformatorImpl.java" startLine="372" startPosition="9" endLine="377" endPosition="202">
@@ -2278,7 +2278,7 @@
     <scopeInfo nodeId="2476748692227886866" fileName="TransformatorImpl.java" startLine="1905" startPosition="9" endLine="1910" endPosition="9" />
     <scopeInfo nodeId="2476748692227886999" fileName="TransformatorImpl.java" startLine="2113" startPosition="9" endLine="2118" endPosition="9" />
     <scopeInfo nodeId="2476748692227884746" fileName="TransformatorImpl.java" startLine="158" startPosition="74" endLine="164" endPosition="5">
-      <varInfo nodeId="2476748692227884746" varName="binaryOperation" />
+      <varInfo nodeId="2476748692227884747" varName="binaryOperation" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884999" fileName="TransformatorImpl.java" startLine="213" startPosition="285" endLine="219" endPosition="103">
       <varInfo nodeId="2476748692227885026" varName="actualArguments" />
@@ -2344,29 +2344,29 @@
     <scopeInfo nodeId="2476748692227887145" fileName="TransformatorImpl.java" startLine="2222" startPosition="32" endLine="2228" endPosition="7" />
     <scopeInfo nodeId="2476748692227885188" fileName="TransformatorImpl.java" startLine="250" startPosition="9" endLine="257" endPosition="7" />
     <scopeInfo nodeId="2476748692227885221" fileName="TransformatorImpl.java" startLine="261" startPosition="30" endLine="268" endPosition="5">
-      <varInfo nodeId="2476748692227885221" varName="thisExpression" />
+      <varInfo nodeId="2476748692227885222" varName="thisExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885241" fileName="TransformatorImpl.java" startLine="268" startPosition="5" endLine="275" endPosition="5">
-      <varInfo nodeId="2476748692227885241" varName="thisExpression" />
+      <varInfo nodeId="2476748692227885242" varName="thisExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885261" fileName="TransformatorImpl.java" startLine="275" startPosition="5" endLine="282" endPosition="5">
-      <varInfo nodeId="2476748692227885261" varName="thisExpression" />
+      <varInfo nodeId="2476748692227885262" varName="thisExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885381" fileName="TransformatorImpl.java" startLine="311" startPosition="0" endLine="318" endPosition="5">
-      <varInfo nodeId="2476748692227885381" varName="variableRef" />
+      <varInfo nodeId="2476748692227885382" varName="variableRef" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885410" fileName="TransformatorImpl.java" startLine="321" startPosition="57" endLine="328" endPosition="5" />
     <scopeInfo nodeId="2476748692227885411" fileName="TransformatorImpl.java" startLine="321" startPosition="57" endLine="328" endPosition="5">
-      <varInfo nodeId="2476748692227885411" varName="baseAssignment" />
+      <varInfo nodeId="2476748692227885412" varName="baseAssignment" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885470" fileName="TransformatorImpl.java" startLine="339" startPosition="5" endLine="346" endPosition="5">
-      <varInfo nodeId="2476748692227885470" varName="classExpression" />
+      <varInfo nodeId="2476748692227885471" varName="classExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885752" fileName="TransformatorImpl.java" startLine="405" startPosition="28" endLine="412" endPosition="5">
-      <varInfo nodeId="2476748692227885752" varName="variableDeclaration" />
+      <varInfo nodeId="2476748692227885753" varName="variableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885847" fileName="TransformatorImpl.java" startLine="432" startPosition="28" endLine="439" endPosition="5">
-      <varInfo nodeId="2476748692227885847" varName="assignment" />
+      <varInfo nodeId="2476748692227885848" varName="assignment" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886050" fileName="TransformatorImpl.java" startLine="482" startPosition="116" endLine="489" endPosition="11" />
     <scopeInfo nodeId="2476748692227884549" fileName="TransformatorImpl.java" startLine="746" startPosition="70" endLine="753" endPosition="17" />
@@ -2374,15 +2374,15 @@
       <varInfo nodeId="2476748692227884362" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884819" fileName="TransformatorImpl.java" startLine="172" startPosition="31" endLine="180" endPosition="5">
-      <varInfo nodeId="2476748692227884819" varName="baseAssignment" />
+      <varInfo nodeId="2476748692227884820" varName="baseAssignment" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885441" fileName="TransformatorImpl.java" startLine="331" startPosition="42" endLine="339" endPosition="5">
-      <varInfo nodeId="2476748692227885441" varName="classifierClassExpression" />
+      <varInfo nodeId="2476748692227885442" varName="classifierClassExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885885" fileName="TransformatorImpl.java" startLine="452" startPosition="20" endLine="460" endPosition="9" />
     <scopeInfo nodeId="2476748692227886150" fileName="TransformatorImpl.java" startLine="491" startPosition="117" endLine="499" endPosition="11" />
     <scopeInfo nodeId="2476748692227886472" fileName="TransformatorImpl.java" startLine="551" startPosition="28" endLine="559" endPosition="5">
-      <varInfo nodeId="2476748692227886472" varName="fieldReference" />
+      <varInfo nodeId="2476748692227886473" varName="fieldReference" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886785" fileName="TransformatorImpl.java" startLine="632" startPosition="9" endLine="640" endPosition="7" />
     <scopeInfo nodeId="2476748692227886912" fileName="TransformatorImpl.java" startLine="663" startPosition="9" endLine="671" endPosition="7" />
@@ -2395,14 +2395,14 @@
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886379" fileName="TransformatorImpl.java" startLine="526" startPosition="0" endLine="535" endPosition="0" />
     <scopeInfo nodeId="2476748692227886420" fileName="TransformatorImpl.java" startLine="537" startPosition="28" endLine="546" endPosition="5">
-      <varInfo nodeId="2476748692227886420" varName="staticFieldReference" />
+      <varInfo nodeId="2476748692227886421" varName="staticFieldReference" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886646" fileName="TransformatorImpl.java" startLine="596" startPosition="28" endLine="605" endPosition="5">
-      <varInfo nodeId="2476748692227886646" varName="staticMethodCall" />
+      <varInfo nodeId="2476748692227886647" varName="staticMethodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886842" fileName="TransformatorImpl.java" startLine="645" startPosition="37" endLine="654" endPosition="5" />
     <scopeInfo nodeId="2476748692227886843" fileName="TransformatorImpl.java" startLine="645" startPosition="37" endLine="654" endPosition="5">
-      <varInfo nodeId="2476748692227886843" varName="instanceofExpression" />
+      <varInfo nodeId="2476748692227886844" varName="instanceofExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884431" fileName="TransformatorImpl.java" startLine="713" startPosition="62" endLine="722" endPosition="7" />
     <scopeInfo nodeId="2476748692227885212" fileName="TransformatorImpl.java" startLine="760" startPosition="31" endLine="769" endPosition="20">
@@ -2427,17 +2427,17 @@
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885284" fileName="TransformatorImpl.java" startLine="285" startPosition="32" endLine="295" endPosition="5" />
     <scopeInfo nodeId="2476748692227885285" fileName="TransformatorImpl.java" startLine="285" startPosition="32" endLine="295" endPosition="5">
-      <varInfo nodeId="2476748692227885285" varName="superMethodCall" />
+      <varInfo nodeId="2476748692227885286" varName="superMethodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885408" fileName="TransformatorImpl.java" startLine="320" startPosition="0" endLine="330" endPosition="0" />
     <scopeInfo nodeId="2476748692227885521" fileName="TransformatorImpl.java" startLine="355" startPosition="9" endLine="365" endPosition="82">
       <varInfo nodeId="2476748692227885523" varName="staticMethodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885692" fileName="TransformatorImpl.java" startLine="391" startPosition="76" endLine="401" endPosition="5">
-      <varInfo nodeId="2476748692227885692" varName="localInstanceFieldReference" />
+      <varInfo nodeId="2476748692227885693" varName="localInstanceFieldReference" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885793" fileName="TransformatorImpl.java" startLine="417" startPosition="28" endLine="427" endPosition="5">
-      <varInfo nodeId="2476748692227885793" varName="foreachStatement" />
+      <varInfo nodeId="2476748692227885794" varName="foreachStatement" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886276" fileName="TransformatorImpl.java" startLine="512" startPosition="9" endLine="522" endPosition="7">
       <varInfo nodeId="2476748692227886278" varName="ctype" />
@@ -2446,10 +2446,10 @@
       <varInfo nodeId="2476748692227886469" varName="finished" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886515" fileName="TransformatorImpl.java" startLine="564" startPosition="28" endLine="574" endPosition="5">
-      <varInfo nodeId="2476748692227886515" varName="fieldReferenceOperation" />
+      <varInfo nodeId="2476748692227886516" varName="fieldReferenceOperation" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886974" fileName="TransformatorImpl.java" startLine="672" startPosition="5" endLine="682" endPosition="5">
-      <varInfo nodeId="2476748692227886974" varName="arrayLength" />
+      <varInfo nodeId="2476748692227886975" varName="arrayLength" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884491" fileName="TransformatorImpl.java" startLine="730" startPosition="37" endLine="740" endPosition="9" />
     <scopeInfo nodeId="2476748692227884547" fileName="TransformatorImpl.java" startLine="745" startPosition="0" endLine="755" endPosition="0">
@@ -2582,7 +2582,7 @@
       <varInfo nodeId="2476748692227887145" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884616" fileName="TransformatorImpl.java" startLine="123" startPosition="31" endLine="134" endPosition="5">
-      <varInfo nodeId="2476748692227884616" varName="node" />
+      <varInfo nodeId="2476748692227884617" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885054" fileName="TransformatorImpl.java" startLine="220" startPosition="160" endLine="231" endPosition="84">
       <varInfo nodeId="2476748692227885056" varName="componentType" />
@@ -2590,10 +2590,10 @@
       <varInfo nodeId="2476748692227885094" varName="size" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885572" fileName="TransformatorImpl.java" startLine="367" startPosition="78" endLine="378" endPosition="5">
-      <varInfo nodeId="2476748692227885572" varName="localInstanceMethodCall" />
+      <varInfo nodeId="2476748692227885573" varName="localInstanceMethodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885634" fileName="TransformatorImpl.java" startLine="379" startPosition="72" endLine="390" endPosition="5">
-      <varInfo nodeId="2476748692227885634" varName="localStaticFieldReference" />
+      <varInfo nodeId="2476748692227885635" varName="localStaticFieldReference" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886415" fileName="TransformatorImpl.java" startLine="536" startPosition="50" endLine="547" endPosition="20">
       <varInfo nodeId="2476748692227886417" varName="finished" />
@@ -2677,7 +2677,7 @@
       <varInfo nodeId="2476748692227886999" varName="quotedNode1_10" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885338" fileName="TransformatorImpl.java" startLine="298" startPosition="52" endLine="310" endPosition="5">
-      <varInfo nodeId="2476748692227885338" varName="variableRef" />
+      <varInfo nodeId="2476748692227885339" varName="variableRef" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885744" fileName="TransformatorImpl.java" startLine="403" startPosition="0" endLine="415" endPosition="0" />
     <scopeInfo nodeId="2476748692227885788" fileName="TransformatorImpl.java" startLine="416" startPosition="43" endLine="428" endPosition="20">
@@ -2688,10 +2688,10 @@
       <varInfo nodeId="2476748692227886512" varName="finished" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886581" fileName="TransformatorImpl.java" startLine="579" startPosition="28" endLine="591" endPosition="5">
-      <varInfo nodeId="2476748692227886581" varName="staticMethodCall" />
+      <varInfo nodeId="2476748692227886582" varName="staticMethodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886704" fileName="TransformatorImpl.java" startLine="610" startPosition="28" endLine="622" endPosition="5">
-      <varInfo nodeId="2476748692227886704" varName="methodCall" />
+      <varInfo nodeId="2476748692227886705" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886840" fileName="TransformatorImpl.java" startLine="644" startPosition="0" endLine="656" endPosition="0" />
     <scopeInfo nodeId="2476748692227884428" fileName="TransformatorImpl.java" startLine="712" startPosition="0" endLine="724" endPosition="0">
@@ -2701,7 +2701,7 @@
     <scopeInfo nodeId="2476748692227886091" fileName="TransformatorImpl.java" startLine="1256" startPosition="0" endLine="1268" endPosition="0" />
     <scopeInfo nodeId="2476748692227886193" fileName="TransformatorImpl.java" startLine="1498" startPosition="0" endLine="1510" endPosition="0" />
     <scopeInfo nodeId="2476748692227885172" fileName="TransformatorImpl.java" startLine="245" startPosition="0" endLine="258" endPosition="5">
-      <varInfo nodeId="2476748692227885172" varName="newExpression" />
+      <varInfo nodeId="2476748692227885173" varName="newExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885282" fileName="TransformatorImpl.java" startLine="284" startPosition="0" endLine="297" endPosition="0" />
     <scopeInfo nodeId="2476748692227886464" fileName="TransformatorImpl.java" startLine="549" startPosition="0" endLine="562" endPosition="0" />
@@ -2771,10 +2771,10 @@
       <varInfo nodeId="2476748692227886701" varName="finished" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886769" fileName="TransformatorImpl.java" startLine="627" startPosition="28" endLine="641" endPosition="5">
-      <varInfo nodeId="2476748692227886769" varName="methodCall" />
+      <varInfo nodeId="2476748692227886770" varName="methodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886896" fileName="TransformatorImpl.java" startLine="658" startPosition="28" endLine="672" endPosition="5">
-      <varInfo nodeId="2476748692227886896" varName="arrayAccess" />
+      <varInfo nodeId="2476748692227886897" varName="arrayAccess" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885440" fileName="TransformatorImpl.java" startLine="331" startPosition="42" endLine="346" endPosition="5" />
     <scopeInfo nodeId="2476748692227885785" fileName="TransformatorImpl.java" startLine="415" startPosition="0" endLine="430" endPosition="0" />
@@ -2786,14 +2786,14 @@
       <varInfo nodeId="2476748692227886159" varName="quotedNode1_22" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885505" fileName="TransformatorImpl.java" startLine="350" startPosition="74" endLine="366" endPosition="5">
-      <varInfo nodeId="2476748692227885505" varName="localStaticMethodCall" />
+      <varInfo nodeId="2476748692227885506" varName="localStaticMethodCall" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885885" fileName="TransformatorImpl.java" startLine="445" startPosition="5" endLine="461" endPosition="7">
       <varInfo nodeId="2476748692227885887" varName="notExpression" />
       <varInfo nodeId="2476748692227885885" varName="notExpression_iterator" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886260" fileName="TransformatorImpl.java" startLine="507" startPosition="28" endLine="523" endPosition="5">
-      <varInfo nodeId="2476748692227886260" varName="ternaryOperator" />
+      <varInfo nodeId="2476748692227886261" varName="ternaryOperator" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886764" fileName="TransformatorImpl.java" startLine="626" startPosition="48" endLine="642" endPosition="20">
       <varInfo nodeId="2476748692227886766" varName="finished" />
@@ -2865,7 +2865,7 @@
       <varInfo nodeId="2476748692227884545" varName="dotExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227887039" fileName="TransformatorImpl.java" startLine="687" startPosition="28" endLine="709" endPosition="5">
-      <varInfo nodeId="2476748692227887039" varName="cast" />
+      <varInfo nodeId="2476748692227887040" varName="cast" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227886866" fileName="TransformatorImpl.java" startLine="1914" startPosition="11" endLine="1936" endPosition="64">
       <varInfo nodeId="2476748692227886866" varName="quotedNode1_12" />
@@ -2947,7 +2947,7 @@
     <scopeInfo nodeId="2476748692227885980" fileName="TransformatorImpl.java" startLine="966" startPosition="32" endLine="999" endPosition="7" />
     <scopeInfo nodeId="2476748692227886016" fileName="TransformatorImpl.java" startLine="1053" startPosition="43" endLine="1086" endPosition="9" />
     <scopeInfo nodeId="2476748692227885941" fileName="TransformatorImpl.java" startLine="467" startPosition="28" endLine="502" endPosition="5">
-      <varInfo nodeId="2476748692227885941" varName="binaryOperation" />
+      <varInfo nodeId="2476748692227885942" varName="binaryOperation" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884206" fileName="TransformatorImpl.java" startLine="76" startPosition="27" endLine="112" endPosition="18">
       <varInfo nodeId="2476748692227884226" varName="finished" />
@@ -2956,7 +2956,7 @@
       <varInfo nodeId="2476748692227886016" varName="quotedNode1_5" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227884976" fileName="TransformatorImpl.java" startLine="207" startPosition="38" endLine="244" endPosition="5">
-      <varInfo nodeId="2476748692227884976" varName="newExpression" />
+      <varInfo nodeId="2476748692227884977" varName="newExpression" />
     </scopeInfo>
     <scopeInfo nodeId="2476748692227885936" fileName="TransformatorImpl.java" startLine="466" startPosition="45" endLine="503" endPosition="20">
       <varInfo nodeId="2476748692227885938" varName="finished" />

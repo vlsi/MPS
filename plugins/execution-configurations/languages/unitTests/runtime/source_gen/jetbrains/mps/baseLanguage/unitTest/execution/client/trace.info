@@ -241,7 +241,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532228" fileName="JUnit4TestWrapper.java" startLine="66" startPosition="112" endLine="70" endPosition="16" />
     <scopeInfo nodeId="2024340988248532191" fileName="JUnit4TestWrapper.java" startLine="57" startPosition="5" endLine="62" endPosition="5">
-      <varInfo nodeId="2024340988248532191" varName="method" />
+      <varInfo nodeId="2024340988248532192" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532222" fileName="JUnit4TestWrapper.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="2024340988248532228" fileName="JUnit4TestWrapper.java" startLine="65" startPosition="0" endLine="72" endPosition="0">
@@ -400,10 +400,10 @@
       <varInfo nodeId="1217424543037" varName="url" />
     </scopeInfo>
     <scopeInfo nodeId="7149605750504389879" fileName="LanguageTestWrapper.java" startLine="135" startPosition="192" endLine="138" endPosition="5">
-      <varInfo nodeId="7149605750504389879" varName="path" />
+      <varInfo nodeId="7149605750504389880" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="1937023808170650696" fileName="LanguageTestWrapper.java" startLine="140" startPosition="96" endLine="143" endPosition="7">
-      <varInfo nodeId="1937023808170650696" varName="path" />
+      <varInfo nodeId="1937023808170650697" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532295" fileName="LanguageTestWrapper.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
     <scopeInfo nodeId="2024340988248532304" fileName="LanguageTestWrapper.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
@@ -432,7 +432,7 @@
     <scopeInfo nodeId="2024340988248532417" fileName="LanguageTestWrapper.java" startLine="202" startPosition="114" endLine="206" endPosition="16" />
     <scopeInfo nodeId="3310779261129403077" fileName="LanguageTestWrapper.java" startLine="82" startPosition="156" endLine="87" endPosition="153" />
     <scopeInfo nodeId="7292080432684956719" fileName="LanguageTestWrapper.java" startLine="138" startPosition="5" endLine="144" endPosition="5">
-      <varInfo nodeId="7292080432684956719" varName="dep" />
+      <varInfo nodeId="7292080432684956720" varName="dep" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532317" fileName="LanguageTestWrapper.java" startLine="48" startPosition="41" endLine="55" endPosition="16" />
     <scopeInfo nodeId="2024340988248532300" fileName="LanguageTestWrapper.java" startLine="166" startPosition="0" endLine="173" endPosition="0">
@@ -464,7 +464,7 @@
     <scopeInfo nodeId="2024340988248532403" fileName="LanguageTestWrapper.java" startLine="157" startPosition="0" endLine="166" endPosition="0" />
     <scopeInfo nodeId="6653480123301124025" fileName="LanguageTestWrapper.java" startLine="105" startPosition="30" endLine="115" endPosition="11" />
     <scopeInfo nodeId="6653480123301124034" fileName="LanguageTestWrapper.java" startLine="105" startPosition="30" endLine="115" endPosition="11">
-      <varInfo nodeId="6653480123301124034" varName="libChild" />
+      <varInfo nodeId="6653480123301124035" varName="libChild" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532313" fileName="LanguageTestWrapper.java" startLine="45" startPosition="0" endLine="57" endPosition="0" />
     <scopeInfo nodeId="2024340988248532343" fileName="LanguageTestWrapper.java" startLine="60" startPosition="54" endLine="72" endPosition="7">
@@ -487,7 +487,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2937573621172211755" fileName="LanguageTestWrapper.java" startLine="96" startPosition="55" endLine="119" endPosition="7" />
     <scopeInfo nodeId="2937573621172211752" fileName="LanguageTestWrapper.java" startLine="95" startPosition="44" endLine="120" endPosition="5">
-      <varInfo nodeId="2937573621172211752" varName="pluginDirFile" />
+      <varInfo nodeId="2937573621172211753" varName="pluginDirFile" />
     </scopeInfo>
     <scopeInfo nodeId="3310779261129403165" fileName="LanguageTestWrapper.java" startLine="123" startPosition="0" endLine="148" endPosition="0" />
     <scopeInfo nodeId="3310779261129403179" fileName="LanguageTestWrapper.java" startLine="92" startPosition="45" endLine="121" endPosition="16">
@@ -701,7 +701,7 @@
       <varInfo nodeId="2024340988248532814" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532430" fileName="TestNodeWrapperFactory.java" startLine="167" startPosition="65" endLine="172" endPosition="5">
-      <varInfo nodeId="2024340988248532430" varName="factory" />
+      <varInfo nodeId="2024340988248532431" varName="factory" />
     </scopeInfo>
     <scopeInfo nodeId="2024340988248532488" fileName="TestNodeWrapperFactory.java" startLine="188" startPosition="54" endLine="193" endPosition="7" />
     <scopeInfo nodeId="2024340988248532503" fileName="TestNodeWrapperFactory.java" startLine="196" startPosition="58" endLine="201" endPosition="7" />
@@ -1248,7 +1248,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5881102044690182596" fileName="TestRunState.java" startLine="70" startPosition="67" endLine="75" endPosition="5" />
     <scopeInfo nodeId="5881102044690182597" fileName="TestRunState.java" startLine="70" startPosition="67" endLine="75" endPosition="5">
-      <varInfo nodeId="5881102044690182597" varName="testCase" />
+      <varInfo nodeId="5881102044690182598" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690183019" fileName="TestRunState.java" startLine="200" startPosition="25" endLine="205" endPosition="24" />
     <scopeInfo nodeId="5881102044690182681" fileName="TestRunState.java" startLine="91" startPosition="0" endLine="97" endPosition="0" />
@@ -1306,7 +1306,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5881102044690182629" fileName="TestRunState.java" startLine="78" startPosition="71" endLine="89" endPosition="5" />
     <scopeInfo nodeId="5881102044690182630" fileName="TestRunState.java" startLine="78" startPosition="71" endLine="89" endPosition="5">
-      <varInfo nodeId="5881102044690182630" varName="testMethod" />
+      <varInfo nodeId="5881102044690182631" varName="testMethod" />
     </scopeInfo>
     <scopeInfo nodeId="5881102044690182860" fileName="TestRunState.java" startLine="152" startPosition="0" endLine="163" endPosition="0">
       <varInfo nodeId="5881102044690182899" varName="className" />
@@ -1732,7 +1732,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6062668769034832926" fileName="Junit_Command.java" startLine="115" startPosition="132" endLine="122" endPosition="82" />
     <scopeInfo nodeId="6062668769034833077" fileName="Junit_Command.java" startLine="147" startPosition="116" endLine="154" endPosition="9">
-      <varInfo nodeId="6062668769034833077" varName="test" />
+      <varInfo nodeId="6062668769034833078" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="6062668769034833146" fileName="Junit_Command.java" startLine="170" startPosition="56" endLine="177" endPosition="185">
       <varInfo nodeId="5603351415227423468" varName="defaultRunParameters" />

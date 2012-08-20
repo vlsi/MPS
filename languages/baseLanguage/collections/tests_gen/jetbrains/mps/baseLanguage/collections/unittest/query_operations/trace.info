@@ -167,12 +167,12 @@
     <scopeInfo nodeId="1224596674784" fileName="ForEach_loop_Test1.java" startLine="62" startPosition="27" endLine="64" endPosition="28" />
     <scopeInfo nodeId="1224596674789" fileName="ForEach_loop_Test1.java" startLine="65" startPosition="27" endLine="67" endPosition="28" />
     <scopeInfo nodeId="1170287076664" fileName="ForEach_loop_Test1.java" startLine="21" startPosition="16" endLine="24" endPosition="5">
-      <varInfo nodeId="1170287076664" varName="i" />
+      <varInfo nodeId="1170287076665" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1224596674785" fileName="ForEach_loop_Test1.java" startLine="54" startPosition="27" endLine="57" endPosition="28" />
     <scopeInfo nodeId="1224596680294" fileName="ForEach_loop_Test1.java" startLine="58" startPosition="27" endLine="61" endPosition="34" />
     <scopeInfo nodeId="1170287183437" fileName="ForEach_loop_Test1.java" startLine="79" startPosition="16" endLine="82" endPosition="5">
-      <varInfo nodeId="1170287183437" varName="i" />
+      <varInfo nodeId="1170287183438" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1170287058581" fileName="ForEach_loop_Test1.java" startLine="19" startPosition="24" endLine="25" endPosition="33">
       <varInfo nodeId="1170287058583" varName="list" />
@@ -420,7 +420,7 @@
       <varInfo nodeId="1571838961922998498" varName="expected" />
     </scopeInfo>
     <scopeInfo nodeId="1571838961922998493" fileName="Mapping_Test1_Test.java" startLine="150" startPosition="24" endLine="158" endPosition="5">
-      <varInfo nodeId="1571838961922998493" varName="s" />
+      <varInfo nodeId="1571838961922998494" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1571838961922998552" fileName="Mapping_Test1_Test.java" startLine="174" startPosition="22" endLine="189" endPosition="21" />
     <scopeInfo nodeId="1571838961923394407" fileName="Mapping_Test1_Test.java" startLine="210" startPosition="22" endLine="225" endPosition="21" />
@@ -623,7 +623,7 @@
       <varInfo nodeId="1571838961923334383" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1571838961923334402" fileName="Where_Select_Test1_Test.java" startLine="84" startPosition="24" endLine="89" endPosition="5">
-      <varInfo nodeId="1571838961923334402" varName="s" />
+      <varInfo nodeId="1571838961923334403" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1571838961923334346" fileName="Where_Select_Test1_Test.java" startLine="38" startPosition="27" endLine="44" endPosition="28" />
     <scopeInfo nodeId="1571838961923364297" fileName="Where_Select_Test1_Test.java" startLine="110" startPosition="38" endLine="118" endPosition="64">

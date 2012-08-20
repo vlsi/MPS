@@ -1862,7 +1862,7 @@
     <scopeInfo nodeId="496727441192652894" fileName="QueriesGenerated.java" startLine="575" startPosition="52" endLine="576" endPosition="88" />
     <scopeInfo nodeId="496727441192171370" fileName="QueriesGenerated.java" startLine="574" startPosition="114" endLine="578" endPosition="75" />
     <scopeInfo nodeId="496727441192171367" fileName="QueriesGenerated.java" startLine="573" startPosition="23" endLine="579" endPosition="5">
-      <varInfo nodeId="496727441192171367" varName="tagWrapper" />
+      <varInfo nodeId="496727441192171368" varName="tagWrapper" />
     </scopeInfo>
     <scopeInfo nodeId="1214320937730" fileName="QueriesGenerated.java" startLine="569" startPosition="148" endLine="580" endPosition="18">
       <varInfo nodeId="496727441192170930" varName="result" />

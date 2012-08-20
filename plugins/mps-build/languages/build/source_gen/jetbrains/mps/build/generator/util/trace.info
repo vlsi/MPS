@@ -248,7 +248,7 @@
       <varInfo nodeId="6853883513540407300" varName="jcp" />
     </scopeInfo>
     <scopeInfo nodeId="6853883513540407202" fileName="JavaExternalLibraryHelper.java" startLine="41" startPosition="94" endLine="87" endPosition="7">
-      <varInfo nodeId="6853883513540407202" varName="element" />
+      <varInfo nodeId="6853883513540407203" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="6853883513540510780" fileName="JavaExternalLibraryHelper.java" startLine="41" startPosition="94" endLine="87" endPosition="7" />
     <scopeInfo nodeId="8775597636506088067" fileName="JavaExternalLibraryHelper.java" startLine="37" startPosition="38" endLine="127" endPosition="18">

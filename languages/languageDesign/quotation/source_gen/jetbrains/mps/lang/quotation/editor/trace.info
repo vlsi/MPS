@@ -2438,7 +2438,7 @@
     <scopeInfo nodeId="8802842484753224591" fileName="Quotation_quotedNode.java" startLine="27" startPosition="96" endLine="29" endPosition="5" />
     <scopeInfo nodeId="8802842484753224561" fileName="Quotation_quotedNode.java" startLine="22" startPosition="69" endLine="25" endPosition="3" />
     <scopeInfo nodeId="8802842484753224601" fileName="Quotation_quotedNode.java" startLine="32" startPosition="73" endLine="35" endPosition="7">
-      <varInfo nodeId="8802842484753224601" varName="nextConcept" />
+      <varInfo nodeId="8802842484753224602" varName="nextConcept" />
     </scopeInfo>
     <scopeInfo nodeId="8802842484753224591" fileName="Quotation_quotedNode.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="8802842484753224591" varName="editorContext" />

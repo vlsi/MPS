@@ -387,7 +387,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6407023681582958594" fileName="AttributeOperations.java" startLine="40" startPosition="98" endLine="45" endPosition="7" />
     <scopeInfo nodeId="6407023681583016440" fileName="AttributeOperations.java" startLine="71" startPosition="100" endLine="76" endPosition="5">
-      <varInfo nodeId="6407023681583016440" varName="attribute" />
+      <varInfo nodeId="6407023681583016441" varName="attribute" />
     </scopeInfo>
     <scopeInfo nodeId="6407023681583065766" fileName="AttributeOperations.java" startLine="129" startPosition="49" endLine="134" endPosition="70">
       <varInfo nodeId="8647109073523579963" varName="role" />

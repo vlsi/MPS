@@ -330,7 +330,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3342666646761697710" fileName="JavaDependenciesMerger.java" startLine="55" startPosition="131" endLine="63" endPosition="5" />
     <scopeInfo nodeId="3342666646761697711" fileName="JavaDependenciesMerger.java" startLine="55" startPosition="131" endLine="63" endPosition="5">
-      <varInfo nodeId="3342666646761697711" varName="fromRootDep" />
+      <varInfo nodeId="3342666646761697712" varName="fromRootDep" />
     </scopeInfo>
     <scopeInfo nodeId="3342666646761697749" fileName="JavaDependenciesMerger.java" startLine="66" startPosition="146" endLine="74" endPosition="174">
       <varInfo nodeId="3342666646761697774" varName="dependNodes" />

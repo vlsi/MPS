@@ -871,7 +871,7 @@
       <varInfo nodeId="4372437818008128826" varName="id" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008128818" fileName="ConfStubSource.java" startLine="66" startPosition="61" endLine="77" endPosition="7">
-      <varInfo nodeId="4372437818008128818" varName="docres" />
+      <varInfo nodeId="4372437818008128819" varName="docres" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008128810" fileName="ConfStubSource.java" startLine="65" startPosition="34" endLine="77" endPosition="7">
       <varInfo nodeId="4372437818008128812" varName="pi" />
@@ -883,7 +883,7 @@
       <varInfo nodeId="4372437818008128928" varName="is" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008128923" fileName="ConfStubSource.java" startLine="92" startPosition="7" endLine="109" endPosition="5">
-      <varInfo nodeId="4372437818008128923" varName="doctuple" />
+      <varInfo nodeId="4372437818008128924" varName="doctuple" />
     </scopeInfo>
     <scopeInfo nodeId="4372437818008128752" fileName="ConfStubSource.java" startLine="57" startPosition="107" endLine="112" endPosition="70">
       <varInfo nodeId="4372437818008128891" varName="descs" />

@@ -673,15 +673,15 @@
       <varInfo nodeId="1201618945543" varName="errorTarget" />
     </scopeInfo>
     <scopeInfo nodeId="1214834437728" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="90" startPosition="227" endLine="93" endPosition="5">
-      <varInfo nodeId="1214834437728" varName="thr" />
+      <varInfo nodeId="1214834437729" varName="thr" />
     </scopeInfo>
     <scopeInfo nodeId="1237814165990" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="118" startPosition="195" endLine="121" endPosition="11" />
     <scopeInfo nodeId="6089229461614981793" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="129" startPosition="75" endLine="132" endPosition="166" />
     <scopeInfo nodeId="1214834437728" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="136" startPosition="212" endLine="139" endPosition="7">
-      <varInfo nodeId="1214834437728" varName="thr" />
+      <varInfo nodeId="1214834437729" varName="thr" />
     </scopeInfo>
     <scopeInfo nodeId="1214834497820" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="139" startPosition="7" endLine="142" endPosition="7">
-      <varInfo nodeId="1214834497820" varName="leftThrows" />
+      <varInfo nodeId="1214834497821" varName="leftThrows" />
     </scopeInfo>
     <scopeInfo nodeId="4160512568111332200" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="199" startPosition="9" endLine="202" endPosition="59">
       <varInfo nodeId="4160512568111332200" varName="quotedNode1_6" />
@@ -745,7 +745,7 @@
     <scopeInfo nodeId="1237814165990" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="60" startPosition="29" endLine="68" endPosition="13" />
     <scopeInfo nodeId="6089229461614981793" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="78" startPosition="73" endLine="86" endPosition="9" />
     <scopeInfo nodeId="1214834497820" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="93" startPosition="5" endLine="101" endPosition="5">
-      <varInfo nodeId="1214834497820" varName="leftThrows" />
+      <varInfo nodeId="1214834497821" varName="leftThrows" />
     </scopeInfo>
     <scopeInfo nodeId="6089229461614981793" fileName="FunctionType_subtypeOf_FunctionType_InequationReplacementRule.java" startLine="124" startPosition="7" endLine="133" endPosition="9">
       <varInfo nodeId="6089229461614981793" varName="paramTypeLeft_it" />

@@ -76,7 +76,7 @@
       <varInfo nodeId="2068944020170493367" varName="quotedNode1_2" />
     </scopeInfo>
     <scopeInfo nodeId="2068944020170434437" fileName="AddClassifierDocComment_Intention.java" startLine="67" startPosition="23" endLine="72" endPosition="5">
-      <varInfo nodeId="2068944020170434437" varName="typeVariableDeclaration" />
+      <varInfo nodeId="2068944020170434438" varName="typeVariableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="2068944020170493367" fileName="AddClassifierDocComment_Intention.java" startLine="86" startPosition="32" endLine="92" endPosition="7" />
     <scopeInfo nodeId="2068944020170372970" fileName="AddClassifierDocComment_Intention.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
@@ -260,13 +260,13 @@
       <varInfo nodeId="2068944020170313353" varName="quotedNode1_2" />
     </scopeInfo>
     <scopeInfo nodeId="8465538089690919857" fileName="AddMethodDocComment_Intention.java" startLine="55" startPosition="26" endLine="60" endPosition="5">
-      <varInfo nodeId="8465538089690919857" varName="parameterDeclaration" />
+      <varInfo nodeId="8465538089690919858" varName="parameterDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="2068944020170311118" fileName="AddMethodDocComment_Intention.java" startLine="62" startPosition="23" endLine="67" endPosition="5">
-      <varInfo nodeId="2068944020170311118" varName="typeVariableDeclaration" />
+      <varInfo nodeId="2068944020170311119" varName="typeVariableDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="5858074156537576506" fileName="AddMethodDocComment_Intention.java" startLine="69" startPosition="26" endLine="74" endPosition="5">
-      <varInfo nodeId="5858074156537576506" varName="throwsItem" />
+      <varInfo nodeId="5858074156537576507" varName="throwsItem" />
     </scopeInfo>
     <scopeInfo nodeId="6832197706140863150" fileName="AddMethodDocComment_Intention.java" startLine="93" startPosition="32" endLine="99" endPosition="7" />
     <scopeInfo nodeId="2068944020170313353" fileName="AddMethodDocComment_Intention.java" startLine="111" startPosition="32" endLine="117" endPosition="7" />
@@ -684,7 +684,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4298862722976216179" fileName="AddAuthorBlockDocTag_Intention.java" startLine="57" startPosition="60" endLine="64" endPosition="7" />
     <scopeInfo nodeId="4298862722976216187" fileName="AddAuthorBlockDocTag_Intention.java" startLine="57" startPosition="60" endLine="64" endPosition="7">
-      <varInfo nodeId="4298862722976216187" varName="childCell" />
+      <varInfo nodeId="4298862722976216188" varName="childCell" />
     </scopeInfo>
     <scopeInfo nodeId="8465538089690783664" fileName="AddAuthorBlockDocTag_Intention.java" startLine="51" startPosition="76" endLine="69" endPosition="7">
       <varInfo nodeId="4298862722976216169" varName="authorEditorCell" />

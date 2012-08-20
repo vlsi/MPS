@@ -165,7 +165,7 @@
       <varInfo nodeId="1213104841340" varName="links" />
     </scopeInfo>
     <scopeInfo nodeId="1213104841335" fileName="LinkDeclaration_Constraints.java" startLine="89" startPosition="106" endLine="100" endPosition="13">
-      <varInfo nodeId="1213104841335" varName="concept" />
+      <varInfo nodeId="1213104841336" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="1213104841303" fileName="LinkDeclaration_Constraints.java" startLine="81" startPosition="142" endLine="101" endPosition="26">
       <varInfo nodeId="1213104841305" varName="aggregation" />

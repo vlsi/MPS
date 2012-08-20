@@ -301,14 +301,14 @@
     <scopeInfo nodeId="4312510064178913926" fileName="CommentHelper.java" startLine="85" startPosition="55" endLine="89" endPosition="6" />
     <scopeInfo nodeId="4312510064178914115" fileName="CommentHelper.java" startLine="92" startPosition="57" endLine="96" endPosition="6" />
     <scopeInfo nodeId="5141400498198648736" fileName="CommentHelper.java" startLine="42" startPosition="66" endLine="47" endPosition="7">
-      <varInfo nodeId="5141400498198648736" varName="line" />
+      <varInfo nodeId="5141400498198648737" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="5141400498198648787" fileName="CommentHelper.java" startLine="49" startPosition="81" endLine="54" endPosition="7">
-      <varInfo nodeId="5141400498198648787" varName="line" />
+      <varInfo nodeId="5141400498198648788" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="7054300446842357261" fileName="CommentHelper.java" startLine="77" startPosition="69" endLine="82" endPosition="5" />
     <scopeInfo nodeId="5141400498198648840" fileName="CommentHelper.java" startLine="54" startPosition="7" endLine="60" endPosition="7">
-      <varInfo nodeId="5141400498198648840" varName="line" />
+      <varInfo nodeId="5141400498198648841" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="4312510064178914281" fileName="CommentHelper.java" startLine="62" startPosition="90" endLine="68" endPosition="7" />
     <scopeInfo nodeId="4312510064178913926" fileName="CommentHelper.java" startLine="84" startPosition="0" endLine="91" endPosition="0">
@@ -1812,7 +1812,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332419" fileName="JavaCompiler.java" startLine="257" startPosition="41" endLine="261" endPosition="7" />
     <scopeInfo nodeId="8753353829093752522" fileName="JavaCompiler.java" startLine="263" startPosition="32" endLine="267" endPosition="5">
-      <varInfo nodeId="8753353829093752522" varName="sourceDir" />
+      <varInfo nodeId="8753353829093752523" varName="sourceDir" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332591" fileName="JavaCompiler.java" startLine="312" startPosition="34" endLine="316" endPosition="7" />
     <scopeInfo nodeId="5646944109420332611" fileName="JavaCompiler.java" startLine="321" startPosition="30" endLine="325" endPosition="75">
@@ -1853,7 +1853,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332276" fileName="JavaCompiler.java" startLine="204" startPosition="34" endLine="209" endPosition="72" />
     <scopeInfo nodeId="6122461715566550704" fileName="JavaCompiler.java" startLine="233" startPosition="69" endLine="238" endPosition="5">
-      <varInfo nodeId="6122461715566550704" varName="root" />
+      <varInfo nodeId="6122461715566550705" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332352" fileName="JavaCompiler.java" startLine="241" startPosition="0" endLine="246" endPosition="0">
       <varInfo nodeId="5646944109420332355" varName="classFqName" />
@@ -1889,7 +1889,7 @@
     <scopeInfo nodeId="7989252335493362498" fileName="JavaCompiler.java" startLine="560" startPosition="0" endLine="565" endPosition="0" />
     <scopeInfo nodeId="8753353829093752556" fileName="JavaCompiler.java" startLine="97" startPosition="147" endLine="103" endPosition="24" />
     <scopeInfo nodeId="6122461715566550768" fileName="JavaCompiler.java" startLine="216" startPosition="37" endLine="222" endPosition="5">
-      <varInfo nodeId="6122461715566550768" varName="packageFqName" />
+      <varInfo nodeId="6122461715566550769" varName="packageFqName" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332312" fileName="JavaCompiler.java" startLine="222" startPosition="5" endLine="228" endPosition="5">
       <varInfo nodeId="5646944109420332314" varName="packageFqName" />
@@ -1903,7 +1903,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332890" fileName="JavaCompiler.java" startLine="393" startPosition="0" endLine="399" endPosition="0" />
     <scopeInfo nodeId="7731963821318721595" fileName="JavaCompiler.java" startLine="427" startPosition="27" endLine="433" endPosition="9">
-      <varInfo nodeId="7731963821318721595" varName="blk" />
+      <varInfo nodeId="7731963821318721596" varName="blk" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420331619" fileName="JavaCompiler.java" startLine="538" startPosition="0" endLine="544" endPosition="0">
       <varInfo nodeId="5646944109420331643" varName="columnNumber" />
@@ -1929,7 +1929,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332869" fileName="JavaCompiler.java" startLine="379" startPosition="22" endLine="386" endPosition="19" />
     <scopeInfo nodeId="7054300446842357318" fileName="JavaCompiler.java" startLine="439" startPosition="21" endLine="446" endPosition="11">
-      <varInfo nodeId="7054300446842357318" varName="line" />
+      <varInfo nodeId="7054300446842357319" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420332958" fileName="JavaCompiler.java" startLine="469" startPosition="47" endLine="476" endPosition="5">
       <varInfo nodeId="5646944109420332966" varName="i" />
@@ -2050,7 +2050,7 @@
       <varInfo nodeId="3671703302989070807" varName="linestart" />
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070793" fileName="JavaCompiler.java" startLine="419" startPosition="15" endLine="450" endPosition="7">
-      <varInfo nodeId="3671703302989070793" varName="comment" />
+      <varInfo nodeId="3671703302989070794" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070750" fileName="JavaCompiler.java" startLine="406" startPosition="103" endLine="450" endPosition="7">
       <varInfo nodeId="3908372348891050598" varName="blocks" />
@@ -2069,7 +2069,7 @@
       <varInfo nodeId="5646944109420331922" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="3671703302989070747" fileName="JavaCompiler.java" startLine="405" startPosition="50" endLine="451" endPosition="5">
-      <varInfo nodeId="3671703302989070747" varName="cud" />
+      <varInfo nodeId="3671703302989070748" varName="cud" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420331904" fileName="JavaCompiler.java" startLine="134" startPosition="77" endLine="184" endPosition="5" />
     <scopeInfo nodeId="5646944109420332905" fileName="JavaCompiler.java" startLine="400" startPosition="50" endLine="452" endPosition="18">
@@ -3927,7 +3927,7 @@
     <scopeInfo nodeId="262096212398016518" fileName="JavaConverterTreeBuilder.java" startLine="1616" startPosition="66" endLine="1621" endPosition="222" />
     <scopeInfo nodeId="5970785221771745712" fileName="JavaConverterTreeBuilder.java" startLine="1637" startPosition="62" endLine="1642" endPosition="218" />
     <scopeInfo nodeId="4312510064178860345" fileName="JavaConverterTreeBuilder.java" startLine="1653" startPosition="132" endLine="1658" endPosition="9">
-      <varInfo nodeId="4312510064178860345" varName="text" />
+      <varInfo nodeId="4312510064178860346" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="5986358097126617653" fileName="JavaConverterTreeBuilder.java" startLine="1696" startPosition="101" endLine="1701" endPosition="7" />
     <scopeInfo nodeId="5646944109420324695" fileName="JavaConverterTreeBuilder.java" startLine="1724" startPosition="12" endLine="1729" endPosition="7" />
@@ -4279,7 +4279,7 @@
       <varInfo nodeId="5646944109420323724" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="247131684935904598" fileName="JavaConverterTreeBuilder.java" startLine="1650" startPosition="32" endLine="1661" endPosition="5">
-      <varInfo nodeId="247131684935904598" varName="comment" />
+      <varInfo nodeId="247131684935904599" varName="comment" />
     </scopeInfo>
     <scopeInfo nodeId="5646944109420324569" fileName="JavaConverterTreeBuilder.java" startLine="1672" startPosition="76" endLine="1683" endPosition="28" />
     <scopeInfo nodeId="7933219999540404205" fileName="JavaConverterTreeBuilder.java" startLine="1765" startPosition="9" endLine="1776" endPosition="11">
@@ -5918,7 +5918,7 @@
     <scopeInfo nodeId="8536576595311000472" fileName="ClassPathDialog.java" startLine="86" startPosition="30" endLine="88" endPosition="80" />
     <scopeInfo nodeId="8536576595310964146" fileName="ClassPathDialog.java" startLine="114" startPosition="28" endLine="116" endPosition="74" />
     <scopeInfo nodeId="8536576595311000521" fileName="ClassPathDialog.java" startLine="92" startPosition="52" endLine="95" endPosition="5">
-      <varInfo nodeId="8536576595311000521" varName="element" />
+      <varInfo nodeId="8536576595311000522" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="8536576595310998244" fileName="ClassPathDialog.java" startLine="106" startPosition="83" endLine="109" endPosition="7" />
     <scopeInfo nodeId="8536576595311001040" fileName="ClassPathDialog.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
@@ -5927,7 +5927,7 @@
       <varInfo nodeId="8536576595311000511" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="8536576595310998241" fileName="ClassPathDialog.java" startLine="105" startPosition="83" endLine="110" endPosition="5">
-      <varInfo nodeId="8536576595310998241" varName="nextUnresolved" />
+      <varInfo nodeId="8536576595310998242" varName="nextUnresolved" />
     </scopeInfo>
     <scopeInfo nodeId="8536576595310956180" fileName="ClassPathDialog.java" startLine="44" startPosition="126" endLine="51" endPosition="11" />
     <scopeInfo nodeId="8536576595310998296" fileName="ClassPathDialog.java" startLine="112" startPosition="60" endLine="119" endPosition="107">

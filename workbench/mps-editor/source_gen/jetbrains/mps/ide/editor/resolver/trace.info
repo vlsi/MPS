@@ -95,7 +95,7 @@
       <varInfo nodeId="4953860923773797627" varName="checkedDotOperand" />
     </scopeInfo>
     <scopeInfo nodeId="1802459475176586839" fileName="EditorResolver.java" startLine="66" startPosition="40" endLine="74" endPosition="5">
-      <varInfo nodeId="1802459475176586839" varName="nextAction" />
+      <varInfo nodeId="1802459475176586840" varName="nextAction" />
     </scopeInfo>
     <scopeInfo nodeId="1802459475176586802" fileName="EditorResolver.java" startLine="65" startPosition="118" endLine="75" endPosition="18">
       <varInfo nodeId="1802459475176586874" varName="result" />

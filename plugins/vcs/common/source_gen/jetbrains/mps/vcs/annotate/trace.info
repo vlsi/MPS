@@ -615,10 +615,10 @@
     <scopeInfo nodeId="3087146731607851335" fileName="AnnotationColumn.java" startLine="707" startPosition="31" endLine="709" endPosition="23" />
     <scopeInfo nodeId="775786118952886433" fileName="AnnotationColumn.java" startLine="808" startPosition="90" endLine="810" endPosition="5" />
     <scopeInfo nodeId="5838713064222200838" fileName="AnnotationColumn.java" startLine="137" startPosition="38" endLine="140" endPosition="5">
-      <varInfo nodeId="5838713064222200838" varName="rev" />
+      <varInfo nodeId="5838713064222200839" varName="rev" />
     </scopeInfo>
     <scopeInfo nodeId="2561579887389010780" fileName="AnnotationColumn.java" startLine="242" startPosition="121" endLine="245" endPosition="11">
-      <varInfo nodeId="2561579887389010780" varName="lc" />
+      <varInfo nodeId="2561579887389010781" varName="lc" />
     </scopeInfo>
     <scopeInfo nodeId="8595271971828762230" fileName="AnnotationColumn.java" startLine="242" startPosition="121" endLine="245" endPosition="11" />
     <scopeInfo nodeId="7306828316422020700" fileName="AnnotationColumn.java" startLine="277" startPosition="84" endLine="280" endPosition="116">
@@ -627,7 +627,7 @@
     <scopeInfo nodeId="8595271971828756901" fileName="AnnotationColumn.java" startLine="385" startPosition="27" endLine="388" endPosition="28" />
     <scopeInfo nodeId="8595271971828756915" fileName="AnnotationColumn.java" startLine="389" startPosition="27" endLine="392" endPosition="34" />
     <scopeInfo nodeId="391337651435690188" fileName="AnnotationColumn.java" startLine="448" startPosition="70" endLine="451" endPosition="5">
-      <varInfo nodeId="391337651435690188" varName="aspectSubcolumn" />
+      <varInfo nodeId="391337651435690189" varName="aspectSubcolumn" />
     </scopeInfo>
     <scopeInfo nodeId="6964398208146163414" fileName="AnnotationColumn.java" startLine="477" startPosition="96" endLine="480" endPosition="90">
       <varInfo nodeId="6964398208146163616" varName="fileLine" />
@@ -678,7 +678,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8535166541498043502" fileName="AnnotationColumn.java" startLine="440" startPosition="107" endLine="444" endPosition="11" />
     <scopeInfo nodeId="8595271971828756925" fileName="AnnotationColumn.java" startLine="440" startPosition="107" endLine="444" endPosition="11">
-      <varInfo nodeId="8595271971828756925" varName="pseudoLine" />
+      <varInfo nodeId="8595271971828756926" varName="pseudoLine" />
     </scopeInfo>
     <scopeInfo nodeId="5833019287081248511" fileName="AnnotationColumn.java" startLine="468" startPosition="45" endLine="472" endPosition="6" />
     <scopeInfo nodeId="8054337884878055984" fileName="AnnotationColumn.java" startLine="492" startPosition="55" endLine="496" endPosition="0" />
@@ -716,7 +716,7 @@
     <scopeInfo nodeId="6803801018698379436" fileName="AnnotationColumn.java" startLine="796" startPosition="78" endLine="800" endPosition="0" />
     <scopeInfo nodeId="5602671425819530082" fileName="AnnotationColumn.java" startLine="205" startPosition="29" endLine="210" endPosition="15" />
     <scopeInfo nodeId="8595271971828762227" fileName="AnnotationColumn.java" startLine="241" startPosition="75" endLine="246" endPosition="9">
-      <varInfo nodeId="8595271971828762227" varName="lineContents" />
+      <varInfo nodeId="8595271971828762228" varName="lineContents" />
     </scopeInfo>
     <scopeInfo nodeId="4277709331644247113" fileName="AnnotationColumn.java" startLine="498" startPosition="0" endLine="503" endPosition="0" />
     <scopeInfo nodeId="1396967583415229237" fileName="AnnotationColumn.java" startLine="540" startPosition="88" endLine="545" endPosition="0">
@@ -750,10 +750,10 @@
       <varInfo nodeId="1514237814543587127" varName="msg" />
     </scopeInfo>
     <scopeInfo nodeId="3494966540336933409" fileName="AnnotationColumn.java" startLine="187" startPosition="108" endLine="193" endPosition="5">
-      <varInfo nodeId="3494966540336933409" varName="revision" />
+      <varInfo nodeId="3494966540336933410" varName="revision" />
     </scopeInfo>
     <scopeInfo nodeId="391337651435690233" fileName="AnnotationColumn.java" startLine="260" startPosition="23" endLine="266" endPosition="5">
-      <varInfo nodeId="391337651435690233" varName="subcolumn" />
+      <varInfo nodeId="391337651435690234" varName="subcolumn" />
     </scopeInfo>
     <scopeInfo nodeId="7306828316422020789" fileName="AnnotationColumn.java" startLine="297" startPosition="11" endLine="303" endPosition="125">
       <varInfo nodeId="7306828316422020793" varName="text" />
@@ -840,7 +840,7 @@
       <varInfo nodeId="6964398208146163446" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="7306828316422020786" fileName="AnnotationColumn.java" startLine="292" startPosition="7" endLine="304" endPosition="7">
-      <varInfo nodeId="7306828316422020786" varName="subcolumn" />
+      <varInfo nodeId="7306828316422020787" varName="subcolumn" />
     </scopeInfo>
     <scopeInfo nodeId="6964398208146163552" fileName="AnnotationColumn.java" startLine="514" startPosition="0" endLine="526" endPosition="0">
       <varInfo nodeId="6964398208146163558" varName="y" />
@@ -1124,7 +1124,7 @@
     <scopeInfo nodeId="4433480198085380368" fileName="ViewActionGroup.java" startLine="34" startPosition="52" endLine="35" endPosition="37" />
     <scopeInfo nodeId="4433480198085380352" fileName="ViewActionGroup.java" startLine="25" startPosition="73" endLine="27" endPosition="30" />
     <scopeInfo nodeId="4433480198085381974" fileName="ViewActionGroup.java" startLine="13" startPosition="19" endLine="16" endPosition="5">
-      <varInfo nodeId="4433480198085381974" varName="subcolumn" />
+      <varInfo nodeId="4433480198085381975" varName="subcolumn" />
     </scopeInfo>
     <scopeInfo nodeId="4433480198085380349" fileName="ViewActionGroup.java" startLine="24" startPosition="0" endLine="28" endPosition="5">
       <varInfo nodeId="4433480198085380372" varName="subcolumn" />
@@ -1191,7 +1191,7 @@
     <scopeInfo nodeId="6566909625908996013" fileName="CommitNumberSubcolumn.java" startLine="24" startPosition="98" endLine="26" endPosition="38" />
     <scopeInfo nodeId="6566909625909090495" fileName="CommitNumberSubcolumn.java" startLine="61" startPosition="82" endLine="63" endPosition="47" />
     <scopeInfo nodeId="5838713064222208590" fileName="CommitNumberSubcolumn.java" startLine="36" startPosition="148" endLine="39" endPosition="5">
-      <varInfo nodeId="5838713064222208590" varName="rev" />
+      <varInfo nodeId="5838713064222208591" varName="rev" />
     </scopeInfo>
     <scopeInfo nodeId="6566909625909004646" fileName="CommitNumberSubcolumn.java" startLine="54" startPosition="30" endLine="57" endPosition="5">
       <varInfo nodeId="6566909625909004649" varName="i" />
@@ -1340,7 +1340,7 @@
     <scopeInfo nodeId="8703200563941381201" fileName="VcsRevisionRange.java" startLine="106" startPosition="36" endLine="107" endPosition="21" />
     <scopeInfo nodeId="7744421503924676712" fileName="VcsRevisionRange.java" startLine="96" startPosition="55" endLine="98" endPosition="38" />
     <scopeInfo nodeId="7744421503924771362" fileName="VcsRevisionRange.java" startLine="32" startPosition="104" endLine="35" endPosition="5">
-      <varInfo nodeId="7744421503924771362" varName="rev" />
+      <varInfo nodeId="7744421503924771363" varName="rev" />
     </scopeInfo>
     <scopeInfo nodeId="1567533269522942329" fileName="VcsRevisionRange.java" startLine="40" startPosition="78" endLine="43" endPosition="36" />
     <scopeInfo nodeId="7744421503924585252" fileName="VcsRevisionRange.java" startLine="70" startPosition="43" endLine="74" endPosition="7" />
@@ -1506,7 +1506,7 @@
     <scopeInfo nodeId="700892246829418013" fileName="AnnotationHelper.java" startLine="137" startPosition="69" endLine="141" endPosition="16" />
     <scopeInfo nodeId="700892246829418019" fileName="AnnotationHelper.java" startLine="144" startPosition="80" endLine="148" endPosition="16" />
     <scopeInfo nodeId="700892246829337613" fileName="AnnotationHelper.java" startLine="41" startPosition="98" endLine="46" endPosition="5">
-      <varInfo nodeId="700892246829337613" varName="column" />
+      <varInfo nodeId="700892246829337614" varName="column" />
     </scopeInfo>
     <scopeInfo nodeId="700892246829418152" fileName="AnnotationHelper.java" startLine="96" startPosition="61" endLine="101" endPosition="9" />
     <scopeInfo nodeId="700892246829418170" fileName="AnnotationHelper.java" startLine="103" startPosition="0" endLine="108" endPosition="0" />
@@ -1554,8 +1554,8 @@
     <nodeInfo nodeId="8955628568092676107" fileName="EditorUtils.java" startLine="75" startPosition="27" endLine="75" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8955628568092676100" fileName="EditorUtils.java" startLine="82" startPosition="28" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8955628568092676100" fileName="EditorUtils.java" startLine="21" startPosition="55" endLine="22" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="8955628568092676100" fileName="EditorUtils.java" startLine="22" startPosition="37" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5_childCell" />
-    <nodeInfo nodeId="8955628568092676100" fileName="EditorUtils.java" startLine="23" startPosition="46" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5_childCell_it" />
+    <nodeInfo nodeId="8955628568092676109" fileName="EditorUtils.java" startLine="22" startPosition="37" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5_childCell" />
+    <nodeInfo nodeId="8955628568092676109" fileName="EditorUtils.java" startLine="23" startPosition="46" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_5_childCell_it" />
     <nodeInfo nodeId="8955628568092676112" fileName="EditorUtils.java" startLine="24" startPosition="59" endLine="25" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_9_cells" />
     <nodeInfo nodeId="8955628568092676100" fileName="EditorUtils.java" startLine="25" startPosition="52" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_10__yield_5i6nbm_b0a0b0a0a0a" />
     <nodeInfo nodeId="8955628568092676100" fileName="EditorUtils.java" startLine="26" startPosition="63" endLine="27" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_10__yield_5i6nbm_b0a0b0a0a0a_it" />

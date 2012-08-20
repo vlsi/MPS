@@ -525,7 +525,7 @@
       <varInfo nodeId="1239579059907" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1239894693058" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="43" startPosition="90" endLine="51" endPosition="5">
-      <varInfo nodeId="1239894693058" varName="cmpRef" />
+      <varInfo nodeId="1239894693059" varName="cmpRef" />
     </scopeInfo>
     <scopeInfo nodeId="1239967949950" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="53" startPosition="169" endLine="63" endPosition="115">
       <varInfo nodeId="1239968089672" varName="PTYPE_typevar_1239968089672" />
@@ -538,7 +538,7 @@
       <varInfo nodeId="1239901178525" varName="quotedNode1_3" />
     </scopeInfo>
     <scopeInfo nodeId="1239967949947" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="52" startPosition="48" endLine="64" endPosition="5">
-      <varInfo nodeId="1239967949947" varName="foo" />
+      <varInfo nodeId="1239967949948" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="96" startPosition="32" endLine="108" endPosition="7" />
     <scopeInfo nodeId="1239901178525" fileName="typeof_NamedTupleLiteral_InferenceRule.java" startLine="116" startPosition="32" endLine="128" endPosition="7" />
@@ -835,7 +835,7 @@
       <varInfo nodeId="3862929002918414723" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1239974188214" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="29" startPosition="197" endLine="33" endPosition="5">
-      <varInfo nodeId="1239974188214" varName="tvr" />
+      <varInfo nodeId="1239974188215" varName="tvr" />
     </scopeInfo>
     <scopeInfo nodeId="3504058432724729014" fileName="typeof_NamedTupleComponentAccessOperation_InferenceRule.java" startLine="47" startPosition="30" endLine="51" endPosition="9">
       <varInfo nodeId="3504058432724729093" varName="idx" />
@@ -1096,7 +1096,7 @@
     <scopeInfo nodeId="1239722403690" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="69" startPosition="51" endLine="71" endPosition="5" />
     <scopeInfo nodeId="1239972928931" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="18" endLine="46" endPosition="13" />
     <scopeInfo nodeId="1239972928932" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="43" startPosition="18" endLine="46" endPosition="13">
-      <varInfo nodeId="1239972928932" varName="c" />
+      <varInfo nodeId="1239972928933" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="1239722403690" fileName="indexedTupleType_supertypeOf_namedTupleType_SubtypingRule.java" startLine="82" startPosition="56" endLine="85" endPosition="11">
       <varInfo nodeId="1239722403690" varName="child" />
@@ -1787,7 +1787,7 @@
     <scopeInfo nodeId="7367153454745566192" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="34" startPosition="26" endLine="46" endPosition="11" />
     <scopeInfo nodeId="7367153454745473479" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="33" startPosition="105" endLine="47" endPosition="9" />
     <scopeInfo nodeId="7367153454745473476" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="32" startPosition="7" endLine="48" endPosition="7">
-      <varInfo nodeId="7367153454745473476" varName="cmp" />
+      <varInfo nodeId="7367153454745473477" varName="cmp" />
     </scopeInfo>
     <scopeInfo nodeId="7367153454745440816" fileName="check_NamedTupleDeclaration_extends_NonTypesystemRule.java" startLine="27" startPosition="117" endLine="48" endPosition="7">
       <varInfo nodeId="7367153454745473467" varName="allExtends" />

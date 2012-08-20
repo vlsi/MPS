@@ -303,7 +303,7 @@
       <varInfo nodeId="1174262652638" varName="statement" />
     </scopeInfo>
     <scopeInfo nodeId="1206054637452" fileName="Children.java" startLine="38" startPosition="5" endLine="41" endPosition="5">
-      <varInfo nodeId="1206054637452" varName="statement" />
+      <varInfo nodeId="1206054637453" varName="statement" />
     </scopeInfo>
     <scopeInfo nodeId="1227876804727" fileName="Children.java" startLine="48" startPosition="209" endLine="52" endPosition="0">
       <varInfo nodeId="1227876804727" varName="it" />
@@ -993,7 +993,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1241018421133" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5" />
     <scopeInfo nodeId="1241018438639" fileName="StructureLanguageEnums.java" startLine="10" startPosition="27" endLine="16" endPosition="5">
-      <varInfo nodeId="1241018438639" varName="member" />
+      <varInfo nodeId="1241018438640" varName="member" />
     </scopeInfo>
     <scopeInfo nodeId="1241018421130" fileName="StructureLanguageEnums.java" startLine="9" startPosition="37" endLine="18" endPosition="0" />
     <unitInfo nodeId="1241018402608" fileName="StructureLanguageEnums.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="smodelLanguage.samples.StructureLanguageEnums" />

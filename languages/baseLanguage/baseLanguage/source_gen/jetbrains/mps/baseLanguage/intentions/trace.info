@@ -1587,7 +1587,7 @@
     <scopeInfo nodeId="1199892779474" fileName="ReplaceBlockWithItsContent_Intention.java" startLine="80" startPosition="37" endLine="81" endPosition="51" />
     <scopeInfo nodeId="1199892779474" fileName="ReplaceBlockWithItsContent_Intention.java" startLine="17" startPosition="94" endLine="19" endPosition="3" />
     <scopeInfo nodeId="1199893988792" fileName="ReplaceBlockWithItsContent_Intention.java" startLine="73" startPosition="128" endLine="76" endPosition="5">
-      <varInfo nodeId="1199893988792" varName="statement" />
+      <varInfo nodeId="1199893988793" varName="statement" />
     </scopeInfo>
     <scopeInfo nodeId="1199892779474" fileName="ReplaceBlockWithItsContent_Intention.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1199892779474" fileName="ReplaceBlockWithItsContent_Intention.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
@@ -1678,7 +1678,7 @@
     <scopeInfo nodeId="1201102619707" fileName="MoveInitializerToConstructor_Intention.java" startLine="73" startPosition="37" endLine="74" endPosition="51" />
     <scopeInfo nodeId="1201102619707" fileName="MoveInitializerToConstructor_Intention.java" startLine="14" startPosition="96" endLine="16" endPosition="3" />
     <scopeInfo nodeId="1201102901101" fileName="MoveInitializerToConstructor_Intention.java" startLine="65" startPosition="7" endLine="68" endPosition="5">
-      <varInfo nodeId="1201102901101" varName="constr" />
+      <varInfo nodeId="1201102901102" varName="constr" />
     </scopeInfo>
     <scopeInfo nodeId="1201102619707" fileName="MoveInitializerToConstructor_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1201102619707" fileName="MoveInitializerToConstructor_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
@@ -1971,7 +1971,7 @@
       <varInfo nodeId="1203701450442" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1209834103807" fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="56" startPosition="5" endLine="65" endPosition="5">
-      <varInfo nodeId="1209834103807" varName="variableReference" />
+      <varInfo nodeId="1209834103808" varName="variableReference" />
     </scopeInfo>
     <scopeInfo nodeId="1203701450446" fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="50" startPosition="90" endLine="66" endPosition="16" />
     <scopeInfo nodeId="1203701450448" fileName="AddRemoveStaticMethodModifier_Intention.java" startLine="69" startPosition="76" endLine="86" endPosition="37">
@@ -2354,10 +2354,10 @@
     <scopeInfo nodeId="1214431614908" fileName="ConvertClassCreatorToAnonimous_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="51" />
     <scopeInfo nodeId="1214431614908" fileName="ConvertClassCreatorToAnonimous_Intention.java" startLine="14" startPosition="98" endLine="16" endPosition="3" />
     <scopeInfo nodeId="1214432427020" fileName="ConvertClassCreatorToAnonimous_Intention.java" startLine="51" startPosition="281" endLine="54" endPosition="5">
-      <varInfo nodeId="1214432427020" varName="typeParm" />
+      <varInfo nodeId="1214432427021" varName="typeParm" />
     </scopeInfo>
     <scopeInfo nodeId="1214432615755" fileName="ConvertClassCreatorToAnonimous_Intention.java" startLine="54" startPosition="5" endLine="57" endPosition="5">
-      <varInfo nodeId="1214432615755" varName="typeParm" />
+      <varInfo nodeId="1214432615756" varName="typeParm" />
     </scopeInfo>
     <scopeInfo nodeId="1214431614908" fileName="ConvertClassCreatorToAnonimous_Intention.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
     <scopeInfo nodeId="1214431614908" fileName="ConvertClassCreatorToAnonimous_Intention.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
@@ -4303,7 +4303,7 @@
     <scopeInfo nodeId="3366354716707474220" fileName="SurroundWithIf_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707474220" fileName="SurroundWithIf_Intention.java" startLine="15" startPosition="90" endLine="17" endPosition="3" />
     <scopeInfo nodeId="8750188059154310865" fileName="SurroundWithIf_Intention.java" startLine="42" startPosition="101" endLine="45" endPosition="5">
-      <varInfo nodeId="8750188059154310865" varName="selectedNode" />
+      <varInfo nodeId="8750188059154310866" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707474220" fileName="SurroundWithIf_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707474220" fileName="SurroundWithIf_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4356,7 +4356,7 @@
     <scopeInfo nodeId="3366354716707626696" fileName="SurroundWithIfElse_Intention.java" startLine="50" startPosition="37" endLine="51" endPosition="51" />
     <scopeInfo nodeId="3366354716707626696" fileName="SurroundWithIfElse_Intention.java" startLine="15" startPosition="94" endLine="17" endPosition="3" />
     <scopeInfo nodeId="8750188059154118973" fileName="SurroundWithIfElse_Intention.java" startLine="42" startPosition="101" endLine="45" endPosition="5">
-      <varInfo nodeId="8750188059154118973" varName="selectedNode" />
+      <varInfo nodeId="8750188059154118974" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707626696" fileName="SurroundWithIfElse_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707626696" fileName="SurroundWithIfElse_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4408,7 +4408,7 @@
     <scopeInfo nodeId="3366354716707714383" fileName="SurroundWithWhile_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707714383" fileName="SurroundWithWhile_Intention.java" startLine="15" startPosition="93" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707720943" fileName="SurroundWithWhile_Intention.java" startLine="42" startPosition="65" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707720943" varName="selectedNode" />
+      <varInfo nodeId="3366354716707720944" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707714383" fileName="SurroundWithWhile_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707714383" fileName="SurroundWithWhile_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4460,7 +4460,7 @@
     <scopeInfo nodeId="3366354716707819213" fileName="SurroundWithDoWhile_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707819213" fileName="SurroundWithDoWhile_Intention.java" startLine="15" startPosition="95" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707825773" fileName="SurroundWithDoWhile_Intention.java" startLine="42" startPosition="65" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707825773" varName="selectedNode" />
+      <varInfo nodeId="3366354716707825774" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707819213" fileName="SurroundWithDoWhile_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707819213" fileName="SurroundWithDoWhile_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4512,7 +4512,7 @@
     <scopeInfo nodeId="3366354716707825816" fileName="SurroundWithFor_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707825816" fileName="SurroundWithFor_Intention.java" startLine="15" startPosition="91" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707825837" fileName="SurroundWithFor_Intention.java" startLine="42" startPosition="63" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707825837" varName="selectedNode" />
+      <varInfo nodeId="3366354716707825838" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707825816" fileName="SurroundWithFor_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707825816" fileName="SurroundWithFor_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4564,7 +4564,7 @@
     <scopeInfo nodeId="3366354716707825882" fileName="SurroundStatementsWithForEach_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707825882" fileName="SurroundStatementsWithForEach_Intention.java" startLine="15" startPosition="105" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707825903" fileName="SurroundStatementsWithForEach_Intention.java" startLine="42" startPosition="63" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707825903" varName="selectedNode" />
+      <varInfo nodeId="3366354716707825904" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707825882" fileName="SurroundStatementsWithForEach_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707825882" fileName="SurroundStatementsWithForEach_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4616,7 +4616,7 @@
     <scopeInfo nodeId="3366354716707825944" fileName="SuroundWithTryCatch_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707825944" fileName="SuroundWithTryCatch_Intention.java" startLine="15" startPosition="95" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707825966" fileName="SuroundWithTryCatch_Intention.java" startLine="42" startPosition="68" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707825966" varName="selectedNode" />
+      <varInfo nodeId="3366354716707825967" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707825944" fileName="SuroundWithTryCatch_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707825944" fileName="SuroundWithTryCatch_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4668,7 +4668,7 @@
     <scopeInfo nodeId="3366354716707895805" fileName="SurroundWithTryFinally_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707895805" fileName="SurroundWithTryFinally_Intention.java" startLine="15" startPosition="98" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707929722" fileName="SurroundWithTryFinally_Intention.java" startLine="42" startPosition="63" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707929722" varName="selectedNode" />
+      <varInfo nodeId="3366354716707929723" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707895805" fileName="SurroundWithTryFinally_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707895805" fileName="SurroundWithTryFinally_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4721,7 +4721,7 @@
     <scopeInfo nodeId="3366354716707929765" fileName="TryCatchFinally_Intention.java" startLine="50" startPosition="37" endLine="51" endPosition="51" />
     <scopeInfo nodeId="3366354716707929765" fileName="TryCatchFinally_Intention.java" startLine="15" startPosition="91" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707929786" fileName="TryCatchFinally_Intention.java" startLine="42" startPosition="63" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707929786" varName="selectedNode" />
+      <varInfo nodeId="3366354716707929787" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707929765" fileName="TryCatchFinally_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707929765" fileName="TryCatchFinally_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4773,7 +4773,7 @@
     <scopeInfo nodeId="3366354716707929843" fileName="SurroundWithSynchronized_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707929843" fileName="SurroundWithSynchronized_Intention.java" startLine="15" startPosition="100" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707929864" fileName="SurroundWithSynchronized_Intention.java" startLine="42" startPosition="72" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707929864" varName="selectedNode" />
+      <varInfo nodeId="3366354716707929865" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707929843" fileName="SurroundWithSynchronized_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707929843" fileName="SurroundWithSynchronized_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4825,7 +4825,7 @@
     <scopeInfo nodeId="3366354716707929907" fileName="SurroundWithBrackets_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707929907" fileName="SurroundWithBrackets_Intention.java" startLine="15" startPosition="96" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707929929" fileName="SurroundWithBrackets_Intention.java" startLine="42" startPosition="65" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707929929" varName="selectedNode" />
+      <varInfo nodeId="3366354716707929930" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707929907" fileName="SurroundWithBrackets_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707929907" fileName="SurroundWithBrackets_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -4877,7 +4877,7 @@
     <scopeInfo nodeId="3366354716707929978" fileName="SurroundWithComment_Intention.java" startLine="49" startPosition="37" endLine="50" endPosition="51" />
     <scopeInfo nodeId="3366354716707929978" fileName="SurroundWithComment_Intention.java" startLine="15" startPosition="95" endLine="17" endPosition="3" />
     <scopeInfo nodeId="3366354716707929999" fileName="SurroundWithComment_Intention.java" startLine="42" startPosition="65" endLine="45" endPosition="5">
-      <varInfo nodeId="3366354716707929999" varName="selectedNode" />
+      <varInfo nodeId="3366354716707930000" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="3366354716707929978" fileName="SurroundWithComment_Intention.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="3366354716707929978" fileName="SurroundWithComment_Intention.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
@@ -6074,7 +6074,7 @@
     <scopeInfo nodeId="7093209195843978568" fileName="UnwrapTryCatch_Intention.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="5341655688653763842" fileName="UnwrapTryCatch_Intention.java" startLine="83" startPosition="66" endLine="87" endPosition="6" />
     <scopeInfo nodeId="5341655688653763832" fileName="UnwrapTryCatch_Intention.java" startLine="48" startPosition="57" endLine="53" endPosition="5">
-      <varInfo nodeId="5341655688653763832" varName="ancestor" />
+      <varInfo nodeId="5341655688653763833" varName="ancestor" />
     </scopeInfo>
     <scopeInfo nodeId="7093209195844143751" fileName="UnwrapTryCatch_Intention.java" startLine="67" startPosition="113" endLine="72" endPosition="0">
       <varInfo nodeId="7093209195844143751" varName="it" />
@@ -6578,7 +6578,7 @@
     <scopeInfo nodeId="917166302015890876" fileName="UnwrapIfThenBlock_Intention.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="5341655688653703423" fileName="UnwrapIfThenBlock_Intention.java" startLine="79" startPosition="66" endLine="83" endPosition="6" />
     <scopeInfo nodeId="5341655688653703412" fileName="UnwrapIfThenBlock_Intention.java" startLine="48" startPosition="57" endLine="53" endPosition="5">
-      <varInfo nodeId="5341655688653703412" varName="ancestor" />
+      <varInfo nodeId="5341655688653703413" varName="ancestor" />
     </scopeInfo>
     <scopeInfo nodeId="917166302016112143" fileName="UnwrapIfThenBlock_Intention.java" startLine="62" startPosition="156" endLine="67" endPosition="0">
       <varInfo nodeId="917166302016112143" varName="it" />

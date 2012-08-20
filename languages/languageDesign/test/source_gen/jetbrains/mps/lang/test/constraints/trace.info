@@ -32,7 +32,7 @@
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="24" startPosition="0" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1213104844739" fileName="TestNodeReference_Constraints.java" startLine="49" startPosition="31" endLine="52" endPosition="15" />
     <scopeInfo nodeId="1213104844740" fileName="TestNodeReference_Constraints.java" startLine="49" startPosition="31" endLine="52" endPosition="15">
-      <varInfo nodeId="1213104844740" varName="node" />
+      <varInfo nodeId="1213104844741" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="32" startPosition="95" endLine="37" endPosition="0" />
     <scopeInfo nodeId="1213104844716" fileName="TestNodeReference_Constraints.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />

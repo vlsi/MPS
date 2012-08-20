@@ -160,14 +160,14 @@
     </scopeInfo>
     <scopeInfo nodeId="8474613039627889917" fileName="ModuleFileProcessor.java" startLine="59" startPosition="51" endLine="62" endPosition="65" />
     <scopeInfo nodeId="1244738286065985217" fileName="ModuleFileProcessor.java" startLine="69" startPosition="30" endLine="72" endPosition="5">
-      <varInfo nodeId="1244738286065985217" varName="project" />
+      <varInfo nodeId="1244738286065985218" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="404594887366247470" fileName="ModuleFileProcessor.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="8474613039627889877" fileName="ModuleFileProcessor.java" startLine="53" startPosition="51" endLine="57" endPosition="65">
       <varInfo nodeId="8474613039627889890" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="1244738286065982867" fileName="ModuleFileProcessor.java" startLine="64" startPosition="26" endLine="68" endPosition="5">
-      <varInfo nodeId="1244738286065982867" varName="lib" />
+      <varInfo nodeId="1244738286065982868" varName="lib" />
     </scopeInfo>
     <scopeInfo nodeId="8526829049878372439" fileName="ModuleFileProcessor.java" startLine="74" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="8526829049878372515" fileName="ModuleFileProcessor.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
@@ -244,7 +244,7 @@
       <varInfo nodeId="8474613039627890151" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="1244738286066001527" fileName="ModuleFileProcessor.java" startLine="117" startPosition="24" endLine="131" endPosition="5">
-      <varInfo nodeId="1244738286066001527" varName="project" />
+      <varInfo nodeId="1244738286066001528" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="5704302315572876288" fileName="ModuleFileProcessor.java" startLine="133" startPosition="0" endLine="147" endPosition="0">
       <varInfo nodeId="5704302315572928653" varName="lib" />
@@ -369,14 +369,14 @@
     <scopeInfo nodeId="9045182831066365691" fileName="ModelFileProcessor.java" startLine="32" startPosition="0" endLine="34" endPosition="3" />
     <scopeInfo nodeId="6784047278245018093" fileName="ModelFileProcessor.java" startLine="46" startPosition="79" endLine="48" endPosition="35" />
     <scopeInfo nodeId="6784047278245016842" fileName="ModelFileProcessor.java" startLine="49" startPosition="5" endLine="52" endPosition="5">
-      <varInfo nodeId="6784047278245016842" varName="source" />
+      <varInfo nodeId="6784047278245016843" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="8526829049878372398" fileName="ModelFileProcessor.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="8526829049878372402" varName="modules" />
     </scopeInfo>
     <scopeInfo nodeId="6472945657448278758" fileName="ModelFileProcessor.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="6784047278245018090" fileName="ModelFileProcessor.java" startLine="45" startPosition="66" endLine="49" endPosition="5">
-      <varInfo nodeId="6784047278245018090" varName="module" />
+      <varInfo nodeId="6784047278245018091" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="9045182831066367122" fileName="ModelFileProcessor.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="9045182831066367125" varName="file" />
@@ -406,20 +406,20 @@
     <scopeInfo nodeId="6784047278245204273" fileName="ModelFileProcessor.java" startLine="120" startPosition="76" endLine="129" endPosition="9" />
     <scopeInfo nodeId="6784047278245206057" fileName="ModelFileProcessor.java" startLine="98" startPosition="57" endLine="109" endPosition="7" />
     <scopeInfo nodeId="6784047278245206058" fileName="ModelFileProcessor.java" startLine="98" startPosition="57" endLine="109" endPosition="7">
-      <varInfo nodeId="6784047278245206058" varName="smr" />
+      <varInfo nodeId="6784047278245206059" varName="smr" />
     </scopeInfo>
     <scopeInfo nodeId="6784047278245204255" fileName="ModelFileProcessor.java" startLine="119" startPosition="111" endLine="130" endPosition="7" />
     <scopeInfo nodeId="6784047278245204270" fileName="ModelFileProcessor.java" startLine="119" startPosition="111" endLine="130" endPosition="7">
-      <varInfo nodeId="6784047278245204270" varName="p" />
+      <varInfo nodeId="6784047278245204271" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="8526829049878372477" fileName="ModelFileProcessor.java" startLine="43" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="404594887366252461" varName="indicator" />
     </scopeInfo>
     <scopeInfo nodeId="6784047278245206052" fileName="ModelFileProcessor.java" startLine="97" startPosition="77" endLine="110" endPosition="5">
-      <varInfo nodeId="6784047278245206052" varName="module" />
+      <varInfo nodeId="6784047278245206053" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="6784047278245204252" fileName="ModelFileProcessor.java" startLine="118" startPosition="0" endLine="131" endPosition="5">
-      <varInfo nodeId="6784047278245204252" varName="entry" />
+      <varInfo nodeId="6784047278245204253" varName="entry" />
     </scopeInfo>
     <scopeInfo nodeId="5573243241919304573" fileName="ModelFileProcessor.java" startLine="70" startPosition="59" endLine="86" endPosition="8">
       <varInfo nodeId="5573243241919304567" varName="modules" />
@@ -813,7 +813,7 @@
     <scopeInfo nodeId="8474613039627891620" fileName="FSChangesWatcher.java" startLine="155" startPosition="44" endLine="180" endPosition="0" />
     <scopeInfo nodeId="5978443222856231451" fileName="FSChangesWatcher.java" startLine="258" startPosition="27" endLine="284" endPosition="11" />
     <scopeInfo nodeId="9045182831066367202" fileName="FSChangesWatcher.java" startLine="258" startPosition="27" endLine="284" endPosition="11">
-      <varInfo nodeId="9045182831066367202" varName="p" />
+      <varInfo nodeId="9045182831066367203" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="8474613039627891135" fileName="FSChangesWatcher.java" startLine="224" startPosition="64" endLine="252" endPosition="7">
       <varInfo nodeId="8474613039627891137" varName="application" />
@@ -906,7 +906,7 @@
     <scopeInfo nodeId="8526829049878335342" fileName="ReloadSession.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="8474613039627889748" fileName="ReloadSession.java" startLine="59" startPosition="15" endLine="63" endPosition="27" />
     <scopeInfo nodeId="8526829049878372292" fileName="ReloadSession.java" startLine="31" startPosition="28" endLine="36" endPosition="5">
-      <varInfo nodeId="8526829049878372292" varName="p" />
+      <varInfo nodeId="8526829049878372293" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="8526829049878372253" fileName="ReloadSession.java" startLine="31" startPosition="28" endLine="37" endPosition="16" />
     <scopeInfo nodeId="8474613039627889811" fileName="ReloadSession.java" startLine="66" startPosition="0" endLine="72" endPosition="0" />
