@@ -17,10 +17,8 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 import java.util.List;
@@ -51,6 +49,13 @@ public class SNodeOperations {
   //todo rewrite via ISNode methods
   public static List<org.jetbrains.mps.openapi.model.SNode> getChildren(org.jetbrains.mps.openapi.model.SNode node, boolean includeAttributes) {
     return (List) ((SNode) node).getChildren(includeAttributes);
+  }
+
+  //todo rewrite via ISNode methods
+  public static Iterable<org.jetbrains.mps.openapi.model.SNode> getDescendants(org.jetbrains.mps.openapi.model.SNode node,
+                                                                               Condition<org.jetbrains.mps.openapi.model.SNode> cond,
+                                                                               boolean includeFirst) {
+    return (Iterable) ((SNode) node).getDescendantsIterable(((Condition) cond), includeFirst);
   }
 
   //todo rewrite via ISNode methods
