@@ -10557,7 +10557,6 @@
         </node>
         <node role="rightExpression" roleId="tpd4.1174660783414" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1204064784350">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1204064784351">
-            <property name="skipDependencyOnCurrent" nameId="tpd4.1195058053095" value="true" />
             <node role="term" roleId="tpd4.1174657509053" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204064792995">
               <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1204064791759">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1204056354666" resolveInfo="imco" />
