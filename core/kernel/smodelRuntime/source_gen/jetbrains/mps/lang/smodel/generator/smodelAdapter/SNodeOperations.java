@@ -556,7 +556,7 @@ public class SNodeOperations {
   }
 
   public static void deleteNode(SNode node) {
-    if (node != null && !(node.isDeleted())) {
+    if (node != null && node.isRegistered()) {
       node.delete();
     }
   }

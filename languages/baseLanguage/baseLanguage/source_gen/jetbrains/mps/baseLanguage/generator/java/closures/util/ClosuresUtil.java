@@ -37,11 +37,11 @@ public class ClosuresUtil {
     if (node == null) {
       return null;
     }
-    return node.findParent(new Condition<SNode>() {
+    return ((SNode) jetbrains.mps.smodel.SNodeOperations.findParent(node, new Condition<SNode>() {
       public boolean met(SNode n) {
         return isClosureContextOwner(n);
       }
-    });
+    }));
   }
 
   public static List<SNode> getVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {
