@@ -565,7 +565,7 @@
     <nodeInfo nodeId="8451791629113434242" fileName="ApiMigrationHelper.java" startLine="615" startPosition="0" endLine="616" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8451791629113434163" fileName="ApiMigrationHelper.java" startLine="616" startPosition="235" endLine="617" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8451791629113434158" fileName="ApiMigrationHelper.java" startLine="617" startPosition="0" endLine="618" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8451791629113434060" fileName="ApiMigrationHelper.java" startLine="618" startPosition="25" endLine="619" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8451791629113494347" fileName="ApiMigrationHelper.java" startLine="618" startPosition="25" endLine="619" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8353898354119474639" fileName="ApiMigrationHelper.java" startLine="619" startPosition="0" endLine="620" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="4390395606403266521" fileName="ApiMigrationHelper.java" startLine="620" startPosition="0" endLine="621" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4390395606403266349" fileName="ApiMigrationHelper.java" startLine="624" startPosition="192" endLine="625" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1725,153 +1725,162 @@
     <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2747" startPosition="32" endLine="2748" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2748" startPosition="32" endLine="2749" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2749" startPosition="32" endLine="2750" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2751" startPosition="7" endLine="2752" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2752" startPosition="162" endLine="2753" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2754" startPosition="9" endLine="2755" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2755" startPosition="164" endLine="2756" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2757" startPosition="11" endLine="2758" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2758" startPosition="48" endLine="2759" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2760" startPosition="68" endLine="2761" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2762" startPosition="20" endLine="2763" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2763" startPosition="59" endLine="2764" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2766" startPosition="41" endLine="2767" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2770" startPosition="11" endLine="2771" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2771" startPosition="180" endLine="2772" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2772" startPosition="48" endLine="2773" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2773" startPosition="329" endLine="2774" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2775" startPosition="11" endLine="2776" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2778" startPosition="9" endLine="2779" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2779" startPosition="178" endLine="2780" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2780" startPosition="46" endLine="2781" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2782" startPosition="11" endLine="2783" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2783" startPosition="48" endLine="2784" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2785" startPosition="68" endLine="2786" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2787" startPosition="20" endLine="2788" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2788" startPosition="59" endLine="2789" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2791" startPosition="41" endLine="2792" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2794" startPosition="11" endLine="2795" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2796" startPosition="9" endLine="2797" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2798" startPosition="7" endLine="2799" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2807" startPosition="31" endLine="2808" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2808" startPosition="26" endLine="2809" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2809" startPosition="67" endLine="2810" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2810" startPosition="32" endLine="2811" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2811" startPosition="32" endLine="2812" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2812" startPosition="32" endLine="2813" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2813" startPosition="32" endLine="2814" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2815" startPosition="7" endLine="2816" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2816" startPosition="162" endLine="2817" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2818" startPosition="9" endLine="2819" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2819" startPosition="171" endLine="2820" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2821" startPosition="11" endLine="2822" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2822" startPosition="165" endLine="2823" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2823" startPosition="47" endLine="2824" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2824" startPosition="323" endLine="2825" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2826" startPosition="11" endLine="2827" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2829" startPosition="9" endLine="2830" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2830" startPosition="178" endLine="2831" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2831" startPosition="45" endLine="2832" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2833" startPosition="11" endLine="2834" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2834" startPosition="166" endLine="2835" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2835" startPosition="48" endLine="2836" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2836" startPosition="55" endLine="2837" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2838" startPosition="11" endLine="2839" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2840" startPosition="9" endLine="2841" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2842" startPosition="7" endLine="2843" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2851" startPosition="71" endLine="2852" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2852" startPosition="26" endLine="2853" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2853" startPosition="67" endLine="2854" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2854" startPosition="32" endLine="2855" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2855" startPosition="32" endLine="2856" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2856" startPosition="32" endLine="2857" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2857" startPosition="32" endLine="2858" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2858" startPosition="32" endLine="2859" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2859" startPosition="32" endLine="2860" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2860" startPosition="32" endLine="2861" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2862" startPosition="7" endLine="2863" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2863" startPosition="162" endLine="2864" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2865" startPosition="9" endLine="2866" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2866" startPosition="164" endLine="2867" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2868" startPosition="11" endLine="2869" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2869" startPosition="48" endLine="2870" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2871" startPosition="68" endLine="2872" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2873" startPosition="20" endLine="2874" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2874" startPosition="59" endLine="2875" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2877" startPosition="41" endLine="2878" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2881" startPosition="11" endLine="2882" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2882" startPosition="180" endLine="2883" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2883" startPosition="48" endLine="2884" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2884" startPosition="329" endLine="2885" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2886" startPosition="11" endLine="2887" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2889" startPosition="9" endLine="2890" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2890" startPosition="178" endLine="2891" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2891" startPosition="46" endLine="2892" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2893" startPosition="11" endLine="2894" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2894" startPosition="169" endLine="2895" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2895" startPosition="48" endLine="2896" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2896" startPosition="355" endLine="2897" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2898" startPosition="13" endLine="2899" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2899" startPosition="50" endLine="2900" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2901" startPosition="70" endLine="2902" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2903" startPosition="22" endLine="2904" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2904" startPosition="61" endLine="2905" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2907" startPosition="43" endLine="2908" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2910" startPosition="13" endLine="2911" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2912" startPosition="11" endLine="2913" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2914" startPosition="9" endLine="2915" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2916" startPosition="7" endLine="2917" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2925" startPosition="31" endLine="2926" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2926" startPosition="26" endLine="2927" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2927" startPosition="67" endLine="2928" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2928" startPosition="32" endLine="2929" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2929" startPosition="32" endLine="2930" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2930" startPosition="32" endLine="2931" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2932" startPosition="7" endLine="2933" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2933" startPosition="162" endLine="2934" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2935" startPosition="9" endLine="2936" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2936" startPosition="171" endLine="2937" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2938" startPosition="11" endLine="2939" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2939" startPosition="165" endLine="2940" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2940" startPosition="47" endLine="2941" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2941" startPosition="323" endLine="2942" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2943" startPosition="11" endLine="2944" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2946" startPosition="9" endLine="2947" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2947" startPosition="178" endLine="2948" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2948" startPosition="45" endLine="2949" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2949" startPosition="296" endLine="2950" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2951" startPosition="9" endLine="2952" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2953" startPosition="7" endLine="2954" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2962" startPosition="50" endLine="2963" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2963" startPosition="26" endLine="2964" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2964" startPosition="67" endLine="2965" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2965" startPosition="32" endLine="2966" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2966" startPosition="32" endLine="2967" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2967" startPosition="32" endLine="2968" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2968" startPosition="32" endLine="2969" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2969" startPosition="32" endLine="2970" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2970" startPosition="32" endLine="2971" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2972" startPosition="7" endLine="2973" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2973" startPosition="162" endLine="2974" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2975" startPosition="9" endLine="2976" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2976" startPosition="46" endLine="2977" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2978" startPosition="66" endLine="2979" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2980" startPosition="18" endLine="2981" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2981" startPosition="57" endLine="2982" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2984" startPosition="38" endLine="2985" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2988" startPosition="9" endLine="2989" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2989" startPosition="178" endLine="2990" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2990" startPosition="46" endLine="2991" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2991" startPosition="272" endLine="2992" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2993" startPosition="9" endLine="2994" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2995" startPosition="7" endLine="2996" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3004" startPosition="31" endLine="3005" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3005" startPosition="26" endLine="3006" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3006" startPosition="67" endLine="3007" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3008" startPosition="7" endLine="3009" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3009" startPosition="163" endLine="3010" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3010" startPosition="43" endLine="3011" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3011" startPosition="277" endLine="3012" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3013" startPosition="7" endLine="3014" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2750" startPosition="32" endLine="2751" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2751" startPosition="32" endLine="2752" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2753" startPosition="7" endLine="2754" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2754" startPosition="162" endLine="2755" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2756" startPosition="9" endLine="2757" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2757" startPosition="164" endLine="2758" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2759" startPosition="11" endLine="2760" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2760" startPosition="48" endLine="2761" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2762" startPosition="68" endLine="2763" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2764" startPosition="20" endLine="2765" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2765" startPosition="59" endLine="2766" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2768" startPosition="41" endLine="2769" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2772" startPosition="11" endLine="2773" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2773" startPosition="180" endLine="2774" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2774" startPosition="48" endLine="2775" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2775" startPosition="329" endLine="2776" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2777" startPosition="11" endLine="2778" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2780" startPosition="9" endLine="2781" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2781" startPosition="178" endLine="2782" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2782" startPosition="46" endLine="2783" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2784" startPosition="11" endLine="2785" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2785" startPosition="173" endLine="2786" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2787" startPosition="13" endLine="2788" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2788" startPosition="167" endLine="2789" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2789" startPosition="50" endLine="2790" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2791" startPosition="15" endLine="2792" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2792" startPosition="52" endLine="2793" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2794" startPosition="72" endLine="2795" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2796" startPosition="24" endLine="2797" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2797" startPosition="63" endLine="2798" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2800" startPosition="45" endLine="2801" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2803" startPosition="15" endLine="2804" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2805" startPosition="13" endLine="2806" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2807" startPosition="11" endLine="2808" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2809" startPosition="9" endLine="2810" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2811" startPosition="7" endLine="2812" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2820" startPosition="31" endLine="2821" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2821" startPosition="26" endLine="2822" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2822" startPosition="67" endLine="2823" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2823" startPosition="32" endLine="2824" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2824" startPosition="32" endLine="2825" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2825" startPosition="32" endLine="2826" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2826" startPosition="32" endLine="2827" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2828" startPosition="7" endLine="2829" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2829" startPosition="162" endLine="2830" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2831" startPosition="9" endLine="2832" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2832" startPosition="171" endLine="2833" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2834" startPosition="11" endLine="2835" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2835" startPosition="165" endLine="2836" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2836" startPosition="47" endLine="2837" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2837" startPosition="323" endLine="2838" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2839" startPosition="11" endLine="2840" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2842" startPosition="9" endLine="2843" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2843" startPosition="178" endLine="2844" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2844" startPosition="45" endLine="2845" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2846" startPosition="11" endLine="2847" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2847" startPosition="166" endLine="2848" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2848" startPosition="48" endLine="2849" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2849" startPosition="55" endLine="2850" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2851" startPosition="11" endLine="2852" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2853" startPosition="9" endLine="2854" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2855" startPosition="7" endLine="2856" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2864" startPosition="71" endLine="2865" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2865" startPosition="26" endLine="2866" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2866" startPosition="67" endLine="2867" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2867" startPosition="32" endLine="2868" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2868" startPosition="32" endLine="2869" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2869" startPosition="32" endLine="2870" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2870" startPosition="32" endLine="2871" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2871" startPosition="32" endLine="2872" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2872" startPosition="32" endLine="2873" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2873" startPosition="32" endLine="2874" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2875" startPosition="7" endLine="2876" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2876" startPosition="162" endLine="2877" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2878" startPosition="9" endLine="2879" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2879" startPosition="164" endLine="2880" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2881" startPosition="11" endLine="2882" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2882" startPosition="48" endLine="2883" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2884" startPosition="68" endLine="2885" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2886" startPosition="20" endLine="2887" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2887" startPosition="59" endLine="2888" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2890" startPosition="41" endLine="2891" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2894" startPosition="11" endLine="2895" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2895" startPosition="180" endLine="2896" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2896" startPosition="48" endLine="2897" endPosition="329" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2897" startPosition="329" endLine="2898" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2899" startPosition="11" endLine="2900" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2902" startPosition="9" endLine="2903" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2903" startPosition="178" endLine="2904" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2904" startPosition="46" endLine="2905" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2906" startPosition="11" endLine="2907" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2907" startPosition="169" endLine="2908" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2908" startPosition="48" endLine="2909" endPosition="355" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2909" startPosition="355" endLine="2910" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2911" startPosition="13" endLine="2912" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2912" startPosition="50" endLine="2913" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2914" startPosition="70" endLine="2915" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2916" startPosition="22" endLine="2917" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2917" startPosition="61" endLine="2918" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2920" startPosition="43" endLine="2921" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2923" startPosition="13" endLine="2924" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2925" startPosition="11" endLine="2926" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2927" startPosition="9" endLine="2928" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2929" startPosition="7" endLine="2930" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2938" startPosition="31" endLine="2939" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2939" startPosition="26" endLine="2940" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2940" startPosition="67" endLine="2941" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2941" startPosition="32" endLine="2942" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2942" startPosition="32" endLine="2943" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2943" startPosition="32" endLine="2944" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2945" startPosition="7" endLine="2946" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2946" startPosition="162" endLine="2947" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2948" startPosition="9" endLine="2949" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2949" startPosition="171" endLine="2950" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2951" startPosition="11" endLine="2952" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2952" startPosition="165" endLine="2953" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2953" startPosition="47" endLine="2954" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2954" startPosition="323" endLine="2955" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2956" startPosition="11" endLine="2957" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2959" startPosition="9" endLine="2960" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2960" startPosition="178" endLine="2961" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2961" startPosition="45" endLine="2962" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2962" startPosition="296" endLine="2963" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2964" startPosition="9" endLine="2965" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2966" startPosition="7" endLine="2967" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2975" startPosition="50" endLine="2976" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2976" startPosition="26" endLine="2977" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2977" startPosition="67" endLine="2978" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2978" startPosition="32" endLine="2979" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2979" startPosition="32" endLine="2980" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2980" startPosition="32" endLine="2981" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2981" startPosition="32" endLine="2982" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2982" startPosition="32" endLine="2983" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2983" startPosition="32" endLine="2984" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2985" startPosition="7" endLine="2986" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2986" startPosition="162" endLine="2987" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2988" startPosition="9" endLine="2989" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2989" startPosition="46" endLine="2990" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2991" startPosition="66" endLine="2992" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2993" startPosition="18" endLine="2994" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2994" startPosition="57" endLine="2995" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2997" startPosition="38" endLine="2998" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3001" startPosition="9" endLine="3002" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3002" startPosition="178" endLine="3003" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3003" startPosition="46" endLine="3004" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3004" startPosition="272" endLine="3005" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3006" startPosition="9" endLine="3007" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3008" startPosition="7" endLine="3009" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3017" startPosition="31" endLine="3018" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3018" startPosition="26" endLine="3019" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3019" startPosition="67" endLine="3020" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3021" startPosition="7" endLine="3022" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3022" startPosition="163" endLine="3023" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3023" startPosition="43" endLine="3024" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3024" startPosition="277" endLine="3025" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3026" startPosition="7" endLine="3027" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1241138785141530892" fileName="ApiMigrationHelper.java" startLine="425" startPosition="14" endLine="427" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8353898354119463751" fileName="ApiMigrationHelper.java" startLine="484" startPosition="14" endLine="486" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7949796796600715225" fileName="ApiMigrationHelper.java" startLine="714" startPosition="54" endLine="716" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a0#()V" />
@@ -1922,11 +1931,11 @@
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2641" startPosition="64" endLine="2643" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a0a0a0a971a1#()V" />
     <nodeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2687" startPosition="56" endLine="2689" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0eh0b#()V" />
     <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2737" startPosition="64" endLine="2739" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a0a0a0a881a1#()V" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2803" startPosition="56" endLine="2805" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0nh0b#()V" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2847" startPosition="64" endLine="2849" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a0a0a0a791a1#()V" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2921" startPosition="56" endLine="2923" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0wh0b#()V" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2958" startPosition="64" endLine="2960" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a0a0a0a602a1#()V" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3000" startPosition="54" endLine="3002" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a3#()V" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2816" startPosition="56" endLine="2818" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0nh0b#()V" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2860" startPosition="64" endLine="2862" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a0a0a0a791a1#()V" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2934" startPosition="56" endLine="2936" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0wh0b#()V" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2971" startPosition="64" endLine="2973" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a0a0a0a602a1#()V" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3013" startPosition="54" endLine="3015" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_yke5lt_a0a0a0a3#()V" />
     <nodeInfo nodeId="7949796796600715304" fileName="ApiMigrationHelper.java" startLine="71" startPosition="40" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7949796796600715410" fileName="ApiMigrationHelper.java" startLine="105" startPosition="40" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3168283084910399321" fileName="ApiMigrationHelper.java" startLine="110" startPosition="30" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1999,16 +2008,16 @@
     <nodeInfo nodeId="8451791629113344985" fileName="ApiMigrationHelper.java" startLine="2593" startPosition="11" endLine="2596" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2665" startPosition="18" endLine="2668" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2668" startPosition="13" endLine="2671" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2762" startPosition="18" endLine="2765" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2765" startPosition="13" endLine="2768" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2787" startPosition="18" endLine="2790" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2790" startPosition="13" endLine="2793" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2873" startPosition="18" endLine="2876" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2876" startPosition="13" endLine="2879" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2903" startPosition="20" endLine="2906" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2906" startPosition="15" endLine="2909" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2980" startPosition="16" endLine="2983" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2983" startPosition="11" endLine="2986" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2764" startPosition="18" endLine="2767" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2767" startPosition="13" endLine="2770" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2796" startPosition="22" endLine="2799" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2799" startPosition="17" endLine="2802" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2886" startPosition="18" endLine="2889" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2889" startPosition="13" endLine="2892" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2916" startPosition="20" endLine="2919" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2919" startPosition="15" endLine="2922" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2993" startPosition="16" endLine="2996" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2996" startPosition="11" endLine="2999" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7949796796600715319" fileName="ApiMigrationHelper.java" startLine="76" startPosition="30" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5256703636345189835" fileName="ApiMigrationHelper.java" startLine="81" startPosition="0" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5257939578590794472" fileName="ApiMigrationHelper.java" startLine="86" startPosition="0" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -2288,27 +2297,27 @@
     <nodeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2705" startPosition="45" endLine="2711" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2720" startPosition="48" endLine="2726" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2720" startPosition="48" endLine="2726" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2759" startPosition="33" endLine="2765" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2769" startPosition="11" endLine="2775" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2769" startPosition="11" endLine="2775" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2784" startPosition="33" endLine="2790" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2820" startPosition="45" endLine="2826" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2820" startPosition="45" endLine="2826" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2832" startPosition="314" endLine="2838" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2832" startPosition="314" endLine="2838" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2870" startPosition="33" endLine="2876" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2880" startPosition="11" endLine="2886" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2880" startPosition="11" endLine="2886" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2900" startPosition="35" endLine="2906" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2937" startPosition="45" endLine="2943" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2937" startPosition="45" endLine="2943" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2945" startPosition="9" endLine="2951" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2945" startPosition="9" endLine="2951" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2977" startPosition="30" endLine="2983" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2987" startPosition="9" endLine="2993" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2987" startPosition="9" endLine="2993" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3007" startPosition="32" endLine="3013" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3007" startPosition="32" endLine="3013" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2761" startPosition="33" endLine="2767" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2771" startPosition="11" endLine="2777" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2771" startPosition="11" endLine="2777" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2793" startPosition="37" endLine="2799" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2833" startPosition="45" endLine="2839" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2833" startPosition="45" endLine="2839" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2845" startPosition="314" endLine="2851" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2845" startPosition="314" endLine="2851" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2883" startPosition="33" endLine="2889" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2893" startPosition="11" endLine="2899" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2893" startPosition="11" endLine="2899" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2913" startPosition="35" endLine="2919" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2950" startPosition="45" endLine="2956" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2950" startPosition="45" endLine="2956" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2958" startPosition="9" endLine="2964" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2958" startPosition="9" endLine="2964" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2990" startPosition="30" endLine="2996" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3000" startPosition="9" endLine="3006" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3000" startPosition="9" endLine="3006" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3020" startPosition="32" endLine="3026" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3020" startPosition="32" endLine="3026" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7949796796600715535" fileName="ApiMigrationHelper.java" startLine="134" startPosition="0" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7949796796600761672" fileName="ApiMigrationHelper.java" startLine="186" startPosition="13" endLine="193" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3168283084910399324" fileName="ApiMigrationHelper.java" startLine="699" startPosition="0" endLine="706" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_yke5lt_a0e0z0a#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
@@ -2369,18 +2378,18 @@
     <nodeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2702" startPosition="43" endLine="2713" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2717" startPosition="326" endLine="2728" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2717" startPosition="326" endLine="2728" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2817" startPosition="43" endLine="2828" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2817" startPosition="43" endLine="2828" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2934" startPosition="43" endLine="2945" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2934" startPosition="43" endLine="2945" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2830" startPosition="43" endLine="2841" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2830" startPosition="43" endLine="2841" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2947" startPosition="43" endLine="2958" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2947" startPosition="43" endLine="2958" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1241138785141518064" fileName="ApiMigrationHelper.java" startLine="419" startPosition="6" endLine="431" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8353898354119463709" fileName="ApiMigrationHelper.java" startLine="478" startPosition="6" endLine="490" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4390395606403469562" fileName="ApiMigrationHelper.java" startLine="1064" startPosition="9" endLine="1076" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4390395606403469562" fileName="ApiMigrationHelper.java" startLine="1064" startPosition="9" endLine="1076" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2972144370624154190" fileName="ApiMigrationHelper.java" startLine="2016" startPosition="9" endLine="2028" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2972144370624154190" fileName="ApiMigrationHelper.java" startLine="2016" startPosition="9" endLine="2028" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2828" startPosition="9" endLine="2840" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2828" startPosition="9" endLine="2840" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2841" startPosition="9" endLine="2853" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2841" startPosition="9" endLine="2853" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4390395606403267126" fileName="ApiMigrationHelper.java" startLine="650" startPosition="100" endLine="663" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="7949796796600715225" fileName="ApiMigrationHelper.java" startLine="717" startPosition="0" endLine="730" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7949796796600715233" fileName="ApiMigrationHelper.java" startLine="735" startPosition="0" endLine="748" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
@@ -2445,17 +2454,17 @@
     <nodeInfo nodeId="8451791629113344985" fileName="ApiMigrationHelper.java" startLine="2584" startPosition="267" endLine="2597" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2659" startPosition="269" endLine="2672" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2659" startPosition="269" endLine="2672" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2756" startPosition="45" endLine="2769" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2756" startPosition="45" endLine="2769" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2781" startPosition="377" endLine="2794" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2781" startPosition="377" endLine="2794" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2867" startPosition="46" endLine="2880" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2867" startPosition="46" endLine="2880" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2897" startPosition="273" endLine="2910" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2897" startPosition="273" endLine="2910" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2974" startPosition="43" endLine="2987" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2974" startPosition="43" endLine="2987" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3003" startPosition="0" endLine="3016" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2758" startPosition="46" endLine="2771" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2758" startPosition="46" endLine="2771" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2790" startPosition="248" endLine="2803" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2790" startPosition="248" endLine="2803" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2880" startPosition="46" endLine="2893" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2880" startPosition="46" endLine="2893" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2910" startPosition="273" endLine="2923" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2910" startPosition="273" endLine="2923" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2987" startPosition="43" endLine="3000" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2987" startPosition="43" endLine="3000" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3016" startPosition="0" endLine="3029" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4390395606403266483" fileName="ApiMigrationHelper.java" startLine="665" startPosition="96" endLine="679" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />
     <nodeInfo nodeId="5043367263433418091" fileName="ApiMigrationHelper.java" startLine="2435" startPosition="9" endLine="2451" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5043367263433418091" fileName="ApiMigrationHelper.java" startLine="2435" startPosition="9" endLine="2451" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2469,8 +2478,8 @@
     <nodeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2507" startPosition="11" endLine="2525" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1002821090946737069" fileName="ApiMigrationHelper.java" startLine="1418" startPosition="9" endLine="1437" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1002821090946737069" fileName="ApiMigrationHelper.java" startLine="1418" startPosition="9" endLine="1437" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2777" startPosition="9" endLine="2796" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2777" startPosition="9" endLine="2796" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2786" startPosition="48" endLine="2805" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2786" startPosition="48" endLine="2805" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2418896918642280077" fileName="ApiMigrationHelper.java" startLine="1568" startPosition="32" endLine="1588" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2418896918642280077" fileName="ApiMigrationHelper.java" startLine="1568" startPosition="32" endLine="1588" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2418896918642280162" fileName="ApiMigrationHelper.java" startLine="1638" startPosition="32" endLine="1658" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2479,8 +2488,8 @@
     <nodeInfo nodeId="8451791629113344985" fileName="ApiMigrationHelper.java" startLine="2579" startPosition="32" endLine="2599" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2654" startPosition="43" endLine="2674" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2654" startPosition="43" endLine="2674" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2892" startPosition="377" endLine="2912" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2892" startPosition="377" endLine="2912" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2905" startPosition="377" endLine="2925" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2905" startPosition="377" endLine="2925" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7949796796600760892" fileName="ApiMigrationHelper.java" startLine="173" startPosition="71" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4390395606403266364" fileName="ApiMigrationHelper.java" startLine="626" startPosition="0" endLine="648" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4390395606403265766" fileName="ApiMigrationHelper.java" startLine="816" startPosition="32" endLine="838" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2513,8 +2522,8 @@
     <nodeInfo nodeId="8451791629113344932" fileName="ApiMigrationHelper.java" startLine="2544" startPosition="32" endLine="2566" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384172" fileName="ApiMigrationHelper.java" startLine="2614" startPosition="32" endLine="2636" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384172" fileName="ApiMigrationHelper.java" startLine="2614" startPosition="32" endLine="2636" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2931" startPosition="32" endLine="2953" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2931" startPosition="32" endLine="2953" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2944" startPosition="32" endLine="2966" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2944" startPosition="32" endLine="2966" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7949796796600760891" fileName="ApiMigrationHelper.java" startLine="172" startPosition="0" endLine="195" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4390395606403266471" fileName="ApiMigrationHelper.java" startLine="664" startPosition="0" endLine="687" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="1004" startPosition="9" endLine="1027" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2549,15 +2558,17 @@
     <nodeInfo nodeId="3074202361243234140" fileName="ApiMigrationHelper.java" startLine="1713" startPosition="32" endLine="1737" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3074202361243234225" fileName="ApiMigrationHelper.java" startLine="1802" startPosition="9" endLine="1826" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3074202361243234225" fileName="ApiMigrationHelper.java" startLine="1802" startPosition="9" endLine="1826" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2753" startPosition="43" endLine="2777" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2753" startPosition="43" endLine="2777" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2864" startPosition="43" endLine="2888" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2864" startPosition="43" endLine="2888" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2971" startPosition="32" endLine="2995" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2971" startPosition="32" endLine="2995" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2755" startPosition="44" endLine="2779" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2755" startPosition="44" endLine="2779" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2783" startPosition="377" endLine="2807" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2783" startPosition="377" endLine="2807" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2877" startPosition="43" endLine="2901" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2877" startPosition="43" endLine="2901" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2984" startPosition="32" endLine="3008" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2984" startPosition="32" endLine="3008" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7949796796600715560" fileName="ApiMigrationHelper.java" startLine="142" startPosition="0" endLine="167" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2888" startPosition="9" endLine="2914" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2888" startPosition="9" endLine="2914" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2901" startPosition="9" endLine="2927" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2901" startPosition="9" endLine="2927" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7949796796600715640" fileName="ApiMigrationHelper.java" startLine="169" startPosition="96" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />
     <nodeInfo nodeId="2418896918642280077" fileName="ApiMigrationHelper.java" startLine="1563" startPosition="0" endLine="1591" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2418896918642280162" fileName="ApiMigrationHelper.java" startLine="1633" startPosition="0" endLine="1661" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
@@ -2570,12 +2581,14 @@
     <nodeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2479" startPosition="46" endLine="2507" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2479" startPosition="46" endLine="2507" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113344985" fileName="ApiMigrationHelper.java" startLine="2574" startPosition="0" endLine="2602" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2814" startPosition="32" endLine="2842" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2814" startPosition="32" endLine="2842" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2827" startPosition="32" endLine="2855" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2827" startPosition="32" endLine="2855" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8353898354119474402" fileName="ApiMigrationHelper.java" startLine="2326" startPosition="9" endLine="2355" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8353898354119474402" fileName="ApiMigrationHelper.java" startLine="2326" startPosition="9" endLine="2355" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4390395606403469562" fileName="ApiMigrationHelper.java" startLine="1048" startPosition="32" endLine="1078" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4390395606403469562" fileName="ApiMigrationHelper.java" startLine="1048" startPosition="32" endLine="1078" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2779" startPosition="9" endLine="2809" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2779" startPosition="9" endLine="2809" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2651" startPosition="32" endLine="2682" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2651" startPosition="32" endLine="2682" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4390395606403265766" fileName="ApiMigrationHelper.java" startLine="809" startPosition="0" endLine="841" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
@@ -2595,7 +2608,7 @@
     <nodeInfo nodeId="5043367263433418091" fileName="ApiMigrationHelper.java" startLine="2421" startPosition="32" endLine="2453" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113344932" fileName="ApiMigrationHelper.java" startLine="2537" startPosition="0" endLine="2569" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8451791629113384172" fileName="ApiMigrationHelper.java" startLine="2607" startPosition="0" endLine="2639" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2924" startPosition="0" endLine="2956" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2937" startPosition="0" endLine="2969" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7949796796600715624" fileName="ApiMigrationHelper.java" startLine="168" startPosition="0" endLine="201" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7949796796600715476" fileName="ApiMigrationHelper.java" startLine="771" startPosition="0" endLine="804" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="9212740481129381404" fileName="ApiMigrationHelper.java" startLine="1095" startPosition="32" endLine="1128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2625,7 +2638,7 @@
     <nodeInfo nodeId="1002821090946737069" fileName="ApiMigrationHelper.java" startLine="1402" startPosition="32" endLine="1439" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1002821090946814700" fileName="ApiMigrationHelper.java" startLine="1484" startPosition="0" endLine="1521" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="3074202361243234140" fileName="ApiMigrationHelper.java" startLine="1703" startPosition="0" endLine="1740" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2961" startPosition="0" endLine="2998" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2974" startPosition="0" endLine="3011" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1241138785141530452" fileName="ApiMigrationHelper.java" startLine="1940" startPosition="44" endLine="1978" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1241138785141530452" fileName="ApiMigrationHelper.java" startLine="1940" startPosition="44" endLine="1978" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8353898354119463755" fileName="ApiMigrationHelper.java" startLine="2255" startPosition="32" endLine="2293" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2633,7 +2646,7 @@
     <nodeInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="990" startPosition="32" endLine="1029" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="990" startPosition="32" endLine="1029" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2972144370624154190" fileName="ApiMigrationHelper.java" startLine="1994" startPosition="0" endLine="2033" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2806" startPosition="0" endLine="2845" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2819" startPosition="0" endLine="2858" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2644" startPosition="0" endLine="2685" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="9212740481129381439" fileName="ApiMigrationHelper.java" startLine="1136" startPosition="0" endLine="1178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2972144370624154278" fileName="ApiMigrationHelper.java" startLine="2038" startPosition="0" endLine="2080" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
@@ -2646,8 +2659,6 @@
     <nodeInfo nodeId="8353898354119474402" fileName="ApiMigrationHelper.java" startLine="2312" startPosition="32" endLine="2357" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2690" startPosition="0" endLine="2735" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1241138785141530692" fileName="ApiMigrationHelper.java" startLine="1873" startPosition="0" endLine="1920" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2750" startPosition="32" endLine="2798" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2750" startPosition="32" endLine="2798" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3074202361243234225" fileName="ApiMigrationHelper.java" startLine="1782" startPosition="0" endLine="1831" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1241138785141530452" fileName="ApiMigrationHelper.java" startLine="1937" startPosition="32" endLine="1986" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1241138785141530452" fileName="ApiMigrationHelper.java" startLine="1937" startPosition="32" endLine="1986" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2658,16 +2669,18 @@
     <nodeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2476" startPosition="44" endLine="2527" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2476" startPosition="44" endLine="2527" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="980" startPosition="0" endLine="1032" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2861" startPosition="32" endLine="2916" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2861" startPosition="32" endLine="2916" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2874" startPosition="32" endLine="2929" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2874" startPosition="32" endLine="2929" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2473" startPosition="32" endLine="2529" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2473" startPosition="32" endLine="2529" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8353898354119474402" fileName="ApiMigrationHelper.java" startLine="2301" startPosition="0" endLine="2360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2740" startPosition="0" endLine="2801" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2752" startPosition="32" endLine="2811" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2752" startPosition="32" endLine="2811" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1241138785141530452" fileName="ApiMigrationHelper.java" startLine="1925" startPosition="0" endLine="1989" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4390395606403266335" fileName="ApiMigrationHelper.java" startLine="623" startPosition="0" endLine="689" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="migrateMethods#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2850" startPosition="0" endLine="2919" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2863" startPosition="0" endLine="2932" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2461" startPosition="0" endLine="2532" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2740" startPosition="0" endLine="2814" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="7949796796600715215" fileName="ApiMigrationHelper.java" startLine="54" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="migrate#()V" />
     <nodeInfo nodeId="1719872688913255227" fileName="ApiMigrationHelper.java" startLine="203" startPosition="0" endLine="623" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replaceSNodeMethods#()V" />
     <scopeInfo nodeId="7949796796600715225" fileName="ApiMigrationHelper.java" startLine="715" startPosition="45" endLine="715" endPosition="45" />
@@ -2718,11 +2731,11 @@
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2642" startPosition="55" endLine="2642" endPosition="55" />
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2688" startPosition="47" endLine="2688" endPosition="47" />
     <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2738" startPosition="55" endLine="2738" endPosition="55" />
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2804" startPosition="47" endLine="2804" endPosition="47" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2848" startPosition="55" endLine="2848" endPosition="55" />
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2922" startPosition="47" endLine="2922" endPosition="47" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2959" startPosition="55" endLine="2959" endPosition="55" />
-    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3001" startPosition="45" endLine="3001" endPosition="45" />
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2817" startPosition="47" endLine="2817" endPosition="47" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2861" startPosition="55" endLine="2861" endPosition="55" />
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2935" startPosition="47" endLine="2935" endPosition="47" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2972" startPosition="55" endLine="2972" endPosition="55" />
+    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3014" startPosition="45" endLine="3014" endPosition="45" />
     <scopeInfo nodeId="7949796796600715310" fileName="ApiMigrationHelper.java" startLine="72" startPosition="45" endLine="73" endPosition="17" />
     <scopeInfo nodeId="7949796796600715416" fileName="ApiMigrationHelper.java" startLine="106" startPosition="45" endLine="107" endPosition="17" />
     <scopeInfo nodeId="3168283084910399322" fileName="ApiMigrationHelper.java" startLine="111" startPosition="125" endLine="112" endPosition="17" />
@@ -2853,16 +2866,16 @@
     <scopeInfo nodeId="8451791629113344985" fileName="ApiMigrationHelper.java" startLine="2594" startPosition="38" endLine="2595" endPosition="90" />
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2663" startPosition="68" endLine="2664" endPosition="66" />
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2669" startPosition="40" endLine="2670" endPosition="92" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2760" startPosition="68" endLine="2761" endPosition="67" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2766" startPosition="41" endLine="2767" endPosition="86" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2785" startPosition="68" endLine="2786" endPosition="67" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2791" startPosition="41" endLine="2792" endPosition="93" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2871" startPosition="68" endLine="2872" endPosition="67" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2877" startPosition="41" endLine="2878" endPosition="86" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2901" startPosition="70" endLine="2902" endPosition="69" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2907" startPosition="43" endLine="2908" endPosition="95" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2978" startPosition="66" endLine="2979" endPosition="64" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2984" startPosition="38" endLine="2985" endPosition="83" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2762" startPosition="68" endLine="2763" endPosition="67" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2768" startPosition="41" endLine="2769" endPosition="86" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2794" startPosition="72" endLine="2795" endPosition="71" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2800" startPosition="45" endLine="2801" endPosition="97" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2884" startPosition="68" endLine="2885" endPosition="67" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2890" startPosition="41" endLine="2891" endPosition="86" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2914" startPosition="70" endLine="2915" endPosition="69" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2920" startPosition="43" endLine="2921" endPosition="95" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2991" startPosition="66" endLine="2992" endPosition="64" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2997" startPosition="38" endLine="2998" endPosition="83" />
     <scopeInfo nodeId="7949796796600715320" fileName="ApiMigrationHelper.java" startLine="77" startPosition="99" endLine="79" endPosition="17" />
     <scopeInfo nodeId="5256703636345189836" fileName="ApiMigrationHelper.java" startLine="82" startPosition="169" endLine="84" endPosition="17" />
     <scopeInfo nodeId="5257939578590794473" fileName="ApiMigrationHelper.java" startLine="87" startPosition="167" endLine="89" endPosition="17" />
@@ -2946,16 +2959,16 @@
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2665" startPosition="20" endLine="2667" endPosition="43" />
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2687" startPosition="56" endLine="2689" endPosition="5" />
     <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2737" startPosition="64" endLine="2739" endPosition="5" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2762" startPosition="20" endLine="2764" endPosition="44" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2787" startPosition="20" endLine="2789" endPosition="44" />
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2803" startPosition="56" endLine="2805" endPosition="5" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2847" startPosition="64" endLine="2849" endPosition="5" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2873" startPosition="20" endLine="2875" endPosition="44" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2903" startPosition="22" endLine="2905" endPosition="46" />
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2921" startPosition="56" endLine="2923" endPosition="5" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2958" startPosition="64" endLine="2960" endPosition="5" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2980" startPosition="18" endLine="2982" endPosition="41" />
-    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3000" startPosition="54" endLine="3002" endPosition="5" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2764" startPosition="20" endLine="2766" endPosition="44" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2796" startPosition="24" endLine="2798" endPosition="48" />
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2816" startPosition="56" endLine="2818" endPosition="5" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2860" startPosition="64" endLine="2862" endPosition="5" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2886" startPosition="20" endLine="2888" endPosition="44" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2916" startPosition="22" endLine="2918" endPosition="46" />
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2934" startPosition="56" endLine="2936" endPosition="5" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2971" startPosition="64" endLine="2973" endPosition="5" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2993" startPosition="18" endLine="2995" endPosition="41" />
+    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3013" startPosition="54" endLine="3015" endPosition="5" />
     <scopeInfo nodeId="7949796796600715205" fileName="ApiMigrationHelper.java" startLine="49" startPosition="69" endLine="52" endPosition="23" />
     <scopeInfo nodeId="7949796796600761682" fileName="ApiMigrationHelper.java" startLine="174" startPosition="29" endLine="177" endPosition="13">
       <varInfo nodeId="7949796796600761682" varName="cls" />
@@ -3350,28 +3363,28 @@
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2721" startPosition="13" endLine="2725" endPosition="63">
       <varInfo nodeId="8451791629113397909" varName="quotedNode1_12" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2770" startPosition="11" endLine="2774" endPosition="63">
-      <varInfo nodeId="8451791629113408676" varName="quotedNode1_11" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2772" startPosition="11" endLine="2776" endPosition="63">
+      <varInfo nodeId="8451791629113408676" varName="quotedNode1_13" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2821" startPosition="11" endLine="2825" endPosition="60">
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2834" startPosition="11" endLine="2838" endPosition="60">
       <varInfo nodeId="8451791629113408916" varName="quotedNode1_8" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2833" startPosition="11" endLine="2837" endPosition="68">
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2846" startPosition="11" endLine="2850" endPosition="68">
       <varInfo nodeId="8451791629113408916" varName="quotedNode1_10" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2881" startPosition="11" endLine="2885" endPosition="63">
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2894" startPosition="11" endLine="2898" endPosition="63">
       <varInfo nodeId="8451791629113408967" varName="quotedNode1_12" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2938" startPosition="11" endLine="2942" endPosition="60">
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2951" startPosition="11" endLine="2955" endPosition="60">
       <varInfo nodeId="8451791629113434175" varName="quotedNode1_7" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2946" startPosition="9" endLine="2950" endPosition="60">
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2959" startPosition="9" endLine="2963" endPosition="60">
       <varInfo nodeId="8451791629113434175" varName="quotedNode1_8" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2988" startPosition="9" endLine="2992" endPosition="61">
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3001" startPosition="9" endLine="3005" endPosition="61">
       <varInfo nodeId="8451791629113434224" varName="quotedNode1_10" />
     </scopeInfo>
-    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3008" startPosition="7" endLine="3012" endPosition="31">
+    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3021" startPosition="7" endLine="3025" endPosition="31">
       <varInfo nodeId="7949796796600715770" varName="quotedNode1_2" />
     </scopeInfo>
     <scopeInfo nodeId="7949796796600715202" fileName="ApiMigrationHelper.java" startLine="48" startPosition="0" endLine="53" endPosition="3">
@@ -3465,14 +3478,14 @@
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2674" startPosition="9" endLine="2680" endPosition="9" />
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2705" startPosition="45" endLine="2711" endPosition="11" />
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2720" startPosition="48" endLine="2726" endPosition="13" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2769" startPosition="11" endLine="2775" endPosition="11" />
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2820" startPosition="45" endLine="2826" endPosition="11" />
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2832" startPosition="314" endLine="2838" endPosition="11" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2880" startPosition="11" endLine="2886" endPosition="11" />
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2937" startPosition="45" endLine="2943" endPosition="11" />
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2945" startPosition="9" endLine="2951" endPosition="9" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2987" startPosition="9" endLine="2993" endPosition="9" />
-    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3007" startPosition="32" endLine="3013" endPosition="7" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2771" startPosition="11" endLine="2777" endPosition="11" />
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2833" startPosition="45" endLine="2839" endPosition="11" />
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2845" startPosition="314" endLine="2851" endPosition="11" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2893" startPosition="11" endLine="2899" endPosition="11" />
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2950" startPosition="45" endLine="2956" endPosition="11" />
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2958" startPosition="9" endLine="2964" endPosition="9" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="3000" startPosition="9" endLine="3006" endPosition="9" />
+    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3020" startPosition="32" endLine="3026" endPosition="7" />
     <scopeInfo nodeId="7949796796600715535" fileName="ApiMigrationHelper.java" startLine="134" startPosition="0" endLine="141" endPosition="5">
       <varInfo nodeId="7949796796600715535" varName="ref" />
     </scopeInfo>
@@ -3575,10 +3588,10 @@
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2718" startPosition="11" endLine="2727" endPosition="68">
       <varInfo nodeId="8451791629113397909" varName="quotedNode1_11" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2818" startPosition="9" endLine="2827" endPosition="58">
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2831" startPosition="9" endLine="2840" endPosition="58">
       <varInfo nodeId="8451791629113408916" varName="quotedNode1_7" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2935" startPosition="9" endLine="2944" endPosition="58">
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2948" startPosition="9" endLine="2957" endPosition="58">
       <varInfo nodeId="8451791629113434175" varName="quotedNode1_6" />
     </scopeInfo>
     <scopeInfo nodeId="7949796796600715756" fileName="ApiMigrationHelper.java" startLine="689" startPosition="0" endLine="699" endPosition="0">
@@ -3605,10 +3618,10 @@
     <scopeInfo nodeId="2972144370624154190" fileName="ApiMigrationHelper.java" startLine="2017" startPosition="9" endLine="2027" endPosition="60">
       <varInfo nodeId="2972144370624154190" varName="quotedNode1_9" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2829" startPosition="9" endLine="2839" endPosition="60">
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2842" startPosition="9" endLine="2852" endPosition="60">
       <varInfo nodeId="8451791629113408916" varName="quotedNode1_9" />
     </scopeInfo>
-    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3004" startPosition="31" endLine="3014" endPosition="20">
+    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3017" startPosition="31" endLine="3027" endPosition="20">
       <varInfo nodeId="7949796796600715770" varName="_parameterValues_129834374" />
       <varInfo nodeId="7949796796600715770" varName="quotedNode_1" />
       <varInfo nodeId="7949796796600715770" varName="result" />
@@ -3740,26 +3753,26 @@
     </scopeInfo>
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2702" startPosition="43" endLine="2713" endPosition="9" />
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2717" startPosition="326" endLine="2728" endPosition="11" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2757" startPosition="11" endLine="2768" endPosition="13">
-      <varInfo nodeId="8451791629113408676" varName="quotedNode1_10" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2759" startPosition="11" endLine="2770" endPosition="13">
+      <varInfo nodeId="8451791629113408676" varName="quotedNode1_12" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2782" startPosition="11" endLine="2793" endPosition="13">
-      <varInfo nodeId="8451791629113408676" varName="quotedNode1_13" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2791" startPosition="15" endLine="2802" endPosition="17">
+      <varInfo nodeId="8451791629113408676" varName="quotedNode1_17" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2817" startPosition="43" endLine="2828" endPosition="9" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2868" startPosition="11" endLine="2879" endPosition="13">
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2830" startPosition="43" endLine="2841" endPosition="9" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2881" startPosition="11" endLine="2892" endPosition="13">
       <varInfo nodeId="8451791629113408967" varName="quotedNode1_11" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2898" startPosition="13" endLine="2909" endPosition="15">
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2911" startPosition="13" endLine="2922" endPosition="15">
       <varInfo nodeId="8451791629113408967" varName="quotedNode1_15" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2934" startPosition="43" endLine="2945" endPosition="9" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2975" startPosition="9" endLine="2986" endPosition="11">
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2947" startPosition="43" endLine="2958" endPosition="9" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2988" startPosition="9" endLine="2999" endPosition="11">
       <varInfo nodeId="8451791629113434224" varName="quotedNode1_9" />
     </scopeInfo>
     <scopeInfo nodeId="4390395606403469562" fileName="ApiMigrationHelper.java" startLine="1064" startPosition="9" endLine="1076" endPosition="9" />
     <scopeInfo nodeId="2972144370624154190" fileName="ApiMigrationHelper.java" startLine="2016" startPosition="9" endLine="2028" endPosition="9" />
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2828" startPosition="9" endLine="2840" endPosition="9" />
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2841" startPosition="9" endLine="2853" endPosition="9" />
     <scopeInfo nodeId="4390395606403267126" fileName="ApiMigrationHelper.java" startLine="650" startPosition="100" endLine="663" endPosition="5">
       <varInfo nodeId="4390395606403267134" varName="i" />
     </scopeInfo>
@@ -3796,12 +3809,12 @@
     <scopeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2510" startPosition="48" endLine="2523" endPosition="13" />
     <scopeInfo nodeId="8451791629113344985" fileName="ApiMigrationHelper.java" startLine="2584" startPosition="267" endLine="2597" endPosition="9" />
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2659" startPosition="269" endLine="2672" endPosition="11" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2756" startPosition="45" endLine="2769" endPosition="11" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2781" startPosition="377" endLine="2794" endPosition="11" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2867" startPosition="46" endLine="2880" endPosition="11" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2897" startPosition="273" endLine="2910" endPosition="13" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2974" startPosition="43" endLine="2987" endPosition="9" />
-    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3003" startPosition="0" endLine="3016" endPosition="0" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2758" startPosition="46" endLine="2771" endPosition="11" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2790" startPosition="248" endLine="2803" endPosition="15" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2880" startPosition="46" endLine="2893" endPosition="11" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2910" startPosition="273" endLine="2923" endPosition="13" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2987" startPosition="43" endLine="3000" endPosition="9" />
+    <scopeInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3016" startPosition="0" endLine="3029" endPosition="0" />
     <scopeInfo nodeId="4390395606403266483" fileName="ApiMigrationHelper.java" startLine="665" startPosition="96" endLine="679" endPosition="0">
       <varInfo nodeId="4390395606403266330" varName="refactoringViewItem" />
     </scopeInfo>
@@ -3826,8 +3839,8 @@
       <varInfo nodeId="1002821090946737069" varName="quotedNode1_11" />
     </scopeInfo>
     <scopeInfo nodeId="8451791629113397909" fileName="ApiMigrationHelper.java" startLine="2713" startPosition="9" endLine="2730" endPosition="9" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2778" startPosition="9" endLine="2795" endPosition="61">
-      <varInfo nodeId="8451791629113408676" varName="quotedNode1_12" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2787" startPosition="13" endLine="2804" endPosition="63">
+      <varInfo nodeId="8451791629113408676" varName="quotedNode1_16" />
     </scopeInfo>
     <scopeInfo nodeId="2418896918642280077" fileName="ApiMigrationHelper.java" startLine="1569" startPosition="7" endLine="1587" endPosition="31">
       <varInfo nodeId="2418896918642280077" varName="quotedNode1_3" />
@@ -3843,12 +3856,12 @@
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2655" startPosition="9" endLine="2673" endPosition="58">
       <varInfo nodeId="8451791629113384221" varName="quotedNode1_6" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2893" startPosition="11" endLine="2911" endPosition="68">
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2906" startPosition="11" endLine="2924" endPosition="68">
       <varInfo nodeId="8451791629113408967" varName="quotedNode1_14" />
     </scopeInfo>
     <scopeInfo nodeId="7949796796600760893" fileName="ApiMigrationHelper.java" startLine="174" startPosition="29" endLine="193" endPosition="13" />
     <scopeInfo nodeId="1002821090946737069" fileName="ApiMigrationHelper.java" startLine="1418" startPosition="9" endLine="1437" endPosition="9" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2777" startPosition="9" endLine="2796" endPosition="9" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2786" startPosition="48" endLine="2805" endPosition="13" />
     <scopeInfo nodeId="4390395606403266366" fileName="ApiMigrationHelper.java" startLine="627" startPosition="199" endLine="647" endPosition="103">
       <varInfo nodeId="4390395606403266326" varName="known" />
       <varInfo nodeId="4390395606403266321" varName="method" />
@@ -3904,8 +3917,8 @@
       <varInfo nodeId="8451791629113384172" varName="quotedNode1_5" />
     </scopeInfo>
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2654" startPosition="43" endLine="2674" endPosition="9" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2892" startPosition="377" endLine="2912" endPosition="11" />
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2932" startPosition="7" endLine="2952" endPosition="31">
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2905" startPosition="377" endLine="2925" endPosition="11" />
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2945" startPosition="7" endLine="2965" endPosition="31">
       <varInfo nodeId="8451791629113434175" varName="quotedNode1_5" />
     </scopeInfo>
     <scopeInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="1005" startPosition="9" endLine="1026" endPosition="61">
@@ -3981,14 +3994,17 @@
     <scopeInfo nodeId="8353898354119463673" fileName="ApiMigrationHelper.java" startLine="2176" startPosition="32" endLine="2198" endPosition="7" />
     <scopeInfo nodeId="8451791629113344932" fileName="ApiMigrationHelper.java" startLine="2544" startPosition="32" endLine="2566" endPosition="7" />
     <scopeInfo nodeId="8451791629113384172" fileName="ApiMigrationHelper.java" startLine="2614" startPosition="32" endLine="2636" endPosition="7" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2754" startPosition="9" endLine="2776" endPosition="58">
-      <varInfo nodeId="8451791629113408676" varName="quotedNode1_9" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2756" startPosition="9" endLine="2778" endPosition="59">
+      <varInfo nodeId="8451791629113408676" varName="quotedNode1_11" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2865" startPosition="9" endLine="2887" endPosition="59">
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2784" startPosition="11" endLine="2806" endPosition="68">
+      <varInfo nodeId="8451791629113408676" varName="quotedNode1_15" />
+    </scopeInfo>
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2878" startPosition="9" endLine="2900" endPosition="59">
       <varInfo nodeId="8451791629113408967" varName="quotedNode1_10" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2931" startPosition="32" endLine="2953" endPosition="7" />
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2972" startPosition="7" endLine="2994" endPosition="31">
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2944" startPosition="32" endLine="2966" endPosition="7" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2985" startPosition="7" endLine="3007" endPosition="31">
       <varInfo nodeId="8451791629113434224" varName="quotedNode1_8" />
     </scopeInfo>
     <scopeInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="1004" startPosition="9" endLine="1027" endPosition="9" />
@@ -4012,12 +4028,13 @@
     <scopeInfo nodeId="1002821090946814700" fileName="ApiMigrationHelper.java" startLine="1494" startPosition="32" endLine="1518" endPosition="7" />
     <scopeInfo nodeId="3074202361243234140" fileName="ApiMigrationHelper.java" startLine="1713" startPosition="32" endLine="1737" endPosition="7" />
     <scopeInfo nodeId="3074202361243234225" fileName="ApiMigrationHelper.java" startLine="1802" startPosition="9" endLine="1826" endPosition="9" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2753" startPosition="43" endLine="2777" endPosition="9" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2864" startPosition="43" endLine="2888" endPosition="9" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2889" startPosition="9" endLine="2913" endPosition="61">
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2755" startPosition="44" endLine="2779" endPosition="9" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2783" startPosition="377" endLine="2807" endPosition="11" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2877" startPosition="43" endLine="2901" endPosition="9" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2902" startPosition="9" endLine="2926" endPosition="61">
       <varInfo nodeId="8451791629113408967" varName="quotedNode1_13" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2971" startPosition="32" endLine="2995" endPosition="7" />
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2984" startPosition="32" endLine="3008" endPosition="7" />
     <scopeInfo nodeId="7949796796600715645" fileName="ApiMigrationHelper.java" startLine="170" startPosition="74" endLine="195" endPosition="11" />
     <scopeInfo nodeId="2418896918642280077" fileName="ApiMigrationHelper.java" startLine="1564" startPosition="49" endLine="1589" endPosition="20">
       <varInfo nodeId="2418896918642280077" varName="_parameterValues_129834374" />
@@ -4049,10 +4066,10 @@
     <scopeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2480" startPosition="11" endLine="2506" endPosition="61">
       <varInfo nodeId="5043367263433434295" varName="quotedNode1_12" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2815" startPosition="7" endLine="2841" endPosition="31">
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2828" startPosition="7" endLine="2854" endPosition="31">
       <varInfo nodeId="8451791629113408916" varName="quotedNode1_6" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2888" startPosition="9" endLine="2914" endPosition="9" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2901" startPosition="9" endLine="2927" endPosition="9" />
     <scopeInfo nodeId="8353898354119474402" fileName="ApiMigrationHelper.java" startLine="2327" startPosition="9" endLine="2354" endPosition="61">
       <varInfo nodeId="8353898354119474402" varName="quotedNode1_12" />
     </scopeInfo>
@@ -4075,7 +4092,10 @@
     <scopeInfo nodeId="8451791629113344985" fileName="ApiMigrationHelper.java" startLine="2574" startPosition="0" endLine="2602" endPosition="0">
       <varInfo nodeId="8451791629113344985" varName="parameter_5" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2814" startPosition="32" endLine="2842" endPosition="7" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2780" startPosition="9" endLine="2808" endPosition="61">
+      <varInfo nodeId="8451791629113408676" varName="quotedNode1_14" />
+    </scopeInfo>
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2827" startPosition="32" endLine="2855" endPosition="7" />
     <scopeInfo nodeId="4390395606403265766" fileName="ApiMigrationHelper.java" startLine="810" startPosition="31" endLine="839" endPosition="20">
       <varInfo nodeId="4390395606403265766" varName="_parameterValues_129834374" />
       <varInfo nodeId="4390395606403265766" varName="quotedNode_1" />
@@ -4200,7 +4220,7 @@
     <scopeInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2652" startPosition="7" endLine="2681" endPosition="31">
       <varInfo nodeId="8451791629113384221" varName="quotedNode1_5" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2925" startPosition="31" endLine="2954" endPosition="20">
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2938" startPosition="31" endLine="2967" endPosition="20">
       <varInfo nodeId="8451791629113434175" varName="_parameterValues_129834374" />
       <varInfo nodeId="8451791629113434175" varName="quotedNode_1" />
       <varInfo nodeId="8451791629113434175" varName="quotedNode_2" />
@@ -4219,6 +4239,7 @@
     <scopeInfo nodeId="5043367263433418091" fileName="ApiMigrationHelper.java" startLine="2422" startPosition="7" endLine="2452" endPosition="31">
       <varInfo nodeId="5043367263433418091" varName="quotedNode1_7" />
     </scopeInfo>
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2779" startPosition="9" endLine="2809" endPosition="9" />
     <scopeInfo nodeId="9212740481129381404" fileName="ApiMigrationHelper.java" startLine="1096" startPosition="7" endLine="1127" endPosition="31">
       <varInfo nodeId="9212740481129381404" varName="quotedNode1_7" />
     </scopeInfo>
@@ -4269,7 +4290,7 @@
     <scopeInfo nodeId="5043367263433418091" fileName="ApiMigrationHelper.java" startLine="2421" startPosition="32" endLine="2453" endPosition="7" />
     <scopeInfo nodeId="8451791629113344932" fileName="ApiMigrationHelper.java" startLine="2537" startPosition="0" endLine="2569" endPosition="0" />
     <scopeInfo nodeId="8451791629113384172" fileName="ApiMigrationHelper.java" startLine="2607" startPosition="0" endLine="2639" endPosition="0" />
-    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2924" startPosition="0" endLine="2956" endPosition="0" />
+    <scopeInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2937" startPosition="0" endLine="2969" endPosition="0" />
     <scopeInfo nodeId="7949796796600715476" fileName="ApiMigrationHelper.java" startLine="771" startPosition="0" endLine="804" endPosition="0">
       <varInfo nodeId="7949796796600715476" varName="parameter_7" />
     </scopeInfo>
@@ -4334,7 +4355,7 @@
     <scopeInfo nodeId="8353898354119463723" fileName="ApiMigrationHelper.java" startLine="2206" startPosition="0" endLine="2240" endPosition="0">
       <varInfo nodeId="8353898354119463723" varName="parameter_9" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2962" startPosition="50" endLine="2996" endPosition="20">
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2975" startPosition="50" endLine="3009" endPosition="20">
       <varInfo nodeId="8451791629113434224" varName="_parameterValues_129834374" />
       <varInfo nodeId="8451791629113434224" varName="quotedNode_1" />
       <varInfo nodeId="8451791629113434224" varName="quotedNode_2" />
@@ -4365,7 +4386,7 @@
     <scopeInfo nodeId="8353898354119463755" fileName="ApiMigrationHelper.java" startLine="2256" startPosition="7" endLine="2292" endPosition="31">
       <varInfo nodeId="8353898354119463755" varName="quotedNode1_8" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2807" startPosition="31" endLine="2843" endPosition="20">
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2820" startPosition="31" endLine="2856" endPosition="20">
       <varInfo nodeId="8451791629113408916" varName="_parameterValues_129834374" />
       <varInfo nodeId="8451791629113408916" varName="quotedNode_1" />
       <varInfo nodeId="8451791629113408916" varName="quotedNode_2" />
@@ -4390,7 +4411,7 @@
     <scopeInfo nodeId="3074202361243234140" fileName="ApiMigrationHelper.java" startLine="1703" startPosition="0" endLine="1740" endPosition="0">
       <varInfo nodeId="3074202361243234140" varName="parameter_11" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2961" startPosition="0" endLine="2998" endPosition="0">
+    <scopeInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2974" startPosition="0" endLine="3011" endPosition="0">
       <varInfo nodeId="8451791629113434224" varName="parameter_11" />
     </scopeInfo>
     <scopeInfo nodeId="1241138785141530452" fileName="ApiMigrationHelper.java" startLine="1940" startPosition="44" endLine="1978" endPosition="9" />
@@ -4433,7 +4454,7 @@
       <varInfo nodeId="8353898354119474451" varName="quotedNode_3" />
       <varInfo nodeId="8353898354119474451" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2806" startPosition="0" endLine="2845" endPosition="0" />
+    <scopeInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2819" startPosition="0" endLine="2858" endPosition="0" />
     <scopeInfo nodeId="4390395606403469562" fileName="ApiMigrationHelper.java" startLine="1038" startPosition="71" endLine="1079" endPosition="20">
       <varInfo nodeId="4390395606403469562" varName="_parameterValues_129834374" />
       <varInfo nodeId="4390395606403469562" varName="quotedNode_1" />
@@ -4530,9 +4551,6 @@
       <varInfo nodeId="3074202361243234225" varName="quotedNode_9" />
       <varInfo nodeId="3074202361243234225" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2751" startPosition="7" endLine="2797" endPosition="31">
-      <varInfo nodeId="8451791629113408676" varName="quotedNode1_8" />
-    </scopeInfo>
     <scopeInfo nodeId="4390395606403265822" fileName="ApiMigrationHelper.java" startLine="847" startPosition="50" endLine="894" endPosition="20">
       <varInfo nodeId="4390395606403265822" varName="_parameterValues_129834374" />
       <varInfo nodeId="4390395606403265822" varName="quotedNode_1" />
@@ -4588,7 +4606,6 @@
       <varInfo nodeId="8353898354119463755" varName="quotedNode_7" />
       <varInfo nodeId="8353898354119463755" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2750" startPosition="32" endLine="2798" endPosition="7" />
     <scopeInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="981" startPosition="31" endLine="1030" endPosition="20">
       <varInfo nodeId="4390395606403469530" varName="_parameterValues_129834374" />
       <varInfo nodeId="4390395606403469530" varName="quotedNode_1" />
@@ -4622,13 +4639,13 @@
     </scopeInfo>
     <scopeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2476" startPosition="44" endLine="2527" endPosition="9" />
     <scopeInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="980" startPosition="0" endLine="1032" endPosition="0" />
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2862" startPosition="7" endLine="2915" endPosition="31">
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2875" startPosition="7" endLine="2928" endPosition="31">
       <varInfo nodeId="8451791629113408967" varName="quotedNode1_9" />
     </scopeInfo>
     <scopeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2474" startPosition="7" endLine="2528" endPosition="32">
       <varInfo nodeId="5043367263433434295" varName="quotedNode1_10" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2861" startPosition="32" endLine="2916" endPosition="7" />
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2874" startPosition="32" endLine="2929" endPosition="7" />
     <scopeInfo nodeId="8353898354119474402" fileName="ApiMigrationHelper.java" startLine="2302" startPosition="31" endLine="2358" endPosition="20">
       <varInfo nodeId="8353898354119474402" varName="_parameterValues_129834374" />
       <varInfo nodeId="8353898354119474402" varName="quotedNode_1" />
@@ -4642,18 +4659,11 @@
       <varInfo nodeId="8353898354119474402" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2473" startPosition="32" endLine="2529" endPosition="7" />
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2741" startPosition="71" endLine="2799" endPosition="20">
-      <varInfo nodeId="8451791629113408676" varName="_parameterValues_129834374" />
-      <varInfo nodeId="8451791629113408676" varName="quotedNode_1" />
-      <varInfo nodeId="8451791629113408676" varName="quotedNode_2" />
-      <varInfo nodeId="8451791629113408676" varName="quotedNode_3" />
-      <varInfo nodeId="8451791629113408676" varName="quotedNode_4" />
-      <varInfo nodeId="8451791629113408676" varName="quotedNode_5" />
-      <varInfo nodeId="8451791629113408676" varName="quotedNode_6" />
-      <varInfo nodeId="8451791629113408676" varName="quotedNode_7" />
-      <varInfo nodeId="8451791629113408676" varName="result" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2753" startPosition="7" endLine="2810" endPosition="32">
+      <varInfo nodeId="8451791629113408676" varName="quotedNode1_10" />
     </scopeInfo>
     <scopeInfo nodeId="8353898354119474402" fileName="ApiMigrationHelper.java" startLine="2301" startPosition="0" endLine="2360" endPosition="0" />
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2752" startPosition="32" endLine="2811" endPosition="7" />
     <scopeInfo nodeId="1241138785141530452" fileName="ApiMigrationHelper.java" startLine="1926" startPosition="50" endLine="1987" endPosition="20">
       <varInfo nodeId="1241138785141530452" varName="_parameterValues_129834374" />
       <varInfo nodeId="1241138785141530452" varName="quotedNode_1" />
@@ -4667,10 +4677,6 @@
       <varInfo nodeId="1241138785141530452" varName="quotedNode_9" />
       <varInfo nodeId="1241138785141530452" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2740" startPosition="0" endLine="2801" endPosition="0">
-      <varInfo nodeId="8451791629113408676" varName="parameter_14" />
-      <varInfo nodeId="8451791629113408676" varName="parameter_15" />
-    </scopeInfo>
     <scopeInfo nodeId="4390395606403266348" fileName="ApiMigrationHelper.java" startLine="624" startPosition="192" endLine="687" endPosition="43">
       <varInfo nodeId="4390395606403266332" varName="results" />
       <varInfo nodeId="4390395606403266327" varName="usages" />
@@ -4681,7 +4687,7 @@
     <scopeInfo nodeId="4390395606403266335" fileName="ApiMigrationHelper.java" startLine="623" startPosition="0" endLine="689" endPosition="0">
       <varInfo nodeId="4390395606403266334" varName="transformations" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2851" startPosition="71" endLine="2917" endPosition="20">
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2864" startPosition="71" endLine="2930" endPosition="20">
       <varInfo nodeId="8451791629113408967" varName="_parameterValues_129834374" />
       <varInfo nodeId="8451791629113408967" varName="quotedNode_1" />
       <varInfo nodeId="8451791629113408967" varName="quotedNode_2" />
@@ -4706,13 +4712,30 @@
       <varInfo nodeId="5043367263433434295" varName="quotedNode_9" />
       <varInfo nodeId="5043367263433434295" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2850" startPosition="0" endLine="2919" endPosition="0">
+    <scopeInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2863" startPosition="0" endLine="2932" endPosition="0">
       <varInfo nodeId="8451791629113408967" varName="parameter_16" />
       <varInfo nodeId="8451791629113408967" varName="parameter_17" />
     </scopeInfo>
     <scopeInfo nodeId="5043367263433434295" fileName="ApiMigrationHelper.java" startLine="2461" startPosition="0" endLine="2532" endPosition="0">
       <varInfo nodeId="5043367263433434295" varName="parameter_18" />
       <varInfo nodeId="5043367263433434295" varName="parameter_19" />
+    </scopeInfo>
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2741" startPosition="71" endLine="2812" endPosition="20">
+      <varInfo nodeId="8451791629113408676" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_1" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_2" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_3" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_4" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_5" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_6" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_7" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_8" />
+      <varInfo nodeId="8451791629113408676" varName="quotedNode_9" />
+      <varInfo nodeId="8451791629113408676" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2740" startPosition="0" endLine="2814" endPosition="0">
+      <varInfo nodeId="8451791629113408676" varName="parameter_18" />
+      <varInfo nodeId="8451791629113408676" varName="parameter_19" />
     </scopeInfo>
     <scopeInfo nodeId="7949796796600715218" fileName="ApiMigrationHelper.java" startLine="55" startPosition="25" endLine="201" endPosition="43">
       <varInfo nodeId="7949796796600715394" varName="castedMethodCalls" />
@@ -4828,7 +4851,7 @@
       <varInfo nodeId="2418896918642279958" varName="transformer9" />
     </scopeInfo>
     <scopeInfo nodeId="1719872688913255227" fileName="ApiMigrationHelper.java" startLine="203" startPosition="0" endLine="623" endPosition="0" />
-    <unitInfo nodeId="7949796796600715200" fileName="ApiMigrationHelper.java" startLine="44" startPosition="0" endLine="3018" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper" />
+    <unitInfo nodeId="7949796796600715200" fileName="ApiMigrationHelper.java" startLine="44" startPosition="0" endLine="3031" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper" />
     <unitInfo nodeId="7949796796600715571" fileName="ApiMigrationHelper.java" startLine="143" startPosition="95" endLine="147" endPosition="5" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$1" />
     <unitInfo nodeId="4390395606403265812" fileName="ApiMigrationHelper.java" startLine="216" startPosition="122" endLine="220" endPosition="5" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$10" />
     <unitInfo nodeId="4390395606403449331" fileName="ApiMigrationHelper.java" startLine="228" startPosition="88" endLine="232" endPosition="5" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$11" />
@@ -4903,15 +4926,15 @@
     <unitInfo nodeId="2972144370624154278" fileName="ApiMigrationHelper.java" startLine="2035" startPosition="0" endLine="2081" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a421a1" />
     <unitInfo nodeId="9212740481129381439" fileName="ApiMigrationHelper.java" startLine="1133" startPosition="0" endLine="1179" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a43a1" />
     <unitInfo nodeId="3074202361243234225" fileName="ApiMigrationHelper.java" startLine="1779" startPosition="0" endLine="1832" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a601a1" />
-    <unitInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2958" startPosition="0" endLine="2999" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a602a1" />
-    <unitInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2847" startPosition="0" endLine="2920" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a791a1" />
+    <unitInfo nodeId="8451791629113434224" fileName="ApiMigrationHelper.java" startLine="2971" startPosition="0" endLine="3012" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a602a1" />
+    <unitInfo nodeId="8451791629113408967" fileName="ApiMigrationHelper.java" startLine="2860" startPosition="0" endLine="2933" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a791a1" />
     <unitInfo nodeId="3074202361243234140" fileName="ApiMigrationHelper.java" startLine="1700" startPosition="0" endLine="1741" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a79a1" />
     <unitInfo nodeId="4390395606403265822" fileName="ApiMigrationHelper.java" startLine="843" startPosition="0" endLine="897" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a7a1" />
-    <unitInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2737" startPosition="0" endLine="2802" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a881a1" />
+    <unitInfo nodeId="8451791629113408676" fileName="ApiMigrationHelper.java" startLine="2737" startPosition="0" endLine="2815" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a881a1" />
     <unitInfo nodeId="2418896918642280162" fileName="ApiMigrationHelper.java" startLine="1630" startPosition="0" endLine="1662" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a88a1" />
     <unitInfo nodeId="8451791629113384221" fileName="ApiMigrationHelper.java" startLine="2641" startPosition="0" endLine="2686" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a971a1" />
     <unitInfo nodeId="2418896918642280077" fileName="ApiMigrationHelper.java" startLine="1560" startPosition="0" endLine="1592" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a0a0a0a97a1" />
-    <unitInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3000" startPosition="0" endLine="3017" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a3" />
+    <unitInfo nodeId="7949796796600715770" fileName="ApiMigrationHelper.java" startLine="3013" startPosition="0" endLine="3030" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0a3" />
     <unitInfo nodeId="3074202361243234176" fileName="ApiMigrationHelper.java" startLine="1742" startPosition="0" endLine="1778" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0ae0b" />
     <unitInfo nodeId="8353898354119463755" fileName="ApiMigrationHelper.java" startLine="2242" startPosition="0" endLine="2297" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0b0a0a0a0a341a1" />
     <unitInfo nodeId="1241138785141530452" fileName="ApiMigrationHelper.java" startLine="1922" startPosition="0" endLine="1990" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0b0a0a0a0a511a1" />
@@ -4925,7 +4948,7 @@
     <unitInfo nodeId="1241138785141518028" fileName="ApiMigrationHelper.java" startLine="1833" startPosition="0" endLine="1869" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0je0b" />
     <unitInfo nodeId="8353898354119463673" fileName="ApiMigrationHelper.java" startLine="2166" startPosition="0" endLine="2202" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0lf0b" />
     <unitInfo nodeId="8451791629113344932" fileName="ApiMigrationHelper.java" startLine="2534" startPosition="0" endLine="2570" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0mg0b" />
-    <unitInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2803" startPosition="0" endLine="2846" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0nh0b" />
+    <unitInfo nodeId="8451791629113408916" fileName="ApiMigrationHelper.java" startLine="2816" startPosition="0" endLine="2859" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0nh0b" />
     <unitInfo nodeId="4390395606403449319" fileName="ApiMigrationHelper.java" startLine="898" startPosition="0" endLine="934" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0o0b" />
     <unitInfo nodeId="1002821090946695702" fileName="ApiMigrationHelper.java" startLine="1180" startPosition="0" endLine="1216" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0pb0b" />
     <unitInfo nodeId="1002821090946814651" fileName="ApiMigrationHelper.java" startLine="1444" startPosition="0" endLine="1480" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0qc0b" />
@@ -4933,7 +4956,7 @@
     <unitInfo nodeId="2972144370624154190" fileName="ApiMigrationHelper.java" startLine="1991" startPosition="0" endLine="2034" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0se0b" />
     <unitInfo nodeId="8353898354119474402" fileName="ApiMigrationHelper.java" startLine="2298" startPosition="0" endLine="2361" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0uf0b" />
     <unitInfo nodeId="8451791629113384172" fileName="ApiMigrationHelper.java" startLine="2604" startPosition="0" endLine="2640" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0vg0b" />
-    <unitInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2921" startPosition="0" endLine="2957" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0wh0b" />
+    <unitInfo nodeId="8451791629113434175" fileName="ApiMigrationHelper.java" startLine="2934" startPosition="0" endLine="2970" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0wh0b" />
     <unitInfo nodeId="4390395606403469530" fileName="ApiMigrationHelper.java" startLine="977" startPosition="0" endLine="1033" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0x0b" />
     <unitInfo nodeId="1002821090946730735" fileName="ApiMigrationHelper.java" startLine="1272" startPosition="0" endLine="1308" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0yb0b" />
     <unitInfo nodeId="2418896918642279921" fileName="ApiMigrationHelper.java" startLine="1523" startPosition="0" endLine="1559" endPosition="0" unitName="jetbrains.mps.lang.smodel.pluginSolution.plugin.ApiMigrationHelper$QuotationClass_yke5lt_a0a0a0zc0b" />
