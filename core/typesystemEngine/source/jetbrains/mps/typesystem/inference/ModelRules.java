@@ -44,7 +44,6 @@ public class ModelRules {
   private RuleSet<AbstractDependentComputation_Runtime> myDependentComputations = new RuleSet<AbstractDependentComputation_Runtime>();
   private RuleSet<DependentComputationWrapper> myDependentComputationsBlockedNodes = new RuleSet<DependentComputationWrapper>();
   private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
-  private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
   private Set<SModelReference> myModelsWithLoadedRules = new THashSet<SModelReference>();
   private OverloadedOperationsManager myOverloadedOperationsManager;
   private static final Logger LOG = Logger.getLogger(RulesManager.class);
@@ -64,7 +63,6 @@ public class ModelRules {
     mySubTypingRules.clear();
     myComparisonRules.clear();
     myReplacementRules.clear();
-    myDependenciesContainer.clear();
     myVariableConverters.clear();
 //    myOverloadedOperationsManager.clear();
     myDependentComputations.clear();
@@ -205,10 +203,6 @@ public class ModelRules {
       }
     }
     return result;
-  }
-
-  public Collection<SNode> getDependencies(SNode node) {
-    return myDependenciesContainer.getDependencies(node);
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
