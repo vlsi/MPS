@@ -54,6 +54,10 @@
   </project-components>
 
   <actions>
+    <action id="jetbrains.mps.idea.scopes.CheckScopesAction"
+            class="jetbrains.mps.idea.scopes.CheckScopesAction">
+      <add-to-group group-id="ProjectViewPopupMenuSettingsGroup" />
+    </action>
   </actions>
 
   <extensions defaultExtensionNs="com.intellij">
