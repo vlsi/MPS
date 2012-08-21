@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.util.Condition;
 
 public class SNodeOperations {
   public static int depth(SNode sNode) {
@@ -50,5 +49,11 @@ public class SNodeOperations {
   //todo after killing it, correct migration script to return false instead
   public static boolean isDisposed(org.jetbrains.mps.openapi.model.SNode node){
     return ((SNode) node).isDisposed();
+  }
+
+  @Deprecated //todo KILL IT! should be node.getTopMostAncestor
+  //todo after killing it, correct migration script getTopMostAncestor
+  public static SNode getContainingRoot(org.jetbrains.mps.openapi.model.SNode node){
+    return ((SNode)node).getContainingRoot();
   }
 }
