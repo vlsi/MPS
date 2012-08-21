@@ -21,6 +21,7 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Set;
 
+@Deprecated
 public abstract class AbstractDependency_Runtime implements IDependency_Runtime {
   public SNode getSourceNode(SNode targetNode) {
     return null;
