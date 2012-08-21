@@ -63,7 +63,7 @@ public abstract class ModelCheckerIssue {
 
     @Override
     public boolean fix() {
-      if (!(myNode.isRegistered())) {
+      if (myNode.isDeleted()) {
         return false;
       } else {
         return super.fix();

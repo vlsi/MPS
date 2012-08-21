@@ -92,14 +92,14 @@ public class _QueriesUtil {
    */
   public static SNode create_closureContextObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     // find enclosing closure or closure context owner 
-    SNode enclosingClosureOrContextOwner = ((SNode) jetbrains.mps.smodel.SNodeOperations.findParent(nodeInsideClosure, new Condition<SNode>() {
+    SNode enclosingClosureOrContextOwner = nodeInsideClosure.findParent(new Condition<SNode>() {
       public boolean met(SNode object) {
         if (SNodeOperations.isInstanceOf(object, "jetbrains.mps.baseLanguage.structure.Closure")) {
           return true;
         }
         return ClosuresUtil.isClosureContextOwner(object);
       }
-    }));
+    });
     SModel model = generator.getOutputModel();
     if (enclosingClosureOrContextOwner != null && ClosuresUtil.isClosureContextOwner(enclosingClosureOrContextOwner)) {
       SNode varDeclStmt_output = (SNode) generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);

@@ -71,7 +71,7 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   }
 
   protected EditorCell createRootCell(List<SModelEvent> events) {
-    if (getEditedNode() == null || !(getEditedNode().isRegistered())) {
+    if (getEditedNode() == null || getEditedNode().isDeleted()) {
       EditorContext editorContext = getEditorContext();
       return new EditorCell_Constant(editorContext, getEditedNode(), "");
     }

@@ -73,7 +73,7 @@ public class DeleteNodesHelper {
             projectPane.rebuildTree();
             projectPane.selectNextNode(sNode);
           }
-          if (!(sNode.isRegistered())) {
+          if (sNode.isDeleted()) {
             continue;
           }
           sNode.delete();
