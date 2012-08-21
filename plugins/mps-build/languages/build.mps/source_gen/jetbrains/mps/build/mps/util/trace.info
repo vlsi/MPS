@@ -1928,9 +1928,9 @@
     <nodeInfo nodeId="4321656770473416146" fileName="ArtifactsRelativePathHelper.java" startLine="80" startPosition="97" endLine="81" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4321656770473416369" fileName="ArtifactsRelativePathHelper.java" startLine="82" startPosition="112" endLine="83" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4321656770473423322" fileName="ArtifactsRelativePathHelper.java" startLine="84" startPosition="104" endLine="85" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4321656770473416450" fileName="ArtifactsRelativePathHelper.java" startLine="86" startPosition="14" endLine="87" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4321656770473416450" fileName="ArtifactsRelativePathHelper.java" startLine="86" startPosition="14" endLine="87" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="3558796834797339848" fileName="ArtifactsRelativePathHelper.java" startLine="89" startPosition="112" endLine="90" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4321656770473416181" fileName="ArtifactsRelativePathHelper.java" startLine="91" startPosition="5" endLine="92" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4321656770473416181" fileName="ArtifactsRelativePathHelper.java" startLine="91" startPosition="5" endLine="92" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="4321656770473396828" fileName="ArtifactsRelativePathHelper.java" startLine="97" startPosition="39" endLine="98" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4321656770473396864" fileName="ArtifactsRelativePathHelper.java" startLine="100" startPosition="9" endLine="101" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="4321656770473416056" fileName="ArtifactsRelativePathHelper.java" startLine="104" startPosition="38" endLine="105" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1979,7 +1979,7 @@
     <scopeInfo nodeId="4321656770473415954" fileName="ArtifactsRelativePathHelper.java" startLine="72" startPosition="27" endLine="73" endPosition="27" />
     <scopeInfo nodeId="4321656770473396628" fileName="ArtifactsRelativePathHelper.java" startLine="80" startPosition="97" endLine="81" endPosition="153" />
     <scopeInfo nodeId="4321656770473416379" fileName="ArtifactsRelativePathHelper.java" startLine="84" startPosition="104" endLine="85" endPosition="212" />
-    <scopeInfo nodeId="4321656770473416449" fileName="ArtifactsRelativePathHelper.java" startLine="86" startPosition="14" endLine="87" endPosition="149" />
+    <scopeInfo nodeId="4321656770473416449" fileName="ArtifactsRelativePathHelper.java" startLine="86" startPosition="14" endLine="87" endPosition="205" />
     <scopeInfo nodeId="3558796834797339793" fileName="ArtifactsRelativePathHelper.java" startLine="89" startPosition="112" endLine="90" endPosition="203" />
     <scopeInfo nodeId="4321656770473396825" fileName="ArtifactsRelativePathHelper.java" startLine="97" startPosition="39" endLine="98" endPosition="104" />
     <scopeInfo nodeId="4321656770473396766" fileName="ArtifactsRelativePathHelper.java" startLine="100" startPosition="9" endLine="101" endPosition="92" />
@@ -2028,7 +2028,7 @@
       <varInfo nodeId="4012382313839842739" varName="sfolder" />
     </scopeInfo>
     <scopeInfo nodeId="4321656770473396748" fileName="ArtifactsRelativePathHelper.java" startLine="95" startPosition="99" endLine="107" endPosition="13" />
-    <scopeInfo nodeId="4321656770473396621" fileName="ArtifactsRelativePathHelper.java" startLine="79" startPosition="115" endLine="92" endPosition="128" />
+    <scopeInfo nodeId="4321656770473396621" fileName="ArtifactsRelativePathHelper.java" startLine="79" startPosition="115" endLine="92" endPosition="184" />
     <scopeInfo nodeId="4321656770473396745" fileName="ArtifactsRelativePathHelper.java" startLine="94" startPosition="0" endLine="109" endPosition="0">
       <varInfo nodeId="4321656770473396751" varName="string" />
     </scopeInfo>

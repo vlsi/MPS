@@ -15,8 +15,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Stack;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
-import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public class ArtifactsRelativePathHelper {
   private VisibleArtifacts artifacts;
@@ -84,12 +84,12 @@ public class ArtifactsRelativePathHelper {
       if (SNodeOperations.isInstanceOf(fileset, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
         return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(SNodeOperations.cast(fileset, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true), null);
       } else {
-        throw new ArtifactsRelativePathHelper.RelativePathException("cannot build relative path for copy, fileset is " + node.getConceptShortName());
+        throw new ArtifactsRelativePathHelper.RelativePathException("cannot build relative path for copy, fileset is " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "name"));
       }
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_File") && isLast) {
       return BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_File"), "path", true), null);
     }
-    throw new ArtifactsRelativePathHelper.RelativePathException("cannot build relative path for " + node.getConceptShortName());
+    throw new ArtifactsRelativePathHelper.RelativePathException("cannot build relative path for " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "name"));
   }
 
   private String getBSName(SNode string) throws ArtifactsRelativePathHelper.RelativePathException {
