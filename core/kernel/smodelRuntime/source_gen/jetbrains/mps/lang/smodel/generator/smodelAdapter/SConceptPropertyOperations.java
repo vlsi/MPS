@@ -15,7 +15,7 @@ public class SConceptPropertyOperations {
     if (node == null) {
       return null;
     }
-    SNode conceptProperty = (SNode) node.findConceptProperty(propertyName);
+    SNode conceptProperty = (SNode) findProperty(node, propertyName);
     if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.StringConceptProperty")) {
       return SPropertyOperations.getString(SNodeOperations.cast(conceptProperty, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value");
     }
@@ -26,7 +26,7 @@ public class SConceptPropertyOperations {
     if (node == null) {
       return 0;
     }
-    SNode conceptProperty = (SNode) node.findConceptProperty(propertyName);
+    SNode conceptProperty = (SNode) findProperty(node, propertyName);
     if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty")) {
       return SPropertyOperations.getInteger(SNodeOperations.cast(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value");
     }
@@ -37,13 +37,13 @@ public class SConceptPropertyOperations {
     if (node == null) {
       return false;
     }
-    SNode conceptProperty = (SNode) node.findConceptProperty(propertyName);
+    SNode conceptProperty = (SNode) findProperty(node, propertyName);
     return SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.BooleanConceptProperty");
   }
 
   public static void setString(SNode node, String propertyName, String value) {
     if (node != null) {
-      SNode conceptProperty = (SNode) node.findConceptProperty(propertyName);
+      SNode conceptProperty = (SNode) findProperty(node, propertyName);
       if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.StringConceptProperty")) {
         SPropertyOperations.set(SNodeOperations.cast(conceptProperty, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value", value);
       }
@@ -52,7 +52,7 @@ public class SConceptPropertyOperations {
 
   public static void setInteger(SNode node, String propertyName, int value) {
     if (node != null) {
-      SNode conceptProperty = (SNode) node.findConceptProperty(propertyName);
+      SNode conceptProperty = (SNode) findProperty(node, propertyName);
       if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty")) {
         SPropertyOperations.set(SNodeOperations.cast(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value", "" + value);
       }
@@ -61,7 +61,7 @@ public class SConceptPropertyOperations {
 
   public static void setBoolean(SNode node, String propertyName, boolean value) {
     if (node != null) {
-      SNode conceptProperty = (SNode) node.findConceptProperty(propertyName);
+      SNode conceptProperty = (SNode) findProperty(node, propertyName);
       if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.BooleanConceptProperty") && !(value)) {
         node.removeChild(conceptProperty);
       } else
@@ -78,5 +78,28 @@ public class SConceptPropertyOperations {
         }
       }
     }
+  }
+
+  public static SNode findProperty(SNode node, String name) {
+    boolean cpt = eq_yzaoi3_a0a0a0g(node.getConceptFqName(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") || eq_yzaoi3_a0a0a0g_0(node.getConceptFqName(), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
+    SNode conceptNode = (cpt ?
+      ((SNode) node) :
+      SNodeOperations.getConceptDeclaration(node)
+    );
+    return SModelSearchUtil.findConceptProperty(conceptNode, name);
+  }
+
+  private static boolean eq_yzaoi3_a0a0a0g(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_yzaoi3_a0a0a0g_0(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
