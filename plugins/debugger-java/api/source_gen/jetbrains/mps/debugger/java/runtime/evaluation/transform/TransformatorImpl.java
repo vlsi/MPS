@@ -59,7 +59,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
           });
         }
       }).first();
-      if (!(myWhatToEvaluate.isDescendantOf(evaluateMethod, false))) {
+      if (!(ListSequence.fromList(SNodeOperations.getAncestors(myWhatToEvaluate, null, false)).contains(evaluateMethod))) {
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(evaluateMethod, "body", true), "statement", true)).addElement(SNodeOperations.cast(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.Statement"));
       }
     } else {

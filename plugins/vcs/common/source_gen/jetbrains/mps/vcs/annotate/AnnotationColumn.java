@@ -331,7 +331,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     EditorComponent editor = getEditorComponent();
     SNode editedNode = editor.getEditedNode();
     SNode node = editedNode.getModel().getNodeById(content.getNodeId());
-    if (node == null || !(node.isDescendantOf(editedNode, true))) {
+    if (node == null || !(ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).contains(editedNode))) {
       return null;
     }
 

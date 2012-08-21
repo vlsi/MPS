@@ -91,6 +91,4 @@ public class SNodeOperations {
   public static boolean isDisposed(org.jetbrains.mps.openapi.model.SNode node) {
     return ((SNode) node).isDisposed();
   }
-
-
 }
