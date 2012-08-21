@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class RemoveDependencies_MigrationScript extends BaseMigrationScript {
   public RemoveDependencies_MigrationScript(IOperationContext operationContext) {
-    super("Remove instances of obsolete concept \"Dependency\"");
+    super("Remove instances of obsolete concepts in typesystem");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
         return "Remove Dependency";
@@ -22,6 +22,31 @@ public class RemoveDependencies_MigrationScript extends BaseMigrationScript {
 
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.typesystem.structure.Dependency";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return true;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        SNodeOperations.deleteNode(node);
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Remove DependentComputationItem";
+      }
+
+      public String getAdditionalInfo() {
+        return "Remove DependentComputationItem";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.typesystem.structure.DependentComputationItem";
       }
 
       public boolean isApplicableInstanceNode(SNode node) {

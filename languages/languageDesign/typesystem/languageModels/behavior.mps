@@ -89,6 +89,7 @@
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.1195214364922" resolveInfo="NonTypesystemRule" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="160921426017537691">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="dependency" />
       <link role="concept" roleId="1i04.1225194240799" targetNodeId="tpd4.8058965347377049973" resolveInfo="DependentComputationItem_FindMasterBlock" />
     </node>
     <node type="1i04.ConceptBehavior" typeId="1i04.1225194240794" id="4484478261143583669">

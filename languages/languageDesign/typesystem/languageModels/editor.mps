@@ -247,6 +247,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.6773347515165533831" resolveInfo="NodeInfo" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8058965347377049980">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="dependency" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.8058965347377019242" resolveInfo="DependentComputationItem" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="2370039984926492997">
