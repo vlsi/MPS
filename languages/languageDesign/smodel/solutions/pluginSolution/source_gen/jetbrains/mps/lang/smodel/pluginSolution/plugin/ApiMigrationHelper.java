@@ -4258,8 +4258,8 @@ public class ApiMigrationHelper {
       {
         quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, GlobalScope.getInstance(), false);
         SNode quotedNode1_5 = quotedNode_1;
-        quotedNode1_5.addReference(SReference.create("baseMethodDeclaration", quotedNode1_5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeOperations.getDescendants(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.util.Condition):org.jetbrains.mps.openapi.model.SNode")));
         quotedNode1_5.addReference(SReference.create("classConcept", quotedNode1_5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeOperations")));
+        quotedNode1_5.addReference(SReference.create("baseMethodDeclaration", quotedNode1_5, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNodeOperations.getDescendants(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.util.Condition,boolean):java.lang.Iterable")));
         {
           quotedNode_2 = (SNode) parameter_9;
           SNode quotedNode1_6;
