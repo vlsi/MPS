@@ -8,10 +8,6 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
-import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
-import jetbrains.mps.typesystem.inference.util.AbstractDependency_Runtime;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -74,22 +70,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InequationReplacementRule_Runtime eliminationRule = new FunctionType_subtypeOf_FunctionType_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.lang.core.structure.BaseConcept";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return SNodeOperations.getParent(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
     }
   }
 }
