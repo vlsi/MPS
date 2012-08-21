@@ -23,6 +23,10 @@
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
       <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 2.0" />
     </node>
+    <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="7286989617095153002">
+      <property name="name" nameId="tpck.1169194664001" value="RemoveDependencies" />
+      <property name="title" nameId="tp33.1177457669450" value="Remove instances of obsolete concept &quot;Dependency&quot;" />
+    </node>
   </roots>
   <root id="6587431012884472434">
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="6587431012884472437">
@@ -179,6 +183,22 @@
                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="6587431012884664092" />
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </root>
+  <root id="7286989617095153002">
+    <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="7286989617095153003">
+      <property name="description" nameId="tp33.1177457972041" value="Remove Dependency" />
+      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tpd4.1193733698246" resolveInfo="Dependency" />
+      <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="7286989617095153004">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7286989617095153005">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7286989617095153006">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7286989617095153028">
+              <node role="operand" roleId="tpee.1197027771414" type="tp33.MigrationScriptPart_node" typeId="tp33.1177458237937" id="7286989617095153007" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_DeleteOperation" typeId="tp25.1140133623887" id="7286989617095185024" />
             </node>
           </node>
         </node>

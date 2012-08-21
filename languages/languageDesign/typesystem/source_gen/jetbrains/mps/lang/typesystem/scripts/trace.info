@@ -45,5 +45,44 @@
     <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="13" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript" />
     <unitInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="16" startPosition="28" endLine="46" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveInequalityPriorities_MigrationScript$1" />
   </root>
+  <root nodeId="7286989617095153002">
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="12" startPosition="81" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7286989617095153006" fileName="RemoveDependencies_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="35" startPosition="42" endLine="36" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="14" startPosition="76" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="13" startPosition="65" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="11" startPosition="77" endLine="39" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveDependencies_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="35" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="35" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="68" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="20" />
+    <scopeInfo nodeId="7286989617095153005" fileName="RemoveDependencies_MigrationScript.java" startLine="31" startPosition="52" endLine="32" endPosition="41" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="35" startPosition="42" endLine="36" endPosition="21" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="14" startPosition="76" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="7286989617095153002" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="7286989617095153002" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="12" startPosition="81" endLine="38" endPosition="7" />
+    <scopeInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="11" startPosition="77" endLine="39" endPosition="3">
+      <varInfo nodeId="7286989617095153002" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveDependencies_MigrationScript" />
+    <unitInfo nodeId="7286989617095153002" fileName="RemoveDependencies_MigrationScript.java" startLine="14" startPosition="28" endLine="38" endPosition="5" unitName="jetbrains.mps.lang.typesystem.scripts.RemoveDependencies_MigrationScript$1" />
+  </root>
 </debugInfo>
 

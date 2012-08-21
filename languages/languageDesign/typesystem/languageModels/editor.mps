@@ -128,6 +128,7 @@
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.1174658326157" resolveInfo="CreateEquationStatement" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1193734047905">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="dependency" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpd4.1193733698246" resolveInfo="Dependency" />
     </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1195214383471">
