@@ -33,6 +33,26 @@ public class TestClass {
     throw new RuntimeException();
   }
 
+  public static void foreachTest() {
+    int sum = 0;
+    int[] array = {1, 2, 3};
+    for (int it : array) {
+      sum += it;
+      throw new RuntimeException();
+    }
+    System.err.println("sum = " + sum);
+  }
+
+  public static void generatedForeachTest() {
+    int sum = 0;
+    int[] array = {1, 2, 3};
+    for (int it_gen : array) {
+      sum += it_gen;
+      throw new RuntimeException();
+    }
+    System.err.println("sum = " + sum);
+  }
+
   public static void main(String[] args) {
   }
 }
