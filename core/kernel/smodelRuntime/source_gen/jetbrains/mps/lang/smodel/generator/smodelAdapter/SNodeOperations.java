@@ -333,10 +333,10 @@ public class SNodeOperations {
   }
 
   public static SNode getNextSibling(SNode node) {
-    if (node == null) {
+    if (node == null || node.getParent() == null) {
       return null;
     }
-    return ((SNode) node.getNextSibling());
+    return node.getParent().getNextChild(node);
   }
 
   public static SNode getPrevSibling(SNode node) {
