@@ -9838,7 +9838,7 @@
     <nodeInfo nodeId="1204064731338" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="32" startPosition="11" endLine="33" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="35" startPosition="97" endLine="36" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="36" startPosition="197" endLine="37" endPosition="311" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="36" startPosition="197" endLine="37" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="40" startPosition="7" endLine="41" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="41" startPosition="48" endLine="42" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1204065906120" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="42" startPosition="199" endLine="43" endPosition="311" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -9906,7 +9906,7 @@
       <varInfo nodeId="1204056354664" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="1204065906124" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="82" startPosition="52" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="37" endPosition="311">
+    <scopeInfo nodeId="1204064763142" fileName="typeof_InstanceMethodCallOperation_InferenceRule.java" startLine="34" startPosition="5" endLine="37" endPosition="312">
       <varInfo nodeId="1204064763142" varName="_info_12389875345" />
       <varInfo nodeId="1204064763142" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
