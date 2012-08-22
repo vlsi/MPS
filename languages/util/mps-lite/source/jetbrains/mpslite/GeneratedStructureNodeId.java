@@ -61,18 +61,4 @@ public class GeneratedStructureNodeId {
     sb.append(propertyDeclaration.getName());
     return new Foreign(Foreign.ID_PREFIX + sb.toString());
   }
-
-  public void changeIdsInGeneratedConcept(AbstractConceptDeclaration conceptDeclaration) {
-    conceptDeclaration.getNode().setId(createConceptNodeId(conceptDeclaration));
-    for (LinkDeclaration linkDeclaration : conceptDeclaration.getLinkDeclarations()) {
-      if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
-        linkDeclaration.getNode().setId(createChildLinkNodeId(conceptDeclaration, linkDeclaration));
-      } else {
-        linkDeclaration.getNode().setId(createReferentLinkNodeId(conceptDeclaration, linkDeclaration));
-      }
-    }
-    for (PropertyDeclaration propertyDeclaration : conceptDeclaration.getPropertyDeclarations()) {
-      propertyDeclaration.getNode().setId(createPropertyNodeId(conceptDeclaration, propertyDeclaration));
-    }
-  }
 }
