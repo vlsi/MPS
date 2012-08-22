@@ -15,14 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
-import jetbrains.mps.util.Condition;
-import org.jetbrains.mps.openapi.language.SConcept;
-
-import java.util.List;
-import java.util.Map;
 
 public class SNodeOperations {
   public static int depth(SNode sNode) {
@@ -41,60 +34,4 @@ public class SNodeOperations {
     return language == null || language.findConceptDeclaration(sNode.getConceptShortName()) == null;
   }
 
-  //todo rewrite via ISNode methods
-  public static boolean isAncestor(org.jetbrains.mps.openapi.model.SNode ancestor, org.jetbrains.mps.openapi.model.SNode node) {
-    return ((SNode) ancestor).isAncestorOf(((SNode) node));
-  }
-
-  //todo rewrite via ISNode methods
-  public static List<org.jetbrains.mps.openapi.model.SNode> getChildren(org.jetbrains.mps.openapi.model.SNode node, boolean includeAttributes) {
-    return (List) ((SNode) node).getChildren(includeAttributes);
-  }
-
-  //todo rewrite via ISNode methods
-  public static Iterable<org.jetbrains.mps.openapi.model.SNode> getDescendants(org.jetbrains.mps.openapi.model.SNode node,
-                                                                               Condition<org.jetbrains.mps.openapi.model.SNode> cond,
-                                                                               boolean includeFirst) {
-    return (Iterable) ((SNode) node).getDescendantsIterable(((Condition) cond), includeFirst);
-  }
-
-  //todo rewrite via ISNode methods
-  //todo in our code, rewrite using ancestors.where(condition) or add a custom condition to smodel language ancestor query
-  public static org.jetbrains.mps.openapi.model.SNode findParent(org.jetbrains.mps.openapi.model.SNode node, Condition<SNode> condition) {
-    return ((SNode) node).findParent(condition);
-  }
-
-  //todo rewrite via ISNode methods (concept+getProperty)
-  public static Map<String, String> getProperties(org.jetbrains.mps.openapi.model.SNode node) {
-    return ((SNode) node).getProperties();
-  }
-
-  //todo rewrite via ISNode methods
-  //todo in our code, rewrite using ancestors.where(condition) or add a custom condition to smodel language ancestor query
-  public static org.jetbrains.mps.openapi.model.SNode getDescendants(org.jetbrains.mps.openapi.model.SNode node, Condition<SNode> condition) {
-    return ((SNode) node).findParent(condition);
-  }
-
-  //todo rewrite the code using this
-  public static SConcept getConcept(String name) {
-    return new SConceptNodeAdapter(SModelUtil.findConceptDeclaration(name, GlobalScope.getInstance()));
-  }
-
-  @Deprecated //todo KILL IT! should be node.getModel!=null
-  //todo after killing it, correct migration script to return model!=null instead
-  public static boolean isRegistered(org.jetbrains.mps.openapi.model.SNode node) {
-    return ((SNode) node).isRegistered();
-  }
-
-  @Deprecated //todo KILL IT! should not be used since nodes are not passed between read actions
-  //todo after killing it, correct migration script to return false instead
-  public static boolean isDisposed(org.jetbrains.mps.openapi.model.SNode node) {
-    return ((SNode) node).isDisposed();
-  }
-
-  @Deprecated //todo KILL IT! should be node.getTopMostAncestor
-  //todo after killing it, correct migration script getTopMostAncestor
-  public static SNode getContainingRoot(org.jetbrains.mps.openapi.model.SNode node){
-    return ((SNode)node).getContainingRoot();
-  }
 }

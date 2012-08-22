@@ -37,7 +37,7 @@ public class ClosuresUtil {
     if (node == null) {
       return null;
     }
-    return ((SNode) jetbrains.mps.smodel.SNodeOperations.findParent(node, new Condition<SNode>() {
+    return ((SNode) jetbrains.mps.lang.smodel.pluginSolution.plugin.SNodeOperations.findParent(node, new Condition<SNode>() {
       public boolean met(SNode n) {
         return isClosureContextOwner(n);
       }

@@ -92,7 +92,7 @@ public class _QueriesUtil {
    */
   public static SNode create_closureContextObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     // find enclosing closure or closure context owner 
-    SNode enclosingClosureOrContextOwner = ((SNode) jetbrains.mps.smodel.SNodeOperations.findParent(nodeInsideClosure, new Condition<SNode>() {
+    SNode enclosingClosureOrContextOwner = ((SNode) jetbrains.mps.lang.smodel.pluginSolution.plugin.SNodeOperations.findParent(nodeInsideClosure, new Condition<SNode>() {
       public boolean met(SNode object) {
         if (SNodeOperations.isInstanceOf(object, "jetbrains.mps.baseLanguage.structure.Closure")) {
           return true;
