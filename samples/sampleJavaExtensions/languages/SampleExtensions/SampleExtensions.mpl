@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="org.jetbrains.mps.samples.IfAndUnless" uuid="67b828fd-8fbc-4496-b7f7-8b64ac097c62" doNotGenerateAdapters="false">
+<language namespace="org.jetbrains.mps.samples.IfAndUnless" uuid="67b828fd-8fbc-4496-b7f7-8b64ac097c62">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

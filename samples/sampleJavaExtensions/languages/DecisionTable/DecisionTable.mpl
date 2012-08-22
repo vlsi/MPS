@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="org.jetbrains.mps.samples.DecisionTable" uuid="65c13e67-09b6-4695-af88-52024b7d2027" doNotGenerateAdapters="false">
+<language namespace="org.jetbrains.mps.samples.DecisionTable" uuid="65c13e67-09b6-4695-af88-52024b7d2027">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.collections.trove" uuid="73736c50-f124-433b-b789-2828a15a0adc" generatorOutputPath="${module}/source_gen" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.baseLanguage.collections.trove" uuid="73736c50-f124-433b-b789-2828a15a0adc" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/languageAccessories" />
     <modelRoot path="${module}/languageModels" />

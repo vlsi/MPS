@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bash" uuid="4a1e4a24-105b-44ed-959c-6586fc957db3" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.bash" uuid="4a1e4a24-105b-44ed-959c-6586fc957db3">
   <models>
     <modelRoot path="${module}/languageAccessories" />
     <modelRoot path="${module}/languageModels" />

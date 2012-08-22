@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.behavior" uuid="af65afd8-f0dd-4942-87d9-63a55f2a9db1" generatorOutputPath="${module}/source_gen" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.lang.behavior" uuid="af65afd8-f0dd-4942-87d9-63a55f2a9db1" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

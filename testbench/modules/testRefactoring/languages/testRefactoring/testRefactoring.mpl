@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="testRefactoring" uuid="343e2a8b-449f-45b3-9da8-1463945cb208" doNotGenerateAdapters="false">
+<language namespace="testRefactoring" uuid="343e2a8b-449f-45b3-9da8-1463945cb208">
   <models>
     <modelRoot path="${module}/languageAccessories" />
     <modelRoot path="${module}/languageModels" />

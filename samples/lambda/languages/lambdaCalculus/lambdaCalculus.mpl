@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.samples.lambdaCalculus" uuid="7c9e2807-94ad-4afc-adf0-aaee45eb2895" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.samples.lambdaCalculus" uuid="7c9e2807-94ad-4afc-adf0-aaee45eb2895">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

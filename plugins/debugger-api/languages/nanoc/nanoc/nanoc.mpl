@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.nanoc" uuid="08ffecab-a1e5-4be9-bd87-e14140b1b0e0" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.nanoc" uuid="08ffecab-a1e5-4be9-bd87-e14140b1b0e0">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

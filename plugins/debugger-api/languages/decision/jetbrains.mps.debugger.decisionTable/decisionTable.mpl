@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.debugger.decisionTable" uuid="3a7eede3-9c22-47a0-a10b-879db14c1b68" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.debugger.decisionTable" uuid="3a7eede3-9c22-47a0-a10b-879db14c1b68">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

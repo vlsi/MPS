@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.lang.dataFlow.analyzers" uuid="97a52717-898f-4598-8150-573d9fd03868" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.lang.dataFlow.analyzers" uuid="97a52717-898f-4598-8150-573d9fd03868">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

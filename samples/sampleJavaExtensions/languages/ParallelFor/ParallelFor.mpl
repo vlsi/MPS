@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="org.jetbrains.mps.samples.ParallelFor" uuid="cb7388e8-f182-4cda-bd83-9796e8634856" doNotGenerateAdapters="false">
+<language namespace="org.jetbrains.mps.samples.ParallelFor" uuid="cb7388e8-f182-4cda-bd83-9796e8634856">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

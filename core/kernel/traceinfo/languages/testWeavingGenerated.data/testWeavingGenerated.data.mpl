@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.traceInfo.testWeavingGenerated.data" uuid="ce517356-fc9a-4e78-8606-6e7a36ff0671" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.traceInfo.testWeavingGenerated.data" uuid="ce517356-fc9a-4e78-8606-6e7a36ff0671">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

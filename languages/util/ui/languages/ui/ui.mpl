@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.ui" uuid="fb26dccf-fa54-4e9a-8ddb-b66311a34393" doNotGenerateAdapters="false">
+<language namespace="jetbrains.mps.ui" uuid="fb26dccf-fa54-4e9a-8ddb-b66311a34393">
   <models>
     <modelRoot path="${module}/languageAccessories" />
     <modelRoot path="${module}/languageModels" />
