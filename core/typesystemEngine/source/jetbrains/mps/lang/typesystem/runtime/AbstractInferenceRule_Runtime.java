@@ -22,7 +22,7 @@ public abstract class AbstractInferenceRule_Runtime implements InferenceRule_Run
 
   @Override
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    return new IsApplicableStatus(isApplicable(argument), null);
+    return new IsApplicableStatus(false, null);
   }
 
   @Override

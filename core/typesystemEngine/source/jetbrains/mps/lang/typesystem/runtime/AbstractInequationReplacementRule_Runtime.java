@@ -30,7 +30,6 @@ public abstract class AbstractInequationReplacementRule_Runtime extends Inequati
   public boolean isApplicableSupertype(SNode node) {
     return false;
   }
-
   //todo generate this method
 
   public void processInequation(SNode subtype, SNode supertype, EquationInfo errorInfo, TypeCheckingContext typeCheckingContext, IsApplicable2Status status, boolean weak, boolean isLessThan) {

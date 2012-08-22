@@ -22,7 +22,7 @@ public abstract class AbstractNonTypesystemRule_Runtime implements NonTypesystem
 
   @Override
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    return new IsApplicableStatus(isApplicable(argument), null);
+    return new IsApplicableStatus(false, null);
   }
 
   @Override
