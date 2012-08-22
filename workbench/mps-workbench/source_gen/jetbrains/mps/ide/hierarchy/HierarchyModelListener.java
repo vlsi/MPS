@@ -20,10 +20,6 @@ public class HierarchyModelListener extends SModelAdapter {
 
   private void collectNodes(MPSTreeNode target, List<SNode> list) {
     for (MPSTreeNode child : target) {
-      if (child.getUserObject() instanceof INodeAdapter) {
-        INodeAdapter nodeAdapter = (INodeAdapter) child.getUserObject();
-        list.add(nodeAdapter.getNode());
-      }
       collectNodes(child, list);
     }
   }

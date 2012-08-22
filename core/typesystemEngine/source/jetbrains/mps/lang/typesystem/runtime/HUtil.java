@@ -43,12 +43,6 @@ public class HUtil {
     }
   }
 
-  public static <T extends INodeAdapter> T copyIfNecessary(T adapter) {
-    if (adapter == null) return adapter;
-    SNode node = adapter.getNode();
-    return (T) BaseAdapter.fromNode(copyIfNecessary(node));
-  }
-
   public static SNode copyIfNecessary(SNode node, TypeCheckingContext typeCheckingContext) {
     if (node != null && (node.getParent() != null || node.isRoot())) {
 

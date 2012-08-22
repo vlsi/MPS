@@ -111,9 +111,6 @@ public class Message implements IMessage {
     boolean error = true;
     if (obj instanceof SNode) {
       myHintObject = new SNodePointer(((SNode) obj));
-    } else if (obj instanceof INodeAdapter) {
-      SNode node = ((INodeAdapter) obj).getNode();
-      myHintObject = new SNodePointer(node);
     } else if (obj instanceof SModel) {
       myHintObject = ((SModel) obj).getSModelReference();
     } else if (obj instanceof IModule) {
