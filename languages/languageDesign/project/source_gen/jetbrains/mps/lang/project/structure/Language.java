@@ -13,7 +13,6 @@ public class Language extends Module {
   public static final String concept = "jetbrains.mps.lang.project.structure.Language";
   public static final String GEN_PATH = "genPath";
   public static final String LANGUAGE_PATH = "languagePath";
-  public static final String DO_NOT_GENERATE_ADAPTERS = "doNotGenerateAdapters";
   public static final String GENERATOR = "generator";
   public static final String ACCESSORY_MODELS = "accessoryModels";
   public static final String EXTENDED_LANGUAGES = "extendedLanguages";
@@ -39,14 +38,6 @@ public class Language extends Module {
 
   public void setLanguagePath(String value) {
     this.setProperty(Language.LANGUAGE_PATH, value);
-  }
-
-  public boolean getDoNotGenerateAdapters() {
-    return this.getBooleanProperty(Language.DO_NOT_GENERATE_ADAPTERS);
-  }
-
-  public void setDoNotGenerateAdapters(boolean value) {
-    this.setBooleanProperty(Language.DO_NOT_GENERATE_ADAPTERS, value);
   }
 
   public int getGeneratorsCount() {

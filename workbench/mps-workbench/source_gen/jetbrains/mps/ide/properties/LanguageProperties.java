@@ -22,7 +22,6 @@ public class LanguageProperties extends ModuleProperties {
   private List<ModuleReference> myRuntimeModules;
   private List<ClassPathEntry> myRuntimeClassPaths;
   private List<ModelRoot> myRuntimeStubModels;
-  private boolean myGenerateAdapters = false;
   private List<StubSolution> myStubSolutions;
 
   public LanguageProperties() {
@@ -66,21 +65,12 @@ public class LanguageProperties extends ModuleProperties {
     return myRuntimeStubModels;
   }
 
-  public boolean isGenerateAdapters() {
-    return myGenerateAdapters;
-  }
-
-  public void setGenerateAdapters(boolean doNotGenerateAdapters) {
-    myGenerateAdapters = doNotGenerateAdapters;
-  }
-
   @Override
   public void loadFrom(ModuleDescriptor descriptor) {
     assert descriptor instanceof LanguageDescriptor;
     super.loadFrom(descriptor);
     LanguageDescriptor d = (LanguageDescriptor) descriptor;
     myGenPath = d.getGenPath();
-    myGenerateAdapters = !(d.isDoNotGenerateAdapters());
     myAccessoryModels.addAll(d.getAccessoryModels());
     myExtendedLanguages.addAll(d.getExtendedLanguages());
     myRuntimeModules.addAll(d.getRuntimeModules());
@@ -104,7 +94,6 @@ public class LanguageProperties extends ModuleProperties {
     super.saveTo(descriptor);
     LanguageDescriptor d = (LanguageDescriptor) descriptor;
     d.setGenPath(myGenPath);
-    d.setDoNotGenerateAdapters(!(myGenerateAdapters));
     d.getAccessoryModels().clear();
     d.getAccessoryModels().addAll(myAccessoryModels);
     d.getExtendedLanguages().clear();

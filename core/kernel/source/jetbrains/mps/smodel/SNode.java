@@ -1646,7 +1646,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
     if (modelDescriptor == null) return true;
     IModule module = modelDescriptor.getModule();
-    return !(module instanceof Language) || ((Language) module).isGenerateAdapters();
+    return !(module instanceof Language);
   }
 
   void clearAdapter() {

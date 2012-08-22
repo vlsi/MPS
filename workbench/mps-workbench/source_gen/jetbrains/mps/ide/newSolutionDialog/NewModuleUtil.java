@@ -146,7 +146,6 @@ public class NewModuleUtil {
     LanguageDescriptor languageDescriptor = new LanguageDescriptor();
     languageDescriptor.setNamespace(languageNamespace);
     languageDescriptor.setId(ModuleId.regular());
-    languageDescriptor.setDoNotGenerateAdapters(true);
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
     if (languageModels.exists()) {
       throw new IllegalStateException("Trying to create a language in an existing language's directory");

@@ -148,22 +148,6 @@
             <property name="flag" nameId="tpc2.1186414551515" value="true" />
           </node>
         </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2984820515650742604">
-          <property name="text" nameId="tpc2.1073389577007" value="do not generate adapters" />
-          <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="269654322145162290" resolveInfo="KeyWord" />
-        </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="2984820515650742605">
-          <property name="text" nameId="tpc2.1073389577007" value=":" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PunctuationLeftStyleClassItem" typeId="tpc2.1233758997495" id="2984820515650742606">
-            <property name="flag" nameId="tpc2.1186414551515" value="true" />
-          </node>
-        </node>
-        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2984820515650742607">
-          <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="hypd.269654322145263494" resolveInfo="doNotGenerateAdapters" />
-          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="2984820515650742608">
-            <property name="flag" nameId="tpc2.1186414551515" value="true" />
-          </node>
-        </node>
         <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1057680424125015353">
           <property name="text" nameId="tpc2.1073389577007" value="generator output" />
           <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="269654322145162290" resolveInfo="KeyWord" />

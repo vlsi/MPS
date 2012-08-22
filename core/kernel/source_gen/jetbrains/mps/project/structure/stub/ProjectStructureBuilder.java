@@ -60,7 +60,6 @@ public abstract class ProjectStructureBuilder {
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + true);
-    SPropertyOperations.set(result, "doNotGenerateAdapters", "" + source.isDoNotGenerateAdapters());
     SPropertyOperations.set(result, "genPath", source.getGenPath());
     SPropertyOperations.set(result, "languagePath", myFile.getPath());
     for (SModelReference ref : source.getAccessoryModels()) {

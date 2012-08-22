@@ -39,11 +39,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 
-/**
- * Added on Oct 16, 2010
- *
- * @author Evgeny Gerashchenko
- */
 public class ProjectFactory {
   private ProjectOptions myOptions;
   private Project myCurrentProject;
@@ -188,8 +183,7 @@ public class ProjectFactory {
     Language language = NewModuleUtil.createNewLanguage(myOptions.getLanguageNamespace(), descriptorFile, mpsProject);
     LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     languageDescriptor.getUsedDevkits().add(LanguageDesign_DevKit.MODULE_REFERENCE);
-    languageDescriptor.setDoNotGenerateAdapters(true);
-    
+
     LanguageAspect.STRUCTURE.createNew(language, false);
     LanguageAspect.EDITOR.createNew(language, false);
     LanguageAspect.CONSTRAINTS.createNew(language, false);

@@ -171,10 +171,6 @@
     </node>
   </root>
   <root id="6370754048397540895">
-    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="269654322145263494">
-      <property name="name" nameId="tpck.1169194664001" value="doNotGenerateAdapters" />
-      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="269654322145296906">
       <property name="name" nameId="tpck.1169194664001" value="genPath" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />

@@ -563,10 +563,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
     return myLanguageDescriptor.getRuntimeStubModels();
   }
 
-  public boolean isGenerateAdapters() {
-    return !myLanguageDescriptor.isDoNotGenerateAdapters();
-  }
-
   protected Collection<ModelRoot> getStubModelEntriesToIncludeOrExclude() {
     LinkedHashSet<ModelRoot> res = new LinkedHashSet<ModelRoot>();
     res.addAll(super.getStubModelEntriesToIncludeOrExclude());

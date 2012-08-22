@@ -56,12 +56,12 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_3345876218930170217(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    return inputLanguage == null || inputLanguage.isGenerateAdapters();
+    return inputLanguage == null;
   }
 
   public static boolean baseMappingRule_Condition_3345876218930171382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     Language inputLanguage = QueriesUtil.getInputLanguage(_context.getOriginalInputModel());
-    return inputLanguage == null || inputLanguage.isGenerateAdapters();
+    return inputLanguage == null;
   }
 
   public static boolean baseMappingRule_Condition_1167266219124(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

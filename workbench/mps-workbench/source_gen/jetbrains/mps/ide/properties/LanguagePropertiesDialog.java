@@ -6,9 +6,6 @@ import jetbrains.mps.workbench.dialogs.project.BasePropertiesDialog;
 import jetbrains.mps.smodel.Language;
 import com.intellij.openapi.Disposable;
 import jetbrains.mps.smodel.IOperationContext;
-import javax.swing.JPanel;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.Project;
@@ -28,12 +25,6 @@ public class LanguagePropertiesDialog extends BasePropertiesDialog {
     super(language.getModuleFqName() + " Properties", operationContext);
     myLanguage = language;
     collectLanguageProperties();
-  }
-
-  public JPanel createCheckboxPanel() {
-    List<StandardComponents.CheckboxDescriptor> list = new ArrayList<StandardComponents.CheckboxDescriptor>();
-    list.add(new StandardComponents.CheckboxDescriptor(myProperties, LanguageProperties.GENERATE_ADAPTERS, "Generate Adapters (deprecated, will be removed in 3.0)"));
-    return StandardComponents.createCheckboxPanel(this, list);
   }
 
   private void collectLanguageProperties() {

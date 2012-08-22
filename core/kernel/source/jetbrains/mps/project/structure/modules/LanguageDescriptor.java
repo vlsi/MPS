@@ -29,7 +29,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private Set<ModuleReference> myRuntimeModules;
   private Set<ModelRoot> myRuntimeStubModels;
   private Set<StubSolution> myStubSolutions;
-  private boolean myDoNotGenerateAdapters = false;
 
   public LanguageDescriptor() {
     super();
@@ -71,14 +70,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public Set<StubSolution> getStubSolutions() {
     return myStubSolutions;
-  }
-
-  public boolean isDoNotGenerateAdapters() {
-    return myDoNotGenerateAdapters;
-  }
-
-  public void setDoNotGenerateAdapters(boolean doNotGenerateAdapters) {
-    myDoNotGenerateAdapters = doNotGenerateAdapters;
   }
 
   @Override

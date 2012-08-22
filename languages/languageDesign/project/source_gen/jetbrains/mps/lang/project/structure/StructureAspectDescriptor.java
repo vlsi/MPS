@@ -20,7 +20,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Generator", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"generatorUID", "generateTemplates"}, new String[]{});
       case 2:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"doNotGenerateAdapters", "genPath", "languagePath"}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.Language", "jetbrains.mps.lang.project.structure.Module", false, new String[]{"jetbrains.mps.lang.project.structure.Module"}, new String[]{"genPath", "languagePath"}, new String[]{});
       case 3:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.project.structure.MappingConfigExternalRef", "jetbrains.mps.lang.project.structure.MappingConfigRefBase", false, new String[]{"jetbrains.mps.lang.project.structure.MappingConfigRefBase"}, new String[]{}, new String[]{});
       case 4:
