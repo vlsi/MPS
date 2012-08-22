@@ -31,22 +31,12 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import java.awt.Font;
 
-/**
- * Igor Alshannikov
- * May 5, 2006
- */
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private static final Logger LOG = Logger.getLogger(AbstractNodeSubstituteAction.class);
 
   private SNode mySourceNode;
   private Object myParameterObject;
   private SNode myOutputConcept;    // todo: this class is still too abstract to have 'output concept'
-
-  @Deprecated
-  protected AbstractNodeSubstituteAction(Object parameterObject, SNode sourceNode) {
-    myParameterObject = parameterObject;
-    mySourceNode = sourceNode;
-  }
 
   protected AbstractNodeSubstituteAction(SNode outputConcept, Object parameterObject, SNode sourceNode) {
     myOutputConcept = outputConcept;
