@@ -93,9 +93,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (myParameterObject instanceof SNode) {
       return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation, visible);
     }
-    if (myParameterObject instanceof INodeAdapter) {
-      return NodePresentationUtil.matchingText(((INodeAdapter) myParameterObject).getNode(), referent_presentation, visible);
-    }
     return "" + myParameterObject;
   }
 
@@ -103,18 +100,12 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (myParameterObject instanceof SNode) {
       return NodePresentationUtil.descriptionText((SNode) myParameterObject, referent_presentation);
     }
-    if (myParameterObject instanceof INodeAdapter) {
-      return NodePresentationUtil.descriptionText( ((INodeAdapter) myParameterObject).getNode(), referent_presentation);
-    }
     return "";
   }
 
   public Icon getIconFor(String pattern, boolean referent_presentation) {
     if (myParameterObject instanceof SNode) {
       return NodeIconUtil.getIcon((SNode) myParameterObject, referent_presentation);
-    }
-    if (myParameterObject instanceof INodeAdapter) {
-      return NodeIconUtil.getIcon(((INodeAdapter) myParameterObject).getNode(), referent_presentation);
     }
     return IdeIcons.DEFAULT_ICON;
   }
@@ -161,7 +152,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
             EditorCell selectedCell = context.getNodeEditorComponent().getSelectedCell();
             if (selectedCell != null) {
               selectedCell.getContainingBigCell().synchronizeViewWithModel();
-            }           
+            }
 
             // put caret at the end of text
             if (selectedCell instanceof EditorCell_Label && ((EditorCell_Label) selectedCell).isEditable()) {
