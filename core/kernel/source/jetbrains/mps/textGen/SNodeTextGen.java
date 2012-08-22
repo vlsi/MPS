@@ -21,13 +21,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.JavaNameUtil;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * Author: Sergey Dmitriev
- * Created Nov 13, 2003
- */
-public abstract class SNodeTextGen<BA extends INodeAdapter> {
-  private static final Logger LOG = Logger.getLogger(SNodeTextGen.class);
-
+public abstract class SNodeTextGen {
   private TextGenBuffer myBuffer;
   private IOperationContext myContext;
   private SNode mySNode;

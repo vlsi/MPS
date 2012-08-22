@@ -21,10 +21,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Igor Alshannikov
- * Sep 21, 2007
- */
 public class SNodePointer {
   private static SModelRepository ourSModelRepository = null;
 
@@ -34,10 +30,6 @@ public class SNodePointer {
 
   public SNodePointer(String modelUID, String nodeId) {
     this(SModelReference.fromString(modelUID), SNodeId.fromString(nodeId));
-  }
-
-  public SNodePointer(@NotNull INodeAdapter node) {
-    this(node.getModel().getSModelReference(), node.getNode().getSNodeId());
   }
 
   public SNodePointer(SNode node) {

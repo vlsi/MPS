@@ -387,15 +387,6 @@ public class NameUtil {
     return compactNamespace(node.getModel().getLongName()) + "." + name;
   }
 
-  public static String compactNodeFQName(INodeAdapter a) {
-    return compactNodeFQName(BaseAdapter.fromAdapter(a));
-  }
-
-
-  public static String conceptFQNameByAdapterClass(Class<? extends BaseAdapter> cls) {
-    return cls.getName();
-  }
-
   public static String escapeInvisibleCharacters(String s) {
     return escapeString(s, ESCAPE_INVISIBLE_CHARS_MAP);
   }
@@ -428,7 +419,6 @@ public class NameUtil {
     }
     return c + "";
   }
-
 
   public static String toSystemDependentPath(String path) {
     path = path.replace('\\', File.separatorChar);
