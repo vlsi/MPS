@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
@@ -113,7 +114,7 @@ public class TraceInfoUtil {
               finished = true;
               for (TraceablePositionInfo otherPos : Sequence.fromIterable(sameSpacePositions)) {
                 SNode otherNode = model.getNodeById(otherPos.getNodeId());
-                if ((otherNode != null) && otherNode.isDescendantOf(currentNode, false)) {
+                if ((otherNode != null) && ListSequence.fromList(SNodeOperations.getAncestors(otherNode, null, false)).contains(currentNode)) {
                   currentNode = otherNode;
                   finished = false;
                   break;

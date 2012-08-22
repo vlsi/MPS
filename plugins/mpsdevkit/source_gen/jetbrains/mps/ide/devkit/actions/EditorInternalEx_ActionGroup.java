@@ -14,7 +14,6 @@ public class EditorInternalEx_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.TestNodePath_Action");
       EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.CellProperties_Action");
       EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.ShowCellInExplorer_Action");
       EditorInternalEx_ActionGroup.this.addAction("jetbrains.mps.ide.devkit.actions.PrintNodeID_Action");

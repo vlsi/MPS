@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.UnregisteredNodes;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.IterableUtil;
 
 public class CalcSNodeStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -88,19 +89,19 @@ public class CalcSNodeStatistic_Action extends BaseAction {
           nodesCount++;
 
           // calc stat 
-          int propertiesCount = node.getPropertyNames().size();
+          int propertiesCount = IterableUtil.asCollection(node.getConcept().getProperties()).size();
           MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ?
             MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 :
             1
           ));
 
-          int refsCount = node.getReferencesArray().length;
+          int refsCount = node.getReferences().size();
           MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ?
             MapSequence.fromMap(refsStatistic).get(refsCount) + 1 :
             1
           ));
 
-          int childrenCount = node.getChildCount();
+          int childrenCount = IterableUtil.asCollection(node.getChildren()).size();
           MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ?
             MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 :
             1
