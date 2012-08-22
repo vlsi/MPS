@@ -21,9 +21,6 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.List;
 
 public interface ISubtypingRule_Runtime extends Rule_Runtime {
-  @Deprecated
-  List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext);
-
   List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status);
 
   boolean isWeak();
