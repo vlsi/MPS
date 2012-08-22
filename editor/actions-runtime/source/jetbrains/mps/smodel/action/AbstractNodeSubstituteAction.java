@@ -104,7 +104,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation, visible);
     }
     if (myParameterObject instanceof INodeAdapter) {
-      return NodePresentationUtil.matchingText((INodeAdapter) myParameterObject, referent_presentation, visible);
+      return NodePresentationUtil.matchingText(((INodeAdapter) myParameterObject).getNode(), referent_presentation, visible);
     }
     return "" + myParameterObject;
   }
@@ -114,7 +114,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       return NodePresentationUtil.descriptionText((SNode) myParameterObject, referent_presentation);
     }
     if (myParameterObject instanceof INodeAdapter) {
-      return NodePresentationUtil.descriptionText((INodeAdapter) myParameterObject, referent_presentation);
+      return NodePresentationUtil.descriptionText( ((INodeAdapter) myParameterObject).getNode(), referent_presentation);
     }
     return "";
   }

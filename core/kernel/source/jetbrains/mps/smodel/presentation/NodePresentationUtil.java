@@ -60,15 +60,7 @@ public class NodePresentationUtil {
   }
 
   public static String matchingText(SNode node, boolean referent_presentation) {
-    return matchingText(node.getAdapter(), referent_presentation, true);
-  }
-
-  public static String matchingText(INodeAdapter nodeAdapter, boolean referent_presentation) {
-    return matchingText(nodeAdapter, referent_presentation, true);
-  }
-
-  public static String matchingText(INodeAdapter nodeAdapter, boolean referent_presentation, boolean visible) {
-    return matchingText(BaseAdapter.fromAdapter(nodeAdapter), referent_presentation, visible);
+    return matchingText(node, referent_presentation, true);
   }
 
   public static String matchingText(SNode node, boolean referent_presentation, boolean visible) {
@@ -93,10 +85,6 @@ public class NodePresentationUtil {
 
   public static String descriptionText(SNode node) {
     return descriptionText(node, false);
-  }
-
-  public static String descriptionText(INodeAdapter nodeAdapter, boolean referent_presentation) {
-    return descriptionText(BaseAdapter.fromAdapter(nodeAdapter), referent_presentation);
   }
 
   public static String descriptionText(SNode node, boolean referent_presentation) {

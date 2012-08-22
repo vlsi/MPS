@@ -999,19 +999,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     myStructureModificationHistory = history;
   }
 
-  @Deprecated
-  //use roots() instead
-  public <N extends INodeAdapter> List<N> getRootsAdapters(@NotNull Class<N> cls) {
-    List<N> result = new ArrayList<N>();
-    for (SNode root : roots()) {
-      INodeAdapter a = root.getAdapter();
-      if (cls.isInstance(a)) {
-        result.add((N) a);
-      }
-    }
-    return result;
-  }
-
   @Nullable
   public SNode getNodeById(String idString) {
     SNodeId nodeId = SNodeId.fromString(idString);

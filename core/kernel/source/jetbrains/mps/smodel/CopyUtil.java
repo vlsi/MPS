@@ -114,10 +114,6 @@ public final class CopyUtil {
     return result;
   }
 
-  public static <BA extends BaseAdapter> BA copy(BA node) {
-    return (BA) copy(node.getNode()).getAdapter();
-  }
-
   public static SNode copy(SNode node) {
     return copy(node, new HashMap<SNode, SNode>(), true);
   }
