@@ -22,8 +22,5 @@ public interface ICheckingRule_Runtime extends Rule_Runtime {
 
   public void applyRule(SNode argument, TypeCheckingContext typeCheckingContext, IsApplicableStatus status);
 
-  @Deprecated
-  public abstract void applyRule(SNode argument, TypeCheckingContext typeCheckingContext);
-
   public boolean overrides();
 }

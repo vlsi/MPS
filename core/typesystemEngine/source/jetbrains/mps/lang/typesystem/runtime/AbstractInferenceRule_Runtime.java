@@ -27,15 +27,5 @@ public abstract class AbstractInferenceRule_Runtime implements InferenceRule_Run
 
   @Override
   public void applyRule(SNode argument, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    applyRule(argument, typeCheckingContext);
-  }
-
-  @Deprecated
-  public boolean isApplicable(SNode argument) {
-    return false;
-  }
-
-  @Deprecated
-  public void applyRule(SNode argument, TypeCheckingContext typeCheckingContext) {
   }
 }
