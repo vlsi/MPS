@@ -10,21 +10,19 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.scope.ErrorScope;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.scope.ScopeAdapter;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.scope.ErrorScope;
+import jetbrains.mps.scope.ScopeAdapter;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.util.NameUtil;
-
-import java.util.ArrayList;
-import java.util.List;
+import jetbrains.mps.smodel.SReference;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.getLogger(SNodeOperations.class);
