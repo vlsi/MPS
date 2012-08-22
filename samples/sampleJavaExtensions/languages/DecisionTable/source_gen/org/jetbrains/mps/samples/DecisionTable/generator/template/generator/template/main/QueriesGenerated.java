@@ -10,7 +10,6 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -55,7 +54,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_3863300516938171105(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode t = SNodeOperations.getAncestor(_context.getNode(), "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", false, false);
     SNode rowHeader = _context.getNode();
-    SNode colHeader = (SNode) ((Expression) SNodeOperations.getAdapter(_context.getNode())).getUserObject("colHeader");
+    SNode colHeader = (SNode) _context.getNode().getUserObject("colHeader");
     return ListSequence.fromList(SLinkOperations.getTargets(t, "resultValues", true)).getElement(SNodeOperations.getIndexInParent(rowHeader) * ListSequence.fromList(SLinkOperations.getTargets(t, "colHeaders", true)).count() + SNodeOperations.getIndexInParent(colHeader));
   }
 
@@ -95,7 +94,7 @@ public class QueriesGenerated {
     List<SNode> rowHeaders = SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", false, false), "rowHeaders", true);
     ListSequence.fromList(rowHeaders).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        ((Expression) SNodeOperations.getAdapter(it)).putUserObject("colHeader", _context.getNode());
+        it.putUserObject("colHeader", _context.getNode());
       }
     });
     return rowHeaders;
