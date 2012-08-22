@@ -98,8 +98,11 @@ public class InstanceMethodDeclaration_Behavior {
     if (ClassifierScopeUtils.isHierarchyCyclic(interfaceNode)) {
       return new EmptyScope();
     }
-
-    return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromIterable(Sequence.fromArray(extendsInterfaces)).concat(Sequence.fromIterable(Sequence.fromArray(new SNode[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")}))));
+    if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
+      return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromIterable(Sequence.fromArray(extendsInterfaces)).concat(Sequence.fromIterable(Sequence.fromArray(new SNode[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object")}))));
+    } else {
+      return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromArray(extendsInterfaces));
+    }
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {
