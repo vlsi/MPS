@@ -107,7 +107,7 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
   }
 
   public void setInitialValue(SNode initialValue) {
-    myHierarchyTree.selectNode(myHierarchyTree.findNodeWith(initialValue.getAdapter()));
+    myHierarchyTree.selectNode(myHierarchyTree.findNodeWith(initialValue));
   }
 
   public SNode submit() throws InvalidInputValueException {
