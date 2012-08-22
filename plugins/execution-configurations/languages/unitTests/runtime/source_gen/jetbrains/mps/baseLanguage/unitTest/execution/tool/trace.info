@@ -1762,29 +1762,32 @@
     <nodeInfo nodeId="3575782568432724216" fileName="TestCaseTreeNode.java" startLine="31" startPosition="25" endLine="32" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575782568432724224" fileName="TestCaseTreeNode.java" startLine="34" startPosition="7" endLine="35" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3575782568432724230" fileName="TestCaseTreeNode.java" startLine="39" startPosition="39" endLine="40" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432724237" fileName="TestCaseTreeNode.java" startLine="43" startPosition="29" endLine="44" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3575782568432724253" fileName="TestCaseTreeNode.java" startLine="47" startPosition="36" endLine="48" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3575782568432724259" fileName="TestCaseTreeNode.java" startLine="52" startPosition="33" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432724237" fileName="TestCaseTreeNode.java" startLine="45" startPosition="25" endLine="46" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432724253" fileName="TestCaseTreeNode.java" startLine="51" startPosition="36" endLine="52" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3575782568432724259" fileName="TestCaseTreeNode.java" startLine="56" startPosition="33" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3575782568432724145" fileName="TestCaseTreeNode.java" startLine="16" startPosition="56" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestCase" />
     <nodeInfo nodeId="3575782568432724214" fileName="TestCaseTreeNode.java" startLine="30" startPosition="57" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3575782568432724233" fileName="TestCaseTreeNode.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doubleClick#()V" />
-    <nodeInfo nodeId="3575782568432724249" fileName="TestCaseTreeNode.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToggleClickCount#()I" />
+    <nodeInfo nodeId="1899166000560864743" fileName="TestCaseTreeNode.java" startLine="44" startPosition="58" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="3575782568432724249" fileName="TestCaseTreeNode.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getToggleClickCount#()I" />
     <nodeInfo nodeId="3575782568432724213" fileName="TestCaseTreeNode.java" startLine="29" startPosition="72" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3575782568432724226" fileName="TestCaseTreeNode.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActionGroup#()Lcom/intellij/openapi/actionSystem/ActionGroup;" />
-    <nodeInfo nodeId="3575782568432724255" fileName="TestCaseTreeNode.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserObject#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="1899166000560864742" fileName="TestCaseTreeNode.java" startLine="43" startPosition="29" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3575782568432724255" fileName="TestCaseTreeNode.java" startLine="54" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserObject#()Ljava/lang/Object;" />
     <nodeInfo nodeId="3575782568432724149" fileName="TestCaseTreeNode.java" startLine="19" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestCaseTreeNode#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)V" />
+    <nodeInfo nodeId="3575782568432724233" fileName="TestCaseTreeNode.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doubleClick#()V" />
     <nodeInfo nodeId="3575782568432724205" fileName="TestCaseTreeNode.java" startLine="27" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassName#()Ljava/lang/String;" />
     <scopeInfo nodeId="3575782568432724215" fileName="TestCaseTreeNode.java" startLine="31" startPosition="25" endLine="32" endPosition="49" />
     <scopeInfo nodeId="3575782568432724229" fileName="TestCaseTreeNode.java" startLine="39" startPosition="39" endLine="40" endPosition="94" />
-    <scopeInfo nodeId="3575782568432724236" fileName="TestCaseTreeNode.java" startLine="43" startPosition="29" endLine="44" endPosition="103" />
-    <scopeInfo nodeId="3575782568432724252" fileName="TestCaseTreeNode.java" startLine="47" startPosition="36" endLine="48" endPosition="14" />
-    <scopeInfo nodeId="3575782568432724258" fileName="TestCaseTreeNode.java" startLine="52" startPosition="33" endLine="53" endPosition="22" />
+    <scopeInfo nodeId="1899166000560864744" fileName="TestCaseTreeNode.java" startLine="45" startPosition="25" endLine="46" endPosition="107" />
+    <scopeInfo nodeId="3575782568432724252" fileName="TestCaseTreeNode.java" startLine="51" startPosition="36" endLine="52" endPosition="14" />
+    <scopeInfo nodeId="3575782568432724258" fileName="TestCaseTreeNode.java" startLine="56" startPosition="33" endLine="57" endPosition="22" />
     <scopeInfo nodeId="3575782568432724214" fileName="TestCaseTreeNode.java" startLine="30" startPosition="57" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3575782568432724233" fileName="TestCaseTreeNode.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="3575782568432724249" fileName="TestCaseTreeNode.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
+    <scopeInfo nodeId="1899166000560864743" fileName="TestCaseTreeNode.java" startLine="44" startPosition="58" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="3575782568432724249" fileName="TestCaseTreeNode.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="3575782568432724156" fileName="TestCaseTreeNode.java" startLine="20" startPosition="108" endLine="25" endPosition="85" />
     <scopeInfo nodeId="3575782568432724226" fileName="TestCaseTreeNode.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="3575782568432724255" fileName="TestCaseTreeNode.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="3575782568432724236" fileName="TestCaseTreeNode.java" startLine="43" startPosition="29" endLine="48" endPosition="7" />
+    <scopeInfo nodeId="3575782568432724255" fileName="TestCaseTreeNode.java" startLine="54" startPosition="0" endLine="59" endPosition="0" />
     <scopeInfo nodeId="3575782568432724149" fileName="TestCaseTreeNode.java" startLine="19" startPosition="0" endLine="26" endPosition="3">
       <varInfo nodeId="3575782568432724150" varName="operationContext" />
       <varInfo nodeId="3575782568432724153" varName="testCase" />
@@ -1792,9 +1795,11 @@
     <scopeInfo nodeId="3575782568432724208" fileName="TestCaseTreeNode.java" startLine="28" startPosition="32" endLine="35" endPosition="27">
       <varInfo nodeId="3575782568432724210" varName="className" />
     </scopeInfo>
+    <scopeInfo nodeId="3575782568432724233" fileName="TestCaseTreeNode.java" startLine="42" startPosition="0" endLine="50" endPosition="0" />
     <scopeInfo nodeId="3575782568432724205" fileName="TestCaseTreeNode.java" startLine="27" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="3575782568432724144" fileName="TestCaseTreeNode.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode" />
+    <unitInfo nodeId="3575782568432724144" fileName="TestCaseTreeNode.java" startLine="16" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode" />
     <unitInfo nodeId="3575782568432724214" fileName="TestCaseTreeNode.java" startLine="30" startPosition="45" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode$1" />
+    <unitInfo nodeId="1899166000560864743" fileName="TestCaseTreeNode.java" startLine="44" startPosition="46" endLine="48" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.execution.tool.TestCaseTreeNode$2" />
   </root>
   <root nodeId="3575782568432724266">
     <nodeInfo nodeId="3575782568432724518" fileName="BaseTestOccurenceNavigator.java" startLine="12" startPosition="103" endLine="13" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestTree" />
