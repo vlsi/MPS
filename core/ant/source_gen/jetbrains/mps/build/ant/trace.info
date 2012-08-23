@@ -1101,6 +1101,7 @@
       <varInfo nodeId="4003657351907888028" varName="modules" />
     </scopeInfo>
     <unitInfo nodeId="1076338101818482910" fileName="MpsWorker.java" startLine="246" startPosition="41" endLine="50" endPosition="0" />
+    <unitInfo nodeId="4003657351907886909" fileName="MpsWorker.java" startLine="50" startPosition="0" endLine="497" endPosition="0" unitName="jetbrains.mps.build.ant.MpsWorker" />
     <unitInfo nodeId="4003657351907887444" fileName="MpsWorker.java" startLine="131" startPosition="46" endLine="137" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$1" />
     <unitInfo nodeId="4003657351907887458" fileName="MpsWorker.java" startLine="142" startPosition="46" endLine="146" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$2" />
     <unitInfo nodeId="4003657351907888070" fileName="MpsWorker.java" startLine="235" startPosition="68" endLine="239" endPosition="5" unitName="jetbrains.mps.build.ant.MpsWorker$3" />
