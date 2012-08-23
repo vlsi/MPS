@@ -6,7 +6,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.Collection;
-import jetbrains.mps.smodel.INodeAdapter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;
@@ -18,14 +17,10 @@ public class SimpleSearchScope extends AbstractSearchScope {
     this(((Collection) nodes));
   }
 
-  public SimpleSearchScope(Collection nodes) {
+  public SimpleSearchScope(Collection<SNode> nodes) {
     myNodes = new LinkedHashSet<SNode>();
-    for (Object node : nodes) {
-      if (node instanceof SNode) {
-        myNodes.add((SNode) node);
-      } else {
-        myNodes.add(((INodeAdapter) node).getNode());
-      }
+    for (SNode node : nodes) {
+      myNodes.add(node);
     }
   }
 
