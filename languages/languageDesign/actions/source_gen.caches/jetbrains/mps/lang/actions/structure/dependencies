@@ -202,6 +202,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.actions.structure.MenuBuilderPart" />
     <classNode dependClassName="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery" />
     <classNode dependClassName="jetbrains.mps.lang.structure.structure.ConceptDeclaration" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
