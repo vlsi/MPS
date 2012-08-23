@@ -6,12 +6,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.generator.template.BaseMappingRuleContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Behavior;
@@ -28,6 +30,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.TemplateFragmentContext;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -40,6 +43,21 @@ public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_3125857749401203974(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).isNotEmpty();
+  }
+
+  public static boolean baseMappingRule_Condition_1167266219124(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
+    return PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(type);
+  }
+
+  public static boolean baseMappingRule_Condition_1167266685049(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
+    return PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(type);
+  }
+
+  public static boolean baseMappingRule_Condition_1167266687532(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
+    SNode type = SLinkOperations.getTarget(_context.getNode(), "memberDataType", false);
+    return PrimitiveDataTypeDeclaration_Behavior.call_isInteger_1220268780075(type);
   }
 
   public static Object propertyMacro_GetPropertyValue_1174698175154(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -179,7 +197,7 @@ public class QueriesGenerated {
       SPropertyOperations.set(string, "value", superConcept);
       return string;
     } else {
-      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a23().createNode();
+      return new QueriesGenerated.QuotationClass_x583g4_a0a0a0a53().createNode();
     }
   }
 
@@ -324,8 +342,20 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static class QuotationClass_x583g4_a0a0a0a23 {
-    public QuotationClass_x583g4_a0a0a0a23() {
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043830800(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043918082(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043927698(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "javaClass");
+  }
+
+  public static class QuotationClass_x583g4_a0a0a0a53 {
+    public QuotationClass_x583g4_a0a0a0a53() {
     }
 
     public SNode createNode() {
