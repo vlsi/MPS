@@ -73,8 +73,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   @NotNull
   private String myConceptFqName;
 
-  private BaseAdapter myAdapter;
-
   public SNode(SModel model, @NotNull String conceptFqName, boolean callIntern) {
     myModel = model;
     if (callIntern) {
@@ -804,10 +802,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     UnregisteredNodes.instance().put(this);
     myRegisteredInModelFlag = false;
 
-    if (myAdapter != null) {
-      UnregisteredNodesWithAdapters.getInstance().add(this);
-    }
-
     myModel.unregisterNode(this);
 
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
@@ -823,16 +817,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       return;
     }
 
-    SModel wasModel = myModel;
     myModel = model;
     myModel.registerNode(this);
     myRegisteredInModelFlag = true;
 
     UnregisteredNodes.instance().remove(this);
-
-    if (myAdapter != null) {
-      UnregisteredNodesWithAdapters.getInstance().remove(this);
-    }
 
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.registerInModel(model);
@@ -1341,7 +1330,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   @UseCarefully
   void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
-    myAdapter = null;
     SModelRepository.getInstance().markChanged(getModel());
   }
 
@@ -1596,61 +1584,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     public Iterator<SNode> iterator() {
       return this;
     }
-  }
-
-  //------------adapters-------------
-
-  public BaseAdapter getAdapter() {
-    ModelAccess.assertLegalRead(this);
-    BaseAdapter adapter = myAdapter;
-    if (adapter != null) return adapter;
-    Constructor c = null;
-    if (languageCanGenerateAdapters()) {
-      c = QueryMethodGenerated.getAdapterConstructor(getConceptFqName());
-    }
-    if (c == null) c = QueryMethodGenerated.getAdapterConstructor(SNodeUtil.concept_BaseConcept);
-    if (c == null) return new BaseAdapter(this) {
-    };
-
-    synchronized (this) {
-      adapter = myAdapter;
-      if (adapter != null) return adapter;
-      try {
-        adapter = (BaseAdapter) c.newInstance(this);
-        assert adapter.getNode() == this;
-
-        if (!myRegisteredInModelFlag) {
-          UnregisteredNodesWithAdapters.getInstance().add(this);
-        }
-        myAdapter = adapter;
-        return adapter;
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (InvocationTargetException e) {
-        LOG.error(e);
-      } catch (InstantiationException e) {
-        LOG.error(e);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-    return new BaseAdapter(this) {
-    };
-  }
-
-  private boolean languageCanGenerateAdapters() {
-    SNode conceptDeclaration = getConceptDeclarationNode();
-    if (conceptDeclaration == null) return true;
-    SModel model = conceptDeclaration.getModel();
-    if (model == null) return true;
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor == null) return true;
-    IModule module = modelDescriptor.getModule();
-    return !(module instanceof Language);
-  }
-
-  void clearAdapter() {
-    myAdapter = null;
   }
 
   //------------user objects-------------

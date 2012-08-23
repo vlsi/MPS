@@ -119,14 +119,13 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       }
     });
     for (SNode root : iterable) {
-      INodeAdapter outputNode = BaseAdapter.fromNode(root);
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();
       String key = getKey(outputModel.getSModelReference(), root);
       Object result = genResult.getResult();
       if (result instanceof String) {
         mySources.put(key, (String) result);
-        if (isJavaSource(outputNode)) {
+        if (isJavaSource(root)) {
           myJavaSources.add(key);
         }
       } else {
@@ -145,8 +144,8 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return JavaNameUtil.packageNameForModelUID(modelReference) + "." + root.getName();
   }
 
-  private static boolean isJavaSource(INodeAdapter outputNode) {
-    String concept = outputNode.getConceptFQName();
+  private static boolean isJavaSource(SNode outputNode) {
+    String concept = outputNode.getConceptFqName();
     return concept.equals(BootstrapLanguages.concept_baseLanguage_ClassConcept) || concept.equals(BootstrapLanguages.concept_baseLanguage_Interface) ||
       concept.equals(BootstrapLanguages.concept_baseLanguage_EnumClass) || concept.equals(BootstrapLanguages.concept_baseLanguage_Annotation);
   }

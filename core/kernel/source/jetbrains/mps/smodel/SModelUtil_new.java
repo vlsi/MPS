@@ -97,32 +97,6 @@ public class SModelUtil_new implements CoreComponent {
     myClManager.removeReloadHandler(myReloadHandler);
   }
 
-  public static <T extends BaseAdapter> T findNodeByFQName(String nodeFQName, Class<T> conceptClass, IScope scope) {
-    String modelName = NameUtil.namespaceFromLongName(nodeFQName);
-    final String name = NameUtil.shortNameFromLongName(nodeFQName);
-
-    for (SModelDescriptor descriptor : scope.getModelDescriptors()) {
-      if (!modelName.equals(descriptor.getLongName())) continue;
-
-      SModel model = descriptor.getSModel();
-      Condition<SNode> cond = new Condition<SNode>() {
-        public boolean met(SNode node) {
-          return name.equals(node.getName());
-        }
-      };
-      Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);
-      for (SNode node : iterable) {
-        INodeAdapter adapter = BaseAdapter.fromNode(node);
-        if (conceptClass.isAssignableFrom(adapter.getClass())) {
-          return (T) adapter;
-        }
-      }
-    }
-    LOG.warning("couldn't find node by fqname: " + nodeFQName);
-    return null;
-  }
-
-
   /**
    * use SModelUtil
    */

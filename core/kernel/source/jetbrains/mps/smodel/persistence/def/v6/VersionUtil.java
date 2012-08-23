@@ -84,12 +84,9 @@ public class VersionUtil {
     if (impElem.getUsedVersion() >= 0)  result.append(VERSION_SEPARATOR_CHAR).append(impElem.getUsedVersion());
     return result.toString();
   }
+
   @NotNull
   private String genReferenceString(@Nullable SNode node, @NotNull String text, boolean usemodel) {
-    return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
-  }
-  @NotNull
-  private String genReferenceString(@Nullable BaseAdapter node, @NotNull String text, boolean usemodel) {
     return node == null ? text : genReferenceString(node.getModel().getSModelReference(), text, usemodel);
   }
 

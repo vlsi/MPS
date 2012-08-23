@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNode;
@@ -373,10 +372,6 @@ public class NameUtil {
     }
     String name = node.getName();
     return node.getModel().getLongName() + "." + name;
-  }
-
-  public static String nodeFQName(INodeAdapter node) {
-    return nodeFQName(BaseAdapter.fromAdapter(node));
   }
 
   public static String compactNodeFQName(SNode node) {
