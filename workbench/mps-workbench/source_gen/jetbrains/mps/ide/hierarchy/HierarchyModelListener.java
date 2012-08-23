@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.INodeAdapter;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
