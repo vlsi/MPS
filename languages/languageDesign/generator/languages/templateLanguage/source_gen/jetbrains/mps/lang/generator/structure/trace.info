@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="Generator_Language.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.Generator_Language" />
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="183" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
+  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
   <root nodeId="1087833241328">
     <nodeInfo nodeId="1087833241328" fileName="PropertyMacro.java" startLine="14" startPosition="79" endLine="15" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
     <nodeInfo nodeId="1087833241328" fileName="PropertyMacro.java" startLine="15" startPosition="94" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COMMENT" />
@@ -3778,6 +3778,40 @@
       <varInfo nodeId="1805153994416516020" varName="sm" />
     </scopeInfo>
     <unitInfo nodeId="1805153994416516020" fileName="PatternReduction_MappingRule.java" startLine="15" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule" />
+  </root>
+  <root nodeId="3118009927543452571">
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="10" startPosition="43" endLine="11" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="11" startPosition="91" endLine="12" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOURCE_NODE_QUERY" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="14" startPosition="33" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="18" startPosition="69" endLine="19" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="22" startPosition="78" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="26" startPosition="65" endLine="27" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="30" startPosition="51" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="13" startPosition="0" endLine="16" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceMacro#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSourceNodeQuery#()Ljetbrains/mps/smodel/INodeAdapter;" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSourceNodeQuery#(Ljetbrains/mps/smodel/INodeAdapter;)V" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;Z)Ljetbrains/mps/lang/generator/structure/TraceMacro;" />
+    <nodeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newInstance#(Ljetbrains/mps/smodel/SModel;)Ljetbrains/mps/lang/generator/structure/TraceMacro;" />
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="14" startPosition="33" endLine="15" endPosition="16" />
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="18" startPosition="69" endLine="19" endPosition="140" />
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="22" startPosition="78" endLine="23" endPosition="55" />
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="26" startPosition="65" endLine="27" endPosition="172" />
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="30" startPosition="51" endLine="31" endPosition="45" />
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="13" startPosition="0" endLine="16" endPosition="3">
+      <varInfo nodeId="3118009927543452571" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="3118009927543452571" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="3118009927543452571" varName="init" />
+      <varInfo nodeId="3118009927543452571" varName="sm" />
+    </scopeInfo>
+    <scopeInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="3118009927543452571" varName="sm" />
+    </scopeInfo>
+    <unitInfo nodeId="3118009927543452571" fileName="TraceMacro.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.TraceMacro" />
   </root>
   <root nodeId="3462145372628071891">
     <nodeInfo nodeId="3462145372628071891" fileName="WeaveMacro.java" startLine="10" startPosition="43" endLine="11" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="concept" />

@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ConceptRightTransformPart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart";
   public static final String CONCEPT = "concept";
+  public static final String NODE_QUERY = "nodeQuery";
   public static final String HANDLER = "handler";
 
   public ConceptRightTransformPart(SNode node) {
@@ -23,6 +24,14 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
 
   public void setConcept(ConceptDeclaration node) {
     super.setReferent(ConceptRightTransformPart.CONCEPT, node);
+  }
+
+  public QueryFunction_SideTransform_NodeQuery getNodeQuery() {
+    return (QueryFunction_SideTransform_NodeQuery) this.getChild(QueryFunction_SideTransform_NodeQuery.class, ConceptRightTransformPart.NODE_QUERY);
+  }
+
+  public void setNodeQuery(QueryFunction_SideTransform_NodeQuery node) {
+    super.setChild(ConceptRightTransformPart.NODE_QUERY, node);
   }
 
   public QueryFunction_SideTransform_ConceptHandler getHandler() {

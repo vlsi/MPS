@@ -250,4 +250,15 @@ public class TemplateQueryContext {
   public static void putInputNode(SNode output, SNode input) {
     output.putUserObject(ORIGINAL_INPUT_NODE, new SNodePointer(input));
   }
+
+  public static void fillOriginalNode(SNode inputNode, SNode outputNode, boolean originalInput) {
+    if (originalInput) {
+      TemplateQueryContext.putInputNode(outputNode, inputNode);
+    } else {
+      SNodePointer originalInputNode = TemplateQueryContext.getInput(inputNode);
+      if (originalInputNode != null) {
+        TemplateQueryContext.putInput(outputNode, originalInputNode);
+      }
+    }
+  }
 }

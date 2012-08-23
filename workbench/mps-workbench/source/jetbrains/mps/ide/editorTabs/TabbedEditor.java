@@ -41,6 +41,8 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.apache.commons.lang.ObjectUtils;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
@@ -51,7 +53,7 @@ import java.awt.BorderLayout;
 import java.util.List;
 import java.util.Set;
 
-public class TabbedEditor extends BaseNodeEditor implements DataProvider {
+public class TabbedEditor extends BaseNodeEditor{
   private TabsComponent myTabsComponent;
   private SModelListener myModelListener = new MyNameListener();
   private SNodePointer myBaseNode;
@@ -73,12 +75,15 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
       }
     }
   };
+  private MPSNodeVirtualFile myVirtualFile;
 
   public TabbedEditor(SNodePointer baseNode, Set<RelationDescriptor> possibleTabs, @NotNull IOperationContext context) {
     super(context);
     myBaseNode = baseNode;
     myPossibleTabs = possibleTabs;
     myContext = context;
+
+    myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myBaseNode);
 
     installTabsComponent();
 
@@ -145,10 +150,6 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
     });
     myTabsComponent.dispose();
     super.dispose();
-  }
-
-  public List<SNodePointer> getAllEditedNodes() {
-    return myTabsComponent.getAllEditedNodes();
   }
 
   @Override
@@ -224,6 +225,10 @@ public class TabbedEditor extends BaseNodeEditor implements DataProvider {
 
   public Object getData(@NonNls String dataId) {
     if (MPSEditorDataKeys.EDITOR_CREATE_GROUP.getName().equals(dataId)) return getCreateGroup();
+    if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
+      return myVirtualFile;
+    }
+
     return null;
   }
 
