@@ -15216,7 +15216,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4412735672778826510">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4412735672778826512" resolveInfo="a" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="4412735672778826511" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="5812072077521760438" />
               </node>
             </node>
           </node>
@@ -15289,7 +15289,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4412735672778826556">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4412735672778826558" resolveInfo="a" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="4412735672778826557" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="5812072077521760444" />
               </node>
             </node>
           </node>
@@ -15328,7 +15328,7 @@
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4412735672778826577">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4412735672778826572" resolveInfo="b" />
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAdapterOperation" typeId="tp25.1170384605257" id="4412735672778826578" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetConceptOperation" typeId="tp25.1172323065820" id="5812072077521760441" />
               </node>
             </node>
           </node>

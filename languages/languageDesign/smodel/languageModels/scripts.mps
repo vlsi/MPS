@@ -1235,13 +1235,6 @@
         </node>
       </node>
     </node>
-    <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="1737294499102100850">
-      <property name="description" nameId="tp33.1177457972041" value="find .adapter operations" />
-      <link role="affectedInstanceConcept" roleId="tp33.1177457957477" targetNodeId="tp25.1170384605257" resolveInfo="Node_GetAdapterOperation" />
-      <node role="affectedInstanceUpdater" roleId="tp33.1177458005323" type="tp33.MigrationScriptPart_Instance_Updater" typeId="tp33.1177458491964" id="1737294499102100851">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1737294499102100852" />
-      </node>
-    </node>
   </root>
   <root id="5426775851424578122">
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="5426775851424580246">

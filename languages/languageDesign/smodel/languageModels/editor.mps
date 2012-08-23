@@ -199,10 +199,6 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.model" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.1166648550386" resolveInfo="Model_CreateNewRootNodeOperation" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1170384672076">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.1170384605257" resolveInfo="Node_GetAdapterOperation" />
-    </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1171305550276">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.node" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.1171305280644" resolveInfo="Node_GetDescendantsOperation" />
@@ -1630,15 +1626,6 @@
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="tpen.1215088010675" resolveInfo="RightParen" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="1237817289941" />
-    </node>
-  </root>
-  <root id="1170384672076">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1170384687660">
-      <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
-      <property name="text" nameId="tpc2.1073389577007" value="adapter" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingRightStyleClassItem" typeId="tpc2.1215007897487" id="1215161161666">
-        <property name="value" nameId="tpc2.1215007802031" value="0.0" />
-      </node>
     </node>
   </root>
   <root id="1171305550276">
