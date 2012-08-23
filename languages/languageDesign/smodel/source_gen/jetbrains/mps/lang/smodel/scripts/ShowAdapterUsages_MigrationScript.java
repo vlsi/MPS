@@ -140,30 +140,6 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "find .adapter operations";
-      }
-
-      public String getAdditionalInfo() {
-        return "find .adapter operations";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return true;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
   }
 
   public static class QuotationClass_lvkajz_a0a1a2a3a0a0a1a0 {
