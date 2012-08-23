@@ -51,9 +51,9 @@ public class SetWithIndent_Intention extends BaseIntention implements Intention 
   public void execute(final SNode node, final EditorContext editorContext) {
     boolean indent = AbstractAppendPart_Behavior.call_withIndent_1237466287046(node);
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart")) {
-      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"), "withIndent", "" + !(indent));
+      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart"), "withIndent", "" + (!(indent)));
     } else {
-      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.NodeAppendPart"), "withIndent", "" + !(indent));
+      SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.lang.textGen.structure.NodeAppendPart"), "withIndent", "" + (!(indent)));
     }
   }
 

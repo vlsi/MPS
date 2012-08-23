@@ -36,7 +36,7 @@ public class ChangeRoot_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "root", "" + !(SPropertyOperations.getBoolean(node, "root")));
+    SPropertyOperations.set(node, "root", "" + (!(SPropertyOperations.getBoolean(node, "root"))));
   }
 
   public String getLocationString() {

@@ -39,7 +39,7 @@ public class AddRemoveSeparator_Intention extends BaseIntention implements Inten
     if (SPropertyOperations.getBoolean(node, "withSeparator")) {
       SPropertyOperations.set(node, "separator", "");
     }
-    SPropertyOperations.set(node, "withSeparator", "" + !(SPropertyOperations.getBoolean(node, "withSeparator")));
+    SPropertyOperations.set(node, "withSeparator", "" + (!(SPropertyOperations.getBoolean(node, "withSeparator"))));
   }
 
   public String getLocationString() {

@@ -36,7 +36,7 @@ public class ChangeOrientationAlternation_Intention extends BaseIntention implem
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "vertical", "" + !(SPropertyOperations.getBoolean(node, "vertical")));
+    SPropertyOperations.set(node, "vertical", "" + (!(SPropertyOperations.getBoolean(node, "vertical"))));
   }
 
   public String getLocationString() {

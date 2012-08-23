@@ -102,7 +102,7 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode newNode = SNodeFactoryOperations.createNewNode("jetbrains.mps.bash.structure.DecimalConstant", null);
             try {
-              SPropertyOperations.set(newNode, "value", "" + Integer.parseInt(pattern));
+              SPropertyOperations.set(newNode, "value", "" + (Integer.parseInt(pattern)));
             } catch (NumberFormatException e) {
               SPropertyOperations.set(newNode, "value", "" + (0));
             }

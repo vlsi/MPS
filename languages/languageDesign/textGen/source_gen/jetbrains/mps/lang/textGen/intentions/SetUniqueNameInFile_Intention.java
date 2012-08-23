@@ -36,7 +36,7 @@ public class SetUniqueNameInFile_Intention extends BaseIntention implements Inte
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "uniqNameInFile", "" + !(SPropertyOperations.getBoolean(node, "uniqNameInFile")));
+    SPropertyOperations.set(node, "uniqNameInFile", "" + (!(SPropertyOperations.getBoolean(node, "uniqNameInFile"))));
   }
 
   public String getLocationString() {

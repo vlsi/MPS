@@ -39,7 +39,7 @@ public class QueriesGenerated {
           if (unit != null) {
             SNode ml = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Money.structure.MoneyLiteral", null);
             SLinkOperations.setTarget(ml, "unit", unit, false);
-            SPropertyOperations.set(ml, "amount", "" + SPropertyOperations.getInteger(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value"));
+            SPropertyOperations.set(ml, "amount", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value")));
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), ml);
             return SLinkOperations.getTarget(ml, "unit", false);
           }

@@ -67,7 +67,7 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 SNode res = SModelOperations.createNewNode(model, "jetbrains.mps.core.xml.structure.XmlElement", null);
                 SPropertyOperations.set(res, "tagName", (item));
-                SPropertyOperations.set(res, "shortEmptyNotation", "" + true);
+                SPropertyOperations.set(res, "shortEmptyNotation", "" + (true));
                 return res;
               }
 

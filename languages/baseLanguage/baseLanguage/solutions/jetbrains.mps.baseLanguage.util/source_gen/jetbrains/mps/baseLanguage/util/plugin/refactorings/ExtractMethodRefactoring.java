@@ -146,7 +146,7 @@ public abstract class ExtractMethodRefactoring {
         SLinkOperations.setTarget(parameter, "type", SNodeOperations.copyNode(methodParameter.getType()), true);
         SPropertyOperations.set(parameter, "name", methodParameter.getName());
         if (methodParameter.isFinal()) {
-          SPropertyOperations.set(parameter, "isFinal", "" + true);
+          SPropertyOperations.set(parameter, "isFinal", "" + (true));
         }
         ListSequence.fromList(parameters).addElement(parameter);
         MapSequence.fromMap(result).put(methodParameter.getDeclaration(), parameter);

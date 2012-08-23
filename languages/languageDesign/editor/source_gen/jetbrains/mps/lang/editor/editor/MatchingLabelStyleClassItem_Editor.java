@@ -137,7 +137,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "hasNoLabel", "" + true);
+      SPropertyOperations.set(node, "hasNoLabel", "" + (true));
     }
 
     public String getMatchingText() {
@@ -150,7 +150,7 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "hasNoLabel", "" + false);
+      SPropertyOperations.set(node, "hasNoLabel", "" + (false));
     }
 
     public String getMatchingText() {

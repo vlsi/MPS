@@ -69,7 +69,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.lambdaCalculus.structure.NumericConstant", null);
-            SPropertyOperations.set(result, "value", "" + Integer.parseInt(pattern));
+            SPropertyOperations.set(result, "value", "" + (Integer.parseInt(pattern)));
             return result;
           }
 

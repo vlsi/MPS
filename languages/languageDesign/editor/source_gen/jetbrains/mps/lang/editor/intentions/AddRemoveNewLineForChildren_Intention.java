@@ -65,7 +65,7 @@ public class AddRemoveNewLineForChildren_Intention extends BaseIntention impleme
   public void execute(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).isEmpty()) {
       SNode styleItem = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem", null);
-      SPropertyOperations.set(styleItem, "flag", "" + true);
+      SPropertyOperations.set(styleItem, "flag", "" + (true));
       ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(styleItem);
     } else {
       SNodeOperations.deleteNode(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(node, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"))).first());

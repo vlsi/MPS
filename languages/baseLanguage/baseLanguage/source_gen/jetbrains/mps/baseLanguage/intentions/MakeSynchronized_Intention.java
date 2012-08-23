@@ -55,7 +55,7 @@ public class MakeSynchronized_Intention extends BaseIntention implements Intenti
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "isSynchronized", "" + !(SPropertyOperations.getBoolean(node, "isSynchronized")));
+    SPropertyOperations.set(node, "isSynchronized", "" + (!(SPropertyOperations.getBoolean(node, "isSynchronized"))));
   }
 
   public String getLocationString() {

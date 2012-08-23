@@ -92,7 +92,7 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_BooleanStyleSheetItem_1222178769289(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem")) {
-      SPropertyOperations.set(_context.getNewNode(), "flag", "" + SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "flag"));
+      SPropertyOperations.set(_context.getNewNode(), "flag", "" + (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "flag")));
     }
   }
 

@@ -36,7 +36,7 @@ public class Switch_HasAttributes_Intention extends BaseIntention implements Int
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "isCompact", "" + !(SPropertyOperations.getBoolean(node, "isCompact")));
+    SPropertyOperations.set(node, "isCompact", "" + (!(SPropertyOperations.getBoolean(node, "isCompact"))));
   }
 
   public String getLocationString() {

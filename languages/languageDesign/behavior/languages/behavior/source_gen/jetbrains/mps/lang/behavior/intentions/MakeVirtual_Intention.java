@@ -50,7 +50,7 @@ public class MakeVirtual_Intention extends BaseIntention implements Intention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SPropertyOperations.set(node, "isVirtual", "" + (!(SPropertyOperations.getBoolean(node, "isVirtual"))));
     if (!(SPropertyOperations.getBoolean(node, "isVirtual"))) {
-      SPropertyOperations.set(node, "isAbstract", "" + false);
+      SPropertyOperations.set(node, "isAbstract", "" + (false));
     }
   }
 

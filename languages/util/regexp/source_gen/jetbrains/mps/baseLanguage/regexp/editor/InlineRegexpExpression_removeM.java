@@ -29,7 +29,7 @@ public class InlineRegexpExpression_removeM {
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = current.getPrevLeaf(CellConditions.SELECTABLE);
-      SPropertyOperations.set(node, "multiLine", "" + false);
+      SPropertyOperations.set(node, "multiLine", "" + (false));
       editorContext.getNodeEditorComponent().changeSelection(toSelect);
     }
   }

@@ -38,10 +38,10 @@ public class Option_makeDefault_Intention extends BaseIntention implements Inten
 
   public void execute(final SNode node, final EditorContext editorContext) {
     boolean makeDefault = SNodeOperations.getIndexInParent(node) != SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption");
-    SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption", "" + (makeDefault ?
+    SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption", "" + ((makeDefault ?
       SNodeOperations.getIndexInParent(node) :
       -1
-    ));
+    )));
   }
 
   public String getLocationString() {

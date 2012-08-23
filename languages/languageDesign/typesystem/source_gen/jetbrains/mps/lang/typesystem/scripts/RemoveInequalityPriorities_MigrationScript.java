@@ -37,7 +37,7 @@ public class RemoveInequalityPriorities_MigrationScript extends BaseMigrationScr
         ListSequence.fromList(SLinkOperations.getTargets(node, "beforeGroups", true)).clear();
         ListSequence.fromList(SLinkOperations.getTargets(node, "rulesToSkip", true)).clear();
         SLinkOperations.setTarget(node, "inequationGroup", null, true);
-        SPropertyOperations.set(node, "inequationPriority", "" + 0);
+        SPropertyOperations.set(node, "inequationPriority", "" + (0));
       }
 
       public boolean isShowAsIntention() {

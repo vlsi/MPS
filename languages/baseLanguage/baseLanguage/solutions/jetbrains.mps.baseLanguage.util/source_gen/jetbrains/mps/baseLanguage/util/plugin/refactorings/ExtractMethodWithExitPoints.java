@@ -39,10 +39,10 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
   protected void modifyPartToExtract() {
     SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
-    SPropertyOperations.set(constant, "value", "" + false);
+    SPropertyOperations.set(constant, "value", "" + (false));
     SLinkOperations.setTarget(ret, "expression", constant, true);
     ListSequence.fromList(this.myStatements).addElement(SNodeOperations.copyNode(ret));
-    SPropertyOperations.set(constant, "value", "" + true);
+    SPropertyOperations.set(constant, "value", "" + (true));
     for (SNode exitPoint : ListSequence.fromList(this.myAnalyzer.getIntenalExitPoints())) {
       SNodeOperations.replaceWithAnother(exitPoint, SNodeOperations.copyNode(ret));
     }

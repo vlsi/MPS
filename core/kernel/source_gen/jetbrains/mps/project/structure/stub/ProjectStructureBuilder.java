@@ -59,8 +59,8 @@ public abstract class ProjectStructureBuilder {
     result.setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
-    SPropertyOperations.set(result, "compileInMPS", "" + true);
-    SPropertyOperations.set(result, "doNotGenerateAdapters", "" + source.isDoNotGenerateAdapters());
+    SPropertyOperations.set(result, "compileInMPS", "" + (true));
+    SPropertyOperations.set(result, "doNotGenerateAdapters", "" + (source.isDoNotGenerateAdapters()));
     SPropertyOperations.set(result, "genPath", source.getGenPath());
     SPropertyOperations.set(result, "languagePath", myFile.getPath());
     for (SModelReference ref : source.getAccessoryModels()) {
@@ -90,7 +90,7 @@ public abstract class ProjectStructureBuilder {
     result.setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
-    SPropertyOperations.set(result, "compileInMPS", "" + source.getCompileInMPS());
+    SPropertyOperations.set(result, "compileInMPS", "" + (source.getCompileInMPS()));
     SPropertyOperations.set(result, "outputPath", source.getOutputPath());
     SPropertyOperations.set(result, "solutionPath", myFile.getPath());
     collectModels(result, source);
@@ -102,7 +102,7 @@ public abstract class ProjectStructureBuilder {
     result.setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
-    SPropertyOperations.set(result, "compileInMPS", "" + false);
+    SPropertyOperations.set(result, "compileInMPS", "" + (false));
     SPropertyOperations.set(result, "devkitPath", myFile.getPath());
     for (ModuleReference ref : source.getExtendedDevkits()) {
       SLinkOperations.getTargets(result, "extendedDevkits", true).add(convert(ref));
@@ -180,7 +180,7 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convert(Dependency source) {
     SNode dep = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.ModuleDependency", null);
-    SPropertyOperations.set(dep, "reexport", "" + source.isReexport());
+    SPropertyOperations.set(dep, "reexport", "" + (source.isReexport()));
     SLinkOperations.setTarget(dep, "moduleRef", convert(source.getModuleRef()), true);
     return dep;
   }
@@ -189,7 +189,7 @@ public abstract class ProjectStructureBuilder {
     SNode generator = SModelOperations.createNewNode(myModel, "jetbrains.mps.lang.project.structure.Generator", null);
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
-    SPropertyOperations.set(generator, "generateTemplates", "" + source.isGenerateTemplates());
+    SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
     SPropertyOperations.set(generator, "namespace", (isNotEmpty_5cil7k_a0a0e0l(source.getNamespace()) ?
       source.getNamespace() :
       null

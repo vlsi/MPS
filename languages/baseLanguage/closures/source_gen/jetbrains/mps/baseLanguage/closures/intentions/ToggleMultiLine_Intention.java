@@ -37,7 +37,7 @@ public class ToggleMultiLine_Intention extends BaseIntention implements Intentio
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "forceMultiLine", "" + !(SPropertyOperations.getBoolean(node, "forceMultiLine")));
+    SPropertyOperations.set(node, "forceMultiLine", "" + (!(SPropertyOperations.getBoolean(node, "forceMultiLine"))));
     editorContext.getNodeEditorComponent().rebuildEditorContent();
   }
 
