@@ -815,10 +815,6 @@
                     <property name="name" nameId="tpck.1169194664001" value="uuid" />
                     <property name="value" nameId="mass.5266766379151914052" value="defe1a08-4c21-11e1-b31b-6cf049e62fe5" />
                   </node>
-                  <node role="attribute" roleId="mass.5266766379151914059" type="mass.Attribute" typeId="mass.5266766379151914050" id="5164231775618799609">
-                    <property name="name" nameId="tpck.1169194664001" value="doNotGenerateAdapters" />
-                    <property name="value" nameId="mass.5266766379151914052" value="false" />
-                  </node>
                 </node>
               </node>
             </node>

@@ -96,7 +96,7 @@ public class DescriptorsIO_Test extends TestCase {
       }
     });
 
-    XMLAssert.assertXMLEqual("<language namespace=\"jetbrains.mps.project.iotests.testLanguage\" uuid=\"defe1a08-4c21-11e1-b31b-6cf049e62fe5\" doNotGenerateAdapters=\"false\"><sourcePath /><models /><accessoryModels /><generators /><extendedLanguages /></language>", TestUtils.readXml(langFile));
+    XMLAssert.assertXMLEqual("<language namespace=\"jetbrains.mps.project.iotests.testLanguage\" uuid=\"defe1a08-4c21-11e1-b31b-6cf049e62fe5\"><sourcePath /><models /><accessoryModels /><generators /><extendedLanguages /></language>", TestUtils.readXml(langFile));
   }
 
   @MPSLaunch
