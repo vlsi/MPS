@@ -149,45 +149,33 @@
     <unitInfo nodeId="4642948870877886557" fileName="ModelAndImportedModelsScope.java" startLine="17" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.smodel.search.ModelAndImportedModelsScope" />
   </root>
   <root nodeId="4642948870877886748">
-    <nodeInfo nodeId="4642948870877886763" fileName="UndefinedSearchScope.java" startLine="16" startPosition="59" endLine="17" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4642948870877886775" fileName="UndefinedSearchScope.java" startLine="21" startPosition="76" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4642948870877886789" fileName="UndefinedSearchScope.java" startLine="26" startPosition="78" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4642948870877886799" fileName="UndefinedSearchScope.java" startLine="30" startPosition="40" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4642948870877886807" fileName="UndefinedSearchScope.java" startLine="35" startPosition="33" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4642948870877886819" fileName="UndefinedSearchScope.java" startLine="39" startPosition="100" endLine="40" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4642948870877886751" fileName="UndefinedSearchScope.java" startLine="11" startPosition="59" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UndefinedSearchScope#()V" />
-    <nodeInfo nodeId="4642948870877886793" fileName="UndefinedSearchScope.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="4642948870877886811" fileName="UndefinedSearchScope.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceInfoResolver#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
-    <nodeInfo nodeId="4642948870877886755" fileName="UndefinedSearchScope.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <nodeInfo nodeId="4642948870877886767" fileName="UndefinedSearchScope.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdapters#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
-    <nodeInfo nodeId="4642948870877886779" fileName="UndefinedSearchScope.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdapters#(Ljava/lang/Class;)Ljava/util/List;" />
-    <nodeInfo nodeId="4642948870877886802" fileName="UndefinedSearchScope.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#()Ljava/util/List;" />
-    <scopeInfo nodeId="4642948870877886754" fileName="UndefinedSearchScope.java" startLine="12" startPosition="33" endLine="12" endPosition="33" />
-    <scopeInfo nodeId="4642948870877886762" fileName="UndefinedSearchScope.java" startLine="16" startPosition="59" endLine="17" endPosition="46" />
-    <scopeInfo nodeId="4642948870877886774" fileName="UndefinedSearchScope.java" startLine="21" startPosition="76" endLine="22" endPosition="46" />
-    <scopeInfo nodeId="4642948870877886788" fileName="UndefinedSearchScope.java" startLine="26" startPosition="78" endLine="27" endPosition="46" />
-    <scopeInfo nodeId="4642948870877886798" fileName="UndefinedSearchScope.java" startLine="30" startPosition="40" endLine="31" endPosition="46" />
-    <scopeInfo nodeId="4642948870877886806" fileName="UndefinedSearchScope.java" startLine="35" startPosition="33" endLine="36" endPosition="46" />
-    <scopeInfo nodeId="4642948870877886818" fileName="UndefinedSearchScope.java" startLine="39" startPosition="100" endLine="40" endPosition="46" />
-    <scopeInfo nodeId="4642948870877886751" fileName="UndefinedSearchScope.java" startLine="11" startPosition="59" endLine="13" endPosition="3" />
-    <scopeInfo nodeId="4642948870877886793" fileName="UndefinedSearchScope.java" startLine="29" startPosition="0" endLine="33" endPosition="0">
+    <nodeInfo nodeId="4642948870877886763" fileName="UndefinedSearchScope.java" startLine="15" startPosition="59" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4642948870877886799" fileName="UndefinedSearchScope.java" startLine="19" startPosition="40" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4642948870877886807" fileName="UndefinedSearchScope.java" startLine="24" startPosition="33" endLine="25" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4642948870877886819" fileName="UndefinedSearchScope.java" startLine="28" startPosition="100" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="4642948870877886751" fileName="UndefinedSearchScope.java" startLine="10" startPosition="59" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UndefinedSearchScope#()V" />
+    <nodeInfo nodeId="4642948870877886793" fileName="UndefinedSearchScope.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInScope#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="4642948870877886811" fileName="UndefinedSearchScope.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceInfoResolver#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/search/IReferenceInfoResolver;" />
+    <nodeInfo nodeId="4642948870877886755" fileName="UndefinedSearchScope.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#(Ljetbrains/mps/util/Condition;)Ljava/util/List;" />
+    <nodeInfo nodeId="4642948870877886802" fileName="UndefinedSearchScope.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodes#()Ljava/util/List;" />
+    <scopeInfo nodeId="4642948870877886754" fileName="UndefinedSearchScope.java" startLine="11" startPosition="33" endLine="11" endPosition="33" />
+    <scopeInfo nodeId="4642948870877886762" fileName="UndefinedSearchScope.java" startLine="15" startPosition="59" endLine="16" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886798" fileName="UndefinedSearchScope.java" startLine="19" startPosition="40" endLine="20" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886806" fileName="UndefinedSearchScope.java" startLine="24" startPosition="33" endLine="25" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886818" fileName="UndefinedSearchScope.java" startLine="28" startPosition="100" endLine="29" endPosition="46" />
+    <scopeInfo nodeId="4642948870877886751" fileName="UndefinedSearchScope.java" startLine="10" startPosition="59" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="4642948870877886793" fileName="UndefinedSearchScope.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="4642948870877886796" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886811" fileName="UndefinedSearchScope.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="4642948870877886811" fileName="UndefinedSearchScope.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="4642948870877886814" varName="referenceNode" />
       <varInfo nodeId="4642948870877886816" varName="targetConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886755" fileName="UndefinedSearchScope.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="4642948870877886755" fileName="UndefinedSearchScope.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="4642948870877886759" varName="condition" />
     </scopeInfo>
-    <scopeInfo nodeId="4642948870877886767" fileName="UndefinedSearchScope.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="4642948870877886771" varName="condition" />
-    </scopeInfo>
-    <scopeInfo nodeId="4642948870877886779" fileName="UndefinedSearchScope.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="4642948870877886785" varName="adapterClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="4642948870877886802" fileName="UndefinedSearchScope.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="4642948870877886748" fileName="UndefinedSearchScope.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.smodel.search.UndefinedSearchScope" />
+    <scopeInfo nodeId="4642948870877886802" fileName="UndefinedSearchScope.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
+    <unitInfo nodeId="4642948870877886748" fileName="UndefinedSearchScope.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.smodel.search.UndefinedSearchScope" />
   </root>
   <root nodeId="4642948870877886822">
     <nodeInfo nodeId="4642948870877886825" fileName="ModelNodesSearchScope.java" startLine="13" startPosition="64" endLine="14" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />

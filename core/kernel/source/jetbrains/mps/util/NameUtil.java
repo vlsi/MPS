@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.misc.ObjectCache;

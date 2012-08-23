@@ -40,7 +40,6 @@ public class SNodeOperations {
     return language == null || language.findConceptDeclaration(sNode.getConceptShortName()) == null;
   }
 
-
   public static List<SNode> getConceptLinkTargets(final SNode node, String linkName, boolean lookupHierarchy) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> conceptLinks = getConceptLinks(node, linkName, lookupHierarchy);

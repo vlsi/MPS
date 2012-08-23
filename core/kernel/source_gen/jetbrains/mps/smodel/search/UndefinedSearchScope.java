@@ -6,7 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.smodel.INodeAdapter;
 
 public class UndefinedSearchScope implements ISearchScope {
   public UndefinedSearchScope() {
@@ -14,16 +13,6 @@ public class UndefinedSearchScope implements ISearchScope {
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    throw new UnsupportedOperationException();
-  }
-
-  @NotNull
-  public List<INodeAdapter> getAdapters(Condition<INodeAdapter> condition) {
-    throw new UnsupportedOperationException();
-  }
-
-  @NotNull
-  public <T extends INodeAdapter> List<T> getAdapters(Class<T> adapterClass) {
     throw new UnsupportedOperationException();
   }
 
