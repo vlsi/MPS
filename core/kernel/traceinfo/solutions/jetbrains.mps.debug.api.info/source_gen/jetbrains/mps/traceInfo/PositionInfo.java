@@ -103,7 +103,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     return myEndLine - myStartLine;
   }
 
-  public void saveTo(Element element) {
+  protected void saveTo(Element element) {
     if (myNodeId != null) {
       element.setAttribute(PositionInfo.NODE_ID, myNodeId);
     }

@@ -11,10 +11,6 @@ import org.jdom.Element;
 import java.util.Comparator;
 import org.jdom.DataConversionException;
 import java.util.List;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.smodel.SModelDescriptor;
-import java.io.File;
-import jetbrains.mps.vfs.FileSystem;
 
 public class DebugInfoRoot {
   private static final String NODE_INFO = "nodeInfo";
@@ -34,25 +30,25 @@ public class DebugInfoRoot {
     myModelId = modelId;
   }
 
-  public void addPosition(TraceablePositionInfo position) {
+  /*package*/ void addPosition(TraceablePositionInfo position) {
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myPositions).addElement(position);
     position.setCachedModelId(myModelId);
   }
 
-  public void addScopePosition(ScopePositionInfo position) {
+  /*package*/ void addScopePosition(ScopePositionInfo position) {
     SetSequence.fromSet(myFileNames).addElement(position.getFileName());
     SetSequence.fromSet(myScopePositions).addElement(position);
     position.setCachedModelId(myModelId);
   }
 
-  public void addUnitPosition(UnitPositionInfo unitPosition) {
+  /*package*/ void addUnitPosition(UnitPositionInfo unitPosition) {
     SetSequence.fromSet(myFileNames).addElement(unitPosition.getFileName());
     SetSequence.fromSet(myUnitPositions).addElement(unitPosition);
     unitPosition.setCachedModelId(myModelId);
   }
 
-  public String getRootId() {
+  /*package*/ String getRootId() {
     return myRootId;
   }
 
@@ -76,7 +72,7 @@ public class DebugInfoRoot {
     return myFileNames;
   }
 
-  public void toXml(Element container) {
+  /*package*/ void toXml(Element container) {
     for (PositionInfo position : SetSequence.fromSet(myPositions).toListSequence().sort(new Comparator<TraceablePositionInfo>() {
       public int compare(TraceablePositionInfo a, TraceablePositionInfo b) {
         return a.compareTo(b);
@@ -106,7 +102,7 @@ public class DebugInfoRoot {
     }
   }
 
-  public static DebugInfoRoot fromXml(Element element, String id, String modelId) throws DataConversionException {
+  /*package*/ static DebugInfoRoot fromXml(Element element, String id, String modelId) throws DataConversionException {
     Element root = element;
     DebugInfoRoot result = new DebugInfoRoot(id, modelId);
     for (Element e : ((List<Element>) root.getChildren(DebugInfoRoot.NODE_INFO))) {
@@ -119,11 +115,5 @@ public class DebugInfoRoot {
       result.addUnitPosition(new UnitPositionInfo(e));
     }
     return result;
-  }
-
-  public static IFile getDebugFileOfModel(String outputDir, SModelDescriptor model) {
-    String modelName = model.getLongName().replace(".", File.separator);
-    String debugPath = modelName.substring(0, modelName.length()) + File.separator + ".debug";
-    return FileSystem.getInstance().getFileByPath(outputDir + File.separator + debugPath);
   }
 }

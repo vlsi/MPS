@@ -7,13 +7,14 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.traceInfo.UnitPositionInfo;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NonNls;
 import java.util.List;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -21,11 +22,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.util.Mapper;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
-import java.util.Set;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
+import java.util.Set;
+import jetbrains.mps.traceInfo.DebugInfoRoot;
+import jetbrains.mps.util.Mapper;
 
 public class TraceInfoUtil {
   public TraceInfoUtil() {
@@ -35,23 +35,49 @@ public class TraceInfoUtil {
   public static String getUnitName(@NotNull String className, final String file, final int position) {
     return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<String, DebugInfo, SModelDescriptor>() {
       public String invoke(DebugInfo info, SModelDescriptor descriptor) {
-        return info.getUnitNameForLine(file, position);
+        return check_4iwlxm_a0a1a0a0a(getUnitInfoForPosition(info, position, file));
       }
     });
+  }
+
+  @Nullable
+  public static String getUnitName(final String file, final int position, SModelDescriptor descriptor) {
+    DebugInfo info = TraceInfoCache.getInstance().get(descriptor);
+    if (info == null) {
+      return null;
+    }
+    UnitPositionInfo unitInfoForPosition = getUnitInfoForPosition(info, position, file);
+    return check_4iwlxm_a3a1(unitInfoForPosition);
   }
 
   @Nullable
   public static SNode getUnitNode(@NonNls String className, final String file, final int position) {
     return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
-        return info.getUnitNodeForLine(file, position, descriptor.getSModel());
+        UnitPositionInfo unitInfo = TraceInfoUtil.getUnitInfoForPosition(info, position, file);
+        if (unitInfo == null) {
+          return null;
+        }
+        return DebugInfo.findNode(unitInfo);
       }
     });
   }
 
+  private static UnitPositionInfo getUnitInfoForPosition(DebugInfo info, final int position, final String file) {
+    List<UnitPositionInfo> resultList = info.getUnitInfoForPosition(file, position);
+    if (ListSequence.fromList(resultList).isEmpty()) {
+      return null;
+    }
+    return ListSequence.fromList(resultList).sort(new ISelector<UnitPositionInfo, Integer>() {
+      public Integer select(UnitPositionInfo it) {
+        return it.getStartLine();
+      }
+    }, false).first();
+  }
+
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
-    return check_4iwlxm_a0a2(getAllTraceableNodes(className, file, position));
+    return check_4iwlxm_a0a4(getAllTraceableNodes(className, file, position));
   }
 
   /**
@@ -147,7 +173,26 @@ public class TraceInfoUtil {
   public static SNode getVar(@NonNls String className, final String file, final int position, @NonNls final String varName) {
     return TraceInfoUtilComponent.getInstance().findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModelDescriptor>() {
       public SNode invoke(DebugInfo info, SModelDescriptor descriptor) {
-        return info.getVarForLine(file, position, descriptor.getSModel(), varName);
+        List<ScopePositionInfo> resultList = info.getInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
+          public Set<ScopePositionInfo> invoke(DebugInfoRoot root) {
+            return root.getScopePositions();
+          }
+        });
+        if (ListSequence.fromList(resultList).isEmpty()) {
+          return null;
+        }
+        Iterable<ScopePositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<ScopePositionInfo, ScopePositionInfo>() {
+          public ScopePositionInfo select(ScopePositionInfo it) {
+            return it;
+          }
+        }, true);
+        for (ScopePositionInfo scopeInfo : sorted) {
+          SNode var = scopeInfo.getVarNode(varName);
+          if (var != null) {
+            return var;
+          }
+        }
+        return null;
       }
     });
   }
@@ -205,7 +250,21 @@ public class TraceInfoUtil {
     });
   }
 
-  private static SNode check_4iwlxm_a0a2(List<SNode> checkedDotOperand) {
+  private static String check_4iwlxm_a0a1a0a0a(UnitPositionInfo checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUnitName();
+    }
+    return null;
+  }
+
+  private static String check_4iwlxm_a3a1(UnitPositionInfo checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUnitName();
+    }
+    return null;
+  }
+
+  private static SNode check_4iwlxm_a0a4(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return ListSequence.fromList(checkedDotOperand).first();
     }

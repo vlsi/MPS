@@ -35,7 +35,7 @@ public class ScopePositionInfo extends PositionInfo {
   }
 
   @Override
-  public void saveTo(Element element) {
+  protected void saveTo(Element element) {
     super.saveTo(element);
     for (VarInfo varInfo : MapSequence.fromMap(myVars).values()) {
       Element child = new Element(ScopePositionInfo.VAR_INFO);
@@ -66,26 +66,20 @@ public class ScopePositionInfo extends PositionInfo {
     }
   }
 
-  public Map<SNode, VarInfo> getTempVarInfoMap() {
-    Map<SNode, VarInfo> result = MapSequence.fromMap(new HashMap<SNode, VarInfo>());
-    MapSequence.fromMap(result).putAll(myTempNodeToVarMap);
-    return result;
+  /*package*/ Map<SNode, VarInfo> getTempVarInfoMap() {
+    return myTempNodeToVarMap;
   }
 
-  public void clearTempVarInfoMap() {
+  /*package*/ void clearTempVarInfoMap() {
     MapSequence.fromMap(myTempNodeToVarMap).clear();
   }
 
-  public void removeVarInfo(VarInfo varInfo) {
+  /*package*/ void removeVarInfo(VarInfo varInfo) {
     MapSequence.fromMap(myVars).removeKey(varInfo.getVarName());
   }
 
   @Override
   public int compareTo(PositionInfo p) {
     return super.compareTo(p);
-  }
-
-  public Iterable<VarInfo> getVarInfos() {
-    return MapSequence.fromMap(myVars).values();
   }
 }

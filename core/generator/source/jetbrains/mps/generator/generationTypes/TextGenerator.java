@@ -29,10 +29,7 @@ import jetbrains.mps.make.java.RootDependencies;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
@@ -87,9 +84,10 @@ public class TextGenerator {
     SModel outputModel = status.getOutputModel();
     if (outputModel == null) return !hasErrors;
 
-    DebugInfo info = null;
+    DebugInfoBuilder debugInfoBuilder = null;
     if (myGenerateDebugInfo) {
-      status.setDebugInfo(info = new DebugInfo());
+      debugInfoBuilder = new DebugInfoBuilder();
+      status.setDebugInfo(debugInfoBuilder.getDebugInfo());
     }
 
     StringBuilder[] buffers = new StringBuilder[]{new StringBuilder(8192), new StringBuilder(32768)};
@@ -112,8 +110,8 @@ public class TextGenerator {
           Object contents = result.getResult();
           if (TextGenerationUtil.NO_TEXTGEN != contents) {
             String fileName = getFileName(outputNode);
-            if (info != null) {
-              fillDebugInfo(info, fileName, result);
+            if (debugInfoBuilder != null) {
+              debugInfoBuilder.fillDebugInfo(fileName, result.getPositions(), result.getScopePositions(), result.getUnitPositions(), status.getOriginalInputModel());
             }
             fillDependencies(dependRoot, outputNode, fileName, result);
             outputNodeContents.put(outputNode, contents);
@@ -126,84 +124,6 @@ public class TextGenerator {
       }
     }
     return !hasErrors;
-  }
-
-  private void fillDebugInfo(@NotNull DebugInfo info, String fileName, TextGenerationResult result) {
-    Map<SNode, TraceablePositionInfo> positions = result.getPositions();
-    Map<SNode, ScopePositionInfo> scopePositions = result.getScopePositions();
-    Map<SNode, UnitPositionInfo> unitPositions = result.getUnitPositions();
-    if (positions == null && scopePositions == null && unitPositions == null) {
-      return;
-    }
-    if (positions != null) {
-      for (SNode out : positions.keySet()) {
-        SNode input = out;
-        input = getOriginalInputNodeForNearestParent(input);
-        if (input != null && !(input.isDisposed())) {
-          TraceablePositionInfo positionInfo = positions.get(out);
-          positionInfo.setNodeId(input.getId());
-          positionInfo.setFileName(fileName);
-          SNode topmostAncestor = input.getTopmostAncestor();
-          info.addPosition(positionInfo, topmostAncestor);
-        }
-      }
-    }
-    if (scopePositions != null) {
-      for (SNode out : scopePositions.keySet()) {
-        SNode input = out;
-        input = getOriginalInputNodeForNearestParent(input);
-        if (input != null && !(input.isDisposed())) {
-          ScopePositionInfo positionInfo = scopePositions.get(out);
-          positionInfo.setNodeId(input.getId());
-          positionInfo.setFileName(fileName);
-          Map<SNode, VarInfo> varMap = positionInfo.getTempVarInfoMap();
-          for (SNode varNode : varMap.keySet()) {
-            SNode originalVar = getOriginalInputNodeForNearestParent(varNode);
-            VarInfo varInfo = varMap.get(varNode);
-            if (originalVar != null && !(originalVar.isDisposed())) {
-              varInfo.setNodeId(originalVar.getId());
-            } else {
-              positionInfo.removeVarInfo(varInfo);
-            }
-          }
-          positionInfo.clearTempVarInfoMap();
-          info.addScopePosition(positionInfo, input.getTopmostAncestor());
-        }
-      }
-    }
-    if (unitPositions != null) {
-      for (SNode out : unitPositions.keySet()) {
-        SNode input = out;
-        input = getOriginalInputNodeForNearestParent(input);
-        UnitPositionInfo positionInfo = unitPositions.get(out);
-        positionInfo.setFileName(fileName);
-        SNode topmostAncestor = null;
-        if (input != null && !(input.isDisposed())) {
-          positionInfo.setNodeId(input.getId());
-          topmostAncestor = input.getTopmostAncestor();
-        }
-        info.addUnitPosition(positionInfo, topmostAncestor);
-      }
-    }
-  }
-
-  public static SNode getOriginalInputNodeForNearestParent(SNode output) {
-    while (output != null) {
-      SNode node = getOriginalInputNode(output);
-      if (node != null) {
-        return node;
-      }
-      output = output.getParent();
-    }
-    return null;
-  }
-
-  private static SNode getOriginalInputNode(SNode input) {
-    while (input != null && !(input.isDisposed())
-      && (input.getModel() instanceof TransientSModel)) {
-      input = TracingUtil.getInputNode(input);
-    }
-    return input;
   }
 
   private void fillDependencies(ModelDependencies root, SNode outputNode, String fileName, TextGenerationResult result) {

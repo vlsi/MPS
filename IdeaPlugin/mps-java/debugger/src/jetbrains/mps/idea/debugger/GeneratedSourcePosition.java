@@ -26,13 +26,11 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -108,7 +106,7 @@ public class GeneratedSourcePosition {
     TraceablePositionInfo position = debugInfo.getPositionForNode(node.getSNodeId().toString());
     if (position == null) return null;
 
-    return new GeneratedSourcePosition(debugInfo.getUnitNameForLine(position.getFileName(), position.getStartLine()), position.getFileName(), position.getStartLine());
+    return new GeneratedSourcePosition(TraceInfoUtil.getUnitName(position.getFileName(), position.getStartLine(), model), position.getFileName(), position.getStartLine());
   }
 
 
