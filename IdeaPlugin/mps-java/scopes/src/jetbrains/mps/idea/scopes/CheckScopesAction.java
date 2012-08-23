@@ -64,7 +64,7 @@ public class CheckScopesAction extends AnAction {
               LOG.warn("PsiClass is null for root node: " + root);
               continue;
             }
-            Set<String> ideaMembers = new TreeSet<String>(IdeaScopesUtils.getMembersFromClass(clazz));
+            Set<String> ideaMembers = new TreeSet<String>(IdeaScopesUtils.getMembersFromClass_New(clazz));
             Set<String> mpsMembers = new TreeSet<String>(MpsScopesUtil.getMembersSignatures(root));
             ideaMembers.size();
             // todo: ...
