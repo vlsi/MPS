@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="7015818220060178316">
-    <nodeInfo nodeId="7015818220060279068" fileName="MainClass.java" startLine="10" startPosition="42" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7015818220060178318" fileName="MainClass.java" startLine="6" startPosition="48" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MainClass#()V" />
-    <nodeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="7015818220060178321" fileName="MainClass.java" startLine="7" startPosition="22" endLine="7" endPosition="22" />
-    <scopeInfo nodeId="7015818220060178417" fileName="MainClass.java" startLine="10" startPosition="42" endLine="11" endPosition="30" />
-    <scopeInfo nodeId="7015818220060178318" fileName="MainClass.java" startLine="6" startPosition="48" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="8639875392258181209" fileName="MainClass.java" startLine="7" startPosition="22" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7015818220060279068" fileName="MainClass.java" startLine="11" startPosition="42" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7015818220060178318" fileName="MainClass.java" startLine="6" startPosition="48" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MainClass#()V" />
+    <nodeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <scopeInfo nodeId="7015818220060178321" fileName="MainClass.java" startLine="7" startPosition="22" endLine="8" endPosition="0" />
+    <scopeInfo nodeId="7015818220060178417" fileName="MainClass.java" startLine="11" startPosition="42" endLine="12" endPosition="30" />
+    <scopeInfo nodeId="7015818220060178318" fileName="MainClass.java" startLine="6" startPosition="48" endLine="9" endPosition="3" />
+    <scopeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="7015818220060178412" varName="args" />
     </scopeInfo>
-    <unitInfo nodeId="7015818220060178316" fileName="MainClass.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="main.MainClass" />
+    <unitInfo nodeId="7015818220060178316" fileName="MainClass.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="main.MainClass" />
   </root>
   <root nodeId="7015818220060279054">
     <nodeInfo nodeId="7015818220060279066" fileName="ConcoleUtil.java" startLine="10" startPosition="37" endLine="11" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
