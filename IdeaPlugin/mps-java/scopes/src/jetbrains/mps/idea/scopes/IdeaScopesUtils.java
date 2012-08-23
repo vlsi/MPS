@@ -29,7 +29,7 @@ import java.util.Set;
 
 public class IdeaScopesUtils {
   public static List<String> getMembersFromClass(PsiClass clazz) {
-    String methodText = "public static void scopes_test_239() { " + clazz.getName() +".? }";
+    String methodText = "public static void scopes_test_239() { " + clazz.getName() + ".? }";
 
     PsiElementFactory elementFactory = JavaPsiFacade.getInstance(clazz.getProject()).getElementFactory();
     PsiMethod psiMethod = elementFactory.createMethodFromText(methodText.replace("?", CompletionInitializationContext.DUMMY_IDENTIFIER), clazz);
@@ -48,37 +48,42 @@ public class IdeaScopesUtils {
     public final Set<Object> myResultNames = new THashSet<Object>();
     public final List<String> myResults = new ArrayList<String>();
 
-    private static Object getUniqueId(Object element, PsiSubstitutor substitutor){
-      if(element instanceof PsiClass){
-        return ((PsiClass)element).getQualifiedName();
+    private static Object getUniqueId(Object element, PsiSubstitutor substitutor) {
+      if (element instanceof PsiClass) {
+        return ((PsiClass) element).getQualifiedName();
       }
-      if(element instanceof PsiPackage){
-        return ((PsiPackage)element).getQualifiedName();
+      if (element instanceof PsiPackage) {
+        return ((PsiPackage) element).getQualifiedName();
       }
-      if(element instanceof PsiMethod){
-        return ((PsiMethod)element).getSignature(substitutor);
+      if (element instanceof PsiMethod) {
+        return ((PsiMethod) element).getSignature(substitutor);
       }
       if (element instanceof PsiVariable) {
-        return "#" + ((PsiVariable)element).getName();
+        return "#" + ((PsiVariable) element).getName();
       }
 
       return null;
     }
 
+    private static String getMethodParametersPresentation(PsiMethod method) {
+      return String.format("<%d>(%d)", method.getTypeParameters().length, method.getParameterList().getParametersCount());
+    }
+
     private static String getSignature(PsiElement element) {
       if (!(element instanceof PsiMember)) {
-        return "Not psi member: "+element.toString();
+        return "Not psi member: " + element.toString();
       }
       PsiMember member = (PsiMember) element;
       PsiClass memberClazz = member.getContainingClass();
       boolean isStatic = member.getModifierList().hasModifierProperty(PsiModifier.STATIC);
 
-      return (isStatic ? "static " : "") + memberClazz.getQualifiedName() + ":" + member.getPresentation().getPresentableText();
+      return (isStatic ? "static " : "") + memberClazz.getQualifiedName() + ":" + member.getName() +
+        (member instanceof PsiMethod ? getMethodParametersPresentation((PsiMethod) member) : "");
     }
 
     @Override
     public boolean execute(@NotNull PsiElement element, ResolveState state) {
-      if (myResultNames.add(getUniqueId((PsiNamedElement)element, state.get(PsiSubstitutor.KEY)))) {
+      if (myResultNames.add(getUniqueId((PsiNamedElement) element, state.get(PsiSubstitutor.KEY)))) {
         myResults.add(getSignature(element));
       }
       return true;

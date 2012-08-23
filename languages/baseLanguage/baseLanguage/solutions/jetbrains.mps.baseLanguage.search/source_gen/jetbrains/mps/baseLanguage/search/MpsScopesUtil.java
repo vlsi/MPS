@@ -39,10 +39,10 @@ public class MpsScopesUtil {
         if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
           ListSequence.fromList(result).addElement("Not ClassifierMember member: " + member);
         } else {
-          ListSequence.fromList(result).addElement((((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Class[]{SNode.class})) ?
+          ListSequence.fromList(result).addElement(((((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Class[]{SNode.class})) ?
             "static " :
-            "" + getSignature(member, classifier)
-          ));
+            ""
+          )) + getSignature(member, classifier));
         }
       }
     }
