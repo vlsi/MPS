@@ -167,17 +167,17 @@ public class DimensionUtil {
       SNode result = MathTypeUtil.qMatrix(typeCheckingContext.getRepresentative(T_typevar_757772128652074250));
       if (row) {
         if (cbc) {
-          SPropertyOperations.set(result, "columns", "" + s);
+          SPropertyOperations.set(result, "columns", "" + (s));
         }
         if (cbd) {
-          SPropertyOperations.set(result, "rows", "" + f);
+          SPropertyOperations.set(result, "rows", "" + (f));
         }
       } else {
         if (cbc) {
-          SPropertyOperations.set(result, "rows", "" + s);
+          SPropertyOperations.set(result, "rows", "" + (s));
         }
         if (cbd) {
-          SPropertyOperations.set(result, "columns", "" + f);
+          SPropertyOperations.set(result, "columns", "" + (f));
         }
       }
       if (SPropertyOperations.getInteger(result, "columns") == 1) {

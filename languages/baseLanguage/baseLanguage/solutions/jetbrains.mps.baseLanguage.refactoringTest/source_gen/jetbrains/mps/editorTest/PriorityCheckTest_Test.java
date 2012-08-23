@@ -32,7 +32,7 @@ public class PriorityCheckTest_Test extends BaseTransformationTest4 {
       this.addNodeById("3852894662483449708");
       SNode op = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PlusExpression", null);
       SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-      SPropertyOperations.set(constant, "value", "" + 3);
+      SPropertyOperations.set(constant, "value", "" + (3));
       SLinkOperations.setTarget(op, "leftExpression", constant, true);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), op);
       SLinkOperations.setTarget(op, "rightExpression", SNodeOperations.cast(this.getNodeById("3852894662483449704"), "jetbrains.mps.baseLanguage.structure.PlusExpression"), true);

@@ -7,6 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MatrixConstructor_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "column", "" + false);
+    SPropertyOperations.set(thisNode, "column", "" + (false));
   }
 }

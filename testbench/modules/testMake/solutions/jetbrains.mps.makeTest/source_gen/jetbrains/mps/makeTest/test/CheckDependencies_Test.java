@@ -19,7 +19,7 @@ public class CheckDependencies_Test extends TestCase {
       @Override
       public void change(SModel model) {
         super.change(model);
-        SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).first(), "staticField", true)).first(), "initializer", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + 0);
+        SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).first(), "staticField", true)).first(), "initializer", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
       }
     });
   }

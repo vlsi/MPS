@@ -51,7 +51,7 @@ public class OverrideImplementMethodsHelper {
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       SNode method = SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, baseMethod, "call_getMethodToImplement_69709522611978987", new Class[]{SNode.class, SNode.class}, myClassConcept)), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SPropertyOperations.set(method, "isAbstract", "" + false);
+      SPropertyOperations.set(method, "isAbstract", "" + (false));
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       if (insertion) {
         ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).insertElement(ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).indexOf(myContextMethod) + 1, method);

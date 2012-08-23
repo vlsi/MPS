@@ -7,6 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class MathContext_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "precision", "" + 7);
+    SPropertyOperations.set(thisNode, "precision", "" + (7));
   }
 }

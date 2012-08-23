@@ -218,13 +218,13 @@ public class JavaConverterTreeBuilder {
 
   /*package*/ SNode processConstant(BooleanConstant x) {
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
-    SPropertyOperations.set(result, "value", "" + x.booleanValue());
+    SPropertyOperations.set(result, "value", "" + (x.booleanValue()));
     return result;
   }
 
   /*package*/ SNode processConstant(ByteConstant x) {
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-    SPropertyOperations.set(result, "value", "" + x.byteValue());
+    SPropertyOperations.set(result, "value", "" + (x.byteValue()));
     return result;
   }
 
@@ -249,7 +249,7 @@ public class JavaConverterTreeBuilder {
 
   /*package*/ SNode processConstant(IntConstant x) {
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-    SPropertyOperations.set(result, "value", "" + x.intValue());
+    SPropertyOperations.set(result, "value", "" + (x.intValue()));
     return result;
   }
 
@@ -261,7 +261,7 @@ public class JavaConverterTreeBuilder {
 
   /*package*/ SNode processConstant(ShortConstant x) {
     SNode result = SModelOperations.createNewNode(myCurrentModel, "jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-    SPropertyOperations.set(result, "value", "" + x.shortValue());
+    SPropertyOperations.set(result, "value", "" + (x.shortValue()));
     return result;
   }
 
@@ -1442,7 +1442,7 @@ public class JavaConverterTreeBuilder {
       }
       myCurrentMethod = method;
       if (b.isSynchronized()) {
-        SPropertyOperations.set(method, "isSynchronized", "" + true);
+        SPropertyOperations.set(method, "isSynchronized", "" + (true));
       }
       SNode methodBody = SLinkOperations.getTarget(method, "body", true);
       if ((methodBody == null)) {
