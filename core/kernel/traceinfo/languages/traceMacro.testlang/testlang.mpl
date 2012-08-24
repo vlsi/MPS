@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.traceInfo.tracemacro.testlang" uuid="140c4818-bfbc-4850-bf7c-e3d80739a03c" doNotGenerateAdapters="true">
+<language namespace="jetbrains.mps.traceInfo.tracemacro.testlang" uuid="140c4818-bfbc-4850-bf7c-e3d80739a03c">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>

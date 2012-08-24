@@ -16,8 +16,8 @@
     <nodeInfo nodeId="2326502737553273951" fileName="ProjectStructureBuilder.java" startLine="58" startPosition="107" endLine="59" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2326502737553273958" fileName="ProjectStructureBuilder.java" startLine="59" startPosition="46" endLine="60" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4198951972171373495" fileName="ProjectStructureBuilder.java" startLine="60" startPosition="50" endLine="61" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4851135740947644214" fileName="ProjectStructureBuilder.java" startLine="61" startPosition="25" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="269654322145296932" fileName="ProjectStructureBuilder.java" startLine="62" startPosition="63" endLine="63" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4851135740947644214" fileName="ProjectStructureBuilder.java" startLine="61" startPosition="25" endLine="62" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="269654322145296932" fileName="ProjectStructureBuilder.java" startLine="62" startPosition="65" endLine="63" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6835717623312062016" fileName="ProjectStructureBuilder.java" startLine="63" startPosition="68" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="269654322145298811" fileName="ProjectStructureBuilder.java" startLine="65" startPosition="61" endLine="66" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2721285250110587419" fileName="ProjectStructureBuilder.java" startLine="68" startPosition="67" endLine="69" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -31,8 +31,8 @@
     <nodeInfo nodeId="2326502737553273967" fileName="ProjectStructureBuilder.java" startLine="88" startPosition="107" endLine="89" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2326502737553273974" fileName="ProjectStructureBuilder.java" startLine="89" startPosition="46" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2721285250110587489" fileName="ProjectStructureBuilder.java" startLine="90" startPosition="50" endLine="91" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4198951972171373736" fileName="ProjectStructureBuilder.java" startLine="91" startPosition="25" endLine="92" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="269654322145299078" fileName="ProjectStructureBuilder.java" startLine="92" startPosition="83" endLine="93" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4198951972171373736" fileName="ProjectStructureBuilder.java" startLine="91" startPosition="25" endLine="92" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="269654322145299078" fileName="ProjectStructureBuilder.java" startLine="92" startPosition="85" endLine="93" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6835717623312030373" fileName="ProjectStructureBuilder.java" startLine="93" startPosition="74" endLine="94" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4243809718336239968" fileName="ProjectStructureBuilder.java" startLine="94" startPosition="70" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2721285250110587486" fileName="ProjectStructureBuilder.java" startLine="95" startPosition="34" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -40,8 +40,8 @@
     <nodeInfo nodeId="2326502737553273996" fileName="ProjectStructureBuilder.java" startLine="100" startPosition="105" endLine="101" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2326502737553274003" fileName="ProjectStructureBuilder.java" startLine="101" startPosition="46" endLine="102" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4198951972171373582" fileName="ProjectStructureBuilder.java" startLine="102" startPosition="50" endLine="103" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4851135740947644237" fileName="ProjectStructureBuilder.java" startLine="103" startPosition="25" endLine="104" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6966544519551894281" fileName="ProjectStructureBuilder.java" startLine="104" startPosition="64" endLine="105" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4851135740947644237" fileName="ProjectStructureBuilder.java" startLine="103" startPosition="25" endLine="104" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6966544519551894281" fileName="ProjectStructureBuilder.java" startLine="104" startPosition="66" endLine="105" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6966544519551925932" fileName="ProjectStructureBuilder.java" startLine="106" startPosition="61" endLine="107" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6966544519551925949" fileName="ProjectStructureBuilder.java" startLine="109" startPosition="63" endLine="110" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6966544519551925964" fileName="ProjectStructureBuilder.java" startLine="112" startPosition="63" endLine="113" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -77,13 +77,13 @@
     <nodeInfo nodeId="269654322145291649" fileName="ProjectStructureBuilder.java" startLine="175" startPosition="116" endLine="176" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="269654322145291661" fileName="ProjectStructureBuilder.java" startLine="176" startPosition="48" endLine="177" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2721285250110587552" fileName="ProjectStructureBuilder.java" startLine="180" startPosition="44" endLine="181" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2721285250110587560" fileName="ProjectStructureBuilder.java" startLine="181" startPosition="119" endLine="182" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2721285250110587575" fileName="ProjectStructureBuilder.java" startLine="182" startPosition="71" endLine="183" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2721285250110587560" fileName="ProjectStructureBuilder.java" startLine="181" startPosition="119" endLine="182" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2721285250110587575" fileName="ProjectStructureBuilder.java" startLine="182" startPosition="73" endLine="183" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2721285250110587572" fileName="ProjectStructureBuilder.java" startLine="183" startPosition="86" endLine="184" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2721285250110524865" fileName="ProjectStructureBuilder.java" startLine="187" startPosition="53" endLine="188" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2721285250110524855" fileName="ProjectStructureBuilder.java" startLine="188" startPosition="118" endLine="189" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="269654322145299016" fileName="ProjectStructureBuilder.java" startLine="189" startPosition="28" endLine="190" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3000929436959691396" fileName="ProjectStructureBuilder.java" startLine="190" startPosition="81" endLine="191" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3000929436959691396" fileName="ProjectStructureBuilder.java" startLine="190" startPosition="81" endLine="191" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2721285250110525131" fileName="ProjectStructureBuilder.java" startLine="196" startPosition="64" endLine="197" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2721285250110587665" fileName="ProjectStructureBuilder.java" startLine="199" startPosition="59" endLine="200" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2864381551719926183" fileName="ProjectStructureBuilder.java" startLine="201" startPosition="5" endLine="202" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -143,7 +143,7 @@
     <nodeInfo nodeId="2436527295719448096" fileName="ProjectStructureBuilder.java" startLine="229" startPosition="46" endLine="232" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2721285250110587016" fileName="ProjectStructureBuilder.java" startLine="248" startPosition="127" endLine="251" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4243809718336271611" fileName="ProjectStructureBuilder.java" startLine="267" startPosition="75" endLine="270" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2110495181344551389" fileName="ProjectStructureBuilder.java" startLine="191" startPosition="95" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2110495181344551389" fileName="ProjectStructureBuilder.java" startLine="191" startPosition="97" endLine="195" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2721285250110587192" fileName="ProjectStructureBuilder.java" startLine="233" startPosition="121" endLine="237" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2110495181344551405" fileName="ProjectStructureBuilder.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_5cil7k_a0a0e0l#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="4198951972171372750" fileName="ProjectStructureBuilder.java" startLine="39" startPosition="0" endLine="44" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectStructureBuilder#(Ljetbrains/mps/project/structure/modules/ModuleDescriptor;Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/smodel/SModel;)V" />
@@ -262,7 +262,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4243809718336239954" fileName="ProjectStructureBuilder.java" startLine="267" startPosition="75" endLine="270" endPosition="5" />
     <scopeInfo nodeId="4243809718336271611" fileName="ProjectStructureBuilder.java" startLine="267" startPosition="75" endLine="270" endPosition="5">
-      <varInfo nodeId="4243809718336271611" varName="ref" />
+      <varInfo nodeId="4243809718336271612" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="269654322145298937" fileName="ProjectStructureBuilder.java" startLine="118" startPosition="46" endLine="122" endPosition="18">
       <varInfo nodeId="269654322145298945" varName="result" />

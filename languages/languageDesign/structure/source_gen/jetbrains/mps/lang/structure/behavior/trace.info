@@ -865,7 +865,7 @@
       <varInfo nodeId="1213877394026" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="2165772098013610113" fileName="AbstractConceptDeclaration_Behavior.java" startLine="98" startPosition="34" endLine="110" endPosition="9">
-      <varInfo nodeId="2165772098013610113" varName="node" />
+      <varInfo nodeId="2165772098013610114" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1213877394294" fileName="AbstractConceptDeclaration_Behavior.java" startLine="167" startPosition="103" endLine="179" endPosition="19">
       <varInfo nodeId="1213877394296" varName="methods" />
