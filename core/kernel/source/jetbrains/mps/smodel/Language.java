@@ -361,10 +361,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   public void save() {
     super.save();
-    if (isPackaged()) {
-      LOG.warning("Trying to save packaged language " + getModuleFqName(), new Exception());
-      return;
-    }
+    if (isPackaged()) return;
     LanguageDescriptorPersistence.saveLanguageDescriptor(myDescriptorFile, getModuleDescriptor(), MacrosFactory.forModuleFile(myDescriptorFile));
   }
 
