@@ -29,7 +29,7 @@ public class InlineRegexpExpression_removeI {
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = current.getPrevLeaf(CellConditions.SELECTABLE);
-      SPropertyOperations.set(node, "caseInsensitive", "" + false);
+      SPropertyOperations.set(node, "caseInsensitive", "" + (false));
       editorContext.getNodeEditorComponent().changeSelection(toSelect);
     }
   }

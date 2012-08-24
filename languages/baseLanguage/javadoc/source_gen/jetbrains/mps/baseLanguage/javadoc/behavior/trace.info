@@ -166,13 +166,13 @@
     <scopeInfo nodeId="5521685164201818824" fileName="HTMLElement_Behavior.java" startLine="55" startPosition="29" endLine="57" endPosition="248" />
     <scopeInfo nodeId="5521685164201558497" fileName="HTMLElement_Behavior.java" startLine="67" startPosition="29" endLine="69" endPosition="255" />
     <scopeInfo nodeId="3633133276124307749" fileName="HTMLElement_Behavior.java" startLine="35" startPosition="29" endLine="38" endPosition="7">
-      <varInfo nodeId="3633133276124307749" varName="part" />
+      <varInfo nodeId="3633133276124307750" varName="part" />
     </scopeInfo>
     <scopeInfo nodeId="3633133276124307921" fileName="HTMLElement_Behavior.java" startLine="47" startPosition="111" endLine="50" endPosition="7">
-      <varInfo nodeId="3633133276124307921" varName="elementLine" />
+      <varInfo nodeId="3633133276124307922" varName="elementLine" />
     </scopeInfo>
     <scopeInfo nodeId="3633133276124409277" fileName="HTMLElement_Behavior.java" startLine="62" startPosition="109" endLine="65" endPosition="9">
-      <varInfo nodeId="3633133276124409277" varName="linePart" />
+      <varInfo nodeId="3633133276124409278" varName="linePart" />
     </scopeInfo>
     <scopeInfo nodeId="6612597108004626828" fileName="HTMLElement_Behavior.java" startLine="13" startPosition="35" endLine="17" endPosition="0">
       <varInfo nodeId="6612597108004626828" varName="thisNode" />

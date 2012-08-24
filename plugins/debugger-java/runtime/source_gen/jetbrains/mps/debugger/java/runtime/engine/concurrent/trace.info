@@ -131,7 +131,7 @@
       <varInfo nodeId="6460341978864345901" varName="command" />
     </scopeInfo>
     <scopeInfo nodeId="6520954994829104665" fileName="ManagerThread.java" startLine="98" startPosition="46" endLine="107" endPosition="11">
-      <varInfo nodeId="6520954994829104665" varName="command" />
+      <varInfo nodeId="6520954994829104666" varName="command" />
     </scopeInfo>
     <scopeInfo nodeId="6520954994829104614" fileName="ManagerThread.java" startLine="96" startPosition="23" endLine="107" endPosition="11">
       <varInfo nodeId="6520954994829104657" varName="unprocessed" />

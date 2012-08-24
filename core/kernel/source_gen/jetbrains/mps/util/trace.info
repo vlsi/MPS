@@ -208,7 +208,7 @@
     <scopeInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="89" startPosition="63" endLine="118" endPosition="12" />
     <scopeInfo nodeId="4972886494893402205" fileName="LongestCommonSubsequenceFinder.java" startLine="88" startPosition="189" endLine="120" endPosition="0" />
     <scopeInfo nodeId="4972886494893402199" fileName="LongestCommonSubsequenceFinder.java" startLine="87" startPosition="16" endLine="126" endPosition="7">
-      <varInfo nodeId="4972886494893402199" varName="f" />
+      <varInfo nodeId="4972886494893402200" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="4972886494893402140" fileName="LongestCommonSubsequenceFinder.java" startLine="84" startPosition="37" endLine="126" endPosition="7">
       <varInfo nodeId="4972886494893402191" varName="i" />
@@ -261,7 +261,7 @@
       <varInfo nodeId="5504093910384079687" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="5504093910384079731" fileName="StringsIO.java" startLine="52" startPosition="46" endLine="55" endPosition="5">
-      <varInfo nodeId="5504093910384079731" varName="line" />
+      <varInfo nodeId="5504093910384079732" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="5504093910384079705" fileName="StringsIO.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="5504093910384079715" varName="file" />
@@ -407,7 +407,7 @@
     <scopeInfo nodeId="7295777740694850318" fileName="SNodeCompare.java" startLine="130" startPosition="66" endLine="134" endPosition="6" />
     <scopeInfo nodeId="7295777740694850302" fileName="SNodeCompare.java" startLine="137" startPosition="68" endLine="141" endPosition="6" />
     <scopeInfo nodeId="7295777740694849919" fileName="SNodeCompare.java" startLine="26" startPosition="71" endLine="31" endPosition="5">
-      <varInfo nodeId="7295777740694849919" varName="p" />
+      <varInfo nodeId="7295777740694849920" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="7295777740694850216" fileName="SNodeCompare.java" startLine="88" startPosition="7" endLine="93" endPosition="7">
       <varInfo nodeId="7295777740694850219" varName="i" />
@@ -450,7 +450,7 @@
       <varInfo nodeId="7295777740694849938" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="7295777740694850100" fileName="SNodeCompare.java" startLine="82" startPosition="83" endLine="94" endPosition="5">
-      <varInfo nodeId="7295777740694850100" varName="r" />
+      <varInfo nodeId="7295777740694850101" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="7295777740694850082" fileName="SNodeCompare.java" startLine="80" startPosition="63" endLine="95" endPosition="16">
       <varInfo nodeId="7295777740694850084" varName="roles" />
@@ -464,7 +464,7 @@
       <varInfo nodeId="7295777740694850029" varName="bRef" />
     </scopeInfo>
     <scopeInfo nodeId="7295777740694850017" fileName="SNodeCompare.java" startLine="48" startPosition="0" endLine="76" endPosition="5">
-      <varInfo nodeId="7295777740694850017" varName="r" />
+      <varInfo nodeId="7295777740694850018" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="7295777740694849958" fileName="SNodeCompare.java" startLine="35" startPosition="65" endLine="77" endPosition="16">
       <varInfo nodeId="2732852465125742105" varName="aMap" />
@@ -514,7 +514,7 @@
     <scopeInfo nodeId="8018595893829093221" fileName="DisjointSets.java" startLine="19" startPosition="49" endLine="21" endPosition="44" />
     <scopeInfo nodeId="8018595893829093217" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5" />
     <scopeInfo nodeId="8018595893829093218" fileName="DisjointSets.java" startLine="18" startPosition="45" endLine="22" endPosition="5">
-      <varInfo nodeId="8018595893829093218" varName="e" />
+      <varInfo nodeId="8018595893829093219" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="8018595893829093056" fileName="DisjointSets.java" startLine="25" startPosition="26" endLine="29" endPosition="48" />
     <scopeInfo nodeId="8018595893829093111" fileName="DisjointSets.java" startLine="37" startPosition="12" endLine="41" endPosition="7" />

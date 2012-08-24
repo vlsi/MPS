@@ -109,7 +109,7 @@
     <scopeInfo nodeId="830211401282058525" fileName="MoveNodes_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="3" />
     <scopeInfo nodeId="830211401282058525" fileName="MoveNodes_Action.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
     <scopeInfo nodeId="130937874511030719" fileName="MoveNodes_Action.java" startLine="106" startPosition="27" endLine="111" endPosition="11">
-      <varInfo nodeId="130937874511030719" varName="node" />
+      <varInfo nodeId="130937874511030720" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="830211401282058525" fileName="MoveNodes_Action.java" startLine="67" startPosition="5" endLine="76" endPosition="7">
       <varInfo nodeId="830211401282058525" varName="error" />

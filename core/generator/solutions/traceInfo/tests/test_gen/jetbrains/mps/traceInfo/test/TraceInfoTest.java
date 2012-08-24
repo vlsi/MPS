@@ -7,12 +7,12 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.TestMain;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.ide.ThreadUtils;
 import com.intellij.ide.IdeEventQueue;
 import org.junit.BeforeClass;
@@ -60,6 +60,36 @@ public class TraceInfoTest {
           }
         });
         Assert.assertTrue("Node " + node.getId() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+      }
+    });
+  }
+
+  @Test
+  public void foreachTest() {
+    invokeTest(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        try {
+          TestClass.foreachTest();
+        } catch (Throwable t) {
+          StackTraceElement stackTraceElement = t.getStackTrace()[0];
+          SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it");
+          Assert.assertTrue("Node " + node + " for variable it.", (node != null) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
+        }
+      }
+    });
+  }
+
+  @Test
+  public void generatedForeachTest() {
+    invokeTest(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        try {
+          TestClass.generatedForeachTest();
+        } catch (Throwable t) {
+          StackTraceElement stackTraceElement = t.getStackTrace()[0];
+          SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it_gen");
+          Assert.assertTrue("Node " + node + " for variable it_gen.", (node != null) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
+        }
       }
     });
   }

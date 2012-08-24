@@ -15,28 +15,33 @@
  */
 package jetbrains.mps.ide.editor;
 
+import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.editor.Document;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
+import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import org.jetbrains.annotations.NonNls;
 
 import java.util.Collections;
 import java.util.List;
 
 public class NodeEditor extends BaseNodeEditor {
+  private final MPSNodeVirtualFile myVirtualFile;
+
   public NodeEditor(IOperationContext context, SNode node) {
     super(context);
+    myVirtualFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
     getCurrentEditorComponent().editNode(node, context);
   }
 
-  public List<SNodePointer> getAllEditedNodes() {
-    SNodePointer editedNodePointer = getCurrentlyEditedNode();
-    if (editedNodePointer == null) {
-      return Collections.emptyList();
+  public Object getData(@NonNls String dataId) {
+    if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
+      return myVirtualFile;
     }
-    return Collections.singletonList(editedNodePointer);
+
+    return null;
   }
 
   @Override

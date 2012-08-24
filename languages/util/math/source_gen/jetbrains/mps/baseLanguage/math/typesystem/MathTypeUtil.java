@@ -273,8 +273,8 @@ public class MathTypeUtil {
         if (matches_i9t80i_a2a11) {
           {
             SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.MatrixType", null);
-            SPropertyOperations.set(result, "rows", "" + SPropertyOperations.getInteger(matchedNode_i9t80i_c0l, "rows"));
-            SPropertyOperations.set(result, "columns", "" + SPropertyOperations.getInteger(matchedNode_i9t80i_c0l, "columns"));
+            SPropertyOperations.set(result, "rows", "" + (SPropertyOperations.getInteger(matchedNode_i9t80i_c0l, "rows")));
+            SPropertyOperations.set(result, "columns", "" + (SPropertyOperations.getInteger(matchedNode_i9t80i_c0l, "columns")));
             SLinkOperations.setTarget(result, "elementType", e, true);
             return result;
           }
@@ -289,7 +289,7 @@ public class MathTypeUtil {
           if (matches_i9t80i_b2a11) {
             {
               SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.VectorType", null);
-              SPropertyOperations.set(result, "height", "" + SPropertyOperations.getInteger(matchedNode_i9t80i_c0l, "height"));
+              SPropertyOperations.set(result, "height", "" + (SPropertyOperations.getInteger(matchedNode_i9t80i_c0l, "height")));
               SLinkOperations.setTarget(result, "elementType", e, true);
               return result;
             }

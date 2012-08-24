@@ -26,7 +26,7 @@ public class SideTransformWrapperActionMap {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "rightOpen", "" + true);
+      SPropertyOperations.set(node, "rightOpen", "" + (true));
     }
   }
 }

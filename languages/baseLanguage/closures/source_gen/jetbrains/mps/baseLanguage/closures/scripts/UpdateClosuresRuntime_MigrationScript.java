@@ -569,7 +569,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             SNode cls = ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0a62a1a1a4a0a0a7a0().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, t, r, basecls, tvds, name));
-            SPropertyOperations.set(cls, "nonStatic", "" + false);
+            SPropertyOperations.set(cls, "nonStatic", "" + (false));
 
             ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0db0b0b0e0a0a0h0a().createNode("E" + (exceps + 1)));
           }
@@ -669,7 +669,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             SNode cls = ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0a42a1a1a4a0a0a8a0().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, t, basecls, tvds, name));
-            SPropertyOperations.set(cls, "nonStatic", "" + false);
+            SPropertyOperations.set(cls, "nonStatic", "" + (false));
 
             ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0bb0b0b0e0a0a0i0a().createNode("E" + (exceps + 1)));
           }
@@ -769,7 +769,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             SNode cls = ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0a42a1a1a4a0a0a9a0().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, r, basecls, tvds, name));
-            SPropertyOperations.set(cls, "nonStatic", "" + false);
+            SPropertyOperations.set(cls, "nonStatic", "" + (false));
 
             ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0bb0b0b0e0a0a0j0a().createNode("E" + (exceps + 1)));
           }
@@ -867,7 +867,7 @@ public class UpdateClosuresRuntime_MigrationScript extends BaseMigrationScript {
             }));
 
             SNode cls = ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0a22a1a1a4a0a0a01a0().createNode(iifcParams, iifc, pdecls, prefs, retVal, retVal, retVal, exdecls, iifcParams, iifc, iifcParams, iifc, basecls, tvds, name));
-            SPropertyOperations.set(cls, "nonStatic", "" + false);
+            SPropertyOperations.set(cls, "nonStatic", "" + (false));
 
             ListSequence.fromList(excepTypeVars).addElement(new UpdateClosuresRuntime_MigrationScript.QuotationClass_7zsbjc_a0a0z0b0b0e0a0a0k0a().createNode("E" + (exceps + 1)));
           }

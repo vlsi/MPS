@@ -302,7 +302,12 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       }
     })) {
       if ((TransformationUtil.isLowLevelVariableReference(variableRef))) {
-        String variableName = SPropertyOperations.getString(SLinkOperations.getTarget(variableRef, "baseVariableDeclaration", false), "name");
+        String variableName;
+        if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference") && SPropertyOperations.getBoolean(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(variableRef, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference"), "baseVariableDeclaration", false), "type", true), "isHigh")) {
+          variableName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(variableRef, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference"), "baseVariableDeclaration", false), "lowLevelName");
+        } else {
+          variableName = SPropertyOperations.getString(SLinkOperations.getTarget(variableRef, "baseVariableDeclaration", false), "name");
+        }
         SNode variableType = TypeChecker.getInstance().getTypeOf(variableRef);
 
         TransformationUtil.replaceLowLevelVariableReference(variableName, variableType, variableRef);

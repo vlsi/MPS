@@ -30,7 +30,7 @@ public class delete_CompactKW {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "isCompact", "" + false);
+      SPropertyOperations.set(node, "isCompact", "" + (false));
     }
   }
 }

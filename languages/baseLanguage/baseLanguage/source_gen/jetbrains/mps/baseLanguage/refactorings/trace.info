@@ -7,7 +7,7 @@
     <nodeInfo nodeId="2869783065404822208" fileName="MakeFieldFinal_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2869783065404758436" fileName="MakeFieldFinal.java" startLine="22" startPosition="52" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2869783065404822208" fileName="MakeFieldFinal_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2869783065404832785" fileName="MakeFieldFinal.java" startLine="26" startPosition="69" endLine="27" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2869783065404832785" fileName="MakeFieldFinal.java" startLine="26" startPosition="69" endLine="27" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2869783065404822208" fileName="MakeFieldFinal_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2869783065404832781" fileName="MakeFieldFinal.java" startLine="30" startPosition="86" endLine="31" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8213529844237519171" fileName="MakeFieldFinal.java" startLine="31" startPosition="191" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -30,7 +30,7 @@
     <scopeInfo nodeId="2869783065404822208" fileName="MakeFieldFinal_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="115" />
     <scopeInfo nodeId="2869783065404758436" fileName="MakeFieldFinal.java" startLine="22" startPosition="52" endLine="23" endPosition="39" />
     <scopeInfo nodeId="2869783065404822208" fileName="MakeFieldFinal_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" />
-    <scopeInfo nodeId="2869783065404758439" fileName="MakeFieldFinal.java" startLine="26" startPosition="69" endLine="27" endPosition="88" />
+    <scopeInfo nodeId="2869783065404758439" fileName="MakeFieldFinal.java" startLine="26" startPosition="69" endLine="27" endPosition="90" />
     <scopeInfo nodeId="2869783065404822208" fileName="MakeFieldFinal_Target.java" startLine="9" startPosition="66" endLine="11" endPosition="3" />
     <scopeInfo nodeId="2869783065404758436" fileName="MakeFieldFinal.java" startLine="14" startPosition="53" endLine="16" endPosition="3" />
     <scopeInfo nodeId="2869783065404823032" fileName="MakeFieldFinal.java" startLine="30" startPosition="86" endLine="32" endPosition="0" />
@@ -300,10 +300,10 @@
     <scopeInfo nodeId="5161277940733430086" fileName="ChangeMethodSignature.java" startLine="19" startPosition="60" endLine="22" endPosition="3" />
     <scopeInfo nodeId="5161277940733430089" fileName="ChangeMethodSignature.java" startLine="32" startPosition="69" endLine="35" endPosition="5" />
     <scopeInfo nodeId="5161277940733431560" fileName="ChangeMethodSignature.java" startLine="32" startPosition="69" endLine="35" endPosition="5">
-      <varInfo nodeId="5161277940733431560" varName="ref" />
+      <varInfo nodeId="5161277940733431561" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="5161277940733431517" fileName="ChangeMethodSignature.java" startLine="42" startPosition="50" endLine="45" endPosition="7">
-      <varInfo nodeId="5161277940733431517" varName="result" />
+      <varInfo nodeId="5161277940733431518" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
     <scopeInfo nodeId="5161277940733430261" fileName="ChangeMethodSignature_Target.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
@@ -324,7 +324,7 @@
       <varInfo nodeId="5161277940733431523" varName="usages" />
     </scopeInfo>
     <scopeInfo nodeId="5161277940733431447" fileName="ChangeMethodSignature.java" startLine="39" startPosition="58" endLine="48" endPosition="5">
-      <varInfo nodeId="5161277940733431447" varName="ref" />
+      <varInfo nodeId="5161277940733431448" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="5161277940733431348" fileName="ChangeMethodSignature.java" startLine="38" startPosition="86" endLine="49" endPosition="22">
       <varInfo nodeId="5161277940733431434" varName="allResults" />
@@ -387,7 +387,7 @@
     <scopeInfo nodeId="7874812549549771289" fileName="RenameMethod.java" startLine="23" startPosition="25" endLine="25" endPosition="53" />
     <scopeInfo nodeId="1494876485718558703" fileName="RenameMethod.java" startLine="42" startPosition="76" endLine="45" endPosition="7" />
     <scopeInfo nodeId="1494876485718558725" fileName="RenameMethod.java" startLine="42" startPosition="76" endLine="45" endPosition="7">
-      <varInfo nodeId="1494876485718558725" varName="node" />
+      <varInfo nodeId="1494876485718558726" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="7874812549549771310" fileName="RenameMethod_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
@@ -584,7 +584,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9118878263582100185" fileName="MakeFieldStatic.java" startLine="25" startPosition="54" endLine="30" endPosition="3" />
     <scopeInfo nodeId="9118878263582111376" fileName="MakeFieldStatic.java" startLine="50" startPosition="68" endLine="55" endPosition="9">
-      <varInfo nodeId="9118878263582111376" varName="result" />
+      <varInfo nodeId="9118878263582111377" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8794595397332155110" fileName="MakeFieldStatic.java" startLine="145" startPosition="7" endLine="150" endPosition="31">
       <varInfo nodeId="8794595397332155110" varName="quotedNode1_2" />
@@ -630,7 +630,7 @@
     </scopeInfo>
     <scopeInfo nodeId="9118878263582108366" fileName="MakeFieldStatic.java" startLine="42" startPosition="57" endLine="57" endPosition="0" />
     <scopeInfo nodeId="9118878263582143804" fileName="MakeFieldStatic.java" startLine="64" startPosition="125" endLine="80" endPosition="5">
-      <varInfo nodeId="9118878263582143804" varName="result" />
+      <varInfo nodeId="9118878263582143805" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="9118878263582108235" fileName="MakeFieldStatic.java" startLine="40" startPosition="68" endLine="58" endPosition="16">
       <varInfo nodeId="9118878263582108276" varName="node" />

@@ -226,7 +226,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "startIncluded", "" + false);
+      SPropertyOperations.set(node, "startIncluded", "" + (false));
     }
 
     public String getMatchingText() {
@@ -239,7 +239,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "startIncluded", "" + true);
+      SPropertyOperations.set(node, "startIncluded", "" + (true));
     }
 
     public String getMatchingText() {
@@ -252,7 +252,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "endIncluded", "" + false);
+      SPropertyOperations.set(node, "endIncluded", "" + (false));
     }
 
     public String getMatchingText() {
@@ -265,7 +265,7 @@ public class IntervalLiteral_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "endIncluded", "" + true);
+      SPropertyOperations.set(node, "endIncluded", "" + (true));
     }
 
     public String getMatchingText() {

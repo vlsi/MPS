@@ -1108,10 +1108,10 @@
     <scopeInfo nodeId="4507335185602808607" fileName="InlineMethodRefactoringAnalyzer.java" startLine="29" startPosition="104" endLine="32" endPosition="27" />
     <scopeInfo nodeId="4507335185602808491" fileName="InlineMethodRefactoringAnalyzer.java" startLine="50" startPosition="30" endLine="53" endPosition="11" />
     <scopeInfo nodeId="4507335185602808492" fileName="InlineMethodRefactoringAnalyzer.java" startLine="50" startPosition="30" endLine="53" endPosition="11">
-      <varInfo nodeId="4507335185602808492" varName="res" />
+      <varInfo nodeId="4507335185602808493" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602808538" fileName="InlineMethodRefactoringAnalyzer.java" startLine="65" startPosition="66" endLine="68" endPosition="7">
-      <varInfo nodeId="4507335185602808538" varName="methodDeclaration" />
+      <varInfo nodeId="4507335185602808539" varName="methodDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602808457" fileName="InlineMethodRefactoringAnalyzer.java" startLine="39" startPosition="61" endLine="43" endPosition="0" />
     <scopeInfo nodeId="4507335185602808600" fileName="InlineMethodRefactoringAnalyzer.java" startLine="28" startPosition="0" endLine="33" endPosition="3">
@@ -1343,7 +1343,7 @@
     <scopeInfo nodeId="4507335185602809103" fileName="InlineMethodDialog.java" startLine="85" startPosition="57" endLine="89" endPosition="0" />
     <scopeInfo nodeId="4317009991304269635" fileName="InlineMethodDialog.java" startLine="156" startPosition="61" endLine="160" endPosition="0" />
     <scopeInfo nodeId="4317009991304269675" fileName="InlineMethodDialog.java" startLine="187" startPosition="29" endLine="191" endPosition="11">
-      <varInfo nodeId="4317009991304269675" varName="res" />
+      <varInfo nodeId="4317009991304269676" varName="res" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602809158" fileName="InlineMethodDialog.java" startLine="98" startPosition="70" endLine="103" endPosition="0">
       <varInfo nodeId="4507335185602809159" varName="e" />
@@ -1570,7 +1570,7 @@
     <scopeInfo nodeId="4507335185602814420" fileName="VisibilityPanel.java" startLine="53" startPosition="53" endLine="55" endPosition="17" />
     <scopeInfo nodeId="4507335185602814403" fileName="VisibilityPanel.java" startLine="47" startPosition="29" endLine="50" endPosition="5" />
     <scopeInfo nodeId="4507335185602814404" fileName="VisibilityPanel.java" startLine="47" startPosition="29" endLine="50" endPosition="5">
-      <varInfo nodeId="4507335185602814404" varName="listener" />
+      <varInfo nodeId="4507335185602814405" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602814392" fileName="VisibilityPanel.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="4507335185602814431" fileName="VisibilityPanel.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
@@ -1689,7 +1689,7 @@
       <varInfo nodeId="4507335185602817383" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602817403" fileName="BaseChooseNodeDialog.java" startLine="61" startPosition="69" endLine="64" endPosition="5">
-      <varInfo nodeId="4507335185602817403" varName="nextOwnModelDescriptor" />
+      <varInfo nodeId="4507335185602817404" varName="nextOwnModelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602817593" fileName="BaseChooseNodeDialog.java" startLine="119" startPosition="15" endLine="122" endPosition="136">
       <varInfo nodeId="4507335185602817595" varName="modelRootTreeNode" />
@@ -1726,13 +1726,13 @@
       <varInfo nodeId="4507335185602817360" varName="title" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602817591" fileName="BaseChooseNodeDialog.java" startLine="114" startPosition="47" endLine="123" endPosition="9">
-      <varInfo nodeId="4507335185602817591" varName="nextRoot" />
+      <varInfo nodeId="4507335185602817592" varName="nextRoot" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602817548" fileName="BaseChooseNodeDialog.java" startLine="102" startPosition="34" endLine="112" endPosition="0">
       <varInfo nodeId="4507335185602817549" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602817460" fileName="BaseChooseNodeDialog.java" startLine="75" startPosition="55" endLine="86" endPosition="5">
-      <varInfo nodeId="4507335185602817460" varName="descriptor" />
+      <varInfo nodeId="4507335185602817461" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602817649" fileName="BaseChooseNodeDialog.java" startLine="129" startPosition="58" endLine="140" endPosition="30">
       <varInfo nodeId="4507335185602817651" varName="selectedNode" />
@@ -1811,7 +1811,7 @@
       <varInfo nodeId="4507335185602819651" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602819559" fileName="DuplicatesProcessor.java" startLine="26" startPosition="70" endLine="29" endPosition="9">
-      <varInfo nodeId="4507335185602819559" varName="message" />
+      <varInfo nodeId="4507335185602819560" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602819522" fileName="DuplicatesProcessor.java" startLine="21" startPosition="26" endLine="38" endPosition="9">
       <varInfo nodeId="4507335185602819543" varName="dialog" />
@@ -1820,7 +1820,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4507335185602819518" fileName="DuplicatesProcessor.java" startLine="20" startPosition="59" endLine="41" endPosition="7" />
     <scopeInfo nodeId="4507335185602819515" fileName="DuplicatesProcessor.java" startLine="19" startPosition="31" endLine="42" endPosition="5">
-      <varInfo nodeId="4507335185602819515" varName="duplicate" />
+      <varInfo nodeId="4507335185602819516" varName="duplicate" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602819510" fileName="DuplicatesProcessor.java" startLine="18" startPosition="60" endLine="42" endPosition="5">
       <varInfo nodeId="4507335185602819512" varName="replaceAll" />
@@ -1846,7 +1846,7 @@
       <varInfo nodeId="4507335185602819661" varName="context" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602819686" fileName="MethodDuplicatesProcessor.java" startLine="24" startPosition="49" endLine="27" endPosition="5">
-      <varInfo nodeId="4507335185602819686" varName="node" />
+      <varInfo nodeId="4507335185602819687" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4507335185602819679" fileName="MethodDuplicatesProcessor.java" startLine="23" startPosition="77" endLine="28" endPosition="18">
       <varInfo nodeId="4507335185602819681" varName="result" />
@@ -1855,7 +1855,6 @@
       <varInfo nodeId="4507335185602819677" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="4507335185602819668" fileName="MethodDuplicatesProcessor.java" startLine="17" startPosition="43" endLine="16" endPosition="0" />
-    <unitInfo nodeId="4507335185602819654" fileName="MethodDuplicatesProcessor.java" startLine="16" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.MethodDuplicatesProcessor" />
   </root>
   <root nodeId="4507335185602819706">
     <nodeInfo nodeId="4507335185602819715" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="86" endLine="16" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
@@ -1872,6 +1871,7 @@
       <varInfo nodeId="4507335185602819729" varName="duplicate" />
     </scopeInfo>
     <unitInfo nodeId="4507335185602819720" fileName="VariableDuplicatesProcessor.java" startLine="16" startPosition="43" endLine="15" endPosition="0" />
+    <unitInfo nodeId="4507335185602819706" fileName="VariableDuplicatesProcessor.java" startLine="15" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.VariableDuplicatesProcessor" />
   </root>
   <root nodeId="4507335185602819743">
     <nodeInfo nodeId="4507335185602819801" fileName="AskDialog.java" startLine="14" startPosition="46" endLine="15" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />

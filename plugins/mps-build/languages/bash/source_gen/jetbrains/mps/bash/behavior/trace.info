@@ -264,7 +264,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8729722338759341979" fileName="SimpleWord_Behavior.java" startLine="23" startPosition="139" endLine="42" endPosition="7" />
     <scopeInfo nodeId="8729722338759341977" fileName="SimpleWord_Behavior.java" startLine="22" startPosition="115" endLine="43" endPosition="5">
-      <varInfo nodeId="8729722338759341977" varName="unit" />
+      <varInfo nodeId="8729722338759341978" varName="unit" />
     </scopeInfo>
     <scopeInfo nodeId="3147078024759753601" fileName="SimpleWord_Behavior.java" startLine="18" startPosition="105" endLine="44" endPosition="17">
       <varInfo nodeId="8457058248754676974" varName="refConcept" />
@@ -395,16 +395,16 @@
       <varInfo nodeId="4857814468242259748" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="7803330421062325331" fileName="ExternalCommandCall_Behavior.java" startLine="17" startPosition="48" endLine="22" endPosition="5">
-      <varInfo nodeId="7803330421062325331" varName="ref" />
+      <varInfo nodeId="7803330421062325332" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="3147078024755336016" fileName="ExternalCommandCall_Behavior.java" startLine="36" startPosition="84" endLine="41" endPosition="5">
-      <varInfo nodeId="3147078024755336016" varName="opt" />
+      <varInfo nodeId="3147078024755336017" varName="opt" />
     </scopeInfo>
     <scopeInfo nodeId="3263637656468223684" fileName="ExternalCommandCall_Behavior.java" startLine="46" startPosition="156" endLine="51" endPosition="5">
-      <varInfo nodeId="3263637656468223684" varName="ref" />
+      <varInfo nodeId="3263637656468223685" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="3263637656468367635" fileName="ExternalCommandCall_Behavior.java" startLine="56" startPosition="163" endLine="61" endPosition="5">
-      <varInfo nodeId="3263637656468367635" varName="ref" />
+      <varInfo nodeId="3263637656468367636" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4857814468242259748" fileName="ExternalCommandCall_Behavior.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="4857814468242259748" varName="thisNode" />
@@ -474,13 +474,13 @@
     <scopeInfo nodeId="3263637656468511441" fileName="ExternalCommandDeclaration_Behavior.java" startLine="51" startPosition="110" endLine="54" endPosition="7" />
     <scopeInfo nodeId="3147078024751157147" fileName="ExternalCommandDeclaration_Behavior.java" startLine="19" startPosition="99" endLine="23" endPosition="23" />
     <scopeInfo nodeId="3263637656467505004" fileName="ExternalCommandDeclaration_Behavior.java" startLine="30" startPosition="46" endLine="35" endPosition="5">
-      <varInfo nodeId="3263637656467505004" varName="opt" />
+      <varInfo nodeId="3263637656467505005" varName="opt" />
     </scopeInfo>
     <scopeInfo nodeId="3263637656468078173" fileName="ExternalCommandDeclaration_Behavior.java" startLine="40" startPosition="49" endLine="45" endPosition="5">
-      <varInfo nodeId="3263637656468078173" varName="opt" />
+      <varInfo nodeId="3263637656468078174" varName="opt" />
     </scopeInfo>
     <scopeInfo nodeId="3263637656468511434" fileName="ExternalCommandDeclaration_Behavior.java" startLine="50" startPosition="49" endLine="55" endPosition="5">
-      <varInfo nodeId="3263637656468511434" varName="opt" />
+      <varInfo nodeId="3263637656468511435" varName="opt" />
     </scopeInfo>
     <scopeInfo nodeId="3147078024750286880" fileName="ExternalCommandDeclaration_Behavior.java" startLine="18" startPosition="118" endLine="24" endPosition="7" />
     <scopeInfo nodeId="3263637656467505000" fileName="ExternalCommandDeclaration_Behavior.java" startLine="29" startPosition="83" endLine="36" endPosition="16">
@@ -493,7 +493,7 @@
       <varInfo nodeId="3263637656468511429" varName="symbols" />
     </scopeInfo>
     <scopeInfo nodeId="3147078024750286845" fileName="ExternalCommandDeclaration_Behavior.java" startLine="17" startPosition="28" endLine="25" endPosition="5">
-      <varInfo nodeId="3147078024750286845" varName="declaration" />
+      <varInfo nodeId="3147078024750286846" varName="declaration" />
     </scopeInfo>
     <scopeInfo nodeId="3147078024750286843" fileName="ExternalCommandDeclaration_Behavior.java" startLine="16" startPosition="84" endLine="26" endPosition="16">
       <varInfo nodeId="3147078024750535227" varName="enabled" />
@@ -559,7 +559,7 @@
       <varInfo nodeId="7803330421060043852" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="7803330421062325114" fileName="OptionSetReference_Behavior.java" startLine="16" startPosition="49" endLine="19" endPosition="5">
-      <varInfo nodeId="7803330421062325114" varName="opt" />
+      <varInfo nodeId="7803330421062325115" varName="opt" />
     </scopeInfo>
     <scopeInfo nodeId="7803330421062325065" fileName="OptionSetReference_Behavior.java" startLine="15" startPosition="85" endLine="20" endPosition="19">
       <varInfo nodeId="7803330421062325107" varName="symbols" />
@@ -629,7 +629,7 @@
       <varInfo nodeId="9034131902192956164" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="9034131902194480199" fileName="VariableNameDeclaration_Behavior.java" startLine="37" startPosition="123" endLine="40" endPosition="5">
-      <varInfo nodeId="9034131902194480199" varName="line" />
+      <varInfo nodeId="9034131902194480200" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="9034131902194480316" fileName="VariableNameDeclaration_Behavior.java" startLine="45" startPosition="121" endLine="48" endPosition="7" />
     <scopeInfo nodeId="9034131902193864302" fileName="VariableNameDeclaration_Behavior.java" startLine="22" startPosition="142" endLine="26" endPosition="188" />
@@ -637,10 +637,10 @@
       <varInfo nodeId="9034131902194480347" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="9034131902194480313" fileName="VariableNameDeclaration_Behavior.java" startLine="44" startPosition="77" endLine="49" endPosition="5">
-      <varInfo nodeId="9034131902194480313" varName="v" />
+      <varInfo nodeId="9034131902194480314" varName="v" />
     </scopeInfo>
     <scopeInfo nodeId="9034131902193864299" fileName="VariableNameDeclaration_Behavior.java" startLine="21" startPosition="105" endLine="27" endPosition="5">
-      <varInfo nodeId="9034131902193864299" varName="line" />
+      <varInfo nodeId="9034131902193864300" varName="line" />
     </scopeInfo>
     <scopeInfo nodeId="9034131902194480303" fileName="VariableNameDeclaration_Behavior.java" startLine="44" startPosition="77" endLine="50" endPosition="16" />
     <scopeInfo nodeId="9034131902194381918" fileName="VariableNameDeclaration_Behavior.java" startLine="34" startPosition="79" endLine="41" endPosition="18">

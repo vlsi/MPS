@@ -144,13 +144,13 @@
       <varInfo nodeId="1987251859607011636" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1987251859607015306" fileName="typeof_DecisionTable_InferenceRule.java" startLine="29" startPosition="0" endLine="38" endPosition="5">
-      <varInfo nodeId="1987251859607015306" varName="e" />
+      <varInfo nodeId="1987251859607015307" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1987251859607015335" fileName="typeof_DecisionTable_InferenceRule.java" startLine="38" startPosition="5" endLine="47" endPosition="5">
-      <varInfo nodeId="1987251859607015335" varName="e" />
+      <varInfo nodeId="1987251859607015336" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1987251859607015350" fileName="typeof_DecisionTable_InferenceRule.java" startLine="47" startPosition="5" endLine="56" endPosition="5">
-      <varInfo nodeId="1987251859607015350" varName="e" />
+      <varInfo nodeId="1987251859607015351" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="86" startPosition="76" endLine="95" endPosition="20">
       <varInfo nodeId="1987251859607015332" varName="_parameterValues_129834374" />

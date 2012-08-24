@@ -75,7 +75,7 @@ public class ModuleLoader {
       SPropertyOperations.set(myModule, "name", myModuleDescriptor.getModuleReference().getModuleFqName());
 
       if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-        SPropertyOperations.set(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "doNotCompile", "" + (myModuleDescriptor instanceof SolutionDescriptor && !(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS())));
+        SPropertyOperations.set(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "doNotCompile", "" + ((myModuleDescriptor instanceof SolutionDescriptor && !(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()))));
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).removeWhere(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency");
@@ -121,7 +121,7 @@ public class ModuleLoader {
     if (myModuleDescriptor != null) {
       loadModule();
     }
-    SPropertyOperations.set(myModule, "compact", "" + false);
+    SPropertyOperations.set(myModule, "compact", "" + (false));
   }
 
   private void loadFile() {
@@ -647,7 +647,7 @@ public class ModuleLoader {
 
         SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null);
         SLinkOperations.setTarget(res, "module", resolved, false);
-        SPropertyOperations.set(res, "reexport", "" + reexport);
+        SPropertyOperations.set(res, "reexport", "" + (reexport));
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(res);
       }
     }
@@ -733,7 +733,7 @@ public class ModuleLoader {
 
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null);
       SLinkOperations.setTarget(res, "module", resolved, false);
-      SPropertyOperations.set(res, "reexport", "" + reexport);
+      SPropertyOperations.set(res, "reexport", "" + (reexport));
       SNode extr = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
       SLinkOperations.setTarget(extr, "dependency", res, true);
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(extr);

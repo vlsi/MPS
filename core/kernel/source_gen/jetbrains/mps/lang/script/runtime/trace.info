@@ -171,7 +171,7 @@
       <varInfo nodeId="1173268376299572164" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1173268376299572257" fileName="StubRefUtil.java" startLine="124" startPosition="64" endLine="128" endPosition="5">
-      <varInfo nodeId="1173268376299572257" varName="newRef" />
+      <varInfo nodeId="1173268376299572258" varName="newRef" />
     </scopeInfo>
     <scopeInfo nodeId="1173268376299571734" fileName="StubRefUtil.java" startLine="138" startPosition="91" endLine="142" endPosition="17" />
     <scopeInfo nodeId="1173268376299571735" fileName="StubRefUtil.java" startLine="145" startPosition="80" endLine="149" endPosition="16" />
@@ -256,7 +256,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1173268376299572155" fileName="StubRefUtil.java" startLine="100" startPosition="70" endLine="116" endPosition="5" />
     <scopeInfo nodeId="1173268376299572156" fileName="StubRefUtil.java" startLine="100" startPosition="70" endLine="116" endPosition="5">
-      <varInfo nodeId="1173268376299572156" varName="ref" />
+      <varInfo nodeId="1173268376299572157" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1173268376299572153" fileName="StubRefUtil.java" startLine="99" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="1173268376299572231" varName="model" />

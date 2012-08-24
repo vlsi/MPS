@@ -107,7 +107,7 @@
       <varInfo nodeId="742486944792922406" varName="classifier" />
     </scopeInfo>
     <scopeInfo nodeId="4733928027686958948" fileName="ChooseFromStubsByNameModel.java" startLine="45" startPosition="110" endLine="48" endPosition="11">
-      <varInfo nodeId="4733928027686958948" varName="model" />
+      <varInfo nodeId="4733928027686958949" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="742486944792922333" fileName="ChooseFromStubsByNameModel.java" startLine="36" startPosition="66" endLine="40" endPosition="13" />
     <scopeInfo nodeId="742486944792821027" fileName="ChooseFromStubsByNameModel.java" startLine="75" startPosition="0" endLine="79" endPosition="0">

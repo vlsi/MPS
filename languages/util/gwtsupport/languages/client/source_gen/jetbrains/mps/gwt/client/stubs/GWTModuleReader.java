@@ -86,18 +86,18 @@ public class GWTModuleReader {
     String defaultExcludes = filterElm.getAttributeValue("defaultexcludes");
     if (defaultExcludes != null) {
       SNode de = SLinkOperations.addNewChild(this.patternFilter, "attr", "jetbrains.mps.gwt.client.structure.DefaultExcludes");
-      SPropertyOperations.set(de, "value", "" + ("yes".equals(defaultExcludes) ?
+      SPropertyOperations.set(de, "value", "" + (("yes".equals(defaultExcludes) ?
         true :
         false
-      ));
+      )));
     }
     String caseSensitive = filterElm.getAttributeValue("casesensitive");
     if (caseSensitive != null) {
       SNode cs = SLinkOperations.addNewChild(this.patternFilter, "attr", "jetbrains.mps.gwt.client.structure.CaseSensitive");
-      SPropertyOperations.set(cs, "value", "" + ("true".equals(caseSensitive) ?
+      SPropertyOperations.set(cs, "value", "" + (("true".equals(caseSensitive) ?
         true :
         false
-      ));
+      )));
     }
     for (Element elm : Sequence.fromIterable(this.elements(filterElm, "include", "exclude"))) {
       this.readPatternHolder(elm);

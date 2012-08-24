@@ -4184,7 +4184,7 @@
       <varInfo nodeId="3207605520775490247" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="3207605520775490327" fileName="ShowSurroundWithIntentions_Action.java" startLine="142" startPosition="0" endLine="154" endPosition="5">
-      <varInfo nodeId="3207605520775490327" varName="pair" />
+      <varInfo nodeId="3207605520775490328" varName="pair" />
     </scopeInfo>
     <scopeInfo nodeId="3207605520775490246" fileName="ShowSurroundWithIntentions_Action.java" startLine="59" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="3207605520775490246" varName="_params" />
@@ -4803,7 +4803,7 @@
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="36" startPosition="0" endLine="41" endPosition="3" />
     <scopeInfo nodeId="3774693388238498747" fileName="DeleteLine_Action.java" startLine="42" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="3774693388238498793" fileName="DeleteLine_Action.java" startLine="92" startPosition="11" endLine="97" endPosition="11">
-      <varInfo nodeId="3774693388238498793" varName="childCell" />
+      <varInfo nodeId="3774693388238498794" varName="childCell" />
     </scopeInfo>
     <scopeInfo nodeId="3774693388238498950" fileName="DeleteLine_Action.java" startLine="126" startPosition="59" endLine="131" endPosition="11" />
     <scopeInfo nodeId="3774693388238498977" fileName="DeleteLine_Action.java" startLine="134" startPosition="7" endLine="139" endPosition="7">
@@ -5203,7 +5203,7 @@
     <scopeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="28" startPosition="32" endLine="31" endPosition="41" />
     <scopeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" />
     <scopeInfo nodeId="4362199797783345535" fileName="CopyThisDown_Action.java" startLine="111" startPosition="9" endLine="114" endPosition="9">
-      <varInfo nodeId="4362199797783345535" varName="node" />
+      <varInfo nodeId="4362199797783345536" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4362199797783345393" fileName="CopyThisDown_Action.java" startLine="117" startPosition="0" endLine="120" endPosition="7">
       <varInfo nodeId="4362199797783345393" varName="t" />

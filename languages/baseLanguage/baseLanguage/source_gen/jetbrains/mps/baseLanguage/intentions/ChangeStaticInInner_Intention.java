@@ -49,7 +49,7 @@ public class ChangeStaticInInner_Intention extends BaseIntention implements Inte
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "nonStatic", "" + !(SPropertyOperations.getBoolean(node, "nonStatic")));
+    SPropertyOperations.set(node, "nonStatic", "" + (!(SPropertyOperations.getBoolean(node, "nonStatic"))));
   }
 
   public String getLocationString() {

@@ -80,7 +80,7 @@
     <scopeInfo nodeId="5541828167401370165" fileName="ModulesClusterizer.java" startLine="114" startPosition="25" endLine="116" endPosition="19" />
     <scopeInfo nodeId="5006694999088887596" fileName="ModulesClusterizer.java" startLine="126" startPosition="62" endLine="128" endPosition="57" />
     <scopeInfo nodeId="3712686628935232879" fileName="ModulesClusterizer.java" startLine="97" startPosition="75" endLine="100" endPosition="9">
-      <varInfo nodeId="3712686628935232879" varName="l" />
+      <varInfo nodeId="3712686628935232880" varName="l" />
     </scopeInfo>
     <scopeInfo nodeId="1077540970775395298" fileName="ModulesClusterizer.java" startLine="39" startPosition="101" endLine="43" endPosition="0">
       <varInfo nodeId="1077540970775395298" varName="r" />

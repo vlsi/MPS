@@ -165,10 +165,10 @@
     <scopeInfo nodeId="3441329651527913434" fileName="ProcessHandlerBuilder.java" startLine="122" startPosition="14" endLine="124" endPosition="31" />
     <scopeInfo nodeId="454072909645324587" fileName="ProcessHandlerBuilder.java" startLine="138" startPosition="57" endLine="140" endPosition="30" />
     <scopeInfo nodeId="3908032508224771471" fileName="ProcessHandlerBuilder.java" startLine="43" startPosition="58" endLine="46" endPosition="5">
-      <varInfo nodeId="3908032508224771471" varName="commandPart" />
+      <varInfo nodeId="3908032508224771472" varName="commandPart" />
     </scopeInfo>
     <scopeInfo nodeId="3908032508224771487" fileName="ProcessHandlerBuilder.java" startLine="50" startPosition="70" endLine="53" endPosition="5">
-      <varInfo nodeId="3908032508224771487" varName="commandPart" />
+      <varInfo nodeId="3908032508224771488" varName="commandPart" />
     </scopeInfo>
     <scopeInfo nodeId="3908032508224771431" fileName="ProcessHandlerBuilder.java" startLine="29" startPosition="65" endLine="33" endPosition="16" />
     <scopeInfo nodeId="2343546112398280850" fileName="ProcessHandlerBuilder.java" startLine="36" startPosition="60" endLine="40" endPosition="16" />

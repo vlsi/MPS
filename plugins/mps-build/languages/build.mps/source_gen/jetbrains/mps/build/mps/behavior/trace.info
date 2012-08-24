@@ -320,10 +320,10 @@
     <scopeInfo nodeId="202934866058962810" fileName="BuildMps_Module_Behavior.java" startLine="54" startPosition="11" endLine="67" endPosition="9" />
     <scopeInfo nodeId="2569834391839855123" fileName="BuildMps_Module_Behavior.java" startLine="110" startPosition="71" endLine="123" endPosition="7" />
     <scopeInfo nodeId="4421917191016427425" fileName="BuildMps_Module_Behavior.java" startLine="93" startPosition="0" endLine="107" endPosition="5">
-      <varInfo nodeId="4421917191016427425" varName="path" />
+      <varInfo nodeId="4421917191016427426" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="2569834391839855120" fileName="BuildMps_Module_Behavior.java" startLine="109" startPosition="83" endLine="124" endPosition="5">
-      <varInfo nodeId="2569834391839855120" varName="jm" />
+      <varInfo nodeId="2569834391839855121" varName="jm" />
     </scopeInfo>
     <scopeInfo nodeId="6859736767834855066" fileName="BuildMps_Module_Behavior.java" startLine="72" startPosition="77" endLine="90" endPosition="9">
       <varInfo nodeId="202934866058962899" varName="jarRuntime" />
@@ -333,16 +333,16 @@
     </scopeInfo>
     <scopeInfo nodeId="6859736767834900794" fileName="BuildMps_Module_Behavior.java" startLine="71" startPosition="79" endLine="91" endPosition="7" />
     <scopeInfo nodeId="6859736767834900791" fileName="BuildMps_Module_Behavior.java" startLine="70" startPosition="0" endLine="92" endPosition="5">
-      <varInfo nodeId="6859736767834900791" varName="lr" />
+      <varInfo nodeId="6859736767834900792" varName="lr" />
     </scopeInfo>
     <scopeInfo nodeId="202934866058962807" fileName="BuildMps_Module_Behavior.java" startLine="38" startPosition="0" endLine="68" endPosition="7">
-      <varInfo nodeId="202934866058962807" varName="dep" />
+      <varInfo nodeId="202934866058962808" varName="dep" />
     </scopeInfo>
     <scopeInfo nodeId="2569834391839847774" fileName="BuildMps_Module_Behavior.java" startLine="29" startPosition="65" endLine="68" endPosition="7">
       <varInfo nodeId="7880069565647276439" varName="artifact" />
     </scopeInfo>
     <scopeInfo nodeId="2569834391839847771" fileName="BuildMps_Module_Behavior.java" startLine="28" startPosition="54" endLine="69" endPosition="5">
-      <varInfo nodeId="2569834391839847771" varName="m" />
+      <varInfo nodeId="2569834391839847772" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="5908258303322131575" fileName="BuildMps_Module_Behavior.java" startLine="24" startPosition="149" endLine="128" endPosition="5">
       <varInfo nodeId="7525356604723806998" varName="closure" />
@@ -498,7 +498,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7984891866937844934" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="86" startPosition="102" endLine="105" endPosition="156" />
     <scopeInfo nodeId="2219920121494203670" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="37" startPosition="60" endLine="57" endPosition="5">
-      <varInfo nodeId="2219920121494203670" varName="ic" />
+      <varInfo nodeId="2219920121494203671" varName="ic" />
     </scopeInfo>
     <scopeInfo nodeId="7117056644539913755" fileName="BuildMpsLayout_Plugin_Behavior.java" startLine="61" startPosition="38" endLine="81" endPosition="7">
       <varInfo nodeId="7117056644539913757" varName="node" />

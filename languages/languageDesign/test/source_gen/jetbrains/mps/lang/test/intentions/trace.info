@@ -198,15 +198,15 @@
     <nodeInfo nodeId="1229956491859" fileName="AddCellAnnotation_Intention.java" startLine="62" startPosition="158" endLine="63" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226066626900" fileName="AddCellAnnotation_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1228588344665" fileName="AddCellAnnotation_Intention.java" startLine="65" startPosition="130" endLine="66" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1977980803835380527" fileName="AddCellAnnotation_Intention.java" startLine="67" startPosition="70" endLine="68" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1977980803835380527" fileName="AddCellAnnotation_Intention.java" startLine="67" startPosition="70" endLine="68" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6268941039745612489" fileName="AddCellAnnotation_Intention.java" startLine="70" startPosition="50" endLine="71" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1229432616638" fileName="AddCellAnnotation_Intention.java" startLine="71" startPosition="62" endLine="72" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432964459" fileName="AddCellAnnotation_Intention.java" startLine="73" startPosition="54" endLine="74" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432832864" fileName="AddCellAnnotation_Intention.java" startLine="75" startPosition="14" endLine="76" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1932269937152736130" fileName="AddCellAnnotation_Intention.java" startLine="77" startPosition="7" endLine="78" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6268941039745612515" fileName="AddCellAnnotation_Intention.java" startLine="78" startPosition="77" endLine="79" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6268941039745615927" fileName="AddCellAnnotation_Intention.java" startLine="79" startPosition="95" endLine="80" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229956650965" fileName="AddCellAnnotation_Intention.java" startLine="81" startPosition="12" endLine="82" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432964459" fileName="AddCellAnnotation_Intention.java" startLine="73" startPosition="54" endLine="74" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432832864" fileName="AddCellAnnotation_Intention.java" startLine="75" startPosition="14" endLine="76" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1932269937152736130" fileName="AddCellAnnotation_Intention.java" startLine="77" startPosition="7" endLine="78" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6268941039745612515" fileName="AddCellAnnotation_Intention.java" startLine="78" startPosition="79" endLine="79" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6268941039745615927" fileName="AddCellAnnotation_Intention.java" startLine="79" startPosition="97" endLine="80" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229956650965" fileName="AddCellAnnotation_Intention.java" startLine="81" startPosition="12" endLine="82" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1229530702910" fileName="AddCellAnnotation_Intention.java" startLine="83" startPosition="5" endLine="84" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1017540429574408417" fileName="AddCellAnnotation_Intention.java" startLine="84" startPosition="78" endLine="85" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1017540429574408440" fileName="AddCellAnnotation_Intention.java" startLine="86" startPosition="50" endLine="87" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -244,10 +244,10 @@
     <scopeInfo nodeId="1225963656907" fileName="AddCellAnnotation_Intention.java" startLine="53" startPosition="90" endLine="54" endPosition="119" />
     <scopeInfo nodeId="1229956363149" fileName="AddCellAnnotation_Intention.java" startLine="59" startPosition="154" endLine="60" endPosition="53" />
     <scopeInfo nodeId="1229956429663" fileName="AddCellAnnotation_Intention.java" startLine="62" startPosition="158" endLine="63" endPosition="48" />
-    <scopeInfo nodeId="1977980803835380462" fileName="AddCellAnnotation_Intention.java" startLine="67" startPosition="70" endLine="68" endPosition="73" />
-    <scopeInfo nodeId="1229432620260" fileName="AddCellAnnotation_Intention.java" startLine="73" startPosition="54" endLine="74" endPosition="76" />
-    <scopeInfo nodeId="1229432828394" fileName="AddCellAnnotation_Intention.java" startLine="75" startPosition="14" endLine="76" endPosition="84" />
-    <scopeInfo nodeId="1229956647135" fileName="AddCellAnnotation_Intention.java" startLine="81" startPosition="12" endLine="82" endPosition="70" />
+    <scopeInfo nodeId="1977980803835380462" fileName="AddCellAnnotation_Intention.java" startLine="67" startPosition="70" endLine="68" endPosition="75" />
+    <scopeInfo nodeId="1229432620260" fileName="AddCellAnnotation_Intention.java" startLine="73" startPosition="54" endLine="74" endPosition="78" />
+    <scopeInfo nodeId="1229432828394" fileName="AddCellAnnotation_Intention.java" startLine="75" startPosition="14" endLine="76" endPosition="86" />
+    <scopeInfo nodeId="1229956647135" fileName="AddCellAnnotation_Intention.java" startLine="81" startPosition="12" endLine="82" endPosition="72" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="95" startPosition="37" endLine="96" endPosition="48" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="22" startPosition="85" endLine="24" endPosition="3" />
     <scopeInfo nodeId="1229956429662" fileName="AddCellAnnotation_Intention.java" startLine="61" startPosition="5" endLine="64" endPosition="5">
@@ -274,7 +274,7 @@
       <varInfo nodeId="1225963656881" varName="editorContext" />
       <varInfo nodeId="1225963656881" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1228588348424" fileName="AddCellAnnotation_Intention.java" startLine="70" startPosition="50" endLine="80" endPosition="91">
+    <scopeInfo nodeId="1228588348424" fileName="AddCellAnnotation_Intention.java" startLine="70" startPosition="50" endLine="80" endPosition="93">
       <varInfo nodeId="1229432616639" varName="caretPosition" />
       <varInfo nodeId="6268941039745612490" varName="label" />
     </scopeInfo>

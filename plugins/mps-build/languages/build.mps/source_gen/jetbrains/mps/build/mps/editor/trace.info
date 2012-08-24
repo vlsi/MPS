@@ -563,7 +563,7 @@
     <nodeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="17" startPosition="75" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="20" startPosition="51" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1500819558096400339" fileName="delete_doNotCompile.java" startLine="28" startPosition="75" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1500819558096400339" fileName="delete_doNotCompile.java" startLine="28" startPosition="75" endLine="29" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="19" startPosition="0" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delete_doNotCompile_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="12" startPosition="34" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
@@ -571,7 +571,7 @@
     <scopeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="13" startPosition="95" endLine="14" endPosition="106" />
     <scopeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="20" startPosition="51" endLine="21" endPosition="25" />
     <scopeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="1500819558096400338" fileName="delete_doNotCompile.java" startLine="28" startPosition="75" endLine="29" endPosition="64" />
+    <scopeInfo nodeId="1500819558096400338" fileName="delete_doNotCompile.java" startLine="28" startPosition="75" endLine="29" endPosition="66" />
     <scopeInfo nodeId="1500819558096400335" fileName="delete_doNotCompile.java" startLine="19" startPosition="0" endLine="22" endPosition="5">
       <varInfo nodeId="1500819558096400335" varName="node" />
     </scopeInfo>
@@ -2384,7 +2384,7 @@
     <nodeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="17" startPosition="80" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="20" startPosition="56" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3189788309731965693" fileName="delete_moduleDepReexport.java" startLine="28" startPosition="75" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3189788309731965693" fileName="delete_moduleDepReexport.java" startLine="28" startPosition="75" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="19" startPosition="0" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delete_moduleDepReexport_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="12" startPosition="39" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
@@ -2392,7 +2392,7 @@
     <scopeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="13" startPosition="95" endLine="14" endPosition="116" />
     <scopeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="20" startPosition="56" endLine="21" endPosition="25" />
     <scopeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="3189788309731965692" fileName="delete_moduleDepReexport.java" startLine="28" startPosition="75" endLine="29" endPosition="60" />
+    <scopeInfo nodeId="3189788309731965692" fileName="delete_moduleDepReexport.java" startLine="28" startPosition="75" endLine="29" endPosition="62" />
     <scopeInfo nodeId="3189788309731965689" fileName="delete_moduleDepReexport.java" startLine="19" startPosition="0" endLine="22" endPosition="5">
       <varInfo nodeId="3189788309731965689" varName="node" />
     </scopeInfo>
@@ -2416,7 +2416,7 @@
     <nodeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="17" startPosition="78" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="20" startPosition="54" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3189788309731970107" fileName="delete_javaDepReexport.java" startLine="28" startPosition="75" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3189788309731970107" fileName="delete_javaDepReexport.java" startLine="28" startPosition="75" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="19" startPosition="0" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delete_javaDepReexport_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="12" startPosition="37" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
@@ -2424,7 +2424,7 @@
     <scopeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="13" startPosition="95" endLine="14" endPosition="112" />
     <scopeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="20" startPosition="54" endLine="21" endPosition="25" />
     <scopeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="3189788309731970106" fileName="delete_javaDepReexport.java" startLine="28" startPosition="75" endLine="29" endPosition="60" />
+    <scopeInfo nodeId="3189788309731970106" fileName="delete_javaDepReexport.java" startLine="28" startPosition="75" endLine="29" endPosition="62" />
     <scopeInfo nodeId="3189788309731970103" fileName="delete_javaDepReexport.java" startLine="19" startPosition="0" endLine="22" endPosition="5">
       <varInfo nodeId="3189788309731970103" varName="node" />
     </scopeInfo>
@@ -4934,7 +4934,7 @@
     <nodeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="17" startPosition="87" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="20" startPosition="63" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4643216374596270304" fileName="delete_ModuleSources_modelsOnly.java" startLine="28" startPosition="75" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4643216374596270304" fileName="delete_ModuleSources_modelsOnly.java" startLine="28" startPosition="75" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="19" startPosition="0" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delete_ModuleSources_modelsOnly_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="12" startPosition="46" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
@@ -4942,7 +4942,7 @@
     <scopeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="13" startPosition="95" endLine="14" endPosition="130" />
     <scopeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="20" startPosition="63" endLine="21" endPosition="25" />
     <scopeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="4643216374596270303" fileName="delete_ModuleSources_modelsOnly.java" startLine="28" startPosition="75" endLine="29" endPosition="62" />
+    <scopeInfo nodeId="4643216374596270303" fileName="delete_ModuleSources_modelsOnly.java" startLine="28" startPosition="75" endLine="29" endPosition="64" />
     <scopeInfo nodeId="4643216374596270300" fileName="delete_ModuleSources_modelsOnly.java" startLine="19" startPosition="0" endLine="22" endPosition="5">
       <varInfo nodeId="4643216374596270300" varName="node" />
     </scopeInfo>

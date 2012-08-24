@@ -30,7 +30,7 @@ public class delete_XmlElement_shortNotation {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "shortEmptyNotation", "" + false);
+      SPropertyOperations.set(node, "shortEmptyNotation", "" + (false));
     }
   }
 }

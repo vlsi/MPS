@@ -1458,7 +1458,7 @@
     </scopeInfo>
     <scopeInfo nodeId="809559803149973644" fileName="QueriesGenerated.java" startLine="1780" startPosition="144" endLine="1791" endPosition="5" />
     <scopeInfo nodeId="809559803149973651" fileName="QueriesGenerated.java" startLine="1780" startPosition="144" endLine="1791" endPosition="5">
-      <varInfo nodeId="809559803149973651" varName="buildProject" />
+      <varInfo nodeId="809559803149973652" varName="buildProject" />
     </scopeInfo>
   </root>
   <root nodeId="8169228734285529439">

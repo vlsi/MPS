@@ -343,7 +343,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3575782568432720111" fileName="TestTree.java" startLine="237" startPosition="118" endLine="252" endPosition="7" />
     <scopeInfo nodeId="3575782568432720112" fileName="TestTree.java" startLine="237" startPosition="118" endLine="252" endPosition="7">
-      <varInfo nodeId="3575782568432720112" varName="method" />
+      <varInfo nodeId="3575782568432720162" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432719356" fileName="TestTree.java" startLine="43" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="3575782568432719421" varName="methodNode" />
@@ -357,19 +357,19 @@
       <varInfo nodeId="3575782568432719807" varName="oldMethodTreeNode" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432719948" fileName="TestTree.java" startLine="185" startPosition="7" endLine="202" endPosition="7">
-      <varInfo nodeId="3575782568432719948" varName="method" />
+      <varInfo nodeId="3575782568432719949" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432720109" fileName="TestTree.java" startLine="236" startPosition="39" endLine="253" endPosition="5" />
     <scopeInfo nodeId="3575782568432720110" fileName="TestTree.java" startLine="236" startPosition="39" endLine="253" endPosition="5">
-      <varInfo nodeId="3575782568432720110" varName="testCase" />
+      <varInfo nodeId="3575782568432720170" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432719797" fileName="TestTree.java" startLine="150" startPosition="36" endLine="169" endPosition="7">
-      <varInfo nodeId="3575782568432719797" varName="method" />
+      <varInfo nodeId="3575782568432719883" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432719941" fileName="TestTree.java" startLine="182" startPosition="118" endLine="202" endPosition="7" />
     <scopeInfo nodeId="3575782568432720106" fileName="TestTree.java" startLine="235" startPosition="0" endLine="255" endPosition="0" />
     <scopeInfo nodeId="3575782568432719932" fileName="TestTree.java" startLine="181" startPosition="35" endLine="203" endPosition="5">
-      <varInfo nodeId="3575782568432719932" varName="testCase" />
+      <varInfo nodeId="3575782568432719933" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432719931" fileName="TestTree.java" startLine="181" startPosition="35" endLine="204" endPosition="17" />
     <scopeInfo nodeId="3575782568432719928" fileName="TestTree.java" startLine="180" startPosition="0" endLine="206" endPosition="0" />
@@ -382,7 +382,7 @@
       <varInfo nodeId="3575782568432719765" varName="testCaseTreeNode" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432719756" fileName="TestTree.java" startLine="140" startPosition="117" endLine="176" endPosition="5">
-      <varInfo nodeId="3575782568432719756" varName="testCase" />
+      <varInfo nodeId="3575782568432719917" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432719735" fileName="TestTree.java" startLine="137" startPosition="32" endLine="178" endPosition="16">
       <varInfo nodeId="3575782568432719737" varName="root" />
@@ -1013,7 +1013,7 @@
     <scopeInfo nodeId="3575782568432722251" fileName="UnitTestViewComponent.java" startLine="136" startPosition="25" endLine="139" endPosition="27" />
     <scopeInfo nodeId="3575782568432722285" fileName="UnitTestViewComponent.java" startLine="146" startPosition="38" endLine="149" endPosition="5" />
     <scopeInfo nodeId="3575782568432722286" fileName="UnitTestViewComponent.java" startLine="146" startPosition="38" endLine="149" endPosition="5">
-      <varInfo nodeId="3575782568432722286" varName="listener" />
+      <varInfo nodeId="3575782568432722287" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432722571" fileName="UnitTestViewComponent.java" startLine="201" startPosition="61" endLine="204" endPosition="9" />
     <scopeInfo nodeId="3575782568432721996" fileName="UnitTestViewComponent.java" startLine="221" startPosition="67" endLine="224" endPosition="5">
@@ -1371,7 +1371,7 @@
     <scopeInfo nodeId="3575782568432723557" fileName="TestOutputComponent.java" startLine="92" startPosition="114" endLine="95" endPosition="7" />
     <scopeInfo nodeId="3575782568432722640" fileName="TestOutputComponent.java" startLine="177" startPosition="51" endLine="180" endPosition="9" />
     <scopeInfo nodeId="3575782568432722641" fileName="TestOutputComponent.java" startLine="177" startPosition="51" endLine="180" endPosition="9">
-      <varInfo nodeId="3575782568432722641" varName="message" />
+      <varInfo nodeId="3575782568432722642" varName="message" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432722812" fileName="TestOutputComponent.java" startLine="224" startPosition="68" endLine="227" endPosition="11" />
     <scopeInfo nodeId="3575782568432722888" fileName="TestOutputComponent.java" startLine="254" startPosition="119" endLine="257" endPosition="21">
@@ -1488,7 +1488,7 @@
       <varInfo nodeId="3575782568432722976" varName="text" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432723128" fileName="TestOutputComponent.java" startLine="329" startPosition="74" endLine="335" endPosition="9">
-      <varInfo nodeId="3575782568432723128" varName="child" />
+      <varInfo nodeId="3575782568432723129" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432723167" fileName="TestOutputComponent.java" startLine="342" startPosition="17" endLine="348" endPosition="9" />
     <scopeInfo nodeId="3575782568432723284" fileName="TestOutputComponent.java" startLine="380" startPosition="21" endLine="386" endPosition="13" />
@@ -1550,7 +1550,7 @@
       <varInfo nodeId="3575782568432723586" varName="type" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432722804" fileName="TestOutputComponent.java" startLine="222" startPosition="31" endLine="231" endPosition="7">
-      <varInfo nodeId="3575782568432722804" varName="child" />
+      <varInfo nodeId="3575782568432722805" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432722905" fileName="TestOutputComponent.java" startLine="259" startPosition="0" endLine="268" endPosition="0">
       <varInfo nodeId="3575782568432722914" varName="key" />
@@ -2020,7 +2020,7 @@
     <scopeInfo nodeId="3575782568432724595" fileName="StatisticsTableModel.java" startLine="44" startPosition="26" endLine="47" endPosition="29" />
     <scopeInfo nodeId="3575782568432724948" fileName="StatisticsTableModel.java" startLine="120" startPosition="25" endLine="123" endPosition="9" />
     <scopeInfo nodeId="3575782568432724949" fileName="StatisticsTableModel.java" startLine="120" startPosition="25" endLine="123" endPosition="9">
-      <varInfo nodeId="3575782568432724949" varName="listener" />
+      <varInfo nodeId="3575782568432724950" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432724990" fileName="StatisticsTableModel.java" startLine="136" startPosition="61" endLine="139" endPosition="13" />
     <scopeInfo nodeId="3575782568432725081" fileName="StatisticsTableModel.java" startLine="166" startPosition="0" endLine="169" endPosition="0">
@@ -2078,7 +2078,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3575782568432724646" fileName="StatisticsTableModel.java" startLine="58" startPosition="26" endLine="64" endPosition="29" />
     <scopeInfo nodeId="3575782568432724875" fileName="StatisticsTableModel.java" startLine="103" startPosition="39" endLine="109" endPosition="7">
-      <varInfo nodeId="3575782568432724875" varName="testMethod" />
+      <varInfo nodeId="3575782568432724876" varName="testMethod" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432724945" fileName="StatisticsTableModel.java" startLine="119" startPosition="68" endLine="125" endPosition="0" />
     <scopeInfo nodeId="3575782568432724987" fileName="StatisticsTableModel.java" startLine="135" startPosition="0" endLine="141" endPosition="0">
@@ -2112,7 +2112,7 @@
       <varInfo nodeId="3575782568432724635" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432724843" fileName="StatisticsTableModel.java" startLine="98" startPosition="18" endLine="110" endPosition="5">
-      <varInfo nodeId="3575782568432724843" varName="testCase" />
+      <varInfo nodeId="3575782568432724844" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432724816" fileName="StatisticsTableModel.java" startLine="94" startPosition="78" endLine="111" endPosition="13">
       <varInfo nodeId="3575782568432724826" varName="totalRow" />
@@ -2504,13 +2504,13 @@
     <scopeInfo nodeId="3575782568432726092" fileName="TestContainerRow.java" startLine="96" startPosition="45" endLine="97" endPosition="50" />
     <scopeInfo nodeId="3575782568432726118" fileName="TestContainerRow.java" startLine="14" startPosition="63" endLine="16" endPosition="38" />
     <scopeInfo nodeId="3575782568432726025" fileName="TestContainerRow.java" startLine="73" startPosition="18" endLine="76" endPosition="5">
-      <varInfo nodeId="3575782568432726025" varName="row" />
+      <varInfo nodeId="3575782568432726026" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432726049" fileName="TestContainerRow.java" startLine="81" startPosition="18" endLine="84" endPosition="5">
-      <varInfo nodeId="3575782568432726049" varName="row" />
+      <varInfo nodeId="3575782568432726050" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432726073" fileName="TestContainerRow.java" startLine="89" startPosition="18" endLine="92" endPosition="5">
-      <varInfo nodeId="3575782568432726073" varName="row" />
+      <varInfo nodeId="3575782568432726074" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432726115" fileName="TestContainerRow.java" startLine="13" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="3575782568432726133" varName="additionalText" />
@@ -2540,7 +2540,7 @@
       <varInfo nodeId="3575782568432726070" varName="count" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432725879" fileName="TestContainerRow.java" startLine="28" startPosition="25" endLine="34" endPosition="5">
-      <varInfo nodeId="3575782568432725879" varName="row" />
+      <varInfo nodeId="3575782568432725880" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432725983" fileName="TestContainerRow.java" startLine="62" startPosition="31" endLine="69" endPosition="22">
       <varInfo nodeId="3575782568432725991" varName="usageAfter" />
@@ -2781,7 +2781,7 @@
       <varInfo nodeId="3575782568432726451" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432726512" fileName="UnitTestRunner.java" startLine="143" startPosition="54" endLine="147" endPosition="9">
-      <varInfo nodeId="3575782568432726512" varName="commandLinePiece" />
+      <varInfo nodeId="3575782568432726513" varName="commandLinePiece" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432726627" fileName="UnitTestRunner.java" startLine="171" startPosition="0" endLine="175" endPosition="117">
       <varInfo nodeId="3575782568432726628" varName="e" />
@@ -2834,7 +2834,7 @@
       <varInfo nodeId="3575782568432726430" varName="parametersPart" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432726425" fileName="UnitTestRunner.java" startLine="116" startPosition="116" endLine="128" endPosition="9">
-      <varInfo nodeId="3575782568432726425" varName="test" />
+      <varInfo nodeId="3575782568432726426" varName="test" />
     </scopeInfo>
     <scopeInfo nodeId="3575782568432726225" fileName="UnitTestRunner.java" startLine="65" startPosition="25" endLine="80" endPosition="11" />
     <scopeInfo nodeId="3575782568432726689" fileName="UnitTestRunner.java" startLine="186" startPosition="99" endLine="202" endPosition="27">

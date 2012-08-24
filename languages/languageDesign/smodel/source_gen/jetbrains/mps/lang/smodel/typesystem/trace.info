@@ -581,7 +581,7 @@
     <scopeInfo nodeId="1178287491727" fileName="RulesUtil.java" startLine="146" startPosition="180" endLine="154" endPosition="17" />
     <scopeInfo nodeId="8844001996561701137" fileName="RulesUtil.java" startLine="183" startPosition="65" endLine="191" endPosition="0" />
     <scopeInfo nodeId="1178301920923" fileName="RulesUtil.java" startLine="160" startPosition="106" endLine="169" endPosition="5">
-      <varInfo nodeId="1178301920923" varName="parm" />
+      <varInfo nodeId="1178301920924" varName="parm" />
     </scopeInfo>
     <scopeInfo nodeId="1222429119607" fileName="RulesUtil.java" startLine="247" startPosition="14" endLine="256" endPosition="9">
       <varInfo nodeId="1222431769040" varName="concepts" />
@@ -3863,7 +3863,7 @@
     <scopeInfo nodeId="1196933487654" fileName="supertypesOf_SNodeListType_SubtypingRule.java" startLine="118" startPosition="53" endLine="120" endPosition="5" />
     <scopeInfo nodeId="8675759500157011605" fileName="supertypesOf_SNodeListType_SubtypingRule.java" startLine="161" startPosition="53" endLine="163" endPosition="5" />
     <scopeInfo nodeId="1179365728313" fileName="supertypesOf_SNodeListType_SubtypingRule.java" startLine="31" startPosition="99" endLine="34" endPosition="7">
-      <varInfo nodeId="1179365728313" varName="superConcept" />
+      <varInfo nodeId="1179365728314" varName="superConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1196933487481" fileName="supertypesOf_SNodeListType_SubtypingRule.java" startLine="97" startPosition="7" endLine="100" endPosition="31">
       <varInfo nodeId="1196933487481" varName="quotedNode1_2" />
@@ -4161,7 +4161,7 @@
     <scopeInfo nodeId="1196933487485" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="54" startPosition="57" endLine="56" endPosition="5" />
     <scopeInfo nodeId="1196933487491" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="85" startPosition="55" endLine="87" endPosition="5" />
     <scopeInfo nodeId="1179363991895" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="30" startPosition="92" endLine="33" endPosition="7">
-      <varInfo nodeId="1179363991895" varName="superConcept" />
+      <varInfo nodeId="1179363991896" varName="superConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1196933487491" fileName="supertypesOf_SNodeType_SNodeType_SubtypingRule.java" startLine="93" startPosition="7" endLine="96" endPosition="31">
       <varInfo nodeId="1196933487491" varName="quotedNode1_2" />
@@ -6286,140 +6286,193 @@
     <unitInfo nodeId="1179410463229" fileName="typeof_Node_ConceptMethodCall_InferenceRule.java" startLine="19" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.typeof_Node_ConceptMethodCall_InferenceRule" />
   </root>
   <root nodeId="1180462861797">
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="19" startPosition="128" endLine="20" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0c" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="21" startPosition="0" endLine="22" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatchingPattern" />
-    <nodeInfo nodeId="1180462919850" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="27" startPosition="114" endLine="28" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="36" startPosition="5" endLine="37" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="37" startPosition="121" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="38" startPosition="39" endLine="39" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="39" startPosition="42" endLine="40" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="44" startPosition="27" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="52" startPosition="76" endLine="53" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="53" startPosition="26" endLine="54" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="54" startPosition="67" endLine="55" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="56" startPosition="7" endLine="57" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="57" startPosition="160" endLine="58" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="58" startPosition="43" endLine="59" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="60" startPosition="7" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="64" startPosition="31" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="65" startPosition="26" endLine="66" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="66" startPosition="67" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="68" startPosition="7" endLine="69" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="69" startPosition="160" endLine="70" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="70" startPosition="43" endLine="71" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="72" startPosition="7" endLine="73" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="82" startPosition="7" endLine="83" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="83" startPosition="73" endLine="84" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="85" startPosition="151" endLine="86" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="88" startPosition="9" endLine="89" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="90" startPosition="145" endLine="91" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="94" startPosition="7" endLine="95" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="98" startPosition="40" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="105" startPosition="51" endLine="106" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="23" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_SNodeType_SConceptType_SubtypingRule#()V" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="48" startPosition="51" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_6gcjzy_a0a0a#()V" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="77" startPosition="108" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_6gcjzy_a0a0a0a2#()V" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="84" startPosition="81" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="89" startPosition="78" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="55" startPosition="32" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="55" startPosition="32" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="67" startPosition="32" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="67" startPosition="32" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="35" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="87" startPosition="9" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="87" startPosition="9" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="87" startPosition="9" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="84" startPosition="81" endLine="93" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="51" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="63" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="81" startPosition="45" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="80" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="24" startPosition="62" endLine="24" endPosition="62" />
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="49" startPosition="42" endLine="49" endPosition="42" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="102" startPosition="71" endLine="102" endPosition="71" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="109" startPosition="42" endLine="109" endPosition="42" />
-    <scopeInfo nodeId="1180462861798" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="27" startPosition="114" endLine="28" endPosition="127" />
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="31" startPosition="46" endLine="32" endPosition="59" />
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="44" startPosition="27" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="85" startPosition="151" endLine="86" endPosition="23" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="90" startPosition="145" endLine="91" endPosition="25" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="98" startPosition="40" endLine="99" endPosition="19" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="105" startPosition="51" endLine="106" endPosition="18" />
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="23" startPosition="0" endLine="25" endPosition="3" />
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="48" startPosition="51" endLine="50" endPosition="5" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="77" startPosition="108" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="56" startPosition="7" endLine="59" endPosition="31">
-      <varInfo nodeId="1196933487663" varName="quotedNode1_2" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="25" startPosition="128" endLine="26" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0c" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="27" startPosition="0" endLine="28" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMatchingPattern" />
+    <nodeInfo nodeId="8012235072071577297" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="33" startPosition="121" endLine="34" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577307" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="34" startPosition="72" endLine="35" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577341" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="35" startPosition="164" endLine="36" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1180462919850" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="36" startPosition="164" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="40" startPosition="46" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="45" startPosition="5" endLine="46" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="46" startPosition="121" endLine="47" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="47" startPosition="39" endLine="48" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="48" startPosition="42" endLine="49" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="53" startPosition="27" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="61" startPosition="76" endLine="62" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="62" startPosition="26" endLine="63" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="63" startPosition="67" endLine="64" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="65" startPosition="7" endLine="66" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="66" startPosition="160" endLine="67" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="67" startPosition="43" endLine="68" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="68" startPosition="232" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="70" startPosition="7" endLine="71" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="74" startPosition="31" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="75" startPosition="26" endLine="76" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="76" startPosition="67" endLine="77" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="78" startPosition="7" endLine="79" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="79" startPosition="160" endLine="80" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="80" startPosition="43" endLine="81" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="81" startPosition="232" endLine="82" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="83" startPosition="7" endLine="84" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="92" startPosition="76" endLine="93" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="93" startPosition="26" endLine="94" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="94" startPosition="67" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="96" startPosition="7" endLine="97" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="97" startPosition="160" endLine="98" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="98" startPosition="43" endLine="99" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="100" startPosition="7" endLine="101" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="104" startPosition="31" endLine="105" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="105" startPosition="26" endLine="106" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="106" startPosition="67" endLine="107" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="108" startPosition="7" endLine="109" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="109" startPosition="160" endLine="110" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="110" startPosition="43" endLine="111" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="112" startPosition="7" endLine="113" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="122" startPosition="7" endLine="123" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="123" startPosition="73" endLine="124" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="125" startPosition="151" endLine="126" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="128" startPosition="9" endLine="129" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="130" startPosition="145" endLine="131" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="134" startPosition="7" endLine="135" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="138" startPosition="40" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="145" startPosition="51" endLine="146" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="29" startPosition="0" endLine="31" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_SNodeType_SConceptType_SubtypingRule#()V" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="57" startPosition="53" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_6gcjzy_a0a0b0a#()V" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="88" startPosition="53" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuotationClass_6gcjzy_a0a0c0a#()V" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="117" startPosition="108" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_6gcjzy_a0a0a0a2#()V" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="124" startPosition="81" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="129" startPosition="78" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="141" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="148" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="137" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="95" startPosition="32" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="95" startPosition="32" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="107" startPosition="32" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="107" startPosition="32" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="44" startPosition="68" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="64" startPosition="32" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="64" startPosition="32" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="77" startPosition="32" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="77" startPosition="32" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="127" startPosition="9" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="127" startPosition="9" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="127" startPosition="9" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="32" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperTypes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljava/util/List;" />
+    <nodeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="43" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="124" startPosition="81" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="91" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="103" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="60" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="73" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNode#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="121" startPosition="45" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="120" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="30" startPosition="62" endLine="30" endPosition="62" />
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="58" startPosition="44" endLine="58" endPosition="44" />
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="89" startPosition="44" endLine="89" endPosition="44" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="118" startPosition="38" endLine="118" endPosition="38" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="142" startPosition="71" endLine="142" endPosition="71" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="149" startPosition="42" endLine="149" endPosition="42" />
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="40" startPosition="46" endLine="41" endPosition="59" />
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="53" startPosition="27" endLine="54" endPosition="16" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="125" startPosition="151" endLine="126" endPosition="23" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="130" startPosition="145" endLine="131" endPosition="25" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="138" startPosition="40" endLine="139" endPosition="19" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="145" startPosition="51" endLine="146" endPosition="18" />
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="29" startPosition="0" endLine="31" endPosition="3" />
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="57" startPosition="53" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="88" startPosition="53" endLine="90" endPosition="5" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="117" startPosition="108" endLine="119" endPosition="5" />
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="96" startPosition="7" endLine="99" endPosition="31">
+      <varInfo nodeId="8012235072071577381" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="68" startPosition="7" endLine="71" endPosition="31">
-      <varInfo nodeId="1196933487663" varName="quotedNode1_2" />
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="108" startPosition="7" endLine="111" endPosition="31">
+      <varInfo nodeId="8012235072071577381" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="141" startPosition="0" endLine="144" endPosition="0">
       <varInfo nodeId="1180462878364" varName="pattern" />
     </scopeInfo>
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="108" startPosition="0" endLine="111" endPosition="0">
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="148" startPosition="0" endLine="151" endPosition="0">
       <varInfo nodeId="1180462878364" varName="o" />
     </scopeInfo>
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="1180462861798" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="33" startPosition="121" endLine="37" endPosition="18">
+      <varInfo nodeId="8012235072071577298" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="45" startPosition="5" endLine="49" endPosition="48">
+      <varInfo nodeId="1180462861797" varName="b" />
+      <varInfo nodeId="1180462861797" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="65" startPosition="7" endLine="69" endPosition="31">
+      <varInfo nodeId="8012235072071577337" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="78" startPosition="7" endLine="82" endPosition="31">
+      <varInfo nodeId="8012235072071577337" varName="quotedNode1_2" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="128" startPosition="9" endLine="132" endPosition="11">
+      <varInfo nodeId="1180462878364" varName="pointer" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="137" startPosition="0" endLine="141" endPosition="0" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
+      <varInfo nodeId="1180462878364" varName="fieldName" />
+    </scopeInfo>
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="95" startPosition="32" endLine="100" endPosition="7" />
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="107" startPosition="32" endLine="112" endPosition="7" />
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="44" startPosition="68" endLine="50" endPosition="5" />
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="64" startPosition="32" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="77" startPosition="32" endLine="83" endPosition="7" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="127" startPosition="9" endLine="133" endPosition="9" />
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="32" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1180462861797" varName="node" />
       <varInfo nodeId="1180462861797" varName="status" />
       <varInfo nodeId="1180462861797" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="36" startPosition="5" endLine="40" endPosition="48">
-      <varInfo nodeId="1180462861797" varName="b" />
-      <varInfo nodeId="1180462861797" varName="pattern" />
-    </scopeInfo>
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="88" startPosition="9" endLine="92" endPosition="11">
-      <varInfo nodeId="1180462878364" varName="pointer" />
-    </scopeInfo>
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="1180462878364" varName="fieldName" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="55" startPosition="32" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="67" startPosition="32" endLine="72" endPosition="7" />
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="35" startPosition="68" endLine="41" endPosition="5" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="87" startPosition="9" endLine="93" endPosition="9" />
-    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="43" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1180462861797" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="52" startPosition="76" endLine="61" endPosition="20">
-      <varInfo nodeId="1196933487663" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1196933487663" varName="quotedNode_1" />
-      <varInfo nodeId="1196933487663" varName="result" />
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="92" startPosition="76" endLine="101" endPosition="20">
+      <varInfo nodeId="8012235072071577381" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8012235072071577381" varName="quotedNode_1" />
+      <varInfo nodeId="8012235072071577381" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="64" startPosition="31" endLine="73" endPosition="20">
-      <varInfo nodeId="1196933487663" varName="_parameterValues_129834374" />
-      <varInfo nodeId="1196933487663" varName="quotedNode_1" />
-      <varInfo nodeId="1196933487663" varName="result" />
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="104" startPosition="31" endLine="113" endPosition="20">
+      <varInfo nodeId="8012235072071577381" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8012235072071577381" varName="quotedNode_1" />
+      <varInfo nodeId="8012235072071577381" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="84" startPosition="81" endLine="93" endPosition="9" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="82" startPosition="7" endLine="93" endPosition="9">
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="124" startPosition="81" endLine="133" endPosition="9" />
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="61" startPosition="76" endLine="71" endPosition="20">
+      <varInfo nodeId="8012235072071577337" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8012235072071577337" varName="quotedNode_1" />
+      <varInfo nodeId="8012235072071577337" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="74" startPosition="31" endLine="84" endPosition="20">
+      <varInfo nodeId="8012235072071577337" varName="_parameterValues_129834374" />
+      <varInfo nodeId="8012235072071577337" varName="quotedNode_1" />
+      <varInfo nodeId="8012235072071577337" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="122" startPosition="7" endLine="133" endPosition="9">
       <varInfo nodeId="1180462878364" varName="nodeToMatch_supertypesOf_SNodeType_SConceptType_auyr2c_a0a" />
     </scopeInfo>
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="51" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="1196933487663" varName="typeCheckingContext" />
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="91" startPosition="0" endLine="103" endPosition="0">
+      <varInfo nodeId="8012235072071577381" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="63" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="81" startPosition="45" endLine="95" endPosition="18" />
-    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="80" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="103" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="60" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="8012235072071577337" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="73" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="121" startPosition="45" endLine="135" endPosition="18" />
+    <scopeInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="120" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="1180462878364" varName="nodeToMatch" />
     </scopeInfo>
-    <unitInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="19" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule" />
-    <unitInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="77" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule$Pattern_6gcjzy_a0a0a0a2" />
-    <unitInfo nodeId="1196933487663" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="48" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule$QuotationClass_6gcjzy_a0a0a" />
+    <unitInfo nodeId="1180462861797" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="25" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule" />
+    <unitInfo nodeId="1180462878364" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="117" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule$Pattern_6gcjzy_a0a0a0a2" />
+    <unitInfo nodeId="8012235072071577337" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="57" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule$QuotationClass_6gcjzy_a0a0b0a" />
+    <unitInfo nodeId="8012235072071577381" fileName="supertypesOf_SNodeType_SConceptType_SubtypingRule.java" startLine="88" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.lang.smodel.typesystem.supertypesOf_SNodeType_SConceptType_SubtypingRule$QuotationClass_6gcjzy_a0a0c0a" />
   </root>
   <root nodeId="1180547887028">
     <nodeInfo nodeId="1180547887030" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="25" startPosition="121" endLine="26" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -6497,7 +6550,7 @@
     <scopeInfo nodeId="1196933487670" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="53" startPosition="57" endLine="55" endPosition="5" />
     <scopeInfo nodeId="1196933487676" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="84" startPosition="55" endLine="86" endPosition="5" />
     <scopeInfo nodeId="1180547887052" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="29" startPosition="92" endLine="32" endPosition="7">
-      <varInfo nodeId="1180547887052" varName="superConcept" />
+      <varInfo nodeId="1180547887053" varName="superConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1196933487676" fileName="supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.java" startLine="92" startPosition="7" endLine="95" endPosition="31">
       <varInfo nodeId="1196933487676" varName="quotedNode1_2" />
@@ -6899,9 +6952,9 @@
     <nodeInfo nodeId="1207683989238" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="36" startPosition="198" endLine="37" endPosition="377" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1207683978005" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="39" startPosition="5" endLine="40" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225542306711" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="40" startPosition="94" endLine="41" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225542319449" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="42" startPosition="5" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225542319449" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="43" startPosition="56" endLine="44" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225542319449" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="44" startPosition="196" endLine="45" endPosition="438" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8012235072071559152" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="42" startPosition="5" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071559152" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="43" startPosition="56" endLine="44" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8012235072071559152" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="44" startPosition="202" endLine="45" endPosition="441" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225542362833" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="47" startPosition="5" endLine="48" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225542362833" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="48" startPosition="46" endLine="49" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1225542362833" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="49" startPosition="196" endLine="50" endPosition="414" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -6989,7 +7042,7 @@
     <nodeInfo nodeId="1181952993678" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="1207683977996" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="26" startPosition="65" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1207683989238" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="33" startPosition="66" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225542319449" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="41" startPosition="94" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8012235072071559152" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="41" startPosition="94" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225542362833" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="46" startPosition="5" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1207683989245" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="107" startPosition="32" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1207683989245" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="107" startPosition="32" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -7046,9 +7099,9 @@
       <varInfo nodeId="1207683989238" varName="_info_12389875345" />
       <varInfo nodeId="1207683989238" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="1225542319449" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="42" startPosition="5" endLine="45" endPosition="438">
-      <varInfo nodeId="1225542319449" varName="_info_12389875345" />
-      <varInfo nodeId="1225542319449" varName="_nodeToCheck_1029348928467" />
+    <scopeInfo nodeId="8012235072071559152" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="42" startPosition="5" endLine="45" endPosition="441">
+      <varInfo nodeId="8012235072071559152" varName="_info_12389875345" />
+      <varInfo nodeId="8012235072071559152" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
     <scopeInfo nodeId="1225542362833" fileName="typeOf_Concept_GetAllSubConcepts_InferenceRule.java" startLine="47" startPosition="5" endLine="50" endPosition="414">
       <varInfo nodeId="1225542362833" varName="_info_12389875345" />

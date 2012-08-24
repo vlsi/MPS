@@ -554,7 +554,7 @@
       <varInfo nodeId="1038726553460202984" varName="vcsManager" />
     </scopeInfo>
     <scopeInfo nodeId="3161776655522590117" fileName="CurrentDifferenceRegistry.java" startLine="52" startPosition="41" endLine="55" endPosition="7">
-      <varInfo nodeId="3161776655522590117" varName="modelChangesManager" />
+      <varInfo nodeId="3161776655522590118" varName="modelChangesManager" />
     </scopeInfo>
     <scopeInfo nodeId="3161776655522590251" fileName="CurrentDifferenceRegistry.java" startLine="93" startPosition="109" endLine="96" endPosition="7" />
     <scopeInfo nodeId="3161776655522590548" fileName="CurrentDifferenceRegistry.java" startLine="159" startPosition="65" endLine="162" endPosition="7" />
@@ -578,7 +578,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3161776655522590245" fileName="CurrentDifferenceRegistry.java" startLine="92" startPosition="36" endLine="97" endPosition="5" />
     <scopeInfo nodeId="3161776655522590246" fileName="CurrentDifferenceRegistry.java" startLine="92" startPosition="36" endLine="97" endPosition="5">
-      <varInfo nodeId="3161776655522590246" varName="md" />
+      <varInfo nodeId="3161776655522590247" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="3161776655522590742" fileName="CurrentDifferenceRegistry.java" startLine="111" startPosition="41" endLine="116" endPosition="69">
       <varInfo nodeId="3161776655522590306" varName="modelRef" />
@@ -984,10 +984,10 @@
     <scopeInfo nodeId="3161776655522682226" fileName="ChangesTracking.java" startLine="367" startPosition="55" endLine="369" endPosition="5" />
     <scopeInfo nodeId="8473562513973655172" fileName="ChangesTracking.java" startLine="118" startPosition="51" endLine="121" endPosition="7" />
     <scopeInfo nodeId="8473562513973655173" fileName="ChangesTracking.java" startLine="118" startPosition="51" endLine="121" endPosition="7">
-      <varInfo nodeId="8473562513973655173" varName="i" />
+      <varInfo nodeId="8473562513973655174" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="6221381139489260601" fileName="ChangesTracking.java" startLine="129" startPosition="41" endLine="132" endPosition="5">
-      <varInfo nodeId="6221381139489260601" varName="ch" />
+      <varInfo nodeId="6221381139489260602" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="1400081181930264420" fileName="ChangesTracking.java" startLine="165" startPosition="27" endLine="168" endPosition="11" />
     <scopeInfo nodeId="3161776655522687150" fileName="ChangesTracking.java" startLine="186" startPosition="64" endLine="189" endPosition="9" />
@@ -1125,7 +1125,7 @@
     <scopeInfo nodeId="3161776655522687190" fileName="ChangesTracking.java" startLine="204" startPosition="25" endLine="211" endPosition="9" />
     <scopeInfo nodeId="6221381139489312236" fileName="ChangesTracking.java" startLine="221" startPosition="58" endLine="228" endPosition="38" />
     <scopeInfo nodeId="5832637535615760952" fileName="ChangesTracking.java" startLine="262" startPosition="27" endLine="269" endPosition="5">
-      <varInfo nodeId="5832637535615760952" varName="d" />
+      <varInfo nodeId="5832637535615760953" varName="d" />
     </scopeInfo>
     <scopeInfo nodeId="3557624462335397393" fileName="ChangesTracking.java" startLine="352" startPosition="0" endLine="359" endPosition="0">
       <varInfo nodeId="3557624462335397393" varName="checkedDotOperand" />
@@ -1670,7 +1670,7 @@
     <scopeInfo nodeId="8579517044346265867" fileName="CurrentDifferenceBroadcaster.java" startLine="72" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="8579517044346265882" fileName="CurrentDifferenceBroadcaster.java" startLine="80" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="8579517044346265802" fileName="CurrentDifferenceBroadcaster.java" startLine="44" startPosition="49" endLine="54" endPosition="5">
-      <varInfo nodeId="8579517044346265802" varName="listener" />
+      <varInfo nodeId="8579517044346265803" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="8579517044346265797" fileName="CurrentDifferenceBroadcaster.java" startLine="43" startPosition="107" endLine="54" endPosition="5" />
     <scopeInfo nodeId="8579517044346265794" fileName="CurrentDifferenceBroadcaster.java" startLine="42" startPosition="0" endLine="56" endPosition="0">

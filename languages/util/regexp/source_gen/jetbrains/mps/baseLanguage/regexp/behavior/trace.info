@@ -194,7 +194,7 @@
       <varInfo nodeId="1353467374624660282" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="4759120547781297356" fileName="Regexp_Behavior.java" startLine="71" startPosition="77" endLine="76" endPosition="5">
-      <varInfo nodeId="4759120547781297356" varName="n" />
+      <varInfo nodeId="4759120547781297357" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1213877429450" fileName="Regexp_Behavior.java" startLine="79" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1213877429450" varName="thisNode" />

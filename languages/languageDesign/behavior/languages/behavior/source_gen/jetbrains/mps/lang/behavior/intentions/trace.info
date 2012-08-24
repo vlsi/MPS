@@ -77,7 +77,7 @@
     <nodeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="42" startPosition="5" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225201879338" fileName="MakeVirtual_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225201879342" fileName="MakeVirtual_Intention.java" startLine="50" startPosition="76" endLine="51" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3566429363059322021" fileName="MakeVirtual_Intention.java" startLine="52" startPosition="63" endLine="53" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3566429363059322021" fileName="MakeVirtual_Intention.java" startLine="52" startPosition="63" endLine="53" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="57" startPosition="37" endLine="58" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="11" startPosition="79" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeVirtual_Intention#()V" />
     <nodeInfo nodeId="1225201879332" fileName="MakeVirtual_Intention.java" startLine="34" startPosition="10" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -102,7 +102,7 @@
     <scopeInfo nodeId="1225201879333" fileName="MakeVirtual_Intention.java" startLine="34" startPosition="12" endLine="35" endPosition="28" />
     <scopeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="40" startPosition="58" endLine="41" endPosition="19" />
     <scopeInfo nodeId="1225201879337" fileName="MakeVirtual_Intention.java" startLine="46" startPosition="90" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="3566429363059295341" fileName="MakeVirtual_Intention.java" startLine="52" startPosition="63" endLine="53" endPosition="62" />
+    <scopeInfo nodeId="3566429363059295341" fileName="MakeVirtual_Intention.java" startLine="52" startPosition="63" endLine="53" endPosition="64" />
     <scopeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="57" startPosition="37" endLine="58" endPosition="52" />
     <scopeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="11" startPosition="79" endLine="13" endPosition="3" />
     <scopeInfo nodeId="1225201879322" fileName="MakeVirtual_Intention.java" startLine="14" startPosition="0" endLine="18" endPosition="0" />

@@ -21,6 +21,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -31,37 +32,10 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
     if (subOrSuperType != null) {
       return Arrays.asList(subOrSuperType);
     }
-    return getSubOrSuperTypes(type, typeCheckingContext);
-  }
-
-  public List<SNode> getSubOrSuperTypes(SNode type, @Nullable TypeCheckingContext typeCheckingContext) {
-    SNode subOrSuperType = getSubOrSuperType(type, typeCheckingContext);
-    if (subOrSuperType != null) {
-      return Arrays.asList(subOrSuperType);
-    }
-    return getSubOrSuperTypes(type);
-  }
-
-  @Deprecated
-  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
-    return getSubOrSuperType(type);
+    return Collections.emptyList();
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return getSubOrSuperType(type, typeCheckingContext);
-  }
-
-  @Deprecated
-  public List<SNode> getSubOrSuperTypes(SNode type) {
-    SNode subOrSuperType = getSubOrSuperType(type);
-    if (subOrSuperType == null) {
-      return new ArrayList<SNode>(0);
-    }
-    return Arrays.asList(subOrSuperType);
-  }
-
-  @Deprecated
-  public SNode getSubOrSuperType(SNode type) {
     return null;
   }
 
@@ -71,11 +45,6 @@ public abstract class AbstractSubtypingRule_Runtime implements ISubtypingRule_Ru
 
   @Override
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
-    return new IsApplicableStatus(isApplicable(argument), null);
-  }
-
-  @Deprecated
-  public boolean isApplicable(SNode argument) {
-    return false;
+    return new IsApplicableStatus(false, null);
   }
 }

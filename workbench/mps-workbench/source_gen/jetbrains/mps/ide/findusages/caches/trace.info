@@ -111,7 +111,7 @@
       <varInfo nodeId="2810982631457565111" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="303301571174692966" fileName="StubModelsFastFindSupport.java" startLine="71" startPosition="7" endLine="77" endPosition="5">
-      <varInfo nodeId="303301571174692966" varName="node" />
+      <varInfo nodeId="303301571174692967" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2810982631457564987" fileName="StubModelsFastFindSupport.java" startLine="81" startPosition="133" endLine="88" endPosition="50">
       <varInfo nodeId="368138058575806365" varName="blName" />

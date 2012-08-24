@@ -29,7 +29,7 @@ public class InlineRegexpExpression_removeS {
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = current.getPrevLeaf(CellConditions.SELECTABLE);
-      SPropertyOperations.set(node, "dotAll", "" + false);
+      SPropertyOperations.set(node, "dotAll", "" + (false));
       editorContext.getNodeEditorComponent().changeSelection(toSelect);
     }
   }

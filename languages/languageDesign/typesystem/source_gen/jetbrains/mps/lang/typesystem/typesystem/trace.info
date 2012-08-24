@@ -3971,7 +3971,7 @@
     <scopeInfo nodeId="2888402081996299041" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="71" startPosition="32" endLine="77" endPosition="7" />
     <scopeInfo nodeId="1236083449676" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="32" endPosition="7" />
     <scopeInfo nodeId="2888402081996283946" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="25" startPosition="29" endLine="32" endPosition="7">
-      <varInfo nodeId="2888402081996283946" varName="opConcept" />
+      <varInfo nodeId="2888402081996283947" varName="opConcept" />
     </scopeInfo>
     <scopeInfo nodeId="1236083447582" fileName="typeof_operationConcept_parameter_InferenceRule.java" startLine="39" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1236083447582" varName="argument" />
@@ -5653,7 +5653,7 @@
       <varInfo nodeId="8290749460590187666" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="6234654476299766909" fileName="superTypesOfMeet_SubtypingRule.java" startLine="22" startPosition="48" endLine="25" endPosition="5">
-      <varInfo nodeId="6234654476299766909" varName="arg" />
+      <varInfo nodeId="6234654476299766910" varName="arg" />
     </scopeInfo>
     <scopeInfo nodeId="8290749460590187666" fileName="superTypesOfMeet_SubtypingRule.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="8290749460590187666" fileName="superTypesOfMeet_SubtypingRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />

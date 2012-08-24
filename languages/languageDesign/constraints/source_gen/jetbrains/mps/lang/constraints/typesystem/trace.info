@@ -1449,7 +1449,7 @@
     <scopeInfo nodeId="8401916545537388999" fileName="check_ReferentSearchScope_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="8401916545537389000" fileName="check_ReferentSearchScope_NonTypesystemRule.java" startLine="22" startPosition="117" endLine="28" endPosition="5" />
     <scopeInfo nodeId="8401916545537389023" fileName="check_ReferentSearchScope_NonTypesystemRule.java" startLine="22" startPosition="117" endLine="28" endPosition="5">
-      <varInfo nodeId="8401916545537389023" varName="param" />
+      <varInfo nodeId="8401916545537389024" varName="param" />
     </scopeInfo>
     <scopeInfo nodeId="8401916545537388999" fileName="check_ReferentSearchScope_NonTypesystemRule.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="8401916545537388999" varName="argument" />

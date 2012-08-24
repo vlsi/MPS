@@ -150,12 +150,12 @@
       <varInfo nodeId="4474271214083124005" varName="editor" />
     </scopeInfo>
     <scopeInfo nodeId="2706316667685001493" fileName="BreakpointsUiComponentEx.java" startLine="140" startPosition="76" endLine="143" endPosition="5">
-      <varInfo nodeId="2706316667685001493" varName="breakpoint" />
+      <varInfo nodeId="2706316667685001494" varName="breakpoint" />
     </scopeInfo>
     <scopeInfo nodeId="4474271214083124714" fileName="BreakpointsUiComponentEx.java" startLine="149" startPosition="62" endLine="152" endPosition="32" />
     <scopeInfo nodeId="4474271214083124752" fileName="BreakpointsUiComponentEx.java" startLine="158" startPosition="62" endLine="161" endPosition="32" />
     <scopeInfo nodeId="2228821930962947705" fileName="BreakpointsUiComponentEx.java" startLine="168" startPosition="122" endLine="171" endPosition="9">
-      <varInfo nodeId="2228821930962947705" varName="component" />
+      <varInfo nodeId="2228821930962947706" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="2706316667685001042" fileName="BreakpointsUiComponentEx.java" startLine="40" startPosition="0" endLine="44" endPosition="3">
       <varInfo nodeId="2706316667685006335" varName="manager" />
@@ -172,7 +172,7 @@
       <varInfo nodeId="4474271214083124469" varName="debugInfo" />
     </scopeInfo>
     <scopeInfo nodeId="2706316667685001399" fileName="BreakpointsUiComponentEx.java" startLine="127" startPosition="76" endLine="131" endPosition="5">
-      <varInfo nodeId="2706316667685001399" varName="breakpoint" />
+      <varInfo nodeId="2706316667685001400" varName="breakpoint" />
     </scopeInfo>
     <scopeInfo nodeId="2228821930962906009" fileName="BreakpointsUiComponentEx.java" startLine="167" startPosition="25" endLine="171" endPosition="9">
       <varInfo nodeId="2228821930962947697" varName="allEditorComponents" />

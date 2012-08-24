@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.Set;
 
+@Deprecated
 public interface IDependency_Runtime {
   public String getSourceConceptFQName();
 

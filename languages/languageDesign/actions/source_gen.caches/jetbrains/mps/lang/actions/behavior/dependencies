@@ -28,6 +28,7 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_result_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_sourceNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_strictly_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_targetNode_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_wrapped_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptRightTransformPart_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.ConceptSubstitutePart_BehaviorDescriptor" />
@@ -233,6 +234,12 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_strictly_BehaviorDescriptor" file="ConceptFunctionParameter_strictly_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_targetNode_BehaviorDescriptor" file="ConceptFunctionParameter_targetNode_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor" />

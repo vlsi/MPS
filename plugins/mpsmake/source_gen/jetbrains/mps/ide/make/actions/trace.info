@@ -1992,7 +1992,7 @@
     <scopeInfo nodeId="6005576522675148127" fileName="TransientModelsNotification.java" startLine="26" startPosition="31" endLine="33" endPosition="23" />
     <scopeInfo nodeId="6005576522675273554" fileName="TransientModelsNotification.java" startLine="53" startPosition="38" endLine="60" endPosition="5" />
     <scopeInfo nodeId="6005576522675273555" fileName="TransientModelsNotification.java" startLine="53" startPosition="38" endLine="60" endPosition="5">
-      <varInfo nodeId="6005576522675273555" varName="widget" />
+      <varInfo nodeId="6005576522675273556" varName="widget" />
     </scopeInfo>
     <scopeInfo nodeId="6005576522675148124" fileName="TransientModelsNotification.java" startLine="25" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="6005576522675273551" fileName="TransientModelsNotification.java" startLine="52" startPosition="0" endLine="62" endPosition="0" />
@@ -2658,11 +2658,11 @@
     <scopeInfo nodeId="3396301219610984032" fileName="MakeActionParameters.java" startLine="198" startPosition="27" endLine="201" endPosition="28" />
     <scopeInfo nodeId="3396301219610984098" fileName="MakeActionParameters.java" startLine="222" startPosition="43" endLine="225" endPosition="27" />
     <scopeInfo nodeId="3396301219610984106" fileName="MakeActionParameters.java" startLine="222" startPosition="43" endLine="225" endPosition="27">
-      <varInfo nodeId="3396301219610984106" varName="mod" />
+      <varInfo nodeId="3396301219610984107" varName="mod" />
     </scopeInfo>
     <scopeInfo nodeId="4290873071535753902" fileName="MakeActionParameters.java" startLine="257" startPosition="37" endLine="260" endPosition="7" />
     <scopeInfo nodeId="4290873071535753930" fileName="MakeActionParameters.java" startLine="257" startPosition="37" endLine="260" endPosition="7">
-      <varInfo nodeId="4290873071535753930" varName="gen" />
+      <varInfo nodeId="4290873071535753931" varName="gen" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788514775" fileName="MakeActionParameters.java" startLine="63" startPosition="81" endLine="67" endPosition="0">
       <varInfo nodeId="8610665572788514775" varName="md" />
@@ -3236,7 +3236,7 @@
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="97" startPosition="27" endLine="100" endPosition="7" />
     <scopeInfo nodeId="8610665572788515473" fileName="MakeNamespace_Action.java" startLine="116" startPosition="115" endLine="119" endPosition="7" />
     <scopeInfo nodeId="8610665572788515474" fileName="MakeNamespace_Action.java" startLine="116" startPosition="115" endLine="119" endPosition="7">
-      <varInfo nodeId="8610665572788515474" varName="module" />
+      <varInfo nodeId="8610665572788515475" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="31" startPosition="54" endLine="35" endPosition="40" />
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="61" startPosition="9" endLine="65" endPosition="7" />
@@ -3252,7 +3252,7 @@
       <varInfo nodeId="8610665572788515535" varName="selectedNode" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515468" fileName="MakeNamespace_Action.java" startLine="115" startPosition="52" endLine="120" endPosition="5">
-      <varInfo nodeId="8610665572788515468" varName="ppNode" />
+      <varInfo nodeId="8610665572788515469" varName="ppNode" />
     </scopeInfo>
     <scopeInfo nodeId="8610665572788515455" fileName="MakeNamespace_Action.java" startLine="30" startPosition="0" endLine="36" endPosition="3">
       <varInfo nodeId="8610665572788515455" varName="cleanMake_par" />

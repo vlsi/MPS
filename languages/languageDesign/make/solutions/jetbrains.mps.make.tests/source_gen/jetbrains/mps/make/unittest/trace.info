@@ -1470,7 +1470,7 @@
     <scopeInfo nodeId="4484244461505560525" fileName="ScriptBuilder_Test.java" startLine="71" startPosition="43" endLine="72" endPosition="27" />
     <scopeInfo nodeId="1103977116241830485" fileName="ScriptBuilder_Test.java" startLine="85" startPosition="73" endLine="86" endPosition="49" />
     <scopeInfo nodeId="1103977116241830482" fileName="ScriptBuilder_Test.java" startLine="84" startPosition="43" endLine="87" endPosition="5">
-      <varInfo nodeId="1103977116241830482" varName="fn" />
+      <varInfo nodeId="1103977116241830483" varName="fn" />
     </scopeInfo>
     <scopeInfo nodeId="1103977116241830509" fileName="ScriptBuilder_Test.java" startLine="30" startPosition="118" endLine="34" endPosition="0">
       <varInfo nodeId="1103977116241830509" varName="f" />

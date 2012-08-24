@@ -230,13 +230,13 @@
     <scopeInfo nodeId="6812098398776640768" fileName="ChangeMethodSignatureDialog.java" startLine="121" startPosition="73" endLine="122" endPosition="120" />
     <scopeInfo nodeId="6812098398776640786" fileName="ChangeMethodSignatureDialog.java" startLine="129" startPosition="27" endLine="131" endPosition="22" />
     <scopeInfo nodeId="6812098398776640516" fileName="ChangeMethodSignatureDialog.java" startLine="75" startPosition="84" endLine="78" endPosition="9">
-      <varInfo nodeId="6812098398776640516" varName="language" />
+      <varInfo nodeId="6812098398776640517" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="6812098398776640540" fileName="ChangeMethodSignatureDialog.java" startLine="79" startPosition="81" endLine="82" endPosition="9">
-      <varInfo nodeId="6812098398776640540" varName="imported" />
+      <varInfo nodeId="6812098398776640541" varName="imported" />
     </scopeInfo>
     <scopeInfo nodeId="6812098398776640765" fileName="ChangeMethodSignatureDialog.java" startLine="120" startPosition="94" endLine="123" endPosition="5">
-      <varInfo nodeId="6812098398776640765" varName="method" />
+      <varInfo nodeId="6812098398776640766" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="6812098398776640621" fileName="ChangeMethodSignatureDialog.java" startLine="55" startPosition="57" endLine="59" endPosition="0" />
     <scopeInfo nodeId="6812098398776640570" fileName="ChangeMethodSignatureDialog.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />

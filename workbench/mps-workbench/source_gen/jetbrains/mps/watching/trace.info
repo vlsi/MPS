@@ -55,20 +55,20 @@
     </scopeInfo>
     <scopeInfo nodeId="3316697760692356731" fileName="ModelFocusSynchronizer.java" startLine="41" startPosition="96" endLine="51" endPosition="17" />
     <scopeInfo nodeId="2834132315319614606" fileName="ModelFocusSynchronizer.java" startLine="57" startPosition="63" endLine="67" endPosition="15">
-      <varInfo nodeId="2834132315319614606" varName="file" />
+      <varInfo nodeId="2834132315319614607" varName="file" />
     </scopeInfo>
     <scopeInfo nodeId="3316697760692356793" fileName="ModelFocusSynchronizer.java" startLine="56" startPosition="62" endLine="67" endPosition="15">
       <varInfo nodeId="3316697760692356795" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="3316697760692356728" fileName="ModelFocusSynchronizer.java" startLine="40" startPosition="84" endLine="52" endPosition="15" />
     <scopeInfo nodeId="3316697760692356729" fileName="ModelFocusSynchronizer.java" startLine="40" startPosition="84" endLine="52" endPosition="15">
-      <varInfo nodeId="3316697760692356729" varName="vf" />
+      <varInfo nodeId="3316697760692356730" varName="vf" />
     </scopeInfo>
     <scopeInfo nodeId="3316697760692356790" fileName="ModelFocusSynchronizer.java" startLine="55" startPosition="96" endLine="68" endPosition="13">
-      <varInfo nodeId="3316697760692356790" varName="model" />
+      <varInfo nodeId="3316697760692356791" varName="model" />
     </scopeInfo>
     <scopeInfo nodeId="3316697760692356726" fileName="ModelFocusSynchronizer.java" startLine="39" startPosition="76" endLine="53" endPosition="13">
-      <varInfo nodeId="3316697760692356726" varName="project" />
+      <varInfo nodeId="3316697760692356727" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="3316697760692356718" fileName="ModelFocusSynchronizer.java" startLine="38" startPosition="29" endLine="69" endPosition="29">
       <varInfo nodeId="3316697760692356720" varName="models" />

@@ -131,8 +131,8 @@
     <nodeInfo nodeId="1213877228507" fileName="Layout_Behavior.java" startLine="39" startPosition="109" endLine="40" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877228514" fileName="Layout_Behavior.java" startLine="40" startPosition="46" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877228523" fileName="Layout_Behavior.java" startLine="41" startPosition="80" endLine="42" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8485638366356712137" fileName="Layout_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="462257719548474339" fileName="Layout_Behavior.java" startLine="44" startPosition="60" endLine="45" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8485638366356712137" fileName="Layout_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="462257719548474339" fileName="Layout_Behavior.java" startLine="44" startPosition="62" endLine="45" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="462257719548474361" fileName="Layout_Behavior.java" startLine="45" startPosition="177" endLine="46" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="462257719548601535" fileName="Layout_Behavior.java" startLine="49" startPosition="79" endLine="50" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4514696390935012426" fileName="Layout_Behavior.java" startLine="54" startPosition="83" endLine="55" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -295,26 +295,26 @@
       <varInfo nodeId="4514696390935024700" varName="allMacroNames" />
     </scopeInfo>
     <scopeInfo nodeId="1213877228282" fileName="Layout_Behavior.java" startLine="80" startPosition="71" endLine="83" endPosition="5">
-      <varInfo nodeId="1213877228282" varName="component" />
+      <varInfo nodeId="1213877228283" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="1213877228349" fileName="Layout_Behavior.java" startLine="100" startPosition="71" endLine="103" endPosition="5">
-      <varInfo nodeId="1213877228349" varName="component" />
+      <varInfo nodeId="1213877228350" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="9027273598492143622" fileName="Layout_Behavior.java" startLine="108" startPosition="113" endLine="111" endPosition="7" />
     <scopeInfo nodeId="9027273598492143744" fileName="Layout_Behavior.java" startLine="108" startPosition="113" endLine="111" endPosition="7">
-      <varInfo nodeId="9027273598492143744" varName="child" />
+      <varInfo nodeId="9027273598492143745" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="9027273598492143649" fileName="Layout_Behavior.java" startLine="115" startPosition="115" endLine="118" endPosition="7" />
     <scopeInfo nodeId="9027273598492144043" fileName="Layout_Behavior.java" startLine="115" startPosition="115" endLine="118" endPosition="7">
-      <varInfo nodeId="9027273598492144043" varName="child" />
+      <varInfo nodeId="9027273598492144044" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1226509010732" fileName="Layout_Behavior.java" startLine="137" startPosition="55" endLine="140" endPosition="22" />
     <scopeInfo nodeId="1233317262397" fileName="Layout_Behavior.java" startLine="152" startPosition="113" endLine="155" endPosition="7" />
     <scopeInfo nodeId="1233317262398" fileName="Layout_Behavior.java" startLine="152" startPosition="113" endLine="155" endPosition="7">
-      <varInfo nodeId="1233317262398" varName="entry" />
+      <varInfo nodeId="1233317262399" varName="entry" />
     </scopeInfo>
     <scopeInfo nodeId="1240564979377" fileName="Layout_Behavior.java" startLine="157" startPosition="211" endLine="160" endPosition="7">
-      <varInfo nodeId="1240564979377" varName="child" />
+      <varInfo nodeId="1240564979378" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1213877228500" fileName="Layout_Behavior.java" startLine="38" startPosition="78" endLine="42" endPosition="65">
       <varInfo nodeId="1213877228502" varName="var" />
@@ -356,14 +356,14 @@
       <varInfo nodeId="1240564972233" varName="childrenToDo" />
     </scopeInfo>
     <scopeInfo nodeId="1213877228495" fileName="Layout_Behavior.java" startLine="37" startPosition="139" endLine="43" endPosition="5">
-      <varInfo nodeId="1213877228495" varName="s" />
+      <varInfo nodeId="1213877228496" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1213877228217" fileName="Layout_Behavior.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4514696390935024689" varName="addBasedir" />
       <varInfo nodeId="1213877228217" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1213877228316" fileName="Layout_Behavior.java" startLine="89" startPosition="98" endLine="95" endPosition="5">
-      <varInfo nodeId="1213877228316" varName="component" />
+      <varInfo nodeId="1213877228317" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="1213877228217" fileName="Layout_Behavior.java" startLine="136" startPosition="0" endLine="142" endPosition="0" />
     <scopeInfo nodeId="462257719548507237" fileName="Layout_Behavior.java" startLine="179" startPosition="43" endLine="185" endPosition="9" />
@@ -786,7 +786,7 @@
       <varInfo nodeId="1238516284388" varName="parentTargetDir" />
     </scopeInfo>
     <scopeInfo nodeId="1213877333844" fileName="AbstractProjectComponent_Behavior.java" startLine="60" startPosition="5" endLine="65" endPosition="5">
-      <varInfo nodeId="1213877333844" varName="ref" />
+      <varInfo nodeId="1213877333845" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1213877333763" fileName="AbstractProjectComponent_Behavior.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="1213877333763" varName="thisNode" />
@@ -1079,13 +1079,13 @@
     </scopeInfo>
     <scopeInfo nodeId="4642981534832278912" fileName="Module_Behavior.java" startLine="259" startPosition="55" endLine="262" endPosition="7" />
     <scopeInfo nodeId="1222444746709" fileName="Module_Behavior.java" startLine="283" startPosition="73" endLine="286" endPosition="5">
-      <varInfo nodeId="1222444746709" varName="language" />
+      <varInfo nodeId="1222444746710" varName="language" />
     </scopeInfo>
     <scopeInfo nodeId="1222444746724" fileName="Module_Behavior.java" startLine="286" startPosition="5" endLine="289" endPosition="5">
-      <varInfo nodeId="1222444746724" varName="devKit" />
+      <varInfo nodeId="1222444746725" varName="devKit" />
     </scopeInfo>
     <scopeInfo nodeId="1222444746739" fileName="Module_Behavior.java" startLine="289" startPosition="5" endLine="292" endPosition="5">
-      <varInfo nodeId="1222444746739" varName="solution" />
+      <varInfo nodeId="1222444746740" varName="solution" />
     </scopeInfo>
     <scopeInfo nodeId="1213877514764" fileName="Module_Behavior.java" startLine="35" startPosition="30" endLine="39" endPosition="0">
       <varInfo nodeId="1213877514764" varName="thisNode" />
@@ -1178,7 +1178,7 @@
       <varInfo nodeId="1213877514764" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="4642981534832278909" fileName="Module_Behavior.java" startLine="258" startPosition="25" endLine="263" endPosition="5">
-      <varInfo nodeId="4642981534832278909" varName="cp" />
+      <varInfo nodeId="4642981534832278910" varName="cp" />
     </scopeInfo>
     <scopeInfo nodeId="4777659345279794565" fileName="Module_Behavior.java" startLine="267" startPosition="117" endLine="272" endPosition="7" />
     <scopeInfo nodeId="1213877514764" fileName="Module_Behavior.java" startLine="119" startPosition="0" endLine="125" endPosition="0">
@@ -1191,7 +1191,7 @@
       <varInfo nodeId="2378354490355101470" varName="start" />
     </scopeInfo>
     <scopeInfo nodeId="264380905730923652" fileName="Module_Behavior.java" startLine="157" startPosition="36" endLine="164" endPosition="9">
-      <varInfo nodeId="264380905730923652" varName="runtimeDependency" />
+      <varInfo nodeId="264380905730923653" varName="runtimeDependency" />
     </scopeInfo>
     <scopeInfo nodeId="264380905730924690" fileName="Module_Behavior.java" startLine="157" startPosition="36" endLine="164" endPosition="9" />
     <scopeInfo nodeId="1213877514764" fileName="Module_Behavior.java" startLine="201" startPosition="0" endLine="208" endPosition="0">
@@ -1446,13 +1446,13 @@
       <varInfo nodeId="1218646036622" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1218716942066" fileName="ModuleCycle_Behavior.java" startLine="58" startPosition="53" endLine="61" endPosition="5">
-      <varInfo nodeId="1218716942066" varName="string" />
+      <varInfo nodeId="1218716942067" varName="string" />
     </scopeInfo>
     <scopeInfo nodeId="1218646036622" fileName="ModuleCycle_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1218646036622" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1218646104265" fileName="ModuleCycle_Behavior.java" startLine="32" startPosition="71" endLine="36" endPosition="5">
-      <varInfo nodeId="1218646104265" varName="moduleRef" />
+      <varInfo nodeId="1218646104266" varName="moduleRef" />
     </scopeInfo>
     <scopeInfo nodeId="4104037887205763479" fileName="ModuleCycle_Behavior.java" startLine="39" startPosition="138" endLine="43" endPosition="0">
       <varInfo nodeId="4104037887205763479" varName="it" />
@@ -1541,7 +1541,7 @@
     <scopeInfo nodeId="1040213783748331946" fileName="ModuleUtil.java" startLine="66" startPosition="52" endLine="71" endPosition="73" />
     <scopeInfo nodeId="1219230047141" fileName="ModuleUtil.java" startLine="44" startPosition="69" endLine="51" endPosition="5" />
     <scopeInfo nodeId="1219230088822" fileName="ModuleUtil.java" startLine="44" startPosition="69" endLine="51" endPosition="5">
-      <varInfo nodeId="1219230088822" varName="m" />
+      <varInfo nodeId="1219230088823" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="1040213783748331928" fileName="ModuleUtil.java" startLine="57" startPosition="50" endLine="65" endPosition="0">
       <varInfo nodeId="1040213783748331931" varName="item" />
@@ -1810,7 +1810,7 @@
       <varInfo nodeId="1220977682599" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1226511600281" fileName="Path_Behavior.java" startLine="28" startPosition="41" endLine="32" endPosition="5">
-      <varInfo nodeId="1226511600281" varName="component" />
+      <varInfo nodeId="1226511600282" varName="component" />
     </scopeInfo>
     <scopeInfo nodeId="1221141245427" fileName="Path_Behavior.java" startLine="37" startPosition="70" endLine="41" endPosition="199" />
     <scopeInfo nodeId="1220977682599" fileName="Path_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
@@ -1840,7 +1840,7 @@
       <varInfo nodeId="1220977682599" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1220978455164" fileName="Path_Behavior.java" startLine="60" startPosition="5" endLine="66" endPosition="5">
-      <varInfo nodeId="1220978455164" varName="path" />
+      <varInfo nodeId="1220978455165" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="1220977682599" fileName="Path_Behavior.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="1220977682599" varName="thisNode" />
@@ -1890,7 +1890,7 @@
       <varInfo nodeId="1220983417227" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1220983426026" fileName="CompositePathComponent_Behavior.java" startLine="18" startPosition="5" endLine="21" endPosition="5">
-      <varInfo nodeId="1220983426026" varName="p" />
+      <varInfo nodeId="1220983426027" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="1220983419347" fileName="CompositePathComponent_Behavior.java" startLine="14" startPosition="67" endLine="22" endPosition="48">
       <varInfo nodeId="1220983446551" varName="path" />
@@ -2142,7 +2142,7 @@
       <varInfo nodeId="1234864689834" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1234876498413" fileName="IVariableHolder_Behavior.java" startLine="21" startPosition="95" endLine="26" endPosition="5">
-      <varInfo nodeId="1234876498413" varName="var" />
+      <varInfo nodeId="1234876498414" varName="var" />
     </scopeInfo>
     <scopeInfo nodeId="1234864689834" fileName="IVariableHolder_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="1234864689834" varName="thisNode" />
@@ -2265,7 +2265,7 @@
       <varInfo nodeId="1234972705117" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1234972952666" fileName="IMacroHolder_Behavior.java" startLine="29" startPosition="102" endLine="34" endPosition="5">
-      <varInfo nodeId="1234972952666" varName="macro" />
+      <varInfo nodeId="1234972952667" varName="macro" />
     </scopeInfo>
     <scopeInfo nodeId="1234972705117" fileName="IMacroHolder_Behavior.java" startLine="77" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1234972705117" varName="thisNode" />
@@ -2286,7 +2286,7 @@
       <varInfo nodeId="1234975567393" varName="names" />
     </scopeInfo>
     <scopeInfo nodeId="1219229216419" fileName="IMacroHolder_Behavior.java" startLine="68" startPosition="48" endLine="74" endPosition="5">
-      <varInfo nodeId="1219229216419" varName="macroName" />
+      <varInfo nodeId="1219229216420" varName="macroName" />
     </scopeInfo>
     <scopeInfo nodeId="1234972705117" fileName="IMacroHolder_Behavior.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1234972802884" varName="macroReference" />

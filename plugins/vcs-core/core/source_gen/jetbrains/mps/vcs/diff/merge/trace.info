@@ -303,7 +303,7 @@
       <varInfo nodeId="4124845871897265035" varName="repository" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265394" fileName="MergeConflictsBuilder.java" startLine="274" startPosition="170" endLine="281" endPosition="5">
-      <varInfo nodeId="4124845871897265394" varName="change" />
+      <varInfo nodeId="4124845871897265395" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265444" fileName="MergeConflictsBuilder.java" startLine="284" startPosition="0" endLine="291" endPosition="0">
       <varInfo nodeId="4124845871897265451" varName="a" />
@@ -325,13 +325,13 @@
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265338" fileName="MergeConflictsBuilder.java" startLine="48" startPosition="77" endLine="57" endPosition="23" />
     <scopeInfo nodeId="4124845871897264796" fileName="MergeConflictsBuilder.java" startLine="137" startPosition="32" endLine="146" endPosition="5">
-      <varInfo nodeId="4124845871897264796" varName="nodeName" />
+      <varInfo nodeId="4124845871897264797" varName="nodeName" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897264904" fileName="MergeConflictsBuilder.java" startLine="155" startPosition="33" endLine="164" endPosition="5">
-      <varInfo nodeId="4124845871897264904" varName="nodeName" />
+      <varInfo nodeId="4124845871897264905" varName="nodeName" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265017" fileName="MergeConflictsBuilder.java" startLine="181" startPosition="28" endLine="190" endPosition="5">
-      <varInfo nodeId="4124845871897265017" varName="addedRoot" />
+      <varInfo nodeId="4124845871897265018" varName="addedRoot" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265243" fileName="MergeConflictsBuilder.java" startLine="245" startPosition="69" endLine="254" endPosition="11" />
     <scopeInfo nodeId="4124845871897265378" fileName="MergeConflictsBuilder.java" startLine="273" startPosition="118" endLine="282" endPosition="34">
@@ -356,14 +356,14 @@
     <scopeInfo nodeId="4209733725028896019" fileName="MergeConflictsBuilder.java" startLine="224" startPosition="0" endLine="235" endPosition="0" />
     <scopeInfo nodeId="4124845871897265239" fileName="MergeConflictsBuilder.java" startLine="244" startPosition="61" endLine="255" endPosition="9" />
     <scopeInfo nodeId="4124845871897265240" fileName="MergeConflictsBuilder.java" startLine="244" startPosition="61" endLine="255" endPosition="9">
-      <varInfo nodeId="4124845871897265240" varName="r" />
+      <varInfo nodeId="4124845871897265241" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265375" fileName="MergeConflictsBuilder.java" startLine="272" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="4124845871897265376" varName="changeSet" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265070" fileName="MergeConflictsBuilder.java" startLine="193" startPosition="95" endLine="206" endPosition="17" />
     <scopeInfo nodeId="4124845871897265236" fileName="MergeConflictsBuilder.java" startLine="243" startPosition="39" endLine="256" endPosition="7">
-      <varInfo nodeId="4124845871897265236" varName="m" />
+      <varInfo nodeId="4124845871897265237" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897264777" fileName="MergeConflictsBuilder.java" startLine="131" startPosition="43" endLine="146" endPosition="5">
       <varInfo nodeId="991773733294051709" varName="arranged" />
@@ -387,7 +387,7 @@
     <scopeInfo nodeId="4124845871897264999" fileName="MergeConflictsBuilder.java" startLine="174" startPosition="0" endLine="192" endPosition="0" />
     <scopeInfo nodeId="4124845871897264641" fileName="MergeConflictsBuilder.java" startLine="107" startPosition="28" endLine="126" endPosition="47" />
     <scopeInfo nodeId="4124845871897265207" fileName="MergeConflictsBuilder.java" startLine="238" startPosition="131" endLine="257" endPosition="5">
-      <varInfo nodeId="4124845871897265207" varName="nodeRole" />
+      <varInfo nodeId="4124845871897265208" varName="nodeRole" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265186" fileName="MergeConflictsBuilder.java" startLine="236" startPosition="35" endLine="270" endPosition="35">
       <varInfo nodeId="4124845871897265188" varName="mineGroupChanges" />
@@ -398,7 +398,7 @@
       <varInfo nodeId="4124845871897264592" varName="nodeId" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897264580" fileName="MergeConflictsBuilder.java" startLine="91" startPosition="31" endLine="128" endPosition="5">
-      <varInfo nodeId="4124845871897264580" varName="change" />
+      <varInfo nodeId="4124845871897264581" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265183" fileName="MergeConflictsBuilder.java" startLine="235" startPosition="0" endLine="272" endPosition="0" />
     <scopeInfo nodeId="4124845871897264572" fileName="MergeConflictsBuilder.java" startLine="86" startPosition="178" endLine="128" endPosition="5">
@@ -728,14 +728,14 @@
     <scopeInfo nodeId="4515621863031787885" fileName="MergeSession.java" startLine="322" startPosition="61" endLine="324" endPosition="5" />
     <scopeInfo nodeId="4515621863031789144" fileName="MergeSession.java" startLine="466" startPosition="58" endLine="468" endPosition="35" />
     <scopeInfo nodeId="4124845871897265715" fileName="MergeSession.java" startLine="197" startPosition="7" endLine="200" endPosition="5">
-      <varInfo nodeId="4124845871897265715" varName="c" />
+      <varInfo nodeId="4124845871897265716" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265728" fileName="MergeSession.java" startLine="203" startPosition="74" endLine="206" endPosition="5" />
     <scopeInfo nodeId="4124845871897265729" fileName="MergeSession.java" startLine="203" startPosition="74" endLine="206" endPosition="5">
-      <varInfo nodeId="4124845871897265729" varName="c" />
+      <varInfo nodeId="4124845871897265730" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="4515621863031787965" fileName="MergeSession.java" startLine="336" startPosition="59" endLine="339" endPosition="7">
-      <varInfo nodeId="4515621863031787965" varName="child" />
+      <varInfo nodeId="4515621863031787966" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="4515621863031787909" fileName="MergeSession.java" startLine="441" startPosition="60" endLine="444" endPosition="42" />
     <scopeInfo nodeId="4515621863031787915" fileName="MergeSession.java" startLine="448" startPosition="52" endLine="451" endPosition="42" />
@@ -919,7 +919,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265514" fileName="MergeSession.java" startLine="80" startPosition="39" endLine="92" endPosition="5" />
     <scopeInfo nodeId="4124845871897265515" fileName="MergeSession.java" startLine="80" startPosition="39" endLine="92" endPosition="5">
-      <varInfo nodeId="4124845871897265515" varName="change" />
+      <varInfo nodeId="4124845871897265516" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897265714" fileName="MergeSession.java" startLine="188" startPosition="72" endLine="200" endPosition="5" />
     <scopeInfo nodeId="4415110399252662334" fileName="MergeSession.java" startLine="426" startPosition="0" endLine="439" endPosition="0">
@@ -944,7 +944,7 @@
     <scopeInfo nodeId="4124845871897265895" fileName="MergeSession.java" startLine="61" startPosition="86" endLine="77" endPosition="7" />
     <scopeInfo nodeId="4515621863031788005" fileName="MergeSession.java" startLine="99" startPosition="39" endLine="115" endPosition="5" />
     <scopeInfo nodeId="4515621863031788006" fileName="MergeSession.java" startLine="99" startPosition="39" endLine="115" endPosition="5">
-      <varInfo nodeId="4515621863031788006" varName="change" />
+      <varInfo nodeId="4515621863031788007" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="4124845871897266021" fileName="MergeSession.java" startLine="267" startPosition="53" endLine="283" endPosition="73">
       <varInfo nodeId="8037826462425846543" varName="stateCopy" />

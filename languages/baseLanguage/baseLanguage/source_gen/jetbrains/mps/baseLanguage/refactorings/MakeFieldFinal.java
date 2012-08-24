@@ -24,7 +24,7 @@ public class MakeFieldFinal extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    SPropertyOperations.set(refactoringContext.getSelectedNode(), "isFinal", "" + true);
+    SPropertyOperations.set(refactoringContext.getSelectedNode(), "isFinal", "" + (true));
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {

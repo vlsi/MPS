@@ -8,10 +8,6 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
-import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
-import jetbrains.mps.typesystem.inference.util.AbstractDependency_Runtime;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -686,102 +682,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InequationReplacementRule_Runtime eliminationRule = new set_type_equivalent_to_subconcepts_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return SNodeOperations.getParent(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.ToListOperation";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return RulesFunctions_Collections.getOutput(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.Expression";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.SkipOperation";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return RulesFunctions_Collections.getOutput(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.Expression";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.PageOperation";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return RulesFunctions_Collections.getOutput(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.Expression";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.TakeOperation";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return RulesFunctions_Collections.getOutput(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.Expression";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.collections.structure.DistinctOperation";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          return RulesFunctions_Collections.getOutput(targetNode);
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.Expression";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
     }
   }
 }

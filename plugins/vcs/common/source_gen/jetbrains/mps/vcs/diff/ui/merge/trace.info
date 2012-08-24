@@ -400,10 +400,10 @@
     <scopeInfo nodeId="1632433213531298974" fileName="MergeModelsDialog.java" startLine="200" startPosition="63" endLine="203" endPosition="27" />
     <scopeInfo nodeId="708166622413808229" fileName="MergeModelsDialog.java" startLine="223" startPosition="11" endLine="226" endPosition="29" />
     <scopeInfo nodeId="708166622413808326" fileName="MergeModelsDialog.java" startLine="249" startPosition="55" endLine="252" endPosition="7">
-      <varInfo nodeId="708166622413808326" varName="ch" />
+      <varInfo nodeId="708166622413808327" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="708166622413808355" fileName="MergeModelsDialog.java" startLine="255" startPosition="55" endLine="258" endPosition="7">
-      <varInfo nodeId="708166622413808355" varName="ch" />
+      <varInfo nodeId="708166622413808356" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="708166622413808427" fileName="MergeModelsDialog.java" startLine="273" startPosition="29" endLine="276" endPosition="27" />
     <scopeInfo nodeId="708166622413808598" fileName="MergeModelsDialog.java" startLine="327" startPosition="25" endLine="330" endPosition="33" />
@@ -522,7 +522,7 @@
     <scopeInfo nodeId="708166622413837041" fileName="MergeModelsDialog.java" startLine="122" startPosition="31" endLine="132" endPosition="7" />
     <scopeInfo nodeId="1493963027547820369" fileName="MergeModelsDialog.java" startLine="160" startPosition="0" endLine="170" endPosition="0" />
     <scopeInfo nodeId="708166622413808524" fileName="MergeModelsDialog.java" startLine="315" startPosition="99" endLine="325" endPosition="5">
-      <varInfo nodeId="708166622413808524" varName="change" />
+      <varInfo nodeId="708166622413808525" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="101314801351942295" fileName="MergeModelsDialog.java" startLine="148" startPosition="0" endLine="160" endPosition="0" />
     <scopeInfo nodeId="6360162175082580507" fileName="MergeModelsDialog.java" startLine="339" startPosition="12" endLine="351" endPosition="9" />
@@ -968,7 +968,7 @@
     </scopeInfo>
     <scopeInfo nodeId="708166622413809512" fileName="MergeRootsDialog.java" startLine="99" startPosition="92" endLine="107" endPosition="0" />
     <scopeInfo nodeId="708166622413809002" fileName="MergeRootsDialog.java" startLine="194" startPosition="24" endLine="202" endPosition="5">
-      <varInfo nodeId="708166622413809002" varName="change" />
+      <varInfo nodeId="708166622413809003" varName="change" />
     </scopeInfo>
     <scopeInfo nodeId="708166622413836662" fileName="MergeRootsDialog.java" startLine="296" startPosition="31" endLine="305" endPosition="7" />
     <scopeInfo nodeId="708166622413808874" fileName="MergeRootsDialog.java" startLine="145" startPosition="86" endLine="155" endPosition="18" />

@@ -289,7 +289,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4101410806532131327" fileName="MPSOpenProjectRunner.java" startLine="75" startPosition="33" endLine="90" endPosition="5" />
     <scopeInfo nodeId="4101410806532131329" fileName="MPSOpenProjectRunner.java" startLine="75" startPosition="33" endLine="90" endPosition="5">
-      <varInfo nodeId="4101410806532131329" varName="property" />
+      <varInfo nodeId="4101410806532131330" varName="property" />
     </scopeInfo>
     <scopeInfo nodeId="4101410806532131324" fileName="MPSOpenProjectRunner.java" startLine="74" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="1209415647739202070" fileName="MPSOpenProjectRunner.java" startLine="50" startPosition="79" endLine="72" endPosition="23">
@@ -385,10 +385,10 @@
     <scopeInfo nodeId="5503298173333997462" fileName="MPSProjectITestsSuite.java" startLine="123" startPosition="38" endLine="124" endPosition="41" />
     <scopeInfo nodeId="8349516052137006552" fileName="MPSProjectITestsSuite.java" startLine="130" startPosition="40" endLine="131" endPosition="21" />
     <scopeInfo nodeId="5503298173333910805" fileName="MPSProjectITestsSuite.java" startLine="36" startPosition="50" endLine="39" endPosition="5">
-      <varInfo nodeId="5503298173333910805" varName="parameter" />
+      <varInfo nodeId="5503298173333910806" varName="parameter" />
     </scopeInfo>
     <scopeInfo nodeId="5503298173334000169" fileName="MPSProjectITestsSuite.java" startLine="69" startPosition="54" endLine="72" endPosition="11">
-      <varInfo nodeId="5503298173334000169" varName="testCase" />
+      <varInfo nodeId="5503298173334000170" varName="testCase" />
     </scopeInfo>
     <scopeInfo nodeId="5503298173333997603" fileName="MPSProjectITestsSuite.java" startLine="84" startPosition="77" endLine="87" endPosition="9" />
     <scopeInfo nodeId="5503298173333998851" fileName="MPSProjectITestsSuite.java" startLine="94" startPosition="101" endLine="97" endPosition="9" />
@@ -398,10 +398,10 @@
       <varInfo nodeId="5503298173333999637" varName="sModel" />
     </scopeInfo>
     <scopeInfo nodeId="5503298173333997600" fileName="MPSProjectITestsSuite.java" startLine="83" startPosition="29" endLine="88" endPosition="7">
-      <varInfo nodeId="5503298173333997600" varName="module" />
+      <varInfo nodeId="5503298173333997601" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="5503298173333998848" fileName="MPSProjectITestsSuite.java" startLine="93" startPosition="32" endLine="98" endPosition="7">
-      <varInfo nodeId="5503298173333998848" varName="modelDescriptor" />
+      <varInfo nodeId="5503298173333998849" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="5503298173333995907" fileName="MPSProjectITestsSuite.java" startLine="105" startPosition="73" endLine="110" endPosition="74">
       <varInfo nodeId="5503298173333996333" varName="moduleAnnotation" />
@@ -421,7 +421,7 @@
       <varInfo nodeId="5637145482862507017" varName="testClass" />
     </scopeInfo>
     <scopeInfo nodeId="5503298173333995899" fileName="MPSProjectITestsSuite.java" startLine="67" startPosition="25" endLine="73" endPosition="9">
-      <varInfo nodeId="5503298173333995899" varName="modelDescriptor" />
+      <varInfo nodeId="5503298173333995900" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="5503298173334000160" fileName="MPSProjectITestsSuite.java" startLine="67" startPosition="25" endLine="73" endPosition="9" />
     <scopeInfo nodeId="5503298173333997583" fileName="MPSProjectITestsSuite.java" startLine="83" startPosition="29" endLine="89" endPosition="165" />
@@ -430,7 +430,7 @@
     <scopeInfo nodeId="5503298173333995933" fileName="MPSProjectITestsSuite.java" startLine="147" startPosition="40" endLine="153" endPosition="17" />
     <scopeInfo nodeId="5503298173333995952" fileName="MPSProjectITestsSuite.java" startLine="158" startPosition="34" endLine="164" endPosition="15" />
     <scopeInfo nodeId="5503298173334017795" fileName="MPSProjectITestsSuite.java" startLine="43" startPosition="77" endLine="51" endPosition="5">
-      <varInfo nodeId="5503298173334017795" varName="testClassDescriptor" />
+      <varInfo nodeId="5503298173334017796" varName="testClassDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="5503298173333995904" fileName="MPSProjectITestsSuite.java" startLine="104" startPosition="0" endLine="112" endPosition="0">
       <varInfo nodeId="5503298173333995972" varName="klass" />
@@ -637,7 +637,7 @@
     <scopeInfo nodeId="7906452883299946910" fileName="ParameterizedSuite.java" startLine="39" startPosition="73" endLine="40" endPosition="20" />
     <scopeInfo nodeId="7906452883299947243" fileName="ParameterizedSuite.java" startLine="47" startPosition="40" endLine="48" endPosition="21" />
     <scopeInfo nodeId="7906452883299947055" fileName="ParameterizedSuite.java" startLine="25" startPosition="50" endLine="28" endPosition="5">
-      <varInfo nodeId="7906452883299947055" varName="parameter" />
+      <varInfo nodeId="7906452883299947056" varName="parameter" />
     </scopeInfo>
     <scopeInfo nodeId="7906452883299951151" fileName="ParameterizedSuite.java" startLine="53" startPosition="53" endLine="56" endPosition="13" />
     <scopeInfo nodeId="7906452883299946831" fileName="ParameterizedSuite.java" startLine="24" startPosition="85" endLine="28" endPosition="5" />
@@ -653,7 +653,7 @@
       <varInfo nodeId="7906452883299946833" varName="klass" />
     </scopeInfo>
     <scopeInfo nodeId="7906452883299946983" fileName="ParameterizedSuite.java" startLine="36" startPosition="105" endLine="42" endPosition="5">
-      <varInfo nodeId="7906452883299946983" varName="each" />
+      <varInfo nodeId="7906452883299946984" varName="each" />
     </scopeInfo>
     <scopeInfo nodeId="7906452883299951144" fileName="ParameterizedSuite.java" startLine="52" startPosition="41" endLine="58" endPosition="24" />
     <scopeInfo nodeId="7906452883299946882" fileName="ParameterizedSuite.java" startLine="35" startPosition="85" endLine="43" endPosition="94">

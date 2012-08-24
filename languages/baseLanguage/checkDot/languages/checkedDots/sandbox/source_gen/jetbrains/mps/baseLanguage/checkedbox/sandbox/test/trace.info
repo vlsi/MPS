@@ -92,7 +92,7 @@
     <scopeInfo nodeId="831786216887884106" fileName="FooCheckedDots.java" startLine="56" startPosition="56" endLine="58" endPosition="16" />
     <scopeInfo nodeId="53796356308657415" fileName="FooCheckedDots.java" startLine="19" startPosition="34" endLine="22" endPosition="0" />
     <scopeInfo nodeId="1023687332192250971" fileName="FooCheckedDots.java" startLine="40" startPosition="19" endLine="43" endPosition="5">
-      <varInfo nodeId="1023687332192250971" varName="s" />
+      <varInfo nodeId="1023687332192250972" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="2319519288049912857" fileName="FooCheckedDots.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="53796356308657408" fileName="FooCheckedDots.java" startLine="61" startPosition="67" endLine="65" endPosition="13" />

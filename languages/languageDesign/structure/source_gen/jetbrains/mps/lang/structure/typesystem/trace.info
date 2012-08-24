@@ -9,8 +9,8 @@
     <nodeInfo nodeId="1212181840040" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="34" startPosition="153" endLine="35" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1227876791987" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="40" startPosition="50" endLine="41" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
     <nodeInfo nodeId="1227876791992" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="41" startPosition="37" endLine="42" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_3_links" />
-    <nodeInfo nodeId="1227876791987" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="42" startPosition="43" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_link" />
-    <nodeInfo nodeId="1227876791987" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="43" startPosition="36" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_link_it" />
+    <nodeInfo nodeId="1227876792002" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="42" startPosition="43" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_link" />
+    <nodeInfo nodeId="1227876792002" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="43" startPosition="36" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_4_link_it" />
     <nodeInfo nodeId="1227876791987" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="51" startPosition="28" endLine="52" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1227876791987" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="52" startPosition="54" endLine="53" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227876791997" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="54" startPosition="27" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -86,7 +86,7 @@
       <varInfo nodeId="1212181746947" varName="argument" />
     </scopeInfo>
     <scopeInfo nodeId="1212181840069" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="85" startPosition="7" endLine="93" endPosition="5">
-      <varInfo nodeId="1212181840069" varName="link" />
+      <varInfo nodeId="1212181840070" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="1227876791987" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="48" startPosition="20" endLine="77" endPosition="19" />
     <scopeInfo nodeId="1227876791987" fileName="check_LinkDeclaration_NonTypesystemRule.java" startLine="46" startPosition="46" endLine="79" endPosition="29" />

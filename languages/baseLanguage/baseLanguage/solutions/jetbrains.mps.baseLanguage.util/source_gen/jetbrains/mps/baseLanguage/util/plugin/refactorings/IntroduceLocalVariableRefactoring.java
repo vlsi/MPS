@@ -22,7 +22,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     this.findDuplicates();
     SNode var = new IntroduceLocalVariableRefactoring.QuotationClass_nngwe4_a0a1a0().createNode(this.getExpressionType(), this.getExpression(), this.getName());
     if (myIsFinal) {
-      SPropertyOperations.set(SLinkOperations.getTarget(var, "localVariableDeclaration", true), "isFinal", "" + true);
+      SPropertyOperations.set(SLinkOperations.getTarget(var, "localVariableDeclaration", true), "isFinal", "" + (true));
     }
     SNode varDeclaration = SLinkOperations.getTarget(var, "localVariableDeclaration", true);
     // <node> 

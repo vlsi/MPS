@@ -1032,7 +1032,7 @@
       <varInfo nodeId="2897370900776712278" varName="infoRoot" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776712755" fileName="DebugInfo.java" startLine="138" startPosition="66" endLine="147" endPosition="5">
-      <varInfo nodeId="2897370900776712755" varName="element" />
+      <varInfo nodeId="2897370900776712756" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="3139128678719779188" fileName="DebugInfo.java" startLine="239" startPosition="0" endLine="248" endPosition="0">
       <varInfo nodeId="3139128678719779189" varName="file" />
@@ -1074,7 +1074,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7340282398733286720" fileName="DebugInfo.java" startLine="157" startPosition="70" endLine="170" endPosition="24" />
     <scopeInfo nodeId="1689763677888154799" fileName="DebugInfo.java" startLine="219" startPosition="67" endLine="232" endPosition="5">
-      <varInfo nodeId="1689763677888154799" varName="element" />
+      <varInfo nodeId="1689763677888154800" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="2897370900776713025" fileName="DebugInfo.java" startLine="293" startPosition="26" endLine="306" endPosition="7">
       <varInfo nodeId="2897370900776713027" varName="roots" />

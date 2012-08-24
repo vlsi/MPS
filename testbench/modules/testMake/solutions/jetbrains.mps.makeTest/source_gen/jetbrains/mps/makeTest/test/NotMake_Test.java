@@ -20,7 +20,7 @@ public class NotMake_Test extends TestCase {
       @Override
       public void change(SModel model) {
         super.change(model);
-        SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "method", true)).first(), "isAbstract", "" + true);
+        SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "method", true)).first(), "isAbstract", "" + (true));
       }
     });
   }
@@ -31,7 +31,7 @@ public class NotMake_Test extends TestCase {
       @Override
       public void change(SModel model) {
         super.change(model);
-        SPropertyOperations.set(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).first(), "isFinal", "" + true);
+        SPropertyOperations.set(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.ClassConcept")).first(), "isFinal", "" + (true));
       }
     });
   }
@@ -59,7 +59,7 @@ public class NotMake_Test extends TestCase {
       @Override
       public void change(SModel model) {
         super.change(model);
-        SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "method", true)).first(), "isAbstract", "" + true);
+        SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "method", true)).first(), "isAbstract", "" + (true));
       }
     });
   }

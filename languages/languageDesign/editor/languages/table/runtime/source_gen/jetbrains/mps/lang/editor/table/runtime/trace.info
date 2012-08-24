@@ -381,10 +381,10 @@
       <varInfo nodeId="7541022036347910999" varName="editorComponent" />
     </scopeInfo>
     <scopeInfo nodeId="2533261537000423247" fileName="EditorCell_Table.java" startLine="179" startPosition="57" endLine="182" endPosition="5">
-      <varInfo nodeId="2533261537000423247" varName="y" />
+      <varInfo nodeId="2533261537000423248" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="2533261537000423153" fileName="EditorCell_Table.java" startLine="186" startPosition="57" endLine="189" endPosition="5">
-      <varInfo nodeId="2533261537000423153" varName="x" />
+      <varInfo nodeId="2533261537000423154" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="2390677225378626358" fileName="EditorCell_Table.java" startLine="200" startPosition="83" endLine="203" endPosition="109">
       <varInfo nodeId="2390677225378645199" varName="nextRow" />
@@ -704,7 +704,7 @@
     </scopeInfo>
     <scopeInfo nodeId="5076432847128249875" fileName="AbstractTableModel_optimized.java" startLine="23" startPosition="39" endLine="26" endPosition="5" />
     <scopeInfo nodeId="5076432847128249879" fileName="AbstractTableModel_optimized.java" startLine="23" startPosition="39" endLine="26" endPosition="5">
-      <varInfo nodeId="5076432847128249879" varName="row" />
+      <varInfo nodeId="5076432847128249880" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="5076432847128249697" fileName="AbstractTableModel_optimized.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="5076432847128249700" varName="index" />
@@ -849,7 +849,7 @@
       <varInfo nodeId="5076432847128338791" varName="parentNode" />
     </scopeInfo>
     <scopeInfo nodeId="5076432847128339085" fileName="ChildrenTableModel.java" startLine="41" startPosition="69" endLine="46" endPosition="7">
-      <varInfo nodeId="5076432847128339085" varName="child" />
+      <varInfo nodeId="5076432847128339086" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="5076432847128338912" fileName="ChildrenTableModel.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="5076432847128338915" varName="index" />
@@ -936,7 +936,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8214583449560973442" fileName="HierarchycalTableModel.java" startLine="83" startPosition="63" endLine="85" endPosition="55" />
     <scopeInfo nodeId="8214583449560973204" fileName="HierarchycalTableModel.java" startLine="30" startPosition="104" endLine="33" endPosition="5">
-      <varInfo nodeId="8214583449560973204" varName="row" />
+      <varInfo nodeId="8214583449560973205" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="6332812368705012697" fileName="HierarchycalTableModel.java" startLine="36" startPosition="48" endLine="39" endPosition="114" />
     <scopeInfo nodeId="832961390883538214" fileName="HierarchycalTableModel.java" startLine="57" startPosition="150" endLine="60" endPosition="5">
@@ -944,13 +944,13 @@
     </scopeInfo>
     <scopeInfo nodeId="1211716198725196002" fileName="HierarchycalTableModel.java" startLine="65" startPosition="46" endLine="68" endPosition="5" />
     <scopeInfo nodeId="1211716198725196031" fileName="HierarchycalTableModel.java" startLine="65" startPosition="46" endLine="68" endPosition="5">
-      <varInfo nodeId="1211716198725196031" varName="row" />
+      <varInfo nodeId="1211716198725196032" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="6332812368705012698" fileName="HierarchycalTableModel.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
     <scopeInfo nodeId="6332812368705012702" fileName="HierarchycalTableModel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1211716198725196014" fileName="HierarchycalTableModel.java" startLine="72" startPosition="46" endLine="76" endPosition="5" />
     <scopeInfo nodeId="1211716198725196231" fileName="HierarchycalTableModel.java" startLine="72" startPosition="46" endLine="76" endPosition="5">
-      <varInfo nodeId="1211716198725196231" varName="row" />
+      <varInfo nodeId="1211716198725196232" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="4762511436389569835" fileName="HierarchycalTableModel.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="832961390883505519" fileName="HierarchycalTableModel.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />

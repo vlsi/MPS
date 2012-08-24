@@ -156,10 +156,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1720905492960354571" fileName="CopyPasteManager.java" startLine="44" startPosition="25" endLine="46" endPosition="20" />
     <scopeInfo nodeId="2197509460969624955" fileName="CopyPasteManager.java" startLine="110" startPosition="32" endLine="113" endPosition="9">
-      <varInfo nodeId="2197509460969624955" varName="preProcessor" />
+      <varInfo nodeId="2197509460969624956" varName="preProcessor" />
     </scopeInfo>
     <scopeInfo nodeId="2197509460969624989" fileName="CopyPasteManager.java" startLine="113" startPosition="9" endLine="116" endPosition="9">
-      <varInfo nodeId="2197509460969624989" varName="postProcessor" />
+      <varInfo nodeId="2197509460969624990" varName="postProcessor" />
     </scopeInfo>
     <scopeInfo nodeId="1058093769519024422" fileName="CopyPasteManager.java" startLine="123" startPosition="29" endLine="126" endPosition="21" />
     <scopeInfo nodeId="5948027493683574988" fileName="CopyPasteManager.java" startLine="55" startPosition="95" endLine="59" endPosition="0">

@@ -651,10 +651,10 @@
     </scopeInfo>
     <scopeInfo nodeId="6217769856310586314" fileName="QueriesGenerated.java" startLine="2614" startPosition="32" endLine="2619" endPosition="7" />
     <scopeInfo nodeId="4107669262321384473" fileName="QueriesGenerated.java" startLine="211" startPosition="26" endLine="217" endPosition="7">
-      <varInfo nodeId="4107669262321384473" varName="c" />
+      <varInfo nodeId="4107669262321384474" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="4107669262321384524" fileName="QueriesGenerated.java" startLine="226" startPosition="26" endLine="232" endPosition="7">
-      <varInfo nodeId="4107669262321384524" varName="c" />
+      <varInfo nodeId="4107669262321384525" varName="c" />
     </scopeInfo>
     <scopeInfo nodeId="4253775830168107358" fileName="QueriesGenerated.java" startLine="618" startPosition="136" endLine="624" endPosition="16">
       <varInfo nodeId="4253775830168296102" varName="myType" />

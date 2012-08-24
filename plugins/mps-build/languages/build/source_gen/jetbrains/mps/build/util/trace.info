@@ -87,10 +87,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1224588814561865366" fileName="DescendantsScope.java" startLine="84" startPosition="90" endLine="92" endPosition="6" />
     <scopeInfo nodeId="1224588814561865197" fileName="DescendantsScope.java" startLine="50" startPosition="24" endLine="60" endPosition="5">
-      <varInfo nodeId="1224588814561865197" varName="n" />
+      <varInfo nodeId="1224588814561865198" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1224588814561865336" fileName="DescendantsScope.java" startLine="70" startPosition="34" endLine="80" endPosition="5">
-      <varInfo nodeId="1224588814561865336" varName="n" />
+      <varInfo nodeId="1224588814561865337" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1224588814561865363" fileName="DescendantsScope.java" startLine="83" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="1224588814561865372" varName="concept" />
@@ -294,10 +294,10 @@
       <varInfo nodeId="2174011193579773760" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="2174011193579773630" fileName="JavaExportUtil.java" startLine="67" startPosition="42" endLine="74" endPosition="9">
-      <varInfo nodeId="2174011193579773630" varName="pair" />
+      <varInfo nodeId="2174011193579773631" varName="pair" />
     </scopeInfo>
     <scopeInfo nodeId="6853883513540405896" fileName="JavaExportUtil.java" startLine="125" startPosition="0" endLine="132" endPosition="5">
-      <varInfo nodeId="6853883513540405896" varName="lib" />
+      <varInfo nodeId="6853883513540405897" varName="lib" />
     </scopeInfo>
     <scopeInfo nodeId="6853883513540403946" fileName="JavaExportUtil.java" startLine="66" startPosition="55" endLine="75" endPosition="15" />
     <scopeInfo nodeId="7880069565647313833" fileName="JavaExportUtil.java" startLine="114" startPosition="53" endLine="123" endPosition="7">
@@ -308,10 +308,10 @@
     </scopeInfo>
     <scopeInfo nodeId="2913098736709466109" fileName="JavaExportUtil.java" startLine="82" startPosition="116" endLine="93" endPosition="11" />
     <scopeInfo nodeId="7880069565647313830" fileName="JavaExportUtil.java" startLine="113" startPosition="36" endLine="124" endPosition="5">
-      <varInfo nodeId="7880069565647313830" varName="n" />
+      <varInfo nodeId="7880069565647313831" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="6853883513540407106" fileName="JavaExportUtil.java" startLine="133" startPosition="0" endLine="144" endPosition="5">
-      <varInfo nodeId="6853883513540407106" varName="extJar" />
+      <varInfo nodeId="6853883513540407107" varName="extJar" />
     </scopeInfo>
     <scopeInfo nodeId="7880069565647276415" fileName="JavaExportUtil.java" startLine="80" startPosition="27" endLine="96" endPosition="7" />
     <scopeInfo nodeId="6853883513540407045" fileName="JavaExportUtil.java" startLine="151" startPosition="92" endLine="167" endPosition="20">
@@ -337,7 +337,7 @@
       <varInfo nodeId="6853883513540407300" varName="jcp" />
     </scopeInfo>
     <scopeInfo nodeId="6853883513540407202" fileName="JavaExportUtil.java" startLine="37" startPosition="0" endLine="64" endPosition="7">
-      <varInfo nodeId="6853883513540407202" varName="element" />
+      <varInfo nodeId="6853883513540407203" varName="element" />
     </scopeInfo>
     <scopeInfo nodeId="6853883513540386114" fileName="JavaExportUtil.java" startLine="35" startPosition="93" endLine="76" endPosition="7">
       <varInfo nodeId="2174011193579745868" varName="result" />
@@ -1370,7 +1370,7 @@
     </scopeInfo>
     <scopeInfo nodeId="4701820937132263693" fileName="VisibleArtifacts.java" startLine="112" startPosition="27" endLine="115" endPosition="9" />
     <scopeInfo nodeId="6684802082773181583" fileName="VisibleArtifacts.java" startLine="112" startPosition="27" endLine="115" endPosition="9">
-      <varInfo nodeId="6684802082773181583" varName="child" />
+      <varInfo nodeId="6684802082773181584" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1446021890180362204" fileName="VisibleArtifacts.java" startLine="207" startPosition="40" endLine="210" endPosition="25">
       <varInfo nodeId="1446021890180362208" varName="artifacts" />
@@ -1841,10 +1841,10 @@
     </scopeInfo>
     <scopeInfo nodeId="7801138212747253271" fileName="FileSetUtil.java" startLine="121" startPosition="103" endLine="127" endPosition="9" />
     <scopeInfo nodeId="6408167411310619982" fileName="FileSetUtil.java" startLine="32" startPosition="0" endLine="39" endPosition="5">
-      <varInfo nodeId="6408167411310619982" varName="folder" />
+      <varInfo nodeId="6408167411310619983" varName="folder" />
     </scopeInfo>
     <scopeInfo nodeId="7801138212747389463" fileName="FileSetUtil.java" startLine="53" startPosition="0" endLine="60" endPosition="5">
-      <varInfo nodeId="7801138212747389463" varName="folder" />
+      <varInfo nodeId="7801138212747389464" varName="folder" />
     </scopeInfo>
     <scopeInfo nodeId="6408167411310620200" fileName="FileSetUtil.java" startLine="67" startPosition="0" endLine="75" endPosition="0">
       <varInfo nodeId="6408167411310620205" varName="container" />

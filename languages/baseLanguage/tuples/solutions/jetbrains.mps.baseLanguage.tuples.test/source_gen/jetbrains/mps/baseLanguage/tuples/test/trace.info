@@ -514,7 +514,7 @@
     <scopeInfo nodeId="1239720102562" fileName="NamedTuples_Test.java" startLine="225" startPosition="27" endLine="228" endPosition="34" />
     <scopeInfo nodeId="1239720114071" fileName="NamedTuples_Test.java" startLine="229" startPosition="27" endLine="232" endPosition="34" />
     <scopeInfo nodeId="1239720139050" fileName="NamedTuples_Test.java" startLine="58" startPosition="44" endLine="62" endPosition="5">
-      <varInfo nodeId="1239720139050" varName="tpl" />
+      <varInfo nodeId="1239720139051" varName="tpl" />
     </scopeInfo>
     <scopeInfo nodeId="1240933105391" fileName="NamedTuples_Test.java" startLine="101" startPosition="61" endLine="105" endPosition="0">
       <varInfo nodeId="1240933105391" varName="it" />

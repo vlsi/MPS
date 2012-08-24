@@ -36,7 +36,7 @@ public class ChangeLeaf_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "leaf", "" + !(SPropertyOperations.getBoolean(node, "leaf")));
+    SPropertyOperations.set(node, "leaf", "" + (!(SPropertyOperations.getBoolean(node, "leaf"))));
   }
 
   public String getLocationString() {

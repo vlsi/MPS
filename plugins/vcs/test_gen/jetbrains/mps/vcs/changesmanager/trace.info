@@ -1084,10 +1084,10 @@
     <scopeInfo nodeId="599918025274815306" fileName="ChangesManagerTest.java" startLine="899" startPosition="37" endLine="912" endPosition="0" />
     <scopeInfo nodeId="3619977242337326269" fileName="ChangesManagerTest.java" startLine="291" startPosition="25" endLine="305" endPosition="9" />
     <scopeInfo nodeId="3619977242337326270" fileName="ChangesManagerTest.java" startLine="291" startPosition="25" endLine="305" endPosition="9">
-      <varInfo nodeId="3619977242337326270" varName="r" />
+      <varInfo nodeId="3619977242337326271" varName="r" />
     </scopeInfo>
     <scopeInfo nodeId="599300103647465971" fileName="ChangesManagerTest.java" startLine="490" startPosition="105" endLine="504" endPosition="5">
-      <varInfo nodeId="599300103647465971" varName="t" />
+      <varInfo nodeId="599300103647465972" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="599918025274815303" fileName="ChangesManagerTest.java" startLine="898" startPosition="40" endLine="912" endPosition="7" />
     <scopeInfo nodeId="7232970427865383924" fileName="ChangesManagerTest.java" startLine="143" startPosition="24" endLine="158" endPosition="24" />
@@ -1127,7 +1127,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6335143297570255108" fileName="ChangesManagerTest.java" startLine="707" startPosition="50" endLine="725" endPosition="0" />
     <scopeInfo nodeId="599300103647469219" fileName="ChangesManagerTest.java" startLine="513" startPosition="122" endLine="532" endPosition="5">
-      <varInfo nodeId="599300103647469219" varName="np" />
+      <varInfo nodeId="599300103647469204" varName="np" />
     </scopeInfo>
     <scopeInfo nodeId="4366166682335348697" fileName="ChangesManagerTest.java" startLine="791" startPosition="38" endLine="810" endPosition="0" />
     <scopeInfo nodeId="3907542737155192783" fileName="ChangesManagerTest.java" startLine="335" startPosition="32" endLine="355" endPosition="24">

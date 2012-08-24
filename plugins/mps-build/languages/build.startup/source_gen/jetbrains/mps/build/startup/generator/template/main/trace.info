@@ -97,7 +97,7 @@
     <scopeInfo nodeId="4962066449779579905" fileName="QueriesGenerated.java" startLine="136" startPosition="35" endLine="141" endPosition="121" />
     <scopeInfo nodeId="4962066449779579948" fileName="QueriesGenerated.java" startLine="157" startPosition="43" endLine="163" endPosition="9" />
     <scopeInfo nodeId="4962066449779579902" fileName="QueriesGenerated.java" startLine="135" startPosition="70" endLine="142" endPosition="5">
-      <varInfo nodeId="4962066449779579902" varName="option" />
+      <varInfo nodeId="4962066449779579903" varName="option" />
     </scopeInfo>
     <scopeInfo nodeId="4962066449779579948" fileName="QueriesGenerated.java" startLine="155" startPosition="7" endLine="164" endPosition="31">
       <varInfo nodeId="4962066449779579948" varName="quotedNode1_3" />
@@ -134,7 +134,7 @@
     <scopeInfo nodeId="8979762117546982115" fileName="QueriesGenerated.java" startLine="109" startPosition="154" endLine="110" endPosition="102" />
     <scopeInfo nodeId="8979762117546982099" fileName="QueriesGenerated.java" startLine="113" startPosition="154" endLine="114" endPosition="114" />
     <scopeInfo nodeId="8979762117546981969" fileName="QueriesGenerated.java" startLine="97" startPosition="106" endLine="100" endPosition="5">
-      <varInfo nodeId="8979762117546981969" varName="cpItem" />
+      <varInfo nodeId="8979762117546981970" varName="cpItem" />
     </scopeInfo>
     <scopeInfo nodeId="8979762117546981954" fileName="QueriesGenerated.java" startLine="94" startPosition="154" endLine="102" endPosition="22">
       <varInfo nodeId="8979762117546981964" varName="classPathItemList" />

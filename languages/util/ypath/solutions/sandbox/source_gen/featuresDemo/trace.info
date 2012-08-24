@@ -304,7 +304,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1197998564521" fileName="DomDemo.java" startLine="23" startPosition="27" endLine="24" endPosition="26" />
     <scopeInfo nodeId="1198082986256" fileName="DomDemo.java" startLine="19" startPosition="89" endLine="22" endPosition="7">
-      <varInfo nodeId="1198082986256" varName="foo" />
+      <varInfo nodeId="1198082986257" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1197998564516" fileName="DomDemo.java" startLine="17" startPosition="9" endLine="22" endPosition="7">
       <varInfo nodeId="1197998576462" varName="doc" />
@@ -446,7 +446,7 @@
     <nodeInfo nodeId="1198852333307" fileName="FileDemo.java" startLine="9" startPosition="23" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1198861603056" fileName="FileDemo.java" startLine="12" startPosition="234" endLine="13" endPosition="38" />
     <scopeInfo nodeId="1198861603053" fileName="FileDemo.java" startLine="11" startPosition="57" endLine="14" endPosition="5">
-      <varInfo nodeId="1198861603053" varName="d" />
+      <varInfo nodeId="1198861603054" varName="d" />
     </scopeInfo>
     <scopeInfo nodeId="1198852333310" fileName="FileDemo.java" startLine="10" startPosition="42" endLine="14" endPosition="5">
       <varInfo nodeId="1198852354929" varName="dir" />

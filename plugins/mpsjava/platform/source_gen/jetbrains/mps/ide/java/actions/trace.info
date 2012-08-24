@@ -2343,7 +2343,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2808756344206306288" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="31" endLine="156" endPosition="15" />
     <scopeInfo nodeId="2808756344206306289" fileName="GoToInheritedClassifier_Action.java" startLine="135" startPosition="31" endLine="156" endPosition="15">
-      <varInfo nodeId="2808756344206306289" varName="finderClass" />
+      <varInfo nodeId="2808756344206306290" varName="finderClass" />
     </scopeInfo>
     <scopeInfo nodeId="2808756344206306287" fileName="GoToInheritedClassifier_Action.java" startLine="134" startPosition="63" endLine="158" endPosition="0" />
     <scopeInfo nodeId="2808756344206306285" fileName="GoToInheritedClassifier_Action.java" startLine="133" startPosition="61" endLine="158" endPosition="13" />
@@ -4969,7 +4969,7 @@
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="32" startPosition="39" endLine="35" endPosition="41" />
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="54" startPosition="27" endLine="57" endPosition="7" />
     <scopeInfo nodeId="8250409733214735696" fileName="MigrateSourcesToMPS_Action.java" startLine="88" startPosition="76" endLine="91" endPosition="7">
-      <varInfo nodeId="8250409733214735696" varName="path" />
+      <varInfo nodeId="8250409733214735697" varName="path" />
     </scopeInfo>
     <scopeInfo nodeId="4326588611400156604" fileName="MigrateSourcesToMPS_Action.java" startLine="100" startPosition="0" endLine="103" endPosition="7">
       <varInfo nodeId="4326588611400156604" varName="t" />
@@ -5288,7 +5288,7 @@
     <scopeInfo nodeId="6354194863340390762" fileName="UncommentStatements_Action.java" startLine="46" startPosition="27" endLine="49" endPosition="7" />
     <scopeInfo nodeId="6354194863340390762" fileName="UncommentStatements_Action.java" startLine="60" startPosition="25" endLine="63" endPosition="9" />
     <scopeInfo nodeId="6354194863340390775" fileName="UncommentStatements_Action.java" startLine="79" startPosition="198" endLine="82" endPosition="7">
-      <varInfo nodeId="6354194863340390775" varName="statement" />
+      <varInfo nodeId="6354194863340390776" varName="statement" />
     </scopeInfo>
     <scopeInfo nodeId="6354194863340390762" fileName="UncommentStatements_Action.java" startLine="84" startPosition="0" endLine="87" endPosition="7">
       <varInfo nodeId="6354194863340390762" varName="t" />
@@ -12207,8 +12207,8 @@
     <nodeInfo nodeId="8838506468326693487" fileName="OverrideImplementMethodsHelper.java" startLine="49" startPosition="112" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8838506468326693498" fileName="OverrideImplementMethodsHelper.java" startLine="51" startPosition="33" endLine="52" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8838506468326693503" fileName="OverrideImplementMethodsHelper.java" startLine="52" startPosition="115" endLine="53" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8838506468326693511" fileName="OverrideImplementMethodsHelper.java" startLine="53" startPosition="284" endLine="54" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8838506468326693517" fileName="OverrideImplementMethodsHelper.java" startLine="54" startPosition="64" endLine="55" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8838506468326693511" fileName="OverrideImplementMethodsHelper.java" startLine="53" startPosition="284" endLine="54" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8838506468326693517" fileName="OverrideImplementMethodsHelper.java" startLine="54" startPosition="66" endLine="55" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8838506468326693539" fileName="OverrideImplementMethodsHelper.java" startLine="56" startPosition="22" endLine="57" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8838506468326693531" fileName="OverrideImplementMethodsHelper.java" startLine="58" startPosition="14" endLine="59" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8838506468326693554" fileName="OverrideImplementMethodsHelper.java" startLine="60" startPosition="7" endLine="61" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

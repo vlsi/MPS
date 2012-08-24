@@ -1599,20 +1599,6 @@
     </node>
   </root>
   <root id="1221579075452">
-    <node role="dependency" roleId="tpd4.1193733919555" type="tpd4.Dependency" typeId="tpd4.1193733698246" id="1227198933074">
-      <link role="targetConcept" roleId="tpd4.1193733730717" targetNodeId="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
-      <link role="sourceConcept" roleId="tpd4.1207648185033" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node role="findSourceBlock" roleId="tpd4.1193733727481" type="tpd4.FindSourceBlock" typeId="tpd4.1193733783530" id="1227198933075">
-        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1227198933076">
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1227198974515">
-            <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1227198979486">
-              <node role="operand" roleId="tpee.1197027771414" type="tpd4.FindSourceBlockParameter" typeId="tpd4.1193733802812" id="1227198974516" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetParentOperation" typeId="tp25.1139613262185" id="1227199939631" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="body" roleId="tpd4.1195213635060" type="tpee.StatementList" typeId="tpee.1068580123136" id="1221579075453">
       <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="1221579075454">
         <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1221579075455">

@@ -404,7 +404,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6460341978864584917" fileName="EventsProcessor.java" startLine="312" startPosition="63" endLine="329" endPosition="17" />
     <scopeInfo nodeId="6460341978864584914" fileName="EventsProcessor.java" startLine="311" startPosition="84" endLine="330" endPosition="15">
-      <varInfo nodeId="6460341978864584914" varName="event" />
+      <varInfo nodeId="6460341978864584915" varName="event" />
     </scopeInfo>
     <scopeInfo nodeId="613652663728232415" fileName="EventsProcessor.java" startLine="113" startPosition="0" endLine="133" endPosition="0">
       <varInfo nodeId="613652663728245426" varName="terminate" />

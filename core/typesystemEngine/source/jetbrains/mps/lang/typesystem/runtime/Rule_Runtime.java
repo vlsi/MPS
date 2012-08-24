@@ -18,8 +18,5 @@ package jetbrains.mps.lang.typesystem.runtime;
 import jetbrains.mps.smodel.SNode;
 
 public interface Rule_Runtime extends IApplicableToConcept {
-  @Deprecated
-  boolean isApplicable(SNode argument);
-
   IsApplicableStatus isApplicableAndPattern(SNode argument);
 }

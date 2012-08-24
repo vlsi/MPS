@@ -144,7 +144,7 @@
       <varInfo nodeId="3323419009397519186" varName="mth" />
     </scopeInfo>
     <scopeInfo nodeId="5515247799653688162" fileName="MPSFacetConfiguration.java" startLine="83" startPosition="52" endLine="88" endPosition="5">
-      <varInfo nodeId="5515247799653688162" varName="optionChild" />
+      <varInfo nodeId="5515247799653688163" varName="optionChild" />
     </scopeInfo>
     <scopeInfo nodeId="3323419009397527165" fileName="MPSFacetConfiguration.java" startLine="92" startPosition="45" endLine="97" endPosition="67">
       <varInfo nodeId="3323419009397527194" varName="res" />

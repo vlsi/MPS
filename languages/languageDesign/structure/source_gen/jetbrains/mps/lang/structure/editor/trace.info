@@ -2309,7 +2309,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1185271168705" fileName="LinkDeclaration_Editor.java" startLine="294" startPosition="88" endLine="297" endPosition="9" />
     <scopeInfo nodeId="1240589458329" fileName="LinkDeclaration_Editor.java" startLine="294" startPosition="88" endLine="297" endPosition="9">
-      <varInfo nodeId="1240589458329" varName="member" />
+      <varInfo nodeId="1240589458330" varName="member" />
     </scopeInfo>
     <scopeInfo nodeId="1197832374771" fileName="LinkDeclaration_Editor.java" startLine="320" startPosition="69" endLine="323" endPosition="5" />
     <scopeInfo nodeId="5109811630748430360" fileName="LinkDeclaration_Editor.java" startLine="348" startPosition="37" endLine="351" endPosition="107">

@@ -552,7 +552,7 @@
       <varInfo nodeId="2183214647889839769" varName="usages" />
     </scopeInfo>
     <scopeInfo nodeId="2183214647889839862" fileName="RefactoringFacade.java" startLine="253" startPosition="108" endLine="259" endPosition="7">
-      <varInfo nodeId="2183214647889839862" varName="elem" />
+      <varInfo nodeId="2183214647889839863" varName="elem" />
     </scopeInfo>
     <scopeInfo nodeId="2183214647889840077" fileName="RefactoringFacade.java" startLine="300" startPosition="13" endLine="306" endPosition="11">
       <varInfo nodeId="2183214647889840079" varName="sess" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.TypesystemDescriptor" />
+  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.TypesystemDescriptor" />
   <root nodeId="1888188276221754553">
     <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1888188276221891124" fileName="typeof_BinaryNumericOperation_InferenceRule.java" startLine="23" startPosition="105" endLine="24" endPosition="213" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1080,35 +1080,6 @@
       <varInfo nodeId="926857988255581396" varName="typeCheckingContext" />
     </scopeInfo>
     <unitInfo nodeId="926857988255581396" fileName="typeof_LetExpression_InferenceRule.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_LetExpression_InferenceRule" />
-  </root>
-  <root nodeId="926857988255646368">
-    <nodeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="14" startPosition="36" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="18" startPosition="44" endLine="19" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="926857988255721940" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="22" startPosition="44" endLine="23" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="926857988255721921" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="26" startPosition="41" endLine="27" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="926857988255721904" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="27" startPosition="51" endLine="28" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="10" startPosition="108" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LetReferenceTypeComputation_DependentComputation#()V" />
-    <nodeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBlockingConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBlockingNode#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBlocking#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <scopeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="11" startPosition="61" endLine="11" endPosition="61" />
-    <scopeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="14" startPosition="36" endLine="15" endPosition="67" />
-    <scopeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="18" startPosition="44" endLine="19" endPosition="77" />
-    <scopeInfo nodeId="926857988255646370" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="22" startPosition="44" endLine="23" endPosition="217" />
-    <scopeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="10" startPosition="108" endLine="12" endPosition="3" />
-    <scopeInfo nodeId="926857988255646372" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="26" startPosition="41" endLine="28" endPosition="258">
-      <varInfo nodeId="926857988255721922" varName="parent" />
-    </scopeInfo>
-    <scopeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="13" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="926857988255646368" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="926857988255646368" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="926857988255646368" fileName="LetReferenceTypeComputation_DependentComputation.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.lambdaCalculus.typesystem.LetReferenceTypeComputation_DependentComputation" />
   </root>
 </debugInfo>
 

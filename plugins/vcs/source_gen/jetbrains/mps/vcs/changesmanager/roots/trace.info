@@ -22,7 +22,7 @@
       <varInfo nodeId="2722286076674321263" varName="baseNode" />
     </scopeInfo>
     <scopeInfo nodeId="2722286076674321285" fileName="NodeFileStatusMappingExt.java" startLine="24" startPosition="46" endLine="31" endPosition="5">
-      <varInfo nodeId="2722286076674321285" varName="d" />
+      <varInfo nodeId="2722286076674321262" varName="d" />
     </scopeInfo>
     <scopeInfo nodeId="2722286076674321625" fileName="NodeFileStatusMappingExt.java" startLine="22" startPosition="113" endLine="32" endPosition="0">
       <varInfo nodeId="2722286076674321275" varName="currentNode" />

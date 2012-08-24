@@ -75,7 +75,7 @@ public class ClassifierLoader {
       final boolean isStatic = (cn.access & Opcodes.ACC_STATIC) != 0;
       getClassifier(pack, name, new _FunctionTypes._void_P1_E0<SNode>() {
         public void invoke(SNode n) {
-          SPropertyOperations.set(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "nonStatic", "" + !(isStatic));
+          SPropertyOperations.set(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "nonStatic", "" + (!(isStatic)));
           ListSequence.fromList(SLinkOperations.getTargets(cls, "staticInnerClassifiers", true)).addElement(n);
         }
       });

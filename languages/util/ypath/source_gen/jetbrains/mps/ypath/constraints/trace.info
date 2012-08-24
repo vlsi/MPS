@@ -222,7 +222,7 @@
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="36" startPosition="86" endLine="41" endPosition="0" />
     <scopeInfo nodeId="1213104846065" fileName="IFeature_Constraints.java" startLine="45" startPosition="62" endLine="50" endPosition="11" />
     <scopeInfo nodeId="1213104846066" fileName="IFeature_Constraints.java" startLine="45" startPosition="62" endLine="50" endPosition="11">
-      <varInfo nodeId="1213104846066" varName="foo" />
+      <varInfo nodeId="1213104846067" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="61" startPosition="89" endLine="66" endPosition="0" />
     <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />

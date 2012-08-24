@@ -2624,9 +2624,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     if (dataId.equals(PlatformDataKeys.VIRTUAL_FILE_ARRAY.getName())) {
       return getVirtualFile() != null ? new VirtualFile[]{getVirtualFile()} : new VirtualFile[0];
     }
-    if (dataId.equals(LangDataKeys.VIRTUAL_FILE.getName())) {
-      return getVirtualFile();
-    }
 
     if (dataId.equals(SelectInContext.DATA_KEY.getName())) {
       ProjectViewSelectInProvider selectInHelper = ApplicationManager.getApplication().getComponent(ProjectViewSelectInProvider.class);

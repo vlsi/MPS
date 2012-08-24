@@ -113,7 +113,7 @@
     <scopeInfo nodeId="4975090607137661832" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="101" startPosition="66" endLine="102" endPosition="44" />
     <scopeInfo nodeId="9161136784551302559" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="105" startPosition="66" endLine="106" endPosition="44" />
     <scopeInfo nodeId="9161136784551302571" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="83" startPosition="47" endLine="86" endPosition="9">
-      <varInfo nodeId="9161136784551302571" varName="word" />
+      <varInfo nodeId="9161136784551302572" varName="word" />
     </scopeInfo>
     <scopeInfo nodeId="4975090607137555731" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="20" startPosition="76" endLine="24" endPosition="0" />
     <scopeInfo nodeId="4975090607137555731" fileName="CheckRootNodesNamingInternalPolicy_MigrationScript.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
@@ -182,10 +182,10 @@
     <scopeInfo nodeId="1709900160195127100" fileName="RefUtil.java" startLine="15" startPosition="135" endLine="18" endPosition="7" />
     <scopeInfo nodeId="8941943470987180077" fileName="RefUtil.java" startLine="24" startPosition="139" endLine="27" endPosition="7" />
     <scopeInfo nodeId="1709900160195127097" fileName="RefUtil.java" startLine="14" startPosition="70" endLine="19" endPosition="5">
-      <varInfo nodeId="1709900160195127097" varName="linkDecl" />
+      <varInfo nodeId="1709900160195127098" varName="linkDecl" />
     </scopeInfo>
     <scopeInfo nodeId="8941943470987180072" fileName="RefUtil.java" startLine="23" startPosition="74" endLine="28" endPosition="5">
-      <varInfo nodeId="8941943470987180072" varName="propDecl" />
+      <varInfo nodeId="8941943470987180073" varName="propDecl" />
     </scopeInfo>
     <scopeInfo nodeId="1709900160195124944" fileName="RefUtil.java" startLine="14" startPosition="70" endLine="20" endPosition="16" />
     <scopeInfo nodeId="8941943470987180071" fileName="RefUtil.java" startLine="23" startPosition="74" endLine="29" endPosition="16" />
@@ -297,17 +297,17 @@
     </scopeInfo>
     <scopeInfo nodeId="6066872190921237633" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
     <scopeInfo nodeId="6066872190921323253" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="32" startPosition="59" endLine="37" endPosition="9">
-      <varInfo nodeId="6066872190921323253" varName="propname" />
+      <varInfo nodeId="6066872190921323254" varName="propname" />
     </scopeInfo>
     <scopeInfo nodeId="6066872190921312640" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="41" startPosition="52" endLine="46" endPosition="9" />
     <scopeInfo nodeId="6066872190921359528" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="41" startPosition="52" endLine="46" endPosition="9">
-      <varInfo nodeId="6066872190921359528" varName="propname" />
+      <varInfo nodeId="6066872190921359529" varName="propname" />
     </scopeInfo>
     <scopeInfo nodeId="6066872190921323335" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="91" startPosition="59" endLine="96" endPosition="24" />
     <scopeInfo nodeId="6066872190921314915" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="32" startPosition="59" endLine="38" endPosition="21" />
     <scopeInfo nodeId="6066872190921323333" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="99" startPosition="52" endLine="106" endPosition="9" />
     <scopeInfo nodeId="6066872190921392895" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="99" startPosition="52" endLine="106" endPosition="9">
-      <varInfo nodeId="6066872190921392895" varName="ref" />
+      <varInfo nodeId="6066872190921392896" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="6066872190921237633" fileName="DeleteUndeclaredLinksAndProperties_MigrationScript.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="6066872190921237633" varName="node" />

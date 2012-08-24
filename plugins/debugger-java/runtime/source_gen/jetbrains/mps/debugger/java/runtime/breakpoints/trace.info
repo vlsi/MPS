@@ -903,7 +903,7 @@
       <varInfo nodeId="7578254065929102305" varName="session" />
     </scopeInfo>
     <scopeInfo nodeId="6951057689129830152" fileName="BreakpointsIconCache.java" startLine="126" startPosition="47" endLine="133" endPosition="11">
-      <varInfo nodeId="6951057689129830152" varName="breakpoint" />
+      <varInfo nodeId="6951057689129830153" varName="breakpoint" />
     </scopeInfo>
     <scopeInfo nodeId="2891782949125172628" fileName="BreakpointsIconCache.java" startLine="170" startPosition="27" endLine="177" endPosition="10" />
     <scopeInfo nodeId="2891782949125172644" fileName="BreakpointsIconCache.java" startLine="178" startPosition="29" endLine="185" endPosition="10" />

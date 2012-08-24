@@ -7565,7 +7565,7 @@
       <varInfo nodeId="1197228189962" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1226062535750" fileName="ListFeature_Editor.java" startLine="409" startPosition="24" endLine="413" endPosition="9">
-      <varInfo nodeId="1226062535750" varName="foo" />
+      <varInfo nodeId="1226062535751" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1226062535736" fileName="ListFeature_Editor.java" startLine="419" startPosition="0" endLine="423" endPosition="0">
       <varInfo nodeId="1226062535736" varName="s" />
@@ -8648,7 +8648,7 @@
       <varInfo nodeId="1197228473242" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1226062535042" fileName="SequenceFeature_Editor.java" startLine="409" startPosition="24" endLine="413" endPosition="9">
-      <varInfo nodeId="1226062535042" varName="foo" />
+      <varInfo nodeId="1226062535043" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1226062535028" fileName="SequenceFeature_Editor.java" startLine="419" startPosition="0" endLine="423" endPosition="0">
       <varInfo nodeId="1226062535028" varName="s" />
@@ -10181,7 +10181,7 @@
       <varInfo nodeId="1197229218536" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1226062535624" fileName="ParamListFeature_Editor.java" startLine="573" startPosition="24" endLine="577" endPosition="9">
-      <varInfo nodeId="1226062535624" varName="foo" />
+      <varInfo nodeId="1226062535625" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1226062535610" fileName="ParamListFeature_Editor.java" startLine="583" startPosition="0" endLine="587" endPosition="0">
       <varInfo nodeId="1226062535610" varName="s" />
@@ -11688,7 +11688,7 @@
       <varInfo nodeId="1197229397421" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="1226062536264" fileName="ParamSequenceFeature_Editor.java" startLine="573" startPosition="24" endLine="577" endPosition="9">
-      <varInfo nodeId="1226062536264" varName="foo" />
+      <varInfo nodeId="1226062536265" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1226062536250" fileName="ParamSequenceFeature_Editor.java" startLine="583" startPosition="0" endLine="587" endPosition="0">
       <varInfo nodeId="1226062536250" varName="s" />
@@ -12442,7 +12442,7 @@
     <scopeInfo nodeId="1197460698446" fileName="menu_SubstituteFeatureAndParameter.java" startLine="28" startPosition="83" endLine="31" endPosition="3" />
     <scopeInfo nodeId="1197465288046" fileName="menu_SubstituteFeatureAndParameter.java" startLine="46" startPosition="100" endLine="49" endPosition="15" />
     <scopeInfo nodeId="1197465288047" fileName="menu_SubstituteFeatureAndParameter.java" startLine="46" startPosition="100" endLine="49" endPosition="15">
-      <varInfo nodeId="1197465288047" varName="pw" />
+      <varInfo nodeId="1197465288048" varName="pw" />
     </scopeInfo>
     <scopeInfo nodeId="1197462019056" fileName="menu_SubstituteFeatureAndParameter.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1197462019056" varName="editorContext" />
@@ -12481,7 +12481,7 @@
       <varInfo nodeId="1197462053568" varName="pw" />
     </scopeInfo>
     <scopeInfo nodeId="1197465288042" fileName="menu_SubstituteFeatureAndParameter.java" startLine="43" startPosition="224" endLine="54" endPosition="9">
-      <varInfo nodeId="1197465288042" varName="feat" />
+      <varInfo nodeId="1197465288043" varName="feat" />
     </scopeInfo>
     <scopeInfo nodeId="1197465239740" fileName="menu_SubstituteFeatureAndParameter.java" startLine="42" startPosition="174" endLine="54" endPosition="9">
       <varInfo nodeId="1197465288032" varName="nodeType" />
@@ -12635,7 +12635,7 @@
     <scopeInfo nodeId="1197650203309" fileName="menu_SubstituteIterateOperationAxis.java" startLine="28" startPosition="84" endLine="31" endPosition="3" />
     <scopeInfo nodeId="1199387562682" fileName="menu_SubstituteIterateOperationAxis.java" startLine="49" startPosition="102" endLine="52" endPosition="17" />
     <scopeInfo nodeId="1199387562683" fileName="menu_SubstituteIterateOperationAxis.java" startLine="49" startPosition="102" endLine="52" endPosition="17">
-      <varInfo nodeId="1199387562683" varName="pw" />
+      <varInfo nodeId="1199387562684" varName="pw" />
     </scopeInfo>
     <scopeInfo nodeId="1197650268187" fileName="menu_SubstituteIterateOperationAxis.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="1197650268187" varName="editorContext" />
@@ -12670,11 +12670,11 @@
     <scopeInfo nodeId="1199387467883" fileName="menu_SubstituteIterateOperationAxis.java" startLine="45" startPosition="75" endLine="55" endPosition="15" />
     <scopeInfo nodeId="1199387236495" fileName="menu_SubstituteIterateOperationAxis.java" startLine="44" startPosition="178" endLine="56" endPosition="13" />
     <scopeInfo nodeId="1199387236492" fileName="menu_SubstituteIterateOperationAxis.java" startLine="43" startPosition="79" endLine="57" endPosition="11">
-      <varInfo nodeId="1199387236492" varName="feat" />
+      <varInfo nodeId="1199387236493" varName="feat" />
     </scopeInfo>
     <scopeInfo nodeId="1197650335098" fileName="menu_SubstituteIterateOperationAxis.java" startLine="42" startPosition="88" endLine="57" endPosition="11" />
     <scopeInfo nodeId="1197650335095" fileName="menu_SubstituteIterateOperationAxis.java" startLine="41" startPosition="224" endLine="58" endPosition="9">
-      <varInfo nodeId="1197650335095" varName="axis" />
+      <varInfo nodeId="1197650335096" varName="axis" />
     </scopeInfo>
     <scopeInfo nodeId="1197650442720" fileName="menu_SubstituteIterateOperationAxis.java" startLine="84" startPosition="69" endLine="101" endPosition="63">
       <varInfo nodeId="1199387592196" varName="axis" />
@@ -12798,7 +12798,7 @@
       <varInfo nodeId="1197903759757" varName="parameterObject" />
     </scopeInfo>
     <scopeInfo nodeId="1197903778920" fileName="menu_FeatureSetOpposite.java" startLine="35" startPosition="119" endLine="46" endPosition="7">
-      <varInfo nodeId="1197903778920" varName="fe" />
+      <varInfo nodeId="1197903778921" varName="fe" />
     </scopeInfo>
     <scopeInfo nodeId="1197903759759" fileName="menu_FeatureSetOpposite.java" startLine="32" startPosition="105" endLine="47" endPosition="17">
       <varInfo nodeId="1197920533795" varName="isGeneric" />
@@ -14309,7 +14309,7 @@
       <varInfo nodeId="4581582910844536505" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="4581582910844536351" fileName="GenericFeature_Editor.java" startLine="365" startPosition="24" endLine="369" endPosition="9">
-      <varInfo nodeId="4581582910844536351" varName="foo" />
+      <varInfo nodeId="4581582910844536352" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="4581582910844536337" fileName="GenericFeature_Editor.java" startLine="375" startPosition="0" endLine="379" endPosition="0">
       <varInfo nodeId="4581582910844536337" varName="s" />
@@ -15551,7 +15551,7 @@
       <varInfo nodeId="4581582910844785024" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="4581582910844784838" fileName="GenericParamFeature_Editor.java" startLine="529" startPosition="24" endLine="533" endPosition="9">
-      <varInfo nodeId="4581582910844784838" varName="foo" />
+      <varInfo nodeId="4581582910844784839" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="4581582910844784824" fileName="GenericParamFeature_Editor.java" startLine="539" startPosition="0" endLine="543" endPosition="0">
       <varInfo nodeId="4581582910844784824" varName="s" />

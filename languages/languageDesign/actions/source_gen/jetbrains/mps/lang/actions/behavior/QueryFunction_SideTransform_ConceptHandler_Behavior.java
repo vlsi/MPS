@@ -21,6 +21,9 @@ public class QueryFunction_SideTransform_ConceptHandler_Behavior {
     if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result")) {
       return false;
     }
+    if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_targetNode")) {
+      return false;
+    }
     return true;
   }
 

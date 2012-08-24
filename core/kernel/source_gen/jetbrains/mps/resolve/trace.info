@@ -149,7 +149,7 @@
     <scopeInfo nodeId="1802459475176382649" fileName="ResolverComponent.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="3840495236046418280" fileName="ResolverComponent.java" startLine="48" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="1802459475176380618" fileName="ResolverComponent.java" startLine="66" startPosition="5" endLine="71" endPosition="5">
-      <varInfo nodeId="1802459475176380618" varName="nextResolver" />
+      <varInfo nodeId="1802459475176380619" varName="nextResolver" />
     </scopeInfo>
     <scopeInfo nodeId="3840495236046418279" fileName="ResolverComponent.java" startLine="40" startPosition="22" endLine="46" endPosition="42" />
     <scopeInfo nodeId="1802459475176462973" fileName="ResolverComponent.java" startLine="19" startPosition="61" endLine="28" endPosition="15">

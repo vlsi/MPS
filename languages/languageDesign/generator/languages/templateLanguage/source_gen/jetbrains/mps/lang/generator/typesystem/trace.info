@@ -726,7 +726,7 @@
       <varInfo nodeId="1226671800483" varName="quotedNode1_5" />
     </scopeInfo>
     <scopeInfo nodeId="1178667279971" fileName="QueriesUtil.java" startLine="89" startPosition="27" endLine="110" endPosition="5">
-      <varInfo nodeId="1178667279971" varName="attribute" />
+      <varInfo nodeId="1178667279972" varName="attribute" />
     </scopeInfo>
     <scopeInfo nodeId="1178667968419" fileName="QueriesUtil.java" startLine="180" startPosition="79" endLine="202" endPosition="16" />
     <scopeInfo nodeId="1226663231604" fileName="QueriesUtil.java" startLine="228" startPosition="70" endLine="250" endPosition="70">
@@ -860,10 +860,10 @@
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="42" startPosition="68" endLine="46" endPosition="5" />
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="48" startPosition="0" endLine="52" endPosition="0" />
     <scopeInfo nodeId="1195601206269" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="22" startPosition="115" endLine="28" endPosition="5">
-      <varInfo nodeId="1195601206269" varName="scriptReference" />
+      <varInfo nodeId="1195601206270" varName="scriptReference" />
     </scopeInfo>
     <scopeInfo nodeId="1195601346470" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="29" startPosition="10" endLine="35" endPosition="5">
-      <varInfo nodeId="1195601346470" varName="scriptReference" />
+      <varInfo nodeId="1195601346471" varName="scriptReference" />
     </scopeInfo>
     <scopeInfo nodeId="1195601047105" fileName="check_MappingConfiguration_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="1195601047105" varName="argument" />
@@ -2260,7 +2260,7 @@
       <varInfo nodeId="933643154465925356" varName="b" />
     </scopeInfo>
     <scopeInfo nodeId="933643154466207636" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="44" startPosition="87" endLine="47" endPosition="7">
-      <varInfo nodeId="933643154466207636" varName="param" />
+      <varInfo nodeId="933643154466207637" varName="param" />
     </scopeInfo>
     <scopeInfo nodeId="933643154465925395" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="31" startPosition="37" endLine="35" endPosition="7" />
     <scopeInfo nodeId="933643154466058161" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="37" startPosition="112" endLine="41" endPosition="9" />
@@ -2275,7 +2275,7 @@
     </scopeInfo>
     <scopeInfo nodeId="933643154466201169" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="48" startPosition="110" endLine="59" endPosition="9" />
     <scopeInfo nodeId="933643154466201166" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="47" startPosition="7" endLine="60" endPosition="7">
-      <varInfo nodeId="933643154466201166" varName="p" />
+      <varInfo nodeId="933643154466201167" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="933643154466175292" fileName="typeof_IncludeMacro_InferenceRule.java" startLine="43" startPosition="12" endLine="60" endPosition="7">
       <varInfo nodeId="933643154466201186" varName="available" />

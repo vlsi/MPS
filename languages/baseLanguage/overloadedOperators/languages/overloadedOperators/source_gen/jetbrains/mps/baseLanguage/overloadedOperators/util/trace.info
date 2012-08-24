@@ -113,7 +113,7 @@
       <varInfo nodeId="5035379201237126228" varName="operator" />
     </scopeInfo>
     <scopeInfo nodeId="5035379201237126406" fileName="BinaryOperationUtil.java" startLine="114" startPosition="78" endLine="122" endPosition="5">
-      <varInfo nodeId="5035379201237126406" varName="operatorEntry" />
+      <varInfo nodeId="5035379201237126407" varName="operatorEntry" />
     </scopeInfo>
     <scopeInfo nodeId="5035379201237126235" fileName="BinaryOperationUtil.java" startLine="68" startPosition="91" endLine="78" endPosition="16" />
     <scopeInfo nodeId="5035379201237126278" fileName="BinaryOperationUtil.java" startLine="81" startPosition="91" endLine="91" endPosition="16" />

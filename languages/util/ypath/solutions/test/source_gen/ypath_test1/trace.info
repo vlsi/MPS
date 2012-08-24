@@ -62,7 +62,7 @@
       <varInfo nodeId="1181230915987" varName="nodes" />
     </scopeInfo>
     <scopeInfo nodeId="1181230813655" fileName="XMLTreeSimple_Test.java" startLine="70" startPosition="20" endLine="74" endPosition="5">
-      <varInfo nodeId="1181230813655" varName="n" />
+      <varInfo nodeId="1181230813656" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1181230118838" fileName="XMLTreeSimple_Test.java" startLine="53" startPosition="59" endLine="59" endPosition="72">
       <varInfo nodeId="1181231319626" varName="a1" />

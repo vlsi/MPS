@@ -115,7 +115,7 @@
       <varInfo nodeId="1165526704347" varName="S" />
     </scopeInfo>
     <scopeInfo nodeId="1165597563931" fileName="SimpleOperations1.java" startLine="125" startPosition="18" endLine="132" endPosition="5">
-      <varInfo nodeId="1165597563931" varName="s" />
+      <varInfo nodeId="1165597563932" varName="s" />
     </scopeInfo>
     <scopeInfo nodeId="1165526992413" fileName="SimpleOperations1.java" startLine="135" startPosition="25" endLine="142" endPosition="66">
       <varInfo nodeId="1165527075579" varName="L" />
@@ -189,13 +189,13 @@
       <varInfo nodeId="1224596675942" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1170979112529" fileName="Sort_Test1.java" startLine="24" startPosition="18" endLine="28" endPosition="5">
-      <varInfo nodeId="1170979112529" varName="i" />
+      <varInfo nodeId="1170979112530" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1224596675886" fileName="Sort_Test1.java" startLine="34" startPosition="100" endLine="38" endPosition="0">
       <varInfo nodeId="1224596675886" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1170979239291" fileName="Sort_Test1.java" startLine="39" startPosition="18" endLine="43" endPosition="5">
-      <varInfo nodeId="1170979239291" varName="i" />
+      <varInfo nodeId="1170979239292" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1170977675572" fileName="Sort_Test1.java" startLine="16" startPosition="24" endLine="28" endPosition="5">
       <varInfo nodeId="1170977695138" varName="expected" />
@@ -534,7 +534,7 @@
       <varInfo nodeId="1224596675914" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1178899243341" fileName="Distinct_Test.java" startLine="37" startPosition="18" endLine="41" endPosition="5">
-      <varInfo nodeId="1178899243341" varName="i" />
+      <varInfo nodeId="1178899246694" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1224596676054" fileName="Distinct_Test.java" startLine="104" startPosition="89" endLine="108" endPosition="0">
       <varInfo nodeId="1224596676054" varName="it" />
@@ -546,7 +546,7 @@
       <varInfo nodeId="1224596675969" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1178899307558" fileName="Distinct_Test.java" startLine="120" startPosition="18" endLine="124" endPosition="5">
-      <varInfo nodeId="1178899307558" varName="i" />
+      <varInfo nodeId="1178899307559" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1205788070346" fileName="Distinct_Test.java" startLine="126" startPosition="0" endLine="132" endPosition="0" />
     <scopeInfo nodeId="1178898653158" fileName="Distinct_Test.java" startLine="17" startPosition="49" endLine="41" endPosition="5">
@@ -1068,10 +1068,10 @@
     <scopeInfo nodeId="1224596680401" fileName="NaiveSetOperations_Test.java" startLine="524" startPosition="25" endLine="527" endPosition="32" />
     <scopeInfo nodeId="1224596679878" fileName="NaiveSetOperations_Test.java" startLine="528" startPosition="25" endLine="531" endPosition="32" />
     <scopeInfo nodeId="1180976086647" fileName="NaiveSetOperations_Test.java" startLine="568" startPosition="96" endLine="571" endPosition="5">
-      <varInfo nodeId="1180976086647" varName="x" />
+      <varInfo nodeId="1180976086648" varName="x" />
     </scopeInfo>
     <scopeInfo nodeId="1180976112578" fileName="NaiveSetOperations_Test.java" startLine="571" startPosition="5" endLine="574" endPosition="5">
-      <varInfo nodeId="1180976112578" varName="y" />
+      <varInfo nodeId="1180976112579" varName="y" />
     </scopeInfo>
     <scopeInfo nodeId="1209906614605" fileName="NaiveSetOperations_Test.java" startLine="588" startPosition="41" endLine="591" endPosition="5">
       <varInfo nodeId="1209906614613" varName="e" />

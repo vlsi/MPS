@@ -174,10 +174,10 @@
     <scopeInfo nodeId="5389689214217448670" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="62" startPosition="0" endLine="67" endPosition="0" />
     <scopeInfo nodeId="3436597452201051214" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="51" startPosition="218" endLine="57" endPosition="17" />
     <scopeInfo nodeId="3436597452201051221" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="51" startPosition="218" endLine="57" endPosition="17">
-      <varInfo nodeId="3436597452201051221" varName="basedecl" />
+      <varInfo nodeId="3436597452201051222" varName="basedecl" />
     </scopeInfo>
     <scopeInfo nodeId="3436597452201051211" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="50" startPosition="130" endLine="58" endPosition="15">
-      <varInfo nodeId="3436597452201051211" varName="builders" />
+      <varInfo nodeId="3436597452201051212" varName="builders" />
     </scopeInfo>
     <scopeInfo nodeId="3436597452201051169" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="49" startPosition="166" endLine="58" endPosition="15" />
     <scopeInfo nodeId="3436597452201051168" fileName="SimpleBuilderPropertyBuilder_Constraints.java" startLine="48" startPosition="202" endLine="59" endPosition="13">

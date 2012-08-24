@@ -245,7 +245,7 @@ public class DefaultEditorBuilder {
       ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last()
     );
     SNode classItem = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
-    SPropertyOperations.set(classItem, "flag", "" + true);
+    SPropertyOperations.set(classItem, "flag", "" + (true));
     ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(classItem);
   }
 

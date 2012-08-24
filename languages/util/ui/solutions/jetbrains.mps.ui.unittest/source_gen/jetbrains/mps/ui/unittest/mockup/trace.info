@@ -74,7 +74,7 @@
     <scopeInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
     <scopeInfo nodeId="1850528335647326942" fileName="MockPanel.java" startLine="34" startPosition="52" endLine="39" endPosition="5">
-      <varInfo nodeId="1850528335647326942" varName="w" />
+      <varInfo nodeId="1850528335647326943" varName="w" />
     </scopeInfo>
     <scopeInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="68" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1850528335647325223" varName="from" />
@@ -175,21 +175,21 @@
     <scopeInfo nodeId="5211164146775800856" fileName="MockWidget.java" startLine="25" startPosition="52" endLine="28" endPosition="27" />
     <scopeInfo nodeId="4343029777915755911" fileName="MockWidget.java" startLine="87" startPosition="51" endLine="90" endPosition="5" />
     <scopeInfo nodeId="4343029777915755912" fileName="MockWidget.java" startLine="87" startPosition="51" endLine="90" endPosition="5">
-      <varInfo nodeId="4343029777915755912" varName="m" />
+      <varInfo nodeId="4343029777915755913" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="5520428330967858546" fileName="MockWidget.java" startLine="96" startPosition="0" endLine="99" endPosition="5">
       <varInfo nodeId="5520428330967858678" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="5520428330967858621" fileName="MockWidget.java" startLine="109" startPosition="24" endLine="112" endPosition="7" />
     <scopeInfo nodeId="5520428330967858634" fileName="MockWidget.java" startLine="109" startPosition="24" endLine="112" endPosition="7">
-      <varInfo nodeId="5520428330967858634" varName="h" />
+      <varInfo nodeId="5520428330967858635" varName="h" />
     </scopeInfo>
     <scopeInfo nodeId="6876714382652027826" fileName="MockWidget.java" startLine="119" startPosition="0" endLine="122" endPosition="5">
       <varInfo nodeId="6876714382652027827" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="6876714382652027800" fileName="MockWidget.java" startLine="132" startPosition="39" endLine="135" endPosition="7" />
     <scopeInfo nodeId="6876714382652027801" fileName="MockWidget.java" startLine="132" startPosition="39" endLine="135" endPosition="7">
-      <varInfo nodeId="6876714382652027801" varName="h" />
+      <varInfo nodeId="6876714382652027802" varName="h" />
     </scopeInfo>
     <scopeInfo nodeId="4343029777915609992" fileName="MockWidget.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="4343029777915609999" varName="key" />

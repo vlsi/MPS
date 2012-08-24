@@ -130,13 +130,13 @@
     <scopeInfo nodeId="1172029188746" fileName="Generics1_Test.java" startLine="12" startPosition="61" endLine="13" endPosition="45" />
     <scopeInfo nodeId="1172029203874" fileName="Generics1_Test.java" startLine="20" startPosition="57" endLine="22" endPosition="14" />
     <scopeInfo nodeId="1172029188742" fileName="Generics1_Test.java" startLine="11" startPosition="50" endLine="14" endPosition="5">
-      <varInfo nodeId="1172029188742" varName="bool" />
+      <varInfo nodeId="1172029188743" varName="bool" />
     </scopeInfo>
     <scopeInfo nodeId="1172029180837" fileName="Generics1_Test.java" startLine="10" startPosition="45" endLine="14" endPosition="5">
       <varInfo nodeId="1172029188739" varName="bools" />
     </scopeInfo>
     <scopeInfo nodeId="1172029203870" fileName="Generics1_Test.java" startLine="19" startPosition="18" endLine="23" endPosition="5">
-      <varInfo nodeId="1172029203870" varName="i" />
+      <varInfo nodeId="1172029203871" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1172029195859" fileName="Generics1_Test.java" startLine="17" startPosition="45" endLine="23" endPosition="5">
       <varInfo nodeId="1172029203867" varName="count" />

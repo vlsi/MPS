@@ -169,10 +169,10 @@
       <varInfo nodeId="7390982340086718262" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718171" fileName="TargetConceptChecker.java" startLine="22" startPosition="122" endLine="35" endPosition="5">
-      <varInfo nodeId="7390982340086718171" varName="child" />
+      <varInfo nodeId="7390982340086718172" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718237" fileName="TargetConceptChecker.java" startLine="36" startPosition="0" endLine="50" endPosition="5">
-      <varInfo nodeId="7390982340086718237" varName="reference" />
+      <varInfo nodeId="7390982340086718238" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718170" fileName="TargetConceptChecker.java" startLine="22" startPosition="122" endLine="50" endPosition="5" />
     <scopeInfo nodeId="7390982340086718161" fileName="TargetConceptChecker.java" startLine="21" startPosition="0" endLine="52" endPosition="0">
@@ -555,7 +555,7 @@
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718607" fileName="LanguageErrorsComponent.java" startLine="65" startPosition="47" endLine="68" endPosition="5" />
     <scopeInfo nodeId="6926756761799928672" fileName="LanguageErrorsComponent.java" startLine="90" startPosition="72" endLine="93" endPosition="5">
-      <varInfo nodeId="6926756761799928672" varName="anc" />
+      <varInfo nodeId="6926756761799928673" varName="anc" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086718962" fileName="LanguageErrorsComponent.java" startLine="171" startPosition="32" endLine="174" endPosition="13">
       <varInfo nodeId="7390982340086718963" varName="checker" />
@@ -913,7 +913,7 @@
       <varInfo nodeId="7390982340086720482" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086720444" fileName="ConstraintsChecker.java" startLine="121" startPosition="8" endLine="146" endPosition="5">
-      <varInfo nodeId="7390982340086720444" varName="p" />
+      <varInfo nodeId="7390982340086720445" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086720131" fileName="ConstraintsChecker.java" startLine="46" startPosition="134" endLine="146" endPosition="5">
       <varInfo nodeId="8887378328853569077" varName="checkingNodeContext" />
@@ -978,7 +978,7 @@
       <varInfo nodeId="3386205146661103654" varName="genuineLink" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086720611" fileName="CardinalitiesChecker.java" startLine="22" startPosition="37" endLine="48" endPosition="5">
-      <varInfo nodeId="7390982340086720611" varName="link" />
+      <varInfo nodeId="7390982340086720612" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="7390982340086720589" fileName="CardinalitiesChecker.java" startLine="20" startPosition="122" endLine="48" endPosition="5">
       <varInfo nodeId="7390982340086720601" varName="concept" />

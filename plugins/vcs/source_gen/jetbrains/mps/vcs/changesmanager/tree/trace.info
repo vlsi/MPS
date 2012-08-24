@@ -212,7 +212,7 @@
     <scopeInfo nodeId="8579517044346265804" fileName="FeatureForestMap.java" startLine="127" startPosition="86" endLine="138" endPosition="7" />
     <scopeInfo nodeId="8579517044346265797" fileName="FeatureForestMap.java" startLine="126" startPosition="66" endLine="139" endPosition="5" />
     <scopeInfo nodeId="8579517044346265802" fileName="FeatureForestMap.java" startLine="126" startPosition="66" endLine="139" endPosition="5">
-      <varInfo nodeId="8579517044346265802" varName="listener" />
+      <varInfo nodeId="8579517044346265803" varName="listener" />
     </scopeInfo>
     <scopeInfo nodeId="3751911615136892065" fileName="FeatureForestMap.java" startLine="66" startPosition="51" endLine="80" endPosition="37">
       <varInfo nodeId="3751911615136892094" varName="ancestors" />
@@ -310,7 +310,7 @@
     <scopeInfo nodeId="5060092229902857478" fileName="FeatureForestMapSupport.java" startLine="93" startPosition="61" endLine="95" endPosition="5" />
     <scopeInfo nodeId="3751911615136919747" fileName="FeatureForestMapSupport.java" startLine="83" startPosition="43" endLine="86" endPosition="11" />
     <scopeInfo nodeId="2717926124490468127" fileName="FeatureForestMapSupport.java" startLine="102" startPosition="75" endLine="105" endPosition="11">
-      <varInfo nodeId="2717926124490468127" varName="f" />
+      <varInfo nodeId="2717926124490468128" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="3751911615136892574" fileName="FeatureForestMapSupport.java" startLine="39" startPosition="0" endLine="43" endPosition="3">
       <varInfo nodeId="3751911615136892578" varName="currentDifferenceRegistry" />
@@ -725,13 +725,13 @@
     <scopeInfo nodeId="2105471615617473964" fileName="TreeHighlighter.java" startLine="324" startPosition="55" endLine="326" endPosition="5" />
     <scopeInfo nodeId="2105471615617474070" fileName="TreeHighlighter.java" startLine="334" startPosition="87" endLine="336" endPosition="39" />
     <scopeInfo nodeId="4653713283496907186" fileName="TreeHighlighter.java" startLine="113" startPosition="23" endLine="116" endPosition="5">
-      <varInfo nodeId="4653713283496907186" varName="child" />
+      <varInfo nodeId="4653713283496907187" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="9170101780449102245" fileName="TreeHighlighter.java" startLine="148" startPosition="16" endLine="151" endPosition="11" />
     <scopeInfo nodeId="9170101780449102275" fileName="TreeHighlighter.java" startLine="148" startPosition="16" endLine="151" endPosition="11" />
     <scopeInfo nodeId="4653713283496948018" fileName="TreeHighlighter.java" startLine="187" startPosition="61" endLine="190" endPosition="5" />
     <scopeInfo nodeId="4653713283496948026" fileName="TreeHighlighter.java" startLine="187" startPosition="61" endLine="190" endPosition="5">
-      <varInfo nodeId="4653713283496948026" varName="node" />
+      <varInfo nodeId="4653713283496948027" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="9200516641177032557" fileName="TreeHighlighter.java" startLine="279" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="9200516641177032560" varName="node" />
@@ -780,7 +780,7 @@
       <varInfo nodeId="17187394613279770" varName="ifile" />
     </scopeInfo>
     <scopeInfo nodeId="17187394613279820" fileName="TreeHighlighter.java" startLine="312" startPosition="43" endLine="317" endPosition="13">
-      <varInfo nodeId="17187394613279820" varName="f" />
+      <varInfo nodeId="17187394613279821" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="17187394613279833" fileName="TreeHighlighter.java" startLine="312" startPosition="43" endLine="317" endPosition="13" />
     <scopeInfo nodeId="4653713283496948160" fileName="TreeHighlighter.java" startLine="128" startPosition="31" endLine="134" endPosition="15" />
@@ -789,7 +789,7 @@
     </scopeInfo>
     <scopeInfo nodeId="2105471615617474059" fileName="TreeHighlighter.java" startLine="332" startPosition="39" endLine="338" endPosition="9" />
     <scopeInfo nodeId="2105471615617474060" fileName="TreeHighlighter.java" startLine="332" startPosition="39" endLine="338" endPosition="9">
-      <varInfo nodeId="2105471615617474060" varName="f" />
+      <varInfo nodeId="2105471615617474061" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="4653713283496907175" fileName="TreeHighlighter.java" startLine="111" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="4653713283496907180" varName="node" />
@@ -830,7 +830,7 @@
     <scopeInfo nodeId="756246431460598813" fileName="TreeHighlighter.java" startLine="310" startPosition="59" endLine="320" endPosition="0" />
     <scopeInfo nodeId="9200516641177032537" fileName="TreeHighlighter.java" startLine="98" startPosition="38" endLine="109" endPosition="44" />
     <scopeInfo nodeId="8308671070660562935" fileName="TreeHighlighter.java" startLine="198" startPosition="65" endLine="209" endPosition="11">
-      <varInfo nodeId="8308671070660562935" varName="anotherFeature" />
+      <varInfo nodeId="8308671070660562936" varName="anotherFeature" />
     </scopeInfo>
     <scopeInfo nodeId="17187394613279113" fileName="TreeHighlighter.java" startLine="309" startPosition="39" endLine="320" endPosition="9" />
     <scopeInfo nodeId="4653713283496948114" fileName="TreeHighlighter.java" startLine="125" startPosition="45" endLine="138" endPosition="0" />

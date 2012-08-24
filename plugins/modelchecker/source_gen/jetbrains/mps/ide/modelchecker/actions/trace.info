@@ -175,8 +175,8 @@
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="75" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="1453248744423272128" fileName="plugin.xml" startLine="22" startPosition="90" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -388,22 +388,22 @@
     <scopeInfo nodeId="1453248744423272271" fileName="ConstraintsChecker.java" startLine="52" startPosition="91" endLine="62" endPosition="15" />
     <scopeInfo nodeId="1453248744423272355" fileName="ConstraintsChecker.java" startLine="72" startPosition="109" endLine="82" endPosition="13" />
     <scopeInfo nodeId="1453248744423272399" fileName="ConstraintsChecker.java" startLine="85" startPosition="0" endLine="95" endPosition="7">
-      <varInfo nodeId="1453248744423272399" varName="reference" />
+      <varInfo nodeId="1453248744423272400" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423272269" fileName="ConstraintsChecker.java" startLine="51" startPosition="150" endLine="63" endPosition="11" />
     <scopeInfo nodeId="1453248744423272353" fileName="ConstraintsChecker.java" startLine="71" startPosition="11" endLine="83" endPosition="9" />
     <scopeInfo nodeId="1453248744423272337" fileName="ConstraintsChecker.java" startLine="66" startPosition="0" endLine="84" endPosition="7">
-      <varInfo nodeId="1453248744423272337" varName="child" />
+      <varInfo nodeId="1453248744423272338" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423272193" fileName="ConstraintsChecker.java" startLine="40" startPosition="199" endLine="64" endPosition="9" />
     <scopeInfo nodeId="1453248744423272188" fileName="ConstraintsChecker.java" startLine="39" startPosition="21" endLine="65" endPosition="7">
-      <varInfo nodeId="1453248744423272188" varName="link" />
+      <varInfo nodeId="1453248744423272189" varName="link" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423272164" fileName="ConstraintsChecker.java" startLine="33" startPosition="92" endLine="95" endPosition="7">
       <varInfo nodeId="1453248744423272180" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423272162" fileName="ConstraintsChecker.java" startLine="32" startPosition="126" endLine="96" endPosition="5">
-      <varInfo nodeId="1453248744423272162" varName="node" />
+      <varInfo nodeId="1453248744423272163" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423272151" fileName="ConstraintsChecker.java" startLine="29" startPosition="134" endLine="99" endPosition="19">
       <varInfo nodeId="1453248744423272153" varName="results" />
@@ -570,7 +570,7 @@
       <varInfo nodeId="1453248744423273032" varName="concept" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423273011" fileName="UnavailableConceptsChecker.java" startLine="24" startPosition="119" endLine="33" endPosition="5">
-      <varInfo nodeId="1453248744423273011" varName="node" />
+      <varInfo nodeId="1453248744423273012" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423273000" fileName="UnavailableConceptsChecker.java" startLine="21" startPosition="134" endLine="36" endPosition="19">
       <varInfo nodeId="1453248744423273002" varName="results" />
@@ -674,11 +674,11 @@
       <varInfo nodeId="1209385276370" varName="uid" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423273107" fileName="UnresolvedReferencesChecker.java" startLine="46" startPosition="41" endLine="83" endPosition="7">
-      <varInfo nodeId="1453248744423273107" varName="ref" />
+      <varInfo nodeId="1453248744423273108" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423273090" fileName="UnresolvedReferencesChecker.java" startLine="42" startPosition="86" endLine="83" endPosition="7" />
     <scopeInfo nodeId="1453248744423273088" fileName="UnresolvedReferencesChecker.java" startLine="41" startPosition="0" endLine="84" endPosition="5">
-      <varInfo nodeId="1453248744423273088" varName="node" />
+      <varInfo nodeId="1453248744423273089" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423273077" fileName="UnresolvedReferencesChecker.java" startLine="33" startPosition="146" endLine="86" endPosition="19">
       <varInfo nodeId="1453248744423273079" varName="results" />
@@ -872,7 +872,7 @@
     <scopeInfo nodeId="6193218767386792898" fileName="ModelChecker.java" startLine="106" startPosition="0" endLine="114" endPosition="0" />
     <scopeInfo nodeId="1453248744423273361" fileName="ModelChecker.java" startLine="69" startPosition="99" endLine="80" endPosition="15" />
     <scopeInfo nodeId="1453248744423273359" fileName="ModelChecker.java" startLine="68" startPosition="0" endLine="81" endPosition="13">
-      <varInfo nodeId="1453248744423273359" varName="specificChecker" />
+      <varInfo nodeId="1453248744423273360" varName="specificChecker" />
     </scopeInfo>
     <scopeInfo nodeId="6193218767386792914" fileName="ModelChecker.java" startLine="65" startPosition="50" endLine="81" endPosition="13">
       <varInfo nodeId="1453248744423273353" varName="model" />
@@ -1160,10 +1160,10 @@
     <scopeInfo nodeId="1453248744423274060" fileName="ModelCheckerIssueFinder.java" startLine="54" startPosition="63" endLine="58" endPosition="11" />
     <scopeInfo nodeId="1453248744423274110" fileName="ModelCheckerIssueFinder.java" startLine="71" startPosition="88" endLine="75" endPosition="9" />
     <scopeInfo nodeId="1453248744423274057" fileName="ModelCheckerIssueFinder.java" startLine="53" startPosition="44" endLine="59" endPosition="9">
-      <varInfo nodeId="1453248744423274057" varName="module" />
+      <varInfo nodeId="1453248744423274058" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274108" fileName="ModelCheckerIssueFinder.java" startLine="70" startPosition="0" endLine="76" endPosition="7">
-      <varInfo nodeId="1453248744423274108" varName="modelDescriptor" />
+      <varInfo nodeId="1453248744423274109" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274045" fileName="ModelCheckerIssueFinder.java" startLine="52" startPosition="28" endLine="59" endPosition="9" />
     <scopeInfo nodeId="377166553787497106" fileName="ModelCheckerIssueFinder.java" startLine="50" startPosition="9" endLine="77" endPosition="45">
@@ -1565,10 +1565,10 @@
       <varInfo nodeId="1453248744423274796" varName="modelDescrpitors" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274844" fileName="ModelCheckerUtils.java" startLine="41" startPosition="44" endLine="44" endPosition="7">
-      <varInfo nodeId="1453248744423274844" varName="generator" />
+      <varInfo nodeId="1453248744423274845" varName="generator" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274877" fileName="ModelCheckerUtils.java" startLine="50" startPosition="103" endLine="53" endPosition="5">
-      <varInfo nodeId="1453248744423274877" varName="module" />
+      <varInfo nodeId="1453248744423274878" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274924" fileName="ModelCheckerUtils.java" startLine="66" startPosition="100" endLine="69" endPosition="7" />
     <scopeInfo nodeId="1453248744423274837" fileName="ModelCheckerUtils.java" startLine="40" startPosition="37" endLine="44" endPosition="7">
@@ -1582,7 +1582,7 @@
       <varInfo nodeId="1453248744423274871" varName="modelDescrpitors" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274919" fileName="ModelCheckerUtils.java" startLine="65" startPosition="23" endLine="70" endPosition="5">
-      <varInfo nodeId="1453248744423274919" varName="issue" />
+      <varInfo nodeId="1453248744423274920" varName="issue" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274790" fileName="ModelCheckerUtils.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1453248744423274809" varName="modelDescriptor" />
@@ -1593,7 +1593,7 @@
       <varInfo nodeId="1453248744423274971" varName="linkDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274821" fileName="ModelCheckerUtils.java" startLine="31" startPosition="103" endLine="39" endPosition="5">
-      <varInfo nodeId="1453248744423274821" varName="modelDescriptor" />
+      <varInfo nodeId="1453248744423274822" varName="modelDescriptor" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423274865" fileName="ModelCheckerUtils.java" startLine="48" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1453248744423274889" varName="modules" />
@@ -1857,7 +1857,7 @@
       <varInfo nodeId="1453248744423275091" varName="issue" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423275264" fileName="ModelCheckerViewer.java" startLine="134" startPosition="45" endLine="140" endPosition="11">
-      <varInfo nodeId="1453248744423275264" varName="issue" />
+      <varInfo nodeId="1453248744423275265" varName="issue" />
     </scopeInfo>
     <scopeInfo nodeId="1453248744423275294" fileName="ModelCheckerViewer.java" startLine="149" startPosition="32" endLine="155" endPosition="17">
       <varInfo nodeId="1453248744423275296" varName="dialogAnswer1" />
@@ -2410,7 +2410,7 @@
     <scopeInfo nodeId="5670662933669196236" fileName="CheckModel_Action.java" startLine="88" startPosition="111" endLine="93" endPosition="11" />
     <scopeInfo nodeId="1453248744423276340" fileName="CheckModel_Action.java" startLine="41" startPosition="9" endLine="48" endPosition="7" />
     <scopeInfo nodeId="5670662933669196233" fileName="CheckModel_Action.java" startLine="87" startPosition="87" endLine="94" endPosition="9">
-      <varInfo nodeId="5670662933669196233" varName="innerModel" />
+      <varInfo nodeId="5670662933669196234" varName="innerModel" />
     </scopeInfo>
     <scopeInfo nodeId="5670662933669112006" fileName="CheckModel_Action.java" startLine="85" startPosition="108" endLine="94" endPosition="9">
       <varInfo nodeId="1477420055747389564" varName="isStub" />
@@ -2859,17 +2859,17 @@
       <varInfo nodeId="2483569029796513478" varName="reporter" />
     </scopeInfo>
     <scopeInfo nodeId="2786701023156660817" fileName="SpecificModelChecker.java" startLine="45" startPosition="92" endLine="59" endPosition="9">
-      <varInfo nodeId="2786701023156660817" varName="errorReporter" />
+      <varInfo nodeId="2786701023156660818" varName="errorReporter" />
     </scopeInfo>
     <scopeInfo nodeId="2786701023156660739" fileName="SpecificModelChecker.java" startLine="43" startPosition="92" endLine="60" endPosition="87">
       <varInfo nodeId="2786701023156660809" varName="iErrorReporters" />
     </scopeInfo>
     <scopeInfo nodeId="2786701023156660734" fileName="SpecificModelChecker.java" startLine="42" startPosition="7" endLine="61" endPosition="7">
-      <varInfo nodeId="2786701023156660734" varName="rootNode" />
+      <varInfo nodeId="2786701023156660735" varName="rootNode" />
     </scopeInfo>
     <scopeInfo nodeId="5231630840089783327" fileName="SpecificModelChecker.java" startLine="35" startPosition="76" endLine="62" endPosition="25" />
     <scopeInfo nodeId="5231630840089783324" fileName="SpecificModelChecker.java" startLine="34" startPosition="121" endLine="63" endPosition="5">
-      <varInfo nodeId="5231630840089783324" varName="checker" />
+      <varInfo nodeId="5231630840089783325" varName="checker" />
     </scopeInfo>
     <scopeInfo nodeId="2786701023156660724" fileName="SpecificModelChecker.java" startLine="31" startPosition="134" endLine="65" endPosition="19">
       <varInfo nodeId="2786701023156660726" varName="results" />
@@ -3179,11 +3179,11 @@
       <varInfo nodeId="2843918448603437931" varName="targetNode" />
     </scopeInfo>
     <scopeInfo nodeId="2843918448603437777" fileName="AspectDependenciesChecker.java" startLine="65" startPosition="41" endLine="85" endPosition="7">
-      <varInfo nodeId="2843918448603437777" varName="ref" />
+      <varInfo nodeId="2843918448603437778" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="2843918448603437768" fileName="AspectDependenciesChecker.java" startLine="61" startPosition="86" endLine="85" endPosition="7" />
     <scopeInfo nodeId="2843918448603437766" fileName="AspectDependenciesChecker.java" startLine="60" startPosition="0" endLine="86" endPosition="5">
-      <varInfo nodeId="2843918448603437766" varName="node" />
+      <varInfo nodeId="2843918448603437767" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8652355820747433942" fileName="AspectDependenciesChecker.java" startLine="106" startPosition="27" endLine="139" endPosition="9" />
     <scopeInfo nodeId="2843918448603437728" fileName="AspectDependenciesChecker.java" startLine="50" startPosition="140" endLine="88" endPosition="19">
@@ -3643,11 +3643,11 @@
       <varInfo nodeId="6550340959293398141" varName="targetSModelReference" />
     </scopeInfo>
     <scopeInfo nodeId="6550340959293398060" fileName="AdapterUsagesFinder.java" startLine="45" startPosition="40" endLine="61" endPosition="9">
-      <varInfo nodeId="6550340959293398060" varName="ref" />
+      <varInfo nodeId="6550340959293398061" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="6550340959293398043" fileName="AdapterUsagesFinder.java" startLine="41" startPosition="88" endLine="61" endPosition="9" />
     <scopeInfo nodeId="6550340959293398041" fileName="AdapterUsagesFinder.java" startLine="40" startPosition="30" endLine="62" endPosition="7">
-      <varInfo nodeId="6550340959293398041" varName="node" />
+      <varInfo nodeId="6550340959293398042" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6550340959293398030" fileName="AdapterUsagesFinder.java" startLine="36" startPosition="136" endLine="64" endPosition="21">
       <varInfo nodeId="6550340959293398032" varName="results" />
@@ -3878,7 +3878,7 @@
     <scopeInfo nodeId="7502735747194136940" fileName="CheckNamespace_Action.java" startLine="31" startPosition="34" endLine="34" endPosition="40" />
     <scopeInfo nodeId="7502735747194136940" fileName="CheckNamespace_Action.java" startLine="59" startPosition="27" endLine="62" endPosition="7" />
     <scopeInfo nodeId="4726588093751207743" fileName="CheckNamespace_Action.java" startLine="88" startPosition="78" endLine="91" endPosition="7">
-      <varInfo nodeId="4726588093751207743" varName="node" />
+      <varInfo nodeId="4726588093751207744" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="7502735747194136940" fileName="CheckNamespace_Action.java" startLine="93" startPosition="0" endLine="96" endPosition="7">
       <varInfo nodeId="7502735747194136940" varName="t" />
@@ -3899,7 +3899,7 @@
       <varInfo nodeId="4726588093751207760" varName="modules" />
     </scopeInfo>
     <scopeInfo nodeId="8260157434483937137" fileName="CheckNamespace_Action.java" startLine="43" startPosition="76" endLine="49" endPosition="5">
-      <varInfo nodeId="8260157434483937137" varName="node" />
+      <varInfo nodeId="8260157434483937138" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1526939793344452927" fileName="CheckNamespace_Action.java" startLine="42" startPosition="87" endLine="50" endPosition="55">
       <varInfo nodeId="8260157434483937131" varName="modules" />
@@ -3997,7 +3997,7 @@
       <varInfo nodeId="8307046163198019512" varName="target" />
     </scopeInfo>
     <scopeInfo nodeId="8307046163197925053" fileName="GeneratorTemplatesChecker.java" startLine="60" startPosition="13" endLine="84" endPosition="11">
-      <varInfo nodeId="8307046163197925053" varName="ref" />
+      <varInfo nodeId="8307046163197925054" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="8307046163198019649" fileName="GeneratorTemplatesChecker.java" startLine="60" startPosition="13" endLine="85" endPosition="0" />
     <scopeInfo nodeId="8307046163198019467" fileName="GeneratorTemplatesChecker.java" startLine="55" startPosition="51" endLine="88" endPosition="37" />

@@ -112,7 +112,7 @@
     <scopeInfo nodeId="2230548360390286986" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="119" startPosition="57" endLine="121" endPosition="5" />
     <scopeInfo nodeId="2230548360390286986" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="143" startPosition="18" endLine="145" endPosition="41" />
     <scopeInfo nodeId="1571838961922885211" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="73" startPosition="5" endLine="76" endPosition="5">
-      <varInfo nodeId="1571838961922885211" varName="f" />
+      <varInfo nodeId="1571838961922885212" varName="f" />
     </scopeInfo>
     <scopeInfo nodeId="2230548360390286986" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="133" startPosition="9" endLine="136" endPosition="61">
       <varInfo nodeId="2230548360390286986" varName="quotedNode1_5" />
@@ -146,7 +146,7 @@
       <varInfo nodeId="2230548360390192818" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2230548360390286806" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="66" startPosition="5" endLine="73" endPosition="5">
-      <varInfo nodeId="2230548360390286806" varName="m" />
+      <varInfo nodeId="2230548360390286807" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="2230548360390284900" fileName="convert_test_case_to_unittest_case_Intention.java" startLine="87" startPosition="31" endLine="97" endPosition="20">
       <varInfo nodeId="2230548360390284900" varName="_parameterValues_129834374" />

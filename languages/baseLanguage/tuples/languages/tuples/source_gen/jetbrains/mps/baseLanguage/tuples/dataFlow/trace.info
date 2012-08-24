@@ -39,7 +39,7 @@
     <scopeInfo nodeId="1239580025007" fileName="NamedTupleLiteral_DataFlow.java" startLine="12" startPosition="65" endLine="14" endPosition="3" />
     <scopeInfo nodeId="1239580025009" fileName="NamedTupleLiteral_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
     <scopeInfo nodeId="1239580042900" fileName="NamedTupleLiteral_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5">
-      <varInfo nodeId="1239580042900" varName="cref" />
+      <varInfo nodeId="1239580042901" varName="cref" />
     </scopeInfo>
     <scopeInfo nodeId="1239580025007" fileName="NamedTupleLiteral_DataFlow.java" startLine="15" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1239580025007" varName="_context" />

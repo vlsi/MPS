@@ -29,7 +29,7 @@
       <varInfo nodeId="1196720900006" varName="is" />
     </scopeInfo>
     <scopeInfo nodeId="1196720900035" fileName="TestFeatures_Test.java" startLine="40" startPosition="20" endLine="44" endPosition="5">
-      <varInfo nodeId="1196720900035" varName="n" />
+      <varInfo nodeId="1196720900049" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1196720900003" fileName="TestFeatures_Test.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1196720900020" varName="xml" />
@@ -78,7 +78,7 @@
       <varInfo nodeId="1196720900093" varName="is" />
     </scopeInfo>
     <scopeInfo nodeId="1196720900122" fileName="GenericFeatures_Test.java" startLine="33" startPosition="20" endLine="37" endPosition="5">
-      <varInfo nodeId="1196720900122" varName="n" />
+      <varInfo nodeId="1196720900136" varName="n" />
     </scopeInfo>
     <scopeInfo nodeId="1196720900060" fileName="GenericFeatures_Test.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="1196720900090" fileName="GenericFeatures_Test.java" startLine="24" startPosition="0" endLine="30" endPosition="0">

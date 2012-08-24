@@ -1639,7 +1639,7 @@
       <varInfo nodeId="1300615610528534128" varName="matchRef" />
     </scopeInfo>
     <scopeInfo nodeId="1300615610528534121" fileName="FindForMethodWithIVariableLikeNodes_Test.java" startLine="36" startPosition="35" endLine="40" endPosition="7">
-      <varInfo nodeId="1300615610528534121" varName="match" />
+      <varInfo nodeId="1300615610528534122" varName="match" />
     </scopeInfo>
     <scopeInfo nodeId="1300615610528534002" fileName="FindForMethodWithIVariableLikeNodes_Test.java" startLine="21" startPosition="87" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1300615610528534093" fileName="FindForMethodWithIVariableLikeNodes_Test.java" startLine="30" startPosition="81" endLine="41" endPosition="399">
@@ -1671,7 +1671,7 @@
       <varInfo nodeId="8155843501977582852" varName="matchRef" />
     </scopeInfo>
     <scopeInfo nodeId="1998477585418805738" fileName="SimpleFindForExtractWithReturn_Test.java" startLine="36" startPosition="35" endLine="40" endPosition="7">
-      <varInfo nodeId="1998477585418805738" varName="match" />
+      <varInfo nodeId="1998477585418805739" varName="match" />
     </scopeInfo>
     <scopeInfo nodeId="1998477585418803771" fileName="SimpleFindForExtractWithReturn_Test.java" startLine="21" startPosition="82" endLine="27" endPosition="0" />
     <scopeInfo nodeId="1998477585418805710" fileName="SimpleFindForExtractWithReturn_Test.java" startLine="30" startPosition="76" endLine="41" endPosition="399">
@@ -2079,7 +2079,7 @@
       <varInfo nodeId="6195342755328044331" varName="matchRef" />
     </scopeInfo>
     <scopeInfo nodeId="6195342755328044324" fileName="FindForMethodWithOutputVariable_Test.java" startLine="36" startPosition="35" endLine="40" endPosition="7">
-      <varInfo nodeId="6195342755328044324" varName="match" />
+      <varInfo nodeId="6195342755328044325" varName="match" />
     </scopeInfo>
     <scopeInfo nodeId="6195342755328044201" fileName="FindForMethodWithOutputVariable_Test.java" startLine="21" startPosition="83" endLine="27" endPosition="0" />
     <scopeInfo nodeId="6195342755328044297" fileName="FindForMethodWithOutputVariable_Test.java" startLine="30" startPosition="77" endLine="41" endPosition="399">
@@ -2321,7 +2321,7 @@
       <varInfo nodeId="8155843501977582822" varName="matchRef" />
     </scopeInfo>
     <scopeInfo nodeId="7793057097608416401" fileName="SimpleFindForExtractFromManyStatements_Test.java" startLine="36" startPosition="35" endLine="40" endPosition="7">
-      <varInfo nodeId="7793057097608416401" varName="match" />
+      <varInfo nodeId="7793057097608416402" varName="match" />
     </scopeInfo>
     <scopeInfo nodeId="7793057097608406463" fileName="SimpleFindForExtractFromManyStatements_Test.java" startLine="21" startPosition="90" endLine="27" endPosition="0" />
     <scopeInfo nodeId="7793057097608416373" fileName="SimpleFindForExtractFromManyStatements_Test.java" startLine="30" startPosition="84" endLine="41" endPosition="399">
@@ -2375,7 +2375,7 @@
       <varInfo nodeId="8155843501977582330" varName="matchRef" />
     </scopeInfo>
     <scopeInfo nodeId="8155843501977560963" fileName="ReplaceOutputVaryable_Test.java" startLine="36" startPosition="35" endLine="40" endPosition="7">
-      <varInfo nodeId="8155843501977560963" varName="match" />
+      <varInfo nodeId="8155843501977560964" varName="match" />
     </scopeInfo>
     <scopeInfo nodeId="8155843501977546256" fileName="ReplaceOutputVaryable_Test.java" startLine="21" startPosition="73" endLine="27" endPosition="0" />
     <scopeInfo nodeId="8155843501977560935" fileName="ReplaceOutputVaryable_Test.java" startLine="30" startPosition="67" endLine="41" endPosition="399">
@@ -2472,7 +2472,7 @@
       <varInfo nodeId="8155843501977582806" varName="matchRef" />
     </scopeInfo>
     <scopeInfo nodeId="8556882668095202232" fileName="SimpleFindForExtractFromExpression_Test.java" startLine="36" startPosition="35" endLine="40" endPosition="7">
-      <varInfo nodeId="8556882668095202232" varName="match" />
+      <varInfo nodeId="8556882668095202233" varName="match" />
     </scopeInfo>
     <scopeInfo nodeId="8556882668095192252" fileName="SimpleFindForExtractFromExpression_Test.java" startLine="21" startPosition="86" endLine="27" endPosition="0" />
     <scopeInfo nodeId="8556882668095202192" fileName="SimpleFindForExtractFromExpression_Test.java" startLine="30" startPosition="80" endLine="41" endPosition="399">
@@ -2504,7 +2504,7 @@
       <varInfo nodeId="8155843501977582837" varName="matchRef" />
     </scopeInfo>
     <scopeInfo nodeId="8556882668095222241" fileName="SimpleFindForExtractFromStatement_Test.java" startLine="36" startPosition="35" endLine="40" endPosition="7">
-      <varInfo nodeId="8556882668095222241" varName="match" />
+      <varInfo nodeId="8556882668095222242" varName="match" />
     </scopeInfo>
     <scopeInfo nodeId="8556882668095222061" fileName="SimpleFindForExtractFromStatement_Test.java" startLine="21" startPosition="85" endLine="27" endPosition="0" />
     <scopeInfo nodeId="8556882668095222213" fileName="SimpleFindForExtractFromStatement_Test.java" startLine="30" startPosition="79" endLine="41" endPosition="399">

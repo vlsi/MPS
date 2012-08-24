@@ -41,8 +41,8 @@
     <nodeInfo nodeId="1227315376409" fileName="AttachMappingLabel_Action.java" startLine="128" startPosition="40" endLine="129" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227315442426" fileName="AttachMappingLabel_Action.java" startLine="130" startPosition="14" endLine="131" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="137" startPosition="53" endLine="138" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="138" startPosition="39" endLine="139" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_label" />
-    <nodeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="139" startPosition="39" endLine="140" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_label_it" />
+    <nodeInfo nodeId="1227316931928" fileName="AttachMappingLabel_Action.java" startLine="138" startPosition="39" endLine="139" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_label" />
+    <nodeInfo nodeId="1227316931928" fileName="AttachMappingLabel_Action.java" startLine="139" startPosition="39" endLine="140" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_label_it" />
     <nodeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="147" startPosition="30" endLine="148" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="1227316931925" fileName="AttachMappingLabel_Action.java" startLine="148" startPosition="56" endLine="149" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1227316931927" fileName="AttachMappingLabel_Action.java" startLine="150" startPosition="29" endLine="151" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -360,10 +360,10 @@
     </scopeInfo>
     <scopeInfo nodeId="428466863025296671" fileName="MappingLabelUtil.java" startLine="23" startPosition="67" endLine="29" endPosition="7" />
     <scopeInfo nodeId="428466863025296672" fileName="MappingLabelUtil.java" startLine="23" startPosition="67" endLine="29" endPosition="7">
-      <varInfo nodeId="428466863025296672" varName="ml" />
+      <varInfo nodeId="428466863025296673" varName="ml" />
     </scopeInfo>
     <scopeInfo nodeId="428466863025296668" fileName="MappingLabelUtil.java" startLine="22" startPosition="213" endLine="30" endPosition="5">
-      <varInfo nodeId="428466863025296668" varName="mc" />
+      <varInfo nodeId="428466863025296669" varName="mc" />
     </scopeInfo>
     <scopeInfo nodeId="428466863025296707" fileName="MappingLabelUtil.java" startLine="35" startPosition="57" endLine="43" endPosition="9" />
     <scopeInfo nodeId="428466863025296694" fileName="MappingLabelUtil.java" startLine="32" startPosition="31" endLine="51" endPosition="30">

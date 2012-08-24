@@ -188,11 +188,11 @@
     </scopeInfo>
     <scopeInfo nodeId="6814837785823339810" fileName="Table_Editor.java" startLine="105" startPosition="54" endLine="108" endPosition="13" />
     <scopeInfo nodeId="6814837785823339862" fileName="Table_Editor.java" startLine="105" startPosition="54" endLine="108" endPosition="13">
-      <varInfo nodeId="6814837785823339862" varName="row" />
+      <varInfo nodeId="6814837785823339863" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="6814837785823339820" fileName="Table_Editor.java" startLine="112" startPosition="54" endLine="115" endPosition="13" />
     <scopeInfo nodeId="6814837785823339832" fileName="Table_Editor.java" startLine="112" startPosition="54" endLine="115" endPosition="13">
-      <varInfo nodeId="6814837785823339832" varName="row" />
+      <varInfo nodeId="6814837785823339833" varName="row" />
     </scopeInfo>
     <scopeInfo nodeId="2882388703616228151" fileName="Table_Editor.java" startLine="27" startPosition="53" endLine="31" endPosition="0">
       <varInfo nodeId="2882388703616228151" varName="editorContext" />
@@ -1139,10 +1139,10 @@
     <scopeInfo nodeId="5877647854348475156" fileName="StateMachine_Editor.java" startLine="134" startPosition="48" endLine="138" endPosition="213" />
     <scopeInfo nodeId="7483705179651268333" fileName="StateMachine_Editor.java" startLine="63" startPosition="58" endLine="68" endPosition="5" />
     <scopeInfo nodeId="7483705179651268957" fileName="StateMachine_Editor.java" startLine="101" startPosition="120" endLine="106" endPosition="15">
-      <varInfo nodeId="7483705179651268957" varName="transition" />
+      <varInfo nodeId="7483705179651268958" varName="transition" />
     </scopeInfo>
     <scopeInfo nodeId="5877647854348506815" fileName="StateMachine_Editor.java" startLine="146" startPosition="132" endLine="151" endPosition="13">
-      <varInfo nodeId="5877647854348506815" varName="transition" />
+      <varInfo nodeId="5877647854348506816" varName="transition" />
     </scopeInfo>
     <scopeInfo nodeId="5877647854348506923" fileName="StateMachine_Editor.java" startLine="214" startPosition="115" endLine="219" endPosition="15" />
     <scopeInfo nodeId="7483705179651268328" fileName="StateMachine_Editor.java" startLine="37" startPosition="89" endLine="43" endPosition="22">
@@ -1160,7 +1160,7 @@
       <varInfo nodeId="6645285158565208916" varName="transition" />
     </scopeInfo>
     <scopeInfo nodeId="5877647854348506920" fileName="StateMachine_Editor.java" startLine="213" startPosition="129" endLine="220" endPosition="13">
-      <varInfo nodeId="5877647854348506920" varName="transition" />
+      <varInfo nodeId="5877647854348506921" varName="transition" />
     </scopeInfo>
     <scopeInfo nodeId="7483705179651269000" fileName="StateMachine_Editor.java" startLine="113" startPosition="40" endLine="121" endPosition="114">
       <varInfo nodeId="7483705179651269002" varName="event" />

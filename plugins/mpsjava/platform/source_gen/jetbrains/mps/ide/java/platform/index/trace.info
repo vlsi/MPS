@@ -160,11 +160,11 @@
       <varInfo nodeId="4183391441819864023" varName="nextClassifier" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864223" fileName="ClassifierSuccessorsFinder.java" startLine="148" startPosition="9" endLine="151" endPosition="9">
-      <varInfo nodeId="4183391441819864223" varName="implementedInterface" />
+      <varInfo nodeId="4183391441819864224" varName="implementedInterface" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864250" fileName="ClassifierSuccessorsFinder.java" startLine="160" startPosition="77" endLine="163" endPosition="9" />
     <scopeInfo nodeId="4183391441819864251" fileName="ClassifierSuccessorsFinder.java" startLine="160" startPosition="77" endLine="163" endPosition="9">
-      <varInfo nodeId="4183391441819864251" varName="extendedInterface" />
+      <varInfo nodeId="4183391441819864252" varName="extendedInterface" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864373" fileName="ClassifierSuccessorsFinder.java" startLine="198" startPosition="100" endLine="201" endPosition="70">
       <varInfo nodeId="4183391441819864375" varName="classifier" />
@@ -177,7 +177,7 @@
     <scopeInfo nodeId="4183391441819864096" fileName="ClassifierSuccessorsFinder.java" startLine="107" startPosition="153" endLine="111" endPosition="24" />
     <scopeInfo nodeId="4183391441819864162" fileName="ClassifierSuccessorsFinder.java" startLine="128" startPosition="31" endLine="132" endPosition="9" />
     <scopeInfo nodeId="4183391441819864163" fileName="ClassifierSuccessorsFinder.java" startLine="128" startPosition="31" endLine="132" endPosition="9">
-      <varInfo nodeId="4183391441819864163" varName="successor" />
+      <varInfo nodeId="4183391441819864164" varName="successor" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864324" fileName="ClassifierSuccessorsFinder.java" startLine="184" startPosition="0" endLine="188" endPosition="5">
       <varInfo nodeId="4183391441819864328" varName="queue" />
@@ -187,7 +187,7 @@
       <varInfo nodeId="4183391441819864405" varName="notModifiedModelFiles" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864247" fileName="ClassifierSuccessorsFinder.java" startLine="159" startPosition="32" endLine="164" endPosition="7">
-      <varInfo nodeId="4183391441819864247" varName="anInterface" />
+      <varInfo nodeId="4183391441819864248" varName="anInterface" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864415" fileName="ClassifierSuccessorsFinder.java" startLine="215" startPosition="0" endLine="220" endPosition="0">
       <varInfo nodeId="4183391441819864418" varName="file" />
@@ -218,7 +218,7 @@
       <varInfo nodeId="4183391441819864367" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864189" fileName="ClassifierSuccessorsFinder.java" startLine="140" startPosition="29" endLine="152" endPosition="7">
-      <varInfo nodeId="4183391441819864189" varName="aClass" />
+      <varInfo nodeId="4183391441819864190" varName="aClass" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864235" fileName="ClassifierSuccessorsFinder.java" startLine="154" startPosition="0" endLine="166" endPosition="0" />
     <scopeInfo nodeId="4183391441819864263" fileName="ClassifierSuccessorsFinder.java" startLine="166" startPosition="0" endLine="178" endPosition="0">
@@ -358,10 +358,10 @@
       <varInfo nodeId="4183391441819864768" varName="conceptFQName" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864598" fileName="ClassifierSuccessorsIndexer.java" startLine="93" startPosition="15" endLine="96" endPosition="15">
-      <varInfo nodeId="4183391441819864598" varName="implementedInterface" />
+      <varInfo nodeId="4183391441819864599" varName="implementedInterface" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864634" fileName="ClassifierSuccessorsIndexer.java" startLine="101" startPosition="53" endLine="104" endPosition="15">
-      <varInfo nodeId="4183391441819864634" varName="extendedInterface" />
+      <varInfo nodeId="4183391441819864635" varName="extendedInterface" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864837" fileName="ClassifierSuccessorsIndexer.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
     <scopeInfo nodeId="4183391441819864843" fileName="ClassifierSuccessorsIndexer.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />

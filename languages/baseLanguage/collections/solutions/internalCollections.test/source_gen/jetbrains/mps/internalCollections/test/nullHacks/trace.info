@@ -60,16 +60,16 @@
     <scopeInfo nodeId="8511931774175302738" fileName="NullSequence_Test.java" startLine="86" startPosition="70" endLine="87" endPosition="31" />
     <scopeInfo nodeId="1225731159908" fileName="NullSequence_Test.java" startLine="70" startPosition="37" endLine="72" endPosition="7" />
     <scopeInfo nodeId="1225731168633" fileName="NullSequence_Test.java" startLine="70" startPosition="37" endLine="72" endPosition="7">
-      <varInfo nodeId="1225731168633" varName="foo" />
+      <varInfo nodeId="1225731168634" varName="foo" />
     </scopeInfo>
     <scopeInfo nodeId="1228857666960" fileName="NullSequence_Test.java" startLine="77" startPosition="21" endLine="80" endPosition="5">
-      <varInfo nodeId="1228857666960" varName="i" />
+      <varInfo nodeId="1228857666961" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="8511931774175302753" fileName="NullSequence_Test.java" startLine="81" startPosition="26" endLine="84" endPosition="5">
-      <varInfo nodeId="8511931774175302753" varName="i" />
+      <varInfo nodeId="8511931774175302754" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="8511931774175302736" fileName="NullSequence_Test.java" startLine="85" startPosition="25" endLine="88" endPosition="5">
-      <varInfo nodeId="8511931774175302736" varName="i" />
+      <varInfo nodeId="8511931774175302737" varName="i" />
     </scopeInfo>
     <scopeInfo nodeId="1207741449244" fileName="NullSequence_Test.java" startLine="46" startPosition="109" endLine="50" endPosition="0">
       <varInfo nodeId="1207741449244" varName="it" />

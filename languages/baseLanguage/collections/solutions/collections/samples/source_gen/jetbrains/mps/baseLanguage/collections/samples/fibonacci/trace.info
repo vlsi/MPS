@@ -111,7 +111,7 @@
     <nodeInfo nodeId="1152305732654" fileName="Main.java" startLine="7" startPosition="19" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="1154035872814" fileName="Main.java" startLine="10" startPosition="65" endLine="11" endPosition="30" />
     <scopeInfo nodeId="1154035872811" fileName="Main.java" startLine="9" startPosition="52" endLine="12" endPosition="5">
-      <varInfo nodeId="1154035872811" varName="num" />
+      <varInfo nodeId="1154035872812" varName="num" />
     </scopeInfo>
     <scopeInfo nodeId="1152305732656" fileName="Main.java" startLine="8" startPosition="42" endLine="12" endPosition="5">
       <varInfo nodeId="1152305767928" varName="fib" />

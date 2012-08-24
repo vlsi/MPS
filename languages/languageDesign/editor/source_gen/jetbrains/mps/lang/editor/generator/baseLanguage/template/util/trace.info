@@ -114,7 +114,7 @@
     <scopeInfo nodeId="1227876793100" fileName="QueriesUtil.java" startLine="66" startPosition="27" endLine="72" endPosition="28" />
     <scopeInfo nodeId="1227876793089" fileName="QueriesUtil.java" startLine="73" startPosition="27" endLine="79" endPosition="28" />
     <scopeInfo nodeId="1189585833182" fileName="QueriesUtil.java" startLine="112" startPosition="18" endLine="118" endPosition="5">
-      <varInfo nodeId="1189585833182" varName="curItem" />
+      <varInfo nodeId="1189585833183" varName="curItem" />
     </scopeInfo>
     <scopeInfo nodeId="1186773435545" fileName="QueriesUtil.java" startLine="37" startPosition="107" endLine="45" endPosition="86">
       <varInfo nodeId="1186775150070" varName="ancestor" />
