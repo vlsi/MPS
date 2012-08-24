@@ -7967,7 +7967,7 @@
   <root id="3118009927543452575">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3118009927543452577">
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3118009927543452578">
-        <property name="text" nameId="tpc2.1073389577007" value="$INPUT$" />
+        <property name="text" nameId="tpc2.1073389577007" value="$TRACE$" />
         <property name="attractsFocus" nameId="tpc2.1130859485024" value="1" />
         <link role="actionMap" roleId="tpc2.1139959269582" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <link role="styleClass" roleId="tpc2.1186406756722" targetNodeId="1215513928924" resolveInfo="macroStart" />
