@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -63,7 +63,7 @@ public class CloneUtil {
     outputNode.putUserObjects(inputNode);
     // keep track of 'original input node'
     if (originalInput) {
-      TemplateQueryContext.putInputNode(outputNode, inputNode);
+      TracingUtil.putInputNode(outputNode, inputNode);
     }
     for (SReference reference : inputNode.getReferencesIterable()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
