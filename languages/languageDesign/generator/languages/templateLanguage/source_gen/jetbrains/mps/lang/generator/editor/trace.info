@@ -16751,7 +16751,7 @@
       <varInfo nodeId="1205879900231" varName="referentNode" />
     </scopeInfo>
     <scopeInfo nodeId="1205869156696" fileName="QueriesUtil.java" startLine="152" startPosition="7" endLine="159" endPosition="5">
-      <varInfo nodeId="1205869156696" varName="child" />
+      <varInfo nodeId="1205869156697" varName="child" />
     </scopeInfo>
     <scopeInfo nodeId="1205880048661" fileName="QueriesUtil.java" startLine="168" startPosition="63" endLine="176" endPosition="16" />
     <scopeInfo nodeId="1216154358071" fileName="QueriesUtil.java" startLine="111" startPosition="69" endLine="120" endPosition="25">

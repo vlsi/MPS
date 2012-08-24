@@ -53,7 +53,7 @@
     <scopeInfo nodeId="1347577327951781517" fileName="RenameConcept.java" startLine="24" startPosition="60" endLine="27" endPosition="3" />
     <scopeInfo nodeId="1347577327951781586" fileName="RenameConcept.java" startLine="49" startPosition="33" endLine="52" endPosition="7" />
     <scopeInfo nodeId="1347577327951781587" fileName="RenameConcept.java" startLine="49" startPosition="33" endLine="52" endPosition="7">
-      <varInfo nodeId="1347577327951781587" varName="value" />
+      <varInfo nodeId="1347577327951781588" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1347577327951781521" fileName="RenameConcept_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
@@ -144,7 +144,7 @@
       <varInfo nodeId="1347577327951781672" varName="newLinkName" />
     </scopeInfo>
     <scopeInfo nodeId="1347577327951781732" fileName="RenameLink.java" startLine="56" startPosition="156" endLine="59" endPosition="5">
-      <varInfo nodeId="1347577327951781732" varName="modelList" />
+      <varInfo nodeId="1347577327951781733" varName="modelList" />
     </scopeInfo>
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="1347577327951781653" fileName="RenameLink_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
@@ -410,16 +410,16 @@
       <varInfo nodeId="6934781091951606382" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8299073042392952013" fileName="MoveConcepts.java" startLine="119" startPosition="5" endLine="122" endPosition="5">
-      <varInfo nodeId="8299073042392952013" varName="ext" />
+      <varInfo nodeId="8299073042392952014" varName="ext" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317979858" fileName="MoveConcepts.java" startLine="130" startPosition="172" endLine="133" endPosition="7">
-      <varInfo nodeId="3068114543317979858" varName="list" />
+      <varInfo nodeId="3068114543317979859" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317979873" fileName="MoveConcepts.java" startLine="137" startPosition="124" endLine="140" endPosition="7">
-      <varInfo nodeId="3068114543317979873" varName="list" />
+      <varInfo nodeId="3068114543317979874" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317978892" fileName="MoveConcepts.java" startLine="146" startPosition="54" endLine="149" endPosition="5">
-      <varInfo nodeId="3068114543317978892" varName="selNode" />
+      <varInfo nodeId="3068114543317978893" varName="selNode" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="3068114543317961951" fileName="MoveConcepts_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
@@ -470,10 +470,10 @@
       <varInfo nodeId="3068114543317961951" varName="entity" />
     </scopeInfo>
     <scopeInfo nodeId="4893885478268658550" fileName="MoveConcepts.java" startLine="108" startPosition="20" endLine="115" endPosition="5">
-      <varInfo nodeId="4893885478268658550" varName="aspect" />
+      <varInfo nodeId="4893885478268658551" varName="aspect" />
     </scopeInfo>
     <scopeInfo nodeId="4893885478268658533" fileName="MoveConcepts.java" startLine="150" startPosition="185" endLine="157" endPosition="5">
-      <varInfo nodeId="4893885478268658533" varName="node" />
+      <varInfo nodeId="4893885478268658534" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="8299073042392964918" fileName="MoveConcepts.java" startLine="164" startPosition="0" endLine="171" endPosition="0">
       <varInfo nodeId="8299073042392964918" varName="checkedDotOperand" />
@@ -605,10 +605,10 @@
     <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="9" startPosition="62" endLine="11" endPosition="3" />
     <scopeInfo nodeId="3068114543317979887" fileName="MoveLinkUp.java" startLine="31" startPosition="23" endLine="34" endPosition="48" />
     <scopeInfo nodeId="3068114543317980315" fileName="MoveLinkUp.java" startLine="87" startPosition="124" endLine="90" endPosition="7">
-      <varInfo nodeId="3068114543317980315" varName="list" />
+      <varInfo nodeId="3068114543317980316" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317980351" fileName="MoveLinkUp.java" startLine="94" startPosition="124" endLine="97" endPosition="7">
-      <varInfo nodeId="3068114543317980351" varName="list" />
+      <varInfo nodeId="3068114543317980352" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="3068114543317979891" fileName="MoveLinkUp_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
@@ -732,10 +732,10 @@
     <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="9" startPosition="66" endLine="11" endPosition="3" />
     <scopeInfo nodeId="3068114543317980424" fileName="MovePropertyUp.java" startLine="28" startPosition="61" endLine="31" endPosition="3" />
     <scopeInfo nodeId="3068114543317980601" fileName="MovePropertyUp.java" startLine="65" startPosition="124" endLine="68" endPosition="7">
-      <varInfo nodeId="3068114543317980601" varName="list" />
+      <varInfo nodeId="3068114543317980602" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317980639" fileName="MovePropertyUp.java" startLine="72" startPosition="124" endLine="75" endPosition="7">
-      <varInfo nodeId="3068114543317980639" varName="list" />
+      <varInfo nodeId="3068114543317980640" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="12" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="3068114543317980452" fileName="MovePropertyUp_Target.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
@@ -822,7 +822,7 @@
     </scopeInfo>
     <scopeInfo nodeId="3883347270486219815" fileName="ConceptMoveUtil.java" startLine="23" startPosition="96" endLine="29" endPosition="24" />
     <scopeInfo nodeId="3883347270486229652" fileName="ConceptMoveUtil.java" startLine="38" startPosition="118" endLine="44" endPosition="5">
-      <varInfo nodeId="3883347270486229652" varName="aspect" />
+      <varInfo nodeId="3883347270486229653" varName="aspect" />
     </scopeInfo>
     <scopeInfo nodeId="3883347270486221553" fileName="ConceptMoveUtil.java" startLine="47" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="3883347270486221553" varName="checkedDotOperand" />

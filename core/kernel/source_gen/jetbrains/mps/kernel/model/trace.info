@@ -178,7 +178,7 @@
     <scopeInfo nodeId="1238267943026" fileName="SModelUtil.java" startLine="70" startPosition="5" endLine="73" endPosition="5" />
     <scopeInfo nodeId="1238254781320" fileName="SModelUtil.java" startLine="151" startPosition="182" endLine="154" endPosition="9" />
     <scopeInfo nodeId="1238254781321" fileName="SModelUtil.java" startLine="151" startPosition="182" endLine="154" endPosition="9">
-      <varInfo nodeId="1238254781321" varName="node" />
+      <varInfo nodeId="1238254781322" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1237996560824" fileName="SModelUtil.java" startLine="168" startPosition="108" endLine="171" endPosition="9" />
     <scopeInfo nodeId="1237996726522" fileName="SModelUtil.java" startLine="175" startPosition="108" endLine="178" endPosition="9" />
@@ -208,7 +208,7 @@
     <scopeInfo nodeId="7651139485607046835" fileName="SModelUtil.java" startLine="250" startPosition="62" endLine="254" endPosition="6" />
     <scopeInfo nodeId="6580059167812420601" fileName="SModelUtil.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="1238267693640" fileName="SModelUtil.java" startLine="64" startPosition="44" endLine="69" endPosition="7">
-      <varInfo nodeId="1238267693640" varName="root" />
+      <varInfo nodeId="1238267693641" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="1237995590829" fileName="SModelUtil.java" startLine="108" startPosition="0" endLine="113" endPosition="0" />
     <scopeInfo nodeId="1238250357849" fileName="SModelUtil.java" startLine="140" startPosition="59" endLine="145" endPosition="62">
@@ -216,10 +216,10 @@
     </scopeInfo>
     <scopeInfo nodeId="1238254781308" fileName="SModelUtil.java" startLine="150" startPosition="87" endLine="155" endPosition="7" />
     <scopeInfo nodeId="1237996560821" fileName="SModelUtil.java" startLine="167" startPosition="7" endLine="172" endPosition="7">
-      <varInfo nodeId="1237996560821" varName="ref" />
+      <varInfo nodeId="1237996560822" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="1237996726519" fileName="SModelUtil.java" startLine="174" startPosition="45" endLine="179" endPosition="7">
-      <varInfo nodeId="1237996726519" varName="ref" />
+      <varInfo nodeId="1237996726520" varName="ref" />
     </scopeInfo>
     <scopeInfo nodeId="4788436444168067057" fileName="SModelUtil.java" startLine="199" startPosition="74" endLine="204" endPosition="53">
       <varInfo nodeId="4788436444168067100" varName="fromFqName" />
@@ -242,7 +242,7 @@
       <varInfo nodeId="1237995590913" varName="linkDeclaration" />
     </scopeInfo>
     <scopeInfo nodeId="1238254781306" fileName="SModelUtil.java" startLine="149" startPosition="72" endLine="156" endPosition="5">
-      <varInfo nodeId="1238254781306" varName="superConcept" />
+      <varInfo nodeId="1238254781307" varName="superConcept" />
     </scopeInfo>
     <scopeInfo nodeId="7651139485607046835" fileName="SModelUtil.java" startLine="249" startPosition="0" endLine="256" endPosition="0">
       <varInfo nodeId="7651139485607046835" varName="a" />
@@ -266,7 +266,7 @@
       <varInfo nodeId="1237996347418" varName="extended" />
     </scopeInfo>
     <scopeInfo nodeId="1238267621439" fileName="SModelUtil.java" startLine="59" startPosition="61" endLine="70" endPosition="5">
-      <varInfo nodeId="1238267621439" varName="descriptor" />
+      <varInfo nodeId="1238267621440" varName="descriptor" />
     </scopeInfo>
     <scopeInfo nodeId="2116786884968876803" fileName="SModelUtil.java" startLine="86" startPosition="30" endLine="97" endPosition="22">
       <varInfo nodeId="2116786884968876824" varName="conceptName" />
@@ -524,7 +524,6 @@
     </scopeInfo>
     <scopeInfo nodeId="8296861627646404084" fileName="TemporaryModelOwner.java" startLine="72" startPosition="0" endLine="93" endPosition="0" />
     <unitInfo nodeId="581120860896098632" fileName="TemporaryModelOwner.java" startLine="28" startPosition="39" endLine="27" endPosition="0" />
-    <unitInfo nodeId="507022825981353202" fileName="TemporaryModelOwner.java" startLine="32" startPosition="46" endLine="36" endPosition="5" unitName="jetbrains.mps.kernel.model.TemporaryModelOwner$2" />
   </root>
 </debugInfo>
 

@@ -198,7 +198,7 @@
       <varInfo nodeId="7576820355142722475" varName="project" />
     </scopeInfo>
     <scopeInfo nodeId="7576820355142674007" fileName="PositionProvider.java" startLine="76" startPosition="70" endLine="81" endPosition="5">
-      <varInfo nodeId="7576820355142674007" varName="providerList" />
+      <varInfo nodeId="7576820355142674008" varName="providerList" />
     </scopeInfo>
     <scopeInfo nodeId="7576820355142721197" fileName="PositionProvider.java" startLine="90" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="7048882195103545667" fileName="PositionProvider.java" startLine="67" startPosition="84" endLine="73" endPosition="70">
@@ -220,10 +220,10 @@
       <varInfo nodeId="7576820355142673515" varName="provider" />
     </scopeInfo>
     <scopeInfo nodeId="7576820355142673229" fileName="PositionProvider.java" startLine="32" startPosition="112" endLine="45" endPosition="5">
-      <varInfo nodeId="7576820355142673229" varName="key" />
+      <varInfo nodeId="7576820355142673230" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="7576820355142673508" fileName="PositionProvider.java" startLine="50" startPosition="150" endLine="63" endPosition="5">
-      <varInfo nodeId="7576820355142673508" varName="key" />
+      <varInfo nodeId="7576820355142673509" varName="key" />
     </scopeInfo>
     <scopeInfo nodeId="7576820355142673200" fileName="PositionProvider.java" startLine="32" startPosition="112" endLine="46" endPosition="16" />
     <scopeInfo nodeId="7576820355142673478" fileName="PositionProvider.java" startLine="50" startPosition="150" endLine="64" endPosition="16" />
