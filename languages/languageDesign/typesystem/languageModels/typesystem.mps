@@ -75,6 +75,7 @@
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="1193734278188">
       <property name="name" nameId="tpck.1169194664001" value="typeof_FindSourceBlockParameter" />
       <property name="overrides" nameId="tpd4.1195213689297" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="dependency" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1195217152344">
       <property name="name" nameId="tpck.1169194664001" value="check_TypeofExpression" />

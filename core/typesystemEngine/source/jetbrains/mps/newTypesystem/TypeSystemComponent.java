@@ -318,9 +318,6 @@ class TypeSystemComponent extends CheckingComponent {
         continue;
       }
       Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
-      if (myNodeTypesComponent.isSpecial()) {
-        candidatesForFrontier.addAll(myTypeChecker.getRulesManager().getDependencies(sNode));
-      }
       if (forceChildrenCheck) {
         candidatesForFrontier.addAll(sNode.getChildren());
       }

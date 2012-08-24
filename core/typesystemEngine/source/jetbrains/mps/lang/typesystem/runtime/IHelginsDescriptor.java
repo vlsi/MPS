@@ -31,6 +31,7 @@ public interface IHelginsDescriptor {
 
   public Set<InequationReplacementRule_Runtime> getEliminationRules();
 
+  @Deprecated
   public Set<IDependency_Runtime> getDependencies();
 
   public Set<IVariableConverter_Runtime> getVariableConverters();

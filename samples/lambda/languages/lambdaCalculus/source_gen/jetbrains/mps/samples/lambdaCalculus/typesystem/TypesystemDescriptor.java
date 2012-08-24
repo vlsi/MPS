@@ -4,7 +4,6 @@ package jetbrains.mps.samples.lambdaCalculus.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -59,10 +58,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       InferenceRule_Runtime inferenceRule = new typeof_Variable_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      AbstractDependentComputation_Runtime dependentComputation = new LetReferenceTypeComputation_DependentComputation();
-      this.myDependentComputations.add(dependentComputation);
     }
   }
 }

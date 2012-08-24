@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.samples.lambdaCalculus.typesystem.LetReferenceTypeComputation_DependentComputation" file="LetReferenceTypeComputation_DependentComputation.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime" />
-  </dependency>
   <dependency className="jetbrains.mps.samples.lambdaCalculus.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.typesystem.LetReferenceTypeComputation_DependentComputation" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_AbstractionVarRef_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_BinaryNumericOperation_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.samples.lambdaCalculus.typesystem.typeof_BinaryOperation_InferenceRule" />

@@ -14,14 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOpsProvider_OneTypeSpecified;
-import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
-import jetbrains.mps.typesystem.inference.util.AbstractDependency_Runtime;
-import java.util.Set;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import java.util.Iterator;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -1023,62 +1018,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.GenericNewExpression";
-        }
-
-        public SNode getSourceNode(SNode targetNode) {
-          if (targetNode.getRole_().equals("creator")) {
-            return SNodeOperations.getParent(targetNode);
-          }
-          return null;
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.AbstractCreator";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
-    }
-    {
-      IDependency_Runtime dependency_Runtime = new AbstractDependency_Runtime() {
-        public String getSourceConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.Expression";
-        }
-
-        public Set<SNode> getSourceNodes(SNode targetNode) {
-          SNode instanceMethodDeclaration = SLinkOperations.getTarget(targetNode, "baseMethodDeclaration", false);
-          List<SNode> declarations = SLinkOperations.getTargets(instanceMethodDeclaration, "typeVariableDeclaration", true);
-          Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-          if (ListSequence.fromList(declarations).isNotEmpty()) {
-            {
-              Iterator<SNode> param_it = ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).iterator();
-              Iterator<SNode> arg_it = ListSequence.fromList(SLinkOperations.getTargets(targetNode, "actualArgument", true)).iterator();
-              SNode param_var;
-              SNode arg_var;
-              while (param_it.hasNext() && arg_it.hasNext()) {
-                param_var = param_it.next();
-                arg_var = arg_it.next();
-                for (SNode tvr : SNodeOperations.getDescendants(SLinkOperations.getTarget(param_var, "type", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
-                  SNode variableDeclaration = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
-                  if (ListSequence.fromList(declarations).contains(variableDeclaration)) {
-                    SetSequence.fromSet(result).addElement(arg_var);
-                  }
-                }
-              }
-            }
-          }
-          return result;
-        }
-
-        public String getTargetConceptFQName() {
-          return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
-        }
-      };
-      this.myDependencies.add(dependency_Runtime);
     }
   }
 

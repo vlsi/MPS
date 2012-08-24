@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNode;
 /**
  * Cyril.Konopko, 12.02.2010
  */
+@Deprecated
 public abstract class AbstractDependentComputation_Runtime implements IApplicableToConcept {
   private DependentComputationWrapper myWrapper = null;
 
@@ -47,6 +48,7 @@ public abstract class AbstractDependentComputation_Runtime implements IApplicabl
     return myWrapper;
   }
 
+  @Deprecated
   public static class DependentComputationWrapper implements IApplicableToConcept {
     private AbstractDependentComputation_Runtime myPeer;
 

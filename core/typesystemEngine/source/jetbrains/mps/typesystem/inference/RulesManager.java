@@ -37,12 +37,7 @@ public class RulesManager {
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
-  private RuleSet<AbstractDependentComputation_Runtime> myDependentComputations = new RuleSet<AbstractDependentComputation_Runtime>();
-  private RuleSet<DependentComputationWrapper> myDependentComputationsBlockedNodes = new RuleSet<DependentComputationWrapper>();
-
   private Set<IVariableConverter_Runtime> myVariableConverters = new THashSet<IVariableConverter_Runtime>();
-
-  private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
 
   private Set<SModelReference> myModelsWithLoadedRules = new THashSet<SModelReference>();
 
@@ -72,11 +67,8 @@ public class RulesManager {
     mySubtypingRules.clear();
     myComparisonRules.clear();
     myReplacementRules.clear();
-    myDependenciesContainer.clear();
     myVariableConverters.clear();
     myOverloadedOperationsManager.clear();
-    myDependentComputations.clear();
-    myDependentComputationsBlockedNodes.clear();
     myRulesManagerNew.clear();
   }
 
@@ -124,14 +116,8 @@ public class RulesManager {
         Set<ComparisonRule_Runtime> comparisonRule_runtimes = typesystem.getComparisonRules();
         myComparisonRules.addRuleSetItem(comparisonRule_runtimes);
         myReplacementRules.addRuleSetItem(typesystem.getEliminationRules());
-        myDependenciesContainer.addDependencies(typesystem.getDependencies());
         myVariableConverters.addAll(typesystem.getVariableConverters());
         myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystem.getOverloadedOperationsTypesProviders());
-        Set<AbstractDependentComputation_Runtime> dependentComputations = typesystem.getDependentComputations();
-        myDependentComputations.addRuleSetItem(dependentComputations);
-        for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
-          myDependentComputationsBlockedNodes.addRule(dependentComputation.getWrapper());
-        }
       } catch (RuntimeException t) {
         success = false;
       } finally {
@@ -141,7 +127,7 @@ public class RulesManager {
     try {
       myComparisonRules.makeConsistent();
       myReplacementRules.makeConsistent();
-      myDependenciesContainer.makeConsistent();
+//      myDependenciesContainer.makeConsistent();
       myOverloadedOperationsManager.makeConsistent();
     } catch (RuntimeException ex) {
       LOG.error("internal error: " + ex.getMessage(), ex);
@@ -238,34 +224,17 @@ public class RulesManager {
     return result;
   }
 
-  public Collection<SNode> getDependencies(SNode node) {
-    return myDependenciesContainer.getDependencies(node);
-  }
-
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
     return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType);
   }
 
   @Deprecated
   public Set<AbstractDependentComputation_Runtime> getDependentComputations(final SNode node) {
-    Set<AbstractDependentComputation_Runtime> rules = myDependentComputations.getRules(node);
-    return CollectionUtil.filter(rules, new Condition<AbstractDependentComputation_Runtime>() {
-      @Override
-      public boolean met(AbstractDependentComputation_Runtime dependentComputation) {
-        return dependentComputation.isApplicable(node);
-      }
-    });
+    return null;
   }
 
   @Deprecated
   public boolean isBlockingDependentComputationNode(SNode node) {
-    Set<DependentComputationWrapper> set = myDependentComputationsBlockedNodes.getRules(node);
-    if (set == null) return false;
-    for (DependentComputationWrapper wrapper : set) {
-      if (wrapper.isBlocking(node)) {
-        return true;
-      }
-    }
     return false;
   }
 }
