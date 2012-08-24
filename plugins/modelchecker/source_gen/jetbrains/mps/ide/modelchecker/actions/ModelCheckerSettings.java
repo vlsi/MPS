@@ -107,7 +107,9 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
     } else {
       ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
-      ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
+      if (isCheckModelProperties()) {
+        ListSequence.fromList(specificCheckers).addElement(new ModelPropertiesChecker());
+      }
       ListSequence.fromList(specificCheckers).addElement(new GeneratorTemplatesChecker());
       if (isCheckUnresolvedReferences()) {
         ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
@@ -143,14 +145,12 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     myState.myCheckConstraints = checkConstraints;
   }
 
-  @Deprecated
-  public boolean isCheckScopes() {
-    return myState.myCheckScopes;
+  public boolean isCheckModelProperties() {
+    return myState.myCheckModelProperties;
   }
 
-  @Deprecated
-  public void setCheckScopes(boolean checkScopes) {
-    myState.myCheckScopes = checkScopes;
+  public void setCheckModelProperties(boolean check) {
+    myState.myCheckModelProperties = check;
   }
 
   public boolean isCheckTypesystem() {
@@ -194,63 +194,12 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public static class MyState {
     private boolean myCheckUnresolvedReferences = true;
     private boolean myCheckConstraints = true;
-    @Deprecated
-    private boolean myCheckScopes = true;
+    private boolean myCheckModelProperties = true;
     private boolean myCheckTypesystem = true;
     private boolean myCheckBeforeCommit = true;
     private boolean myCheckStubs = false;
 
     public MyState() {
-    }
-
-    public boolean isCheckUnresolvedReferences() {
-      return myCheckUnresolvedReferences;
-    }
-
-    public void setCheckUnresolvedReferences(boolean checkUnresolvedReferences) {
-      myCheckUnresolvedReferences = checkUnresolvedReferences;
-    }
-
-    public boolean isCheckConstraints() {
-      return myCheckConstraints;
-    }
-
-    public void setCheckConstraints(boolean checkConstraints) {
-      myCheckConstraints = checkConstraints;
-    }
-
-    @Deprecated
-    public boolean isCheckScopes() {
-      return myCheckScopes;
-    }
-
-    @Deprecated
-    public void setCheckScopes(boolean checkScopes) {
-      myCheckScopes = checkScopes;
-    }
-
-    public boolean isCheckTypesystem() {
-      return myCheckTypesystem;
-    }
-
-    public void setCheckTypesystem(boolean checkTypesystem) {
-      myCheckTypesystem = checkTypesystem;
-    }
-
-    public boolean isCheckBeforeCommit() {
-      return myCheckBeforeCommit;
-    }
-
-    public void setCheckBeforeCommit(boolean checkBeforeCommit) {
-      myCheckBeforeCommit = checkBeforeCommit;
-    }
-
-    public boolean isCheckStubs() {
-      return myCheckStubs;
-    }
-
-    public void setCheckStubs(boolean checkStubs) {
-      myCheckStubs = checkStubs;
     }
   }
 }
