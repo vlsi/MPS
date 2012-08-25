@@ -34,6 +34,7 @@ import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 import java.lang.reflect.Constructor;
@@ -64,6 +65,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   private String[] myProperties = null;
 
+  private boolean myDisposed = false;
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private SNodeId myId;
@@ -828,8 +830,22 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
+  void dispose() {
+    //myModel = null;
+    //myRegisteredInModelFlag = false;
+    //myChildren = null;
+    //myReferences = null;
+    //myProperties = null;
+    myDisposed = true;
+    myUserObjects = null;
+  }
+
   public boolean isDisposed() {
-    return myModel != null && myModel.isDisposed();
+    return myDisposed;
+  }
+
+  public boolean shouldHaveBeenDisposed() {
+    return isDisposed() || myModel.isDisposed();
   }
 
   public boolean isDetached() {
