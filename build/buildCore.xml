@@ -2157,6 +2157,7 @@
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/stubUtils/source_gen" />
         <pathelement path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
+        <pathelement path="${mps_home}/core/openapi/source" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
         <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
@@ -2190,6 +2191,7 @@
       <fileset dir="${mps_home}/core/kernel/smodelRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/stubUtils/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/openapi/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
