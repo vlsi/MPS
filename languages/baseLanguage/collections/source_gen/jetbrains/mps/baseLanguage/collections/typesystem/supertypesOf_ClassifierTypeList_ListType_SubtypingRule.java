@@ -124,7 +124,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
         }
         {
           String childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_ = "parameter";
-          if (nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getChildCount(childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a, childRole_supertypesOf_ClassifierTypeList_ListType_h8kiwa_, 1))) {
             return false;
           }
           {

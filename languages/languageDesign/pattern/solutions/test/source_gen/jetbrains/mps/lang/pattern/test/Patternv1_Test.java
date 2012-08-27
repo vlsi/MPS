@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 @MPSLaunch
 public class Patternv1_Test extends BaseTransformationTest4 {
@@ -130,7 +131,7 @@ public class Patternv1_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_v1_1fh_ = "operand";
-            if (nodeToMatch_v1_1fh_a0.getChildCount(childRole_v1_1fh_) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_v1_1fh_a0, childRole_v1_1fh_, 1))) {
               return false;
             }
             {
@@ -148,7 +149,7 @@ public class Patternv1_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_v1_1fh__0 = "operation";
-            if (nodeToMatch_v1_1fh_a0.getChildCount(childRole_v1_1fh__0) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_v1_1fh_a0, childRole_v1_1fh__0, 1))) {
               return false;
             }
             {

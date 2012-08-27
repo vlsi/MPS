@@ -89,7 +89,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
         }
         {
           String childRole_check_ForeachWithErasure_gn1qzs_ = "parameter";
-          if (nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getChildCount(childRole_check_ForeachWithErasure_gn1qzs_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a, childRole_check_ForeachWithErasure_gn1qzs_, 1))) {
             return false;
           }
           {

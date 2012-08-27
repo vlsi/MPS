@@ -74,7 +74,7 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
         }
         {
           String childRole_map_type_comparableWith_Map_a1tqv3_ = "parameter";
-          if (nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildCount(childRole_map_type_comparableWith_Map_a1tqv3_) != 2) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a, childRole_map_type_comparableWith_Map_a1tqv3_, 2))) {
             return false;
           }
           {

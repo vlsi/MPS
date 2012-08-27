@@ -153,7 +153,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
         }
         {
           String childRole_SortedMap_comparableTo_sorted_map_1q5lf6_ = "parameter";
-          if (nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildCount(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_) != 2) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a, childRole_SortedMap_comparableTo_sorted_map_1q5lf6_, 2))) {
             return false;
           }
           {

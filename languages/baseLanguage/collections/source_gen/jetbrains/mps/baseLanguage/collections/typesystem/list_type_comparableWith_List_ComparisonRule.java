@@ -73,7 +73,7 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
         }
         {
           String childRole_list_type_comparableWith_List_ho857w_ = "parameter";
-          if (nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getChildCount(childRole_list_type_comparableWith_List_ho857w_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_list_type_comparableWith_List_ho857w_a0a, childRole_list_type_comparableWith_List_ho857w_, 1))) {
             return false;
           }
           {

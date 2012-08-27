@@ -7,6 +7,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class MapSrcListMacro_Behavior {
   public static void init(SNode thisNode) {
@@ -39,7 +40,7 @@ public class MapSrcListMacro_Behavior {
         }
         {
           String childRole_MapSrcListMacro_Behavior_wn5chh_ = "elementType";
-          if (nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0.getChildCount(childRole_MapSrcListMacro_Behavior_wn5chh_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_MapSrcListMacro_Behavior_wn5chh_a0a0a0, childRole_MapSrcListMacro_Behavior_wn5chh_, 1))) {
             return false;
           }
           {

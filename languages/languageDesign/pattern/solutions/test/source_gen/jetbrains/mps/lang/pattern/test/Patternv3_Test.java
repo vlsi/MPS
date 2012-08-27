@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 @MPSLaunch
 public class Patternv3_Test extends BaseTransformationTest4 {
@@ -114,7 +115,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_v3_1fi_ = "operand";
-            if (nodeToMatch_v3_1fi_a0.getChildCount(childRole_v3_1fi_) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_v3_1fi_a0, childRole_v3_1fi_, 1))) {
               return false;
             }
             {
@@ -132,7 +133,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_v3_1fi__0 = "operation";
-            if (nodeToMatch_v3_1fi_a0.getChildCount(childRole_v3_1fi__0) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_v3_1fi_a0, childRole_v3_1fi__0, 1))) {
               return false;
             }
             {
@@ -146,7 +147,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
                 patternVar_method = nodeToMatch_v3_1fi_a0a_0.getReferent("baseMethodDeclaration");
                 {
                   String childRole_v3_1fi__1 = "actualArgument";
-                  if (nodeToMatch_v3_1fi_a0a_0.getChildCount(childRole_v3_1fi__1) != 1) {
+                  if (!(PatternUtil.hasNChildren(nodeToMatch_v3_1fi_a0a_0, childRole_v3_1fi__1, 1))) {
                     return false;
                   }
                   {

@@ -30,7 +30,7 @@
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="84" startPosition="9" endLine="85" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="86" startPosition="139" endLine="87" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="90" startPosition="9" endLine="91" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="92" startPosition="129" endLine="93" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="92" startPosition="142" endLine="93" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="95" startPosition="11" endLine="96" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="96" startPosition="181" endLine="97" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="100" startPosition="7" endLine="101" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -103,7 +103,7 @@
     <scopeInfo nodeId="1032178265900242657" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="67" startPosition="30" endLine="68" endPosition="17" />
     <scopeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="81" startPosition="148" endLine="82" endPosition="23" />
     <scopeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="86" startPosition="139" endLine="87" endPosition="25" />
-    <scopeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="92" startPosition="129" endLine="93" endPosition="25" />
+    <scopeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="92" startPosition="142" endLine="93" endPosition="25" />
     <scopeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="104" startPosition="40" endLine="105" endPosition="19" />
     <scopeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="109" startPosition="69" endLine="110" endPosition="69" />
     <scopeInfo nodeId="1032178265900313087" fileName="check_ForeachWithErasure_NonTypesystemRule.java" startLine="115" startPosition="45" endLine="116" endPosition="28" />
@@ -10329,7 +10329,7 @@
     <nodeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="153" startPosition="59" endLine="154" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="155" startPosition="138" endLine="156" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="158" startPosition="9" endLine="159" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="160" startPosition="121" endLine="161" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="160" startPosition="134" endLine="161" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="163" startPosition="11" endLine="164" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="165" startPosition="13" endLine="166" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="166" startPosition="66" endLine="167" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -10397,7 +10397,7 @@
     <scopeInfo nodeId="1208355936702" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="37" startPosition="46" endLine="38" endPosition="60" />
     <scopeInfo nodeId="1208355936702" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="50" startPosition="27" endLine="51" endPosition="17" />
     <scopeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="155" startPosition="138" endLine="156" endPosition="23" />
-    <scopeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="160" startPosition="121" endLine="161" endPosition="25" />
+    <scopeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="160" startPosition="134" endLine="161" endPosition="25" />
     <scopeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="168" startPosition="150" endLine="169" endPosition="29" />
     <scopeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="173" startPosition="141" endLine="174" endPosition="31" />
     <scopeInfo nodeId="1208355958253" fileName="ObjectArraySupertypes_SubtypingRule.java" startLine="184" startPosition="40" endLine="185" endPosition="19" />

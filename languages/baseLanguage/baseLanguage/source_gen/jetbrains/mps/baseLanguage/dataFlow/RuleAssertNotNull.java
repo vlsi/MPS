@@ -7,6 +7,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleAssertNotNull extends DataFlowConstructor {
@@ -40,7 +41,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
         }
         {
           String childRole_RuleAssertNotNull_7fbm30_ = "condition";
-          if (nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getChildCount(childRole_RuleAssertNotNull_7fbm30_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_RuleAssertNotNull_7fbm30_a0a, childRole_RuleAssertNotNull_7fbm30_, 1))) {
             return false;
           }
           {
@@ -125,7 +126,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
           }
           {
             String childRole_RuleAssertNotNull_7fbm30__0 = "leftExpression";
-            if (nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0.getChildCount(childRole_RuleAssertNotNull_7fbm30__0) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0, childRole_RuleAssertNotNull_7fbm30__0, 1))) {
               return false;
             }
             {
@@ -139,7 +140,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
           }
           {
             String childRole_RuleAssertNotNull_7fbm30__1 = "rightExpression";
-            if (nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0.getChildCount(childRole_RuleAssertNotNull_7fbm30__1) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0, childRole_RuleAssertNotNull_7fbm30__1, 1))) {
               return false;
             }
             {
@@ -185,7 +186,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
           }
           {
             String childRole_RuleAssertNotNull_7fbm30__2 = "leftExpression";
-            if (nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0.getChildCount(childRole_RuleAssertNotNull_7fbm30__2) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0, childRole_RuleAssertNotNull_7fbm30__2, 1))) {
               return false;
             }
             {
@@ -201,7 +202,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
           }
           {
             String childRole_RuleAssertNotNull_7fbm30__3 = "rightExpression";
-            if (nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0.getChildCount(childRole_RuleAssertNotNull_7fbm30__3) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0, childRole_RuleAssertNotNull_7fbm30__3, 1))) {
               return false;
             }
             {

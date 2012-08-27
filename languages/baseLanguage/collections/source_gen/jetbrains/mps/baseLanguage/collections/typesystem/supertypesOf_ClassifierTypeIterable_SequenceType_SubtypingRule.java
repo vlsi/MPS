@@ -124,7 +124,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
         }
         {
           String childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_ = "parameter";
-          if (nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getChildCount(childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a, childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_, 1))) {
             return false;
           }
           {

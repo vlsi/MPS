@@ -3279,7 +3279,7 @@
     <nodeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="93" startPosition="9" endLine="94" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="95" startPosition="137" endLine="96" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="99" startPosition="9" endLine="100" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="101" startPosition="124" endLine="102" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="101" startPosition="137" endLine="102" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="104" startPosition="11" endLine="105" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="105" startPosition="174" endLine="106" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="109" startPosition="7" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3294,7 +3294,7 @@
     <nodeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="147" startPosition="9" endLine="148" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="149" startPosition="135" endLine="150" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="153" startPosition="9" endLine="154" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="155" startPosition="120" endLine="156" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="155" startPosition="133" endLine="156" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="158" startPosition="11" endLine="159" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="159" startPosition="168" endLine="160" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="163" startPosition="7" endLine="164" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3370,13 +3370,13 @@
     <scopeInfo nodeId="1238764345596" fileName="IterateOverIterable_Intention.java" startLine="76" startPosition="37" endLine="77" endPosition="51" />
     <scopeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="90" startPosition="146" endLine="91" endPosition="23" />
     <scopeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="95" startPosition="137" endLine="96" endPosition="25" />
-    <scopeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="101" startPosition="124" endLine="102" endPosition="25" />
+    <scopeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="101" startPosition="137" endLine="102" endPosition="25" />
     <scopeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="113" startPosition="40" endLine="114" endPosition="19" />
     <scopeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="118" startPosition="69" endLine="119" endPosition="75" />
     <scopeInfo nodeId="1238764774811" fileName="IterateOverIterable_Intention.java" startLine="124" startPosition="48" endLine="125" endPosition="31" />
     <scopeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="144" startPosition="144" endLine="145" endPosition="23" />
     <scopeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="149" startPosition="135" endLine="150" endPosition="25" />
-    <scopeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="155" startPosition="120" endLine="156" endPosition="25" />
+    <scopeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="155" startPosition="133" endLine="156" endPosition="25" />
     <scopeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="167" startPosition="40" endLine="168" endPosition="19" />
     <scopeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="172" startPosition="69" endLine="173" endPosition="75" />
     <scopeInfo nodeId="1238772364166" fileName="IterateOverIterable_Intention.java" startLine="178" startPosition="48" endLine="179" endPosition="31" />

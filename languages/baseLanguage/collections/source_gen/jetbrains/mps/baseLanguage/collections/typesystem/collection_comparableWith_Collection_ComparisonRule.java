@@ -73,7 +73,7 @@ public class collection_comparableWith_Collection_ComparisonRule extends Compari
         }
         {
           String childRole_collection_comparableWith_Collection_uvtyfy_ = "parameter";
-          if (nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a.getChildCount(childRole_collection_comparableWith_Collection_uvtyfy_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_collection_comparableWith_Collection_uvtyfy_a0a, childRole_collection_comparableWith_Collection_uvtyfy_, 1))) {
             return false;
           }
           {

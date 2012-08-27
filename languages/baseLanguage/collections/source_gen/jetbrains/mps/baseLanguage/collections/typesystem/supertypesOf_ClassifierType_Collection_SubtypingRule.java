@@ -124,7 +124,7 @@ public class supertypesOf_ClassifierType_Collection_SubtypingRule extends Subtyp
         }
         {
           String childRole_supertypesOf_ClassifierType_Collection_g8re64_ = "parameter";
-          if (nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a.getChildCount(childRole_supertypesOf_ClassifierType_Collection_g8re64_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a, childRole_supertypesOf_ClassifierType_Collection_g8re64_, 1))) {
             return false;
           }
           {

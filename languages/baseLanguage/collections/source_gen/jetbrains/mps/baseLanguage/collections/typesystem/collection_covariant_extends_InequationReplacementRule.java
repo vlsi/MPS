@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class collection_covariant_extends_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
@@ -81,7 +82,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
         }
         {
           String childRole_collection_covariant_extends_otuqx5_ = "elementType";
-          if (nodeToMatch_collection_covariant_extends_otuqx5_a0a.getChildCount(childRole_collection_covariant_extends_otuqx5_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_collection_covariant_extends_otuqx5_a0a, childRole_collection_covariant_extends_otuqx5_, 1))) {
             return false;
           }
           {
@@ -129,7 +130,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
         }
         {
           String childRole_collection_covariant_extends_otuqx5__0 = "elementType";
-          if (nodeToMatch_collection_covariant_extends_otuqx5_a0a_0.getChildCount(childRole_collection_covariant_extends_otuqx5__0) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_collection_covariant_extends_otuqx5_a0a_0, childRole_collection_covariant_extends_otuqx5__0, 1))) {
             return false;
           }
           {

@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class CopySrcListMacro_Behavior {
   public static void init(SNode thisNode) {
@@ -55,7 +56,7 @@ public class CopySrcListMacro_Behavior {
         }
         {
           String childRole_CopySrcListMacro_Behavior_26ny8p_ = "elementType";
-          if (nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0.getChildCount(childRole_CopySrcListMacro_Behavior_26ny8p_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_CopySrcListMacro_Behavior_26ny8p_a0a1a0, childRole_CopySrcListMacro_Behavior_26ny8p_, 1))) {
             return false;
           }
           {

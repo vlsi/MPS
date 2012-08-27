@@ -157,7 +157,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
         }
         {
           String childRole_ObjectArraySupertypes_mvbroc_ = "componentType";
-          if (nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getChildCount(childRole_ObjectArraySupertypes_mvbroc_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a, childRole_ObjectArraySupertypes_mvbroc_, 1))) {
             return false;
           }
           {

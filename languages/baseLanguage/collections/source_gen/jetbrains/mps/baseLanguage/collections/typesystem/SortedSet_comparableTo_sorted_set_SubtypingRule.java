@@ -124,7 +124,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
         }
         {
           String childRole_SortedSet_comparableTo_sorted_set_h9rz5k_ = "parameter";
-          if (nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a.getChildCount(childRole_SortedSet_comparableTo_sorted_set_h9rz5k_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_SortedSet_comparableTo_sorted_set_h9rz5k_a0a, childRole_SortedSet_comparableTo_sorted_set_h9rz5k_, 1))) {
             return false;
           }
           {

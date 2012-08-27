@@ -7,6 +7,7 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class LoopMacro_Behavior {
   public static void init(SNode thisNode) {
@@ -39,7 +40,7 @@ public class LoopMacro_Behavior {
         }
         {
           String childRole_LoopMacro_Behavior_cdqxf8_ = "elementType";
-          if (nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0.getChildCount(childRole_LoopMacro_Behavior_cdqxf8_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_LoopMacro_Behavior_cdqxf8_a0a0a0, childRole_LoopMacro_Behavior_cdqxf8_, 1))) {
             return false;
           }
           {

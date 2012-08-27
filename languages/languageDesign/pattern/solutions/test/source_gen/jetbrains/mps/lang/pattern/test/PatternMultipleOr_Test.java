@@ -18,6 +18,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 @MPSLaunch
 public class PatternMultipleOr_Test extends BaseTransformationTest4 {
@@ -143,7 +144,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_MultipleOr_qy0uft_ = "condition";
-            if (nodeToMatch_MultipleOr_qy0uft_a0.getChildCount(childRole_MultipleOr_qy0uft_) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a0, childRole_MultipleOr_qy0uft_, 1))) {
               return false;
             }
             {
@@ -183,7 +184,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
           }
           {
             String childRole_MultipleOr_qy0uft__12 = "ifTrue";
-            if (nodeToMatch_MultipleOr_qy0uft_a0.getChildCount(childRole_MultipleOr_qy0uft__12) != 1) {
+            if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a0, childRole_MultipleOr_qy0uft__12, 1))) {
               return false;
             }
             {
@@ -234,7 +235,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             }
             {
               String childRole_MultipleOr_qy0uft__0 = "leftExpression";
-              if (nodeToMatch_MultipleOr_qy0uft_a0a0a.getChildCount(childRole_MultipleOr_qy0uft__0) != 1) {
+              if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a0a0a, childRole_MultipleOr_qy0uft__0, 1))) {
                 return false;
               }
               {
@@ -250,7 +251,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             }
             {
               String childRole_MultipleOr_qy0uft__1 = "rightExpression";
-              if (nodeToMatch_MultipleOr_qy0uft_a0a0a.getChildCount(childRole_MultipleOr_qy0uft__1) != 1) {
+              if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a0a0a, childRole_MultipleOr_qy0uft__1, 1))) {
                 return false;
               }
               {
@@ -294,7 +295,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             }
             {
               String childRole_MultipleOr_qy0uft__2 = "leftExpression";
-              if (nodeToMatch_MultipleOr_qy0uft_a1a0a.getChildCount(childRole_MultipleOr_qy0uft__2) != 1) {
+              if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a1a0a, childRole_MultipleOr_qy0uft__2, 1))) {
                 return false;
               }
               {
@@ -308,7 +309,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             }
             {
               String childRole_MultipleOr_qy0uft__3 = "rightExpression";
-              if (nodeToMatch_MultipleOr_qy0uft_a1a0a.getChildCount(childRole_MultipleOr_qy0uft__3) != 1) {
+              if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a1a0a, childRole_MultipleOr_qy0uft__3, 1))) {
                 return false;
               }
               {
@@ -354,7 +355,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             }
             {
               String childRole_MultipleOr_qy0uft__4 = "leftExpression";
-              if (nodeToMatch_MultipleOr_qy0uft_a2a0a.getChildCount(childRole_MultipleOr_qy0uft__4) != 1) {
+              if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a2a0a, childRole_MultipleOr_qy0uft__4, 1))) {
                 return false;
               }
               {
@@ -367,7 +368,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                   }
                   {
                     String childRole_MultipleOr_qy0uft__5 = "leftExpression";
-                    if (nodeToMatch_MultipleOr_qy0uft_a0c0a0.getChildCount(childRole_MultipleOr_qy0uft__5) != 1) {
+                    if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a0c0a0, childRole_MultipleOr_qy0uft__5, 1))) {
                       return false;
                     }
                     {
@@ -381,7 +382,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                   }
                   {
                     String childRole_MultipleOr_qy0uft__6 = "rightExpression";
-                    if (nodeToMatch_MultipleOr_qy0uft_a0c0a0.getChildCount(childRole_MultipleOr_qy0uft__6) != 1) {
+                    if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a0c0a0, childRole_MultipleOr_qy0uft__6, 1))) {
                       return false;
                     }
                     {
@@ -400,7 +401,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             }
             {
               String childRole_MultipleOr_qy0uft__7 = "rightExpression";
-              if (nodeToMatch_MultipleOr_qy0uft_a2a0a.getChildCount(childRole_MultipleOr_qy0uft__7) != 1) {
+              if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a2a0a, childRole_MultipleOr_qy0uft__7, 1))) {
                 return false;
               }
               {
@@ -439,7 +440,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             }
             {
               String childRole_MultipleOr_qy0uft__8 = "leftExpression";
-              if (nodeToMatch_MultipleOr_qy0uft_a3a0a.getChildCount(childRole_MultipleOr_qy0uft__8) != 1) {
+              if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a3a0a, childRole_MultipleOr_qy0uft__8, 1))) {
                 return false;
               }
               {
@@ -452,7 +453,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                   }
                   {
                     String childRole_MultipleOr_qy0uft__9 = "leftExpression";
-                    if (nodeToMatch_MultipleOr_qy0uft_a0d0a0.getChildCount(childRole_MultipleOr_qy0uft__9) != 1) {
+                    if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a0d0a0, childRole_MultipleOr_qy0uft__9, 1))) {
                       return false;
                     }
                     {
@@ -468,7 +469,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                   }
                   {
                     String childRole_MultipleOr_qy0uft__10 = "rightExpression";
-                    if (nodeToMatch_MultipleOr_qy0uft_a0d0a0.getChildCount(childRole_MultipleOr_qy0uft__10) != 1) {
+                    if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a0d0a0, childRole_MultipleOr_qy0uft__10, 1))) {
                       return false;
                     }
                     {
@@ -485,7 +486,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
             }
             {
               String childRole_MultipleOr_qy0uft__11 = "rightExpression";
-              if (nodeToMatch_MultipleOr_qy0uft_a3a0a.getChildCount(childRole_MultipleOr_qy0uft__11) != 1) {
+              if (!(PatternUtil.hasNChildren(nodeToMatch_MultipleOr_qy0uft_a3a0a, childRole_MultipleOr_qy0uft__11, 1))) {
                 return false;
               }
               {

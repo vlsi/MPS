@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class MacroIntentionsUtil {
   public MacroIntentionsUtil() {
@@ -145,7 +146,7 @@ public class MacroIntentionsUtil {
         }
         {
           String childRole_MacroIntentionsUtil_iiuth6_ = "elementType";
-          if (nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0b.getChildCount(childRole_MacroIntentionsUtil_iiuth6_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_MacroIntentionsUtil_iiuth6_a0a0a0d0b, childRole_MacroIntentionsUtil_iiuth6_, 1))) {
             return false;
           }
           {

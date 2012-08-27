@@ -73,7 +73,7 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
         }
         {
           String childRole_queue_type_comparableWith_Queue_jt8ol0_ = "parameter";
-          if (nodeToMatch_queue_type_comparableWith_Queue_jt8ol0_a0a.getChildCount(childRole_queue_type_comparableWith_Queue_jt8ol0_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_queue_type_comparableWith_Queue_jt8ol0_a0a, childRole_queue_type_comparableWith_Queue_jt8ol0_, 1))) {
             return false;
           }
           {

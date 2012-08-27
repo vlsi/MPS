@@ -34,6 +34,7 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_6896005762093594382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -487,7 +488,7 @@ public class QueriesGenerated {
         }
         {
           String childRole_QueriesGenerated_x583g4_ = "content";
-          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a17.getChildCount(childRole_QueriesGenerated_x583g4_) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a17, childRole_QueriesGenerated_x583g4_, 1))) {
             return false;
           }
           {
@@ -506,7 +507,7 @@ public class QueriesGenerated {
               }
               {
                 String childRole_QueriesGenerated_x583g4__0 = "attributes";
-                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0tc.getChildCount(childRole_QueriesGenerated_x583g4__0) != 1) {
+                if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0tc, childRole_QueriesGenerated_x583g4__0, 1))) {
                   return false;
                 }
                 {
@@ -522,7 +523,7 @@ public class QueriesGenerated {
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__1 = "value";
-                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a17.getChildCount(childRole_QueriesGenerated_x583g4__1) != 1) {
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a17, childRole_QueriesGenerated_x583g4__1, 1))) {
                         return false;
                       }
                       {
@@ -579,7 +580,7 @@ public class QueriesGenerated {
         }
         {
           String childRole_QueriesGenerated_x583g4__2 = "content";
-          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a27.getChildCount(childRole_QueriesGenerated_x583g4__2) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a27, childRole_QueriesGenerated_x583g4__2, 1))) {
             return false;
           }
           {
@@ -598,7 +599,7 @@ public class QueriesGenerated {
               }
               {
                 String childRole_QueriesGenerated_x583g4__3 = "attributes";
-                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0uc.getChildCount(childRole_QueriesGenerated_x583g4__3) != 1) {
+                if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0uc, childRole_QueriesGenerated_x583g4__3, 1))) {
                   return false;
                 }
                 {
@@ -614,7 +615,7 @@ public class QueriesGenerated {
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__4 = "value";
-                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a27.getChildCount(childRole_QueriesGenerated_x583g4__4) != 1) {
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a27, childRole_QueriesGenerated_x583g4__4, 1))) {
                         return false;
                       }
                       {
@@ -671,7 +672,7 @@ public class QueriesGenerated {
         }
         {
           String childRole_QueriesGenerated_x583g4__5 = "content";
-          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a37.getChildCount(childRole_QueriesGenerated_x583g4__5) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a37, childRole_QueriesGenerated_x583g4__5, 1))) {
             return false;
           }
           {
@@ -690,7 +691,7 @@ public class QueriesGenerated {
               }
               {
                 String childRole_QueriesGenerated_x583g4__6 = "attributes";
-                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getChildCount(childRole_QueriesGenerated_x583g4__6) != 1) {
+                if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc, childRole_QueriesGenerated_x583g4__6, 1))) {
                   return false;
                 }
                 {
@@ -706,7 +707,7 @@ public class QueriesGenerated {
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__7 = "value";
-                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a37.getChildCount(childRole_QueriesGenerated_x583g4__7) != 1) {
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a37, childRole_QueriesGenerated_x583g4__7, 1))) {
                         return false;
                       }
                       {
@@ -763,7 +764,7 @@ public class QueriesGenerated {
         }
         {
           String childRole_QueriesGenerated_x583g4__8 = "content";
-          if (nodeToMatch_QueriesGenerated_x583g4_a0a0a47.getChildCount(childRole_QueriesGenerated_x583g4__8) != 1) {
+          if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a47, childRole_QueriesGenerated_x583g4__8, 1))) {
             return false;
           }
           {
@@ -782,7 +783,7 @@ public class QueriesGenerated {
               }
               {
                 String childRole_QueriesGenerated_x583g4__9 = "attributes";
-                if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getChildCount(childRole_QueriesGenerated_x583g4__9) != 1) {
+                if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc, childRole_QueriesGenerated_x583g4__9, 1))) {
                   return false;
                 }
                 {
@@ -798,7 +799,7 @@ public class QueriesGenerated {
                     }
                     {
                       String childRole_QueriesGenerated_x583g4__10 = "value";
-                      if (nodeToMatch_QueriesGenerated_x583g4_a0a0a0a47.getChildCount(childRole_QueriesGenerated_x583g4__10) != 1) {
+                      if (!(PatternUtil.hasNChildren(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a47, childRole_QueriesGenerated_x583g4__10, 1))) {
                         return false;
                       }
                       {
