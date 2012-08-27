@@ -63,6 +63,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   private boolean fullLoadUpdateMode;
 
   private StackTraceElement[] myDisposedStacktrace = null;
+  private final ModelDependenciesManager myModelDependenciesManager = new ModelDependenciesManager(this);
 
   public SModel(@NotNull SModelReference modelReference) {
     this(modelReference, new UniversalOptimizedNodeIdMap());
@@ -507,7 +508,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
   //---------imports manipulation--------
 
   public ModelDependenciesManager getModelDepsManager() {
-    return new ModelDependenciesManager(this);
+    return myModelDependenciesManager;
   }
 
   //language
@@ -865,6 +866,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
+    myModelDependenciesManager.dispose();
   }
 
   public boolean updateSModelReferences() {
