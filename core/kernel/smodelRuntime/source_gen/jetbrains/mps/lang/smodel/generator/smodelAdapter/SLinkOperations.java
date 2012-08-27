@@ -133,13 +133,6 @@ public class SLinkOperations {
     return children;
   }
 
-  public static int getCount(SNode parent, String role) {
-    if (parent != null) {
-      return parent.getChildCount(role);
-    }
-    return 0;
-  }
-
   public static List<SNode> getConceptLinkTargets(SNode node, String linkName) {
     if (node == null) {
       return new ArrayList<SNode>();

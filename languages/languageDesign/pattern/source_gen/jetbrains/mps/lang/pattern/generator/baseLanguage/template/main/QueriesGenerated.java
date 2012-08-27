@@ -78,7 +78,7 @@ public class QueriesGenerated {
     return _context.createUniqueName("childRole_" + SNodeOperations.getContainingRoot(mainNode), SNodeOperations.getContainingRoot(mainNode));
   }
 
-  public static Object propertyMacro_GetPropertyValue_6283201779507549347(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6803895172776101654(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
     return mainNode.getChildCount(role);
@@ -285,15 +285,11 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(linkPattern, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_2751254962088920352(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6803895172776101631(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode().getReferent("mainNode"), "nodeToMatch"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_6283201779507549373(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode().getReferent("mainNode"), "nodeToMatch"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-  }
-
-  public static Object referenceMacro_GetReferent_6283201779507549387(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_6803895172776101645(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "childRoleVar");
   }
 
