@@ -81,7 +81,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_6803895172776101654(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
-    return mainNode.getChildCount(role);
+    return mainNode.getChildren(role).size();
   }
 
   public static Object propertyMacro_GetPropertyValue_6283201779507549521(final IOperationContext operationContext, final PropertyMacroContext _context) {
