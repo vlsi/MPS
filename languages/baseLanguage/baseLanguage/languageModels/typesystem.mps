@@ -5901,10 +5901,10 @@
                     <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="4460871289557453854">
                       <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="1216393910650" resolveInfo="throwableType" />
                       <node role="value" roleId="tpd4.1210784642750" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4460871289557453855">
-                        <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4460871289557453856">
-                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1210182111348" resolveInfo="throwables" />
-                        </node>
                         <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="4460871289557453857" />
+                        <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2324219720863760843">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4460871289557451307" resolveInfo="throwTypes" />
+                        </node>
                       </node>
                     </node>
                   </node>
