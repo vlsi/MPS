@@ -29,6 +29,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
+import jetbrains.mps.idea.core.project.stubs.ProjectJavaSourceImporter;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -126,6 +127,16 @@ public class SolutionIdea extends Solution {
           myDependencies.add(dep);
         }
       }
+
+      if (ProjectJavaSourceImporter.ourSolution!=null) {
+        Dependency dep = new Dependency();
+        dep.setModuleRef(ProjectJavaSourceImporter.ourSolution.getModuleReference());
+        dep.setReexport(false);
+        myDependencies.add(dep);
+      } else {
+        System.out.println("Our stub solution is MISSING");
+      }
+
       for (Module usedModule : usedModules) {
         MPSFacet usedModuleMPSFacet = FacetManager.getInstance(usedModule).getFacetByType(MPSFacetType.ID);
         if (usedModuleMPSFacet != null && usedModuleMPSFacet.wasInitialized()) {
