@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.ide.java.javaSources" uuid="e1e9f9bd-a1ee-4207-b5fe-bfb4568daf36" doNotGenerateAdapters="true">
+<language namespace="jetbrains.mps.ide.java.javaSources" uuid="e1e9f9bd-a1ee-4207-b5fe-bfb4568daf36">
   <models>
     <modelRoot path="${module}/classes_gen">
       <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />

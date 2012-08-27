@@ -114,7 +114,7 @@ public class ASTConverter {
     // FIXME work around. what's with interface here 
     if (!(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) && flagSet(x.modifiers, ClassFileConstants.AccStatic)) {
       // setting nonStatic only if static keyword is present 
-      SPropertyOperations.set(cls, "nonStatic", "" + false);
+      SPropertyOperations.set(cls, "nonStatic", "" + (false));
     }
 
     // <node> 
@@ -160,8 +160,8 @@ public class ASTConverter {
             return SNodeOperations.cast(convertTypeRef(it), "jetbrains.mps.baseLanguage.structure.ClassifierType");
           }
         }));
-        SPropertyOperations.set(claz, "abstractClass", "" + flagSet(x.modifiers, ClassFileConstants.AccAbstract));
-        SPropertyOperations.set(claz, "isFinal", "" + flagSet(x.modifiers, ClassFileConstants.AccFinal));
+        SPropertyOperations.set(claz, "abstractClass", "" + (flagSet(x.modifiers, ClassFileConstants.AccAbstract)));
+        SPropertyOperations.set(claz, "isFinal", "" + (flagSet(x.modifiers, ClassFileConstants.AccFinal)));
       }
     }
 
@@ -222,8 +222,8 @@ public class ASTConverter {
           fields = SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
           SNode fieldDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
 
-          SPropertyOperations.set(fieldDecl, "isVolatile", "" + flagSet(f.modifiers, ClassFileConstants.AccVolatile));
-          SPropertyOperations.set(fieldDecl, "isTransient", "" + flagSet(f.modifiers, ClassFileConstants.AccTransient));
+          SPropertyOperations.set(fieldDecl, "isVolatile", "" + (flagSet(f.modifiers, ClassFileConstants.AccVolatile)));
+          SPropertyOperations.set(fieldDecl, "isTransient", "" + (flagSet(f.modifiers, ClassFileConstants.AccTransient)));
 
           fDecl = fieldDecl;
         }
@@ -236,7 +236,7 @@ public class ASTConverter {
 
           SLinkOperations.setTarget(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", convertVisibility(f.modifiers), true);
 
-          SPropertyOperations.set(fDecl, "isFinal", "" + flagSet(f.modifiers, ClassFileConstants.AccFinal));
+          SPropertyOperations.set(fDecl, "isFinal", "" + (flagSet(f.modifiers, ClassFileConstants.AccFinal)));
 
           ListSequence.fromList(fields).addElement(fDecl);
         }
@@ -264,7 +264,7 @@ public class ASTConverter {
           }
 
           if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
-            SPropertyOperations.set(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract", "" + true);
+            SPropertyOperations.set(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract", "" + (true));
             SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", new ASTConverter.QuotationClass_rbndtb_a0a1a3a1a3a53a1().createNode(), true);
           }
 
@@ -355,7 +355,7 @@ public class ASTConverter {
       SNode imd = result;
       if (SNodeOperations.isInstanceOf(imd, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
         if (flagSet(x.modifiers, ClassFileConstants.AccAbstract)) {
-          SPropertyOperations.set(imd, "isAbstract", "" + true);
+          SPropertyOperations.set(imd, "isAbstract", "" + (true));
         }
       }
     }
@@ -399,8 +399,8 @@ public class ASTConverter {
     }
 
     // doesn't make sense for constructor, but it's how it's done in baseLanguage.structure 
-    SPropertyOperations.set(result, "isFinal", "" + flagSet(x.modifiers, ClassFileConstants.AccFinal));
-    SPropertyOperations.set(result, "isSynchronized", "" + flagSet(x.modifiers, ClassFileConstants.AccSynchronized));
+    SPropertyOperations.set(result, "isFinal", "" + (flagSet(x.modifiers, ClassFileConstants.AccFinal)));
+    SPropertyOperations.set(result, "isSynchronized", "" + (flagSet(x.modifiers, ClassFileConstants.AccSynchronized)));
 
     if (x instanceof MethodDeclaration) {
       // Not a constructor 
