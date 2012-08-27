@@ -69,8 +69,6 @@ public interface SNode {
 
   boolean isEmpty(String role);
 
-  int getChildCount(String role);
-
   // refs
 
   void setReferenceTarget(String role, SNode target);
