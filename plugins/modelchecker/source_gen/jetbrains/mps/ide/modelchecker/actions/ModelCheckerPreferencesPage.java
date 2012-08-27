@@ -14,7 +14,7 @@ public class ModelCheckerPreferencesPage {
   private JPanel myPage;
   private JCheckBox myCheckUnresolvedReferencesCheckBox = new JCheckBox("Check for unresolved references");
   private JCheckBox myCheckConstraintsCheckBox = new JCheckBox("Check constraints");
-  private JCheckBox myCheckScopesCheckBox = new JCheckBox("Check references for valid search scopes");
+  private JCheckBox myCheckModelPropertiesCheckBox = new JCheckBox("Check model properties");
   private JCheckBox myCheckTypesystemCheckBox = new JCheckBox("Perform typesystem checks");
   private JCheckBox myCheckStubsCheckBox = new JCheckBox("Check stub models");
   private ModelCheckerSettings myModelCheckerSettings;
@@ -23,19 +23,14 @@ public class ModelCheckerPreferencesPage {
     myModelCheckerSettings = settings;
     myCheckUnresolvedReferencesCheckBox.setSelected(myModelCheckerSettings.isCheckUnresolvedReferences());
     myCheckConstraintsCheckBox.setSelected(myModelCheckerSettings.isCheckConstraints());
-    /*
-      myCheckScopesCheckBox.setSelected(myModelCheckerSettings.isCheckScopes());
-    */
+    myCheckModelPropertiesCheckBox.setSelected(myModelCheckerSettings.isCheckModelProperties());
     myCheckTypesystemCheckBox.setSelected(myModelCheckerSettings.isCheckTypesystem());
     myCheckStubsCheckBox.setSelected(myModelCheckerSettings.isCheckStubs());
 
     JPanel optionsPanel = new JPanel(new GridLayout(0, 1));
     optionsPanel.add(myCheckUnresolvedReferencesCheckBox);
     optionsPanel.add(myCheckConstraintsCheckBox);
-
-    /*
-      optionsPanel.add(myCheckScopesCheckBox);
-    */
+    optionsPanel.add(myCheckModelPropertiesCheckBox);
     optionsPanel.add(myCheckTypesystemCheckBox);
     optionsPanel.add(myCheckStubsCheckBox);
 
@@ -63,7 +58,7 @@ public class ModelCheckerPreferencesPage {
   public void commit() {
     myModelCheckerSettings.setCheckUnresolvedReferences(myCheckUnresolvedReferencesCheckBox.isSelected());
     myModelCheckerSettings.setCheckConstraints(myCheckConstraintsCheckBox.isSelected());
-    myModelCheckerSettings.setCheckScopes(myCheckScopesCheckBox.isSelected());
+    myModelCheckerSettings.setCheckModelProperties(myCheckModelPropertiesCheckBox.isSelected());
     myModelCheckerSettings.setCheckTypesystem(myCheckTypesystemCheckBox.isSelected());
     myModelCheckerSettings.setCheckStubs(myCheckStubsCheckBox.isSelected());
   }
@@ -75,7 +70,7 @@ public class ModelCheckerPreferencesPage {
     if (myModelCheckerSettings.isCheckConstraints() != myCheckConstraintsCheckBox.isSelected()) {
       return true;
     }
-    if (myModelCheckerSettings.isCheckScopes() != myCheckScopesCheckBox.isSelected()) {
+    if (myModelCheckerSettings.isCheckModelProperties() != myCheckModelPropertiesCheckBox.isSelected()) {
       return true;
     }
     if (myModelCheckerSettings.isCheckTypesystem() != myCheckTypesystemCheckBox.isSelected()) {
