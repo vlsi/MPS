@@ -27,7 +27,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport;
 
 public class JavaSourceStubModelDS extends StubModelDataSource implements FastFindSupportProvider {
   private String myRoot;
@@ -92,6 +91,12 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
+  public List<SNode> parseFile(char[] contents, SModel model) {
+    JavaParser parser = new JavaParser();
+    String code = new String(contents);
+    return parser.parse(code, ParseDepth.TOPLEVEL, true, model);
+  }
+
   public Collection<NodeDescriptor> getNodeDescriptors() {
     if (myModelLoaded) {
       System.err.println("Model has already been loaded");
@@ -104,6 +109,6 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
   @Nullable
   public FastFindSupport getFastFindSupport() {
     // <node> 
-    return new StubModelsFastFindSupport();
+    return null;
   }
 }

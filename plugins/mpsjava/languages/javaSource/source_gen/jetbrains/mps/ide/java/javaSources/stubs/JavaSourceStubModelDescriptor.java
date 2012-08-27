@@ -8,6 +8,15 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.IModule;
 import java.util.Collection;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
+import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.SModel;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor implements NodesNavigationContributor {
   public JavaSourceStubModelDescriptor(SModelReference modelReference, JavaSourceStubModelDS source, IModule module) {
@@ -16,5 +25,37 @@ public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor imple
 
   public Collection<NodeDescriptor> getNodeDescriptors() {
     return ((JavaSourceStubModelDS) getSource()).getNodeDescriptors();
+  }
+
+  public void reparseOneFile(char[] contents) {
+    ModelDataSource ds = getSource();
+    assert ds instanceof JavaSourceStubModelDS;
+
+    final SModel myModel = getSModel();
+    List<SNode> nodes = ((JavaSourceStubModelDS) ds).parseFile(contents, myModel);
+
+    // replace existing nodes with matching names 
+    List<SNode> roots = SModelOperations.getRoots(myModel, null);
+    for (SNode node : ListSequence.fromList(nodes)) {
+      final String name = node.getName();
+      // TODO use myModel/.getNodeById 
+      final SNode root = ListSequence.fromList(roots).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return it.getName().equals(name);
+        }
+      });
+
+      final SNode theNode = node;
+
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          if ((root == null)) {
+            SModelOperations.addRootNode(myModel, theNode);
+          } else {
+            SNodeOperations.replaceWithAnother(root, theNode);
+          }
+        }
+      });
+    }
   }
 }

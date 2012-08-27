@@ -68,8 +68,8 @@ public class ASTConverter {
   }
 
   public SNode convertRoot(ASTNode node) {
-    if (node instanceof TypeDeclaration) {
 
+    if (node instanceof TypeDeclaration) {
       TypeDeclaration decl = (TypeDeclaration) node;
       String name = new String(decl.name);
       myClassResolver.addTypeName(name);
@@ -79,7 +79,6 @@ public class ASTConverter {
       } finally {
         myClassResolver.leaveType();
       }
-
     } else {
       throw new JavaParseException("Root is not type decl");
     }

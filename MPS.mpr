@@ -327,7 +327,6 @@
       <modulePath path="${project}/plugins/mps-core/languages/core.properties/sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-core/languages/core.xml/sandbox/sandbox.msd" folder="build" />
       <modulePath path="${project}/plugins/mps-core/languages/core.xml/xml.mpl" folder="build" />
-      <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/jetbrains.mps.xml.sandbox/jetbrains.mps.xml.sandbox.msd" folder="languages.xml" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/buildlanguage/buildlanguage.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/custommps/custommps.mpl" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/dependency/dependency.mpl" folder="languages.build" />
@@ -338,6 +337,7 @@
       <modulePath path="${project}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.build.mpsdist/mpsdist.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/execution.msd" folder="languages.build" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/languageDescriptor.mpl" folder="languages.xml" />
+      <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/jetbrains.mps.xml.sandbox/jetbrains.mps.xml.sandbox.msd" folder="languages.xml" />
       <modulePath path="${project}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/pluginSolution/pluginSolution.msd" folder="languages.xml" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/quickQueryLanguage.mpl" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" folder="core.language-design" />
