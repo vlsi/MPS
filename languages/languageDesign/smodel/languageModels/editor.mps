@@ -162,10 +162,6 @@
       <property name="name" nameId="tpck.1169194664001" value="SemanticDowncastExpression_Symbol_Actions" />
       <link role="applicableConcept" roleId="tpc2.1139535219968" targetNodeId="tp25.1145404486709" resolveInfo="SemanticDowncastExpression" />
     </node>
-    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1145468780047">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.linkList" />
-      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.1145468686058" resolveInfo="LinkList_GetCountOperation" />
-    </node>
     <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="1145567617432">
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp25.1145567426890" resolveInfo="SNodeListCreator" />
     </node>
@@ -1477,17 +1473,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </root>
-  <root id="1145468780047">
-    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1145468793690">
-      <property name="text" nameId="tpc2.1073389577007" value="count" />
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.EditableStyleClassItem" typeId="tpc2.1186414860679" id="1214398031985">
-        <property name="flag" nameId="tpc2.1186414551515" value="true" />
-      </node>
-      <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingRightStyleClassItem" typeId="tpc2.1215007897487" id="1219241280968">
-        <property name="value" nameId="tpc2.1215007802031" value="0.0" />
       </node>
     </node>
   </root>

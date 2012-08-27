@@ -189,11 +189,6 @@
       <property name="name" nameId="tpck.1169194664001" value="SemanticDowncastExpression" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
-    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1145468686058">
-      <property name="name" nameId="tpck.1169194664001" value="LinkList_GetCountOperation" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="operation.linkList" />
-      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
-    </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1145567426890">
       <property name="name" nameId="tpck.1169194664001" value="SNodeListCreator" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1145552809883" resolveInfo="AbstractCreator" />
@@ -1360,30 +1355,6 @@
       <property name="role" nameId="tpce.1071599776563" value="leftExpression" />
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
-    </node>
-  </root>
-  <root id="1145468686058">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1145468686060">
-      <property name="value" nameId="tpce.1105725733873" value="count" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1145468686061">
-      <property name="value" nameId="tpce.1105725733873" value="number of children/referents" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="1145468686062">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="1138763350436" resolveInfo="applicableToLinkList" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3342854882747946700">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1179356603587">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1217022095863" resolveInfo="returnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.IntegerType" typeId="tpee.1070534370425" id="1179356605386" />
-    </node>
-    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4943859628564383057">
-      <property name="comment" nameId="tpce.1225118933224" value="this 'count' operation was replaced with nlist&lt;&gt; 'size' operation from collections laguage" />
-      <property name="build" nameId="tpce.1225118929411" value="14333" />
     </node>
   </root>
   <root id="1145567426890">
