@@ -67,8 +67,6 @@ public interface SNode {
 
   Iterable<? extends SNode> getChildren();
 
-  boolean isEmpty(String role);
-
   // refs
 
   void setReferenceTarget(String role, SNode target);

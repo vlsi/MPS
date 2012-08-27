@@ -1734,12 +1734,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   @Override
-  public boolean isEmpty(String role) {
-    // TODO API (implement)
-    return false;
-  }
-
-  @Override
   public Iterable<Object> getUserObjectsKeys() {
     // TODO API (implement)
     return null;
