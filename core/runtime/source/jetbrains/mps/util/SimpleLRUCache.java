@@ -64,6 +64,8 @@ public class SimpleLRUCache<K> {
     return k;
   }
 
+  protected void purged(K k) {}
+
   @Override
   public String toString() {
     return "LRU["+firstLevelCache.size()+", "+secondLevelCache.size()+"]";
@@ -150,6 +152,7 @@ public class SimpleLRUCache<K> {
         if (transitionalCache.putIfAbsent(toRemove, toRemove) == null) {
           if (firstLevelCache.remove(toRemove, toRemove)) {
             roomLeftFirstLevel.incrementAndGet();
+            purged(toRemove);
           }
           transitionalCache.remove(toRemove, toRemove);
         }
