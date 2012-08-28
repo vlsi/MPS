@@ -20,6 +20,10 @@ public class MpsScopesUtil {
 
   public static String getSignature(SNode classifierMember, SNode classifier) {
     String classifierPrefix = ((String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(SNodeOperations.getParent(classifierMember), "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getFqName_1213877404258", new Class[]{SNode.class})) + ":";
+    if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
+      return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "name");
+    }
+
     if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       return classifierPrefix + SPropertyOperations.getString(SNodeOperations.cast(classifierMember, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "name");
     }
@@ -33,7 +37,7 @@ public class MpsScopesUtil {
   public static List<String> getMembersSignatures(SNode classifier) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
 
-    for (SNode memberType : ListSequence.fromList(Arrays.asList(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
+    for (SNode memberType : ListSequence.fromList(Arrays.asList(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")))) {
       Scope scope = ((Scope) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getMembers_2201875424515824604", new Class[]{SNode.class, SNode.class}, memberType));
       for (SNode member : scope.getAvailableElements(null)) {
         if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {

@@ -3106,58 +3106,62 @@
   </root>
   <root nodeId="6192102952330246943">
     <nodeInfo nodeId="6192102952330317342" fileName="MpsScopesUtil.java" startLine="21" startPosition="79" endLine="22" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6192102952330317337" fileName="MpsScopesUtil.java" startLine="23" startPosition="117" endLine="24" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6192102952330318613" fileName="MpsScopesUtil.java" startLine="26" startPosition="119" endLine="27" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6192102952330318523" fileName="MpsScopesUtil.java" startLine="27" startPosition="122" endLine="28" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6192102952330318586" fileName="MpsScopesUtil.java" startLine="29" startPosition="5" endLine="30" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6192102952330253471" fileName="MpsScopesUtil.java" startLine="33" startPosition="69" endLine="34" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6192102952330253482" fileName="MpsScopesUtil.java" startLine="34" startPosition="73" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6192102952330285111" fileName="MpsScopesUtil.java" startLine="36" startPosition="489" endLine="37" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6192102952330293867" fileName="MpsScopesUtil.java" startLine="39" startPosition="111" endLine="40" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6192102952330253487" fileName="MpsScopesUtil.java" startLine="48" startPosition="5" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6192102952330253484" fileName="MpsScopesUtil.java" startLine="49" startPosition="0" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852907523808703510" fileName="MpsScopesUtil.java" startLine="23" startPosition="121" endLine="24" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852907523808703475" fileName="MpsScopesUtil.java" startLine="25" startPosition="5" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6192102952330317337" fileName="MpsScopesUtil.java" startLine="27" startPosition="117" endLine="28" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6192102952330318613" fileName="MpsScopesUtil.java" startLine="30" startPosition="119" endLine="31" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6192102952330318523" fileName="MpsScopesUtil.java" startLine="31" startPosition="122" endLine="32" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6192102952330318586" fileName="MpsScopesUtil.java" startLine="33" startPosition="5" endLine="34" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6192102952330253471" fileName="MpsScopesUtil.java" startLine="37" startPosition="69" endLine="38" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6192102952330253482" fileName="MpsScopesUtil.java" startLine="38" startPosition="73" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6192102952330285111" fileName="MpsScopesUtil.java" startLine="40" startPosition="596" endLine="41" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6192102952330293867" fileName="MpsScopesUtil.java" startLine="43" startPosition="111" endLine="44" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6192102952330253487" fileName="MpsScopesUtil.java" startLine="52" startPosition="5" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6192102952330253484" fileName="MpsScopesUtil.java" startLine="53" startPosition="0" endLine="54" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6192102952330246945" fileName="MpsScopesUtil.java" startLine="17" startPosition="28" endLine="19" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsScopesUtil#()V" />
-    <nodeInfo nodeId="6192102952330317305" fileName="MpsScopesUtil.java" startLine="22" startPosition="277" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6192102952330317574" fileName="MpsScopesUtil.java" startLine="25" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6192102952330285182" fileName="MpsScopesUtil.java" startLine="41" startPosition="16" endLine="45" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6192102952330293959" fileName="MpsScopesUtil.java" startLine="41" startPosition="14" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6192102952330293831" fileName="MpsScopesUtil.java" startLine="38" startPosition="61" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6192102952330285145" fileName="MpsScopesUtil.java" startLine="37" startPosition="186" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6192102952330293695" fileName="MpsScopesUtil.java" startLine="20" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSignature#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6192102952330285064" fileName="MpsScopesUtil.java" startLine="35" startPosition="0" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6192102952330253451" fileName="MpsScopesUtil.java" startLine="32" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMembersSignatures#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
+    <nodeInfo nodeId="852907523808703476" fileName="MpsScopesUtil.java" startLine="22" startPosition="277" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6192102952330317305" fileName="MpsScopesUtil.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6192102952330317574" fileName="MpsScopesUtil.java" startLine="29" startPosition="5" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6192102952330285182" fileName="MpsScopesUtil.java" startLine="45" startPosition="16" endLine="49" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6192102952330293959" fileName="MpsScopesUtil.java" startLine="45" startPosition="14" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6192102952330293831" fileName="MpsScopesUtil.java" startLine="42" startPosition="61" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6192102952330285145" fileName="MpsScopesUtil.java" startLine="41" startPosition="186" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6192102952330285064" fileName="MpsScopesUtil.java" startLine="39" startPosition="0" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="6192102952330293695" fileName="MpsScopesUtil.java" startLine="20" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSignature#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6192102952330253451" fileName="MpsScopesUtil.java" startLine="36" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMembersSignatures#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="6192102952330246948" fileName="MpsScopesUtil.java" startLine="18" startPosition="26" endLine="18" endPosition="26" />
-    <scopeInfo nodeId="6192102952330317307" fileName="MpsScopesUtil.java" startLine="23" startPosition="117" endLine="24" endPosition="170" />
-    <scopeInfo nodeId="6192102952330293832" fileName="MpsScopesUtil.java" startLine="39" startPosition="111" endLine="40" endPosition="93" />
+    <scopeInfo nodeId="852907523808703477" fileName="MpsScopesUtil.java" startLine="23" startPosition="121" endLine="24" endPosition="174" />
+    <scopeInfo nodeId="6192102952330317307" fileName="MpsScopesUtil.java" startLine="27" startPosition="117" endLine="28" endPosition="170" />
+    <scopeInfo nodeId="6192102952330293832" fileName="MpsScopesUtil.java" startLine="43" startPosition="111" endLine="44" endPosition="93" />
     <scopeInfo nodeId="6192102952330246945" fileName="MpsScopesUtil.java" startLine="17" startPosition="28" endLine="19" endPosition="3" />
-    <scopeInfo nodeId="6192102952330317575" fileName="MpsScopesUtil.java" startLine="26" startPosition="119" endLine="28" endPosition="290">
+    <scopeInfo nodeId="6192102952330317575" fileName="MpsScopesUtil.java" startLine="30" startPosition="119" endLine="32" endPosition="290">
       <varInfo nodeId="6192102952330318614" varName="method" />
     </scopeInfo>
-    <scopeInfo nodeId="6192102952330293960" fileName="MpsScopesUtil.java" startLine="41" startPosition="16" endLine="45" endPosition="49" />
-    <scopeInfo nodeId="6192102952330285146" fileName="MpsScopesUtil.java" startLine="38" startPosition="61" endLine="46" endPosition="9" />
-    <scopeInfo nodeId="6192102952330293698" fileName="MpsScopesUtil.java" startLine="21" startPosition="79" endLine="30" endPosition="50">
-      <varInfo nodeId="6192102952330317343" varName="classifierPrefix" />
-    </scopeInfo>
-    <scopeInfo nodeId="6192102952330285145" fileName="MpsScopesUtil.java" startLine="37" startPosition="186" endLine="47" endPosition="7">
+    <scopeInfo nodeId="6192102952330293960" fileName="MpsScopesUtil.java" startLine="45" startPosition="16" endLine="49" endPosition="49" />
+    <scopeInfo nodeId="6192102952330285146" fileName="MpsScopesUtil.java" startLine="42" startPosition="61" endLine="50" endPosition="9" />
+    <scopeInfo nodeId="6192102952330285145" fileName="MpsScopesUtil.java" startLine="41" startPosition="186" endLine="51" endPosition="7">
       <varInfo nodeId="6192102952330285148" varName="member" />
     </scopeInfo>
-    <scopeInfo nodeId="6192102952330285067" fileName="MpsScopesUtil.java" startLine="36" startPosition="489" endLine="47" endPosition="7">
+    <scopeInfo nodeId="6192102952330285067" fileName="MpsScopesUtil.java" startLine="40" startPosition="596" endLine="51" endPosition="7">
       <varInfo nodeId="6192102952330285112" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="6192102952330293695" fileName="MpsScopesUtil.java" startLine="20" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="6192102952330293698" fileName="MpsScopesUtil.java" startLine="21" startPosition="79" endLine="34" endPosition="50">
+      <varInfo nodeId="6192102952330317343" varName="classifierPrefix" />
+    </scopeInfo>
+    <scopeInfo nodeId="6192102952330285064" fileName="MpsScopesUtil.java" startLine="39" startPosition="0" endLine="52" endPosition="5">
+      <varInfo nodeId="6192102952330285065" varName="memberType" />
+    </scopeInfo>
+    <scopeInfo nodeId="6192102952330293695" fileName="MpsScopesUtil.java" startLine="20" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="6192102952330293702" varName="classifier" />
       <varInfo nodeId="6192102952330293700" varName="classifierMember" />
     </scopeInfo>
-    <scopeInfo nodeId="6192102952330285064" fileName="MpsScopesUtil.java" startLine="35" startPosition="0" endLine="48" endPosition="5">
-      <varInfo nodeId="6192102952330285065" varName="memberType" />
-    </scopeInfo>
-    <scopeInfo nodeId="6192102952330253454" fileName="MpsScopesUtil.java" startLine="33" startPosition="69" endLine="50" endPosition="18">
+    <scopeInfo nodeId="6192102952330253454" fileName="MpsScopesUtil.java" startLine="37" startPosition="69" endLine="54" endPosition="18">
       <varInfo nodeId="6192102952330253472" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="6192102952330253451" fileName="MpsScopesUtil.java" startLine="32" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="6192102952330253451" fileName="MpsScopesUtil.java" startLine="36" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="6192102952330253469" varName="classifier" />
     </scopeInfo>
-    <unitInfo nodeId="6192102952330246943" fileName="MpsScopesUtil.java" startLine="17" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.MpsScopesUtil" />
+    <unitInfo nodeId="6192102952330246943" fileName="MpsScopesUtil.java" startLine="17" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.search.MpsScopesUtil" />
   </root>
   <root nodeId="8442551749397137296">
     <nodeInfo nodeId="8442551749397137336" fileName="BaseLanguageUtil.java" startLine="15" startPosition="33" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
