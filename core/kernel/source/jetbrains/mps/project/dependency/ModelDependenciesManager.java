@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -74,7 +75,7 @@ public class ModelDependenciesManager {
           myModuleWatcher.watchDevKit(exDevKit);
         }
       }
-      this.myCachedDeps = result;
+      this.myCachedDeps = Collections.unmodifiableSet(result);
     }
     return myCachedDeps;
   }
