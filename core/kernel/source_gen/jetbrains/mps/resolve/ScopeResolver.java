@@ -16,7 +16,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.ModelAccess;
 
 public class ScopeResolver implements IResolver {
   private static final Logger LOG = Logger.getLogger(ScopeResolver.class);
@@ -60,12 +59,7 @@ public class ScopeResolver implements IResolver {
         if (result == null) {
           return false;
         }
-        final SNode finalResult = result;
-        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-          public void run() {
-            sourceNode.setReferent(reference.getRole(), finalResult, false);
-          }
-        }, operationContext.getProject());
+        sourceNode.setReferent(reference.getRole(), result, false);
         return true;
       }
     });

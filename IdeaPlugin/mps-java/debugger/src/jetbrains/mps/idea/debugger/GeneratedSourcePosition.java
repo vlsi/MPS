@@ -26,15 +26,13 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -85,15 +83,44 @@ public class GeneratedSourcePosition {
 
   @Nullable
   public PsiFile getPsiFile(final Project project) {
-    final String fullPath = ModelAccess.instance().runReadAction(new Computable<String>() {
+    SModelReference reference = ModelAccess.instance().runReadAction(new Computable<SModelReference>() {
       @Override
-      public String compute() {
+      public SModelReference compute() {
         SNode node = getNode();
         if (node == null) return null;
         SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        return modelDescriptor.getSModelReference();
+      }
+    });
+    if (reference == null) {
+      return null;
+    }
+    return getPsiFile(project, reference, myFileName);
+  }
+
+  @Nullable
+  public static GeneratedSourcePosition fromNode(final SNode node) {
+    SModelDescriptor model = node.getModel().getModelDescriptor();
+    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
+    if (debugInfo == null) {
+      return null;
+    }
+    TraceablePositionInfo position = debugInfo.getPositionForNode(node.getSNodeId().toString());
+    if (position == null) return null;
+
+    return new GeneratedSourcePosition(debugInfo.getUnitNameForLine(position.getFileName(), position.getStartLine()), position.getFileName(), position.getStartLine());
+  }
+
+
+  @Nullable
+  public static PsiFile getPsiFile(final Project project, final SModelReference modelReference, final String generatedFileName) {
+    final String fullPath = ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
         IModule module = modelDescriptor.getModule();
         IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, FileSystem.getInstance().getFileByPath(module.getGeneratorOutputPath()));
-        IFile file = defaultOutputDir.getDescendant(myFileName);
+        IFile file = defaultOutputDir.getDescendant(generatedFileName);
         if (!file.exists()) {
           return null;
         }
@@ -115,18 +142,5 @@ public class GeneratedSourcePosition {
         return PsiManager.getInstance(project).findFile(file);
       }
     });
-  }
-
-  @Nullable
-  public static GeneratedSourcePosition fromNode(final SNode node) {
-    SModelDescriptor model = node.getModel().getModelDescriptor();
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(model);
-    if (debugInfo == null) {
-      return null;
-    }
-    TraceablePositionInfo position = debugInfo.getPositionForNode(node.getSNodeId().toString());
-    if (position == null) return null;
-
-    return new GeneratedSourcePosition(debugInfo.getUnitNameForLine(position.getFileName(), position.getStartLine()), position.getFileName(), position.getStartLine());
   }
 }

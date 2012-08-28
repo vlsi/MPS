@@ -274,6 +274,7 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-java/debugger/src" />
+        <path location="${mps_home}/IdeaPlugin/mps-java/scopes/src" />
         <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
       </src>
       <classpath>
@@ -302,6 +303,7 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-java">
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/debugger/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/mps-java/scopes/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
