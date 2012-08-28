@@ -29,6 +29,7 @@ import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
+import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.vfs.IFile;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -66,12 +67,41 @@ public class CheckScopesAction extends AnAction {
             }
             Set<String> ideaMembers = new TreeSet<String>(IdeaScopesUtils.getMembersFromClass_New(clazz));
             Set<String> mpsMembers = new TreeSet<String>(MpsScopesUtil.getMembersSignatures(root));
-            ideaMembers.size();
-            // todo: ...
+            checkScopesOnEquality(clazz.getQualifiedName(), ideaMembers, mpsMembers);
           }
         }
       }
     });
+  }
+
+  private static void checkScopesOnEquality(String classifierFqName, Set<String> ideaMembers, Set<String> mpsMembers) {
+    if (ideaMembers.equals(mpsMembers)) {
+      return;
+    }
+
+    Set<String> commonMembers = new HashSet<String>();
+    commonMembers.addAll(ideaMembers);
+    commonMembers.retainAll(mpsMembers);
+
+    Set<String> onlyIdeaMembers = new TreeSet<String>();
+    onlyIdeaMembers.addAll(ideaMembers);
+    onlyIdeaMembers.removeAll(commonMembers);
+
+    Set<String> onlyMpsMembers = new TreeSet<String>();
+    onlyMpsMembers.addAll(mpsMembers);
+    onlyMpsMembers.removeAll(commonMembers);
+
+    // remove enum valueOf and values methods from only idea members
+    onlyIdeaMembers.remove("static " + classifierFqName + ":valueOf<0>(1)");
+    onlyIdeaMembers.remove("static " + classifierFqName + ":values<0>(0)");
+
+    if (onlyIdeaMembers.size() + onlyMpsMembers.size() == 0) {
+      return;
+    }
+
+    System.out.println("Members scope is not equal for " + classifierFqName);
+    System.out.println("Only idea members: " + onlyIdeaMembers);
+    System.out.println("Only mps members: " + onlyMpsMembers);
   }
 
   @Nullable
