@@ -152,17 +152,14 @@
     </copy>
     <copy todir="${build.layout}">
       <fileset file="${basedir}/releaseNotes.txt" />
+    </copy>
+    <copy todir="${build.layout}">
+      <fileset file="${basedir}/readme.txt" />
       <filterchain>
         <tokenfilter>
           <replaceregex pattern="\$version\$" replace="${buildCore.version}" flags="" />
         </tokenfilter>
       </filterchain>
-    </copy>
-    <copy todir="${build.layout}">
-      <fileset file="${basedir}/readme.txt" />
-    </copy>
-    <copy todir="${build.layout}">
-      <fileset file="${basedir}/releaseNotes.txt" />
     </copy>
     <echo file="${build.layout}/build.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.date=${date}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}${line.separator}buildMPS.idea.platform.build.number=${idea.platform.build.number}${line.separator}buildCore.version=${buildCore.version}</echo>
   </target>
