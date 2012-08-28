@@ -1,5 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
+  <root nodeId="2504587702126708200">
+    <nodeInfo nodeId="2504587702126708202" fileName="InterfaceWithHashCode.java" startLine="6" startPosition="40" endLine="7" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
+    <nodeInfo nodeId="8067825124534941919" fileName="InterfaceWithHashCode.java" startLine="7" startPosition="24" endLine="8" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="otherMethod#()V" />
+    <scopeInfo nodeId="2504587702126708202" fileName="InterfaceWithHashCode.java" startLine="6" startPosition="40" endLine="7" endPosition="24" />
+    <scopeInfo nodeId="8067825124534941919" fileName="InterfaceWithHashCode.java" startLine="7" startPosition="24" endLine="8" endPosition="28" />
+    <unitInfo nodeId="2504587702126708200" fileName="InterfaceWithHashCode.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="main.InterfaceWithHashCode" />
+  </root>
+  <root nodeId="2504587702126708206">
+    <nodeInfo nodeId="2504587702126708223" fileName="ComparableTest.java" startLine="10" startPosition="45" endLine="11" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2504587702126708208" fileName="ComparableTest.java" startLine="6" startPosition="67" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ComparableTest#()V" />
+    <nodeInfo nodeId="2504587702126708217" fileName="ComparableTest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Lmain/ComparableTest;)I" />
+    <scopeInfo nodeId="2504587702126708211" fileName="ComparableTest.java" startLine="7" startPosition="27" endLine="7" endPosition="27" />
+    <scopeInfo nodeId="2504587702126708222" fileName="ComparableTest.java" startLine="10" startPosition="45" endLine="11" endPosition="13" />
+    <scopeInfo nodeId="2504587702126708208" fileName="ComparableTest.java" startLine="6" startPosition="67" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="2504587702126708217" fileName="ComparableTest.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="2504587702126708220" varName="test" />
+    </scopeInfo>
+    <unitInfo nodeId="2504587702126708206" fileName="ComparableTest.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="main.ComparableTest" />
+  </root>
+  <root nodeId="2649472120078565353">
+    <nodeInfo nodeId="2649472120078565355" fileName="HashCodeFromInterface.java" startLine="6" startPosition="78" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HashCodeFromInterface#()V" />
+    <scopeInfo nodeId="2649472120078565358" fileName="HashCodeFromInterface.java" startLine="7" startPosition="34" endLine="7" endPosition="34" />
+    <scopeInfo nodeId="2649472120078565355" fileName="HashCodeFromInterface.java" startLine="6" startPosition="78" endLine="8" endPosition="3" />
+    <unitInfo nodeId="2649472120078565353" fileName="HashCodeFromInterface.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="main.HashCodeFromInterface" />
+  </root>
   <root nodeId="7015818220060178316">
     <nodeInfo nodeId="8639875392258181209" fileName="MainClass.java" startLine="7" startPosition="22" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7015818220060279068" fileName="MainClass.java" startLine="11" startPosition="42" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
