@@ -15,6 +15,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodeBase;
 
 public class SNodeOperations {
   public SNodeOperations() {
@@ -125,6 +126,13 @@ public class SNodeOperations {
       }
     });
     return res;
+  }
+
+  /**
+   * todo rewrite the code via snode methods
+   */
+  public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
+    ((jetbrains.mps.smodel.SNode) parent).insertChild(((SNodeBase) anchor), role, ((jetbrains.mps.smodel.SNode) child), before);
   }
 
   /**
