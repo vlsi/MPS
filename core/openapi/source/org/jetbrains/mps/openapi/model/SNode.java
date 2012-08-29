@@ -73,13 +73,16 @@ public interface SNode {
   //non-modifiable
   Iterable<? extends SNode> getChildren(String role);
 
+  SNode getPrevChild(SNode child);
+
+  SNode getNextChild(SNode child);
+
   @Nullable String getRole();
 
   String getRoleOf(SNode child);
 
-  SNode getPrevChild(SNode child);
-
-  SNode getNextChild(SNode child);
+  //non-modifiable
+  Iterable<String> getChildRoles();
 
   // refs
 
