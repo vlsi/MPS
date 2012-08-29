@@ -67,8 +67,10 @@ public interface SNode {
   @NotNull
   SNode getTopmostAncestor();
 
+  //non-modifiable
   Iterable<? extends SNode> getChildren();
 
+  //non-modifiable
   Iterable<? extends SNode> getChildren(String role);
 
   @Nullable String getRole();
@@ -93,6 +95,7 @@ public interface SNode {
 
   void removeReference(SReference ref);
 
+  //non-modifiable
   Iterable<? extends SReference> getReferences();
 
   Iterable<String> getReferenceRoles();
@@ -105,6 +108,7 @@ public interface SNode {
 
   void setProperty(String propertyName, String propertyValue);
 
+  //non-modifiable
   Iterable<String> getPropertyNames();
 
   // user objects
@@ -113,5 +117,6 @@ public interface SNode {
 
   void putUserObject(Object key, @Nullable Object value);
 
+  //non-modifiable
   Iterable<Object> getUserObjectsKeys();
 }
