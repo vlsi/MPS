@@ -9,6 +9,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class SNodeOperations {
   public SNodeOperations() {
@@ -63,6 +69,48 @@ public class SNodeOperations {
    */
   public static SConcept getConcept(String name) {
     return new SConceptNodeAdapter(((jetbrains.mps.smodel.SNode) SModelUtil.findConceptDeclaration(name, GlobalScope.getInstance())));
+  }
+
+  /**
+   * todo rewrite the code using this
+   */
+  public static Set<String> getChildRoles(SNode n) {
+    final Set<String> res = SetSequence.fromSet(new HashSet<String>());
+    n.visitChildren(new SNode.ChildVisitor() {
+      public boolean visitChild(String role, SNode child) {
+        SetSequence.fromSet(res).addElement(role);
+        return false;
+      }
+    });
+    return res;
+  }
+
+  /**
+   * todo rewrite the code using this
+   */
+  public static Set<SReference> getReferences(SNode n) {
+    final Set<SReference> res = SetSequence.fromSet(new HashSet<SReference>());
+    n.visitReferences(new SNode.ReferenceVisitor() {
+      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference reference) {
+        SetSequence.fromSet(res).addElement(((SReference) reference));
+        return false;
+      }
+    });
+    return res;
+  }
+
+  /**
+   * todo rewrite the code using this
+   */
+  public static List<SNode> getChildren(SNode n) {
+    final List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
+    n.visitChildren(new SNode.ChildVisitor() {
+      public boolean visitChild(String role, SNode child) {
+        ListSequence.fromList(res).addElement(child);
+        return false;
+      }
+    });
+    return res;
   }
 
   /**
