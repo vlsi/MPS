@@ -33,6 +33,7 @@ public class RuleUtil {
   public static final String concept_TemplateCallMacro = "jetbrains.mps.lang.generator.structure.TemplateCallMacro";
   public static final String concept_PropertyMacro = "jetbrains.mps.lang.generator.structure.PropertyMacro";
   public static final String concept_ReferenceMacro = "jetbrains.mps.lang.generator.structure.ReferenceMacro";
+  public static final String concept_TraceMacro = "jetbrains.mps.lang.generator.structure.TraceMacro";
   public static final String concept_BaseMappingRule = "jetbrains.mps.lang.generator.structure.BaseMappingRule";
   public static final String concept_Reduction_MappingRule = "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
   public static final String concept_Root_MappingRule = "jetbrains.mps.lang.generator.structure.Root_MappingRule";
@@ -284,6 +285,8 @@ public class RuleUtil {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.IncludeMacro"), "sourceNodeQuery", true);
     } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TemplateCallMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TemplateCallMacro"), "sourceNodeQuery", true);
+    } else if (conceptFqName.equals("jetbrains.mps.lang.generator.structure.TraceMacro")) {
+      return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.TraceMacro"), "sourceNodeQuery", true);
     }
     return null;
   }

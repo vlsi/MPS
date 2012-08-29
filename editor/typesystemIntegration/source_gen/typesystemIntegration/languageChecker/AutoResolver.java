@@ -14,16 +14,14 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
 
@@ -43,11 +41,17 @@ public class AutoResolver extends EditorCheckerAdapter {
     if (!(autoresolve)) {
       SetSequence.fromSet(messages).addElement(HighlightUtil.createWarningMessage(rootNode, "Containing model has unresolved model imports. Automatic refrence resolving is switched off to avoid incorrect reference target resolving.", this));
     }
-    for (SReference ref : SetSequence.fromSet(collectBadReferences(rootNode))) {
+    Set<SReference> badReferences = collectBadReferences(rootNode);
+    for (SReference ref : SetSequence.fromSet(badReferences)) {
       EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this, editorContext);
       SetSequence.fromSet(messages).addElement(message);
-      if (autoresolve) {
-        autoresolveReference(ref, editorContext);
+    }
+    if (autoresolve) {
+      IOperationContext operationContext = editorContext.getOperationContext();
+      if (operationContext != null) {
+        TypeContextManager.getInstance().setComputeInNormalMode(true);
+        ResolverComponent.getInstance().resolveScopesOnly(badReferences, operationContext);
+        TypeContextManager.getInstance().setComputeInNormalMode(false);
       }
     }
     return messages;
@@ -81,31 +85,6 @@ public class AutoResolver extends EditorCheckerAdapter {
     } finally {
       SReference.enableLogging();
     }
-  }
-
-  private void autoresolveReference(final SReference reference, EditorContext editorContext) {
-    if (editorContext == null) {
-      return;
-    }
-    final IOperationContext operationContext = editorContext.getOperationContext();
-    if (operationContext == null) {
-      return;
-    }
-    final Project project = editorContext.getOperationContext().getProject();
-    if (project == null) {
-      return;
-    }
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      public void run() {
-        ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-          public void run() {
-            TypeContextManager.getInstance().setComputeInNormalMode(true);
-            ResolverComponent.getInstance().resolve(reference, operationContext);
-            TypeContextManager.getInstance().setComputeInNormalMode(false);
-          }
-        }, project);
-      }
-    });
   }
 
   public boolean isLaterThan(BaseEditorChecker editorChecker) {

@@ -23,7 +23,11 @@ import jetbrains.mps.generator.impl.AbstractTemplateGenerator.RoleValidationStat
 import jetbrains.mps.generator.impl.interpreted.TemplateWeavingRuleInterpreted;
 import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.impl.template.InputQueryUtil;
-import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.generator.runtime.GenerationException;
+import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
+import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
+import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
@@ -280,11 +284,11 @@ public class TemplateProcessor {
       List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
       if (_outputNodes != null && _outputNodes.size() > 0) {
 
-        if(_outputNodes.size() == 1) {
+        if (_outputNodes.size() == 1) {
           SNode contextNode = _outputNodes.get(0);
 
           List<SNode> nodesToWeave = getNewInputNodes(macro, templateContext);
-          for(SNode node : nodesToWeave) {
+          for (SNode node : nodesToWeave) {
             try {
               generationTracer.pushInputNode(node);
               generationTracer.pushRuleConsequence(new SNodePointer(macro));
@@ -560,6 +564,18 @@ public class TemplateProcessor {
         }
       }
 
+      return outputNodes;
+    } else if (macroConceptFQName.equals(RuleUtil.concept_TraceMacro)) {
+      // $TRACE$
+      SNode inputNode = getNewInputNode(macro, templateContext);
+
+      List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, templateContext.subContext(mappingName), nodeMacrosToSkip + 1);
+      if (_outputNodes != null) {
+        outputNodes.addAll(_outputNodes);
+        for (SNode outputNode : _outputNodes) {
+          TemplateQueryContext.fillOriginalNode(inputNode, outputNode, myGenerator.getGeneratorSessionContext().getOriginalInputModel() == inputNode.getModel());
+        }
+      }
       return outputNodes;
     } else {
 

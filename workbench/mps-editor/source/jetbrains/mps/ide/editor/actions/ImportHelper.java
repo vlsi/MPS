@@ -164,8 +164,9 @@ public class ImportHelper {
 
       if (!importCandidates.isEmpty()) {
         Set<ModuleReference> modules = chooseModulesToImport(myProject, importCandidates);
-        if (modules == null) return;
-        toImport.addAll(modules);
+        if (modules != null) {
+          toImport.addAll(modules);
+        }
       }
 
       toImport.add(getModuleReference());

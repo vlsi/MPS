@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.ide.editor.actions;
 
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
+import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.fileTypes.FileIcons;
@@ -26,6 +28,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -33,24 +36,21 @@ import java.util.Set;
 
 public class SelectLanguagesDialog extends DialogWrapper {
   private JList myList;
+  private Project myProject;
   private Set<ModuleReference> myCandidates;
 
   public SelectLanguagesDialog(Project project, Set<ModuleReference> candidates) {
     super(project);
+    myProject = project;
     myCandidates = candidates;
     setTitle("Import Extended Languages");
+    setCancelButtonText("Import None");
+    setOKButtonText("Import Selected");
     init();
   }
 
   public String getDimensionServiceKey() {
-    return getClass().getName() + "2";
-  }
-
-  protected Action[] createActions() {
-    List<Action> actions = new ArrayList<Action>();
-    actions.add(getOKAction());
-    actions.add(getCancelAction());
-    return actions.toArray(new Action[actions.size()]);
+    return getClass().getName();
   }
 
   protected JComponent createCenterPanel() {
@@ -66,7 +66,7 @@ public class SelectLanguagesDialog extends DialogWrapper {
     JPanel center = new JPanel(new GridBagLayout());
     JTextArea label = new JTextArea("Select additional languages to import:");
     label.setEditable(false);
-    label.setBackground(this.getContentPane().getBackground());
+    label.setBackground(getContentPane().getBackground());
     label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
     center.add(label, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
 
@@ -80,8 +80,12 @@ public class SelectLanguagesDialog extends DialogWrapper {
 
     panel.add(center, BorderLayout.CENTER);
     panel.setPreferredSize(new Dimension(400, 250));
-    return panel;
 
+    return panel;
+  }
+
+  public JComponent getPreferredFocusedComponent() {
+    return myList;
   }
 
   public Set<ModuleReference> getSelectedModules() {
@@ -119,4 +123,5 @@ public class SelectLanguagesDialog extends DialogWrapper {
       return result;
     }
   }
+
 }
