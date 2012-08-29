@@ -114,6 +114,20 @@ public class SNodeOperations {
   }
 
   /**
+   * todo rewrite the code using this
+   */
+  public static Set<String> getReferenceRoles(SNode n) {
+    final Set<String> res = SetSequence.fromSet(new HashSet<String>());
+    n.visitReferences(new SNode.ReferenceVisitor() {
+      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
+        SetSequence.fromSet(res).addElement(role);
+        return false;
+      }
+    });
+    return res;
+  }
+
+  /**
    * todo KILL IT! should be node.getModel!=null
    * todo after killing it, correct migration script to return model!=null instead
    */
