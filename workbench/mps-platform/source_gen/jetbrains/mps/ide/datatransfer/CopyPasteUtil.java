@@ -20,6 +20,7 @@ import java.util.HashSet;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -120,9 +121,14 @@ public class CopyPasteUtil {
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
-    SNode targetNode = new SNode(sourceNode.getModel(), sourceNode.getConceptFqName());
+    final SNode targetNode = new SNode(sourceNode.getModel(), sourceNode.getConceptFqName());
     targetNode.setId(SNodeId.fromString(sourceNode.getSNodeId().toString()));
-    targetNode.putProperties(sourceNode);
+    sourceNode.visitProperties(new SNode.PropertyVisitor() {
+      public boolean visitProperty(String name, String value) {
+        targetNode.setProperty(name, value);
+        return true;
+      }
+    });
     sourceNodesToNewNodes.put(sourceNode, targetNode);
     List<SReference> references = sourceNode.getReferences();
     for (SReference reference : references) {
