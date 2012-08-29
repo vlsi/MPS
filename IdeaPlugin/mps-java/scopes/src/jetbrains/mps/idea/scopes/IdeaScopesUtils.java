@@ -146,6 +146,10 @@ public class IdeaScopesUtils {
 
     @Override
     public void addElement(@NotNull LookupElement element) {
+      // TODO: comment it when scopes supports inner classes
+      if (element.getObject() instanceof PsiClass) {
+        return;
+      }
       if (element.getObject() instanceof PsiElement) {
         result.add(getSignature((PsiElement)element.getObject()));
       }

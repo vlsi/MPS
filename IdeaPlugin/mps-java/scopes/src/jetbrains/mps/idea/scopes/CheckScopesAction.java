@@ -57,6 +57,9 @@ public class CheckScopesAction extends AnAction {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       @Override
       public void run() {
+        long mpsTime = 0, ideaTime = 0;
+        int notEqualMembersCount = 0;
+
         SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
         for (SNode root : descriptor.getSModel().roots()) {
           if (LanguageHierarchyCache.isAssignable(root.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -65,18 +68,26 @@ public class CheckScopesAction extends AnAction {
               LOG.warn("PsiClass is null for root node: " + root);
               continue;
             }
+            long time = System.currentTimeMillis();
             Set<String> ideaMembers = new TreeSet<String>(IdeaScopesUtils.getMembersFromClass_New(clazz));
+            ideaTime += System.currentTimeMillis() - time;
+            time = System.currentTimeMillis();
             Set<String> mpsMembers = new TreeSet<String>(MpsScopesUtil.getMembersSignatures(root));
-            checkScopesOnEquality(clazz.getQualifiedName(), ideaMembers, mpsMembers);
+            mpsTime += System.currentTimeMillis() - time;
+            if (!checkScopesOnEquality(clazz.getQualifiedName(), ideaMembers, mpsMembers)) {
+              notEqualMembersCount++;
+            }
           }
         }
+        System.out.printf("Not equal members in %d classifiers; idea time %.4f; mps time %.4f%n",
+          notEqualMembersCount, ideaTime / 1000.0, mpsTime / 1000.0);
       }
     });
   }
 
-  private static void checkScopesOnEquality(String classifierFqName, Set<String> ideaMembers, Set<String> mpsMembers) {
+  private static boolean checkScopesOnEquality(String classifierFqName, Set<String> ideaMembers, Set<String> mpsMembers) {
     if (ideaMembers.equals(mpsMembers)) {
-      return;
+      return true;
     }
 
     Set<String> commonMembers = new HashSet<String>();
@@ -96,12 +107,14 @@ public class CheckScopesAction extends AnAction {
     onlyIdeaMembers.remove("static " + classifierFqName + ":values<0>(0)");
 
     if (onlyIdeaMembers.size() + onlyMpsMembers.size() == 0) {
-      return;
+      return true;
     }
 
     System.out.println("Members scope is not equal for " + classifierFqName);
     System.out.println("Only idea members: " + onlyIdeaMembers);
     System.out.println("Only mps members: " + onlyMpsMembers);
+
+    return false;
   }
 
   @Nullable
