@@ -58,6 +58,9 @@ public interface SNode {
    */
   void insertChild(String role, SNode child, @Nullable SNode anchor);
 
+  //note this has different semantics than child.delete()
+  void removeChild(SNode child);
+
   void delete();
 
   //base tree queries
