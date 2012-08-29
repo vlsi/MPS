@@ -103,12 +103,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
   }
 
-  @Override
   public void addNextSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
     getParent().insertChild(this, myRoleInParent, (SNode) newSibling);
   }
 
-  @Override
   public void addPrevSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
     getParent().insertChild(this, myRoleInParent, (SNode) newSibling, true);
   }
@@ -289,7 +287,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return myRoleInParent;
   }
 
-  @Override
   public String getRole() {
     return myRoleInParent;
   }
@@ -512,7 +509,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return (SNode) super.firstChild();
   }
 
-  @Override
   public void setChild(String role, org.jetbrains.mps.openapi.model.SNode childNode) {
     SNode oldChild = getChild(role);
     if (oldChild != null) {
@@ -559,7 +555,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return null;
   }
 
-  @Override
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
     SNode firstChild = firstChild();
     insertChild(firstChild == null ? null : firstChild.treePrevious(), role, (SNode) child);
@@ -730,7 +725,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
    *
    * @param child
    */
-  @Override
   public void removeChild(org.jetbrains.mps.openapi.model.SNode child) {
     if (child.getParent() != this) return;
     ModelChange.assertLegalNodeChange(this);
@@ -1448,7 +1442,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getParent().firstChild() == this ? null : (SNode) treePrevious();
   }
 
-  @Override
   public org.jetbrains.mps.openapi.model.SNode getPrevSibling() {
     if (getParent() == null) return null;
     return getParent().firstChild() == this ? null : treePrevious();
@@ -1458,7 +1451,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return (SNode) treeNext();
   }
 
-  @Override
   public org.jetbrains.mps.openapi.model.SNode getNextSibling() {
     return treeNext();
   }
@@ -1722,10 +1714,40 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   // new API
 
+
+  @Override
+  public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
+    insertChild(((SNodeBase) anchor),role, ((SNode) child));
+  }
+
+  @Override
+  public String getRoleOf(org.jetbrains.mps.openapi.model.SNode child) {
+    return ((SNode) child).getRole();
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getPrevChild(org.jetbrains.mps.openapi.model.SNode child) {
+    return getPrevChild(((SNode) child));
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getNextChild(org.jetbrains.mps.openapi.model.SNode child) {
+    return getNextChild(((SNode) child));
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode getFirstChild(String role) {
+    for (SNode n:getChildrenIterable()) {
+      if (n.getRole().equals(role)){
+        return n;
+      }
+    }
+    return null;
+  }
+
   @Override
   public SNodeReference getReference() {
-    // TODO API (implement)
-    return null;
+    return new SNodeReference(this);
   }
 
   @Override
@@ -1735,7 +1757,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public Iterable<Object> getUserObjectsKeys() {
-    // TODO API (implement)
-    return null;
+    Object[] res = new Object[myUserObjects.length/2];
+    for (int i=0;i<myUserObjects.length/2;i++){
+      res[i]=myUserObjects[i*2];
+    }
+    return Arrays.asList(res);
   }
 }

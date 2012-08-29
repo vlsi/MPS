@@ -21,6 +21,9 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 public interface SNode {
+
+  //common properties
+
   SNodeId getNodeId();
 
   SNodeReference getReference();
@@ -33,39 +36,41 @@ public interface SNode {
 
   SModel getModel();
 
-  //tree traversal
+  // tree operation
 
-  SNode getParent();
-
-  SNode getTopmostAncestor();
-
-  String getRole();
-
-  SNode getPrevSibling();
-
-  SNode getNextSibling();
-
-  void addNextSibling(SNode newSibling);
-
-  void addPrevSibling(SNode newSibling);
+  /**
+   * Inserts the given node as a child of current after anchor node in specified role.<br/>
+   * If the given role is multiple, this method inserts a new child.<br/>
+   * If the given role is single and currently has no children in it, a new child is added.
+   * Last parameter is ignored in this case.<br/>
+   * If the given role is single and currently has a child in it, the current child is replaced
+   * with a new one. Last parameter is ignored in this case.<br/>
+   *
+   * @param role a role to insert new child into
+   * @param child a node to insert
+   * @param anchor a new child node will be inserted after this node. If specified,
+   *               anchor must be in the same role as inserted child. If not specified,
+   *               a new child is inserted into first position in the given role
+   */
+  void insertChild(String role, SNode child, @Nullable SNode anchor);
 
   void delete();
 
-  // single
+  //base tree queries
 
-  SNode getChild(String role);
+  SNode getParent();
 
-  void setChild(String role, SNode childNode);
-
-  // multiple
-
-  void addChild(String role, SNode child);
-
-  void removeChild(SNode child);
+  Iterable<? extends SNode> getChildren(); //needed?
 
   Iterable<? extends SNode> getChildren(String role);
 
-  Iterable<? extends SNode> getChildren();
+  String getRoleOf(SNode child);
+
+  SNode getPrevChild(SNode child);
+
+  SNode getNextChild(SNode child);
+
+  SNode getFirstChild(String role);
 
   // refs
 
@@ -98,4 +103,32 @@ public interface SNode {
   void putUserObject(Object key, @Nullable Object value);
 
   Iterable<Object> getUserObjectsKeys();
+
+  // complex queries
+
+  SNode getTopmostAncestor();
+
+  String getRole();
+
+/*
+  uncomment during migration if there are usages of these methods
+
+  SNode getPrevSibling();
+
+  SNode getNextSibling();
+
+  void addNextSibling(SNode newSibling);
+
+  void addPrevSibling(SNode newSibling);
+
+  SNode getChild(String role);
+
+  void setChild(String role, SNode childNode);
+
+  // multiple
+
+  void addChild(String role, SNode child);
+
+  void removeChild(SNode child);
+*/
 }
