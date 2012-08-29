@@ -429,7 +429,9 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public void visitProperties(PropertyVisitor v) {
-
+    for (Entry<String,String> e : getProperties().entrySet()) {
+      if (!v.visitProperty(e.getKey(), e.getValue())) return;
+    }
   }
 
   public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
