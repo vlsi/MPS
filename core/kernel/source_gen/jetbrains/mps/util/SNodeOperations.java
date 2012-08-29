@@ -91,4 +91,11 @@ public class SNodeOperations {
   public static jetbrains.mps.smodel.SNode getContainingRoot(SNode node) {
     return ((jetbrains.mps.smodel.SNode) node).getContainingRoot();
   }
+
+  /**
+   * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
+   */
+  public static String getDebugText(SNode node) {
+    return ((jetbrains.mps.smodel.SNode) node).getDebugText();
+  }
 }
