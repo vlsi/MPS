@@ -68,9 +68,6 @@ public interface SNode {
   SNode getTopmostAncestor();
 
   //non-modifiable
-  Iterable<? extends SNode> getChildren();
-
-  //non-modifiable
   Iterable<? extends SNode> getChildren(String role);
 
   SNode getPrevChild(SNode child);
@@ -81,8 +78,7 @@ public interface SNode {
 
   String getRoleOf(SNode child);
 
-  //non-modifiable
-  Iterable<String> getChildRoles();
+  void visitChildren(ChildVisitor v);
 
   // refs
 
@@ -98,10 +94,7 @@ public interface SNode {
 
   void removeReference(SReference ref);
 
-  //non-modifiable
-  Iterable<? extends SReference> getReferences();
-
-  Iterable<String> getReferenceRoles();
+  void visitReferences(ReferenceVisitor v);
 
   // props
 
@@ -111,8 +104,7 @@ public interface SNode {
 
   void setProperty(String propertyName, String propertyValue);
 
-  //non-modifiable
-  Iterable<String> getPropertyNames();
+  void visitProperties(PropertyVisitor v);
 
   // user objects
 
@@ -120,6 +112,23 @@ public interface SNode {
 
   void putUserObject(Object key, @Nullable Object value);
 
-  //non-modifiable
-  Iterable<Object> getUserObjectsKeys();
+  void visitUserObjects(UserObjectVisitor v);
+
+  //visitors
+
+  public interface ChildVisitor {
+    boolean visitChild(String role, SNode child);
+  }
+
+  public interface ReferenceVisitor {
+    boolean visitReference(String role, SReference ref);
+  }
+
+  public interface PropertyVisitor {
+    boolean visitProperty(String name, String value);
+  }
+
+  public interface UserObjectVisitor {
+    boolean visitObject(Object key, Object value);
+  }
 }

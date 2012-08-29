@@ -20,7 +20,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.language.ConceptRegistry;
@@ -37,9 +36,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.util.*;
+import java.util.Map.Entry;
 
 public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.getLogger(SNode.class);
@@ -427,6 +425,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public void setProperty(final String propertyName, String propertyValue) {
     setProperty(propertyName, propertyValue, true);
+  }
+
+  @Override
+  public void visitProperties(PropertyVisitor v) {
+
   }
 
   public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
@@ -1039,6 +1042,13 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
+  @Override
+  public void visitReferences(ReferenceVisitor v) {
+    for (SReference ref : getReferences()) {
+      if (!v.visitReference(ref.getRole(), ref)) return;
+    }
+  }
+
   public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
     if (myReferences != null) {
       for (SReference reference : myReferences) {
@@ -1136,13 +1146,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     UnregisteredNodes.instance().remove(this);
   }
 
-
   private void removeAllReferences() {
     while (_reference().size() > 0) {
       removeReferenceAt(0);
     }
   }
-
 
   public boolean isDeleted() {
     return (_reference().size() == 0) && getParent() == null && !getModel().isRoot(this);
@@ -1632,6 +1640,13 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
+  @Override
+  public void visitUserObjects(UserObjectVisitor v) {
+    for (Entry e : getUserObjects().entrySet()) {
+      if (!v.visitObject(e.getKey(), e.getValue())) return;
+    }
+  }
+
   public void putUserObjects(SNode fromNode) {
     if (fromNode == null || fromNode.myUserObjects == null) return;
     if (myUserObjects == null) {
@@ -1717,12 +1732,19 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChild(((SNodeBase) anchor),role, ((SNode) child));
+    insertChild(((SNodeBase) anchor), role, ((SNode) child));
   }
 
   @Override
   public String getRoleOf(org.jetbrains.mps.openapi.model.SNode child) {
     return ((SNode) child).getRole();
+  }
+
+  @Override
+  public void visitChildren(ChildVisitor v) {
+    for (SNode child : getChildren()) {
+      if (!v.visitChild(child.getRole(), child)) return;
+    }
   }
 
   @Override
@@ -1743,14 +1765,5 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   @Override
   public SConcept getConcept() {
     return new SConceptNodeAdapter(getConceptDeclarationNode());
-  }
-
-  @Override
-  public Iterable<Object> getUserObjectsKeys() {
-    Object[] res = new Object[myUserObjects.length/2];
-    for (int i=0;i<myUserObjects.length/2;i++){
-      res[i]=myUserObjects[i*2];
-    }
-    return Arrays.asList(res);
   }
 }
