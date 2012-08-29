@@ -146,8 +146,11 @@ public class SimpleLRUCache<K> {
       firstLevelQueue.add(canonic);
 
       if (roomLeftFirstLevel.decrementAndGet() <= 0) {
-        K toRemove = firstLevelQueue.poll();
-        assert toRemove != null;
+        K toRemove;
+        do {
+          toRemove = firstLevelQueue.poll();
+          assert toRemove != null;
+        } while (!firstLevelCache.containsKey(toRemove));
 
         if (transitionalCache.putIfAbsent(toRemove, toRemove) == null) {
           if (firstLevelCache.remove(toRemove, toRemove)) {
