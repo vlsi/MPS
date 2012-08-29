@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodeOperations;
@@ -24,7 +25,11 @@ public class SLinkOperations {
   public static SNode getTarget(SNode node, String role, boolean child) {
     if (node != null) {
       if (child) {
-        return node.getChild(role);
+        Iterator<SNode> it = node.getChildren(role).iterator();
+        return (it.hasNext() ?
+          it.next() :
+          null
+        );
       }
       return node.getReferent(role);
     }
@@ -114,7 +119,11 @@ public class SLinkOperations {
     if (parent == null) {
       return null;
     }
-    SNode child = parent.getChild(role);
+    Iterator<SNode> it = parent.getChildren(role).iterator();
+    SNode child = (it.hasNext() ?
+      it.next() :
+      null
+    );
     if (child != null) {
       parent.removeChild(child);
       return child;
@@ -144,7 +153,7 @@ public class SLinkOperations {
     if (reference == null) {
       return null;
     }
-    return (SNode) reference.getSourceNode().getLinkDeclaration(reference.getRole());
+    return ((SNode) SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(((SNode) reference.getSourceNode())), reference.getRole()));
   }
 
   public static SNode getTargetNode(SReference reference) {
