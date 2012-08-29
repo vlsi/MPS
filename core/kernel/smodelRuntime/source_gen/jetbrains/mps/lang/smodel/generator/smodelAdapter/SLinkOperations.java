@@ -39,15 +39,17 @@ public class SLinkOperations {
   public static SNode setTarget(SNode node, String role, SNode targetNode, boolean child) {
     if (node != null) {
       if (child) {
-        if (targetNode == null) {
-          node.setChild(role, null);
-        } else {
+        SNode oldChild = node.getChild(role);
+        node.removeChild(oldChild);
+
+        if (targetNode != null) {
           SNode targetParent = targetNode.getParent();
           if (targetParent != node) {
             if (targetParent != null) {
               targetParent.removeChild(targetNode);
             }
-            node.setChild(role, targetNode);
+            node.removeChild(oldChild);
+            node.addChild(role, targetNode);
           }
         }
       } else {
@@ -60,7 +62,7 @@ public class SLinkOperations {
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
       SNode newChild = SModelOperations.createNewNode(node.getModel(), childConceptFQName);
-      node.setChild(role, newChild);
+      SLinkOperations.setTarget(node, role, newChild, true);
       return newChild;
     }
     return null;
