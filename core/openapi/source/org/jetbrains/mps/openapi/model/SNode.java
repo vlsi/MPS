@@ -64,13 +64,13 @@ public interface SNode {
   SNode getParent();
 
   @NotNull
-  SNode getTopmostAncestor(); //needed?
+  SNode getTopmostAncestor();
 
   Iterable<? extends SNode> getChildren();
 
   Iterable<? extends SNode> getChildren(String role);
 
-  @Nullable String getRole();  //needed?
+  @Nullable String getRole();
 
   String getRoleOf(SNode child);
 
