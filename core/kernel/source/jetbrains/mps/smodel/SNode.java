@@ -1736,16 +1736,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   @Override
-  public org.jetbrains.mps.openapi.model.SNode getFirstChild(String role) {
-    for (SNode n:getChildrenIterable()) {
-      if (n.getRole().equals(role)){
-        return n;
-      }
-    }
-    return null;
-  }
-
-  @Override
   public SNodeReference getReference() {
     return new SNodeReference(this);
   }
