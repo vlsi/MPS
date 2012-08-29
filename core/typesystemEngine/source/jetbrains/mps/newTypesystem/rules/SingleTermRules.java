@@ -35,8 +35,8 @@ public abstract class SingleTermRules<K> {
   private ConcurrentHashMap<Object, Set<K>> myCachedRules = new ConcurrentHashMap<Object, Set<K>>();
 
   public Set<K> lookupRules (SNode term) {
-    LanguageScope langScope = LanguageScopeFactory.getInstance().getLanguageScope(
-      term.getModel().getModelDepsManager().getAllImportedLanguages());
+    LanguageScope langScope = LanguageScope.getCurrent();
+
     String conceptFQName = term.getConceptFqName();
     Object compoundKey = new Pair<Object, String>(langScope, conceptFQName);
 

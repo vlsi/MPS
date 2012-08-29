@@ -31,12 +31,41 @@ import java.util.Map;
  * Time: 4:40 PM
  * To change this template use File | Settings | File Templates.
  */
-public final class LanguageScope {
+public class LanguageScope {
+
+  private static final CurrentLanguageScope GLOBAL = new CurrentLanguageScope(new GlobalLanguageScope(), null);
+
+  private static ThreadLocal<CurrentLanguageScope> CURRENT = new ThreadLocal<CurrentLanguageScope>() {
+    @Override
+    protected CurrentLanguageScope initialValue() {
+      return GLOBAL;
+    }
+  };
 
   private final LanguageScopeFactory myFactory;
   private final BitSet myNsBitSet;
 
-  public LanguageScope(LanguageScopeFactory factory, BitSet nsBitSet) {
+  public static LanguageScope getCurrent() {
+    CurrentLanguageScope cls = CURRENT.get();
+    return cls.myLangScope;
+  }
+
+  public static void setCurrent (LanguageScope langScope, Object owner) {
+    CurrentLanguageScope cls = CURRENT.get();
+    if (cls != GLOBAL) throw new IllegalStateException("second attempt to set current LanguageScope");
+    CURRENT.set(new CurrentLanguageScope(langScope, owner));
+  }
+
+  public static void removeCurrent(LanguageScope languageScope, Object owner) {
+    CurrentLanguageScope cls = CURRENT.get();
+    if (cls == GLOBAL) throw new IllegalStateException("attempt to remove null LanguageScope");
+    if (cls.myOwner != owner) throw new IllegalStateException("attempt to remove foreign LanguageScope");
+    if (cls.myLangScope!= languageScope) throw new IllegalStateException("attempt to remove another LanguageScope");
+
+    CURRENT.remove();
+  }
+
+  /*package*/ LanguageScope(LanguageScopeFactory factory, BitSet nsBitSet) {
     myFactory = factory;
     myNsBitSet = nsBitSet;
   }
@@ -57,5 +86,38 @@ public final class LanguageScope {
   @Override
   public int hashCode() {
     return myNsBitSet.hashCode()*37;
+  }
+
+
+  private static class GlobalLanguageScope extends LanguageScope {
+
+    private GlobalLanguageScope() {
+      super(null, null);
+    }
+
+    @Override
+    public boolean containsNamespace(String namespace) {
+      return true;
+    }
+
+    @Override
+    public boolean equals(Object that) {
+      return that == this;
+    }
+
+    @Override
+    public int hashCode() {
+      return System.identityHashCode(this);
+    }
+  }
+
+  private static class CurrentLanguageScope {
+    private Object myOwner;
+    private LanguageScope myLangScope;
+
+    public CurrentLanguageScope(LanguageScope langScope, Object owner) {
+      this.myOwner = owner;
+      this.myLangScope = langScope;
+    }
   }
 }
