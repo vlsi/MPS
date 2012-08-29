@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 public interface SNode {
@@ -94,6 +95,8 @@ public interface SNode {
 
   Iterable<? extends SReference> getReferences();
 
+  Iterable<String> getReferenceRoles();
+
   // props
 
   boolean hasProperty(String propertyName);
@@ -101,6 +104,8 @@ public interface SNode {
   String getProperty(String propertyName);
 
   void setProperty(String propertyName, String propertyValue);
+
+  Iterable<String> getPropertyNames();
 
   // user objects
 
