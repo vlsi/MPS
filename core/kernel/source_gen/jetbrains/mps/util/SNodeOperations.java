@@ -80,7 +80,7 @@ public class SNodeOperations {
     n.visitChildren(new SNode.ChildVisitor() {
       public boolean visitChild(String role, SNode child) {
         SetSequence.fromSet(res).addElement(role);
-        return false;
+        return true;
       }
     });
     return res;
@@ -94,7 +94,7 @@ public class SNodeOperations {
     n.visitReferences(new SNode.ReferenceVisitor() {
       public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference reference) {
         SetSequence.fromSet(res).addElement(((SReference) reference));
-        return false;
+        return true;
       }
     });
     return res;
@@ -108,7 +108,7 @@ public class SNodeOperations {
     n.visitChildren(new SNode.ChildVisitor() {
       public boolean visitChild(String role, SNode child) {
         ListSequence.fromList(res).addElement(child);
-        return false;
+        return true;
       }
     });
     return res;
@@ -122,7 +122,7 @@ public class SNodeOperations {
     n.visitReferences(new SNode.ReferenceVisitor() {
       public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
         SetSequence.fromSet(res).addElement(role);
-        return false;
+        return true;
       }
     });
     return res;
