@@ -43,7 +43,7 @@ public class SNodeUtil {
     try {
       return ((String) BehaviorManager.getInstance().invoke(Object.class, node, "virtual_getPresentation_1213877396640", new Class[]{SNode.class}));
     } catch (Throwable t) {
-      return node.getPersistentProperty("name");
+      return node.getName();
     }
   }
 
