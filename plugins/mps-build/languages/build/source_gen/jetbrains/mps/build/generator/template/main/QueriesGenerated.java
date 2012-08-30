@@ -1360,19 +1360,19 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_4821808014881251890(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (SNode) _context.getNode().getReferent("targetModule");
+    return SLinkOperations.getTarget(_context.getNode(), "targetModule", false);
   }
 
   public static Object templateArgumentQuery_8169228734285529871(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (SNode) _context.getNode().getReferent("targetJar");
+    return SLinkOperations.getTarget(_context.getNode(), "targetJar", false);
   }
 
   public static Object templateArgumentQuery_6859736767834590331(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (SNode) _context.getNode().getReferent("targetJar");
+    return SLinkOperations.getTarget(_context.getNode(), "targetFile", false);
   }
 
   public static Object templateArgumentQuery_144710003695561027(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return (SNode) _context.getNode().getReferent("targetLibrary");
+    return SLinkOperations.getTarget(_context.getNode(), "targetLibrary", false);
   }
 
   public static Object templateArgumentQuery_4821808014881175180(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -1474,8 +1474,8 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5979287180587467230(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode module : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getModules()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
-      loopnode.setReferent("targetModule", module, false);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule", null);
+      SLinkOperations.setTarget(loopnode, "targetModule", module, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1484,8 +1484,8 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_8169228734285529277(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getJars()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
-      loopnode.setReferent("targetJar", jar, false);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaJar", null);
+      SLinkOperations.setTarget(loopnode, "targetJar", jar, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1494,8 +1494,8 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6859736767834590289(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode jar : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJars()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
-      loopnode.setReferent("targetJar", jar, false);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_SingleFile", null);
+      SLinkOperations.setTarget(loopnode, "targetFile", jar, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1504,8 +1504,8 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_144710003695560909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode library : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getLibraries()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
-      loopnode.setReferent("targetLibrary", library, false);
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaLibrary", null);
+      SLinkOperations.setTarget(loopnode, "targetLibrary", library, false);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;

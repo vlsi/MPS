@@ -4778,6 +4778,454 @@
     <unitInfo nodeId="4903714810883760418" fileName="BuildStringPart_Editor.java" startLine="21" startPosition="40" endLine="32" endPosition="5" unitName="jetbrains.mps.build.editor.BuildStringPart_Editor$1" />
     <unitInfo nodeId="4903714810883760424" fileName="BuildStringPart_Editor.java" startLine="23" startPosition="19" endLine="30" endPosition="9" unitName="jetbrains.mps.build.editor.BuildStringPart_Editor$2" />
   </root>
+  <root nodeId="4964617264469642267">
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="48" startPosition="58" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642267" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="25" startPosition="89" endLine="26" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="26" startPosition="99" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="26" startPosition="99" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="29" startPosition="109" endLine="30" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="31" startPosition="5" endLine="32" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="35" startPosition="88" endLine="36" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="36" startPosition="96" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="36" startPosition="96" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="37" startPosition="47" endLine="38" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="38" startPosition="34" endLine="39" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="42" startPosition="87" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="44" startPosition="37" endLine="45" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="45" startPosition="50" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="46" startPosition="26" endLine="47" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="47" startPosition="112" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="48" startPosition="58" endLine="49" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="49" startPosition="73" endLine="50" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="50" startPosition="57" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="52" startPosition="35" endLine="53" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="53" startPosition="72" endLine="54" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="54" startPosition="78" endLine="55" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="56" startPosition="10" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642275" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="60" startPosition="111" endLine="61" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="65" startPosition="33" endLine="66" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="69" startPosition="69" endLine="70" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="73" startPosition="81" endLine="74" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="77" startPosition="92" endLine="78" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="78" startPosition="84" endLine="79" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="79" startPosition="31" endLine="80" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="80" startPosition="44" endLine="81" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="81" startPosition="33" endLine="82" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="82" startPosition="28" endLine="83" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="83" startPosition="60" endLine="84" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="83" startPosition="60" endLine="84" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="84" startPosition="44" endLine="85" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="85" startPosition="75" endLine="86" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="86" startPosition="59" endLine="87" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="88" startPosition="37" endLine="89" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="89" startPosition="74" endLine="90" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="90" startPosition="80" endLine="91" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="92" startPosition="12" endLine="93" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="28" startPosition="80" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="28" startPosition="80" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="46" startPosition="26" endLine="49" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="64" startPosition="69" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_zc1akc_a0a#()V" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="82" startPosition="28" endLine="85" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642267" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="20" startPosition="88" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642273" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_zc1akc_a1a#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/IScope;)Z" />
+    <nodeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="51" startPosition="59" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="87" startPosition="61" endLine="93" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_zc1akc_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_zc1akc_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="41" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_zc1akc_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="76" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_zc1akc_a0a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="48" startPosition="58" endLine="48" endPosition="58" />
+    <scopeInfo nodeId="4964617264469642267" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
+    <scopeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="26" startPosition="99" endLine="27" endPosition="48" />
+    <scopeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="27" startPosition="48" endLine="28" endPosition="80" />
+    <scopeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="29" startPosition="109" endLine="30" endPosition="83" />
+    <scopeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="36" startPosition="96" endLine="37" endPosition="47" />
+    <scopeInfo nodeId="4964617264469642274" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="60" startPosition="111" endLine="61" endPosition="66" />
+    <scopeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="65" startPosition="33" endLine="66" endPosition="14" />
+    <scopeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="69" startPosition="69" endLine="70" endPosition="67" />
+    <scopeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="73" startPosition="81" endLine="74" endPosition="66" />
+    <scopeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="83" startPosition="60" endLine="84" endPosition="44" />
+    <scopeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="28" startPosition="80" endLine="31" endPosition="5" />
+    <scopeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="46" startPosition="26" endLine="49" endPosition="73" />
+    <scopeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="52" startPosition="35" endLine="55" endPosition="105">
+      <varInfo nodeId="4964617264469642269" varName="manager" />
+      <varInfo nodeId="4964617264469642269" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="64" startPosition="69" endLine="67" endPosition="5" />
+    <scopeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="82" startPosition="28" endLine="85" endPosition="75" />
+    <scopeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="88" startPosition="37" endLine="91" endPosition="107">
+      <varInfo nodeId="4964617264469642271" varName="manager" />
+      <varInfo nodeId="4964617264469642271" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642267" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="20" startPosition="88" endLine="24" endPosition="0">
+      <varInfo nodeId="4964617264469642267" varName="editorContext" />
+      <varInfo nodeId="4964617264469642267" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="35" startPosition="88" endLine="39" endPosition="22">
+      <varInfo nodeId="4964617264469642272" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642273" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="4964617264469642273" varName="editorContext" />
+      <varInfo nodeId="4964617264469642273" varName="node" />
+      <varInfo nodeId="4964617264469642273" varName="scope" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="4964617264469642270" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="4964617264469642270" varName="editorContext" />
+      <varInfo nodeId="4964617264469642270" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="25" startPosition="89" endLine="32" endPosition="22">
+      <varInfo nodeId="4964617264469642268" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642272" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="34" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="4964617264469642272" varName="editorContext" />
+      <varInfo nodeId="4964617264469642272" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642268" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="4964617264469642268" varName="editorContext" />
+      <varInfo nodeId="4964617264469642268" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="42" startPosition="87" endLine="57" endPosition="22">
+      <varInfo nodeId="4964617264469642269" varName="attributeConcept" />
+      <varInfo nodeId="4964617264469642269" varName="attributeKind" />
+      <varInfo nodeId="4964617264469642269" varName="editorCell" />
+      <varInfo nodeId="4964617264469642269" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="77" startPosition="92" endLine="93" endPosition="24">
+      <varInfo nodeId="4964617264469642271" varName="attributeConcept" />
+      <varInfo nodeId="4964617264469642271" varName="attributeKind" />
+      <varInfo nodeId="4964617264469642271" varName="editorCell" />
+      <varInfo nodeId="4964617264469642271" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642269" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="41" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="4964617264469642269" varName="editorContext" />
+      <varInfo nodeId="4964617264469642269" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642271" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="76" startPosition="0" endLine="95" endPosition="0">
+      <varInfo nodeId="4964617264469642271" varName="editorContext" />
+      <varInfo nodeId="4964617264469642271" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4964617264469642267" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="20" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_Editor" />
+    <unitInfo nodeId="4964617264469642270" fileName="GeneratorInternal_BuildSource_JavaModule_Editor.java" startLine="64" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaModule_Editor$_Inline_zc1akc_a0a" />
+  </root>
+  <root nodeId="4964617264469642572">
+    <nodeInfo nodeId="4964617264469642572" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="17" startPosition="89" endLine="18" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="18" startPosition="99" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="18" startPosition="99" endLine="19" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="19" startPosition="48" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="19" startPosition="48" endLine="20" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="20" startPosition="81" endLine="21" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="24" startPosition="88" endLine="25" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="25" startPosition="90" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="25" startPosition="90" endLine="26" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="26" startPosition="47" endLine="27" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="27" startPosition="34" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642572" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="12" startPosition="88" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_1p6igx_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_1p6igx_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="4964617264469642572" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="63" />
+    <scopeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="18" startPosition="99" endLine="19" endPosition="48" />
+    <scopeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="19" startPosition="48" endLine="20" endPosition="81" />
+    <scopeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="25" startPosition="90" endLine="26" endPosition="47" />
+    <scopeInfo nodeId="4964617264469642572" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="12" startPosition="88" endLine="16" endPosition="0">
+      <varInfo nodeId="4964617264469642572" varName="editorContext" />
+      <varInfo nodeId="4964617264469642572" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="17" startPosition="89" endLine="21" endPosition="22">
+      <varInfo nodeId="4964617264469642573" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="24" startPosition="88" endLine="28" endPosition="22">
+      <varInfo nodeId="4964617264469642575" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642573" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="4964617264469642573" varName="editorContext" />
+      <varInfo nodeId="4964617264469642573" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642575" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="23" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4964617264469642575" varName="editorContext" />
+      <varInfo nodeId="4964617264469642575" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4964617264469642572" fileName="GeneratorInternal_BuildSource_SingleFile_Editor.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_SingleFile_Editor" />
+  </root>
+  <root nodeId="4964617264469642726">
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="81" startPosition="60" endLine="81" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642726" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="24" startPosition="99" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="24" startPosition="99" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="31" startPosition="88" endLine="32" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="32" startPosition="94" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="32" startPosition="94" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="34" startPosition="34" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="38" startPosition="87" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="40" startPosition="34" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="41" startPosition="47" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="42" startPosition="26" endLine="43" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="43" startPosition="109" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="44" startPosition="58" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="45" startPosition="73" endLine="46" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="46" startPosition="57" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="48" startPosition="35" endLine="49" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="49" startPosition="72" endLine="50" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="50" startPosition="78" endLine="51" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="52" startPosition="10" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="57" startPosition="33" endLine="58" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="61" startPosition="69" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="65" startPosition="81" endLine="66" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="69" startPosition="94" endLine="70" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="70" startPosition="98" endLine="71" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="70" startPosition="98" endLine="71" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="71" startPosition="53" endLine="72" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="71" startPosition="53" endLine="72" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="72" startPosition="85" endLine="73" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="76" startPosition="92" endLine="77" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="77" startPosition="83" endLine="78" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="78" startPosition="31" endLine="79" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="79" startPosition="44" endLine="80" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="80" startPosition="28" endLine="81" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="81" startPosition="60" endLine="82" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="82" startPosition="75" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="83" startPosition="59" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="85" startPosition="37" endLine="86" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="86" startPosition="74" endLine="87" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="87" startPosition="80" endLine="88" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="89" startPosition="12" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="80" startPosition="28" endLine="82" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="42" startPosition="26" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="56" startPosition="69" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_g0zw24_a1a#()V" />
+    <nodeInfo nodeId="4964617264469642726" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="18" startPosition="85" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="47" startPosition="59" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="84" startPosition="61" endLine="90" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_g0zw24_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="68" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_g0zw24_a0b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_g0zw24_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="75" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_g0zw24_a0a1a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="37" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_g0zw24_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" />
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="81" startPosition="60" endLine="81" endPosition="60" />
+    <scopeInfo nodeId="4964617264469642726" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
+    <scopeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="24" startPosition="99" endLine="25" endPosition="48" />
+    <scopeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" />
+    <scopeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" />
+    <scopeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="32" startPosition="94" endLine="33" endPosition="47" />
+    <scopeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="57" startPosition="33" endLine="58" endPosition="14" />
+    <scopeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="61" startPosition="69" endLine="62" endPosition="67" />
+    <scopeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="65" startPosition="81" endLine="66" endPosition="68" />
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="70" startPosition="98" endLine="71" endPosition="53" />
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="71" startPosition="53" endLine="72" endPosition="85" />
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="80" startPosition="28" endLine="82" endPosition="75" />
+    <scopeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="42" startPosition="26" endLine="45" endPosition="73" />
+    <scopeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="48" startPosition="35" endLine="51" endPosition="105">
+      <varInfo nodeId="4964617264469642733" varName="manager" />
+      <varInfo nodeId="4964617264469642733" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="56" startPosition="69" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="85" startPosition="37" endLine="88" endPosition="107">
+      <varInfo nodeId="4964617264469642736" varName="manager" />
+      <varInfo nodeId="4964617264469642736" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642726" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="18" startPosition="85" endLine="22" endPosition="0">
+      <varInfo nodeId="4964617264469642726" varName="editorContext" />
+      <varInfo nodeId="4964617264469642726" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="31" startPosition="88" endLine="35" endPosition="22">
+      <varInfo nodeId="4964617264469642731" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="4964617264469642734" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="4964617264469642734" varName="editorContext" />
+      <varInfo nodeId="4964617264469642734" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="69" startPosition="94" endLine="73" endPosition="24">
+      <varInfo nodeId="4964617264469642736" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="23" startPosition="89" endLine="28" endPosition="22">
+      <varInfo nodeId="4964617264469642728" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642731" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4964617264469642731" varName="editorContext" />
+      <varInfo nodeId="4964617264469642731" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="68" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="4964617264469642736" varName="editorContext" />
+      <varInfo nodeId="4964617264469642736" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642728" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4964617264469642728" varName="editorContext" />
+      <varInfo nodeId="4964617264469642728" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="76" startPosition="92" endLine="90" endPosition="24">
+      <varInfo nodeId="4964617264469642736" varName="attributeConcept" />
+      <varInfo nodeId="4964617264469642736" varName="attributeKind" />
+      <varInfo nodeId="4964617264469642736" varName="editorCell" />
+      <varInfo nodeId="4964617264469642736" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="38" startPosition="87" endLine="53" endPosition="22">
+      <varInfo nodeId="4964617264469642733" varName="attributeConcept" />
+      <varInfo nodeId="4964617264469642733" varName="attributeKind" />
+      <varInfo nodeId="4964617264469642733" varName="editorCell" />
+      <varInfo nodeId="4964617264469642733" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642736" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="75" startPosition="0" endLine="92" endPosition="0">
+      <varInfo nodeId="4964617264469642736" varName="editorContext" />
+      <varInfo nodeId="4964617264469642736" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642733" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="37" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="4964617264469642733" varName="editorContext" />
+      <varInfo nodeId="4964617264469642733" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4964617264469642726" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="18" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_Editor" />
+    <unitInfo nodeId="4964617264469642734" fileName="GeneratorInternal_BuildSource_JavaJar_Editor.java" startLine="56" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaJar_Editor$_Inline_g0zw24_a1a" />
+  </root>
+  <root nodeId="4964617264469642865">
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642865" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="23" startPosition="89" endLine="24" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="24" startPosition="99" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="24" startPosition="99" endLine="25" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="27" startPosition="80" endLine="28" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="31" startPosition="88" endLine="32" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="32" startPosition="98" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="32" startPosition="98" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="33" startPosition="47" endLine="34" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="34" startPosition="34" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="38" startPosition="87" endLine="39" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="40" startPosition="38" endLine="41" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="41" startPosition="51" endLine="42" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="42" startPosition="26" endLine="43" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="43" startPosition="113" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="44" startPosition="58" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="45" startPosition="73" endLine="46" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="46" startPosition="57" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="48" startPosition="35" endLine="49" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="49" startPosition="72" endLine="50" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="50" startPosition="78" endLine="51" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="52" startPosition="10" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="57" startPosition="33" endLine="58" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="61" startPosition="69" endLine="62" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="65" startPosition="81" endLine="66" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="69" startPosition="92" endLine="70" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="70" startPosition="84" endLine="71" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="71" startPosition="31" endLine="72" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="72" startPosition="44" endLine="73" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="73" startPosition="33" endLine="74" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="74" startPosition="28" endLine="75" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="75" startPosition="60" endLine="76" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="75" startPosition="60" endLine="76" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="76" startPosition="44" endLine="77" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="77" startPosition="75" endLine="78" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="78" startPosition="59" endLine="79" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="80" startPosition="37" endLine="81" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="81" startPosition="74" endLine="82" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="82" startPosition="80" endLine="83" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="84" startPosition="12" endLine="85" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="42" startPosition="26" endLine="45" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="56" startPosition="69" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Inline_b31w58_a1a#()V" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="74" startPosition="28" endLine="77" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4964617264469642865" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="18" startPosition="89" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="47" startPosition="59" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="79" startPosition="61" endLine="85" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_b31w58_a0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_b31w58_a#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="37" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefCell_b31w58_b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="68" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_b31w58_a0b0#(Ljetbrains/mps/nodeEditor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="44" startPosition="58" endLine="44" endPosition="58" />
+    <scopeInfo nodeId="4964617264469642865" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" />
+    <scopeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="24" startPosition="99" endLine="25" endPosition="48" />
+    <scopeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="25" startPosition="48" endLine="26" endPosition="81" />
+    <scopeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="26" startPosition="81" endLine="27" endPosition="80" />
+    <scopeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="32" startPosition="98" endLine="33" endPosition="47" />
+    <scopeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="57" startPosition="33" endLine="58" endPosition="14" />
+    <scopeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="61" startPosition="69" endLine="62" endPosition="67" />
+    <scopeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="65" startPosition="81" endLine="66" endPosition="66" />
+    <scopeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="75" startPosition="60" endLine="76" endPosition="44" />
+    <scopeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="42" startPosition="26" endLine="45" endPosition="73" />
+    <scopeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="48" startPosition="35" endLine="51" endPosition="105">
+      <varInfo nodeId="4964617264469642872" varName="manager" />
+      <varInfo nodeId="4964617264469642872" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="56" startPosition="69" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="74" startPosition="28" endLine="77" endPosition="75" />
+    <scopeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="80" startPosition="37" endLine="83" endPosition="107">
+      <varInfo nodeId="4964617264469642875" varName="manager" />
+      <varInfo nodeId="4964617264469642875" varName="opContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642865" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="18" startPosition="89" endLine="22" endPosition="0">
+      <varInfo nodeId="4964617264469642865" varName="editorContext" />
+      <varInfo nodeId="4964617264469642865" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="31" startPosition="88" endLine="35" endPosition="22">
+      <varInfo nodeId="4964617264469642870" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="4964617264469642873" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
+      <varInfo nodeId="4964617264469642873" varName="editorContext" />
+      <varInfo nodeId="4964617264469642873" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="23" startPosition="89" endLine="28" endPosition="22">
+      <varInfo nodeId="4964617264469642867" varName="editorCell" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642870" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="30" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="4964617264469642870" varName="editorContext" />
+      <varInfo nodeId="4964617264469642870" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642867" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="22" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="4964617264469642867" varName="editorContext" />
+      <varInfo nodeId="4964617264469642867" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="38" startPosition="87" endLine="53" endPosition="22">
+      <varInfo nodeId="4964617264469642872" varName="attributeConcept" />
+      <varInfo nodeId="4964617264469642872" varName="attributeKind" />
+      <varInfo nodeId="4964617264469642872" varName="editorCell" />
+      <varInfo nodeId="4964617264469642872" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="69" startPosition="92" endLine="85" endPosition="24">
+      <varInfo nodeId="4964617264469642875" varName="attributeConcept" />
+      <varInfo nodeId="4964617264469642875" varName="attributeKind" />
+      <varInfo nodeId="4964617264469642875" varName="editorCell" />
+      <varInfo nodeId="4964617264469642875" varName="provider" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642872" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="37" startPosition="0" endLine="55" endPosition="0">
+      <varInfo nodeId="4964617264469642872" varName="editorContext" />
+      <varInfo nodeId="4964617264469642872" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4964617264469642875" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="68" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="4964617264469642875" varName="editorContext" />
+      <varInfo nodeId="4964617264469642875" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="4964617264469642865" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="18" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_Editor" />
+    <unitInfo nodeId="4964617264469642873" fileName="GeneratorInternal_BuildSource_JavaLibrary_Editor.java" startLine="56" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.build.editor.GeneratorInternal_BuildSource_JavaLibrary_Editor$_Inline_b31w58_a1a" />
+  </root>
   <root nodeId="4993211115183250896">
     <nodeInfo nodeId="4993211115183250898" fileName="BuildSource_JavaDependencyLibrary_Editor.java" startLine="79" startPosition="58" endLine="79" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4993211115183250896" fileName="BuildSource_JavaDependencyLibrary_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
