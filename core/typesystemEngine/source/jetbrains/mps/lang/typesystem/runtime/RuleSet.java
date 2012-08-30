@@ -80,10 +80,12 @@ public class RuleSet<T extends IApplicableToConcept> {
     if (!myRules.containsKey(conceptFQName)) return Collections.emptyList();
 
     List<T> result = new ArrayList<T>(4);
-    // TODO check for concurrent access and make a copy if needed
-    for (T rule: myRules.get(conceptFQName)) {
-      if (scope.containsNamespace(getNamespace(rule))) {
-        result.add(rule);
+    Set<T> rules = myRules.get(conceptFQName);
+    synchronized (rules) {
+      for (T rule: rules) {
+        if (scope.containsNamespace(getNamespace(rule))) {
+          result.add(rule);
+        }
       }
     }
     return Collections.unmodifiableList(result);
