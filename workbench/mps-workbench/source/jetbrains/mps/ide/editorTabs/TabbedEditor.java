@@ -167,7 +167,7 @@ public class TabbedEditor extends BaseNodeEditor{
   }
 
   private void showNodeInternal(SNode node, boolean select, boolean fromTabs) {
-    SNode containingRoot = node.isRoot() ? node : node.getContainingRoot();
+    SNode containingRoot = node.isRoot() ? node : node.getTopmostAncestor();
     SNodePointer currentlyEditedNode = getCurrentlyEditedNode();
     EditorComponent editor = getCurrentEditorComponent();
     if (editor == null) {

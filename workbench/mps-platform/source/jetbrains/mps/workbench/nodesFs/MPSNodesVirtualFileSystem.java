@@ -164,7 +164,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
   }
 
   private void updateModificationStamp(SNode rootNode) {
-    MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(rootNode.getContainingRoot()));
+    MPSNodeVirtualFile vf = myVirtualFiles.get(new SNodePointer(rootNode.getTopmostAncestor()));
     if (vf != null) {
       vf.setModificationStamp(LocalTimeCounter.currentTime());
       vf.setTimeStamp(System.currentTimeMillis());

@@ -90,7 +90,7 @@ class ButtonEditorTab {
     }
 
     private String getActionName(SNode node) {
-        String rootName = node.getContainingRoot().getName();
+        String rootName = node.getTopmostAncestor().getName();
         if (rootName != null) {
             rootName = rootName.replaceFirst("_", "__");
         }
@@ -101,7 +101,7 @@ class ButtonEditorTab {
         private final SNode myNode;
 
         public NavigateNodeAction(SNode node, String name) {
-            super(name, "", IconManager.getIconFor(node.getContainingRoot()));
+            super(name, "", IconManager.getIconFor(node.getTopmostAncestor()));
             myNode = node;
         }
 
@@ -226,7 +226,7 @@ class ButtonEditorTab {
                 public void run() {
                     List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
                     if (nodes.size() == 1) {
-                        myCallback.changeNode(nodes.get(0).getContainingRoot());
+                        myCallback.changeNode(nodes.get(0).getTopmostAncestor());
                         return;
                     }
 

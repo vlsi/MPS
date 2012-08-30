@@ -118,7 +118,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     boolean current = false;
     for (SNode aspect : tab.getDescriptor().getNodes(myBaseNode.getNode())) {
       if (getLastNode() == null) continue;
-      if (aspect.getContainingRoot().equals(getLastNode().getNode())) {
+      if (aspect.getTopmostAncestor().equals(getLastNode().getNode())) {
         current = true;
         break;
       }
