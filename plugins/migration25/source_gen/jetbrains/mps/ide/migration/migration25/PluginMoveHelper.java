@@ -13,8 +13,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -32,13 +30,16 @@ import javax.swing.ImageIcon;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 
 public class PluginMoveHelper {
@@ -84,8 +85,6 @@ public class PluginMoveHelper {
     }
 
     myProject.getProject().save();
-    MPSModuleRepository.getInstance().saveAll();
-    SModelRepository.getInstance().saveAll();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
 
@@ -161,13 +160,13 @@ public class PluginMoveHelper {
 
     final String modelName = s.getModuleFqName() + ".plugin";
     List<SModelDescriptor> solModels = s.getOwnModelDescriptors();
-    SModelDescriptor pluginModel = ListSequence.fromList(solModels).where(new IWhereFilter<SModelDescriptor>() {
+    final Wrappers._T<SModelDescriptor> pluginModel = new Wrappers._T<SModelDescriptor>(ListSequence.fromList(solModels).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
         return it.getLongName().equals(modelName);
       }
-    }).first();
-    if (pluginModel == null) {
-      pluginModel = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().iterator().next(), null);
+    }).first());
+    if (pluginModel.value == null) {
+      pluginModel.value = s.createModel(new SModelFqName(modelName, ""), s.getSModelRoots().iterator().next(), null);
     }
 
     List<SNode> nodes = IterableUtil.asList(LanguageAspect.PLUGIN.get(l).getSModel().roots());
@@ -177,7 +176,7 @@ public class PluginMoveHelper {
         return !(isFromFacetLang(it));
       }
     });
-    final RefactoringContext context = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel), Sequence.fromIterable(nodes2Refactor).toListSequence(), myProject);
+    final RefactoringContext context = RefactoringContext.createRefactoringContextByName("jetbrains.mps.lang.core.refactorings.MoveNodes", Arrays.asList("target"), Arrays.asList(pluginModel.value), Sequence.fromIterable(nodes2Refactor).toListSequence(), myProject);
     RefactoringContext rc = (RefactoringContext) context;
     rc.setLocal(true);
 
@@ -187,8 +186,9 @@ public class PluginMoveHelper {
       }
     });
 
+    // <node> 
 
-    jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.getSModel(), false, true);
+    jetbrains.mps.smodel.SModelOperations.validateLanguagesAndImports(pluginModel.value.getSModel(), false, true);
 
     s.save();
     SModelRepository.getInstance().saveAll();
