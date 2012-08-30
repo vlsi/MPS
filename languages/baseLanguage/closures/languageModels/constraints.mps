@@ -225,10 +225,10 @@
                   </node>
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp25.Link_SetTargetOperation" typeId="tp25.1140725362528" id="1227555760346">
-                  <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="1227555762116">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1227623029090" resolveInfo="coerceToClassifierTypeOrPrimitive" />
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1227555977455">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1227555774490">
+                  <node role="linkTarget" roleId="tp25.1140725362529" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8599557361818706404">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalStaticMethodCall" typeId="tpee.1172058436953" id="1227555762116">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1227623029090" resolveInfo="coerceToClassifierTypeOrPrimitive" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1227555774490">
                         <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="1227555772198">
                           <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpee.1070534760951" resolveInfo="ArrayType" />
                           <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="2386296566107169630">
@@ -239,8 +239,8 @@
                           <link role="link" roleId="tp25.1138056516764" targetNodeId="tpee.1070534760952" />
                         </node>
                       </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="1227555979547" />
                     </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_CopyOperation" typeId="tp25.1144146199828" id="8599557361818738409" />
                   </node>
                 </node>
               </node>
