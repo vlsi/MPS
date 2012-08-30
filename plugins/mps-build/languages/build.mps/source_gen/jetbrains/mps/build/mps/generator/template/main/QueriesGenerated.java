@@ -79,7 +79,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7259033139236585058(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getBooleanProperty("targetReexport");
+    return SPropertyOperations.getBoolean(_context.getNode(), "targetReexport");
   }
 
   public static Object propertyMacro_GetPropertyValue_2105528055260559335(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -372,7 +372,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7259033139236507287(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode targetModule = (SNode) _context.getNode().getReferent("targetModule");
+    SNode targetModule = SLinkOperations.getTarget(_context.getNode(), "targetModule", false);
     return (SNodeOperations.getModel(targetModule).isTransient() ?
       _context.getCopiedOutputNodeForInputNode(targetModule) :
       targetModule
@@ -653,11 +653,9 @@ public class QueriesGenerated {
     MPSModulesClosure.RequiredJavaModules requiredAndReexp = ((MPSModulesClosure) _context.getVariable("var:mdeps")).getRequiredJava();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mod : requiredAndReexp.getModules()) {
-      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
-      loopnode.setReferent("targetModule", mod, false);
-      if (requiredAndReexp.isReexported(mod)) {
-        loopnode.setProperty("targetReexport", "true", false);
-      }
+      SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSource_JavaModule", null);
+      SLinkOperations.setTarget(loopnode, "targetModule", mod, false);
+      SPropertyOperations.set(loopnode, "targetReexport", "" + (requiredAndReexp.isReexported(mod)));
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
