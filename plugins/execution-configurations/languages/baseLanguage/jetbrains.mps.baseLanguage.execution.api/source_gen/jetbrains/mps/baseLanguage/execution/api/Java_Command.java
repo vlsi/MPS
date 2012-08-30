@@ -35,8 +35,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.reloading.ClasspathStringCollector;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import java.util.Set;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -361,7 +361,9 @@ public class Java_Command {
     if (withDependencies) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          AbstractModule.getDependenciesClasspath(CollectionUtil.set(module), false).accept(visitor);
+          for (IModule m : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE))) {
+            m.getClassPathItem().accept(visitor);
+          }
         }
       });
     }
