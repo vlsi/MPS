@@ -168,4 +168,11 @@ public class SNodeOperations {
   public static String getDebugText(SNode node) {
     return ((jetbrains.mps.smodel.SNode) node).getDebugText();
   }
+
+  /**
+   * This will be replaced by getting resolve info from a reference in a context containing it
+   */
+  public static String getResolveInfo(SNode n) {
+    return ((jetbrains.mps.smodel.SNode) n).getResolveInfo();
+  }
 }
