@@ -397,7 +397,7 @@
     <nodeInfo nodeId="4491627601716787214" fileName="EditorComponentUtil.java" startLine="74" startPosition="5" endLine="75" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4491627601716787242" fileName="EditorComponentUtil.java" startLine="79" startPosition="56" endLine="80" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4491627601716787248" fileName="EditorComponentUtil.java" startLine="80" startPosition="51" endLine="81" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4491627601716787233" fileName="EditorComponentUtil.java" startLine="82" startPosition="12" endLine="83" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4491627601716787233" fileName="EditorComponentUtil.java" startLine="82" startPosition="12" endLine="83" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4491627601716787278" fileName="EditorComponentUtil.java" startLine="88" startPosition="44" endLine="89" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4491627601716787280" fileName="EditorComponentUtil.java" startLine="90" startPosition="5" endLine="91" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4491627601716787290" fileName="EditorComponentUtil.java" startLine="92" startPosition="27" endLine="93" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -440,7 +440,7 @@
     <scopeInfo nodeId="4491627601716787148" fileName="EditorComponentUtil.java" startLine="53" startPosition="28" endLine="54" endPosition="18" />
     <scopeInfo nodeId="4491627601716787191" fileName="EditorComponentUtil.java" startLine="66" startPosition="75" endLine="67" endPosition="30" />
     <scopeInfo nodeId="4491627601716787208" fileName="EditorComponentUtil.java" startLine="71" startPosition="81" endLine="72" endPosition="36" />
-    <scopeInfo nodeId="4491627601716787232" fileName="EditorComponentUtil.java" startLine="82" startPosition="12" endLine="83" endPosition="67" />
+    <scopeInfo nodeId="4491627601716787232" fileName="EditorComponentUtil.java" startLine="82" startPosition="12" endLine="83" endPosition="68" />
     <scopeInfo nodeId="4491627601716787277" fileName="EditorComponentUtil.java" startLine="88" startPosition="44" endLine="89" endPosition="37" />
     <scopeInfo nodeId="4491627601716787299" fileName="EditorComponentUtil.java" startLine="94" startPosition="30" endLine="95" endPosition="30" />
     <scopeInfo nodeId="4491627601716787330" fileName="EditorComponentUtil.java" startLine="101" startPosition="43" endLine="102" endPosition="43" />

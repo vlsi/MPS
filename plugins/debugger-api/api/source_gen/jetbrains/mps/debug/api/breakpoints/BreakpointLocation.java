@@ -86,7 +86,7 @@ public class BreakpointLocation {
       public String compute() {
         SNode node = myNodePointer.getNode();
         if (node != null) {
-          SNode root = node.getContainingRoot();
+          SNode root = node.getTopmostAncestor();
           return node + " in " + root + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";
         } else {
           return myNodePointer.getNodeId() + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";
