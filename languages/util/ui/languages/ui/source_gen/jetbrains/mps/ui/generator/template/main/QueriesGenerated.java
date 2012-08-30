@@ -610,7 +610,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1251509410704218257(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).get(0);
   }
 
   public static SNode sourceNodeQuery_1251509410704218358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -618,23 +618,23 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1251509410704218458(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).get(0);
   }
 
   public static SNode sourceNodeQuery_1251509410704218477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).get(0);
   }
 
   public static SNode sourceNodeQuery_1251509410704218506(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).get(0);
   }
 
   public static SNode sourceNodeQuery_1251509410704218535(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).get(0);
   }
 
   public static SNode sourceNodeQuery_1251509410704218564(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).get(0);
   }
 
   public static SNode sourceNodeQuery_6991444902044157789(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -690,7 +690,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1251509410704218302(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Sequence.fromIterable(UIObjectTemplate_Behavior.call_allExtendsTemplates_4007322171506129964(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "template", false), "jetbrains.mps.ui.modeling.structure.UIObjectTemplate"))).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode t) {
-        return t.getChild(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"));
+        return t.getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).get(0);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode tp) {

@@ -22,8 +22,9 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -157,16 +158,17 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void copyChildren(SNode from, SNode to) {
-    Set<String> toConceptRoles = SetSequence.fromSetWithValues(new HashSet(), ListSequence.fromList(((List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(to), "call_getLinkDeclarations_1213877394480", new Class[]{SNode.class}))).select(new ISelector<SNode, String>() {
+    List<SNode> ld = SModelSearchUtil.getLinkDeclarations(SNodeOperations.getConceptDeclaration(to));
+    for (String role : ListSequence.fromList(ld).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, "role");
+        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role");
       }
-    }));
-    for (String role : SetSequence.fromSet(from.getChildRoles())) {
-      if (SetSequence.fromSet(toConceptRoles).contains(role) && !(SetSequence.fromSet(ROLES_NOT_TO_COPY).contains(role))) {
-        for (SNode child : ListSequence.fromList(from.getChildren(role))) {
-          to.addChild(role, SNodeOperations.detachNode(((SNode) child)));
-        }
+    })) {
+      if (SetSequence.fromSet(ROLES_NOT_TO_COPY).contains(role)) {
+        continue;
+      }
+      for (SNode child : ListSequence.fromList(from.getChildren(role))) {
+        to.addChild(role, SNodeOperations.detachNode(((SNode) child)));
       }
     }
   }
