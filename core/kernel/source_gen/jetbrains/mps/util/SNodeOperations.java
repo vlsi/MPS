@@ -61,8 +61,8 @@ public class SNodeOperations {
    * todo rewrite via ISNode methods
    * todo in our code, rewrite using ancestors.where(condition) or add a custom condition to smodel language ancestor query
    */
-  public static SNode getDescendants(SNode node, Condition<jetbrains.mps.smodel.SNode> condition) {
-    return ((jetbrains.mps.smodel.SNode) node).findParent(condition);
+  public static List<SNode> getDescendants(SNode node, Condition<jetbrains.mps.smodel.SNode> condition) {
+    return ((List) ((jetbrains.mps.smodel.SNode) node).getDescendants(condition));
   }
 
   /**
