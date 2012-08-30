@@ -137,6 +137,7 @@
       <property name="name" nameId="tpck.1169194664001" value="OptionalMigrations" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
       <property name="caption" nameId="tp4k.1204991940915" value="Optional" />
+      <property name="isPluginXmlGroup" nameId="tp4k.6368583333374291912" value="true" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454599624">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_APIMigration" />
@@ -8086,13 +8087,13 @@
     </node>
   </root>
   <root id="6104662726362995670">
+    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6104662726363047020">
+      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="2899596005953728721" resolveInfo="Migrations25" />
+    </node>
     <node role="contents" roleId="tp4k.1207145245948" type="tp4k.ElementListContents" typeId="tp4k.1207145163717" id="6104662726362995672">
       <node role="reference" roleId="tp4k.1207145201301" type="tp4k.ActionInstance" typeId="tp4k.1203088046679" id="6104662726363047019">
         <link role="action" roleId="tp4k.1203088061055" targetNodeId="6104662726362995667" resolveInfo="FixModelLanguages" />
       </node>
-    </node>
-    <node role="modifier" roleId="tp4k.1204991552650" type="tp4k.ModificationStatement" typeId="tp4k.1203092361741" id="6104662726363047020">
-      <link role="modifiedGroup" roleId="tp4k.1203092736097" targetNodeId="2899596005953728721" resolveInfo="Migrations25" />
     </node>
   </root>
   <root id="6104662726362995667">
@@ -8320,6 +8321,9 @@
       </node>
       <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="1234868901259333410">
         <link role="group" roleId="tp4k.331224023792854816" targetNodeId="6104662726362995670" resolveInfo="FixAfterMigration" />
+      </node>
+      <node role="actionGroups" roleId="tp4k.331224023792854818" type="tp4k.ActionGroupRef" typeId="tp4k.331224023792854815" id="5838018373833259528">
+        <link role="group" roleId="tp4k.331224023792854816" targetNodeId="4250481571544053952" resolveInfo="OptionalMigrations" />
       </node>
     </node>
   </root>
