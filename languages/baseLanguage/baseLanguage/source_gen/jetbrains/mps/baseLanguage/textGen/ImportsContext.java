@@ -56,8 +56,9 @@ public class ImportsContext {
     }
     MapSequence.fromMap(simpleNameToFqName).put(simpleName, fqName);
     if (packageName.equals(this.packageName)) {
-      // same package: generate without explicit import 
-      return false;
+      // same package: generate without explicit import in case of root classifier 
+      boolean isRootClassifier = (packageName.length() + simpleName.length() + 1) == fqName.length();
+      return !(isRootClassifier);
     }
     if (packageName.equals("java.lang")) {
       // java.lang model: generate without explicit import if context package doesn't contains same simple name 
