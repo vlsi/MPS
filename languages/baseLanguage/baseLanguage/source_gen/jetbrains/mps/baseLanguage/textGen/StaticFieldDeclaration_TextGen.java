@@ -6,7 +6,7 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TraceInfoGenerationUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor.NodeAttribute;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -19,8 +19,8 @@ public class StaticFieldDeclaration_TextGen extends SNodeTextGen {
     if (getBuffer().hasPositionsSupport()) {
       TraceInfoGenerationUtil.createPositionInfo(this, node);
     }
-    if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) != null)) {
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), this.getSNode());
+    if ((AttributeOperations.getAttribute(node, new NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))) != null)) {
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), AttributeOperations.getAttribute(node, new NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"))), this.getSNode());
     }
     this.appendNewLine();
     BaseLanguageTextGen.annotations(node, this);
