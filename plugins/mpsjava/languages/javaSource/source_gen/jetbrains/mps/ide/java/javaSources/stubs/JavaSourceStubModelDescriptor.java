@@ -9,13 +9,13 @@ import jetbrains.mps.project.IModule;
 import java.util.Collection;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
 import jetbrains.mps.smodel.descriptor.source.ModelDataSource;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor implements NodesNavigationContributor {
@@ -27,35 +27,48 @@ public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor imple
     return ((JavaSourceStubModelDS) getSource()).getNodeDescriptors();
   }
 
-  public void reparseOneFile(char[] contents) {
-    ModelDataSource ds = getSource();
+  public void reparseOneFile(final String contents) {
+    final ModelDataSource ds = getSource();
     assert ds instanceof JavaSourceStubModelDS;
 
-    final SModel myModel = getSModel();
-    List<SNode> nodes = ((JavaSourceStubModelDS) ds).parseFile(contents, myModel);
 
-    // replace existing nodes with matching names 
-    List<SNode> roots = SModelOperations.getRoots(myModel, null);
-    for (SNode node : ListSequence.fromList(nodes)) {
-      final String name = node.getName();
-      // TODO use myModel/.getNodeById 
-      final SNode root = ListSequence.fromList(roots).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return it.getName().equals(name);
+    // FIXME change write actions, commands 
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+
+        final SModel myModel = getSModel();
+        List<SNode> nodes = ((JavaSourceStubModelDS) ds).parseFile(contents, myModel);
+
+        // replace existing nodes with matching names 
+        List<SNode> roots = SModelOperations.getRoots(myModel, null);
+        for (SNode node : ListSequence.fromList(nodes)) {
+          final String name = node.getName();
+          // TODO use myModel/.getNodeById 
+          final SNode root = ListSequence.fromList(roots).findFirst(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return it.getName().equals(name);
+            }
+          });
+
+          final SNode theNode = node;
+
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              if ((root == null)) {
+                SModelOperations.addRootNode(myModel, theNode);
+              } else {
+                SNodeOperations.detachNode(root);
+                // <node> 
+                SNodeOperations.deleteNode(root);
+                SModelOperations.addRootNode(myModel, theNode);
+              }
+            }
+          });
+          // <node> 
+          // <node> 
+
         }
-      });
-
-      final SNode theNode = node;
-
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          if ((root == null)) {
-            SModelOperations.addRootNode(myModel, theNode);
-          } else {
-            SNodeOperations.replaceWithAnother(root, theNode);
-          }
-        }
-      });
-    }
+      }
+    });
   }
 }

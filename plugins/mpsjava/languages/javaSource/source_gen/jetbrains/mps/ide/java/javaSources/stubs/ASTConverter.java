@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -117,8 +118,8 @@ public class ASTConverter {
       SPropertyOperations.set(cls, "nonStatic", "" + (false));
     }
 
-    // <node> 
-    // <node> 
+    SNodeId id;
+    cls.setId(new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + SPropertyOperations.getString(cls, "name")));
 
 
     // handling type params 

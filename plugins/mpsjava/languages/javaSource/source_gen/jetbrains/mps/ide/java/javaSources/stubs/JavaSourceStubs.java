@@ -70,7 +70,7 @@ public class JavaSourceStubs extends AbstractModelRootManager {
 
       } else {
 
-        smd = new BaseStubModelDescriptor(modelReference, new JavaSourceStubModelDS(module.getModuleReference(), dir.getPath()), module);
+        smd = new JavaSourceStubModelDescriptor(modelReference, new JavaSourceStubModelDS(module.getModuleReference(), dir.getPath()), module);
 
         for (IFile file : ListSequence.fromList(files)) {
           ((StubModelDataSource) smd.getSource()).addPath(file.getPath());

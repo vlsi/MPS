@@ -240,32 +240,32 @@
       <varInfo nodeId="8083368042256393735" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256393775" fileName="Utils.java" startLine="188" startPosition="90" endLine="191" endPosition="5">
-      <varInfo nodeId="8083368042256393775" varName="m" />
+      <varInfo nodeId="8083368042256393776" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256393917" fileName="Utils.java" startLine="193" startPosition="91" endLine="196" endPosition="5">
-      <varInfo nodeId="8083368042256393917" varName="m" />
+      <varInfo nodeId="8083368042256393918" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="7562608578341431730" fileName="Utils.java" startLine="243" startPosition="90" endLine="246" endPosition="5">
-      <varInfo nodeId="7562608578341431730" varName="rightRoot" />
+      <varInfo nodeId="7562608578341431731" varName="rightRoot" />
     </scopeInfo>
     <scopeInfo nodeId="7562608578341463859" fileName="Utils.java" startLine="248" startPosition="89" endLine="251" endPosition="16">
       <varInfo nodeId="7562608578341463919" varName="rightBrother" />
     </scopeInfo>
     <scopeInfo nodeId="7562608578341511080" fileName="Utils.java" startLine="257" startPosition="92" endLine="260" endPosition="5">
-      <varInfo nodeId="7562608578341511080" varName="cl" />
+      <varInfo nodeId="7562608578341511081" varName="cl" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256455990" fileName="Utils.java" startLine="276" startPosition="94" endLine="279" endPosition="7">
-      <varInfo nodeId="8083368042256455990" varName="mthd" />
+      <varInfo nodeId="8083368042256455991" varName="mthd" />
     </scopeInfo>
     <scopeInfo nodeId="7030568040400230213" fileName="Utils.java" startLine="289" startPosition="86" endLine="292" endPosition="5">
-      <varInfo nodeId="7030568040400230213" varName="rightTVar" />
+      <varInfo nodeId="7030568040400230214" varName="rightTVar" />
     </scopeInfo>
     <scopeInfo nodeId="7030568040400230305" fileName="Utils.java" startLine="294" startPosition="56" endLine="297" endPosition="124" />
     <scopeInfo nodeId="7030568040400251762" fileName="Utils.java" startLine="307" startPosition="86" endLine="310" endPosition="5">
-      <varInfo nodeId="7030568040400251762" varName="rightMthd" />
+      <varInfo nodeId="7030568040400251763" varName="rightMthd" />
     </scopeInfo>
     <scopeInfo nodeId="7030568040400251915" fileName="Utils.java" startLine="311" startPosition="0" endLine="314" endPosition="5">
-      <varInfo nodeId="7030568040400251915" varName="leftMthd" />
+      <varInfo nodeId="7030568040400251916" varName="leftMthd" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256393550" fileName="Utils.java" startLine="109" startPosition="0" endLine="113" endPosition="0">
       <varInfo nodeId="8083368042256393554" varName="dirPath" />
@@ -273,7 +273,7 @@
     </scopeInfo>
     <scopeInfo nodeId="8083368042256397076" fileName="Utils.java" startLine="126" startPosition="54" endLine="130" endPosition="7" />
     <scopeInfo nodeId="8083368042256397078" fileName="Utils.java" startLine="126" startPosition="54" endLine="130" endPosition="7">
-      <varInfo nodeId="8083368042256397078" varName="root" />
+      <varInfo nodeId="8083368042256397079" varName="root" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294020191" fileName="Utils.java" startLine="174" startPosition="87" endLine="178" endPosition="118" />
     <scopeInfo nodeId="7562608578341431674" fileName="Utils.java" startLine="202" startPosition="89" endLine="206" endPosition="49">
@@ -287,7 +287,7 @@
       <varInfo nodeId="2974745296611907227" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256456146" fileName="Utils.java" startLine="280" startPosition="0" endLine="284" endPosition="7">
-      <varInfo nodeId="8083368042256456146" varName="mthd" />
+      <varInfo nodeId="8083368042256456147" varName="mthd" />
     </scopeInfo>
     <scopeInfo nodeId="4795297196607510337" fileName="Utils.java" startLine="50" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="4795297196607510343" varName="node" />
@@ -297,22 +297,22 @@
       <varInfo nodeId="1218582063869330571" varName="source" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256393730" fileName="Utils.java" startLine="119" startPosition="73" endLine="124" endPosition="5">
-      <varInfo nodeId="8083368042256393730" varName="md" />
+      <varInfo nodeId="8083368042256393731" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="7562608578341463856" fileName="Utils.java" startLine="247" startPosition="0" endLine="252" endPosition="5">
-      <varInfo nodeId="7562608578341463856" varName="leftRoot" />
+      <varInfo nodeId="7562608578341463857" varName="leftRoot" />
     </scopeInfo>
     <scopeInfo nodeId="7030568040400230302" fileName="Utils.java" startLine="293" startPosition="0" endLine="298" endPosition="5">
-      <varInfo nodeId="7030568040400230302" varName="leftTVar" />
+      <varInfo nodeId="7030568040400230303" varName="leftTVar" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256397073" fileName="Utils.java" startLine="125" startPosition="0" endLine="131" endPosition="5">
-      <varInfo nodeId="8083368042256397073" varName="m" />
+      <varInfo nodeId="8083368042256397074" varName="m" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294020188" fileName="Utils.java" startLine="173" startPosition="0" endLine="179" endPosition="7">
-      <varInfo nodeId="7149447565294020188" varName="srcRoot" />
+      <varInfo nodeId="7149447565294020189" varName="srcRoot" />
     </scopeInfo>
     <scopeInfo nodeId="7562608578341431671" fileName="Utils.java" startLine="201" startPosition="82" endLine="207" endPosition="5">
-      <varInfo nodeId="7562608578341431671" varName="name" />
+      <varInfo nodeId="7562608578341431672" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294019839" fileName="Utils.java" startLine="151" startPosition="87" endLine="160" endPosition="46" />
     <scopeInfo nodeId="8083368042256455880" fileName="Utils.java" startLine="275" startPosition="186" endLine="284" endPosition="7">
@@ -331,13 +331,13 @@
       <varInfo nodeId="7030568040400230220" varName="rightIndex" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294019836" fileName="Utils.java" startLine="150" startPosition="0" endLine="161" endPosition="7">
-      <varInfo nodeId="7149447565294019836" varName="binRoot" />
+      <varInfo nodeId="7149447565294019837" varName="binRoot" />
     </scopeInfo>
     <scopeInfo nodeId="7016215775330903349" fileName="Utils.java" startLine="168" startPosition="62" endLine="180" endPosition="5">
-      <varInfo nodeId="7016215775330903349" varName="md" />
+      <varInfo nodeId="7016215775330903350" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="7562608578341511236" fileName="Utils.java" startLine="261" startPosition="0" endLine="273" endPosition="5">
-      <varInfo nodeId="7562608578341511236" varName="cl" />
+      <varInfo nodeId="7562608578341511237" varName="cl" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256419892" fileName="Utils.java" startLine="241" startPosition="0" endLine="254" endPosition="0">
       <varInfo nodeId="8083368042256419896" varName="left" />
@@ -363,7 +363,7 @@
       <varInfo nodeId="7030568040400251406" varName="right" />
     </scopeInfo>
     <scopeInfo nodeId="7016215775330881298" fileName="Utils.java" startLine="145" startPosition="88" endLine="162" endPosition="5">
-      <varInfo nodeId="7016215775330881298" varName="md" />
+      <varInfo nodeId="7016215775330881299" varName="md" />
     </scopeInfo>
     <scopeInfo nodeId="1218582063869921686" fileName="Utils.java" startLine="88" startPosition="61" endLine="107" endPosition="183">
       <varInfo nodeId="1218582063869921801" varName="mdl" />
@@ -404,7 +404,7 @@
       <varInfo nodeId="2974745296611907190" varName="srcRoots" />
     </scopeInfo>
     <scopeInfo nodeId="2974745296611411606" fileName="Utils.java" startLine="212" startPosition="0" endLine="237" endPosition="5">
-      <varInfo nodeId="2974745296611411606" varName="name" />
+      <varInfo nodeId="2974745296611411607" varName="name" />
     </scopeInfo>
     <scopeInfo nodeId="4795297196607521186" fileName="Utils.java" startLine="55" startPosition="0" endLine="82" endPosition="0">
       <varInfo nodeId="1218582063869330552" varName="code" />
@@ -448,7 +448,7 @@
   </root>
   <root nodeId="8083368042256395971">
     <nodeInfo nodeId="7339047227027414511" fileName="NodePatcher.java" startLine="25" startPosition="171" endLine="26" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256398823" fileName="NodePatcher.java" startLine="38" startPosition="49" endLine="39" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8083368042256398823" fileName="NodePatcher.java" startLine="38" startPosition="49" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7149447565294019920" fileName="NodePatcher.java" startLine="45" startPosition="168" endLine="46" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7149447565294019998" fileName="NodePatcher.java" startLine="51" startPosition="172" endLine="52" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7149447565294020086" fileName="NodePatcher.java" startLine="58" startPosition="343" endLine="59" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -497,7 +497,7 @@
     <nodeInfo nodeId="7149447565294020241" fileName="NodePatcher.java" startLine="63" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="removeSourceLevelAnnotations#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="8083368042256395976" fileName="NodePatcher.java" startLine="21" startPosition="24" endLine="21" endPosition="24" />
     <scopeInfo nodeId="8083368042256396006" fileName="NodePatcher.java" startLine="25" startPosition="171" endLine="26" endPosition="152" />
-    <scopeInfo nodeId="8083368042256398822" fileName="NodePatcher.java" startLine="38" startPosition="49" endLine="39" endPosition="61" />
+    <scopeInfo nodeId="8083368042256398822" fileName="NodePatcher.java" startLine="38" startPosition="49" endLine="39" endPosition="63" />
     <scopeInfo nodeId="7149447565294019919" fileName="NodePatcher.java" startLine="45" startPosition="168" endLine="46" endPosition="66" />
     <scopeInfo nodeId="7149447565294019997" fileName="NodePatcher.java" startLine="51" startPosition="172" endLine="52" endPosition="52" />
     <scopeInfo nodeId="7149447565294020085" fileName="NodePatcher.java" startLine="58" startPosition="343" endLine="59" endPosition="65" />
@@ -510,16 +510,16 @@
     <scopeInfo nodeId="8083368042256395973" fileName="NodePatcher.java" startLine="20" startPosition="26" endLine="22" endPosition="3" />
     <scopeInfo nodeId="8083368042256395980" fileName="NodePatcher.java" startLine="24" startPosition="51" endLine="27" endPosition="5" />
     <scopeInfo nodeId="8083368042256395999" fileName="NodePatcher.java" startLine="24" startPosition="51" endLine="27" endPosition="5">
-      <varInfo nodeId="8083368042256395999" varName="method" />
+      <varInfo nodeId="8083368042256396000" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256398813" fileName="NodePatcher.java" startLine="37" startPosition="156" endLine="40" endPosition="7" />
     <scopeInfo nodeId="7149447565294019888" fileName="NodePatcher.java" startLine="44" startPosition="53" endLine="47" endPosition="5" />
     <scopeInfo nodeId="7149447565294019912" fileName="NodePatcher.java" startLine="44" startPosition="53" endLine="47" endPosition="5">
-      <varInfo nodeId="7149447565294019912" varName="field" />
+      <varInfo nodeId="7149447565294019913" varName="field" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294019968" fileName="NodePatcher.java" startLine="50" startPosition="56" endLine="53" endPosition="5" />
     <scopeInfo nodeId="7149447565294019990" fileName="NodePatcher.java" startLine="50" startPosition="56" endLine="53" endPosition="5">
-      <varInfo nodeId="7149447565294019990" varName="constr" />
+      <varInfo nodeId="7149447565294019991" varName="constr" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294020059" fileName="NodePatcher.java" startLine="57" startPosition="158" endLine="60" endPosition="7" />
     <scopeInfo nodeId="7149447565294020275" fileName="NodePatcher.java" startLine="65" startPosition="290" endLine="69" endPosition="0">
@@ -536,11 +536,11 @@
     </scopeInfo>
     <scopeInfo nodeId="8083368042256398786" fileName="NodePatcher.java" startLine="36" startPosition="47" endLine="41" endPosition="5" />
     <scopeInfo nodeId="8083368042256398805" fileName="NodePatcher.java" startLine="36" startPosition="47" endLine="41" endPosition="5">
-      <varInfo nodeId="8083368042256398805" varName="cls" />
+      <varInfo nodeId="8083368042256398806" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294020028" fileName="NodePatcher.java" startLine="56" startPosition="54" endLine="61" endPosition="5" />
     <scopeInfo nodeId="7149447565294020051" fileName="NodePatcher.java" startLine="56" startPosition="54" endLine="61" endPosition="5">
-      <varInfo nodeId="7149447565294020051" varName="cls" />
+      <varInfo nodeId="7149447565294020052" varName="cls" />
     </scopeInfo>
     <scopeInfo nodeId="8083368042256395977" fileName="NodePatcher.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="8083368042256395981" varName="node" />
@@ -570,7 +570,7 @@
       <varInfo nodeId="7149447565294020372" varName="sourceConst" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294020308" fileName="NodePatcher.java" startLine="70" startPosition="0" endLine="95" endPosition="5">
-      <varInfo nodeId="7149447565294020308" varName="thisAnnoInst" />
+      <varInfo nodeId="7149447565294020309" varName="thisAnnoInst" />
     </scopeInfo>
     <scopeInfo nodeId="7149447565294020244" fileName="NodePatcher.java" startLine="64" startPosition="63" endLine="95" endPosition="5">
       <varInfo nodeId="7149447565294020268" varName="retentionAnno" />

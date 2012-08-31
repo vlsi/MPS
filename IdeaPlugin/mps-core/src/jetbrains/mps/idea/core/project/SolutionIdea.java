@@ -128,13 +128,12 @@ public class SolutionIdea extends Solution {
         }
       }
 
-      if (ProjectJavaSourceImporter.ourSolution!=null) {
+      Solution sourceStubSol = ProjectJavaSourceImporter.getInstance(myModule.getProject()).getSolutionForModule(myModule);
+      if (sourceStubSol!=null) {
         Dependency dep = new Dependency();
-        dep.setModuleRef(ProjectJavaSourceImporter.ourSolution.getModuleReference());
+        dep.setModuleRef(sourceStubSol.getModuleReference());
         dep.setReexport(false);
         myDependencies.add(dep);
-      } else {
-        System.out.println("Our stub solution is MISSING");
       }
 
       for (Module usedModule : usedModules) {

@@ -91,10 +91,9 @@ public class JavaSourceStubModelDS extends StubModelDataSource implements FastFi
     return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
   }
 
-  public List<SNode> parseFile(char[] contents, SModel model) {
+  public List<SNode> parseFile(String contents, SModel model) {
     JavaParser parser = new JavaParser();
-    String code = new String(contents);
-    return parser.parse(code, ParseDepth.TOPLEVEL, true, model);
+    return parser.parse(contents, ParseDepth.TOPLEVEL, true, model);
   }
 
   public Collection<NodeDescriptor> getNodeDescriptors() {

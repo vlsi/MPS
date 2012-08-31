@@ -36,7 +36,7 @@ public class NodePatcher {
   public static void fixNonStatic(SNode node) {
     for (SNode cls : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{}))) {
       if (cls.getProperty("nonStatic") == null) {
-        SPropertyOperations.set(cls, "nonStatic", "" + true);
+        SPropertyOperations.set(cls, "nonStatic", "" + (true));
       }
     }
   }

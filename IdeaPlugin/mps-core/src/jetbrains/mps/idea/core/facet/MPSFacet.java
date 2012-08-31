@@ -84,11 +84,6 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
           }
         });
 
-        if (ProjectJavaSourceImporter.isWorkDone()) {
-          System.out.println("Work already done here: " + ProjectJavaSourceImporter.ourSolution.getModuleReference().toString());
-        } else {
-          System.out.println("NOT YET");
-        }
       }
     });
 
