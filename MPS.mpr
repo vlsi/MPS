@@ -404,6 +404,7 @@
       <modulePath path="${project}/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/jetbrains.mps.samples.theSimplestLanguage.sandbox.msd" folder="samples" />
       <modulePath path="${project}/samples/xmlLiterals/languages/xmlLiterals/xmlLiterals.mpl" folder="samples" />
       <modulePath path="${project}/samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/jetbrains.mps.samples.xmlLiterals.sandbox.msd" folder="samples" />
+      <modulePath path="${project}/solutions/jetbrains.mps.lang.smodel.runtime/runtime.msd" folder="core.smodel" />
       <modulePath path="${project}/testbench/languages/solutions/pluginSolution/pluginSolution.msd" folder="testbench" />
       <modulePath path="${project}/testbench/languages/suite.mpl" folder="testbench" />
       <modulePath path="${project}/testbench/modules/miscTests/solutions/jetbrains.mps.refactoring.tests.msd" folder="testbench" />
