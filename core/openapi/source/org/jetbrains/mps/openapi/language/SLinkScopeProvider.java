@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.language.scope;
+package org.jetbrains.mps.openapi.language;
 
-public interface SScopePlace {
+public interface SLinkScopeProvider {
+  SScope getScope(SScopePlace place);
 }

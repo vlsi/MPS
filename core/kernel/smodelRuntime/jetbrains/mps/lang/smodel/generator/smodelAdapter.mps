@@ -64,6 +64,7 @@
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6599163591527286349">
       <property name="name" nameId="tpck.1169194664001" value="SLinkOperations" />
+      <property name="isDeprecated" nameId="tpee.1224848525476" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6599163591527286941">
       <property name="name" nameId="tpck.1169194664001" value="SNodeOperations" />
@@ -6329,6 +6330,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="3240133230625539237">
+      <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Deprecated" resolveInfo="Deprecated" />
     </node>
   </root>
   <root id="6599163591527286941">
