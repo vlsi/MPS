@@ -20,9 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
-
 import java.util.List;
-
 import jetbrains.mps.smodel.event.SModelEvent;
 
 public class EditorResolver implements IResolver {
