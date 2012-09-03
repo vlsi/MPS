@@ -6,8 +6,10 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.textGen.TextGenBuffer;
 import java.util.Set;
 import java.util.Map;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._2;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -15,10 +17,10 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.InternUtil;
 import java.util.Collections;
+import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -31,10 +33,13 @@ public class ImportsContext {
   private final Set<String> packageSimpleNames;
   private final Set<String> classifiersInRoot;
   private final Map<String, String> bindings;
+  private Map<_2<SNode, String>, Map<String, String>> contextClassifiersCache;
 
   private ImportsContext(TextGenBuffer buffer, SNode rootNode) {
     this.buffer = buffer;
     this.packageName = SNodeOperations.getModel(rootNode).getSModelReference().getLongName();
+
+    contextClassifiersCache = MapSequence.fromMap(new HashMap<_2<SNode, String>, Map<String, String>>());
 
     // init nested class bindings 
     bindings = new HashMap<String, String>();
@@ -129,39 +134,27 @@ public class ImportsContext {
       return Collections.emptyMap();
     }
 
-    Map<String, String> bindings = MapSequence.fromMap(new HashMap<String, String>());
-    SNode child = null;
-
-    while ((contextNode != null)) {
-      if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
-        boolean processNestedClassifiers = false;
-        if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
-          processNestedClassifiers = true;
-        } else if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.Interface")) {
-          processNestedClassifiers = !(SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface"));
-        } else if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          processNestedClassifiers = !(SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(child, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass"));
-        } else {
-          LOG.warning("Illegal classifier node in bl textgen: " + contextNode);
-        }
-
-        // todo: is it true? had a bug with it. Look like nested classifier has more priority then class with same name 
-        addClassifierToBindingMap(bindings, SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"));
-        if (processNestedClassifiers) {
-          // todo: classifiers with same names in different supertypes? 
-          for (SNode superClassifier : Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-            for (SNode nestedClassifier : SLinkOperations.getTargets(superClassifier, "staticInnerClassifiers", true)) {
-              addClassifierToBindingMap(bindings, nestedClassifier);
-            }
-          }
-        }
-      }
-
-      child = contextNode;
+    // find first classifier in path 
+    String sourceChildRole = null;
+    while ((contextNode != null) && !(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      sourceChildRole = contextNode.getRole();
       contextNode = SNodeOperations.getParent(contextNode);
     }
 
-    return bindings;
+    if ((contextNode == null)) {
+      // todo: impossible? 
+      return Collections.emptyMap();
+    }
+
+    _2<SNode, String> cacheKey = MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole);
+    if (MapSequence.fromMap(contextClassifiersCache).containsKey(cacheKey)) {
+      return MapSequence.fromMap(contextClassifiersCache).get(cacheKey);
+    }
+
+    Map<String, String> result = getContextClassifiersInternal(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole);
+    MapSequence.fromMap(contextClassifiersCache).put(cacheKey, result);
+
+    return result;
   }
 
   public static ImportsContext getInstance(TextGenBuffer buffer) {
@@ -188,6 +181,44 @@ public class ImportsContext {
 
   private static String nestedName(String packageName, String fqName) {
     return fqName.substring(packageName.length() + 1);
+  }
+
+  private static Map<String, String> getContextClassifiersInternal(SNode contextNode, String sourceChildRole) {
+    Map<String, String> bindings = MapSequence.fromMap(new HashMap<String, String>());
+
+    SNode current = contextNode;
+    while ((current != null)) {
+      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+        boolean processNestedClassifiers = false;
+        if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+          processNestedClassifiers = true;
+        } else if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.Interface")) {
+          processNestedClassifiers = !("extendedInterface".equals(sourceChildRole));
+        } else if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+          processNestedClassifiers = !("superclass".equals(sourceChildRole) || "implementedInterface".equals(sourceChildRole));
+        } else {
+          LOG.warning("Illegal classifier node in bl textgen: " + current);
+        }
+
+        // todo: is it true? had a bug with it. Look like nested classifier has more priority then class with same name 
+        addClassifierToBindingMap(bindings, SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.Classifier"));
+        if (processNestedClassifiers) {
+          // todo: classifiers with same names in different supertypes? 
+          for (SNode superClassifier : Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+            for (SNode nestedClassifier : SLinkOperations.getTargets(superClassifier, "staticInnerClassifiers", true)) {
+              addClassifierToBindingMap(bindings, nestedClassifier);
+            }
+          }
+        }
+      }
+
+      // todo: specialized links? 
+      // should not be a problem: superclass/extendedInterface/implementedInterface not specialized 
+      sourceChildRole = current.getRole();
+      current = SNodeOperations.getParent(current);
+    }
+
+    return bindings;
   }
 
   public class ClassifierRefText {
