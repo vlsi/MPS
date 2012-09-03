@@ -9,15 +9,14 @@ import java.util.Map;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._2;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.InternUtil;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -39,7 +38,7 @@ public class ImportsContext {
     this.buffer = buffer;
     this.packageName = SNodeOperations.getModel(rootNode).getSModelReference().getLongName();
 
-    contextClassifiersCache = MapSequence.fromMap(new HashMap<_2<SNode, String>, Map<String, String>>());
+    contextClassifiersCache = new HashMap<_2<SNode, String>, Map<String, String>>();
 
     // init nested class bindings 
     bindings = new HashMap<String, String>();
@@ -47,14 +46,14 @@ public class ImportsContext {
     // init package simple names 
     packageSimpleNames = new HashSet<String>();
     for (SNode classifier : SModelOperations.getRoots(SNodeOperations.getModel(rootNode), "jetbrains.mps.baseLanguage.structure.Classifier")) {
-      SetSequence.fromSet(packageSimpleNames).addElement(SPropertyOperations.getString(classifier, "name"));
+      packageSimpleNames.add(SPropertyOperations.getString(classifier, "name"));
     }
 
     // init classifiers in root 
-    classifiersInRoot = SetSequence.fromSet(new HashSet<String>());
+    classifiersInRoot = new HashSet<String>();
     for (SNode classifier : SNodeOperations.getModel(rootNode).getFastNodeFinder().getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true)) {
       if (SNodeOperations.getContainingRoot(classifier) == rootNode) {
-        SetSequence.fromSet(classifiersInRoot).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier")));
+        classifiersInRoot.add(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier")));
       }
     }
   }
@@ -65,13 +64,13 @@ public class ImportsContext {
 
     // 0) nested classifier in same root 
     // todo: maybe after 1) ? 
-    if (SetSequence.fromSet(classifiersInRoot).contains(fqName)) {
+    if (classifiersInRoot.contains(fqName)) {
       return new ImportsContext.ClassifierRefText(nestedName(packageName, fqName), false);
     }
 
     // 1) check nested classes context 
-    if (MapSequence.fromMap(nestedClassifiersBinding).containsKey(simpleName)) {
-      if (fqName.equals(MapSequence.fromMap(nestedClassifiersBinding).get(simpleName))) {
+    if (nestedClassifiersBinding.containsKey(simpleName)) {
+      if (fqName.equals(nestedClassifiersBinding.get(simpleName))) {
         return new ImportsContext.ClassifierRefText(simpleName, false);
       } else {
         return new ImportsContext.ClassifierRefText(fqName, false);
@@ -79,8 +78,8 @@ public class ImportsContext {
     }
 
     // 2) check current binding 
-    if (MapSequence.fromMap(bindings).containsKey(simpleName)) {
-      if (fqName.equals(MapSequence.fromMap(bindings).get(simpleName))) {
+    if (bindings.containsKey(simpleName)) {
+      if (fqName.equals(bindings.get(simpleName))) {
         return new ImportsContext.ClassifierRefText(simpleName, false);
       } else {
         return new ImportsContext.ClassifierRefText(fqName, false);
@@ -88,7 +87,7 @@ public class ImportsContext {
     }
 
     // 3) add binding, add explicit import or not? 
-    MapSequence.fromMap(bindings).put(simpleName, fqName);
+    bindings.put(simpleName, fqName);
     addDependency(packageName, fqName);
 
     if (packageName.equals(this.packageName)) {
@@ -98,7 +97,7 @@ public class ImportsContext {
     }
     if (packageName.equals("java.lang")) {
       // java.lang model: generate without explicit import if context package doesn't contains same simple name 
-      return new ImportsContext.ClassifierRefText(simpleName, SetSequence.fromSet(packageSimpleNames).contains(simpleName));
+      return new ImportsContext.ClassifierRefText(simpleName, packageSimpleNames.contains(simpleName));
     }
     // in other cases: generate explicit import 
     return new ImportsContext.ClassifierRefText(simpleName, true);
@@ -120,7 +119,7 @@ public class ImportsContext {
       dependencies = SetSequence.fromSet(new HashSet<String>());
       buffer.putUserObject(TextGenManager.DEPENDENCY, dependencies);
     }
-    SetSequence.fromSet(dependencies).addElement(InternUtil.intern(dependencyFqName));
+    dependencies.add(InternUtil.intern(dependencyFqName));
   }
 
   private Map<String, String> getContextClassifiers(SNode contextNode) {
@@ -147,12 +146,12 @@ public class ImportsContext {
     }
 
     _2<SNode, String> cacheKey = MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole);
-    if (MapSequence.fromMap(contextClassifiersCache).containsKey(cacheKey)) {
-      return MapSequence.fromMap(contextClassifiersCache).get(cacheKey);
+    if (contextClassifiersCache.containsKey((Object) cacheKey)) {
+      return contextClassifiersCache.get((Object) cacheKey);
     }
 
     Map<String, String> result = getContextClassifiersInternal(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole);
-    MapSequence.fromMap(contextClassifiersCache).put(cacheKey, result);
+    contextClassifiersCache.put(cacheKey, result);
 
     return result;
   }
@@ -174,8 +173,8 @@ public class ImportsContext {
     String simpleName = SPropertyOperations.getString(classifier, "name");
     String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(classifier);
 
-    if (!(MapSequence.fromMap(bindings).containsKey(simpleName))) {
-      MapSequence.fromMap(bindings).put(simpleName, fqName);
+    if (!(bindings.containsKey(simpleName))) {
+      bindings.put(simpleName, fqName);
     }
   }
 
@@ -184,7 +183,7 @@ public class ImportsContext {
   }
 
   private static Map<String, String> getContextClassifiersInternal(SNode contextNode, String sourceChildRole) {
-    Map<String, String> bindings = MapSequence.fromMap(new HashMap<String, String>());
+    Map<String, String> bindings = new HashMap<String, String>();
 
     SNode current = contextNode;
     while ((current != null)) {
