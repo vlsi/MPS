@@ -163,7 +163,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.ImportsContext" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.StringTextGen" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples._2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

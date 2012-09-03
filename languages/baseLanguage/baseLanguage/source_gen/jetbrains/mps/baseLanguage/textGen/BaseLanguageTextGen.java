@@ -19,10 +19,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.textGen.TextGenBuffer;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.JavaNameUtil;
 import java.util.HashSet;
 import jetbrains.mps.util.InternUtil;
 
@@ -220,11 +220,7 @@ public abstract class BaseLanguageTextGen {
     String packageName = packageAndShortName._0();
     String shortName = packageAndShortName._1();
     String longName = NameUtil.longNameFromNamespaceAndShortName(packageAndShortName._0(), packageAndShortName._1());
-    BaseLanguageTextGen.appendClsName(packageAndShortName._0(), longName, textGen);
-    StringTextGen.compilableString((BaseLanguageTextGen.isNeedLongName(longName, textGen) ?
-      longName :
-      JavaNameUtil.shortName(longName)
-    ), textGen);
+    textGen.append(BaseLanguageTextGen.appendClsName(packageAndShortName._0(), longName, textGen));
   }
 
   protected static _2<String, String> getPackageAndShortName(SReference classifierRef, final SNodeTextGen textGen) {

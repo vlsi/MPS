@@ -2823,41 +2823,20 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7204211436280825069">
-          <node role="expression" roleId="tpee.1068580123156" type="2omo.UtilityMethodCall" typeId="2omo.1234529062040" id="7204211436280825070">
-            <link role="function" roleId="2omo.1234529163244" targetNodeId="1236686501608" resolveInfo="appendClsName" />
-            <node role="parameter" roleId="2omo.1234529174917" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="7204211436280825071">
-              <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7204211436280825072">
-                <property name="value" nameId="tpee.1068580320021" value="0" />
+        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="2487573897569046234">
+          <node role="part" roleId="2omo.1237306115446" type="2omo.NodeAppendPart" typeId="2omo.1237305334312" id="2487573897569046236">
+            <node role="value" roleId="2omo.1237305790512" type="2omo.UtilityMethodCall" typeId="2omo.1234529062040" id="7204211436280825070">
+              <link role="function" roleId="2omo.1234529163244" targetNodeId="1236686501608" resolveInfo="appendClsName" />
+              <node role="parameter" roleId="2omo.1234529174917" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="7204211436280825071">
+                <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="7204211436280825072">
+                  <property name="value" nameId="tpee.1068580320021" value="0" />
+                </node>
+                <node role="tuple" roleId="cx9y.1238857764950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7204211436280825073">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7204211436280042439" resolveInfo="packageAndShortName" />
+                </node>
               </node>
-              <node role="tuple" roleId="cx9y.1238857764950" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7204211436280825073">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7204211436280042439" resolveInfo="packageAndShortName" />
-              </node>
-            </node>
-            <node role="parameter" roleId="2omo.1234529174917" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5921330353705722280">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5921330353705722276" resolveInfo="longName" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="2omo.AppendOperation" typeId="2omo.1237306079178" id="7204211436279974091">
-          <node role="part" roleId="2omo.1237306115446" type="2omo.OperationCall" typeId="2omo.1233924848298" id="7204211436279974106">
-            <link role="function" roleId="2omo.1234190664409" targetNodeId="1236013746483" resolveInfo="compilableString" />
-            <node role="parameter" roleId="2omo.1234191323697" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7204211436279974107">
-              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5921330353705722282">
+              <node role="parameter" roleId="2omo.1234529174917" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5921330353705722280">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5921330353705722276" resolveInfo="longName" />
-              </node>
-              <node role="condition" roleId="tpee.1163668914799" type="2omo.UtilityMethodCall" typeId="2omo.1234529062040" id="7204211436279974114">
-                <link role="function" roleId="2omo.1234529163244" targetNodeId="7204211436279973951" resolveInfo="isNeedLongName" />
-                <node role="parameter" roleId="2omo.1234529174917" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5921330353705722281">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5921330353705722276" resolveInfo="longName" />
-                </node>
-              </node>
-              <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6792623998778481224">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~JavaNameUtil%dshortName(java%dlang%dString)%cjava%dlang%dString" resolveInfo="shortName" />
-                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~JavaNameUtil" resolveInfo="JavaNameUtil" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5921330353705722283">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5921330353705722276" resolveInfo="longName" />
-                </node>
               </node>
             </node>
           </node>
