@@ -40,7 +40,6 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   private static final String TYPESYSTEM_SUFFIX = ".typesystem";
 
   ConcurrentMap<Pair<String, String>, Set<T>> myRules = new ConcurrentHashMap<Pair<String, String>, /* synchronized */ Set<T>>();
-  ConcurrentMap<Pair<String, String>, Set<T>> myRulesCache = new ConcurrentHashMap<Pair<String, String>, /* unmodifiable */ Set<T>>();
 
   private DoubleTermRules<T> myDoubleTermRules = new DoubleTermRules<T>() {
     @Override
