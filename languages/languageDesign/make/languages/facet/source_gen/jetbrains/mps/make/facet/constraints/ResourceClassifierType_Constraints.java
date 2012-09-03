@@ -64,7 +64,7 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return (List<SNode>) new VisibleClassifiersScope(_context.getEnclosingNode(), AbstractClassifiersScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
               public boolean met(SNode cls) {
-                return Classifier_Behavior.call_isDescendant_7165541881557222913((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Classifier")), SLinkOperations.getTarget(new ResourceClassifierType_Constraints.QuotationClass_ymgo28_a0b0a0a0a0a0a0a2a0a0a1a0b0a1a0().createNode(), "classifier", false));
+                return Classifier_Behavior.call_isDescendant_7165541881557222913((SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Classifier")), SLinkOperations.getTarget(new QuotationClass_ymgo28_a0b0a0a0a0a0a0a2a0a0a1a0b0a1a0().createNode(), "classifier", false));
               }
             });
           }
