@@ -12,7 +12,7 @@ import jetbrains.mps.textGen.TextGenManager;
 public class InternalNewExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     this.append("new ");
-    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
+    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {

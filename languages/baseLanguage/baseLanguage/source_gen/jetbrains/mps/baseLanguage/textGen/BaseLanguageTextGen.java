@@ -24,7 +24,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.HashSet;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.util.JavaNameUtil;
+import jetbrains.mps.baseLanguage.textGen.ImportsContext.ClassifierRefText;
 
 public abstract class BaseLanguageTextGen {
   private static Logger LOG = Logger.getLogger(BaseLanguageTextGen.class);
@@ -98,17 +98,17 @@ public abstract class BaseLanguageTextGen {
     BaseLanguageTextGen.visibility(v, textGen);
   }
 
-  public static void internalClassifierName(SNode node, final SNodeTextGen textGen) {
+  public static void internalClassifierName(SNode node, SNode contextNode, final SNodeTextGen textGen) {
     if ((node == null)) {
       textGen.append("???");
       textGen.foundError("classifier is null");
       return;
     }
-    BaseLanguageTextGen.appendClassName(BaseLanguageTextGen.getPackageName(node, textGen), NameUtil.longNameFromNamespaceAndShortName(BaseLanguageTextGen.getPackageName(node, textGen), SPropertyOperations.getString(node, "nestedName")), textGen);
+    BaseLanguageTextGen.appendClassName(BaseLanguageTextGen.getPackageName(node, textGen), NameUtil.longNameFromNamespaceAndShortName(BaseLanguageTextGen.getPackageName(node, textGen), SPropertyOperations.getString(node, "nestedName")), contextNode, textGen);
   }
 
-  public static void internalClassName(String packageName, String className, final SNodeTextGen textGen) {
-    BaseLanguageTextGen.appendClassName(packageName, NameUtil.longNameFromNamespaceAndShortName(packageName, className), textGen);
+  public static void internalClassName(String packageName, String className, SNode contextNode, final SNodeTextGen textGen) {
+    BaseLanguageTextGen.appendClassName(packageName, NameUtil.longNameFromNamespaceAndShortName(packageName, className), contextNode, textGen);
   }
 
   public static void extendedInterface(SNode interface1, final SNodeTextGen textGen) {
@@ -204,7 +204,7 @@ public abstract class BaseLanguageTextGen {
       return;
     }
     String longName = NameUtil.longNameFromNamespaceAndShortName(packageAndShortName._0(), packageAndShortName._1());
-    BaseLanguageTextGen.appendClassName(packageAndShortName._0(), longName, textGen);
+    BaseLanguageTextGen.appendClassName(packageAndShortName._0(), longName, classifierRef.getSourceNode(), textGen);
   }
 
   protected static _2<String, String> getPackageAndShortName(SReference classifierRef, final SNodeTextGen textGen) {
@@ -276,36 +276,24 @@ public abstract class BaseLanguageTextGen {
     return cls.getModel().getSModelReference().getLongName();
   }
 
-  protected static String getClassName(String packageName, String fqName, final SNodeTextGen textGen) {
+  protected static String getClassName(String packageName, String fqName, SNode contextNode, final SNodeTextGen textGen) {
     if (fqName == null) {
       textGen.foundError("class name is NULL");
       return "???";
     }
+    ClassifierRefText refText = ImportsContext.getInstance(textGen.getBuffer()).getClassRefText(packageName, fqName, contextNode);
 
-    ImportsContext context = ImportsContext.getInstance(textGen.getBuffer());
-    String simpleName = JavaNameUtil.shortName(fqName);
-    if (context.containsBinding(simpleName)) {
-      if (fqName.equals(context.getBinding(simpleName))) {
-        return simpleName;
-      } else {
-        return fqName;
-      }
-    } else {
-      if (context.addBinding(packageName, fqName)) {
-        int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
-        textGen.appendNewLine();
-        textGen.append("import " + fqName + ";");
-        textGen.getBuffer().selectPart(currPartId);
-      }
-
-      // todo: ? 
-      BaseLanguageTextGen.addDependency(InternUtil.intern(fqName), textGen);
-
-      return simpleName;
+    if (refText.shouldBeImported) {
+      int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
+      textGen.appendNewLine();
+      textGen.append("import " + fqName + ";");
+      textGen.getBuffer().selectPart(currPartId);
     }
+
+    return refText.refText;
   }
 
-  protected static void appendClassName(String packageName, String fqName, final SNodeTextGen textGen) {
-    textGen.append(BaseLanguageTextGen.getClassName(packageName, fqName, textGen));
+  protected static void appendClassName(String packageName, String fqName, SNode contextNode, final SNodeTextGen textGen) {
+    textGen.append(BaseLanguageTextGen.getClassName(packageName, fqName, contextNode, textGen));
   }
 }

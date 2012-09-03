@@ -11,7 +11,7 @@ import jetbrains.mps.textGen.TextGenManager;
 
 public class InternalClassCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), this);
+    BaseLangInternal.className(SPropertyOperations.getString(node, "fqClassName"), node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
