@@ -37,6 +37,12 @@ public class RuleSet<T extends IApplicableToConcept> {
   private ConcurrentMap<String, Set<T>> myRules = new ConcurrentHashMap<String, /* synchronized */ Set<T>>();
 
   private SingleTermRules<T> mySingleTermRules = new SingleTermRules<T>() {
+
+    @Override
+    protected List<String> getParents(String nextConceptFQName) {
+      return LanguageHierarchyCache.getParentsNames(nextConceptFQName);
+    }
+
     @Override
     protected Iterable<T> allForConcept(String conceptFQName, LanguageScope langScope) {
       return getAllApplicableTo(conceptFQName, langScope);
@@ -46,7 +52,7 @@ public class RuleSet<T extends IApplicableToConcept> {
     protected boolean isOverriding(T rule) {
       return rule instanceof ICheckingRule_Runtime && ((ICheckingRule_Runtime) rule).overrides();
     }
-  };
+   };
 
 
   public void addRuleSetItem(Set<T> rules) {

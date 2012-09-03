@@ -69,12 +69,14 @@ public abstract class SingleTermRules<K> {
         result.add(applicableRule);
       }
       if (!overriding) {
-        queue.addAll(LanguageHierarchyCache.getParentsNames(nextConceptFQName));
+        queue.addAll(getParents(nextConceptFQName));
       }
     }
 
     return Collections.unmodifiableSet(result);
   }
+
+  abstract protected List<String> getParents(String nextConceptFQName);
 
   abstract protected Iterable<K> allForConcept(String conceptFQName, LanguageScope scope);
 
