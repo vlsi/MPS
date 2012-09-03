@@ -13,6 +13,7 @@ import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.textGen.TextGenManager;
@@ -20,7 +21,6 @@ import jetbrains.mps.util.InternUtil;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class ImportsContext {
   private static String USER_OBJECT_KEY = "CLASS_IMPORTS_CONTEXT";
@@ -29,6 +29,7 @@ public class ImportsContext {
   private final TextGenBuffer buffer;
   private final String packageName;
   private final Set<String> packageSimpleNames;
+  private final Set<String> classifiersInRoot;
   private final Map<String, String> bindings;
 
   private ImportsContext(TextGenBuffer buffer, SNode rootNode) {
@@ -43,30 +44,41 @@ public class ImportsContext {
     for (SNode classifier : SModelOperations.getRoots(SNodeOperations.getModel(rootNode), "jetbrains.mps.baseLanguage.structure.Classifier")) {
       SetSequence.fromSet(packageSimpleNames).addElement(SPropertyOperations.getString(classifier, "name"));
     }
+
+    // init classifiers in root 
+    classifiersInRoot = SetSequence.fromSet(new HashSet<String>());
+    for (SNode classifier : SNodeOperations.getModel(rootNode).getFastNodeFinder().getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true)) {
+      if (SNodeOperations.getContainingRoot(classifier) == rootNode) {
+        SetSequence.fromSet(classifiersInRoot).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier")));
+      }
+    }
   }
 
-  public ClassifierRefText getClassRefText(String packageName, String fqName, SNode contextNode) {
+  public ImportsContext.ClassifierRefText getClassRefText(String packageName, String fqName, SNode contextNode) {
     String simpleName = JavaNameUtil.shortName(fqName);
     Map<String, String> nestedClassifiersBinding = getContextClassifiers(contextNode);
 
     // 0) nested classifier in same root 
-    // todo 
+    // todo: maybe after 1) ? 
+    if (SetSequence.fromSet(classifiersInRoot).contains(fqName)) {
+      return new ImportsContext.ClassifierRefText(nestedName(packageName, fqName), false);
+    }
 
     // 1) check nested classes context 
     if (MapSequence.fromMap(nestedClassifiersBinding).containsKey(simpleName)) {
       if (fqName.equals(MapSequence.fromMap(nestedClassifiersBinding).get(simpleName))) {
-        return new ClassifierRefText(simpleName, false);
+        return new ImportsContext.ClassifierRefText(simpleName, false);
       } else {
-        return new ClassifierRefText(fqName, false);
+        return new ImportsContext.ClassifierRefText(fqName, false);
       }
     }
 
     // 2) check current binding 
     if (MapSequence.fromMap(bindings).containsKey(simpleName)) {
       if (fqName.equals(MapSequence.fromMap(bindings).get(simpleName))) {
-        return new ClassifierRefText(simpleName, false);
+        return new ImportsContext.ClassifierRefText(simpleName, false);
       } else {
-        return new ClassifierRefText(fqName, false);
+        return new ImportsContext.ClassifierRefText(fqName, false);
       }
     }
 
@@ -77,19 +89,19 @@ public class ImportsContext {
     if (packageName.equals(this.packageName)) {
       // same package: generate without explicit import in case of root classifier 
       boolean isRootClassifier = (packageName.length() + simpleName.length() + 1) == fqName.length();
-      return new ClassifierRefText(simpleName, !(isRootClassifier));
+      return new ImportsContext.ClassifierRefText(simpleName, !(isRootClassifier));
     }
     if (packageName.equals("java.lang")) {
       // java.lang model: generate without explicit import if context package doesn't contains same simple name 
-      return new ClassifierRefText(simpleName, SetSequence.fromSet(packageSimpleNames).contains(simpleName));
+      return new ImportsContext.ClassifierRefText(simpleName, SetSequence.fromSet(packageSimpleNames).contains(simpleName));
     }
     // in other cases: generate explicit import 
-    return new ClassifierRefText(simpleName, true);
+    return new ImportsContext.ClassifierRefText(simpleName, true);
   }
 
   private void addDependency(String packageName, String fqName) {
     // using only root classifiers as dependencies 
-    String nestedName = fqName.substring(packageName.length() + 1);
+    String nestedName = nestedName(packageName, fqName);
     int dotIndex = nestedName.indexOf(".");
     String dependencyFqName;
     if (dotIndex == -1) {
@@ -133,6 +145,7 @@ public class ImportsContext {
           LOG.warning("Illegal classifier node in bl textgen: " + contextNode);
         }
 
+        // todo: is it true? had a bug with it. Look like nested classifier has more priority then class with same name 
         addClassifierToBindingMap(bindings, SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"));
         if (processNestedClassifiers) {
           // todo: classifiers with same names in different supertypes? 
@@ -171,6 +184,10 @@ public class ImportsContext {
     if (!(MapSequence.fromMap(bindings).containsKey(simpleName))) {
       MapSequence.fromMap(bindings).put(simpleName, fqName);
     }
+  }
+
+  private static String nestedName(String packageName, String fqName) {
+    return fqName.substring(packageName.length() + 1);
   }
 
   public class ClassifierRefText {
