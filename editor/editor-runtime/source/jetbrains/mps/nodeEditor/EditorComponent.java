@@ -1333,6 +1333,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         removeOurListeners(oldDep);
       }
     }
+    // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
+    // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
+    if (myNode != null && !myNode.isDeleted()) {
+      assert myModelDescriptorsWithListener.contains(myNode.getModel().getModelDescriptor()) : "Listener was not added to a containing model of current node. Editor: " + EditorComponent.this;
+    }
 
     revalidate();
     repaint();
