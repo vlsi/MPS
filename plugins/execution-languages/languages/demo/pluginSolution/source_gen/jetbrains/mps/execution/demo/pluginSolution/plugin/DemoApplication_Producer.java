@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import com.intellij.execution.impl.RunManagerImpl;
 
 public class DemoApplication_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_Factory";
@@ -39,7 +40,7 @@ public class DemoApplication_Producer {
       if (!(SPropertyOperations.getBoolean(source, "valid"))) {
         return null;
       }
-      DemoApplication_Configuration configuration = new DemoApplication_Configuration(getContext().getProject(), (DemoApplication_Configuration_Factory) getConfigurationFactory(), "SomeNode " + SPropertyOperations.getString(source, "name"));
+      DemoApplication_Configuration configuration = ((DemoApplication_Configuration) getConfigurationFactory().createConfiguration("SomeNode " + SPropertyOperations.getString(source, "name"), (DemoApplication_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(source);
       return configuration;
     }
