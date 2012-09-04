@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.util.LocalSourcePathArtifact;
 
 public class BuildLayout_AbstractCopy_Behavior {
   public static void init(SNode thisNode) {
@@ -59,10 +60,27 @@ public class BuildLayout_AbstractCopy_Behavior {
         }
       }
     }
+    if (object instanceof LocalSourcePathArtifact) {
+      LocalSourcePathArtifact art = (LocalSourcePathArtifact) object;
+      if (art.getRoot() != SNodeOperations.getContainingRoot(thisNode)) {
+        return false;
+      }
+
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile") && !(art.isFolder())) {
+        return eq_cz5gmx_a0a0d0b0e(art.getSourcePath(), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true)));
+      }
+    }
     return false;
   }
 
   private static boolean eq_cz5gmx_a0a0d0b0a0e(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_cz5gmx_a0a0d0b0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

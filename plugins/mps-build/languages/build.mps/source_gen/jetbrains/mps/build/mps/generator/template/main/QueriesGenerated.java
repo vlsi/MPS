@@ -124,20 +124,21 @@ public class QueriesGenerated {
     }
 
     LocalArtifacts outputFiles = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._0();
-    SNode myJar = outputFiles.findArtifact(path);
-    if (myJar == null) {
+    Tuples._2<SNode, String> location = outputFiles.getLocalResource(path);
+    if (location._0() == null) {
       String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
       _context.showErrorMessage(path, "cannot find `" + jarName + "' in local layout");
       return "???";
     }
     SNode container = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._1();
     try {
-      return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(myJar, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(location._0(), "jetbrains.mps.build.structure.BuildLayout_Node")) + location._1();
     } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
       String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
-      _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "'");
+      _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "': " + ex.getMessage());
       return "";
     }
+
   }
 
   public static Object propertyMacro_GetPropertyValue_4743026300739052426(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -160,18 +161,18 @@ public class QueriesGenerated {
     }
 
     LocalArtifacts outputFiles = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._0();
-    SNode myJar = outputFiles.findArtifact(path);
-    if (myJar == null) {
+    Tuples._2<SNode, String> location = outputFiles.getLocalResource(path);
+    if (location._0() == null) {
       String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
       _context.showErrorMessage(path, "cannot find `" + jarName + "' in local layout");
       return "???";
     }
     SNode container = ((Tuples._3<LocalArtifacts, SNode, SNode>) _context.getVariable("var:files"))._1();
     try {
-      return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(myJar, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      return new ArtifactsRelativePathHelper(outputFiles, container).getRelativePath(SNodeOperations.cast(location._0(), "jetbrains.mps.build.structure.BuildLayout_Node")) + location._1();
     } catch (ArtifactsRelativePathHelper.RelativePathException ex) {
       String jarName = BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, Context.defaultContext(_context).getMacros(path));
-      _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "'");
+      _context.showErrorMessage(_context.getNode(), "cannot build relative path to `" + jarName + "': " + ex.getMessage());
       return "";
     }
   }

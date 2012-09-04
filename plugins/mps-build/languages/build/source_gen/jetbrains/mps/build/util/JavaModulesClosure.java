@@ -10,6 +10,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class JavaModulesClosure {
   private Set<SNode> modules = new LinkedHashSet<SNode>();
@@ -96,11 +100,23 @@ public class JavaModulesClosure {
   }
 
   public Collection<SNode> getJars() {
-    return jars;
+    return Sequence.fromIterable(((Iterable<SNode>) jars)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "customLocation", true) == null);
+      }
+    }).toListSequence();
   }
 
   public Collection<SNode> getExternalJars() {
-    return externalJars;
+    return Sequence.fromIterable(((Iterable<SNode>) jars)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "customLocation", true) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(SLinkOperations.getTarget(it, "customLocation", true), "jar", false);
+      }
+    }).concat(SetSequence.fromSet(externalJars)).toListSequence();
   }
 
   public SNode getInitial() {
