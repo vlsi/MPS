@@ -143,13 +143,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void fileHeader(SNode cls, final SNodeTextGen textGen) {
-    Set<String> names = BaseLanguageTextGen.getUserObjects(TextGenManager.IMPORT, textGen);
-    String newImport = BaseLanguageTextGen.getPackageName(cls, textGen) + "." + SPropertyOperations.getString(cls, "name");
-    SetSequence.fromSet(names).addElement(newImport);
     if (cls.isRoot()) {
-      for (SNode nestedClassifier : SNodeOperations.getDescendants(cls, "jetbrains.mps.baseLanguage.structure.Classifier", false, new String[]{})) {
-        SetSequence.fromSet(names).addElement(BaseLanguageTextGen.getPackageName(nestedClassifier, textGen) + "." + SPropertyOperations.getString(nestedClassifier, "name"));
-      }
       int wasPart = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.append("package " + BaseLanguageTextGen.getPackageName(cls, textGen) + ";");
       textGen.appendNewLine();

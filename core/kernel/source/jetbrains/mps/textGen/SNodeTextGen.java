@@ -126,7 +126,9 @@ public abstract class SNodeTextGen {
     }
   }
 
+  @Deprecated
   public String getReferentPresentation(SReference reference) {
+    // todo: this method not working now
     return getReferentPresentation(reference, true);
   }
 
@@ -169,7 +171,9 @@ public abstract class SNodeTextGen {
       packageName = targetNode.getModel().getSModelReference().getLongName();
     }
     if (uniq) {
-      return (isNeedLongName(shortName, packageName) ? packageName + '.' + shortName : shortName);
+      // todo: uniq, wtf?
+//      old code: return (isNeedLongName(shortName, packageName) ? packageName + '.' + shortName : shortName);
+      return shortName;
     } else {
       return shortName;
     }
@@ -177,17 +181,5 @@ public abstract class SNodeTextGen {
 
   public String getDefaultNoTextGenErrorText(SNode node) {
     return "<!TextGen not found for '" + node.getConceptFqName() + "'!>";
-  }
-
-  boolean isNeedLongName(String shortName, String packageName) {
-    if (shortName == null || packageName == null || packageName.isEmpty()) return false;
-    SetSequence<String> importedNames = (SetSequence<String>) getUserObject(TextGenManager.IMPORT);
-    for (String importedName : importedNames) {
-      if (JavaNameUtil.shortName(importedName).equals(shortName)
-        && !JavaNameUtil.packageName(importedName).equals(packageName)) {
-        return true;
-      }
-    }
-    return false;
   }
 }

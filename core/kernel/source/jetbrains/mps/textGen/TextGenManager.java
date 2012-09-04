@@ -43,10 +43,11 @@ public class TextGenManager {
   public static final String PACKAGE_NAME = "PACKAGE_NAME";
   public static final String DEPENDENCY = "DEPENDENCY";
   public static final String EXTENDS = "EXTENDS";
+  @Deprecated
   public static final String IMPORT = "IMPORT";
   public static final String OUTPUT_ENCODING = "OUTPUT_ENCODING";
   public static final String ROOT_NODE = "ROOT_NODE";
-  //temp hack
+  @Deprecated
   public static final String ADDED_IMPORT = "ADDED_IMPORT";
 
   public static void reset() {
