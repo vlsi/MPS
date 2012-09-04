@@ -30,7 +30,7 @@ import java.util.*;
  */
 public class SubtypingUtil {
 
-  public static List<SNode> eliminateSubTypes(Collection<SNode> types) {
+  public static List<SNode> eliminateSuperTypes(Collection<SNode> types) {
     return new RelationEliminator() {
       @Override
       boolean inRelation(SNode left, SNode right) {
@@ -62,7 +62,7 @@ public class SubtypingUtil {
 //    return result;
   }
 
-  public static List<SNode> eliminateSuperTypes(Collection<SNode> types) {
+  public static List<SNode> eliminateSubTypes(Collection<SNode> types) {
     return new RelationEliminator() {
       @Override
       boolean inRelation(SNode left, SNode right) {
