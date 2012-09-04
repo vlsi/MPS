@@ -24,7 +24,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.HashSet;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.baseLanguage.textGen.ImportsContext.ClassifierRefText;
 
 public abstract class BaseLanguageTextGen {
   private static Logger LOG = Logger.getLogger(BaseLanguageTextGen.class);
@@ -281,16 +280,7 @@ public abstract class BaseLanguageTextGen {
       textGen.foundError("class name is NULL");
       return "???";
     }
-    ClassifierRefText refText = ImportsContext.getInstance(textGen.getBuffer()).getClassRefText(packageName, fqName, contextNode);
-
-    if (refText.shouldBeImported) {
-      int currPartId = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
-      textGen.appendNewLine();
-      textGen.append("import " + fqName + ";");
-      textGen.getBuffer().selectPart(currPartId);
-    }
-
-    return refText.refText;
+    return ImportsContext.getInstance(textGen.getBuffer()).getClassRefText(packageName, fqName, contextNode);
   }
 
   protected static void appendClassName(String packageName, String fqName, SNode contextNode, final SNodeTextGen textGen) {

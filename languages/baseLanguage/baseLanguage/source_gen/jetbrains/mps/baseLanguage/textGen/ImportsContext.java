@@ -58,49 +58,65 @@ public class ImportsContext {
     }
   }
 
-  public ImportsContext.ClassifierRefText getClassRefText(String packageName, String fqName, SNode contextNode) {
+  public String getClassRefText(String packageName, String fqName, SNode contextNode) {
     String simpleName = JavaNameUtil.shortName(fqName);
     Map<String, String> nestedClassifiersBinding = getContextClassifiers(contextNode);
 
     // 0) nested classifier in same root 
     // todo: maybe after 1) ? 
     if (classifiersInRoot.contains(fqName)) {
-      return new ImportsContext.ClassifierRefText(nestedName(packageName, fqName), false);
+      return nestedName(packageName, fqName);
     }
 
     // 1) check nested classes context 
     if (nestedClassifiersBinding.containsKey(simpleName)) {
       if (fqName.equals(nestedClassifiersBinding.get(simpleName))) {
-        return new ImportsContext.ClassifierRefText(simpleName, false);
+        return simpleName;
       } else {
-        return new ImportsContext.ClassifierRefText(fqName, false);
+        return fqName;
       }
     }
 
     // 2) check current binding 
     if (bindings.containsKey(simpleName)) {
       if (fqName.equals(bindings.get(simpleName))) {
-        return new ImportsContext.ClassifierRefText(simpleName, false);
+        return simpleName;
       } else {
-        return new ImportsContext.ClassifierRefText(fqName, false);
+        return fqName;
       }
     }
 
     // 3) add binding, add explicit import or not? 
     bindings.put(simpleName, fqName);
     addDependency(packageName, fqName);
+    boolean shouldBeImported;
 
     if (packageName.equals(this.packageName)) {
       // same package: generate without explicit import in case of root classifier 
       boolean isRootClassifier = (packageName.length() + simpleName.length() + 1) == fqName.length();
-      return new ImportsContext.ClassifierRefText(simpleName, !(isRootClassifier));
-    }
-    if (packageName.equals("java.lang")) {
+      shouldBeImported = !(isRootClassifier);
+    } else if (packageName.equals("java.lang")) {
       // java.lang model: generate without explicit import if context package doesn't contains same simple name 
-      return new ImportsContext.ClassifierRefText(simpleName, packageSimpleNames.contains(simpleName));
+      shouldBeImported = packageSimpleNames.contains(simpleName);
+    } else {
+      // in other cases: generate explicit import 
+      shouldBeImported = true;
     }
-    // in other cases: generate explicit import 
-    return new ImportsContext.ClassifierRefText(simpleName, true);
+    if (shouldBeImported) {
+      addImport(fqName);
+    }
+    return simpleName;
+  }
+
+  private void addImport(String fqName) {
+    int currPartId = buffer.selectPart(TextGenBuffer.TOP);
+
+    buffer.append(buffer.getLineSeparator());
+    buffer.append("import ");
+    buffer.append(fqName);
+    buffer.append(";");
+
+    buffer.selectPart(currPartId);
   }
 
   private void addDependency(String packageName, String fqName) {
@@ -218,15 +234,5 @@ public class ImportsContext {
     }
 
     return bindings;
-  }
-
-  public class ClassifierRefText {
-    public String refText;
-    public boolean shouldBeImported;
-
-    public ClassifierRefText(String refText, boolean shouldBeImported) {
-      this.refText = refText;
-      this.shouldBeImported = shouldBeImported;
-    }
   }
 }
