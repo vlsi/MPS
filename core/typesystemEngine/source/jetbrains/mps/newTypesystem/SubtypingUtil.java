@@ -30,70 +30,6 @@ import java.util.*;
  */
 public class SubtypingUtil {
 
-  public static List<SNode> eliminateSuperTypes(Collection<SNode> types) {
-    return new RelationEliminator() {
-      @Override
-      boolean inRelation(SNode left, SNode right) {
-        return TypeChecker.getInstance().getSubtypingManager().isSubtype(right, left, true);
-      }
-    }.doEliminate(types);
-
-//    List<SNode> result = new LinkedList<SNode>();
-//    Set<SNode> toRemove = new THashSet<SNode>();
-//    for (SNode current : types) {
-//      boolean toAdd = true;
-//      for (SNode resultType : result) {
-//        //sub isSubType !sub - isSuperType
-//        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(resultType, current, true)) {
-//          toAdd = false;
-//          break;
-//        }
-//        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(current, resultType, true)) {
-//          toRemove.add(resultType);
-//        }
-//      }
-//      if (toAdd) {
-//        result.add(current);
-//      }
-//      for (SNode removeType : toRemove) {
-//        result.remove(removeType);
-//      }
-//    }
-//    return result;
-  }
-
-  public static List<SNode> eliminateSubTypes(Collection<SNode> types) {
-    return new RelationEliminator() {
-      @Override
-      boolean inRelation(SNode left, SNode right) {
-        return TypeChecker.getInstance().getSubtypingManager().isSubtype(left, right, true);
-      }
-    }.doEliminate(types);
-
-//    List<SNode> result = new LinkedList<SNode>();
-//    Set<SNode> toRemove = new THashSet<SNode>();
-//    for (SNode current : types) {
-//      boolean toAdd = true;
-//      for (SNode resultType : result) {
-//        //sub isSubType !sub - isSuperType
-//        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(current, resultType, true)) {
-//          toAdd = false;
-//          break;
-//        }
-//        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(resultType, current, true)) {
-//          toRemove.add(resultType);
-//        }
-//      }
-//      if (toAdd) {
-//        result.add(current);
-//      }
-//      for (SNode removeType : toRemove) {
-//        result.remove(removeType);
-//      }
-//    }
-//    return result;
-  }
-
   public static Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
     Set<SNode> residualNodes = new THashSet<SNode>(nodes);
     while (residualNodes.size() > 1) {
@@ -129,6 +65,24 @@ public class SubtypingUtil {
     return residualNodes;
   }
 
+  public static List<SNode> eliminateSuperTypes(Collection<SNode> types) {
+    return new RelationEliminator() {
+      @Override
+      boolean inRelation(SNode left, SNode right) {
+        return TypeChecker.getInstance().getSubtypingManager().isSubtype(right, left, true);
+      }
+    }.doEliminate(types);
+  }
+
+  public static List<SNode> eliminateSubTypes(Collection<SNode> types) {
+    return new RelationEliminator() {
+      @Override
+      boolean inRelation(SNode left, SNode right) {
+        return TypeChecker.getInstance().getSubtypingManager().isSubtype(left, right, true);
+      }
+    }.doEliminate(types);
+  }
+
   abstract private static class RelationEliminator {
 
     abstract boolean inRelation(SNode left, SNode right);
@@ -139,7 +93,6 @@ public class SubtypingUtil {
       for (SNode current : types) {
         boolean toAdd = true;
         for (SNode resultType : result) {
-          //sub isSubType !sub - isSuperType
           if (inRelation(current, resultType)) {
             toAdd = false;
             break;
