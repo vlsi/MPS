@@ -18,7 +18,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.textGen.TextGenBuffer;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._2;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelReference;
@@ -198,7 +198,7 @@ public abstract class BaseLanguageTextGen {
       textGen.foundError("null classifier ref");
       return;
     }
-    _2<String, String> packageAndShortName = BaseLanguageTextGen.getPackageAndShortName(classifierRef, textGen);
+    Tuples._2<String, String> packageAndShortName = BaseLanguageTextGen.getPackageAndShortName(classifierRef, textGen);
     if (packageAndShortName == null) {
       LOG.warning("null package and short name");
       return;
@@ -207,7 +207,7 @@ public abstract class BaseLanguageTextGen {
     BaseLanguageTextGen.appendClassName(packageAndShortName._0(), longName, classifierRef.getSourceNode(), textGen);
   }
 
-  protected static _2<String, String> getPackageAndShortName(SReference classifierRef, final SNodeTextGen textGen) {
+  protected static Tuples._2<String, String> getPackageAndShortName(SReference classifierRef, final SNodeTextGen textGen) {
     SReference reference = classifierRef;
     if (reference == null) {
       textGen.foundError("null reference");

@@ -6,7 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.textGen.TextGenBuffer;
 import java.util.Set;
 import java.util.Map;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._2;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.HashMap;
@@ -30,14 +30,14 @@ public class ImportsContext {
   private final Set<String> packageSimpleNames;
   private final Set<String> classifiersInRoot;
   private final Map<String, String> bindings;
-  private SimpleCache<_2<SNode, String>, Map<String, String>> contextClassifiersCache;
+  private SimpleCache<Tuples._2<SNode, String>, Map<String, String>> contextClassifiersCache;
 
   private ImportsContext(TextGenBuffer buffer, SNode rootNode) {
     this.buffer = buffer;
     this.packageName = SNodeOperations.getModel(rootNode).getSModelReference().getLongName();
 
-    contextClassifiersCache = new SimpleCache<_2<SNode, String>, Map<String, String>>() {
-      protected Map<String, String> innerGet(_2<SNode, String> key) {
+    contextClassifiersCache = new SimpleCache<Tuples._2<SNode, String>, Map<String, String>>() {
+      protected Map<String, String> innerGet(Tuples._2<SNode, String> key) {
         return getContextClassifiersInternal(key._0(), key._1());
       }
     };
@@ -61,44 +61,52 @@ public class ImportsContext {
   }
 
   public String getClassRefText(String packageName, String fqName, SNode contextNode) {
-    String simpleName = JavaNameUtil.shortName(fqName);
+    // main invariant: use always nested names, import only root classifiers 
+    String nestedName = JavaNameUtil.nestedClassName(packageName, fqName);
+
+    int dotIndex = nestedName.indexOf(".");
+    String rootClassifierName = (dotIndex == -1 ?
+      nestedName :
+      nestedName.substring(0, dotIndex)
+    );
+    String nestedPart = nestedName.substring(rootClassifierName.length());
+
+    return getRootClassifierRefText(packageName, rootClassifierName, contextNode) + nestedPart;
+  }
+
+  private String getRootClassifierRefText(String packageName, String className, SNode contextNode) {
+    assert !(className.contains("."));
+
+    String fqName = packageName + "." + className;
     Map<String, String> nestedClassifiersBinding = getContextClassifiers(contextNode);
 
-    // 0) nested classifier in same root 
-    // todo: maybe after 1) ? 
-    if (classifiersInRoot.contains(fqName)) {
-      return JavaNameUtil.nestedClassName(packageName, fqName);
-    }
-
     // 1) check nested classes context 
-    if (nestedClassifiersBinding.containsKey(simpleName)) {
-      if (fqName.equals(nestedClassifiersBinding.get(simpleName))) {
-        return simpleName;
+    if (nestedClassifiersBinding.containsKey(className)) {
+      if (fqName.equals(nestedClassifiersBinding.get(className))) {
+        return className;
       } else {
         return fqName;
       }
     }
 
     // 2) check current binding 
-    if (bindings.containsKey(simpleName)) {
-      if (fqName.equals(bindings.get(simpleName))) {
-        return simpleName;
+    if (bindings.containsKey(className)) {
+      if (fqName.equals(bindings.get(className))) {
+        return className;
       } else {
         return fqName;
       }
     }
 
-    // 3) add binding, add explicit import or not? 
-    bindings.put(simpleName, fqName);
+    // 3) add binding, question is: add explicit import or not? 
+    bindings.put(className, fqName);
     boolean shouldBeImported;
 
     if (packageName.equals(this.packageName)) {
-      // same package: generate without explicit import in case of root classifier 
-      boolean isRootClassifier = (packageName.length() + simpleName.length() + 1) == fqName.length();
-      shouldBeImported = !(isRootClassifier);
+      shouldBeImported = false;
     } else if (packageName.equals("java.lang")) {
       // java.lang model: generate without explicit import if context package doesn't contains same simple name 
-      shouldBeImported = packageSimpleNames.contains(simpleName);
+      shouldBeImported = packageSimpleNames.contains(className);
     } else {
       // in other cases: generate explicit import 
       shouldBeImported = true;
@@ -106,7 +114,8 @@ public class ImportsContext {
     if (shouldBeImported) {
       addImport(fqName);
     }
-    return simpleName;
+
+    return className;
   }
 
   private void addImport(String fqName) {
