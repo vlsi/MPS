@@ -565,7 +565,6 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.ImportsContext" file="ImportsContext.java">
     <classNode dependClassName="java.lang.IllegalStateException" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashMap" />
@@ -573,6 +572,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.textGen.SimpleCache" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
@@ -865,6 +865,10 @@
   <dependency className="jetbrains.mps.baseLanguage.textGen.ShortType_TextGen" file="ShortType_TextGen.java">
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
+  </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.textGen.SimpleCache" file="SimpleCache.java">
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.textGen.SingleLineComment_TextGen" file="SingleLineComment_TextGen.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

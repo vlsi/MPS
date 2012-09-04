@@ -30,13 +30,17 @@ public class ImportsContext {
   private final Set<String> packageSimpleNames;
   private final Set<String> classifiersInRoot;
   private final Map<String, String> bindings;
-  private Map<_2<SNode, String>, Map<String, String>> contextClassifiersCache;
+  private SimpleCache<_2<SNode, String>, Map<String, String>> contextClassifiersCache;
 
   private ImportsContext(TextGenBuffer buffer, SNode rootNode) {
     this.buffer = buffer;
     this.packageName = SNodeOperations.getModel(rootNode).getSModelReference().getLongName();
 
-    contextClassifiersCache = new HashMap<_2<SNode, String>, Map<String, String>>();
+    contextClassifiersCache = new SimpleCache<_2<SNode, String>, Map<String, String>>() {
+      protected Map<String, String> innerGet(_2<SNode, String> key) {
+        return getContextClassifiersInternal(key._0(), key._1());
+      }
+    };
 
     // init nested class bindings 
     bindings = new HashMap<String, String>();
@@ -139,15 +143,7 @@ public class ImportsContext {
       return Collections.emptyMap();
     }
 
-    _2<SNode, String> cacheKey = MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole);
-    if (contextClassifiersCache.containsKey((Object) cacheKey)) {
-      return contextClassifiersCache.get((Object) cacheKey);
-    }
-
-    Map<String, String> result = getContextClassifiersInternal(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole);
-    contextClassifiersCache.put(cacheKey, result);
-
-    return result;
+    return contextClassifiersCache.get(MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole));
   }
 
   public static ImportsContext getInstance(TextGenBuffer buffer) {
