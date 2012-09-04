@@ -15,11 +15,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.util.JavaNameUtil;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.util.InternUtil;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -65,7 +63,7 @@ public class ImportsContext {
     // 0) nested classifier in same root 
     // todo: maybe after 1) ? 
     if (classifiersInRoot.contains(fqName)) {
-      return nestedName(packageName, fqName);
+      return JavaNameUtil.nestedClassName(packageName, fqName);
     }
 
     // 1) check nested classes context 
@@ -88,7 +86,6 @@ public class ImportsContext {
 
     // 3) add binding, add explicit import or not? 
     bindings.put(simpleName, fqName);
-    addDependency(packageName, fqName);
     boolean shouldBeImported;
 
     if (packageName.equals(this.packageName)) {
@@ -117,25 +114,6 @@ public class ImportsContext {
     buffer.append(";");
 
     buffer.selectPart(currPartId);
-  }
-
-  private void addDependency(String packageName, String fqName) {
-    // using only root classifiers as dependencies 
-    String nestedName = nestedName(packageName, fqName);
-    int dotIndex = nestedName.indexOf(".");
-    String dependencyFqName;
-    if (dotIndex == -1) {
-      dependencyFqName = fqName;
-    } else {
-      dependencyFqName = packageName + "." + nestedName.substring(0, dotIndex);
-    }
-
-    Set<String> dependencies = (Set<String>) buffer.getUserObject(TextGenManager.DEPENDENCY);
-    if (dependencies == null) {
-      dependencies = SetSequence.fromSet(new HashSet<String>());
-      buffer.putUserObject(TextGenManager.DEPENDENCY, dependencies);
-    }
-    dependencies.add(InternUtil.intern(dependencyFqName));
   }
 
   private Map<String, String> getContextClassifiers(SNode contextNode) {
@@ -192,10 +170,6 @@ public class ImportsContext {
     if (!(bindings.containsKey(simpleName))) {
       bindings.put(simpleName, fqName);
     }
-  }
-
-  private static String nestedName(String packageName, String fqName) {
-    return fqName.substring(packageName.length() + 1);
   }
 
   private static Map<String, String> getContextClassifiersInternal(SNode contextNode, String sourceChildRole) {

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.HashSet;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.InternUtil;
 
 public abstract class BaseLanguageTextGen {
@@ -262,15 +263,6 @@ public abstract class BaseLanguageTextGen {
     return names;
   }
 
-  protected static void addDependency(String name, final SNodeTextGen textGen) {
-    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.DEPENDENCY, textGen);
-    SetSequence.fromSet(dependencies).addElement(name);
-  }
-
-  protected static void addDependency(SNode node, final SNodeTextGen textGen) {
-    BaseLanguageTextGen.addDependency(InternUtil.intern(NameUtil.nodeFQName(node)), textGen);
-  }
-
   protected static String getPackageName(SNode cls, final SNodeTextGen textGen) {
     return cls.getModel().getSModelReference().getLongName();
   }
@@ -280,7 +272,27 @@ public abstract class BaseLanguageTextGen {
       textGen.foundError("class name is NULL");
       return "???";
     }
+
+    BaseLanguageTextGen.addDependency(packageName, fqName, textGen);
     return ImportsContext.getInstance(textGen.getBuffer()).getClassRefText(packageName, fqName, contextNode);
+  }
+
+  protected static void addDependency(String packageName, String fqName, final SNodeTextGen textGen) {
+    // using only root classifiers as dependencies 
+    String nestedName = JavaNameUtil.nestedClassName(packageName, fqName);
+    int dotIndex = nestedName.indexOf(".");
+    String dependencyFqName;
+    if (dotIndex == -1) {
+      dependencyFqName = fqName;
+    } else {
+      dependencyFqName = packageName + "." + nestedName.substring(0, dotIndex);
+    }
+    BaseLanguageTextGen.addDependency(dependencyFqName, textGen);
+  }
+
+  protected static void addDependency(String fqName, final SNodeTextGen textGen) {
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects(TextGenManager.DEPENDENCY, textGen);
+    SetSequence.fromSet(dependencies).addElement(InternUtil.intern(fqName));
   }
 
   protected static void appendClassName(String packageName, String fqName, SNode contextNode, final SNodeTextGen textGen) {
