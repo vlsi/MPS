@@ -4,9 +4,10 @@ package jetbrains.mps.build.mps.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
@@ -42,7 +43,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1500819558096430320(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SPropertyOperations.getBoolean(_context.getNode(), "doNotCompile") == false;
+    return BuildMps_Module_Behavior.call_isCompilable_7454762407073969360(_context.getNode());
   }
 
   public static boolean baseMappingRule_Condition_2591537044436204156(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -443,7 +444,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_2794582399917924015(final IOperationContext operationContext, final IfMacroContext _context) {
-    return !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "module", false), "doNotCompile"));
+    return BuildMps_Module_Behavior.call_isCompilable_7454762407073969360(SLinkOperations.getTarget(_context.getNode(), "module", false));
   }
 
   public static boolean ifMacro_Condition_2540145662854694255(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -634,7 +635,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mod : Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:mdeps")).getModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getBoolean(it, "doNotCompile") == false;
+        return BuildMps_Module_Behavior.call_isCompilable_7454762407073969360(it);
       }
     }).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
