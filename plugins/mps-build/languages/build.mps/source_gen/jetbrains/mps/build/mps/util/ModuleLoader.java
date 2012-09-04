@@ -799,7 +799,7 @@ public class ModuleLoader {
       }
     }
 
-    boolean doNotCompile = myModuleDescriptor instanceof SolutionDescriptor && (!(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()) || !(hasModels));
+    boolean doNotCompile = myModuleDescriptor instanceof SolutionDescriptor && (!(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()) || res.isEmpty());
     if (checkOnly && importOnly) {
       SPropertyOperations.set(module, "doNotCompile", "" + doNotCompile);
 
