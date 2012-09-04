@@ -28,7 +28,6 @@ import jetbrains.mps.typesystem.inference.SubtypingManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
-import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
@@ -44,15 +43,6 @@ public class SubTypingManagerNew extends SubtypingManager {
     myCoercionManager = new CoercionManager(typeChecker, this);
   }
 
-  boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
-    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
-      if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   public boolean isSubtype(SNode subType, SNode superType) {
     return isSubtype(subType, superType, true);
   }
@@ -64,6 +54,16 @@ public class SubTypingManagerNew extends SubtypingManager {
     return isSubType(subType, superType, null, null, isWeak);
   }
 
+  @Override
+  public boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
+    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
+      if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   // TODO: must not be public (internal API)
   public boolean isSubType(final SNode subType, final SNode superType, @Nullable final EquationInfo info, final State state, final boolean isWeak) {
     long start = System.nanoTime();
@@ -71,109 +71,23 @@ public class SubTypingManagerNew extends SubtypingManager {
 
     Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
       public Boolean compute() {
-        if (null == subType || null == superType) return false;
-        if (subType == superType) return true;
-        boolean canAskCache = (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType));
-        if (canAskCache) {
-          Boolean answer = getIsSubTypeCacheAnswer(subType, superType, isWeak);
-          if (answer != null) {
-            return answer;
+
+        THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+        SubtypingResolver subtypingResolver = new SubtypingResolver(state == null ? null : state.getTypeCheckingContext(), matchingPairs);
+
+        boolean result = subtypingResolver.isSubType(subType, superType, isWeak);
+        if (result) {
+          Equations equations = state != null ? state.getEquations() : null;
+          if (equations != null) {
+            equations.addEquations(matchingPairs, info);
           }
         }
-        Equations equations = null;
-        if (state != null) {
-          equations = state.getEquations();
-        }
-        if (TypesUtil.match(subType, superType, equations, info)) {
-          return true;
-        }
-        if (isSubTypeByReplacementRules(subType, superType, isWeak)) {
-          return true;
-        }
-        if (meetsAndJoins(subType, superType, info, isWeak, state)) {
-          return true;
-        }
-        return searchInSuperTypes(subType, new NodeMatcher(superType, equations, info), isWeak, state, canAskCache);
+
+        return result;
       }
     });
-    TypeSystemReporter.getInstance().reportIsSubType(subType,superType,(System.nanoTime() - start));
+    TypeSystemReporter.getInstance().reportIsSubType(subType, superType, (System.nanoTime() - start));
     return aBoolean;
-  }
-
-  private boolean meetsAndJoins(SNode subType, SNode superType, EquationInfo info, boolean isWeak, State state) {
-    if (LatticeUtil.isJoin(superType)) {
-      for (SNode argument : LatticeUtil.getJoinArguments(superType)) {
-        if (!TypesUtil.hasVariablesInside(argument) && isSubTypeByReplacementRules(subType, argument, isWeak)) {
-          return true;
-        }
-        if (isSubType(subType, argument, info, state, isWeak)) {
-          return true;
-        }
-      }
-    }
-    if (LatticeUtil.isMeet(subType)) {
-      for (SNode argument : LatticeUtil.getMeetArguments(subType)) {
-        if (!TypesUtil.hasVariablesInside(superType) && isSubTypeByReplacementRules(argument, superType, isWeak)) {
-          return true;
-        }
-        if (isSubType(argument, superType, info, state, isWeak)) {
-          return true;
-        }
-      }
-    }
-    if (LatticeUtil.isMeet(superType)) {
-      boolean result = true;
-      for (SNode argument : LatticeUtil.getMeetArguments(superType)) {
-        if (result && !isSubType(subType, argument, info, state, isWeak)) {
-          result = false;
-        }
-      }
-      if (result) {
-        return true;
-      }     /*
-      if (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType)) {
-        for (SNode argument : LatticeUtil.getMeetArguments(superType)) {
-          if (isSubType(subType, argument, info, state, isWeak)) {
-            return true;
-          }
-        }
-      }       */
-    }
-    return false;
-  }
-
-  private boolean searchInSuperTypes(SNode subType, NodeMatcher superType, boolean isWeak, State state, boolean canAskCache) {
-    TypeCheckingContextNew typeCheckingContextNew = state == null ? null : state.getTypeCheckingContext();
-    Queue<SNode> queue = new LinkedList<SNode>();
-    StructuralNodeSet<SNode> visited = new StructuralNodeSet<SNode>();
-    queue.add(subType);
-    visited.add(subType);
-    while (!queue.isEmpty()) {
-      SNode cur = queue.poll();
-      if (superType.matchesWith(cur)) {
-        addToCache(subType, superType, true, isWeak);
-        return true;
-      }
-      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
-      collectImmediateSuperTypes(cur, isWeak, ancestors, typeCheckingContextNew);
-      for (SNode ancestor: ancestors) {
-        if (visited.contains(ancestor)) continue;
-        visited.addStructurally(ancestor);
-        if (canAskCache) {
-          Boolean cacheAnswer = getIsSubTypeCacheAnswer(ancestor, superType.getNode(), isWeak);
-          if (cacheAnswer != null) {
-            if (cacheAnswer) {
-              addToCache(subType, superType, true, isWeak);
-              return true;
-            }
-            continue;
-          }
-        }
-        queue.add(ancestor);
-      }
-    }
-    addToCache(subType, superType, false, isWeak);
-    return false;
   }
 
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
@@ -190,8 +104,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     return SubtypingUtil.mostSpecificTypes(nodes);
   }
 
-  // TODO: must be private
- /*package*/ void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
+  @Override
+  public void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
     if (term == null) {
       return;
     }
@@ -347,58 +261,5 @@ public class SubTypingManagerNew extends SubtypingManager {
     SNode sNode = myCoercionManager.coerceSubTypingNew(subtype, pattern, isWeak, state);
     TypeSystemReporter.getInstance().reportCoerce(subtype, pattern.getConceptFQName(), System.nanoTime()-start);
     return sNode;
-  }
-
-  private Boolean getIsSubTypeCacheAnswer(SNode subType, SNode superType, boolean isWeak) {
-    SubtypingCache cache = myTypeChecker.getSubtypingCache();
-    if (cache != null) {
-      Boolean answer = cache.getIsSubtype(subType, superType, isWeak);
-      if (answer != null) {
-        return answer;
-      }
-    }
-    cache = myTypeChecker.getGlobalSubtypingCache();
-    if (cache != null) {
-      Boolean answer = cache.getIsSubtype(subType, superType, isWeak);
-      if (answer != null) {
-        return answer;
-      }
-    }
-    return null;
-  }
-
-  private void addToCache(SNode subType, INodeMatcher superType, boolean answer, boolean isWeak) {
-    SubtypingCache cache = myTypeChecker.getSubtypingCache();
-    if (cache == null) {
-      cache = myTypeChecker.getGlobalSubtypingCache();
-    }
-    if (cache != null && superType instanceof NodeMatcher) {
-      cache.cacheIsSubtype(subType, ((NodeMatcher) superType).getNode(), answer, isWeak);
-    }
-  }
-
-  private static class NodeMatcher implements INodeMatcher {
-    private final SNode myNode;
-    private final Equations myEquations;
-
-    private final EquationInfo myInfo;
-
-    public NodeMatcher(SNode node, Equations equations, EquationInfo info) {
-      myNode = node;
-      myEquations = equations;
-      myInfo = info;
-    }
-
-    public boolean matchesWith(SNode nodeToMatch) {
-      return TypesUtil.match(nodeToMatch, myNode, myEquations, myInfo);
-    }
-
-    public SNode getNode() {
-      return myNode;
-    }
-    public String getConceptFQName() {
-      return myNode.getConceptFqName();
-    }
-
   }
 }

@@ -35,11 +35,15 @@ public abstract class SubtypingManager {
 
   public abstract boolean isSubtype(SNode subType, SNode superType, boolean isWeak);
 
+  public abstract boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak);
+
   public abstract boolean isComparable(SNode left, SNode right, boolean isWeak);
 
   public abstract StructuralNodeSet<?> collectImmediateSupertypes(SNode term);
 
   public abstract StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak);
+
+  public abstract void collectImmediateSuperTypes(SNode term, boolean isWeak, StructuralNodeSet result, TypeCheckingContext context);
 
   // TODO: adapt to the common API style
   public abstract Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak);
