@@ -33,6 +33,7 @@ import java.util.*;
 
 public class CoercionManager {
   private final TypeChecker myTypeChecker;
+  // TODO: why this dependency?
   private final SubTypingManagerNew mySubTyping;
 
   public CoercionManager(TypeChecker typeChecker, SubTypingManagerNew subTyping) {

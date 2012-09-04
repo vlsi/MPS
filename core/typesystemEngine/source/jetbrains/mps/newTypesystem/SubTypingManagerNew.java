@@ -64,6 +64,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     return isSubType(subType, superType, null, null, isWeak);
   }
 
+  // TODO: must not be public (internal API)
   public boolean isSubType(final SNode subType, final SNode superType, @Nullable final EquationInfo info, final State state, final boolean isWeak) {
     long start = System.nanoTime();
 
@@ -185,7 +186,12 @@ public class SubTypingManagerNew extends SubtypingManager {
     return result;
   }
 
- void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
+  public  Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
+    return SubtypingUtil.mostSpecificTypes(nodes);
+  }
+
+  // TODO: must be private
+ /*package*/ void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
     if (term == null) {
       return;
     }
@@ -200,43 +206,18 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }
 
-  //sub = true to eliminate subTypes
-  private List<SNode> eliminateSubOrSuperTypes(Collection<SNode> types, boolean sub) {
-    List<SNode> result = new LinkedList<SNode>();
-    Set<SNode> toRemove = new THashSet<SNode>();
-    for (SNode current : types) {
-      boolean toAdd = true;
-      for (SNode resultType : result) {
-        //sub isSubType !sub - isSuperType
-        if (subOrSuperType(resultType, current, sub, true)) {
-          toAdd = false;
-          break;
-        }
-        if (subOrSuperType(current, resultType, sub, true)) {
-          toRemove.add(resultType);
-        }
-      }
-      if (toAdd) {
-        result.add(current);
-      }
-      for (SNode removeType : toRemove) {
-        result.remove(removeType);
-      }
-    }
-    return result;
+  /**
+   * @deprecated use SubtypingUtil
+   */
+  // TODO: remove
+  /*package*/ List<SNode> eliminateSuperTypes(Collection<SNode> types) {
+    return SubtypingUtil.eliminateSubTypes(types);
   }
 
-  public List<SNode> eliminateSuperTypes(Collection<SNode> types) {
-    return eliminateSubOrSuperTypes(types, true);
-  }
-
-  List<SNode> eliminateSubTypes(Collection<SNode> types) {
-    return eliminateSubOrSuperTypes(types, false);
-  }
-
+  // TODO: must be private
   public SNode createMeet(List<SNode> types) {
     if (types.size() > 1) {
-      types = eliminateSuperTypes(types);
+      types = SubtypingUtil.eliminateSuperTypes(types);
     }
     return LatticeUtil.meetNodes(new LinkedHashSet<SNode>(types));
   }
@@ -311,22 +292,22 @@ public class SubTypingManagerNew extends SubtypingManager {
       }
       SNode left = types.remove(0);
       SNode right = types.remove(0);
-      List<SNode> newNodes = eliminateSuperTypes(leastCommonSuperTypes(left, right, context));
+      List<SNode> newNodes = SubtypingUtil.eliminateSuperTypes(leastCommonSuperTypes(left, right, context));
       newNodesSize = newNodes.size();
       types.addAll(newNodes);
     }
-    return eliminateSuperTypes(types);
+    return SubtypingUtil.eliminateSuperTypes(types);
   }
 
-  //sub isSubType
-  private boolean subOrSuperType(SNode left, SNode right, boolean sub, boolean isWeak) {
-    if (sub) {
-      return isSubtype(left, right, isWeak);
-    } else {
-      return isSubtype(right, left, isWeak);
+  public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
+    if (types.size() <= 1) {
+      return types;
     }
+    List<SNode> typesList = SubtypingUtil.eliminateSubTypes(types);
+    return new HashSet<SNode>(leastCommonSuperTypes(typesList, null));
   }
 
+  // TODO: move someplace else
   public SNode createLCS(List<SNode> types, TypeCheckingContextNew context) {
     if (types.isEmpty()) return  null;
     if (types.size() == 1) return types.iterator().next();
@@ -336,12 +317,12 @@ public class SubTypingManagerNew extends SubtypingManager {
           return node1.getPresentation().compareTo(node2.getPresentation());
         }
       });
-      types = eliminateSubTypes(types);
-    }     
+      types = SubtypingUtil.eliminateSubTypes(types);
+    }
     return LatticeUtil.meetNodes(new THashSet<SNode>(leastCommonSuperTypes(types, context)));
   }
 
-  boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
+  private boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
     if (left == null || right == null) {
       return false;
     }
@@ -360,47 +341,12 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
+  /*package*/ SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
     if (subtype == null) return null;
     long start = System.nanoTime();
     SNode sNode = myCoercionManager.coerceSubTypingNew(subtype, pattern, isWeak, state);
     TypeSystemReporter.getInstance().reportCoerce(subtype, pattern.getConceptFQName(), System.nanoTime()-start);
     return sNode;
-  }
-
-  public Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
-    Set<SNode> residualNodes = new THashSet<SNode>(nodes);
-    while (residualNodes.size() > 1) {
-      List<SNode> nodesToIterate = new ArrayList<SNode>(residualNodes);
-      Collections.sort(nodesToIterate, new Comparator<SNode>() {
-        @Override
-        public int compare(SNode o1, SNode o2) {
-          return TypesUtil.depth(o2) - TypesUtil.depth(o1);
-        }
-      });
-      boolean wasChange = false;
-      int size = nodesToIterate.size();
-      for (int i = 0; i < size; i++) {
-        for (int j = i + 1; j < size; j++) {
-          SNode node1 = nodesToIterate.get(i);
-          SNode node2 = nodesToIterate.get(j);
-          if (node1 == null || node2 == null) {
-            residualNodes.remove(null);
-          }
-          if (isSubtype(node1, node2)) {
-            residualNodes.remove(node2);
-            wasChange = true;
-          } else if (isSubtype(node2, node1)) {
-            residualNodes.remove(node1);
-            wasChange = true;
-          }
-        }
-      }
-      if (!wasChange) {
-        break;
-      }
-    }
-    return residualNodes;
   }
 
   private Boolean getIsSubTypeCacheAnswer(SNode subType, SNode superType, boolean isWeak) {
@@ -431,9 +377,10 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }
 
-  static class NodeMatcher implements INodeMatcher {
+  private static class NodeMatcher implements INodeMatcher {
     private final SNode myNode;
     private final Equations myEquations;
+
     private final EquationInfo myInfo;
 
     public NodeMatcher(SNode node, Equations equations, EquationInfo info) {
@@ -449,17 +396,9 @@ public class SubTypingManagerNew extends SubtypingManager {
     public SNode getNode() {
       return myNode;
     }
-
     public String getConceptFQName() {
       return myNode.getConceptFqName();
     }
-  }
 
-  public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
-    if (types.size() <= 1) {
-      return types;
-    }
-    List<SNode> typesList = eliminateSubTypes(types);
-    return new HashSet<SNode>(leastCommonSuperTypes(typesList, null));
   }
 }

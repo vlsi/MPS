@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.HashSet;
+import jetbrains.mps.newTypesystem.SubtypingUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.IMapping;
@@ -210,7 +211,7 @@ public class MethodResolveUtil {
     }
     if (mostSpecific) {
       Set<SNode> goodParamTypes = typesOfParamToMethods.keySet();
-      Set<SNode> mostSpecificTypes = subtypingManager.mostSpecificTypes(goodParamTypes);
+      Set<SNode> mostSpecificTypes = SubtypingUtil.mostSpecificTypes(goodParamTypes);
       if (!(mostSpecificTypes.isEmpty())) {
         result = new ArrayList<SNode>();
         for (SNode mostSpecificType : mostSpecificTypes) {

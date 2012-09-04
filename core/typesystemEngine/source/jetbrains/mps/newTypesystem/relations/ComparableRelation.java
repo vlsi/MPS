@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.relations;
 
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
+import jetbrains.mps.newTypesystem.SubtypingUtil;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.RelationBlock;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
@@ -40,8 +41,9 @@ public class ComparableRelation extends AbstractRelation {
     if (nodes.isEmpty()) {
       return false;
     }
+    // TODO: why not use global TypeChecker? there can be the only one, after all
     SubTypingManagerNew subTypingManager = (SubTypingManagerNew) state.getTypeCheckingContext().getTypeChecker().getSubtypingManager();
-    nodes = subTypingManager.eliminateSuperTypes(nodes);
+    nodes = SubtypingUtil.eliminateSuperTypes(nodes);
     List<SNode> types = new LinkedList<SNode>();
     SNode result = null;
     for (SNode type : nodes) {

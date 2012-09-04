@@ -35,13 +35,17 @@ public abstract class SubtypingManager {
 
   public abstract boolean isSubtype(SNode subType, SNode superType, boolean isWeak);
 
+  public abstract boolean isComparable(SNode left, SNode right, boolean isWeak);
+
   public abstract StructuralNodeSet<?> collectImmediateSupertypes(SNode term);
 
   public abstract StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak);
 
+  // TODO: adapt to the common API style
   public abstract Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak);
 
-  public abstract boolean isComparable(SNode left, SNode right, boolean isWeak);
-
+  /**
+   * @deprecated use SubtypingUtil
+   */
   public abstract Set<SNode> mostSpecificTypes(Set<SNode> nodes);
 }

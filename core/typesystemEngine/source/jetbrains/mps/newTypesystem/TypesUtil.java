@@ -30,9 +30,7 @@ import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class TypesUtil {
 
