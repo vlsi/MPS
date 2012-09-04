@@ -27,6 +27,8 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ModelDependenciesManager {
@@ -37,6 +39,8 @@ public class ModelDependenciesManager {
 
   private AtomicBoolean myInvalidatedFlag = new AtomicBoolean(true);
   private volatile Set<ModuleReference> myCachedDeps;
+  // a one-time synchronization helper for the cache
+  private CountDownLatch myCacheInitGuard = new CountDownLatch(1);
 
   public ModelDependenciesManager(SModel model) {
     myModel = model;
@@ -76,6 +80,12 @@ public class ModelDependenciesManager {
         }
       }
       this.myCachedDeps = Collections.unmodifiableSet(result);
+      myCacheInitGuard.countDown();
+    }
+    try {
+      myCacheInitGuard.await();
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
     }
     return myCachedDeps;
   }
