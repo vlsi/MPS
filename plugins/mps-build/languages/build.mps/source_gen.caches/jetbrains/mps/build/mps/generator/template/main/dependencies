@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildSourcePath_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildString_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_AbstractModule_Behavior" />
+    <classNode dependClassName="jetbrains.mps.build.mps.behavior.BuildMps_Module_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.MPSModulesClosure" />
     <classNode dependClassName="jetbrains.mps.build.mps.util.ModuleLoader" />

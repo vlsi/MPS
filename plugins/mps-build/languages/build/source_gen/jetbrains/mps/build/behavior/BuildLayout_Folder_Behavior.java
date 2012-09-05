@@ -9,8 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import java.util.List;
+import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
@@ -61,6 +62,29 @@ public class BuildLayout_Folder_Behavior {
         });
       }
     }
+    if (object instanceof LocalSourcePathArtifact) {
+      LocalSourcePathArtifact art = (LocalSourcePathArtifact) object;
+      if (!(art.isFolder()) || art.getRoot() != SNodeOperations.getContainingRoot(thisNode)) {
+        return false;
+      }
+
+      for (SNode c : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "children", true))) {
+        if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.build.structure.BuildLayout_Files")) {
+          SNode files = SNodeOperations.as(c, "jetbrains.mps.build.structure.BuildLayout_Files");
+          if (ListSequence.fromList(SLinkOperations.getTargets(files, "parameters", true)).isEmpty() && eq_n0rd9q_a0a1a0a3a1a5(art.getSourcePath(), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(files, "path", true)))) {
+            return true;
+          }
+        } else if (SNodeOperations.isInstanceOf(c, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
+          SNode copy = SNodeOperations.as(c, "jetbrains.mps.build.structure.BuildLayout_Copy");
+          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(copy, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles")) {
+            SNode inputSet = SNodeOperations.cast(SLinkOperations.getTarget(copy, "fileset", true), "jetbrains.mps.build.structure.BuildInputFiles");
+            if (ListSequence.fromList(SLinkOperations.getTargets(inputSet, "selectors", true)).isEmpty() && eq_n0rd9q_a0a1a1a0a0d0b0f(art.getSourcePath(), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(inputSet, "dir", true)))) {
+              return true;
+            }
+          }
+        }
+      }
+    }
     return BuildLayout_Node_Behavior.callSuper_exports_6547494638219603457(thisNode, "jetbrains.mps.build.structure.BuildLayout_Folder", object);
   }
 
@@ -83,5 +107,19 @@ public class BuildLayout_Folder_Behavior {
         return BuildLayout_Folder_Behavior.call_getImportContentChildren_7045211410692956036(SNodeOperations.cast(SLinkOperations.getTarget(it, "target", false), "jetbrains.mps.build.structure.BuildLayout_Folder"));
       }
     }));
+  }
+
+  private static boolean eq_n0rd9q_a0a1a0a3a1a5(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_n0rd9q_a0a1a1a0a0d0b0f(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }
