@@ -25,8 +25,8 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
+import jetbrains.mps.newTypesystem.SubtypingUtil;
 import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -280,11 +280,11 @@ public class RulesUtil {
 
   public static SNode leastCommonSuperconcept(List<SNode> concepts) {
     SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
-    Set<SNode> set = SetSequence.fromSet(new HashSet<SNode>());
+    List<SNode> allTypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode concept : concepts) {
-      SetSequence.fromSet(set).addElement(new RulesUtil.QuotationClass_yxkngc_a0a0a0c0k().createNode(concept));
+      ListSequence.fromList(allTypes).addElement(new RulesUtil.QuotationClass_yxkngc_a0a0a0c0k().createNode(concept));
     }
-    Set<SNode> leastCommonSupertypes = subtypingManager.leastCommonSupertypes(set, true);
+    List<SNode> leastCommonSupertypes = SubtypingUtil.leastCommonSuperTypes(allTypes, null);
     if (leastCommonSupertypes.isEmpty() || !(SNodeOperations.isInstanceOf(leastCommonSupertypes.iterator().next(), "jetbrains.mps.lang.smodel.structure.SNodeType")) || SLinkOperations.getTarget(SNodeOperations.cast(leastCommonSupertypes.iterator().next(), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false) == null) {
       return SLinkOperations.getTarget(new RulesUtil.QuotationClass_yxkngc_a0a0a4a01().createNode(), "concept", false);
     }

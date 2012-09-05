@@ -39,6 +39,8 @@ public abstract class SubtypingManager {
 
   public abstract boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak);
 
+  public abstract boolean isSuperType(SNode superType, Set<SNode> possibleSubTypes);
+
   public abstract boolean isComparable(SNode left, SNode right, boolean isWeak);
 
   public abstract boolean isComparableByRules(SNode left, SNode right, boolean isWeak);
@@ -51,8 +53,6 @@ public abstract class SubtypingManager {
 
   // TODO: adapt to the common API style
   public abstract Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak);
-
-  public abstract List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContextNew context);
 
   /**
    * @deprecated use SubtypingUtil

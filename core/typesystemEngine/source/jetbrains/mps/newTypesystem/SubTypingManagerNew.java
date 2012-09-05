@@ -68,6 +68,16 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   @Override
+  public boolean isSuperType(SNode superType, Set<SNode> possibleSubTypes) {
+    for (SNode subType : possibleSubTypes) {
+      if (isSubtype(subType, superType, true)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  @Override
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
     return collectImmediateSupertypes(term, true);
   }
@@ -135,79 +145,10 @@ public class SubTypingManagerNew extends SubtypingManager {
       return types;
     }
     List<SNode> typesList = SubtypingUtil.eliminateSubTypes(types);
-    return new HashSet<SNode>(leastCommonSuperTypes(typesList, null));
+    return new HashSet<SNode>(SubtypingUtil.leastCommonSuperTypes(typesList, null));
   }
 
-  @Override
-  public List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContextNew context) {
-    if (types.size() == 0) {
-      return null;
-    }
-    int newNodesSize = 1;
-    while (types.size() > newNodesSize) {
-      if (types.size() == 1) {
-        return types;
-      }
-      if (types.size() == 0) {
-        return null;
-      }
-      SNode left = types.remove(0);
-      SNode right = types.remove(0);
-      List<SNode> newNodes = SubtypingUtil.eliminateSuperTypes(leastCommonSuperTypes(left, right, context));
-      newNodesSize = newNodes.size();
-      types.addAll(newNodes);
-    }
-    return SubtypingUtil.eliminateSuperTypes(types);
-  }
-
-  public Set<SNode> leastCommonSuperTypes(SNode left, SNode right, TypeCheckingContextNew context) {
-    StructuralNodeSet<?> frontier = new StructuralNodeSet();
-    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
-    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
-    Set<SNode> result = new THashSet<SNode>();
-    frontier.add(left);
-    while (!frontier.isEmpty()) {
-      Set<SNode> yetPassedRaw = new THashSet<SNode>();
-      //collecting a set of frontier's ancestors
-      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
-      for (SNode node : frontier) {
-        collectImmediateSuperTypes(node, true, ancestors, context);
-        yetPassedRaw.add(node);
-      }
-      for (SNode ancestor : ancestors) {
-        if (isSubtype(right, ancestor, true)) {
-          if (!isSuperType(ancestor, result)) {
-            result.add(ancestor);
-          }
-        }
-      }
-      for (SNode passedNodeRaw : yetPassedRaw) {
-        yetPassed.add(passedNodeRaw);
-      }
-      for (SNode passedNode : yetPassed) {
-        ancestors.removeStructurally(passedNode);
-      }
-      for (SNode resultNode : result) {
-        ancestors.removeStructurally(resultNode);
-      }
-
-      newFrontier.addAllStructurally(ancestors);
-      yetPassed.addAllStructurally(ancestors);
-      frontier = newFrontier;
-      newFrontier = new StructuralNodeSet();
-    }
-    return result;
-  }
-
-  private boolean isSuperType(SNode superType, Set<SNode> possibleSubTypes) {
-    for (SNode subType : possibleSubTypes) {
-      if (isSubtype(subType, superType, true)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
+  // TODO: wtf
   /*package*/ SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
     if (subtype == null) return null;
     long start = System.nanoTime();

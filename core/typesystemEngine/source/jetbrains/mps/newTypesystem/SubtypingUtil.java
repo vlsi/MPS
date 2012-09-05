@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 
 import java.util.*;
@@ -95,7 +96,71 @@ public class SubtypingUtil {
       });
       types = SubtypingUtil.eliminateSubTypes(types);
     }
-    return LatticeUtil.meetNodes(new THashSet<SNode>(TypeChecker.getInstance().getSubtypingManager().leastCommonSuperTypes(types, context)));
+    return LatticeUtil.meetNodes(new THashSet<SNode>(SubtypingUtil.leastCommonSuperTypes(types, context)));
+  }
+
+  public static List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContextNew context) {
+    if (types.size() == 0) {
+      return null;
+    }
+    if (types.size () == 1) {
+      return types;
+    }
+    types = SubtypingUtil.eliminateSubTypes(types);
+    int newNodesSize = 1;
+    while (types.size() > newNodesSize) {
+      if (types.size() == 1) {
+        return types;
+      }
+      if (types.size() == 0) {
+        return null;
+      }
+      SNode left = types.remove(0);
+      SNode right = types.remove(0);
+      List<SNode> newNodes = SubtypingUtil.eliminateSuperTypes(SubtypingUtil.leastCommonSuperTypes(left, right, context));
+      newNodesSize = newNodes.size();
+      types.addAll(newNodes);
+    }
+    return SubtypingUtil.eliminateSuperTypes(types);
+  }
+
+  private static Set<SNode> leastCommonSuperTypes(SNode left, SNode right, TypeCheckingContextNew context) {
+    StructuralNodeSet<?> frontier = new StructuralNodeSet();
+    StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
+    StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
+    Set<SNode> result = new THashSet<SNode>();
+    frontier.add(left);
+    while (!frontier.isEmpty()) {
+      Set<SNode> yetPassedRaw = new THashSet<SNode>();
+      //collecting a set of frontier's ancestors
+      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
+      for (SNode node : frontier) {
+        TypeChecker.getInstance().getSubtypingManager().collectImmediateSuperTypes(node, true, ancestors, context);
+        yetPassedRaw.add(node);
+      }
+      for (SNode ancestor : ancestors) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(right, ancestor, true)) {
+          if (!TypeChecker.getInstance().getSubtypingManager().isSuperType(ancestor, result)) {
+            result.add(ancestor);
+          }
+        }
+      }
+      for (SNode passedNodeRaw : yetPassedRaw) {
+        yetPassed.add(passedNodeRaw);
+      }
+      for (SNode passedNode : yetPassed) {
+        ancestors.removeStructurally(passedNode);
+      }
+      for (SNode resultNode : result) {
+        ancestors.removeStructurally(resultNode);
+      }
+
+      newFrontier.addAllStructurally(ancestors);
+      yetPassed.addAllStructurally(ancestors);
+      frontier = newFrontier;
+      newFrontier = new StructuralNodeSet();
+    }
+    return result;
   }
 
   abstract private static class RelationEliminator {
