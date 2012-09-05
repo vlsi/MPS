@@ -63,7 +63,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   private TreeHighlighter.MyFeatureForestMapListener myFeatureListener = new TreeHighlighter.MyFeatureForestMapListener();
   private TreeHighlighter.MyFileStatusListener myFileStatusListener = new TreeHighlighter.MyFileStatusListener();
   private TreeHighlighter.MyModelListener myGlobalModelListener;
-  private TreeHighlighter.FeaturesHolder myFeaturesHolder = new TreeHighlighter.FeaturesHolder();
+  private final TreeHighlighter.FeaturesHolder myFeaturesHolder = new TreeHighlighter.FeaturesHolder();
 
   public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor, boolean removeNodesOnModelDisposal) {
     myRegistry = registry;
@@ -344,20 +344,26 @@ public class TreeHighlighter implements TreeMessageOwner {
 
   private class FeaturesHolder {
     private final MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
+    private final MultiMap<SModelReference, Feature> myModelRefToFeatures = new MultiMap<SModelReference, Feature>();
 
     public FeaturesHolder() {
     }
 
     public void putNodeWithFeature(Feature feature, MPSTreeNode node) {
       myFeatureToNodes.putValue(feature, node);
+      myModelRefToFeatures.putValue(feature.getModelReference(), feature);
     }
 
     public void removeNodeWithFeature(Feature feature, MPSTreeNode node) {
       myFeatureToNodes.removeValue(feature, node);
+      if (myFeatureToNodes.get(feature).isEmpty()) {
+        myModelRefToFeatures.removeValue(feature.getModelReference(), feature);
+      }
     }
 
     public void removeFeature(Feature feature) {
       myFeatureToNodes.remove(feature);
+      myModelRefToFeatures.removeValue(feature.getModelReference(), feature);
     }
 
     public Collection<MPSTreeNode> getNodesByFeature(Feature feature) {
@@ -366,11 +372,7 @@ public class TreeHighlighter implements TreeMessageOwner {
 
     public List<Feature> getFeaturesByModelReference(SModelReference modelRef) {
       List<Feature> features = ListSequence.fromList(new ArrayList<Feature>());
-      for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
-        if (modelRef.equals(anotherFeature.getModelReference())) {
-          ListSequence.fromList(features).addElement(anotherFeature);
-        }
-      }
+      ListSequence.fromList(features).addSequence(CollectionSequence.fromCollection(myModelRefToFeatures.get(modelRef)));
       return features;
     }
 
