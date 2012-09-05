@@ -6,7 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JScrollPane;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.smodel.IOperationContext;
-import java.awt.Frame;
+import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.event.MouseEvent;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
@@ -29,8 +29,8 @@ public class ShowCFGDialog extends DialogWrapper {
   private ShowCFGDialog.MyComponent myComponent;
   private ControlFlowGraph<InstructionWrapper> myControlFlowGraph;
 
-  public ShowCFGDialog(Program p, final IOperationContext operationContext, Frame frame) {
-    super(frame, true);
+  public ShowCFGDialog(Program p, final IOperationContext operationContext, Project project) {
+    super(project);
     this.myComponent = new ShowCFGDialog.MyComponent();
     this.myScrollPane = ScrollPaneFactory.createScrollPane(myComponent);
     this.myScrollPane.setBackground(this.getBackground());

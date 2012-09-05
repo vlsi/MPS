@@ -12,12 +12,14 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
+import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
 import jetbrains.mps.smodel.IOperationContext;
-import java.awt.Frame;
+import com.intellij.openapi.project.Project;
+import javax.swing.SwingUtilities;
 
 public class ShowDFA_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -26,7 +28,7 @@ public class ShowDFA_Action extends BaseAction {
   public ShowDFA_Action() {
     super("Show Data Flow Graph", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @Override
@@ -62,8 +64,8 @@ public class ShowDFA_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
-    if (MapSequence.fromMap(_params).get("frame") == null) {
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
     return true;
@@ -71,10 +73,11 @@ public class ShowDFA_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
+      Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
+      final DialogWrapper dialog = new ShowCFGDialog(program, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
-          new ShowCFGDialog(program, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame"))).show();
+          dialog.show();
         }
       });
     } catch (Throwable t) {
