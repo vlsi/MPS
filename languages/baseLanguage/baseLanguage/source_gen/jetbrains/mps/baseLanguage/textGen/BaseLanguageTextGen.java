@@ -268,7 +268,7 @@ public abstract class BaseLanguageTextGen {
     }
 
     BaseLanguageTextGen.addDependency(packageName, fqName, textGen);
-    return ImportsContext.getInstance(textGen.getBuffer()).getClassRefText(packageName, fqName, contextNode);
+    return ImportsContext.getInstance(textGen.getBuffer()).getClassifierRefText(packageName, fqName, contextNode);
   }
 
   protected static void addDependency(String packageName, String fqName, final SNodeTextGen textGen) {
