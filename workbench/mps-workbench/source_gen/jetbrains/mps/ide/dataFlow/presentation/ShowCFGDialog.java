@@ -16,6 +16,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
+import javax.swing.Action;
 import javax.swing.Scrollable;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
@@ -60,6 +61,10 @@ public class ShowCFGDialog extends DialogWrapper {
   @Nullable
   protected JComponent createCenterPanel() {
     return myScrollPane;
+  }
+
+  protected Action[] createActions() {
+    return new Action[0];
   }
 
   private class MyComponent extends JComponent implements Scrollable {
