@@ -8,14 +8,14 @@ import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.event.MouseEvent;
-import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.Action;
+import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.Scrollable;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
@@ -37,19 +37,16 @@ public class ShowCFGDialog extends DialogWrapper {
     this.myControlFlowGraph = graph;
     graph.setComponent(myComponent);
     graph.relayout();
-    this.myControlFlowGraph.addBlockListener(new IBlockListener<InstructionWrapper>() {
-      public void mousePressed(MouseEvent event, IInstruction<InstructionWrapper> instruction) {
-        InstructionWrapper instructionWrapper = (InstructionWrapper) instruction;
-        Instruction cfgInstruction = instructionWrapper.getInstruction();
-        Object source = cfgInstruction.getSource();
-        if (source instanceof SNode) {
-          final SNode node = (SNode) source;
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            public void run() {
+    this.myControlFlowGraph.addBlockListener(new IBlockListener() {
+      public void mousePressed(MouseEvent event, final IBlock block) {
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          public void run() {
+            SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a0(block.getSourceNode());
+            if (node != null) {
               NavigationSupport.getInstance().openNode(operationContext, node, true, true);
             }
-          });
-        }
+          }
+        });
       }
     });
     init();
@@ -66,6 +63,13 @@ public class ShowCFGDialog extends DialogWrapper {
 
   protected Action[] createActions() {
     return new Action[0];
+  }
+
+  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a0(SNodePointer checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode();
+    }
+    return null;
   }
 
   private class MyComponent extends JComponent implements Scrollable {
