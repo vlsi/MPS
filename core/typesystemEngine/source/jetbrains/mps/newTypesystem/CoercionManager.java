@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import com.sun.xml.internal.ws.util.StringUtils;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.state.State;
@@ -58,7 +59,7 @@ public class CoercionManager {
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConceptFqName())) {
       List<SNode> children = subtype.getChildren("argument");
 
-      SNode lcs = mySubTyping.createLCS(children, typeCheckingContext);
+      SNode lcs = SubtypingUtil.createLeastCommonSupertype(children, typeCheckingContext);
       return coerceSubTypingNew(lcs, pattern, isWeak, state);
     }
 
@@ -131,7 +132,7 @@ public class CoercionManager {
       }
       if (!results.isEmpty()) {
         if (results.size() > 1) {
-          results = mySubTyping.eliminateSuperTypes(results);
+          results = SubtypingUtil.eliminateSuperTypes(results);
         }
         if (!results.isEmpty()) {
           return results.get(0);

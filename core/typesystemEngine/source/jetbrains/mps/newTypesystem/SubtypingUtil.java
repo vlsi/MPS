@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 
 import java.util.*;
 
@@ -81,6 +82,20 @@ public class SubtypingUtil {
         return TypeChecker.getInstance().getSubtypingManager().isSubtype(left, right, true);
       }
     }.doEliminate(types);
+  }
+
+  public static SNode createLeastCommonSupertype(List<SNode> types, TypeCheckingContextNew context) {
+    if (types.isEmpty()) return  null;
+    if (types.size() == 1) return types.iterator().next();
+    if (types.size() > 1) {
+      Collections.sort(types, new Comparator<SNode>() {
+        public int compare(SNode node1, SNode node2) {
+          return node1.getPresentation().compareTo(node2.getPresentation());
+        }
+      });
+      types = SubtypingUtil.eliminateSubTypes(types);
+    }
+    return LatticeUtil.meetNodes(new THashSet<SNode>(TypeChecker.getInstance().getSubtypingManager().leastCommonSuperTypes(types, context)));
   }
 
   abstract private static class RelationEliminator {

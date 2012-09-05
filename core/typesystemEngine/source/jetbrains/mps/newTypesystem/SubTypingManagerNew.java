@@ -43,10 +43,12 @@ public class SubTypingManagerNew extends SubtypingManager {
     myCoercionManager = new CoercionManager(typeChecker, this);
   }
 
+  @Override
   public boolean isSubtype(SNode subType, SNode superType) {
     return isSubtype(subType, superType, true);
   }
 
+  @Override
   public boolean isSubtype(SNode subType, SNode superType, boolean isWeak) {
     if (TypesUtil.isVariable(subType)) return false;
     if (TypesUtil.isVariable(superType)) return false;
@@ -65,32 +67,19 @@ public class SubTypingManagerNew extends SubtypingManager {
     return false;
   }
 
-  // TODO: must not be public (internal API)
-  public boolean isSubType(final SNode subType, final SNode superType, @Nullable final EquationInfo info, final State state, final boolean isWeak) {
-    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
-    SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak, state == null ? null : state.getTypeCheckingContext(), matchingPairs);
-
-    boolean result = subtypingResolver.calcIsSubType(subType, superType);
-    if (result) {
-      Equations equations = state != null ? state.getEquations() : null;
-      if (equations != null) {
-        equations.addEquations(matchingPairs, info);
-      }
-    }
-
-    return result;
-  }
-
+  @Override
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {
     return collectImmediateSupertypes(term, true);
   }
 
+  @Override
   public StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak) {
     StructuralNodeSet result = new StructuralNodeSet();
     collectImmediateSuperTypes(term, isWeak, result, null);
     return result;
   }
 
+  @Override
   public  Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
     return SubtypingUtil.mostSpecificTypes(nodes);
   }
@@ -111,32 +100,67 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
   }
 
-  /**
-   * @deprecated use SubtypingUtil
-   */
-  // TODO: remove
-  /*package*/ List<SNode> eliminateSuperTypes(Collection<SNode> types) {
-    return SubtypingUtil.eliminateSubTypes(types);
+  @Override
+  public boolean isComparable(SNode left, SNode right, boolean isWeak) {
+    return isComparableByRules(left, right, isWeak) ||
+      isSubTypeByReplacementRules(left, right, isWeak) ||
+      isSubTypeByReplacementRules(right, left, isWeak) ||
+      isSubtype(left, right, isWeak) ||
+      isSubtype(right, left, isWeak);
   }
 
-  // TODO: must be private
-  public SNode createMeet(List<SNode> types) {
-    if (types.size() > 1) {
-      types = SubtypingUtil.eliminateSuperTypes(types);
+  @Override
+  public boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
+    if (left == null || right == null) {
+      return false;
     }
-    return LatticeUtil.meetNodes(new LinkedHashSet<SNode>(types));
-  }
-
-  private boolean isSuperType(SNode superType, Set<SNode> possibleSubTypes) {
-    for (SNode subType : possibleSubTypes) {
-      if (isSubtype(subType, superType, true)) {
-        return true;
+    List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
+    if (comparisonRule_runtimes != null) {
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
+      }
+    }
+    comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(right, left, isWeak);
+    if (comparisonRule_runtimes != null) {
+      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.o1.areComparable(right, left, comparisonRule_runtime.o2)) return true;
       }
     }
     return false;
   }
 
-  private Set<SNode> leastCommonSuperTypes(SNode left, SNode right, TypeCheckingContextNew context) {
+  @Override
+  public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
+    if (types.size() <= 1) {
+      return types;
+    }
+    List<SNode> typesList = SubtypingUtil.eliminateSubTypes(types);
+    return new HashSet<SNode>(leastCommonSuperTypes(typesList, null));
+  }
+
+  @Override
+  public List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContextNew context) {
+    if (types.size() == 0) {
+      return null;
+    }
+    int newNodesSize = 1;
+    while (types.size() > newNodesSize) {
+      if (types.size() == 1) {
+        return types;
+      }
+      if (types.size() == 0) {
+        return null;
+      }
+      SNode left = types.remove(0);
+      SNode right = types.remove(0);
+      List<SNode> newNodes = SubtypingUtil.eliminateSuperTypes(leastCommonSuperTypes(left, right, context));
+      newNodesSize = newNodes.size();
+      types.addAll(newNodes);
+    }
+    return SubtypingUtil.eliminateSuperTypes(types);
+  }
+
+  public Set<SNode> leastCommonSuperTypes(SNode left, SNode right, TypeCheckingContextNew context) {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
@@ -175,72 +199,10 @@ public class SubTypingManagerNew extends SubtypingManager {
     return result;
   }
 
-  public boolean isComparable(SNode left, SNode right, boolean isWeak) {
-    return isComparableByRules(left, right, isWeak) ||
-      isSubTypeByReplacementRules(left, right, isWeak) ||
-      isSubTypeByReplacementRules(right, left, isWeak) ||
-      isSubtype(left, right, isWeak) ||
-      isSubtype(right, left, isWeak);
-  }
-
-  private List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContextNew context) {
-    if (types.size() == 0) {
-      return null;
-    }
-    int newNodesSize = 1;
-    while (types.size() > newNodesSize) {
-      if (types.size() == 1) {
-        return types;
-      }
-      if (types.size() == 0) {
-        return null;
-      }
-      SNode left = types.remove(0);
-      SNode right = types.remove(0);
-      List<SNode> newNodes = SubtypingUtil.eliminateSuperTypes(leastCommonSuperTypes(left, right, context));
-      newNodesSize = newNodes.size();
-      types.addAll(newNodes);
-    }
-    return SubtypingUtil.eliminateSuperTypes(types);
-  }
-
-  public Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak) {
-    if (types.size() <= 1) {
-      return types;
-    }
-    List<SNode> typesList = SubtypingUtil.eliminateSubTypes(types);
-    return new HashSet<SNode>(leastCommonSuperTypes(typesList, null));
-  }
-
-  // TODO: move someplace else
-  public SNode createLCS(List<SNode> types, TypeCheckingContextNew context) {
-    if (types.isEmpty()) return  null;
-    if (types.size() == 1) return types.iterator().next();
-    if (types.size() > 1) {
-      Collections.sort(types, new Comparator<SNode>() {
-        public int compare(SNode node1, SNode node2) {
-          return node1.getPresentation().compareTo(node2.getPresentation());
-        }
-      });
-      types = SubtypingUtil.eliminateSubTypes(types);
-    }
-    return LatticeUtil.meetNodes(new THashSet<SNode>(leastCommonSuperTypes(types, context)));
-  }
-
-  private boolean isComparableByRules(SNode left, SNode right, boolean isWeak) {
-    if (left == null || right == null) {
-      return false;
-    }
-    List<Pair<ComparisonRule_Runtime, IsApplicable2Status>> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(left, right, isWeak);
-    if (comparisonRule_runtimes != null) {
-      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(left, right, comparisonRule_runtime.o2)) return true;
-      }
-    }
-    comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(right, left, isWeak);
-    if (comparisonRule_runtimes != null) {
-      for (Pair<ComparisonRule_Runtime, IsApplicable2Status> comparisonRule_runtime : comparisonRule_runtimes) {
-        if (comparisonRule_runtime.o1.areComparable(right, left, comparisonRule_runtime.o2)) return true;
+  private boolean isSuperType(SNode superType, Set<SNode> possibleSubTypes) {
+    for (SNode subType : possibleSubTypes) {
+      if (isSubtype(subType, superType, true)) {
+        return true;
       }
     }
     return false;

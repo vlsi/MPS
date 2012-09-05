@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
+import jetbrains.mps.newTypesystem.SubtypingUtil;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
@@ -179,7 +180,7 @@ public class InequalitySystem {
        superTypes.addAll(myComparableTypes);
        superTypes.addAll(myStrongComparableTypes);
      }
-     return subtypingManager.createLCS(superTypes, myState.getTypeCheckingContext());
+     return SubtypingUtil.createLeastCommonSupertype(superTypes, myState.getTypeCheckingContext());
    }
   
   public void replaceRefs(Map<SNode, SNode> mapping) {

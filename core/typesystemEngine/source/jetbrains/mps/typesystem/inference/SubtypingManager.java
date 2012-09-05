@@ -17,9 +17,11 @@ package jetbrains.mps.typesystem.inference;
 
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 
+import java.util.List;
 import java.util.Set;
 
 public abstract class SubtypingManager {
@@ -39,6 +41,8 @@ public abstract class SubtypingManager {
 
   public abstract boolean isComparable(SNode left, SNode right, boolean isWeak);
 
+  public abstract boolean isComparableByRules(SNode left, SNode right, boolean isWeak);
+
   public abstract StructuralNodeSet<?> collectImmediateSupertypes(SNode term);
 
   public abstract StructuralNodeSet collectImmediateSupertypes(SNode term, boolean isWeak);
@@ -47,6 +51,8 @@ public abstract class SubtypingManager {
 
   // TODO: adapt to the common API style
   public abstract Set<SNode> leastCommonSupertypes(Set<SNode> types, boolean isWeak);
+
+  public abstract List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContextNew context);
 
   /**
    * @deprecated use SubtypingUtil
