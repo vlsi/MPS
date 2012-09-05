@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.apache.commons.lang.ObjectUtils;
+import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -99,14 +100,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public boolean isRoot() {
     return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
-  }
-
-  public void addNextSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
-    getParent().insertChild(this, myRoleInParent, (SNode) newSibling);
-  }
-
-  public void addPrevSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
-    getParent().insertChild(this, myRoleInParent, (SNode) newSibling, true);
   }
 
   public SModel getModel() {
@@ -429,7 +422,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public void visitProperties(PropertyVisitor v) {
-    for (Entry<String,String> e : getProperties().entrySet()) {
+    for (Entry<String, String> e : getProperties().entrySet()) {
       if (!v.visitProperty(e.getKey(), e.getValue())) return;
     }
   }
@@ -1768,4 +1761,25 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public SConcept getConcept() {
     return new SConceptNodeAdapter(getConceptDeclarationNode());
   }
+
+  //-------------------------------------------------------
+  //-----------TO IMPLEMENT VIA OTHER METHODS--------------
+  //-------------------------------------------------------
+
+
+  //-------------------------------------------------------
+  //---------NO USAGES - LEFT FOR COMPATIBILITY------------
+  //-------------------------------------------------------
+
+  public void addNextSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
+    getParent().insertChild(getRole(), newSibling, this);
+  }
+
+  public void addPrevSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
+    getParent().insertChild(getRole(), newSibling, getPrevSibling());
+  }
+
+
+
+
 }
