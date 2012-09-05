@@ -157,18 +157,18 @@
   </root>
   <root nodeId="1240488415103">
     <nodeInfo nodeId="1240573408991" fileName="TupleIntefaceUtils.java" startLine="22" startPosition="53" endLine="23" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240573261715" fileName="TupleIntefaceUtils.java" startLine="26" startPosition="130" endLine="27" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240573261723" fileName="TupleIntefaceUtils.java" startLine="27" startPosition="210" endLine="28" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240573261730" fileName="TupleIntefaceUtils.java" startLine="28" startPosition="209" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240573261757" fileName="TupleIntefaceUtils.java" startLine="31" startPosition="247" endLine="32" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240573261792" fileName="TupleIntefaceUtils.java" startLine="33" startPosition="300" endLine="34" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240573261715" fileName="TupleIntefaceUtils.java" startLine="26" startPosition="65" endLine="27" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240573261723" fileName="TupleIntefaceUtils.java" startLine="27" startPosition="80" endLine="28" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240573261730" fileName="TupleIntefaceUtils.java" startLine="28" startPosition="79" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240573261757" fileName="TupleIntefaceUtils.java" startLine="31" startPosition="247" endLine="32" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240573261792" fileName="TupleIntefaceUtils.java" startLine="33" startPosition="300" endLine="34" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240573261807" fileName="TupleIntefaceUtils.java" startLine="35" startPosition="320" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240573261855" fileName="TupleIntefaceUtils.java" startLine="37" startPosition="322" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240573382659" fileName="TupleIntefaceUtils.java" startLine="40" startPosition="5" endLine="41" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240573332430" fileName="TupleIntefaceUtils.java" startLine="43" startPosition="105" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240573353692" fileName="TupleIntefaceUtils.java" startLine="48" startPosition="105" endLine="49" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240573382659" fileName="TupleIntefaceUtils.java" startLine="40" startPosition="5" endLine="41" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240573332430" fileName="TupleIntefaceUtils.java" startLine="43" startPosition="40" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240573353692" fileName="TupleIntefaceUtils.java" startLine="48" startPosition="40" endLine="49" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240573937726" fileName="TupleIntefaceUtils.java" startLine="51" startPosition="26" endLine="52" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240573479682" fileName="TupleIntefaceUtils.java" startLine="54" startPosition="27" endLine="55" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240573479682" fileName="TupleIntefaceUtils.java" startLine="54" startPosition="27" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240574032662" fileName="TupleIntefaceUtils.java" startLine="57" startPosition="87" endLine="58" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240574122956" fileName="TupleIntefaceUtils.java" startLine="61" startPosition="85" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240574095466" fileName="TupleIntefaceUtils.java" startLine="63" startPosition="9" endLine="64" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -192,15 +192,15 @@
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="74" startPosition="78" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Property#()V" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="78" startPosition="0" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Property#(Ljava/lang/Boolean;Ljava/lang/String;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1240488428955" fileName="TupleIntefaceUtils.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isTupleInterface#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="235" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="234" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="105" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="104" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;)Ljava/lang/String;" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isfinal#(Ljava/lang/Boolean;)Ljava/lang/Boolean;" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="name#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="type#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isfinal#()Ljava/lang/Boolean;" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="name#()Ljava/lang/String;" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="type#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1240573332420" fileName="TupleIntefaceUtils.java" startLine="41" startPosition="98" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240573332420" fileName="TupleIntefaceUtils.java" startLine="41" startPosition="33" endLine="46" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240573353682" fileName="TupleIntefaceUtils.java" startLine="46" startPosition="26" endLine="51" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="106" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;)Ljetbrains/mps/baseLanguage/tuples/constraints/TupleIntefaceUtils/Property;" />
     <nodeInfo nodeId="1240573514603" fileName="TupleIntefaceUtils.java" startLine="59" startPosition="7" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -210,13 +210,13 @@
     <nodeInfo nodeId="1240573211676" fileName="TupleIntefaceUtils.java" startLine="25" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="analyzeTupleInterface#(Ljetbrains/mps/smodel/SNode;)Ljava/util/List;" />
     <scopeInfo nodeId="1240488415108" fileName="TupleIntefaceUtils.java" startLine="19" startPosition="31" endLine="19" endPosition="31" />
     <scopeInfo nodeId="1240488428958" fileName="TupleIntefaceUtils.java" startLine="22" startPosition="53" endLine="23" endPosition="74" />
-    <scopeInfo nodeId="1240573261756" fileName="TupleIntefaceUtils.java" startLine="31" startPosition="247" endLine="32" endPosition="239" />
-    <scopeInfo nodeId="1240573261791" fileName="TupleIntefaceUtils.java" startLine="33" startPosition="300" endLine="34" endPosition="238" />
+    <scopeInfo nodeId="1240573261756" fileName="TupleIntefaceUtils.java" startLine="31" startPosition="247" endLine="32" endPosition="174" />
+    <scopeInfo nodeId="1240573261791" fileName="TupleIntefaceUtils.java" startLine="33" startPosition="300" endLine="34" endPosition="173" />
     <scopeInfo nodeId="1240573261806" fileName="TupleIntefaceUtils.java" startLine="35" startPosition="320" endLine="36" endPosition="18" />
     <scopeInfo nodeId="1240573261854" fileName="TupleIntefaceUtils.java" startLine="37" startPosition="322" endLine="38" endPosition="18" />
-    <scopeInfo nodeId="1240573332429" fileName="TupleIntefaceUtils.java" startLine="43" startPosition="105" endLine="44" endPosition="24" />
-    <scopeInfo nodeId="1240573353691" fileName="TupleIntefaceUtils.java" startLine="48" startPosition="105" endLine="49" endPosition="24" />
-    <scopeInfo nodeId="1240573451134" fileName="TupleIntefaceUtils.java" startLine="54" startPosition="27" endLine="55" endPosition="131" />
+    <scopeInfo nodeId="1240573332429" fileName="TupleIntefaceUtils.java" startLine="43" startPosition="40" endLine="44" endPosition="24" />
+    <scopeInfo nodeId="1240573353691" fileName="TupleIntefaceUtils.java" startLine="48" startPosition="40" endLine="49" endPosition="24" />
+    <scopeInfo nodeId="1240573451134" fileName="TupleIntefaceUtils.java" startLine="54" startPosition="27" endLine="55" endPosition="66" />
     <scopeInfo nodeId="1240574007132" fileName="TupleIntefaceUtils.java" startLine="57" startPosition="87" endLine="58" endPosition="37" />
     <scopeInfo nodeId="1240574107024" fileName="TupleIntefaceUtils.java" startLine="61" startPosition="85" endLine="62" endPosition="22" />
     <scopeInfo nodeId="1240574223368" fileName="TupleIntefaceUtils.java" startLine="68" startPosition="25" endLine="69" endPosition="18" />
@@ -239,10 +239,10 @@
     <scopeInfo nodeId="1240488428955" fileName="TupleIntefaceUtils.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1240488439728" varName="ifc" />
     </scopeInfo>
-    <scopeInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="235" endLine="46" endPosition="0">
+    <scopeInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="105" endLine="46" endPosition="0">
       <varInfo nodeId="1240573332428" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="234" endLine="51" endPosition="0">
+    <scopeInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="104" endLine="51" endPosition="0">
       <varInfo nodeId="1240573353690" varName="p" />
     </scopeInfo>
     <scopeInfo nodeId="1240573514604" fileName="TupleIntefaceUtils.java" startLine="60" startPosition="77" endLine="64" endPosition="37" />
@@ -266,7 +266,7 @@
       <varInfo nodeId="1240573261735" varName="method" />
     </scopeInfo>
     <scopeInfo nodeId="1240573356268" fileName="TupleIntefaceUtils.java" startLine="53" startPosition="28" endLine="66" endPosition="62" />
-    <scopeInfo nodeId="1240573211679" fileName="TupleIntefaceUtils.java" startLine="26" startPosition="130" endLine="71" endPosition="18">
+    <scopeInfo nodeId="1240573211679" fileName="TupleIntefaceUtils.java" startLine="26" startPosition="65" endLine="71" endPosition="18">
       <varInfo nodeId="1240573261716" varName="accessors" />
       <varInfo nodeId="1240573332421" varName="ait" />
       <varInfo nodeId="1240573937727" varName="hasMutators" />
@@ -279,8 +279,8 @@
       <varInfo nodeId="1240573246422" varName="ifc" />
     </scopeInfo>
     <unitInfo nodeId="1240488415103" fileName="TupleIntefaceUtils.java" startLine="18" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils" />
-    <unitInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="139" endLine="46" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$1" />
-    <unitInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="138" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$2" />
+    <unitInfo nodeId="1240573332428" fileName="TupleIntefaceUtils.java" startLine="42" startPosition="74" endLine="46" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$1" />
+    <unitInfo nodeId="1240573353690" fileName="TupleIntefaceUtils.java" startLine="47" startPosition="73" endLine="51" endPosition="5" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$2" />
     <unitInfo nodeId="1240488553401" fileName="TupleIntefaceUtils.java" startLine="74" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils$Property" />
   </root>
   <root nodeId="1652220223504359701">

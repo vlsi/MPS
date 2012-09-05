@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="ypath.traversalTests.DOMF" file="DOMF.java">
+    <classNode dependClassName="DOMF.Feature_child" />
+    <classNode dependClassName="DOMF.Feature_elements" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />

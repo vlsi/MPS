@@ -82,6 +82,7 @@
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode dependClassName="jetbrains.mps.debug.evaluation.proxies.IValueProxy" />
+    <classNode dependClassName="jetbrains.mps.debug.integration.ui.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.debug.runtime.java.programState.watchables.CalculatedWatchable" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel" />

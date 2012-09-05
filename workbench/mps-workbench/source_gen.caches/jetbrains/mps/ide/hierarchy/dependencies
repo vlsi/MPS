@@ -48,6 +48,7 @@
     <classNode dependClassName="javax.swing.JScrollPane" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="javax.swing.tree.DefaultMutableTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.view.icons.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.HierarchyTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.icons.Icons" />

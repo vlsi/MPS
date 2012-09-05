@@ -3374,6 +3374,7 @@
     <classNode dependClassName="com.intellij.openapi.progress.ProgressIndicator" />
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.event.MouseAdapter" />
     <classNode dependClassName="java.awt.event.MouseEvent" />

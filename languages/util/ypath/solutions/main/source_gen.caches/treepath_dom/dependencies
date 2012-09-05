@@ -14,6 +14,8 @@
     <classNode extendsClassName="jetbrains.mps.ypath.runtime.TreePath" />
   </dependency>
   <dependency className="treepath_dom.DOM2" file="DOM2.java">
+    <classNode dependClassName="DOM2.Feature_attributes" />
+    <classNode dependClassName="DOM2.Feature_nodes" />
     <classNode dependClassName="java.lang.IndexOutOfBoundsException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />

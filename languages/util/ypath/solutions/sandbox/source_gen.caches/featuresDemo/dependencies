@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="featuresDemo.DOM_NG" file="DOM_NG.java">
+    <classNode dependClassName="DOM_NG.Feature_attributes" />
+    <classNode dependClassName="DOM_NG.Feature_nodes" />
+    <classNode dependClassName="DOM_NG.Feature_parent" />
     <classNode dependClassName="java.lang.IndexOutOfBoundsException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -37,6 +40,8 @@
     <classNode dependClassName="org.w3c.dom.Node" />
   </dependency>
   <dependency className="featuresDemo.FILE_NG" file="FILE_NG.java">
+    <classNode dependClassName="FILE_NG.Feature_children" />
+    <classNode dependClassName="FILE_NG.Feature_parent" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.IndexOutOfBoundsException" />
     <classNode dependClassName="java.lang.Iterable" />

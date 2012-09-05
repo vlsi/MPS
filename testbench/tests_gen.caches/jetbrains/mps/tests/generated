@@ -16,7 +16,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895905bf(ypath_test1)" hash="4ok0zhx58yyf9x6a42n90888tamn7sb" />
   <dep model="r:00000000-0000-4000-0000-011c895905c0(ypath.traversalTests)" hash="-cqo9qmblhuito6u2dh68al0atqfgbky" />
   <dep model="r:0d165b79-85c3-4fee-8efc-b69a37e1c2ee(orthogonalLayoutTest)" hash="2rjmvtl9z7cse0gmr1gtfte33nckz13" />
-  <dep model="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" hash="-de60ggwkx5mumemqbt2761ywzaq7ud" />
+  <dep model="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" hash="-40hz17aeins61a2ckpsmkgjoj1rmz8q" />
   <dep model="r:254a17e7-db47-47cc-b375-32516d9c95d0(jetbrains.mps.testbench.suite.generator.template.main@generator)" hash="-a4pa962mrg9f3mcxt9vy29xm2a3ltb6" />
   <dep model="r:29a1b5f5-cf76-4978-a4ac-fe622e0f96ff(jetbrains.mps.debug.evaluation.transform.tests)" hash="d0zsoque7ma7kroq2jurjp08bpec1t3" />
   <dep model="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)" hash="-cccj0l9ytvrrfolewafekpo05otu2be" />

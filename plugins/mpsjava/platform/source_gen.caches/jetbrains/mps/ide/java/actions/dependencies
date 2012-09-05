@@ -879,6 +879,7 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent" file="OverrideImplementMethodComponent.java">
+    <classNode dependClassName="com.intellij.openapi.components.State" />
     <classNode dependClassName="com.intellij.openapi.components.Storage" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="java.lang.String" />

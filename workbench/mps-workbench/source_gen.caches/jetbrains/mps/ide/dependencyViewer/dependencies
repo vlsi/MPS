@@ -93,6 +93,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.icons.IdeIcons" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -141,6 +142,7 @@
     <classNode dependClassName="jetbrains.mps.ide.projectPane.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

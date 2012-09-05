@@ -58,6 +58,9 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_auxCompile.Parameters" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_compile.Parameters" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.plugin.JavaCompile_Facet.Target_compileToMemory.Parameters" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.compiler.CompilationResultAdapter" />

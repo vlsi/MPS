@@ -13,24 +13,24 @@ public class NamedTupleInFunctionType {
   public NamedTupleInFunctionType() {
   }
 
-  public void foo(Map<String, jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings> map, _FunctionTypes._void_P1_E0<? super IMapping<String, jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings>> mpng) {
+  public void foo(Map<String, TwoStrings> map, _FunctionTypes._void_P1_E0<? super IMapping<String, TwoStrings>> mpng) {
     MapSequence.fromMap(map).visitAll(mpng);
   }
 
-  public void m(_FunctionTypes._void_P1_E0<? super NamedTupleInFunctionType.G<jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings>> fun) {
-    fun.invoke(new NamedTupleInFunctionType.G<jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings>());
+  public void m(_FunctionTypes._void_P1_E0<? super NamedTupleInFunctionType.G<TwoStrings>> fun) {
+    fun.invoke(new NamedTupleInFunctionType.G<TwoStrings>());
   }
 
-  public void _void_P1(_FunctionTypes._void_P1_E0<? super Pair<IntPair, jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings>> fun) {
-    fun.invoke(new Pair<IntPair, jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings>(new IntPair(1, 2), new jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings("one", "two")));
+  public void _void_P1(_FunctionTypes._void_P1_E0<? super Pair<IntPair, TwoStrings>> fun) {
+    fun.invoke(new Pair<IntPair, TwoStrings>(new IntPair(1, 2), new TwoStrings("one", "two")));
   }
 
   public void _void_P2(_FunctionTypes._void_P2_E0<? super IntPair, ? super Pair> fun) {
     _void_P2(fun);
   }
 
-  public void _value_P0(_FunctionTypes._return_P0_E0<? extends Pair<IntPair, jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings>> fun) {
-    Pair<IntPair, jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings> pair = fun.invoke();
+  public void _value_P0(_FunctionTypes._return_P0_E0<? extends Pair<IntPair, TwoStrings>> fun) {
+    Pair<IntPair, TwoStrings> pair = fun.invoke();
   }
 
   public class G<T> {

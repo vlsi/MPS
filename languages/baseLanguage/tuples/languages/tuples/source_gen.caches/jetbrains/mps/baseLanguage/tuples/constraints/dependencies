@@ -96,6 +96,7 @@
     <classNode dependClassName="java.lang.SuppressWarnings" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.constraints.TupleIntefaceUtils.Property" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IEnumerator" />

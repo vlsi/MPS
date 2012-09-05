@@ -765,11 +765,11 @@
     <unitInfo nodeId="1240574537739" fileName="Bool.java" startLine="8" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.test.Bool" />
   </root>
   <root nodeId="1969253282019065659">
-    <nodeInfo nodeId="1969253282019065693" fileName="NamedTupleInFunctionType.java" startLine="16" startPosition="247" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1969253282019090161" fileName="NamedTupleInFunctionType.java" startLine="20" startPosition="161" endLine="21" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1969253282019086191" fileName="NamedTupleInFunctionType.java" startLine="24" startPosition="155" endLine="25" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1969253282019065693" fileName="NamedTupleInFunctionType.java" startLine="16" startPosition="119" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1969253282019090161" fileName="NamedTupleInFunctionType.java" startLine="20" startPosition="97" endLine="21" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1969253282019086191" fileName="NamedTupleInFunctionType.java" startLine="24" startPosition="91" endLine="25" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1969253282019073412" fileName="NamedTupleInFunctionType.java" startLine="28" startPosition="87" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1969253282019088165" fileName="NamedTupleInFunctionType.java" startLine="32" startPosition="160" endLine="33" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1969253282019088165" fileName="NamedTupleInFunctionType.java" startLine="32" startPosition="96" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1969253282019090139" fileName="NamedTupleInFunctionType.java" startLine="40" startPosition="20" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1969253282019065677" fileName="NamedTupleInFunctionType.java" startLine="49" startPosition="25" endLine="50" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1969253282019065677" fileName="NamedTupleInFunctionType.java" startLine="53" startPosition="45" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -797,11 +797,11 @@
     <scopeInfo nodeId="1969253282019065664" fileName="NamedTupleInFunctionType.java" startLine="13" startPosition="37" endLine="13" endPosition="37" />
     <scopeInfo nodeId="1969253282019090128" fileName="NamedTupleInFunctionType.java" startLine="37" startPosition="16" endLine="37" endPosition="16" />
     <scopeInfo nodeId="1969253282019090144" fileName="NamedTupleInFunctionType.java" startLine="44" startPosition="26" endLine="44" endPosition="26" />
-    <scopeInfo nodeId="1969253282019065668" fileName="NamedTupleInFunctionType.java" startLine="16" startPosition="247" endLine="17" endPosition="44" />
-    <scopeInfo nodeId="1969253282019090152" fileName="NamedTupleInFunctionType.java" startLine="20" startPosition="161" endLine="21" endPosition="125" />
-    <scopeInfo nodeId="1969253282019073387" fileName="NamedTupleInFunctionType.java" startLine="24" startPosition="155" endLine="25" endPosition="223" />
+    <scopeInfo nodeId="1969253282019065668" fileName="NamedTupleInFunctionType.java" startLine="16" startPosition="119" endLine="17" endPosition="44" />
+    <scopeInfo nodeId="1969253282019090152" fileName="NamedTupleInFunctionType.java" startLine="20" startPosition="97" endLine="21" endPosition="61" />
+    <scopeInfo nodeId="1969253282019073387" fileName="NamedTupleInFunctionType.java" startLine="24" startPosition="91" endLine="25" endPosition="95" />
     <scopeInfo nodeId="1969253282019073398" fileName="NamedTupleInFunctionType.java" startLine="28" startPosition="87" endLine="29" endPosition="18" />
-    <scopeInfo nodeId="1969253282019088153" fileName="NamedTupleInFunctionType.java" startLine="32" startPosition="160" endLine="33" endPosition="114">
+    <scopeInfo nodeId="1969253282019088153" fileName="NamedTupleInFunctionType.java" startLine="32" startPosition="96" endLine="33" endPosition="50">
       <varInfo nodeId="1969253282019088166" varName="pair" />
     </scopeInfo>
     <scopeInfo nodeId="1969253282019090137" fileName="NamedTupleInFunctionType.java" startLine="40" startPosition="20" endLine="41" endPosition="18" />

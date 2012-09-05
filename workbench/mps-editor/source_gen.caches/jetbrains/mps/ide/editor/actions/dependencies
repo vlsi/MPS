@@ -848,6 +848,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.selection.Selection" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorCell" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />

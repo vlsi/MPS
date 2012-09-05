@@ -155,8 +155,8 @@ public class DependencyUtil {
     });
   }
 
-  public static Set<jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency> getCyclic(jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency node, Set<jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency> visited, List<jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency> path) {
-    Set<jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency> res = SetSequence.fromSet(new HashSet<jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency>());
+  public static Set<Dependency> getCyclic(Dependency node, Set<Dependency> visited, List<Dependency> path) {
+    Set<Dependency> res = SetSequence.fromSet(new HashSet<Dependency>());
     if (ListSequence.fromList(path).contains(node)) {
       return SetSequence.fromSet(res).addSequence(ListSequence.fromList(path).tailListSequence(ListSequence.fromList(path).indexOf(node)));
     }
@@ -164,7 +164,7 @@ public class DependencyUtil {
       SetSequence.fromSet(visited).addElement(node);
       ListSequence.fromList(path).addElement(node);
       for (DependencyUtil.Link link : ListSequence.fromList(dependencies(node.role(), node.module(), true))) {
-        SetSequence.fromSet(res).addSequence(SetSequence.fromSet(getCyclic(new jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency(link.module, link.role), visited, path)));
+        SetSequence.fromSet(res).addSequence(SetSequence.fromSet(getCyclic(new Dependency(link.module, link.role), visited, path)));
       }
       ListSequence.fromList(path).removeLastElement();
     }

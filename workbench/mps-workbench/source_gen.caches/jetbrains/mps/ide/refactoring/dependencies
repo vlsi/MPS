@@ -118,6 +118,7 @@
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.ILoggableRefactoring" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />

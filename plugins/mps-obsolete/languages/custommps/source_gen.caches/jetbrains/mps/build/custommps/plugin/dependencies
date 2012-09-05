@@ -13,6 +13,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.build.custommps.plugin.CopyBuildArtifacts_Facet.Target_copyFiles.Parameters" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

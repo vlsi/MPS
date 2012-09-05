@@ -111,6 +111,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.IntPair" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.NamedTupleInFunctionType.TwoStrings" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.test.Pair" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IMapping" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />

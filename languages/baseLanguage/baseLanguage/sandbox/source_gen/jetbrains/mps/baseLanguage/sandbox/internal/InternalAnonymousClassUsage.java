@@ -58,7 +58,7 @@ public class InternalAnonymousClassUsage {
   }
 
   public void check5() {
-    new jetbrains.mps.baseLanguage.sandbox.internal.InternalAnonymousClassUsage.ReadableImpl("wow, my title") {
+    new ReadableImpl("wow, my title") {
       {
         System.out.println("initializer");
       }

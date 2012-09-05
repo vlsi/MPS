@@ -2,14 +2,14 @@
 <debugInfo>
   <root nodeId="1850528335647299603">
     <nodeInfo nodeId="4343029777915768161" fileName="MockPanel.java" startLine="11" startPosition="43" endLine="12" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="type" />
-    <nodeInfo nodeId="1850528335647300242" fileName="MockPanel.java" startLine="12" startPosition="24" endLine="13" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="widgets" />
+    <nodeInfo nodeId="1850528335647300242" fileName="MockPanel.java" startLine="12" startPosition="24" endLine="13" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="widgets" />
     <nodeInfo nodeId="4343029777915768173" fileName="MockPanel.java" startLine="15" startPosition="33" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3633072329222841355" fileName="MockPanel.java" startLine="19" startPosition="51" endLine="20" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3633072329222841367" fileName="MockPanel.java" startLine="20" startPosition="21" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1850528335647325266" fileName="MockPanel.java" startLine="24" startPosition="40" endLine="25" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1850528335647325273" fileName="MockPanel.java" startLine="28" startPosition="54" endLine="29" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1850528335647325273" fileName="MockPanel.java" startLine="28" startPosition="54" endLine="29" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1850528335647300230" fileName="MockPanel.java" startLine="33" startPosition="52" endLine="34" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1850528335647326951" fileName="MockPanel.java" startLine="35" startPosition="105" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1850528335647326951" fileName="MockPanel.java" startLine="35" startPosition="62" endLine="36" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1850528335647326999" fileName="MockPanel.java" startLine="36" startPosition="60" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1850528335647327031" fileName="MockPanel.java" startLine="37" startPosition="31" endLine="38" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1850528335647333225" fileName="MockPanel.java" startLine="39" startPosition="5" endLine="40" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -36,7 +36,7 @@
     <nodeInfo nodeId="1850528335647300219" fileName="MockPanel.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="appendXML#(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;" />
     <scopeInfo nodeId="1850528335647299608" fileName="MockPanel.java" startLine="15" startPosition="33" endLine="16" endPosition="21" />
     <scopeInfo nodeId="1850528335647325262" fileName="MockPanel.java" startLine="24" startPosition="40" endLine="25" endPosition="36" />
-    <scopeInfo nodeId="1850528335647325245" fileName="MockPanel.java" startLine="28" startPosition="54" endLine="29" endPosition="122" />
+    <scopeInfo nodeId="1850528335647325245" fileName="MockPanel.java" startLine="28" startPosition="54" endLine="29" endPosition="79" />
     <scopeInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="45" startPosition="25" endLine="46" endPosition="14" />
     <scopeInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="49" startPosition="62" endLine="50" endPosition="33" />
     <scopeInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="53" startPosition="48" endLine="54" endPosition="29" />
@@ -48,7 +48,7 @@
     <scopeInfo nodeId="1850528335647299605" fileName="MockPanel.java" startLine="14" startPosition="0" endLine="17" endPosition="3">
       <varInfo nodeId="6469323859730975187" varName="type" />
     </scopeInfo>
-    <scopeInfo nodeId="1850528335647326945" fileName="MockPanel.java" startLine="35" startPosition="105" endLine="38" endPosition="28" />
+    <scopeInfo nodeId="1850528335647326945" fileName="MockPanel.java" startLine="35" startPosition="62" endLine="38" endPosition="28" />
     <scopeInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="44" startPosition="76" endLine="47" endPosition="5" />
     <scopeInfo nodeId="1850528335647325223" fileName="MockPanel.java" startLine="48" startPosition="0" endLine="51" endPosition="5">
       <varInfo nodeId="1850528335647325223" varName="compartment" />

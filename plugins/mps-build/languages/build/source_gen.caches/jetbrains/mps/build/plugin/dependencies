@@ -15,6 +15,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.build.plugin.CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters" />
     <classNode dependClassName="jetbrains.mps.build.plugin.Utils" />
     <classNode dependClassName="jetbrains.mps.build.util.GenerationUtil" />
     <classNode dependClassName="jetbrains.mps.generator.generationTypes.TextGenerator" />
