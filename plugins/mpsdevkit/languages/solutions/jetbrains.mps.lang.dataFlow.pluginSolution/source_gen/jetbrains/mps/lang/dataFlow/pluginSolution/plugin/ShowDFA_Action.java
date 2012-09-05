@@ -12,6 +12,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
@@ -25,7 +26,7 @@ public class ShowDFA_Action extends BaseAction {
   public ShowDFA_Action() {
     super("Show Data Flow Graph", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -70,8 +71,12 @@ public class ShowDFA_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
-      new ShowCFGDialog(program, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")));
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
+          new ShowCFGDialog(program, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame"))).show();
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowDFA", t);

@@ -12,6 +12,7 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner;
 import jetbrains.mps.baseLanguage.dataFlow.NullableState;
 import jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner;
@@ -26,7 +27,7 @@ public class ShowNullDFA_Action extends BaseAction {
   public ShowNullDFA_Action() {
     super("Show Nullable DFA", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -71,8 +72,12 @@ public class ShowNullDFA_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      AnalyzerRunner<Map<SNode, NullableState>> runner = new NullableAnalyzerRunner(((SNode) MapSequence.fromMap(_params).get("node")));
-      new ShowCFGDialog(runner.getProgramCopy(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame")));
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          AnalyzerRunner<Map<SNode, NullableState>> runner = new NullableAnalyzerRunner(((SNode) MapSequence.fromMap(_params).get("node")));
+          new ShowCFGDialog(runner.getProgramCopy(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Frame) MapSequence.fromMap(_params).get("frame"))).show();
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowNullDFA", t);
