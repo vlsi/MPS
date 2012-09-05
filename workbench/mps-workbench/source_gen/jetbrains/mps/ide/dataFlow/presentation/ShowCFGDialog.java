@@ -4,7 +4,6 @@ package jetbrains.mps.ide.dataFlow.presentation;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.JScrollPane;
-import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.ScrollPaneFactory;
@@ -29,13 +28,15 @@ public class ShowCFGDialog extends DialogWrapper {
   private ShowCFGDialog.MyComponent myComponent;
   private ControlFlowGraph<InstructionWrapper> myControlFlowGraph;
 
-  public ShowCFGDialog(Program p, final IOperationContext operationContext, Project project) {
+  public ShowCFGDialog(ControlFlowGraph<InstructionWrapper> graph, final IOperationContext operationContext, Project project) {
     super(project);
     this.myComponent = new ShowCFGDialog.MyComponent();
     this.myScrollPane = ScrollPaneFactory.createScrollPane(myComponent);
     this.myScrollPane.setBackground(this.getBackground());
     this.myComponent.setFont(this.myComponent.getFont().deriveFont(10.0f));
-    this.myControlFlowGraph = new ControlFlowGraph<InstructionWrapper>(new ProgramWrapper(p), new GraphCreator(), this.myComponent);
+    this.myControlFlowGraph = graph;
+    graph.setComponent(myComponent);
+    graph.relayout();
     this.myControlFlowGraph.addBlockListener(new IBlockListener<InstructionWrapper>() {
       public void mousePressed(MouseEvent event, IInstruction<InstructionWrapper> instruction) {
         InstructionWrapper instructionWrapper = (InstructionWrapper) instruction;

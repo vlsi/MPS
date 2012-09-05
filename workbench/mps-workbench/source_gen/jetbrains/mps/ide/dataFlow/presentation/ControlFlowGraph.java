@@ -30,10 +30,9 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
   private int myWidth;
   private int myHeight;
 
-  public ControlFlowGraph(IProgram<T> program, IGraphCreator<T> graphCreator, Component component) {
+  public ControlFlowGraph(IProgram<T> program, IGraphCreator<T> graphCreator) {
     this.myProgram = program;
     this.myGraphCreator = graphCreator;
-    this.myComponent = component;
     ControlFlowGraph.this.buildBlocks();
   }
 
@@ -41,7 +40,6 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
     for (IInstruction<T> instruction : this.myProgram.getInstructions()) {
       this.myBlocks.add(this.myGraphCreator.createBlock((T) instruction, MARGIN_X, 0, 0, 0));
     }
-    ControlFlowGraph.this.relayout();
   }
 
   public void paint(Graphics g) {
@@ -56,6 +54,10 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
     for (ArrowHead arrowHead : this.myArrowHeads) {
       arrowHead.paint(g);
     }
+  }
+
+  public void setComponent(Component component) {
+    this.myComponent = component;
   }
 
   public void relayout() {

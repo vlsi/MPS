@@ -13,14 +13,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.dataFlow.framework.AnalyzerRunner;
 import jetbrains.mps.baseLanguage.dataFlow.NullableState;
+import jetbrains.mps.ide.dataFlow.presentation.ControlFlowGraph;
+import jetbrains.mps.ide.dataFlow.presentation.InstructionWrapper;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.dataFlow.NullableAnalyzerRunner;
-import com.intellij.openapi.ui.DialogWrapper;
+import jetbrains.mps.ide.dataFlow.presentation.ProgramWrapper;
+import jetbrains.mps.ide.dataFlow.presentation.GraphCreator;
 import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
-import javax.swing.SwingUtilities;
 
 public class ShowNullDFA_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -29,7 +33,7 @@ public class ShowNullDFA_Action extends BaseAction {
   public ShowNullDFA_Action() {
     super("Show Nullable DFA", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -74,13 +78,16 @@ public class ShowNullDFA_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      AnalyzerRunner<Map<SNode, NullableState>> runner = new NullableAnalyzerRunner(((SNode) MapSequence.fromMap(_params).get("node")));
-      final DialogWrapper dialog = new ShowCFGDialog(runner.getProgramCopy(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
-      SwingUtilities.invokeLater(new Runnable() {
+      final Wrappers._T<AnalyzerRunner<Map<SNode, NullableState>>> runner = new Wrappers._T<AnalyzerRunner<Map<SNode, NullableState>>>();
+      final Wrappers._T<ControlFlowGraph<InstructionWrapper>> graph = new Wrappers._T<ControlFlowGraph<InstructionWrapper>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog.show();
+          runner.value = new NullableAnalyzerRunner(((SNode) MapSequence.fromMap(_params).get("node")));
+          graph.value = new ControlFlowGraph<InstructionWrapper>(new ProgramWrapper(runner.value.getProgramCopy()), new GraphCreator());
+
         }
       });
+      new ShowCFGDialog(graph.value, ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project"))).show();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ShowNullDFA", t);
