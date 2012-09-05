@@ -42,11 +42,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * evgeny, 11/10/11
@@ -68,6 +64,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   private String myErrors = null;
   private Element myProjectElement;
   protected ProjectDescriptor myProjectDescriptor;
+
+  private final Map<ModuleReference, String> myModuleToFolder = new HashMap<ModuleReference, String>();
 
   public StandaloneMPSProject(Project project) {
     super(project);
@@ -167,6 +165,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       assert descriptorFile != null;
       myProjectDescriptor.removeModule(descriptorFile.getPath());
     }
+
+    myModuleToFolder.remove(ref);
   }
 
   protected void readModules() {
@@ -230,6 +230,18 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   @Nullable
   public String getFolderFor(IModule module) {
+    ModuleReference moduleReference = module.getModuleReference();
+    if (myModuleToFolder.containsKey(moduleReference)) {
+      return myModuleToFolder.get(moduleReference);
+    } else {
+      String folder = getFolderForModule_Internal(module);
+      myModuleToFolder.put(moduleReference, folder);
+      return folder;
+    }
+  }
+
+  @Nullable
+  private String getFolderForModule_Internal(IModule module) {
     IFile file = module.getDescriptorFile();
     assert file != null;
     String path = file.getPath();
@@ -251,6 +263,8 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         return;
       }
     }
+
+    myModuleToFolder.clear();
   }
 
   @Override
