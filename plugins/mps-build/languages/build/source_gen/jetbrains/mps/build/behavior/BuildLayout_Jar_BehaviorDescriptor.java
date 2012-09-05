@@ -33,6 +33,10 @@ public class BuildLayout_Jar_BehaviorDescriptor extends BuildLayout_NamedContain
     return BuildLayout_Jar_Behavior.virtual_isFile_1368030936106753986(thisNode);
   }
 
+  public String virtual_getExpectedExtension_6967233722066020217(SNode thisNode) {
+    return BuildLayout_Jar_Behavior.virtual_getExpectedExtension_6967233722066020217(thisNode);
+  }
+
   public String virtual_getFileSetExtension_6408167411310575216(SNode thisNode) {
     return BuildLayout_Jar_Behavior.virtual_getFileSetExtension_6408167411310575216(thisNode);
   }
