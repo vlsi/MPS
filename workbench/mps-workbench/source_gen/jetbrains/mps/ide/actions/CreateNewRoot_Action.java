@@ -23,14 +23,14 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 
-public class QuickCreate_Action extends BaseAction {
+public class CreateNewRoot_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(QuickCreate_Action.class);
+  protected static Log log = LogFactory.getLog(CreateNewRoot_Action.class);
 
-  public QuickCreate_Action() {
-    super("Quick Create...", "", ICON);
+  public CreateNewRoot_Action() {
+    super("Create...", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(true);
+    this.setExecuteOutsideCommand(false);
   }
 
   @Override
@@ -43,7 +43,7 @@ public class QuickCreate_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "QuickCreate", t);
+        log.error("User's action doUpdate method failed. Action:" + "CreateNewRoot", t);
       }
       this.disable(event.getPresentation());
     }
@@ -62,10 +62,11 @@ public class QuickCreate_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      // Deprecated action should be removed in MPS 3.0 
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(true);
+          ActionGroup group = ((MPSTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getQuickCreateGroup(false);
 
           if (group != null) {
             Presentation pres = new Presentation();
@@ -81,7 +82,7 @@ public class QuickCreate_Action extends BaseAction {
       popup.value.showInBestPositionFor(event.getDataContext());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "QuickCreate", t);
+        log.error("User's action execute method failed. Action:" + "CreateNewRoot", t);
       }
     }
   }
