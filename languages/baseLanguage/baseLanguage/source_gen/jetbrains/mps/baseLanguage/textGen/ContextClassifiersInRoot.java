@@ -37,7 +37,7 @@ public class ContextClassifiersInRoot {
   public Map<String, String> getContextClassifiers(SNode contextNode) {
     // only AnonymousClass has Classifier as reference 
     // todo: make it clearer 
-    if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+    if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.IAnonymousClass")) {
       contextNode = SNodeOperations.getParent(contextNode);
     }
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
