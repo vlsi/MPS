@@ -14,21 +14,20 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.vcs.changesmanager.SimpleCommandQueue;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.ide.ui.MPSTree;
-import com.intellij.util.containers.MultiMap;
-import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vcs.changesmanager.tree.features.ModelFeature;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import com.intellij.openapi.project.Project;
@@ -44,9 +43,11 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import com.intellij.util.containers.MultiMap;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class TreeHighlighter implements TreeMessageOwner {
   protected static Log log = LogFactory.getLog(TreeHighlighter.class);
@@ -60,9 +61,9 @@ public class TreeHighlighter implements TreeMessageOwner {
   private boolean myInitialized;
   private TreeHighlighter.MyTreeNodeListener myTreeNodeListener = new TreeHighlighter.MyTreeNodeListener();
   private TreeHighlighter.MyFeatureForestMapListener myFeatureListener = new TreeHighlighter.MyFeatureForestMapListener();
-  private final MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
   private TreeHighlighter.MyFileStatusListener myFileStatusListener = new TreeHighlighter.MyFileStatusListener();
   private TreeHighlighter.MyModelListener myGlobalModelListener;
+  private TreeHighlighter.FeaturesHolder myFeaturesHolder = new TreeHighlighter.FeaturesHolder();
 
   public TreeHighlighter(@NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport, @NotNull MPSTree tree, @NotNull TreeNodeFeatureExtractor featureExtractor, boolean removeNodesOnModelDisposal) {
     myRegistry = registry;
@@ -119,16 +120,16 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void registerNode(@NotNull final MPSTreeNode node) {
     final Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
-      synchronized (myFeatureToNodes) {
-        myFeatureToNodes.putValue(feature, node);
+      synchronized (myFeaturesHolder) {
+        myFeaturesHolder.putNodeWithFeature(feature, node);
       }
       myCommandQueue.runTask(new Runnable() {
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              synchronized (myFeatureToNodes) {
+              synchronized (myFeaturesHolder) {
                 // check if node isn't already removed from tree 
-                if (myFeatureToNodes.get(feature).contains(node)) {
+                if (myFeaturesHolder.getNodesByFeature(feature).contains(node)) {
                   rehighlightNode(node, feature);
                 }
               }
@@ -142,9 +143,9 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void unregisterNode(@NotNull MPSTreeNode node) {
     Feature feature = myFeatureExtractor.getFeature(node);
     if (feature != null) {
-      synchronized (myFeatureToNodes) {
-        if (myFeatureToNodes.get(feature).contains(node)) {
-          myFeatureToNodes.removeValue(feature, node);
+      synchronized (myFeaturesHolder) {
+        if (myFeaturesHolder.getNodesByFeature(feature).contains(node)) {
+          myFeaturesHolder.removeNodeWithFeature(feature, node);
         } else {
           if (log.isErrorEnabled()) {
             log.error("trying to remove tree node which was not registered: " + node.getClass().getName() + " " + feature);
@@ -185,7 +186,7 @@ public class TreeHighlighter implements TreeMessageOwner {
   }
 
   private void rehighlightFeature(@NotNull Feature feature) {
-    for (MPSTreeNode node : CollectionSequence.fromCollection(myFeatureToNodes.get(feature))) {
+    for (MPSTreeNode node : CollectionSequence.fromCollection(myFeaturesHolder.getNodesByFeature(feature))) {
       rehighlightNode(node, feature);
     }
   }
@@ -193,18 +194,16 @@ public class TreeHighlighter implements TreeMessageOwner {
   private void rehighlightFeatureAndDescendants(@NotNull final Feature feature) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        synchronized (myFeatureToNodes) {
+        synchronized (myFeaturesHolder) {
           rehighlightFeature(feature);
           SModelReference modelRef = feature.getModelReference();
-          for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
-            if (modelRef.equals(anotherFeature.getModelReference())) {
-              if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
-                public boolean accept(Feature a) {
-                  return feature.equals(a);
-                }
-              })) {
-                rehighlightFeature(anotherFeature);
+          for (Feature anotherFeature : ListSequence.fromList(myFeaturesHolder.getFeaturesByModelReference(modelRef))) {
+            if (Sequence.fromIterable(Sequence.fromArray(anotherFeature.getAncestors())).any(new IWhereFilter<Feature>() {
+              public boolean accept(Feature a) {
+                return feature.equals(a);
               }
+            })) {
+              rehighlightFeature(anotherFeature);
             }
           }
         }
@@ -309,11 +308,9 @@ public class TreeHighlighter implements TreeMessageOwner {
     public void fileStatusesChanged() {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          synchronized (myFeatureToNodes) {
-            for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
-              if (f instanceof ModelFeature) {
-                rehighlightFeatureAndDescendants(f);
-              }
+          synchronized (myFeaturesHolder) {
+            for (Feature f : ListSequence.fromList(myFeaturesHolder.getAllModelFeatures())) {
+              rehighlightFeatureAndDescendants(f);
             }
           }
         }
@@ -329,11 +326,11 @@ public class TreeHighlighter implements TreeMessageOwner {
     public void beforeModelDisposed(SModel model) {
       SModelReference modelRef = model.getSModelReference();
       List<MPSTreeNode> obsoleteTreeNodes = ListSequence.fromList(new ArrayList<MPSTreeNode>());
-      synchronized (myFeatureToNodes) {
-        for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
-          if (!(f instanceof ModelFeature) && modelRef.equals(f.getModelReference())) {
-            ListSequence.fromList(obsoleteTreeNodes).addSequence(CollectionSequence.fromCollection(myFeatureToNodes.get(f)));
-            myFeatureToNodes.remove(f);
+      synchronized (myFeaturesHolder) {
+        for (Feature f : ListSequence.fromList(myFeaturesHolder.getFeaturesByModelReference(modelRef))) {
+          if (!(f instanceof ModelFeature)) {
+            ListSequence.fromList(obsoleteTreeNodes).addSequence(CollectionSequence.fromCollection(myFeaturesHolder.getNodesByFeature(f)));
+            myFeaturesHolder.removeFeature(f);
           }
         }
       }
@@ -342,6 +339,49 @@ public class TreeHighlighter implements TreeMessageOwner {
           unhighlightNode(tn);
         }
       });
+    }
+  }
+
+  private class FeaturesHolder {
+    private final MultiMap<Feature, MPSTreeNode> myFeatureToNodes = new MultiMap<Feature, MPSTreeNode>();
+
+    public FeaturesHolder() {
+    }
+
+    public void putNodeWithFeature(Feature feature, MPSTreeNode node) {
+      myFeatureToNodes.putValue(feature, node);
+    }
+
+    public void removeNodeWithFeature(Feature feature, MPSTreeNode node) {
+      myFeatureToNodes.removeValue(feature, node);
+    }
+
+    public void removeFeature(Feature feature) {
+      myFeatureToNodes.remove(feature);
+    }
+
+    public Collection<MPSTreeNode> getNodesByFeature(Feature feature) {
+      return myFeatureToNodes.get(feature);
+    }
+
+    public List<Feature> getFeaturesByModelReference(SModelReference modelRef) {
+      List<Feature> features = ListSequence.fromList(new ArrayList<Feature>());
+      for (Feature anotherFeature : SetSequence.fromSet(myFeatureToNodes.keySet())) {
+        if (modelRef.equals(anotherFeature.getModelReference())) {
+          ListSequence.fromList(features).addElement(anotherFeature);
+        }
+      }
+      return features;
+    }
+
+    public List<Feature> getAllModelFeatures() {
+      List<Feature> features = ListSequence.fromList(new ArrayList<Feature>());
+      for (Feature f : SetSequence.fromSet(myFeatureToNodes.keySet())) {
+        if (f instanceof ModelFeature) {
+          ListSequence.fromList(features).addElement(f);
+        }
+      }
+      return features;
     }
   }
 }
