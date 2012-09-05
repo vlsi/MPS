@@ -51,7 +51,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (TypesUtil.isVariable(subType)) return false;
     if (TypesUtil.isVariable(superType)) return false;
 
-    return isSubType(subType, superType, null, null, isWeak);
+    SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak);
+    return subtypingResolver.calcIsSubType(subType, superType);
   }
 
   @Override
@@ -66,28 +67,18 @@ public class SubTypingManagerNew extends SubtypingManager {
 
   // TODO: must not be public (internal API)
   public boolean isSubType(final SNode subType, final SNode superType, @Nullable final EquationInfo info, final State state, final boolean isWeak) {
-    long start = System.nanoTime();
+    THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
+    SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak, state == null ? null : state.getTypeCheckingContext(), matchingPairs);
 
-
-    Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
-      public Boolean compute() {
-
-        THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
-        SubtypingResolver subtypingResolver = new SubtypingResolver(state == null ? null : state.getTypeCheckingContext(), matchingPairs);
-
-        boolean result = subtypingResolver.isSubType(subType, superType, isWeak);
-        if (result) {
-          Equations equations = state != null ? state.getEquations() : null;
-          if (equations != null) {
-            equations.addEquations(matchingPairs, info);
-          }
-        }
-
-        return result;
+    boolean result = subtypingResolver.calcIsSubType(subType, superType);
+    if (result) {
+      Equations equations = state != null ? state.getEquations() : null;
+      if (equations != null) {
+        equations.addEquations(matchingPairs, info);
       }
-    });
-    TypeSystemReporter.getInstance().reportIsSubType(subType, superType, (System.nanoTime() - start));
-    return aBoolean;
+    }
+
+    return result;
   }
 
   public StructuralNodeSet<?> collectImmediateSupertypes(SNode term) {

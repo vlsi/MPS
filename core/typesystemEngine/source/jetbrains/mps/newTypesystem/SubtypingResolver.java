@@ -15,12 +15,20 @@
  */
 package jetbrains.mps.newTypesystem;
 
+import gnu.trove.THashSet;
+import jetbrains.mps.newTypesystem.state.Equations;
+import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.TypeSystemReporter;
+import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.LinkedList;
@@ -35,20 +43,39 @@ import java.util.Queue;
 */
 public class SubtypingResolver {
 
+  private final boolean myWeak;
   final TypeCheckingContextNew myTypeCheckingContextNew;
   final Collection<Pair<SNode,SNode>> myMatchingPairs;
 
-  public SubtypingResolver(TypeCheckingContextNew typeCheckingContextNew, /*out*/ Collection<Pair<SNode, SNode>> matchingPairs) {
+  public SubtypingResolver(boolean isWeak, TypeCheckingContextNew typeCheckingContextNew, /*out*/ Collection<Pair<SNode, SNode>> matchingPairs) {
+    this.myWeak = isWeak;
     this.myTypeCheckingContextNew = typeCheckingContextNew;
     this.myMatchingPairs = matchingPairs;
   }
 
-  public boolean isSubType(final SNode subType, final SNode superType, final boolean isWeak) {
+  public SubtypingResolver(boolean isWeak) {
+    this(isWeak, null, null);
+  }
+
+  public boolean calcIsSubType(final SNode subType, final SNode superType) {
+    long start = System.nanoTime();
+
+    Boolean aBoolean = NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<Boolean>() {
+      public Boolean compute() {
+        boolean result = isSubType(subType, superType);
+        return result;
+      }
+    });
+    TypeSystemReporter.getInstance().reportIsSubType(subType, superType, (System.nanoTime() - start));
+    return aBoolean;
+  }
+
+  private boolean isSubType(final SNode subType, final SNode superType) {
     if (null == subType || null == superType) return false;
     if (subType == superType) return true;
     boolean canAskCache = (!TypesUtil.hasVariablesInside(superType) && !TypesUtil.hasVariablesInside(subType));
     if (canAskCache) {
-      Boolean answer = getIsSubTypeCacheAnswer(subType, superType, isWeak);
+      Boolean answer = getIsSubTypeCacheAnswer(subType, superType, myWeak);
       if (answer != null) {
         return answer;
       }
@@ -56,13 +83,13 @@ public class SubtypingResolver {
     if (TypesUtil.match(subType, superType, myMatchingPairs)) {
       return true;
     }
-    if (TypeChecker.getInstance().getSubtypingManager().isSubTypeByReplacementRules(subType, superType, isWeak)) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubTypeByReplacementRules(subType, superType, myWeak)) {
       return true;
     }
-    if (meetsAndJoins(subType, superType, isWeak)) {
+    if (meetsAndJoins(subType, superType, myWeak)) {
       return true;
     }
-    return searchInSuperTypes(subType, new SupertypeMatcher(superType, myMatchingPairs), isWeak, canAskCache);
+    return searchInSuperTypes(subType, new SupertypeMatcher(superType, myMatchingPairs), myWeak, canAskCache);
   }
 
   private boolean meetsAndJoins(SNode subType, SNode superType, boolean isWeak) {
@@ -71,7 +98,7 @@ public class SubtypingResolver {
         if (!TypesUtil.hasVariablesInside(argument) && TypeChecker.getInstance().getSubtypingManager().isSubTypeByReplacementRules(subType, argument, isWeak)) {
           return true;
         }
-        if (isSubType(subType, argument, isWeak)) {
+        if (isSubType(subType, argument)) {
           return true;
         }
       }
@@ -81,7 +108,7 @@ public class SubtypingResolver {
         if (!TypesUtil.hasVariablesInside(superType) && TypeChecker.getInstance().getSubtypingManager().isSubTypeByReplacementRules(argument, superType, isWeak)) {
           return true;
         }
-        if (isSubType(argument, superType, isWeak)) {
+        if (isSubType(argument, superType)) {
           return true;
         }
       }
@@ -89,7 +116,7 @@ public class SubtypingResolver {
     if (LatticeUtil.isMeet(superType)) {
       boolean result = true;
       for (SNode argument : LatticeUtil.getMeetArguments(superType)) {
-        if (result && !isSubType(subType, argument, isWeak)) {
+        if (result && !isSubType(subType, argument)) {
           result = false;
         }
       }
