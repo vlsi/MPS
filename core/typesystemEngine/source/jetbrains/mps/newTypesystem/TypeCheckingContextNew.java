@@ -97,12 +97,12 @@ public class TypeCheckingContextNew extends TypeCheckingContext {
   public void checkRoot(final boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
       try {
-        LanguageScope.setCurrent(myLangScope, this);
+        LanguageScope.pushCurrent(myLangScope, this);
         myNodeTypesComponent.computeTypes(refreshTypes);
         myNodeTypesComponent.setCheckedTypesystem();
       }
       finally {
-        LanguageScope.removeCurrent(myLangScope, this);
+        LanguageScope.popCurrent(myLangScope, this);
       }
     }
   }

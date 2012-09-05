@@ -74,6 +74,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   //todo [MihMuh] this should be replaced in 3.0 (don't know exactly with what now)
   private ClassLoader myStubsLoader = new MyClassLoader();
+  private final LanguageDependenciesManager myLanguageDependenciesManager = new LanguageDependenciesManager(this);
 
   protected Language(LanguageDescriptor descriptor, IFile file) {
     myDescriptorFile = file;
@@ -94,7 +95,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   public LanguageDependenciesManager getDependenciesManager() {
-    return new LanguageDependenciesManager(this);
+    return myLanguageDependenciesManager;
   }
 
   public void addExtendedLanguage(ModuleReference langRef) {
@@ -179,6 +180,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   public void dispose() {
     super.dispose();
+    myLanguageDependenciesManager.dispose();
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
   }
 

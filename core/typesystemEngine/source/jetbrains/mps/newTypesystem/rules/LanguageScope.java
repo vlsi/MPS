@@ -15,14 +15,9 @@
  */
 package jetbrains.mps.newTypesystem.rules;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.util.InternUtil;
-
 import java.util.BitSet;
-import java.util.IdentityHashMap;
-import java.util.Map;
+import java.util.Collections;
+import java.util.LinkedList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -35,34 +30,35 @@ public class LanguageScope {
 
   private static final CurrentLanguageScope GLOBAL = new CurrentLanguageScope(new GlobalLanguageScope(), null);
 
-  private static ThreadLocal<CurrentLanguageScope> CURRENT = new ThreadLocal<CurrentLanguageScope>() {
+  private static ThreadLocal<LinkedList<CurrentLanguageScope>> CURRENT_STACK = new ThreadLocal<LinkedList<CurrentLanguageScope>>() {
     @Override
-    protected CurrentLanguageScope initialValue() {
-      return GLOBAL;
+    protected LinkedList<CurrentLanguageScope> initialValue() {
+      return new LinkedList<CurrentLanguageScope>(Collections.singleton(GLOBAL));
     }
   };
 
   private final LanguageScopeFactory myFactory;
   private final BitSet myNsBitSet;
 
+  public static LanguageScope getGlobal () {
+    return GLOBAL.myLangScope;
+  }
+
   public static LanguageScope getCurrent() {
-    CurrentLanguageScope cls = CURRENT.get();
+    CurrentLanguageScope cls = CURRENT_STACK.get().peek();
     return cls.myLangScope;
   }
 
-  public static void setCurrent (LanguageScope langScope, Object owner) {
-    CurrentLanguageScope cls = CURRENT.get();
-    if (cls != GLOBAL) throw new IllegalStateException("second attempt to set current LanguageScope");
-    CURRENT.set(new CurrentLanguageScope(langScope, owner));
+  public static void pushCurrent(LanguageScope langScope, Object owner) {
+    CURRENT_STACK.get().push(new CurrentLanguageScope(langScope, owner));
   }
 
-  public static void removeCurrent(LanguageScope languageScope, Object owner) {
-    CurrentLanguageScope cls = CURRENT.get();
-    if (cls == GLOBAL) throw new IllegalStateException("attempt to remove null LanguageScope");
+  public static void popCurrent(LanguageScope languageScope, Object owner) {
+    if (CURRENT_STACK.get().size() == 1) throw new IllegalStateException("attempt to remove global LanguageScope");
+    CurrentLanguageScope cls = CURRENT_STACK.get().peek();
     if (cls.myOwner != owner) throw new IllegalStateException("attempt to remove foreign LanguageScope");
     if (cls.myLangScope!= languageScope) throw new IllegalStateException("attempt to remove another LanguageScope");
-
-    CURRENT.remove();
+    CURRENT_STACK.get().pop();
   }
 
   /*package*/ LanguageScope(LanguageScopeFactory factory, BitSet nsBitSet) {

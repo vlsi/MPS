@@ -17,6 +17,8 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.*;
+import jetbrains.mps.newTypesystem.rules.LanguageScope;
+import jetbrains.mps.newTypesystem.rules.LanguageScopeFactory;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
@@ -49,18 +51,34 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (TypesUtil.isVariable(subType)) return false;
     if (TypesUtil.isVariable(superType)) return false;
 
-    SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak);
-    return subtypingResolver.calcIsSubType(subType, superType);
+    LanguageScope languageScope = LanguageScope.getGlobal();
+//      LanguageScopeFactory.getInstance().getLanguageScope(subType.getLanguage().getDependenciesManager().getAllExtendedLanguages());
+    try{
+      LanguageScope.pushCurrent(languageScope, this);
+      SubtypingResolver subtypingResolver = new SubtypingResolver(isWeak);
+      return subtypingResolver.calcIsSubType(subType, superType);
+    }
+    finally {
+      LanguageScope.popCurrent(languageScope, this);
+    }
   }
 
   @Override
   public boolean isSubTypeByReplacementRules(SNode subType, SNode superType, boolean isWeak) {
-    for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
-      if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
-        return true;
+    LanguageScope languageScope = LanguageScope.getGlobal();
+//      LanguageScopeFactory.getInstance().getLanguageScope(subType.getLanguage().getDependenciesManager().getAllExtendedLanguages());
+    try{
+      LanguageScope.pushCurrent(languageScope, this);
+      for (Pair<InequationReplacementRule_Runtime, IsApplicable2Status> rule : myTypeChecker.getRulesManager().getReplacementRules(subType, superType)) {
+        if (rule.o1.checkInequation(subType, superType, new EquationInfo(null, null), rule.o2, isWeak)) {
+          return true;
+        }
       }
+      return false;
     }
-    return false;
+    finally {
+      LanguageScope.popCurrent(languageScope, this);
+    }
   }
 
   @Override
@@ -86,24 +104,32 @@ public class SubTypingManagerNew extends SubtypingManager {
   }
 
   @Override
-  public  Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
-    return SubtypingUtil.mostSpecificTypes(nodes);
-  }
-
-  @Override
   public void collectImmediateSuperTypes(final SNode term, boolean isWeak, StructuralNodeSet result, final TypeCheckingContext context) {
     if (term == null) {
       return;
     }
-    List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
-    if (subtypingRule_runtimes != null) {
-      for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
-        List<SNode> superTypes = subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
-        if (superTypes != null) {
-          result.addAll(superTypes);
+    LanguageScope languageScope = LanguageScope.getGlobal();
+//      LanguageScopeFactory.getInstance().getLanguageScope(term.getLanguage().getDependenciesManager().getAllExtendedLanguages());
+    try{
+      LanguageScope.pushCurrent(languageScope, this);
+      List<Pair<SubtypingRule_Runtime, IsApplicableStatus>> subtypingRule_runtimes = myTypeChecker.getRulesManager().getSubtypingRules(term, isWeak);
+      if (subtypingRule_runtimes != null) {
+        for (final Pair<SubtypingRule_Runtime, IsApplicableStatus> subtypingRule : subtypingRule_runtimes) {
+          List<SNode> superTypes = subtypingRule.o1.getSubOrSuperTypes(term, context, subtypingRule.o2);
+          if (superTypes != null) {
+            result.addAll(superTypes);
+          }
         }
       }
     }
+    finally {
+      LanguageScope.popCurrent(languageScope, this);
+    }
+  }
+
+  @Override
+  public  Set<SNode> mostSpecificTypes(Set<SNode> nodes) {
+    return SubtypingUtil.mostSpecificTypes(nodes);
   }
 
   @Override
