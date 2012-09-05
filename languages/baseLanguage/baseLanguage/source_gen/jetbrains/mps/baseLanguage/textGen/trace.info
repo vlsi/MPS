@@ -250,7 +250,9 @@
       <varInfo nodeId="2319174188476256718" varName="dependencies" />
     </scopeInfo>
     <scopeInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="60" startPosition="72" endLine="63" endPosition="5" />
-    <scopeInfo nodeId="1237463992904" fileName="BaseLanguageTextGen.java" startLine="67" startPosition="104" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="1237463992904" fileName="BaseLanguageTextGen.java" startLine="67" startPosition="104" endLine="70" endPosition="7">
+      <varInfo nodeId="1237463992904" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="4026438661936177963" fileName="BaseLanguageTextGen.java" startLine="80" startPosition="34" endLine="83" endPosition="124">
       <varInfo nodeId="4395451366078113524" varName="deprecated" />
     </scopeInfo>
@@ -306,8 +308,12 @@
       <varInfo nodeId="8394413739791173577" varName="fqName" />
       <varInfo nodeId="1234796104060" varName="textGen" />
     </scopeInfo>
-    <scopeInfo nodeId="1237463992096" fileName="BaseLanguageTextGen.java" startLine="35" startPosition="54" endLine="41" endPosition="9" />
-    <scopeInfo nodeId="1237463991789" fileName="BaseLanguageTextGen.java" startLine="49" startPosition="109" endLine="55" endPosition="7" />
+    <scopeInfo nodeId="1237463992096" fileName="BaseLanguageTextGen.java" startLine="35" startPosition="54" endLine="41" endPosition="9">
+      <varInfo nodeId="1237463992096" varName="item" />
+    </scopeInfo>
+    <scopeInfo nodeId="1237463991789" fileName="BaseLanguageTextGen.java" startLine="49" startPosition="109" endLine="55" endPosition="7">
+      <varInfo nodeId="1237463991789" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="8170689402424596664" varName="need" />
       <varInfo nodeId="1234796104060" varName="textGen" />
@@ -320,9 +326,7 @@
       <varInfo nodeId="1235571157487" varName="methodCall" />
       <varInfo nodeId="1234796104060" varName="textGen" />
     </scopeInfo>
-    <scopeInfo nodeId="163269897332208693" fileName="BaseLanguageTextGen.java" startLine="178" startPosition="109" endLine="184" endPosition="9">
-      <varInfo nodeId="163269897332208693" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="163269897332208693" fileName="BaseLanguageTextGen.java" startLine="178" startPosition="109" endLine="184" endPosition="9" />
     <scopeInfo nodeId="1234796104060" fileName="BaseLanguageTextGen.java" startLine="251" startPosition="88" endLine="257" endPosition="17">
       <varInfo nodeId="1234799552343" varName="names" />
     </scopeInfo>
@@ -718,7 +722,9 @@
     <scopeInfo nodeId="1237463992061" fileName="AnonymousClass_TextGen.java" startLine="36" startPosition="80" endLine="40" endPosition="11" />
     <scopeInfo nodeId="2925336694746301338" fileName="AnonymousClass_TextGen.java" startLine="47" startPosition="85" endLine="51" endPosition="11" />
     <scopeInfo nodeId="1237463992778" fileName="AnonymousClass_TextGen.java" startLine="23" startPosition="104" endLine="29" endPosition="9" />
-    <scopeInfo nodeId="1237463992061" fileName="AnonymousClass_TextGen.java" startLine="35" startPosition="100" endLine="41" endPosition="9" />
+    <scopeInfo nodeId="1237463992061" fileName="AnonymousClass_TextGen.java" startLine="35" startPosition="100" endLine="41" endPosition="9">
+      <varInfo nodeId="1237463992061" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="2925336694746301338" fileName="AnonymousClass_TextGen.java" startLine="46" startPosition="105" endLine="52" endPosition="9" />
     <scopeInfo nodeId="8907999818608789542" fileName="AnonymousClass_TextGen.java" startLine="56" startPosition="250" endLine="62" endPosition="7" />
     <scopeInfo nodeId="1234887935309" fileName="AnonymousClass_TextGen.java" startLine="21" startPosition="102" endLine="31" endPosition="23" />
@@ -796,7 +802,9 @@
     <scopeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="12" startPosition="42" endLine="13" endPosition="155" />
     <scopeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="18" startPosition="104" endLine="19" endPosition="28" />
     <scopeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="16" startPosition="78" endLine="20" endPosition="9" />
-    <scopeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="15" startPosition="98" endLine="21" endPosition="7" />
+    <scopeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="15" startPosition="98" endLine="21" endPosition="7">
+      <varInfo nodeId="1237463992578" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1234888916067" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="12" startPosition="42" endLine="23" endPosition="21" />
     <scopeInfo nodeId="1237463992578" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="12" startPosition="42" endLine="23" endPosition="21" />
     <scopeInfo nodeId="1234888916067" fileName="ArrayCreatorWithInitializer_TextGen.java" startLine="11" startPosition="71" endLine="25" endPosition="0">
@@ -827,9 +835,7 @@
     <nodeInfo nodeId="1234889037948" fileName="ArrayLiteral_TextGen.java" startLine="11" startPosition="56" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="1237463993099" fileName="ArrayLiteral_TextGen.java" startLine="17" startPosition="99" endLine="18" endPosition="28" />
     <scopeInfo nodeId="1237463993099" fileName="ArrayLiteral_TextGen.java" startLine="15" startPosition="73" endLine="19" endPosition="9" />
-    <scopeInfo nodeId="1237463993099" fileName="ArrayLiteral_TextGen.java" startLine="14" startPosition="93" endLine="20" endPosition="7">
-      <varInfo nodeId="1237463993099" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="1237463993099" fileName="ArrayLiteral_TextGen.java" startLine="14" startPosition="93" endLine="20" endPosition="7" />
     <scopeInfo nodeId="1234889037948" fileName="ArrayLiteral_TextGen.java" startLine="12" startPosition="42" endLine="22" endPosition="21" />
     <scopeInfo nodeId="1237463993099" fileName="ArrayLiteral_TextGen.java" startLine="12" startPosition="42" endLine="22" endPosition="21" />
     <scopeInfo nodeId="1234889037948" fileName="ArrayLiteral_TextGen.java" startLine="11" startPosition="56" endLine="24" endPosition="0">
@@ -1246,9 +1252,7 @@
     <scopeInfo nodeId="1234891178357" fileName="ClassConcept_TextGen.java" startLine="74" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="1234891178357" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1237463992729" fileName="ClassConcept_TextGen.java" startLine="48" startPosition="111" endLine="54" endPosition="9">
-      <varInfo nodeId="1237463992729" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="1237463992729" fileName="ClassConcept_TextGen.java" startLine="48" startPosition="111" endLine="54" endPosition="9" />
     <scopeInfo nodeId="1234891556383" fileName="ClassConcept_TextGen.java" startLine="46" startPosition="109" endLine="55" endPosition="7" />
     <scopeInfo nodeId="1237463992729" fileName="ClassConcept_TextGen.java" startLine="46" startPosition="109" endLine="55" endPosition="7" />
     <scopeInfo nodeId="1234891178357" fileName="ClassConcept_TextGen.java" startLine="20" startPosition="42" endLine="72" endPosition="5" />
@@ -1355,9 +1359,7 @@
     <scopeInfo nodeId="1234892549516" fileName="CommentedStatementsBlock_TextGen.java" startLine="30" startPosition="44" endLine="31" endPosition="219" />
     <scopeInfo nodeId="1237463991875" fileName="CommentedStatementsBlock_TextGen.java" startLine="18" startPosition="5" endLine="20" endPosition="32" />
     <scopeInfo nodeId="1237465277993" fileName="CommentedStatementsBlock_TextGen.java" startLine="27" startPosition="25" endLine="29" endPosition="32" />
-    <scopeInfo nodeId="1237463992267" fileName="CommentedStatementsBlock_TextGen.java" startLine="22" startPosition="98" endLine="25" endPosition="7">
-      <varInfo nodeId="1237463992267" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="1237463992267" fileName="CommentedStatementsBlock_TextGen.java" startLine="22" startPosition="98" endLine="25" endPosition="7" />
     <scopeInfo nodeId="1237463992267" fileName="CommentedStatementsBlock_TextGen.java" startLine="21" startPosition="25" endLine="26" endPosition="5" />
     <scopeInfo nodeId="1236685002519" fileName="CommentedStatementsBlock_TextGen.java" startLine="20" startPosition="32" endLine="27" endPosition="25" />
     <scopeInfo nodeId="1234892549516" fileName="CommentedStatementsBlock_TextGen.java" startLine="15" startPosition="42" endLine="32" endPosition="5" />
@@ -1775,19 +1777,17 @@
     <scopeInfo nodeId="1578358025114152151" fileName="Interface_TextGen.java" startLine="63" startPosition="111" endLine="65" endPosition="59" />
     <scopeInfo nodeId="1237982032621" fileName="Interface_TextGen.java" startLine="24" startPosition="5" endLine="27" endPosition="104" />
     <scopeInfo nodeId="1237463993199" fileName="Interface_TextGen.java" startLine="33" startPosition="5" endLine="36" endPosition="60" />
-    <scopeInfo nodeId="1237463992742" fileName="Interface_TextGen.java" startLine="50" startPosition="100" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="1237463992177" fileName="Interface_TextGen.java" startLine="57" startPosition="97" endLine="60" endPosition="9">
-      <varInfo nodeId="1237463992177" varName="item" />
+    <scopeInfo nodeId="1237463992742" fileName="Interface_TextGen.java" startLine="50" startPosition="100" endLine="53" endPosition="7">
+      <varInfo nodeId="1237463992742" varName="item" />
     </scopeInfo>
+    <scopeInfo nodeId="1237463992177" fileName="Interface_TextGen.java" startLine="57" startPosition="97" endLine="60" endPosition="9" />
     <scopeInfo nodeId="1237463993114" fileName="Interface_TextGen.java" startLine="40" startPosition="88" endLine="44" endPosition="11" />
     <scopeInfo nodeId="1235068684876" fileName="Interface_TextGen.java" startLine="79" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="1235068684876" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1237463992742" fileName="Interface_TextGen.java" startLine="49" startPosition="25" endLine="54" endPosition="5" />
     <scopeInfo nodeId="1237463992177" fileName="Interface_TextGen.java" startLine="56" startPosition="131" endLine="61" endPosition="7" />
-    <scopeInfo nodeId="1237463993114" fileName="Interface_TextGen.java" startLine="39" startPosition="108" endLine="45" endPosition="9">
-      <varInfo nodeId="1237463993114" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="1237463993114" fileName="Interface_TextGen.java" startLine="39" startPosition="108" endLine="45" endPosition="9" />
     <scopeInfo nodeId="1235130023143" fileName="Interface_TextGen.java" startLine="55" startPosition="95" endLine="61" endPosition="7" />
     <scopeInfo nodeId="1235129879130" fileName="Interface_TextGen.java" startLine="37" startPosition="106" endLine="46" endPosition="7" />
     <scopeInfo nodeId="1237463993114" fileName="Interface_TextGen.java" startLine="37" startPosition="106" endLine="46" endPosition="7" />
@@ -2407,9 +2407,7 @@
     <scopeInfo nodeId="1237465938909" fileName="StaticMethodDeclaration_TextGen.java" startLine="73" startPosition="25" endLine="76" endPosition="25" />
     <scopeInfo nodeId="1237463992533" fileName="StaticMethodDeclaration_TextGen.java" startLine="46" startPosition="78" endLine="50" endPosition="9" />
     <scopeInfo nodeId="1237463992362" fileName="StaticMethodDeclaration_TextGen.java" startLine="57" startPosition="81" endLine="61" endPosition="11" />
-    <scopeInfo nodeId="1237463992533" fileName="StaticMethodDeclaration_TextGen.java" startLine="45" startPosition="98" endLine="51" endPosition="7">
-      <varInfo nodeId="1237463992533" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="1237463992533" fileName="StaticMethodDeclaration_TextGen.java" startLine="45" startPosition="98" endLine="51" endPosition="7" />
     <scopeInfo nodeId="1237463992362" fileName="StaticMethodDeclaration_TextGen.java" startLine="56" startPosition="101" endLine="62" endPosition="9">
       <varInfo nodeId="1237463992362" varName="item" />
     </scopeInfo>
@@ -2675,7 +2673,9 @@
     <scopeInfo nodeId="1237463991739" fileName="ThisConstructorInvocation_TextGen.java" startLine="25" startPosition="109" endLine="26" endPosition="28" />
     <scopeInfo nodeId="1235133911716" fileName="ThisConstructorInvocation_TextGen.java" startLine="31" startPosition="44" endLine="32" endPosition="219" />
     <scopeInfo nodeId="1237463991739" fileName="ThisConstructorInvocation_TextGen.java" startLine="23" startPosition="83" endLine="27" endPosition="9" />
-    <scopeInfo nodeId="1237463991739" fileName="ThisConstructorInvocation_TextGen.java" startLine="22" startPosition="103" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="1237463991739" fileName="ThisConstructorInvocation_TextGen.java" startLine="22" startPosition="103" endLine="28" endPosition="7">
+      <varInfo nodeId="1237463991739" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="1237463991739" fileName="ThisConstructorInvocation_TextGen.java" startLine="20" startPosition="24" endLine="30" endPosition="22" />
     <scopeInfo nodeId="1235133911716" fileName="ThisConstructorInvocation_TextGen.java" startLine="15" startPosition="42" endLine="33" endPosition="5" />
     <scopeInfo nodeId="1235133911716" fileName="ThisConstructorInvocation_TextGen.java" startLine="14" startPosition="69" endLine="35" endPosition="0">
@@ -3219,9 +3219,7 @@
     <scopeInfo nodeId="1237463991826" fileName="ConstructorDeclaration_TextGen.java" startLine="44" startPosition="78" endLine="48" endPosition="9" />
     <scopeInfo nodeId="1237463993107" fileName="ConstructorDeclaration_TextGen.java" startLine="55" startPosition="81" endLine="59" endPosition="11" />
     <scopeInfo nodeId="1236685024634" fileName="ConstructorDeclaration_TextGen.java" startLine="63" startPosition="22" endLine="68" endPosition="25" />
-    <scopeInfo nodeId="1237463991826" fileName="ConstructorDeclaration_TextGen.java" startLine="43" startPosition="98" endLine="49" endPosition="7">
-      <varInfo nodeId="1237463991826" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="1237463991826" fileName="ConstructorDeclaration_TextGen.java" startLine="43" startPosition="98" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1237463993107" fileName="ConstructorDeclaration_TextGen.java" startLine="54" startPosition="101" endLine="60" endPosition="9">
       <varInfo nodeId="1237463993107" varName="item" />
     </scopeInfo>
@@ -3481,10 +3479,10 @@
     <scopeInfo nodeId="1235740524220" fileName="EnumClass_TextGen.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1235740524220" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1237463992982" fileName="EnumClass_TextGen.java" startLine="42" startPosition="111" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="1237463992692" fileName="EnumClass_TextGen.java" startLine="53" startPosition="101" endLine="59" endPosition="7">
-      <varInfo nodeId="1237463992692" varName="item" />
+    <scopeInfo nodeId="1237463992982" fileName="EnumClass_TextGen.java" startLine="42" startPosition="111" endLine="48" endPosition="9">
+      <varInfo nodeId="1237463992982" varName="item" />
     </scopeInfo>
+    <scopeInfo nodeId="1237463992692" fileName="EnumClass_TextGen.java" startLine="53" startPosition="101" endLine="59" endPosition="7" />
     <scopeInfo nodeId="1235740714405" fileName="EnumClass_TextGen.java" startLine="40" startPosition="109" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1237463992982" fileName="EnumClass_TextGen.java" startLine="40" startPosition="109" endLine="49" endPosition="7" />
     <scopeInfo nodeId="1237463992692" fileName="EnumClass_TextGen.java" startLine="52" startPosition="25" endLine="63" endPosition="45" />
@@ -3549,7 +3547,9 @@
       <varInfo nodeId="2107485570170138643" varName="str" />
     </scopeInfo>
     <scopeInfo nodeId="8435245205864948313" fileName="EnumConstantDeclaration_TextGen.java" startLine="33" startPosition="27" endLine="38" endPosition="27" />
-    <scopeInfo nodeId="1237463992567" fileName="EnumConstantDeclaration_TextGen.java" startLine="22" startPosition="103" endLine="28" endPosition="7" />
+    <scopeInfo nodeId="1237463992567" fileName="EnumConstantDeclaration_TextGen.java" startLine="22" startPosition="103" endLine="28" endPosition="7">
+      <varInfo nodeId="1237463992567" varName="item" />
+    </scopeInfo>
     <scopeInfo nodeId="8435245205864941035" fileName="EnumConstantDeclaration_TextGen.java" startLine="31" startPosition="95" endLine="40" endPosition="33" />
     <scopeInfo nodeId="1237463992567" fileName="EnumConstantDeclaration_TextGen.java" startLine="20" startPosition="5" endLine="30" endPosition="21" />
     <scopeInfo nodeId="1235740896598" fileName="EnumConstantDeclaration_TextGen.java" startLine="13" startPosition="42" endLine="41" endPosition="5" />
@@ -4141,9 +4141,7 @@
       <varInfo nodeId="3408882292339891930" varName="item" />
     </scopeInfo>
     <scopeInfo nodeId="3408882292339891947" fileName="BaseClassConceptTextGen.java" startLine="50" startPosition="114" endLine="53" endPosition="25" />
-    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="88" startPosition="52" endLine="91" endPosition="7">
-      <varInfo nodeId="2365107255602301567" varName="item" />
-    </scopeInfo>
+    <scopeInfo nodeId="2365107255602301567" fileName="BaseClassConceptTextGen.java" startLine="88" startPosition="52" endLine="91" endPosition="7" />
     <scopeInfo nodeId="3077396384314014603" fileName="BaseClassConceptTextGen.java" startLine="27" startPosition="103" endLine="31" endPosition="7">
       <varInfo nodeId="3077396384314014607" varName="constructor" />
     </scopeInfo>
@@ -4234,118 +4232,147 @@
   <root nodeId="4571635105384638795">
     <nodeInfo nodeId="4571635105384638795" fileName="ContextClassifiersInRoot.java" startLine="18" startPosition="39" endLine="19" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4571635105384639077" fileName="ContextClassifiersInRoot.java" startLine="20" startPosition="0" endLine="21" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="contextClassifiersCache" />
-    <nodeInfo nodeId="4571635105384639104" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="76" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384638992" fileName="ContextClassifiersInRoot.java" startLine="31" startPosition="71" endLine="32" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384638994" fileName="ContextClassifiersInRoot.java" startLine="32" startPosition="55" endLine="33" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384638998" fileName="ContextClassifiersInRoot.java" startLine="34" startPosition="107" endLine="35" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384639010" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="103" endLine="38" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384639014" fileName="ContextClassifiersInRoot.java" startLine="38" startPosition="88" endLine="39" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384639020" fileName="ContextClassifiersInRoot.java" startLine="40" startPosition="5" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384639021" fileName="ContextClassifiersInRoot.java" startLine="41" startPosition="0" endLine="42" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384639023" fileName="ContextClassifiersInRoot.java" startLine="42" startPosition="37" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384639038" fileName="ContextClassifiersInRoot.java" startLine="44" startPosition="134" endLine="45" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384639045" fileName="ContextClassifiersInRoot.java" startLine="45" startPosition="46" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384639051" fileName="ContextClassifiersInRoot.java" startLine="47" startPosition="5" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384639054" fileName="ContextClassifiersInRoot.java" startLine="49" startPosition="32" endLine="50" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384639056" fileName="ContextClassifiersInRoot.java" startLine="50" startPosition="27" endLine="51" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384639061" fileName="ContextClassifiersInRoot.java" startLine="52" startPosition="5" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384639062" fileName="ContextClassifiersInRoot.java" startLine="53" startPosition="0" endLine="54" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384638963" fileName="ContextClassifiersInRoot.java" startLine="57" startPosition="97" endLine="58" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384638969" fileName="ContextClassifiersInRoot.java" startLine="58" startPosition="74" endLine="59" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384638975" fileName="ContextClassifiersInRoot.java" startLine="59" startPosition="84" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384638978" fileName="ContextClassifiersInRoot.java" startLine="61" startPosition="46" endLine="62" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638813" fileName="ContextClassifiersInRoot.java" startLine="66" startPosition="111" endLine="67" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384638822" fileName="ContextClassifiersInRoot.java" startLine="67" startPosition="65" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384638823" fileName="ContextClassifiersInRoot.java" startLine="68" startPosition="0" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384638838" fileName="ContextClassifiersInRoot.java" startLine="71" startPosition="101" endLine="72" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4571635105384638853" fileName="ContextClassifiersInRoot.java" startLine="73" startPosition="198" endLine="74" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638863" fileName="ContextClassifiersInRoot.java" startLine="75" startPosition="109" endLine="76" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638877" fileName="ContextClassifiersInRoot.java" startLine="77" startPosition="112" endLine="78" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638892" fileName="ContextClassifiersInRoot.java" startLine="79" startPosition="16" endLine="80" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638896" fileName="ContextClassifiersInRoot.java" startLine="81" startPosition="9" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384638897" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="0" endLine="83" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384638899" fileName="ContextClassifiersInRoot.java" startLine="83" startPosition="120" endLine="84" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638906" fileName="ContextClassifiersInRoot.java" startLine="85" startPosition="39" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384638912" fileName="ContextClassifiersInRoot.java" startLine="88" startPosition="120" endLine="89" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638928" fileName="ContextClassifiersInRoot.java" startLine="93" startPosition="7" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384638929" fileName="ContextClassifiersInRoot.java" startLine="94" startPosition="0" endLine="95" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384638931" fileName="ContextClassifiersInRoot.java" startLine="95" startPosition="34" endLine="96" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4571635105384638933" fileName="ContextClassifiersInRoot.java" startLine="96" startPosition="100" endLine="97" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638940" fileName="ContextClassifiersInRoot.java" startLine="97" startPosition="42" endLine="98" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638946" fileName="ContextClassifiersInRoot.java" startLine="99" startPosition="5" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4571635105384638947" fileName="ContextClassifiersInRoot.java" startLine="100" startPosition="0" endLine="101" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4571635105384638890" fileName="ContextClassifiersInRoot.java" startLine="79" startPosition="14" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4571635105384638996" fileName="ContextClassifiersInRoot.java" startLine="33" startPosition="29" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384638976" fileName="ContextClassifiersInRoot.java" startLine="60" startPosition="0" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384638910" fileName="ContextClassifiersInRoot.java" startLine="87" startPosition="194" endLine="90" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4571635105384639094" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="96" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="innerGet#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/util/Map;" />
-    <nodeInfo nodeId="4571635105384639008" fileName="ContextClassifiersInRoot.java" startLine="36" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384639027" fileName="ContextClassifiersInRoot.java" startLine="43" startPosition="34" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4571635105384639052" fileName="ContextClassifiersInRoot.java" startLine="48" startPosition="0" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384639087" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="51" endLine="28" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4571635105384638908" fileName="ContextClassifiersInRoot.java" startLine="86" startPosition="72" endLine="91" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4571635105384638797" fileName="ContextClassifiersInRoot.java" startLine="22" startPosition="0" endLine="29" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextClassifiersInRoot#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4571635105384638904" fileName="ContextClassifiersInRoot.java" startLine="84" startPosition="126" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384638953" fileName="ContextClassifiersInRoot.java" startLine="56" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addClassifierToBindingMap#(Ljava/util/Map;Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="4571635105384638842" fileName="ContextClassifiersInRoot.java" startLine="72" startPosition="49" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384638832" fileName="ContextClassifiersInRoot.java" startLine="70" startPosition="31" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4571635105384638990" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifiers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
-    <nodeInfo nodeId="4571635105384638827" fileName="ContextClassifiersInRoot.java" startLine="69" startPosition="32" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4571635105384638806" fileName="ContextClassifiersInRoot.java" startLine="65" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContextClassifiersInternal#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/Map;" />
-    <scopeInfo nodeId="4571635105384639103" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="76" endLine="26" endPosition="65" />
-    <scopeInfo nodeId="4571635105384638997" fileName="ContextClassifiersInRoot.java" startLine="34" startPosition="107" endLine="35" endPosition="59" />
-    <scopeInfo nodeId="4571635105384638977" fileName="ContextClassifiersInRoot.java" startLine="61" startPosition="46" endLine="62" endPosition="39" />
-    <scopeInfo nodeId="4571635105384638852" fileName="ContextClassifiersInRoot.java" startLine="73" startPosition="198" endLine="74" endPosition="42" />
-    <scopeInfo nodeId="4571635105384638862" fileName="ContextClassifiersInRoot.java" startLine="75" startPosition="109" endLine="76" endPosition="84" />
-    <scopeInfo nodeId="4571635105384638876" fileName="ContextClassifiersInRoot.java" startLine="77" startPosition="112" endLine="78" endPosition="127" />
-    <scopeInfo nodeId="4571635105384638891" fileName="ContextClassifiersInRoot.java" startLine="79" startPosition="16" endLine="80" endPosition="75" />
-    <scopeInfo nodeId="4571635105384638911" fileName="ContextClassifiersInRoot.java" startLine="88" startPosition="120" endLine="89" endPosition="68" />
-    <scopeInfo nodeId="4571635105384639009" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="103" endLine="39" endPosition="36" />
-    <scopeInfo nodeId="4571635105384639037" fileName="ContextClassifiersInRoot.java" startLine="44" startPosition="134" endLine="46" endPosition="59" />
-    <scopeInfo nodeId="4571635105384639053" fileName="ContextClassifiersInRoot.java" startLine="49" startPosition="32" endLine="51" endPosition="36" />
-    <scopeInfo nodeId="4571635105384638909" fileName="ContextClassifiersInRoot.java" startLine="87" startPosition="194" endLine="90" endPosition="13" />
-    <scopeInfo nodeId="4571635105384638910" fileName="ContextClassifiersInRoot.java" startLine="87" startPosition="194" endLine="90" endPosition="13">
-      <varInfo nodeId="4571635105384638916" varName="nestedClassifier" />
+    <nodeInfo nodeId="7520879497544097064" fileName="ContextClassifiersInRoot.java" startLine="21" startPosition="93" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="nestedClassifiersCache" />
+    <nodeInfo nodeId="7520879497544097357" fileName="ContextClassifiersInRoot.java" startLine="26" startPosition="76" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7520879497544097139" fileName="ContextClassifiersInRoot.java" startLine="31" startPosition="57" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4571635105384638992" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="71" endLine="38" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4571635105384638994" fileName="ContextClassifiersInRoot.java" startLine="38" startPosition="55" endLine="39" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4571635105384638998" fileName="ContextClassifiersInRoot.java" startLine="40" startPosition="107" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4571635105384639010" fileName="ContextClassifiersInRoot.java" startLine="43" startPosition="103" endLine="44" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4571635105384639014" fileName="ContextClassifiersInRoot.java" startLine="44" startPosition="88" endLine="45" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4571635105384639020" fileName="ContextClassifiersInRoot.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384639021" fileName="ContextClassifiersInRoot.java" startLine="47" startPosition="0" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4571635105384639023" fileName="ContextClassifiersInRoot.java" startLine="48" startPosition="37" endLine="49" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4571635105384639038" fileName="ContextClassifiersInRoot.java" startLine="50" startPosition="134" endLine="51" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4571635105384639045" fileName="ContextClassifiersInRoot.java" startLine="51" startPosition="46" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4571635105384639051" fileName="ContextClassifiersInRoot.java" startLine="53" startPosition="5" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384639054" fileName="ContextClassifiersInRoot.java" startLine="55" startPosition="32" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4571635105384639056" fileName="ContextClassifiersInRoot.java" startLine="56" startPosition="27" endLine="57" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4571635105384639061" fileName="ContextClassifiersInRoot.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384639062" fileName="ContextClassifiersInRoot.java" startLine="59" startPosition="0" endLine="60" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7520879497544097151" fileName="ContextClassifiersInRoot.java" startLine="63" startPosition="96" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520879497544097160" fileName="ContextClassifiersInRoot.java" startLine="64" startPosition="65" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544097161" fileName="ContextClassifiersInRoot.java" startLine="65" startPosition="0" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520879497544097176" fileName="ContextClassifiersInRoot.java" startLine="68" startPosition="101" endLine="69" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520879497544097191" fileName="ContextClassifiersInRoot.java" startLine="70" startPosition="198" endLine="71" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097201" fileName="ContextClassifiersInRoot.java" startLine="72" startPosition="109" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097215" fileName="ContextClassifiersInRoot.java" startLine="74" startPosition="112" endLine="75" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097230" fileName="ContextClassifiersInRoot.java" startLine="76" startPosition="16" endLine="77" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097234" fileName="ContextClassifiersInRoot.java" startLine="78" startPosition="9" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544097235" fileName="ContextClassifiersInRoot.java" startLine="79" startPosition="0" endLine="80" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544097237" fileName="ContextClassifiersInRoot.java" startLine="80" startPosition="120" endLine="81" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097248" fileName="ContextClassifiersInRoot.java" startLine="84" startPosition="67" endLine="85" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097275" fileName="ContextClassifiersInRoot.java" startLine="89" startPosition="7" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544097276" fileName="ContextClassifiersInRoot.java" startLine="90" startPosition="0" endLine="91" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544097278" fileName="ContextClassifiersInRoot.java" startLine="91" startPosition="34" endLine="92" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544097280" fileName="ContextClassifiersInRoot.java" startLine="92" startPosition="100" endLine="93" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097287" fileName="ContextClassifiersInRoot.java" startLine="93" startPosition="42" endLine="94" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097293" fileName="ContextClassifiersInRoot.java" startLine="95" startPosition="5" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544097294" fileName="ContextClassifiersInRoot.java" startLine="96" startPosition="0" endLine="97" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7520879497544096768" fileName="ContextClassifiersInRoot.java" startLine="100" startPosition="77" endLine="101" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544096795" fileName="ContextClassifiersInRoot.java" startLine="101" startPosition="45" endLine="102" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7520879497544096793" fileName="ContextClassifiersInRoot.java" startLine="102" startPosition="74" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384638906" fileName="ContextClassifiersInRoot.java" startLine="103" startPosition="0" endLine="104" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7520879497544096778" fileName="ContextClassifiersInRoot.java" startLine="106" startPosition="114" endLine="107" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544096805" fileName="ContextClassifiersInRoot.java" startLine="109" startPosition="5" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7520879497544096807" fileName="ContextClassifiersInRoot.java" startLine="110" startPosition="0" endLine="111" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4571635105384638963" fileName="ContextClassifiersInRoot.java" startLine="114" startPosition="97" endLine="115" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4571635105384638969" fileName="ContextClassifiersInRoot.java" startLine="115" startPosition="74" endLine="116" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4571635105384638975" fileName="ContextClassifiersInRoot.java" startLine="116" startPosition="84" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4571635105384638978" fileName="ContextClassifiersInRoot.java" startLine="118" startPosition="46" endLine="119" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097228" fileName="ContextClassifiersInRoot.java" startLine="76" startPosition="14" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4571635105384638996" fileName="ContextClassifiersInRoot.java" startLine="39" startPosition="29" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7520879497544097246" fileName="ContextClassifiersInRoot.java" startLine="83" startPosition="180" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7520879497544096776" fileName="ContextClassifiersInRoot.java" startLine="105" startPosition="191" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4571635105384638976" fileName="ContextClassifiersInRoot.java" startLine="117" startPosition="0" endLine="120" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384639094" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="96" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="innerGet#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljava/util/Map;" />
+    <nodeInfo nodeId="7520879497544097110" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="76" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="innerGet#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
+    <nodeInfo nodeId="4571635105384639008" fileName="ContextClassifiersInRoot.java" startLine="42" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384639027" fileName="ContextClassifiersInRoot.java" startLine="49" startPosition="34" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4571635105384639052" fileName="ContextClassifiersInRoot.java" startLine="54" startPosition="0" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384639087" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="51" endLine="29" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097068" fileName="ContextClassifiersInRoot.java" startLine="29" startPosition="6" endLine="34" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7520879497544097244" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="39" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7520879497544096774" fileName="ContextClassifiersInRoot.java" startLine="104" startPosition="66" endLine="109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7520879497544097242" fileName="ContextClassifiersInRoot.java" startLine="81" startPosition="126" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7520879497544097180" fileName="ContextClassifiersInRoot.java" startLine="69" startPosition="49" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384638953" fileName="ContextClassifiersInRoot.java" startLine="113" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addClassifierToBindingMap#(Ljava/util/Map;Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="4571635105384638797" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="0" endLine="35" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContextClassifiersInRoot#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7520879497544096750" fileName="ContextClassifiersInRoot.java" startLine="99" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNestedClassifiers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
+    <nodeInfo nodeId="7520879497544097170" fileName="ContextClassifiersInRoot.java" startLine="67" startPosition="31" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4571635105384638990" fileName="ContextClassifiersInRoot.java" startLine="36" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifiers#(Ljetbrains/mps/smodel/SNode;)Ljava/util/Map;" />
+    <nodeInfo nodeId="7520879497544097165" fileName="ContextClassifiersInRoot.java" startLine="66" startPosition="32" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="7520879497544097142" fileName="ContextClassifiersInRoot.java" startLine="62" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContextClassifiers#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljava/util/Map;" />
+    <scopeInfo nodeId="4571635105384639103" fileName="ContextClassifiersInRoot.java" startLine="26" startPosition="76" endLine="27" endPosition="57" />
+    <scopeInfo nodeId="7520879497544097119" fileName="ContextClassifiersInRoot.java" startLine="31" startPosition="57" endLine="32" endPosition="41" />
+    <scopeInfo nodeId="4571635105384638997" fileName="ContextClassifiersInRoot.java" startLine="40" startPosition="107" endLine="41" endPosition="59" />
+    <scopeInfo nodeId="7520879497544097190" fileName="ContextClassifiersInRoot.java" startLine="70" startPosition="198" endLine="71" endPosition="42" />
+    <scopeInfo nodeId="7520879497544097200" fileName="ContextClassifiersInRoot.java" startLine="72" startPosition="109" endLine="73" endPosition="84" />
+    <scopeInfo nodeId="7520879497544097214" fileName="ContextClassifiersInRoot.java" startLine="74" startPosition="112" endLine="75" endPosition="127" />
+    <scopeInfo nodeId="7520879497544097229" fileName="ContextClassifiersInRoot.java" startLine="76" startPosition="16" endLine="77" endPosition="75" />
+    <scopeInfo nodeId="7520879497544097247" fileName="ContextClassifiersInRoot.java" startLine="84" startPosition="67" endLine="85" endPosition="79" />
+    <scopeInfo nodeId="7520879497544096777" fileName="ContextClassifiersInRoot.java" startLine="106" startPosition="114" endLine="107" endPosition="71" />
+    <scopeInfo nodeId="4571635105384638977" fileName="ContextClassifiersInRoot.java" startLine="118" startPosition="46" endLine="119" endPosition="39" />
+    <scopeInfo nodeId="4571635105384639009" fileName="ContextClassifiersInRoot.java" startLine="43" startPosition="103" endLine="45" endPosition="36" />
+    <scopeInfo nodeId="4571635105384639037" fileName="ContextClassifiersInRoot.java" startLine="50" startPosition="134" endLine="52" endPosition="59" />
+    <scopeInfo nodeId="4571635105384639053" fileName="ContextClassifiersInRoot.java" startLine="55" startPosition="32" endLine="57" endPosition="36" />
+    <scopeInfo nodeId="7520879497544097245" fileName="ContextClassifiersInRoot.java" startLine="83" startPosition="180" endLine="86" endPosition="13" />
+    <scopeInfo nodeId="7520879497544096775" fileName="ContextClassifiersInRoot.java" startLine="105" startPosition="191" endLine="108" endPosition="7" />
+    <scopeInfo nodeId="7520879497544096776" fileName="ContextClassifiersInRoot.java" startLine="105" startPosition="191" endLine="108" endPosition="7">
+      <varInfo nodeId="7520879497544096782" varName="nestedClassifier" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384639094" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="96" endLine="28" endPosition="0">
+    <scopeInfo nodeId="4571635105384639094" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="96" endLine="29" endPosition="0">
       <varInfo nodeId="4571635105384639099" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638800" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="51" endLine="28" endPosition="6" />
-    <scopeInfo nodeId="4571635105384638908" fileName="ContextClassifiersInRoot.java" startLine="86" startPosition="72" endLine="91" endPosition="11">
-      <varInfo nodeId="4571635105384638921" varName="superClassifier" />
+    <scopeInfo nodeId="7520879497544097110" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="76" endLine="34" endPosition="0">
+      <varInfo nodeId="7520879497544097115" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638962" fileName="ContextClassifiersInRoot.java" startLine="57" startPosition="97" endLine="63" endPosition="5">
+    <scopeInfo nodeId="7520879497544097243" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="39" endLine="87" endPosition="11" />
+    <scopeInfo nodeId="7520879497544097244" fileName="ContextClassifiersInRoot.java" startLine="82" startPosition="39" endLine="87" endPosition="11">
+      <varInfo nodeId="7520879497544097265" varName="simpleToFqName" />
+    </scopeInfo>
+    <scopeInfo nodeId="7520879497544096774" fileName="ContextClassifiersInRoot.java" startLine="104" startPosition="66" endLine="109" endPosition="5">
+      <varInfo nodeId="7520879497544096787" varName="superClassifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="4571635105384638962" fileName="ContextClassifiersInRoot.java" startLine="114" startPosition="97" endLine="120" endPosition="5">
       <varInfo nodeId="4571635105384638970" varName="fqName" />
       <varInfo nodeId="4571635105384638964" varName="simpleName" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638905" fileName="ContextClassifiersInRoot.java" startLine="85" startPosition="39" endLine="91" endPosition="11" />
-    <scopeInfo nodeId="4571635105384638797" fileName="ContextClassifiersInRoot.java" startLine="22" startPosition="0" endLine="29" endPosition="3">
-      <varInfo nodeId="4571635105384638802" varName="rootNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4571635105384638953" fileName="ContextClassifiersInRoot.java" startLine="56" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="4571635105384638953" fileName="ContextClassifiersInRoot.java" startLine="113" startPosition="0" endLine="122" endPosition="0">
       <varInfo nodeId="4571635105384638954" varName="bindings" />
       <varInfo nodeId="4571635105384638958" varName="classifier" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638837" fileName="ContextClassifiersInRoot.java" startLine="71" startPosition="101" endLine="92" endPosition="9">
-      <varInfo nodeId="4571635105384638839" varName="processNestedClassifiers" />
+    <scopeInfo nodeId="4571635105384638800" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="51" endLine="34" endPosition="6" />
+    <scopeInfo nodeId="7520879497544096753" fileName="ContextClassifiersInRoot.java" startLine="100" startPosition="77" endLine="111" endPosition="29">
+      <varInfo nodeId="7520879497544096796" varName="nestedClassifiers" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638991" fileName="ContextClassifiersInRoot.java" startLine="31" startPosition="71" endLine="54" endPosition="173">
+    <scopeInfo nodeId="4571635105384638797" fileName="ContextClassifiersInRoot.java" startLine="23" startPosition="0" endLine="35" endPosition="3">
+      <varInfo nodeId="4571635105384638802" varName="rootNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="7520879497544096750" fileName="ContextClassifiersInRoot.java" startLine="99" startPosition="0" endLine="113" endPosition="0">
+      <varInfo nodeId="7520879497544096771" varName="classifier" />
+    </scopeInfo>
+    <scopeInfo nodeId="7520879497544097175" fileName="ContextClassifiersInRoot.java" startLine="68" startPosition="101" endLine="88" endPosition="9">
+      <varInfo nodeId="7520879497544097177" varName="processNestedClassifiers" />
+    </scopeInfo>
+    <scopeInfo nodeId="4571635105384638991" fileName="ContextClassifiersInRoot.java" startLine="37" startPosition="71" endLine="60" endPosition="173">
       <varInfo nodeId="4571635105384639024" varName="sourceChildRole" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638990" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="4571635105384638990" fileName="ContextClassifiersInRoot.java" startLine="36" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="4571635105384639071" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638831" fileName="ContextClassifiersInRoot.java" startLine="70" startPosition="31" endLine="98" endPosition="51" />
-    <scopeInfo nodeId="4571635105384638812" fileName="ContextClassifiersInRoot.java" startLine="66" startPosition="111" endLine="101" endPosition="20">
-      <varInfo nodeId="4571635105384638814" varName="bindings" />
-      <varInfo nodeId="4571635105384638824" varName="current" />
+    <scopeInfo nodeId="7520879497544097169" fileName="ContextClassifiersInRoot.java" startLine="67" startPosition="31" endLine="94" endPosition="51" />
+    <scopeInfo nodeId="7520879497544097145" fileName="ContextClassifiersInRoot.java" startLine="63" startPosition="96" endLine="97" endPosition="20">
+      <varInfo nodeId="7520879497544097152" varName="bindings" />
+      <varInfo nodeId="7520879497544097162" varName="current" />
     </scopeInfo>
-    <scopeInfo nodeId="4571635105384638806" fileName="ContextClassifiersInRoot.java" startLine="65" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="4571635105384638807" varName="contextNode" />
-      <varInfo nodeId="4571635105384638809" varName="sourceChildRole" />
+    <scopeInfo nodeId="7520879497544097142" fileName="ContextClassifiersInRoot.java" startLine="62" startPosition="0" endLine="99" endPosition="0">
+      <varInfo nodeId="7520879497544097146" varName="contextNode" />
+      <varInfo nodeId="7520879497544097148" varName="sourceChildRole" />
     </scopeInfo>
-    <unitInfo nodeId="4571635105384638795" fileName="ContextClassifiersInRoot.java" startLine="18" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot" />
-    <unitInfo nodeId="4571635105384639092" fileName="ContextClassifiersInRoot.java" startLine="24" startPosition="34" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot$1" />
+    <unitInfo nodeId="4571635105384638795" fileName="ContextClassifiersInRoot.java" startLine="18" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot" />
+    <unitInfo nodeId="4571635105384639092" fileName="ContextClassifiersInRoot.java" startLine="25" startPosition="34" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot$1" />
+    <unitInfo nodeId="7520879497544097108" fileName="ContextClassifiersInRoot.java" startLine="30" startPosition="33" endLine="34" endPosition="5" unitName="jetbrains.mps.baseLanguage.textGen.ContextClassifiersInRoot$2" />
   </root>
   <root nodeId="5205855332950472840">
     <nodeInfo nodeId="5205855332950472843" fileName="ArrayCloneOperation_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

@@ -9,21 +9,27 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class ContextClassifiersInRoot {
   private static Logger LOG = Logger.getLogger(ContextClassifiersInRoot.class);
 
   private SimpleCache<Tuples._2<SNode, String>, Map<String, String>> contextClassifiersCache;
+  private SimpleCache<SNode, Map<String, String>> nestedClassifiersCache;
 
   public ContextClassifiersInRoot(SNode rootNode) {
     contextClassifiersCache = new SimpleCache<Tuples._2<SNode, String>, Map<String, String>>() {
       protected Map<String, String> innerGet(Tuples._2<SNode, String> key) {
-        return getContextClassifiersInternal(key._0(), key._1());
+        return getContextClassifiers(key._0(), key._1());
+      }
+    };
+    nestedClassifiersCache = new SimpleCache<SNode, Map<String, String>>() {
+      protected Map<String, String> innerGet(SNode key) {
+        return getNestedClassifiers(key);
       }
     };
   }
@@ -54,16 +60,7 @@ public class ContextClassifiersInRoot {
     return contextClassifiersCache.get(MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole));
   }
 
-  private static void addClassifierToBindingMap(Map<String, String> bindings, SNode classifier) {
-    String simpleName = SPropertyOperations.getString(classifier, "name");
-    String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(classifier);
-
-    if (!(bindings.containsKey(simpleName))) {
-      bindings.put(simpleName, fqName);
-    }
-  }
-
-  private static Map<String, String> getContextClassifiersInternal(SNode contextNode, String sourceChildRole) {
+  private Map<String, String> getContextClassifiers(SNode contextNode, String sourceChildRole) {
     Map<String, String> bindings = new HashMap<String, String>();
 
     SNode current = contextNode;
@@ -83,10 +80,9 @@ public class ContextClassifiersInRoot {
         // todo: is it true? had a bug with it. Look like nested classifier has more priority then class with same name 
         addClassifierToBindingMap(bindings, SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.Classifier"));
         if (processNestedClassifiers) {
-          // todo: classifiers with same names in different supertypes? 
-          for (SNode superClassifier : Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-            for (SNode nestedClassifier : SLinkOperations.getTargets(superClassifier, "staticInnerClassifiers", true)) {
-              addClassifierToBindingMap(bindings, nestedClassifier);
+          for (Map.Entry<String, String> simpleToFqName : nestedClassifiersCache.get(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.Classifier")).entrySet()) {
+            if (!(bindings.containsKey(simpleToFqName.getKey()))) {
+              bindings.put(simpleToFqName.getKey(), simpleToFqName.getValue());
             }
           }
         }
@@ -99,5 +95,28 @@ public class ContextClassifiersInRoot {
     }
 
     return bindings;
+  }
+
+  private static Map<String, String> getNestedClassifiers(SNode classifier) {
+    // returns map from simpleName to fqName 
+    Map<String, String> nestedClassifiers = new HashMap<String, String>();
+
+    // todo: classifiers with same names in different supertypes? 
+    for (SNode superClassifier : Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      for (SNode nestedClassifier : SLinkOperations.getTargets(superClassifier, "staticInnerClassifiers", true)) {
+        addClassifierToBindingMap(nestedClassifiers, nestedClassifier);
+      }
+    }
+
+    return nestedClassifiers;
+  }
+
+  private static void addClassifierToBindingMap(Map<String, String> bindings, SNode classifier) {
+    String simpleName = SPropertyOperations.getString(classifier, "name");
+    String fqName = INamedConcept_Behavior.call_getFqName_1213877404258(classifier);
+
+    if (!(bindings.containsKey(simpleName))) {
+      bindings.put(simpleName, fqName);
+    }
   }
 }
