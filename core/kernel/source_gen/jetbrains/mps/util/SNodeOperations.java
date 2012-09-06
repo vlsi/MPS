@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,7 +19,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNodeBase;
+import org.jetbrains.annotations.Nullable;
 
 public class SNodeOperations {
   public SNodeOperations() {
@@ -37,12 +38,8 @@ public class SNodeOperations {
   }
 
   public static List<SNode> getChildren(SNode node, boolean includeAttributes) {
-    List<SNode> children = ((List<SNode>) node.getChildren());
-    if (includeAttributes) {
-      return (children);
-    }
     List<SNode> res = new ArrayList<SNode>();
-    for (SNode child : children) {
+    for (SNode child : node.getChildren()) {
       if (child != null && AttributeOperations.isAttribute(child)) {
         res.add(child);
       }
@@ -50,11 +47,16 @@ public class SNodeOperations {
     return res;
   }
 
-  /**
-   * todo rewrite via ISNode methods
-   */
   public static Iterable<SNode> getDescendants(SNode node, Condition<SNode> cond, boolean includeFirst) {
-    return ((Iterable) ((jetbrains.mps.smodel.SNode) node).getDescendantsIterable(((Condition) cond), includeFirst));
+    Iterator<? extends SNode> iterator = node.getChildren().iterator();
+    SNode firstChild = (iterator.hasNext() ?
+      iterator.next() :
+      null
+    );
+    return new SNodeOperations.DescendantsIterable(node, (includeFirst ?
+      node :
+      firstChild
+    ), cond);
   }
 
   public static SNode findParent(SNode node, Condition<SNode> condition) {
@@ -88,7 +90,7 @@ public class SNodeOperations {
   private static void collectDescendants(SNode node, final List<SNode> list, final Condition<SNode> condition) {
     node.visitChildren(new SNode.ChildVisitor() {
       public boolean visitChild(String role, SNode child) {
-        if (condition == null || condition.met(child)) {
+        if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
           ListSequence.fromList(list).addElement(child);
         }
         collectDescendants(child, list, condition);
@@ -164,7 +166,11 @@ public class SNodeOperations {
    * todo rewrite the code via snode methods
    */
   public static void insertChild(SNode parent, String role, SNode child, SNode anchor, boolean before) {
-    ((jetbrains.mps.smodel.SNode) parent).insertChild(((SNodeBase) anchor), role, ((jetbrains.mps.smodel.SNode) child), before);
+    if (before) {
+      parent.insertChild(role, child, parent.getPrevChild(anchor));
+    } else {
+      parent.insertChild(role, child, anchor);
+    }
   }
 
   /**
@@ -190,7 +196,7 @@ public class SNodeOperations {
    * todo after killing it, correct migration script getTopMostAncestor
    */
   @Deprecated
-  public static jetbrains.mps.smodel.SNode getContainingRoot(SNode node) {
+  public static SNode getContainingRoot(SNode node) {
     return ((jetbrains.mps.smodel.SNode) node).getContainingRoot();
   }
 
@@ -206,5 +212,76 @@ public class SNodeOperations {
    */
   public static String getResolveInfo(SNode n) {
     return ((jetbrains.mps.smodel.SNode) n).getResolveInfo();
+  }
+
+  private static class DescendantsIterable implements TreeIterator<SNode>, Iterable<SNode> {
+    private SNode original;
+    private SNode current;
+    private Condition<SNode> condition;
+    private SNode prev;
+
+    /*package*/ DescendantsIterable(SNode original, SNode first, @Nullable Condition<SNode> condition) {
+      this.original = original;
+      this.current = first;
+      this.condition = condition;
+      while (current != null && condition != null && !(condition.met(current))) {
+        current = nextInternal(current, false);
+      }
+    }
+
+    public void skipChildren() {
+      if (prev == null) {
+        throw new IllegalStateException("no element");
+      }
+      current = nextInternal(prev, true);
+      while (current != null && condition != null && !(condition.met(current))) {
+        current = nextInternal(current, false);
+      }
+    }
+
+    public boolean hasNext() {
+      return current != null;
+    }
+
+    public SNode next() {
+      SNode result = current;
+      do {
+        current = nextInternal(current, false);
+      } while (current != null && condition != null && !(condition.met(current)));
+      prev = result;
+      return result;
+    }
+
+    public void remove() {
+      throw new UnsupportedOperationException();
+    }
+
+    private SNode nextInternal(SNode curr, boolean skipChildren) {
+      if (curr == null) {
+        return null;
+      }
+      if (!(skipChildren)) {
+        Iterator<? extends SNode> iterator = curr.getChildren().iterator();
+        if (iterator.hasNext()) {
+          return iterator.next();
+        }
+      }
+      if (curr == original) {
+        return null;
+      }
+      SNode parent;
+      do {
+        parent = curr.getParent();
+        if (parent.getNextChild(curr) != null) {
+          return parent.getNextChild(curr);
+        }
+        curr = parent;
+      } while (curr != original);
+      return null;
+    }
+
+    public Iterator<SNode> iterator() {
+      return this;
+    }
   }
 }
