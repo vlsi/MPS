@@ -143,7 +143,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
           public void run() {
             for (SNode methodCall : reResolvedTargets.keySet()) {
               SNode referent = reResolvedTargets.get(methodCall);
-              if (referent != null && !(referent.isDisposed())) {
+              if (referent != null && !(referent.shouldHaveBeenDisposed())) {
                 SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", referent, false);
               }
             }

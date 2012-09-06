@@ -233,11 +233,11 @@ public class LanguageErrorsComponent {
   }
 
   public void processBeforeModelDisposed(SModel model) {
-    if (!(myRoot.isDisposed()) && SNodeOperations.getModel(myRoot) == model) {
+    if (!(myRoot.shouldHaveBeenDisposed()) && SNodeOperations.getModel(myRoot) == model) {
       return;
     }
     for (SNode additional : new HashSet<SNode>(MapSequence.fromMap(myDependenciesToNodes).keySet())) {
-      if (additional.isDisposed() || SNodeOperations.getModel(additional) == model) {
+      if (additional.shouldHaveBeenDisposed() || SNodeOperations.getModel(additional) == model) {
         processNodeChange(additional);
       }
     }
