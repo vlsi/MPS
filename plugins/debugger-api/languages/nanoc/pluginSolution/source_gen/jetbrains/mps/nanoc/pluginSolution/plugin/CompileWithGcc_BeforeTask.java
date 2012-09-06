@@ -19,7 +19,7 @@ import com.intellij.execution.ExecutionException;
 
 public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> {
   private static final Key<CompileWithGcc_BeforeTask.CompileWithGcc_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.nanoc.pluginSolution.plugin.CompileWithGcc_BeforeTask");
-  protected static Log log = LogFactory.getLog(CompileWithGcc_BeforeTask.class);
+  protected static Log log_2698960852101319553 = LogFactory.getLog(CompileWithGcc_BeforeTask.class);
 
   public CompileWithGcc_BeforeTask() {
     super("Compile with gcc");
@@ -50,12 +50,12 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
           @Override
           public void onTextAvailable(ProcessEvent event, Key key) {
             if (ProcessOutputTypes.STDERR.equals(key)) {
-              if (log.isErrorEnabled()) {
-                log.error(event.getText());
+              if (log_2698960852101319553.isErrorEnabled()) {
+                log_2698960852101319553.error(event.getText());
               }
             } else {
-              if (log.isInfoEnabled()) {
-                log.info(event.getText());
+              if (log_2698960852101319553.isInfoEnabled()) {
+                log_2698960852101319553.info(event.getText());
               }
             }
           }
@@ -66,8 +66,8 @@ public class CompileWithGcc_BeforeTask extends BaseMpsBeforeTaskProvider<Compile
         }
         return new File(Gcc_Command.getExecutableFile(myFile).getAbsolutePath()).exists();
       } catch (ExecutionException e) {
-        if (log.isErrorEnabled()) {
-          log.error("", e);
+        if (log_2698960852101319553.isErrorEnabled()) {
+          log_2698960852101319553.error("", e);
         }
         return false;
       }

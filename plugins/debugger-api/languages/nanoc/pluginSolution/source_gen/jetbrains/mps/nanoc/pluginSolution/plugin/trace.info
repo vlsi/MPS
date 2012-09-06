@@ -2,7 +2,7 @@
 <debugInfo>
   <unitInfo fileName="BeforeTasksInitializer_CustomProjectPlugin.java" startLine="15" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.BeforeTasksInitializer_CustomProjectPlugin" />
   <unitInfo fileName="RunConfigurationsInitializer_CustomApplicationPlugin.java" startLine="14" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.RunConfigurationsInitializer_CustomApplicationPlugin" />
-  <root nodeId="5487985028841967290">
+  <root nodeId="5487985028841967290" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="15" startPosition="90" endLine="16" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComponent" />
     <nodeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="16" startPosition="45" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="icon" />
     <nodeInfo nodeId="5487985028841967291" fileName="ProgramsLocationComponent_GDBLocation_PreferencesPage.java" startLine="19" startPosition="123" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
@@ -142,7 +142,7 @@
     <unitInfo nodeId="5487985028841967290" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="18" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_PreferencesComponent" />
     <unitInfo nodeId="5487985028841967290" fileName="ProgramsLocationComponent_PreferencesComponent.java" startLine="59" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.ProgramsLocationComponent_PreferencesComponent$MyState" />
   </root>
-  <root nodeId="5487985028841967374">
+  <root nodeId="5487985028841967374" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="24" startPosition="92" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="26" startPosition="0" endLine="27" endPosition="398" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCreators" />
     <nodeInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="32" startPosition="24" endLine="33" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -215,7 +215,7 @@
     <unitInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="42" startPosition="65" endLine="54" endPosition="7" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.DebugInfoProvider_CustomApplicationPlugin$1" />
     <unitInfo nodeId="5487985028841967374" fileName="DebugInfoProvider_CustomApplicationPlugin.java" startLine="69" startPosition="96" endLine="73" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.DebugInfoProvider_CustomApplicationPlugin$2" />
   </root>
-  <root nodeId="5487985028841967385">
+  <root nodeId="5487985028841967385" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967386" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="10" startPosition="97" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDebugger" />
     <nodeInfo nodeId="5487985028841967391" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="16" startPosition="24" endLine="17" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967397" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="18" startPosition="28" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -246,7 +246,7 @@
     <scopeInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="15" startPosition="0" endLine="24" endPosition="0" />
     <unitInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.CppDebuggerInitializer_CustomApplicationPlugin" />
   </root>
-  <root nodeId="5487985028841967424">
+  <root nodeId="5487985028841967424" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967425" fileName="ExecutableFile_Kind.java" startLine="17" startPosition="63" endLine="18" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841967424" fileName="ExecutableFile_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
     <nodeInfo nodeId="5487985028841967424" fileName="ExecutableFile_Kind.java" startLine="25" startPosition="61" endLine="26" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -289,7 +289,7 @@
     <scopeInfo nodeId="5487985028841967424" fileName="ExecutableFile_Kind.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
     <unitInfo nodeId="5487985028841967424" fileName="ExecutableFile_Kind.java" startLine="17" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.ExecutableFile_Kind" />
   </root>
-  <root nodeId="5487985028841967426">
+  <root nodeId="5487985028841967426" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Factory.java" startLine="10" startPosition="68" endLine="11" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Factory.java" startLine="14" startPosition="72" endLine="15" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967439" fileName="NanoCFile_Configuration_Editor.java" startLine="14" startPosition="95" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
@@ -383,12 +383,9 @@
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Factory.java" startLine="19" startPosition="27" endLine="20" endPosition="24" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="22" startPosition="31" endLine="23" endPosition="29" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="34" startPosition="104" endLine="35" endPosition="50" />
-    <scopeInfo nodeId="5487985028841967472" fileName="NanoCFile_Configuration_Editor.java" startLine="34" startPosition="104" endLine="35" endPosition="50" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="38" startPosition="76" endLine="39" endPosition="52" />
-    <scopeInfo nodeId="5487985028841967463" fileName="NanoCFile_Configuration_Editor.java" startLine="38" startPosition="76" endLine="39" endPosition="52" />
     <scopeInfo nodeId="5487985028841967433" fileName="NanoCFile_Configuration.java" startLine="40" startPosition="39" endLine="41" endPosition="18" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="45" startPosition="105" endLine="46" endPosition="34" />
-    <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="49" startPosition="73" endLine="50" endPosition="40" />
     <scopeInfo nodeId="5487985028841967482" fileName="NanoCFile_Configuration.java" startLine="49" startPosition="73" endLine="50" endPosition="40" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="65" startPosition="26" endLine="66" endPosition="81" />
     <scopeInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration.java" startLine="71" startPosition="33" endLine="72" endPosition="42" />
@@ -488,7 +485,7 @@
     <unitInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Editor.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.NanoCFile_Configuration_Editor" />
     <unitInfo nodeId="5487985028841967426" fileName="NanoCFile_Configuration_Factory.java" startLine="9" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.NanoCFile_Configuration_Factory" />
   </root>
-  <root nodeId="5487985028841967489">
+  <root nodeId="5487985028841967489" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967489" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="42" startPosition="169" endLine="43" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967489" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="43" startPosition="39" endLine="44" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967489" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="47" startPosition="68" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -587,21 +584,21 @@
     <unitInfo nodeId="5487985028841967490" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="86" startPosition="15" endLine="101" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.NanoCFile_Configuration_RunProfileState$3" />
     <unitInfo nodeId="5487985028841967498" fileName="NanoCFile_Configuration_RunProfileState.java" startLine="90" startPosition="49" endLine="94" endPosition="9" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.NanoCFile_Configuration_RunProfileState$4" />
   </root>
-  <root nodeId="5487985028841967572">
+  <root nodeId="5487985028841967572" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="20" startPosition="135" endLine="21" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KEY" />
-    <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="21" startPosition="176" endLine="22" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="21" startPosition="176" endLine="22" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log_2698960852101319553" />
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="24" startPosition="38" endLine="25" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="28" startPosition="90" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="32" startPosition="83" endLine="33" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="36" startPosition="112" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="42" startPosition="42" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="43" startPosition="20" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967595" fileName="CompileWithGcc_BeforeTask.java" startLine="53" startPosition="41" endLine="54" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841967605" fileName="CompileWithGcc_BeforeTask.java" startLine="57" startPosition="40" endLine="58" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967595" fileName="CompileWithGcc_BeforeTask.java" startLine="53" startPosition="61" endLine="54" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967605" fileName="CompileWithGcc_BeforeTask.java" startLine="57" startPosition="60" endLine="58" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967613" fileName="CompileWithGcc_BeforeTask.java" startLine="62" startPosition="11" endLine="63" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967621" fileName="CompileWithGcc_BeforeTask.java" startLine="64" startPosition="28" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967626" fileName="CompileWithGcc_BeforeTask.java" startLine="66" startPosition="9" endLine="67" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841967641" fileName="CompileWithGcc_BeforeTask.java" startLine="69" startPosition="35" endLine="70" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841967641" fileName="CompileWithGcc_BeforeTask.java" startLine="69" startPosition="55" endLine="70" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841967644" fileName="CompileWithGcc_BeforeTask.java" startLine="71" startPosition="9" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="38" startPosition="0" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompileWithGcc_BeforeTask_RunTask#()V" />
     <nodeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="23" startPosition="0" endLine="26" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CompileWithGcc_BeforeTask#()V" />
@@ -625,16 +622,14 @@
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="24" startPosition="38" endLine="25" endPosition="30" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="28" startPosition="90" endLine="29" endPosition="77" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="32" startPosition="83" endLine="33" endPosition="15" />
-    <scopeInfo nodeId="5487985028841967595" fileName="CompileWithGcc_BeforeTask.java" startLine="53" startPosition="41" endLine="54" endPosition="43" />
-    <scopeInfo nodeId="5487985028841967605" fileName="CompileWithGcc_BeforeTask.java" startLine="57" startPosition="40" endLine="58" endPosition="42" />
+    <scopeInfo nodeId="5487985028841967595" fileName="CompileWithGcc_BeforeTask.java" startLine="53" startPosition="61" endLine="54" endPosition="63" />
+    <scopeInfo nodeId="5487985028841967605" fileName="CompileWithGcc_BeforeTask.java" startLine="57" startPosition="60" endLine="58" endPosition="62" />
     <scopeInfo nodeId="5487985028841967620" fileName="CompileWithGcc_BeforeTask.java" startLine="64" startPosition="28" endLine="65" endPosition="23" />
-    <scopeInfo nodeId="5487985028841967641" fileName="CompileWithGcc_BeforeTask.java" startLine="69" startPosition="35" endLine="70" endPosition="27" />
+    <scopeInfo nodeId="5487985028841967641" fileName="CompileWithGcc_BeforeTask.java" startLine="69" startPosition="55" endLine="70" endPosition="47" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="38" startPosition="0" endLine="40" endPosition="5" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="42" startPosition="42" endLine="44" endPosition="18" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="23" startPosition="0" endLine="26" endPosition="3" />
     <scopeInfo nodeId="5487985028841967594" fileName="CompileWithGcc_BeforeTask.java" startLine="52" startPosition="56" endLine="55" endPosition="15" />
-    <scopeInfo nodeId="5487985028841967595" fileName="CompileWithGcc_BeforeTask.java" startLine="52" startPosition="56" endLine="55" endPosition="15" />
-    <scopeInfo nodeId="5487985028841967604" fileName="CompileWithGcc_BeforeTask.java" startLine="56" startPosition="20" endLine="59" endPosition="15" />
     <scopeInfo nodeId="5487985028841967605" fileName="CompileWithGcc_BeforeTask.java" startLine="56" startPosition="20" endLine="59" endPosition="15" />
     <scopeInfo nodeId="5487985028841967641" fileName="CompileWithGcc_BeforeTask.java" startLine="68" startPosition="38" endLine="71" endPosition="9" />
     <scopeInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
@@ -663,7 +658,7 @@
     <unitInfo nodeId="5487985028841967583" fileName="CompileWithGcc_BeforeTask.java" startLine="49" startPosition="104" endLine="62" endPosition="9" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.CompileWithGcc_BeforeTask$1" />
     <unitInfo nodeId="5487985028841967572" fileName="CompileWithGcc_BeforeTask.java" startLine="36" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.CompileWithGcc_BeforeTask$CompileWithGcc_BeforeTask_RunTask" />
   </root>
-  <root nodeId="5487985028841967648">
+  <root nodeId="5487985028841967648" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="20" startPosition="26" endLine="21" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGccLocation_String" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="28" startPosition="57" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5487985028841967648" fileName="Gcc_Command.java" startLine="30" startPosition="30" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -786,7 +781,7 @@
     <unitInfo nodeId="5487985028841967710" fileName="Gcc_Command.java" startLine="91" startPosition="45" endLine="97" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$2" />
     <unitInfo nodeId="5487985028841967771" fileName="Gcc_Command.java" startLine="105" startPosition="45" endLine="111" endPosition="5" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gcc_Command$3" />
   </root>
-  <root nodeId="5487985028841967924">
+  <root nodeId="5487985028841967924" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967924" fileName="Gdb_Command.java" startLine="14" startPosition="26" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGdbLocation_File" />
     <nodeInfo nodeId="5487985028841967924" fileName="Gdb_Command.java" startLine="22" startPosition="55" endLine="23" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5487985028841967924" fileName="Gdb_Command.java" startLine="24" startPosition="30" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -827,7 +822,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841967924" fileName="Gdb_Command.java" startLine="14" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Gdb_Command" />
   </root>
-  <root nodeId="5487985028841967972">
+  <root nodeId="5487985028841967972" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841967972" fileName="Exec_Command.java" startLine="12" startPosition="27" endLine="13" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWorkingDirectory_File" />
     <nodeInfo nodeId="5487985028841967972" fileName="Exec_Command.java" startLine="13" startPosition="82" endLine="14" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProgramParameters_String" />
     <nodeInfo nodeId="5487985028841967972" fileName="Exec_Command.java" startLine="21" startPosition="66" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
@@ -879,7 +874,7 @@
     </scopeInfo>
     <unitInfo nodeId="5487985028841967972" fileName="Exec_Command.java" startLine="12" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.Exec_Command" />
   </root>
-  <root nodeId="7162597690968188473">
+  <root nodeId="7162597690968188473" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690968188473" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="77" endLine="13" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
     <nodeInfo nodeId="7162597690968188473" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="27" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7162597690968188473" fileName="PluginSolution_ProjectPlugin.java" startLine="18" startPosition="87" endLine="19" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
