@@ -65,7 +65,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
   private Element myProjectElement;
   protected ProjectDescriptor myProjectDescriptor;
 
-  private final Map<ModuleReference, String> myModuleToFolder = new HashMap<ModuleReference, String>();
+  private final Map<ModuleReference, Path> myModuleToPath = new HashMap<ModuleReference, Path>();
 
   public StandaloneMPSProject(Project project) {
     super(project);
@@ -166,7 +166,7 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
       myProjectDescriptor.removeModule(descriptorFile.getPath());
     }
 
-    myModuleToFolder.remove(ref);
+    myModuleToPath.remove(ref);
   }
 
   protected void readModules() {
@@ -230,41 +230,19 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
 
   @Nullable
   public String getFolderFor(IModule module) {
-    ModuleReference moduleReference = module.getModuleReference();
-    if (myModuleToFolder.containsKey(moduleReference)) {
-      return myModuleToFolder.get(moduleReference);
+    Path path = getPathForModule(module);
+    if (path != null) {
+      return path.getMPSFolder();
     } else {
-      String folder = getFolderForModule_Internal(module);
-      myModuleToFolder.put(moduleReference, folder);
-      return folder;
+      return null;
     }
-  }
-
-  @Nullable
-  private String getFolderForModule_Internal(IModule module) {
-    IFile file = module.getDescriptorFile();
-    assert file != null;
-    String path = file.getPath();
-    for (Path sp : getAllModulePaths()) {
-      if (FileSystem.getInstance().getFileByPath(sp.getPath()).getPath().equals(path)) {
-        return sp.getMPSFolder();
-      }
-    }
-    return null;
   }
 
   public void setFolderFor(IModule module, String newFolder) {
-    IFile file = module.getDescriptorFile();
-    assert file != null;
-    String path = file.getPath();
-    for (Path sp : getAllModulePaths()) {
-      if (FileSystem.getInstance().getFileByPath(sp.getPath()).getPath().equals(path)) {
-        sp.setMPSFolder(newFolder);
-        return;
-      }
+    Path path = getPathForModule(module);
+    if (path != null) {
+      path.setMPSFolder(newFolder);
     }
-
-    myModuleToFolder.clear();
   }
 
   @Override
@@ -289,5 +267,28 @@ public class StandaloneMPSProject extends MPSProject implements PersistentStateC
         ProjectUtil.closeAndDispose(myProject);
       }
     }
+  }
+
+  private Path getPathForModule(IModule module) {
+    ModuleReference reference = module.getModuleReference();
+    if (myModuleToPath.containsKey(reference)) {
+      return myModuleToPath.get(reference);
+    } else {
+      Path result = getPathForModule_Internal(module);
+      myModuleToPath.put(reference, result);
+      return result;
+    }
+  }
+
+  private Path getPathForModule_Internal(IModule module) {
+    IFile file = module.getDescriptorFile();
+    assert file != null;
+    String path = file.getPath();
+    for (Path sp : getAllModulePaths()) {
+      if (FileSystem.getInstance().getFileByPath(sp.getPath()).getPath().equals(path)) {
+        return sp;
+      }
+    }
+    return null;
   }
 }
