@@ -292,7 +292,15 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public org.jetbrains.mps.openapi.model.SNodeId getNodeId() {
-    return getSNodeId();
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    if (myId == null && !isRegistered()) {
+      // TODO remove id generation
+      myId = SModel.generateUniqueId();
+      //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
+    }
+    return myId;
   }
 
   public String getPresentation() {
@@ -407,15 +415,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public SNodeId getSNodeId() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    if (myId == null && !isRegistered()) {
-      // TODO remove id generation
-      myId = SModel.generateUniqueId();
-      //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
-    }
-    return myId;
+    return (SNodeId) getNodeId();
   }
 
   public void setId(@Nullable SNodeId id) {
