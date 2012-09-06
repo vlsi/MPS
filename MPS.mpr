@@ -173,6 +173,7 @@
       <modulePath path="${project}/languages/languageDesign/smodel/languages/smodelTests/smodelTests.mpl" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/languages/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/smodel.mpl" folder="core.smodel" />
+      <modulePath path="${project}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.runtime/runtime.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.unittest/jetbrains.mps.lang.smodel.unittest.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/pluginSolution/pluginSolution.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/smodel/solutions/samples/smodelLanguage-samples.msd" folder="samples" />
@@ -404,7 +405,6 @@
       <modulePath path="${project}/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/jetbrains.mps.samples.theSimplestLanguage.sandbox.msd" folder="samples" />
       <modulePath path="${project}/samples/xmlLiterals/languages/xmlLiterals/xmlLiterals.mpl" folder="samples" />
       <modulePath path="${project}/samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/jetbrains.mps.samples.xmlLiterals.sandbox.msd" folder="samples" />
-      <modulePath path="${project}/solutions/jetbrains.mps.lang.smodel.runtime/runtime.msd" folder="core.smodel" />
       <modulePath path="${project}/testbench/languages/solutions/pluginSolution/pluginSolution.msd" folder="testbench" />
       <modulePath path="${project}/testbench/languages/suite.mpl" folder="testbench" />
       <modulePath path="${project}/testbench/modules/miscTests/solutions/jetbrains.mps.refactoring.tests.msd" folder="testbench" />
