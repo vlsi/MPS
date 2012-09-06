@@ -2691,11 +2691,11 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8432634623182579835" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8432634623182579836">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="null.null" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8432634623182579837">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8432634623182579838">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType%d&lt;init&gt;(int)" resolveInfo="null.null" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType%d&lt;init&gt;(int)" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8432634623182579839">
             <property name="value" nameId="tpee.1068580320021" value="2" />
           </node>
@@ -2791,7 +2791,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getType" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8432634623182579893" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8432634623182579894">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="null.null" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8432634623182579895">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8432634623182579896">
@@ -2822,11 +2822,11 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8432634623182579909" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8432634623182579910">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="null.null" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8432634623182579911">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8432634623182579912">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType%d&lt;init&gt;(int)" resolveInfo="null.null" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType%d&lt;init&gt;(int)" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8432634623182579913">
             <property name="value" nameId="tpee.1068580320021" value="1" />
           </node>
@@ -2922,7 +2922,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getType" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8432634623182579967" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8432634623182579968">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="null.null" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8432634623182579969">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8432634623182579970">
@@ -2968,11 +2968,11 @@
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8432634623182579987" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8432634623182579988">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="null.null" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
       </node>
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8432634623182579989">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8432634623182579990">
-          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType%d&lt;init&gt;(int)" resolveInfo="null.null" />
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType%d&lt;init&gt;(int)" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8432634623182579991">
             <property name="value" nameId="tpee.1068580320021" value="1" />
           </node>
@@ -3140,7 +3140,7 @@
       <property name="name" nameId="tpck.1169194664001" value="getType" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8432634623182580071" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8432634623182580072">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="null.null" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="9a8.~EditorMessageIconRenderer$IconRendererType" resolveInfo="EditorMessageIconRenderer.IconRendererType" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8432634623182580073">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8432634623182580074">
@@ -4933,8 +4933,8 @@
                                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2235828751986251004" resolveInfo="referent" />
                                         </node>
                                       </node>
-                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2235828751986251019">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dshouldHaveBeenDisposed()%cboolean" resolveInfo="shouldHaveBeenDisposed" />
+                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3381879624491375961">
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%disDisposed()%cboolean" resolveInfo="isDisposed" />
                                       </node>
                                     </node>
                                   </node>

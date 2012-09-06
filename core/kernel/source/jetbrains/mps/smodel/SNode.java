@@ -63,7 +63,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   private String[] myProperties = null;
 
-  private boolean myDisposed = false;
   private boolean myRegisteredInModelFlag;
   private SModel myModel;
   private SNodeId myId;
@@ -410,10 +409,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
-
-  public boolean shouldHaveBeenDisposed() {
-    return isDisposed() || myModel.isDisposed();
-  }
 
   public SNodeId getSNodeId() {
     return (SNodeId) getNodeId();
@@ -1154,18 +1149,8 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  void dispose() {
-    //myModel = null;
-    //myRegisteredInModelFlag = false;
-    //myChildren = null;
-    //myReferences = null;
-    //myProperties = null;
-    myDisposed = true;
-    myUserObjects = null;
-  }
-
   public boolean isDisposed() {
-    return myDisposed;
+    return myModel != null && myModel.isDisposed();
   }
 
   public boolean isDetached() {
