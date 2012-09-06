@@ -859,9 +859,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
     myDisposed = true;
     myDisposedStacktrace = new Throwable().getStackTrace();
-    for (SNode sn : myIdToNodeMap.values()) {
-      sn.dispose();
-    }
     disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
