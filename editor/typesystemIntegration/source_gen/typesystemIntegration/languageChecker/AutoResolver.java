@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.SModel;
@@ -41,17 +42,26 @@ public class AutoResolver extends EditorCheckerAdapter {
     if (!(autoresolve)) {
       SetSequence.fromSet(messages).addElement(HighlightUtil.createWarningMessage(rootNode, "Containing model has unresolved model imports. Automatic refrence resolving is switched off to avoid incorrect reference target resolving.", this));
     }
-    Set<SReference> badReferences = collectBadReferences(rootNode);
+    final Set<SReference> badReferences = collectBadReferences(rootNode);
     for (SReference ref : SetSequence.fromSet(badReferences)) {
       EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this, editorContext);
       SetSequence.fromSet(messages).addElement(message);
     }
     if (autoresolve) {
-      IOperationContext operationContext = editorContext.getOperationContext();
+      final IOperationContext operationContext = editorContext.getOperationContext();
       if (operationContext != null) {
-        TypeContextManager.getInstance().setComputeInNormalMode(true);
-        ResolverComponent.getInstance().resolveScopesOnly(badReferences, operationContext);
-        TypeContextManager.getInstance().setComputeInNormalMode(false);
+        ModelAccess.instance().runWriteInEDT(new Runnable() {
+          public void run() {
+            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+              public void run() {
+                TypeContextManager.getInstance().setComputeInNormalMode(true);
+                ResolverComponent.getInstance().resolveScopesOnly(badReferences, operationContext);
+                TypeContextManager.getInstance().setComputeInNormalMode(false);
+              }
+            }, operationContext.getProject());
+          }
+        });
+
       }
     }
     return messages;
