@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -73,7 +72,7 @@ public class TypeContextManager implements CoreComponent {
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
           if (nodePointer == null || nodePointer.getNode() == null || nodePointer.getModel() == null ||
-            nodePointer.getNode().shouldHaveBeenDisposed() || modelRef.equals(nodePointer.getModelReference())) {
+            nodePointer.getNode().isDisposed() || modelRef.equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }

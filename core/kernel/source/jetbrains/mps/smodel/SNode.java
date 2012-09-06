@@ -410,10 +410,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
-  public boolean shouldHaveBeenDisposed() {
-    return isDisposed() || myModel.isDisposed();
-  }
-
   public SNodeId getSNodeId() {
     return (SNodeId) getNodeId();
   }
