@@ -12,7 +12,9 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 
+@Deprecated
 public class SLinkOperations {
+  @Deprecated
   public SLinkOperations() {
   }
 
