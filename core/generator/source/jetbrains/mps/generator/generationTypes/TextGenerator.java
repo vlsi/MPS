@@ -140,11 +140,11 @@ public class TextGenerator {
         SNode input = out;
         input = getOriginalInputNodeForNearestParent(input);
         if (input != null && !(input.isDisposed())) {
-          TraceablePositionInfo positionInfo = result.getPositions().get(out);
+          TraceablePositionInfo positionInfo = positions.get(out);
           positionInfo.setNodeId(input.getId());
-          info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
-          info.addPosition(positionInfo, input.getTopmostAncestor().getId());
+          SNode topmostAncestor = input.getTopmostAncestor();
+          info.addPosition(positionInfo, topmostAncestor);
         }
       }
     }
@@ -153,23 +153,21 @@ public class TextGenerator {
         SNode input = out;
         input = getOriginalInputNodeForNearestParent(input);
         if (input != null && !(input.isDisposed())) {
-          ScopePositionInfo positionInfo = result.getScopePositions().get(out);
+          ScopePositionInfo positionInfo = scopePositions.get(out);
           positionInfo.setNodeId(input.getId());
-          info.setModel(input.getModel());
           positionInfo.setFileName(fileName);
           Map<SNode, VarInfo> varMap = positionInfo.getTempVarInfoMap();
           for (SNode varNode : varMap.keySet()) {
             SNode originalVar = getOriginalInputNodeForNearestParent(varNode);
             VarInfo varInfo = varMap.get(varNode);
             if (originalVar != null && !(originalVar.isDisposed())) {
-              String s = originalVar.getId();
-              varInfo.setNodeId(s);
+              varInfo.setNodeId(originalVar.getId());
             } else {
               positionInfo.removeVarInfo(varInfo);
             }
           }
           positionInfo.clearTempVarInfoMap();
-          info.addScopePosition(positionInfo, input.getTopmostAncestor().getId());
+          info.addScopePosition(positionInfo, input.getTopmostAncestor());
         }
       }
     }
@@ -177,15 +175,14 @@ public class TextGenerator {
       for (SNode out : unitPositions.keySet()) {
         SNode input = out;
         input = getOriginalInputNodeForNearestParent(input);
-        UnitPositionInfo positionInfo = result.getUnitPositions().get(out);
+        UnitPositionInfo positionInfo = unitPositions.get(out);
         positionInfo.setFileName(fileName);
-        String id = null;
+        SNode topmostAncestor = null;
         if (input != null && !(input.isDisposed())) {
           positionInfo.setNodeId(input.getId());
-          info.setModel(input.getModel());
-          id = input.getTopmostAncestor().getId();
+          topmostAncestor = input.getTopmostAncestor();
         }
-        info.addUnitPosition(positionInfo, id);
+        info.addUnitPosition(positionInfo, topmostAncestor);
       }
     }
   }
@@ -265,7 +262,8 @@ public class TextGenerator {
           debugInfoCache = TraceInfoCache.getInstance().get(status.getOriginalInputModel());
         }
         if (debugInfoCache != null) {
-          DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(rdep.getRootId());
+          SNode node = rdep.getRootId() == null ? null : new SNodePointer(status.getOriginalInputModel().getSModelReference().toString(), rdep.getRootId()).getNode();
+          DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(node);
           if (infoRoot != null && status.getDebugInfo() != null) {
             status.getDebugInfo().replaceRoot(infoRoot);
           }

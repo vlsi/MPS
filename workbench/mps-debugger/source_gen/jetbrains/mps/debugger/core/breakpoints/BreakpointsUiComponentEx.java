@@ -83,7 +83,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
       SNode node = cell.getSNode();
       if (node != null) {
         DebugInfo debugInfo = traceInfoCache.get(node.getModel().getModelDescriptor());
-        if (debugInfo != null && debugInfo.getPositionForNode(node.getId()) != null) {
+        if (debugInfo != null && debugInfo.getPositionForNode(node) != null) {
           break;
         }
       }

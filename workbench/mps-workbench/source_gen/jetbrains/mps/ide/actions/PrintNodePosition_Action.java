@@ -70,7 +70,7 @@ public class PrintNodePosition_Action extends BaseAction {
     try {
       DebugInfo result = TraceInfoCache.getInstance().get(((SModelDescriptor) MapSequence.fromMap(_params).get("model")));
       if (result != null) {
-        PositionInfo positionInfo = result.getPositionForNode(((SNode) MapSequence.fromMap(_params).get("node")).getSNodeId().toString());
+        PositionInfo positionInfo = result.getPositionForNode(((SNode) MapSequence.fromMap(_params).get("node")));
         System.out.println(positionInfo);
       }
     } catch (Throwable t) {
