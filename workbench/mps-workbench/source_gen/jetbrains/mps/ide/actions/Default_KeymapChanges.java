@@ -40,7 +40,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.actions.ModuleProperties_Action", getShortcut("alt ENTER"));
     addSimpleShortcut("jetbrains.mps.ide.actions.MoveFileOrDirectory_Action", getShortcut(" F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.PasteNode_Action", getShortcut("ctrl V"));
-    addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("alt INSERT"));
+    addSimpleShortcut("jetbrains.mps.ide.actions.QuickCreate_Action", getShortcut("alt INSERT"), getShortcut("ctrl alt INSERT"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RemoveFromFavorites_Action", getShortcut("ctrl DELETE"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RenameFileOrDirectory_Action", getShortcut("shift F6"));
     addSimpleShortcut("jetbrains.mps.ide.actions.RenameModel_Action", getShortcut("shift F6"));

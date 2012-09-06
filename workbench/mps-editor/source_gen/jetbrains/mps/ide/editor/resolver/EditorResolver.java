@@ -34,17 +34,20 @@ public class EditorResolver implements IResolver {
       return false;
     }
     final EditorResolver.FakeEditorComponent fakeEditor = new EditorResolver.FakeEditorComponent(SNodeOperations.getContainingRoot(sourceNode), operationContext);
-    EditorCell cellWithRole = fakeEditor.findNodeCellWithRole(sourceNode, reference.getRole());
-    if (cellWithRole == null) {
-      return false;
+    try {
+      EditorCell cellWithRole = fakeEditor.findNodeCellWithRole(sourceNode, reference.getRole());
+      if (cellWithRole == null) {
+        return false;
+      }
+      NodeSubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
+      final INodeSubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
+      if (applicableSubstituteAction == null) {
+        return false;
+      }
+      applicableSubstituteAction.substitute(fakeEditor.getEditorContext(), resolveInfo);
+    } finally {
+      fakeEditor.dispose();
     }
-    NodeSubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
-    final INodeSubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
-    if (applicableSubstituteAction == null) {
-      return false;
-    }
-    applicableSubstituteAction.substitute(fakeEditor.getEditorContext(), resolveInfo);
-    fakeEditor.dispose();
     return true;
   }
 

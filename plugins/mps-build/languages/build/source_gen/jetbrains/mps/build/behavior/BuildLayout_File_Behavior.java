@@ -5,6 +5,7 @@ package jetbrains.mps.build.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.util.LocalSourcePathArtifact;
 import jetbrains.mps.build.util.UnpackHelper;
 import jetbrains.mps.build.util.FileSetUtil;
 
@@ -26,6 +27,12 @@ public class BuildLayout_File_Behavior {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildSourcePath") && SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(thisNode)) {
         SNode required = SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildSourcePath");
         return eq_iewd47_a0b0b0a0d(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(required), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(thisNode, "path", true)));
+      }
+    }
+    if (artifactId instanceof LocalSourcePathArtifact) {
+      LocalSourcePathArtifact art = (LocalSourcePathArtifact) artifactId;
+      if (!(art.isFolder()) && art.getRoot() == SNodeOperations.getContainingRoot(thisNode)) {
+        return eq_iewd47_a0a0b0b0d(art.getSourcePath(), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(thisNode, "path", true)));
       }
     }
     return false;
@@ -62,6 +69,13 @@ public class BuildLayout_File_Behavior {
   }
 
   private static boolean eq_iewd47_a0b0b0a0d(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_iewd47_a0a0b0b0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

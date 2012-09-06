@@ -48,6 +48,9 @@
     <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildStandalone}/lib" />
     </copy>
+    <copy todir="${build.layout}/lib">
+      <fileset dir="${artifacts.buildDebuggerPlugin}/lib" />
+    </copy>
     <mkdir dir="${build.tmp}/default/branding.jar" />
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
