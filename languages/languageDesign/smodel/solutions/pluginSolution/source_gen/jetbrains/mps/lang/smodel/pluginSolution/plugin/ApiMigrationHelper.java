@@ -34,6 +34,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.ide.refactoring.RefactoringViewItemImpl;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -248,13 +250,17 @@ public class ApiMigrationHelper {
 
     ip.getComponent(RefactoringView.class).showRefactoringView(ip, new RefactoringViewAction() {
       public void performAction(RefactoringViewItem refactoringViewItem) {
+        final List<SNodePointer> included = ((RefactoringViewItemImpl) refactoringViewItem).getUsagesView().getIncludedResultNodes();
         refactoringViewItem.close();
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             for (int i = 0; i < ListSequence.fromList(usages).count(); i++) {
               _FunctionTypes._void_P1_E0<? super SNode> transformer = ListSequence.fromList(transformations).getElement(i)._3();
               for (SNode known : SetSequence.fromSet(ListSequence.fromList(usages).getElement(i)._0())) {
-                transformer.invoke(known);
+                SNodePointer np = new SNodePointer(known);
+                if (ListSequence.fromList(included).contains(np)) {
+                  transformer.invoke(known);
+                }
               }
             }
           }
