@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -48,7 +49,7 @@ public class LoggingGenerationUtil {
           return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) || baseName.equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"), "name"));
         }
       }).isNotEmpty()) {
-        return baseName + "_" + contextNode.getId();
+        return baseName + "_" + Integer.toString(Math.abs(INamedConcept_Behavior.call_getFqName_1213877404258(contextNode).hashCode()));
       }
     }
 
