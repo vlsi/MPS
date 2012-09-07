@@ -146,7 +146,7 @@ public final class CopyUtil {
 
     for (SNode child : fromNode.getChildren(true)) {
       if (AttributeOperations.isAttribute(child)) {
-        String role = child.getRole_();
+        String role = child.getRole();
         assert role != null;
         toNode.addChild(role, CopyUtil.copy(child, mapping, true));
       }
@@ -162,7 +162,7 @@ public final class CopyUtil {
     result.putProperties(node);
     result.putUserObjects(node);
     for (SNode child : node.getChildren(copyAttributes)) {
-      String role = child.getRole_();
+      String role = child.getRole();
       assert role != null;
       result.addChild(role, clone(child, mapping, copyAttributes));
     }

@@ -104,7 +104,7 @@ public class NodeExplorerComponent {
 
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {
-        add(new MySNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
+        add(new MySNodeTreeNode(childNode, childNode.getRole(), getOperationContext()));
       }
       add(new MyPropertiesNode(getSNode(), getOperationContext()));
       add(new MyReferentsNode(getSNode(), getOperationContext()));

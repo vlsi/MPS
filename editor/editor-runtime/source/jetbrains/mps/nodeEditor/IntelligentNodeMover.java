@@ -76,7 +76,7 @@ class IntelligentNodeMover {
     if (current.getParent() == null) return;
 
     final SNode parent = current.getParent();
-    final String role = current.getRole_();
+    final String role = current.getRole();
     assert parent != null && role != null;
 
     final SNode acd = parent.getConceptDeclarationNode();
@@ -195,7 +195,7 @@ class IntelligentNodeMover {
   }
 
   private boolean isBoundary(SNode node) {
-    String role = node.getRole_();
+    String role = node.getRole();
     assert role != null;
     List<SNode> siblings = node.getParent().getChildren(role);
     int index = siblings.indexOf(node);

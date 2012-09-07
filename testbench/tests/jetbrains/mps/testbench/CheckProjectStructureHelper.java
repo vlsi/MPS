@@ -303,7 +303,7 @@ public class CheckProjectStructureHelper {
       for (SNode child : node.getChildren()) {
         SNode decl = child.getRoleLink();
         if (decl == null) {
-          result.add("unknown child role: `" + child.getRole_() + "' in node " + node.getDebugText());
+          result.add("unknown child role: `" + child.getRole() + "' in node " + node.getDebugText());
         }
       }
     }

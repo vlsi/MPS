@@ -505,7 +505,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
-    SNode link = node.getParent().getLinkDeclaration(node.getRole_());
+    SNode link = node.getParent().getLinkDeclaration(node.getRole());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
     String concreteConceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept), editorContext.getScope());
     if (node.getConceptFqName().equals(concreteConceptFqName)) {

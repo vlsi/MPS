@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -64,11 +63,11 @@ public class NodePaster {
   }
 
   public void paste(SNode pasteTarget, PasteEnv pasteEnv) {
-    paste(pasteTarget, pasteTarget.getRole_(), pasteEnv);
+    paste(pasteTarget, pasteTarget.getRole(), pasteEnv);
   }
 
   private void paste(SNode pasteTarget, String role, PasteEnv pasteEnv) {
-    String role_ = role != null ? role : pasteTarget.getRole_();
+    String role_ = role != null ? role : pasteTarget.getRole();
     int status = canPaste(pasteTarget, role_, pasteEnv);
 
     if (status == PASTE_TO_TARGET) {
@@ -106,14 +105,14 @@ public class NodePaster {
   }
 
   public boolean canPasteRelative(SNode anchorNode) {
-    return canPasteToParent(anchorNode, anchorNode.getRole_());
+    return canPasteToParent(anchorNode, anchorNode.getRole());
   }
 
   public void pasteRelative(SNode anchorNode, PastePlaceHint placeHint) {
     if (anchorNode.getParent() == null) {
       pasteAsRoots(anchorNode.getModel());
     } else {
-      pasteToParent(anchorNode, anchorNode.getRole_(), placeHint);
+      pasteToParent(anchorNode, anchorNode.getRole(), placeHint);
     }
   }
 
@@ -122,7 +121,7 @@ public class NodePaster {
       return PASTE_N_A;
     }
 
-    String role_ = role != null ? role : pasteTarget.getRole_();
+    String role_ = role != null ? role : pasteTarget.getRole();
 
     boolean canPasteAsRoot = (pasteTarget.getParent() == null) && canPasteAsRoots(); // root selected and ..
     boolean canPasteToTarget = canPasteToTarget(pasteTarget, role_, true);
@@ -232,7 +231,7 @@ public class NodePaster {
         return new NodeAndRole(anchorNode, role);
       }
       anchorNode = container;
-      role = anchorNode.getRole_();
+      role = anchorNode.getRole();
     }
     return null;
   }
@@ -285,7 +284,7 @@ public class NodePaster {
 
     if (role == null) {
       SNode pasteTarget = targetCell.getSNode();
-      role = pasteTarget.getRole_();
+      role = pasteTarget.getRole();
     }
     return role;
   }

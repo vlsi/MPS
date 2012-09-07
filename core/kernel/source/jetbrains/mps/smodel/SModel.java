@@ -648,7 +648,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
         for (SNode child : node.getChildrenIterable()) {
           SNode decl = child.getRoleLink();
           if (decl == null) {
-            LOG.error("undeclared child role: '" + child.getRole_() + "' in node " + node.getDebugText());
+            LOG.error("undeclared child role: '" + child.getRole() + "' in node " + node.getDebugText());
           } else {
             result.add(decl.getModel().getSModelReference());
           }

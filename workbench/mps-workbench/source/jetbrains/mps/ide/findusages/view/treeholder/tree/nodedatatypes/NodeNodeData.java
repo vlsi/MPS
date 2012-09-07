@@ -133,7 +133,7 @@ public class NodeNodeData extends BaseNodeData {
         if (node.getParent() == null) return "";
         return "role: " +
           "<i>" +
-          StringEscapeUtils.escapeHtml(node.getRole_()) +
+          StringEscapeUtils.escapeHtml(node.getRole()) +
           "</i>" +
           "; " +
           "in: " +

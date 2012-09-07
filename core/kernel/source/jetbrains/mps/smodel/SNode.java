@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import org.apache.commons.lang.ObjectUtils;
-import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -178,7 +177,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = firstChild; child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRole_())) {
+      if (role.equals(child.getRole())) {
         result.add(child);
         child.fireNodeReadAccess();
         NodeReadEventsCaster.fireNodeChildReadAccess(this, role, child);
@@ -598,7 +597,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     StringBuilder sb = new StringBuilder();
     SNode current = child;
     while (current != this && current != null) {
-      String role = current.getRole_();
+      String role = current.getRole();
       SNode currentParent = current.getParent();
       List<SNode> children = currentParent == null || role == null ? new ArrayList<SNode>() : currentParent.getChildren(role);
       String numberString = children.size() <= 1 ? "" : "#" + children.indexOf(current);
@@ -920,7 +919,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     SNode foundChild = null;
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRole_())) {
+      if (role.equals(child.getRole())) {
         foundChild = child;
         count++;
       } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
@@ -962,7 +961,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
     boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRole_())) {
+      if (role.equals(child.getRole())) {
         count++;
       } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
         count++;
@@ -976,13 +975,13 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
-    String role_ = child_.getRole_();
+    String role_ = child_.getRole();
     if (role_ == null) return -1;
     int count = 0;
 
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (child == child_) return count;
-      if (role_.equals(child.getRole_())) {
+      if (role_.equals(child.getRole())) {
         count++;
       }
     }
@@ -1059,7 +1058,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public SNode getNextChild(SNode child) {
-    String childRole = child.getRole_();
+    String childRole = child.getRole();
     assert childRole != null : "role must be not null";
     List<SNode> children = getChildren(childRole);
     int index = children.indexOf(child);
@@ -1068,7 +1067,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public SNode getPrevChild(SNode child) {
-    String childRole = child.getRole_();
+    String childRole = child.getRole();
     assert childRole != null : "role must be not null";
     List<SNode> children = getChildren(childRole);
     int index = children.indexOf(child);
@@ -1401,7 +1400,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public String getDebugText() {
     String roleText = "";
     if (isRegistered()) {
-      String s = getRole_();
+      String s = getRole();
       roleText = s == null ? "[root]" : "[" + s + "]";
     }
     String nameText;
@@ -1549,7 +1548,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     if (node.getParent() == this) {
-      String role = node.getRole_();
+      String role = node.getRole();
       assert role != null;
       return role;
     }
@@ -1573,7 +1572,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeUnclassifiedReadAccess();
 
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      String roleOf = child.getRole_();
+      String roleOf = child.getRole();
       assert roleOf != null;
       if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
         augend.add(roleOf);
@@ -1647,7 +1646,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public void replaceChild(SNode oldChild, SNode newChild) {
     SNodeBase anchor = oldChild == firstChild() ? null : oldChild.treePrevious();
-    String role = oldChild.getRole_();
+    String role = oldChild.getRole();
     assert role != null;
     // old and new child can have the same node Id
     // thus it is important to remove old child first
@@ -1657,7 +1656,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public void replaceChild(SNode oldChild, List<SNode> newChildren) {
     assert oldChild.treeParent() == this;
-    String oldChildRole = oldChild.getRole_();
+    String oldChildRole = oldChild.getRole();
     assert oldChildRole != null;
     SNode prevChild = oldChild;
     for (SNode newChild : newChildren) {
@@ -1680,14 +1679,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
   }
 
-  public String getRole_() {
-    return myRoleInParent;
-  }
-
   public SNode getRoleLink() {
-    if (getRole_() == null) return null;
+    if (getRole() == null) return null;
     if (getParent() == null) return null;
-    return getParent().getLinkDeclaration(getRole_());
+    return getParent().getLinkDeclaration(getRole());
   }
 
   public Map<String, String> getProperties() {
@@ -1727,6 +1722,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //NO USAGES IN JAVA CODE - LEFT FOR COMPATIBILITY (till 3.0)
   //----------------------------------------------------------
 
+  public String getRole_() {
+    return getRole();
+  }
+
   public void addNextSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
     getParent().insertChild(getRole(), newSibling, this);
   }
@@ -1755,5 +1754,4 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public void setBooleanProperty(String propertyName, boolean value) {
     setProperty(propertyName, value ? "" + value : null);
   }
-
 }

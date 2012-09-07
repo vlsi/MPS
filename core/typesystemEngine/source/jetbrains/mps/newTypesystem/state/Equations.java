@@ -19,8 +19,6 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
-import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
 import jetbrains.mps.smodel.CopyUtil;
@@ -175,7 +173,7 @@ public class Equations {
     for (SNode child : node.getChildren()) {
       SNode newChild = expandNode(child, variablesMet, finalExpansion, copy);
       if (finalExpansion && TypesUtil.isVariable(newChild)) {
-        newChild = convertReferentVariable(node, child.getRole_(), child);
+        newChild = convertReferentVariable(node, child.getRole(), child);
       }
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
