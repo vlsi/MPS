@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior;
 import jetbrains.mps.build.util.JavaExportUtil;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
@@ -63,9 +64,13 @@ public class BuildMps_Module_Behavior {
         }
       })) {
         if ((SLinkOperations.getTarget(dep, "customLocation", true) != null)) {
-          artifact = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(dep, "customLocation", true), artifacts);
-          if (artifact != null) {
-            builder.add(artifact);
+          Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(dep, "customLocation", true), artifacts);
+          if (dependencyTarget != null) {
+            if ((boolean) dependencyTarget._1()) {
+              builder.addWithContent(dependencyTarget._0());
+            } else {
+              builder.add(dependencyTarget._0());
+            }
             needsFetch = true;
           }
         } else {
@@ -86,9 +91,13 @@ public class BuildMps_Module_Behavior {
 
         SNode jarRuntime = SNodeOperations.cast(runtime, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime");
         if ((SLinkOperations.getTarget(jarRuntime, "customLocation", true) != null)) {
-          SNode artifact = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(jarRuntime, "customLocation", true), artifacts);
-          if (artifact != null) {
-            builder.add(artifact);
+          Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(jarRuntime, "customLocation", true), artifacts);
+          if (dependencyTarget != null) {
+            if ((boolean) dependencyTarget._1()) {
+              builder.addWithContent(dependencyTarget._0());
+            } else {
+              builder.add(dependencyTarget._0());
+            }
             needsFetch = true;
           }
         } else {
@@ -102,9 +111,14 @@ public class BuildMps_Module_Behavior {
     }
 
     for (SNode path : ListSequence.fromList(requiredJars)) {
-      SNode artifact = SNodeOperations.as(artifacts.findArtifact(path), "jetbrains.mps.build.structure.BuildLayout_Node");
+      Tuples._2<SNode, String> resource = artifacts.getResource(path);
+      SNode artifact = SNodeOperations.as(resource._0(), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (artifact != null) {
-        builder.add(artifact);
+        if (isNotEmpty_va39l0_a0a0c0i0c(resource._1())) {
+          builder.addWithContent(artifact);
+        } else {
+          builder.add(artifact);
+        }
         needsFetch = true;
         if (SNodeOperations.isInstanceOf(artifact, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy")) {
           SNode file = SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(artifact, "jetbrains.mps.build.structure.BuildLayout_AbstractCopy"), "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
@@ -145,5 +159,9 @@ public class BuildMps_Module_Behavior {
 
   public static boolean callSuper_isCompilable_7454762407073969360(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.mps.structure.BuildMps_Module"), callerConceptFqName, "virtual_isCompilable_7454762407073969360", PARAMETERS_7454762407073969360, new Object[]{});
+  }
+
+  public static boolean isNotEmpty_va39l0_a0a0c0i0c(String str) {
+    return str != null && str.length() > 0;
   }
 }

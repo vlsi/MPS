@@ -9,6 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.build.behavior.BuildString_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.build.behavior.BuildLayout_Jar_Behavior;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -21,13 +22,13 @@ public class check_BuildLayout_Jar_NonTypesystemRule extends AbstractNonTypesyst
 
   public void applyRule(final SNode jarArchive, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String approxName = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(jarArchive, "containerName", true), null);
-    if (!(approxName.endsWith("}")) && !(approxName.toLowerCase().endsWith(".jar"))) {
+    if (!(approxName.endsWith("}")) && !(approxName.toLowerCase().endsWith(BuildLayout_Jar_Behavior.call_getExpectedExtension_6967233722066020217(jarArchive)))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(jarArchive, "containerName", true), "should end with `.zip'", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "1979010778009333641", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(SLinkOperations.getTarget(jarArchive, "containerName", true), "should end with `" + BuildLayout_Jar_Behavior.call_getExpectedExtension_6967233722066020217(jarArchive) + "'", "r:2349e4dd-6518-4a4c-9022-c7887bed8b52(jetbrains.mps.build.typesystem)", "1979010778009333641", null, errorTarget);
         {
           BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.build.typesystem.fixContainerName_QuickFix", false);
-          intentionProvider.putArgument("newExtension", ".jar");
+          intentionProvider.putArgument("newExtension", BuildLayout_Jar_Behavior.call_getExpectedExtension_6967233722066020217(jarArchive));
           _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
@@ -46,6 +47,6 @@ public class check_BuildLayout_Jar_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

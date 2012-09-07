@@ -9,12 +9,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
+import jetbrains.mps.smodel.language.ConceptRegistry;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BuildLayout_Jar_Behavior {
+  private static Class[] PARAMETERS_6967233722066020217 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -64,6 +69,19 @@ public class BuildLayout_Jar_Behavior {
 
   public static boolean virtual_hasFileModeAttribute_6408167411310575237(SNode thisNode) {
     return true;
+  }
+
+  public static String virtual_getExpectedExtension_6967233722066020217(SNode thisNode) {
+    return ".jar";
+  }
+
+  public static String call_getExpectedExtension_6967233722066020217(SNode thisNode) {
+    BehaviorDescriptor descriptor = ConceptRegistry.getInstance().getBehaviorDescriptorForInstanceNode(thisNode);
+    return (String) descriptor.invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Jar"), "virtual_getExpectedExtension_6967233722066020217", PARAMETERS_6967233722066020217, new Object[]{});
+  }
+
+  public static String callSuper_getExpectedExtension_6967233722066020217(SNode thisNode, String callerConceptFqName) {
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildLayout_Jar"), callerConceptFqName, "virtual_getExpectedExtension_6967233722066020217", PARAMETERS_6967233722066020217, new Object[]{});
   }
 
   public static class QuotationClass_20awhq_a0a0b0f0b {

@@ -36,6 +36,7 @@ import java.util.Map;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.util.GenerationUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerator;
@@ -208,7 +209,7 @@ public class CopyGeneratedScripts_Facet extends IFacet.Stub {
                     MapSequence.fromMap(pa.global().properties(Target_collectScriptDirectories.this.getName(), CopyGeneratedScripts_Facet.Target_collectScriptDirectories.Parameters.class).fileNameToDestination()).put(gres.model().getSModelReference(), MapSequence.fromMap(new HashMap<String, String>()));
 
                     // all descendants with scripts_dir_property 
-                    Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(gres.status().getOutputModel(), null)).where(new IWhereFilter<SNode>() {
+                    Iterable<SNode> buildScriptDescendants = ListSequence.fromList(SModelOperations.getRoots(((SModel) gres.status().getOutputModel()), null)).where(new IWhereFilter<SNode>() {
                       public boolean accept(SNode it) {
                         Object userObject = it.getUserObject(GenerationUtil.SCRIPTS_TARGET_PROPERTY);
                         return userObject != null && userObject instanceof String;

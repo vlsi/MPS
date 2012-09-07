@@ -6,10 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.behavior.BuildLayout_Node_Behavior;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 
 public class LocalArtifacts extends VisibleArtifacts {
   public LocalArtifacts(SNode project, TemplateQueryContext genContext) {
@@ -27,31 +23,5 @@ public class LocalArtifacts extends VisibleArtifacts {
       }
     }
     return null;
-  }
-
-  public Tuples._2<SNode, String> getLocalResource(SNode path) {
-    SNode result = findArtifact(path);
-    if (result != null) {
-      return MultiTuple.<SNode,String>from(result, "");
-    }
-
-    StringBuilder suffix = new StringBuilder();
-    SNode current = SNodeOperations.as(path, "jetbrains.mps.build.structure.BuildRelativePath");
-    if (current != null) {
-      suffix.append("/").append(BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(path, null));
-      current = SNodeOperations.as(BuildSourcePath_Behavior.call_getParent_8654221991637145399(current), "jetbrains.mps.build.structure.BuildRelativePath");
-    }
-    SNode containingRoot = SNodeOperations.getContainingRoot(path);
-    while (current != null) {
-      result = findArtifact(new LocalSourcePathArtifact(containingRoot, BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(current), true));
-      if (result != null) {
-        return MultiTuple.<SNode,String>from(result, suffix.toString());
-      }
-
-      suffix.insert(0, BuildSourcePath_Behavior.call_getLastSegment_1368030936106771141(current, null)).insert(0, "/");
-      current = SNodeOperations.as(BuildSourcePath_Behavior.call_getParent_8654221991637145399(current), "jetbrains.mps.build.structure.BuildRelativePath");
-    }
-
-    return MultiTuple.<SNode,String>from((SNode) null, (String) null);
   }
 }

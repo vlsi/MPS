@@ -48,9 +48,10 @@ import java.awt.Color;
 import java.util.*;
 
 public class PlainTabsComponent extends BaseTabsComponent {
-  private List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
-  private AsJBTabs myJbTabs;
+  private final List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
+  private final AsJBTabs myJbTabs;
   private RelationDescriptor myLastEmptyTab = null;
+  private volatile boolean myDisposed = false;
 
   private final Disposable myJbTabsDisposable = new Disposable() {
     public void dispose() {
@@ -76,6 +77,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     myJbTabs.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
+        if(myDisposed) return;
+
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             onTabIndexChange();
@@ -86,6 +89,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   private synchronized void onTabIndexChange() {
+    if (myDisposed) return;
+
     int index = myJbTabs.getSelectedIndex();
     PlainEditorTab tab = myRealTabs.get(index);
     SNodePointer np = tab.getNode();
@@ -101,11 +106,15 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   public synchronized RelationDescriptor getCurrentTabAspect() {
+    if (myDisposed) return null;
+
     if (myLastEmptyTab != null) return myLastEmptyTab;
     return myRealTabs.get(myJbTabs.getSelectedIndex()).getTab();
   }
 
   public void setLastNode(SNodePointer node) {
+    if (myDisposed) return;
+
     //not to make infinite recursion when tab is clicked
     if (ObjectUtils.equals(node, getLastNode())) return;
 
@@ -113,12 +122,16 @@ public class PlainTabsComponent extends BaseTabsComponent {
     selectNodeTab();
   }
 
-  public void dispose() {
+  //this is synchronized because we change myJbTabs here (while disposing)
+  public synchronized void dispose() {
+    myDisposed = true;
     Disposer.dispose(myJbTabsDisposable);
     super.dispose();
   }
 
   protected synchronized void updateTabColors() {
+    if (myDisposed) return;
+
     for (int i = 0; i < myRealTabs.size(); i++) {
       SNodePointer nodePtr = myRealTabs.get(i).getNode();
       TabColorProvider colorProvider = getColorProvider();
@@ -135,6 +148,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   protected synchronized void updateTabs() {
+    if (myDisposed) return;
+
     myRealTabs.clear();
     myJbTabs.removeAll();
 
@@ -162,6 +177,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   private synchronized void selectNodeTab() {
+    if (myDisposed) return;
+
     for (PlainEditorTab t : myRealTabs) {
       if (t.getNode() != null && t.getNode().equals(getLastNode())) {
         myJbTabs.setSelectedIndex(myRealTabs.indexOf(t));
@@ -177,6 +194,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   public synchronized void nextTab() {
+    if (myDisposed) return;
+
     int i = myJbTabs.getSelectedIndex();
     if (i < myJbTabs.getTabCount() - 1) {
       myJbTabs.setSelectedIndex(i + 1);
@@ -184,6 +203,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   public synchronized void prevTab() {
+    if (myDisposed) return;
+
     int i = myJbTabs.getSelectedIndex();
     if (i > 0) {
       myJbTabs.setSelectedIndex(i - 1);
@@ -191,6 +212,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   protected boolean isTabUpdateNeeded(SNodePointer node) {
+    if (myDisposed) return false;
+
     if (!isOwn(node)) return false;
 
     onNodeChange(myBaseNode.getNode());
@@ -198,6 +221,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   private synchronized boolean isOwn(SNodePointer node) {
+    if (myDisposed) return false;
+
     for (PlainEditorTab tab : myRealTabs) {
       if (ObjectUtils.equals(tab.getNode(), node)) return true;
     }

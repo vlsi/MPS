@@ -51,6 +51,7 @@
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="1979010778009333627">
       <property name="name" nameId="tpck.1169194664001" value="check_BuildLayout_Jar" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
+      <property name="overrides" nameId="tpd4.1195213689297" value="true" />
     </node>
     <node type="tpd4.NonTypesystemRule" typeId="tpd4.1195214364922" id="4915877860351621513">
       <property name="name" nameId="tpck.1169194664001" value="check_BuildProject" />
@@ -1051,13 +1052,33 @@
               <link role="quickFix" roleId="tpd4.1216388525179" targetNodeId="1979010778009329265" resolveInfo="fixContainerName" />
               <node role="actualArgument" roleId="tpd4.1210784493590" type="tpd4.TypesystemIntentionArgument" typeId="tpd4.1210784384552" id="1979010778009333643">
                 <link role="quickFixArgument" roleId="tpd4.1216386999476" targetNodeId="1979010778009329268" resolveInfo="newExtension" />
-                <node role="value" roleId="tpd4.1210784642750" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1979010778009333644">
-                  <property name="value" nameId="tpee.1070475926801" value=".jar" />
+                <node role="value" roleId="tpd4.1210784642750" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6967233722066053654">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6967233722066053633">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1979010778009333629" resolveInfo="jarArchive" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6967233722066053660">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.6967233722066020217" resolveInfo="getExpectedExtension" />
+                  </node>
                 </node>
               </node>
             </node>
-            <node role="warningText" roleId="tpd4.1207055552304" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1979010778009333645">
-              <property name="value" nameId="tpee.1070475926801" value="should end with `.zip'" />
+            <node role="warningText" roleId="tpd4.1207055552304" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6967233722066053628">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="6967233722066053588">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1979010778009333645">
+                  <property name="value" nameId="tpee.1070475926801" value="should end with `" />
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6967233722066053612">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6967233722066053591">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1979010778009333629" resolveInfo="jarArchive" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6967233722066053617">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.6967233722066020217" resolveInfo="getExpectedExtension" />
+                  </node>
+                </node>
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6967233722066053631">
+                <property name="value" nameId="tpee.1070475926801" value="'" />
+              </node>
             </node>
             <node role="nodeToReport" roleId="tpd4.1227096802790" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1979010778009333646">
               <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1979010778009333663">
@@ -1082,8 +1103,13 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1979010778009333655">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dendsWith(java%dlang%dString)%cboolean" resolveInfo="endsWith" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1979010778009333656">
-                  <property name="value" nameId="tpee.1070475926801" value=".jar" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6967233722066053705">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="6967233722066053684">
+                    <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1979010778009333629" resolveInfo="jarArchive" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="6967233722066053710">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vbkb.6967233722066020217" resolveInfo="getExpectedExtension" />
+                  </node>
                 </node>
               </node>
             </node>
