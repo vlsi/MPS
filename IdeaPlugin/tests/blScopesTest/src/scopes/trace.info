@@ -7,6 +7,18 @@
     <scopeInfo nodeId="8067825124534941919" fileName="InterfaceWithHashCode.java" startLine="7" startPosition="24" endLine="8" endPosition="28" />
     <unitInfo nodeId="2504587702126708200" fileName="InterfaceWithHashCode.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="scopes.InterfaceWithHashCode" />
   </root>
+  <root nodeId="2504587702126708206">
+    <nodeInfo nodeId="2504587702126708223" fileName="ComparableTest.java" startLine="10" startPosition="45" endLine="11" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2504587702126708208" fileName="ComparableTest.java" startLine="6" startPosition="67" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ComparableTest#()V" />
+    <nodeInfo nodeId="2504587702126708217" fileName="ComparableTest.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Lscopes/ComparableTest;)I" />
+    <scopeInfo nodeId="2504587702126708211" fileName="ComparableTest.java" startLine="7" startPosition="27" endLine="7" endPosition="27" />
+    <scopeInfo nodeId="2504587702126708222" fileName="ComparableTest.java" startLine="10" startPosition="45" endLine="11" endPosition="13" />
+    <scopeInfo nodeId="2504587702126708208" fileName="ComparableTest.java" startLine="6" startPosition="67" endLine="8" endPosition="3" />
+    <scopeInfo nodeId="2504587702126708217" fileName="ComparableTest.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="2504587702126708220" varName="test" />
+    </scopeInfo>
+    <unitInfo nodeId="2504587702126708206" fileName="ComparableTest.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="scopes.ComparableTest" />
+  </root>
   <root nodeId="2649472120078565353">
     <nodeInfo nodeId="2649472120078565355" fileName="HashCodeFromInterface.java" startLine="6" startPosition="78" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HashCodeFromInterface#()V" />
     <scopeInfo nodeId="2649472120078565358" fileName="HashCodeFromInterface.java" startLine="7" startPosition="34" endLine="7" endPosition="34" />
