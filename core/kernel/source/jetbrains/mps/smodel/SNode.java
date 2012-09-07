@@ -477,22 +477,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public boolean isDescendantOf(SNode node, boolean includeThis) {
-    SNode current;
-    if (includeThis) {
-      current = this;
-    } else {
-      current = getParent();
-    }
-    while (current != null) {
-      if (current == node) {
-        return true;
-      }
-      current = current.getParent();
-    }
-    return false;
-  }
-
   public Language getNodeLanguage() {
     SNode concept = getConceptDeclarationNode();
     return SModelUtil.getDeclaringLanguage(concept);
@@ -564,48 +548,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return null;
   }
 
-  public SNode findChildByPath(String path) {
-    if (path == null) return null;
-    String residual = path;
-    SNode current = this;
-    while (!residual.equals("") && current != null) {
-      residual = residual.substring(1);
-      int index = residual.indexOf("/");
-      String roleAndNumber = index == -1 ? residual : residual.substring(0, index);
-      residual = residual.substring(roleAndNumber.length());
-
-      int numberIndex = roleAndNumber.indexOf("#");
-      String role = numberIndex == -1 ? roleAndNumber : roleAndNumber.substring(0, numberIndex);
-      String numberString = numberIndex == -1 ? "-1" : roleAndNumber.substring(numberIndex + 1);
-      int number = Integer.parseInt(numberString);
-
-      if (number == -1) {
-        current = current.getChild(role);
-      } else {
-        List<SNode> childrenForRole = current.getChildren(role);
-        if (number < childrenForRole.size()) {
-          current = childrenForRole.get(number);
-        } else {
-          current = null;
-        }
-      }
-    }
-    return current;
-  }
-
-  public String getNodePath(SNode child) {
-    StringBuilder sb = new StringBuilder();
-    SNode current = child;
-    while (current != this && current != null) {
-      String role = current.getRole();
-      SNode currentParent = current.getParent();
-      List<SNode> children = currentParent == null || role == null ? new ArrayList<SNode>() : currentParent.getChildren(role);
-      String numberString = children.size() <= 1 ? "" : "#" + children.indexOf(current);
-      sb.insert(0, "/" + role + numberString);
-      current = currentParent;
-    }
-    return sb.toString();
-  }
 
   public boolean isReferentRequired(String role) {
     SNode conceptDeclaration = getConceptDeclarationNode();
@@ -645,145 +587,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return treeNext();
   }
 
-  private class MyReferencesWrapper extends ArrayWrapper<SReference> {
-    protected SReference[] getArray() {
-      return myReferences;
-    }
-
-    protected void setArray(SReference[] newArray) {
-      myReferences = newArray;
-    }
-
-    protected SReference[] newArray(int size) {
-      return new SReference[size];
-    }
-  }
-
-  private static class ChildrenList extends AbstractImmutableList<SNode> {
-    public ChildrenList(SNode first) {
-      super(first);
-    }
-
-    public ChildrenList(SNode first, int size) {
-      super(first, size);
-    }
-
-    @Override
-    protected SNode next(SNode node) {
-      return node.nextSibling();
-    }
-
-    @Override
-    protected SNode prev(SNode node) {
-      return node.prevSibling();
-    }
-
-    @Override
-    protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
-      return new ChildrenList(elem, size);
-    }
-  }
-
-  private static class SkipAttributesChildrenList extends AbstractImmutableList<SNode> {
-    public SkipAttributesChildrenList(SNode first) {
-      super(skipAttributes(first));
-    }
-
-    public SkipAttributesChildrenList(SNode first, int size) {
-      super(skipAttributes(first), size);
-    }
-
-    private static SNode skipAttributes(SNode node) {
-      while (node != null && AttributeOperations.isAttribute(node)) {
-        node = node.nextSibling();
-      }
-      return node;
-    }
-
-    protected SNode next(SNode node) {
-      return skipAttributes(node.nextSibling());
-    }
-
-    protected SNode prev(SNode node) {
-      SNode result = myFirst == node ? null : node.prevSibling();
-      while (result != null && AttributeOperations.isAttribute(result)) {
-        result = myFirst == result ? null : result.prevSibling();
-      }
-      return result;
-    }
-
-    protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
-      return new SkipAttributesChildrenList(elem, size);
-    }
-  }
-
-  private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
-    protected Set<Pair<SNode, String>> initialValue() {
-      return new HashSet<Pair<SNode, String>>();
-    }
-  }
-
-  private static class DescendantsIterable implements TreeIterator<SNode>, Iterable<SNode> {
-    private SNode original;
-    private SNode current;
-    private Condition<SNode> condition;
-    private SNode prev;
-
-    DescendantsIterable(SNode original, SNode first, @Nullable Condition<SNode> condition) {
-      this.original = original;
-      this.current = first;
-      this.condition = condition;
-      while (current != null && condition != null && !condition.met(current)) {
-        current = nextInternal(current, false);
-      }
-    }
-
-    public boolean hasNext() {
-      return current != null;
-    }
-
-    public SNode next() {
-      SNode result = current;
-      do {
-        current = nextInternal(current, false);
-      } while (current != null && condition != null && !condition.met(current));
-      prev = result;
-      return result;
-    }
-
-    public void skipChildren() {
-      if (prev == null) throw new IllegalStateException("no element");
-      current = nextInternal(prev, true);
-      while (current != null && condition != null && !condition.met(current)) {
-        current = nextInternal(current, false);
-      }
-    }
-
-    private SNode nextInternal(SNode curr, boolean skipChildren) {
-      if (curr == null) return null;
-      if (!skipChildren) {
-        SNode firstChild = curr.firstChild();
-        if (firstChild != null) return firstChild;
-      }
-      if (curr == original) return null;
-      do {
-        if (curr.nextSibling() != null) {
-          return curr.nextSibling();
-        }
-        curr = curr.getParent();
-      } while (curr != original);
-      return null;
-    }
-
-    public void remove() {
-      throw new UnsupportedOperationException();
-    }
-
-    public Iterator<SNode> iterator() {
-      return this;
-    }
-  }
-
   private String getProperty_internal(String propertyName) {
     Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
     Pair<SNode, String> current = new Pair<SNode, String>(this, propertyName);
@@ -805,12 +608,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
     }
     return getProperty_simple(propertyName);
-  }
-
-  private String getProperty_simple(String propertyName) {
-    int index = getPropertyIndex(propertyName);
-    if (index == -1) return null;
-    return myProperties[index + 1];
   }
 
   private int getPropertyIndex(String propertyName) {
@@ -872,31 +669,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (ModelChange.needFireEvents(model, this)) {
       model.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
-  }
-
-  private void removeProperty(int index) {
-    String[] oldProperties = myProperties;
-    int newLength = oldProperties.length - 2;
-    if (newLength == 0) {
-      myProperties = null;
-      return;
-    }
-    myProperties = new String[newLength];
-    System.arraycopy(oldProperties, 0, myProperties, 0, index);
-    System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
-  }
-
-  private void addProperty(String propertyName, String propertyValue) {
-    String[] oldProperties = myProperties == null ? EMPTY_STRING_ARRAY : myProperties;
-    myProperties = new String[oldProperties.length + 2];
-    System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
-    myProperties[myProperties.length - 2] = propertyName;
-    myProperties[myProperties.length - 1] = propertyValue;
-  }
-
-  private void enforceModelLoad() {
-    if (!isRoot()) return;
-    myModel.enforceFullLoad();
   }
 
   public void setChild(String role, org.jetbrains.mps.openapi.model.SNode childNode) {
@@ -1036,20 +808,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   private void fireNodeUnclassifiedReadAccess() {
     if (!myModel.canFireEvent()) return;
     NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
-  }
-
-  public int getChildCount() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    int count = 0;
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      count++;
-    }
-    return count;
   }
 
   private void fireNodeReadAccess() {
@@ -1254,20 +1012,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return resultReference;
   }
 
-  private SReference doSetReference(String role, SNode newReferent, List<SReference> toDelete) {
-    for (SReference reference : toDelete) {
-      int index = _reference().indexOf(reference);
-      removeReferenceAt(index);
-    }
-
-    SReference resultReference = null;
-    if (newReferent != null) {
-      resultReference = SReference.create(role, this, newReferent);
-      insertReferenceAt(myReferences == null ? 0 : myReferences.length, resultReference);
-    }
-    return resultReference;
-  }
-
   public SNode getReferent(String role) {
     SReference reference = getReference(role);
     SNode result = reference == null ? null : reference.getTargetNode();
@@ -1339,17 +1083,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  private void replaceReferenceAt(int index, @NotNull SReference referenceToAdd) {
-    ModelChange.assertLegalNodeChange(this);
-
-    if (UndoHelper.getInstance().needRegisterUndo(getModel()) || ModelChange.needFireEvents(getModel(), this)) {
-      removeReferenceAt(index);
-      insertReferenceAt(index, referenceToAdd);
-    } else {
-      myReferences[index] = referenceToAdd;
-    }
-  }
-
   void removeReferenceAt(final int i) {
     ModelChange.assertLegalNodeChange(this);
     final SReference reference = myReferences[i];
@@ -1362,34 +1095,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
     if (ModelChange.needFireEvents(model, this)) {
       model.fireReferenceRemovedEvent(reference);
-    }
-  }
-
-  private void delete_internal() {
-    //delete all children
-    List<SNode> children = new ArrayList<SNode>(getChildren());
-    for (SNode child : children) {
-      child.delete_internal();
-    }
-
-    //remove all references
-    removeAllReferences();
-
-    //remove from parent
-    SNode parent = getParent();
-    if (parent != null) {
-      parent.removeChild(this);
-    } else if (getModel().isRoot(this)) {
-      getModel().removeRoot(this);
-    }
-
-    // really delete
-    UnregisteredNodes.instance().remove(this);
-  }
-
-  private void removeAllReferences() {
-    while (_reference().size() > 0) {
-      removeReferenceAt(0);
     }
   }
 
@@ -1748,6 +1453,306 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public boolean hasId() {
     return getNodeId() != null;
+  }
+
+  public int getChildCount() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    int count = 0;
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      count++;
+    }
+    return count;
+  }
+
+  public boolean isDescendantOf(SNode node, boolean includeThis) {
+    SNode current;
+    if (includeThis) {
+      current = this;
+    } else {
+      current = getParent();
+    }
+    while (current != null) {
+      if (current == node) {
+        return true;
+      }
+      current = current.getParent();
+    }
+    return false;
+  }
+
+  public SNode findChildByPath(String path) {
+    if (path == null) return null;
+    String residual = path;
+    SNode current = this;
+    while (!residual.equals("") && current != null) {
+      residual = residual.substring(1);
+      int index = residual.indexOf("/");
+      String roleAndNumber = index == -1 ? residual : residual.substring(0, index);
+      residual = residual.substring(roleAndNumber.length());
+
+      int numberIndex = roleAndNumber.indexOf("#");
+      String role = numberIndex == -1 ? roleAndNumber : roleAndNumber.substring(0, numberIndex);
+      String numberString = numberIndex == -1 ? "-1" : roleAndNumber.substring(numberIndex + 1);
+      int number = Integer.parseInt(numberString);
+
+      if (number == -1) {
+        current = current.getChild(role);
+      } else {
+        List<SNode> childrenForRole = current.getChildren(role);
+        if (number < childrenForRole.size()) {
+          current = childrenForRole.get(number);
+        } else {
+          current = null;
+        }
+      }
+    }
+    return current;
+  }
+
+  public String getNodePath(SNode child) {
+    StringBuilder sb = new StringBuilder();
+    SNode current = child;
+    while (current != this && current != null) {
+      String role = current.getRole();
+      SNode currentParent = current.getParent();
+      List<SNode> children = currentParent == null || role == null ? new ArrayList<SNode>() : currentParent.getChildren(role);
+      String numberString = children.size() <= 1 ? "" : "#" + children.indexOf(current);
+      sb.insert(0, "/" + role + numberString);
+      current = currentParent;
+    }
+    return sb.toString();
+  }
+
+  //--------private-------
+
+  private String getProperty_simple(String propertyName) {
+    int index = getPropertyIndex(propertyName);
+    if (index == -1) return null;
+    return myProperties[index + 1];
+  }
+
+  private void replaceReferenceAt(int index, @NotNull SReference referenceToAdd) {
+    ModelChange.assertLegalNodeChange(this);
+
+    if (UndoHelper.getInstance().needRegisterUndo(getModel()) || ModelChange.needFireEvents(getModel(), this)) {
+      removeReferenceAt(index);
+      insertReferenceAt(index, referenceToAdd);
+    } else {
+      myReferences[index] = referenceToAdd;
+    }
+  }
+
+  private void delete_internal() {
+    //delete all children
+    List<SNode> children = new ArrayList<SNode>(getChildren());
+    for (SNode child : children) {
+      child.delete_internal();
+    }
+
+    //remove all references
+    removeAllReferences();
+
+    //remove from parent
+    SNode parent = getParent();
+    if (parent != null) {
+      parent.removeChild(this);
+    } else if (getModel().isRoot(this)) {
+      getModel().removeRoot(this);
+    }
+
+    // really delete
+    UnregisteredNodes.instance().remove(this);
+  }
+
+  private void removeAllReferences() {
+    while (_reference().size() > 0) {
+      removeReferenceAt(0);
+    }
+  }
+
+  private SReference doSetReference(String role, SNode newReferent, List<SReference> toDelete) {
+    for (SReference reference : toDelete) {
+      int index = _reference().indexOf(reference);
+      removeReferenceAt(index);
+    }
+
+    SReference resultReference = null;
+    if (newReferent != null) {
+      resultReference = SReference.create(role, this, newReferent);
+      insertReferenceAt(myReferences == null ? 0 : myReferences.length, resultReference);
+    }
+    return resultReference;
+  }
+
+  private void removeProperty(int index) {
+    String[] oldProperties = myProperties;
+    int newLength = oldProperties.length - 2;
+    if (newLength == 0) {
+      myProperties = null;
+      return;
+    }
+    myProperties = new String[newLength];
+    System.arraycopy(oldProperties, 0, myProperties, 0, index);
+    System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
+  }
+
+  private void addProperty(String propertyName, String propertyValue) {
+    String[] oldProperties = myProperties == null ? EMPTY_STRING_ARRAY : myProperties;
+    myProperties = new String[oldProperties.length + 2];
+    System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
+    myProperties[myProperties.length - 2] = propertyName;
+    myProperties[myProperties.length - 1] = propertyValue;
+  }
+
+  private void enforceModelLoad() {
+    if (!isRoot()) return;
+    myModel.enforceFullLoad();
+  }
+
+  //--------private classes-------
+
+  private class MyReferencesWrapper extends ArrayWrapper<SReference> {
+    protected SReference[] getArray() {
+      return myReferences;
+    }
+
+    protected void setArray(SReference[] newArray) {
+      myReferences = newArray;
+    }
+
+    protected SReference[] newArray(int size) {
+      return new SReference[size];
+    }
+  }
+
+  private static class ChildrenList extends AbstractImmutableList<SNode> {
+    public ChildrenList(SNode first) {
+      super(first);
+    }
+
+    public ChildrenList(SNode first, int size) {
+      super(first, size);
+    }
+
+    @Override
+    protected SNode next(SNode node) {
+      return node.nextSibling();
+    }
+
+    @Override
+    protected SNode prev(SNode node) {
+      return node.prevSibling();
+    }
+
+    @Override
+    protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
+      return new ChildrenList(elem, size);
+    }
+  }
+
+  private static class SkipAttributesChildrenList extends AbstractImmutableList<SNode> {
+    public SkipAttributesChildrenList(SNode first) {
+      super(skipAttributes(first));
+    }
+
+    public SkipAttributesChildrenList(SNode first, int size) {
+      super(skipAttributes(first), size);
+    }
+
+    private static SNode skipAttributes(SNode node) {
+      while (node != null && AttributeOperations.isAttribute(node)) {
+        node = node.nextSibling();
+      }
+      return node;
+    }
+
+    protected SNode next(SNode node) {
+      return skipAttributes(node.nextSibling());
+    }
+
+    protected SNode prev(SNode node) {
+      SNode result = myFirst == node ? null : node.prevSibling();
+      while (result != null && AttributeOperations.isAttribute(result)) {
+        result = myFirst == result ? null : result.prevSibling();
+      }
+      return result;
+    }
+
+    protected AbstractImmutableList<SNode> subList(SNode elem, int size) {
+      return new SkipAttributesChildrenList(elem, size);
+    }
+  }
+
+  private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
+    protected Set<Pair<SNode, String>> initialValue() {
+      return new HashSet<Pair<SNode, String>>();
+    }
+  }
+
+  private static class DescendantsIterable implements TreeIterator<SNode>, Iterable<SNode> {
+    private SNode original;
+    private SNode current;
+    private Condition<SNode> condition;
+    private SNode prev;
+
+    DescendantsIterable(SNode original, SNode first, @Nullable Condition<SNode> condition) {
+      this.original = original;
+      this.current = first;
+      this.condition = condition;
+      while (current != null && condition != null && !condition.met(current)) {
+        current = nextInternal(current, false);
+      }
+    }
+
+    public boolean hasNext() {
+      return current != null;
+    }
+
+    public SNode next() {
+      SNode result = current;
+      do {
+        current = nextInternal(current, false);
+      } while (current != null && condition != null && !condition.met(current));
+      prev = result;
+      return result;
+    }
+
+    public void skipChildren() {
+      if (prev == null) throw new IllegalStateException("no element");
+      current = nextInternal(prev, true);
+      while (current != null && condition != null && !condition.met(current)) {
+        current = nextInternal(current, false);
+      }
+    }
+
+    private SNode nextInternal(SNode curr, boolean skipChildren) {
+      if (curr == null) return null;
+      if (!skipChildren) {
+        SNode firstChild = curr.firstChild();
+        if (firstChild != null) return firstChild;
+      }
+      if (curr == original) return null;
+      do {
+        if (curr.nextSibling() != null) {
+          return curr.nextSibling();
+        }
+        curr = curr.getParent();
+      } while (curr != original);
+      return null;
+    }
+
+    public void remove() {
+      throw new UnsupportedOperationException();
+    }
+
+    public Iterator<SNode> iterator() {
+      return this;
+    }
   }
 
 }
