@@ -357,7 +357,8 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
       modelDesc.reparseOneFile( doc.getCharsSequence().toString() );
 
-      System.out.println("DOC DEBUG: changed -> " + doc.getText());
+//      System.out.println("DOC DEBUG: changed -> " + doc.getText());
+      System.out.println("PARSING FILE");
     }
   }
 

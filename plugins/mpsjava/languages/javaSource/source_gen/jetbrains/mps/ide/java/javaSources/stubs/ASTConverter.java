@@ -43,6 +43,7 @@ import org.eclipse.jdt.internal.compiler.ast.ArrayInitializer;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
 import org.eclipse.jdt.internal.compiler.ast.SingleNameReference;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -118,8 +119,9 @@ public class ASTConverter {
       SPropertyOperations.set(cls, "nonStatic", "" + (false));
     }
 
+    String clsStringId = SNodeId.Foreign.ID_PREFIX + SPropertyOperations.getString(cls, "name");
     SNodeId id;
-    cls.setId(new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + SPropertyOperations.getString(cls, "name")));
+    cls.setId(new SNodeId.Foreign(clsStringId));
 
 
     // handling type params 
@@ -236,8 +238,10 @@ public class ASTConverter {
           SLinkOperations.setTarget(fDecl, "type", convertTypeRef(f.type), true);
 
           SLinkOperations.setTarget(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", convertVisibility(f.modifiers), true);
-
           SPropertyOperations.set(fDecl, "isFinal", "" + (flagSet(f.modifiers, ClassFileConstants.AccFinal)));
+
+          SNodeId nodeId = new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + SPropertyOperations.getString(cls, "name") + "." + SPropertyOperations.getString(fDecl, "name"));
+          fDecl.setId(nodeId);
 
           ListSequence.fromList(fields).addElement(fDecl);
         }
@@ -266,16 +270,16 @@ public class ASTConverter {
 
           if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
             SPropertyOperations.set(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract", "" + (true));
-            SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", new ASTConverter.QuotationClass_rbndtb_a0a1a3a1a3a53a1().createNode(), true);
+            SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", new ASTConverter.QuotationClass_rbndtb_a0a1a3a1a3a63a1().createNode(), true);
           }
 
-          methods.add(convertMethod((MethodDeclaration) method, result));
+          methods.add(convertMethod((MethodDeclaration) method, clsStringId, result));
 
         } else if (method instanceof ConstructorDeclaration) {
 
           result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-          SLinkOperations.setTarget(result, "returnType", new ASTConverter.QuotationClass_rbndtb_a0a2a0b0d0jb0b().createNode(), true);
-          ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).addElement(SNodeOperations.cast(convertMethod(method, result), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
+          SLinkOperations.setTarget(result, "returnType", new ASTConverter.QuotationClass_rbndtb_a0a2a0b0d0kb0b().createNode(), true);
+          ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).addElement(SNodeOperations.cast(convertMethod(method, clsStringId, result), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"));
         }
       }
 
@@ -344,13 +348,18 @@ public class ASTConverter {
     return node;
   }
 
-  public SNode convertMethod(@NotNull AbstractMethodDeclaration x, @NotNull SNode result) {
+  public SNode convertMethod(@NotNull AbstractMethodDeclaration x, String idPrefix, @NotNull SNode result) {
+
+    StringBuilder idBuilder = new StringBuilder(idPrefix);
 
     convertAnnotations(x.annotations, result);
 
     if (!(x instanceof ConstructorDeclaration)) {
       SPropertyOperations.set(result, "name", new String(x.selector));
     }
+    // using eclipse selector because result.name is not set for constructors 
+    idBuilder.append("." + new String(x.selector) + "(");
+
 
     {
       SNode imd = result;
@@ -371,8 +380,16 @@ public class ASTConverter {
         SPropertyOperations.set(par, "name", new String(arg.name));
         SLinkOperations.setTarget(par, "type", convertTypeRef(arg.type), true);
         ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(par);
+
+        idBuilder.append(getTypeName(SLinkOperations.getTarget(par, "type", true)));
+        idBuilder.append(",");
+      }
+      // delete the last comma 
+      if (x.arguments.length > 0) {
+        idBuilder.deleteCharAt(idBuilder.length() - 1);
       }
     }
+    idBuilder.append(")");
 
     if (x.thrownExceptions != null) {
       ListSequence.fromList(SLinkOperations.getTargets(result, "throwsItem", true)).addSequence(Sequence.fromIterable(Sequence.fromArray(x.thrownExceptions)).select(new ISelector<TypeReference, SNode>() {
@@ -386,9 +403,8 @@ public class ASTConverter {
       // TODO build method bodies 
     } else {
       // make a different stub statement list 'source code' ? 
-      SLinkOperations.setTarget(result, "body", new ASTConverter.QuotationClass_rbndtb_a0a1a0o0g().createNode(), true);
+      SLinkOperations.setTarget(result, "body", new ASTConverter.QuotationClass_rbndtb_a0a1a0u0g().createNode(), true);
     }
-
 
     {
       SNode mem = result;
@@ -409,6 +425,8 @@ public class ASTConverter {
       MethodDeclaration mDecl = (MethodDeclaration) x;
       SLinkOperations.setTarget(result, "returnType", convertTypeRef(mDecl.returnType), true);
     }
+
+    result.setId(new SNodeId.Foreign(idBuilder.toString()));
 
     myClassResolver.leaveTypeVarFrame();
 
@@ -590,8 +608,30 @@ public class ASTConverter {
     return (bitmap & flag) != 0;
   }
 
-  public static class QuotationClass_rbndtb_a0a1a3a1a3a53a1 {
-    public QuotationClass_rbndtb_a0a1a3a1a3a53a1() {
+  public String getTypeName(SNode type) {
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      // <node> 
+      // <node> 
+      return SConceptPropertyOperations.getString(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType"), "alias");
+    } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      // <node> 
+      //  we'll do assert later when parser always returns dynamic refs 
+      // <node> 
+      if (SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType").getReference("classifier") instanceof DynamicReference) {
+        DynamicReference dynRef = (DynamicReference) SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType").getReference("classifier");
+        return dynRef.getResolveInfo();
+      } else {
+        return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name");
+      }
+    } else if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      return "Tv:" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), "name");
+    } else {
+      return "unk";
+    }
+  }
+
+  public static class QuotationClass_rbndtb_a0a1a3a1a3a63a1 {
+    public QuotationClass_rbndtb_a0a1a3a1a3a63a1() {
     }
 
     public SNode createNode() {
@@ -607,8 +647,8 @@ public class ASTConverter {
     }
   }
 
-  public static class QuotationClass_rbndtb_a0a2a0b0d0jb0b {
-    public QuotationClass_rbndtb_a0a2a0b0d0jb0b() {
+  public static class QuotationClass_rbndtb_a0a2a0b0d0kb0b {
+    public QuotationClass_rbndtb_a0a2a0b0d0kb0b() {
     }
 
     public SNode createNode() {
@@ -624,8 +664,8 @@ public class ASTConverter {
     }
   }
 
-  public static class QuotationClass_rbndtb_a0a1a0o0g {
-    public QuotationClass_rbndtb_a0a1a0o0g() {
+  public static class QuotationClass_rbndtb_a0a1a0u0g {
+    public QuotationClass_rbndtb_a0a1a0u0g() {
     }
 
     public SNode createNode() {

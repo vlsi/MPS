@@ -16,10 +16,7 @@
 
 package jetbrains.mps.idea.core.project.stubs;
 
-import com.intellij.psi.PsiJavaFile;
-import com.intellij.psi.PsiTreeChangeAdapter;
-import com.intellij.psi.PsiTreeChangeEvent;
-import com.intellij.psi.PsiTreeChangeListener;
+import com.intellij.psi.*;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -53,6 +50,5 @@ public class JavaStubPsiListener extends PsiTreeChangeAdapter {
     // will do filtering of psi events
     myDelegate.childReplaced(e);
   }
-
 
 }
