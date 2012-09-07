@@ -427,7 +427,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
-        return "?" + getConceptShortName() + "?";
+        return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
       }
       return "?" + persistentName + "?";
     }
@@ -457,15 +457,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
   }
 
-  public List<SNode> getDescendants(Condition<SNode> condition) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    List<SNode> list = new ArrayList<SNode>();
-    collectDescendants(condition, list);
-    return list;
-  }
 
   private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
     // depth-first traversal
@@ -493,14 +484,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public ModuleReference getConceptLanguage() {
     return new ModuleReference(getLanguageNamespace());
-  }
-
-  @NotNull
-  public String getConceptShortName() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    return NameUtil.shortNameFromLongName(myConceptFqName);
   }
 
   @NotNull
@@ -547,7 +530,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
     return null;
   }
-
 
   public boolean isReferentRequired(String role) {
     SNode conceptDeclaration = getConceptDeclarationNode();
@@ -1126,7 +1108,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + NameUtil.shortNameFromLongName(getConceptShortName()) + " " + nameText + " in " + myModel.getSModelFqName();
+    return roleText + " " + NameUtil.shortNameFromLongName(NameUtil.shortNameFromLongName(getConceptFqName())) + " " + nameText + " in " + myModel.getSModelFqName();
   }
 
   public String getId() {
@@ -1526,6 +1508,21 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       current = currentParent;
     }
     return sb.toString();
+  }
+
+  public List<SNode> getDescendants(Condition<SNode> condition) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    List<SNode> list = new ArrayList<SNode>();
+    collectDescendants(condition, list);
+    return list;
+  }
+
+  @NotNull
+  public String getConceptShortName() {
+    return NameUtil.shortNameFromLongName(getConceptFqName());
   }
 
   //--------private-------

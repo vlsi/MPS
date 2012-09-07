@@ -259,7 +259,7 @@ public class CellExplorerView extends BaseProjectTool {
         final SNode node = myCell.getSNode();
         String name = node.getName();
         name = name != null ? name : "<no name>";
-        String text = "<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ")";
+        String text = "<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(NameUtil.shortNameFromLongName(node.getConceptFqName())) + ")";
         add(new TextTreeNode(text) {
           {
             setIcon(IconManager.getIconFor(node));

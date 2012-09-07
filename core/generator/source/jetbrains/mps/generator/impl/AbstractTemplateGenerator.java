@@ -23,6 +23,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 
 import java.util.List;
@@ -221,7 +222,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       }
       SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(link);
       String expected = linkDeclarationTarget != null ? linkDeclarationTarget.getName() : "<unknown>";
-      String was = targetNode.getConceptShortName();
+      String was = NameUtil.shortNameFromLongName(targetNode.getConceptFqName());
       return new RoleValidationStatus(sourceNode, relationKind + " '" + expected + "' is expected for role '" + role + "' but was '" + was + "'",
         GeneratorUtil.describe(targetNode, relationKind));
     }

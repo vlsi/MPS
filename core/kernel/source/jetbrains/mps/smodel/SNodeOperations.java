@@ -19,6 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +38,7 @@ public class SNodeOperations {
 
   public static boolean isUnknown(SNode sNode) {
     Language language = GlobalScope.getInstance().getLanguage(sNode.getLanguageNamespace());
-    return language == null || language.findConceptDeclaration(sNode.getConceptShortName()) == null;
+    return language == null || language.findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConceptFqName())) == null;
   }
 
   public static List<SNode> getConceptLinkTargets(final SNode node, String linkName, boolean lookupHierarchy) {
