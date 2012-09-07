@@ -13,10 +13,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 
 public class StaticFieldDeclarationScope extends Scope {
@@ -34,7 +35,19 @@ public class StaticFieldDeclarationScope extends Scope {
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(nameToField).values()));
+    if ((prefix == null || prefix.length() == 0)) {
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(nameToField).values()));
+    } else {
+      ListSequence.fromList(result).addSequence(MapSequence.fromMap(nameToField).where(new IWhereFilter<IMapping<String, SNode>>() {
+        public boolean accept(IMapping<String, SNode> it) {
+          return it.key().startsWith(prefix);
+        }
+      }).select(new ISelector<IMapping<String, SNode>, SNode>() {
+        public SNode select(IMapping<String, SNode> it) {
+          return it.value();
+        }
+      }));
+    }
 
     Map<String, List<SNode>> groups = MapSequence.fromMap(new HashMap<String, List<SNode>>());
     for (SNode field : Sequence.fromIterable(extendsScopes).translate(new ITranslator2<Scope, SNode>() {

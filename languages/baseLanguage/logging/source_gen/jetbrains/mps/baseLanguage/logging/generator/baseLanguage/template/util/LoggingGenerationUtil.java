@@ -8,6 +8,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -31,6 +38,22 @@ public class LoggingGenerationUtil {
 
   public static boolean isDesignTimeModel(SModel sm) {
     return Language.getLanguageFor(sm.getModelDescriptor()) != null;
+  }
+
+  public static String generateUniqueFieldName(SNode contextNode, final String baseName) {
+    for (SNode logStatement : ListSequence.fromList(SNodeOperations.getDescendants(contextNode, "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{}))) {
+      Scope scope = ScopeUtils.parentScope(logStatement, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IVariableDeclaration"));
+
+      if (Sequence.fromIterable(scope.getAvailableElements(baseName)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration")) || baseName.equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"), "name"));
+        }
+      }).isNotEmpty()) {
+        return baseName + "_" + Integer.toString(Math.abs(INamedConcept_Behavior.call_getFqName_1213877404258(contextNode).hashCode()));
+      }
+    }
+
+    return baseName;
   }
 
   public static class QuotationClass_gd2srw_a0a0a1a1a0 {
