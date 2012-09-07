@@ -482,7 +482,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     if (myDisposed) return;
 
     enforceFullLoad();
-    SNodeId id = node.hasId() ? node.getSNodeId() : null;
+    SNodeId id = ((SNodeId) node.getNodeId());
     SNode existingNode = id != null ? myIdToNodeMap.get(id) : null;
     if (id == null || existingNode != null && existingNode != node) {
       id = generateUniqueId();

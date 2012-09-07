@@ -1424,14 +1424,9 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return roleText + " " + NameUtil.shortNameFromLongName(getConceptShortName()) + " " + nameText + " in " + myModel.getSModelFqName();
   }
 
-  public boolean hasId() {
-    return myId != null;
-  }
-
   public String getId() {
     return getSNodeId().toString();
   }
-
 
   public void putUserObjects(SNode fromNode) {
     if (fromNode == null || fromNode.myUserObjects == null) return;
@@ -1479,24 +1474,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return userObjects;
   }
 
-  //------------concept properties-------------
-
-  public boolean hasConceptProperty(String propertyName) {
-    if ("root".equals(propertyName)) {
-      if (SNodeUtil.isInstanceOfConceptDeclaration(this)) {
-        return SNodeUtil.getConceptDeclaration_IsRootable(this);
-      } else {
-        SNode conceptDeclaration = getConceptDeclarationNode();
-        if (SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration)) {
-          return SNodeUtil.getConceptDeclaration_IsRootable(conceptDeclaration);
-        }
-      }
-      return false;
-    }
-
-    return findConceptProperty(propertyName) != null;
-  }
-
   public String getConceptProperty(String propertyName) {
     SNode conceptProperty = findConceptProperty(propertyName);
     Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
@@ -1512,8 +1489,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
-
-  //MUST NOT be used,except from ModelAccess
 
   SModel getModelInternal() {
     return myModel;
@@ -1583,10 +1558,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public Set<String> getChildRoles() {
     return getChildRoles(false);
-  }
-
-  public Set<String> addChildRoles(final Set<String> augend) {
-    return addChildRoles(augend, false);
   }
 
   public Set<String> getReferenceRoles() {
@@ -1754,4 +1725,29 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public void setBooleanProperty(String propertyName, boolean value) {
     setProperty(propertyName, value ? "" + value : null);
   }
+
+  public boolean hasConceptProperty(String propertyName) {
+    if ("root".equals(propertyName)) {
+      if (SNodeUtil.isInstanceOfConceptDeclaration(this)) {
+        return SNodeUtil.getConceptDeclaration_IsRootable(this);
+      } else {
+        SNode conceptDeclaration = getConceptDeclarationNode();
+        if (SNodeUtil.isInstanceOfConceptDeclaration(conceptDeclaration)) {
+          return SNodeUtil.getConceptDeclaration_IsRootable(conceptDeclaration);
+        }
+      }
+      return false;
+    }
+
+    return findConceptProperty(propertyName) != null;
+  }
+
+  public Set<String> addChildRoles(final Set<String> augend) {
+    return addChildRoles(augend, false);
+  }
+
+  public boolean hasId() {
+    return getNodeId() != null;
+  }
+
 }

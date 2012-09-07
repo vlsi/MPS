@@ -501,7 +501,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    if (inputNode.hasId() && inputNode.isRegistered()) {
+    if (inputNode.getNodeId() != null && inputNode.isRegistered()) {
       outputNode.setId(inputNode.getSNodeId());
     }
     blockReductionsForCopiedNode(inputNode, outputNode, reductionContext); // prevent infinite applying of the same reduction to the 'same' node.
