@@ -21,28 +21,29 @@ public class SNodeEditorUtil {
   public static final String RIGHT_TRANSFORM_HINT = "right_transform_hint";
   public static final String LEFT_TRANSFORM_HINT = "left_transform_hint";
 
-
-  public static void addRightTransformHint(SNode node) {
-    node.setBooleanProperty(RIGHT_TRANSFORM_HINT, true);
+  public static boolean hasRightTransformHint(SNode node) {
+    //note value can be null
+    return node.getUserObject(RIGHT_TRANSFORM_HINT)==Boolean.TRUE;
   }
 
-  public static boolean hasRightTransformHint(SNode node) {
-    return node.getBooleanProperty(RIGHT_TRANSFORM_HINT);
+  public static void addRightTransformHint(SNode node) {
+    node.putUserObject(RIGHT_TRANSFORM_HINT, true);
   }
 
   public static void removeRightTransformHint(SNode node) {
-    node.setBooleanProperty(RIGHT_TRANSFORM_HINT, false);
-  }
-
-  public static void addLeftTransformHint(SNode node) {
-    node.setBooleanProperty(LEFT_TRANSFORM_HINT, true);
+    node.putUserObject(RIGHT_TRANSFORM_HINT, false);
   }
 
   public static boolean hasLeftTransformHint(SNode node) {
-    return node.getBooleanProperty(LEFT_TRANSFORM_HINT);
+    //note value can be null
+    return node.getUserObject(LEFT_TRANSFORM_HINT)==Boolean.TRUE;
+  }
+
+  public static void addLeftTransformHint(SNode node) {
+    node.putUserObject(LEFT_TRANSFORM_HINT, true);
   }
 
   public static void removeLeftTransformHint(SNode node) {
-    node.setBooleanProperty(LEFT_TRANSFORM_HINT, false);
+    node.putUserObject(LEFT_TRANSFORM_HINT, false);
   }
 }

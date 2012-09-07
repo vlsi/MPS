@@ -1723,13 +1723,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
-  public boolean getBooleanProperty(String propertyName) {
-    String value = getProperty(propertyName);
-    return "true".equals(value);
+  //----------------------------------------------------------
+  //NO USAGES IN JAVA CODE - LEFT FOR COMPATIBILITY (till 3.0)
+  //----------------------------------------------------------
+
+  public void addNextSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
+    getParent().insertChild(getRole(), newSibling, this);
   }
 
-  public void setBooleanProperty(String propertyName, boolean value) {
-    setProperty(propertyName, value ? "" + value : null);
+  public void addPrevSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
+    getParent().insertChild(getRole(), newSibling, getPrevSibling());
   }
 
   public int getIntegerProperty(String propertyName) {
@@ -1745,16 +1748,12 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     setProperty(propertyName, "" + value);
   }
 
-  //-------------------------------------------------------
-  //-----NO USAGES - LEFT FOR COMPATIBILITY (till 3.0)-----
-  //-------------------------------------------------------
-
-  public void addNextSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
-    getParent().insertChild(getRole(), newSibling, this);
+  public boolean getBooleanProperty(String propertyName) {
+    return "true".equals(getProperty(propertyName));
   }
 
-  public void addPrevSibling(org.jetbrains.mps.openapi.model.SNode newSibling) {
-    getParent().insertChild(getRole(), newSibling, getPrevSibling());
+  public void setBooleanProperty(String propertyName, boolean value) {
+    setProperty(propertyName, value ? "" + value : null);
   }
 
 }
