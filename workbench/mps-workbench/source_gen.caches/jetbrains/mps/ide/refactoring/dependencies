@@ -204,7 +204,6 @@
     <classNode dependClassName="java.awt.Insets" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.lang.model.SourceVersion" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JLabel" />
     <classNode dependClassName="javax.swing.JPanel" />
