@@ -1110,17 +1110,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return o != null ? o.toString() : null;
   }
 
-  public SNode findConceptProperty(String propertyName) {
-    SNode conceptDeclaration;
-    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-      conceptDeclaration = this;
-    } else {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
-    }
-    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-  }
-
-  SModel getModelInternal() {
+  public SModel getModelInternal() {
     return myModel;
   }
 
@@ -1128,7 +1118,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (myModel == newModel) return;
     LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
 
-    SModel wasModel = myModel;
     myModel = newModel;
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.changeModel(newModel);
@@ -1137,14 +1126,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public boolean isRoot() {
     return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
-  }
-
-  public StackTraceElement[] getModelDisposedTrace() {
-    if (myModel != null) {
-      return myModel.getDisposedStacktrace();
-    } else {
-      return null;
-    }
   }
 
   public String getRoleOf(SNode node) {
@@ -1250,7 +1231,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
   }
 
-
   public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
 
@@ -1272,7 +1252,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
-
   //----------------------------------------------------------
   //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
   //----------------------------------------------------------
@@ -1293,6 +1272,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (getRole() == null) return null;
     if (getParent() == null) return null;
     return getParent().getLinkDeclaration(getRole());
+  }
+
+  public SNode findConceptProperty(String propertyName) {
+    SNode conceptDeclaration;
+    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
+      conceptDeclaration = this;
+    } else {
+      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
+    }
+    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   //----------------------------------------------------------
@@ -1518,6 +1507,13 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return count;
   }
 
+  public StackTraceElement[] getModelDisposedTrace() {
+    if (myModel != null) {
+      return myModel.getDisposedStacktrace();
+    } else {
+      return null;
+    }
+  }
 
   //--------private-------
 
