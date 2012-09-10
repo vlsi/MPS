@@ -42,10 +42,10 @@ public class SimpleTextElement implements NodeTextElement {
   @Override
   public int compareTo(NodeTextElement o) {
     if (o == null) return 1;
-    if (o.getNode().isAncestorOf(myNode)) {
+    if (jetbrains.mps.util.SNodeOperations.isAncestor(o.getNode(), myNode)) {
       return -1;
     }
-    if (myNode.isAncestorOf(o.getNode())) {
+    if (jetbrains.mps.util.SNodeOperations.isAncestor(myNode, o.getNode())) {
       return 1;
     }
     return 0;

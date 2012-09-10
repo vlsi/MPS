@@ -1216,16 +1216,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
-  public boolean isAncestorOf(SNode child) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    if (child == this) return true;
-    SNode parentOfChild = child.getParent();
-    if (parentOfChild == null) return false;
-    return isAncestorOf(parentOfChild);
-  }
-
   public SNode getContainingRoot() {
     ModelAccess.assertLegalRead(this);
 
@@ -1518,6 +1508,9 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
+  public boolean isAncestorOf(SNode child) {
+    return jetbrains.mps.util.SNodeOperations.isAncestor(this,child);
+  }
 
   //--------private-------
 
