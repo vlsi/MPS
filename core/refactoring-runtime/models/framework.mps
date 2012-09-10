@@ -6855,16 +6855,23 @@
                     </node>
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4792031542972814368">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4792031542972814369">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4792031542972814370">
-                          <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="7798745791083932836">
-                            <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4792031542972814371">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972814221" resolveInfo="feature" />
-                            </node>
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8441062577042835111">
+                          <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8441062577042835114">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972814226" resolveInfo="newFeatureName" />
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4792031542972814372">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dsetName(java%dlang%dString)%cvoid" resolveInfo="setName" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4792031542972814373">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972814226" resolveInfo="newFeatureName" />
+                          <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4792031542972814370">
+                            <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8441062577042835087">
+                              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpce.1071489288299" resolveInfo="PropertyDeclaration" />
+                              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4792031542972814371">
+                                <property name="right_transform_hint" value="123" />
+                                <property name="left_transform_hint" value="123" />
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972814221" resolveInfo="feature" />
+                              </node>
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="8441062577042835093">
+                              <property name="right_transform_hint" value="123" />
+                              <property name="left_transform_hint" value="123" />
+                              <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                             </node>
                           </node>
                         </node>
@@ -6981,16 +6988,23 @@
                     </node>
                     <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4792031542972814417">
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="4792031542972814418">
-                        <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4792031542972814419">
-                          <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="7798745791083932838">
-                            <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4792031542972814420">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972814221" resolveInfo="feature" />
-                            </node>
+                        <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8441062577042835310">
+                          <node role="rValue" roleId="tpee.1068498886297" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8441062577042835313">
+                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972814226" resolveInfo="newFeatureName" />
                           </node>
-                          <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4792031542972814421">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dsetName(java%dlang%dString)%cvoid" resolveInfo="setName" />
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4792031542972814422">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972814226" resolveInfo="newFeatureName" />
+                          <node role="lValue" roleId="tpee.1068498886295" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8441062577042835266">
+                            <node role="operand" roleId="tpee.1197027771414" type="tp25.SNodeTypeCastExpression" typeId="tp25.1140137987495" id="8441062577042835289">
+                              <link role="concept" roleId="tp25.1140138128738" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                              <node role="leftExpression" roleId="tp25.1140138123956" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="4792031542972814420">
+                                <property name="right_transform_hint" value="123" />
+                                <property name="left_transform_hint" value="123" />
+                                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4792031542972814221" resolveInfo="feature" />
+                              </node>
+                            </node>
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="8441062577042835292">
+                              <property name="right_transform_hint" value="123" />
+                              <property name="left_transform_hint" value="123" />
+                              <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
                             </node>
                           </node>
                         </node>

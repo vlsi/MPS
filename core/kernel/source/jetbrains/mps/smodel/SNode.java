@@ -494,11 +494,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName));
   }
 
-  @UseCarefully
-  void setConceptFqName(@NotNull String conceptFQName) {
-    myConceptFqName = InternUtil.intern(conceptFQName);
-    SModelRepository.getInstance().markChanged(getModel());
-  }
 
   public boolean isInstanceOfConcept(SNode concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
@@ -746,10 +741,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getChildren(true);
   }
 
-  private List<SReference> _reference() {
-    return new MyReferencesWrapper();
-  }
-
   public Iterable<SNode> getChildrenIterable() {
     return new Iterable<SNode>() {
       public Iterator<SNode> iterator() {
@@ -787,15 +778,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  private void fireNodeUnclassifiedReadAccess() {
-    if (!myModel.canFireEvent()) return;
-    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
-  }
-
-  private void fireNodeReadAccess() {
-    if (!myModel.canFireEvent()) return;
-    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
-  }
 
   public SNode getNextChild(SNode child) {
     String childRole = child.getRole();
@@ -1308,10 +1290,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     removeChild(oldChild);
   }
 
-  public void setName(String name) {
-    setProperty(SNodeUtil.property_INamedConcept_name, name);
-  }
-
   public String getResolveInfo() {
     String resolveInfo = SNodeUtil.getResolveInfo(this);
     if (resolveInfo != null) {
@@ -1358,6 +1336,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       }
     }
     return result;
+  }
+
+  //----------------------------------------------------------
+  //----------------USAGES IN REFACTORINGS ONLY---------------
+  //----------------------------------------------------------
+
+  @UseCarefully
+  void setConceptFqName(@NotNull String conceptFQName) {
+    myConceptFqName = InternUtil.intern(conceptFQName);
+    SModelRepository.getInstance().markChanged(getModel());
   }
 
   //----------------------------------------------------------
@@ -1525,6 +1513,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return augend;
   }
 
+  public void setName(String name) {
+    setProperty(SNodeUtil.property_INamedConcept_name, name);
+  }
+
   //--------private-------
 
   private String getProperty_simple(String propertyName) {
@@ -1610,6 +1602,21 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (!isRoot()) return;
     myModel.enforceFullLoad();
   }
+
+  private void fireNodeUnclassifiedReadAccess() {
+    if (!myModel.canFireEvent()) return;
+    NodeReadEventsCaster.fireNodeUnclassifiedReadAccess(this);
+  }
+
+  private void fireNodeReadAccess() {
+    if (!myModel.canFireEvent()) return;
+    NodeReadAccessCasterInEditor.fireNodeReadAccessed(this);
+  }
+
+  private List<SReference> _reference() {
+    return new MyReferencesWrapper();
+  }
+
 
   //--------private classes-------
 

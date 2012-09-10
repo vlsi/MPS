@@ -272,7 +272,7 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          feature.setName(newFeatureName);
+          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), "name", newFeatureName);
         }
       }
     }
@@ -285,7 +285,7 @@ public class RefactoringContext {
         SNodeOperations.deleteNode(feature);
       } else {
         if (newFeatureName != null && !(newFeatureName.equals(oldFeatureName))) {
-          feature.setName(newFeatureName);
+          SPropertyOperations.set(SNodeOperations.cast(feature, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "name", newFeatureName);
         }
       }
     }
