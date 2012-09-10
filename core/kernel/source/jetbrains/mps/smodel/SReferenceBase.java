@@ -92,7 +92,7 @@ abstract class SReferenceBase extends SReference {
             new ProblemDescription(new SNodePointer(myImmatureTargetNode),
               "ImmatureTargetNode(modelID: " +
                 (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
-                ", nodeID: " + myImmatureTargetNode.getId() +
+                ", nodeID: " + myImmatureTargetNode.getSNodeId().toString() +
                 "): isRegistered = " + myImmatureTargetNode.isRegistered() +
                 ", isDisposed = " + myImmatureTargetNode.isDisposed() + dumpUnregisteredTrace()));
           myImmatureTargetNode = null;

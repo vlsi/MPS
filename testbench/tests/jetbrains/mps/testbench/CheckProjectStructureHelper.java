@@ -403,7 +403,7 @@ public class CheckProjectStructureHelper {
             append(node.getModel().getLongName()).
             append("}").
             append(" node ").
-            append(node.getId()).
+            append(node.getSNodeId().toString()).
             append("(").
             append(node).
             append(")\n");

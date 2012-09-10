@@ -53,7 +53,7 @@ public class CellProperties {
     mySNode = myCell.getSNode();
     String name = mySNode.getName();
     name = name != null ? name : "<no name>";
-    myCellSNode = mySNode == null ? "no node" : name + " (" + NameUtil.shortNameFromLongName(mySNode.getConceptFqName()) + ") [" + mySNode.getId() + "]";
+    myCellSNode = mySNode == null ? "no node" : name + " (" + NameUtil.shortNameFromLongName(mySNode.getConceptFqName()) + ") [" + mySNode.getSNodeId().toString() + "]";
   }
 
 

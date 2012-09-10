@@ -653,7 +653,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       }
     }
     if (count > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getSModelReference() + "\n";
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getSNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
@@ -1046,10 +1046,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       nameText = "<??name??>";
     }
     return roleText + " " + NameUtil.shortNameFromLongName(NameUtil.shortNameFromLongName(getConceptFqName())) + " " + nameText + " in " + myModel.getSModelFqName();
-  }
-
-  public String getId() {
-    return getSNodeId().toString();
   }
 
   public void removeUserObject(Object key) {
@@ -1519,6 +1515,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public boolean isDeleted() {
     return getModel()==null;
+  }
+
+  public String getId() {
+    return getSNodeId().toString();
   }
 
   //--------private-------

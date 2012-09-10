@@ -58,12 +58,12 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myNode = node;
     myRole = role;
     myCondition = condition;
-    setUserObject(node.getId());
+    setUserObject(node.getSNodeId().toString());
 
     if (myNode == null) {
       setNodeIdentifier("null");
     } else {
-      setNodeIdentifier(myNode.getId());
+      setNodeIdentifier(myNode.getSNodeId().toString());
     }
   }
 
