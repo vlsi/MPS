@@ -48,11 +48,15 @@ public class SConceptNodeAdapter implements SConcept {
   }
 
   public SLink getLink(final String role) {
-    return new SLinkNodeAdapter(ListSequence.fromList(SLinkOperations.getTargets(myConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode link = ListSequence.fromList(SLinkOperations.getTargets(myConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_12aglo_a0a0a0a0a0a0a0e(SPropertyOperations.getString(SModelUtil.getGenuineLinkDeclaration(it), "role"), role);
+        return eq_12aglo_a0a0a0a0a0a0a4(SPropertyOperations.getString(SModelUtil.getGenuineLinkDeclaration(it), "role"), role);
       }
-    }));
+    });
+    return (link == null ?
+      null :
+      new SLinkNodeAdapter(link)
+    );
   }
 
   public Iterable<SLink> getLinks() {
@@ -64,11 +68,15 @@ public class SConceptNodeAdapter implements SConcept {
   }
 
   public SProperty getProperty(final String name) {
-    return new SPropertyNodeAdapter(ListSequence.fromList(SLinkOperations.getTargets(myConcept, "propertyDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+    SNode property = ListSequence.fromList(SLinkOperations.getTargets(myConcept, "propertyDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_12aglo_a0a0a0a0a0a0a0g(SPropertyOperations.getString(it, "name"), name);
+        return eq_12aglo_a0a0a0a0a0a0a6(SPropertyOperations.getString(it, "name"), name);
       }
-    }));
+    });
+    return (property == null ?
+      null :
+      new SPropertyNodeAdapter(property)
+    );
   }
 
   public Iterable<SProperty> getProperties() {
@@ -100,14 +108,14 @@ public class SConceptNodeAdapter implements SConcept {
     return myConcept;
   }
 
-  private static boolean eq_12aglo_a0a0a0a0a0a0a0e(Object a, Object b) {
+  private static boolean eq_12aglo_a0a0a0a0a0a0a4(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_12aglo_a0a0a0a0a0a0a0g(Object a, Object b) {
+  private static boolean eq_12aglo_a0a0a0a0a0a0a6(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
