@@ -503,17 +503,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
-  public SNode getConceptDeclarationNode() {
-    return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
-  }
-
-  public SNode getPropertyDeclaration(String propertyName) {
-    return SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
-  }
-
-  public SNode getLinkDeclaration(String role) {
-    return SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
-  }
 
   public SNode findParent(Condition<SNode> condition) {
     SNode parent = getParent();
@@ -700,23 +689,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     } else {
       insertChild(anchorChild, role, child);
     }
-  }
-
-  public int getChildCount(String role) {
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
-    }
-    int count = 0;
-
-    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRole())) {
-        count++;
-      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
-        count++;
-      }
-    }
-    return count;
   }
 
   public int getIndexOfChild(SNode child_) {
@@ -1278,11 +1250,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
   }
 
-  public SNode getRoleLink() {
-    if (getRole() == null) return null;
-    if (getParent() == null) return null;
-    return getParent().getLinkDeclaration(getRole());
-  }
 
   public Map<String, String> getProperties() {
     ModelAccess.assertLegalRead(this);
@@ -1305,6 +1272,28 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
+
+  //----------------------------------------------------------
+  //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
+  //----------------------------------------------------------
+
+  public SNode getConceptDeclarationNode() {
+    return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
+  }
+
+  public SNode getPropertyDeclaration(String propertyName) {
+    return SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
+  }
+
+  public SNode getLinkDeclaration(String role) {
+    return SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
+  }
+
+  public SNode getRoleLink() {
+    if (getRole() == null) return null;
+    if (getParent() == null) return null;
+    return getParent().getLinkDeclaration(getRole());
+  }
 
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
@@ -1511,6 +1500,24 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public boolean isAncestorOf(SNode child) {
     return jetbrains.mps.util.SNodeOperations.isAncestor(this,child);
   }
+
+  public int getChildCount(String role) {
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
+    }
+    int count = 0;
+
+    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      if (role.equals(child.getRole())) {
+        count++;
+      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
+        count++;
+      }
+    }
+    return count;
+  }
+
 
   //--------private-------
 
