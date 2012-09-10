@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.HashSet;
+import javax.swing.tree.TreeSelectionModel;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -59,6 +60,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   private AbstractOperation myOldOperation;
   private EditorComponent myEditorComponent;
   private List<TypeSystemTraceTreeNode> myErrorNodes;
+  private TypeSystemTraceTree.DetailsTree myDetailsTree;
 
   public TypeSystemTraceTree(IOperationContext operationContext, TypeCheckingContextNew tcc, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
     myOperationContext = operationContext;
@@ -77,7 +79,13 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     myEditorComponent = editorComponent;
     this.rebuildNow();
     expandAll();
-    addTreeSelectionListener(new TypeSystemTraceTree.MyTreeSelectionListener());
+    this.myDetailsTree = new TypeSystemTraceTree.DetailsTree(null);
+    addTreeSelectionListener(new TypeSystemTraceTree.ShowDetailsUpdater());
+    getSelectionModel().setSelectionMode(TreeSelectionModel.CONTIGUOUS_TREE_SELECTION);
+  }
+
+  /*package*/ MPSTree getDetailsTree() {
+    return myDetailsTree;
   }
 
   public void rebuildTrace() {
@@ -116,7 +124,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     if (TraceSettings.isTraceForSelectedNode() && mySelectedNode != null) {
       getSliceVars(myOperation);
     }
-    MPSTreeNode result = create(myOperation, false);
+    MPSTreeNode result = create(myOperation, false, true);
     if (result == null) {
       result = new TextTreeNode("Empty type system trace");
     }
@@ -124,13 +132,15 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     return result;
   }
 
-  public TypeSystemTraceTreeNode create(AbstractOperation operation, boolean showParent) {
+  public TypeSystemTraceTreeNode create(AbstractOperation operation, boolean showParent, boolean withChildren) {
     boolean showNode = showNode(operation);
     List<TypeSystemTraceTreeNode> children = new ArrayList<TypeSystemTraceTreeNode>();
-    for (AbstractOperation consequence : operation.getConsequences()) {
-      TypeSystemTraceTreeNode node = create(consequence, showNode || showParent);
-      if (node != null) {
-        children.add(node);
+    if (withChildren) {
+      for (AbstractOperation consequence : operation.getConsequences()) {
+        TypeSystemTraceTreeNode node = create(consequence, showNode || showParent, false);
+        if (node != null) {
+          children.add(node);
+        }
       }
     }
     if (!(filterNodeType(operation))) {
@@ -249,7 +259,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   @Nullable
   public Object getData(@NonNls String id) {
     MPSTreeNode currentNode = this.getCurrentNode();
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a1a01(currentNode);
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a1a11(currentNode);
     if (operation == null) {
       return null;
     }
@@ -292,25 +302,174 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     });
   }
 
-  private static Object check_kyyn1p_a0a1a01(MPSTreeNode checkedDotOperand) {
+  private void showState(final MPSTreeNode fromNode, final MPSTreeNode toNode) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        AbstractOperation rootDiff = myCurrentContext.getOperation();
+        Object fromDiff = fromNode.getUserObject();
+        Object toDiff = toNode.getUserObject();
+
+        if (myOldOperation == null) {
+          myCurrentState.clear(false);
+          myCurrentState.executeOperationsBeforeAnchor(rootDiff, fromDiff);
+        } else {
+          myCurrentState.updateState(myOldOperation, (AbstractOperation) fromDiff);
+        }
+        myParent.resetState(myCurrentState);
+
+        myCurrentState.updateState((AbstractOperation) fromDiff, (AbstractOperation) toDiff);
+        myParent.updateState(myCurrentState);
+
+        myOldOperation = (AbstractOperation) toDiff;
+      }
+    });
+  }
+
+  private void showDetails(MPSTreeNode treeNode) {
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a51(treeNode);
+    myDetailsTree.setOperation(operation);
+  }
+
+  private static Object check_kyyn1p_a0a1a2b(MPSTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUserObject();
     }
     return null;
   }
 
-  private class MyTreeSelectionListener implements TreeSelectionListener {
-    private MyTreeSelectionListener() {
+  private static Object check_kyyn1p_a0a1a11(MPSTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUserObject();
+    }
+    return null;
+  }
+
+  private static Object check_kyyn1p_a0a0a51(MPSTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUserObject();
+    }
+    return null;
+  }
+
+  private class ShowDetailsUpdater implements TreeSelectionListener {
+    private ShowDetailsUpdater() {
     }
 
     @Override
     public void valueChanged(TreeSelectionEvent e) {
-      TreePath path = e.getNewLeadSelectionPath();
-      if (path == null) {
-        return;
+      TreePath leadPath = e.getNewLeadSelectionPath();
+      if (leadPath != null) {
+        showDetails((MPSTreeNode) leadPath.getLastPathComponent());
       }
-      Object treeNode = path.getLastPathComponent();
-      showState((MPSTreeNode) treeNode);
+
+      TreePath[] selectionPaths = getSelectionPaths();
+      if (selectionPaths != null && selectionPaths.length >= 1) {
+        if (selectionPaths.length == 1) {
+          TreePath path = selectionPaths[0];
+          if (path == null) {
+            return;
+          }
+          Object treeNode = path.getLastPathComponent();
+          showState((MPSTreeNode) treeNode);
+        } else {
+          TreePath fromPath = selectionPaths[0];
+          TreePath toPath = selectionPaths[selectionPaths.length - 1];
+          showState((MPSTreeNode) fromPath.getLastPathComponent(), (MPSTreeNode) toPath.getLastPathComponent());
+        }
+      }
+    }
+  }
+
+  public class DetailsTree extends MPSTree implements DataProvider {
+    private AbstractOperation myOperation;
+
+    public DetailsTree(AbstractOperation operation) {
+      this.myOperation = operation;
+      rebuildNow();
+      expandAll();
+      addTreeSelectionListener(new TypeSystemTraceTree.DetailsTree.ShowStateUpdater());
+    }
+
+    public void setOperation(AbstractOperation operation) {
+      this.myOperation = operation;
+      rebuildNow();
+      expandAll();
+    }
+
+    public TypeSystemTraceTreeNode create(AbstractOperation operation, boolean showParent) {
+      if (myOperation == null) {
+        return null;
+      }
+      boolean showNode = showNode(operation);
+      List<TypeSystemTraceTreeNode> children = new ArrayList<TypeSystemTraceTreeNode>();
+      for (AbstractOperation consequence : operation.getConsequences()) {
+        TypeSystemTraceTreeNode node = create(consequence, showNode || showParent);
+        if (node != null) {
+          children.add(node);
+        }
+      }
+      if (!(filterNodeType(operation))) {
+        return null;
+      }
+      if (!(showParent)) {
+        if (!(showNode) && children.isEmpty()) {
+          return null;
+        }
+      }
+      TypeSystemTraceTreeNode result = new TypeSystemTraceTreeNode(operation, myOperationContext, myCurrentContext.getState(), myEditorComponent);
+      for (TypeSystemTraceTreeNode node : children) {
+        result.add(node);
+      }
+      // <node> 
+      return result;
+    }
+
+    @Nullable
+    public Object getData(@NonNls String id) {
+      MPSTreeNode currentNode = this.getCurrentNode();
+      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a1a2b(currentNode);
+      if (operation == null) {
+        return null;
+      }
+      final Pair<String, String> rule = operation.getRule();
+      final SNode source = operation.getSource();
+      if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
+        return myOperationContext;
+      }
+      if (id.equals(MPSDataKeys.RULE_MODEL_AND_ID.getName())) {
+        return rule;
+      }
+      if (source != null && source.isRegistered()) {
+        if (id.equals(MPSDataKeys.SOURCE_NODE.getName())) {
+          return source;
+        }
+      }
+      return null;
+    }
+
+    protected MPSTreeNode rebuild() {
+      setRootVisible(false);
+      MPSTreeNode result = create(myOperation, true);
+      if (result == null) {
+        result = new TextTreeNode("Empty type system trace");
+      }
+      setRootVisible(true);
+      return result;
+    }
+
+    private class ShowStateUpdater implements TreeSelectionListener {
+      private ShowStateUpdater() {
+      }
+
+      @Override
+      public void valueChanged(TreeSelectionEvent e) {
+        TreePath path = e.getNewLeadSelectionPath();
+        if (path == null) {
+          return;
+        }
+        Object treeNode = path.getLastPathComponent();
+        showState((MPSTreeNode) treeNode);
+      }
     }
   }
 }

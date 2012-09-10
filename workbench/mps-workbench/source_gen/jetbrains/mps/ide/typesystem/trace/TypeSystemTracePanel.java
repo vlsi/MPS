@@ -5,6 +5,7 @@ package jetbrains.mps.ide.typesystem.trace;
 import javax.swing.JPanel;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.tools.BaseTool;
+import jetbrains.mps.ide.ui.MPSTree;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.SwingUtilities;
@@ -15,8 +16,8 @@ import java.awt.Color;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import javax.swing.JSplitPane;
 import com.intellij.ui.components.JBScrollPane;
+import javax.swing.JSplitPane;
 import jetbrains.mps.newTypesystem.state.State;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
@@ -34,6 +35,7 @@ public class TypeSystemTracePanel extends JPanel {
   private JPanel myButtons;
   private EditorComponent myEditorComponent;
   private BaseTool myTool;
+  private MPSTree myDetailsTree;
 
   public TypeSystemTracePanel(BaseTool tool) {
     this.setLayout(new BorderLayout());
@@ -58,24 +60,40 @@ public class TypeSystemTracePanel extends JPanel {
     }
     myEditorComponent = editorComponent;
     myTraceTree = new TypeSystemTraceTree(operationContext, t, node, this, editorComponent);
+    // TODO: refactor into a separate class 
+    this.myDetailsTree = myTraceTree.getDetailsTree();
     myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState(), editorComponent);
-    JSplitPane splitPane = new JSplitPane();
     JBScrollPane traceScrollPane = new JBScrollPane(myTraceTree);
-    traceScrollPane.setPreferredSize(new Dimension(400, 900));
+    traceScrollPane.setPreferredSize(new Dimension(400, 700));
+    JBScrollPane detailsScrollPane = new JBScrollPane(myDetailsTree);
+    detailsScrollPane.setPreferredSize(new Dimension(400, 200));
     JBScrollPane stateScrollPane = new JBScrollPane(myStateTree);
     stateScrollPane.setPreferredSize(new Dimension(400, 900));
-    splitPane.setDividerLocation(0.65);
-    splitPane.setResizeWeight(0.65);
-    splitPane.setLeftComponent(traceScrollPane);
-    splitPane.setRightComponent(stateScrollPane);
+
+    JSplitPane leftHSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+    leftHSplitPane.setDividerLocation(0.8);
+    leftHSplitPane.setResizeWeight(0.8);
+    leftHSplitPane.setTopComponent(traceScrollPane);
+    leftHSplitPane.setBottomComponent(detailsScrollPane);
+
+    JSplitPane vSplitPane = new JSplitPane();
+    vSplitPane.setDividerLocation(0.65);
+    vSplitPane.setResizeWeight(0.65);
+    vSplitPane.setLeftComponent(leftHSplitPane);
+    vSplitPane.setRightComponent(stateScrollPane);
+
     this.removeAll();
-    this.add(splitPane);
+    this.add(vSplitPane);
     this.add(myButtons, BorderLayout.NORTH);
     this.setVisible(true);
   }
 
   public void resetState(State state) {
     myStateTree.resetState(state);
+  }
+
+  public void updateState(State state) {
+    myStateTree.updateState(state);
   }
 
   protected DefaultActionGroup createButtonsGroup() {
