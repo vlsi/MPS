@@ -196,7 +196,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (frame != null) {
       JavaLocation location = frame.getLocation();
       if (location != null) {
-        return TraceInfoUtil.getUnitName(location.getUnitName(), location.getFileName(), location.getLineNumber());
+        return location.getUnitName();
       }
     }
     return null;
