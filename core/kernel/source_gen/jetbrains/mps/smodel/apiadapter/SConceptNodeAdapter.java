@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SLink;
+import java.util.List;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -47,8 +49,8 @@ public class SConceptNodeAdapter implements SConcept {
     return NameUtil.nodeFQName(myConcept);
   }
 
-  public SLink getLink(final String role) {
-    SNode link = ListSequence.fromList(SLinkOperations.getTargets(myConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+  public SLink findLink(final String role) {
+    SNode link = ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(myConcept)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_12aglo_a0a0a0a0a0a0a4(SPropertyOperations.getString(SModelUtil.getGenuineLinkDeclaration(it), "role"), role);
       }
@@ -67,8 +69,8 @@ public class SConceptNodeAdapter implements SConcept {
     });
   }
 
-  public SProperty getProperty(final String name) {
-    SNode property = ListSequence.fromList(SLinkOperations.getTargets(myConcept, "propertyDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+  public SProperty findProperty(final String name) {
+    SNode property = ListSequence.fromList((List<SNode>) SModelSearchUtil.getPropertyDeclarations(myConcept)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_12aglo_a0a0a0a0a0a0a6(SPropertyOperations.getString(it, "name"), name);
       }

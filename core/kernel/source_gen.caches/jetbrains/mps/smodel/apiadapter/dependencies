@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -19,6 +20,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SLanguageLanguageAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SLinkNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SPropertyNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.SModelSearchUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SInterfaceConcept" />
@@ -39,6 +41,7 @@
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -52,6 +55,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SLanguageLanguageAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SLinkNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SPropertyNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.SModelSearchUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />

@@ -15,24 +15,20 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-/**
- * evgeny, 7/27/12
- */
 public interface SAbstractConcept {
+  SLanguage getLanguage();
 
   String getName();
 
   String getQualifiedName();
 
-  SLink getLink(String role);
+  SLink findLink(String role);
 
   Iterable<SLink> getLinks();
 
-  SProperty getProperty(String name);
+  SProperty findProperty(String name);
 
   Iterable<SProperty> getProperties();
 
   boolean isSubConceptOf(SConcept concept);
-
-  SLanguage getLanguage();
 }

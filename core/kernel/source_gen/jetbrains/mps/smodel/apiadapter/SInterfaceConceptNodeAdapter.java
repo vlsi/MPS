@@ -11,6 +11,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SLink;
+import java.util.List;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -42,12 +44,16 @@ public class SInterfaceConceptNodeAdapter implements SInterfaceConcept {
     return NameUtil.nodeFQName(myIConcept);
   }
 
-  public SLink getLink(final String name) {
-    return new SLinkNodeAdapter(ListSequence.fromList(SLinkOperations.getTargets(myIConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+  public SLink findLink(final String name) {
+    SNode link = ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(myIConcept)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_lmck5_a0a0a0a0a0a0a0d(SPropertyOperations.getString(it, "role"), name);
+        return eq_lmck5_a0a0a0a0a0a0a3(SPropertyOperations.getString(it, "role"), name);
       }
-    }));
+    });
+    return (link == null ?
+      null :
+      new SLinkNodeAdapter(link)
+    );
   }
 
   public Iterable<SLink> getLinks() {
@@ -58,12 +64,16 @@ public class SInterfaceConceptNodeAdapter implements SInterfaceConcept {
     });
   }
 
-  public SProperty getProperty(final String name) {
-    return new SPropertyNodeAdapter(ListSequence.fromList(SLinkOperations.getTargets(myIConcept, "propertyDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
+  public SProperty findProperty(final String name) {
+    SNode prop = ListSequence.fromList((List<SNode>) SModelSearchUtil.getPropertyDeclarations(myIConcept)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_lmck5_a0a0a0a0a0a0a0f(SPropertyOperations.getString(it, "name"), name);
+        return eq_lmck5_a0a0a0a0a0a0a5(SPropertyOperations.getString(it, "name"), name);
       }
-    }));
+    });
+    return (prop == null ?
+      null :
+      new SPropertyNodeAdapter(prop)
+    );
   }
 
   public Iterable<SProperty> getProperties() {
@@ -95,14 +105,14 @@ public class SInterfaceConceptNodeAdapter implements SInterfaceConcept {
     return myIConcept;
   }
 
-  private static boolean eq_lmck5_a0a0a0a0a0a0a0d(Object a, Object b) {
+  private static boolean eq_lmck5_a0a0a0a0a0a0a3(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_lmck5_a0a0a0a0a0a0a0f(Object a, Object b) {
+  private static boolean eq_lmck5_a0a0a0a0a0a0a5(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

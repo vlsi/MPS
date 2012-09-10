@@ -301,7 +301,7 @@ public class CheckProjectStructureHelper {
 
       node.visitProperties(new PropertyVisitor() {
         public boolean visitProperty(String name, String value) {
-          if (concept.getProperty(name) == null) {
+          if (concept.findProperty(name) == null) {
             result.add("unknown property: `" + name + "' in node " + node.getDebugText());
           }
           return true;
@@ -310,7 +310,7 @@ public class CheckProjectStructureHelper {
 
       node.visitReferences(new ReferenceVisitor() {
         public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
-          SLink link = concept.getLink(ref.getRole());
+          SLink link = concept.findLink(ref.getRole());
           if (link == null || !link.isReference()) {
             result.add("unknown link role: `" + ref.getRole() + "' in node " + node.getDebugText());
           }
@@ -320,7 +320,7 @@ public class CheckProjectStructureHelper {
 
       node.visitChildren(new ChildVisitor() {
         public boolean visitChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
-          SLink link = concept.getLink(child.getRole());
+          SLink link = concept.findLink(child.getRole());
           if (link == null || link.isReference()) {
             result.add("unknown child role: `" + child.getRole() + "' in node " + node.getDebugText());
           }
