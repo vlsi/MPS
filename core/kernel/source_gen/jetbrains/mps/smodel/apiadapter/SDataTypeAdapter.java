@@ -4,11 +4,12 @@ package jetbrains.mps.smodel.apiadapter;
 
 import org.jetbrains.mps.openapi.language.SDataType;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 public class SDataTypeAdapter implements SDataType {
   private SNode dNode;
 
-  public SDataTypeAdapter(SNode dNode) {
+  public SDataTypeAdapter(@NotNull SNode dNode) {
     this.dNode = dNode;
   }
 

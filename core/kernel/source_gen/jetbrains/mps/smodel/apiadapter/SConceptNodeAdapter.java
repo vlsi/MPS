@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.apiadapter;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -22,7 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class SConceptNodeAdapter implements SConcept {
   private SNode myConcept;
 
-  public SConceptNodeAdapter(SNode concept) {
+  public SConceptNodeAdapter(@NotNull SNode concept) {
     myConcept = concept;
   }
 

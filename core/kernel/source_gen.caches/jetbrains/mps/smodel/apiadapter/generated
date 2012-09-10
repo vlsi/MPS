@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-emzuyr4l70wzeos6q1bq1ht0v229sza">
+<dependencies version="2" modelHash="-7md2inih1k9wnrn0x8m7gd52ubepa0r">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
@@ -22,11 +22,11 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="cmd60507xhkoe4c48chqmcyr68ebp62" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="s3tv1frpwve3ihtsua8rcflzhi3fe4" />
-  <common hash="-31g5wau0sdfnmeoalqi27rsn1egzq4k">
+  <common hash="73hn0a3xc5o1zw7ozusy8n3uko9361y">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="2075824672078462207" name="SConceptNodeAdapter" hash="7inop4lhr04ouruybf3z7ofgrbxy5ib">
+  <source id="2075824672078462207" name="SConceptNodeAdapter" hash="-7489dn6bhmr6yrkncbo1urx0iquv56n">
     <dep root="2075824672078462511" />
     <dep root="2601097456319836723" />
     <dep root="2601097456319846203" />
@@ -44,6 +44,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" />
     <dep model="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
@@ -52,7 +53,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SConceptNodeAdapter.java" />
   </source>
-  <source id="2075824672078462511" name="SLinkNodeAdapter" hash="-a5mjl3ciqa9eqi26yq5kbfchp6crm7l">
+  <source id="2075824672078462511" name="SLinkNodeAdapter" hash="4kq9z2whpc9ik5yjfxpbu4paelbid1o">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -68,7 +69,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SLinkNodeAdapter.java" />
   </source>
-  <source id="2601097456319836723" name="SInterfaceConceptNodeAdapter" hash="bdcmaddp65k4dl6bm4na5m0qvimx5p2">
+  <source id="2601097456319836723" name="SInterfaceConceptNodeAdapter" hash="-5l7x3noarl55l7tdjmlhdeis11weymg">
     <dep root="2075824672078462511" />
     <dep root="2601097456319846203" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -92,7 +93,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SInterfaceConceptNodeAdapter.java" />
   </source>
-  <source id="2601097456319846203" name="SPropertyNodeAdapter" hash="-95cqa0ubwf90bn8ilkhl6vpgtxwqwvf">
+  <source id="2601097456319846203" name="SPropertyNodeAdapter" hash="5vq22wmlir3bzef1shn65eapu7nnf1g">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.smodel.generator.smodelAdapter(MPS.Core/jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -108,7 +109,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SPropertyNodeAdapter.java" />
   </source>
-  <source id="2601097456319851251" name="SLanguageLanguageAdapter" hash="-aefo10uufdvr5f9ele38um6ynhko9i">
+  <source id="2601097456319851251" name="SLanguageLanguageAdapter" hash="-78xna85y0xny6stdxvhhjxlvw8stfqg">
     <dep root="2075824672078462207" />
     <dep root="2601097456319836723" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -131,7 +132,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="SLanguageLanguageAdapter.java" />
   </source>
-  <source id="2601097456319899832" name="SDataTypeAdapter" hash="-24gwo3y75wimjaqgcd9n3h3ryo8z230">
+  <source id="2601097456319899832" name="SDataTypeAdapter" hash="-3i34grw9te4rhmbnk6b6lktia90jz7f">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />

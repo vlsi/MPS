@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.apiadapter;
 
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -18,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class SLanguageLanguageAdapter implements SLanguage {
   private Language myLanguage;
 
-  public SLanguageLanguageAdapter(Language language) {
+  public SLanguageLanguageAdapter(@NotNull Language language) {
     this.myLanguage = language;
   }
 
