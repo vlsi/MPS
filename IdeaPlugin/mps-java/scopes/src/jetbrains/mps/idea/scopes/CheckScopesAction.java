@@ -124,9 +124,9 @@ public class CheckScopesAction extends AnAction {
     if (debugInfo == null) {
       return null;
     }
-    UnitPositionInfo position = debugInfo.getUnitForNode(node.getSNodeId().toString());
-    if (position == null) return null;
-    return GeneratedSourcePosition.getPsiFile(project, model.getSModelReference(), position.getFileName());
+    Iterable<UnitPositionInfo> positions = debugInfo.getUnitsForNode(node);
+    if (!positions.iterator().hasNext()) return null;
+    return GeneratedSourcePosition.getPsiFile(project, model.getSModelReference(), positions.iterator().next().getFileName());
   }
 
   @Nullable
