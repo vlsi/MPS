@@ -152,7 +152,7 @@ public class TraceInfoUtil {
         return DebugInfo.findNode(result);
 
       }
-    }, TraceInfoUtilComponent.DEFAULT_MAPPER);
+    });
   }
 
   @Nullable
@@ -184,7 +184,6 @@ public class TraceInfoUtil {
   }
 
   @Nullable
-  @Deprecated
   public static <T extends PositionInfo> List<SNode> getAllNodes(@NotNull final String className, final String file, final int position, final Mapper<DebugInfoRoot, ? extends Set<T>> positionsGetter) {
     return TraceInfoUtilComponent.getInstance().getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<T>, DebugInfoRoot>() {
       public Set<T> invoke(DebugInfoRoot info) {
