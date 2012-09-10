@@ -409,19 +409,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
-  public SNodeId getSNodeId() {
-    return (SNodeId) getNodeId();
-  }
-
-  public void setId(@Nullable SNodeId id) {
-    if (ObjectUtils.equals(id, myId)) return;
-
-    if (!isRegistered()) {
-      myId = id;
-    } else {
-      LOG.error("can't set id to registered node " + getDebugText(), new Throwable());
-    }
-  }
 
   public String getPresentation(boolean detailed) {
     if (SNodeOperations.isUnknown(this)) {
@@ -1034,10 +1021,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public boolean isDeleted() {
-    return (_reference().size() == 0) && getParent() == null && !getModel().isRoot(this);
-  }
-
   public String getDebugText() {
     String roleText = "";
     if (isRegistered()) {
@@ -1251,6 +1234,25 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
     return result;
   }
+
+  //----------------------------------------------------------
+  //-------------MIGRATE TOGETHER WITH MODELS CODE------------
+  //----------------------------------------------------------
+
+  public SNodeId getSNodeId() {
+    return (SNodeId) getNodeId();
+  }
+
+  public void setId(@Nullable SNodeId id) {
+    if (ObjectUtils.equals(id, myId)) return;
+
+    if (!isRegistered()) {
+      myId = id;
+    } else {
+      LOG.error("can't set id to registered node " + getDebugText(), new Throwable());
+    }
+  }
+
 
   //----------------------------------------------------------
   //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
@@ -1513,6 +1515,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     } else {
       return null;
     }
+  }
+
+  public boolean isDeleted() {
+    return getModel()==null;
   }
 
   //--------private-------
