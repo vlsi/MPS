@@ -207,7 +207,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (myNode.isDisposed() || !myNode.isRegistered() || myNode.getModel().getModelDescriptor() == null) {
+        if (myNode.isDisposed() || !jetbrains.mps.util.SNodeOperations.isRegistered(myNode) || myNode.getModel().getModelDescriptor() == null) {
           return;
         }
         treeView.editNode(myNode, getOperationContext(), focus);

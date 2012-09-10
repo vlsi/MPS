@@ -459,7 +459,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   Collection<SNode> copyNodeFromExternalNode(String mappingName, SNodePointer templateNode, String templateNodeId, SNode inputNode, ReductionContext reductionContext) throws GenerationFailureException, GenerationCanceledException {
-    if (inputNode.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
       // TODO fail in strict mode
       inputNode = CopyUtil.copy(inputNode);
       // TODO inputNode.changeModel();
@@ -501,7 +501,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    if (inputNode.getNodeId() != null && inputNode.isRegistered()) {
+    if (inputNode.getNodeId() != null && jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
       outputNode.setId(inputNode.getSNodeId());
     }
     blockReductionsForCopiedNode(inputNode, outputNode, reductionContext); // prevent infinite applying of the same reduction to the 'same' node.
@@ -522,7 +522,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     for (SReference inputReference : inputNode.getReferencesIterable()) {
-      if (inputNode.isRegistered() && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
+      if (jetbrains.mps.util.SNodeOperations.isRegistered(inputNode) && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();
         if (inputReference instanceof StaticReference) {
@@ -561,7 +561,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           GeneratorUtil.describeIfExists(templateNode != null ? templateNode.getNode() : null, "template"));
         continue;
       }
-      if (inputTargetNode.isRegistered() && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
+      if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode) && inputTargetNode.getModel().equals(myInputModel) || myAdditionalInputNodes.containsKey(inputTargetNode)) {
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
           inputReference.getRole(),
           outputNode,
@@ -572,7 +572,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           this
         );
         outputNode.addReference(reference);
-      } else if (inputTargetNode.isRegistered()) {
+      } else if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode)) {
         outputNode.setReferent(inputReference.getRole(), inputTargetNode);
       } else {
         myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)",

@@ -854,7 +854,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         clearModelDisposedTrace();
         myNode = node;
         //todo this is because of type system nodes, which are not registered in models. This code should be removed ASAP
-        if (myNode != null && myNode.isRegistered()) {
+        if (myNode != null && jetbrains.mps.util.SNodeOperations.isRegistered(myNode)) {
           myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
           myVirtualFile = myNode != null && !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
         } else {
@@ -1341,7 +1341,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
     // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
-    if (myNode != null && !(myNode.getModel() == null) && myNode.isRegistered()) {
+    if (myNode != null && !(myNode.getModel() == null) && jetbrains.mps.util.SNodeOperations.isRegistered(myNode)) {
       SModel model = myNode.getModel();
       SModelDescriptor modelDescriptor = model.getModelDescriptor();
       if (modelDescriptor != null && modelDescriptor.isRegistered() && !model.isUpdateMode()) {

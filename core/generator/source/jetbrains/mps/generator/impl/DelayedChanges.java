@@ -123,7 +123,7 @@ public class DelayedChanges {
             }
           }
 
-          if (child.isRegistered()) {
+          if (jetbrains.mps.util.SNodeOperations.isRegistered(child)) {
             // must be "in air"
             child = CopyUtil.copy(child);
           }

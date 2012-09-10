@@ -210,7 +210,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public RootDependenciesBuilder getRootBuilder(SNode inputNode) {
-    if (inputNode == null || !inputNode.isRegistered()) {
+    if (inputNode == null || !jetbrains.mps.util.SNodeOperations.isRegistered(inputNode)) {
       return myConditionalsBuilder;
     }
     inputNode = inputNode.getTopmostAncestor();

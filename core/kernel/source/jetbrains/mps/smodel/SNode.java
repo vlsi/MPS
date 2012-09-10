@@ -294,7 +294,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
-    if (myId == null && !isRegistered()) {
+    if (myId == null && !jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
       // TODO remove id generation
       myId = SModel.generateUniqueId();
       //LOG.error(new IllegalStateException("cannot generate id for unregistered node"));
@@ -457,10 +457,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return myConceptFqName;
-  }
-
-  public ModuleReference getConceptLanguage() {
-    return new ModuleReference(NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName()));
   }
 
   public boolean isInstanceOfConcept(SNode concept) {
@@ -762,7 +758,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     child.setRoleInParent(role);
 
     SModel model = getModel();
-    if (isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
       child.registerInModel(model);
     } else {
       child.changeModel(model);
@@ -814,10 +810,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public boolean isDetached() {
     return getContainingRoot() == null;
-  }
-
-  public boolean isRegistered() {
-    return myRegisteredInModelFlag;
   }
 
   public List<SReference> getReferences() {
@@ -1002,7 +994,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public String getDebugText() {
     String roleText = "";
-    if (isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
       String s = getRole();
       roleText = s == null ? "[root]" : "[" + s + "]";
     }
@@ -1074,7 +1066,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
-    LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
+    LOG.assertLog(!jetbrains.mps.util.SNodeOperations.isRegistered(this), "couldn't change model of registered node " + getDebugText());
 
     myModel = newModel;
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
@@ -1221,7 +1213,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public void setId(@Nullable SNodeId id) {
     if (ObjectUtils.equals(id, myId)) return;
 
-    if (!isRegistered()) {
+    if (!jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
       myId = id;
     } else {
       LOG.error("can't set id to registered node " + getDebugText(), new Throwable());
@@ -1263,6 +1255,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public Language getNodeLanguage() {
     SNode concept = getConceptDeclarationNode();
     return SModelUtil.getDeclaringLanguage(concept);
+  }
+
+  public ModuleReference getConceptLanguage() {
+    return new ModuleReference(NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName()));
   }
 
   //----------------------------------------------------------
@@ -1507,6 +1503,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   @NotNull
   public String getLanguageNamespace() {
     return NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName());
+  }
+
+  public boolean isRegistered() {
+    return myRegisteredInModelFlag;
   }
 
   //--------private-------

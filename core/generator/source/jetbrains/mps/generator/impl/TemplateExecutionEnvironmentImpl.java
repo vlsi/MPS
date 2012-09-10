@@ -78,7 +78,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     Collection<SNode> outputNodes = null;
     for (SNode newInputNode : inputNodes) {
       Collection<SNode> _outputNodes =
-        newInputNode.getModel() == generator.getInputModel() && newInputNode.isRegistered()
+        newInputNode.getModel() == generator.getInputModel() && jetbrains.mps.util.SNodeOperations.isRegistered(newInputNode)
           ? generator.copyNodeFromInputNode(mappingName, templateNode, templateId, newInputNode, reductionContext, new boolean[]{false})
           : generator.copyNodeFromExternalNode(mappingName, templateNode, templateId, newInputNode, reductionContext);
       if (_outputNodes != null) {
@@ -126,7 +126,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       }
     }
 
-    if (child.isRegistered()) {
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(child)) {
       // must be "in air"
       child = CopyUtil.copy(child);
     }
