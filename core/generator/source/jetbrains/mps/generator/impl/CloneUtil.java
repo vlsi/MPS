@@ -20,11 +20,9 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.util.*;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
-/**
- * Created by: Sergey Dmitriev
- * Date: Apr 2, 2007
- */
 public class CloneUtil {
   private static final Logger LOG = Logger.getLogger(CloneUtil.class);
 
@@ -56,10 +54,10 @@ public class CloneUtil {
   public static SNode clone(SNode inputNode, SModel outputModel, boolean originalInput) {
     // new SNode() uses intern. It's a very expensive operation and we know that when we copy node, concept fq name
     // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
-    SNode outputNode = new SNode(outputModel, inputNode.getConceptFqName(), false);
+    final SNode outputNode = new SNode(outputModel, inputNode.getConceptFqName(), false);
 
     outputNode.setId(inputNode.getSNodeId());
-    outputNode.putProperties(inputNode);
+    jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
     outputNode.putUserObjects(inputNode);
     // keep track of 'original input node'
     if (originalInput) {
@@ -100,5 +98,4 @@ public class CloneUtil {
     }
     return outputNode;
   }
-
 }

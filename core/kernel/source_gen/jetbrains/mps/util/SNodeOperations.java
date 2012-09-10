@@ -214,6 +214,15 @@ public class SNodeOperations {
     return ((jetbrains.mps.smodel.SNode) n).getResolveInfo();
   }
 
+  public static void copyProperties(SNode from, final SNode to) {
+    from.visitProperties(new SNode.PropertyVisitor() {
+      public boolean visitProperty(String p0, String p1) {
+        to.setProperty(p0, p1);
+        return true;
+      }
+    });
+  }
+
   private static class DescendantsIterable implements TreeIterator<SNode>, Iterable<SNode> {
     private SNode original;
     private SNode current;

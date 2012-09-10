@@ -121,7 +121,7 @@ public class TemplateProcessor {
     }
     mappings.addOutputNodeByInputNodeAndMappingName(context.getInput(), mappingName, outputNode);
     mappings.addOutputNodeByTemplateNode(templateNode, outputNode);
-    outputNode.putProperties(templateNode);
+    jetbrains.mps.util.SNodeOperations.copyProperties(templateNode, outputNode);
 
     SModel templateModel = templateNode.getModel();
     for (SReference reference : templateNode.getReferencesIterable()) {

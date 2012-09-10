@@ -514,7 +514,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // output node should be accessible via 'findCopiedNode'
     myMappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
 
-    outputNode.putProperties(inputNode);
+    jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
     outputNode.putUserObjects(inputNode);
     // keep track of 'original input node'
     if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {

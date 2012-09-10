@@ -36,11 +36,6 @@ public final class CopyUtil {
 
   private static void copyModelContentAndPreserveIds(SModel from, SModel to) {
     for (SNode root : from.roots()) {
-//      HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-//      SNode rootCopy = clone(root, mapping, true);
-//      for (SNode sourceNode : mapping.keySet()) {
-//        mapping.get(sourceNode).setId(sourceNode.getSNodeId());
-//      }
       to.addRoot(copyAndPreserveId(root, true));
     }
   }
@@ -138,28 +133,12 @@ public final class CopyUtil {
     return result;
   }
 
-  public static void copyAttributes(SNode fromNode, SNode toNode) {
-    if (fromNode == null || toNode == null) return;
-
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    mapping.put(fromNode, toNode);
-
-    for (SNode child : fromNode.getChildren(true)) {
-      if (AttributeOperations.isAttribute(child)) {
-        String role = child.getRole();
-        assert role != null;
-        toNode.addChild(role, CopyUtil.copy(child, mapping, true));
-      }
-    }
-
-  }
-
   private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     if (node == null) return null;
 
     SNode result = new SNode(node.getModel(), node.getConceptFqName(), false);
     mapping.put(node, result);
-    result.putProperties(node);
+    jetbrains.mps.util.SNodeOperations.copyProperties(node, result);
     result.putUserObjects(node);
     for (SNode child : node.getChildren(copyAttributes)) {
       String role = child.getRole();
