@@ -409,7 +409,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
-
   public String getPresentation(boolean detailed) {
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
@@ -441,23 +440,14 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
-    return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
-  }
-
-
-  private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
-    // depth-first traversal
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
-        list.add(child);
+    Condition<org.jetbrains.mps.openapi.model.SNode> cond = condition==null?null:
+      new Condition<org.jetbrains.mps.openapi.model.SNode>() {
+      public boolean met(org.jetbrains.mps.openapi.model.SNode object) {
+        if (!(object instanceof SNode)) return false;
+        return condition.met((SNode) object);
       }
-      child.collectDescendants(condition, list);
-    }
-  }
-
-  public Language getNodeLanguage() {
-    SNode concept = getConceptDeclarationNode();
-    return SModelUtil.getDeclaringLanguage(concept);
+    };
+    return (Iterable<SNode>) (Iterable) jetbrains.mps.util.SNodeOperations.getDescendants(this, cond, includeFirst);
   }
 
   @NotNull
@@ -470,17 +460,8 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public ModuleReference getConceptLanguage() {
-    return new ModuleReference(getLanguageNamespace());
+    return new ModuleReference(NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName()));
   }
-
-  @NotNull
-  public String getLanguageNamespace() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    return InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName));
-  }
-
 
   public boolean isInstanceOfConcept(SNode concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
@@ -489,7 +470,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public boolean isInstanceOfConcept(String conceptFqName) {
     return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
-
 
   public SNode findParent(Condition<SNode> condition) {
     SNode parent = getParent();
@@ -514,7 +494,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public Language getLanguage() {
-    String languageNamespace = getLanguageNamespace();
+    String languageNamespace = NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName());
     return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
   }
 
@@ -736,7 +716,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       return new SkipAttributesChildrenList(firstChild);
     }
   }
-
 
   public SNode getNextChild(SNode child) {
     String childRole = child.getRole();
@@ -1249,7 +1228,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-
   //----------------------------------------------------------
   //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
   //----------------------------------------------------------
@@ -1280,6 +1258,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
+  }
+
+  public Language getNodeLanguage() {
+    SNode concept = getConceptDeclarationNode();
+    return SModelUtil.getDeclaringLanguage(concept);
   }
 
   //----------------------------------------------------------
@@ -1485,7 +1468,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public boolean isAncestorOf(SNode child) {
-    return jetbrains.mps.util.SNodeOperations.isAncestor(this,child);
+    return jetbrains.mps.util.SNodeOperations.isAncestor(this, child);
   }
 
   public int getChildCount(String role) {
@@ -1514,11 +1497,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public boolean isDeleted() {
-    return getModel()==null;
+    return getModel() == null;
   }
 
   public String getId() {
     return getSNodeId().toString();
+  }
+
+  @NotNull
+  public String getLanguageNamespace() {
+    return NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName());
   }
 
   //--------private-------
@@ -1621,6 +1609,15 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new MyReferencesWrapper();
   }
 
+  private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
+    // depth-first traversal
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
+        list.add(child);
+      }
+      child.collectDescendants(condition, list);
+    }
+  }
 
   //--------private classes-------
 
