@@ -45,6 +45,9 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
@@ -286,23 +289,33 @@ public class CheckProjectStructureHelper {
     return errors;
   }
 
-  private static void checkModelNodes(@NotNull SModel model, @NotNull List<String> result) {
-    for (SNode node : model.nodes()) {
-      for (String propname : node.getProperties().keySet()) {
-        SNode decl = node.getPropertyDeclaration(propname);
-        if (decl == null) {
-          result.add("unknown property: `" + propname + "' in node " + node.getDebugText());
-        }
+  private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
+    for (final SNode node : model.nodes()) {
+      final SConcept concept = node.getConcept();
+      if (concept==null){
+        result.add("unknown concept of node: " + node.getDebugText());
+        continue;
       }
+
+      node.visitProperties(new PropertyVisitor() {
+        public boolean visitProperty(String name, String value) {
+          if (concept.getProperty(name)==null){
+            result.add("unknown property: `" + name + "' in node " + node.getDebugText());
+          }
+          return true;
+        }
+      });
+
       for (SReference ref : node.getReferencesIterable()) {
-        SNode decl = node.getLinkDeclaration(ref.getRole());
-        if (decl == null) {
+        SLink link = concept.getLink(ref.getRole());
+        if (link==null || !link.isReference()){
           result.add("unknown link role: `" + ref.getRole() + "' in node " + node.getDebugText());
         }
       }
+
       for (SNode child : node.getChildren()) {
-        SNode decl = child.getRoleLink();
-        if (decl == null) {
+        SLink link = concept.getLink(child.getRole());
+        if (link==null || link.isReference()){
           result.add("unknown child role: `" + child.getRole() + "' in node " + node.getDebugText());
         }
       }
