@@ -1227,22 +1227,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return addChildRoles(new HashSet<String>(), includeAttributeRoles);
   }
 
-  public Set<String> addChildRoles(final Set<String> augend, boolean includeAttributeRoles) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      String roleOf = child.getRole();
-      assert roleOf != null;
-      if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
-        augend.add(roleOf);
-      }
-    }
-    return augend;
-  }
-
   public Set<String> getChildRoles() {
     return getChildRoles(false);
   }
@@ -1523,6 +1507,22 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   @NotNull
   public String getConceptShortName() {
     return NameUtil.shortNameFromLongName(getConceptFqName());
+  }
+
+  public Set<String> addChildRoles(final Set<String> augend, boolean includeAttributeRoles) {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      String roleOf = child.getRole();
+      assert roleOf != null;
+      if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
+        augend.add(roleOf);
+      }
+    }
+    return augend;
   }
 
   //--------private-------

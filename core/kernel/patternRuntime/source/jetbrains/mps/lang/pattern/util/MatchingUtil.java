@@ -78,7 +78,7 @@ public class MatchingUtil {
 
     // children
     Set<String> childRoles = node1.getChildRoles(matchAttributes);
-    node2.addChildRoles(childRoles, matchAttributes);
+    childRoles.addAll(node2.getChildRoles(matchAttributes));
     for (String role : childRoles) {
       List<SNode> children1 = node1.getChildren(role);
       List<SNode> children2 = node2.getChildren(role);
