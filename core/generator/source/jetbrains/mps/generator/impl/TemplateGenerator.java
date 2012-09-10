@@ -272,7 +272,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         registerRoot(outputNode, inputNode, rule.getRuleNode(), false);
         setChanged();
         // we copy user objects in reduction rules, root mapping rules are no different
-        outputNode.putUserObjects(inputNode);
+        jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
       }
 
       if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
@@ -419,7 +419,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
                 // output node should be accessible via 'findCopiedNode'
                 getMappings().addCopiedOutputNodeForInputNode(inputNode, reducedNode);
                 // preserve user objects
-                reducedNode.putUserObjects(inputNode);
+                jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, reducedNode);
                 // keep track of 'original input node'
                 if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
                   TracingUtil.putInputNode(reducedNode, inputNode);
@@ -515,7 +515,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myMappings.addCopiedOutputNodeForInputNode(inputNode, outputNode);
 
     jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
-    outputNode.putUserObjects(inputNode);
+    jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
     // keep track of 'original input node'
     if (inputNode.getModel() == getGeneratorSessionContext().getOriginalInputModel()) {
       TracingUtil.putInputNode(outputNode, inputNode);

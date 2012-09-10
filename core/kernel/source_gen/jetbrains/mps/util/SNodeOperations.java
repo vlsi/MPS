@@ -223,6 +223,15 @@ public class SNodeOperations {
     });
   }
 
+  public static void copyUserObjects(SNode from, final SNode to) {
+    from.visitUserObjects(new SNode.UserObjectVisitor() {
+      public boolean visitObject(Object object, Object object1) {
+        to.putUserObject(object, object1);
+        return true;
+      }
+    });
+  }
+
   private static class DescendantsIterable implements TreeIterator<SNode>, Iterable<SNode> {
     private SNode original;
     private SNode current;

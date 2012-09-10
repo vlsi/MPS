@@ -1097,17 +1097,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getSNodeId().toString();
   }
 
-  public void putUserObjects(SNode fromNode) {
-    if (fromNode == null || fromNode.myUserObjects == null) return;
-    if (myUserObjects == null) {
-      myUserObjects = fromNode.myUserObjects;
-    } else {
-      for (int i = 0; i < fromNode.myUserObjects.length; i += 2) {
-        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i + 1]);
-      }
-    }
-  }
-
   public void removeUserObject(Object key) {
     if (myUserObjects == null) return;
     for (int i = 0; i < myUserObjects.length; i += 2) {
@@ -1313,18 +1302,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new PropertiesMap(myProperties);
   }
 
-  public void putProperties(SNode fromNode) {
-    ModelChange.assertLegalNodeChange(this);
-
-    if (fromNode == null || fromNode.myProperties == null) return;
-
-    String[] addedProps = fromNode.myProperties;
-    String[] oldProperties = myProperties == null ? EMPTY_STRING_ARRAY : myProperties;
-    myProperties = new String[oldProperties.length + addedProps.length];
-    System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
-    System.arraycopy(addedProps, 0, myProperties, oldProperties.length, addedProps.length);
-  }
-
   public Set<String> getPropertyNames() {
     ModelAccess.assertLegalRead(this);
 
@@ -1337,6 +1314,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
     return result;
   }
+
 
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
@@ -1516,6 +1494,30 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public void setName(String name) {
     setProperty(SNodeUtil.property_INamedConcept_name, name);
   }
+
+  public void putProperties(SNode fromNode) {
+    ModelChange.assertLegalNodeChange(this);
+
+    if (fromNode == null || fromNode.myProperties == null) return;
+
+    String[] addedProps = fromNode.myProperties;
+    String[] oldProperties = myProperties == null ? EMPTY_STRING_ARRAY : myProperties;
+    myProperties = new String[oldProperties.length + addedProps.length];
+    System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
+    System.arraycopy(addedProps, 0, myProperties, oldProperties.length, addedProps.length);
+  }
+
+  public void putUserObjects(SNode fromNode) {
+    if (fromNode == null || fromNode.myUserObjects == null) return;
+    if (myUserObjects == null) {
+      myUserObjects = fromNode.myUserObjects;
+    } else {
+      for (int i = 0; i < fromNode.myUserObjects.length; i += 2) {
+        putUserObject(fromNode.myUserObjects[i], fromNode.myUserObjects[i + 1]);
+      }
+    }
+  }
+
 
   //--------private-------
 

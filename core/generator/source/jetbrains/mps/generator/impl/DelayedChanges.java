@@ -56,14 +56,14 @@ public class DelayedChanges {
   }
 
   public void addExecuteMapSrcNodeMacroChange(SNode mapSrcMacro, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
-    childToReplace.putUserObjects(attrsHolder);
+    jetbrains.mps.util.SNodeOperations.copyUserObjects(attrsHolder, childToReplace);
     synchronized (this) {
       myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, context, reductionContext));
     }
   }
 
   public void addExecuteNodeMapper(@NotNull NodeMapper mapper, PostProcessor processor, SNode childToReplace, @NotNull TemplateContext context, @NotNull ReductionContext reductionContext) {
-    childToReplace.putUserObjects(attrsHolder);
+    jetbrains.mps.util.SNodeOperations.copyUserObjects(attrsHolder, childToReplace);
     myExecuteMapSrcNodeMacroChanges.add(new MapNodeChange(mapper, processor, childToReplace, context, reductionContext));
   }
 

@@ -58,7 +58,7 @@ public class CloneUtil {
 
     outputNode.setId(inputNode.getSNodeId());
     jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
-    outputNode.putUserObjects(inputNode);
+    jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
     // keep track of 'original input node'
     if (originalInput) {
       TracingUtil.putInputNode(outputNode, inputNode);
