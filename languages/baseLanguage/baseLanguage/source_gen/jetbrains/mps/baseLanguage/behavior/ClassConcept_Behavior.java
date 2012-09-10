@@ -301,6 +301,11 @@ public class ClassConcept_Behavior {
         return new EmptyScope();
       }
 
+      if ((superClass == null)) {
+        LOG.warning("Superclass classifier is null for not java.lang.Object classifier in " + thisNode);
+        return new EmptyScope();
+      }
+
       if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperConstructorKind")) {
         return MemberScopes.visibleClassifierMembers(superClass, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"), thisNode);
       }
