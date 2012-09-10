@@ -87,7 +87,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   protected void doUpdatePresentation_internal() {
-    if (myNode.isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode)) {
       return;
     }
     if (hasErrors()) {
@@ -155,7 +155,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected void doInit() {
     this.removeAllChildren();
     SNode n = getSNode();
-    if (n == null || n.isDisposed()) return;
+    if (n == null || jetbrains.mps.util.SNodeOperations.isDisposed(n)) return;
 
     if (showPropertiesAndReferences()) {
       add(new ConceptTreeNode(getOperationContext(),n));
@@ -207,7 +207,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (myNode.isDisposed() || !jetbrains.mps.util.SNodeOperations.isRegistered(myNode) || myNode.getModel().getModelDescriptor() == null) {
+        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !jetbrains.mps.util.SNodeOperations.isRegistered(myNode) || myNode.getModel().getModelDescriptor() == null) {
           return;
         }
         treeView.editNode(myNode, getOperationContext(), focus);

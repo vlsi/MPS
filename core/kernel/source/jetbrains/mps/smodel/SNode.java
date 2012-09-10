@@ -489,11 +489,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(genuineLinkDeclaration);
   }
 
-  public Language getLanguage() {
-    String languageNamespace = NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName());
-    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
-  }
-
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
@@ -802,10 +797,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.registerInModel(model);
     }
-  }
-
-  public boolean isDisposed() {
-    return myModel != null && myModel.isDisposed();
   }
 
   public boolean isDetached() {
@@ -1261,6 +1252,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new ModuleReference(NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName()));
   }
 
+  public Language getLanguage() {
+    String languageNamespace = NameUtil.namespaceFromConceptFQName(getConcept().getQualifiedName());
+    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+  }
+
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
@@ -1508,6 +1504,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public boolean isRegistered() {
     return myRegisteredInModelFlag;
   }
+
+  public boolean isDisposed() {
+    return myModel != null && myModel.isDisposed();
+  }
+
 
   //--------private-------
 

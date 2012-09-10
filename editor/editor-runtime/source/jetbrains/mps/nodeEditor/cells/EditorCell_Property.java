@@ -91,7 +91,7 @@ public class EditorCell_Property extends EditorCell_Label {
     // a solution for MPS-13531
     // better solution is to redispatch all currently waiting EDT commands inside MPSProject.dispose() method
     // currently not available - not possible to redispatch all waiting commands from AWT Thread.
-    if (getSNode().isDisposed()) {
+    if (jetbrains.mps.util.SNodeOperations.isDisposed(getSNode())) {
       return;
     }
     if (myCommitInProgress) return;

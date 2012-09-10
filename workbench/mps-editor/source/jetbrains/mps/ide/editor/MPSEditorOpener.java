@@ -121,7 +121,7 @@ public class MPSEditorOpener {
       }
       assert false : "Containing root was not found for node: " + node.toString() +
         ", top-level node: " + current +
-        ", isDisposed: " + node.isDisposed() +
+        ", isDisposed: " + jetbrains.mps.util.SNodeOperations.isDisposed(node) +
         ", model: " + node.getModel() +
         (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed() : "");
     }

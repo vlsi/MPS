@@ -52,6 +52,6 @@ public class CacheNodeHandler {
 
   protected SNode getNode() {
     SNode sn = myNodeRef.get();
-    return sn != null && !(sn.isDisposed()) ? sn : null;
+    return sn != null && !(jetbrains.mps.util.SNodeOperations.isDisposed(sn)) ? sn : null;
   }
 }

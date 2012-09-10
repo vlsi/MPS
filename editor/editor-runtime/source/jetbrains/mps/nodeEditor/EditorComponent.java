@@ -1213,7 +1213,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public void assertModelNotDisposed() {
     assert myModelDisposedStackTrace == null : getModelDisposedMessage();
-    assert myNode == null || !myNode.isDisposed() : getNodeDisposedMessage();
+    assert myNode == null || !jetbrains.mps.util.SNodeOperations.isDisposed(myNode) : getNodeDisposedMessage();
   }
 
   private String getNodeDisposedMessage() {
@@ -1278,7 +1278,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean isInvalidLightweight() {
     return getEditorContext() == null ||
       getEditedNode() == null ||
-      getEditedNode().isDisposed();
+      jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
   }
 
   private void addOurListeners(@NotNull SModelDescriptor sm) {
@@ -2971,7 +2971,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private boolean isNodeDisposed() {
-    return getEditedNode() != null && getEditedNode().isDisposed();
+    return getEditedNode() != null && jetbrains.mps.util.SNodeOperations.isDisposed(getEditedNode());
   }
 
   public boolean isEditable() {
