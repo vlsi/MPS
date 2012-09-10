@@ -5,7 +5,7 @@ package jetbrains.mps.execution.util.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +22,7 @@ public class IMainClass_Behavior {
     final Wrappers._T<String> unitName = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        unitName.value = TraceInfoUtil.getUnitName(thisNode);
+        unitName.value = TraceDown.anyUnitName(thisNode);
       }
     });
     return unitName.value;

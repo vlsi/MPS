@@ -28,12 +28,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.traceInfo.UnitPositionInfo;
-import jetbrains.mps.traceInfo.DebugInfoRoot;
+import jetbrains.mps.generator.traceInfo.TraceDown;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.reloading.ClasspathStringCollector;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -46,7 +45,6 @@ import com.intellij.openapi.util.SystemInfo;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.util.FileUtil;
 import java.io.PrintWriter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
 import jetbrains.mps.debug.api.IDebuggerSettings;
 import jetbrains.mps.debug.runtime.settings.LocalConnectionSettings;
@@ -276,31 +274,20 @@ public class Java_Command {
           }
           className.value = null;
         } else {
-          List<UnitPositionInfo> unitForNode = debugInfo.getUnitsForNode(node);
-          if (ListSequence.fromList(unitForNode).isEmpty()) {
+          Iterable<String> unitNames = (Iterable<String>) TraceDown.unitNames(node);
+          if (Sequence.fromIterable(unitNames).isEmpty()) {
             if (log.isErrorEnabled()) {
               log.error("No unitName found for " + node + " in trace.info. Check that model is generated.");
             }
             className.value = null;
-          } else if ((int) ListSequence.fromList(unitForNode).count() == 1) {
-            className.value = ListSequence.fromList(unitForNode).first().getUnitName();
+          } else if ((int) Sequence.fromIterable(unitNames).count() == 1) {
+            className.value = Sequence.fromIterable(unitNames).first();
           } else {
-            DebugInfoRoot infoRoot = debugInfo.getRootInfo(SNodeOperations.getContainingRoot(node));
-            for (final TraceablePositionInfo position : SetSequence.fromSet(infoRoot.getPositions())) {
-              if (eq_kk96hj_a0a0b0a1a0c0a0a0a0b0c(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-                if (eq_kk96hj_a0a0a0b0a1a0c0a0a0a0b0c(position.getPropertyString(), ((String) BehaviorManager.getInstance().invoke(Object.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class})))) {
-                  UnitPositionInfo unit = ListSequence.fromList(unitForNode).findFirst(new IWhereFilter<UnitPositionInfo>() {
-                    public boolean accept(UnitPositionInfo it) {
-                      return it.isPositionInside(position.getFileName(), position.getStartLine());
-                    }
-                  });
-                  if (unit != null) {
-                    className.value = unit.getUnitName();
-                    break;
-                  }
-                }
+            className.value = TraceDown.unitNameWithPosition(node, new _FunctionTypes._return_P1_E0<Boolean, TraceablePositionInfo>() {
+              public Boolean invoke(TraceablePositionInfo position) {
+                return (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c(position.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && (eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c_0(position.getPropertyString(), ((String) BehaviorManager.getInstance().invoke(Object.class, new Java_Command.QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2().createNode(), "virtual_getTraceableProperty_5067982036267369901", new Class[]{SNode.class}))));
               }
-            }
+            });
           }
         }
       }
@@ -504,14 +491,14 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  private static boolean eq_kk96hj_a0a0b0a1a0c0a0a0a0b0c(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_kk96hj_a0a0a0b0a1a0c0a0a0a0b0c(Object a, Object b) {
+  private static boolean eq_kk96hj_a0a0a0a0a1a0a0a1a0c0a0a0a0b0c_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
@@ -522,8 +509,8 @@ public class Java_Command {
     return str != null && str.length() > 0;
   }
 
-  public static class QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2 {
-    public QuotationClass_kk96hj_a1a0a0a0a0a1a0b0a2a0a0a0a1a2() {
+  public static class QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2 {
+    public QuotationClass_kk96hj_a1a0a0a0a0a0a0b0a0a0b0a2a0a0a0a1a2() {
     }
 
     public SNode createNode() {

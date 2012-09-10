@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.traceInfo.TraceDown;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.vfs.FileSystem;
 
@@ -91,7 +92,7 @@ public class Gcc_Command {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         module.value = SNodeOperations.getModel(file).getModelDescriptor().getModule();
-        sourceName.value = TraceInfoUtil.getUnitName(file);
+        sourceName.value = TraceDown.anyUnitName(file);
         packageName.value = SNodeOperations.getModel(file).getLongName().replace(".", "/");
       }
     });
