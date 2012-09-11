@@ -6,12 +6,14 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
-public class FooCheckedDots {
+public class FooCheckedDots<T extends Enum> {
   private String myString;
   private boolean myBoolean;
   private int myInt;
+  private T element;
 
-  public FooCheckedDots() {
+  public FooCheckedDots(T element) {
+    this.element = element;
   }
 
   public void bar(String s, Object t, FooCheckedDots foo2) {
@@ -28,7 +30,8 @@ public class FooCheckedDots {
     check_7013wl_a1a1(s, this);
     check_7013wl_a2a1(s, myString);
     check_7013wl_a3a1(s, this);
-
+    // http://youtrack.jetbrains.com/issue/MPS-14355 
+    check_7013wl_a5a1(s, this);
   }
 
   public int intFunc() {
@@ -86,14 +89,14 @@ public class FooCheckedDots {
     return false;
   }
 
-  private static char check_7013wl_a0a1(String checkedDotOperand, FooCheckedDots checkedDotThisExpression) {
+  private static <T extends Enum> char check_7013wl_a0a1(String checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.charAt(checkedDotThisExpression.intFunc());
     }
     return 0;
   }
 
-  private static char check_7013wl_a1a1(String checkedDotOperand, FooCheckedDots checkedDotThisExpression) {
+  private static <T extends Enum> char check_7013wl_a1a1(String checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.charAt(checkedDotThisExpression.intFunc());
     }
@@ -107,9 +110,16 @@ public class FooCheckedDots {
     return false;
   }
 
-  private static boolean check_7013wl_a3a1(String checkedDotOperand, FooCheckedDots checkedDotThisExpression) {
+  private static <T extends Enum> boolean check_7013wl_a3a1(String checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(checkedDotThisExpression.myString);
+    }
+    return false;
+  }
+
+  private static <T extends Enum> boolean check_7013wl_a5a1(String checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.equals(checkedDotThisExpression.element.name());
     }
     return false;
   }
@@ -121,7 +131,7 @@ public class FooCheckedDots {
     return 0;
   }
 
-  private static void check_7013wl_a1a4(FooCheckedDots checkedDotOperand, FooCheckedDots checkedDotThisExpression) {
+  private static <T extends Enum> void check_7013wl_a1a4(FooCheckedDots checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.foo(checkedDotThisExpression.getString(checkedDotThisExpression.myInt, checkedDotThisExpression.myBoolean));
     }
