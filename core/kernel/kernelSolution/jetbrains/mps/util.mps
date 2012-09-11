@@ -4689,8 +4689,6 @@
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="8441062577042923658">
       <property name="name" nameId="tpck.1169194664001" value="copyProperties" />
-      <property name="right_transform_hint" value="123" />
-      <property name="left_transform_hint" value="123" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8441062577042923662">
         <property name="name" nameId="tpck.1169194664001" value="from" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8441062577042923664">
@@ -4744,8 +4742,6 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8441062577042938045">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8441062577042938067">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8441062577042938046">
-                              <property name="right_transform_hint" value="123" />
-                              <property name="left_transform_hint" value="123" />
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8441062577042923665" resolveInfo="to" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8441062577042938073">
@@ -4776,8 +4772,6 @@
     </node>
     <node role="staticMethod" roleId="tpee.1070462273904" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="8441062577042956614">
       <property name="name" nameId="tpck.1169194664001" value="copyUserObjects" />
-      <property name="right_transform_hint" value="123" />
-      <property name="left_transform_hint" value="123" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8441062577042956615">
         <property name="name" nameId="tpck.1169194664001" value="from" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8441062577042956616">
@@ -4831,8 +4825,6 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8441062577042956734">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8441062577042956756">
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8441062577042956735">
-                              <property name="right_transform_hint" value="123" />
-                              <property name="left_transform_hint" value="123" />
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8441062577042956617" resolveInfo="to" />
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8441062577042956942">
