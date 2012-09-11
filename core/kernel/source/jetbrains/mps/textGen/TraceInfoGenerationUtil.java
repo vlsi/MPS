@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.traceInfo.PositionInfo;
 import jetbrains.mps.traceInfo.ScopePositionInfo;
@@ -28,6 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 public class TraceInfoGenerationUtil {
+  private static final Logger LOG = Logger.getLogger(TraceInfoGenerationUtil.class);
   public static final String POSITION_INFO = "POSITION_INFO";
   public static final String SCOPE_INFO = "SCOPE_INFO";
   public static final String UNIT_INFO = "UNIT_INFO";
@@ -114,5 +116,16 @@ public class TraceInfoGenerationUtil {
     info.setEndLine(buffer.getLineNumber());
     info.setEndPosition(buffer.getPosition());
     info.setUnitName(unitName);
+
+    warnIfUnitNameInvalid(unitName, node);
+  }
+
+  private static void warnIfUnitNameInvalid(String unitName, SNode node) {
+    String longName = node.getModel().getSModelFqName().getLongName();
+    if (!(unitName.startsWith(longName))) {
+      LOG.warning("Unit name has to start with model fqName. Fix " + unitName + " in " + longName + ".", node);
+    } else if (unitName.length() <= longName.length() + 1 || !(unitName.substring(longName.length()).startsWith(".")) || unitName.substring(longName.length()+1).contains(".")) {
+      LOG.warning("Unit name has to match \"modelFqName.shortUnitName\" where short unit name does not contain dots. Fix " + unitName + " in " + longName + ".", node);
+    }
   }
 }

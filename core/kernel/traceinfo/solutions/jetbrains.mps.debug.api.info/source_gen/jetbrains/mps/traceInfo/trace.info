@@ -370,7 +370,7 @@
     <scopeInfo nodeId="2897370900776711562" fileName="ScopePositionInfo.java" startLine="40" startPosition="66" endLine="43" endPosition="32">
       <varInfo nodeId="2897370900776711564" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="2897370900776711663" fileName="ScopePositionInfo.java" startLine="62" startPosition="12" endLine="65" endPosition="7" />
+    <scopeInfo nodeId="2897370900776711664" fileName="ScopePositionInfo.java" startLine="62" startPosition="12" endLine="65" endPosition="7" />
     <scopeInfo nodeId="2897370900776711628" fileName="ScopePositionInfo.java" startLine="57" startPosition="26" endLine="61" endPosition="69">
       <varInfo nodeId="2897370900776711630" varName="varInfo" />
     </scopeInfo>
@@ -783,7 +783,7 @@
     <nodeInfo nodeId="2897370900776713106" fileName="DebugInfo.java" startLine="230" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromXml#(Lorg/jdom/Element;Ljetbrains/mps/smodel/SModelDescriptor;)Ljetbrains/mps/traceInfo/DebugInfo;" />
     <nodeInfo nodeId="1689763677888153882" fileName="DebugInfo.java" startLine="156" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInfoForPosition#(Ljava/lang/String;ILjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljava/util/List;" />
     <nodeInfo nodeId="2897370900776713014" fileName="DebugInfo.java" startLine="206" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toXml#()Lorg/jdom/Element;" />
-    <scopeInfo nodeId="2897370900776713105" fileName="DebugInfo.java" startLine="42" startPosition="22" endLine="42" endPosition="22" />
+    <scopeInfo nodeId="2897370900776713105" fileName="DebugInfo.java" startLine="42" startPosition="27" endLine="42" endPosition="27" />
     <scopeInfo nodeId="5066864551128356993" fileName="DebugInfo.java" startLine="55" startPosition="86" endLine="56" endPosition="67" />
     <scopeInfo nodeId="5066864551128357059" fileName="DebugInfo.java" startLine="59" startPosition="87" endLine="60" endPosition="72" />
     <scopeInfo nodeId="5066864551128357119" fileName="DebugInfo.java" startLine="63" startPosition="89" endLine="64" endPosition="75" />
@@ -1208,8 +1208,12 @@
       <varInfo nodeId="2522627450234088684" varName="input" />
     </scopeInfo>
     <scopeInfo nodeId="2522627450234088851" fileName="DebugInfoBuilder.java" startLine="76" startPosition="32" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="2522627450234088581" fileName="DebugInfoBuilder.java" startLine="60" startPosition="28" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="2522627450234088675" fileName="DebugInfoBuilder.java" startLine="68" startPosition="33" endLine="74" endPosition="7" />
+    <scopeInfo nodeId="2522627450234088582" fileName="DebugInfoBuilder.java" startLine="60" startPosition="28" endLine="66" endPosition="7">
+      <varInfo nodeId="2522627450234088586" varName="out" />
+    </scopeInfo>
+    <scopeInfo nodeId="2522627450234088676" fileName="DebugInfoBuilder.java" startLine="68" startPosition="33" endLine="74" endPosition="7">
+      <varInfo nodeId="2522627450234088680" varName="out" />
+    </scopeInfo>
     <scopeInfo nodeId="5066864551128496282" fileName="DebugInfoBuilder.java" startLine="17" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="5066864551128497849" varName="fileName" />
       <varInfo nodeId="5066864551128496411" varName="inputModel" />

@@ -39,7 +39,7 @@ public class DebugInfo {
 
   private Map<Tuples._2<String, String>, DebugInfoRoot> myRoots = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, DebugInfoRoot>());
 
-  public DebugInfo() {
+  /*package*/ DebugInfo() {
   }
 
   private DebugInfoRoot getOrCreateDebugInfoRoot(SNode rootNode) {
