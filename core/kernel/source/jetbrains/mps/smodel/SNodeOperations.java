@@ -37,7 +37,7 @@ public class SNodeOperations {
   }
 
   public static boolean isUnknown(SNode sNode) {
-    Language language = GlobalScope.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(sNode.getConcept().getQualifiedName()));
+    Language language = GlobalScope.getInstance().getLanguage(sNode.getLanguageNamespace());
     return language == null || language.findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConceptFqName())) == null;
   }
 

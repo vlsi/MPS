@@ -18,7 +18,6 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -54,7 +53,7 @@ public class ModelContentUtil {
     }
     for (SNode root : model.roots()) {
       for (SNode child : root.getDescendantsIterable(null, true)) {
-        String namespace1 = NameUtil.namespaceFromConceptFQName(child.getConcept().getQualifiedName());
+        String namespace1 = child.getLanguageNamespace();
         namespaces.add(namespace1);
       }
     }
