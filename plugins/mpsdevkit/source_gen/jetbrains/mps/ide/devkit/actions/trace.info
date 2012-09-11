@@ -4963,36 +4963,41 @@
     <unitInfo nodeId="8513716958726547010" fileName="Trace_KeymapChanges.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.Trace_KeymapChanges" />
   </root>
   <root nodeId="8513716958726547050">
-    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="17" startPosition="51" endLine="18" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="8513716958726547076" fileName="TraceTool_Tool.java" startLine="19" startPosition="0" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
-    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="22" startPosition="42" endLine="23" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="26" startPosition="37" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8513716958726547087" fileName="TraceTool_Tool.java" startLine="27" startPosition="24" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8513716958726547064" fileName="TraceTool_Tool.java" startLine="31" startPosition="156" endLine="32" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8513716958726547081" fileName="TraceTool_Tool.java" startLine="35" startPosition="36" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="21" startPosition="0" endLine="24" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceTool_Tool#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="8513716958726547051" fileName="TraceTool_Tool.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildTrace#(Ljetbrains/mps/newTypesystem/TypeCheckingContextNew;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Z)V" />
-    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
-    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="22" startPosition="42" endLine="23" endPosition="79" />
-    <scopeInfo nodeId="8513716958726547063" fileName="TraceTool_Tool.java" startLine="31" startPosition="156" endLine="32" endPosition="102" />
-    <scopeInfo nodeId="8513716958726547080" fileName="TraceTool_Tool.java" startLine="35" startPosition="36" endLine="36" endPosition="39" />
-    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="26" startPosition="37" endLine="28" endPosition="80" />
-    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="21" startPosition="0" endLine="24" endPosition="3">
+    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="18" startPosition="51" endLine="19" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="8513716958726547076" fileName="TraceTool_Tool.java" startLine="20" startPosition="0" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPanel" />
+    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="23" startPosition="42" endLine="24" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="27" startPosition="37" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547087" fileName="TraceTool_Tool.java" startLine="28" startPosition="24" endLine="29" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7812713049443707378" fileName="TraceTool_Tool.java" startLine="32" startPosition="25" endLine="33" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="33" startPosition="50" endLine="34" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547064" fileName="TraceTool_Tool.java" startLine="37" startPosition="156" endLine="38" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8513716958726547081" fileName="TraceTool_Tool.java" startLine="41" startPosition="36" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="22" startPosition="0" endLine="25" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TraceTool_Tool#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="8513716958726547051" fileName="TraceTool_Tool.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="buildTrace#(Ljetbrains/mps/newTypesystem/TypeCheckingContextNew;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorComponent;Z)V" />
+    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponent#()Ljavax/swing/JComponent;" />
+    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="23" startPosition="42" endLine="24" endPosition="79" />
+    <scopeInfo nodeId="8513716958726547063" fileName="TraceTool_Tool.java" startLine="37" startPosition="156" endLine="38" endPosition="102" />
+    <scopeInfo nodeId="8513716958726547080" fileName="TraceTool_Tool.java" startLine="41" startPosition="36" endLine="42" endPosition="39" />
+    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="27" startPosition="37" endLine="29" endPosition="80" />
+    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="32" startPosition="25" endLine="34" endPosition="20" />
+    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="22" startPosition="0" endLine="25" endPosition="3">
       <varInfo nodeId="8513716958726547050" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="8513716958726547051" fileName="TraceTool_Tool.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
+    <scopeInfo nodeId="8513716958726547051" fileName="TraceTool_Tool.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="8513716958726547058" varName="editorComponent" />
       <varInfo nodeId="8513716958726547056" varName="node" />
       <varInfo nodeId="8513716958726547054" varName="operationContext" />
       <varInfo nodeId="8513716958726547060" varName="rebuild" />
       <varInfo nodeId="8513716958726547052" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
+    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="8513716958726547050" varName="project" />
     </scopeInfo>
-    <unitInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="17" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.TraceTool_Tool" />
+    <scopeInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
+    <unitInfo nodeId="8513716958726547050" fileName="TraceTool_Tool.java" startLine="18" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.devkit.actions.TraceTool_Tool" />
   </root>
   <root nodeId="8513716958726547095">
     <nodeInfo nodeId="8513716958726547095" fileName="ShowTypeSystemTraceIncremental_Action.java" startLine="24" startPosition="71" endLine="25" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -5476,8 +5481,8 @@
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="37" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="38" endLine="12" endPosition="40" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="40" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="12" startPosition="52" endLine="12" endPosition="53" conceptFqName="jetbrains.mps.gtext.structure.GText" />
@@ -5541,8 +5546,8 @@
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="75" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="76" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="76" endLine="22" endPosition="78" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="78" endLine="22" endPosition="90" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="8586967776370586377" fileName="plugin.xml" startLine="22" startPosition="90" endLine="22" endPosition="91" conceptFqName="jetbrains.mps.gtext.structure.GText" />

@@ -118,6 +118,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
+    <classNode dependClassName="com.intellij.openapi.util.Disposer" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
@@ -144,17 +145,21 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode extendsClassName="com.intellij.openapi.Disposable" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" file="TypeSystemTraceTree.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
+    <classNode dependClassName="java.awt.Color" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.LinkedList" />
     <classNode dependClassName="java.util.List" />
@@ -184,6 +189,10 @@
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.blocks.Block" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.NodeHighlightManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
@@ -197,10 +206,10 @@
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
     <classNode extendsClassName="javax.swing.event.TreeSelectionListener" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.MPSTree" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultEditorMessage" />
   </dependency>
   <dependency className="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTreeNode" file="TypeSystemTraceTreeNode.java">
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.List" />

@@ -8,6 +8,7 @@ import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -26,6 +27,11 @@ public class TraceTool_Tool extends GeneratedTool {
   public void init(Project project) {
     super.init(project);
     TraceTool_Tool.this.myPanel = new TypeSystemTracePanel(TraceTool_Tool.this);
+  }
+
+  public void dispose() {
+    Disposer.dispose(TraceTool_Tool.this.myPanel);
+    super.dispose();
   }
 
   public void buildTrace(TypeCheckingContextNew t, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
