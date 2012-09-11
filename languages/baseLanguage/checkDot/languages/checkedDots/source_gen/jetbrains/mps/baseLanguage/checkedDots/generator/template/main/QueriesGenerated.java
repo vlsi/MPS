@@ -59,6 +59,10 @@ public class QueriesGenerated {
     return CheckedDotExpression_Behavior.call_hasLocalContextInside_3674434577577159922(_context.getNode());
   }
 
+  public static boolean ifMacro_Condition_131924539844672792(final IOperationContext operationContext, final IfMacroContext _context) {
+    return CheckedDotExpression_Behavior.call_hasLocalContextInside_3674434577577159922(_context.getNode());
+  }
+
   public static boolean ifMacro_Condition_3674434577577160639(final IOperationContext operationContext, final IfMacroContext _context) {
     return CheckedDotExpression_Behavior.call_hasLocalContextInside_3674434577577159922(_context.getNode());
   }
@@ -100,7 +104,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_3674434577577160632(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return new QueriesGenerated.QuotationClass_x583g4_a0a0s().createNode();
+    return new QueriesGenerated.QuotationClass_x583g4_a0a0t().createNode();
   }
 
   public static Iterable sourceNodesQuery_3391577739833431906(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -118,6 +122,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(declaration, "throwsItem", true);
   }
 
+  public static Iterable sourceNodesQuery_131924539844672796(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "typeVariableDeclaration", true);
+  }
+
   public static Iterable sourceNodesQuery_3391577739833596041(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.IVariableReference", false, new String[]{});
   }
@@ -126,8 +134,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
 
-  public static class QuotationClass_x583g4_a0a0s {
-    public QuotationClass_x583g4_a0a0s() {
+  public static class QuotationClass_x583g4_a0a0t {
+    public QuotationClass_x583g4_a0a0t() {
     }
 
     public SNode createNode() {

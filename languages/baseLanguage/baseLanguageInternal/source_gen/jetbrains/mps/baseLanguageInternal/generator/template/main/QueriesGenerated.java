@@ -201,7 +201,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_context.getNode(), "throwsItem", true);
   }
 
-  public static Iterable sourceNodesQuery_2492830749282371608(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_2118978533621033533(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "typeVariableDeclaration", true);
   }
 
