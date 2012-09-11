@@ -455,31 +455,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public Language getNodeLanguage() {
-    SNode concept = getConceptDeclarationNode();
-    return SModelUtil.getDeclaringLanguage(concept);
-  }
-
-  @NotNull
-  public String getConceptFqName() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    return myConceptFqName;
-  }
-
-  public ModuleReference getConceptLanguage() {
-    return new ModuleReference(getLanguageNamespace());
-  }
-
-  @NotNull
-  public String getLanguageNamespace() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    return InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName));
-  }
 
 
   public boolean isInstanceOfConcept(SNode concept) {
@@ -1157,18 +1132,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public List<SNode> getAncestors(boolean includeThis) {
-    List<SNode> result = new ArrayList<SNode>();
-    if (includeThis) {
-      result.add(this);
-    }
-    SNode parent = getParent();
-    if (parent != null) {
-      result.addAll(parent.getAncestors(true));
-    }
-    return result;
-  }
-
   public void replaceChild(SNode oldChild, SNode newChild) {
     SNodeBase anchor = oldChild == firstChild() ? null : oldChild.treePrevious();
     String role = oldChild.getRole();
@@ -1270,6 +1233,33 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
+
+  public Language getNodeLanguage() {
+    SNode concept = getConceptDeclarationNode();
+    return SModelUtil.getDeclaringLanguage(concept);
+  }
+
+  @NotNull
+  public String getConceptFqName() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    return myConceptFqName;
+  }
+
+  public ModuleReference getConceptLanguage() {
+    return new ModuleReference(getLanguageNamespace());
+  }
+
+  @NotNull
+  public String getLanguageNamespace() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    return InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName));
+  }
+
 
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
@@ -1516,6 +1506,18 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public boolean isDisposed() {
     return myModel != null && myModel.isDisposed();
+  }
+
+  public List<SNode> getAncestors(boolean includeThis) {
+    List<SNode> result = new ArrayList<SNode>();
+    if (includeThis) {
+      result.add(this);
+    }
+    SNode parent = getParent();
+    if (parent != null) {
+      result.addAll(parent.getAncestors(true));
+    }
+    return result;
   }
 
 

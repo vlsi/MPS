@@ -2739,7 +2739,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     for (SModelEvent e : events) {
       if (e instanceof SModelChildEvent) {
         SModelChildEvent ce = (SModelChildEvent) e;
-        if (ce.getParent().getAncestors(true).contains(getEditedNode())) {
+        if (jetbrains.mps.util.SNodeOperations.isAncestor(getEditedNode(), ce.getParent())) {
           if (ce.isAdded()) {
             lastAdd = ce;
             childAddedEventNodes.add(ce.getChild());
