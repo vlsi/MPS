@@ -435,10 +435,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public List<SNode> getDescendants() {
-    return getDescendants(null);
-  }
-
   public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
     return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
   }
@@ -1464,6 +1460,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       parent = parent.getParent();
     }
     return null;
+  }
+
+  public List<SNode> getDescendants() {
+    return getDescendants(null);
   }
 
 
