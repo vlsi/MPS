@@ -101,7 +101,7 @@ public class SelectFilesPsiListener implements PsiTreeChangeListener {
 
   @Override
   public void childReplaced(PsiTreeChangeEvent e) {
-    System.out.println("INTERESTING PSI: " + e.getFile().getName());
+//    System.out.println("INTERESTING PSI: " + e.getFile().getName());
     if (isFileInteresting(e)) myDelegate.childReplaced(e);
   }
 

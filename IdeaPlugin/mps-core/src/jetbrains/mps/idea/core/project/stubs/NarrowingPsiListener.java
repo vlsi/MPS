@@ -16,19 +16,33 @@
 
 package jetbrains.mps.idea.core.project.stubs;
 
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDocumentManager;
+import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiTreeChangeAdapter;
 import com.intellij.psi.PsiTreeChangeEvent;
-import com.intellij.psi.PsiTreeChangeListener;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.WeakHashMap;
 
 /**
  * User: Daniil Elovkov
  * Date: 8/30/12
  */
 public class NarrowingPsiListener extends PsiTreeChangeAdapter {
+
+  private static long DELAY = 3000; // Milliseconds
+
   @NotNull private SimpleDocumentListener myDelegate;
   private PsiDocumentManager myPsiDocumentManager;
+
+  private Timer myTimer = new Timer(true);
+  private Map<PsiFile,TimerTask> myFileTasks = new WeakHashMap<PsiFile,TimerTask>();
 
   public NarrowingPsiListener(PsiDocumentManager psiDocMgr, @NotNull SimpleDocumentListener delegate) {
     myDelegate = delegate;
@@ -36,7 +50,16 @@ public class NarrowingPsiListener extends PsiTreeChangeAdapter {
   }
 
   private void handle(PsiTreeChangeEvent e) {
-    myDelegate.documentChanged(e.getFile().getVirtualFile(), myPsiDocumentManager.getDocument(e.getFile()));
+    PsiFile psiFile = e.getFile();
+    synchronized (myFileTasks) {
+      TimerTask task = myFileTasks.get(psiFile);
+      if (task!=null) {
+        task.cancel();
+      }
+      task = new DocTimerTask(psiFile);
+      myFileTasks.put(psiFile, task);
+      myTimer.schedule(task, DELAY);
+    }
   }
 
   // before* methods are not handled, because SimpleDocumentListener is simple
@@ -70,5 +93,32 @@ public class NarrowingPsiListener extends PsiTreeChangeAdapter {
   @Override
   public void propertyChanged(PsiTreeChangeEvent e) {
     handle(e);
+  }
+
+  private class DocTimerTask extends TimerTask {
+
+    PsiFile myPsiFile;
+    DocTimerTask(PsiFile f) {
+      myPsiFile = f;
+    }
+
+//    @Override
+//    public boolean cancel() {
+//      return true;
+//    }
+
+    @Override
+    public void run() {
+      synchronized (myFileTasks) {
+        ThreadUtils.runInUIThreadNoWait(new Runnable() {
+          @Override
+          public void run() {
+            myDelegate.documentChanged(myPsiFile.getVirtualFile(), myPsiDocumentManager.getDocument(myPsiFile));
+          }
+        });
+
+        myFileTasks.remove(myPsiFile);
+      }
+    }
   }
 }

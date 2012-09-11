@@ -30,25 +30,69 @@ public class JavaStubPsiListener extends PsiTreeChangeAdapter {
     myDelegate = delegate;
   }
 
+  private boolean interesting(PsiElement elem) {
+    if (elem instanceof PsiClass || elem instanceof PsiMethod || elem instanceof PsiField
+      || elem instanceof PsiParameterList || elem instanceof PsiParameter
+      || elem instanceof PsiReferenceList // but not PsiReference !
+      || elem instanceof PsiModifierList || elem instanceof PsiModifier
+      || elem instanceof PsiTypeParameterList || elem instanceof PsiTypeParameter) {
+      return true;
+    }
+    return false;
+  }
+
+  private boolean notInteresting(PsiElement elem) {
+    return elem instanceof PsiFile || elem instanceof PsiCodeBlock || elem instanceof PsiExpression;
+  }
+
+  private boolean filter(PsiElement elem) {
+    if (elem == null || elem instanceof PsiWhiteSpace) return false;
+
+    PsiElement e = elem;
+    do {
+      if (interesting(e)) return true;
+      if (notInteresting(e)) return false;
+      e = e.getParent();
+    } while (e!=null);
+
+    return false;
+  }
+
   @Override
   public void childAdded(PsiTreeChangeEvent e) {
+
+    if (filter(e.getChild())) {
+      myDelegate.childAdded(e);
+    }
+
     if (e.getChild() instanceof PsiJavaFile) {
 
-      System.out.println("NEW ClASS DEBUG **** " + e.getChild().toString() + " " + e.getParent().toString());
+//      System.out.println("NEW ClASS DEBUG **** " + e.getChild().toString() + " " + e.getParent().toString());
 
       // a file has been added
-      myDelegate.childAdded(e);
+//      myDelegate.childAdded(e);
     }
   }
 
   @Override
   public void childReplaced(PsiTreeChangeEvent e) {
 
-    System.out.println("CAUGHT PSI: " + e.getFile().getName());
+    if (filter(e.getNewChild())) {
+      myDelegate.childReplaced(e);
+    }
+
+//    System.out.println("CAUGHT PSI: " + e.getFile().getName());
 
     // TODO currently only a dumb stub
     // will do filtering of psi events
-    myDelegate.childReplaced(e);
+//    myDelegate.childReplaced(e);
+  }
+
+  @Override
+  public void childRemoved(PsiTreeChangeEvent e) {
+    if (filter(e.getChild())) {
+      myDelegate.childRemoved(e);
+    }
   }
 
 }

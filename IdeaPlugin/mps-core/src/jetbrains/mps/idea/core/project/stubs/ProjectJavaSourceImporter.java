@@ -59,6 +59,7 @@ import java.util.*;
 public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager implements ProjectComponent {
 
   private static Map<Project,ProjectJavaSourceImporter> INSTANCEs = new HashMap<Project,ProjectJavaSourceImporter>();
+  private Object LOCK = new Object();
 
   private Project myProject;
   private ModuleManager myModuleManager;
@@ -76,9 +77,6 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
   private final static String SOLUTION_NAME_PREFIX = "JavaCodeIn";
 
-  private static boolean workDone = false;
-
-
   public ProjectJavaSourceImporter(MPSCoreComponents core, Project project) {
     myProject = project;
     myModuleManager = ModuleManager.getInstance(project);
@@ -90,8 +88,10 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
   @Override
   protected void init() {
-    if (INSTANCEs.get(myProject)!=null) throw new IllegalStateException("Double initialization");
-    INSTANCEs.put(myProject,this);
+    synchronized (INSTANCEs) {
+      if (INSTANCEs.get(myProject)!=null) throw new IllegalStateException("Double initialization");
+      INSTANCEs.put(myProject,this);
+    }
   }
 
   @Override
@@ -123,7 +123,9 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
   }
 
   public static ProjectJavaSourceImporter getInstance(Project p) {
-    return INSTANCEs.get(p);
+    synchronized (INSTANCEs) {
+      return INSTANCEs.get(p);
+    }
   }
 
   public Solution getSolutionForModule(Module mod) {
@@ -131,70 +133,76 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
   }
 
   private void activate() {
-    for (final Module mod: myModuleManager.getModules()) {
+    synchronized (LOCK) {
+      for (final Module mod: myModuleManager.getModules()) {
 
-      // currently only modules with MPS facet, later should either take dependencies into account
-      // or just take all modules
-      if (!hasMPSFacet(mod)) continue;
+        // currently only modules with MPS facet, later should either take dependencies into account
+        // or just take all modules
+        if (!hasMPSFacet(mod)) continue;
 
-      System.out.println("*** " + mod.toString());
-      trackModule(mod, false);
-      updatePsiListener();
-    }
-
-
-    workDone = true;
-
-    // add listeners
-    workerConnection = myProject.getMessageBus().connect();
-    // setup add/remove module listeners (change in dependencies)
-    workerConnection.subscribe(ProjectTopics.MODULES, new ModuleWatcher(myProject));
-    // setup project roots listeners
-    workerConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new ModuleRootListener() {
-      @Override
-      public void beforeRootsChange(ModuleRootEvent moduleRootEvent) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        System.out.println("*** " + mod.toString());
+        trackModule(mod, false);
+        updatePsiListener();
       }
 
-      @Override
-      public void rootsChanged(ModuleRootEvent moduleRootEvent) {
-        System.out.println("ROOTS DEBUG: event");
-      }
-    });
-    // setup create/delete files listeners
-    VirtualFileManager.getInstance().addVirtualFileListener(new VirtualFileAdapter() {
-      @Override
-      public void fileCreated(VirtualFileEvent event) {
 
-        System.out.println("VIRT FILE DEBUG: " + event.getFile().getName());
-        try {
-          System.out.println("CONTENTS: " + new String(event.getFile().contentsToByteArray()));
-        } catch (IOException e) {
-          e.printStackTrace();
+      // add listeners
+      workerConnection = myProject.getMessageBus().connect();
+      // setup add/remove module listeners (change in dependencies)
+      workerConnection.subscribe(ProjectTopics.MODULES, new ModuleWatcher(myProject));
+      // setup project roots listeners
+      workerConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new ModuleRootListener() {
+        @Override
+        public void beforeRootsChange(ModuleRootEvent moduleRootEvent) {
+          //To change body of implemented methods use File | Settings | File Templates.
         }
 
-        // FIXME HACK
-        VirtualFile vfile = event.getFile();
-        VirtualFile parent = vfile.getParent();
+        @Override
+        public void rootsChanged(ModuleRootEvent moduleRootEvent) {
+          System.out.println("ROOTS DEBUG: event");
+        }
+      });
+      // setup create/delete files listeners
+      VirtualFileManager.getInstance().addVirtualFileListener(new VirtualFileAdapter() {
+        @Override
+        public void fileCreated(VirtualFileEvent event) {
 
-        // check if it's under interesting dir
-        // should be done via DataSources
-        if (vfile.getName().endsWith(".java") && files2Models.containsKey(parent) ) {
-          System.out.println("Updating psi listener");
-          myListenedFiles.add(vfile);
-          updatePsiListener();
-          BaseStubModelDescriptor model = files2Models.get(vfile.getParent());
-          if (model!=null) { // just in case, although files2Models shouldn't contain value null
-            ((StubModelDataSource)model.getSource()).addPath(vfile.toString());
-            files2Models.put(vfile, model);
+          System.out.println("VIRT FILE DEBUG: " + event.getFile().getName());
+          try {
+            System.out.println("CONTENTS: " + new String(event.getFile().contentsToByteArray()));
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+
+          // FIXME this logic should ideally be done via DataSources
+          VirtualFile vfile = event.getFile();
+          VirtualFile parent = vfile.getParent();
+
+          // check if it's under interesting dir
+          if (vfile.getName().endsWith(".java") && files2Models.containsKey(parent) ) {
+            System.out.println("Updating psi listener");
+            myListenedFiles.add(vfile);
+            updatePsiListener();
+            BaseStubModelDescriptor model = files2Models.get(vfile.getParent());
+            if (model!=null) { // just in case, although files2Models shouldn't contain value null
+              ((StubModelDataSource)model.getSource()).addPath(vfile.toString());
+              files2Models.put(vfile, model);
+            }
           }
         }
-      }
-    });
 
-//    myPsiManager.addPsiTreeChangeListener(new PsiTreeChangeTester());
+        @Override
+        public void fileDeleted(VirtualFileEvent event) {
+          synchronized (LOCK) {
 
-    myIsActivated = true;
+          }
+        }
+      });
+
+//      myPsiManager.addPsiTreeChangeListener(new PsiTreeChangeTester());
+
+      myIsActivated = true;
+    }
   }
 
   /**
@@ -203,16 +211,17 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
    * We only keep tracking facet notifications, to react when MPS facet is back.
    */
   private void deactivate() {
+    synchronized (LOCK) {
+      workerConnection.disconnect();
+      if (myPsiListener!=null) myPsiManager.removePsiTreeChangeListener(myPsiListener);
 
-    workerConnection.disconnect();
-    if (myPsiListener!=null) myPsiManager.removePsiTreeChangeListener(myPsiListener);
-
-    // remove all our solutions
-    for (Module mod: myModulesToSolutions.keySet()) {
-      untrackModule(mod, false);
+      // remove all our solutions
+      for (Module mod: myModulesToSolutions.keySet()) {
+        untrackModule(mod, false);
+      }
+      myListenedFiles.clear();
+      myIsActivated = false;
     }
-    myListenedFiles.clear();
-    myIsActivated = false;
   }
 
   private boolean hasMPSFacet() {
@@ -237,51 +246,55 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
    */
   private void trackModule(final Module module, boolean separate) {
 
-    final VirtualFile[] roots = ModuleRootManager.getInstance(module).getSourceRoots(false);
-    // workaround for setting variable from within a runnable
-    final Solution[] solutionCell = new Solution[1];
+    synchronized (LOCK) {
 
-    for (VirtualFile root: roots) {
-      System.out.println(" -- " + root);
-    }
+      final VirtualFile[] roots = ModuleRootManager.getInstance(module).getSourceRoots(false);
+      // workaround for setting variable from within a runnable
+      final Solution[] solutionCell = new Solution[1];
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        Solution solution = addSolution(SOLUTION_NAME_PREFIX+module.getName(), roots, true);
-        solution.updateModelsSet();
-        myModulesToSolutions.put(module, solution);
-        solutionCell[0] = solution;
+      for (VirtualFile root: roots) {
+        System.out.println(" -- " + root);
       }
-    });
 
-    for (SModelDescriptor desc: SModelRepository.getInstance().getModelDescriptors(solutionCell[0])) {
-      if (desc instanceof BaseStubModelDescriptor) {
-        BaseStubModelDescriptor modelDesc = (BaseStubModelDescriptor)desc;
-        FileBasedModelDataSource modelDataSource = (FileBasedModelDataSource) modelDesc.getSource();
-        Collection<String> files = modelDataSource.getFilesToListen();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          Solution solution = addSolution(SOLUTION_NAME_PREFIX+module.getName(), roots, true);
+          solution.updateModelsSet();
+          myModulesToSolutions.put(module, solution);
+          solutionCell[0] = solution;
+        }
+      });
 
-        System.out.println("Model: " + desc.getLongName());
-        for (String f: files) {
-          System.out.println("path: " + f);
-          VirtualFile vfile = VirtualFileManager.getInstance().refreshAndFindFileByUrl("file://" + f);
-          myListenedFiles.add( vfile );
-          files2Models.put(vfile, modelDesc);
+      for (SModelDescriptor desc: SModelRepository.getInstance().getModelDescriptors(solutionCell[0])) {
+        if (desc instanceof BaseStubModelDescriptor) {
+          BaseStubModelDescriptor modelDesc = (BaseStubModelDescriptor)desc;
+          FileBasedModelDataSource modelDataSource = (FileBasedModelDataSource) modelDesc.getSource();
+          Collection<String> files = modelDataSource.getFilesToListen();
+
+          System.out.println("Model: " + desc.getLongName());
+          for (String f: files) {
+            System.out.println("path: " + f);
+            VirtualFile vfile = VirtualFileManager.getInstance().refreshAndFindFileByUrl("file://" + f);
+            myListenedFiles.add( vfile );
+            files2Models.put(vfile, modelDesc);
+          }
         }
       }
-    }
 
-    if (separate) updatePsiListener();
+      if (separate) updatePsiListener();
+    }
   }
 
   private void untrackModule(Module module, boolean separate) {
-    if (!myModulesToSolutions.containsKey(module)) return;
+    synchronized (LOCK) {
+      if (!myModulesToSolutions.containsKey(module)) return;
 
-    // TODO
+      // TODO
+    }
   }
 
   private void updatePsiListener() {
-    if (myPsiListener!=null) myPsiManager.removePsiTreeChangeListener(myPsiListener);
 
     myPsiListener = new SelectFilesPsiListener(myListenedFiles,
       new JavaStubPsiListener(
@@ -290,13 +303,11 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
         )
       ));
 
-    myPsiManager.addPsiTreeChangeListener(myPsiListener);
+    synchronized (LOCK) {
+      if (myPsiListener!=null) myPsiManager.removePsiTreeChangeListener(myPsiListener);
+      myPsiManager.addPsiTreeChangeListener(myPsiListener);
+    }
   }
-
-  public static boolean isWorkDone() {
-    return workDone;
-  }
-
 
   class MPSFacetWatcher extends FacetManagerAdapter {
     @Override
@@ -352,13 +363,15 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
     @Override
     public void documentChanged(VirtualFile vfile, Document doc) {
 
-      final BaseStubModelDescriptor modelDesc = files2Models.get(vfile);
-      if (modelDesc==null) return;
+      synchronized (LOCK) {
+        final BaseStubModelDescriptor modelDesc = files2Models.get(vfile);
+        if (modelDesc==null) return;
 
-      modelDesc.reparseOneFile( doc.getCharsSequence().toString() );
+        modelDesc.reparseOneFile( doc.getCharsSequence().toString() );
+      }
 
 //      System.out.println("DOC DEBUG: changed -> " + doc.getText());
-      System.out.println("PARSING FILE");
+      System.out.println("PARSING FILE " +  new Date().toString());
     }
   }
 
@@ -371,7 +384,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
     @Override
     public void childAdded(PsiTreeChangeEvent psiTreeChangeEvent) {
-      System.out.println("Child ADDED");
+      System.out.println("Child ADDED " + psiTreeChangeEvent.getChild());
     }
 
     @Override

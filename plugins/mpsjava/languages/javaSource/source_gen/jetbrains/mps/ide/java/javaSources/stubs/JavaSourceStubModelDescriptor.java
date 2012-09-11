@@ -15,7 +15,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor implements NodesNavigationContributor {
@@ -42,13 +42,12 @@ public class JavaSourceStubModelDescriptor extends BaseStubModelDescriptor imple
         // replace existing nodes with matching names 
         List<SNode> roots = SModelOperations.getRoots(myModel, null);
         for (SNode node : ListSequence.fromList(nodes)) {
-          final String name = node.getName();
+          // <node> 
           // TODO use myModel/.getNodeById 
-          final SNode root = ListSequence.fromList(roots).findFirst(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return it.getName().equals(name);
-            }
-          });
+          // <node> 
+
+          SNodeId nodeId = node.getSNodeId();
+          final SNode root = myModel.getNodeById(nodeId);
 
           final SNode theNode = node;
 
