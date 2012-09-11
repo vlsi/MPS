@@ -68,9 +68,7 @@ public class DebugInfo {
     return MapSequence.fromMap(myRoots).get(tupleFrom(root));
   }
 
-  @Deprecated
-  @ToRemove(version = 2.5)
-  public void replaceRoot(DebugInfoRoot root) {
+  /*package*/ void putRootInfo(DebugInfoRoot root) {
     MapSequence.fromMap(myRoots).put(MultiTuple.<String,String>from(root.getRootId(), root.getModelId()), root);
   }
 

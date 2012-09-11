@@ -16,11 +16,9 @@
 package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.TransientSModel;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
-import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -35,7 +33,6 @@ import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.traceInfo.*;
 import jetbrains.mps.util.NameUtil;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -155,7 +152,6 @@ public class TextGenerator {
       }
     }
 
-    DebugInfo debugInfoCache = null;
     ModelDependencies modelDep = null;
 
     GenerationDependencies dependencies = status.getDependencies();
@@ -177,17 +173,24 @@ public class TextGenerator {
           }
         }
 
-        // re-register debug
-        if (debugInfoCache == null) {
-          debugInfoCache = TraceInfoCache.getInstance().get(status.getOriginalInputModel());
-        }
-        if (debugInfoCache != null) {
-          SNode node = rdep.getRootId() == null ? null : new SNodePointer(status.getOriginalInputModel().getSModelReference().toString(), rdep.getRootId()).getNode();
-          DebugInfoRoot infoRoot = debugInfoCache.getRootInfo(node);
-          if (infoRoot != null && status.getDebugInfo() != null) {
-            status.getDebugInfo().replaceRoot(infoRoot);
+      }
+
+      // complete debug info with info for roots that did not changed and therefore were not generated
+      // we get debug info for them from cache
+      DebugInfo cachedDebugInfo = TraceInfoCache.getInstance().get(status.getOriginalInputModel());
+      DebugInfo generatedDebugInfo = status.getDebugInfo();
+      if (cachedDebugInfo != null && generatedDebugInfo != null) {
+
+        List<SNode> unchangedRoots = new ArrayList<SNode>();
+        String inputModelUid = status.getOriginalInputModel().getSModelReference().toString();
+        for (GenerationRootDependencies dependency : dependencies.getUnchangedDependencies()) {
+          SNode node = new SNodePointer(inputModelUid, dependency.getRootId()).getNode();
+          if (node != null) {
+            unchangedRoots.add(node);
           }
         }
+
+        DebugInfoBuilder.completeDebugInfoFromCache(cachedDebugInfo, generatedDebugInfo, unchangedRoots);
       }
     }
   }
