@@ -448,9 +448,63 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       return;
     }
     setFolded(true);
+    adjustSelectionToFoldingState(getEditor());
+    if (!isUnderFolded()) {
+      addUnfoldingListener();
+      removeFoldingListenerForChildren();
+    }
 
+    if (!programmaticaly) {
+      getEditorContext().flushEvents();
+      getEditor().relayout();
+    }
+  }
+
+  private void addUnfoldingListenerForChildren() {
+    Queue<EditorCell> children = new LinkedList<EditorCell>(getEditorCells());
+    while (!children.isEmpty()) {
+      EditorCell child = children.poll();
+      if (!(child instanceof EditorCell_Collection)) {
+        continue;
+      }
+      EditorCell_Collection childCollection = (EditorCell_Collection) child;
+      if (childCollection.isFolded()) {
+        childCollection.addUnfoldingListener();
+      } else {
+        children.addAll(childCollection.getEditorCells());
+      }
+    }
+  }
+
+  private void removeFoldingListenerForChildren() {
+    Queue<EditorCell> children = new LinkedList<EditorCell>(getEditorCells());
+    while (!children.isEmpty()) {
+      EditorCell child = children.poll();
+      if (!(child instanceof EditorCell_Collection)) {
+        continue;
+      }
+      EditorCell_Collection childCollection = (EditorCell_Collection) child;
+      if (childCollection.isFolded()) {
+        childCollection.removeUnfoldingListener();
+      } else {
+        children.addAll(childCollection.getEditorCells());
+      }
+    }
+  }
+
+  private void removeUnfoldingListener() {
+    if (myUnfoldCollectionMouseListener == null) {
+      return;
+    }
+    getEditor().removeMouseListener(myUnfoldCollectionMouseListener);
+    myUnfoldCollectionMouseListener = null;
+  }
+
+  private void addUnfoldingListener() {
+    if (myUnfoldCollectionMouseListener != null) {
+      return;
+    }
     final EditorComponent editorComponent = getEditor();
-    adjustSelectionToFoldingState(editorComponent);
     editorComponent.addMouseListener(myUnfoldCollectionMouseListener = new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (getBounds().contains(e.getPoint())) {
@@ -460,10 +514,6 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
         }
       }
     });
-    if (!programmaticaly) {
-      getEditorContext().flushEvents();
-      getEditor().relayout();
-    }
   }
 
   private void adjustSelectionToFoldingState(EditorComponent editorComponent) {
@@ -510,11 +560,15 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
 
   public void unfold(boolean programmaticaly) {
     if (!isFolded()) return;
+
+    getEditor().setFolded(this, false);
     setFolded(false);
 
-    EditorComponent editor = getEditor();
-    editor.removeMouseListener(myUnfoldCollectionMouseListener);
-    adjustSelectionToFoldingState(editor);
+    if (!isUnderFolded()) {
+      removeUnfoldingListener();
+      addUnfoldingListenerForChildren();
+    }
+    adjustSelectionToFoldingState(getEditor());
 
     if (!programmaticaly) {
       getEditorContext().flushEvents();
@@ -801,6 +855,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     if (canBePossiblyFolded()) {
       getEditor().getCellTracker().removeFoldableCell(this);
     }
+    removeUnfoldingListener();
+    getEditor().setFolded(this, false);
+
     if (myLastCellSelectionListener != null) {
       setBracesEnabled(false);
       getEditor().getSelectionManager().removeSelectionListener(myLastCellSelectionListener);
