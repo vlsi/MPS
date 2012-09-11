@@ -921,36 +921,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
-  void insertReferenceAt(final int i, final SReference reference) {
-    ModelChange.assertLegalNodeChange(this);
-
-    _reference().add(i, reference);
-
-    SModel model = getModel();
-    if (model == null) return;
-
-    model.performUndoableAction(new InsertReferenceAtUndoableAction(this, i, reference));
-
-    if (ModelChange.needFireEvents(model, this)) {
-      model.fireReferenceAddedEvent(reference);
-    }
-  }
-
-  void removeReferenceAt(final int i) {
-    ModelChange.assertLegalNodeChange(this);
-    final SReference reference = myReferences[i];
-    _reference().remove(reference);
-
-    SModel model = getModel();
-    if (model == null) return;
-
-    model.performUndoableAction(new RemoveReferenceAtUndoableAction(this, i, reference));
-
-    if (ModelChange.needFireEvents(model, this)) {
-      model.fireReferenceRemovedEvent(reference);
-    }
-  }
-
   public String getDebugText() {
     String roleText = "";
     if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
@@ -1618,6 +1588,36 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       if (ObjectUtils.equals(myProperties[i], propertyName)) return i;
     }
     return -1;
+  }
+
+  private void insertReferenceAt(final int i, final SReference reference) {
+    ModelChange.assertLegalNodeChange(this);
+
+    _reference().add(i, reference);
+
+    SModel model = getModel();
+    if (model == null) return;
+
+    model.performUndoableAction(new InsertReferenceAtUndoableAction(this, reference));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.fireReferenceAddedEvent(reference);
+    }
+  }
+
+  private void removeReferenceAt(final int i) {
+    ModelChange.assertLegalNodeChange(this);
+    final SReference reference = myReferences[i];
+    _reference().remove(reference);
+
+    SModel model = getModel();
+    if (model == null) return;
+
+    model.performUndoableAction(new RemoveReferenceAtUndoableAction(this, reference));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.fireReferenceRemovedEvent(reference);
+    }
   }
 
   //--------private classes-------
