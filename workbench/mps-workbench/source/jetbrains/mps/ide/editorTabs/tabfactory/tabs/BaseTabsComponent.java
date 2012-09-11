@@ -198,6 +198,8 @@ public abstract class BaseTabsComponent implements TabsComponent {
     protected void onImportantRootRemoved(SNodePointer node) {
       if (myBaseNode.equals(node)) return; //will be closed by idea
       if (myBaseNode.getNode()==null) return; //will be closed by idea
+      if (myBaseNode.getModel() == null || myBaseNode.getModel().getModule() == null) return; //will be closed by idea
+      if (ModuleRepositoryFacade.getInstance().getModule(myBaseNode.getModel().getModule().getModuleReference()) == null) return; //will be closed by idea
 
       if (!isTabUpdateNeeded(node)) return;
       updateTabs();
