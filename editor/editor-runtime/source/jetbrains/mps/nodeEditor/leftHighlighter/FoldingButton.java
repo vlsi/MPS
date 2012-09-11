@@ -55,6 +55,10 @@ class FoldingButton {
 
   boolean relayout() {
     EditorCell cell = getCell();
+    if (cell == null) {
+      myIsHidden = true;
+      return true;
+    }
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
       myIsHidden = collectionCell.isUnderFolded();
@@ -64,9 +68,12 @@ class FoldingButton {
         myY1 = firstLeafCell != null ? firstLeafCell.getBaseline() - HEIGHT : collectionCell.getBaseline() - HEIGHT;
         EditorCell lastLeafCell = collectionCell.getLastLeaf();
         myY2 = lastLeafCell != null ? collectionCell.getLastLeaf().getBaseline() : collectionCell.getBaseline();
+        if (!myIsFolded && myY2 - myY1 < 2 * HEIGHT) {
+          // to avoid overlapping folding buttons
+          myIsHidden = true;
+        }
       }
-      // to avoid overlapping folding buttons
-      return myIsHidden || myIsFolded || myY2 - myY1 >= 2 * HEIGHT;
+      return true;
     }
     return false;
   }
