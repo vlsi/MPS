@@ -191,7 +191,7 @@ public class ClassConcept_Behavior {
     if (Classifier_Behavior.call_isSame_4855996797771684010(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), thisNode)) {
       return null;
     }
-    return (SLinkOperations.getTarget(thisNode, "superclass", true) != null ?
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false) != null) ?
       SLinkOperations.getTarget(thisNode, "superclass", true) :
       new ClassConcept_Behavior.QuotationClass_xjj00_a0a1a11().createNode()
     );
