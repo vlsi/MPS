@@ -34,7 +34,6 @@ public class GlobalModuleDependenciesManager {
   private Set<IModule> myModules;
 
   public GlobalModuleDependenciesManager(Collection<IModule> modules) {
-    assert !modules.isEmpty();
     myModules = new HashSet<IModule>(modules);
     addGenerators();
   }
