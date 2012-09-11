@@ -15,6 +15,7 @@ import org.jetbrains.mps.openapi.language.SLink;
 import java.util.List;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -51,7 +52,7 @@ public class SConceptNodeAdapter implements SConcept {
   public SLink findLink(final String role) {
     SNode link = ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(myConcept)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_12aglo_a0a0a0a0a0a0a4(SPropertyOperations.getString(it, "role"), role);
+        return eq_12aglo_a0a0a0a0a0a0a4(SPropertyOperations.getString(SModelUtil.getGenuineLinkDeclaration(it), "role"), role);
       }
     });
     return (link == null ?
