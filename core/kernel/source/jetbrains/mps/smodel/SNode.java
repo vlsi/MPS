@@ -409,32 +409,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
-  public String getPresentation(boolean detailed) {
-    if (SNodeOperations.isUnknown(this)) {
-      String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
-      if (persistentName == null) {
-        return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
-      }
-      return "?" + persistentName + "?";
-    }
-
-    try {
-/*
- Warning:
- BaseConcept_Behavior class will be loaded using platform classloader here.
- As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
- */
-      if (detailed) {
-        return "" + SNodeUtil.getDetailedPresentation(this);
-      } else {
-        return "" + SNodeUtil.getPresentation(this);
-      }
-    } catch (RuntimeException t) {
-      LOG.error(t);
-      return "[can't calculate presentation : " + t.getMessage() + "]";
-    }
-  }
-
   public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
     return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
   }
@@ -1464,6 +1438,32 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public List<SNode> getDescendants() {
     return getDescendants(null);
+  }
+
+  public String getPresentation(boolean detailed) {
+    if (SNodeOperations.isUnknown(this)) {
+      String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+      if (persistentName == null) {
+        return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
+      }
+      return "?" + persistentName + "?";
+    }
+
+    try {
+/*
+ Warning:
+ BaseConcept_Behavior class will be loaded using platform classloader here.
+ As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
+ */
+      if (detailed) {
+        return "" + SNodeUtil.getDetailedPresentation(this);
+      } else {
+        return "" + SNodeUtil.getPresentation(this);
+      }
+    } catch (RuntimeException t) {
+      LOG.error(t);
+      return "[can't calculate presentation : " + t.getMessage() + "]";
+    }
   }
 
 
