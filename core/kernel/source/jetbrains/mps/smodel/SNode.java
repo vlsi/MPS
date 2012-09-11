@@ -409,7 +409,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
-
   public String getPresentation(boolean detailed) {
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
@@ -465,17 +464,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
-  public SNode findParent(Condition<SNode> condition) {
-    SNode parent = getParent();
-    while (parent != null) {
-      if (condition.met(parent)) {
-        return parent;
-      }
-      parent = parent.getParent();
-    }
-    return null;
-  }
-
   public boolean isReferentRequired(String role) {
     SNode conceptDeclaration = getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
@@ -514,35 +502,12 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return treeNext();
   }
 
-  private String getProperty_internal(String propertyName) {
-    Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
-    Pair<SNode, String> current = new Pair<SNode, String>(this, propertyName);
-    if (getters.contains(current)) return getPersistentProperty(propertyName);
-
-    getters.add(current);
-    try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
-      Object getterValue = descriptor.getValue(this, GlobalScope.getInstance());
-      return getterValue == null ? null : String.valueOf(getterValue);
-    } finally {
-      getters.remove(current);
-    }
-  }
-
   public String getPersistentProperty(String propertyName) {
     if (myProperties == null) return null;
     if (ourMemberAccessModifier != null) {
       propertyName = ourMemberAccessModifier.getNewPropertyName(myModel, myConceptFqName, propertyName);
     }
     return getProperty_simple(propertyName);
-  }
-
-  private int getPropertyIndex(String propertyName) {
-    if (myProperties == null) return -1;
-    for (int i = 0; i < myProperties.length; i += 2) {
-      if (ObjectUtils.equals(myProperties[i], propertyName)) return i;
-    }
-    return -1;
   }
 
   void changePropertyName(String oldPropertyName, String newPropertyName) {
@@ -1520,6 +1485,17 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
+  public SNode findParent(Condition<SNode> condition) {
+    SNode parent = getParent();
+    while (parent != null) {
+      if (condition.met(parent)) {
+        return parent;
+      }
+      parent = parent.getParent();
+    }
+    return null;
+  }
+
 
   //--------private-------
 
@@ -1619,6 +1595,29 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   private List<SReference> _reference() {
     return new MyReferencesWrapper();
+  }
+
+  private String getProperty_internal(String propertyName) {
+    Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
+    Pair<SNode, String> current = new Pair<SNode, String>(this, propertyName);
+    if (getters.contains(current)) return getPersistentProperty(propertyName);
+
+    getters.add(current);
+    try {
+      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
+      Object getterValue = descriptor.getValue(this, GlobalScope.getInstance());
+      return getterValue == null ? null : String.valueOf(getterValue);
+    } finally {
+      getters.remove(current);
+    }
+  }
+
+  private int getPropertyIndex(String propertyName) {
+    if (myProperties == null) return -1;
+    for (int i = 0; i < myProperties.length; i += 2) {
+      if (ObjectUtils.equals(myProperties[i], propertyName)) return i;
+    }
+    return -1;
   }
 
   //--------private classes-------
