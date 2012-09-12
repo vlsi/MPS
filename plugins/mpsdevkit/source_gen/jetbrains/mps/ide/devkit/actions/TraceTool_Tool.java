@@ -8,6 +8,10 @@ import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import com.intellij.openapi.wm.impl.ToolWindowImpl;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
+import com.intellij.openapi.wm.ex.ToolWindowEx;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
@@ -27,6 +31,14 @@ public class TraceTool_Tool extends GeneratedTool {
   public void init(Project project) {
     super.init(project);
     TraceTool_Tool.this.myPanel = new TypeSystemTracePanel(TraceTool_Tool.this);
+    ((ToolWindowImpl) TraceTool_Tool.this.getToolWindow()).addPropertyChangeListener(new PropertyChangeListener() {
+      public void propertyChange(PropertyChangeEvent event) {
+        if (ToolWindowEx.PROP_AVAILABLE.equals(event.getPropertyName()) && Boolean.FALSE.equals(event.getNewValue())) {
+          TraceTool_Tool.this.myPanel.cleanUp();
+        }
+      }
+    });
+
   }
 
   public void dispose() {

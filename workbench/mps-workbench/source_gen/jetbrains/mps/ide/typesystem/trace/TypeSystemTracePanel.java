@@ -18,7 +18,8 @@ import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.ui.components.JBScrollPane;
-import javax.swing.JSplitPane;
+import com.intellij.openapi.ui.Splitter;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.newTypesystem.state.State;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -73,17 +74,22 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     JBScrollPane stateScrollPane = new JBScrollPane(myStateTree);
     stateScrollPane.setPreferredSize(new Dimension(400, 900));
 
-    JSplitPane leftHSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
-    leftHSplitPane.setDividerLocation(0.8);
-    leftHSplitPane.setResizeWeight(0.8);
-    leftHSplitPane.setTopComponent(traceScrollPane);
-    leftHSplitPane.setBottomComponent(detailsScrollPane);
+    Splitter leftHSplitPane = new Splitter(true, 0.8f);
+    // <node> 
+    // <node> 
+    leftHSplitPane.setFirstComponent(traceScrollPane);
+    leftHSplitPane.setSecondComponent(detailsScrollPane);
+    leftHSplitPane.getDivider().setBackground(UIUtil.getPanelBackground());
+    leftHSplitPane.getDivider().setOpaque(true);
 
-    JSplitPane vSplitPane = new JSplitPane();
-    vSplitPane.setDividerLocation(0.65);
-    vSplitPane.setResizeWeight(0.65);
-    vSplitPane.setLeftComponent(leftHSplitPane);
-    vSplitPane.setRightComponent(stateScrollPane);
+    Splitter vSplitPane = new Splitter(false, 0.65f);
+    // <node> 
+    // <node> 
+    vSplitPane.setFirstComponent(leftHSplitPane);
+    vSplitPane.setSecondComponent(stateScrollPane);
+    vSplitPane.getDivider().setBackground(UIUtil.getPanelBackground());
+    vSplitPane.getDivider().setOpaque(true);
+
 
     this.removeAll();
     this.add(vSplitPane);
@@ -103,7 +109,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     cleanUp();
   }
 
-  private void cleanUp() {
+  public void cleanUp() {
     if (myTraceTree != null) {
       Disposer.dispose(myTraceTree);
       this.myTraceTree = null;
