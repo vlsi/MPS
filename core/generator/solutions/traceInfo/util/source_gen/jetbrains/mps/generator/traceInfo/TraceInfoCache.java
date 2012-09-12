@@ -36,6 +36,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   protected static Log log = LogFactory.getLog(TraceInfoCache.class);
 
   private List<TraceInfoCache.TraceInfoResourceProvider> myProviders = new CopyOnWriteArrayList<TraceInfoCache.TraceInfoResourceProvider>();
+  private final TraceInfoFromSourceProvider myFromSourceProvider = new TraceInfoFromSourceProvider();
 
   public TraceInfoCache(SModelRepository modelRepository) {
     super(modelRepository);
@@ -55,10 +56,16 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
         cleanup();
       }
     });
+    if (TraceInfoFromSourceProvider.isInAnt()) {
+      myProviders.add(myFromSourceProvider);
+    }
   }
 
   @Override
   public void dispose() {
+    if (TraceInfoFromSourceProvider.isInAnt()) {
+      myProviders.remove(myFromSourceProvider);
+    }
     super.dispose();
     synchronized (INSTANCE_LOCK) {
       INSTANCE = null;

@@ -15,6 +15,7 @@
     <classNode dependClassName="jetbrains.mps.cleanup.CleanupListener" />
     <classNode dependClassName="jetbrains.mps.cleanup.CleanupManager" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationStatus" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoFromSourceProvider" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.reloading.CommonPaths" />
@@ -33,6 +34,19 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.generator.cache.XmlBasedModelCache" />
+  </dependency>
+  <dependency className="jetbrains.mps.generator.traceInfo.TraceInfoFromSourceProvider" file="TraceInfoFromSourceProvider.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.net.MalformedURLException" />
+    <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="jetbrains.mps.generator.traceInfo.TraceInfoCache" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.generator.traceInfo.TraceInfoResourceProvider" />
   </dependency>
   <dependency className="jetbrains.mps.generator.traceInfo.TraceInfoUtil" file="TraceInfoUtil.java">
     <classNode dependClassName="java.lang.Comparable" />
