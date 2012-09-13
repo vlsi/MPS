@@ -27,6 +27,7 @@ public class PathMacros implements CoreComponent {
   private static PathMacros INSTANCE;
 
   private List<PathMacrosProvider> myMacrosProviders = new CopyOnWriteArrayList<PathMacrosProvider>();
+  private Set<String> reported = new HashSet<String>();
 
   public static PathMacros getInstance() {
     return INSTANCE;
@@ -98,6 +99,9 @@ public class PathMacros implements CoreComponent {
   }
 
   public void report(String message, String macro) {
+    if (reported.contains(macro)) return;
+
+    reported.add(macro);
     for (PathMacrosProvider p : myMacrosProviders) {
       p.report(message, macro);
     }
