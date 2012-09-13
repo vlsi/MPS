@@ -83,7 +83,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
       visitedFolders.add(root);
     }
 
-    if (!CacheUtil.isIgnored(root, myManager)) return;
+    if (CacheUtil.isIgnored(root, myManager)) return;
 
     if (indicator != null) {
       indicator.setText2(root.getPresentableUrl());
