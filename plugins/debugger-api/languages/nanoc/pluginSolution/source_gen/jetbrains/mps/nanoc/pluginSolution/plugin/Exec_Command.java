@@ -4,7 +4,6 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import java.io.File;
 import com.intellij.util.SystemProperties;
-import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
@@ -14,26 +13,6 @@ public class Exec_Command {
   private String myProgramParameters_String;
 
   public Exec_Command() {
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Exec_Command setWorkingDirectory(File workingDirectory) {
-    // this methods only exist to not make users regenerate their code 
-    if (workingDirectory != null) {
-      myWorkingDirectory_File = workingDirectory;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Exec_Command setProgramParameters(String programParameters) {
-    // this methods only exist to not make users regenerate their code 
-    if (programParameters != null) {
-      myProgramParameters_String = programParameters;
-    }
-    return this;
   }
 
   public Exec_Command setWorkingDirectory_File(File workingDirectory) {

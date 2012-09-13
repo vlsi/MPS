@@ -10,7 +10,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.execution.api.commands.CommandPart;
-import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -69,76 +68,6 @@ public class Java_Command {
   private CommandPart myVirtualMachineParameter_ProcessBuilderCommandPart;
 
   public Java_Command() {
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setWorkingDirectory(File workingDirectory) {
-    // this methods only exist to not make users regenerate their code 
-    if (workingDirectory != null) {
-      myWorkingDirectory_File = workingDirectory;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setJrePath(String jrePath) {
-    // this methods only exist to not make users regenerate their code 
-    if (jrePath != null) {
-      myJrePath_String = jrePath;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setProgramParameter(String programParameter) {
-    // this methods only exist to not make users regenerate their code 
-    if (programParameter != null) {
-      myProgramParameter_String = programParameter;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setVirtualMachineParameter(String virtualMachineParameter) {
-    // this methods only exist to not make users regenerate their code 
-    if (virtualMachineParameter != null) {
-      myVirtualMachineParameter_String = virtualMachineParameter;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setClassPath(List<String> classPath) {
-    // this methods only exist to not make users regenerate their code 
-    if (classPath != null) {
-      myClassPath_ListString = classPath;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setDebuggerSettings(String debuggerSettings) {
-    // this methods only exist to not make users regenerate their code 
-    if (debuggerSettings != null) {
-      myDebuggerSettings_String = debuggerSettings;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Java_Command setVirtualMachineParameter(CommandPart virtualMachineParameter) {
-    // this methods only exist to not make users regenerate their code 
-    if (virtualMachineParameter != null) {
-      myVirtualMachineParameter_ProcessBuilderCommandPart = virtualMachineParameter;
-    }
-    return this;
   }
 
   public Java_Command setWorkingDirectory_File(File workingDirectory) {

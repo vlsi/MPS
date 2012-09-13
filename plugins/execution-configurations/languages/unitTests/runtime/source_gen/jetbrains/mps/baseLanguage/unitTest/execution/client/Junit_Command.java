@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.client;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.io.File;
-import jetbrains.mps.util.annotation.ToRemove;
 import com.intellij.execution.process.ProcessHandler;
 import java.util.List;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
@@ -44,46 +43,6 @@ public class Junit_Command {
   public Junit_Command() {
   }
 
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Junit_Command setDebuggerSettings(String debuggerSettings) {
-    // this methods only exist to not make users regenerate their code 
-    if (debuggerSettings != null) {
-      myDebuggerSettings_String = debuggerSettings;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Junit_Command setVirtualMachineParameter(String virtualMachineParameter) {
-    // this methods only exist to not make users regenerate their code 
-    if (virtualMachineParameter != null) {
-      myVirtualMachineParameter_String = virtualMachineParameter;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Junit_Command setJrePath(String jrePath) {
-    // this methods only exist to not make users regenerate their code 
-    if (jrePath != null) {
-      myJrePath_String = jrePath;
-    }
-    return this;
-  }
-
-  @Deprecated
-  @ToRemove(version = 2.1)
-  public Junit_Command setWorkingDirectory(File workingDirectory) {
-    // this methods only exist to not make users regenerate their code 
-    if (workingDirectory != null) {
-      myWorkingDirectory_File = workingDirectory;
-    }
-    return this;
-  }
-
   public Junit_Command setDebuggerSettings_String(String debuggerSettings) {
     if (debuggerSettings != null) {
       myDebuggerSettings_String = debuggerSettings;
@@ -116,7 +75,7 @@ public class Junit_Command {
     return new Junit_Command().setVirtualMachineParameter_String(check_u7m9j_a1a0a0a(javaRunParameters)).setJrePath_String((check_u7m9j_a0c0a0a0(javaRunParameters) ?
       javaRunParameters.jrePath() :
       null
-    )).setWorkingDirectory_File((isEmpty_yo2c7x_a0a0a0a0a8(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
+    )).setWorkingDirectory_File((isEmpty_yo2c7x_a0a0a0a0a4(check_u7m9j_a0a3a0a0a(javaRunParameters)) ?
       null :
       new File(javaRunParameters.workingDirectory())
     )).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(tests);
@@ -254,7 +213,7 @@ public class Junit_Command {
     return null;
   }
 
-  public static boolean isEmpty_yo2c7x_a0a0a0a0a8(String str) {
+  public static boolean isEmpty_yo2c7x_a0a0a0a0a4(String str) {
     return str == null || str.length() == 0;
   }
 

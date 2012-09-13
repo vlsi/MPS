@@ -403,7 +403,6 @@
     <classNode dependClassName="com.intellij.util.SystemProperties" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
@@ -423,7 +422,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ApplicationPlugin" file="Plugin_ApplicationPlugin.java">
