@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="CheckedDotExpression_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_BehaviorDescriptor" />
+  <root nodeId="3674434577577159919">
+    <nodeInfo nodeId="3674434577577159927" fileName="CheckedDotExpression_Behavior.java" startLine="13" startPosition="88" endLine="14" endPosition="262" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="671730757938930442" fileName="CheckedDotExpression_Behavior.java" startLine="17" startPosition="87" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3674434577577159919" fileName="CheckedDotExpression_Behavior.java" startLine="9" startPosition="44" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3674434577577159919" fileName="CheckedDotExpression_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_hasLocalContextInside_3674434577577159922#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3674434577577159919" fileName="CheckedDotExpression_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_allowsNullOperand_4585239809762176541#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="3674434577577159921" fileName="CheckedDotExpression_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="3674434577577159925" fileName="CheckedDotExpression_Behavior.java" startLine="13" startPosition="88" endLine="14" endPosition="262" />
+    <scopeInfo nodeId="671730757938930440" fileName="CheckedDotExpression_Behavior.java" startLine="17" startPosition="87" endLine="18" endPosition="16" />
+    <scopeInfo nodeId="3674434577577159919" fileName="CheckedDotExpression_Behavior.java" startLine="9" startPosition="44" endLine="12" endPosition="0">
+      <varInfo nodeId="3674434577577159919" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3674434577577159919" fileName="CheckedDotExpression_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="3674434577577159919" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3674434577577159919" fileName="CheckedDotExpression_Behavior.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+      <varInfo nodeId="3674434577577159919" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="3674434577577159919" fileName="CheckedDotExpression_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.behavior.CheckedDotExpression_Behavior" />
+  </root>
+</debugInfo>
+

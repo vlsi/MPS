@@ -23,7 +23,7 @@
   <dep model="r:2ae43476-98ce-4354-9a55-d7b44e372d64(jetbrains.mps.lang.editor.table.structure)" hash="6tfaqfodpowz5ym1casfl2u20fewmib" />
   <dep model="r:86ce5303-096b-481a-b577-1636d0ef54ad(jetbrains.mps.lang.editor.table.behavior)" hash="-dnzp5fnp7fwmsbsm5l25kfhpifo99i9" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="cmd60507xhkoe4c48chqmcyr68ebp62" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-ewgblj5m32jyc5zc1n1eup4emffkdql" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="2x6oi9gk3k77xzxby0ossnm955s7qkw" />
   <common hash="7pgtuuhzrl49x16hlga8kcg78d2bho2" dependsOnNodes="true">
     <dep root="6216065619544939788" />

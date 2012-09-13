@@ -2337,14 +2337,17 @@
     <nodeInfo nodeId="8638838189258370789" fileName="MapPathMacrosProvider.java" startLine="17" startPosition="39" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8638838189258378849" fileName="MapPathMacrosProvider.java" startLine="21" startPosition="37" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8638838189258378856" fileName="MapPathMacrosProvider.java" startLine="25" startPosition="33" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2329394428277364418" fileName="MapPathMacrosProvider.java" startLine="29" startPosition="52" endLine="30" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8638838189258370754" fileName="MapPathMacrosProvider.java" startLine="12" startPosition="0" endLine="15" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapPathMacrosProvider#(Ljava/util/Map;)V" />
     <nodeInfo nodeId="8638838189258370759" fileName="MapPathMacrosProvider.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="8638838189258370765" fileName="MapPathMacrosProvider.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserNames#()Ljava/util/Set;" />
     <nodeInfo nodeId="8638838189258370770" fileName="MapPathMacrosProvider.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNames#()Ljava/util/Set;" />
+    <nodeInfo nodeId="2329394428277189079" fileName="MapPathMacrosProvider.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="report#(Ljava/lang/String;Ljava/lang/String;)V" />
     <scopeInfo nodeId="8638838189258370757" fileName="MapPathMacrosProvider.java" startLine="13" startPosition="60" endLine="14" endPosition="25" />
     <scopeInfo nodeId="8638838189258370764" fileName="MapPathMacrosProvider.java" startLine="17" startPosition="39" endLine="18" endPosition="28" />
     <scopeInfo nodeId="8638838189258370769" fileName="MapPathMacrosProvider.java" startLine="21" startPosition="37" endLine="22" endPosition="56" />
     <scopeInfo nodeId="8638838189258370774" fileName="MapPathMacrosProvider.java" startLine="25" startPosition="33" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="2329394428277189086" fileName="MapPathMacrosProvider.java" startLine="29" startPosition="52" endLine="30" endPosition="69" />
     <scopeInfo nodeId="8638838189258370754" fileName="MapPathMacrosProvider.java" startLine="12" startPosition="0" endLine="15" endPosition="3">
       <varInfo nodeId="8638838189258370811" varName="macros" />
     </scopeInfo>
@@ -2353,7 +2356,11 @@
     </scopeInfo>
     <scopeInfo nodeId="8638838189258370765" fileName="MapPathMacrosProvider.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
     <scopeInfo nodeId="8638838189258370770" fileName="MapPathMacrosProvider.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="8638838189258370752" fileName="MapPathMacrosProvider.java" startLine="10" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.ant.util.MapPathMacrosProvider" />
+    <scopeInfo nodeId="2329394428277189079" fileName="MapPathMacrosProvider.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="2329394428277189084" varName="macro" />
+      <varInfo nodeId="2329394428277189082" varName="message" />
+    </scopeInfo>
+    <unitInfo nodeId="8638838189258370752" fileName="MapPathMacrosProvider.java" startLine="10" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.ant.util.MapPathMacrosProvider" />
   </root>
   <root nodeId="8638838189258378820">
     <nodeInfo nodeId="8638838189258378835" fileName="SetLibraryContributor.java" startLine="9" startPosition="66" endLine="10" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="libraryPaths" />
