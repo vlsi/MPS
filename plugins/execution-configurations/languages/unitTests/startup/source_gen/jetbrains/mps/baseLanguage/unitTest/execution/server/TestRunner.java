@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.LineNumberReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.junit.runner.JUnitCore;
 import java.io.PrintStream;
 import org.junit.runner.notification.RunListener;
@@ -27,14 +26,14 @@ public class TestRunner {
       if ("-c".equals(argv[i])) {
         i++;
         String className = argv[i];
-        ListSequence.fromList(requests).addElement(this.createClassRequest(className));
+        ListSequence.fromList(requests).addElement(Request.aClass(Class.forName(className)));
       } else if ("-m".equals(argv[i])) {
         i++;
         String s = argv[i];
         int index = s.lastIndexOf('.');
         String testCase = s.substring(0, index);
         String method = s.substring(index + 1);
-        ListSequence.fromList(requests).addElement(this.createMethodRequest(testCase, method));
+        ListSequence.fromList(requests).addElement(Request.method(Class.forName(testCase), method));
       } else if ("-f".equals(argv[i])) {
         i++;
         String filename = argv[i];
@@ -54,25 +53,6 @@ public class TestRunner {
         loadTests(ListSequence.fromList(fileContents).toGenericArray(String.class), requests);
       }
     }
-  }
-
-  /**
-   * Since BaseTransformationTest4 is no longer TestCase we can start tests without hacks
-   */
-  @Deprecated
-  @ToRemove(version = 2.1)
-  protected Request createMethodRequest(String testCase, String method) throws ClassNotFoundException {
-    // protected just for the sake of symmetry with createClassRequest 
-    return Request.method(Class.forName(testCase), method);
-  }
-
-  /**
-   * Since BaseTransformationTest4 is no longer TestCase we can start tests without hacks
-   */
-  @Deprecated
-  @ToRemove(version = 2.1)
-  protected Request createClassRequest(String className) throws ClassNotFoundException {
-    return Request.aClass(Class.forName(className));
   }
 
   protected void executeTestsFromArguments(String[] args) throws IOException, ClassNotFoundException, FileNotFoundException {
