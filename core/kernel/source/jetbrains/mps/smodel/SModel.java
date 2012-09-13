@@ -241,7 +241,7 @@ public class SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.devkitAdded(new SModelDevKitEvent(this, ref));
+        sModelListener.devkitAdded(new SModelDevKitEvent(this, ref, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -252,7 +252,7 @@ public class SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.devkitRemoved(new SModelDevKitEvent(this, ref));
+        sModelListener.devkitRemoved(new SModelDevKitEvent(this, ref, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -263,7 +263,7 @@ public class SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.languageAdded(new SModelLanguageEvent(this, ref));
+        sModelListener.languageAdded(new SModelLanguageEvent(this, ref, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -274,7 +274,7 @@ public class SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.languageRemoved(new SModelLanguageEvent(this, ref));
+        sModelListener.languageRemoved(new SModelLanguageEvent(this, ref, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -285,7 +285,7 @@ public class SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(this, modelReference));
+        sModelListener.importAdded(new SModelImportEvent(this, modelReference, true));
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -296,7 +296,7 @@ public class SModel {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        sModelListener.importAdded(new SModelImportEvent(this, modelReference));
+        sModelListener.importAdded(new SModelImportEvent(this, modelReference, false));
       } catch (Throwable t) {
         LOG.error(t);
       }
