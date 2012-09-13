@@ -21,10 +21,11 @@ import java.util.Set;
 * evgeny, 10/19/11
 */
 public interface PathMacrosProvider {
-
   Set<String> getNames();
 
   Set<String> getUserNames();
 
   String getValue(String name);
+
+  void report(String message, String macro);
 }

@@ -23,11 +23,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
- * evgeny, 10/19/11
- */
-public class PathMacros implements PathMacrosProvider, CoreComponent {
-
+public class PathMacros implements CoreComponent {
   private static PathMacros INSTANCE;
 
   private List<PathMacrosProvider> myMacrosProviders = new CopyOnWriteArrayList<PathMacrosProvider>();
@@ -53,7 +49,6 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
     INSTANCE = null;
   }
 
-  @Override
   public Set<String> getNames() {
     Set<String> result = null;
     boolean modifiable = false;
@@ -73,7 +68,6 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
     return result != null ? result : Collections.<String>emptySet();
   }
 
-  @Override
   public Set<String> getUserNames() {
     Set<String> result = null;
     boolean modifiable = false;
@@ -93,7 +87,6 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
     return result != null ? result : Collections.<String>emptySet();
   }
 
-  @Override
   public String getValue(String name) {
     for (PathMacrosProvider p : myMacrosProviders) {
       final String value = p.getValue(name);
@@ -104,6 +97,11 @@ public class PathMacros implements PathMacrosProvider, CoreComponent {
     return null;
   }
 
+  public void report(String message, String macro) {
+    for (PathMacrosProvider p : myMacrosProviders) {
+      p.report(message, macro);
+    }
+  }
 
   public void addMacrosProvider(PathMacrosProvider provider) {
     if (provider == this) return;

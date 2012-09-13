@@ -15,19 +15,20 @@
  */
 package jetbrains.mps.ide.project;
 
+import com.intellij.notification.Notification;
+import com.intellij.notification.NotificationListener;
+import com.intellij.notification.NotificationType;
+import com.intellij.notification.Notifications;
 import com.intellij.openapi.application.PathMacros;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.PathMacrosProvider;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.event.HyperlinkEvent;
 import java.util.Set;
 
-/**
- * evgeny, 10/19/11
- */
 public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProvider {
-
   public WorkbenchPathMacros(MPSCoreComponents coreComponents, PathMacros ideaPathMacros) {
   }
 
@@ -60,5 +61,16 @@ public class WorkbenchPathMacros implements ApplicationComponent, PathMacrosProv
   @Override
   public String getValue(String name) {
     return PathMacros.getInstance().getValue(name);
+  }
+
+  @Override
+  public void report(String message, String macro) {
+    Notifications.Bus.notify(new Notification("Path manager", "Undefined macro", macro+" <html><a href=\"\">fix...</a></html>", NotificationType.ERROR, new NotificationListener() {
+      @Override
+      public void hyperlinkUpdate(@NotNull Notification notification, @NotNull HyperlinkEvent event) {
+        notification.expire();
+        System.out.print(123);
+      }
+    }));
   }
 }
