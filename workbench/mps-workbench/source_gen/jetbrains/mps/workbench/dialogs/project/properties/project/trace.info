@@ -448,9 +448,7 @@
     <scopeInfo nodeId="3201642974933586098" fileName="TestConfigurationDialog.java" startLine="161" startPosition="50" endLine="164" endPosition="67" />
     <scopeInfo nodeId="3201642974933585349" fileName="TestConfigurationDialog.java" startLine="194" startPosition="37" endLine="197" endPosition="16" />
     <scopeInfo nodeId="3201642974933585323" fileName="TestConfigurationDialog.java" startLine="199" startPosition="37" endLine="202" endPosition="16" />
-    <scopeInfo nodeId="3201642974933585409" fileName="TestConfigurationDialog.java" startLine="218" startPosition="45" endLine="221" endPosition="7">
-      <varInfo nodeId="3201642974933585413" varName="c" />
-    </scopeInfo>
+    <scopeInfo nodeId="3201642974933585408" fileName="TestConfigurationDialog.java" startLine="218" startPosition="45" endLine="221" endPosition="7" />
     <scopeInfo nodeId="3201642974933585495" fileName="TestConfigurationDialog.java" startLine="277" startPosition="43" endLine="280" endPosition="20">
       <varInfo nodeId="3201642974933585497" varName="result" />
     </scopeInfo>
@@ -480,7 +478,9 @@
     <scopeInfo nodeId="8715098193949534440" fileName="TestConfigurationDialog.java" startLine="338" startPosition="120" endLine="342" endPosition="0">
       <varInfo nodeId="8715098193949534440" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933585981" fileName="TestConfigurationDialog.java" startLine="356" startPosition="50" endLine="360" endPosition="11" />
+    <scopeInfo nodeId="3201642974933585982" fileName="TestConfigurationDialog.java" startLine="356" startPosition="50" endLine="360" endPosition="11">
+      <varInfo nodeId="3201642974933585988" varName="o" />
+    </scopeInfo>
     <scopeInfo nodeId="3201642974933584668" fileName="TestConfigurationDialog.java" startLine="372" startPosition="0" endLine="376" endPosition="0">
       <varInfo nodeId="3201642974933584671" varName="bRemove" />
     </scopeInfo>

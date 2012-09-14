@@ -518,7 +518,9 @@
     <scopeInfo nodeId="4282822416100098482" fileName="ControlFlowGraph.java" startLine="189" startPosition="57" endLine="192" endPosition="5">
       <varInfo nodeId="4282822416100098486" varName="block" />
     </scopeInfo>
-    <scopeInfo nodeId="4282822416100098501" fileName="ControlFlowGraph.java" startLine="195" startPosition="60" endLine="198" endPosition="5" />
+    <scopeInfo nodeId="4282822416100098502" fileName="ControlFlowGraph.java" startLine="195" startPosition="60" endLine="198" endPosition="5">
+      <varInfo nodeId="4282822416100098506" varName="block" />
+    </scopeInfo>
     <scopeInfo nodeId="4282822416100098528" fileName="ControlFlowGraph.java" startLine="202" startPosition="40" endLine="205" endPosition="7" />
     <scopeInfo nodeId="1410818700511174440" fileName="ControlFlowGraph.java" startLine="69" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1410818700511174461" varName="component" />

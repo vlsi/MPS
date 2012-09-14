@@ -510,8 +510,8 @@
     <unitInfo nodeId="173672751428922291" fileName="MakeTask.java" startLine="169" startPosition="64" endLine="177" endPosition="7" unitName="jetbrains.mps.ide.make.MakeTask$1" />
     <unitInfo nodeId="173672751428921855" fileName="MakeTask.java" startLine="58" startPosition="43" endLine="68" endPosition="5" unitName="jetbrains.mps.ide.make.MakeTask$1" />
     <unitInfo nodeId="173672751428922191" fileName="MakeTask.java" startLine="156" startPosition="0" endLine="222" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$TaskState" />
-    <unitInfo nodeId="173672751428922192" fileName="MakeTask.java" startLine="166" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$TaskState$RelayingLoggingHandler" />
     <unitInfo nodeId="173672751428922083" fileName="MakeTask.java" startLine="120" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask$WorkbenchMakeTask" />
+    <unitInfo nodeId="173672751428922192" fileName="MakeTask.java" startLine="166" startPosition="0" endLine="221" endPosition="0" unitName="jetbrains.mps.ide.make.MakeTask.TaskState$RelayingLoggingHandler" />
   </root>
   <root nodeId="173672751428922365" modelId="r:0e3b77a4-c2c4-4ca6-a3b1-df5ad0152a9c(jetbrains.mps.ide.make)">
     <nodeInfo nodeId="173672751428922366" fileName="TextPreviewFile.java" startLine="20" startPosition="54" endLine="21" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FS" />

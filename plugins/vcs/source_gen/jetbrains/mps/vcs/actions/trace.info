@@ -66,7 +66,9 @@
     </scopeInfo>
     <scopeInfo nodeId="7705742079275757885" fileName="AbstractShowInFileView.java" startLine="48" startPosition="44" endLine="52" endPosition="9" />
     <scopeInfo nodeId="7705742079275757917" fileName="AbstractShowInFileView.java" startLine="60" startPosition="85" endLine="64" endPosition="17" />
-    <scopeInfo nodeId="7705742079275757880" fileName="AbstractShowInFileView.java" startLine="47" startPosition="31" endLine="53" endPosition="7" />
+    <scopeInfo nodeId="7705742079275757881" fileName="AbstractShowInFileView.java" startLine="47" startPosition="31" endLine="53" endPosition="7">
+      <varInfo nodeId="7705742079275757883" varName="baseDir" />
+    </scopeInfo>
     <scopeInfo nodeId="7705742079275757780" fileName="AbstractShowInFileView.java" startLine="20" startPosition="48" endLine="27" endPosition="5">
       <varInfo nodeId="7705742079275757782" varName="project" />
       <varInfo nodeId="7705742079275757788" varName="selectedFile" />

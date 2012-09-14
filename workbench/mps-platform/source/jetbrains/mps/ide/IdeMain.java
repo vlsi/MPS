@@ -27,7 +27,7 @@ public class IdeMain {
 
   public static void setTestMode(TestMode testMode) {
     ourTestMode = testMode;
-    if (testMode == TestMode.CORE_TEST) {
+    if (testMode == TestMode.CORE_TEST || testMode == TestMode.UI_TEST) {
       MPSCore.getInstance().setTestMode();
     }
   }

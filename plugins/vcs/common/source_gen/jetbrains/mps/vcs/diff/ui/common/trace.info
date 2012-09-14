@@ -1158,9 +1158,7 @@
       <varInfo nodeId="4652592318748337734" varName="inspector" />
       <varInfo nodeId="8026003490916165917" varName="mergeAdjacent" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748337412" fileName="ChangeGroupLayout.java" startLine="68" startPosition="56" endLine="73" endPosition="7">
-      <varInfo nodeId="4652592318748337413" varName="b" />
-    </scopeInfo>
+    <scopeInfo nodeId="4652592318748337411" fileName="ChangeGroupLayout.java" startLine="68" startPosition="56" endLine="73" endPosition="7" />
     <scopeInfo nodeId="4652592318748337613" fileName="ChangeGroupLayout.java" startLine="122" startPosition="46" endLine="127" endPosition="26" />
     <scopeInfo nodeId="8026003490916188822" fileName="ChangeGroupLayout.java" startLine="173" startPosition="87" endLine="178" endPosition="102">
       <varInfo nodeId="1214268015959816391" varName="tolerance" />
@@ -2148,9 +2146,7 @@
       <varInfo nodeId="4652592318748339683" varName="dataId" />
     </scopeInfo>
     <scopeInfo nodeId="8694267608197378168" fileName="DiffModelTree.java" startLine="282" startPosition="73" endLine="293" endPosition="41" />
-    <scopeInfo nodeId="4652592318748339416" fileName="DiffModelTree.java" startLine="89" startPosition="60" endLine="102" endPosition="9">
-      <varInfo nodeId="4652592318748339417" varName="sub" />
-    </scopeInfo>
+    <scopeInfo nodeId="4652592318748339415" fileName="DiffModelTree.java" startLine="89" startPosition="60" endLine="102" endPosition="9" />
     <scopeInfo nodeId="4652592318748339605" fileName="DiffModelTree.java" startLine="151" startPosition="74" endLine="164" endPosition="5">
       <varInfo nodeId="4652592318748339607" varName="index" />
     </scopeInfo>
@@ -2748,7 +2744,7 @@
     <scopeInfo nodeId="4652592318748340605" fileName="NextPreviousTraverser.java" startLine="52" startPosition="117" endLine="54" endPosition="24" />
     <scopeInfo nodeId="4652592318748341037" fileName="NextPreviousTraverser.java" startLine="216" startPosition="41" endLine="218" endPosition="32" />
     <scopeInfo nodeId="4652592318748341107" fileName="NextPreviousTraverser.java" startLine="266" startPosition="76" endLine="268" endPosition="54" />
-    <scopeInfo nodeId="4652592318748340745" fileName="NextPreviousTraverser.java" startLine="115" startPosition="10" endLine="118" endPosition="7" />
+    <scopeInfo nodeId="4652592318748340744" fileName="NextPreviousTraverser.java" startLine="115" startPosition="10" endLine="118" endPosition="7" />
     <scopeInfo nodeId="4652592318748340911" fileName="NextPreviousTraverser.java" startLine="161" startPosition="7" endLine="164" endPosition="37">
       <varInfo nodeId="4652592318748340911" varName="_tmp_mf966z_a0j0g" />
     </scopeInfo>
@@ -3074,6 +3070,10 @@
     <scopeInfo nodeId="739457190729177668" fileName="ChangeGroupMessages.java" startLine="45" startPosition="0" endLine="54" endPosition="0" />
     <scopeInfo nodeId="739457190729189660" fileName="ChangeGroupMessages.java" startLine="29" startPosition="0" endLine="41" endPosition="0" />
     <unitInfo nodeId="3477558405266190215" fileName="ChangeGroupMessages.java" startLine="15" startPosition="56" endLine="14" endPosition="0" />
+    <unitInfo nodeId="739457190729175664" fileName="ChangeGroupMessages.java" startLine="14" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages" />
+    <unitInfo nodeId="739457190729183679" fileName="ChangeGroupMessages.java" startLine="31" startPosition="39" endLine="39" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$2" />
+    <unitInfo nodeId="9208869176467556553" fileName="ChangeGroupMessages.java" startLine="33" startPosition="60" endLine="37" endPosition="9" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
+    <unitInfo nodeId="739457190729183618" fileName="ChangeGroupMessages.java" startLine="48" startPosition="67" endLine="52" endPosition="5" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$3" />
     <unitInfo nodeId="739457190729183512" fileName="ChangeGroupMessages.java" startLine="60" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages$MyChangeGroupMessage" />
   </root>
   <root nodeId="8733553229778921962" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">

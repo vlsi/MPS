@@ -1453,13 +1453,13 @@
     <scopeInfo nodeId="5797068448049413072" fileName="LanguageHierarchiesComponent.java" startLine="447" startPosition="30" endLine="449" endPosition="85" />
     <scopeInfo nodeId="5797068448049413181" fileName="LanguageHierarchiesComponent.java" startLine="502" startPosition="89" endLine="504" endPosition="47" />
     <scopeInfo nodeId="5797068448049413243" fileName="LanguageHierarchiesComponent.java" startLine="516" startPosition="78" endLine="518" endPosition="41" />
-    <scopeInfo nodeId="5797068448049413899" fileName="LanguageHierarchiesComponent.java" startLine="93" startPosition="46" endLine="96" endPosition="9">
-      <varInfo nodeId="5797068448049413901" varName="conceptContainer" />
-    </scopeInfo>
+    <scopeInfo nodeId="5797068448049413898" fileName="LanguageHierarchiesComponent.java" startLine="93" startPosition="46" endLine="96" endPosition="9" />
     <scopeInfo nodeId="5797068448049413909" fileName="LanguageHierarchiesComponent.java" startLine="99" startPosition="46" endLine="102" endPosition="9" />
     <scopeInfo nodeId="5797068448049413920" fileName="LanguageHierarchiesComponent.java" startLine="105" startPosition="47" endLine="108" endPosition="9" />
     <scopeInfo nodeId="5797068448049414152" fileName="LanguageHierarchiesComponent.java" startLine="282" startPosition="25" endLine="285" endPosition="19" />
-    <scopeInfo nodeId="5797068448049414163" fileName="LanguageHierarchiesComponent.java" startLine="310" startPosition="25" endLine="313" endPosition="9" />
+    <scopeInfo nodeId="5797068448049414164" fileName="LanguageHierarchiesComponent.java" startLine="310" startPosition="25" endLine="313" endPosition="9">
+      <varInfo nodeId="5797068448049414166" varName="root" />
+    </scopeInfo>
     <scopeInfo nodeId="5797068448049413848" fileName="LanguageHierarchiesComponent.java" startLine="410" startPosition="49" endLine="413" endPosition="11" />
     <scopeInfo nodeId="5797068448049413161" fileName="LanguageHierarchiesComponent.java" startLine="493" startPosition="9" endLine="496" endPosition="7">
       <varInfo nodeId="5797068448049413163" varName="child" />
@@ -1930,7 +1930,9 @@
     <scopeInfo nodeId="5797068448049415244" fileName="HierarchyModelListener.java" startLine="15" startPosition="0" endLine="18" endPosition="3">
       <varInfo nodeId="5797068448049415247" varName="hierarchyTree" />
     </scopeInfo>
-    <scopeInfo nodeId="5797068448049415262" fileName="HierarchyModelListener.java" startLine="20" startPosition="67" endLine="23" endPosition="5" />
+    <scopeInfo nodeId="5797068448049415263" fileName="HierarchyModelListener.java" startLine="20" startPosition="67" endLine="23" endPosition="5">
+      <varInfo nodeId="5797068448049415265" varName="child" />
+    </scopeInfo>
     <scopeInfo nodeId="5797068448049415344" fileName="HierarchyModelListener.java" startLine="40" startPosition="68" endLine="44" endPosition="26">
       <varInfo nodeId="5797068448049415346" varName="nodes" />
     </scopeInfo>

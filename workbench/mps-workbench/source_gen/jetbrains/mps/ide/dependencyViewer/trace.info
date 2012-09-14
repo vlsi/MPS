@@ -405,7 +405,9 @@
     <scopeInfo nodeId="8294989614925457877" fileName="ReferencesFinder.java" startLine="111" startPosition="64" endLine="118" endPosition="5">
       <varInfo nodeId="8294989614925457898" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="8294989614925457933" fileName="ReferencesFinder.java" startLine="127" startPosition="93" endLine="134" endPosition="11" />
+    <scopeInfo nodeId="8294989614925457934" fileName="ReferencesFinder.java" startLine="127" startPosition="93" endLine="134" endPosition="11">
+      <varInfo nodeId="8294989614925457958" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="8294989614925457573" fileName="ReferencesFinder.java" startLine="28" startPosition="9" endLine="36" endPosition="7" />
     <scopeInfo nodeId="8294989614925457806" fileName="ReferencesFinder.java" startLine="94" startPosition="96" endLine="102" endPosition="18">
       <varInfo nodeId="8294989614925457808" varName="result" />

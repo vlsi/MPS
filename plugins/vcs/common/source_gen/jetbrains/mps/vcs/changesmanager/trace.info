@@ -575,7 +575,9 @@
     <scopeInfo nodeId="7723078313139695268" fileName="CurrentDifferenceRegistry.java" startLine="148" startPosition="0" endLine="152" endPosition="0">
       <varInfo nodeId="7723078313139695271" varName="vf" />
     </scopeInfo>
-    <scopeInfo nodeId="3161776655522590245" fileName="CurrentDifferenceRegistry.java" startLine="92" startPosition="36" endLine="97" endPosition="5" />
+    <scopeInfo nodeId="3161776655522590246" fileName="CurrentDifferenceRegistry.java" startLine="92" startPosition="36" endLine="97" endPosition="5">
+      <varInfo nodeId="3161776655522590247" varName="md" />
+    </scopeInfo>
     <scopeInfo nodeId="3161776655522590742" fileName="CurrentDifferenceRegistry.java" startLine="111" startPosition="41" endLine="116" endPosition="69">
       <varInfo nodeId="3161776655522590306" varName="modelRef" />
     </scopeInfo>
@@ -1005,12 +1007,14 @@
     <scopeInfo nodeId="3285276019551683348" fileName="ChangesTracking.java" startLine="374" startPosition="58" endLine="376" endPosition="5" />
     <scopeInfo nodeId="3285276019551792700" fileName="ChangesTracking.java" startLine="456" startPosition="31" endLine="458" endPosition="66" />
     <scopeInfo nodeId="3161776655522682226" fileName="ChangesTracking.java" startLine="576" startPosition="55" endLine="578" endPosition="5" />
-    <scopeInfo nodeId="8473562513973655172" fileName="ChangesTracking.java" startLine="125" startPosition="51" endLine="128" endPosition="7" />
+    <scopeInfo nodeId="8473562513973655173" fileName="ChangesTracking.java" startLine="125" startPosition="51" endLine="128" endPosition="7">
+      <varInfo nodeId="8473562513973655174" varName="i" />
+    </scopeInfo>
     <scopeInfo nodeId="6221381139489260601" fileName="ChangesTracking.java" startLine="136" startPosition="41" endLine="139" endPosition="5">
       <varInfo nodeId="6221381139489260602" varName="ch" />
     </scopeInfo>
     <scopeInfo nodeId="1400081181930264420" fileName="ChangesTracking.java" startLine="172" startPosition="27" endLine="175" endPosition="11" />
-    <scopeInfo nodeId="3161776655522687151" fileName="ChangesTracking.java" startLine="193" startPosition="64" endLine="196" endPosition="9" />
+    <scopeInfo nodeId="3161776655522687150" fileName="ChangesTracking.java" startLine="193" startPosition="64" endLine="196" endPosition="9" />
     <scopeInfo nodeId="6402272430681910421" fileName="ChangesTracking.java" startLine="203" startPosition="38" endLine="206" endPosition="9" />
     <scopeInfo nodeId="9208608870626866296" fileName="ChangesTracking.java" startLine="213" startPosition="30" endLine="216" endPosition="26">
       <varInfo nodeId="1191738686175028201" varName="changeSet" />
@@ -1400,7 +1404,7 @@
     <scopeInfo nodeId="3722815385094205366" fileName="SimpleCommandQueue.java" startLine="19" startPosition="57" endLine="21" endPosition="21" />
     <scopeInfo nodeId="3722815385094288784" fileName="SimpleCommandQueue.java" startLine="33" startPosition="28" endLine="35" endPosition="23" />
     <scopeInfo nodeId="6669546492594067003" fileName="SimpleCommandQueue.java" startLine="39" startPosition="25" endLine="41" endPosition="25" />
-    <scopeInfo nodeId="3722815385094288876" fileName="SimpleCommandQueue.java" startLine="49" startPosition="45" endLine="52" endPosition="7" />
+    <scopeInfo nodeId="3722815385094288887" fileName="SimpleCommandQueue.java" startLine="49" startPosition="45" endLine="52" endPosition="7" />
     <scopeInfo nodeId="3722815385094244337" fileName="SimpleCommandQueue.java" startLine="64" startPosition="49" endLine="67" endPosition="5">
       <varInfo nodeId="3722815385094244343" varName="name" />
     </scopeInfo>

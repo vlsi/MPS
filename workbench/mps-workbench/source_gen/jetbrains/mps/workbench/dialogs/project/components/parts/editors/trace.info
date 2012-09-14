@@ -175,7 +175,9 @@
       <varInfo nodeId="4256903895781786778" varName="language" />
       <varInfo nodeId="4256903895781786863" varName="manager" />
     </scopeInfo>
-    <scopeInfo nodeId="4256903895781786765" fileName="ManagerTableCellEditor.java" startLine="50" startPosition="25" endLine="55" endPosition="9" />
+    <scopeInfo nodeId="4256903895781786771" fileName="ManagerTableCellEditor.java" startLine="50" startPosition="25" endLine="55" endPosition="9">
+      <varInfo nodeId="4256903895781786772" varName="node" />
+    </scopeInfo>
     <scopeInfo nodeId="4256903895781784722" fileName="ManagerTableCellEditor.java" startLine="36" startPosition="123" endLine="42" endPosition="93">
       <varInfo nodeId="4256903895781784773" varName="manager" />
       <varInfo nodeId="3003041218840692431" varName="managerName" />
@@ -185,7 +187,9 @@
       <varInfo nodeId="8571970830724169304" varName="stubsAspect" />
     </scopeInfo>
     <scopeInfo nodeId="4256903895781786764" fileName="ManagerTableCellEditor.java" startLine="49" startPosition="57" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="8571970830724169286" fileName="ManagerTableCellEditor.java" startLine="68" startPosition="25" endLine="76" endPosition="9" />
+    <scopeInfo nodeId="8571970830724169296" fileName="ManagerTableCellEditor.java" startLine="68" startPosition="25" endLine="76" endPosition="9">
+      <varInfo nodeId="8571970830724169300" varName="l" />
+    </scopeInfo>
     <scopeInfo nodeId="4256903895781784709" fileName="ManagerTableCellEditor.java" startLine="35" startPosition="55" endLine="44" endPosition="0">
       <varInfo nodeId="4256903895781784720" varName="focus" />
       <varInfo nodeId="4256903895781784716" varName="index" />

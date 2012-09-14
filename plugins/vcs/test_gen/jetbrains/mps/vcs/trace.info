@@ -309,7 +309,9 @@
     </scopeInfo>
     <scopeInfo nodeId="7314351270975464170" fileName="DiskMemoryConflictsTest.java" startLine="306" startPosition="68" endLine="314" endPosition="7" />
     <scopeInfo nodeId="7314351270975464214" fileName="DiskMemoryConflictsTest.java" startLine="323" startPosition="50" endLine="331" endPosition="7" />
-    <scopeInfo nodeId="7884566175275140901" fileName="DiskMemoryConflictsTest.java" startLine="78" startPosition="92" endLine="87" endPosition="13" />
+    <scopeInfo nodeId="7884566175275140902" fileName="DiskMemoryConflictsTest.java" startLine="78" startPosition="92" endLine="87" endPosition="13">
+      <varInfo nodeId="7884566175275140904" varName="dm" />
+    </scopeInfo>
     <scopeInfo nodeId="7314351270975463537" fileName="DiskMemoryConflictsTest.java" startLine="107" startPosition="15" endLine="116" endPosition="13">
       <varInfo nodeId="7314351270975463539" varName="modelDescriptor" />
       <varInfo nodeId="7314351270975463546" varName="node" />

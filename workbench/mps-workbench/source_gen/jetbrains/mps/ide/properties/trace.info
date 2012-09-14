@@ -954,7 +954,9 @@
       <varInfo nodeId="1747818952411874074" varName="list" />
       <varInfo nodeId="1747818952411874070" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="407" startPosition="52" endLine="411" endPosition="13" />
+    <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="407" startPosition="52" endLine="411" endPosition="13">
+      <varInfo nodeId="3416087927885130128" varName="value" />
+    </scopeInfo>
     <scopeInfo nodeId="4060390951635974672" fileName="StandardComponents.java" startLine="439" startPosition="0" endLine="443" endPosition="0">
       <varInfo nodeId="4060390951635974677" varName="caption" />
       <varInfo nodeId="4060390951635974679" varName="list" />
@@ -2929,7 +2931,9 @@
       <varInfo nodeId="5923576889075047336" varName="child" />
       <varInfo nodeId="5923576889075047345" varName="childData" />
     </scopeInfo>
-    <scopeInfo nodeId="5923576889075047284" fileName="EditOperandDialog.java" startLine="126" startPosition="50" endLine="129" endPosition="7" />
+    <scopeInfo nodeId="5923576889075047285" fileName="EditOperandDialog.java" startLine="126" startPosition="50" endLine="129" endPosition="7">
+      <varInfo nodeId="5923576889075047292" varName="ref" />
+    </scopeInfo>
     <scopeInfo nodeId="5923576889075047658" fileName="EditOperandDialog.java" startLine="214" startPosition="63" endLine="217" endPosition="7">
       <varInfo nodeId="5923576889075047660" varName="child" />
     </scopeInfo>
@@ -2992,9 +2996,7 @@
     <scopeInfo nodeId="6801780643483355755" fileName="EditOperandDialog.java" startLine="162" startPosition="101" endLine="168" endPosition="7" />
     <scopeInfo nodeId="5923576889075048085" fileName="EditOperandDialog.java" startLine="311" startPosition="0" endLine="317" endPosition="0" />
     <scopeInfo nodeId="5923576889075046985" fileName="EditOperandDialog.java" startLine="48" startPosition="16" endLine="55" endPosition="11" />
-    <scopeInfo nodeId="5923576889075047433" fileName="EditOperandDialog.java" startLine="148" startPosition="59" endLine="155" endPosition="11">
-      <varInfo nodeId="5923576889075047440" varName="ref" />
-    </scopeInfo>
+    <scopeInfo nodeId="5923576889075047432" fileName="EditOperandDialog.java" startLine="148" startPosition="59" endLine="155" endPosition="11" />
     <scopeInfo nodeId="6801780643483355746" fileName="EditOperandDialog.java" startLine="161" startPosition="98" endLine="169" endPosition="5">
       <varInfo nodeId="6801780643483355753" varName="ref" />
     </scopeInfo>

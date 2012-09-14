@@ -410,6 +410,7 @@
       <modulePath path="${project}/testbench/languages/solutions/pluginSolution/pluginSolution.msd" folder="testbench" />
       <modulePath path="${project}/testbench/languages/suite.mpl" folder="testbench" />
       <modulePath path="${project}/testbench/modules/miscTests/solutions/jetbrains.mps.refactoring.tests.msd" folder="testbench" />
+      <modulePath path="${project}/testbench/modules/testActions/testActions.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testAntTask/solutions/testAntTask/testAntTask.msd" folder="testbench" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/jetbrains.mps.makeTest.msd" folder="core.make" />
       <modulePath path="${project}/testbench/modules/testMake/solutions/jetbrains.mps.testModels/jetbrains.mps.testModels.msd" folder="testbench" />

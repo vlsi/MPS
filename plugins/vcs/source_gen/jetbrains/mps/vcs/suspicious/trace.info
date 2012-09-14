@@ -112,9 +112,7 @@
     <scopeInfo nodeId="4093906047203395631" fileName="SuspiciousModelIndex.java" startLine="184" startPosition="64" endLine="185" endPosition="30" />
     <scopeInfo nodeId="4213817562888239151" fileName="SuspiciousModelIndex.java" startLine="103" startPosition="30" endLine="105" endPosition="40" />
     <scopeInfo nodeId="4093906047203395666" fileName="SuspiciousModelIndex.java" startLine="43" startPosition="111" endLine="46" endPosition="37" />
-    <scopeInfo nodeId="4093906047203395833" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="31" endLine="135" endPosition="15">
-      <varInfo nodeId="4093906047203395835" varName="conflictable" />
-    </scopeInfo>
+    <scopeInfo nodeId="4213817562888225834" fileName="SuspiciousModelIndex.java" startLine="132" startPosition="31" endLine="135" endPosition="15" />
     <scopeInfo nodeId="4093906047203396087" fileName="SuspiciousModelIndex.java" startLine="165" startPosition="78" endLine="168" endPosition="9" />
     <scopeInfo nodeId="4093906047203395599" fileName="SuspiciousModelIndex.java" startLine="174" startPosition="61" endLine="177" endPosition="5">
       <varInfo nodeId="4093906047203395602" varName="manager" />
@@ -150,7 +148,9 @@
       <varInfo nodeId="4093906047203395664" varName="vfManager" />
       <varInfo nodeId="4093906047203395662" varName="watcher" />
     </scopeInfo>
-    <scopeInfo nodeId="4093906047203396080" fileName="SuspiciousModelIndex.java" startLine="164" startPosition="46" endLine="169" endPosition="7" />
+    <scopeInfo nodeId="4093906047203396081" fileName="SuspiciousModelIndex.java" startLine="164" startPosition="46" endLine="169" endPosition="7">
+      <varInfo nodeId="4093906047203396085" varName="project" />
+    </scopeInfo>
     <scopeInfo nodeId="4093906047203395613" fileName="SuspiciousModelIndex.java" startLine="178" startPosition="0" endLine="183" endPosition="0" />
     <scopeInfo nodeId="4093906047203395711" fileName="SuspiciousModelIndex.java" startLine="56" startPosition="0" endLine="62" endPosition="0" />
     <scopeInfo nodeId="4093906047203396002" fileName="SuspiciousModelIndex.java" startLine="121" startPosition="111" endLine="127" endPosition="11">

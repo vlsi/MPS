@@ -88,7 +88,9 @@
     <scopeInfo nodeId="2810982631457565121" fileName="StubModelsFastFindSupport.java" startLine="145" startPosition="65" endLine="146" endPosition="35" />
     <scopeInfo nodeId="2810982631457564918" fileName="StubModelsFastFindSupport.java" startLine="44" startPosition="0" endLine="46" endPosition="3" />
     <scopeInfo nodeId="4614401897484748141" fileName="StubModelsFastFindSupport.java" startLine="116" startPosition="25" endLine="119" endPosition="11" />
-    <scopeInfo nodeId="2810982631457565113" fileName="StubModelsFastFindSupport.java" startLine="144" startPosition="46" endLine="147" endPosition="9" />
+    <scopeInfo nodeId="2810982631457565114" fileName="StubModelsFastFindSupport.java" startLine="144" startPosition="46" endLine="147" endPosition="9">
+      <varInfo nodeId="2810982631457565119" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="2810982631457564922" fileName="StubModelsFastFindSupport.java" startLine="47" startPosition="0" endLine="51" endPosition="0" />
     <scopeInfo nodeId="2810982631457564932" fileName="StubModelsFastFindSupport.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
     <scopeInfo nodeId="368138058575778549" fileName="StubModelsFastFindSupport.java" startLine="62" startPosition="124" endLine="66" endPosition="0">
@@ -752,7 +754,9 @@
       <varInfo nodeId="2566197375814063693" varName="list" />
     </scopeInfo>
     <scopeInfo nodeId="5122318299906045829" fileName="ClassifierCacher.java" startLine="184" startPosition="30" endLine="192" endPosition="11" />
-    <scopeInfo nodeId="2566197375814062515" fileName="ClassifierCacher.java" startLine="198" startPosition="57" endLine="206" endPosition="5" />
+    <scopeInfo nodeId="2566197375814062522" fileName="ClassifierCacher.java" startLine="198" startPosition="57" endLine="206" endPosition="5">
+      <varInfo nodeId="2566197375814062526" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="2566197375814063274" fileName="ClassifierCacher.java" startLine="334" startPosition="54" endLine="342" endPosition="17" />
     <scopeInfo nodeId="2566197375814063404" fileName="ClassifierCacher.java" startLine="364" startPosition="0" endLine="372" endPosition="0">
       <varInfo nodeId="2566197375814063409" varName="anns" />
@@ -799,7 +803,9 @@
     <scopeInfo nodeId="5122318299906072522" fileName="ClassifierCacher.java" startLine="280" startPosition="49" endLine="293" endPosition="26" />
     <scopeInfo nodeId="2566197375814062263" fileName="ClassifierCacher.java" startLine="150" startPosition="54" endLine="164" endPosition="5" />
     <scopeInfo nodeId="2566197375814061757" fileName="ClassifierCacher.java" startLine="110" startPosition="54" endLine="125" endPosition="5" />
-    <scopeInfo nodeId="2566197375814062816" fileName="ClassifierCacher.java" startLine="261" startPosition="51" endLine="276" endPosition="5" />
+    <scopeInfo nodeId="2566197375814062823" fileName="ClassifierCacher.java" startLine="261" startPosition="51" endLine="276" endPosition="5">
+      <varInfo nodeId="2566197375814062827" varName="m" />
+    </scopeInfo>
     <scopeInfo nodeId="5122318299906072516" fileName="ClassifierCacher.java" startLine="279" startPosition="70" endLine="294" endPosition="5">
       <varInfo nodeId="5122318299906072520" varName="m" />
     </scopeInfo>
@@ -859,9 +865,7 @@
       <varInfo nodeId="2566197375814063503" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="2566197375814062621" fileName="ClassifierCacher.java" startLine="210" startPosition="54" endLine="257" endPosition="7" />
-    <scopeInfo nodeId="2566197375814062615" fileName="ClassifierCacher.java" startLine="209" startPosition="48" endLine="258" endPosition="5">
-      <varInfo nodeId="2566197375814062619" varName="c" />
-    </scopeInfo>
+    <scopeInfo nodeId="2566197375814062608" fileName="ClassifierCacher.java" startLine="209" startPosition="48" endLine="258" endPosition="5" />
     <scopeInfo nodeId="2566197375814062601" fileName="ClassifierCacher.java" startLine="208" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="2566197375814062604" varName="ac" />
     </scopeInfo>

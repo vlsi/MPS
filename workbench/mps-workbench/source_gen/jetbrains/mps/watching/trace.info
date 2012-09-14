@@ -168,7 +168,9 @@
       <varInfo nodeId="4707157387247361215" varName="toAdd" />
       <varInfo nodeId="4707157387247361206" varName="toRemove" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247361241" fileName="WatchedRoots.java" startLine="90" startPosition="115" endLine="94" endPosition="5" />
+    <scopeInfo nodeId="4707157387247361242" fileName="WatchedRoots.java" startLine="90" startPosition="115" endLine="94" endPosition="5">
+      <varInfo nodeId="4707157387247361244" varName="l" />
+    </scopeInfo>
     <scopeInfo nodeId="4707157387247361332" fileName="WatchedRoots.java" startLine="111" startPosition="45" endLine="115" endPosition="9" />
     <scopeInfo nodeId="4707157387247361102" fileName="WatchedRoots.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="4707157387247361119" fileName="WatchedRoots.java" startLine="48" startPosition="43" endLine="53" endPosition="0" />
@@ -203,9 +205,7 @@
       <varInfo nodeId="4707157387247361237" varName="librariesRequests" />
       <varInfo nodeId="4707157387247361234" varName="toAdd" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247361274" fileName="WatchedRoots.java" startLine="97" startPosition="121" endLine="104" endPosition="5">
-      <varInfo nodeId="4707157387247361276" varName="l" />
-    </scopeInfo>
+    <scopeInfo nodeId="4707157387247361273" fileName="WatchedRoots.java" startLine="97" startPosition="121" endLine="104" endPosition="5" />
     <scopeInfo nodeId="4707157387247361162" fileName="WatchedRoots.java" startLine="74" startPosition="0" endLine="82" endPosition="0" />
     <scopeInfo nodeId="4707157387247361263" fileName="WatchedRoots.java" startLine="96" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="4707157387247361269" varName="librariesRequests" />

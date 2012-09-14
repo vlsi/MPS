@@ -230,7 +230,9 @@
       <varInfo nodeId="1213877245174" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1447667470349200724" fileName="SequenceType_Behavior.java" startLine="35" startPosition="165" endLine="38" endPosition="11" />
-    <scopeInfo nodeId="1447667470349161992" fileName="SequenceType_Behavior.java" startLine="40" startPosition="14" endLine="43" endPosition="9" />
+    <scopeInfo nodeId="1213877245202" fileName="SequenceType_Behavior.java" startLine="40" startPosition="14" endLine="43" endPosition="9">
+      <varInfo nodeId="1213877245203" varName="suffix" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877245174" fileName="SequenceType_Behavior.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1213877245174" varName="thisNode" />
     </scopeInfo>
@@ -383,7 +385,9 @@
     <scopeInfo nodeId="3078742637637080212" fileName="ListType_Behavior.java" startLine="112" startPosition="7" endLine="116" endPosition="31">
       <varInfo nodeId="3078742637637080212" varName="quotedNode1_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1447667470349161966" fileName="ListType_Behavior.java" startLine="42" startPosition="135" endLine="47" endPosition="9" />
+    <scopeInfo nodeId="1447667470349200691" fileName="ListType_Behavior.java" startLine="42" startPosition="135" endLine="47" endPosition="9">
+      <varInfo nodeId="1447667470349200692" varName="suffix" />
+    </scopeInfo>
     <scopeInfo nodeId="1213877511286" fileName="ListType_Behavior.java" startLine="89" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="7602110602933345723" varName="targetModel" />
       <varInfo nodeId="1213877511286" varName="thisNode" />
@@ -791,9 +795,7 @@
       <varInfo nodeId="1226515539540" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1447667470349200746" fileName="SetType_Behavior.java" startLine="43" startPosition="165" endLine="46" endPosition="11" />
-    <scopeInfo nodeId="1226515541906" fileName="SetType_Behavior.java" startLine="48" startPosition="14" endLine="51" endPosition="9">
-      <varInfo nodeId="1226515541907" varName="suffix" />
-    </scopeInfo>
+    <scopeInfo nodeId="1447667470349162003" fileName="SetType_Behavior.java" startLine="48" startPosition="14" endLine="51" endPosition="9" />
     <scopeInfo nodeId="1226515539540" fileName="SetType_Behavior.java" startLine="34" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1226515539540" varName="thisNode" />
     </scopeInfo>
@@ -2372,9 +2374,7 @@
       <varInfo nodeId="5686963296372576518" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="1447667470349200625" fileName="AbstractContainerType_Behavior.java" startLine="27" startPosition="165" endLine="30" endPosition="11" />
-    <scopeInfo nodeId="5686963296372577670" fileName="AbstractContainerType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9">
-      <varInfo nodeId="5686963296372577671" varName="suffix" />
-    </scopeInfo>
+    <scopeInfo nodeId="1447667470349161835" fileName="AbstractContainerType_Behavior.java" startLine="32" startPosition="14" endLine="35" endPosition="9" />
     <scopeInfo nodeId="5686963296372576518" fileName="AbstractContainerType_Behavior.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="5686963296372576518" varName="thisNode" />
     </scopeInfo>
@@ -2509,7 +2509,9 @@
       <varInfo nodeId="7886927014685055056" varName="thisNode" />
     </scopeInfo>
     <scopeInfo nodeId="7886927014685055099" fileName="CollectionType_Behavior.java" startLine="41" startPosition="165" endLine="44" endPosition="11" />
-    <scopeInfo nodeId="7886927014685055118" fileName="CollectionType_Behavior.java" startLine="46" startPosition="14" endLine="49" endPosition="9" />
+    <scopeInfo nodeId="7886927014685055119" fileName="CollectionType_Behavior.java" startLine="46" startPosition="14" endLine="49" endPosition="9">
+      <varInfo nodeId="7886927014685055120" varName="suffix" />
+    </scopeInfo>
     <scopeInfo nodeId="7886927014685055056" fileName="CollectionType_Behavior.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="7886927014685055056" varName="thisNode" />
     </scopeInfo>

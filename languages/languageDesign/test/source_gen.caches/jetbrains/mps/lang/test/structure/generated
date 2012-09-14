@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="awctfvz1064z52oc6kg7w6c2mkuuk5a">
+<dependencies version="2" modelHash="-76d9v3ivo01c7l43tm0jtyo502yp30u">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-1vq0gdri0lycfxz1qxc7e4rfjd0h9c6" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="go6segw8331kdd55iid2eyf6mpbgsd" />
@@ -186,7 +186,7 @@
   <source id="5773579205429866751" name="EditorComponentExpression" hash="2k3us4uxcsfa51hxv6jj799tv8fvpb0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5097124989038916362" name="TestInfo" hash="-bsf6n25ps8q4q2akqblx86tojla70z4">
+  <source id="5097124989038916362" name="TestInfo" hash="7aj9054jooivzpj5t63uh3c2t0ekcnh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7011073693661765739" name="InvokeActionStatement" hash="4x2cfwyllufrm948e95yoqsbwrrhoaq">

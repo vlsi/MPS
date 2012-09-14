@@ -236,9 +236,7 @@
       <varInfo nodeId="7228605397000826846" varName="modelName" />
     </scopeInfo>
     <scopeInfo nodeId="7228605397000826850" fileName="AspectMethodsFinder.java" startLine="79" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="7228605397000827086" fileName="AspectMethodsFinder.java" startLine="33" startPosition="25" endLine="38" endPosition="9">
-      <varInfo nodeId="7228605397000827093" varName="descriptor" />
-    </scopeInfo>
+    <scopeInfo nodeId="7228605397000827085" fileName="AspectMethodsFinder.java" startLine="33" startPosition="25" endLine="38" endPosition="9" />
     <scopeInfo nodeId="7228605397000826931" fileName="AspectMethodsFinder.java" startLine="41" startPosition="58" endLine="46" endPosition="5">
       <varInfo nodeId="7228605397000826933" varName="model" />
     </scopeInfo>
@@ -319,9 +317,7 @@
     <scopeInfo nodeId="7228605397000827131" fileName="ConstantFinder.java" startLine="42" startPosition="0" endLine="45" endPosition="5">
       <varInfo nodeId="7228605397000827134" varName="data" />
     </scopeInfo>
-    <scopeInfo nodeId="7228605397000827242" fileName="ConstantFinder.java" startLine="49" startPosition="27" endLine="52" endPosition="11">
-      <varInfo nodeId="7228605397000827244" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="7228605397000827241" fileName="ConstantFinder.java" startLine="49" startPosition="27" endLine="52" endPosition="11" />
     <scopeInfo nodeId="7228605397000827180" fileName="ConstantFinder.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="7228605397000827186" varName="monitor" />
       <varInfo nodeId="7228605397000827184" varName="query" />

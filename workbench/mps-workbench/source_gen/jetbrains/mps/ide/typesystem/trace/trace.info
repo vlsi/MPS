@@ -589,9 +589,7 @@
     <scopeInfo nodeId="866755926374575656" fileName="TypeSystemStateTree.java" startLine="70" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="866755926374575659" varName="state" />
     </scopeInfo>
-    <scopeInfo nodeId="1802485101229752671" fileName="TypeSystemStateTree.java" startLine="106" startPosition="79" endLine="113" endPosition="5">
-      <varInfo nodeId="1802485101229752674" varName="idx" />
-    </scopeInfo>
+    <scopeInfo nodeId="1802485101229745143" fileName="TypeSystemStateTree.java" startLine="106" startPosition="79" endLine="113" endPosition="5" />
     <scopeInfo nodeId="3651762609556438266" fileName="TypeSystemStateTree.java" startLine="243" startPosition="34" endLine="250" endPosition="13">
       <varInfo nodeId="3651762609556438271" varName="node" />
     </scopeInfo>
@@ -1619,7 +1617,9 @@
       <varInfo nodeId="1040231816994673287" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="866755926374576920" fileName="TypeSystemTraceTree.java" startLine="109" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="1574155554204785214" fileName="TypeSystemTraceTree.java" startLine="157" startPosition="23" endLine="163" endPosition="7" />
+    <scopeInfo nodeId="7469000189634346396" fileName="TypeSystemTraceTree.java" startLine="157" startPosition="23" endLine="163" endPosition="7">
+      <varInfo nodeId="7469000189634346399" varName="consequence" />
+    </scopeInfo>
     <scopeInfo nodeId="7131315281168482395" fileName="TypeSystemTraceTree.java" startLine="182" startPosition="0" endLine="188" endPosition="0" />
     <scopeInfo nodeId="866755926374577264" fileName="TypeSystemTraceTree.java" startLine="205" startPosition="49" endLine="211" endPosition="7">
       <varInfo nodeId="866755926374577266" varName="block" />
@@ -1824,11 +1824,13 @@
       <varInfo nodeId="2861086863977863665" varName="showParent" />
     </scopeInfo>
     <unitInfo nodeId="7131315281168482157" fileName="TypeSystemTraceTree.java" startLine="93" startPosition="30" endLine="59" endPosition="0" />
+    <unitInfo nodeId="866755926374576838" fileName="TypeSystemTraceTree.java" startLine="59" startPosition="0" endLine="627" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree" />
+    <unitInfo nodeId="866755926374577680" fileName="TypeSystemTraceTree.java" startLine="314" startPosition="45" endLine="335" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$2" />
     <unitInfo nodeId="7502195005651612524" fileName="TypeSystemTraceTree.java" startLine="339" startPosition="45" endLine="358" endPosition="5" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$3" />
     <unitInfo nodeId="2861086863977863182" fileName="TypeSystemTraceTree.java" startLine="505" startPosition="0" endLine="626" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$DetailsTree" />
-    <unitInfo nodeId="866755926374576841" fileName="TypeSystemTraceTree.java" startLine="609" startPosition="0" endLine="625" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$DetailsTree$ShowStateUpdater" />
     <unitInfo nodeId="7131315281168482772" fileName="TypeSystemTraceTree.java" startLine="446" startPosition="0" endLine="504" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$SelectedNodeEditorMessage" />
     <unitInfo nodeId="2861086863977869564" fileName="TypeSystemTraceTree.java" startLine="416" startPosition="0" endLine="445" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree$ShowDetailsUpdater" />
+    <unitInfo nodeId="866755926374576841" fileName="TypeSystemTraceTree.java" startLine="609" startPosition="0" endLine="625" endPosition="0" unitName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTree.DetailsTree$ShowStateUpdater" />
   </root>
   <root nodeId="866755926374577735" modelId="r:baaecce4-d235-4862-b71c-c60e946df6fa(jetbrains.mps.ide.typesystem.trace)">
     <nodeInfo nodeId="866755926374577738" fileName="TypeSystemTraceTreeNode.java" startLine="18" startPosition="58" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="COLOR_MAP" />
