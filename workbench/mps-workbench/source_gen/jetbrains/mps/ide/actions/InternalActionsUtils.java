@@ -4,12 +4,21 @@ package jetbrains.mps.ide.actions;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import java.util.List;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -25,11 +34,29 @@ import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class InternalActionsUtils {
   protected static Log log = LogFactory.getLog(InternalActionsUtils.class);
 
   public InternalActionsUtils() {
+  }
+
+  public static List<SNodePointer> getAllConcepts() {
+    final List<SNodePointer> concepts = ListSequence.fromList(new ArrayList<SNodePointer>());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (Object concept : FindUtils.getSearchResults(new EmptyProgressMonitor(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder").getSearchResults()) {
+          ListSequence.fromList(concepts).addElement(new SNodePointer(((SearchResult<SNode>) concept).getObject()));
+        }
+      }
+    });
+    return concepts;
   }
 
   public static void executeActionOnAllNodes(String actionName, ProgressMonitor monitor, final _FunctionTypes._void_P1_E0<? super SNode> nodeCallback) {
@@ -69,7 +96,7 @@ public class InternalActionsUtils {
                 log.warn("Model num: " + num.value + ", name: " + modelRef.getLongName());
               }
             }
-            SModel model = check_6btuvs_a0d0a0a2a4a0(SModelRepository.getInstance().getModelDescriptor(modelRef));
+            SModel model = check_6btuvs_a0d0a0a2a4a1(SModelRepository.getInstance().getModelDescriptor(modelRef));
             if (model != null) {
               for (SNode node : model.nodes()) {
                 try {
@@ -104,7 +131,29 @@ public class InternalActionsUtils {
     });
   }
 
-  private static SModel check_6btuvs_a0d0a0a2a4a0(SModelDescriptor checkedDotOperand) {
+  public static void showUsagesViewForNodes(Project project, final List<SNodePointer> nodes) {
+    IResultProvider provider = FindUtils.makeProvider(new IFinder() {
+      public SearchResults find(SearchQuery query, ProgressMonitor progress) {
+        SearchResults results = new SearchResults<SNode>();
+        for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodePointer, SNode>() {
+          public SNode select(SNodePointer it) {
+            return it.getNode();
+          }
+        }).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return it != null;
+          }
+        })) {
+          results.getSearchResults().add(new SearchResult<SNode>(node, "Uncategorized"));
+        }
+        return results;
+      }
+    });
+
+    project.getComponent(UsagesViewTool.class).findUsages(provider, new SearchQuery(GlobalScope.getInstance()), false, true, false, "Nothing");
+  }
+
+  private static SModel check_6btuvs_a0d0a0a2a4a1(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModel();
     }
