@@ -28,6 +28,7 @@ import java.util.Set;
 
 /**
  * TODO rewrite
+ *
  * @deprecated Use MacroHelper
  */
 @Deprecated
@@ -35,7 +36,8 @@ public abstract class Macros {
   private static final Logger LOG = Logger.getLogger(Macros.class);
   static final char SEPARATOR_CHAR = '/';
 
-  public static final String MPS_HOME = "${mps_home}";
+  private static final String MPS_HOME_MACRO_NAME = "mps_home";
+  public static final String MPS_HOME = "${" + MPS_HOME_MACRO_NAME + "}";
 
   public final String expandPath(@Nullable String path, @Nullable IFile anchorFile) {
     if (path == null || !path.startsWith("${")) return path; // No macros to expand
@@ -68,37 +70,23 @@ public abstract class Macros {
   }
 
   protected String expandPath_internal(String path, IFile anchorFile) {
-    IFile result = null;
+    if (!path.startsWith("${") || !path.contains("}")) return FileUtil.getCanonicalPath(path);
+    String macro = path.substring(2, path.indexOf("}"));
 
-    Set<String> macroNames = PathMacros.getInstance().getNames();
-    for (String macro : macroNames) {
-      String prefix = "${" + macro + "}";
-      if (path.startsWith(prefix)) {
-        String relativePath = removePrefix(path, prefix);
-        String macroValue = PathMacros.getInstance().getValue(macro);
-        result = macroValue == null ? null : FileSystem.getInstance().getFileByPath(macroValue).getDescendant(relativePath);
-        break;
-      }
-    }
-    if (result != null) return IFileUtils.getCanonicalPath(result);
+    String relativePath = removePrefix(path);
 
-    if (path.startsWith(MPS_HOME)) {
-      String relativePath = removePrefix(path, MPS_HOME);
-      result = FileSystem.getInstance().getFileByPath(PathManager.getHomePath()).getDescendant(relativePath);
-    }
-    if (result != null) return IFileUtils.getCanonicalPath(result);
+    //this is to be removed
+    if (macro.equals(MPS_HOME_MACRO_NAME)) return getFullPath(PathManager.getHomePath(), relativePath);
 
-    if (!path.startsWith("${")) {
-      result = FileSystem.getInstance().getFileByPath(path);
-      return IFileUtils.getCanonicalPath(result);
-    }
+    String macroValue = PathMacros.getInstance().getValue(macro);
+    if (macroValue != null) return getFullPath(macroValue, relativePath);
 
-    int end = path.indexOf("}");
-    if (end != -1) {
-      LOG.error("Wasn't able to expand path " + path);
-      LOG.error("Please define path variable " + path.substring(2, end) + " in path variables section of settings");
-    }
-    return path;
+    PathMacros.getInstance().report("Please define path variable in path variables section of settings", macro);
+    return FileUtil.getCanonicalPath(path);
+  }
+
+  private String getFullPath(String anchorPath, String relativePath) {
+    return IFileUtils.getCanonicalPath(FileSystem.getInstance().getFileByPath(anchorPath).getDescendant(relativePath));
   }
 
   protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
@@ -133,8 +121,8 @@ public abstract class Macros {
     return File.separator + FileUtil.getRelativePath(path, prefix, File.separator);
   }
 
-  protected String removePrefix(String path, String prefix) {
-    String result = path.substring(prefix.length());
+  protected String removePrefix(String path) {
+    String result = path.substring(path.indexOf("}") + 1);
     if (result.startsWith(File.separator)) result = result.substring(1);
     return result;
   }
