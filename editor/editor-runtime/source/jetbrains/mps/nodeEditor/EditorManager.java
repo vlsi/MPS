@@ -57,6 +57,25 @@ public class EditorManager {
     return operationContext.getComponent(EditorManager.class);
   }
 
+  static List<Pair<SNode, SNodePointer>> convert(List<SModelEvent> events) {
+    if (events == null) {
+      return null;
+    }
+    List<Pair<SNode, SNodePointer>> result = new ArrayList<Pair<SNode, SNodePointer>>();
+    for (SModelEvent event : events) {
+      SNode eventNode;
+      if (event instanceof SModelChildEvent) {
+        eventNode = ((SModelChildEvent) event).getParent();
+      } else if (event instanceof SModelReferenceEvent) {
+        eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
+      } else if (event instanceof SModelPropertyEvent) {
+        eventNode = ((SModelPropertyEvent) event).getNode();
+      } else continue;
+      result.add(new Pair<SNode, SNodePointer>(eventNode, new SNodePointer(eventNode)));
+    }
+    return result;
+  }
+
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, false);
   }
@@ -72,7 +91,7 @@ public class EditorManager {
         myMap.putAll(getContextToCellMap(rootCell));
       }
       myCreatingInspectedCell = isInspectorCell;
-      return createEditorCell(context, events, nodeRefContext);
+      return createEditorCell(context, convert(events), nodeRefContext);
     } finally {
       myMap.clear();
       context.popTracerTask();
@@ -163,7 +182,7 @@ public class EditorManager {
     return attributeCell;
   }
 
-  /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<SModelEvent> sModelEvents) {
+  /*package*/ EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context, SNode roleAttribute, List<Pair<SNode, SNodePointer>> modifications) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
       stack = new Stack<EditorCell>();
@@ -171,7 +190,7 @@ public class EditorManager {
     }
     stack.push(cellWithRole);
     myLastAttributedCell = cellWithRole;
-    EditorCell result = createEditorCell(context, sModelEvents, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
+    EditorCell result = createEditorCell(context, modifications, ReferencedNodeContext.createNodeAttributeContext(roleAttribute));
     myLastAttributedCell = null;
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
@@ -195,7 +214,7 @@ public class EditorManager {
     return !myCreatingInspectedCell;
   }
 
-  /*package*/ EditorCell createEditorCell(EditorContext context, List<SModelEvent> events, ReferencedNodeContext refContext) {
+  /*package*/ EditorCell createEditorCell(EditorContext context, List<Pair<SNode, SNodePointer>> modifications, ReferencedNodeContext refContext) {
     context.pushTracerTask("?" + refContext.toString(), true);
     try {
       SNode node = refContext.getNode();
@@ -208,7 +227,7 @@ public class EditorManager {
           if (!myAttributesStack.contains(attribute)) {
             myAttributesStack.push(attribute);
 
-            EditorCell nodeCell = createEditorCell(context, events, refContext);
+            EditorCell nodeCell = createEditorCell(context, modifications, refContext);
 
             SNode poppedAttribute = myAttributesStack.pop();
             LOG.assertLog(poppedAttribute == attribute);
@@ -218,9 +237,9 @@ public class EditorManager {
       }
 
       EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
-      if (events != null) {
+      if (modifications != null) {
         EditorCell oldCell = myMap.get(refContext);
-        boolean nodeChanged = isNodeChanged(events, nodeEditorComponent, oldCell);
+        boolean nodeChanged = isNodeChanged(modifications, nodeEditorComponent, oldCell);
 
         if (!nodeChanged) {
           if (oldCell != null) {
@@ -257,23 +276,13 @@ public class EditorManager {
     }
   }
 
-  private boolean isNodeChanged(List<SModelEvent> events, EditorComponent nodeEditorComponent, EditorCell oldCell) {
-    boolean nodeChanged = false;
-    for (SModelEvent event : events) {
-      SNode eventNode;
-      if (event instanceof SModelChildEvent) {
-        eventNode = ((SModelChildEvent) event).getParent();
-      } else if (event instanceof SModelReferenceEvent) {
-        eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
-      } else if (event instanceof SModelPropertyEvent) {
-        eventNode = ((SModelPropertyEvent) event).getNode();
-      } else continue;
-      if (nodeEditorComponent.doesCellDependOnNode(oldCell, eventNode)) {
-        nodeChanged = true;
-        break;
+  private boolean isNodeChanged(List<Pair<SNode, SNodePointer>> modifications, EditorComponent nodeEditorComponent, EditorCell oldCell) {
+    for (Pair<SNode, SNodePointer> modification : modifications) {
+      if (nodeEditorComponent.doesCellDependOnNode(oldCell, modification.o1, modification.o2)) {
+        return true;
       }
     }
-    return nodeChanged;
+    return false;
   }
 
 
