@@ -338,9 +338,9 @@ public class SModel {
 
   void fireChildAddedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
+    int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.childAdded(new SModelChildEvent(this, true, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);
@@ -350,9 +350,9 @@ public class SModel {
 
   void fireChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
+    int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.childRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);
@@ -362,9 +362,9 @@ public class SModel {
 
   void fireBeforeChildRemovedEvent(@NotNull SNode parent, @NotNull String role, @NotNull SNode child, SNode anchor) {
     if (!canFireEvent()) return;
+    int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
     for (SModelListener sModelListener : getModelListeners()) {
       try {
-        int childIndex = anchor == null ? 0 : parent.getChildren().indexOf(anchor) + 1;
         sModelListener.beforeChildRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
       } catch (Throwable t) {
         LOG.error(t);
