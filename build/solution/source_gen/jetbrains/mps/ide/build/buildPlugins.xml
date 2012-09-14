@@ -41,19 +41,13 @@
     </copy>
     <jar destfile="${build.layout}/plugins/mps-java/lib/mpsjava.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
-      <fileset dir="${build.tmp}/default/mpsjava.jar" />
-    </jar>
-    <mkdir dir="${build.layout}/plugins/mps-java/platform" />
-    <jar destfile="${build.layout}/plugins/mps-java/platform/jetbrains.mps.ide.java.platform-src.jar">
       <zipfileset file="${mps_home}/plugins/mpsjava/platform/platform.msd" prefix="modules/jetbrains.mps.ide.java.platform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.platform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java.platform/models" />
-    </jar>
-    <mkdir dir="${build.layout}/plugins/mps-java/workbench" />
-    <jar destfile="${build.layout}/plugins/mps-java/workbench/jetbrains.mps.ide.java-src.jar">
       <zipfileset file="${mps_home}/plugins/mpsjava/workbench/java.msd" prefix="modules/jetbrains.mps.ide.java" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/workbench" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java/models" />
+      <fileset dir="${build.tmp}/default/mpsjava.jar" />
     </jar>
     <mkdir dir="${build.layout}/plugins/mps-java/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.java.migration.jar" />
