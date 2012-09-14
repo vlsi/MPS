@@ -25,4 +25,8 @@ public class MapPathMacrosProvider implements PathMacrosProvider {
   public Set<String> getNames() {
     return Collections.unmodifiableSet(macros.keySet());
   }
+
+  public void report(String message, String macro) {
+    System.out.println("Undefined macro: " + macro + ". " + message);
+  }
 }
