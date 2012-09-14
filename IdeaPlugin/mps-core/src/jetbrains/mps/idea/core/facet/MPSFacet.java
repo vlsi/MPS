@@ -30,6 +30,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.idea.core.project.stubs.ProjectJavaSourceImporter;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
@@ -73,14 +74,20 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
 
             repository.registerModule(mySolution = solution, myMpsProject);
             myMpsProject.addModule(mySolution.getModuleReference());
+
+//            solution.addDependency(ProjectJavaSourceImporter.ourSolution.getModuleReference(), false);
+
             LOG.info(MPSBundle.message("facet.module.loaded", MPSFacet.this.mySolution.getModuleFqName()));
             IdeaPluginDescriptor descriptor = PluginManager.getPlugin(PluginManager.getPluginByClassName(MPSFacet.class.getName()));
             String version = descriptor == null ? null : descriptor.getVersion();
             UsageTrigger.trigger("MPS.initFacet."+version);
           }
         });
+
       }
     });
+
+
   }
 
   @Override
