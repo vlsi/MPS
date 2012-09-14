@@ -9,16 +9,13 @@ import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import java.util.HashMap;
-import jetbrains.mps.smodel.UnregisteredNodes;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.IterableUtil;
 
 public class CalcSNodeStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -27,7 +24,7 @@ public class CalcSNodeStatistic_Action extends BaseAction {
   public CalcSNodeStatistic_Action() {
     super("Calc properties/refs/children statistic for SNodes", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @Override
@@ -50,68 +47,45 @@ public class CalcSNodeStatistic_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(PlatformDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Iterable<IModule> modules = MPSModuleRepository.getInstance().getAllModules();
-      if (log.isWarnEnabled()) {
-        log.warn("Modules: " + Sequence.fromIterable(modules).count());
-      }
-      Iterable<SModelDescriptor> models = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, SModelDescriptor>() {
-        public Iterable<SModelDescriptor> translate(IModule it) {
-          return it.getOwnModelDescriptors();
-        }
-      });
-      if (log.isWarnEnabled()) {
-        log.warn("Models: " + Sequence.fromIterable(models).count());
-      }
+      final Map<Integer, Integer> propertiesStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
+      final Map<Integer, Integer> childrenStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
+      final Map<Integer, Integer> refsStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
+      final Wrappers._int zeros = new Wrappers._int(0);
 
-      int num = 0;
-
-      Map<Integer, Integer> propertiesStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
-      Map<Integer, Integer> childrenStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
-      Map<Integer, Integer> refsStatistic = MapSequence.fromMap(new HashMap<Integer, Integer>());
-      int zeros = 0;
-
-      for (SModelDescriptor modelDescriptor : models) {
-        // hack for conf stubs 
-        UnregisteredNodes.instance().clear();
-        if (num++ % 100 == 0) {
-          if (log.isWarnEnabled()) {
-            log.warn("Model num: " + num + ", name: " + modelDescriptor.getLongName());
-          }
-        }
-
-        int nodesCount = 0;
-        for (SNode node : modelDescriptor.getSModel().nodes()) {
-          nodesCount++;
-
-          // calc stat 
-          int propertiesCount = IterableUtil.asCollection(node.getConcept().getProperties()).size();
+      InternalActionsUtils.executeActionOnAllNodesInModal("Calculate statistic", ((Project) MapSequence.fromMap(_params).get("project")), new _FunctionTypes._void_P1_E0<SNode>() {
+        public void invoke(SNode node) {
+          int propertiesCount = node.getPropertyNames().size();
           MapSequence.fromMap(propertiesStatistic).put(propertiesCount, (MapSequence.fromMap(propertiesStatistic).containsKey(propertiesCount) ?
             MapSequence.fromMap(propertiesStatistic).get(propertiesCount) + 1 :
             1
           ));
 
-          int refsCount = node.getReferences().size();
+          int refsCount = node.getReferencesArray().length;
           MapSequence.fromMap(refsStatistic).put(refsCount, (MapSequence.fromMap(refsStatistic).containsKey(refsCount) ?
             MapSequence.fromMap(refsStatistic).get(refsCount) + 1 :
             1
           ));
 
-          int childrenCount = IterableUtil.asCollection(node.getChildren()).size();
+          int childrenCount = node.getChildCount();
           MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ?
             MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 :
             1
           ));
 
           if (propertiesCount + refsCount + childrenCount == 0) {
-            zeros++;
+            zeros.value++;
           }
         }
-      }
+      });
 
       if (log.isWarnEnabled()) {
         log.warn("Property size statistic: " + propertiesStatistic);
@@ -123,9 +97,8 @@ public class CalcSNodeStatistic_Action extends BaseAction {
         log.warn("Children size statistic: " + childrenStatistic);
       }
       if (log.isWarnEnabled()) {
-        log.warn("Zeros statistic: " + zeros);
+        log.warn("Zeros statistic: " + zeros.value);
       }
-
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "CalcSNodeStatistic", t);
