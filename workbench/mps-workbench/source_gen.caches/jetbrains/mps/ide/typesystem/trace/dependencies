@@ -52,6 +52,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -75,6 +76,7 @@
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemStateTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.util.ColorAndGraphicsUtil" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.NodeMaps" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.blocks.Block" />
@@ -154,6 +156,7 @@
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.DefaultActionGroup" />
     <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.Graphics" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -175,6 +178,7 @@
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemTraceTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.TextTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.util.ColorAndGraphicsUtil" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.TypesUtil" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.operation.AbstractOperation" />

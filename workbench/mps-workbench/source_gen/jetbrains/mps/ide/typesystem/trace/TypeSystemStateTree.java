@@ -44,6 +44,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
+import java.awt.Graphics;
+import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreeSelectionModel;
@@ -338,6 +340,22 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
     @Override
     public boolean acceptCell(EditorCell cell, EditorComponent component) {
       return myCell == cell;
+    }
+
+    @Override
+    protected void paintWithColor(Graphics graphics, EditorCell cell, Color color) {
+      int x = cell.getX() + cell.getLeftInset();
+      int y = cell.getY() + cell.getTopInset();
+      int width = cell.getWidth() - cell.getLeftInset() - cell.getRightInset() - 1;
+      int height = cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1;
+
+      graphics.setColor(color);
+      ColorAndGraphicsUtil.drawDashedRect(graphics, x, y, width, height);
+    }
+
+    @Override
+    public boolean isBackground() {
+      return true;
     }
 
     @Override

@@ -52,6 +52,8 @@ import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorMessage;
+import java.awt.Graphics;
+import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
 import java.util.Collections;
 
 public class TypeSystemTraceTree extends MPSTree implements DataProvider {
@@ -445,7 +447,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     private EditorCell myCell;
 
     public SelectedNodeEditorMessage(EditorCell cell, String message) {
-      super(cell.getSNode(), Color.green, message, myMessageOwner);
+      super(cell.getSNode(), new Color(192, 255, 255), message, myMessageOwner);
       this.myCell = cell;
     }
 
@@ -462,6 +464,22 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     @Override
     public boolean sameAs(EditorMessage that) {
       return super.sameAs(that) && this.equals(that);
+    }
+
+    @Override
+    protected void paintWithColor(Graphics graphics, EditorCell cell, Color color) {
+      int x = cell.getX() + cell.getLeftInset();
+      int y = cell.getY() + cell.getTopInset();
+      int width = cell.getWidth() - cell.getLeftInset() - cell.getRightInset() - 1;
+      int height = cell.getHeight() - cell.getTopInset() - cell.getBottomInset() - 1;
+
+      graphics.setColor(color);
+      ColorAndGraphicsUtil.fillStripes(graphics, x, y, width, height);
+    }
+
+    @Override
+    public boolean isBackground() {
+      return true;
     }
 
     @Override
