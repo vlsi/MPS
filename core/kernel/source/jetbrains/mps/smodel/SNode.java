@@ -414,10 +414,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
-  public Language getLanguage() {
-    String languageNamespace = getLanguageNamespace();
-    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
-  }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = InternUtil.intern(newRoleInParent);
@@ -1134,6 +1130,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName));
   }
 
+  public Language getLanguage() {
+    String languageNamespace = getLanguageNamespace();
+    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+  }
 
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
