@@ -12,15 +12,15 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SLink;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SProperty;
 import java.util.List;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.kernel.model.SModelUtil;
-import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SConceptNodeAdapter implements SConcept {
   private SNode myConcept;
@@ -49,15 +49,11 @@ public class SConceptNodeAdapter implements SConcept {
     return NameUtil.nodeFQName(myConcept);
   }
 
-  public SLink findLink(final String role) {
-    SNode link = ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(myConcept)).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return eq_12aglo_a0a0a0a0a0a0a4(SPropertyOperations.getString(SModelUtil.getGenuineLinkDeclaration(it), "role"), role);
-      }
-    });
-    return (link == null ?
+  public SLink findLink(String role) {
+    SNode ld = new ConceptAndSuperConceptsScope(myConcept).getLinkDeclarationByRole(role);
+    return (ld == null ?
       null :
-      new SLinkNodeAdapter(link)
+      new SLinkNodeAdapter(SNodeOperations.cast(ld, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))
     );
   }
 
@@ -108,13 +104,6 @@ public class SConceptNodeAdapter implements SConcept {
 
   public SNode getConcept() {
     return myConcept;
-  }
-
-  private static boolean eq_12aglo_a0a0a0a0a0a0a4(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   private static boolean eq_12aglo_a0a0a0a0a0a0a6(Object a, Object b) {
