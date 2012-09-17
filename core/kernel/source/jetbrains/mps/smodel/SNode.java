@@ -418,7 +418,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
-
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
@@ -584,24 +583,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public SNode getNextChild(SNode child) {
-    String childRole = child.getRole();
-    assert childRole != null : "role must be not null";
-    List<SNode> children = getChildren(childRole);
-    int index = children.indexOf(child);
-    if (index < 0 || index >= children.size() - 1) return null;
-    return children.get(index + 1);
-  }
-
-  public SNode getPrevChild(SNode child) {
-    String childRole = child.getRole();
-    assert childRole != null : "role must be not null";
-    List<SNode> children = getChildren(childRole);
-    int index = children.indexOf(child);
-    if (index <= 0) return null;
-    return children.get(index - 1);
-  }
-
   public void insertChild(final SNodeBase anchor, String _role, final SNode child) {
     enforceModelLoad();
 
@@ -641,37 +622,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
     if (ModelChange.needFireEvents(model, this)) {
       model.fireChildAddedEvent(this, role, child, anchor);
-    }
-  }
-
-  void unRegisterFromModel() {
-    if (!myRegisteredInModelFlag) return;
-    UnregisteredNodes.instance().put(this);
-    myRegisteredInModelFlag = false;
-
-    myModel.unregisterNode(this);
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.unRegisterFromModel();
-    }
-  }
-
-  void registerInModel(SModel model) {
-    if (myRegisteredInModelFlag) {
-      if (model != myModel) {
-        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
-      }
-      return;
-    }
-
-    myModel = model;
-    myModel.registerNode(this);
-    myRegisteredInModelFlag = true;
-
-    UnregisteredNodes.instance().remove(this);
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.registerInModel(model);
     }
   }
 
@@ -1453,6 +1403,56 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return null;
   }
 
+  public SNode getNextChild(SNode child) {
+    String childRole = child.getRole();
+    assert childRole != null : "role must be not null";
+    List<SNode> children = getChildren(childRole);
+    int index = children.indexOf(child);
+    if (index < 0 || index >= children.size() - 1) return null;
+    return children.get(index + 1);
+  }
+
+  public SNode getPrevChild(SNode child) {
+    String childRole = child.getRole();
+    assert childRole != null : "role must be not null";
+    List<SNode> children = getChildren(childRole);
+    int index = children.indexOf(child);
+    if (index <= 0) return null;
+    return children.get(index - 1);
+  }
+
+  //--------private (SNode and SModel usages)-------
+
+  void unRegisterFromModel() {
+    if (!myRegisteredInModelFlag) return;
+    UnregisteredNodes.instance().put(this);
+    myRegisteredInModelFlag = false;
+
+    myModel.unregisterNode(this);
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      child.unRegisterFromModel();
+    }
+  }
+
+  void registerInModel(SModel model) {
+    if (myRegisteredInModelFlag) {
+      if (model != myModel) {
+        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
+      }
+      return;
+    }
+
+    myModel = model;
+    myModel.registerNode(this);
+    myRegisteredInModelFlag = true;
+
+    UnregisteredNodes.instance().remove(this);
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      child.registerInModel(model);
+    }
+  }
 
   //--------private-------
 
