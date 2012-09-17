@@ -585,6 +585,11 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
       return null;
     }
 
+    @Override
+    protected JPopupMenu createPopupMenu(MPSTreeNode node) {
+      return TypeSystemTraceTree.this.createPopupMenu(node);
+    }
+
     protected MPSTreeNode rebuild() {
       setRootVisible(false);
       MPSTreeNode result;
