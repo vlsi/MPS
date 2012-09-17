@@ -57,7 +57,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
               RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, returnType, typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), methodClassifier);
             }
           }
-        }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "702942408396860198", true, false);
+        }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "702942408396860198", false, false);
       }
     } else {
       RulesFunctions_BaseLanguage.inference_InstanceMethodCallOperation(typeCheckingContext, imco, returnType, typeCheckingContext.getRepresentative(instanceType_typevar_1204064731338), methodClassifier);
