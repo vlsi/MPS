@@ -419,24 +419,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
 
-  public SNode prevSibling() {
-    if (getParent() == null) return null;
-    return getParent().firstChild() == this ? null : (SNode) treePrevious();
-  }
-
-  public org.jetbrains.mps.openapi.model.SNode getPrevSibling() {
-    if (getParent() == null) return null;
-    return getParent().firstChild() == this ? null : treePrevious();
-  }
-
-  public SNode nextSibling() {
-    return (SNode) treeNext();
-  }
-
-  public org.jetbrains.mps.openapi.model.SNode getNextSibling() {
-    return treeNext();
-  }
-
   public String getPersistentProperty(String propertyName) {
     if (myProperties == null) return null;
     if (ourMemberAccessModifier != null) {
@@ -1451,6 +1433,24 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
     return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
+  }
+
+  public SNode prevSibling() {
+    if (getParent() == null) return null;
+    return getParent().firstChild() == this ? null : (SNode) treePrevious();
+  }
+
+  public org.jetbrains.mps.openapi.model.SNode getPrevSibling() {
+    if (getParent() == null) return null;
+    return getParent().firstChild() == this ? null : treePrevious();
+  }
+
+  public SNode nextSibling() {
+    return (SNode) treeNext();
+  }
+
+  public org.jetbrains.mps.openapi.model.SNode getNextSibling() {
+    return treeNext();
   }
 
 

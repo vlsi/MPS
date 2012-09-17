@@ -105,7 +105,7 @@ class IntelligentNodeMover {
           return;
         }
 
-        SNode levelCurrent = sibling(currentAnchor);
+        SNode levelCurrent = siblingWithTheSameRole(currentAnchor);
         while (levelCurrent != null) {
           SNode result = findNodeAtBoundary(targetType, levelCurrent, true);
           if (result != null) {
@@ -115,7 +115,7 @@ class IntelligentNodeMover {
             return;
           }
 
-          levelCurrent = sibling(levelCurrent);
+          levelCurrent = siblingWithTheSameRole(levelCurrent);
         }
 
         currentTarget = currentTarget.getParent();
@@ -144,17 +144,18 @@ class IntelligentNodeMover {
   }
 
   private void moveOtherNodes(SNode current) {
+    SNode parent = current.getParent();
     if (forward()) {
       for (SNode node : myNodes.subList(0, myNodes.size() - 1)) {
         node.getParent().removeChild(node);
-        current.getParent().insertChild(current.getRole(), node, current.getPrevSibling());
+        parent.insertChild(current.getRole(), node, parent.getPrevChild(current));
       }
     } else {
       List<SNode> list = new ArrayList<SNode>(myNodes.subList(1, myNodes.size()));
       Collections.reverse(list);
       for (SNode node : list) {
         node.getParent().removeChild(node);
-        current.getParent().insertChild(current.getRole(), node, current);
+        parent.insertChild(current.getRole(), node, current);
       }
     }
   }
@@ -176,14 +177,6 @@ class IntelligentNodeMover {
     }
 
     return null;
-  }
-
-  private SNode sibling(SNode node) {
-    if (forward()) {
-      return node.nextSibling();
-    } else {
-      return node.prevSibling();
-    }
   }
 
   private SNode siblingWithTheSameRole(SNode node) {
