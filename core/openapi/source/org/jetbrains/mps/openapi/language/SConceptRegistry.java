@@ -15,25 +15,9 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-public interface SAbstractConcept {
-  /**
-   * This is a string used to identify a concept.
-   * Now we use fqName for that purpose, but further it's planned to use id instead,
-   * so that the id does not change when we change concept's name.
-   */
-  String getId();
-
-  String getName();
-
-  SLanguage getLanguage();
-
-  SLink findLink(String role);
-
-  Iterable<SLink> getLinks();
-
-  SProperty findProperty(String name);
-
-  Iterable<SProperty> getProperties();
-
-  boolean isSubConceptOf(SConcept concept);
+/**
+ * This interface provides a per-concept access to SLanguageRepository
+ */
+public interface SConceptRegistry {
+  SConcept getConcept(String id);
 }

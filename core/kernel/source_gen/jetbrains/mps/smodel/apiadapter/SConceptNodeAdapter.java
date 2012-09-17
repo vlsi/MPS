@@ -45,7 +45,7 @@ public class SConceptNodeAdapter implements SConcept {
     return SPropertyOperations.getString(myConcept, "name");
   }
 
-  public String getQualifiedName() {
+  public String getId() {
     return NameUtil.nodeFQName(myConcept);
   }
 

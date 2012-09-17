@@ -40,7 +40,7 @@ public class SInterfaceConceptNodeAdapter implements SInterfaceConcept {
     return SPropertyOperations.getString(myIConcept, "name");
   }
 
-  public String getQualifiedName() {
+  public String getId() {
     return NameUtil.nodeFQName(myIConcept);
   }
 

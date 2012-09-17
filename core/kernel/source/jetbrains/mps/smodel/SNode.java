@@ -1365,7 +1365,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public boolean isReferentRequired(String role) {
     SLink link = getConcept().findLink(role);
     if (link == null) {
-      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + getConcept().getQualifiedName());
+      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + getConcept().getId());
       return false;
     }
 
