@@ -33,6 +33,7 @@ import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
 import java.util.*;
@@ -413,36 +414,8 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
   }
 
-
-  private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
-    // depth-first traversal
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
-        list.add(child);
-      }
-      child.collectDescendants(condition, list);
-    }
-  }
-
-
-
-  public boolean isInstanceOfConcept(SNode concept) {
-    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
-  }
-
   public boolean isInstanceOfConcept(String conceptFqName) {
     return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
-  }
-
-  public boolean isReferentRequired(String role) {
-    SNode conceptDeclaration = getConceptDeclarationNode();
-    SNode linkDeclaration = SModelSearchUtil.findLinkDeclaration(conceptDeclaration, role);
-    if (linkDeclaration == null) {
-      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
-      return false;
-    }
-    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    return SNodeUtil.getLinkDeclaration_IsAtLeastOneMultiplicity(genuineLinkDeclaration);
   }
 
   public Language getLanguage() {
@@ -1369,7 +1342,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public boolean isAncestorOf(SNode child) {
-    return jetbrains.mps.util.SNodeOperations.isAncestor(this,child);
+    return jetbrains.mps.util.SNodeOperations.isAncestor(this, child);
   }
 
   public int getChildCount(String role) {
@@ -1464,6 +1437,20 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       LOG.error(t);
       return "[can't calculate presentation : " + t.getMessage() + "]";
     }
+  }
+
+  public boolean isInstanceOfConcept(SNode concept) {
+    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
+  }
+
+  public boolean isReferentRequired(String role) {
+    SLink link = getConcept().findLink(role);
+    if (link == null) {
+      LOG.error("couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + getConcept().getQualifiedName());
+      return false;
+    }
+
+    return !link.isOptional();
   }
 
 
@@ -1619,6 +1606,17 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       model.fireReferenceRemovedEvent(reference);
     }
   }
+
+  private void collectDescendants(Condition<SNode> condition, List<SNode> list) {
+    // depth-first traversal
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      if (condition == null || condition == Condition.TRUE_CONDITION || condition.met(child)) {
+        list.add(child);
+      }
+      child.collectDescendants(condition, list);
+    }
+  }
+
 
   //--------private classes-------
 
