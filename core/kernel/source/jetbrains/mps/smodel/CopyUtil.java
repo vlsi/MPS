@@ -19,6 +19,8 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.TreeIterator;
 
 import java.util.*;
@@ -159,11 +161,12 @@ public final class CopyUtil {
 
   private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean copyAttributes, boolean forceCloneRefs) {
     if(root == null) return;
-    final Iterator<SNode> nodesIterator = root.getDescendantsIterable(null, true).iterator();
-    while(nodesIterator.hasNext()) {
-      SNode inputNode = nodesIterator.next();
+    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), root.getDescendants());
+    Iterator<SNode> it = thisAndDesc.iterator();
+    while(it.hasNext()) {
+      SNode inputNode = it.next();
       if (!copyAttributes && AttributeOperations.isAttribute(inputNode)) {
-        ((TreeIterator)nodesIterator).skipChildren();
+        ((TreeIterator)it).skipChildren();
         continue;
       }
       SNode outputNode = mapping.get(inputNode);

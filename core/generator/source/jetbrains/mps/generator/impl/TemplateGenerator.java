@@ -33,6 +33,7 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -467,7 +468,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     synchronized (myAdditionalInputNodes) {
       if (!myAdditionalInputNodes.containsKey(inputNode)) {
-        for (SNode n : inputNode.getDescendantsIterable(null, true)) {
+        Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(inputNode), inputNode.getDescendants());
+        for (SNode n : thisAndDesc) {
           myAdditionalInputNodes.put(n, Boolean.TRUE);
         }
       }

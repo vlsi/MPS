@@ -410,10 +410,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
-  public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
-    return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
-  }
-
   public boolean isInstanceOfConcept(String conceptFqName) {
     return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
@@ -1451,6 +1447,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
 
     return !link.isOptional();
+  }
+
+  public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
+    return new DescendantsIterable(this, includeFirst ? this : firstChild(), condition);
   }
 
 

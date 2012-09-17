@@ -18,8 +18,10 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -52,9 +54,9 @@ public class ModelContentUtil {
       namespaces.add(ref.getModuleFqName());
     }
     for (SNode root : model.roots()) {
-      for (SNode child : root.getDescendantsIterable(null, true)) {
-        String namespace1 = child.getLanguageNamespace();
-        namespaces.add(namespace1);
+      Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), root.getDescendants());
+      for (SNode child : thisAndDesc) {
+        namespaces.add(child.getLanguageNamespace());
       }
     }
     // empty behavior model should have it's behavior aspect descriptor generated
