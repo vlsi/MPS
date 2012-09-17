@@ -24,9 +24,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.LazyScope;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -143,6 +144,14 @@ public class FieldDeclaration_Behavior {
     } else {
       return fields;
     }
+  }
+
+  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && contextClassifier != SNodeOperations.getParent(thisNode)) {
+      return;
+    }
+    scope.addMember(thisNode, SPropertyOperations.getString(thisNode, "name"));
+    scope.hideMembers(SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static Icon call_getAdditionalIcon_8884554759541377970(SNode thisNode) {

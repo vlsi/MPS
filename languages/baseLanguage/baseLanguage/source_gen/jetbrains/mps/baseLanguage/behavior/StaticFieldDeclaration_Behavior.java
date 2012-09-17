@@ -23,9 +23,10 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.scopes.StaticFieldDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldDeclaration_Behavior {
   private static Class[] PARAMETERS_5039675756633082276 = {SNode.class};
@@ -133,6 +134,15 @@ public class StaticFieldDeclaration_Behavior {
     }
     // todo: staticField??? 
     return new StaticFieldDeclarationScope(SLinkOperations.getTargets(classNode, "staticField", true), extendsScopes);
+  }
+
+  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && contextClassifier != SNodeOperations.getParent(thisNode)) {
+      return;
+    }
+
+    scope.addMember(thisNode, SPropertyOperations.getString(thisNode, "name"));
+    scope.hideMembers(SPropertyOperations.getString(thisNode, "name"));
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082276(SNode thisNode) {

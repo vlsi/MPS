@@ -21,9 +21,10 @@ import jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.scopes.StaticMethodDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -94,6 +95,16 @@ public class StaticMethodDeclaration_Behavior {
       }
     }));
     return new StaticMethodDeclarationScope(classNode, extendedClassifiers);
+  }
+
+  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && contextClassifier != SNodeOperations.getParent(thisNode)) {
+      return;
+    }
+
+    String signature = SPropertyOperations.getString(thisNode, "name") + "(" + BaseMethodDeclaration_Behavior.call_getErasureSignature_2830572026628006618(thisNode) + ")";
+    scope.addMember(thisNode, signature);
+    scope.hideMembers(signature);
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633082235(SNode thisNode) {

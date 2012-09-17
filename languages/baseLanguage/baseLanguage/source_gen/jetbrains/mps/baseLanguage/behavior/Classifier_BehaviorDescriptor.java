@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 import java.util.Set;
 
 public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements HasAnnotation_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor, IVisible_BehaviorDescriptor, IContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
@@ -39,6 +40,10 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
     return Classifier_Behavior.virtual_getThisType_3305065273710880775(thisNode);
   }
 
+  public Iterable<SNode> virtual_getMembersImpl_3642561415614722957(SNode thisNode) {
+    return Classifier_Behavior.virtual_getMembersImpl_3642561415614722957(thisNode);
+  }
+
   public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     return Classifier_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
   }
@@ -65,6 +70,10 @@ public abstract class Classifier_BehaviorDescriptor extends GenericDeclaration_B
 
   public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
     return Classifier_Behavior.virtual_getMembers_2201875424515824604(thisNode, kind);
+  }
+
+  public void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    Classifier_Behavior.virtual_populateMembers_3642561415614722944(thisNode, scope, contextClassifier);
   }
 
   public Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {

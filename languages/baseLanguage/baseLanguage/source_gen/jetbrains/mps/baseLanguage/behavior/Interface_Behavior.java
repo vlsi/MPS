@@ -19,6 +19,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.scopes.MemberScopes;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -111,6 +112,35 @@ public class Interface_Behavior {
     }
 
     return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.Interface", kind);
+  }
+
+  public static void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    // populate own members 
+    for (SNode member : SNodeOperations.getChildren(thisNode)) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+        ClassifierMember_Behavior.call_populateMember_3642561415614717885(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), scope, contextClassifier);
+      }
+    }
+
+    // populate extended interfaces members 
+    for (SNode extendedInterface : SLinkOperations.getTargets(thisNode, "extendedInterface", true)) {
+      if ((SLinkOperations.getTarget(extendedInterface, "classifier", false) != null)) {
+        Classifier_Behavior.call_populateMembers_3642561415614722944(SLinkOperations.getTarget(extendedInterface, "classifier", false), scope, contextClassifier);
+      }
+    }
+  }
+
+  public static Iterable<SNode> virtual_getMembersImpl_3642561415614722957(SNode thisNode) {
+    MembersScope scope = new MembersScope();
+    Classifier_Behavior.call_populateMembers_3642561415614722944(thisNode, scope, thisNode);
+    if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
+      Classifier_Behavior.call_populateMembers_3642561415614722944(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), scope, thisNode);
+    }
+    return Sequence.fromIterable(scope.toScope().getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
+      }
+    });
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {

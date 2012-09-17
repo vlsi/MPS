@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.scopes.InstanceMethodDeclarationScope;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -103,6 +104,16 @@ public class InstanceMethodDeclaration_Behavior {
     } else {
       return new InstanceMethodDeclarationScope(interfaceNode, Sequence.fromArray(extendsInterfaces));
     }
+  }
+
+  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && contextClassifier != SNodeOperations.getParent(thisNode)) {
+      return;
+    }
+
+    String signature = ClassifierScopeUtils.getMethodSignatureForOverriding(contextClassifier, thisNode);
+    scope.addMember(thisNode, signature);
+    scope.hideMembers(signature);
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {

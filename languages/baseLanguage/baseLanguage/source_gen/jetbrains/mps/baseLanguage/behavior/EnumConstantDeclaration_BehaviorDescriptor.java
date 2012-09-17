@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 
 public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor {
   public EnumConstantDeclaration_BehaviorDescriptor() {
@@ -61,6 +62,10 @@ public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_Beha
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return EnumConstantDeclaration_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    EnumConstantDeclaration_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
   }
 
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {

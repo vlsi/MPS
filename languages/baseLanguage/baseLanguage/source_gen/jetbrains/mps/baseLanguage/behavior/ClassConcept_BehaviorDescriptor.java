@@ -4,14 +4,19 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 import java.util.List;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
 import java.util.Set;
 import jetbrains.mps.scope.Scope;
 
 public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public ClassConcept_BehaviorDescriptor() {
+  }
+
+  public void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    ClassConcept_Behavior.virtual_populateMembers_3642561415614722944(thisNode, scope, contextClassifier);
   }
 
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {

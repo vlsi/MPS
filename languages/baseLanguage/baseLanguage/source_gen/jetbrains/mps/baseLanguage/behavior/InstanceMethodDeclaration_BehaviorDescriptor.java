@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 import java.util.List;
 
 public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
@@ -39,6 +40,10 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends BaseMethodDecl
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    InstanceMethodDeclaration_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
   }
 
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {

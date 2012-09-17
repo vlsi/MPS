@@ -10,6 +10,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 
 public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, StaticKind_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public StaticFieldDeclaration_BehaviorDescriptor() {
@@ -48,16 +49,20 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
     return StaticFieldDeclaration_Behavior.virtual_getSuffix_3012473318495499856(thisNode, project);
   }
 
-  public String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    return StaticFieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
-  }
-
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
 
+  public String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
+    return StaticFieldDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
+  }
+
   public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
     return StaticFieldDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
+  }
+
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    StaticFieldDeclaration_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {

@@ -33,6 +33,7 @@ import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -322,6 +323,28 @@ public class ClassConcept_Behavior {
       return Classifier_Behavior.call_getVisibleMembers_8083692786967356611(thisNode, child, kind);
     }
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind, child);
+  }
+
+  public static void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    // populate own members 
+    for (SNode member : SNodeOperations.getChildren(thisNode)) {
+      if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+        ClassifierMember_Behavior.call_populateMember_3642561415614717885(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), scope, contextClassifier);
+      }
+    }
+
+    // populate superclass members 
+    SNode superClass = ClassConcept_Behavior.call_getSuperclass_1240936569950(thisNode);
+    if ((superClass != null) && (SLinkOperations.getTarget(superClass, "classifier", false) != null)) {
+      Classifier_Behavior.call_populateMembers_3642561415614722944(SLinkOperations.getTarget(superClass, "classifier", false), scope, contextClassifier);
+    }
+
+    // populate implemented interfaces members 
+    for (SNode implementedInterface : SLinkOperations.getTargets(thisNode, "implementedInterface", true)) {
+      if ((SLinkOperations.getTarget(implementedInterface, "classifier", false) != null)) {
+        Classifier_Behavior.call_populateMembers_3642561415614722944(SLinkOperations.getTarget(implementedInterface, "classifier", false), scope, contextClassifier);
+      }
+    }
   }
 
   public static boolean call_isRunnable_7941158526576616766(SNode thisNode) {

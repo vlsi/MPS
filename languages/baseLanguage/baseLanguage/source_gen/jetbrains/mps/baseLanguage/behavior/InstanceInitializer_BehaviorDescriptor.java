@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 
 public class InstanceInitializer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor {
   public InstanceInitializer_BehaviorDescriptor() {
@@ -30,6 +31,10 @@ public class InstanceInitializer_BehaviorDescriptor extends BaseConcept_Behavior
 
   public Scope virtual_getScopeForClass_1251851371723365193(SNode thisNode, SNode classNode, @Nullable SNode extendsClass, SNode[] implementsInterfaces) {
     return InstanceInitializer_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
+  }
+
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    ClassifierMember_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
   }
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {

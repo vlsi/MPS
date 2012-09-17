@@ -4,12 +4,17 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.scopes.MembersScope;
 import java.util.Set;
 import jetbrains.mps.scope.Scope;
 import java.util.List;
 
 public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor {
   public Interface_BehaviorDescriptor() {
+  }
+
+  public void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+    Interface_Behavior.virtual_populateMembers_3642561415614722944(thisNode, scope, contextClassifier);
   }
 
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
@@ -26,6 +31,10 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
 
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IBLDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
+  }
+
+  public Iterable<SNode> virtual_getMembersImpl_3642561415614722957(SNode thisNode) {
+    return Interface_Behavior.virtual_getMembersImpl_3642561415614722957(thisNode);
   }
 
   public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
