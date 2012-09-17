@@ -23,7 +23,7 @@ public class SelectTest_Test extends Util_Test {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ISequence<Integer> test = seq.select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
-        return (it % 2 == 1 ?
+        return (Integer) (it % 2 == 1 ?
           it * 2 :
           it * 3
         );
