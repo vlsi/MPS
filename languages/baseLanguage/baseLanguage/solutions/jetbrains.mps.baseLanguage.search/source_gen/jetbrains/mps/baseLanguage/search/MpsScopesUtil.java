@@ -34,23 +34,34 @@ public class MpsScopesUtil {
     return "No signature for " + classifierMember;
   }
 
-  public static List<String> getMembersSignatures(SNode classifier) {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
-
+  public static Iterable<SNode> getMembersOld(SNode classifier) {
+    List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode memberType : ListSequence.fromList(Arrays.asList(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")))) {
       Scope scope = ((Scope) BehaviorManager.getInstance().invoke(Object.class, classifier, "virtual_getMembers_2201875424515824604", new Class[]{SNode.class, SNode.class}, memberType));
       for (SNode member : scope.getAvailableElements(null)) {
-        if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
-          ListSequence.fromList(result).addElement("Not ClassifierMember member: " + member);
-        } else {
-          ListSequence.fromList(result).addElement(((((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Class[]{SNode.class})) ?
-            "static " :
-            ""
-          )) + getSignature(member, classifier));
-        }
+        ListSequence.fromList(members).addElement(member);
       }
     }
+    return members;
+  }
 
+  public static Iterable<SNode> getMembersNew(SNode classifier) {
+    // here new way to members calculating 
+    return getMembersOld(classifier);
+  }
+
+  public static List<String> getMembersSignatures(SNode classifier) {
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    for (SNode member : getMembersNew(classifier)) {
+      if (!(SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
+        ListSequence.fromList(result).addElement("Not ClassifierMember member: " + member);
+      } else {
+        ListSequence.fromList(result).addElement(((((Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", new Class[]{SNode.class})) ?
+          "static " :
+          ""
+        )) + getSignature(member, classifier));
+      }
+    }
     return result;
   }
 }

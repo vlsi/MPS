@@ -29,6 +29,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new AnalyzeDependencies_Action());
     addAction(new AnalyzeModuleDependencies_Action());
     addAction(new AnalyzeStacktrace_Action());
+    addAction(new CalcClassifiersInRootsStatistic_Action());
     addAction(new CalcSNodeStatistic_Action());
     addAction(new CloneModel_Action());
     addAction(new CloneRoot_Action());
