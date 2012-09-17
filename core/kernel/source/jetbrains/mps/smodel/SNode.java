@@ -406,6 +406,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
+  public List<SNode> getChildren() {
+    return getChildren(true);
+  }
+
   //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
@@ -517,15 +521,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return foundChild;
   }
 
-  public SNode getChildAt(int index) {
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (index-- == 0) {
-        return child;
-      }
-    }
-    return null;
-  }
-
   public void insertChild(SNodeBase anchorChild, String role, SNode child, boolean insertBefore) {
     if (insertBefore) {
       insertChild(firstChild() == anchorChild ? null : anchorChild.treePrevious(), role, child);
@@ -550,10 +545,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       }
     }
     return -1;
-  }
-
-  public List<SNode> getChildren() {
-    return getChildren(true);
   }
 
   public Iterable<SNode> getChildrenIterable() {
@@ -1451,6 +1442,15 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public org.jetbrains.mps.openapi.model.SNode getNextSibling() {
     return treeNext();
+  }
+
+  public SNode getChildAt(int index) {
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      if (index-- == 0) {
+        return child;
+      }
+    }
+    return null;
   }
 
 
