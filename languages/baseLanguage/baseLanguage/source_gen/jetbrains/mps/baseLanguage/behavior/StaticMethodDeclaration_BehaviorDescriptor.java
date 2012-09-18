@@ -34,8 +34,8 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclar
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
-  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
-    StaticMethodDeclaration_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext context, SNode contextClassifier) {
+    StaticMethodDeclaration_Behavior.virtual_populateMember_3642561415614717885(thisNode, context, contextClassifier);
   }
 
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {

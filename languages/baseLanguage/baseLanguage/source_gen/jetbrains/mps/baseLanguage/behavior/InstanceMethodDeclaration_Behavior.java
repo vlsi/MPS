@@ -107,14 +107,14 @@ public class InstanceMethodDeclaration_Behavior {
     }
   }
 
-  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility") && contextClassifier != SNodeOperations.getParent(thisNode)) {
+  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext context, SNode contextClassifier) {
+    if (!(context.isElementVisible(thisNode))) {
       return;
     }
 
     String signature = ClassifierScopeUtils.getMethodSignatureForOverriding(contextClassifier, thisNode);
-    scope.addMember(thisNode, new MethodSignature(signature));
-    scope.hideMembers(new MethodSignature(signature));
+    context.addMember(thisNode, new MethodSignature(signature));
+    context.hideMembers(new MethodSignature(signature));
   }
 
   public static Icon call_getAdditionalIcon_8884554759541381512(SNode thisNode) {

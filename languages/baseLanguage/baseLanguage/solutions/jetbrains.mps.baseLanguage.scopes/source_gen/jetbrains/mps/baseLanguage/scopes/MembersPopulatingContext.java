@@ -10,23 +10,24 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MembersPopulatingContext {
   private Stack<SNode> classifiers = new Stack<SNode>();
   private boolean isPackageProtectedAvailable = true;
-  private List<SNode> members = new ArrayList<SNode>();
-  private Set<Signature> hidedMembers = new HashSet<Signature>();
+  private final List<SNode> members = new ArrayList<SNode>();
+  private final Set<Signature> hidedSignatures = new HashSet<Signature>();
 
   public MembersPopulatingContext(SNode classifier) {
     // java collections for speed 
   }
 
   public void hideMembers(Signature signature) {
-    hidedMembers.add(signature);
+    hidedSignatures.add(signature);
   }
 
   public void addMember(SNode member, Signature signature) {
-    if (!(hidedMembers.contains(signature))) {
+    if (!(hidedSignatures.contains(signature))) {
       members.add(member);
     }
   }
@@ -55,7 +56,21 @@ public class MembersPopulatingContext {
     assert classifiers.pop() == classifier;
   }
 
-  public boolean isPackageProtectedAvailable() {
+  public boolean isPackageProtectedVisible() {
     return isPackageProtectedAvailable;
+  }
+
+  public boolean isPrivateVisible() {
+    return classifiers.size() == 1;
+  }
+
+  public boolean isElementVisible(SNode element) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(element, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
+      return isPrivateVisible();
+    }
+    if ((SLinkOperations.getTarget(element, "visibility", true) == null)) {
+      return isPackageProtectedVisible();
+    }
+    return true;
   }
 }

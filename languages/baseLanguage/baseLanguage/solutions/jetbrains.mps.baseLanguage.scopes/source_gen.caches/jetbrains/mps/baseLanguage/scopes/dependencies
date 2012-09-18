@@ -203,14 +203,15 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.Signature" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.NamedElementsScope" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.MembersScope" file="MembersScope.java">
