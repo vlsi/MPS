@@ -56,7 +56,8 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         myParentNode = sourceNode;
         SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
-        myCurrentChild = sourceNode.getChild(SModelUtil.getGenuineLinkRole(linkDeclaration));
+        List<SNode> ch = sourceNode.getChildren(SModelUtil.getGenuineLinkRole(linkDeclaration));
+        myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       }
     });
   }

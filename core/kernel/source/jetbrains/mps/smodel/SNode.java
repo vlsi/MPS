@@ -493,33 +493,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public SNode getChild(String role) {
-    ModelAccess.assertLegalRead(this);
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
-    }
-    fireNodeReadAccess();
-    int count = 0;
-    SNode foundChild = null;
-    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (role.equals(child.getRole())) {
-        foundChild = child;
-        count++;
-      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
-        foundChild = child;
-        count++;
-      }
-    }
-    if (count > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getSNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
-      errorMessage += "they are : " + getChildren(role);
-      LOG.error(errorMessage, new Throwable(), this);
-    }
-    NodeReadEventsCaster.fireNodeChildReadAccess(this, role, foundChild);
-    return foundChild;
-  }
-
   public void insertChild(SNodeBase anchorChild, String role, SNode child, boolean insertBefore) {
     if (insertBefore) {
       insertChild(firstChild() == anchorChild ? null : anchorChild.treePrevious(), role, child);
@@ -1420,6 +1393,34 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (index <= 0) return null;
     return children.get(index - 1);
   }
+
+  public SNode getChild(String role) {
+    ModelAccess.assertLegalRead(this);
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
+    }
+    fireNodeReadAccess();
+    int count = 0;
+    SNode foundChild = null;
+    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      if (role.equals(child.getRole())) {
+        foundChild = child;
+        count++;
+      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
+        foundChild = child;
+        count++;
+      }
+    }
+    if (count > 1) {
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getSNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
+      errorMessage += "they are : " + getChildren(role);
+      LOG.error(errorMessage, new Throwable(), this);
+    }
+    NodeReadEventsCaster.fireNodeChildReadAccess(this, role, foundChild);
+    return foundChild;
+  }
+
 
   //--------private (SNode and SModel usages)-------
 

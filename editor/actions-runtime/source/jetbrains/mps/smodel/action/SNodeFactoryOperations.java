@@ -25,6 +25,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 
+import java.util.List;
+
 /**
  * Evgeny Gryaznov, 1/4/11
  */
@@ -72,7 +74,8 @@ public class SNodeFactoryOperations {
 
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      SNode prototypeNode = node.getChild(role);
+      List<SNode> ch = node.getChildren(role);
+      SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
       SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
       node.setChild(role, newChild);
       return newChild;
