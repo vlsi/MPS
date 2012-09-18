@@ -12,7 +12,7 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
-import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor {
   public ControlAbstractionDeclaration_BehaviorDescriptor() {
@@ -30,7 +30,7 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
     return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
   }
 
-  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     ClassifierMember_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
   }
 

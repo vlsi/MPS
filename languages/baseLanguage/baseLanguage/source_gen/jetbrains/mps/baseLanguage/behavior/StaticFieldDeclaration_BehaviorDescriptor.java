@@ -10,7 +10,7 @@ import javax.swing.Icon;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, StaticKind_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, IBLDeprecatable_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor {
   public StaticFieldDeclaration_BehaviorDescriptor() {
@@ -61,7 +61,7 @@ public class StaticFieldDeclaration_BehaviorDescriptor extends VariableDeclarati
     return StaticFieldDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
   }
 
-  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     StaticFieldDeclaration_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
   }
 

@@ -8,7 +8,7 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, StaticKind_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {
   public StaticMethodDeclaration_BehaviorDescriptor() {
@@ -34,7 +34,7 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclar
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
   }
 
-  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     StaticMethodDeclaration_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
   }
 

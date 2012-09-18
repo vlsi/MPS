@@ -19,7 +19,8 @@ import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
+import jetbrains.mps.baseLanguage.scopes.FieldSignature;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -86,9 +87,9 @@ public class EnumConstantDeclaration_Behavior {
     }));
   }
 
-  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
-    scope.addMember(thisNode, SPropertyOperations.getString(thisNode, "name"));
-    scope.hideMembers(SPropertyOperations.getString(thisNode, "name"));
+  public static void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
+    scope.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
+    scope.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
 
   public static List<Icon> call_getMarkIcons_5039675756633083396(SNode thisNode) {

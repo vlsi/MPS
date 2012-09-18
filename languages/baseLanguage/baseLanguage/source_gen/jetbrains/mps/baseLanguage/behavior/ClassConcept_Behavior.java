@@ -33,7 +33,7 @@ import jetbrains.mps.baseLanguage.scopes.MemberScopes;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
-import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -325,7 +325,7 @@ public class ClassConcept_Behavior {
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind, child);
   }
 
-  public static void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+  public static void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     // populate own members 
     for (SNode member : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.List;
 import javax.swing.Icon;
 import java.util.Set;
@@ -15,7 +15,7 @@ public class ClassConcept_BehaviorDescriptor extends Classifier_BehaviorDescript
   public ClassConcept_BehaviorDescriptor() {
   }
 
-  public void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+  public void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     ClassConcept_Behavior.virtual_populateMembers_3642561415614722944(thisNode, scope, contextClassifier);
   }
 

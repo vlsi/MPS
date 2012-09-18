@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.Set;
 import jetbrains.mps.scope.Scope;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
   public Interface_BehaviorDescriptor() {
   }
 
-  public void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+  public void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     Interface_Behavior.virtual_populateMembers_3642561415614722944(thisNode, scope, contextClassifier);
   }
 

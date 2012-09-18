@@ -11,19 +11,19 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 
-public class MembersScope {
+public class MembersPopulatingContext {
   private List<SNode> members = new ArrayList<SNode>();
-  private Set<String> hidedMembers = new HashSet<String>();
+  private Set<Signature> hidedMembers = new HashSet<Signature>();
 
-  public MembersScope() {
+  public MembersPopulatingContext() {
     // use java collections for speed 
   }
 
-  public void hideMembers(String signature) {
+  public void hideMembers(Signature signature) {
     hidedMembers.add(signature);
   }
 
-  public void addMember(SNode member, String signature) {
+  public void addMember(SNode member, Signature signature) {
     if (!(hidedMembers.contains(signature))) {
       members.add(member);
     }

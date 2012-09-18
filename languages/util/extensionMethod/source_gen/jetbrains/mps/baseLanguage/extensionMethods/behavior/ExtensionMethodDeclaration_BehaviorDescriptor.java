@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.baseLanguage.scopes.MembersScope;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor {
   public ExtensionMethodDeclaration_BehaviorDescriptor() {
@@ -22,7 +22,7 @@ public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDec
     return ExtensionMethodDeclaration_Behavior.virtual_getScopeForClass_1251851371723365193(thisNode, classNode, extendsClass, implementsInterfaces);
   }
 
-  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersScope scope, SNode contextClassifier) {
+  public void virtual_populateMember_3642561415614717885(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     ClassifierMember_Behavior.virtual_populateMember_3642561415614717885(thisNode, scope, contextClassifier);
   }
 
