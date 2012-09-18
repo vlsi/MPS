@@ -64,18 +64,12 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
   private TypeSystemStateTreeNode createNode() {
     TypeSystemStateTreeNode result = new TypeSystemStateTreeNode("Type system state", myOperationContext);
     result.add(new TypeSystemStateTreeNode("Solving inequalities in process: " + myState.getInequalities().isSolvingInProcess(), myOperationContext));
-    /*
-      result.add(createNode("Check-only inequalities", myState.getCheckingInequalities(), null));
-    */
     TypeSystemStateTreeNode[] nodes = {createInequalitiesNode(), createNode("Comparable", myState.getBlocks(BlockKind.COMPARABLE), null), createNode("When concrete", myState.getBlocks(BlockKind.WHEN_CONCRETE), null), createNode("Errors", myState.getNodeMaps().getErrorListPresentation(), Color.RED), createNode("Check-only equations", myState.getBlocks(BlockKind.CHECK_EQUATION), null), createEquationsNode()};
     for (TypeSystemStateTreeNode node : nodes) {
       if (node.children().hasMoreElements()) {
         result.add(node);
       }
     }
-    /*
-      result.add(createTypesNode());
-    */
     return result;
   }
 
