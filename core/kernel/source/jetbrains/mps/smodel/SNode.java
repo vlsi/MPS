@@ -226,8 +226,12 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   @Override
-  public void setReferenceTarget(String role, org.jetbrains.mps.openapi.model.SNode target) {
-    setReferent(role, (SNode) target);
+  public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+    if (target == null) {
+      removeReferent(role);
+    } else {
+      setReferent(role, (SNode) target);
+    }
   }
 
   @Override
@@ -598,6 +602,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
     }
+
     // remove old references
     List<SReference> toDelete = new ArrayList<SReference>();
     if (myReferences != null) {
@@ -670,21 +675,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public void addReference(SReference reference) {
     assert reference.getSourceNode() == this;
     insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
-  }
-
-  public void removeReferent(String role) {
-    if (ourMemberAccessModifier != null) {
-      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
-    }
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.getRole().equals(role)) {
-          int index = _reference().indexOf(reference);
-          removeReferenceAt(index);
-          break;
-        }
-      }
-    }
   }
 
   public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
@@ -1419,6 +1409,20 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     myUserObjects = null;
   }
 
+  public void removeReferent(String role) {
+    if (ourMemberAccessModifier != null) {
+      role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
+    }
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.getRole().equals(role)) {
+          int index = _reference().indexOf(reference);
+          removeReferenceAt(index);
+          break;
+        }
+      }
+    }
+  }
 
   //--------private (SNode and SModel usages)-------
 

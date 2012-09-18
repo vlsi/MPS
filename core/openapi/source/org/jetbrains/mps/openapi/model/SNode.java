@@ -85,7 +85,7 @@ public interface SNode {
 
   // refs
 
-  void setReferenceTarget(String role, SNode target);
+  void setReferenceTarget(String role, @Nullable SNode target);
 
   SNode getReferenceTarget(String role);
 
