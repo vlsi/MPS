@@ -19,6 +19,7 @@ import gnu.trove.THashMap;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -84,7 +85,7 @@ public class HUtil {
         return true;
       }
     }
-    for (SNode referent : node.getReferents()) {
+    for (SNode referent : TypesUtil.getNodeReferents(node)) {
       if (referent != null && HUtil.isRuntimeTypeVariable(referent)) {
         return true;
       }

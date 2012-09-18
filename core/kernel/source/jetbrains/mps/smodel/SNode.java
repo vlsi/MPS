@@ -685,21 +685,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public List<SNode> getReferents() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    List<SNode> result = new ArrayList<SNode>();
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        SNode targetNode = reference.getTargetNode();
-        if (targetNode != null) result.add(targetNode);
-      }
-    }
-    return result;
-  }
-
   public String getDebugText() {
     String roleText = "";
     if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
@@ -1424,6 +1409,20 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
 
+  public List<SNode> getReferents() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    List<SNode> result = new ArrayList<SNode>();
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        SNode targetNode = reference.getTargetNode();
+        if (targetNode != null) result.add(targetNode);
+      }
+    }
+    return result;
+  }
 
   //--------private (SNode and SModel usages)-------
 

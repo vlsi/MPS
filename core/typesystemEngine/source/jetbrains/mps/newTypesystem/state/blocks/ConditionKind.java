@@ -63,7 +63,7 @@ public enum ConditionKind {
         return Arrays.asList(representative);
       }
       List<SNode> result = new ArrayList<SNode>();
-      for (SNode referent : representative.getReferents()) {
+      for (SNode referent : TypesUtil.getNodeReferents(representative)) {
         if (referent != null) {
           SNode refRepresentative = state.getRepresentative(referent);
           if (HUtil.isRuntimeTypeVariable(refRepresentative)) {
