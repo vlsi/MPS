@@ -102,7 +102,7 @@ public final class CopyUtil {
   public static List<SNode> copy(List<SNode> nodes, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, mapping);
     for(SNode node : nodes) {
-      addReferences(node, mapping, true, false);
+      addReferences(node, mapping, false);
     }
     return result;
   }
@@ -121,7 +121,7 @@ public final class CopyUtil {
     for (SNode sourceNode : mapping.keySet()) {
       mapping.get(sourceNode).setId(sourceNode.getSNodeId());
     }
-    addReferences(node, mapping, true, cloneRefs);
+    addReferences(node, mapping, cloneRefs);
     return result;
   }
 
@@ -131,7 +131,7 @@ public final class CopyUtil {
 
   public static SNode copy(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode result = clone(node, mapping, copyAttributes);
-    addReferences(node, mapping, copyAttributes, false);
+    addReferences(node, mapping, false);
     return result;
   }
 
@@ -159,16 +159,12 @@ public final class CopyUtil {
     return results;
   }
 
-  private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean copyAttributes, boolean forceCloneRefs) {
+  private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
     if(root == null) return;
     Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), root.getDescendants());
     Iterator<SNode> it = thisAndDesc.iterator();
     while(it.hasNext()) {
       SNode inputNode = it.next();
-      if (!copyAttributes && AttributeOperations.isAttribute(inputNode)) {
-        ((TreeIterator)it).skipChildren();
-        continue;
-      }
       SNode outputNode = mapping.get(inputNode);
       if(outputNode == null) {
         throw new IllegalStateException();

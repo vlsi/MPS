@@ -468,8 +468,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     synchronized (myAdditionalInputNodes) {
       if (!myAdditionalInputNodes.containsKey(inputNode)) {
-        Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(inputNode), inputNode.getDescendants());
-        for (SNode n : thisAndDesc) {
+        myAdditionalInputNodes.put(inputNode, Boolean.TRUE);
+        for (SNode n : inputNode.getDescendants()) {
           myAdditionalInputNodes.put(n, Boolean.TRUE);
         }
       }

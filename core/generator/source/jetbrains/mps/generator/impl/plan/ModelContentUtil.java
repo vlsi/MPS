@@ -54,8 +54,8 @@ public class ModelContentUtil {
       namespaces.add(ref.getModuleFqName());
     }
     for (SNode root : model.roots()) {
-      Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), root.getDescendants());
-      for (SNode child : thisAndDesc) {
+      namespaces.add(root.getLanguageNamespace());
+      for (SNode child : root.getDescendants()) {
         namespaces.add(child.getLanguageNamespace());
       }
     }
