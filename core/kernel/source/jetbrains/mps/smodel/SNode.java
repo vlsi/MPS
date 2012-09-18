@@ -572,11 +572,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new ArrayList<SReference>(_reference());
   }
 
-  public SReference[] getReferencesArray() {
-    SReference[] references = new SReference[myReferences.length];
-    System.arraycopy(myReferences, 0, references, 0, myReferences.length);
-    return references;
-  }
 
   public Collection<SReference> getReferencesIterable() {
     return new AbstractList<SReference>() {
@@ -1423,6 +1418,12 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   public void addReference(SReference reference) {
     assert reference.getSourceNode() == this;
     insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
+  }
+
+  public SReference[] getReferencesArray() {
+    SReference[] references = new SReference[myReferences.length];
+    System.arraycopy(myReferences, 0, references, 0, myReferences.length);
+    return references;
   }
 
   //--------private (SNode and SModel usages)-------

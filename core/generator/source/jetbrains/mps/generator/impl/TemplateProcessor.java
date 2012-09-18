@@ -30,9 +30,14 @@ import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -599,24 +604,29 @@ public class TemplateProcessor {
     }
   }
 
-  private void validateReferences(SNode node, SNode inputNode) {
-    for (SReference reference : node.getReferencesArray()) {
-      // reference to input model - illegal
-      if (myGenerator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
-        // replace
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-          reference.getRole(),
-          reference.getSourceNode(),
-          inputNode,
-          reference.getTargetNode());
-        PostponedReference postponedReference = new PostponedReference(
-          refInfo,
-          myGenerator);
-        reference.getSourceNode().replaceReference(reference, postponedReference);
+  private void validateReferences(SNode node, final SNode inputNode) {
+    node.visitReferences(new ReferenceVisitor() {
+      public boolean visitReference(String role, org.jetbrains.mps.openapi.model.SReference ref) {
+        SReference reference = (SReference) ref;
+        // reference to input model - illegal
+        if (myGenerator.getInputModel().getSModelReference().equals(reference.getTargetSModelReference())) {
+          // replace
+          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+            reference.getRole(),
+            reference.getSourceNode(),
+            inputNode,
+            reference.getTargetNode());
+          PostponedReference postponedReference = new PostponedReference(
+            refInfo,
+            myGenerator);
+          reference.getSourceNode().replaceReference(reference, postponedReference);
+        }
+        return true;
       }
-    }
-    for (SNode child : node.getChildren()) {
-      validateReferences(child, inputNode);
+    });
+
+    for (org.jetbrains.mps.openapi.model.SNode child : jetbrains.mps.util.SNodeOperations.getChildren(node)) {
+      validateReferences(((SNode) child), inputNode);
     }
   }
 
