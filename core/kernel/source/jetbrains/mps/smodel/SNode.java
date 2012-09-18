@@ -1402,12 +1402,8 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
-    boolean isOldAttributeRole = AttributeOperations.isOldAttributeRole(role);
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       if (role.equals(child.getRole())) {
-        foundChild = child;
-        count++;
-      } else if (isOldAttributeRole && AttributeOperations.isOldRoleForNewAttribute(child, role)) {
         foundChild = child;
         count++;
       }
