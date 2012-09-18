@@ -534,7 +534,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             continue;
           }
 
-          outputNode.addReference(new StaticReference(
+          outputNode.setReference(new StaticReference(
             inputReference.getRole(),
             outputNode,
             targetModelReference,
@@ -547,7 +547,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
             targetModelReference,
             inputReference.getResolveInfo());
           outputReference.setOrigin(((DynamicReference) inputReference).getOrigin());
-          outputNode.addReference(outputReference);
+          outputNode.setReference(outputReference);
         } else {
           myLogger.error(inputNode, "internal error: can't clone reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText(),
             new ProblemDescription(inputNode, " -- was reference class: " + inputReference.getClass().getName()));
@@ -572,7 +572,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
           refInfo,
           this
         );
-        outputNode.addReference(reference);
+        outputNode.setReference(reference);
       } else if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode)) {
         outputNode.setReferent(inputReference.getRole(), inputTargetNode);
       } else {

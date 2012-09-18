@@ -16,12 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.TreeIterator;
 
 import java.util.*;
 
@@ -172,7 +169,7 @@ public final class CopyUtil {
         if (inputTargetNode == null) { //broken reference or need to clone
           if (ref instanceof StaticReference) {
             StaticReference statRef = (StaticReference) ref;
-            outputNode.addReference(new StaticReference(
+            outputNode.setReference(new StaticReference(
               statRef.getRole(),
               outputNode,
               statRef.getTargetSModelReference(),
@@ -182,7 +179,7 @@ public final class CopyUtil {
             DynamicReference dynRef = (DynamicReference) ref;
             DynamicReference output = new DynamicReference(dynRef.getRole(), outputNode, dynRef.getTargetSModelReference(), dynRef.getResolveInfo());
             output.setOrigin(dynRef.getOrigin());
-            outputNode.addReference(output);
+            outputNode.setReference(output);
           }
         } else if (mapping.containsKey(inputTargetNode)) {
           outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode));

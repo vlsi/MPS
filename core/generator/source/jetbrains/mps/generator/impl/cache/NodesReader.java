@@ -88,13 +88,12 @@ public class NodesReader {
       }
       String resolveInfo = is.readString();
       if (kind == 1) {
-        node.addReference(
-          new StaticReference(
-            role,
-            node,
-            modelRef,
-            targetNodeId,
-            resolveInfo));
+        node.setReference(new StaticReference(
+          role,
+          node,
+          modelRef,
+          targetNodeId,
+          resolveInfo));
       } else if (kind == 2 || kind == 3) {
         DynamicReference reference = new DynamicReference(
           role,
@@ -104,8 +103,7 @@ public class NodesReader {
         if (origin != null) {
           reference.setOrigin(origin);
         }
-        node.addReference(
-          reference);
+        node.setReference(reference);
       } else {
         throw new IOException("unknown reference type");
       }

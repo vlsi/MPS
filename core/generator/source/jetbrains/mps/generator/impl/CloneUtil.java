@@ -73,7 +73,7 @@ public class CloneUtil {
             targetModelReference,
             ((StaticReference) reference).getTargetNodeId(),
             reference.getResolveInfo());
-          outputNode.addReference(outputReference);
+          outputNode.setReference(outputReference);
         }
       } else if (reference instanceof DynamicReference) {
         DynamicReference outputReference = new DynamicReference(
@@ -82,7 +82,7 @@ public class CloneUtil {
           targetModelReference,
           reference.getResolveInfo());
         outputReference.setOrigin(((DynamicReference) reference).getOrigin());
-        outputNode.addReference(outputReference);
+        outputNode.setReference(outputReference);
       } else {
         LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
         LOG.error(" -- was reference class : " + reference.getClass().getName());

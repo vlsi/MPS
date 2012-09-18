@@ -30,6 +30,6 @@ class InsertReferenceAtUndoableAction extends SNodeUndoableAction {
   }
 
   protected void doRedo() {
-    getAffectedNode().addReference(myReference);
+    getAffectedNode().setReference(myReference);
   }
 }

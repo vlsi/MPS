@@ -253,7 +253,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.addReference(postponedReference);
+    outputNode.setReference(postponedReference);
   }
 
   public void resolveInTemplateLater(@NotNull SNode outputNode, String role, SNodePointer sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
@@ -268,7 +268,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.addReference(postponedReference);
+    outputNode.setReference(postponedReference);
   }
 
   public void resolve(ReferenceResolver resolver, SNode outputNode, String role, TemplateContext context) {
@@ -280,7 +280,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       refInfo,
       generator
     );
-    outputNode.addReference(postponedReference);
+    outputNode.setReference(postponedReference);
   }
 
   /*
