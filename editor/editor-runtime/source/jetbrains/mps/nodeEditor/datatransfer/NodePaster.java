@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.util.SNodeOperations;
 
 import java.util.Collections;
 import java.util.List;
@@ -177,7 +178,7 @@ public class NodePaster {
     boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
     for (SNode pasteNode : myPasteNodes) {
       SNode nodeToPaste = normalizeForLink(pasteNode, link);
-      pasteTarget.insertChild(_anchorNode, SModelUtil.getGenuineLinkRole(link), nodeToPaste, insertBefore);
+      SNodeOperations.insertChild(pasteTarget, SModelUtil.getGenuineLinkRole(link), nodeToPaste, _anchorNode, insertBefore);
       CopyPasteManager.getInstance().postProcessNode(nodeToPaste);
       _anchorNode = nodeToPaste;
       insertBefore = false;

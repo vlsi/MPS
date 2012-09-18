@@ -156,7 +156,7 @@ public class SNodeFactoryOperations {
     if (newChild == null) return null;
     String role = node.getRole();
     assert role != null;
-    parent.insertChild(node, role, newChild, true);
+    parent.insertChild(parent.getPrevChild(node), role, newChild);
     return newChild;
   }
 }

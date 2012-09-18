@@ -493,14 +493,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public void insertChild(SNodeBase anchorChild, String role, SNode child, boolean insertBefore) {
-    if (insertBefore) {
-      insertChild(firstChild() == anchorChild ? null : anchorChild.treePrevious(), role, child);
-    } else {
-      insertChild(anchorChild, role, child);
-    }
-  }
-
   public int getIndexOfChild(SNode child_) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1415,6 +1407,14 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
     NodeReadEventsCaster.fireNodeChildReadAccess(this, role, foundChild);
     return foundChild;
+  }
+
+  public void insertChild(SNodeBase anchorChild, String role, SNode child, boolean insertBefore) {
+    if (insertBefore) {
+      insertChild(firstChild() == anchorChild ? null : anchorChild.treePrevious(), role, child);
+    } else {
+      insertChild(anchorChild, role, child);
+    }
   }
 
 

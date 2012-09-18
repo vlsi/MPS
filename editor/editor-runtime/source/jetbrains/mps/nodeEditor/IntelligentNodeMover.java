@@ -203,7 +203,7 @@ class IntelligentNodeMover {
     if (forward()) {
       parent.insertChild(prevChild, role, current);
     } else {
-      parent.insertChild(prevChild, role, current, true);
+      parent.insertChild(parent.getPrevChild(prevChild), role, current);
     }
   }
 
