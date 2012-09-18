@@ -977,6 +977,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
+  public boolean isDeleted() {
+    return (_reference().size() == 0) && getParent() == null && !getModel().isRoot(this);
+  }
+
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
@@ -1287,10 +1291,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     } else {
       return null;
     }
-  }
-
-  public boolean isDeleted() {
-    return getModel() == null;
   }
 
   public String getId() {

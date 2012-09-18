@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
@@ -70,7 +72,7 @@ public class InspectorEditorComponent extends EditorComponent {
         myNode = node;
         myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
         myRoot = myNode == null ? null : myNode.getContainingRoot();
-        setReadOnly(node == null || node.getModel() == null || node.getModel().isDisposed() || node.getModel().isNotEditable());
+        setReadOnly(node == null || node.isDeleted() || node.getModel().isDisposed() || node.getModel().isNotEditable());
         if (node == null) {
           setOperationContext(null);
         } else {
@@ -89,7 +91,7 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   public EditorCell createRootCell(List<SModelEvent> events) {
-    if (getEditedNode() == null || getEditedNode().getModel() == null) {
+    if (getEditedNode() == null || getEditedNode().isDeleted()) {
       return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
     }
     return getEditorContext().createInspectedCell(getEditedNode(), events);
