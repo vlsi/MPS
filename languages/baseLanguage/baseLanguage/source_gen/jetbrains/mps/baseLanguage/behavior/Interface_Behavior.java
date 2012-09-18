@@ -136,11 +136,7 @@ public class Interface_Behavior {
     if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
       Classifier_Behavior.call_populateMembersImpl_3642561415614722944(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), scope, thisNode);
     }
-    return Sequence.fromIterable(scope.toScope().getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      }
-    });
+    return scope.getMembers();
   }
 
   public static String call_getUnitName_2496361171403551004(SNode thisNode) {

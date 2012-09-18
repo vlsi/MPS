@@ -21,8 +21,6 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.scope.EmptyScope;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -33,6 +31,8 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.scopes.runtime.CompositeWithParentScope;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.FilteringByNameScope;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
@@ -114,11 +114,7 @@ public class Classifier_Behavior {
     // overriding of this method is strictly prohibited 
     MembersPopulatingContext scope = new MembersPopulatingContext(thisNode);
     Classifier_Behavior.call_populateMembers_7865228194069708908(thisNode, scope, thisNode);
-    return Sequence.fromIterable(scope.toScope().getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-      }
-    });
+    return scope.getMembers();
   }
 
   public static void call_populateMembers_7865228194069708908(SNode thisNode, MembersPopulatingContext context, SNode contextClassifier) {
