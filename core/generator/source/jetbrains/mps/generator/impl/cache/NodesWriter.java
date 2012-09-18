@@ -18,6 +18,7 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode.UserObjectVisitor;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -106,15 +107,16 @@ public class NodesWriter {
 
   protected void writeUserObjects(SNode node, ModelOutputStream os) throws IOException {
     // write user objects here
-    Map<Object, Object> userObjects = node.getUserObjects();
-    ArrayList<Object> knownUserObject = new ArrayList<Object>();
-    for (Object key : userObjects.keySet()) {
-      Object value = userObjects.get(key);
-      if (isKnownUserObject(key) && isKnownUserObject(value)) {
-        knownUserObject.add(key);
-        knownUserObject.add(value);
+    final ArrayList<Object> knownUserObject = new ArrayList<Object>();
+    node.visitUserObjects(new UserObjectVisitor() {
+      public boolean visitObject(Object key, Object value) {
+        if (isKnownUserObject(key) && isKnownUserObject(value)) {
+          knownUserObject.add(key);
+          knownUserObject.add(value);
+        }
+        return true;
       }
-    }
+    });
 
     os.writeInt(knownUserObject.size());
     for (int i = 0; i < knownUserObject.size(); i += 2) {

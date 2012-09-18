@@ -745,17 +745,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     myUserObjects = null;
   }
 
-  public Map<Object, Object> getUserObjects() {
-    Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
-    if (myUserObjects == null) {
-      return userObjects;
-    }
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      userObjects.put(myUserObjects[i], myUserObjects[i + 1]);
-    }
-    return userObjects;
-  }
-
   public String getConceptProperty(String propertyName) {
     SNode conceptProperty = findConceptProperty(propertyName);
     Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
@@ -1419,6 +1408,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     };
   }
 
+  public Map<Object, Object> getUserObjects() {
+    Map<Object, Object> userObjects = new LinkedHashMap<Object, Object>();
+    if (myUserObjects == null) {
+      return userObjects;
+    }
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      userObjects.put(myUserObjects[i], myUserObjects[i + 1]);
+    }
+    return userObjects;
+  }
 
   //--------private (SNode and SModel usages)-------
 
