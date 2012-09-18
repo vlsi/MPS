@@ -911,19 +911,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new PropertiesMap(myProperties);
   }
 
-  public Set<String> getPropertyNames() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    Set<String> result = AttributeOperations.getPropertyNamesFromAttributes(this);
-    if (myProperties != null) {
-      for (int i = 0; i < myProperties.length; i += 2) {
-        result.add(myProperties[i]);
-      }
-    }
-    return result;
-  }
-
   public boolean isDeleted() {
     return (_reference().size() == 0) && getParent() == null && !getModel().isRoot(this);
   }
@@ -1417,6 +1404,19 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (myUserObjects.length == 0) {
       myUserObjects = null;
     }
+  }
+
+  public Set<String> getPropertyNames() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    Set<String> result = AttributeOperations.getPropertyNamesFromAttributes(this);
+    if (myProperties != null) {
+      for (int i = 0; i < myProperties.length; i += 2) {
+        result.add(myProperties[i]);
+      }
+    }
+    return result;
   }
 
 
