@@ -432,14 +432,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getProperty_simple(propertyName);
   }
 
-  void changePropertyName(String oldPropertyName, String newPropertyName) {
-    //todo make undo?
-    if (myProperties == null) return;
-    int index = getPropertyIndex(oldPropertyName);
-    if (index == -1) return;
-    myProperties[index] = newPropertyName;
-  }
-
   public void setProperty(String propertyName, String propertyValue, boolean usePropertySetter) {
     propertyName = InternUtil.intern(propertyName);
     ModelChange.assertLegalNodeChange(this);
@@ -938,6 +930,14 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
+
+  void changePropertyName(String oldPropertyName, String newPropertyName) {
+    //todo make undo?
+    if (myProperties == null) return;
+    int index = getPropertyIndex(oldPropertyName);
+    if (index == -1) return;
+    myProperties[index] = newPropertyName;
+  }
 
   @UseCarefully
   void setConceptFqName(@NotNull String conceptFQName) {
