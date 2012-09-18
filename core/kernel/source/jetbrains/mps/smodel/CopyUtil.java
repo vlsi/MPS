@@ -162,13 +162,9 @@ public final class CopyUtil {
   private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
     if(root == null) return;
     Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), root.getDescendants());
-    Iterator<SNode> it = thisAndDesc.iterator();
-    while(it.hasNext()) {
-      SNode inputNode = it.next();
+    for (SNode inputNode : thisAndDesc) {
       SNode outputNode = mapping.get(inputNode);
-      if(outputNode == null) {
-        throw new IllegalStateException();
-      }
+      if (outputNode == null) continue;
 
       for (SReference ref : inputNode.getReferencesIterable()) {
         boolean cloneRefs = forceCloneRefs || MPSCore.getInstance().isMergeDriverMode();
