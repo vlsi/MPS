@@ -15,30 +15,29 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.cellLayout.*;
+import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.cellLayout.*;
-import jetbrains.mps.nodeEditor.*;
-import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ArrayWrapper;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
-import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
-import java.awt.image.WritableRaster;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.*;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * Author: Sergey Dmitriev
@@ -635,51 +634,29 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       return;
     }
 
-    BufferedImage image = new BufferedImage(intersection.width + 2, intersection.height + 2, BufferedImage.TYPE_INT_ARGB);
-    Graphics gr = image.getGraphics();
-    gr.setClip(0, 0, image.getWidth(), image.getHeight());
-
-    int x0 = intersection.x;
-    int y0 = intersection.y;
+    if (drawBorder && g instanceof Graphics2D) {
+      g = new SelectionGraphics((Graphics2D) g);
+    }
 
     List<? extends EditorCell> selectionCells = myCellLayout instanceof CellLayoutExt ? ((CellLayoutExt) myCellLayout).getSelectionCells(this) : null;
     if (selectionCells != null) {
-      gr.translate(1 - x0, 1 - y0);
       ParentSettings selection = isSelectionPaintedOnAncestor(parentSettings);
       for (EditorCell cell : selectionCells) {
-        cell.paintSelection(gr, c, false, selection);
+        cell.paintSelection(g, c, false, selection);
       }
     } else {
       List<Rectangle> selection = myCellLayout.getSelectionBounds(this);
-      gr.setColor(c);
+      g.setColor(c);
       for (Rectangle part : selection) {
-        gr.fillRect(part.x - x0 + 1, part.y - y0 + 1, part.width, part.height);
+        g.fillRect(part.x, part.y, part.width, part.height);
       }
     }
 
-    if (drawBorder) {
-      Color darkerColor = c.darker();
-      WritableRaster raster = image.getRaster();
-      int[] color = {darkerColor.getRed(), darkerColor.getGreen(), darkerColor.getBlue(), 255};
-      for (int x = 1; x < image.getWidth() - 1; x++) {
-        for (int y = 1; y < image.getHeight() - 1; y++) {
-          int[] curPix = raster.getPixel(x, y, (int[]) null);
-
-          if (curPix[3] == 0) continue;
-
-          int[] upPix = raster.getPixel(x, y - 1, (int[]) null);
-          int[] downPix = raster.getPixel(x, y + 1, (int[]) null);
-          int[] leftPix = raster.getPixel(x - 1, y, (int[]) null);
-          int[] rightPix = raster.getPixel(x + 1, y, (int[]) null);
-
-          if (upPix[3] == 0 || downPix[3] == 0 || leftPix[3] == 0 || rightPix[3] == 0) {
-            raster.setPixel(x, y, color);
-          }
-        }
-      }
+    if (g instanceof SelectionGraphics) {
+      SelectionGraphics selectionGraphics = (SelectionGraphics) g;
+      selectionGraphics.getOriginalGraphics().setColor(c.darker());
+      selectionGraphics.getOriginalGraphics().draw(selectionGraphics.getSelectionArea());
     }
-
-    g.drawImage(image, x0 - 1, y0 - 1, null);
   }
 
   public ParentSettings paintBackground(Graphics g, ParentSettings parentSettings) {
