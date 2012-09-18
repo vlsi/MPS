@@ -139,7 +139,7 @@ public class ModelWriter7 implements IModelWriter {
       element.addContent(propertyElement);
     }
 
-    for (SReference reference : node.getReferencesIterable()) {
+    for (SReference reference : node.getReferences()) {
       Element linkElement = new Element(ModelPersistence.LINK);
       linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));

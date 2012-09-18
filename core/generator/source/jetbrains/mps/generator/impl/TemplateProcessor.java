@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.ArrayList;
@@ -129,7 +128,7 @@ public class TemplateProcessor {
     jetbrains.mps.util.SNodeOperations.copyProperties(templateNode, outputNode);
 
     SModel templateModel = templateNode.getModel();
-    for (SReference reference : templateNode.getReferencesIterable()) {
+    for (SReference reference : templateNode.getReferences()) {
       if (AttributeOperations.getLinkAttribute(templateNode, "referenceMacro", reference.getRole()) != null) {
         continue;
       }

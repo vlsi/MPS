@@ -36,14 +36,10 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.util.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
-import org.jetbrains.mps.openapi.model.impl.*;
-import org.jetbrains.mps.openapi.model.impl.SNodeBase;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -530,7 +526,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
 
-    for (SReference inputReference : inputNode.getReferencesIterable()) {
+    for (SReference inputReference : inputNode.getReferences()) {
       if (jetbrains.mps.util.SNodeOperations.isRegistered(inputNode) && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();

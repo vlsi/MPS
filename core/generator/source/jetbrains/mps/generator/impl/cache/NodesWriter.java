@@ -73,7 +73,7 @@ public class NodesWriter {
   }
 
   protected void writeReferences(SNode node, ModelOutputStream os) throws IOException {
-    Collection<SReference> refs = node.getReferencesIterable();
+    Collection<SReference> refs = node.getReferences();
     os.writeInt(refs.size());
     for (SReference reference : refs) {
       SModelReference targetModelReference = reference.getTargetSModelReference();

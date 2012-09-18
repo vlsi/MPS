@@ -73,7 +73,7 @@ public class SModelOperations {
         model.addLanguage(ref);
       }
 
-      for (SReference reference : node.getReferencesIterable()) {
+      for (SReference reference : node.getReferences()) {
         if (reference.isExternal()) {
           SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {

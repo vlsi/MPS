@@ -163,7 +163,7 @@ public final class CopyUtil {
       SNode outputNode = mapping.get(inputNode);
       if (outputNode == null) continue;
 
-      for (SReference ref : inputNode.getReferencesIterable()) {
+      for (SReference ref : inputNode.getReferences()) {
         boolean cloneRefs = forceCloneRefs || MPSCore.getInstance().isMergeDriverMode();
         SNode inputTargetNode = cloneRefs ? null : ref.getTargetNodeSilently();
         if (inputTargetNode == null) { //broken reference or need to clone

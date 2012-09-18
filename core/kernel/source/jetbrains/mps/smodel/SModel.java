@@ -601,7 +601,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
         for (String propname : node.getProperties().keySet()) {
           result.add(RoleIdsComponent.getPropertyNamePointer(node, propname).getModelReference());
         }
-        for (SReference ref : node.getReferencesIterable()) {
+        for (SReference ref : node.getReferences()) {
           if (ref.getTargetSModelReference() != null) {
             result.add(ref.getTargetSModelReference());
           }
@@ -625,7 +625,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
             result.add(decl.getModel().getSModelReference());
           }
         }
-        for (SReference ref : node.getReferencesIterable()) {
+        for (SReference ref : node.getReferences()) {
           SModelReference targetModelRef = ref.getTargetSModelReference();
           if (targetModelRef == null) {
             LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + node.getDebugText());

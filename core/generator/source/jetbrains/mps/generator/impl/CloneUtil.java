@@ -61,7 +61,7 @@ public class CloneUtil {
     if (originalInput) {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
-    for (SReference reference : inputNode.getReferencesIterable()) {
+    for (SReference reference : inputNode.getReferences()) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {
