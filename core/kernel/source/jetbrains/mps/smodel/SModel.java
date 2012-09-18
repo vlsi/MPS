@@ -236,12 +236,6 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     return myIdToNodeMap.size();
   }
 
-  public void clearAdaptersAndUserObjects() {
-    for (SNode node : myIdToNodeMap.values()) {
-      node.removeAllUserObjects();
-    }
-  }
-
   //---------loading state--------
 
   protected boolean canFireEvent() {

@@ -741,10 +741,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return roleText + " " + NameUtil.shortNameFromLongName(NameUtil.shortNameFromLongName(getConceptFqName())) + " " + nameText + " in " + myModel.getSModelFqName();
   }
 
-  public void removeAllUserObjects() {
-    myUserObjects = null;
-  }
-
   public String getConceptProperty(String propertyName) {
     SNode conceptProperty = findConceptProperty(propertyName);
     Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
@@ -767,10 +763,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public boolean isRoot() {
     return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
-  }
-
-  public Set<String> getChildRoles(boolean includeAttributeRoles) {
-    return addChildRoles(new HashSet<String>(), includeAttributeRoles);
   }
 
   public SNode getContainingRoot() {
@@ -1418,6 +1410,15 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (myProperties == null) return Collections.emptyMap();
     return new PropertiesMap(myProperties);
   }
+
+  public Set<String> getChildRoles(boolean includeAttributeRoles) {
+    return addChildRoles(new HashSet<String>(), includeAttributeRoles);
+  }
+
+  public void removeAllUserObjects() {
+    myUserObjects = null;
+  }
+
 
   //--------private (SNode and SModel usages)-------
 
