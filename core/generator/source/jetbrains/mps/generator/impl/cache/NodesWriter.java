@@ -18,11 +18,13 @@ package jetbrains.mps.generator.impl.cache;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 import org.jetbrains.mps.openapi.model.SNode.UserObjectVisitor;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -97,7 +99,13 @@ public class NodesWriter {
   }
 
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
-    Map<String, String> properties = node.getProperties();
+    final Map<String, String> properties = new HashMap<String, String>();
+    node.visitProperties(new PropertyVisitor() {
+      public boolean visitProperty(String name, String value) {
+        properties.put(name,value);
+        return true;
+      }
+    });
     os.writeInt(properties.size());
     for (Entry<String, String> entry : properties.entrySet()) {
       os.writeString(entry.getKey());

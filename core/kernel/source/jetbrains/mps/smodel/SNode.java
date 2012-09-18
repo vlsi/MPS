@@ -823,14 +823,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
   }
 
-  public Map<String, String> getProperties() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    if (myProperties == null) return Collections.emptyMap();
-    return new PropertiesMap(myProperties);
-  }
-
   public boolean isDeleted() {
     return (_reference().size() == 0) && getParent() == null && !getModel().isRoot(this);
   }
@@ -1417,6 +1409,14 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       userObjects.put(myUserObjects[i], myUserObjects[i + 1]);
     }
     return userObjects;
+  }
+
+  public Map<String, String> getProperties() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    if (myProperties == null) return Collections.emptyMap();
+    return new PropertiesMap(myProperties);
   }
 
   //--------private (SNode and SModel usages)-------
