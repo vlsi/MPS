@@ -33,7 +33,6 @@ import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -583,7 +582,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
-    for (SNode inputChildNode : inputNode.getChildrenIterable()) {
+    for (SNode inputChildNode : inputNode.getChildren()) {
       String childRole = inputChildNode.getRole_();
       assert childRole != null;
       myGenerationTracer.pushInputNode(inputChildNode);
@@ -629,7 +628,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     }
 
-    for (SNode child : node.getChildrenIterable()) {
+    for (SNode child : node.getChildren()) {
       revalidateAllReferences(child);
     }
   }

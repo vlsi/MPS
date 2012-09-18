@@ -27,7 +27,7 @@ import java.util.List;
 public class SNodeOperations {
   public static int depth(SNode sNode) {
     int childDepth = 0;
-    for (SNode child : sNode.getChildrenIterable()) {
+    for (SNode child : sNode.getChildren()) {
       int depth = depth(child);
       if (childDepth < depth) {
         childDepth = depth;

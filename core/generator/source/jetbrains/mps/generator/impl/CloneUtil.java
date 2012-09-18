@@ -20,8 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 public class CloneUtil {
   private static final Logger LOG = Logger.getLogger(CloneUtil.class);
@@ -91,7 +89,7 @@ public class CloneUtil {
       }
     }
 
-    for (SNode child : inputNode.getChildrenIterable()) {
+    for (SNode child : inputNode.getChildren()) {
       String role = child.getRole_();
       assert role != null;
       outputNode.addChild(role, clone(child, outputModel, originalInput));

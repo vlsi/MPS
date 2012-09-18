@@ -613,7 +613,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
           }
           result.add(RoleIdsComponent.getReferenceRolePointer(ref).getModelReference());
         }
-        for (SNode child : node.getChildrenIterable()) {
+        for (SNode child : node.getChildren()) {
           result.add(RoleIdsComponent.getNodeRolePointer(child).getModelReference());
         }
       } else {
@@ -645,7 +645,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
             result.add(decl.getModel().getSModelReference());
           }
         }
-        for (SNode child : node.getChildrenIterable()) {
+        for (SNode child : node.getChildren()) {
           SNode decl = child.getRoleLink();
           if (decl == null) {
             LOG.error("undeclared child role: '" + child.getRole() + "' in node " + node.getDebugText());

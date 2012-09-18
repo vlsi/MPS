@@ -513,30 +513,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return -1;
   }
 
-  public Iterable<SNode> getChildrenIterable() {
-    return new Iterable<SNode>() {
-      public Iterator<SNode> iterator() {
-        return new Iterator<SNode>() {
-          private SNode current = firstChild();
-
-          public boolean hasNext() {
-            return current != null;
-          }
-
-          public SNode next() {
-            SNode result = current;
-            current = current.nextSibling();
-            return result;
-          }
-
-          public void remove() {
-            throw new UnsupportedOperationException();
-          }
-        };
-      }
-    };
-  }
-
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -814,24 +790,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public Set<String> getChildRoles(boolean includeAttributeRoles) {
     return addChildRoles(new HashSet<String>(), includeAttributeRoles);
-  }
-
-  public Set<String> getChildRoles() {
-    return getChildRoles(false);
-  }
-
-  public Set<String> getReferenceRoles() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    Set<String> result = new HashSet<String>();
-    if (myReferences != null) {
-      for (SReference ref : myReferences) {
-        result.add(ref.getRole());
-      }
-    }
-    result.addAll(AttributeOperations.getLinkNamesFromAttributes(this));
-    return result;
   }
 
   public SNode getContainingRoot() {
@@ -1417,6 +1375,48 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
 
     return "<no role>";
+  }
+
+  public Set<String> getChildRoles() {
+    return getChildRoles(false);
+  }
+
+  public Set<String> getReferenceRoles() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    Set<String> result = new HashSet<String>();
+    if (myReferences != null) {
+      for (SReference ref : myReferences) {
+        result.add(ref.getRole());
+      }
+    }
+    result.addAll(AttributeOperations.getLinkNamesFromAttributes(this));
+    return result;
+  }
+
+  public Iterable<SNode> getChildrenIterable() {
+    return new Iterable<SNode>() {
+      public Iterator<SNode> iterator() {
+        return new Iterator<SNode>() {
+          private SNode current = firstChild();
+
+          public boolean hasNext() {
+            return current != null;
+          }
+
+          public SNode next() {
+            SNode result = current;
+            current = current.nextSibling();
+            return result;
+          }
+
+          public void remove() {
+            throw new UnsupportedOperationException();
+          }
+        };
+      }
+    };
   }
 
 
