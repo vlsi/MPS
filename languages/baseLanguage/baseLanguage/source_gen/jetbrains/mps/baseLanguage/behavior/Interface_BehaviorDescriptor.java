@@ -4,17 +4,13 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import java.util.Set;
+import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.scope.Scope;
 import java.util.List;
 
 public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IBLDeprecatable_BehaviorDescriptor, UnitConcept_BehaviorDescriptor {
   public Interface_BehaviorDescriptor() {
-  }
-
-  public void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
-    Interface_Behavior.virtual_populateMembers_3642561415614722944(thisNode, scope, contextClassifier);
   }
 
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
@@ -39,6 +35,10 @@ public class Interface_BehaviorDescriptor extends Classifier_BehaviorDescriptor 
 
   public boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return Interface_Behavior.virtual_checkLoops_3980490811621705349(thisNode, visited);
+  }
+
+  public void virtual_populateMembersImpl_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
+    Interface_Behavior.virtual_populateMembersImpl_3642561415614722944(thisNode, scope, contextClassifier);
   }
 
   public Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {

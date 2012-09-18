@@ -114,7 +114,7 @@ public class Interface_Behavior {
     return Classifier_Behavior.callSuper_getMembers_2201875424515824604(thisNode, "jetbrains.mps.baseLanguage.structure.Interface", kind);
   }
 
-  public static void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
+  public static void virtual_populateMembersImpl_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     // populate own members 
     for (SNode member : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
@@ -125,16 +125,16 @@ public class Interface_Behavior {
     // populate extended interfaces members 
     for (SNode extendedInterface : SLinkOperations.getTargets(thisNode, "extendedInterface", true)) {
       if ((SLinkOperations.getTarget(extendedInterface, "classifier", false) != null)) {
-        Classifier_Behavior.call_populateMembers_3642561415614722944(SLinkOperations.getTarget(extendedInterface, "classifier", false), scope, contextClassifier);
+        Classifier_Behavior.call_populateMembersImpl_3642561415614722944(SLinkOperations.getTarget(extendedInterface, "classifier", false), scope, contextClassifier);
       }
     }
   }
 
   public static Iterable<SNode> virtual_getMembersImpl_3642561415614722957(SNode thisNode) {
-    MembersPopulatingContext scope = new MembersPopulatingContext();
-    Classifier_Behavior.call_populateMembers_3642561415614722944(thisNode, scope, thisNode);
+    MembersPopulatingContext scope = new MembersPopulatingContext(thisNode);
+    Classifier_Behavior.call_populateMembersImpl_3642561415614722944(thisNode, scope, thisNode);
     if ((SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object") != null)) {
-      Classifier_Behavior.call_populateMembers_3642561415614722944(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), scope, thisNode);
+      Classifier_Behavior.call_populateMembersImpl_3642561415614722944(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), scope, thisNode);
     }
     return Sequence.fromIterable(scope.toScope().getAvailableElements(null)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {

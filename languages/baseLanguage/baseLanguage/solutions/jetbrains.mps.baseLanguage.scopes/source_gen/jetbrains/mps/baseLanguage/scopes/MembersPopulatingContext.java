@@ -7,16 +7,19 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.scope.Scope;
+import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 
 public class MembersPopulatingContext {
+  private final String packageName;
   private List<SNode> members = new ArrayList<SNode>();
   private Set<Signature> hidedMembers = new HashSet<Signature>();
 
-  public MembersPopulatingContext() {
-    // use java collections for speed 
+  public MembersPopulatingContext(SNode classifier) {
+    // java collections for speed 
+    this.packageName = JavaNameUtil.packageName(SNodeOperations.getModel(classifier));
   }
 
   public void hideMembers(Signature signature) {
@@ -38,5 +41,11 @@ public class MembersPopulatingContext {
       }
     }
     return new NamedElementsScope(namedMembers);
+  }
+
+  public void enterClassifierInternal(SNode classifier) {
+  }
+
+  public void exitClassifierInternal(SNode classifier) {
   }
 }

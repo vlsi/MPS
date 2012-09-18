@@ -325,7 +325,7 @@ public class ClassConcept_Behavior {
     return ScopeProvider_Behavior.callSuper_getScope_3734116213129936182(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", kind, child);
   }
 
-  public static void virtual_populateMembers_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
+  public static void virtual_populateMembersImpl_3642561415614722944(SNode thisNode, MembersPopulatingContext scope, SNode contextClassifier) {
     // populate own members 
     for (SNode member : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
@@ -336,13 +336,13 @@ public class ClassConcept_Behavior {
     // populate superclass members 
     SNode superClass = ClassConcept_Behavior.call_getSuperclass_1240936569950(thisNode);
     if ((superClass != null) && (SLinkOperations.getTarget(superClass, "classifier", false) != null)) {
-      Classifier_Behavior.call_populateMembers_3642561415614722944(SLinkOperations.getTarget(superClass, "classifier", false), scope, contextClassifier);
+      Classifier_Behavior.call_populateMembersImpl_3642561415614722944(SLinkOperations.getTarget(superClass, "classifier", false), scope, contextClassifier);
     }
 
     // populate implemented interfaces members 
     for (SNode implementedInterface : SLinkOperations.getTargets(thisNode, "implementedInterface", true)) {
       if ((SLinkOperations.getTarget(implementedInterface, "classifier", false) != null)) {
-        Classifier_Behavior.call_populateMembers_3642561415614722944(SLinkOperations.getTarget(implementedInterface, "classifier", false), scope, contextClassifier);
+        Classifier_Behavior.call_populateMembersImpl_3642561415614722944(SLinkOperations.getTarget(implementedInterface, "classifier", false), scope, contextClassifier);
       }
     }
   }
