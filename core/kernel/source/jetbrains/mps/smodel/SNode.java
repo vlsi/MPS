@@ -812,25 +812,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
   }
 
-  public String getRoleOf(SNode node) {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    if (node.getParent() == this) {
-      String role = node.getRole();
-      assert role != null;
-      return role;
-    }
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.getTargetNode() == node) return reference.getRole();
-      }
-    }
-
-    return "<no role>";
-  }
-
   public Set<String> getChildRoles(boolean includeAttributeRoles) {
     return addChildRoles(new HashSet<String>(), includeAttributeRoles);
   }
@@ -1417,6 +1398,25 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       }
     }
     return result;
+  }
+
+  public String getRoleOf(SNode node) {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    if (node.getParent() == this) {
+      String role = node.getRole();
+      assert role != null;
+      return role;
+    }
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.getTargetNode() == node) return reference.getRole();
+      }
+    }
+
+    return "<no role>";
   }
 
 
