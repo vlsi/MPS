@@ -424,10 +424,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
   }
 
-  public void setRoleInParent(String newRoleInParent) {//todo add undo
-    myRoleInParent = InternUtil.intern(newRoleInParent);
-  }
-
   public String getPersistentProperty(String propertyName) {
     if (myProperties == null) return null;
     if (ourMemberAccessModifier != null) {
@@ -741,16 +737,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return myModel;
   }
 
-  public void changeModel(SModel newModel) {
-    if (myModel == newModel) return;
-    LOG.assertLog(!jetbrains.mps.util.SNodeOperations.isRegistered(this), "couldn't change model of registered node " + getDebugText());
-
-    myModel = newModel;
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.changeModel(newModel);
-    }
-  }
-
   public boolean isRoot() {
     return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
   }
@@ -906,6 +892,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
     SModelRepository.getInstance().markChanged(getModel());
+  }
+
+  public void changeModel(SModel newModel) {
+    if (myModel == newModel) return;
+    LOG.assertLog(!jetbrains.mps.util.SNodeOperations.isRegistered(this), "couldn't change model of registered node " + getDebugText());
+
+    myModel = newModel;
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      child.changeModel(newModel);
+    }
   }
 
   //----------------------------------------------------------
@@ -1423,6 +1419,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       }
     }
   }
+
+  public void setRoleInParent(String newRoleInParent) {//todo add undo
+    myRoleInParent = InternUtil.intern(newRoleInParent);
+  }
+
 
   //--------private (SNode and SModel usages)-------
 
