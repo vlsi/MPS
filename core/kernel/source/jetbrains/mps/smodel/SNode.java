@@ -560,10 +560,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public boolean isDetached() {
-    return getContainingRoot() == null;
-  }
-
   public List<SReference> getReferences() {
     ModelAccess.assertLegalRead(this);
 
@@ -648,29 +644,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return myModel;
   }
 
-  public boolean isRoot() {
-    return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
-  }
-
-  public SNode getContainingRoot() {
-    ModelAccess.assertLegalRead(this);
-
-    SNode current = this;
-
-    while (true) {
-      current.fireNodeReadAccess();
-      if (current.treeParent() == null) {
-        if (getModel().isRoot(current)) {
-          return current;
-        } else {
-          return null;
-        }
-      } else {
-        current = (SNode) current.treeParent();
-      }
-    }
-  }
-
   public void replaceChild(SNode oldChild, SNode newChild) {
     SNodeBase anchor = oldChild == firstChild() ? null : oldChild.treePrevious();
     String role = oldChild.getRole();
@@ -702,9 +675,39 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
   }
 
+  //----root, deleted, etc.---
+
+  public boolean isRoot() {
+    return myRegisteredInModelFlag && getParent() == null && myModel.isRoot(this);
+  }
+
+  public SNode getContainingRoot() {
+    ModelAccess.assertLegalRead(this);
+
+    SNode current = this;
+
+    while (true) {
+      current.fireNodeReadAccess();
+      if (current.treeParent() == null) {
+        if (getModel().isRoot(current)) {
+          return current;
+        } else {
+          return null;
+        }
+      } else {
+        current = (SNode) current.treeParent();
+      }
+    }
+  }
+
   public boolean isDeleted() {
     return (_reference().size() == 0) && getParent() == null && !getModel().isRoot(this);
   }
+
+  public boolean isDetached() {
+    return getContainingRoot() == null;
+  }
+
 
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
