@@ -11297,7 +11297,7 @@
             <property name="name" nameId="tpck.1169194664001" value="cat40" />
             <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="7039601390004648960" />
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7039601390004648961">
-              <property name="value" nameId="tpee.1070475926801" value="insertChild(a,r,c,b)-&gt;SNodeOperations.insertChild()" />
+              <property name="value" nameId="tpee.1070475926801" value="insertChild(a,r,c,b)-&gt;insertChild()" />
             </node>
           </node>
         </node>

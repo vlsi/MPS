@@ -37,20 +37,6 @@ public class Trace {
     return myEnabled;
   }
 
-  public void unregisteredFromModel(SNode node) {
-    if (!isEnabled()) {
-      return;
-    }
-    node.putUserObject(UNREGISTER_NODE_KEY, new Throwable("SNode was unregistered from model"));
-  }
-
-  public void registeredInModel(SNode node) {
-    if (!isEnabled()) {
-      return;
-    }
-    node.removeUserObject(UNREGISTER_NODE_KEY);
-  }
-
   public Throwable getUnregisteredFromModelTrace(SNode node) {
     if (!isEnabled()) {
       return null;

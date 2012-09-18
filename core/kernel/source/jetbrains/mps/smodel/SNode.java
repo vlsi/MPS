@@ -376,27 +376,29 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return null;
   }
 
-  public void putUserObject(Object key, Object value) {
+  public void putUserObject(Object key, @Nullable Object value) {
     if (value == null) {
       removeUserObject(key);
       return;
     }
+
     if (myUserObjects == null) {
       myUserObjects = new Object[]{key, value};
-    } else {
-      for (int i = 0; i < myUserObjects.length; i += 2) {
-        if (myUserObjects[i].equals(key)) {
-          myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
-          myUserObjects[i + 1] = value;
-          return;
-        }
-      }
-      Object[] newarr = new Object[myUserObjects.length + 2];
-      System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
-      newarr[0] = key;
-      newarr[1] = value;
-      myUserObjects = newarr;
+      return;
     }
+
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      if (myUserObjects[i].equals(key)) {
+        myUserObjects = Arrays.copyOf(myUserObjects, myUserObjects.length, Object[].class);
+        myUserObjects[i + 1] = value;
+        return;
+      }
+    }
+    Object[] newarr = new Object[myUserObjects.length + 2];
+    System.arraycopy(myUserObjects, 0, newarr, 2, myUserObjects.length);
+    newarr[0] = key;
+    newarr[1] = value;
+    myUserObjects = newarr;
   }
 
   @Override
@@ -769,26 +771,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       nameText = "<??name??>";
     }
     return roleText + " " + NameUtil.shortNameFromLongName(NameUtil.shortNameFromLongName(getConceptFqName())) + " " + nameText + " in " + myModel.getSModelFqName();
-  }
-
-  public void removeUserObject(Object key) {
-    if (myUserObjects == null) return;
-    for (int i = 0; i < myUserObjects.length; i += 2) {
-      if (myUserObjects[i].equals(key)) {
-        Object[] newarr = new Object[myUserObjects.length - 2];
-        if (i > 0) {
-          System.arraycopy(myUserObjects, 0, newarr, 0, i);
-        }
-        if (i + 2 < myUserObjects.length) {
-          System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
-        }
-        myUserObjects = newarr;
-        break;
-      }
-    }
-    if (myUserObjects.length == 0) {
-      myUserObjects = null;
-    }
   }
 
   public void removeAllUserObjects() {
@@ -1414,6 +1396,26 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       insertChild(firstChild() == anchorChild ? null : anchorChild.treePrevious(), role, child);
     } else {
       insertChild(anchorChild, role, child);
+    }
+  }
+
+  public void removeUserObject(Object key) {
+    if (myUserObjects == null) return;
+    for (int i = 0; i < myUserObjects.length; i += 2) {
+      if (myUserObjects[i].equals(key)) {
+        Object[] newarr = new Object[myUserObjects.length - 2];
+        if (i > 0) {
+          System.arraycopy(myUserObjects, 0, newarr, 0, i);
+        }
+        if (i + 2 < myUserObjects.length) {
+          System.arraycopy(myUserObjects, i + 2, newarr, i, newarr.length - i);
+        }
+        myUserObjects = newarr;
+        break;
+      }
+    }
+    if (myUserObjects.length == 0) {
+      myUserObjects = null;
     }
   }
 
