@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
@@ -74,7 +75,7 @@ public class SNodeFactoryOperations {
       List<SNode> ch = node.getChildren(role);
       SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
       SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
-      node.setChild(role, newChild);
+      SNodeEditorUtil.setSingleChild(node,role,newChild);
       return newChild;
     }
     return null;

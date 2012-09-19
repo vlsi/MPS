@@ -50,7 +50,7 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
     }
 
     if (oldChild == null) {
-      parentNode.setChild(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newChild);
+      parentNode.addChild(SModelUtil.getGenuineLinkRole(myLinkDeclaration), newChild);
     } else {
       parentNode.replaceChild(oldChild, newChild);
       oldChild.delete();

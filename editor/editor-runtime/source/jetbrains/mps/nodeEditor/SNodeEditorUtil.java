@@ -51,4 +51,16 @@ public class SNodeEditorUtil {
   public static void removeLeftTransformHint(SNode node) {
     node.setProperty(LEFT_TRANSFORM_HINT, null);
   }
+
+  //---------------------
+
+  public static void setSingleChild(SNode node,String role, org.jetbrains.mps.openapi.model.SNode childNode) {
+    SNode oldChild = node.getChild(role);
+    if (oldChild != null) {
+      node.removeChild(oldChild);
+    }
+    if (childNode != null) {
+      node.addChild(role, childNode);
+    }
+  }
 }

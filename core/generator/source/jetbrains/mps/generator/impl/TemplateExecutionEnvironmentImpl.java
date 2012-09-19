@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.ArrayList;
@@ -328,11 +327,15 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       // there should have been warning about that
       contextParentNode.addChild(childRole, outputNodeToWeave);
     } else {
-      // if singular child then don't add more that 1 child
       if (SModelUtil.isMultipleLinkDeclaration(childLinkDeclaration)) {
         contextParentNode.addChild(childRole, outputNodeToWeave);
       } else {
-        contextParentNode.setChild(childRole, outputNodeToWeave);
+        SNode oldChild = contextParentNode.getChild(childRole);
+        if (oldChild != null) {
+          // if singular child then don't add more that 1 child
+          contextParentNode.removeChild(oldChild);
+        }
+        contextParentNode.addChild(childRole, outputNodeToWeave);
       }
     }
   }

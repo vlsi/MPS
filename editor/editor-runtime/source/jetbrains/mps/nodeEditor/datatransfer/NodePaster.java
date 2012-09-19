@@ -21,6 +21,7 @@ import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.editor.runtime.impl.DataTransferUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SModel;
@@ -169,7 +170,7 @@ public class NodePaster {
     if (!SModelUtil.isMultipleLinkDeclaration(link)) {
       assert myPasteNodes.size() == 1 : "cannot paste multiple children for role '" + SModelUtil.getLinkDeclarationRole(link) + "'";
       SNode node = normalizeForLink(myPasteNodes.get(0), link);
-      pasteTarget.setChild(SModelUtil.getLinkDeclarationRole(link), node);
+      SNodeEditorUtil.setSingleChild(pasteTarget, SModelUtil.getLinkDeclarationRole(link), node);
       CopyPasteManager.getInstance().postProcessNode(node);
       return;
     }

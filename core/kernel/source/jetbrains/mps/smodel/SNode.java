@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -480,16 +481,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
     if (ModelChange.needFireEvents(model, this)) {
       model.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
-    }
-  }
-
-  public void setChild(String role, org.jetbrains.mps.openapi.model.SNode childNode) {
-    SNode oldChild = getChild(role);
-    if (oldChild != null) {
-      removeChild(oldChild);
-    }
-    if (childNode != null) {
-      addChild(role, childNode);
     }
   }
 
@@ -1418,6 +1409,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
     if (ModelChange.needFireEvents(model, this)) {
       model.fireChildAddedEvent(this, role, child, anchor);
+    }
+  }
+
+  public void setChild(String role, org.jetbrains.mps.openapi.model.SNode childNode) {
+    SNode oldChild = getChild(role);
+    if (oldChild != null) {
+      removeChild(oldChild);
+    }
+    if (childNode != null) {
+      addChild(role, childNode);
     }
   }
 

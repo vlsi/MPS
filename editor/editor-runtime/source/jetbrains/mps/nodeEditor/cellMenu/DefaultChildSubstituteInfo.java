@@ -105,7 +105,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
       parent.insertChild(role, hole, parent.getPrevChild(child));
       parent.removeChild(child);
     } else {
-      parent.setChild(role, hole);
+      parent.addChild(role, hole);
     }
     InequalitySystem inequationsForHole = TypeChecker.getInstance().getInequalitiesForHole(hole, holeIsAType);
     inequationsForHole.replaceRefs(mapping);
