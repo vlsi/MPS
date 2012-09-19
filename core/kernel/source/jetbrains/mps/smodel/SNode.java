@@ -649,10 +649,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return myConceptFqName;
   }
 
-  public ModuleReference getConceptLanguage() {
-    return new ModuleReference(getLanguageNamespace());
-  }
-
   @NotNull
   public String getLanguageNamespace() {
     ModelAccess.assertLegalRead(this);
@@ -1421,6 +1417,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
     removeChild(oldChild);
   }
+
+  public ModuleReference getConceptLanguage() {
+    return new ModuleReference(getLanguageNamespace());
+  }
+
 
 
   //--------private (SNode and SModel usages)-------

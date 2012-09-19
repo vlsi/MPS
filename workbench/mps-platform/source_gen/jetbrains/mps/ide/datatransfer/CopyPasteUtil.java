@@ -54,7 +54,7 @@ public class CopyPasteUtil {
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
     for (SNode node : sourceNodes) {
-      necessaryLanguages.add(node.getConceptLanguage().update());
+      necessaryLanguages.add(new ModuleReference(node.getLanguageNamespace()).update());
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
