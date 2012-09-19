@@ -24,6 +24,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -56,7 +57,7 @@ public class SModelOperations {
     }
 
     for (SNode node : model.nodes()) {
-      Language lang = node.getLanguage();
+      Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) {
         LOG.error("Can't find language " + node.getLanguageNamespace());
         continue;

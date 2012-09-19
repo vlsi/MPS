@@ -647,11 +647,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName));
   }
 
-  public Language getLanguage() {
-    String languageNamespace = getLanguageNamespace();
-    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
-  }
-
   //----------------------------------------------------------
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
@@ -1420,6 +1415,11 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
     return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
+  }
+
+  public Language getLanguage() {
+    String languageNamespace = getLanguageNamespace();
+    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
   }
 
 

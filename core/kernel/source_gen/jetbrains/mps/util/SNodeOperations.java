@@ -19,6 +19,8 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.Nullable;
 
 public class SNodeOperations {
@@ -221,6 +223,10 @@ public class SNodeOperations {
         return true;
       }
     });
+  }
+
+  public static Language getLanguage(SNode node) {
+    return ModuleRepositoryFacade.getInstance().getModule(node.getConcept().getLanguage().getPresentation(), Language.class);
   }
 
   public static void copyUserObjects(SNode from, final SNode to) {
