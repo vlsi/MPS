@@ -1319,7 +1319,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public Collection<SReference> getReferencesIterable() {
-    return (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(this);
+    return jetbrains.mps.util.SNodeOperations.getReferences(this);
   }
 
   public int getIndexOfChild(SNode child_) {
