@@ -363,7 +363,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public SConcept getConcept() {
-    return new SConceptNodeAdapter(getConceptDeclarationNode());
+    return new SConceptNodeAdapter(getConceptFqName());
   }
 
   public Object getUserObject(Object key) {

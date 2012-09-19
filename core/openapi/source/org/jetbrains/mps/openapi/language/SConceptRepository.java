@@ -15,9 +15,6 @@
  */
 package org.jetbrains.mps.openapi.language;
 
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
 
 /**
@@ -26,12 +23,11 @@ import jetbrains.mps.smodel.apiadapter.SConceptNodeAdapter;
 public abstract class SConceptRepository {
   private static SConceptRepository ourInstance = new SConceptRepository() {
     public SConcept getConcept(String id) {
-      SNode cnode = SModelUtil.findConceptDeclaration(id, GlobalScope.getInstance());
-      return new SConceptNodeAdapter(cnode);
+      return new SConceptNodeAdapter(id);
     }
   };
 
-  public static SConceptRepository getInstance(){
+  public static SConceptRepository getInstance() {
     return ourInstance;
   }
 

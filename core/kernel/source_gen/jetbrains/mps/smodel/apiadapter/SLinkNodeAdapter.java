@@ -10,6 +10,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SLinkScopeProvider;
 
 public class SLinkNodeAdapter implements SLink {
@@ -40,8 +41,8 @@ public class SLinkNodeAdapter implements SLink {
   public SAbstractConcept getTargetConcept() {
     SNode t = SLinkOperations.getTarget(myNode, "target", false);
     return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ?
-      new SInterfaceConceptNodeAdapter(SNodeOperations.cast(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) :
-      new SConceptNodeAdapter(SNodeOperations.cast(t, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))
+      new SInterfaceConceptNodeAdapter(NameUtil.nodeFQName(t)) :
+      new SConceptNodeAdapter(NameUtil.nodeFQName(t))
     );
   }
 

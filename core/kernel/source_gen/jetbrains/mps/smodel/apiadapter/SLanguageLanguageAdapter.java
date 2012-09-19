@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.NameUtil;
 
 public class SLanguageLanguageAdapter implements SLanguage {
   private Language myLanguage;
@@ -36,7 +37,7 @@ public class SLanguageLanguageAdapter implements SLanguage {
       }
     }).select(new ISelector<SNode, SConceptNodeAdapter>() {
       public SConceptNodeAdapter select(SNode it) {
-        return new SConceptNodeAdapter(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
+        return new SConceptNodeAdapter(NameUtil.nodeFQName(it));
       }
     }));
     ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
@@ -45,7 +46,7 @@ public class SLanguageLanguageAdapter implements SLanguage {
       }
     }).select(new ISelector<SNode, SInterfaceConceptNodeAdapter>() {
       public SInterfaceConceptNodeAdapter select(SNode it) {
-        return new SInterfaceConceptNodeAdapter(SNodeOperations.cast(it, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
+        return new SInterfaceConceptNodeAdapter(NameUtil.nodeFQName(it));
       }
     }));
     return c;
