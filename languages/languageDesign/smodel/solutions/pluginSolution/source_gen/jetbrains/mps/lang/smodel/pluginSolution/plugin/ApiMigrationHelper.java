@@ -180,13 +180,13 @@ public class ApiMigrationHelper {
               SLinkOperations.setTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", newSnodeNode, false);
             }
             for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTypes)) {
-              tmplCls._0().setReference(tmplCls._1());
+              tmplCls._0().setReference(tmplCls._1().getRole(), tmplCls._1());
             }
             for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTemplates)) {
-              tmplCls._0().setReference(tmplCls._1());
+              tmplCls._0().setReference(tmplCls._1().getRole(), tmplCls._1());
             }
             for (Tuples._2<SNode, SReference> change : SetSequence.fromSet(changedMethodCalls)) {
-              change._0().setReference(change._1());
+              change._0().setReference(change._1().getRole(), change._1());
             }
             for (SNode occ : SetSequence.fromSet(castedMethodCalls)) {
               SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(occ), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
