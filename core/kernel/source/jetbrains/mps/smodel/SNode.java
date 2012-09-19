@@ -487,24 +487,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public int getIndexOfChild(SNode child_) {
-    ModelAccess.assertLegalRead(this);
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-
-    String role_ = child_.getRole();
-    if (role_ == null) return -1;
-    int count = 0;
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      if (child == child_) return count;
-      if (role_.equals(child.getRole())) {
-        count++;
-      }
-    }
-    return -1;
-  }
-
   public List<SNode> getChildren(boolean includeAttributes) {
     ModelAccess.assertLegalRead(this);
     fireNodeReadAccess();
@@ -1418,6 +1400,24 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public Collection<SReference> getReferencesIterable() {
     return getReferences();
+  }
+
+  public int getIndexOfChild(SNode child_) {
+    ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+
+    String role_ = child_.getRole();
+    if (role_ == null) return -1;
+    int count = 0;
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      if (child == child_) return count;
+      if (role_.equals(child.getRole())) {
+        count++;
+      }
+    }
+    return -1;
   }
 
   //--------private (SNode and SModel usages)-------
