@@ -211,12 +211,11 @@ public class QueriesGenerated {
     return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_7952658987872215075(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode configuration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), "configuration", false);
-    return IGeneratedToClass_Behavior.call_getNamespace_2256484787298834694(configuration) + "." + RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(configuration);
+  public static Object propertyMacro_GetPropertyValue_6519221734259390311(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), "configuration", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_2572811016744697082(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_6519221734259407644(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), "configuration", false));
   }
 
@@ -531,7 +530,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "source", true);
   }
 
-  public static SNode sourceNodeQuery_2572811016744697112(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_6519221734259310277(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), "configurationName", true);
   }
 
