@@ -833,7 +833,9 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
       getEditor().getCellTracker().removeFoldableCell(this);
     }
     removeUnfoldingListener();
-    getEditor().setFolded(this, false);
+    if (isFolded()) {
+      getEditor().setFolded(this, false);
+    }
 
     if (myLastCellSelectionListener != null) {
       setBracesEnabled(false);
