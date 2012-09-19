@@ -23,7 +23,7 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -182,7 +182,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
             tlist6 = TemplateUtil.singletonList(tnode7);
             // put input node 
             for (SNode resultNode : CollectionSequence.fromCollection(tlist6)) {
-              TemplateQueryContext.fillOriginalNode(copySrcInput6, resultNode, copySrcInput6.getModel() == environment.getGenerator().getGeneratorSessionContext().getOriginalInputModel());
+              TracingUtil.fillOriginalNode(copySrcInput6, resultNode, copySrcInput6.getModel() == environment.getGenerator().getGeneratorSessionContext().getOriginalInputModel());
             }
           } finally {
             environment.getTracer().closeMacro(traceMacro_417xrn_a0a0a1a5a2a4a);
