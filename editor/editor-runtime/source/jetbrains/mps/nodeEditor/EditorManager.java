@@ -46,7 +46,7 @@ public class EditorManager {
 
   public static final String OLD_NODE_FOR_SUBSTITUTION = "oldNode";
 
-  private HashMap<ReferencedNodeContext, EditorCell> myMap = new HashMap<ReferencedNodeContext, EditorCell>();
+  private Deque<Map<ReferencedNodeContext, EditorCell>> myContextToOldCellMap = new LinkedList<Map<ReferencedNodeContext, EditorCell>>();
   private boolean myCreatingInspectedCell = false;
 
   private Map<Class, Stack<EditorCell>> myAttributedClassesToAttributedCellStacksMap = new HashMap<Class, Stack<EditorCell>>();
@@ -86,45 +86,45 @@ public class EditorManager {
       EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
       EditorCell rootCell = nodeEditorComponent.getRootCell();
       ReferencedNodeContext nodeRefContext = ReferencedNodeContext.createNodeContext(node);
-      myMap.clear();
-      if (rootCell != null) {
-        myMap.putAll(getContextToCellMap(rootCell));
+      List<Pair<SNode, SNodePointer>> modifications = convert(events);
+      //assert myContextToOldCellMap.isEmpty();
+      myContextToOldCellMap.clear();
+      myContextToOldCellMap.push(new HashMap<ReferencedNodeContext, EditorCell>());
+      if (rootCell != null && modifications != null) {
+        fillContextToCellMap(rootCell, myContextToOldCellMap.peek());
       }
       myCreatingInspectedCell = isInspectorCell;
-      return createEditorCell(context, convert(events), nodeRefContext);
+
+      return createEditorCell(context, modifications, nodeRefContext);
     } finally {
-      myMap.clear();
+      myContextToOldCellMap.pop();
       context.popTracerTask();
     }
   }
 
-  private static Map<ReferencedNodeContext, EditorCell> getContextToCellMap(EditorCell cell) {
-    Map<ReferencedNodeContext, EditorCell> result = new HashMap<ReferencedNodeContext, EditorCell>();
+  private static void fillContextToCellMap(EditorCell cell, Map<ReferencedNodeContext, EditorCell> map) {
     Object bigCellContext = cell.getUserObject(BIG_CELL_CONTEXT);
     if (bigCellContext instanceof ReferencedNodeContext) {
       ReferencedNodeContext refContext = (ReferencedNodeContext) bigCellContext;
-      result.put(refContext, cell);
+      map.put(refContext, cell);
       // Don't go deeper if this cell represents normal node.
       //
       // Go deeper if this cell represents attribute node
       // since we need to load mappings for all child attributes
       // till the "main" node's cell and main node's cell itself.
       if (!refContext.isNodeAttribute()) {
-        return result;
+        return;
       }
     }
-    result.putAll(getContextToCellMapForChildren(cell));
-    return result;
+    fillContextToCellMapForChildren(cell, map);
   }
 
-  private static Map<ReferencedNodeContext, EditorCell> getContextToCellMapForChildren(EditorCell cell) {
-    Map<ReferencedNodeContext, EditorCell> result = new HashMap<ReferencedNodeContext, EditorCell>();
+  private static void fillContextToCellMapForChildren(EditorCell cell, Map<ReferencedNodeContext, EditorCell> map) {
     if (cell instanceof EditorCell_Collection) {
       for (EditorCell childCell : ((EditorCell_Collection) cell)) {
-        result.putAll(getContextToCellMap(childCell));
+        fillContextToCellMap(childCell, map);
       }
     }
-    return result;
   }
 
   public EditorCell getCurrentAttributedPropertyCell() {
@@ -237,8 +237,9 @@ public class EditorManager {
       }
 
       EditorComponent nodeEditorComponent = context.getNodeEditorComponent();
+      Map<ReferencedNodeContext, EditorCell> childContextToCellMap = null;
       if (modifications != null) {
-        EditorCell oldCell = myMap.get(refContext);
+        EditorCell oldCell = myContextToOldCellMap.peek().get(refContext);
         boolean nodeChanged = isNodeChanged(modifications, nodeEditorComponent, oldCell);
 
         if (!nodeChanged) {
@@ -266,11 +267,20 @@ public class EditorManager {
             return oldCell;
           }
         }
-        myMap.putAll(getContextToCellMapForChildren(oldCell));
+        fillContextToCellMapForChildren(oldCell, childContextToCellMap = new HashMap<ReferencedNodeContext, EditorCell>());
         nodeEditorComponent.clearNodesCellDependsOn(oldCell, this);
       }
 
-      return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
+      try {
+        if (childContextToCellMap != null) {
+          myContextToOldCellMap.push(childContextToCellMap);
+        }
+        return createEditorCell_internal(context, myCreatingInspectedCell, refContext);
+      } finally {
+        if (childContextToCellMap != null) {
+          myContextToOldCellMap.pop();
+        }
+      }
     } finally {
       context.popTracerTask();
     }
