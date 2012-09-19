@@ -152,7 +152,7 @@ public class ModuleLoader {
       myModuleDescriptor = md;
       myModuleFile = file;
     } catch (Exception ex) {
-      report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": exception: " + ex.getMessage(), myOriginalModule);
+      report("cannot import module file for " + SPropertyOperations.getString(myModule, "name") + ": exception: " + ex.getMessage(), myOriginalModule, ex);
       ex.printStackTrace(System.err);
     }
   }
@@ -602,11 +602,7 @@ public class ModuleLoader {
       } else {
         resolved = SNodeOperations.as(visible.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
         if (resolved == null) {
-          if (genContext != null) {
-            genContext.showWarningMessage(myOriginalModule, "unsatisfied dependency: " + dep.getModuleRef().toString());
-          }
-          // TODO FIXME 
-          // <node> 
+          report("unsatisfied dependency: " + dep.getModuleRef().toString(), myOriginalModule);
           continue;
         }
       }
@@ -713,11 +709,7 @@ public class ModuleLoader {
       } else {
         resolved = SNodeOperations.as(visible.resolve(targetName, moduleRef.getModuleId().toString()), "jetbrains.mps.build.mps.structure.BuildMps_Module");
         if (resolved == null) {
-          if (genContext != null) {
-            genContext.showWarningMessage(myOriginalModule, "unsatisfied dependency: " + dep.getModuleRef().toString());
-          }
-          // TODO FIXME 
-          // <node> 
+          report("unsatisfied dependency: " + dep.getModuleRef().toString(), myOriginalModule);
           continue;
         }
       }
@@ -828,14 +820,18 @@ public class ModuleLoader {
     try {
       return pathConverter.convertPath(path, SNodeOperations.getModel(myModule));
     } catch (PathConverter.PathConvertException ex) {
-      report(ex.getMessage(), anchor);
+      report(ex.getMessage(), anchor, ex);
       return null;
     }
   }
 
   protected void report(String message, SNode node) {
+    report(message, node, null);
+  }
+
+  protected void report(String message, SNode node, Exception cause) {
     if (genContext == null) {
-      throw new ModuleLoader.ModuleLoaderException(message, node);
+      throw new ModuleLoader.ModuleLoaderException(message, node, cause);
     }
 
     genContext.showErrorMessage(node, message);
@@ -872,8 +868,8 @@ public class ModuleLoader {
   public static class ModuleLoaderException extends RuntimeException {
     private SNode node;
 
-    public ModuleLoaderException(String message, SNode node) {
-      super(message);
+    public ModuleLoaderException(String message, SNode node, Throwable cause) {
+      super(message, cause);
       this.node = node;
     }
 
@@ -926,6 +922,13 @@ public class ModuleLoader {
           Context.defaultContext(genContext) :
           Context.defaultContext()
         ));
+        if (localPath == null) {
+          if (genContext != null) {
+            genContext.showWarningMessage(found, "cannot resolve local path: " + path + ", macro has no default value");
+          }
+          return path;
+        }
+
         String relPath = path.substring(index + 1);
         return IFileUtils.getCanonicalPath(FileSystem.getInstance().getFileByPath(localPath).getDescendant(relPath));
       }

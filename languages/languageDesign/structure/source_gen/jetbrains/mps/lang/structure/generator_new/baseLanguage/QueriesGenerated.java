@@ -47,11 +47,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1226343664102(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).isNotEmpty();
   }
 
   public static boolean createRootRule_Condition_3125857749401203974(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    return ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).isNotEmpty();
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.structure.structure.DataTypeDeclaration")).isNotEmpty();
   }
 
   public static boolean baseMappingRule_Condition_3345876218930170217(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -1042,7 +1042,7 @@ __switch__:
   }
 
   public static Iterable sourceNodesQuery_1281791650135608648(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SModelOperations.getNodes(_context.getOriginalInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
         return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
       }

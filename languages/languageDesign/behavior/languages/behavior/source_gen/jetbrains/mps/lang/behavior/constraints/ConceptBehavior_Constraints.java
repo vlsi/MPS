@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class ConceptBehavior_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1227088888254");
@@ -68,6 +69,6 @@ public class ConceptBehavior_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.BEHAVIOR.is(model);
+    return LanguageAspect.BEHAVIOR.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 }

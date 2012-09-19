@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class InterfaceConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087672328");
@@ -34,6 +35,6 @@ public class InterfaceConceptDeclaration_Constraints extends BaseConstraintsDesc
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.STRUCTURE.is(model);
+    return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 }

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModelStereotype;
 
 public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087688291");
@@ -99,6 +100,6 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
   }
 
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
-    return LanguageAspect.STRUCTURE.is(model);
+    return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
 }

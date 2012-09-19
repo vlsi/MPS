@@ -94,7 +94,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.IMResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.MResource" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._3" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
