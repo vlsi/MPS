@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.style.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -63,6 +62,7 @@ public class TextLine {
   private int mySelectionStartX = -1;
   private int mySelectionEndX = -1;
   private int myTextEndX = -1;
+  private int myMinWidth = -1;
   private int myStartTextSelectionPosition = 0;
   private int myEndTextSelectionPosition = 0;
 
@@ -171,6 +171,7 @@ public class TextLine {
    */
   public void setMinimalLength(int length) {
     myMinimalLength = length;
+    myMinWidth = -1;
   }
 
   private void updateStyle(Set<StyleAttribute> attributes) {
@@ -221,20 +222,23 @@ public class TextLine {
     FontMetrics metrics = getFontMetrics();
     myHeight = (int) (metrics.getHeight() * myLineSpacing + getPaddingTop() + getPaddingBottom());
     myTextHeight = (int) (metrics.getHeight() * myLineSpacing);
-    int minWidth = calculateMinWidth(metrics);
+    int minWidth = calculateMinWidth();
     int width = metrics.charsWidth(myText.toCharArray(), 0, myText.length()) + getPaddingLeft() + getPaddingRight();
     myWidth = Math.max(minWidth, width);
     myDescent = metrics.getDescent();
   }
 
-  public int getEffectiveWidth(FontMetrics metrics) {
-    int minWidth = calculateMinWidth(metrics);
+  int getEffectiveWidth() {
+    int minWidth = calculateMinWidth();
     int effectiveWidth = myWidth - getPaddingLeft() - getPaddingRight();
     return Math.max(minWidth, effectiveWidth);
   }
 
-  private int calculateMinWidth(FontMetrics metrics) {
-    return Math.max(myMinimalLength * metrics.charWidth('w'), 2);
+  private int calculateMinWidth() {
+    if (myMinWidth == -1) {
+      myMinWidth = Math.max(myMinimalLength * getFontMetrics().charWidth('w'), 2);
+    }
+    return myMinWidth;
   }
 
   private int getHorizontalInternalInset(Padding p) {
