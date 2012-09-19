@@ -35,6 +35,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import javax.swing.Icon;
 import java.util.*;
@@ -265,7 +266,7 @@ public class ChildSubstituteActionsHelper {
     IReferencePresentation presentation = refDescriptor.getReferencePresentation();
     Iterable<SNode> referentNodes = searchScope.getAvailableElements(null);
     for (SNode referentNode : referentNodes) {
-      if(referentNode == null || !referentNode.isInstanceOfConcept(targetConcept)) continue;
+      if(referentNode == null || !referentNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(targetConcept))) continue;
       actions.add(new SmartRefChildNodeSubstituteAction(referentNode, parentNode,
         currentChild, childSetter, context.getScope(), smartConcept, smartReference, presentation));
     }

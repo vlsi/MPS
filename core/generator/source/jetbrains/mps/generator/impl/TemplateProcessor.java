@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.ArrayList;
@@ -104,7 +105,7 @@ public class TemplateProcessor {
     int macroCount = 0;
     // templateNode has unprocessed node-macros?
     for (SNode templateChildNode : templateNode.getChildren()) {
-      if (!(templateChildNode.isInstanceOfConcept(RuleUtil.concept_NodeMacro))) continue;
+      if (!(templateChildNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(RuleUtil.concept_NodeMacro)))) continue;
       macroCount++;
       if (macroCount <= nodeMacrosToSkip) continue;
       generationTracer.pushMacro(new SNodePointer(templateChildNode));

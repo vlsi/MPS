@@ -33,6 +33,7 @@ import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.reference.SNodeReference;
 
@@ -424,7 +425,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return new ArrayList<SReference>(_reference());
   }
 
-  //-------------------------------------------------------
+//-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
@@ -667,10 +668,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //----------------------------------------------------------
   //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
   //----------------------------------------------------------
-
-  public boolean isInstanceOfConcept(String conceptFqName) {
-    return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
-  }
 
   public SNode getConceptDeclarationNode() {
     return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
@@ -1046,7 +1043,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public boolean isInstanceOfConcept(SNode concept) {
-    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
+    return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept)));
   }
 
   public boolean isReferentRequired(String role) {
@@ -1416,6 +1413,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     } else {
       return new SkipAttributesChildrenList(firstChild);
     }
+  }
+
+  public boolean isInstanceOfConcept(String conceptFqName) {
+    return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
   //--------private (SNode and SModel usages)-------

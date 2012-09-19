@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.presentation;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.awt.Font;
 
@@ -76,7 +77,7 @@ public class NodePresentationUtil {
     }
 
     if (!visible) {
-      if (node.isInstanceOfConcept(SNodeUtil.concept_IResolveInfo)) {
+      if (node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(SNodeUtil.concept_IResolveInfo))) {
         return SNodeUtil.getResolveInfo(node);
       }
     }

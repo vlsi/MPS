@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,7 +99,7 @@ class IntelligentNodeMover {
       SNode currentTarget = parent.getParent();
 
       while (currentTarget != null) {
-        if (currentTarget.isInstanceOfConcept(NameUtil.nodeFQName(targetType))) {
+        if (currentTarget.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(targetType)))) {
           parent.removeChild(current);
           addWithAnchor(currentTarget, currentAnchor, role, current);
           moveOtherNodes(current);
@@ -161,7 +162,7 @@ class IntelligentNodeMover {
   }
 
   private SNode findNodeAtBoundary(SNode acd, SNode current, boolean includeThis) {
-    if (includeThis && current.isInstanceOfConcept(NameUtil.nodeFQName(acd))) {
+    if (includeThis && current.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(acd)))) {
       return current;
     }
 

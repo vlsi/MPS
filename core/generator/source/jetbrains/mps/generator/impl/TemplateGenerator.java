@@ -39,6 +39,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode.ReferenceVisitor;
 
 import java.util.*;
@@ -337,7 +338,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     try {
-      if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
+      if (inputRootNode.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(applicableConcept))) {
         if (environment.getReductionContext().getQueryExecutor().isApplicable(rule, environment, new DefaultTemplateContext(inputRootNode))) {
           myGenerationTracer.pushInputNode(inputRootNode);
           myGenerationTracer.pushRule(rule.getRuleNode());
