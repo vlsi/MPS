@@ -93,9 +93,7 @@ public interface SNode {
 
   SReference getReference(String role);
 
-  void setReference(SReference reference);
-
-  void removeReference(SReference ref);
+  void setReference(String role, SReference reference);
 
   public Iterable<? extends SReference> getReferences();  //?needed
 

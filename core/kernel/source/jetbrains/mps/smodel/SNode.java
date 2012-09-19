@@ -266,19 +266,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return result;
   }
 
-  public void setReference(org.jetbrains.mps.openapi.model.SReference reference) {
-    addReference((SReference) reference);
-  }
-
-  public void removeReference(org.jetbrains.mps.openapi.model.SReference referenceToRemove) {
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.equals(referenceToRemove)) {
-          int index = _reference().indexOf(reference);
-          removeReferenceAt(index);
-          break;
-        }
+  public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+    for (SReference r : myReferences) {
+      if (r.getRole().equals(role)) {
+        int index = _reference().indexOf(r);
+        removeReferenceAt(index);
+        break;
       }
+    }
+    if (reference != null) {
+      addReference((SReference) reference);
     }
   }
 
@@ -480,18 +477,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
     if (ModelChange.needFireEvents(model, this)) {
       model.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
-    }
-  }
-
-  public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (reference.equals(referenceToRemove)) {
-          int index = _reference().indexOf(reference);
-          replaceReferenceAt(index, referenceToAdd);
-          break;
-        }
-      }
     }
   }
 
@@ -1414,6 +1399,34 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public Language getNodeLanguage() {
     return jetbrains.mps.util.SNodeOperations.getLanguage(this);
+  }
+
+  public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.equals(referenceToRemove)) {
+          int index = _reference().indexOf(reference);
+          replaceReferenceAt(index, referenceToAdd);
+          break;
+        }
+      }
+    }
+  }
+
+  public void removeReference(org.jetbrains.mps.openapi.model.SReference referenceToRemove) {
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (reference.equals(referenceToRemove)) {
+          int index = _reference().indexOf(reference);
+          removeReferenceAt(index);
+          break;
+        }
+      }
+    }
+  }
+
+  public void setReference(SReference reference) {
+    setReference(reference.getRole(), reference);
   }
 
   //--------private (SNode and SModel usages)-------
