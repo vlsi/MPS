@@ -36,6 +36,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SLanguageLanguageAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SLinkNodeAdapter" />
     <classNode dependClassName="jetbrains.mps.smodel.apiadapter.SPropertyNodeAdapter" />
+    <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
     <classNode dependClassName="jetbrains.mps.smodel.search.SModelSearchUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />

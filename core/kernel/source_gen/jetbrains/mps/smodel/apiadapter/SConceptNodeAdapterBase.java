@@ -6,19 +6,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SLink;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SProperty;
 import java.util.List;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 
@@ -38,15 +39,11 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     return myConceptName;
   }
 
-  public SLink findLink(final String name) {
-    SNode link = ListSequence.fromList((List<SNode>) SModelSearchUtil.getLinkDeclarations(getConcept())).findFirst(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return eq_vein7o_a0a0a0a0a0a0a2(SPropertyOperations.getString(it, "role"), name);
-      }
-    });
-    return (link == null ?
+  public SLink findLink(String role) {
+    SNode ld = new ConceptAndSuperConceptsScope(getConcept()).getLinkDeclarationByRole(role);
+    return (ld == null ?
       null :
-      new SLinkNodeAdapter(link)
+      new SLinkNodeAdapter(SNodeOperations.cast(ld, "jetbrains.mps.lang.structure.structure.LinkDeclaration"))
     );
   }
 
@@ -100,13 +97,6 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
       myConcept = SModelUtil.findConceptDeclaration(myConceptName, GlobalScope.getInstance());
     }
     return myConcept;
-  }
-
-  private static boolean eq_vein7o_a0a0a0a0a0a0a2(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   private static boolean eq_vein7o_a0a0a0a0a0a0a4(Object a, Object b) {
