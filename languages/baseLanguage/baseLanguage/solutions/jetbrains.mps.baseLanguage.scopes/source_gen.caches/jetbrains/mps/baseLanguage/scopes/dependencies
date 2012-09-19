@@ -68,6 +68,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopeUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifiersScope" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.VisibilityUtil" />

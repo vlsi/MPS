@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -104,7 +105,7 @@ public class ClassifierScopes {
         }
 
         SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
-        if (SPropertyOperations.getBoolean(classifier, "nonStatic") || SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+        if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier))) {
           return true;
         }
 
