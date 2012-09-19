@@ -132,7 +132,7 @@ public final class OldBehaviorManager implements CoreComponent {
 
   public void initNode(@NotNull SNode node) {
     String conceptFqName = InternUtil.intern(node.getConcept().getId());
-    String languageNamespace = node.getLanguageNamespace();
+    String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
     Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
 
     List<Method> methodsToCall;

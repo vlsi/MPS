@@ -59,7 +59,7 @@ public class SModelOperations {
     for (SNode node : model.nodes()) {
       Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) {
-        LOG.error("Can't find language " + node.getLanguageNamespace());
+        LOG.error("Can't find language " + NameUtil.namespaceFromConceptFQName(node.getConceptFqName()));
         continue;
       }
       ModuleReference ref = lang.getModuleReference();

@@ -18,7 +18,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -637,14 +636,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return myConceptFqName;
-  }
-
-  @NotNull
-  public String getLanguageNamespace() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    return InternUtil.intern(NameUtil.namespaceFromConceptFQName(myConceptFqName));
   }
 
   //----------------------------------------------------------
@@ -1404,7 +1395,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public ModuleReference getConceptLanguage() {
-    return new ModuleReference(getLanguageNamespace());
+    return new ModuleReference(NameUtil.namespaceFromConceptFQName(getConceptFqName()));
   }
 
   public SNode findConceptProperty(String propertyName) {
@@ -1418,10 +1409,14 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public Language getLanguage() {
-    String languageNamespace = getLanguageNamespace();
+    String languageNamespace = NameUtil.namespaceFromConceptFQName(getConceptFqName());
     return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
   }
 
+  @NotNull
+  public String getLanguageNamespace() {
+    return NameUtil.namespaceFromConceptFQName(getConceptFqName());
+  }
 
 
   //--------private (SNode and SModel usages)-------
