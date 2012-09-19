@@ -188,7 +188,7 @@ public class Equations {
   }
 
   private void replaceReferences(SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
-    List<SReference> references = new ArrayList<SReference>(node.getReferences());
+    List<SReference> references = new ArrayList<SReference>((List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node));
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (TypesUtil.isVariable(oldNode)) {

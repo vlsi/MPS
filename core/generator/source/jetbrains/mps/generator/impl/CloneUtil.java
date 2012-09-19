@@ -21,6 +21,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 
+import java.util.List;
+
 public class CloneUtil {
   private static final Logger LOG = Logger.getLogger(CloneUtil.class);
 
@@ -61,7 +63,7 @@ public class CloneUtil {
     if (originalInput) {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
-    for (SReference reference : inputNode.getReferences()) {
+    for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(inputNode)) {
       SModelReference targetModelReference = reference.isExternal() ? reference.getTargetSModelReference() : outputModel.getSModelReference();
       if (reference instanceof StaticReference) {
         if (targetModelReference == null) {

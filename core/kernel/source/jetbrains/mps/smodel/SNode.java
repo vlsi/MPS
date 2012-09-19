@@ -420,10 +420,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
-  public boolean isInstanceOfConcept(String conceptFqName) {
-    return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
-  }
-
   public String getPersistentProperty(String propertyName) {
     if (myProperties == null) return null;
     if (ourMemberAccessModifier != null) {
@@ -542,14 +538,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public List<SReference> getReferences() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    return new ArrayList<SReference>(_reference());
-  }
-
   public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
     if (myReferences != null) {
       for (SReference reference : myReferences) {
@@ -663,7 +651,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getContainingRoot() == null;
   }
 
-
   //----------------------------------------------------------
   //-------------MIGRATE TOGETHER WITH MODELS CODE------------
   //----------------------------------------------------------
@@ -685,6 +672,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   //----------------------------------------------------------
   //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
   //----------------------------------------------------------
+
+  public boolean isInstanceOfConcept(String conceptFqName) {
+    return SModelUtil.isAssignableConcept(myConceptFqName, conceptFqName);
+  }
 
   public SNode getConceptDeclarationNode() {
     return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
@@ -1385,7 +1376,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public Collection<SReference> getReferencesIterable() {
-    return getReferences();
+    return (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(this);
   }
 
   public int getIndexOfChild(SNode child_) {
@@ -1417,6 +1408,14 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public SReference setReferent(String role, SNode newReferent) {
     return setReferent(role, newReferent, true);
+  }
+
+  public List<SReference> getReferences() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    return new ArrayList<SReference>(_reference());
   }
 
   //--------private (SNode and SModel usages)-------

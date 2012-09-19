@@ -331,9 +331,9 @@ public class NodeTypesComponent {
 
       List<SReference> references = new ArrayList<SReference>();
       SNode child = event.getChild();
-      references.addAll(child.getReferences());
+      references.addAll((List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(child));
       for (SNode descendant : (List<SNode>)(List)jetbrains.mps.util.SNodeOperations.getDescendants(child, null)) {
-        references.addAll(descendant.getReferences());
+        references.addAll((List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(descendant));
         if (event.isRemoved()) {
           //invalidate nodes which are removed
           markDependentNodesForInvalidation(descendant, myNonTypeSystemComponent);

@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.persistence.def.XmlStringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 
+import java.util.List;
 import java.util.Map;
 
 public class ModelWriter7 implements IModelWriter {
@@ -139,7 +140,7 @@ public class ModelWriter7 implements IModelWriter {
       element.addContent(propertyElement);
     }
 
-    for (SReference reference : node.getReferences()) {
+    for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
       Element linkElement = new Element(ModelPersistence.LINK);
       linkElement.setAttribute(ModelPersistence.ROLE, myHelper.genRole(reference));
       DocUtil.setNotNullAttribute(linkElement, ModelPersistence.ROLE_ID, myHelper.genRoleId(reference));

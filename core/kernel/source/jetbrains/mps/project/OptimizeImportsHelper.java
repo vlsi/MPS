@@ -142,7 +142,7 @@ public class OptimizeImportsHelper {
     }
     for (SNode node : modelDescriptor.getSModel().nodes()) {
       result.myUsedLanguages.add(node.getLanguage());
-      for (SReference ref : node.getReferences()) {
+      for (SReference ref : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
         SModelReference mr = ref.getTargetSModelReference();
         if (!modelDescriptor.getSModelReference().equals(mr)) {
           result.myUsedModels.add(mr);

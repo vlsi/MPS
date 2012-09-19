@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
+import java.util.List;
+
 public class ReferencesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
 
@@ -46,7 +48,7 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
   protected void doInit() {
     super.doInit();
 
-    for (final SReference ref : myNode.getReferences()) {
+    for (final SReference ref : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(myNode)) {
       add(new ReferenceTreeNode(this.getOperationContext(), ref));
     }
 

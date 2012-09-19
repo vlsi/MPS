@@ -117,7 +117,7 @@ public class ReferencesTest extends BaseMPSTest {
 
     for (SNode node : sm.getSModel().nodes()) {
 
-      for (SReference ref : node.getReferences()) {
+      for (SReference ref : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
         if (SNodeUtil.hasReferenceMacro(node, ref.getRole())) {
           continue;
         }

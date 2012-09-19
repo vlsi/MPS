@@ -161,11 +161,13 @@ public class DelayedChanges {
     }
 
     private void validateReferences(SNode node) {
-      for (SReference reference : node.getReferences()) {
-        validateReference(reference);
-      }
-            for (SNode child : node.getChildren()) {
-        validateReferences(child);
+      List<SNode> descendants = node.getDescendants();
+      descendants.add(node);
+
+      for (SNode d: descendants){
+        for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(d)) {
+          validateReference(reference);
+        }
       }
     }
 
