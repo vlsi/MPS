@@ -199,7 +199,7 @@ public class Equations {
         if (newNode != oldNode) {
           String role = reference.getRole();
           node.removeReference(reference);
-          node.setReferent(role, newNode);
+          node.setReferenceTarget(role, newNode);
         }
       }
     }

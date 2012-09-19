@@ -148,7 +148,7 @@ public class TemplateProcessor {
         );
         outputNode.setReference(postponedReference);
       } else {
-        outputNode.setReferent(reference.getRole(), templateReferentNode);
+        outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
       }
     }
 

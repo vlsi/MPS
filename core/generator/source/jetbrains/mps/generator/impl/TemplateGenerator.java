@@ -578,7 +578,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         );
         outputNode.setReference(reference);
       } else if (jetbrains.mps.util.SNodeOperations.isRegistered(inputTargetNode)) {
-        outputNode.setReferent(inputReference.getRole(), inputTargetNode);
+        outputNode.setReferenceTarget(inputReference.getRole(), inputTargetNode);
       } else {
         myLogger.error(templateNode != null ? templateNode.getNode() : inputNode, "broken reference '" + inputReference.getRole() + "' in " + inputNode.getDebugText() + " (unregistered target node)",
           GeneratorUtil.describeIfExists(inputNode, "input node"),

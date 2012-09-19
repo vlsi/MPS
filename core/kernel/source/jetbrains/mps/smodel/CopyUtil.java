@@ -182,9 +182,9 @@ public final class CopyUtil {
             outputNode.setReference(output);
           }
         } else if (mapping.containsKey(inputTargetNode)) {
-          outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode));
+          outputNode.setReferenceTarget(ref.getRole(), mapping.get(inputTargetNode));
         } else {
-          outputNode.setReferent(ref.getRole(), inputTargetNode);
+          outputNode.setReferenceTarget(ref.getRole(), inputTargetNode);
         }
       }
     }

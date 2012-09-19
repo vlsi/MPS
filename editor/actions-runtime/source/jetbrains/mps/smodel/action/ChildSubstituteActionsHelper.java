@@ -353,7 +353,7 @@ public class ChildSubstituteActionsHelper {
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
       SNode childNode = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(mySmartConcept), model, GlobalScope.getInstance());
       String referentRole = SModelUtil.getGenuineLinkRole(mySmartReference);
-      childNode.setReferent(referentRole, myReferentNode);
+      childNode.setReferenceTarget(referentRole, myReferentNode);
       NodeFactoryManager.setupNode(mySmartConcept, childNode, myCurrentChild, myParentNode, model, getScope());
       return childNode;
     }

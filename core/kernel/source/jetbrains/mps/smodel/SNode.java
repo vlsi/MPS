@@ -230,7 +230,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (target == null) {
       removeReferent(role);
     } else {
-      setReferent(role, (SNode) target);
+      setReferent(role, ((SNode) target));
     }
   }
 
@@ -549,12 +549,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     fireNodeUnclassifiedReadAccess();
     return new ArrayList<SReference>(_reference());
   }
-
-  public SReference setReferent(String role, SNode newReferent) {
-
-    return setReferent(role, newReferent, true);
-  }
-
 
   public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
     if (myReferences != null) {
@@ -1419,6 +1413,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result);
     }
     return result;
+  }
+
+  public SReference setReferent(String role, SNode newReferent) {
+    return setReferent(role, newReferent, true);
   }
 
   //--------private (SNode and SModel usages)-------
