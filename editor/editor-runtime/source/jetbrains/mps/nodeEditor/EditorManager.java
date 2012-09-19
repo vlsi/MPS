@@ -61,7 +61,7 @@ public class EditorManager {
     if (events == null) {
       return null;
     }
-    List<Pair<SNode, SNodePointer>> result = new ArrayList<Pair<SNode, SNodePointer>>();
+    LinkedHashSet<Pair<SNode, SNodePointer>> result = new LinkedHashSet<Pair<SNode, SNodePointer>>();
     for (SModelEvent event : events) {
       SNode eventNode;
       if (event instanceof SModelChildEvent) {
@@ -71,9 +71,18 @@ public class EditorManager {
       } else if (event instanceof SModelPropertyEvent) {
         eventNode = ((SModelPropertyEvent) event).getNode();
       } else continue;
-      result.add(new Pair<SNode, SNodePointer>(eventNode, new SNodePointer(eventNode)));
+      result.add(new Pair<SNode, SNodePointer>(eventNode, new SNodePointer(eventNode) {
+        int myHashCode = -1;
+        @Override
+        public int hashCode() {
+          if (myHashCode == -1) {
+            myHashCode = super.hashCode();
+          }
+          return myHashCode;
+        }
+      }));
     }
-    return result;
+    return new ArrayList<Pair<SNode, SNodePointer>>(result);
   }
 
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
@@ -215,7 +224,9 @@ public class EditorManager {
   }
 
   /*package*/ EditorCell createEditorCell(EditorContext context, List<Pair<SNode, SNodePointer>> modifications, ReferencedNodeContext refContext) {
-    context.pushTracerTask("?" + refContext.toString(), true);
+    if (context.isTracing()) {
+      context.pushTracerTask("?" + refContext.toString(), true);
+    }
     try {
       SNode node = refContext.getNode();
 
@@ -282,7 +293,9 @@ public class EditorManager {
         }
       }
     } finally {
-      context.popTracerTask();
+      if (context.isTracing()) {
+        context.popTracerTask();
+      }
     }
   }
 
@@ -301,7 +314,9 @@ public class EditorManager {
   }
 
   private EditorCell createEditorCell_internal(final EditorContext context, boolean isInspectorCell, ReferencedNodeContext refContext) {
-    context.pushTracerTask("+" + refContext.toString(), true);
+    if (context.isTracing()) {
+      context.pushTracerTask("+" + refContext.toString(), true);
+    }
     try {
       final SNode node = refContext.getNode();
 
@@ -346,7 +361,9 @@ public class EditorManager {
       assert nodeCell != null;
       return nodeCell;
     } finally {
-      context.popTracerTask();
+      if (context.isTracing()) {
+        context.popTracerTask();
+      }
     }
   }
 
