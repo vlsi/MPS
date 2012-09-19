@@ -416,6 +416,14 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getChildren(true);
   }
 
+  public List<SReference> getReferences() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    return new ArrayList<SReference>(_reference());
+  }
+
   //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
@@ -1395,14 +1403,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public SReference setReferent(String role, SNode newReferent) {
     return setReferent(role, newReferent, true);
-  }
-
-  public List<SReference> getReferences() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    return new ArrayList<SReference>(_reference());
   }
 
   public List<SNode> getChildren(boolean includeAttributes) {

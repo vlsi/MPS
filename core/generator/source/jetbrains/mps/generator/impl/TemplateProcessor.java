@@ -128,7 +128,7 @@ public class TemplateProcessor {
     jetbrains.mps.util.SNodeOperations.copyProperties(templateNode, outputNode);
 
     SModel templateModel = templateNode.getModel();
-    for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(templateNode)) {
+    for (SReference reference : templateNode.getReferences()) {
       if (AttributeOperations.getLinkAttribute(templateNode, "referenceMacro", reference.getRole()) != null) {
         continue;
       }

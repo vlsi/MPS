@@ -226,7 +226,7 @@ public class ModelAssert {
 
   private static Map<String, Set<SReference>> createRoleToReferenceMap(SNode expectedNode) {
     Map<String, Set<SReference>> expRoleToReferenceMap = new HashMap<String, Set<SReference>>();
-    for (SReference ref : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(expectedNode)) {
+    for (SReference ref : expectedNode.getReferences()) {
       if (expRoleToReferenceMap.get(ref.getRole()) == null) {
         expRoleToReferenceMap.put(ref.getRole(), new HashSet<SReference>());
       }

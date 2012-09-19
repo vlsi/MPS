@@ -73,7 +73,7 @@ public class SModelOperations {
         model.addLanguage(ref);
       }
 
-      for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
+      for (SReference reference : node.getReferences()) {
         if (reference.isExternal()) {
           SModelReference targetModelReference = reference.getTargetSModelReference();
           if (targetModelReference != null && !importedModels.contains(targetModelReference)) {
@@ -244,7 +244,7 @@ public class SModelOperations {
   public static Set<SModelReference> getUsedImportedModels(SModel sModel) {
     Set<SModelReference> result = new HashSet<SModelReference>();
     for (SNode node : sModel.nodes()) {
-      Iterable<SReference> references = (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node);
+      Iterable<SReference> references = node.getReferences();
       for (SReference reference : references) {
         if (!reference.isExternal()) continue;
         SModelReference targetModelReference = reference.getTargetSModelReference();

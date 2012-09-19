@@ -36,8 +36,6 @@ public interface SNode {
 
   SModel getModel();
 
-  public Iterable<? extends SNode> getChildren();
-
   // tree operation
 
   void addChild(String role, SNode child);
@@ -81,6 +79,8 @@ public interface SNode {
 
   String getRoleOf(SNode child);
 
+  public Iterable<? extends SNode> getChildren();  //?needed
+
   void visitChildren(ChildVisitor v);
 
   // refs
@@ -96,6 +96,8 @@ public interface SNode {
   void setReference(SReference reference);
 
   void removeReference(SReference ref);
+
+  public Iterable<? extends SReference> getReferences();  //?needed
 
   void visitReferences(ReferenceVisitor v);
 

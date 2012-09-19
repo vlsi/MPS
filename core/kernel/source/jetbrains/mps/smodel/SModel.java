@@ -601,7 +601,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
         for (String propname : node.getProperties().keySet()) {
           result.add(RoleIdsComponent.getPropertyNamePointer(node, propname).getModelReference());
         }
-        for (SReference ref : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
+        for (SReference ref : node.getReferences()) {
           if (ref.getTargetSModelReference() != null) {
             result.add(ref.getTargetSModelReference());
           }
@@ -625,7 +625,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
             result.add(decl.getModel().getSModelReference());
           }
         }
-        for (SReference ref : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
+        for (SReference ref : node.getReferences()) {
           SModelReference targetModelRef = ref.getTargetSModelReference();
           if (targetModelRef == null) {
             LOG.error("target model of reference '" + ref.getRole() + "' is null in node " + node.getDebugText());
@@ -864,7 +864,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
 
     boolean changed = false;
     for (SNode node : myIdToNodeMap.values()) {
-      for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
+      for (SReference reference : node.getReferences()) {
         SModelReference oldReference = reference.getTargetSModelReference();
         if (oldReference == null) continue;
         SModelReference newRef = oldReference.update();
@@ -927,7 +927,7 @@ public class SModel implements org.jetbrains.mps.openapi.model.SModel {
     SModelReference oldReference = myReference;
     myReference = newModelReference;
     for (SNode node : myIdToNodeMap.values()) {
-      for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
+      for (SReference reference : node.getReferences()) {
         if (oldReference.equals(reference.getTargetSModelReference())) {
           reference.setTargetSModelReference(newModelReference);
         }

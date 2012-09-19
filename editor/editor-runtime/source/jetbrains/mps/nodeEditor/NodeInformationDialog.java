@@ -24,7 +24,6 @@ import jetbrains.mps.util.NameUtil;
 
 import java.awt.Frame;
 import java.awt.Point;
-import java.util.List;
 
 public class NodeInformationDialog extends AbstractNodeInformationDialog {
   private EditorComponent myEditorComponent;
@@ -57,7 +56,7 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
         result.append("ID = ").append(node.getSNodeId().toString()).append("\n");
 
         result.append("\nReferences:");
-        for (SReference ref : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node)) {
+        for (SReference ref : node.getReferences()) {
           SNode target = ref.getTargetNode();
 
           if (ref.getTargetNode() == null) {

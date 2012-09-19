@@ -64,7 +64,7 @@ public class ConnectedComponentPartitioner {
   }
 
   private void buildNodeDependencies(SNode node, int[] dependsOn, Map<SNode, Integer> rootIndex) {
-    for (SReference ref : (List<SReference>) SNodeOperations.getReferences(node)) {
+    for (SReference ref : node.getReferences()) {
       if (ref.isExternal()) {
         continue;
       }

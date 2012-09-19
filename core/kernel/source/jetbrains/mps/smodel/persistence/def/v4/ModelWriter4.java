@@ -158,7 +158,7 @@ public class ModelWriter4 implements IModelWriter {
     }
 
     // references ...
-    List<SReference> references = (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node);
+    List<SReference> references = node.getReferences();
     IReferencePersister referencePersister = getReferencePersister();
     for (SReference reference : references) {
       referencePersister.saveReference(element, reference, useUIDs, visibleModelElements);

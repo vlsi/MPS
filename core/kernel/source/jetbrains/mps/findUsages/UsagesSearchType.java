@@ -24,7 +24,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -68,7 +67,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
   }
 
   private void addUsages(SNode current, Collection<SNode> nodes, Set<StaticReferenceInfo> srefs, Set<SReference> result) {
-    for (SReference ref : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(current)) {
+    for (SReference ref : current.getReferences()) {
       if (ref instanceof StaticReference){
         SModelReference mr = ref.getTargetSModelReference();
         if (srefs.contains(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr),ref.getTargetNodeId()))){

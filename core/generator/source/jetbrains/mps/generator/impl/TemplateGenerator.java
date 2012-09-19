@@ -526,7 +526,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       TracingUtil.putInputNode(outputNode, inputNode);
     }
 
-    for (SReference inputReference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(inputNode)) {
+    for (SReference inputReference : inputNode.getReferences()) {
       if (jetbrains.mps.util.SNodeOperations.isRegistered(inputNode) && (inputReference instanceof DynamicReference || inputReference.isExternal())) {
         // dynamic & external references don't need validation => replace input model with output
         SModelReference targetModelReference = inputReference.isExternal() ? inputReference.getTargetSModelReference() : myOutputModel.getSModelReference();

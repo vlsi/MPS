@@ -22,7 +22,10 @@ import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 import org.jetbrains.mps.openapi.model.SNode.UserObjectVisitor;
 
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
 public class NodesWriter {
@@ -70,7 +73,7 @@ public class NodesWriter {
   }
 
   protected void writeReferences(SNode node, ModelOutputStream os) throws IOException {
-    Collection<SReference> refs = (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(node);
+    Collection<SReference> refs = node.getReferences();
     os.writeInt(refs.size());
     for (SReference reference : refs) {
       SModelReference targetModelReference = reference.getTargetSModelReference();
