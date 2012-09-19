@@ -241,7 +241,7 @@ public class TemplateProcessor {
           // check node languages : prevent 'input node' query from returning node, which language was not counted when
           // planning the generation steps.
           for (SNode outputNode : _outputNodes) {
-            Language outputNodeLang = outputNode.getNodeLanguage();
+            Language outputNodeLang = jetbrains.mps.util.SNodeOperations.getLanguage(outputNode);
             if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
               if (!outputNodeLang.getGenerators().isEmpty()) {
                 myGenerator.getLogger().error(outputNode, "language of output node is '" + outputNodeLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",
@@ -261,7 +261,7 @@ public class TemplateProcessor {
       if (child != null) {
         // check node languages : prevent 'insert' query from returnning node, which language was not counted when
         // planning the generation steps.
-        Language childLang = child.getNodeLanguage();
+        Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
         if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
           if (!childLang.getGenerators().isEmpty()) {
             myGenerator.getLogger().error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",

@@ -113,7 +113,7 @@ public class DelayedChanges {
         if (child != null) {
           // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
           // planning the generation steps.
-          Language childLang = child.getNodeLanguage();
+          Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
           if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
             if (!childLang.getGenerators().isEmpty()) {
               myLogger.error(child, "language of output node is '" + childLang.getModuleFqName() + "' - this language did not show up when computing generation steps!",

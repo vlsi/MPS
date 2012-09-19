@@ -89,7 +89,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
         // check node languages : prevent 'input node' query from returning node, which language was not counted when
         // planning the generation steps.
         for (SNode outputNode : _outputNodes) {
-          Language outputNodeLang = outputNode.getNodeLanguage();
+          Language outputNodeLang = jetbrains.mps.util.SNodeOperations.getLanguage(outputNode);
           if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
             if (!outputNodeLang.getGenerators().isEmpty()) {
               SNode tNode = templateNode.getNode();
@@ -119,7 +119,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   public SNode insertNode(SNode child, SNodePointer templateNode, TemplateContext templateContext) throws GenerationCanceledException, GenerationFailureException {
     // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
     // planning the generation steps.
-    Language childLang = child.getNodeLanguage();
+    Language childLang = jetbrains.mps.util.SNodeOperations.getLanguage(child);
     if (!generator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
       if (!childLang.getGenerators().isEmpty()) {
         SNode tNode = templateNode.getNode();

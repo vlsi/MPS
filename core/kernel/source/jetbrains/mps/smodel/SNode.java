@@ -624,11 +624,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getParent().getLinkDeclaration(getRole());
   }
 
-  public Language getNodeLanguage() {
-    SNode concept = getConceptDeclarationNode();
-    return SModelUtil.getDeclaringLanguage(concept);
-  }
-
   @NotNull
   public String getConceptFqName() {
     ModelAccess.assertLegalRead(this);
@@ -1409,8 +1404,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
   }
 
   public Language getLanguage() {
-    String languageNamespace = NameUtil.namespaceFromConceptFQName(getConceptFqName());
-    return ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
+    return jetbrains.mps.util.SNodeOperations.getLanguage(this);
   }
 
   @NotNull
@@ -1418,6 +1412,9 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return NameUtil.namespaceFromConceptFQName(getConceptFqName());
   }
 
+  public Language getNodeLanguage() {
+    return jetbrains.mps.util.SNodeOperations.getLanguage(this);
+  }
 
   //--------private (SNode and SModel usages)-------
 

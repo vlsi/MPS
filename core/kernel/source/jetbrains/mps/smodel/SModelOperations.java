@@ -155,7 +155,7 @@ public class SModelOperations {
   public static Set<ModuleReference> getUsedLanguages(@NotNull SModel model) {
     Set<ModuleReference> result = new HashSet<ModuleReference>();
     for (SNode node : model.nodes()) {
-      Language lang = node.getLanguage();
+      Language lang = jetbrains.mps.util.SNodeOperations.getLanguage(node);
       if (lang == null) continue;
       result.add(lang.getModuleReference());
     }
