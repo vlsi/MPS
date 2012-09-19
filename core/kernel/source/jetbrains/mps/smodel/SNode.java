@@ -625,16 +625,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     return getParent().getLinkDeclaration(getRole());
   }
 
-  public SNode findConceptProperty(String propertyName) {
-    SNode conceptDeclaration;
-    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-      conceptDeclaration = this;
-    } else {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
-    }
-    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-  }
-
   public Language getNodeLanguage() {
     SNode concept = getConceptDeclarationNode();
     return SModelUtil.getDeclaringLanguage(concept);
@@ -1420,6 +1410,16 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public ModuleReference getConceptLanguage() {
     return new ModuleReference(getLanguageNamespace());
+  }
+
+  public SNode findConceptProperty(String propertyName) {
+    SNode conceptDeclaration;
+    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
+      conceptDeclaration = this;
+    } else {
+      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
+    }
+    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
 
