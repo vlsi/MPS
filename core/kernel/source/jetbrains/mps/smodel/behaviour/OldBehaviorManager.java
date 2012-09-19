@@ -132,7 +132,7 @@ public final class OldBehaviorManager implements CoreComponent {
 
   public void initNode(@NotNull SNode node) {
     String conceptFqName = InternUtil.intern(node.getConcept().getId());
-    String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
+    String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConcept().getId());
     Language language = ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class);
 
     List<Method> methodsToCall;
@@ -251,7 +251,7 @@ public final class OldBehaviorManager implements CoreComponent {
       }
     }
 
-    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConceptFqName() + ", conceptNode == null: " + (concept == null));
+    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConcept().getId() + ", conceptNode == null: " + (concept == null));
   }
 
   private static class MethodInfo {

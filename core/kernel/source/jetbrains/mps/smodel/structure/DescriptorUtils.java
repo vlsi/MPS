@@ -90,8 +90,8 @@ public class DescriptorUtils {
     List<String> result = new ArrayList<String>();
 
     for (SNode node : LanguageAspect.STRUCTURE.get(language).getSModel().nodes()) {
-      if ("jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(node.getConceptFqName()) ||
-        "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(node.getConceptFqName())) {
+      if ("jetbrains.mps.lang.structure.structure.ConceptDeclaration".equals(node.getConcept().getId()) ||
+        "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration".equals(node.getConcept().getId())) {
         result.add(NameUtil.nodeFQName(node));
       }
     }

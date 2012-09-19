@@ -101,7 +101,7 @@ public class VersionUtil {
 
   //this did not work: a model reference did not equal nothing
   public static int getNodeLanguageVersion(SNode node) {
-    SModelReference reference = LanguageAspect.STRUCTURE.get(new ModuleReference(NameUtil.namespaceFromConceptFQName(node.getConceptFqName())));
+    SModelReference reference = LanguageAspect.STRUCTURE.get(new ModuleReference(NameUtil.namespaceFromConceptFQName(node.getConcept().getId())));
     reference = reference.update();
     return SModelOperations.getUsedVersion(node.getModel(), reference);
   }

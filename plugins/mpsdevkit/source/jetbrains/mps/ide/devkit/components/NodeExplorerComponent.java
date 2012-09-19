@@ -34,6 +34,7 @@ import org.jetbrains.mps.openapi.model.SNode.PropertyVisitor;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
+import java.util.List;
 
 public class NodeExplorerComponent {
   private MyTree myTree = new MyTree();
@@ -101,7 +102,7 @@ public class NodeExplorerComponent {
     protected void doInit() {
       this.removeAllChildren();
 
-      add(new TextTreeNode("Concept = " + getSNode().getConceptFqName()));
+      add(new TextTreeNode("Concept = " + getSNode().getConcept().getId()));
 
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {
@@ -123,7 +124,7 @@ public class NodeExplorerComponent {
     }
 
     protected void doInit() {
-      for (SReference reference : myNode.getNode().getReferences()) {
+      for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(myNode.getNode())) {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
           add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext()));

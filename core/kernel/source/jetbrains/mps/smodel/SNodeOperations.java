@@ -37,8 +37,8 @@ public class SNodeOperations {
   }
 
   public static boolean isUnknown(SNode sNode) {
-    Language language = GlobalScope.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(sNode.getConceptFqName()));
-    return language == null || language.findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConceptFqName())) == null;
+    Language language = GlobalScope.getInstance().getLanguage(NameUtil.namespaceFromConceptFQName(sNode.getConcept().getId()));
+    return language == null || language.findConceptDeclaration(NameUtil.shortNameFromLongName(sNode.getConcept().getId())) == null;
   }
 
   public static List<SNode> getConceptLinkTargets(final SNode node, String linkName, boolean lookupHierarchy) {

@@ -66,7 +66,7 @@ public class ModelConstraintsManager {
     ConceptRegistry registry = ConceptRegistry.getInstance();
 
     while (currentNode != null) {
-      jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConceptFqName());
+      jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = registry.getConstraintsDescriptor(currentNode.getConcept().getId());
 
       if (!descriptor.canBeAncestor(currentNode, childNode, childConcept, context, checkingNodeContext)) {
         return false;
@@ -83,7 +83,7 @@ public class ModelConstraintsManager {
   }
 
   public static boolean canBeParent(SNode parentNode, SNode childConcept, SNode link, IOperationContext context) {
-    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConceptFqName());
+    jetbrains.mps.smodel.runtime.ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(parentNode.getConcept().getId());
     return canBeParent(descriptor, parentNode, childConcept, link, context, null, null);
   }
 

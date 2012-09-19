@@ -91,7 +91,7 @@ public class VersionUtil {
   }
 
   public String genType(@NotNull SNode node) {
-    return genReferenceString(node.getConceptDeclarationNode(), node.getConceptFqName(), false);
+    return genReferenceString(node.getConceptDeclarationNode(), node.getConcept().getId(), false);
   }
   public String genRole(@NotNull SNode node) {
     return node.getRole() == null ? null : genReferenceString(AttributeOperations.isAttribute(node) ? null : node.getRoleLink(), node.getRole(), true);

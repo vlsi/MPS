@@ -118,7 +118,7 @@ public class NodePresentationUtil {
     }
 
     if (node.isRoot()) {
-      return NameUtil.shortNameFromLongName(node.getConceptFqName()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
+      return NameUtil.shortNameFromLongName(node.getConcept().getId()) + " (" + node.getModel().getSModelReference().getCompactPresentation() + ")";
     }
 
     return node.getRole() + " (" + NameUtil.compactNodeFQName(node.getTopmostAncestor()) + ")";
@@ -130,7 +130,7 @@ public class NodePresentationUtil {
       return alias;
     }
 
-    return NameUtil.shortNameFromLongName(node.getConceptFqName());
+    return NameUtil.shortNameFromLongName(node.getConcept().getId());
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {

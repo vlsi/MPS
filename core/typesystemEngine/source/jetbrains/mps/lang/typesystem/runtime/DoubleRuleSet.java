@@ -54,7 +54,7 @@ public class DoubleRuleSet<T extends IApplicableTo2Concepts> {
   }
 
   public Set<T> getRules(SNode node1, SNode node2) {
-    return get(new Pair<String, String>(node1.getConceptFqName(), node2.getConceptFqName()));
+    return get(new Pair<String, String>(node1.getConcept().getId(), node2.getConcept().getId()));
   }
 
   protected Set<T> get(@NotNull final Pair<String, String> key) {

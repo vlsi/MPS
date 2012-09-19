@@ -42,7 +42,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
         myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
-        assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConceptFqName();
+        assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getId();
         SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
         myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
         if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {

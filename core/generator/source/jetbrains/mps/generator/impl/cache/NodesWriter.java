@@ -52,7 +52,7 @@ public class NodesWriter {
   }
 
   protected void writeNode(SNode node, ModelOutputStream os) throws IOException {
-    os.writeString(node.getConceptFqName());
+    os.writeString(node.getConcept().getId());
     os.writeNodeId(node.getSNodeId());
     os.writeString(node.getRole_());
     os.writeByte('{');

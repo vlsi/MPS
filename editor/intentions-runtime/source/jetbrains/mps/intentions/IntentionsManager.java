@@ -192,7 +192,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   private List<Intention> getIntentionsFor(SNode node, Computable<Boolean> terminated) {
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     List<Intention> result = new ArrayList<Intention>();
     for (String ancestor : LanguageHierarchyCache.getAncestorsNames(conceptFqName)) {
       Set<Intention> intentions = myIntentions.get(ancestor);

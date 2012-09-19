@@ -62,7 +62,7 @@ public class FastRuleFinder {
   }
 
   public TemplateReductionRule[] findReductionRules(SNode node) {
-    return myApplicableRules.get(node.getConceptFqName());
+    return myApplicableRules.get(node.getConcept().getId());
   }
 
   public static class BlockedReductionsData {

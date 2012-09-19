@@ -443,7 +443,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, propertyName);
       if (!threadSet.contains(pair) && myModel.canFireEvent()) {
-        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
+        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConcept().getId()).getProperty(propertyName);
         threadSet.add(pair);
         try {
           descriptor.setValue(this, propertyValue, GlobalScope.getInstance());
@@ -607,15 +607,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     if (getRole() == null) return null;
     if (getParent() == null) return null;
     return getParent().getLinkDeclaration(getRole());
-  }
-
-  @NotNull
-  public String getConceptFqName() {
-    ModelAccess.assertLegalRead(this);
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    return myConceptFqName;
   }
 
   //----------------------------------------------------------
@@ -1211,7 +1202,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
       Set<Pair<SNode, String>> threadSet = ourSetReferentEventHandlersInProgress.get();
       Pair<SNode, String> pair = new Pair<SNode, String>(this, role);
       if (!threadSet.contains(pair)) {
-        ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getReference(role);
+        ReferenceConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConcept().getId()).getReference(role);
 
         if (!(descriptor instanceof IllegalReferenceConstraintsDescriptor)) {
           handlerFound = true;
@@ -1429,6 +1420,15 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     setReference(reference.getRole(), reference);
   }
 
+  @NotNull
+  public String getConceptFqName() {
+    ModelAccess.assertLegalRead(this);
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    return myConceptFqName;
+  }
+
   //--------private (SNode and SModel usages)-------
 
   void unRegisterFromModel() {
@@ -1569,7 +1569,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
     getters.add(current);
     try {
-      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConceptFqName()).getProperty(propertyName);
+      PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(this.getConcept().getId()).getProperty(propertyName);
       Object getterValue = descriptor.getValue(this, GlobalScope.getInstance());
       return getterValue == null ? null : String.valueOf(getterValue);
     } finally {

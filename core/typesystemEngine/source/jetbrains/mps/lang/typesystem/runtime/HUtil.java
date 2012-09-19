@@ -66,13 +66,13 @@ public class HUtil {
 
   public static boolean isRuntimeTypeVariable(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable".equals(conceptFqName);
   }
 
   public static boolean isRuntimeListVariable(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeListVariable".equals(conceptFqName);
   }
 
@@ -96,13 +96,13 @@ public class HUtil {
   @Deprecated
   public static boolean isRuntimeErrorType(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType".equals(conceptFqName);
   }
 
   public static boolean isRuntimeHoleType(SNode node) {
     if (node == null) return false;
-    String conceptFqName = node.getConceptFqName();
+    String conceptFqName = node.getConcept().getId();
     return "jetbrains.mps.lang.typesystem.structure.RuntimeHoleType".equals(conceptFqName);
   }
 

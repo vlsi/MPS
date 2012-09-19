@@ -40,7 +40,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
       setIcon(IconManager.getIconFor(concept));
       setNodeIdentifier(concept.getName());
     } else {
-      setNodeIdentifier(myNode.getConceptFqName());
+      setNodeIdentifier(myNode.getConcept().getId());
     }
   }
 

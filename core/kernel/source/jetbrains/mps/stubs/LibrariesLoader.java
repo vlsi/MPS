@@ -115,7 +115,7 @@ public class LibrariesLoader implements CoreComponent {
 
       Condition<SNode> cond = new Condition<SNode>() {
         public boolean met(SNode node) {
-          return node.getConceptFqName().equals(BootstrapLanguages.concept_stubs_LibraryStubDescriptor);
+          return node.getConcept().getId().equals(BootstrapLanguages.concept_stubs_LibraryStubDescriptor);
         }
       };
       Iterable<SNode> iterable = new ConditionalIterable<SNode>(descriptor.getSModel().roots(), cond);

@@ -54,7 +54,7 @@ public class RuleSet<T extends IApplicableToConcept> {
   }
 
   public Set<T> getRules(SNode node) {
-    return get(node.getConceptFqName());
+    return get(node.getConcept().getId());
   }
 
   protected Set<T> get(String key) {

@@ -180,6 +180,6 @@ public abstract class SNodeTextGen {
   }
 
   public String getDefaultNoTextGenErrorText(SNode node) {
-    return "<!TextGen not found for '" + node.getConceptFqName() + "'!>";
+    return "<!TextGen not found for '" + node.getConcept().getId() + "'!>";
   }
 }

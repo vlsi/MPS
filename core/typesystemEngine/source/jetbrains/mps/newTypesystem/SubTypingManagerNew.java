@@ -451,7 +451,7 @@ public class SubTypingManagerNew extends SubtypingManager {
     }
 
     public String getConceptFQName() {
-      return myNode.getConceptFqName();
+      return myNode.getConcept().getId();
     }
   }
 

@@ -118,7 +118,7 @@ public class TemplateProcessor {
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     generationTracer.pushTemplateNode(new SNodePointer(templateNode));
-    SNode outputNode = new SNode(myOutputModel, templateNode.getConceptFqName(), false);
+    SNode outputNode = new SNode(myOutputModel, templateNode.getConcept().getId(), false);
     GeneratorMappings mappings = myGenerator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
     for (SNode historyInputNode : context.getInputHistory()) {
@@ -156,7 +156,7 @@ public class TemplateProcessor {
     // process property and reference macros
     List<SNode> templateChildNodes = new ArrayList<SNode>();
     for (SNode templateChildNode : templateNode.getChildren()) {
-      String templateChildNodeConcept = templateChildNode.getConceptFqName();
+      String templateChildNodeConcept = templateChildNode.getConcept().getId();
 
       if (templateChildNodeConcept.equals(RuleUtil.concept_PropertyMacro)) {
         myReductionContext.getQueryExecutor().expandPropertyMacro(templateChildNode, context.getInput(), templateNode, outputNode, context);
@@ -204,7 +204,7 @@ public class TemplateProcessor {
 
   @Nullable
   private List<SNode> createOutputNodesForTemplateNodeWithMacro(SNode macro, SNode templateNode, @NotNull TemplateContext templateContext, int nodeMacrosToSkip, String outerMappingName) throws DismissTopMappingRuleException, GenerationFailureException, GenerationCanceledException {
-    String macroConceptFQName = macro.getConceptFqName();
+    String macroConceptFQName = macro.getConcept().getId();
     IGenerationTracer generationTracer = myGenerator.getGenerationTracer();
     List<SNode> outputNodes = new ArrayList<SNode>();
     String mappingName = GeneratorUtilEx.getMappingName(macro, outerMappingName);
@@ -381,7 +381,7 @@ public class TemplateProcessor {
         try {
           TemplateContext newcontext = templateContext.subContext(mappingName, newInputNode);
           if (macro_mapperFunction != null) {
-            SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
+            SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConcept().getId(), myOutputModel, myGenerator.getScope(), false);
             generationTracer.pushOutputNodeToReplaceLater(childToReplaceLater);
             outputNodes.add(childToReplaceLater);
             // execute the 'mapper' function later
