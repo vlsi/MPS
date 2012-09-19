@@ -335,7 +335,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChild(role, ((SNode) child), ((SNodeBase) anchor));
+    insertChild(((SNodeBase) anchor), role, ((SNode) child));
   }
 
   @Override
