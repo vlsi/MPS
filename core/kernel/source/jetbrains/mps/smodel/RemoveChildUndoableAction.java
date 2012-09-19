@@ -28,7 +28,7 @@ class RemoveChildUndoableAction extends SNodeUndoableAction {
   }
 
   protected void doUndo() {
-    getAffectedNode().insertChild(myAnchor, myRole, myChild);
+    getAffectedNode().insertChild(myRole, myChild, myAnchor);
   }
 
   protected void doRedo() {

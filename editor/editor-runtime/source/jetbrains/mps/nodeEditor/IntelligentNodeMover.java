@@ -202,15 +202,15 @@ class IntelligentNodeMover {
 
   private void addWithAnchor(SNode parent, SNode prevChild, String role, SNode current) {
     if (forward()) {
-      parent.insertChild(prevChild, role, current);
+      parent.insertChild(role, current, prevChild);
     } else {
-      parent.insertChild(parent.getPrevChild(prevChild), role, current);
+      parent.insertChild(role, current, parent.getPrevChild(prevChild));
     }
   }
 
   private void addAtBoundary(SNode result, String role, SNode current) {
     if (forward()) {
-      result.insertChild(null, role, current);
+      result.insertChild(role, current, null);
     } else {
       result.addChild(role, current);
     }

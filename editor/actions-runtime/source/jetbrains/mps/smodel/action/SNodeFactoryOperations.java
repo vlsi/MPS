@@ -18,10 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 
@@ -144,7 +141,7 @@ public class SNodeFactoryOperations {
     if (newChild == null) return null;
     String role = node.getRole();
     assert parent != null && role != null;
-    parent.insertChild(node, role, newChild);
+    parent.insertChild(role, newChild, node);
     return newChild;
   }
 
@@ -156,7 +153,7 @@ public class SNodeFactoryOperations {
     if (newChild == null) return null;
     String role = node.getRole();
     assert role != null;
-    parent.insertChild(parent.getPrevChild(node), role, newChild);
+    parent.insertChild(role, newChild, parent.getPrevChild(node));
     return newChild;
   }
 }

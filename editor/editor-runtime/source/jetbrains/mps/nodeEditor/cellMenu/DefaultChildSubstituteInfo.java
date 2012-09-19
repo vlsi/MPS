@@ -102,7 +102,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
     hole = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", auxModel, GlobalScope.getInstance());
     if (myCurrentChild != null) {
       SNode child = mapping.get(myCurrentChild);
-      parent.insertChild(parent.getPrevChild(child), role, hole);
+      parent.insertChild(role, hole, parent.getPrevChild(child));
       parent.removeChild(child);
     } else {
       parent.setChild(role, hole);

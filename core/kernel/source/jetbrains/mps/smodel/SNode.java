@@ -156,7 +156,8 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
     SNode firstChild = firstChild();
-    insertChild(firstChild == null ? null : firstChild.treePrevious(), role, (SNode) child);
+    final SNodeBase anchor = firstChild == null ? null : firstChild.treePrevious();
+    insertChild(role, (SNode) child, anchor);
   }
 
   //all access to myFirstChild should be via this method
@@ -333,7 +334,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   @Override
   public void insertChild(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable org.jetbrains.mps.openapi.model.SNode anchor) {
-    insertChild(((SNodeBase) anchor), role, ((SNode) child));
+    insertChild(role, ((SNode) child), ((SNodeBase) anchor));
   }
 
   @Override
@@ -492,48 +493,6 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     }
   }
 
-  public void insertChild(final SNodeBase anchor, String _role, final SNode child) {
-    enforceModelLoad();
-
-    if (ourMemberAccessModifier != null) {
-      _role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, _role);
-    }
-    final String role = _role;
-    SNode parentOfChild = child.getParent();
-    if (parentOfChild != null) {
-      throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
-        "Couldn't add it to: " + this.getDebugText());
-    }
-
-    if (child.isRoot()) {
-      throw new RuntimeException(child.getDebugText() + " is root node. Can't add it as a child");
-    }
-
-    if (getTopmostAncestor() == child) {
-      throw new RuntimeException("Trying to create a cyclic tree");
-    }
-
-    ModelChange.assertLegalNodeChange(this);
-
-    children_insertAfter(anchor, child);
-    child.setRoleInParent(role);
-
-    SModel model = getModel();
-    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
-      child.registerInModel(model);
-    } else {
-      child.changeModel(model);
-    }
-
-    if (model == null) return;
-
-    model.performUndoableAction(new InsertChildAtUndoableAction(this, anchor, _role, child));
-
-    if (ModelChange.needFireEvents(model, this)) {
-      model.fireChildAddedEvent(this, role, child, anchor);
-    }
-  }
-
   public void replaceReference(SReference referenceToRemove, @NotNull SReference referenceToAdd) {
     if (myReferences != null) {
       for (SReference reference : myReferences) {
@@ -590,7 +549,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     // old and new child can have the same node Id
     // thus it is important to remove old child first
     removeChild(oldChild);
-    insertChild(anchor, role, newChild);
+    insertChild(role, newChild, anchor);
   }
 
   public void replaceChild(SNode oldChild, List<SNode> newChildren) {
@@ -599,7 +558,7 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
     assert oldChildRole != null;
     SNode prevChild = oldChild;
     for (SNode newChild : newChildren) {
-      insertChild(prevChild, oldChildRole, newChild);
+      insertChild(oldChildRole, newChild, prevChild);
       prevChild = newChild;
     }
     removeChild(oldChild);
@@ -1130,9 +1089,10 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public void insertChild(SNodeBase anchorChild, String role, SNode child, boolean insertBefore) {
     if (insertBefore) {
-      insertChild(firstChild() == anchorChild ? null : anchorChild.treePrevious(), role, child);
+      final SNodeBase anchor = firstChild() == anchorChild ? null : anchorChild.treePrevious();
+      insertChild(role, child, anchor);
     } else {
-      insertChild(anchorChild, role, child);
+      insertChild(role, child, anchorChild);
     }
   }
 
@@ -1417,6 +1377,48 @@ public final class SNode extends SNodeBase implements org.jetbrains.mps.openapi.
 
   public boolean isInstanceOfConcept(String conceptFqName) {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
+  }
+
+  public void insertChild(final SNodeBase anchor, String _role, final SNode child) {
+    enforceModelLoad();
+
+    if (ourMemberAccessModifier != null) {
+      _role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, _role);
+    }
+    final String role = _role;
+    SNode parentOfChild = child.getParent();
+    if (parentOfChild != null) {
+      throw new RuntimeException(child.getDebugText() + " already has parent: " + parentOfChild.getDebugText() + "\n" +
+        "Couldn't add it to: " + this.getDebugText());
+    }
+
+    if (child.isRoot()) {
+      throw new RuntimeException(child.getDebugText() + " is root node. Can't add it as a child");
+    }
+
+    if (getTopmostAncestor() == child) {
+      throw new RuntimeException("Trying to create a cyclic tree");
+    }
+
+    ModelChange.assertLegalNodeChange(this);
+
+    children_insertAfter(anchor, child);
+    child.setRoleInParent(role);
+
+    SModel model = getModel();
+    if (jetbrains.mps.util.SNodeOperations.isRegistered(this)) {
+      child.registerInModel(model);
+    } else {
+      child.changeModel(model);
+    }
+
+    if (model == null) return;
+
+    model.performUndoableAction(new InsertChildAtUndoableAction(this, anchor, _role, child));
+
+    if (ModelChange.needFireEvents(model, this)) {
+      model.fireChildAddedEvent(this, role, child, anchor);
+    }
   }
 
   //--------private (SNode and SModel usages)-------
